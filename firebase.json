@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": "www",
+    "ignore": [
+      ".firebaserc",
+      "database.rules.json",
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "**/src/**"
+    ]
+  }
+}

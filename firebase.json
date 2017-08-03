@@ -5,6 +5,7 @@
       ".firebaserc",
       "database.rules.json",
       "firebase.json",
+      "package.json",
       "**/.*",
       "**/node_modules/**",
       "**/src/**"

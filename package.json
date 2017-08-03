@@ -1,0 +1,19 @@
+{
+  "name": "mockoon-website",
+  "version": "1.0.0",
+  "description": "Mockoon app website repository",
+  "author": {
+    "name": "Guillaume Monnet",
+    "email": "hi@255kb.com",
+    "url": "https://255kb.com/"
+  },
+  "homepage": "https://mockoon.com",
+  "scripts": {
+    "publish": "firebase deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/255kb/mockoon-website.git"
+  },
+  "license": "MIT"
+}

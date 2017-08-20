@@ -9,11 +9,15 @@
   },
   "homepage": "https://mockoon.com",
   "scripts": {
-    "publish": "firebase deploy"
+    "publish": "firebase deploy",
+    "start": "http-server -a localhost -p 8000 -c-1 ./www"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/255kb/mockoon-website.git"
+  },
+  "devDependencies": {
+    "http-server": "^0.10.0"
   },
   "license": "MIT"
 }

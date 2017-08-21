@@ -10,6 +10,7 @@
   "homepage": "https://mockoon.com",
   "scripts": {
     "publish": "firebase deploy",
+    "build": "gulp",
     "start": "http-server -a localhost -p 8000 -c-1 ./www"
   },
   "repository": {
@@ -17,6 +18,11 @@
     "url": "git+https://github.com/255kb/mockoon-website.git"
   },
   "devDependencies": {
+    "bulma": "^0.5.1",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.7.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
     "http-server": "^0.10.0"
   },
   "license": "MIT"

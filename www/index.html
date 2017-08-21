@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mockoon - Mock servers in seconds</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -17,7 +16,7 @@
 </head>
 
 <body>
-  <section class="hero is-dark is-brand is-small">
+  <section class="hero is-small">
     <div class="hero-head">
       <header class="nav">
         <div class="container">
@@ -50,69 +49,21 @@
           Mock servers in seconds
         </h1>
         <h2 class="subtitle">
-          Never wonder how much time it takes anymore. It's shorter than that.
+          And... it's done.
         </h2>
       </div>
     </div>
 
-    <figure class="image is-128x128 rounded">
+    <figure class="image rounded main-picture cb">
       <img src="images/main.jpg">
     </figure>
   </section>
-
-  <section class="section" id="features">
-    <div class="container">
-      <div class="columns">
-        <div class="column has-text-centered">
-          <h1 class="title">Some great features!</h1>
-        </div>
-      </div>
-
-      <div class="columns">
-        <div class="column has-text-centered">
-          <figure class="image rounded mb20">
-            <img src="images/feature1.jpg">
-          </figure>
-          <div class="content">
-            <p class="title is-4">Unlimited environments</p>
-            <p>
-              Create an unlimited number of mock servers and routes, and run them in parallel.
-            </p>
-          </div>
-        </div>
-        <div class="column has-text-centered">
-          <figure class="image rounded mb20">
-            <img src="images/feature2.jpg">
-          </figure>
-          <div class="content">
-            <p class="title is-4">Customizable responses</p>
-            <p>
-              Customize routes: regex paths, HTTP status, multiple body content types, file download, custom headers...
-            </p>
-          </div>
-        </div>
-        <div class="column has-text-centered">
-          <figure class="image rounded mb20">
-            <img src="images/feature3.jpg">
-          </figure>
-          <div class="content">
-            <p class="title is-4">... and more</p>
-            <p>
-              Rich text editor, auto save, latency simulation, OPTIONS pre-flight request support...
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr>
 
   <section class="section" id="download">
     <div class="container">
       <div class="columns">
         <div class="column has-text-centered">
-          <h1 class="title">Download Mockoon <span class="is-size-6">v0.1.6</span></h1>
+          <h1 class="title">Download Mockoon <span class="is-size-6">v0.1.0 beta</span></h1>
           <h6 class="subtitle is-6">Please note that Mockoon is still in beta. <a href="https://github.com/255kb/mockoon/labels/feature">More features</a>            will come, stay tuned!</h6>
         </div>
       </div>
@@ -120,7 +71,7 @@
       <div class="columns">
         <div class="column has-text-centered">
           <p class="is-size-1 is-brand mb20"><i class="icon-windows"></i></p>
-          <a class="button is-primary is-outlined" href="https://releases.mockoon.com/mockoon.setup.0.1.6.exe">
+          <a class="button is-primary is-outlined" href="https://releases.mockoon.com/mockoon.setup.0.1.0.exe">
             <span class="icon"><i class="icon-download"></i></span>
             <span>Windows</span>
           </a>
@@ -128,7 +79,7 @@
         </div>
         <div class="column has-text-centered">
           <p class="is-size-1 is-brand mb20"><i class="icon-linux"></i></p>
-          <a class="button is-primary is-outlined" href="https://releases.mockoon.com/mockoon-0.1.6-x86_64.AppImage">
+          <a class="button is-primary is-outlined" href="https://releases.mockoon.com/mockoon-0.1.0-x86_64.AppImage">
             <span class="icon"><i class="icon-download"></i></span>
             <span>Linux</span>
           </a>
@@ -136,7 +87,7 @@
         </div>
         <div class="column has-text-centered">
           <p class="is-size-1 is-brand mb20"><i class="icon-apple"></i></p>
-          <a class="button is-primary is-outlined" href="https://releases.mockoon.com/mockoon.setup.0.1.6.dmg">
+          <a class="button is-primary is-outlined" href="https://releases.mockoon.com/mockoon.setup.0.1.0.dmg">
             <span class="icon"><i class="icon-download"></i></span>
             <span>OS X</span>
           </a>
@@ -148,7 +99,60 @@
 
   <hr>
 
-  <section class="section">
+  <section class="section" id="features">
+    <div class="container">
+      <div class="columns">
+        <div class="column has-text-centered">
+          <h1 class="title">Some great features!</h1>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column has-text-centered">
+          <figure class="image rounded is-75 cb mb20">
+            <img src="images/feature1.jpg">
+          </figure>
+          <div class="content">
+            <p class="title is-4">Unlimited environments</p>
+            <p>
+              Create an unlimited number of mock servers and routes, and run them in parallel.
+            </p>
+          </div>
+        </div>
+        <div class="column has-text-centered">
+          <figure class="image rounded is-75 cb mb20">
+            <img src="images/feature2.jpg">
+          </figure>
+          <div class="content">
+            <p class="title is-4">Customizable responses</p>
+            <p>
+              Customizable routes: regex paths, HTTP status, multiple body content types, file download, custom headers...
+            </p>
+          </div>
+        </div>
+        <div class="column has-text-centered">
+          <figure class="image rounded is-75 cb mb20">
+            <img src="images/feature3.jpg">
+          </figure>
+          <div class="content">
+            <p class="title is-4">... and more</p>
+            <p>
+              Rich text editor, auto save, latency simulation, OPTIONS pre-flight request support...
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column has-text-centered">
+          <a href="#completefeatures">Complete list of features</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="section" id="completefeatures">
     <div class="columns">
       <div class="column is-6 is-offset-3">
         <p class="title is-4 has-text-centered">Complete list of features</p>
@@ -190,12 +194,12 @@
             </p>
             <p>
               <a title="Share on Twitter" href="http://twitter.com/share?url=https://mockoon.com&amp;text=I've+just+downloaded+a+great+API+mocking+tool&amp;via=255kb&amp;"
-                onclick="window.open(this.href, 'twitter-share', 'width=800,height=600');return false;" class="button twitter">
+                onclick="window.open(this.href, 'twitter-share', 'width=800,height=600');return false;" class="button is-primary is-outlined twitter">
                   <span class="icon"><i class="icon-twitter" aria-hidden="true"></i></span>
                   <span>Twitter</span>
                   </a>
               <a title="Share on Facebook" href="http://www.facebook.com/sharer/sharer.php?u=https://mockoon.com" onclick="window.open(this.href, 'facebook-share', 'width=800,height=600');return false;"
-                class="button facebook">
+                class="button is-primary is-outlined facebook">
                   <span class="icon"><i class="icon-facebook" aria-hidden="true"></i></span>
                   <span>Facebook</span>
                 </a>
@@ -212,8 +216,6 @@
         <p>
           &copy; Mockoon 2017 - present by <a href="https://255kb.com">Guillaume Monnet</a>
         </p>
-
-
         <a class="github-button" href="https://github.com/255kb/mockoon" data-size="large" data-show-count="true" aria-label="Star 255kb/mockoon on GitHub">Star</a>
       </div>
     </div>

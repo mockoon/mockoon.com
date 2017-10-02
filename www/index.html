@@ -30,6 +30,20 @@
 </head>
 
 <body>
+  <div class="modal terms-modal">
+    <div class="modal-background" onclick="toggleModal('remove')"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Terms</p>
+        <button class="delete" aria-label="close" onclick="toggleModal('remove')"></button>
+      </header>
+      <section class="modal-card-body">
+
+
+      </section>
+    </div>
+  </div>
+
   <section class="hero is-small">
     <div class="hero-head">
       <header class="nav">
@@ -109,6 +123,12 @@
             <span>OS X</span>
           </a>
           <p class="content is-small is-light">dmg file</p>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column has-text-centered">
+          <p>By downloading Mockoon you accept these <a onclick="toggleModal('add')">simple terms</a>.</p>
         </div>
       </div>
     </div>
@@ -256,6 +276,11 @@
   </footer>
 
   <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script>
+    var toggleModal = function (action) {
+      document.querySelector('.modal.terms-modal').classList[action]('is-active');
+    };
+  </script>
 </body>
 
 </html>

@@ -252,7 +252,7 @@
           <p><strong>Does Mockoon require an account?</strong><br>No, you don't need an account to use Mockoon.</p>
           <p><strong>Is Mockoon free?</strong><br>Mockoon is 100% free during the beta. After the beta, Mockoon will <em>maybe</em> move to a freemium model by offering a paid version with more (valuable) features. Nothing is sure yet except that a free version will always be available.</p>
           <p><strong>Where are my data stored?</strong><br>Locally, in your operating system user data folder. "c:/.../Users/xxx/AppData/Roaming on Windows", "~/.config" on Linux and "~/Library/Application Support" on macOS.</p>
-          <p><strong>Are you collecting usage data?</strong><br>Yes, but only anonymous data through Google Analytics, with some very basic metrics like: number of environments and routes you have, actions done in the application (route select, server started, etc).</p>
+          <p><strong>Are you collecting usage data?</strong><br>Yes, but only anonymous data through Google Analytics. Besides Google Analytics standard collected data (OS, screen size, etc.) we are also collecting some events happening in the application. A typical event includes the following JSON { category: 'delete', action: 'environment' }, { category: 'server', action: 'start' }, etc. None of your mock data, routes or URLs are collected.</p>
         </div>
       </div>
     </div>

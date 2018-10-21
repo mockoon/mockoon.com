@@ -18,11 +18,11 @@
     "url": "git+https://github.com/255kb/mockoon-website.git"
   },
   "devDependencies": {
-    "bulma": "^0.7.1",
+    "bulma": "^0.7.2",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.9.4",
+    "gulp-clean-css": "^3.10.0",
     "gulp-concat": "^2.6.1",
-    "gulp-sass": "^4.0.1",
+    "gulp-sass": "^4.0.2",
     "http-server": "^0.11.1"
   },
   "license": "MIT"

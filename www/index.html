@@ -35,27 +35,33 @@
 
   <section class="hero is-small">
     <div class="hero-head">
-      <header class="nav">
+      <header class="navbar">
         <div class="container">
-          <div class="nav-left">
-            <a class="nav-item">
+          <div class="navbar-brand">
+            <a href="https://mockoon.com">
               <img src="images/logo.svg" class="logo" alt="Logo" width="150">
             </a>
+
+            <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
           </div>
-          <div class="nav-right nav-menu">
-            <span class="nav-item">
+          <div class="navbar-menu navbar-end" id="navMenu">
+            <span class="navbar-item">
               <a class="button" href="#download"><span>Download</span></a>
             </span>
-            <a class="nav-item" href="#features">
+            <a class="navbar-item" href="#features">
               Features
             </a>
-            <a class="nav-item" href="#feedback">
+            <a class="navbar-item" href="#feedback">
               Feedback
             </a>
-            <a class="nav-item" href="#faq">
+            <a class="navbar-item" href="#faq">
               FAQ
             </a>
-            <a class="nav-item" href="https://github.com/255kb/mockoon/wiki">
+            <a class="navbar-item" href="https://github.com/255kb/mockoon/wiki">
               Documentation
             </a>
           </div>
@@ -111,7 +117,7 @@
             <span class="icon"><i class="icon-download"></i></span>
             <span>OS X</span>
           </a>
-          <p class="content is-small is-light">dmg file</p>
+          <p class="content is-small is-light">dmg file<br>or <code>brew cask install mockoon</code></p>
         </div>
       </div>
 
@@ -329,6 +335,21 @@
   </footer>
 
   <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='MMERGE5';ftypes[5]='date';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach( el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
+        });
+      }
+    });
+  </script>
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 

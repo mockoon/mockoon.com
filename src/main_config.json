@@ -1,0 +1,10 @@
+{
+  "$schema": "../builder/schemas/main-config-schema.json",
+
+  "domain": "https://mockoon.com",
+  "defaultLanguage": "en",
+  "showCanonicalUrl": true,
+  "showAlternatesUrls": true,
+  "addGoogleAnalytics": true,
+  "googleAnalyticsId": "UA-7759211-14"
+}

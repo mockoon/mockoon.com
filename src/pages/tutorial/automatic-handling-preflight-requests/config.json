@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../builder/schemas/page-config-schema.json",
+
+  "languages": {
+    "en": {
+      "pageTitle": "Automatic handling of preflight OPTIONS requests",
+      "pageDesc": "Front and API are not on the same domain? Handle preflight requests automatically with Mockoon.",
+      "pageSubtitle": "Front and API are not on the same domain? Handle preflight requests automatically with Mockoon.",
+      "text1": "When mocking, chances are front application and mocked API won’t be on the <strong>same domain</strong>, thus triggering browsers OPTIONS preflight requests.<br>Failing to answer to these requests may prevent your application from working. Luckily, Mockoon can handle this for you:",
+      "text2": "Open the <strong>environment settings</strong> by clicking on the cog in the upper right corner:",
+      "text3": "Enable <strong>CORS option</strong>, ensure that blue crossing arrows are displayed next to the environment name which indicates that CORS option has been successfully activated.",
+      "text4": "You may need to restart the environment for the changes to take effect.",
+      "text5": "Starting from now Mockoon will automatically answer with a 200 HTTP status code to all preflight OPTIONS requests. The following headers will also be added to the response:",
+      "text6": "<code>Access-Control-Allow-Origin: *</code><br><code>Access-Control-Allow-Methods: GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS</code><br><code>Access-Control-Allow-Headers: Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With</code><br>",
+      "text7": "Mockoon won’t send any CORS header if you define a route with the OPTIONS method in your environment (i.e. <code>OPTIONS /my-route</code>), leaving you in full control of the headers you want to add.",
+      "imageAlt1": "Open environment settings",
+      "imageAlt2": "Enable CORS mode"
+    }
+  }
+}

@@ -1,17 +1,17 @@
-@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import "../../node_modules/bulma/sass/utilities/initial-variables";
 
 $blue: #1997c6;
 $primary: $blue;
 
-@import "../node_modules/bulma/bulma.sass";
+@import "../../node_modules/bulma/bulma.sass";
 
-@font-face {
+ @font-face {
   font-family: 'mockoon';
-  src:  url('fonts/mockoon.eot?eu6upg');
-  src:  url('fonts/mockoon.eot?eu6upg#iefix') format('embedded-opentype'),
-    url('fonts/mockoon.ttf?eu6upg') format('truetype'),
-    url('fonts/mockoon.woff?eu6upg') format('woff'),
-    url('fonts/mockoon.svg?eu6upg#mockoon') format('svg');
+  src:  url('/assets/fonts/mockoon.eot?eu6upg');
+  src:  url('/assets/fonts/mockoon.eot?eu6upg#iefix') format('embedded-opentype'),
+    url('/assets/fonts/mockoon.ttf?eu6upg') format('truetype'),
+    url('/assets/fonts/mockoon.woff?eu6upg') format('woff'),
+    url('/assets/fonts/mockoon.svg?eu6upg#mockoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -46,6 +46,9 @@ $primary: $blue;
   content: "\f17c";
 }
 
+body {
+  background-color: #f5f5f5;
+}
 code {
   color: $grey;
 }
@@ -69,8 +72,12 @@ p.is-brand {
   width: 75%;
 }
 .main-picture {
-  max-width: 800px;
+  max-width: 600px;
   width: 50%;
+  margin-bottom: 20px;
+}
+.section.is-light {
+  background-color: #fbfbfb;
 }
 .cb {
   margin-left: auto;
@@ -78,7 +85,7 @@ p.is-brand {
 }
 
 #mc_embed_signup {
-  background: #fff;
+  background: transparent;
   clear: left;
   font: 14px Arial, Helvetica, sans-serif;
   margin: 0 auto;
@@ -97,4 +104,38 @@ p.is-brand {
 
 .mt-40 {
   margin-top: 40px;
+}
+.footer {
+  background-color: #efefef;
+}
+.donate-item {
+  display: inline-block;
+  vertical-align: middle;
+
+  &:first-of-type {
+    margin-right: 20px;
+  }
+}
+.card-content {
+  padding: 0.8rem;
+}
+
+.image.max-50 {
+  max-width: 50%;
+}
+.card-content {
+  height: 166px;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    content: '';
+    width: 75px;
+    height: 26px;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6895133053221288) 18%, rgba(255,255,255,1) 71%);
+  }
 }

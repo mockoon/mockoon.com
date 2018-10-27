@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../builder/schemas/page-config-schema.json",
+
+  "languages": {
+    "en": {
+      "pageTitle": "Tutorials",
+      "pageDesc": "Learn how to use Mockoon's features and mock your REST server or API like a pro!",
+      "pageSubtitle": "Learn how to use Mockoon's features and mock your REST server or API like a pro!",
+      "readButton": "Read",
+      "tutorialProxyModeTitle": "API mocking with proxy mode",
+      "tutorialProxyModeDesc": "Learn how to partially mock a REST API and proxy to another server with Mockoon.",
+      "tutorialHttpsModeTitle": "Serve a mock API over TLS",
+      "tutorialHttpsModeDesc": "Need to mock a secured API? Mockoon can also do this!",
+      "tutorialCorsTitle": "Automatic handling of preflight OPTIONS requests",
+      "tutorialCorsDesc": "Front and API are not on the same domain? Handle preflight requests automatically with Mockoon.",
+      "tutorialPrefixTitle": "Define a prefixed API",
+      "tutorialPrefixDesc": "Want to prefix your mock server routes? Learn how to do it with Mockoon"
+    }
+  }
+}

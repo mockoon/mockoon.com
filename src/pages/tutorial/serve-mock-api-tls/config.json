@@ -1,0 +1,18 @@
+{
+  "$schema": "../../../../builder/schemas/page-config-schema.json",
+
+  "languages": {
+    "en": {
+      "pageTitle": "Serve a mock API over TLS",
+      "pageDesc": "Need to mock a secured API? Mockoon can also do this!",
+      "pageSubtitle": "Need to mock a secured API? Mockoon can also do this!",
+      "text1": "Sometimes you want to mock a secured server (over TLS), Mockoon got you covered:",
+      "text2": "Open the <strong>environment settings</strong> by clicking on the cog in the upper right corner:",
+      "text3": "Enable <strong>HTTPS option</strong>, ensure that a yellow lock is displayed next to the environment name which indicates that HTTPS option has been successfully activated. ",
+      "text4": "You may need to restart the environment for the changes to take effect.",
+      "text5": "Your environment will now be available on <strong>https://xxxx</strong> instead of <strong>http://xxxx</strong>. Please note that Mockoon is using a self-signed certificate in order to serve your environment over TLS.",
+      "imageAlt1": "Open environment settings",
+      "imageAlt2": "Enable HTTPS mode"
+    }
+  }
+}

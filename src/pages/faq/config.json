@@ -1,0 +1,10 @@
+{
+  "$schema": "../../../builder/schemas/page-config-schema.json",
+
+  "languages": {
+    "en": {
+      "pageTitle": "Frequently asked questions",
+      "pageDesc": "Find the most frequently asked question about Mockoon, the free desktop server mocking application."
+    }
+  }
+}

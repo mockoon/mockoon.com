@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../builder/schemas/page-config-schema.json",
+
+  "languages": {
+    "en": {
+      "pageTitle": "API mocking with proxy mode",
+      "pageDesc": "Learn how to partially mock a REST API and proxy to another server with Mockoon.",
+      "pageSubtitle": "Learn how to partially mock a REST API and proxy to another server with Mockoon.",
+      "text1": "Sometimes you may need to mock only part of an API and forward the rest to an existing REST server. Fortunately, you can do this with Mockoon:",
+      "text2": "Open the <strong>environment settings</strong> by clicking on the cog in the upper right corner:",
+      "text3": "Enable <strong>proxy mode</strong> and enter the server URL to which you want to forward calls. A small shield icon should appear on the right of your environment name indicating that the proxy mode has been enabled:",
+      "text4": "All routes that have been defined will be intercepted by Mockoon, and any other request will be forwarded to the server defined in the proxy mode setting.",
+      "imageAlt1": "Open environment settings",
+      "imageAlt2": "Enable proxy mode"
+    }
+  }
+}

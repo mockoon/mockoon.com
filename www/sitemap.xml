@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://mockoon.com/faq</loc>
+  </url>
+  <url>
+    <loc>https://mockoon.com/features</loc>
+  </url>
+  <url>
+    <loc>https://mockoon.com/tutorial/api-mocking-proxy-mode</loc>
+  </url>
+  <url>
+    <loc>https://mockoon.com/tutorial/automatic-handling-preflight-requests</loc>
+  </url>
+  <url>
+    <loc>https://mockoon.com/tutorial/define-prefixed-api</loc>
+  </url>
+  <url>
+    <loc>https://mockoon.com/tutorial/serve-mock-api-tls</loc>
+  </url>
+  <url>
+    <loc>https://mockoon.com/tutorials</loc>
+  </url>
+  <url>
+    <loc>https://mockoon.com</loc>
+  </url>
+</urlset>

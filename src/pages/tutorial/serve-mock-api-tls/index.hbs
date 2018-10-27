@@ -1,0 +1,44 @@
+{{> header}}
+  {{> hero}}
+
+  {{> download-section}}
+
+  <div class="section">
+    <div class="container">
+      <div class="content">
+        {{{text 'text1'}}}
+        <ol>
+          <li>{{{text 'text2'}}}</li>
+        </ol>
+      </div>
+      <div class="columns">
+        <div class="column is-8 is-offset-2">
+          <figure class="image">
+            <img src="assets/images/tutorials/open-settings.gif" alt="{{text 'imageAlt1'}}">
+          </figure>
+        </div>
+      </div>
+      <div class="content">
+        <ol>
+          <li value="2">{{{text 'text3'}}}</li>
+        </ol>
+      </div>
+      <div class="columns">
+        <div class="column is-8 is-offset-2">
+          <figure class="image">
+            <img src="assets/images/tutorials/enable-https-mode.gif" alt="{{text 'imageAlt2'}}">
+          </figure>
+        </div>
+      </div>
+      <div class="content">
+        <p>{{{text 'text4'}}}</p>
+        <p>{{{text 'text5'}}}</p>
+      </div>
+
+      {{> tutorials-link}}
+    </div>
+  </div>
+
+  {{> newsletter-section}}
+
+{{> footer}}

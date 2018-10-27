@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic handling of preflight OPTIONS requests - Mockoon</title>
+    <meta name="description" content="Front and API are not on the same domain? Handle preflight requests automatically with Mockoon.">
+    <link rel="stylesheet" href="https://cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252830">
+    <meta name="theme-color" content="#ffffff">
+      <link rel="canonical" href="https://mockoon.com/tutorial/automatic-handling-preflight-requests">
+
+          <link rel="alternate" hreflang="en" href="https://mockoon.com/tutorial/automatic-handling-preflight-requests">
+
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-7759211-14', 'auto');
+        ga('send', 'pageview');
+      </script>
+    <meta property="og:image" content="https://mockoon.com/images/main.jpg">
+    <meta property="og:url" content="https://mockoon.com">
+    <meta property="og:title" content="Mockoon - Automatic handling of preflight OPTIONS requests">
+    <meta property="og:description" content="Front and API are not on the same domain? Handle preflight requests automatically with Mockoon.">
+    <meta property="og:type" content="website">
+  </head>
+
+  <body>
+  <section class="hero is-small">
+    <div class="hero-head">
+      <header class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a href="/">
+              <img src="assets/images/logo.svg" class="logo" alt="Logo" width="150">
+            </a>
+      
+            <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <div class="navbar-menu navbar-end" id="navMenu">
+            <a class="navbar-item" href="features">
+              Features
+            </a>
+            <a class="navbar-item" href="tutorials">
+              Tutorials
+            </a>
+            <a class="navbar-item" href="faq">
+              FAQ
+            </a>
+            <a class="navbar-item" href="https://github.com/255kb/mockoon/wiki">
+              App wiki
+            </a>
+          </div>
+        </div>
+      </header>
+    </div>
+  
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-spaced">
+          Automatic handling of preflight OPTIONS requests
+        </h1>
+        <h2 class="subtitle mt20">
+          Front and API are not on the same domain? Handle preflight requests automatically with Mockoon.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section is-light">
+    <div class="container has-text-centered has-text-weight-semibold">
+      <p class="title is-6">Get Mockoon latest version and start mocking!</p>
+      <p><a class="button is-primary" href="#download"><span>Download</span></a></p>
+    </div>
+  </section>
+
+  <div class="section">
+    <div class="container">
+      <div class="content">
+        When mocking, chances are front application and mocked API won’t be on the <strong>same domain</strong>, thus triggering browsers OPTIONS preflight requests.<br>Failing to answer to these requests may prevent your application from working. Luckily, Mockoon can handle this for you:
+        <ol>
+          <li>Open the <strong>environment settings</strong> by clicking on the cog in the upper right corner:</li>
+        </ol>
+      </div>
+      <div class="columns">
+        <div class="column is-8 is-offset-2">
+          <figure class="image">
+            <img src="assets/images/tutorials/open-settings.gif" alt="Open environment settings">
+          </figure>
+        </div>
+      </div>
+      <div class="content">
+        <ol>
+          <li value="2">Enable <strong>CORS option</strong>, ensure that blue crossing arrows are displayed next to the environment name which indicates that CORS option has been successfully activated.</li>
+        </ol>
+      </div>
+      <div class="columns">
+        <div class="column is-8 is-offset-2">
+          <figure class="image">
+            <img src="assets/images/tutorials/enable-cors-mode.gif" alt="Enable CORS mode">
+          </figure>
+        </div>
+      </div>
+      <div class="content">
+        <p>You may need to restart the environment for the changes to take effect.</p>
+        <p>Starting from now Mockoon will automatically answer with a 200 HTTP status code to all preflight OPTIONS requests. The following headers will also be added to the response:</p>
+        <p><code>Access-Control-Allow-Origin: *</code><br><code>Access-Control-Allow-Methods: GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS</code><br><code>Access-Control-Allow-Headers: Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With</code><br></p>
+        <p>Mockoon won’t send any CORS header if you define a route with the OPTIONS method in your environment (i.e. <code>OPTIONS /my-route</code>), leaving you in full control of the headers you want to add.</p>
+      </div>
+
+      <div class="content">
+        <h4 class="has-text-centered has-text-weight-semibold"><a href="tutorials">Back to all tutorials</a></h4>
+      </div>
+    </div>
+  </div>
+
+  <section class="section is-light">
+    <div class="container has-text-centered has-text-weight-semibold">
+      <p>Join Mockoon&#x27;s mailing list to receive latest updates</p>
+      <div id="mc_embed_signup">
+        <form action="https://mockoon.us17.list-manage.com/subscribe/post?u=a8822ec82cbe40c6dc5564bd4&amp;id=e054c8a3a4" method="post"
+          id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+            <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="b_a8822ec82cbe40c6dc5564bd4_e054c8a3a4" tabindex="-1" value="">
+            </div>
+            <div class="clear">
+              <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            &copy; Mockoon 2017 - present by <a href="https://255kb.com">Guillaume Monnet</a>
+          </p>
+          <a class="github-button" href="https://github.com/255kb/mockoon" data-size="large" data-show-count="true" aria-label="Star Mockoon on GitHub">Star</a>
+        </div>
+      </div>
+    </footer>
+
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='MMERGE5';ftypes[5]='date';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        if ($navbarBurgers.length > 0) {
+          $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+              el.classList.toggle('is-active');
+              $target.classList.toggle('is-active');
+            });
+          });
+        }
+      });
+    </script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>

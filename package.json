@@ -1,29 +1,39 @@
 {
   "name": "mockoon-website",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Mockoon app website repository",
+  "scripts": {
+    "watch": "gulp watch",
+    "build": "gulp compile",
+    "serve": "http-server -a localhost -p 8080 -c-1 ./www",
+    "publish": "firebase deploy"
+  },
   "author": {
     "name": "Guillaume Monnet",
     "email": "hi@255kb.com",
     "url": "https://255kb.com/"
   },
   "homepage": "https://mockoon.com",
-  "scripts": {
-    "publish": "firebase deploy",
-    "build": "gulp",
-    "start": "http-server -a localhost -p 8000 -c-1 ./www"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/255kb/mockoon-website.git"
   },
-  "devDependencies": {
-    "bulma": "^0.7.2",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.10.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-sass": "^4.0.2",
-    "http-server": "^0.11.1"
+  "bugs": {
+    "url": "https://github.com/255kb/mockoon-website/issues"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "bulma": "0.7.2",
+    "gulp": "3.9.1",
+    "gulp-clean-css": "3.10.0",
+    "gulp-compile-handlebars": "0.6.1",
+    "gulp-concat": "2.6.1",
+    "gulp-rename": "1.4.0",
+    "gulp-sass": "4.0.2",
+    "http-server": "0.11.1",
+    "merge-stream": "1.0.1",
+    "ncp": "2.0.0",
+    "node-sass": "^4.9.4",
+    "rimraf": "2.6.2"
+  }
 }

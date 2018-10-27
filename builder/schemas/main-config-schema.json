@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+
+  "type": "object",
+  "title": "mainConfig",
+  "properties": {
+    "domain": {
+      "type": "string"
+    },
+    "defaultLanguage": {
+      "type": "string"
+    },
+    "showCanonicalUrl": {
+      "type": "boolean"
+    },
+    "showAlternatesUrls": {
+      "type": "boolean"
+    },
+    "addGoogleAnalytics": {
+      "type": "boolean"
+    },
+    "googleAnalyticsId": {
+      "type": "string"
+    }
+  },
+  "required": ["domain", "defaultLanguage", "showCanonicalUrl", "showAlternatesUrls", "addGoogleAnalytics", "googleAnalyticsId"]
+}

@@ -1,0 +1,154 @@
+{{> header}}
+  <section class="hero is-small">
+    <div class="hero-head">
+      {{> nav}}
+    </div>
+
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-spaced">
+          {{text 'pageTitle'}}
+        </h1>
+        <h2 class="subtitle mt20">
+          {{{text 'subTitle'}}}
+        </h2>
+        <p>
+          <a class="button is-primary" href="#download"><span>{{text 'downloadButton'}}</span></a>
+        </p>
+      </div>
+    </div>
+
+    <figure class="image rounded main-picture cb">
+      <img src="assets/images/main.jpg">
+    </figure>
+  </section>
+
+  <section class="section" id="download">
+    <div class="container">
+      <div class="columns">
+        <div class="column has-text-centered">
+          <h1 class="title">{{text 'downloadTitle'}} <span class="is-size-6">v{{version}}</span></h1>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-4 has-text-centered">
+          <p class="is-size-1 is-brand mb20"><i class="icon-windows"></i></p>
+          <a class="button is-primary is-outlined" href="https://github.com/255kb/mockoon/releases/download/v{{version}}/mockoon.setup.{{version}}.exe" onclick="ga('send', 'event', 'application', 'download', 'windows');">
+            <span class="icon"><i class="icon-download"></i></span>
+            <span>Windows</span>
+          </a>
+          <p class="content is-small is-light">{{{text 'downloadWindowsSub'}}}</p>
+        </div>
+        <div class="column is-4 has-text-centered">
+          <p class="is-size-1 is-brand mb20"><i class="icon-linux"></i></p>
+          <a class="button is-primary is-outlined" href="https://github.com/255kb/mockoon/releases/download/v{{version}}/mockoon-{{version}}-x86_64.AppImage" onclick="ga('send', 'event', 'application', 'download', 'linux');">
+            <span class="icon"><i class="icon-download"></i></span>
+            <span>Linux</span>
+          </a>
+          <p class="content is-small is-light">{{{text 'downloadLinuxSub'}}}</p>
+        </div>
+        <div class="column has-text-centered">
+          <p class="is-size-1 is-brand mb20"><i class="icon-apple"></i></p>
+          <a class="button is-primary is-outlined" href="https://github.com/255kb/mockoon/releases/download/v{{version}}/mockoon.setup.{{version}}.dmg" onclick="ga('send', 'event', 'application', 'download', 'osx');">
+            <span class="icon"><i class="icon-download"></i></span>
+            <span>OS X</span>
+          </a>
+          <p class="content is-small is-light">{{{text 'downloadMacSub'}}}</p>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column has-text-centered">
+          <p>{{{text 'downloadSubTitle'}}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{> donate-section}}
+
+  <section class="section" id="features">
+    <div class="container">
+      <div class="columns">
+        <div class="column has-text-centered">
+          <h1 class="title">{{text 'featuresTitle'}}</h1>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column has-text-centered">
+          <figure class="image rounded is-75 cb mb20">
+            <img src="assets/images/feature1.jpg">
+          </figure>
+          <div class="content">
+            <p class="title is-4">{{text 'featuresCol1Title'}}</p>
+            <p>
+              {{text 'featuresCol1Desc'}}
+            </p>
+          </div>
+        </div>
+        <div class="column has-text-centered">
+          <figure class="image rounded is-75 cb mb20">
+            <img src="assets/images/feature2.jpg">
+          </figure>
+          <div class="content">
+            <p class="title is-4">{{text 'featuresCol2Title'}}</p>
+            <p>
+              {{text 'featuresCol2Desc'}}
+            </p>
+          </div>
+        </div>
+        <div class="column has-text-centered">
+          <figure class="image rounded is-75 cb mb20">
+            <img src="assets/images/feature3.jpg">
+          </figure>
+          <div class="content">
+            <p class="title is-4">{{text 'featuresCol3Title'}}</p>
+            <p>
+              {{text 'featuresCol3Desc'}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column has-text-centered">
+          <a href="features">{{text 'featuresLink'}}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{> newsletter-section}}
+
+  <section class="section" id="feedback">
+    <div class="container">
+      <div class="columns">
+        <div class="column has-text-centered">
+          <h1 class="title">{{text 'feedbackTitle'}}</h1>
+          <div class="content">
+            <p>
+              {{{text 'feedbackDesc'}}}
+            </p>
+            <p>
+              {{text 'socialTitle'}}
+            </p>
+            <p>
+              <a title="Share on Twitter" href="http://twitter.com/share?url=https://mockoon.com&amp;text=I've+just+downloaded+a+great+API+mocking+tool&amp;via=255kb&amp;"
+                onclick="window.open(this.href, 'twitter-share', 'width=800,height=600');return false;" class="button is-primary is-outlined twitter">
+                  <span class="icon"><i class="icon-twitter" aria-hidden="true"></i></span>
+                  <span>Twitter</span>
+                  </a>
+              <a title="Share on Facebook" href="http://www.facebook.com/sharer/sharer.php?u=https://mockoon.com" onclick="window.open(this.href, 'facebook-share', 'width=800,height=600');return false;"
+                class="button is-primary is-outlined facebook">
+                  <span class="icon"><i class="icon-facebook" aria-hidden="true"></i></span>
+                  <span>Facebook</span>
+                </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{{> footer}}

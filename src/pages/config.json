@@ -1,0 +1,27 @@
+{
+  "$schema": "../../builder/schemas/page-config-schema.json",
+
+  "languages": {
+    "en": {
+      "pageTitle": "Mock API in seconds",
+      "pageDesc": "Mockoon is a free and open source desktop application allowing to quickly mock servers and API.",
+      "subTitle": "Mockoon is the easiest and quickest way to run mock APIs locally.<br>No remote deployment, no account required, open source.",
+      "downloadTitle": "Download Mockoon ",
+      "downloadSubTitle": "Mockoon is released under the MIT license. Feel free to <a href=\"https://github.com/255kb/mockoon\">contribute</a>.",
+      "downloadWindowsSub": "exe installer",
+      "downloadLinuxSub": "AppImage",
+      "downloadMacSub": "dmg file<br>or <code>brew cask install mockoon</code>",
+      "featuresTitle": "Some great features!",
+      "featuresCol1Title": "Unlimited fast mocking",
+      "featuresCol1Desc": "Create an unlimited number of mock local servers and routes, and run them in parallel.",
+      "featuresCol2Title": "Complete control",
+      "featuresCol2Desc": "customize routes: HTTP methods, regex paths, HTTP status, file serving, custom headers...",
+      "featuresCol3Title": "... and more",
+      "featuresCol3Desc": "Import / export, JSON templating, auto save, proxy mode, HTTPS, latency simulation, CORS support...",
+      "featuresLink": "Complete list of features",
+      "feedbackTitle": "Feedback welcome!",
+      "feedbackDesc": "You have found a bug, you have an idea? Submit them on Mockoon's <a href=\"https://github.com/255kb/mockoon\">GitHub repository</a>.",
+      "socialTitle": "You like Mockoon? Spread the word :)"
+    }
+  }
+}

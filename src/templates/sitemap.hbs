@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{{#each urls}}
+  <url>
+    <loc>{{url}}</loc>
+  </url>
+{{/each}}
+{{#each multiLanguagesUrls}}
+  <url>
+  {{#each sitemapMultiLanguagesUrls}}
+    {{#if isDefaultLang}}
+      <loc>{{url}}</loc>
+    {{/if}}
+      <xhtml:link rel="alternate" hreflang="{{lang}}" href="{{url}}" />
+  {{/each}}
+  </url>
+{{/each}}
+</urlset>

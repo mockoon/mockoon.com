@@ -1,10 +1,10 @@
 {
   "name": "mockoon-website",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Mockoon app website repository",
   "scripts": {
     "watch": "gulp watch",
-    "build": "gulp compile",
+    "build": "rm -rf ./www && gulp compile",
     "serve": "http-server -a localhost -p 8080 -c-1 ./www",
     "publish": "firebase deploy"
   },

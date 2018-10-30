@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../builder/schemas/page-config-schema.json",
+
+  "languages": {
+    "en": {
+      "pageTitle": "Access incoming requests logs",
+      "pageDesc": "Check how to access Mockoon's entering requests logs for easier debugging",
+      "pageSubtitle": "Check how to access Mockoon's entering requests logs for easier debugging",
+      "text1": "For easier debugging, Mockoon log all entering requests for each of your environment. To access the logs it's very simple:",
+      "text2": "After selecting the environment you are interested in open the <strong>requests logs</strong> by clicking on the clock icon in the upper right corner:",
+      "text3": "You will see in the list all the requests intercepted by Mockoon on the currently selected environment. Please note that all requests are intercepted even favicon requests made by browsers!",
+      "text4": "Complete headers list, route (URL) params, query params, and body in raw format are all included in the request's details.",
+      "imageAlt1": "Open requests logs"
+    }
+  }
+}

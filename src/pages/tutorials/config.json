@@ -16,7 +16,9 @@
       "tutorialPrefixTitle": "Define a prefixed API",
       "tutorialPrefixDesc": "Want to prefix your mock server routes? Learn how to do it with Mockoon",
       "tutorialRequestsLogsTitle": "Access incoming requests logs",
-      "tutorialRequestsLogsDesc": "Check how to access Mockoon's entering requests logs for easier debugging"
+      "tutorialRequestsLogsDesc": "Check how to access Mockoon's entering requests logs for easier debugging",
+      "tutorialImportExportTitle": "Import and export environments and routes",
+      "tutorialImportExportDesc": "Learn how to easily import and export your environments and routes in JSON format with Mockoon"
     }
   }
 }

@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serve a mock API over TLS - Mockoon</title>
-    <meta name="description" content="Need to mock a secured API? Mockoon can also do this!">
+    <title>Import and export environments and routes - Mockoon</title>
+    <meta name="description" content="Learn how to easily import and export your environments and routes in JSON format with Mockoon">
     <link rel="stylesheet" href="https://cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css">
     <link href="/assets/css/style.css" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -16,9 +16,9 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252830">
     <meta name="theme-color" content="#ffffff">
-      <link rel="canonical" href="https://mockoon.com/tutorial/serve-mock-api-tls">
+      <link rel="canonical" href="https://mockoon.com/tutorial/import-export-environments-routes">
 
-          <link rel="alternate" hreflang="en" href="https://mockoon.com/tutorial/serve-mock-api-tls">
+          <link rel="alternate" hreflang="en" href="https://mockoon.com/tutorial/import-export-environments-routes">
 
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -31,8 +31,8 @@
       </script>
     <meta property="og:image" content="https://mockoon.com/images/main.jpg">
     <meta property="og:url" content="https://mockoon.com">
-    <meta property="og:title" content="Mockoon - Serve a mock API over TLS">
-    <meta property="og:description" content="Need to mock a secured API? Mockoon can also do this!">
+    <meta property="og:title" content="Mockoon - Import and export environments and routes">
+    <meta property="og:description" content="Learn how to easily import and export your environments and routes in JSON format with Mockoon">
     <meta property="og:type" content="website">
   </head>
 
@@ -76,10 +76,10 @@
     <div class="hero-body">
       <div class="container has-text-centered">
         <h1 class="title is-spaced">
-          Serve a mock API over TLS
+          Import and export environments and routes
         </h1>
         <h2 class="subtitle mt20">
-          Need to mock a secured API? Mockoon can also do this!
+          Learn how to easily import and export your environments and routes in JSON format with Mockoon
         </h2>
       </div>
     </div>
@@ -95,33 +95,63 @@
   <div class="section">
     <div class="container">
       <div class="content">
-        Sometimes you want to mock a secured server (over TLS), Mockoon got you covered:
+        <p>Mockoon supports two types of import/export. Full import/export based on files or a single environment or route based on the clipboard.</p>
+        <h3>All environments import/export</h3>
         <ol>
-          <li>Open the <strong>environment settings</strong> by clicking on the cog in the upper right corner:</li>
+          <li>To export all environments to a file, open the <strong>Tools</strong> menu and select <strong>Export all environments</strong>:</li>
         </ol>
       </div>
       <div class="columns">
         <div class="column is-8 is-offset-2">
           <figure class="image">
-            <img src="assets/images/tutorials/open-settings.gif" alt="Open environment settings">
+            <img src="assets/images/tutorials/export-all-environments.gif" alt="Export all environments">
           </figure>
         </div>
       </div>
       <div class="content">
         <ol>
-          <li value="2">Enable <strong>HTTPS option</strong>, ensure that a yellow lock is displayed next to the environment name which indicates that HTTPS option has been successfully activated.</li>
+          <li value="2">To import all environments from a file, open the <strong>Tools</strong> menu and select <strong>Import all environments from a file</strong>:</li>
         </ol>
       </div>
       <div class="columns">
         <div class="column is-8 is-offset-2">
           <figure class="image">
-            <img src="assets/images/tutorials/enable-https-mode.gif" alt="Enable HTTPS mode">
+            <img src="assets/images/tutorials/import-all-environments.gif" alt="Import environments from a file">
           </figure>
         </div>
       </div>
       <div class="content">
-        <p>You may need to restart the environment for the changes to take effect.</p>
-        <p>Your environment will now be available on <strong>https://xxxx</strong> instead of <strong>http://xxxx</strong>. Please note that Mockoon is using a self-signed certificate in order to serve your environment over TLS.</p>
+        <p>Environments imported from a file will be added at the end of the environments list. No data will be overwritten even if imported environments share the same names.</p>
+      </div>
+
+      <div class="content">
+        <h3>Single environment or route import/export</h3>
+        <ol>
+          <li>To export a specific environment or route's JSON data to the clipboard, right-click on the environment or route and select <strong>Copy to clipboard (JSON)</strong>:</li>
+        </ol>
+      </div>
+      <div class="columns">
+        <div class="column is-8 is-offset-2">
+          <figure class="image">
+            <img src="assets/images/tutorials/export-environment-clipboard.gif" alt="Copy environment JSON data to the clipboard">
+          </figure>
+        </div>
+      </div>
+      <div class="content">
+        <ol>
+          <li value="2">To import a specific environment or route's JSON data from the clipboard, open the <strong>Tools</strong> menu and select <strong>Import environment/route from clipboard</strong>:</li>
+        </ol>
+      </div>
+      <div class="columns">
+        <div class="column is-8 is-offset-2">
+          <figure class="image">
+            <img src="assets/images/tutorials/import-environment-clipboard.gif" alt="Import environment JSON data from the clipboard">
+          </figure>
+        </div>
+      </div>
+      <div class="content">
+        <p>Environment imported from the clipboard will be added at the end of the environments list, and routes at the end of the active environment's routes list.</p>
+        <p>Currently, Mockoon supports import/export in its own JSON format. More formats will come in future releases.</p>
       </div>
 
       <div class="content">

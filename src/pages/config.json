@@ -8,7 +8,7 @@
       "subTitle": "Mockoon is the easiest and quickest way to run mock APIs locally.<br>No remote deployment, no account required, open source.",
       "downloadTitle": "Download Mockoon ",
       "downloadSubTitle": "Mockoon is released under the MIT license. Feel free to <a href=\"https://github.com/255kb/mockoon\">contribute</a>.",
-      "downloadWindowsSub": "exe installer",
+      "downloadWindowsSub": "exe installer<br>or <code>choco install mockoon</code>",
       "downloadLinuxSub": "AppImage",
       "downloadMacSub": "dmg file<br>or <code>brew cask install mockoon</code>",
       "featuresTitle": "Some great features!",

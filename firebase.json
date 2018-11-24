@@ -15,6 +15,11 @@
         "source": "/styles.*.css",
         "destination": "/styles.css",
         "type": 301
+      },
+      {
+        "source": "/tutorial/dynamic-response-with-templating",
+        "destination": "https://github.com/255kb/mockoon/wiki/%7B%7B-%7D%7D-templating",
+        "type": 302
       }
     ]
   }

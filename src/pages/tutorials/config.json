@@ -18,7 +18,9 @@
       "tutorialRequestsLogsTitle": "Access incoming requests logs",
       "tutorialRequestsLogsDesc": "Check how to access Mockoon's entering requests logs for easier debugging",
       "tutorialImportExportTitle": "Import and export environments and routes",
-      "tutorialImportExportDesc": "Learn how to easily import and export your environments and routes in JSON format with Mockoon"
+      "tutorialImportExportDesc": "Learn how to easily import and export your environments and routes in JSON format with Mockoon",
+      "tutorialTemplatingTitle": "Create dynamic responses with templating",
+      "tutorialTemplatingDesc": "Create dynamic responses for your mock server with Mockoon's templating system."
     }
   }
 }

@@ -1,0 +1,58 @@
+{{> header}}
+  {{> hero}}
+
+  {{> download-section}}
+
+  <div class="section">
+    <div class="container">
+      <div class="content">
+        {{{text 'text1'}}}
+        <h3>{{{text 'title1'}}}</h3>
+        <p>{{{text 'text2'}}}</p>
+        <p>{{{text 'text3'}}}</p>
+        <ul>
+          {{{text 'text4'}}}
+        </ul>
+        <p>{{{text 'text5'}}}</p>
+        <ul>
+          {{{text 'text6'}}}
+        </ul>
+        <h3>{{{text 'title2'}}}</h3>
+        <p>{{{text 'text7'}}}</p>
+        <p>{{{text 'text8'}}}</p>
+        <p><code>{{{text 'text9'}}}</code></p>
+        <p>{{{text 'text10'}}}</p>
+        <p><code>{{{text 'text11'}}}</code></p>
+      </div>
+      <div class="content">
+        <h3>{{{text 'title3'}}}</h3>
+        <p>{{{text 'text12'}}}</p>
+        <p>{{{text 'text13'}}}</p>
+        <p>{{{text 'text14'}}}</p>
+      </div>
+      <div class="columns">
+        <div class="column is-6 is-offset-3">
+          <figure class="image">
+            <img src="assets/images/tutorials/file-input-templating.jpg" alt="{{text 'imageAlt1'}}">
+          </figure>
+        </div>
+      </div>
+      <div class="content">
+        <h3>{{{text 'title4'}}}</h3>
+        <p>{{{text 'text15'}}}</p>
+      </div>
+      <div class="columns">
+        <div class="column is-6 is-offset-3">
+          <figure class="image">
+            <img src="assets/images/tutorials/header-templating.jpg" alt="{{text 'imageAlt2'}}">
+          </figure>
+        </div>
+      </div>
+
+      {{> tutorials-link}}
+    </div>
+  </div>
+
+  {{> newsletter-section}}
+
+{{> footer}}

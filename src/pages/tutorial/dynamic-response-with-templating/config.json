@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../../builder/schemas/page-config-schema.json",
+
+  "languages": {
+    "en": {
+      "pageTitle": "Create dynamic responses with templating",
+      "pageDesc": "Create dynamic responses for your mock server with Mockoon's templating system.",
+      "pageSubtitle": "Create dynamic responses for your mock server with Mockoon's templating system.",
+      "text1": "Mockoon's implements <a href=\"https://github.com/webroo/dummy-json\" target=\"_blank\">Dummy JSON</a> library in order to create dynamic responses. This templating system is supported in response's <strong>body</strong> and <strong>headers</strong>, <strong>file contents</strong>, and <strong>file path</strong>.",
+      "title1": "Available helpers",
+      "text2": "Dummy JSON offers lots of built-in helpers: <code>repeat</code>, <code>int</code>, <code>float</code>, <code>date</code>, <code>time</code>, <code>title</code>, <code>firstname</code>, <code>lastname</code>, <code>company</code>, <code>latitude</code>, <code>longitude</code>, <code>domain</code>, <code>TLD</code>, <code>email</code>, <code>street</code>, <code>city</code>, <code>country</code>, <code>phone</code>, <code>color</code>, <code>hexColor</code>, <code>guid</code>, <code>ipv4</code>, <code>ipv6</code>, <code>lorem</code>, <code>lowercase</code>, <code>uppercase</code>, etc. Please have a look at <a href=\"https://github.com/webroo/dummy-json#available-helpers\" target=\"_blank\">Dummy JSON documentation</a> to learn how to use them.",
+      "text3": "In addition to these helpers, some custom ones have been added to Mockoon:",
+      "text4": "<li><code>array 'item1' 'item2' 'item3'</code>: create an array from items (to be used in the next helpers oneOf, someOf)</li><li><code>oneOf (array 'item1' 'item2' 'item3')</code>: select a random item in the array passed in parameters</li><li><code>someOf (array 'item1' 'item2' 'item3') x y</code>: select x to y random items in the array passed in parameters</li><li><code>#switch ... #case ... #default</code>: select content depending on a variable, like a normal switch :) (see example below)</li>",
+      "text5": "Mockoon also supports the following helpers which can gather request information:",
+      "text6": "<li><code>body 'path' 'default value'</code>: get a path from a request body JSON. Path has the following form: <code>key.0.key.5.key</code> (syntax is based on NPM <code>object-path</code> package)</li><li><code>urlParam 'paramName1'</code>: get a param from the URL <code>/:paramName1/:paramName2</code></li><li><code>queryParam 'param1' 'default value'</code>: get a param from the query string <code>?param1=xxx&#38;param2=yyy</code> or a default value if param is not present</li><li><code>header 'Header-Name' 'default value'</code>: get content from any request header or a default value if header is not present</li><li><code>hostname</code>: get request hostname</li><li><code>ip</code>: get request IP address</li><li><code>method </code>: get request method (GET, PUT, POST, etc.)</li>",
+      "title2": "Body and file content templating",
+      "text7": "Templating will work in the body textarea without consideration for the Content-Type that has been defined. It will also work with files content for a limited set of MIME types (<code>application/json</code>, <code>text/html</code>, <code>text/css</code>, <code>text/csv</code>, <code>application/javascript</code>, <code>application/typescript</code>, <code>text/plain</code>, <code>application/xhtml+xml</code>, <code>application/xml</code>).",
+      "text8": "Here is an example of what you can do with this templating system:",
+      "text9": "{<br>   \"userId\": \"{{urlParam 'id'}}\",<br>   \"name\": \"{{queryParam 'name' 'John'}}\",<br>   \"lang\": \"{{{header 'Accept-Language' 'en'}}}\",<br>   \"elementTitle\": \"{{body 'elements.0.title' 'default'}}\",<br>   \"ip\": \"{{ip}}\",<br>   \"method\": \"{{method}}\",<br>   \"hostname\": \"{{hostname}}\",<br>   \"friends\": [<br>     {{#repeat 2}}<br>     {<br>       \"id\": {{@index}},<br>       \"name\": \"{{firstName}} {{lastName}}\"<br>     }<br>     {{/repeat}}<br>   ],<br>   \"oneItem\": \"{{oneOf (array 'item1' 'item2' 'item3')}}\",<br>   \"someItems\": \"{{someOf (array 'item1' 'item2' 'item3') 1 2}}\",<br>   \"userName\":<br>     {{#switch (urlParam 'id')}}<br>       {{#case \"1\"}}\"John\"{{/case}}<br>       {{#case \"2\"}}\"Jack\"{{/case}}<br>       {{#default}}\"Peter\"{{/default}}<br>     {{/switch}}<br>}",
+      "text10": "And the result you can get:",
+      "text11": "Request: <br>GET /user/123456?name=john<br>Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7<br>Body:<br>{<br>  \"element\": [{\"title\": \"My title\"}]<br>}<br><br><br>Response:<br>{<br>  \"userId\": \"5\",<br>  \"name\": \"john\",<br>  \"lang\": \"fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7\",<br>  \"elementTitle\": \"My title\",<br>  \"ip\": \"::1\",<br>  \"method\": \"GET\",<br>  \"hostname\": \"localhost\",<br>  \"friends\": [<br>    {<br>      \"id\": 0,<br>      \"name\": \"Stephen Bradbury\"<br>    },<br>    {<br>      \"id\": 1,<br>      \"name\": \"Warren Caffey\"<br>    }<br>  ],<br>  \"oneItem\":\"item1\",<br>  \"someItems\":\"item2\",<br>  \"userName\":\"John\"<br>}",
+      "title3": "File input templating",
+      "text12": "The <strong>file input field</strong> in each route also supports templating with the same helpers. This allows you to dynamically serve files depending on the request parameters, like <code>urlParam</code> or any other helper.",
+      "text13": "Example:<br>If you have a set of files named <code>./file1.json</code>, <code>./file2.json</code>, etc and a route named <code>/:id</code> you can use the <code>urlParam</code> helper in the file input: <code>c:/.../file{{urlParam 'id'}}.json</code>.",
+      "text14": "If you call this route with an id <code>/1</code>, <code>./file1.json</code> will be sent.",
+      "imageAlt1": "File input templating",
+      "title4": "Headers templating",
+      "text15": "Finally, templating helpers are also supported in <strong>headers values</strong> (both route headers and environment headers):",
+      "imageAlt2": "Headers value templating"
+    }
+  }
+}

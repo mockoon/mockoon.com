@@ -51,6 +51,10 @@ body {
 }
 code {
   color: $grey;
+  white-space: pre;
+  padding: 0 0.5rem;
+  display: inline-block;
+  background-color: #efefef;
 }
 
 img.logo {

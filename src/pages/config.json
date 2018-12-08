@@ -19,6 +19,7 @@
       "featuresCol3Title": "... and more",
       "featuresCol3Desc": "Import / export, JSON templating, auto save, proxy mode, HTTPS, latency simulation, CORS support...",
       "featuresLink": "Complete list of features",
+      "testimonialsTitle": "What developers say",
       "feedbackTitle": "Feedback welcome!",
       "feedbackDesc": "You have found a bug, you have an idea? Submit them on Mockoon's <a href=\"https://github.com/255kb/mockoon\">GitHub repository</a>.",
       "socialTitle": "You like Mockoon? Spread the word :)"

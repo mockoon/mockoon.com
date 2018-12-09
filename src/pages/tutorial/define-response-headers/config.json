@@ -1,0 +1,18 @@
+{
+  "$schema": "../../../../builder/schemas/page-config-schema.json",
+
+  "languages": {
+    "en": {
+      "pageTitle": "Define route and environment response headers",
+      "pageDesc": "Mockoon can handle response headers at both environment and route levels for your mock server, learn how.",
+      "pageSubtitle": "Mockoon can handle response headers at both environment and route levels, learn how.",
+      "text1": "In Mockoon you can easily define <strong>response headers</strong> for <strong>each route</strong> but also at the <strong>environment level</strong>. Response headers defined on a route will <strong>override</strong> those defined on an environment.",
+      "title1": "Route level response headers",
+      "text2": "To add response headers like <code>Content-Type</code> to your route go to the <strong>Headers tab</strong> and fill the name and value fields:",
+      "imageAlt1": "Add route response header",
+      "title2": "Environment level response headers",
+      "text3": "You can also add response headers at the environment level. Headers defined on an environment will be overridden if they are redefined on a route. To define an environment response header head to <strong>environment settings</strong> and add headers at the bottom of the page:",
+      "imageAlt2": "Add environment response header"
+    }
+  }
+}

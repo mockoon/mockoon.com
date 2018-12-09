@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete list of features - Mockoon</title>
-    <meta name="description" content="List of all features offered by Mockoon, the REST API mocking tool compatible with Windows, Mac and Linux.">
+    <title>Define route and environment response headers - Mockoon</title>
+    <meta name="description" content="Mockoon can handle response headers at both environment and route levels for your mock server, learn how.">
     <link rel="stylesheet" href="https://cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css">
     <link href="/assets/css/style.css" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -16,9 +16,9 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252830">
     <meta name="theme-color" content="#ffffff">
-      <link rel="canonical" href="https://mockoon.com/features">
+      <link rel="canonical" href="https://mockoon.com/tutorial/define-response-headers">
 
-          <link rel="alternate" hreflang="en" href="https://mockoon.com/features">
+          <link rel="alternate" hreflang="en" href="https://mockoon.com/tutorial/define-response-headers">
 
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -31,8 +31,8 @@
       </script>
     <meta property="og:image" content="https://mockoon.com/images/main.jpg">
     <meta property="og:url" content="https://mockoon.com">
-    <meta property="og:title" content="Mockoon - Complete list of features">
-    <meta property="og:description" content="List of all features offered by Mockoon, the REST API mocking tool compatible with Windows, Mac and Linux.">
+    <meta property="og:title" content="Mockoon - Define route and environment response headers">
+    <meta property="og:description" content="Mockoon can handle response headers at both environment and route levels for your mock server, learn how.">
     <meta property="og:type" content="website">
   </head>
 
@@ -73,10 +73,10 @@
     <div class="hero-body">
       <div class="container has-text-centered">
         <h1 class="title is-spaced">
-          Complete list of features
+          Define route and environment response headers
         </h1>
         <h2 class="subtitle mt20">
-          
+          Mockoon can handle response headers at both environment and route levels, learn how.
         </h2>
       </div>
     </div>
@@ -89,82 +89,37 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="columns">
-      <div class="column is-10 is-offset-1">
-        <div class="tile is-horizontal">
-          <article class="tile is-child notification">
-            <p class="title">Unlimited mocking</p>
-            <p class="subtitle">Mock an unlimited number of environments with unlimited number of routes and run them in parallel.</p>
-          </article>
-          <article class="tile is-child notification">
-            <p class="title">Import / export</p>
-            <p class="subtitle">Environment import / export either from or to a file or the clipboard. <a href="tutorial/import-export-environments-routes">Learn more</a></p>
-          </article>
-          <article class="tile is-child notification">
-            <p class="title">Route regex</p>
-            <p class="subtitle">Route regex supported (/.*, /[a-z]{3}, ...), based on ExpressJS syntax.</p>
-          </article>
-        </div>
-        <div class="tile is-horizontal">
-          <article class="tile is-child notification">
-            <p class="title">Any response</p>
-            <p class="subtitle">Support all HTTP status codes and methods: GET 200, POST 502, etc.</p>
-          </article>
-          <article class="tile is-child notification">
-            <p class="title">CORS</p>
-            <p class="subtitle">Automatically send CORS headers (<code>Access-Control-Allow-Origin</code>, etc.) for OPTIONS requests. <a href="tutorial/automatic-handling-preflight-requests">Learn more</a></p>
-          </article>
-          <article class="tile is-child notification">
-            <p class="title">HTTPS</p>
-            <p class="subtitle">Serve your mock API over TLS with self-signed certificate. <a href="tutorial/serve-mock-api-tls">Learn more</a></p>
-          </article>
-        </div>
-        <div class="tile is-horizontal">
-          <article class="tile is-child notification">
-            <p class="title">Response headers</p>
-            <p class="subtitle">Add any response headers to your routes and environments. With auto-completion. <a href="tutorial/define-response-headers">Learn more</a></p>
-          </article>
-          <article class="tile is-child notification">
-            <p class="title">Latency</p>
-            <p class="subtitle">Add latency at environment or route level or even both.</p>
-          </article>
-          <article class="tile is-child notification">
-            <p class="title">Incoming requests logs</p>
-            <p class="subtitle">All entering requests are logged for easier debugging. <a href="tutorial/incoming-requests-logs">Learn more</a></p>
-          </article>
-        </div>
-        <div class="tile is-horizontal">
-          <article class="tile is-child notification">
-            <p class="title">Proxy mode</p>
-            <p class="subtitle">Redirect all non-defined routes to the specified host with Mockoon's proxy mode.</p>
-          </article>
-          <article class="tile is-child notification">
-            <p class="title">File serving</p>
-            <p class="subtitle">File serving with automatic mime type detection and templating support.</p>
-          </article>
-          <article class="tile is-child notification">
-            <p class="title">Rich text editor</p>
-            <p class="subtitle">Rich text editor for body content supporting multiple languages (JSON, HTML, etc).</p>
-          </article>
-        </div>
-        <div class="tile is-horizontal">
-          <article class="tile is-child notification">
-            <p class="title">Templating</p>
-            <p class="subtitle">Templating supported in body, file content and header, with many helpers: url params, query params, JSON body lookup, etc. <a href="tutorial/dynamic-response-with-templating">Learn more</a></p>
-          </article>
-          <article class="tile is-child notification">
-            <p class="title">Auto-save</p>
-            <p class="subtitle">Real-time auto save as you type. Never worry again about saving!</p>
-          </article>
-          <article class="tile is-child notification">
-            <p class="title">Offline</p>
-            <p class="subtitle">No account, no sign-up, no cloud deployment required.</p>
-          </article>
+  <div class="section">
+    <div class="container">
+      <div class="content">
+        <p>In Mockoon you can easily define <strong>response headers</strong> for <strong>each route</strong> but also at the <strong>environment level</strong>. Response headers defined on a route will <strong>override</strong> those defined on an environment.</p>
+        <h3>Route level response headers</h3>
+        <p>To add response headers like <code>Content-Type</code> to your route go to the <strong>Headers tab</strong> and fill the name and value fields:</p>
+      </div>
+      <div class="columns">
+        <div class="column is-8 is-offset-2">
+          <figure class="image">
+            <img src="assets/images/tutorials/add-route-header.gif" alt="Add route response header">
+          </figure>
         </div>
       </div>
+      <div class="content">
+        <h3>Environment level response headers</h3>
+        <p>You can also add response headers at the environment level. Headers defined on an environment will be overridden if they are redefined on a route. To define an environment response header head to <strong>environment settings</strong> and add headers at the bottom of the page:</p>
+      </div>
+      <div class="columns">
+        <div class="column is-8 is-offset-2">
+          <figure class="image">
+            <img src="assets/images/tutorials/add-environment-header.gif" alt="Add environment response header">
+          </figure>
+        </div>
+      </div>
+
+      <div class="content">
+        <h4 class="has-text-centered has-text-weight-semibold"><a href="tutorials">Back to all tutorials</a></h4>
+      </div>
     </div>
-  </section>
+  </div>
 
   <section class="section is-light">
     <div class="container has-text-centered has-text-weight-semibold">

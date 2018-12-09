@@ -20,7 +20,9 @@
       "tutorialImportExportTitle": "Import and export environments and routes",
       "tutorialImportExportDesc": "Learn how to easily import and export your environments and routes in JSON format with Mockoon",
       "tutorialTemplatingTitle": "Create dynamic responses with templating",
-      "tutorialTemplatingDesc": "Create dynamic responses for your mock server with Mockoon's templating system."
+      "tutorialTemplatingDesc": "Create dynamic responses for your mock server with Mockoon's templating system.",
+      "tutorialHeadersTitle": "Define route and environment response headers",
+      "tutorialHeadersDesc": "Mockoon can handle response headers at both environment and route levels, learn how."
     }
   }
 }

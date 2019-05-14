@@ -1,6 +1,6 @@
 {
   "name": "mockoon-website",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Mockoon app website repository",
   "scripts": {
     "watch": "gulp watch",
@@ -16,10 +16,10 @@
   "homepage": "https://mockoon.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/255kb/mockoon-website.git"
+    "url": "git+https://github.com/mockoon/website.git"
   },
   "bugs": {
-    "url": "https://github.com/255kb/mockoon-website/issues"
+    "url": "https://github.com/mockoon/website/issues"
   },
   "license": "MIT",
   "devDependencies": {

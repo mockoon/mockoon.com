@@ -7,7 +7,7 @@
       "pageDesc": "Mockoon is a free and open source desktop application allowing to quickly mock servers and API.",
       "subTitle": "Mockoon is the easiest and quickest way to run mock APIs locally.<br>No remote deployment, no account required, open source.",
       "downloadTitle": "Download Mockoon ",
-      "downloadSubTitle": "Mockoon is released under the MIT license. Feel free to <a href=\"https://github.com/255kb/mockoon\">contribute</a>.",
+      "downloadSubTitle": "Mockoon is released under the MIT license. Feel free to <a href=\"https://github.com/mockoon/mockoon\">contribute</a>.",
       "downloadWindowsSub": "exe installer<br>or <code>choco install mockoon</code>",
       "downloadLinuxSub": "AppImage",
       "downloadMacSub": "dmg file<br>or <code>brew cask install mockoon</code>",
@@ -21,7 +21,7 @@
       "featuresLink": "Complete list of features",
       "testimonialsTitle": "What developers say",
       "feedbackTitle": "Feedback welcome!",
-      "feedbackDesc": "You have found a bug, you have an idea? Submit them on Mockoon's <a href=\"https://github.com/255kb/mockoon\">GitHub repository</a>.",
+      "feedbackDesc": "You have found a bug, you have an idea? Submit them on Mockoon's <a href=\"https://github.com/mockoon/mockoon\">GitHub repository</a>.",
       "socialTitle": "You like Mockoon? Spread the word :)"
     }
   }

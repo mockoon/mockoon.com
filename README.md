@@ -1,6 +1,6 @@
 # Mockoon official website repository
 
-To download the application or contribute head over to the [official website](https://mockoon.com/#download) or the [latest release](https://github.com/255kb/mockoon/releases/latest) on Mockoon's repository.
+To download the application or contribute head over to the [official website](https://mockoon.com/#download) or the [latest release](https://github.com/mockoon/mockoon/releases/latest) on Mockoon's repository.
 
 ## Updating version
 

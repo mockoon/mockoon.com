@@ -1,21 +1,13 @@
 {
   "hosting": {
-    "public": "www",
+    "public": "out",
     "ignore": [
       ".firebaserc",
       "database.rules.json",
       "firebase.json",
       "package.json",
       "**/.*",
-      "**/node_modules/**",
-      "**/src/**"
-    ],
-    "redirects": [
-      {
-        "source": "/styles.*.css",
-        "destination": "/styles.css",
-        "type": 301
-      }
+      "**/node_modules/**"
     ]
   }
 }

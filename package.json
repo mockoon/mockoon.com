@@ -2,11 +2,13 @@
   "name": "mockoon-website",
   "version": "1.4.0",
   "description": "Mockoon app website repository",
+  "main": "index.js",
   "scripts": {
-    "watch": "gulp watch",
-    "build": "rm -rf ./www && gulp compile",
-    "serve": "http-server -a localhost -p 8080 -c-1 ./www",
-    "publish": "firebase deploy"
+    "dev": "next",
+    "build": "next build",
+    "export": "rm -rf ./build && rm -rf ./out && npm run build && next export",
+    "start": "next start",
+    "deploy": "firebase deploy"
   },
   "author": {
     "name": "Guillaume Monnet",
@@ -22,18 +24,13 @@
     "url": "https://github.com/mockoon/website/issues"
   },
   "license": "MIT",
-  "devDependencies": {
-    "bulma": "0.7.2",
-    "gulp": "3.9.1",
-    "gulp-clean-css": "3.10.0",
-    "gulp-compile-handlebars": "0.6.1",
-    "gulp-concat": "2.6.1",
-    "gulp-rename": "1.4.0",
-    "gulp-sass": "4.0.2",
-    "http-server": "0.11.1",
-    "merge-stream": "1.0.1",
-    "ncp": "2.0.0",
-    "node-sass": "4.9.4",
-    "rimraf": "2.6.2"
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "bulma": "^0.7.5",
+    "fs-extra": "^8.0.1",
+    "next": "^8.1.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }

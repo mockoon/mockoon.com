@@ -8,4 +8,4 @@ To download the application or contribute head over to the [official website](ht
 
 ## Contributing
 
-This static website is built using [Super Tiny Website Generator](https://github.com/255kb/stwg). Follow the documentation to add tutorials or pages.
+This website was created with Next.js and can be rebuilt with `npm run build` followed by `npm run export` to export a static version.

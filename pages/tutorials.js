@@ -40,7 +40,7 @@ function Tutorials() {
                     </div>
                   </div>
                   <footer className="card-footer">
-                    <a href={tutorial.slug} className="card-footer-item">Read</a>
+                    <a href={`/tutorial/${tutorial.slug}`} className="card-footer-item">Read</a>
                   </footer>
                 </div>
               </div>

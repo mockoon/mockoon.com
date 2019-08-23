@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "export": "rm -rf ./build && rm -rf ./out && npm run build && next export",
+    "export": "rm -rf ./next && rm -rf ./out && npm run build && next export",
     "start": "next start",
-    "deploy": "firebase deploy"
+    "deploy": "npm run export && firebase deploy --only hosting"
   },
   "author": {
     "name": "Guillaume Monnet",
@@ -27,10 +27,12 @@
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "bulma": "^0.7.5",
-    "fs-extra": "^8.0.1",
-    "next": "^8.1.0",
+    "next": "^9.0.4",
     "node-sass": "^4.12.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.3"
   }
 }

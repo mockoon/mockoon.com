@@ -1,4 +1,5 @@
 import Tutorial from '../../components/tutorial';
+import Image from './partials/image';
 
 const meta = { title: 'Create dynamic responses with templating', description: 'Create dynamic responses for your mock server with Mockoon\'s templating system.' };
 
@@ -33,13 +34,7 @@ function DynamicResponseWithTemplating() {
         <p>Here is an example of what you can do with this templating system:</p>
         <p><code>&#123;<br />   "userId": "&#123;&#123; urlParam 'id'&#125;&#125;",<br />   "name": "&#123;&#123; queryParam 'name' 'John' &#125;&#125;",<br />   "lang": "&#123;&#123;&#123;header 'Accept-Language' 'en'&#125;&#125;&#125;",<br />   "elementTitle": "&#123;&#123; body 'elements.0.title' 'default' &#125;&#125;",<br />   "ip": "&#123;&#123; ip &#125;&#125;",<br />   "method": "&#123;&#123; method &#125;&#125;",<br />   "hostname": "&#123;&#123; hostname &#125;&#125;",<br />   "friends": [<br />     &#123;&#123;#repeat 2&#125;&#125;<br />     &#123;<br />       "id": &#123;&#123;@index&#125;&#125;,<br />       "name": "&#123;&#123; firstName &#125;&#125; &#123;&#123; lastName &#125;&#125;"<br />     &#125;<br />     &#123;&#123;/ repeat&#125;&#125;<br />   ],<br />   "oneItem": "&#123;&#123; oneOf (array 'item1' 'item2' 'item3') &#125;&#125;",<br />   "someItems": "&#123;&#123; someOf (array 'item1' 'item2' 'item3') 1 2 &#125;&#125;",<br />   "userName":<br />     &#123;&#123;#switch (urlParam 'id')&#125;&#125;<br />       &#123;&#123;#case "1"&#125;&#125;"John"&#123;&#123;/case&#125;&#125;<br />       &#123;&#123;#case "2"&#125;&#125;"Jack"&#123;&#123;/case&#125;&#125;<br />       &#123;&#123;#default&#125;&#125;"Peter"&#123;&#123;/default &#125;&#125;<br />     &#123;&#123;/switch&#125;&#125;<br />&#125;</code></p>
       </div>
-      <div className="columns">
-        <div className="column is-6 is-offset-3">
-          <figure className="image">
-            <img src="/static/images/tutorials/body-templating.jpg" alt="Body response templating" />
-          </figure>
-        </div>
-      </div>
+      <Image src="/static/images/tutorials/body-templating.jpg" alt="Body response templating" size="medium" />
       <div className="content">
         <p>And the response you can get with the following request:</p>
         <p><code>GET /user/123456?name=john<br />Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7<br />Body:<br />&#123;<br />  "element": [&#123;"title": "My title"&#125;]<br />&#125;</code><br /><br />Response:<br /><code>&#123;<br />  "userId": "5",<br />  "name": "john",<br />  "lang": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",<br />  "elementTitle": "My title",<br />  "ip": "::1",<br />  "method": "GET",<br />  "hostname": "localhost",<br />  "friends": [<br />    &#123;<br />      "id": 0,<br />      "name": "Stephen Bradbury"<br />    &#125;,<br />    &#123;<br />      "id": 1,<br />      "name": "Warren Caffey"<br />    &#125;<br />  ],<br />  "oneItem":"item1",<br />  "someItems":"item2",<br />  "userName":"John"<br />&#125;</code></p>
@@ -52,24 +47,12 @@ function DynamicResponseWithTemplating() {
         <p>If you have a set of files named <code>./file1.json</code>, <code>./file2.json</code>, etc and a route named <code>/:id</code> you can use the <code>urlParam</code> helper in the file input: <code>c:/.../file&#123;&#123; urlParam 'id'&#125;&#125;.json</code>.</p>
         <p>If you call this route with an id <code>/1</code>, <code>./file1.json</code> will be sent.</p>
       </div>
-      <div className="columns">
-        <div className="column is-6 is-offset-3">
-          <figure className="image">
-            <img src="/static/images/tutorials/file-input-templating.jpg" alt="File input templating" />
-          </figure>
-        </div>
-      </div>
+      <Image src="/static/images/tutorials/file-input-templating.jpg" alt="File input templating" size="medium" />
       <div className="content">
         <h3>Headers templating</h3>
         <p>Finally, templating helpers are also supported in <strong>headers values</strong> (both route headers and environment headers):</p>
       </div>
-      <div className="columns">
-        <div className="column is-6 is-offset-3">
-          <figure className="image">
-            <img src="/static/images/tutorials/header-templating.jpg" alt="Headers value templating" />
-          </figure>
-        </div>
-      </div>
+      <Image src="/static/images/tutorials/header-templating.jpg" alt="Headers value templating" size="medium" />
     </Tutorial>
   );
 }

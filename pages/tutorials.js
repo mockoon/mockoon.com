@@ -19,7 +19,7 @@ function Tutorials() {
         {
           tutorialsList.slice(rowIndex * numberPerRow, (rowIndex * numberPerRow) + numberPerRow).map((tutorial, tutorialIndex) => {
             return (
-              <div key={'tutorial' + tutorialIndex} className="column">
+              <div key={'tutorial' + tutorialIndex} className="column is-3">
                 <div className="card">
                   <div className="card-image">
                     <a href={`/tutorial/${tutorial.slug}`}>

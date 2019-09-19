@@ -1,4 +1,6 @@
 import Tutorial from '../../components/tutorial';
+import Image from './partials/image';
+import OpenSettingsGif from './partials/open-settings-gif';
 
 const meta = { title: 'Automatic handling of preflight OPTIONS requests', description: 'Front and API are not on the same domain? Handle preflight requests automatically with Mockoon' };
 
@@ -11,25 +13,13 @@ function AutomaticHandlingPreflightRequests() {
           <li>Open the <strong>environment settings</strong> by clicking on the cog in the upper right corner:</li>
         </ol>
       </div>
-      <div className="columns">
-        <div className="column is-8 is-offset-2">
-          <figure className="image">
-            <img src="/static/images/tutorials/open-settings.gif" alt="Open environment settings" />
-          </figure>
-        </div>
-      </div>
+      <OpenSettingsGif />
       <div className="content">
         <ol>
           <li value="2">Enable <strong>CORS option</strong>, ensure that blue crossing arrows are displayed next to the environment name which indicates that CORS option has been successfully activated.</li>
         </ol>
       </div>
-      <div className="columns">
-        <div className="column is-8 is-offset-2">
-          <figure className="image">
-            <img src="/static/images/tutorials/enable-cors-mode.gif" alt="Enable CORS mode" />
-          </figure>
-        </div>
-      </div>
+      <Image src="/static/images/tutorials/enable-cors-mode.gif" alt="Enable CORS mode" />
       <div className="content">
         <p>You may need to restart the environment for the changes to take effect.</p>
         <p>Starting from now Mockoon will automatically answer with a 200 HTTP status code to all preflight OPTIONS requests. The following headers will also be added to the response:</p>

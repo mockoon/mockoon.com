@@ -46,6 +46,12 @@ const TutorialsList = [
     description: 'Mockoon can handle response headers at both environment and route levels, learn how.',
     picture: '/static/images/tutorials/thumbnails/headers.jpg',
     slug: 'define-response-headers'
+  },
+  {
+    title: 'Define multiple responses for each route',
+    description: 'Multiple responses can be defined for each route with different body, headers and status.',
+    picture: '/static/images/tutorials/thumbnails/responses.jpg',
+    slug: 'multiple-route-responses'
   }
 ];
 

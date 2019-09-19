@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "export": "rm -rf ./next && rm -rf ./out && npm run build && next export",
+    "export": "npm run build && next export",
     "start": "next start",
     "deploy": "npm run export && firebase deploy --only hosting"
   },

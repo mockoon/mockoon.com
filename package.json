@@ -1,5 +1,5 @@
 {
-  "name": "mockoon-website",
+  "name": "mockoon-com",
   "version": "1.4.0",
   "description": "Mockoon app website repository",
   "main": "index.js",
@@ -18,10 +18,10 @@
   "homepage": "https://mockoon.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mockoon/website.git"
+    "url": "git+https://github.com/mockoon/mockoon.com.git"
   },
   "bugs": {
-    "url": "https://github.com/mockoon/website/issues"
+    "url": "https://github.com/mockoon/mockoon.com/issues"
   },
   "license": "MIT",
   "dependencies": {

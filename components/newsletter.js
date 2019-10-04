@@ -21,6 +21,8 @@ function Newsletter() {
             </div>
           </form>
         </div>
+        <p>Or follow us on Twitter</p>
+        <a href="https://twitter.com/GetMockoon?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-dnt="true" data-show-count="false">Follow @GetMockoon</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     </section>
   );

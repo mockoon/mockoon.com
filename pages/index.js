@@ -46,15 +46,15 @@ class Index extends React.Component {
               <div className="column is-4 has-text-centered">
                 <p className="is-size-1 is-brand mb20"><i className="icon-linux"></i></p>
                 <div class="buttons has-addons is-centered">
-                  <a className="button is-primary is-outlined is-marginless" href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}-x86_64.AppImage`} onClick={() => ga('send', 'event', 'application', 'download', 'linux')}>
+                  <a className="button is-primary is-outlined is-marginless" href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.deb`} onClick={() => ga('send', 'event', 'application', 'download', 'linux')}>
                     <span className="icon"><i className="icon-download"></i></span>
                     <span>deb</span>
                   </a>
-                  <a className="button is-primary is-outlined is-marginless" href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}-x86_64.AppImage`} onClick={() => ga('send', 'event', 'application', 'download', 'linux')}>
+                  <a className="button is-primary is-outlined is-marginless" href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.rpm`} onClick={() => ga('send', 'event', 'application', 'download', 'linux')}>
                     <span className="icon"><i className="icon-download"></i></span>
                     <span>rpm</span>
                   </a>
-                  <a className="button is-primary is-outlined is-marginless" href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}-x86_64.AppImage`} onClick={() => ga('send', 'event', 'application', 'download', 'linux')}>
+                  <a className="button is-primary is-outlined is-marginless" href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.AppImage`} onClick={() => ga('send', 'event', 'application', 'download', 'linux')}>
                     <span className="icon"><i className="icon-download"></i></span>
                     <span>AppImage</span>
                   </a>

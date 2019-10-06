@@ -13,7 +13,7 @@ const featuresList = [
   { title: "HTTPS", description: "Serve your mock API over TLS with self-signed certificate. <a href=\"/tutorial/serve-mock-api-tls/\">Learn more</a>" },
   { title: "Response headers", description: "Add any response headers to your routes and environments. With auto-completion. <a href=\"/tutorial/define-response-headers\">Learn more</a>" },
   { title: "Latency", description: "Add latency at environment or route level or even both." },
-  { title: "Incoming requests logs", description: "All entering requests are logged for easier debugging. <a href=\"/tutorial/incoming-requests-logs\">Learn more</a>" },
+  { title: "Requests and responses logs", description: "All incoming requests and outgoing responses are logged for easier debugging. <a href=\"/tutorial/incoming-requests-logs\">Learn more</a>" },
   { title: "Proxy mode", description: "Redirect all non-defined routes to the specified host with Mockoon's proxy mode." },
   { title: "File serving", description: "File serving with automatic mime type detection and templating support." },
   { title: "Rich text editor", description: "Rich text editor for body content supporting multiple languages (JSON, HTML, etc)." },

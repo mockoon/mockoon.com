@@ -24,8 +24,8 @@ const TutorialsList = [
     slug: 'define-prefixed-api'
   },
   {
-    title: 'Access incoming requests logs',
-    description: 'Check how to access Mockoon\'s entering requests logs for easier debugging',
+    title: 'Access requests and responses logs',
+    description: 'Check how to access Mockoon\'s requests and responses logs for easier debugging',
     picture: '/static/images/tutorials/thumbnails/logs.jpg',
     slug: 'incoming-requests-logs'
   },

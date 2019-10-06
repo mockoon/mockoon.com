@@ -1,1 +1,1 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[33],{sC5C:function(n,w,a){(window.__NEXT_P=window.__NEXT_P||[]).push(["/tutorial/partials/image",function(){var n=a("k6ZC");return{page:n.default||n}}])}},[["sC5C",1,0]]]);
+(window.webpackJsonp=window.webpackJsonp||[]).push([[16],{sC5C:function(n,w,a){(window.__NEXT_P=window.__NEXT_P||[]).push(["/tutorial/partials/image",function(){var n=a("k6ZC");return{page:n.default||n}}])}},[["sC5C",1,0]]]);

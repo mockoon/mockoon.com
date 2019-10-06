@@ -9,16 +9,6 @@ const version = require('../package.json').version;
 const meta = { title: 'Mock API in seconds' };
 
 class Index extends React.Component {
-  componentDidMount() {
-    // add Twitter script
-    const script = document.createElement('script');
-    script.src = 'https://platform.twitter.com/widgets.js';
-    script.async = true;
-    script.defer = true;
-
-    document.body.appendChild(script);
-  }
-
   render() {
     return (
       <Layout>
@@ -45,7 +35,7 @@ class Index extends React.Component {
               </div>
               <div className="column is-4 has-text-centered">
                 <p className="is-size-1 is-brand mb20"><i className="icon-linux"></i></p>
-                <div class="buttons has-addons is-centered">
+                <div className="buttons has-addons is-centered">
                   <a className="button is-primary is-outlined is-marginless" href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.deb`} onClick={() => ga('send', 'event', 'application', 'download', 'linux')}>
                     <span className="icon"><i className="icon-download"></i></span>
                     <span>deb</span>

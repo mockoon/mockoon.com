@@ -25,6 +25,14 @@ class Layout extends React.Component {
     gaScript.async = true;
     gaScript.defer = true;
     document.head.appendChild(gaScript);
+
+    // add Twitter script
+    const script = document.createElement('script');
+    script.src = 'https://platform.twitter.com/widgets.js';
+    script.async = true;
+    script.defer = true;
+
+    document.body.appendChild(script);
   }
 
   render() {

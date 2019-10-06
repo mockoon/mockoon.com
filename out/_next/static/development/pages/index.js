@@ -4829,7 +4829,7 @@ function (_React$Component) {
         title: meta.title,
         subtitle: "Mockoon is the easiest and quickest way to run mock APIs locally.<br>No remote deployment, no account required, open source.",
         withDownloadCTA: "true",
-        mainPicture: "/static/images/main.jpg",
+        mainPicture: "/static/images/screenshot.jpg",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 17

@@ -14,7 +14,7 @@ class Index extends React.Component {
       <Layout>
         <Meta title={meta.title} description="Mockoon is a free and open source desktop application allowing to quickly mock servers and API." />
 
-        <Hero title={meta.title} subtitle="Mockoon is the easiest and quickest way to run mock APIs locally.<br>No remote deployment, no account required, open source." withDownloadCTA="true" mainPicture="/static/images/main.jpg" />
+        <Hero title={meta.title} subtitle="Mockoon is the easiest and quickest way to run mock APIs locally.<br>No remote deployment, no account required, open source." withDownloadCTA="true" mainPicture="/static/images/screenshot.jpg" />
 
         <section className="section" id="download">
           <div className="container">

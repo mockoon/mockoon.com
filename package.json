@@ -25,14 +25,18 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
-    "bulma": "^0.7.5",
-    "next": "^9.0.4",
+    "bulma": "^0.8.0",
+    "next": "^9.1.1",
     "node-sass": "^4.12.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-highlight": "^0.12.0"
   },
   "devDependencies": {
+    "@types/node": "^12.11.5",
+    "@types/react": "^16.9.9",
     "typescript": "^3.5.3"
   }
 }

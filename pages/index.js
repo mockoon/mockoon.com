@@ -35,7 +35,7 @@ class Index extends React.Component {
               </div>
               <div className="column is-4 has-text-centered">
                 <p className="is-size-1 is-brand mb20"><i className="icon-linux"></i></p>
-                <div className="buttons has-addons is-centered">
+                <div className="buttons has-addons is-centered is-marginless">
                   <a className="button is-primary is-outlined is-marginless" href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.deb`} onClick={() => ga('send', 'event', 'application', 'download', 'linux')}>
                     <span className="icon"><i className="icon-download"></i></span>
                     <span>deb</span>
@@ -49,7 +49,7 @@ class Index extends React.Component {
                     <span>AppImage</span>
                   </a>
                 </div>
-                <p className="content is-light">or <code>sudo snap install mockoon</code></p>
+                <p className="content is-light">or <code>sudo snap install mockoon</code><br /><code>yay -S mockoon-bin</code></p>
               </div>
               <div className="column has-text-centered">
                 <p className="is-size-1 is-brand mb20"><i className="icon-apple"></i></p>
@@ -57,7 +57,7 @@ class Index extends React.Component {
                   <span className="icon"><i className="icon-download"></i></span>
                   <span>dmg</span>
                 </a>
-                <p className="content is-small is-light">or <code>brew cask install mockoon</code></p>
+                <p className="content is-light">or <code>brew cask install mockoon</code></p>
               </div>
             </div>
 

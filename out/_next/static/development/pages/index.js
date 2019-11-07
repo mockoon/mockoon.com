@@ -4980,7 +4980,7 @@ function (_React$Component) {
         },
         __self: this
       })), __jsx("div", {
-        className: "buttons has-addons is-centered",
+        className: "buttons has-addons is-centered is-marginless",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 38
@@ -5092,7 +5092,19 @@ function (_React$Component) {
           lineNumber: 52
         },
         __self: this
-      }, "sudo snap install mockoon"))), __jsx("div", {
+      }, "sudo snap install mockoon"), __jsx("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
+        },
+        __self: this
+      }), __jsx("code", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
+        },
+        __self: this
+      }, "yay -S mockoon-bin"))), __jsx("div", {
         className: "column has-text-centered",
         __source: {
           fileName: _jsxFileName,
@@ -5145,7 +5157,7 @@ function (_React$Component) {
         },
         __self: this
       }, "dmg")), __jsx("p", {
-        className: "content is-small is-light",
+        className: "content is-light",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 60

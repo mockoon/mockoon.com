@@ -1,6 +1,6 @@
 {
   "name": "mockoon-com",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "Mockoon app website repository",
   "main": "index.js",
   "scripts": {

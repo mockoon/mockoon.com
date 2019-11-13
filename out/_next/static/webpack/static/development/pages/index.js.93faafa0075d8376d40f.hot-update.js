@@ -1,9 +1,9 @@
 webpackHotUpdate("static\\development\\pages\\index.js",{
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/index.tsx":
+/*!*************************!*\
+  !*** ./pages/index.tsx ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -16,17 +16,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_donate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/donate */ "./components/donate.js");
-/* harmony import */ var _components_hero__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/hero */ "./components/hero.js");
-/* harmony import */ var _components_meta__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/meta */ "./components/meta.js");
-/* harmony import */ var _components_newsletter__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/newsletter */ "./components/newsletter.js");
-/* harmony import */ var _layout_layout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../layout/layout */ "./layout/layout.js");
+/* harmony import */ var _components_donate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/donate */ "./components/donate.tsx");
+/* harmony import */ var _components_hero__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/hero */ "./components/hero.tsx");
+/* harmony import */ var _components_meta__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/meta */ "./components/meta.tsx");
+/* harmony import */ var _components_newsletter__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/newsletter */ "./components/newsletter.tsx");
+/* harmony import */ var _layout_layout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../layout/layout */ "./layout/layout.tsx");
 
 
 
 
 
-var _jsxFileName = "D:\\dev\\mockoon.com\\pages\\index.js";
+var _jsxFileName = "D:\\dev\\mockoon.com\\pages\\index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -336,13 +336,19 @@ function (_React$Component) {
           lineNumber: 52
         },
         __self: this
-      }, "sudo snap install mockoon"), ", ", __jsx("code", {
+      }, "sudo snap install mockoon"), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 52
         },
         __self: this
-      }, "sudo snap install mockoon"))), __jsx("div", {
+      }), __jsx("code", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
+        },
+        __self: this
+      }, "yay -S mockoon-bin"))), __jsx("div", {
         className: "column has-text-centered",
         __source: {
           fileName: _jsxFileName,
@@ -1229,4 +1235,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.001e890a697b95df6d3f.hot-update.js.map
+//# sourceMappingURL=index.js.93faafa0075d8376d40f.hot-update.js.map

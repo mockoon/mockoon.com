@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\faq.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\tutorials.js"],{
 
 /***/ "./components/download.js":
 /*!********************************!*\
@@ -766,6 +766,65 @@ function Spectrum() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Spectrum);
+
+/***/ }),
+
+/***/ "./content/tutorials-list.js":
+/*!***********************************!*\
+  !*** ./content/tutorials-list.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var TutorialsList = [{
+  title: 'API mocking with proxy mode',
+  description: 'Learn how to partially mock a REST API and proxy to another server with Mockoon.',
+  picture: '/static/images/tutorials/thumbnails/proxy.jpg',
+  slug: 'api-mocking-proxy-mode'
+}, {
+  title: 'Serve a mock API over TLS',
+  description: 'Need to mock a secured API? Mockoon can also do this!',
+  picture: '/static/images/tutorials/thumbnails/https.jpg',
+  slug: 'serve-mock-api-tls'
+}, {
+  title: 'Automatic handling of preflight OPTIONS requests',
+  description: 'Front and API are not on the same domain? Handle preflight requests automatically with Mockoon.',
+  picture: '/static/images/tutorials/thumbnails/cors.jpg',
+  slug: 'automatic-handling-preflight-requests'
+}, {
+  title: 'Define a prefixed API',
+  description: 'Want to prefix your mock server routes? Learn how to do it with Mockoon',
+  picture: '/static/images/tutorials/thumbnails/prefix.jpg',
+  slug: 'define-prefixed-api'
+}, {
+  title: 'Access requests and responses logs',
+  description: 'Check how to access Mockoon\'s requests and responses logs for easier debugging',
+  picture: '/static/images/tutorials/thumbnails/logs.jpg',
+  slug: 'incoming-requests-logs'
+}, {
+  title: 'Import and export environments and routes',
+  description: 'Learn how to easily import and export your environments and routes in JSON format with Mockoon',
+  picture: '/static/images/tutorials/thumbnails/import.jpg',
+  slug: 'import-export-environments-routes'
+}, {
+  title: 'Create dynamic responses with templating',
+  description: 'Create dynamic responses for your mock server with Mockoon\'s templating system.',
+  picture: '/static/images/tutorials/thumbnails/templating.jpg',
+  slug: 'dynamic-response-with-templating'
+}, {
+  title: 'Define route and environment response headers',
+  description: 'Mockoon can handle response headers at both environment and route levels, learn how.',
+  picture: '/static/images/tutorials/thumbnails/headers.jpg',
+  slug: 'define-response-headers'
+}, {
+  title: 'Define multiple responses for each route',
+  description: 'Multiple responses can be defined for each route with different body, headers and status.',
+  picture: '/static/images/tutorials/thumbnails/responses.jpg',
+  slug: 'multiple-route-responses'
+}];
+/* harmony default export */ __webpack_exports__["default"] = (TutorialsList);
 
 /***/ }),
 
@@ -4669,21 +4728,21 @@ exports["default"] = function () {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ffaq&absolutePagePath=C%3A%5Cdev%5Cmockoon.com%5Cpages%5Cfaq.js!./":
-/*!*********************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ffaq&absolutePagePath=C%3A%5Cdev%5Cmockoon.com%5Cpages%5Cfaq.js ***!
-  \*********************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ftutorials&absolutePagePath=C%3A%5Cdev%5Cmockoon.com%5Cpages%5Ctutorials.js!./":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ftutorials&absolutePagePath=C%3A%5Cdev%5Cmockoon.com%5Cpages%5Ctutorials.js ***!
+  \*********************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/faq", function() {
-      var page = __webpack_require__(/*! ./pages/faq.js */ "./pages/faq.js")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/tutorials", function() {
+      var page = __webpack_require__(/*! ./pages/tutorials.js */ "./pages/tutorials.js")
       if(true) {
-        module.hot.accept(/*! ./pages/faq.js */ "./pages/faq.js", function() {
-          if(!next.router.components["/faq"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/faq.js */ "./pages/faq.js")
-          next.router.update("/faq", updatedPage.default || updatedPage)
+        module.hot.accept(/*! ./pages/tutorials.js */ "./pages/tutorials.js", function() {
+          if(!next.router.components["/tutorials"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/tutorials.js */ "./pages/tutorials.js")
+          next.router.update("/tutorials", updatedPage.default || updatedPage)
         })
       }
       return { page: page.default || page }
@@ -4703,10 +4762,10 @@ module.exports = (__webpack_require__(/*! dll-reference dll_129a35c7ec57967eb265
 
 /***/ }),
 
-/***/ "./pages/faq.js":
-/*!**********************!*\
-  !*** ./pages/faq.js ***!
-  \**********************/
+/***/ "./pages/tutorials.js":
+/*!****************************!*\
+  !*** ./pages/tutorials.js ***!
+  \****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4718,8 +4777,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_hero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/hero */ "./components/hero.js");
 /* harmony import */ var _components_meta__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/meta */ "./components/meta.js");
 /* harmony import */ var _components_newsletter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/newsletter */ "./components/newsletter.js");
-/* harmony import */ var _layout_layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../layout/layout */ "./layout/layout.js");
-var _jsxFileName = "C:\\dev\\mockoon.com\\pages\\faq.js";
+/* harmony import */ var _content_tutorials_list__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../content/tutorials-list */ "./content/tutorials-list.js");
+/* harmony import */ var _layout_layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../layout/layout */ "./layout/layout.js");
+var _jsxFileName = "C:\\dev\\mockoon.com\\pages\\tutorials.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -4727,195 +4787,188 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 var meta = {
-  title: 'Frequently asked questions'
+  title: 'Tutorials',
+  description: 'Learn how to use Mockoon\'s features and mock your REST server or API like a pro!'
 };
 
-function Faq() {
-  return __jsx(_layout_layout__WEBPACK_IMPORTED_MODULE_5__["default"], {
+function Tutorials() {
+  var numberPerRow = 4;
+  var numberOfRows = Math.ceil(_content_tutorials_list__WEBPACK_IMPORTED_MODULE_5__["default"].length / numberPerRow);
+  var tutorialsContent = [];
+
+  for (var rowIndex = 0; rowIndex < numberOfRows; rowIndex++) {
+    tutorialsContent.push(__jsx("div", {
+      key: 'tutorialRow' + rowIndex,
+      className: "columns",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }, _content_tutorials_list__WEBPACK_IMPORTED_MODULE_5__["default"].slice(rowIndex * numberPerRow, rowIndex * numberPerRow + numberPerRow).map(function (tutorial, tutorialIndex) {
+      return __jsx("div", {
+        key: 'tutorial' + tutorialIndex,
+        className: "column is-3",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "card",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "card-image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/tutorial/".concat(tutorial.slug),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25
+        },
+        __self: this
+      }, __jsx("figure", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }, __jsx("img", {
+        src: tutorial.picture,
+        alt: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        },
+        __self: this
+      })))), __jsx("div", {
+        className: "card-content",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "media",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "media-content",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33
+        },
+        __self: this
+      }, __jsx("p", {
+        className: "title is-5",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 34
+        },
+        __self: this
+      }, tutorial.title))), __jsx("div", {
+        className: "content",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38
+        },
+        __self: this
+      }, tutorial.description)), __jsx("footer", {
+        className: "card-footer",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42
+        },
+        __self: this
+      }, __jsx("a", {
+        href: "/tutorial/".concat(tutorial.slug),
+        className: "card-footer-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 43
+        },
+        __self: this
+      }, "Read"))));
+    })));
+  }
+
+  return __jsx(_layout_layout__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 55
     },
     __self: this
   }, __jsx(_components_meta__WEBPACK_IMPORTED_MODULE_3__["default"], {
     title: meta.title,
-    description: "Find the most frequently asked question about Mockoon, the free desktop server mocking application.",
+    description: meta.description,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 56
     },
     __self: this
   }), __jsx(_components_hero__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: meta.title,
+    subtitle: meta.description,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 57
     },
     __self: this
   }), __jsx(_components_download__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 59
     },
     __self: this
-  }), __jsx("section", {
+  }), __jsx("div", {
     className: "section",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 61
     },
     __self: this
   }, __jsx("div", {
-    className: "columns",
+    className: "container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 62
     },
     __self: this
-  }, __jsx("div", {
-    className: "column is-6 is-offset-3",
+  }, tutorialsContent)), __jsx(_components_newsletter__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: this
-  }, __jsx("div", {
-    className: "content",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: this
-  }, __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: this
-  }, "How does Mockoon mocking works?"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: this
-  }, "Unlike many other mocking tools, Mockoon uses a local server to avoid latency and the hassle of deploying through a remote service."), __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: this
-  }, "Does Mockoon require an active internet connection?"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
-  }, "No, you don't need an internet connection to use Mockoon, everything runs locally."), __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, "Does Mockoon require an account?"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: this
-  }, "No, you don't need to sign up or create an account to use Mockoon."), __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: this
-  }, "Is Mockoon free and/or open source?"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: this
-  }, "Mockoon is 100% free AND open source (MIT license)."), __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: this
-  }, "Where are my data stored?"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
-  }, "Locally, in your operating system user data folder. ", __jsx("code", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
-  }, "c:/.../Users/xxx/AppData/Roaming"), " on Windows, ", __jsx("code", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
-  }, "~/.config"), " on Linux and ", __jsx("code", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
-  }, "~/Library/Application Support"), " on macOS."), __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: this
-  }, "Are you collecting usage data?"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: this
-  }, "Yes, but only anonymous data through Google Analytics. Besides Google Analytics standard collected data (OS, screen size, etc.) we are also collecting some events happening in the application. A typical event includes the following JSON ", __jsx("code", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: this
-  }, '{', "category: 'delete', action: 'environment'", '}'), ", ", __jsx("code", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: this
-  }, '{', "category: 'server', action: 'start' ", '}'), ", etc.", __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: this
-  }), "None of your mock data, routes or URLs are collected."))))), __jsx(_components_newsletter__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 67
     },
     __self: this
   }));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Faq);
+/* harmony default export */ __webpack_exports__["default"] = (Tutorials);
 
 /***/ }),
 
-/***/ 2:
-/*!*************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Ffaq&absolutePagePath=C%3A%5Cdev%5Cmockoon.com%5Cpages%5Cfaq.js ***!
-  \*************************************************************************************************************/
+/***/ 3:
+/*!*************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Ftutorials&absolutePagePath=C%3A%5Cdev%5Cmockoon.com%5Cpages%5Ctutorials.js ***!
+  \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Ffaq&absolutePagePath=C%3A%5Cdev%5Cmockoon.com%5Cpages%5Cfaq.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ffaq&absolutePagePath=C%3A%5Cdev%5Cmockoon.com%5Cpages%5Cfaq.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Ftutorials&absolutePagePath=C%3A%5Cdev%5Cmockoon.com%5Cpages%5Ctutorials.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ftutorials&absolutePagePath=C%3A%5Cdev%5Cmockoon.com%5Cpages%5Ctutorials.js!./");
 
 
 /***/ }),
@@ -4931,5 +4984,5 @@ module.exports = dll_129a35c7ec57967eb265;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js","styles"]]]);
-//# sourceMappingURL=faq.js.map
+},[[3,"static/runtime/webpack.js","styles"]]]);
+//# sourceMappingURL=tutorials.js.map

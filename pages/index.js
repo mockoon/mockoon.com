@@ -126,22 +126,7 @@ class Index extends React.Component {
 
             <div className="columns">
               <div className="column is-one-quarter">
-                <blockquote className="twitter-tweet" data-cards="hidden" data-dnt="true" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">Mockoon is a nice and simple local API mocking tool by <a href="https://twitter.com/255kb?ref_src=twsrc%5Etfw">@255kb</a> <a href="https://t.co/6pr3uXpZ4r">https://t.co/6pr3uXpZ4r</a></p>&mdash; Damir Arh (@DamirArh) <a href="https://twitter.com/DamirArh/status/1043813625163583488?ref_src=twsrc%5Etfw">23 septembre 2018</a></blockquote>
-              </div>
-              <div className="column is-one-quarter">
-                <blockquote className="twitter-tweet" data-cards="hidden" data-dnt="true" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">Mockoon by <a href="https://twitter.com/255kb?ref_src=twsrc%5Etfw">@255kb</a> - amazing tool for mocking APIs locally. Def a keeper <a href="https://twitter.com/hashtag/API?src=hash&amp;ref_src=twsrc%5Etfw">#API</a> <a href="https://twitter.com/hashtag/Programming?src=hash&amp;ref_src=twsrc%5Etfw">#Programming</a> <a href="https://t.co/Ut6wZQUXBF">https://t.co/Ut6wZQUXBF</a> <a href="https://t.co/C0FuDN9Bo5">pic.twitter.com/C0FuDN9Bo5</a></p>&mdash; 🚀 Marius (@Maephisto) <a href="https://twitter.com/Maephisto/status/926431521220841473?ref_src=twsrc%5Etfw">3 novembre 2017</a></blockquote>
-              </div>
-              <div className="column is-one-quarter">
-                <blockquote className="twitter-tweet" data-cards="hidden" data-dnt="true" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">Mockoon looks like a promising tool for creating local mocks for testing <a href="https://t.co/6rrAkmIk2M">https://t.co/6rrAkmIk2M</a> <a href="https://t.co/WMIxTgnpyU">pic.twitter.com/WMIxTgnpyU</a></p>&mdash; Nexmo Developer (@NexmoDev) <a href="https://twitter.com/NexmoDev/status/922560022055284739?ref_src=twsrc%5Etfw">23 octobre 2017</a></blockquote>
-              </div>
-              <div className="column is-one-quarter">
-                <blockquote className="twitter-tweet" data-cards="hidden" data-dnt="true" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">Wow <a href="https://twitter.com/255kb?ref_src=twsrc%5Etfw">@255kb</a> Mockoon is incredibly easy to use! Thank you.</p>&mdash; Gareth Fuller (@GarethAFuller) <a href="https://twitter.com/GarethAFuller/status/920218814331187200?ref_src=twsrc%5Etfw">17 octobre 2017</a></blockquote>
-              </div>
-            </div>
-
-            <div className="columns">
-              <div className="column is-one-quarter">
-                <blockquote className="twitter-tweet" data-cards="hidden" data-dnt="true" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">Mockoon - the easiest and quickest way to run mock APIs locally.<br />No remote deployment, no account required, open source<br /><br /> <a href="https://t.co/IyFXC4ispf">https://t.co/IyFXC4ispf</a></p>&mdash; Geoffrey Crofte 🐲 🇱🇺 (@geoffrey_crofte) <a href="https://twitter.com/geoffrey_crofte/status/1034707726000168960?ref_src=twsrc%5Etfw">29 août 2018</a></blockquote>
+                <blockquote className="twitter-tweet" data-cards="hidden" data-dnt="true" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">If you’re a mobile/frontend developer and you’re suffering with DEV environment, start mocking your APIs with <a href="https://twitter.com/GetMockoon?ref_src=twsrc%5Etfw">@GetMockoon</a> . It’s amazing! Thanks, <a href="https://twitter.com/255kb?ref_src=twsrc%5Etfw">@255kb</a> for creating this! I’m using every time that I develop new iOS projects!</p>&mdash; Sr. Décio Montanhani (@deciomontanhani) <a href="https://twitter.com/deciomontanhani/status/1211713659824754689?ref_src=twsrc%5Etfw">December 30, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               </div>
               <div className="column is-one-quarter">
                 <blockquote className="twitter-tweet" data-cards="hidden" data-dnt="true" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">OMG Mockoon, where have you been all these years?! <a href="https://t.co/8xnuDTLSZE">https://t.co/8xnuDTLSZE</a><br />Thank you <a href="https://twitter.com/255kb?ref_src=twsrc%5Etfw">@255kb</a>!</p>&mdash; Benjamin Reitzammer (@benjamin) <a href="https://twitter.com/benjamin/status/1097149234183397378?ref_src=twsrc%5Etfw">17 février 2019</a></blockquote>
@@ -151,6 +136,20 @@ class Index extends React.Component {
               </div>
               <div className="column is-one-quarter">
                 <blockquote className="twitter-tweet" data-cards="hidden" data-dnt="true" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">Mockoon is easy to use &amp; intuitive, great user experience. Thank you for creating this <a href="https://twitter.com/255kb?ref_src=twsrc%5Etfw">@255kb</a></p>&mdash; Steffen Laurens (@L_gondrong) <a href="https://twitter.com/L_gondrong/status/1044774814009835521?ref_src=twsrc%5Etfw">26 septembre 2018</a></blockquote>
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column is-one-quarter">
+                <blockquote className="twitter-tweet" data-cards="hidden" data-dnt="true" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">Mockoon is a nice and simple local API mocking tool by <a href="https://twitter.com/255kb?ref_src=twsrc%5Etfw">@255kb</a> <a href="https://t.co/6pr3uXpZ4r">https://t.co/6pr3uXpZ4r</a></p>&mdash; Damir Arh (@DamirArh) <a href="https://twitter.com/DamirArh/status/1043813625163583488?ref_src=twsrc%5Etfw">23 septembre 2018</a></blockquote>
+              </div>
+              <div className="column is-one-quarter">
+                <blockquote className="twitter-tweet" data-cards="hidden" data-dnt="true" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">Mockoon - the easiest and quickest way to run mock APIs locally.<br />No remote deployment, no account required, open source<br /><br /> <a href="https://t.co/IyFXC4ispf">https://t.co/IyFXC4ispf</a></p>&mdash; Geoffrey Crofte 🐲 🇱🇺 (@geoffrey_crofte) <a href="https://twitter.com/geoffrey_crofte/status/1034707726000168960?ref_src=twsrc%5Etfw">29 août 2018</a></blockquote>
+              </div>
+              <div className="column is-one-quarter">
+                <blockquote className="twitter-tweet" data-cards="hidden" data-dnt="true" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">Mockoon by <a href="https://twitter.com/255kb?ref_src=twsrc%5Etfw">@255kb</a> - amazing tool for mocking APIs locally. Def a keeper <a href="https://twitter.com/hashtag/API?src=hash&amp;ref_src=twsrc%5Etfw">#API</a> <a href="https://twitter.com/hashtag/Programming?src=hash&amp;ref_src=twsrc%5Etfw">#Programming</a> <a href="https://t.co/Ut6wZQUXBF">https://t.co/Ut6wZQUXBF</a> <a href="https://t.co/C0FuDN9Bo5">pic.twitter.com/C0FuDN9Bo5</a></p>&mdash; 🚀 Marius (@Maephisto) <a href="https://twitter.com/Maephisto/status/926431521220841473?ref_src=twsrc%5Etfw">3 novembre 2017</a></blockquote>
+              </div>
+              <div className="column is-one-quarter">
+                <blockquote className="twitter-tweet" data-cards="hidden" data-dnt="true" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">Wow <a href="https://twitter.com/255kb?ref_src=twsrc%5Etfw">@255kb</a> Mockoon is incredibly easy to use! Thank you.</p>&mdash; Gareth Fuller (@GarethAFuller) <a href="https://twitter.com/GarethAFuller/status/920218814331187200?ref_src=twsrc%5Etfw">17 octobre 2017</a></blockquote>
               </div>
             </div>
           </div>

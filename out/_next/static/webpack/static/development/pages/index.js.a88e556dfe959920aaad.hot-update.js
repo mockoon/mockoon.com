@@ -1,5 +1,178 @@
 webpackHotUpdate("static\\development\\pages\\index.js",{
 
+/***/ "./components/newsletter.js":
+/*!**********************************!*\
+  !*** ./components/newsletter.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "C:\\dev\\mockoon.com\\components\\newsletter.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function Newsletter() {
+  return __jsx("section", {
+    className: "section is-light",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "container has-text-centered has-text-weight-semibold",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: this
+  }, __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, "Join Mockoon's mailing list to receive latest updates"), __jsx("div", {
+    id: "mc_embed_signup",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, __jsx("form", {
+    action: "https://mockoon.us17.list-manage.com/subscribe/post?u=a8822ec82cbe40c6dc5564bd4&id=e054c8a3a4",
+    method: "post",
+    id: "mc-embedded-subscribe-form",
+    name: "mc-embedded-subscribe-form",
+    className: "validate",
+    target: "_blank",
+    noValidate: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }, __jsx("div", {
+    id: "mc_embed_signup_scroll",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, __jsx("input", {
+    type: "email",
+    defaultValue: "",
+    name: "EMAIL",
+    className: "email",
+    id: "mce-EMAIL",
+    placeholder: "email address",
+    required: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }), __jsx("div", {
+    style: {
+      position: 'absolute',
+      left: -5000 + 'px'
+    },
+    "aria-hidden": "true",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, __jsx("input", {
+    type: "text",
+    name: "b_a8822ec82cbe40c6dc5564bd4_e054c8a3a4",
+    tabIndex: "-1",
+    defaultValue: "",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  })), __jsx("div", {
+    className: "clear",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, __jsx("input", {
+    type: "submit",
+    defaultValue: "Subscribe",
+    name: "subscribe",
+    id: "mc-embedded-subscribe",
+    className: "button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  })), __jsx("div", {
+    id: "mce-responses",
+    className: "clear",
+    style: {
+      "float": 'none'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "response",
+    id: "mce-error-response",
+    style: {
+      display: 'none'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }), __jsx("div", {
+    className: "response",
+    id: "mce-success-response",
+    style: {
+      display: 'none'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }))))), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }, "Or follow us on Twitter"), __jsx("a", {
+    href: "https://twitter.com/GetMockoon?ref_src=twsrc%5Etfw",
+    className: "twitter-follow-button",
+    "data-size": "large",
+    "data-show-screen-name": "false",
+    "data-dnt": "true",
+    "data-show-count": "false",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: this
+  }, "Follow @GetMockoon")));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Newsletter);
+
+/***/ }),
+
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -945,49 +1118,39 @@ function (_React$Component) {
           lineNumber: 146
         },
         __self: this
-      }, "Mockoon by ", __jsx("a", {
-        href: "https://twitter.com/255kb?ref_src=twsrc%5Etfw",
+      }, "Mockoon - the easiest and quickest way to run mock APIs locally.", __jsx("br", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 146
         },
         __self: this
-      }, "@255kb"), " - amazing tool for mocking APIs locally. Def a keeper ", __jsx("a", {
-        href: "https://twitter.com/hashtag/API?src=hash&ref_src=twsrc%5Etfw",
+      }), "No remote deployment, no account required, open source", __jsx("br", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 146
         },
         __self: this
-      }, "#API"), " ", __jsx("a", {
-        href: "https://twitter.com/hashtag/Programming?src=hash&ref_src=twsrc%5Etfw",
+      }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 146
         },
         __self: this
-      }, "#Programming"), " ", __jsx("a", {
-        href: "https://t.co/Ut6wZQUXBF",
+      }), " ", __jsx("a", {
+        href: "https://t.co/IyFXC4ispf",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 146
         },
         __self: this
-      }, "https://t.co/Ut6wZQUXBF"), " ", __jsx("a", {
-        href: "https://t.co/C0FuDN9Bo5",
+      }, "https://t.co/IyFXC4ispf")), "\u2014 Geoffrey Crofte \uD83D\uDC32 \uD83C\uDDF1\uD83C\uDDFA (@geoffrey_crofte) ", __jsx("a", {
+        href: "https://twitter.com/geoffrey_crofte/status/1034707726000168960?ref_src=twsrc%5Etfw",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 146
         },
         __self: this
-      }, "pic.twitter.com/C0FuDN9Bo5")), "\u2014 \uD83D\uDE80 Marius (@Maephisto) ", __jsx("a", {
-        href: "https://twitter.com/Maephisto/status/926431521220841473?ref_src=twsrc%5Etfw",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 146
-        },
-        __self: this
-      }, "3 novembre 2017"))), __jsx("div", {
+      }, "29 ao\xFBt 2018"))), __jsx("div", {
         className: "column is-one-quarter",
         __source: {
           fileName: _jsxFileName,
@@ -1013,28 +1176,49 @@ function (_React$Component) {
           lineNumber: 149
         },
         __self: this
-      }, "Mockoon looks like a promising tool for creating local mocks for testing ", __jsx("a", {
-        href: "https://t.co/6rrAkmIk2M",
+      }, "Mockoon by ", __jsx("a", {
+        href: "https://twitter.com/255kb?ref_src=twsrc%5Etfw",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 149
         },
         __self: this
-      }, "https://t.co/6rrAkmIk2M"), " ", __jsx("a", {
-        href: "https://t.co/WMIxTgnpyU",
+      }, "@255kb"), " - amazing tool for mocking APIs locally. Def a keeper ", __jsx("a", {
+        href: "https://twitter.com/hashtag/API?src=hash&ref_src=twsrc%5Etfw",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 149
         },
         __self: this
-      }, "pic.twitter.com/WMIxTgnpyU")), "\u2014 Nexmo Developer (@NexmoDev) ", __jsx("a", {
-        href: "https://twitter.com/NexmoDev/status/922560022055284739?ref_src=twsrc%5Etfw",
+      }, "#API"), " ", __jsx("a", {
+        href: "https://twitter.com/hashtag/Programming?src=hash&ref_src=twsrc%5Etfw",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 149
         },
         __self: this
-      }, "23 octobre 2017"))), __jsx("div", {
+      }, "#Programming"), " ", __jsx("a", {
+        href: "https://t.co/Ut6wZQUXBF",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 149
+        },
+        __self: this
+      }, "https://t.co/Ut6wZQUXBF"), " ", __jsx("a", {
+        href: "https://t.co/C0FuDN9Bo5",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 149
+        },
+        __self: this
+      }, "pic.twitter.com/C0FuDN9Bo5")), "\u2014 \uD83D\uDE80 Marius (@Maephisto) ", __jsx("a", {
+        href: "https://twitter.com/Maephisto/status/926431521220841473?ref_src=twsrc%5Etfw",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 149
+        },
+        __self: this
+      }, "3 novembre 2017"))), __jsx("div", {
         className: "column is-one-quarter",
         __source: {
           fileName: _jsxFileName,
@@ -1074,75 +1258,10 @@ function (_React$Component) {
           lineNumber: 152
         },
         __self: this
-      }, "17 octobre 2017")))), __jsx("div", {
-        className: "columns",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 156
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "column is-one-quarter",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 157
-        },
-        __self: this
-      }, __jsx("blockquote", {
-        className: "twitter-tweet",
-        "data-cards": "hidden",
-        "data-dnt": "true",
-        "data-conversation": "none",
-        "data-lang": "en",
+      }, "17 octobre 2017")))))), __jsx(_components_newsletter__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 158
-        },
-        __self: this
-      }, __jsx("p", {
-        lang: "en",
-        dir: "ltr",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 158
-        },
-        __self: this
-      }, "Mockoon - the easiest and quickest way to run mock APIs locally.", __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 158
-        },
-        __self: this
-      }), "No remote deployment, no account required, open source", __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 158
-        },
-        __self: this
-      }), __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 158
-        },
-        __self: this
-      }), " ", __jsx("a", {
-        href: "https://t.co/IyFXC4ispf",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 158
-        },
-        __self: this
-      }, "https://t.co/IyFXC4ispf")), "\u2014 Geoffrey Crofte \uD83D\uDC32 \uD83C\uDDF1\uD83C\uDDFA (@geoffrey_crofte) ", __jsx("a", {
-        href: "https://twitter.com/geoffrey_crofte/status/1034707726000168960?ref_src=twsrc%5Etfw",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 158
-        },
-        __self: this
-      }, "29 ao\xFBt 2018")))))), __jsx(_components_newsletter__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 165
         },
         __self: this
       }), __jsx("section", {
@@ -1150,70 +1269,85 @@ function (_React$Component) {
         id: "feedback",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 167
+          lineNumber: 160
         },
         __self: this
       }, __jsx("div", {
         className: "container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 168
+          lineNumber: 161
         },
         __self: this
       }, __jsx("div", {
         className: "columns",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 169
+          lineNumber: 162
         },
         __self: this
       }, __jsx("div", {
         className: "column has-text-centered",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 170
+          lineNumber: 163
         },
         __self: this
       }, __jsx("h1", {
         className: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 171
+          lineNumber: 164
         },
         __self: this
       }, "Feedback welcome!"), __jsx("div", {
         className: "content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 172
+          lineNumber: 165
         },
         __self: this
       }, __jsx("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 166
         },
         __self: this
       }, "You have found a bug, you have an idea? Submit them on Mockoon's ", __jsx("a", {
         href: "https://github.com/mockoon/mockoon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 166
         },
         __self: this
       }, "GitHub repository"), "."), __jsx("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 174
+          lineNumber: 167
         },
         __self: this
       }, "You like Mockoon? Spread the word :)"), __jsx("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 175
+          lineNumber: 168
         },
         __self: this
       }, __jsx("a", {
+        href: "https://twitter.com/share?ref_src=twsrc%5Etfw",
+        "class": "twitter-share-button",
+        "data-size": "large",
+        "data-text": "Mockoon is the easiest and quickest way to run mock APIs locally. No remote deployment, no account required, open source.",
+        "data-url": "https://mockoon.com",
+        "data-via": "GetMockoon",
+        "data-hashtags": "api, prototyping, developerTools",
+        "data-dnt": "true",
+        "data-show-count": "false",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 169
+        },
+        __self: this
+      }, "Twitter"), __jsx("a", {
         title: "Share on Twitter",
         href: "http://twitter.com/share?url=https://mockoon.com&text=Mockoon+is+the+easiest+and+quickest+way+to+run+mock+APIs+locally.+No+remote+deployment,+no+account+required,+open+source.&via=255kb&",
         onClick: function onClick(event) {
@@ -1224,14 +1358,14 @@ function (_React$Component) {
         className: "button is-primary is-outlined twitter",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 176
+          lineNumber: 171
         },
         __self: this
       }, __jsx("span", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 178
+          lineNumber: 173
         },
         __self: this
       }, __jsx("i", {
@@ -1239,13 +1373,13 @@ function (_React$Component) {
         "aria-hidden": "true",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 178
+          lineNumber: 173
         },
         __self: this
       })), __jsx("span", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 179
+          lineNumber: 174
         },
         __self: this
       }, "Twitter")), __jsx("a", {
@@ -1262,14 +1396,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 181
+          lineNumber: 176
         },
         __self: this
       }, __jsx("span", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 182
+          lineNumber: 177
         },
         __self: this
       }, __jsx("i", {
@@ -1277,13 +1411,13 @@ function (_React$Component) {
         "aria-hidden": "true",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 182
+          lineNumber: 177
         },
         __self: this
       })), __jsx("span", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 183
+          lineNumber: 178
         },
         __self: this
       }, "Facebook")))))))));
@@ -1298,4 +1432,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.530a0569f2869b525ef9.hot-update.js.map
+//# sourceMappingURL=index.js.a88e556dfe959920aaad.hot-update.js.map

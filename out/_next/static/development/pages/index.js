@@ -5920,7 +5920,7 @@ function (_React$Component) {
         href: "http://twitter.com/share?url=https://mockoon.com&text=Mockoon+is+the+easiest+and+quickest+way+to+run+mock+APIs+locally.+No+remote+deployment,+no+account+required,+open+source.&via=255kb&",
         onClick: function onClick(event) {
           event.preventDefault();
-          window.open('http://twitter.com/share?url=https://mockoon.com&amp;text=Mockoon+is+the+easiest+and+quickest+way+to+run+mock+APIs+locally.+No+remote+deployment,+no+account+required,+open+source.&amp;via=255kb&amp;', 'twitter-share', 'width=800,height=600');
+          window.open('http://twitter.com/share?url=https://mockoon.com&amp;text=Mockoon+is+the+easiest+and+quickest+way+to+run+mock+APIs+locally.+No+remote+deployment,+no+account+required,+open+source.%20%23RestAPI%20%23Prototyping%20%23DeveloperTools&amp;via=GetMockoon&amp;', 'twitter-share', 'width=800,height=600');
           return false;
         },
         className: "button is-primary is-outlined twitter",

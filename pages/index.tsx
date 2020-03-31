@@ -235,12 +235,197 @@ class Index extends React.Component {
                   <a href='https://twitter.com/deciomontanhani/status/1211713659824754689?ref_src=twsrc%5Etfw'>
                     December 30, 2019
                   </a>
-                </blockquote>{' '}
-                <script
-                  async
-                  src='https://platform.twitter.com/widgets.js'
-                  charSet='utf-8'
-                ></script>
+                </blockquote>
+              </div>
+              <div className='column is-one-quarter'>
+                <blockquote
+                  className='twitter-tweet'
+                  data-cards='hidden'
+                  data-dnt='true'
+                  data-conversation='none'
+                  data-lang='en'
+                >
+                  <p lang='en' dir='ltr'>
+                    OMG its a life saving tool for FrontEnd and FullStack
+                    developer. Mockoon is the easiest and quickest way to run
+                    mock APIs locally. No remote deployment, no account
+                    required, open source.{' '}
+                    <a href='https://t.co/8tuILwL0cI'>
+                      https://t.co/8tuILwL0cI
+                    </a>{' '}
+                    via{' '}
+                    <a href='https://twitter.com/255kb?ref_src=twsrc%5Etfw'>
+                      @255kb
+                    </a>
+                  </p>
+                  &mdash; Rubesh Gain (@rubeshgain){' '}
+                  <a href='https://twitter.com/rubeshgain/status/1243557172988051456?ref_src=twsrc%5Etfw'>
+                    March 27, 2020
+                  </a>
+                </blockquote>
+              </div>
+              <div className='column is-one-quarter'>
+                <blockquote
+                  className='twitter-tweet'
+                  data-cards='hidden'
+                  data-dnt='true'
+                  data-conversation='none'
+                  data-lang='en'
+                >
+                  <p lang='en' dir='ltr'>
+                    Forgot to mention an important part of this article. I am
+                    leveraging{' '}
+                    <a href='https://twitter.com/GetMockoon?ref_src=twsrc%5Etfw'>
+                      @GetMockoon
+                    </a>{' '}
+                    to implement the APIs! <br />
+                    All credit to{' '}
+                    <a href='https://twitter.com/255kb?ref_src=twsrc%5Etfw'>
+                      @255kb
+                    </a>{' '}
+                    who developed this wonderful tool.
+                  </p>
+                  &mdash; Nabil Kazi (@nQaze){' '}
+                  <a href='https://twitter.com/nQaze/status/1239577212883554310?ref_src=twsrc%5Etfw'>
+                    March 16, 2020
+                  </a>
+                </blockquote>
+              </div>
+              <div className='column is-one-quarter'>
+                <blockquote
+                  className='twitter-tweet'
+                  data-cards='hidden'
+                  data-dnt='true'
+                  data-conversation='none'
+                  data-lang='en'
+                >
+                  <p lang='en' dir='ltr'>
+                    Did I already say that Mockoon is awesome?
+                    <br />
+                    Mockoon is the easiest and quickest way I found to run mock
+                    APIs locally.{' '}
+                    <a href='https://twitter.com/hashtag/RestAPI?src=hash&amp;ref_src=twsrc%5Etfw'>
+                      #RestAPI
+                    </a>{' '}
+                    <a href='https://twitter.com/hashtag/Prototyping?src=hash&amp;ref_src=twsrc%5Etfw'>
+                      #Prototyping
+                    </a>{' '}
+                    <a href='https://twitter.com/hashtag/DeveloperTools?src=hash&amp;ref_src=twsrc%5Etfw'>
+                      #DeveloperTools
+                    </a>{' '}
+                    <a href='https://twitter.com/hashtag/OpenSource?src=hash&amp;ref_src=twsrc%5Etfw'>
+                      #OpenSource
+                    </a>{' '}
+                    <a href='https://t.co/GlIPxThfu8'>
+                      https://t.co/GlIPxThfu8
+                    </a>{' '}
+                    di{' '}
+                    <a href='https://twitter.com/GetMockoon?ref_src=twsrc%5Etfw'>
+                      @GetMockoon
+                    </a>
+                    <br />
+                    <br />
+                    P.S. It&#39;s made with{' '}
+                    <a href='https://twitter.com/hashtag/Electron?src=hash&amp;ref_src=twsrc%5Etfw'>
+                      #Electron
+                    </a>{' '}
+                    and this is a huge bonus in my eyes.
+                  </p>
+                  &mdash; Nicola Orritos (@nicola_orritos){' '}
+                  <a href='https://twitter.com/nicola_orritos/status/1227168377275371520?ref_src=twsrc%5Etfw'>
+                    February 11, 2020
+                  </a>
+                </blockquote>
+              </div>
+            </div>
+            <div className='columns'>
+              <div className='column is-one-quarter'>
+                <blockquote
+                  className='twitter-tweet'
+                  data-cards='hidden'
+                  data-dnt='true'
+                  data-conversation='none'
+                  data-lang='en'
+                >
+                  <p lang='en' dir='ltr'>
+                    <a href='https://twitter.com/255kb?ref_src=twsrc%5Etfw'>
+                      @255kb
+                    </a>{' '}
+                    Thanks for Mockoon ! such a handy tool !
+                  </p>
+                  &mdash; Axel (@Axel_V_py){' '}
+                  <a href='https://twitter.com/Axel_V_py/status/1214821739613560832?ref_src=twsrc%5Etfw'>
+                    January 8, 2020
+                  </a>
+                </blockquote>
+              </div>
+              <div className='column is-one-quarter'>
+                <blockquote
+                  className='twitter-tweet'
+                  data-cards='hidden'
+                  data-dnt='true'
+                  data-conversation='none'
+                  data-lang='en'
+                >
+                  <p lang='en' dir='ltr'>
+                    Developers! Mockoon is the easiest and quickest way to run
+                    mock APIs locally. No remote deployment, no account
+                    required, open source.
+                    <br />
+                    <br />
+                    snap install mockoon
+                    <a href='https://t.co/MRDS2orVZs'>
+                      https://t.co/MRDS2orVZs
+                    </a>{' '}
+                    <a href='https://t.co/xCDBaWXHsY'>
+                      pic.twitter.com/xCDBaWXHsY
+                    </a>
+                  </p>
+                  &mdash; Ubuntu (@ubuntu){' '}
+                  <a href='https://twitter.com/ubuntu/status/1185862564955279360?ref_src=twsrc%5Etfw'>
+                    October 20, 2019
+                  </a>
+                </blockquote>
+              </div>
+              <div className='column is-one-quarter'>
+                <blockquote
+                  className='twitter-tweet'
+                  data-cards='hidden'
+                  data-dnt='true'
+                  data-conversation='none'
+                  data-lang='en'
+                >
+                  <p lang='en' dir='ltr'>
+                    Found{' '}
+                    <a href='https://twitter.com/hashtag/Mockoon?src=hash&amp;ref_src=twsrc%5Etfw'>
+                      #Mockoon
+                    </a>{' '}
+                    yesterday and have been using it to debug some{' '}
+                    <a href='https://twitter.com/hashtag/API?src=hash&amp;ref_src=twsrc%5Etfw'>
+                      #API
+                    </a>{' '}
+                    calls today. Very convenient little tool!{' '}
+                    <a href='https://twitter.com/hashtag/BusinessCentral?src=hash&amp;ref_src=twsrc%5Etfw'>
+                      #BusinessCentral
+                    </a>{' '}
+                    <a href='https://twitter.com/hashtag/webservice?src=hash&amp;ref_src=twsrc%5Etfw'>
+                      #webservice
+                    </a>{' '}
+                    <a href='https://twitter.com/hashtag/REST?src=hash&amp;ref_src=twsrc%5Etfw'>
+                      #REST
+                    </a>{' '}
+                    <a href='https://twitter.com/hashtag/JSON?src=hash&amp;ref_src=twsrc%5Etfw'>
+                      #JSON
+                    </a>{' '}
+                    <a href='https://t.co/W67Br0ps01'>
+                      https://t.co/W67Br0ps01
+                    </a>
+                  </p>
+                  &mdash; Kevin 🚴🏽‍♂️ (@365BCycle){' '}
+                  <a href='https://twitter.com/365BCycle/status/1161669683734622213?ref_src=twsrc%5Etfw'>
+                    August 14, 2019
+                  </a>
+                </blockquote>
               </div>
               <div className='column is-one-quarter'>
                 <blockquote
@@ -265,151 +450,6 @@ class Index extends React.Component {
                   &mdash; Benjamin Reitzammer (@benjamin){' '}
                   <a href='https://twitter.com/benjamin/status/1097149234183397378?ref_src=twsrc%5Etfw'>
                     17 février 2019
-                  </a>
-                </blockquote>
-              </div>
-              <div className='column is-one-quarter'>
-                <blockquote
-                  className='twitter-tweet'
-                  data-cards='hidden'
-                  data-dnt='true'
-                  data-conversation='none'
-                  data-lang='en'
-                >
-                  <p lang='en' dir='ltr'>
-                    <a href='https://twitter.com/255kb?ref_src=twsrc%5Etfw'>
-                      @255kb
-                    </a>{' '}
-                    Great Job !! with mockoon. Latest update looks supercool!!..
-                  </p>
-                  &mdash; ;; (@notthatthing_){' '}
-                  <a href='https://twitter.com/notthatthing_/status/1046706165772513280?ref_src=twsrc%5Etfw'>
-                    1 octobre 2018
-                  </a>
-                </blockquote>
-              </div>
-              <div className='column is-one-quarter'>
-                <blockquote
-                  className='twitter-tweet'
-                  data-cards='hidden'
-                  data-dnt='true'
-                  data-conversation='none'
-                  data-lang='en'
-                >
-                  <p lang='en' dir='ltr'>
-                    Mockoon is easy to use &amp; intuitive, great user
-                    experience. Thank you for creating this{' '}
-                    <a href='https://twitter.com/255kb?ref_src=twsrc%5Etfw'>
-                      @255kb
-                    </a>
-                  </p>
-                  &mdash; Steffen Laurens (@L_gondrong){' '}
-                  <a href='https://twitter.com/L_gondrong/status/1044774814009835521?ref_src=twsrc%5Etfw'>
-                    26 septembre 2018
-                  </a>
-                </blockquote>
-              </div>
-            </div>
-            <div className='columns'>
-              <div className='column is-one-quarter'>
-                <blockquote
-                  className='twitter-tweet'
-                  data-cards='hidden'
-                  data-dnt='true'
-                  data-conversation='none'
-                  data-lang='en'
-                >
-                  <p lang='en' dir='ltr'>
-                    Mockoon is a nice and simple local API mocking tool by{' '}
-                    <a href='https://twitter.com/255kb?ref_src=twsrc%5Etfw'>
-                      @255kb
-                    </a>{' '}
-                    <a href='https://t.co/6pr3uXpZ4r'>
-                      https://t.co/6pr3uXpZ4r
-                    </a>
-                  </p>
-                  &mdash; Damir Arh (@DamirArh){' '}
-                  <a href='https://twitter.com/DamirArh/status/1043813625163583488?ref_src=twsrc%5Etfw'>
-                    23 septembre 2018
-                  </a>
-                </blockquote>
-              </div>
-              <div className='column is-one-quarter'>
-                <blockquote
-                  className='twitter-tweet'
-                  data-cards='hidden'
-                  data-dnt='true'
-                  data-conversation='none'
-                  data-lang='en'
-                >
-                  <p lang='en' dir='ltr'>
-                    Mockoon - the easiest and quickest way to run mock APIs
-                    locally.
-                    <br />
-                    No remote deployment, no account required, open source
-                    <br />
-                    <br />{' '}
-                    <a href='https://t.co/IyFXC4ispf'>
-                      https://t.co/IyFXC4ispf
-                    </a>
-                  </p>
-                  &mdash; Geoffrey Crofte 🐲 🇱🇺 (@geoffrey_crofte){' '}
-                  <a href='https://twitter.com/geoffrey_crofte/status/1034707726000168960?ref_src=twsrc%5Etfw'>
-                    29 août 2018
-                  </a>
-                </blockquote>
-              </div>
-              <div className='column is-one-quarter'>
-                <blockquote
-                  className='twitter-tweet'
-                  data-cards='hidden'
-                  data-dnt='true'
-                  data-conversation='none'
-                  data-lang='en'
-                >
-                  <p lang='en' dir='ltr'>
-                    Mockoon by{' '}
-                    <a href='https://twitter.com/255kb?ref_src=twsrc%5Etfw'>
-                      @255kb
-                    </a>{' '}
-                    - amazing tool for mocking APIs locally. Def a keeper{' '}
-                    <a href='https://twitter.com/hashtag/API?src=hash&amp;ref_src=twsrc%5Etfw'>
-                      #API
-                    </a>{' '}
-                    <a href='https://twitter.com/hashtag/Programming?src=hash&amp;ref_src=twsrc%5Etfw'>
-                      #Programming
-                    </a>{' '}
-                    <a href='https://t.co/Ut6wZQUXBF'>
-                      https://t.co/Ut6wZQUXBF
-                    </a>{' '}
-                    <a href='https://t.co/C0FuDN9Bo5'>
-                      pic.twitter.com/C0FuDN9Bo5
-                    </a>
-                  </p>
-                  &mdash; 🚀 Marius (@Maephisto){' '}
-                  <a href='https://twitter.com/Maephisto/status/926431521220841473?ref_src=twsrc%5Etfw'>
-                    3 novembre 2017
-                  </a>
-                </blockquote>
-              </div>
-              <div className='column is-one-quarter'>
-                <blockquote
-                  className='twitter-tweet'
-                  data-cards='hidden'
-                  data-dnt='true'
-                  data-conversation='none'
-                  data-lang='en'
-                >
-                  <p lang='en' dir='ltr'>
-                    Wow{' '}
-                    <a href='https://twitter.com/255kb?ref_src=twsrc%5Etfw'>
-                      @255kb
-                    </a>{' '}
-                    Mockoon is incredibly easy to use! Thank you.
-                  </p>
-                  &mdash; Gareth Fuller (@GarethAFuller){' '}
-                  <a href='https://twitter.com/GarethAFuller/status/920218814331187200?ref_src=twsrc%5Etfw'>
-                    17 octobre 2017
                   </a>
                 </blockquote>
               </div>

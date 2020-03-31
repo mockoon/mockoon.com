@@ -6,7 +6,9 @@ import Layout from '../layout/layout';
 import Hero from './hero';
 import Meta from './meta';
 
-const Tutorial: FunctionComponent<{ meta: { title: string, description: string } }> = function (props) {
+const Tutorial: FunctionComponent<{
+  meta: { title: string; description: string };
+}> = function(props) {
   return (
     <Layout>
       <Meta title={props.meta.title} description={props.meta.description} />
@@ -14,9 +16,8 @@ const Tutorial: FunctionComponent<{ meta: { title: string, description: string }
 
       <Download />
 
-      <div className="section">
-        <div className="container">
-
+      <div className='section'>
+        <div className='container'>
           {props.children}
 
           <TutorialsBack />
@@ -24,8 +25,7 @@ const Tutorial: FunctionComponent<{ meta: { title: string, description: string }
       </div>
 
       <Newsletter />
-
-    </Layout >
+    </Layout>
   );
 };
 

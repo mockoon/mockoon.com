@@ -6,9 +6,6 @@ module.exports = withCSS(withSass({
   generateBuildId: async () => {
     return `v${version}`;
   },
-  experimental: {
-    publicDirectory: true
-  },
   exportTrailingSlash: true,
   cssLoaderOptions: {
     url: false

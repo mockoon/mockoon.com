@@ -7,11 +7,11 @@ $primary: $blue;
 
  @font-face {
   font-family: 'mockoon';
-  src:  url('/static/fonts/mockoon.eot?eu6upg');
-  src:  url('/static/fonts/mockoon.eot?eu6upg#iefix') format('embedded-opentype'),
-    url('/static/fonts/mockoon.ttf?eu6upg') format('truetype'),
-    url('/static/fonts/mockoon.woff?eu6upg') format('woff'),
-    url('/static/fonts/mockoon.svg?eu6upg#mockoon') format('svg');
+  src:  url('/fonts/mockoon.eot?eu6upg');
+  src:  url('/fonts/mockoon.eot?eu6upg#iefix') format('embedded-opentype'),
+    url('/fonts/mockoon.ttf?eu6upg') format('truetype'),
+    url('/fonts/mockoon.woff?eu6upg') format('woff'),
+    url('/fonts/mockoon.svg?eu6upg#mockoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }

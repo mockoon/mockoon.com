@@ -7,7 +7,9 @@ import tutorialsList from '../content/tutorials-list';
 import Layout from '../layout/layout';
 
 const meta = {
-  title: 'Tutorials', description: 'Learn how to use Mockoon\'s features and mock your REST server or API like a pro!'
+  title: 'Tutorials',
+  description:
+    "Learn how to use Mockoon's features and mock your REST server or API like a pro!"
 };
 
 const Tutorials: FunctionComponent = function() {
@@ -17,38 +19,44 @@ const Tutorials: FunctionComponent = function() {
 
   for (let rowIndex = 0; rowIndex < numberOfRows; rowIndex++) {
     tutorialsContent.push(
-      <div key={'tutorialRow' + rowIndex} className="columns">
-        {
-          tutorialsList.slice(rowIndex * numberPerRow, (rowIndex * numberPerRow) + numberPerRow).map((tutorial, tutorialIndex) => {
+      <div key={'tutorialRow' + rowIndex} className='columns'>
+        {tutorialsList
+          .slice(
+            rowIndex * numberPerRow,
+            rowIndex * numberPerRow + numberPerRow
+          )
+          .map((tutorial, tutorialIndex) => {
             return (
-              <div key={'tutorial' + tutorialIndex} className="column is-3">
-                <div className="card">
-                  <div className="card-image">
+              <div key={'tutorial' + tutorialIndex} className='column is-3'>
+                <div className='card'>
+                  <div className='card-image'>
                     <a href={`/tutorial/${tutorial.slug}`}>
-                      <figure className="image">
-                        <img src={tutorial.picture} alt="" />
+                      <figure className='image'>
+                        <img src={tutorial.picture} alt='' />
                       </figure>
                     </a>
                   </div>
-                  <div className="card-content">
-                    <div className="media">
-                      <div className="media-content">
-                        <p className="title is-5">{tutorial.title}</p>
+                  <div className='card-content'>
+                    <div className='media'>
+                      <div className='media-content'>
+                        <p className='title is-5'>{tutorial.title}</p>
                       </div>
                     </div>
 
-                    <div className="content">
-                      {tutorial.description}
-                    </div>
+                    <div className='content'>{tutorial.description}</div>
                   </div>
-                  <footer className="card-footer">
-                    <a href={`/tutorial/${tutorial.slug}`} className="card-footer-item has-text-weight-semibold">Read</a>
+                  <footer className='card-footer'>
+                    <a
+                      href={`/tutorial/${tutorial.slug}`}
+                      className='card-footer-item has-text-weight-semibold'
+                    >
+                      Read
+                    </a>
                   </footer>
                 </div>
               </div>
             );
-          })
-        }
+          })}
       </div>
     );
   }
@@ -60,15 +68,13 @@ const Tutorials: FunctionComponent = function() {
 
       <Download />
 
-      <div className="section">
-        <div className="container">
-          {tutorialsContent}
-        </div>
+      <div className='section'>
+        <div className='container'>{tutorialsContent}</div>
       </div>
 
       <Newsletter />
     </Layout>
   );
-}
+};
 
 export default Tutorials;

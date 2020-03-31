@@ -3,8 +3,11 @@ import Image from './image';
 
 const OpenSettingsGif: FunctionComponent = function() {
   return (
-    <Image src="/static/images/tutorials/open-settings.gif" alt="Open environment settings"/>
+    <Image
+      src='/images/tutorials/open-settings.gif'
+      alt='Open environment settings'
+    />
   );
-}
+};
 
 export default OpenSettingsGif;

@@ -4,12 +4,15 @@ import Spectrum from './spectrum';
 
 const Footer: FunctionComponent = function() {
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="content has-text-centered">
-          <p>&copy; Mockoon 2017 - present by <a href="https://github.com/255kb">255kb</a></p>
+    <footer className='footer'>
+      <div className='container'>
+        <div className='content has-text-centered'>
           <p>
-            <a href="https://spectrum.chat/mockoon">
+            &copy; Mockoon 2017 - present by{' '}
+            <a href='https://github.com/255kb'>255kb</a>
+          </p>
+          <p>
+            <a href='https://spectrum.chat/mockoon'>
               <Spectrum />
             </a>
           </p>
@@ -18,6 +21,6 @@ const Footer: FunctionComponent = function() {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

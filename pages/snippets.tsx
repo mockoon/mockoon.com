@@ -6,7 +6,9 @@ import Newsletter from '../components/newsletter';
 import Layout from '../layout/layout';
 
 const meta = {
-  title: 'Snippets', description: 'Search among dozens of mock data and endpoints snippets that you can reuse in Mockoon'
+  title: 'Snippets',
+  description:
+    'Search among dozens of mock data and endpoints snippets that you can reuse in Mockoon'
 };
 
 const Snippets: FunctionComponent = function() {
@@ -17,59 +19,65 @@ const Snippets: FunctionComponent = function() {
 
       <Download />
 
-      <div className="section">
-        <div className="container">
-          <div className="columns is-vcentered">
-            <div className="column is-one-quarter is-offset-one-quarter">
-              <div className="card">
-                <div className="card-image">
+      <div className='section'>
+        <div className='container'>
+          <div className='columns is-vcentered'>
+            <div className='column is-one-quarter is-offset-one-quarter'>
+              <div className='card'>
+                <div className='card-image'>
                   <a href={`/snippets/basic/json`}>
-                    <figure className="image">
-                      <img src="/static/images/tutorials/thumbnails/body.jpg" alt="" />
+                    <figure className='image'>
+                      <img src='/images/tutorials/thumbnails/body.jpg' alt='' />
                     </figure>
                   </a>
                 </div>
-                <div className="card-content">
-                  <div className="media">
-                    <div className="media-content">
-                      <p className="title is-5">Basic snippets</p>
+                <div className='card-content'>
+                  <div className='media'>
+                    <div className='media-content'>
+                      <p className='title is-5'>Basic snippets</p>
                     </div>
                   </div>
 
-                  <div className="content">
+                  <div className='content'>
                     JSON bodies, CSV generation, etc
                   </div>
                 </div>
-                <footer className="card-footer">
-                  <a href={`/snippets/basic/json`} className="card-footer-item has-text-weight-semibold">View</a>
+                <footer className='card-footer'>
+                  <a
+                    href={`/snippets/basic/json`}
+                    className='card-footer-item has-text-weight-semibold'
+                  >
+                    View
+                  </a>
                 </footer>
               </div>
             </div>
 
-            <div className="column is-one-quarter">
-              <div className="card">
-                <div className="card-image">
-                  <figure className="image">
-                    <img src="/static/images/tutorials/thumbnails/github.jpg" alt="" />
+            <div className='column is-one-quarter'>
+              <div className='card'>
+                <div className='card-image'>
+                  <figure className='image'>
+                    <img src='/images/tutorials/thumbnails/github.jpg' alt='' />
                   </figure>
                 </div>
-                <div className="card-content">
-                  <div className="media">
-                    <div className="media-content">
-                      <p className="title is-5">GitHub API snippets</p>
+                <div className='card-content'>
+                  <div className='media'>
+                    <div className='media-content'>
+                      <p className='title is-5'>GitHub API snippets</p>
                     </div>
                   </div>
 
-                  <div className="content">
+                  <div className='content'>
                     Ready to use routes and bodies from most used GitHub API
                   </div>
                 </div>
-                <footer className="card-footer">
-                  <p className="card-footer-item has-text-weight-semibold">Coming soon!</p>
+                <footer className='card-footer'>
+                  <p className='card-footer-item has-text-weight-semibold'>
+                    Coming soon!
+                  </p>
                 </footer>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -77,6 +85,6 @@ const Snippets: FunctionComponent = function() {
       <Newsletter />
     </Layout>
   );
-}
+};
 
 export default Snippets;

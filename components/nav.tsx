@@ -13,25 +13,50 @@ class Nav extends Component<any, { menuOpened: boolean }> {
   }
   render() {
     return (
-      <header className="navbar">
-        <div className="container">
-          <div className="navbar-brand">
-            <a href="/">
-              <img src="/static/images/logo.svg" className="logo" alt="Logo" width="150" />
+      <header className='navbar'>
+        <div className='container'>
+          <div className='navbar-brand'>
+            <a href='/'>
+              <img
+                src='/images/logo.svg'
+                className='logo'
+                alt='Logo'
+                width='150'
+              />
             </a>
 
-            <a role="button" className={`navbar-burger ${this.state.menuOpened ? 'is-active' : ''}`} aria-label="menu" aria-expanded="false" onClick={this.toggleMenu.bind(this)}>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
+            <a
+              role='button'
+              className={`navbar-burger ${
+                this.state.menuOpened ? 'is-active' : ''
+              }`}
+              aria-label='menu'
+              aria-expanded='false'
+              onClick={this.toggleMenu.bind(this)}
+            >
+              <span aria-hidden='true'></span>
+              <span aria-hidden='true'></span>
+              <span aria-hidden='true'></span>
             </a>
           </div>
-          <div className={`navbar-menu navbar-end ${this.state.menuOpened ? 'is-active' : ''}`}>
-            <a className="navbar-item" href="/features">Features</a>
-            <a className="navbar-item" href="/tutorials">Tutorials</a>
-            <a className="navbar-item" href="/snippets">Snippets</a>
-            <a className="navbar-item" href="/faq">FAQ</a>
-            <a className="navbar-item" href="https://spectrum.chat/mockoon">
+          <div
+            className={`navbar-menu navbar-end ${
+              this.state.menuOpened ? 'is-active' : ''
+            }`}
+          >
+            <a className='navbar-item' href='/features'>
+              Features
+            </a>
+            <a className='navbar-item' href='/tutorials'>
+              Tutorials
+            </a>
+            <a className='navbar-item' href='/snippets'>
+              Snippets
+            </a>
+            <a className='navbar-item' href='/faq'>
+              FAQ
+            </a>
+            <a className='navbar-item' href='https://spectrum.chat/mockoon'>
               <Spectrum />
             </a>
           </div>

@@ -100,6 +100,10 @@ const DynamicResponseWithTemplating: FunctionComponent = function() {
             default value if param is not present
           </li>
           <li>
+            <code>cookie 'cookie_name' 'default value'</code>: get the content
+            of a cookie or a default value if the cookie is not present
+          </li>
+          <li>
             <code>header 'Header-Name' 'default value'</code>: get content from
             any request header or a default value if header is not present
           </li>

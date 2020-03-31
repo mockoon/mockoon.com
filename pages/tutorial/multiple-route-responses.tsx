@@ -144,6 +144,9 @@ const MultipleRouteResponses: FunctionComponent = function() {
           Examples:
           <code>primary|secondary</code>, <code>^user1-9</code>,{' '}
           <code>UTF-.*</code>
+          <br />
+          You can even test for empty values with the following regex:{' '}
+          <code>^$|\s+</code>
         </p>
       </div>
     </Tutorial>

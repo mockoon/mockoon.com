@@ -119,8 +119,8 @@ const DynamicResponseWithTemplating: FunctionComponent = function() {
           <li>
             <code>now 'YYYY-MM-DD'</code>: display current time in the chosen
             format. Format syntax is based on{' '}
-            <a href='https://date-fns.org/v1.30.1/docs/format'>
-              date-fns package
+            <a href='https://date-fns.org/v2.11.1/docs/format'>
+              date-fns package (v2)
             </a>{' '}
             and is optional. Without providing it this helper will display an
             ISO string

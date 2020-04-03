@@ -22,7 +22,10 @@ const ApiMockingProxyMode: FunctionComponent = function () {
           </li>
         </ol>
       </div>
-      <OpenSettingsGif />
+      <Image
+        src='/images/tutorials/open-env-settings.png'
+        alt='Click on the cog (upper right corner'
+      />
       <div className='content'>
         <ol>
           <li value='2'>
@@ -34,8 +37,8 @@ const ApiMockingProxyMode: FunctionComponent = function () {
         </ol>
       </div>
       <Image
-        src='/images/tutorials/enable-proxy-mode.gif'
-        alt='Enable proxy mode'
+        src='/images/tutorials/enable-proxy-mode.png'
+        alt='Enable proxy mode by ticking the checkbox'
       />
       <div className='content'>
         <p>
@@ -43,6 +46,31 @@ const ApiMockingProxyMode: FunctionComponent = function () {
           any other request will be forwarded to the server defined in the proxy
           mode setting.
         </p>
+      </div>
+      <div className='content'>
+        <ol>
+          <li value='3'>
+            [Optional] Since v1.8.0, you can add{' '}
+            <strong>proxy headers</strong> for both the proxied request and the
+            response.
+          </li>
+        </ol>
+        <Image
+          src='/images/tutorials/proxy-headers.png'
+          alt='Add proxy headers by filling the keys and values'
+        />
+      </div>
+      <div className='content'>
+        <ul>
+          <li>
+            <strong>Proxy request headers</strong> will be automatically added
+            to the request sent to the proxied server.
+          </li>
+          <li>
+            <strong>Proxy response headers</strong> will be automatically added
+            to the response received from the proxied server.
+          </li>
+        </ul>
       </div>
     </Tutorial>
   );

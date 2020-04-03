@@ -127,7 +127,7 @@ const ImportExportEnvironmentsRoutes: FunctionComponent = function () {
       <div className='content'>
         <h3>2. Swagger/OpenAPI format</h3>
         <p>
-          Mockoon also supports import in both OpenAPI v2 (Swagger) and v3
+          Since v1.8.0, Mockoon also supports import in both OpenAPI v2 (Swagger) and v3
           formats. Environments can be exported to OpenAPI v3 format only.
         </p>
         <h4>Import environment from an OpenAPI v2 or v3 JSON/YAML file</h4>

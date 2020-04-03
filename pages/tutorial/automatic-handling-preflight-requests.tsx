@@ -9,7 +9,7 @@ const meta = {
     'Front and API are not on the same domain? Handle preflight requests automatically with Mockoon'
 };
 
-const AutomaticHandlingPreflightRequests: FunctionComponent = function() {
+const AutomaticHandlingPreflightRequests: FunctionComponent = function () {
   return (
     <Tutorial meta={meta}>
       <div className='content'>

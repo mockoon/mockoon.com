@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 
-const Donate: FunctionComponent = function() {
+const Donate: FunctionComponent = function () {
   return (
     <section className='section is-light'>
       <div className='container has-text-centered has-text-weight-semibold'>

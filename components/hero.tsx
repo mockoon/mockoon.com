@@ -6,7 +6,7 @@ const Hero: FunctionComponent<{
   subtitle?: string;
   withDownloadCTA?: boolean;
   mainPicture?: string;
-}> = function(props) {
+}> = function (props) {
   return (
     <section className='hero is-small'>
       <div className='hero-head'>

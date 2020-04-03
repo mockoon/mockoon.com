@@ -8,7 +8,7 @@ import Meta from './meta';
 
 const Tutorial: FunctionComponent<{
   meta: { title: string; description: string };
-}> = function(props) {
+}> = function (props) {
   return (
     <Layout>
       <Meta title={props.meta.title} description={props.meta.description} />

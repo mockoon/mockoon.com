@@ -8,7 +8,7 @@ const meta = {
     "Create dynamic responses for your mock server with Mockoon's templating system."
 };
 
-const DynamicResponseWithTemplating: FunctionComponent = function() {
+const DynamicResponseWithTemplating: FunctionComponent = function () {
   return (
     <Tutorial meta={meta}>
       <div className='content'>

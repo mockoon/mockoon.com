@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 
-const TutorialsBack: FunctionComponent = function() {
+const TutorialsBack: FunctionComponent = function () {
   return (
     <div className='content'>
       <h4 className='has-text-centered has-text-weight-semibold'>

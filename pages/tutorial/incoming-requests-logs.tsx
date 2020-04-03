@@ -8,7 +8,7 @@ const meta = {
     "Check how to access Mockoon's entering requests and outgoing responses logs for easier debugging"
 };
 
-const IncomingRequestsLogs: FunctionComponent = function() {
+const IncomingRequestsLogs: FunctionComponent = function () {
   return (
     <Tutorial meta={meta}>
       <div className='content'>

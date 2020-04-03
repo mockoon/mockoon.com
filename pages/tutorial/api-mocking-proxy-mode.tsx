@@ -9,7 +9,7 @@ const meta = {
     'Learn how to partially mock a REST API and proxy to another server with Mockoon.'
 };
 
-const ApiMockingProxyMode: FunctionComponent = function() {
+const ApiMockingProxyMode: FunctionComponent = function () {
   return (
     <Tutorial meta={meta}>
       <div className='content'>

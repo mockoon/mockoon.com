@@ -10,8 +10,6 @@ export const BasicSnippetsMenu: LeftNavItems = [
   },
   {
     label: 'Complete routes',
-    links: [
-      { title: 'Route', slug: '/snippets/basic/complete-route' }
-    ]
+    links: [{ title: 'Route', slug: '/snippets/basic/complete-route' }]
   }
 ];

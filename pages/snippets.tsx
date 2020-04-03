@@ -11,7 +11,7 @@ const meta = {
     'Search among dozens of mock data and endpoints snippets that you can reuse in Mockoon'
 };
 
-const Snippets: FunctionComponent = function() {
+const Snippets: FunctionComponent = function () {
   return (
     <Layout>
       <Meta title={meta.title} description={meta.description} />

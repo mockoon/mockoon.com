@@ -9,7 +9,7 @@ type LeftNavLink = {
 
 export type LeftNavItems = LeftNavLabel[];
 
-const LeftNav: FunctionComponent<{ menuItems: LeftNavItems }> = props => {
+const LeftNav: FunctionComponent<{ menuItems: LeftNavItems }> = (props) => {
   const router = useRouter;
 
   return (

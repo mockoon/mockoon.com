@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 
-const Download: FunctionComponent = function() {
+const Download: FunctionComponent = function () {
   return (
     <section className='section is-light'>
       <div className='container has-text-centered has-text-weight-semibold'>

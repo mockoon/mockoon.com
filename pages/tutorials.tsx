@@ -12,7 +12,7 @@ const meta = {
     "Learn how to use Mockoon's features and mock your REST server or API like a pro!"
 };
 
-const Tutorials: FunctionComponent = function() {
+const Tutorials: FunctionComponent = function () {
   const numberPerRow = 4;
   const numberOfRows = Math.ceil(tutorialsList.length / numberPerRow);
   const tutorialsContent = [];

@@ -14,7 +14,7 @@ const featuresList = [
   {
     title: 'Import / export',
     description:
-      'Environment import / export either from or to a file or the clipboard. <a href="/tutorial/import-export-environments-routes">Learn more</a>'
+      'Environment import / export with Swagger/OpenAPI format support. <a href="/tutorial/import-export-environments-routes">Learn more</a>'
   },
   {
     title: 'Route regex',
@@ -81,7 +81,7 @@ const featuresList = [
   }
 ];
 
-const Features: FunctionComponent = function() {
+const Features: FunctionComponent = function () {
   const numberOfRows = Math.ceil(featuresList.length / 3);
   const featuresContent = [];
 

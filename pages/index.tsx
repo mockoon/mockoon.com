@@ -21,7 +21,7 @@ class Index extends React.Component {
           title={meta.title}
           subtitle='Mockoon is the easiest and quickest way to run mock APIs locally.<br>No remote deployment, no account required, open source.'
           withDownloadCTA={true}
-          mainPicture='/images/screenshot.jpg'
+          mainPicture='/images/screenshot.png'
         />
 
         <section className='section' id='download'>
@@ -185,8 +185,8 @@ class Index extends React.Component {
                 <div className='content'>
                   <p className='title is-4'>... and more</p>
                   <p>
-                    Import / export, JSON templating, auto save, proxy mode,
-                    HTTPS, latency simulation, CORS support...
+                    Import / export, OpenAPI compatibility, JSON templating,
+                    auto save, proxy mode, HTTPS, CORS support...
                   </p>
                 </div>
               </div>
@@ -478,7 +478,7 @@ class Index extends React.Component {
                     <a
                       title='Share on Twitter'
                       href='http://twitter.com/share?url=https://mockoon.com&amp;text=Mockoon+is+the+easiest+and+quickest+way+to+run+mock+APIs+locally.+No+remote+deployment,+no+account+required,+open+source.&amp;via=255kb&amp;'
-                      onClick={event => {
+                      onClick={(event) => {
                         event.preventDefault();
                         window.open(
                           'http://twitter.com/share?url=https://mockoon.com&amp;text=Mockoon+is+the+easiest+and+quickest+way+to+run+mock+APIs+locally.+No+remote+deployment,+no+account+required,+open+source.%20%23RestAPI%20%23Prototyping%20%23DeveloperTools&amp;via=GetMockoon&amp;',
@@ -497,7 +497,7 @@ class Index extends React.Component {
                     <a
                       title='Share on Facebook'
                       href='http://www.facebook.com/sharer/sharer.php?u=https://mockoon.com'
-                      onClick={event => {
+                      onClick={(event) => {
                         event.preventDefault();
                         window.open(
                           'http://www.facebook.com/sharer/sharer.php?u=https://mockoon.com',

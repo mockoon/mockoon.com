@@ -5,42 +5,42 @@ import { FunctionComponent } from 'react';
 const meta = {
   title: 'Import and export environments and routes',
   description:
-    'Learn how to easily import and export your environments and routes in JSON format with Mockoon'
+    'Learn how to easily import and export your environments and routes in OpenAPI or Mockoon format'
 };
 
-const ImportExportEnvironmentsRoutes: FunctionComponent = function() {
+const ImportExportEnvironmentsRoutes: FunctionComponent = function () {
   return (
     <Tutorial meta={meta}>
       <div className='content'>
         <p>
-          Mockoon supports two types of import/export. Full import/export to
-          JSON files or a single environment or route directly copied to the
-          clipboard.
+          Mockoon supports import/export in two formats: Mockoon own format
+          (JSON) and Swagger (v2) or OpenAPI (v3) format.
         </p>
-        <h3>Export all environments to a JSON file</h3>
+        <h3>1. Mockoon's format</h3>
+        <h4>Export all environments to a JSON file</h4>
         <p>
-          To export all environments to a file, open the <strong>Tools</strong>{' '}
-          menu and select{' '}
+          To export all environments to a file, open the{' '}
+          <strong>Import/export</strong> menu, select{' '}
+          <strong>Mockoon's format</strong> and then{' '}
           <strong>Export all environments to a file (JSON)</strong>:
         </p>
       </div>
       <Image
-        src='/images/tutorials/export-all-environments.gif'
-        alt='Export all environments'
+        size='medium'
+        src='/images/tutorials/export-all.png'
+        alt='Click on Export all environments to a file (JSON)'
       />
       <div className='content'>
         <p>
-          Since v1.7.0, exported data is independent of Mockoon's version. They
-          can be imported in a more recent version and data will be
-          automatically migrated. Once migrated, environments cannot be imported
-          anymore in an older version. For older versions, exports are locked to
-          the version on which they are created and cannot be imported on a
-          different version.
+          Since v1.7.0, the environments exported in older versions will be
+          automatically migrated if imported in a more recent version. Once
+          migrated, environments cannot be imported anymore in an older version.
+          For versions prior 1.7.0, exports are locked to the version on which
+          they were created and cannot be imported on a different version.
         </p>
       </div>
-
       <div className='content'>
-        <h3>Single environment or route export to clipboard</h3>
+        <h4>Single environment or route export to clipboard</h4>
         <p>
           To export a specific environment or route's JSON data to the
           clipboard, right-click on the environment or route and select{' '}
@@ -48,68 +48,127 @@ const ImportExportEnvironmentsRoutes: FunctionComponent = function() {
         </p>
       </div>
       <Image
-        src='/images/tutorials/export-environment-clipboard.gif'
-        alt='Copy environment JSON data to the clipboard'
+        size='medium'
+        src='/images/tutorials/export-clipboard-env.png'
+        alt='Right click on an environment and click on Copy to clipboard (JSON)'
+      />
+      <Image
+        size='medium'
+        src='/images/tutorials/export-clipboard-route.png'
+        alt='Right click on a route and click on Copy to clipboard (JSON)'
       />
       <div className='content'>
         <p>
           Starting with v1.7.0, the resulting JSON is fully compatible with the
-          file-based import. It can either be imported through the "Import from
-          clipboard" feature, or copied in a JSON file and imported through the
-          "Import from a file" feature.
+          file-based import. It can either be imported through{' '}
+          <strong>Import/export</strong> > <strong>Mockoon's format</strong> >{' '}
+          <strong>Import from the clipboard</strong>, or copied in a JSON file
+          and imported through <strong>Import/export</strong> >{' '}
+          <strong>Mockoon's format</strong> >{' '}
+          <strong>Import from a file</strong>.
           <br />
-          One limitation: exported routes cannot be imported on a different
-          version of Mockoon as data migration are not played for routes.
+          One limitation: a single route copied to the clipboard cannot be
+          imported on a different version of Mockoon as data migration cannot be
+          applied on routes only.
         </p>
       </div>
-
       <div className='content'>
-        <h3>Import from a JSON file</h3>
+        <h4>Import from a JSON file</h4>
         <p>
-          To import data from a JSON file, open the <strong>Tools</strong> menu
-          and select <strong>Import from a file (JSON)</strong>:
+          To import data from a JSON file, open the{' '}
+          <strong>Import/export</strong> menu, select{' '}
+          <strong>Mockoon's format</strong> and then{' '}
+          <strong>Import from a file (JSON)</strong>:
         </p>
       </div>
       <Image
-        src='/images/tutorials/import-all-environments.gif'
-        alt='Import from a file'
+        size='medium'
+        src='/images/tutorials/import-file.png'
+        alt='Click on Import from a file'
       />
       <div className='content'>
         <p>
-          Any type of export can be imported from a JSON file: environments or
-          single environment and route copied to the clipboard and saved to a
-          JSON file. Environments imported from a file will be added at the end
-          of the environments list. No data will be overwritten even if imported
-          environments share the same names. Imported routes will be added to
-          the active environment.
+          Any type of export can be imported from a JSON file: environments JSON
+          files or single environment/route copied to the clipboard and saved to
+          a JSON file. Environments imported from a file will be added at the
+          end of the environments list. No data will be overwritten even if
+          imported environments share the same names. Imported routes will be
+          added to the active environment.
         </p>
       </div>
-
       <div className='content'>
-        <h3>Import from clipboard</h3>
+        <h4>Import from clipboard</h4>
         <p>
-          To import data from the clipboard, open the <strong>Tools</strong>{' '}
-          menu and select <strong>Import from clipboard</strong>:
+          To import data from the clipboard, open the{' '}
+          <strong>Import/export</strong> menu, select{' '}
+          <strong>Mockoon's format</strong> and then{' '}
+          <strong>Import from clipboard</strong>:
         </p>
       </div>
       <Image
-        src='/images/tutorials/import-environment-clipboard.gif'
-        alt='Import environment JSON data from the clipboard'
+        size='medium'
+        src='/images/tutorials/import-clipboard.png'
+        alt='Click on Import from clipboard'
       />
       <div className='content'>
         <p>
           Again, any type of exported data can be imported through this method.
         </p>
       </div>
-
       <div className='content'>
-        <h3>Note for older version</h3>
+        <h4>Note for older versions</h4>
         <p>
           Before v1.7.0, data exported through the clipboard method was not
           compatible with import from a file and vice versa. Also, exported data
           from one version couldn't be imported to another version of Mockoon.
           These limitations have been removed in v1.7.0
         </p>
+      </div>
+      <div className='content'>
+        <h3>2. Swagger/OpenAPI format</h3>
+        <p>
+          Mockoon also supports import in both OpenAPI v2 (Swagger) and v3
+          formats. Environments can be exported to OpenAPI v3 format only.
+        </p>
+        <h4>Import environment from an OpenAPI v2 or v3 JSON/YAML file</h4>
+        <p>
+          To import an environment from a file, open the{' '}
+          <strong>Import/export</strong> menu, select{' '}
+          <strong>Swagger/OpenAPI</strong> and then{' '}
+          <strong>Import Swagger v2/OpenAPI v3 (JSON or YAML)</strong>:
+        </p>
+      </div>{' '}
+      <Image
+        size='medium'
+        src='/images/tutorials/import-openapi.png'
+        alt='Click on Import Swagger v2/OpenAPI v3 (JSON or YAML)'
+      />{' '}
+      <div className='content'>
+        <h4>Export an environment to an OpenAPI v3 JSON file</h4>
+        <p>
+          To export an environment to a JSON file, open the{' '}
+          <strong>Import/export</strong> menu, select{' '}
+          <strong>Swagger/OpenAPI</strong> and then{' '}
+          <strong>Export current environment to OpenAPI v3 (JSON)</strong>:
+        </p>
+      </div>
+      <Image
+        size='medium'
+        src='/images/tutorials/export-openapi.png'
+        alt='Click on Export current environment to OpenAPI v3 (JSON)'
+      />
+      <div className='content'>
+        <p>
+          OpenAPI import and export currently support the following properties:
+        </p>
+        <ul>
+          <li>API title</li>
+          <li>Server URL, port, base path (prefix) and protocol</li>
+          <li>
+            Routes paths (including parameters), methods, responses with status
+            code (200, etc) and headers, and descriptions
+          </li>
+        </ul>
       </div>
     </Tutorial>
   );

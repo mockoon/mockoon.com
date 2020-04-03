@@ -7,7 +7,7 @@ import Layout from '../layout/layout';
 
 const meta = { title: 'Frequently asked questions' };
 
-const Faq: FunctionComponent = function() {
+const Faq: FunctionComponent = function () {
   return (
     <Layout>
       <Meta

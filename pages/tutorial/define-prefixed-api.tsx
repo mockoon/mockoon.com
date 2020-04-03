@@ -8,7 +8,7 @@ const meta = {
     'Want to prefix your mock server routes? Learn how to do it with Mockoon'
 };
 
-const DefinePrefixedApi: FunctionComponent = function() {
+const DefinePrefixedApi: FunctionComponent = function () {
   return (
     <Tutorial meta={meta}>
       <div className='content'>

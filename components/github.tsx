@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 
-const GitHub: FunctionComponent = function() {
+const GitHub: FunctionComponent = function () {
   return (
     <a
       className='github-button'

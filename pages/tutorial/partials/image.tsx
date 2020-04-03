@@ -4,7 +4,7 @@ const Image: FunctionComponent<{
   size?: 'medium';
   src: string;
   alt: string;
-}> = function(props) {
+}> = function (props) {
   return (
     <div className='columns'>
       <div

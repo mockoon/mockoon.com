@@ -4,7 +4,7 @@ import { FunctionComponent } from 'react';
 const Meta: FunctionComponent<{
   title: string;
   description: string;
-}> = function(props) {
+}> = function (props) {
   return (
     <Head>
       <title>{props.title} - Mockoon</title>

@@ -8,7 +8,7 @@ const meta = {
     'Mockoon can handle response headers at both environment and route levels for your mock server, learn how.'
 };
 
-const DefineResponseHeaders: FunctionComponent = function() {
+const DefineResponseHeaders: FunctionComponent = function () {
   return (
     <Tutorial meta={meta}>
       <div className='content'>

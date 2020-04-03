@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react';
 import GitHub from './github';
 import Spectrum from './spectrum';
 
-const Footer: FunctionComponent = function() {
+const Footer: FunctionComponent = function () {
   return (
     <footer className='footer'>
       <div className='container'>

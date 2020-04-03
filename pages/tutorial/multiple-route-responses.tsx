@@ -8,7 +8,7 @@ const meta = {
     'Multiple responses can be defined for each route with different body, headers and status. They are triggered with rules.'
 };
 
-const MultipleRouteResponses: FunctionComponent = function() {
+const MultipleRouteResponses: FunctionComponent = function () {
   return (
     <Tutorial meta={meta}>
       <div className='content'>

@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 
-const Spectrum: FunctionComponent = function() {
+const Spectrum: FunctionComponent = function () {
   return (
     <img
       src='https://withspectrum.github.io/badge/badge.svg'

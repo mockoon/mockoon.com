@@ -7,10 +7,8 @@ const meta = {
   title: 'Serve a mock API over TLS',
   description: 'Need to mock a secured API? Mockoon can also do this!'
 };
-/**
- * WIP
- */
-const ServeMockApiTls: FunctionComponent = function() {
+
+const ServeMockApiTls: FunctionComponent = function () {
   return (
     <Tutorial meta={meta}>
       <div className='content'>

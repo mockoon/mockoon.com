@@ -8,7 +8,8 @@ class Layout extends React.Component {
   componentDidMount() {
     // add AWS script
     const awsScript = document.createElement('script');
-    awsScript.src = '//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js';
+    awsScript.src =
+      '//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js';
     awsScript.async = true;
     awsScript.defer = true;
     document.body.appendChild(awsScript);
@@ -39,19 +40,42 @@ class Layout extends React.Component {
     return (
       <div>
         <Head>
-          <meta charSet="UTF-8" />
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-          <link rel="manifest" href="/manifest.json" />
-          <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252830" />
-          <meta name="theme-color" content="#ffffff" />
+          <meta charSet='UTF-8' />
+          <meta httpEquiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+          <meta
+            name='viewport'
+            content='width=device-width, initial-scale=1.0'
+          />
+          <link
+            rel='apple-touch-icon'
+            sizes='180x180'
+            href='/apple-touch-icon.png'
+          />
+          <link
+            rel='icon'
+            type='image/png'
+            sizes='32x32'
+            href='/favicon-32x32.png'
+          />
+          <link
+            rel='icon'
+            type='image/png'
+            sizes='16x16'
+            href='/favicon-16x16.png'
+          />
+          <link rel='manifest' href='/manifest.json' />
+          <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#252830' />
+          <meta name='theme-color' content='#ffffff' />
           {/* Buy me a coffee font */}
-          <link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet" />
+          <link
+            href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext'
+            rel='stylesheet'
+          />
           {/* Mailchimp newsletter form CSS */}
-          <link rel="stylesheet" href="https://cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" />
+          <link
+            rel='stylesheet'
+            href='https://cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css'
+          />
         </Head>
         {this.props.children}
         <Footer />

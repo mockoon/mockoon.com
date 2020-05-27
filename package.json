@@ -32,17 +32,23 @@
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
-    "bulma": "^0.8.1",
-    "next": "^9.3.3",
-    "node-sass": "^4.13.1",
+    "bulma": "^0.8.2",
+    "glob": "^7.1.6",
+    "gray-matter": "^4.0.2",
+    "next": "^9.4.0",
+    "node-sass": "^4.14.1",
+    "raw-loader": "^4.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-highlight": "^0.12.0"
+    "react-markdown": "^4.3.1"
   },
   "devDependencies": {
+    "@types/glob": "^7.1.1",
     "@types/node": "^13.9.8",
-    "@types/react": "^16.9.30",
-    "prettier": "^2.0.2",
+    "@types/react": "^16.9.35",
+    "@types/webpack": "^4.41.13",
+    "@types/webpack-env": "^1.15.2",
+    "prettier": "^2.0.5",
     "typescript": "^3.5.3"
   }
 }

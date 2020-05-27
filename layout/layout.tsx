@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
 import Footer from '../components/footer';
-import '../node_modules/highlight.js/styles/github-gist.css';
 import '../styles/style.scss';
 
 class Layout extends React.Component {

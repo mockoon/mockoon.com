@@ -50,6 +50,9 @@ class Nav extends Component<any, { menuOpened: boolean }> {
             <a className='navbar-item' href='/tutorials'>
               Tutorials
             </a>
+            <a className='navbar-item' href='/blog'>
+              Blog
+            </a>
             <a className='navbar-item' href='/faq'>
               FAQ
             </a>

@@ -1,10 +1,8 @@
 import Head from 'next/head';
 import { FunctionComponent } from 'react';
+import { MetaData } from '../models/common.model';
 
-const Meta: FunctionComponent<{
-  title: string;
-  description: string;
-}> = function (props) {
+const Meta: FunctionComponent<MetaData> = function (props) {
   return (
     <Head>
       <title>{props.title} - Mockoon</title>

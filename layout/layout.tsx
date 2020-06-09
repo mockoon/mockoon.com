@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
 import Footer from '../components/footer';
-import '../styles/style.scss';
 
 class Layout extends React.Component {
   componentDidMount() {

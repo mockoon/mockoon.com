@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react';
 import Nav from './nav';
 
 const Hero: FunctionComponent<{
-  title: string;
+  title?: string;
   subtitle?: string;
   withDownloadCTA?: boolean;
   mainPicture?: string;
@@ -15,12 +15,14 @@ const Hero: FunctionComponent<{
 
       <div className='hero-body'>
         <div className='container has-text-centered'>
-          <h1 className='title is-spaced'>{props.title}</h1>
+          {props.title && <h1 className='title is-spaced'>{props.title}</h1>}
 
-          <h2
-            className='subtitle mt20'
-            dangerouslySetInnerHTML={{ __html: props.subtitle }}
-          ></h2>
+          {props.subtitle && (
+            <h2
+              className='subtitle mt20'
+              dangerouslySetInnerHTML={{ __html: props.subtitle }}
+            ></h2>
+          )}
 
           {props.withDownloadCTA && (
             <p>

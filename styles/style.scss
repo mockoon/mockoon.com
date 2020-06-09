@@ -1,14 +1,17 @@
-@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import '../node_modules/bulma/sass/utilities/initial-variables';
 
-$blue: #1997c6;
+$blue: #03a9f4;
 $primary: $blue;
+$link-hover: darken($blue, 10%);
 
-@import "../node_modules/bulma/bulma.sass";
+@import '../node_modules/bulma/bulma.sass';
 
- @font-face {
+@import './material-icons.scss';
+
+@font-face {
   font-family: 'mockoon';
-  src:  url('/fonts/mockoon.eot?eu6upg');
-  src:  url('/fonts/mockoon.eot?eu6upg#iefix') format('embedded-opentype'),
+  src: url('/fonts/mockoon.eot?eu6upg');
+  src: url('/fonts/mockoon.eot?eu6upg#iefix') format('embedded-opentype'),
     url('/fonts/mockoon.ttf?eu6upg') format('truetype'),
     url('/fonts/mockoon.woff?eu6upg') format('woff'),
     url('/fonts/mockoon.svg?eu6upg#mockoon') format('svg');
@@ -16,7 +19,8 @@ $primary: $blue;
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^='icon-'],
+[class*=' icon-'] {
   font-family: 'mockoon' !important;
   speak: none;
   font-style: normal;
@@ -28,33 +32,34 @@ $primary: $blue;
   -moz-osx-font-smoothing: grayscale;
 }
 .icon-download:before {
-  content: "\f019";
+  content: '\f019';
 }
 .icon-twitter:before {
-  content: "\f099";
+  content: '\f099';
 }
 .icon-facebook:before {
-  content: "\f09a";
+  content: '\f09a';
 }
 .icon-apple:before {
-  content: "\f179";
+  content: '\f179';
 }
 .icon-windows:before {
-  content: "\f17a";
+  content: '\f17a';
 }
 .icon-linux:before {
-  content: "\f17c";
+  content: '\f17c';
 }
 
-body {
-  background-color: #f5f5f5;
-}
-pre code, code {
-  color: $grey;
+pre code,
+code {
+  color: $body-color;
   white-space: pre;
   padding: 0 0.5rem;
   display: inline-block;
-  background-color: #efefef;
+  background-color: #e5e5e5;
+}
+pre code {
+  background-color: transparent;
 }
 hr {
   background-color: lighten($primary, 30%);
@@ -74,7 +79,7 @@ p.is-brand {
 .footer.is-brand {
   background-color: #f7f7f9;
 }
-.is-75{
+.is-75 {
   width: 75%;
 }
 .main-picture {
@@ -104,7 +109,7 @@ p.is-brand {
   width: 100%;
 }
 #mc_embed_signup .button {
-  background-color: #209cee;
+  background-color: #03a9f4;
 }
 
 #mc_embed_signup .button:hover {
@@ -143,40 +148,56 @@ p.is-brand {
     content: '';
     width: 75px;
     height: 26px;
-    background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6895133053221288) 18%, rgba(255,255,255,1) 71%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6895133053221288) 18%,
+      rgba(255, 255, 255, 1) 71%
+    );
   }
 }
 
 .card .media:not(:last-child) {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
+.menu-list {
+  a {
+    i {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+  }
+  a:not(.is-active) i {
+    color: $primary;
+  }
+}
 
 // Buy me a coffee button styles
-.bmc-button img{
+.bmc-button img {
   width: 27px !important;
   margin-bottom: 3px !important;
   box-shadow: none !important;
   border: none !important;
   vertical-align: middle !important;
 }
-.bmc-button{
+.bmc-button {
   line-height: 36px !important;
-  height:37px !important;
+  height: 37px !important;
   text-decoration: none !important;
-  display:inline-block !important;
-  color:#000000 !important;
-  background-color:#FFFFFF !important;
+  display: inline-block !important;
+  color: #000000 !important;
+  background-color: #ffffff !important;
   border-radius: 3px !important;
   border: 1px solid transparent !important;
   padding: 0px 9px !important;
   font-size: 17px !important;
-  letter-spacing:-0.08px !important;;
+  letter-spacing: -0.08px !important;
   box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;
   -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
   margin: 0 auto !important;
-  font-family:'Lato', sans-serif !important;
+  font-family: 'Lato', sans-serif !important;
   -webkit-box-sizing: border-box !important;
   box-sizing: border-box !important;
   -o-transition: 0.3s all linear !important;
@@ -185,12 +206,14 @@ p.is-brand {
   -ms-transition: 0.3s all linear !important;
   transition: 0.3s all linear !important;
 }
-.bmc-button:hover, .bmc-button:active, .bmc-button:focus {
+.bmc-button:hover,
+.bmc-button:active,
+.bmc-button:focus {
   -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
   text-decoration: none !important;
   box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
   opacity: 0.85 !important;
-  color:#000000 !important;
+  color: #000000 !important;
 }
 
 .hljs {

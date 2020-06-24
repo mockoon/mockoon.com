@@ -166,6 +166,18 @@ Neida,Durrett,PN
 Vaughn,Neal,MO
 ```
 
+###### Disable body and file templating 
+
+Templating can be disabled for the body and file content in each route response separately. Thus, no helper will be interpreted by the templating engine.
+
+First, open the **Route response settings**:
+
+![click on route response fourth settings tab](/images/docs/open-route-response-settings.png)
+
+Then, disable the templating by checking the box: 
+
+![check the disable templating box](/images/docs/disable-route-response-templating.png)
+
 ##### File input templating
 
 Templating is also supported in the **file input field**. It allows to dynamically serve files depending on the request parameters, like `urlParam` or any other helper. Example:

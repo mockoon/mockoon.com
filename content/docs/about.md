@@ -10,6 +10,6 @@ meta:
 
 ---
 
-This documentation covers Mockoon's most used features and some topics.
+This documentation covers Mockoon's most used features and options.
 
 If you found any missing or erroneous information, please open an issue on the [website's repository](https://github.com/mockoon/mockoon.com).

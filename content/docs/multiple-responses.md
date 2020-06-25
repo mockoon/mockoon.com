@@ -12,11 +12,15 @@ meta:
 
 For each route, multiple responses can be defined (status, body, and headers) and triggered using a set of rules.
 
-### Adding a response
+### Adding or duplicating a response
 
- To add a response to your route, click on the "plus" icon next to the responses list:
- 
+To **add** a new response to your route, click on the "plus" icon next to the responses list:
+
 ![Click on the icon to add a new response](/images/docs/add-route-response.png)
+
+You can also **duplicate** an existing route response by clicking on the "copy" icon on the right:
+
+![Click on the copy icon to duplicate a response](/images/docs/duplicate-route-response.png)
 
 #### Default route response
 

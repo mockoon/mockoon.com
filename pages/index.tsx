@@ -22,6 +22,7 @@ class Index extends React.Component {
           subtitle='Mockoon is the easiest and quickest way to run mock APIs locally.<br>No remote deployment, no account required, open source.'
           withDownloadCTA={true}
           mainPicture='/images/screenshot.png'
+          mainPictureAlt='Application screenshot'
         />
 
         <section className='section' id='download'>
@@ -156,7 +157,10 @@ class Index extends React.Component {
             <div className='columns'>
               <div className='column has-text-centered'>
                 <figure className='image rounded is-75 cb mb20'>
-                  <img src='/images/feature1.jpg' />
+                  <img
+                    src='/images/feature1.jpg'
+                    alt='Mockoon routes list view'
+                  />
                 </figure>
                 <div className='content'>
                   <p className='title is-4'>Unlimited fast mocking</p>
@@ -168,7 +172,7 @@ class Index extends React.Component {
               </div>
               <div className='column has-text-centered'>
                 <figure className='image rounded is-75 cb mb20'>
-                  <img src='/images/feature2.jpg' />
+                  <img src='/images/feature2.jpg' alt='Routes configuration' />
                 </figure>
                 <div className='content'>
                   <p className='title is-4'>Complete control</p>
@@ -180,7 +184,7 @@ class Index extends React.Component {
               </div>
               <div className='column has-text-centered'>
                 <figure className='image rounded is-75 cb mb20'>
-                  <img src='/images/feature3.jpg' />
+                  <img src='/images/feature3.jpg' alt='Routes JSON body' />
                 </figure>
                 <div className='content'>
                   <p className='title is-4'>... and more</p>
@@ -219,21 +223,30 @@ class Index extends React.Component {
                   data-lang='en'
                 >
                   <p lang='en' dir='ltr'>
-                    If you’re a mobile/frontend developer and you’re suffering
-                    with DEV environment, start mocking your APIs with{' '}
-                    <a href='https://twitter.com/GetMockoon?ref_src=twsrc%5Etfw'>
-                      @GetMockoon
-                    </a>{' '}
-                    . It’s amazing! Thanks,{' '}
-                    <a href='https://twitter.com/255kb?ref_src=twsrc%5Etfw'>
-                      @255kb
-                    </a>{' '}
-                    for creating this! I’m using every time that I develop new
-                    iOS projects!
+                    Mockoon is the best! It&#39;s the easiest and quickest way
+                    to mock APIs locally.
                   </p>
-                  &mdash; Sr. Décio Montanhani (@deciomontanhani){' '}
-                  <a href='https://twitter.com/deciomontanhani/status/1211713659824754689?ref_src=twsrc%5Etfw'>
-                    December 30, 2019
+                  &mdash; Chuma Umenze (@chumaumenze){' '}
+                  <a href='https://twitter.com/chumaumenze/status/1276429472057765888?ref_src=twsrc%5Etfw'>
+                    June 26, 2020
+                  </a>
+                </blockquote>
+              </div>
+              <div className='column is-one-quarter'>
+                <blockquote
+                  className='twitter-tweet'
+                  data-cards='hidden'
+                  data-dnt='true'
+                  data-conversation='none'
+                  data-lang='en'
+                >
+                  <p lang='en' dir='ltr'>
+                    I’ve used Mockoon to mock the API of a mobile app and it is
+                    so useful for edge scenarios.
+                  </p>
+                  &mdash; Bruno Dias (@brunoald){' '}
+                  <a href='https://twitter.com/brunoald/status/1276317161200418816?ref_src=twsrc%5Etfw'>
+                    June 26, 2020
                   </a>
                 </blockquote>
               </div>
@@ -264,6 +277,7 @@ class Index extends React.Component {
                   </a>
                 </blockquote>
               </div>
+
               <div className='column is-one-quarter'>
                 <blockquote
                   className='twitter-tweet'
@@ -291,6 +305,8 @@ class Index extends React.Component {
                   </a>
                 </blockquote>
               </div>
+            </div>
+            <div className='columns'>
               <div className='column is-one-quarter'>
                 <blockquote
                   className='twitter-tweet'
@@ -337,8 +353,6 @@ class Index extends React.Component {
                   </a>
                 </blockquote>
               </div>
-            </div>
-            <div className='columns'>
               <div className='column is-one-quarter'>
                 <blockquote
                   className='twitter-tweet'
@@ -368,6 +382,33 @@ class Index extends React.Component {
                   data-lang='en'
                 >
                   <p lang='en' dir='ltr'>
+                    If you’re a mobile/frontend developer and you’re suffering
+                    with DEV environment, start mocking your APIs with{' '}
+                    <a href='https://twitter.com/GetMockoon?ref_src=twsrc%5Etfw'>
+                      @GetMockoon
+                    </a>{' '}
+                    . It’s amazing! Thanks,{' '}
+                    <a href='https://twitter.com/255kb?ref_src=twsrc%5Etfw'>
+                      @255kb
+                    </a>{' '}
+                    for creating this! I’m using every time that I develop new
+                    iOS projects!
+                  </p>
+                  &mdash; Sr. Décio Montanhani (@deciomontanhani){' '}
+                  <a href='https://twitter.com/deciomontanhani/status/1211713659824754689?ref_src=twsrc%5Etfw'>
+                    December 30, 2019
+                  </a>
+                </blockquote>
+              </div>
+              <div className='column is-one-quarter'>
+                <blockquote
+                  className='twitter-tweet'
+                  data-cards='hidden'
+                  data-dnt='true'
+                  data-conversation='none'
+                  data-lang='en'
+                >
+                  <p lang='en' dir='ltr'>
                     Developers! Mockoon is the easiest and quickest way to run
                     mock APIs locally. No remote deployment, no account
                     required, open source.
@@ -384,72 +425,6 @@ class Index extends React.Component {
                   &mdash; Ubuntu (@ubuntu){' '}
                   <a href='https://twitter.com/ubuntu/status/1185862564955279360?ref_src=twsrc%5Etfw'>
                     October 20, 2019
-                  </a>
-                </blockquote>
-              </div>
-              <div className='column is-one-quarter'>
-                <blockquote
-                  className='twitter-tweet'
-                  data-cards='hidden'
-                  data-dnt='true'
-                  data-conversation='none'
-                  data-lang='en'
-                >
-                  <p lang='en' dir='ltr'>
-                    Found{' '}
-                    <a href='https://twitter.com/hashtag/Mockoon?src=hash&amp;ref_src=twsrc%5Etfw'>
-                      #Mockoon
-                    </a>{' '}
-                    yesterday and have been using it to debug some{' '}
-                    <a href='https://twitter.com/hashtag/API?src=hash&amp;ref_src=twsrc%5Etfw'>
-                      #API
-                    </a>{' '}
-                    calls today. Very convenient little tool!{' '}
-                    <a href='https://twitter.com/hashtag/BusinessCentral?src=hash&amp;ref_src=twsrc%5Etfw'>
-                      #BusinessCentral
-                    </a>{' '}
-                    <a href='https://twitter.com/hashtag/webservice?src=hash&amp;ref_src=twsrc%5Etfw'>
-                      #webservice
-                    </a>{' '}
-                    <a href='https://twitter.com/hashtag/REST?src=hash&amp;ref_src=twsrc%5Etfw'>
-                      #REST
-                    </a>{' '}
-                    <a href='https://twitter.com/hashtag/JSON?src=hash&amp;ref_src=twsrc%5Etfw'>
-                      #JSON
-                    </a>{' '}
-                    <a href='https://t.co/W67Br0ps01'>
-                      https://t.co/W67Br0ps01
-                    </a>
-                  </p>
-                  &mdash; Kevin 🚴🏽‍♂️ (@365BCycle){' '}
-                  <a href='https://twitter.com/365BCycle/status/1161669683734622213?ref_src=twsrc%5Etfw'>
-                    August 14, 2019
-                  </a>
-                </blockquote>
-              </div>
-              <div className='column is-one-quarter'>
-                <blockquote
-                  className='twitter-tweet'
-                  data-cards='hidden'
-                  data-dnt='true'
-                  data-conversation='none'
-                  data-lang='en'
-                >
-                  <p lang='en' dir='ltr'>
-                    OMG Mockoon, where have you been all these years?!{' '}
-                    <a href='https://t.co/8xnuDTLSZE'>
-                      https://t.co/8xnuDTLSZE
-                    </a>
-                    <br />
-                    Thank you{' '}
-                    <a href='https://twitter.com/255kb?ref_src=twsrc%5Etfw'>
-                      @255kb
-                    </a>
-                    !
-                  </p>
-                  &mdash; Benjamin Reitzammer (@benjamin){' '}
-                  <a href='https://twitter.com/benjamin/status/1097149234183397378?ref_src=twsrc%5Etfw'>
-                    17 février 2019
                   </a>
                 </blockquote>
               </div>

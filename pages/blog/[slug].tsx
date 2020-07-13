@@ -1,5 +1,6 @@
 import { sync } from 'glob';
 import matter from 'gray-matter';
+import Head from 'next/head';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Download from '../../components/download';
@@ -43,6 +44,12 @@ export default function (props: {
 }) {
   return (
     <Layout>
+      {props.articleData.canonical && (
+        <Head>
+          <link rel='canonical' href={props.articleData.canonical} />
+        </Head>
+      )}
+
       <Meta
         title={props.articleData.meta.title}
         description={props.articleData.meta.description}

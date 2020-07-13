@@ -4,7 +4,6 @@ const Newsletter: FunctionComponent = function () {
   return (
     <section className='section is-light'>
       <div className='container has-text-centered has-text-weight-semibold'>
-        <p>Join Mockoon's mailing list to receive latest updates</p>
         <div id='mc_embed_signup'>
           <form
             action='https://mockoon.us17.list-manage.com/subscribe/post?u=a8822ec82cbe40c6dc5564bd4&amp;id=e054c8a3a4'
@@ -16,13 +15,15 @@ const Newsletter: FunctionComponent = function () {
             noValidate
           >
             <div id='mc_embed_signup_scroll'>
+              <label htmlFor='mce-EMAIL'>
+                Enter your email address to receive Mockoon's latest updates:
+              </label>
               <input
                 type='email'
-                defaultValue=''
                 name='EMAIL'
                 className='email'
                 id='mce-EMAIL'
-                placeholder='email address'
+                aria-required="true"
                 required
               />
               <div

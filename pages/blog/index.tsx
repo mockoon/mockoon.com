@@ -41,7 +41,6 @@ const Blog: FunctionComponent<{
 }> = function (props) {
   return (
     <Layout>
-      {' '}
       <style jsx>{`
         .card {
           margin-bottom: 30px;

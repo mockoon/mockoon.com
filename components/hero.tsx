@@ -6,6 +6,7 @@ const Hero: FunctionComponent<{
   subtitle?: string;
   withDownloadCTA?: boolean;
   mainPicture?: string;
+  mainPictureAlt?: string;
 }> = function (props) {
   return (
     <section className='hero is-small'>
@@ -36,7 +37,7 @@ const Hero: FunctionComponent<{
 
       {props.mainPicture && (
         <figure className='image rounded main-picture cb'>
-          <img src={props.mainPicture} />
+          <img src={props.mainPicture} alt={props.mainPictureAlt} />
         </figure>
       )}
     </section>

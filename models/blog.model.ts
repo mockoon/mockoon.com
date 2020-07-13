@@ -5,4 +5,5 @@ export type ArticleData = {
   excerpt: string;
   date: string;
   meta: MetaData;
+  canonical?: string;
 };

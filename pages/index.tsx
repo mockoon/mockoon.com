@@ -223,6 +223,33 @@ class Index extends React.Component {
                   data-lang='en'
                 >
                   <p lang='en' dir='ltr'>
+                    I can wholeheartedly recommend{' '}
+                    <a href='https://twitter.com/GetMockoon?ref_src=twsrc%5Etfw'>
+                      @GetMockoon
+                    </a>{' '}
+                    if you&#39;re looking for an easy way to{' '}
+                    <a href='https://twitter.com/hashtag/mock?src=hash&amp;ref_src=twsrc%5Etfw'>
+                      #mock
+                    </a>{' '}
+                    Http-Endpoints locally.
+                    <br />
+                    This tool just works, it&#39;s super intuitive. Love it.❤️
+                  </p>
+                  &mdash; Alexandros (@KechaAlex){' '}
+                  <a href='https://twitter.com/KechaAlex/status/1283134297067618306?ref_src=twsrc%5Etfw'>
+                    July 14, 2020
+                  </a>
+                </blockquote>
+              </div>
+              <div className='column is-one-quarter'>
+                <blockquote
+                  className='twitter-tweet'
+                  data-cards='hidden'
+                  data-dnt='true'
+                  data-conversation='none'
+                  data-lang='en'
+                >
+                  <p lang='en' dir='ltr'>
                     Mockoon is the best! It&#39;s the easiest and quickest way
                     to mock APIs locally.
                   </p>
@@ -277,7 +304,8 @@ class Index extends React.Component {
                   </a>
                 </blockquote>
               </div>
-
+            </div>
+            <div className='columns'>
               <div className='column is-one-quarter'>
                 <blockquote
                   className='twitter-tweet'
@@ -305,8 +333,6 @@ class Index extends React.Component {
                   </a>
                 </blockquote>
               </div>
-            </div>
-            <div className='columns'>
               <div className='column is-one-quarter'>
                 <blockquote
                   className='twitter-tweet'
@@ -397,34 +423,6 @@ class Index extends React.Component {
                   &mdash; Sr. Décio Montanhani (@deciomontanhani){' '}
                   <a href='https://twitter.com/deciomontanhani/status/1211713659824754689?ref_src=twsrc%5Etfw'>
                     December 30, 2019
-                  </a>
-                </blockquote>
-              </div>
-              <div className='column is-one-quarter'>
-                <blockquote
-                  className='twitter-tweet'
-                  data-cards='hidden'
-                  data-dnt='true'
-                  data-conversation='none'
-                  data-lang='en'
-                >
-                  <p lang='en' dir='ltr'>
-                    Developers! Mockoon is the easiest and quickest way to run
-                    mock APIs locally. No remote deployment, no account
-                    required, open source.
-                    <br />
-                    <br />
-                    snap install mockoon
-                    <a href='https://t.co/MRDS2orVZs'>
-                      https://t.co/MRDS2orVZs
-                    </a>{' '}
-                    <a href='https://t.co/xCDBaWXHsY'>
-                      pic.twitter.com/xCDBaWXHsY
-                    </a>
-                  </p>
-                  &mdash; Ubuntu (@ubuntu){' '}
-                  <a href='https://twitter.com/ubuntu/status/1185862564955279360?ref_src=twsrc%5Etfw'>
-                    October 20, 2019
                   </a>
                 </blockquote>
               </div>

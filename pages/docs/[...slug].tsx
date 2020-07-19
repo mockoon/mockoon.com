@@ -88,6 +88,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
+      slug: `docs/${params.slug.join('/')}`,
       navItems: topics.list.map((topic) => ({
         title: topic.data.title,
         icon: topic.data.icon || null,
@@ -102,6 +103,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function (props: {
+  slug: string;
   navItems: DocsNavData;
   topicData: DocsTopicData;
   topicBody: string;
@@ -134,18 +136,6 @@ export default function (props: {
     router.push(`/docs/${event.target.value}/about`);
   };
 
-  const buildVersionMenuName = (version: string) => {
-    if (version === 'latest') {
-      return `v${latestVersion} (${version})`;
-    }
-
-    if (version === 'v1.7.0') {
-      return `${version} (and older)`;
-    }
-
-    return version;
-  };
-
   const transformLinkUri = (uri: string) => {
     if (uri.includes('docs:')) {
       uri.split(':');
@@ -171,6 +161,8 @@ export default function (props: {
       <Meta
         title={props.topicData.meta.title}
         description={props.topicData.meta.description}
+        ogType='article'
+        url={`/${props.slug}`}
       />
       <Hero title='Documentation' withDownloadCTA={false} />
 

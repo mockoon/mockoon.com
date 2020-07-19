@@ -16,6 +16,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
+      slug: `blog/${params.slug}`,
       articleData: parsedContent.data,
       articleBody: parsedContent.content
     }
@@ -39,6 +40,7 @@ export async function getStaticPaths() {
 }
 
 export default function (props: {
+  slug: string;
   articleData: ArticleData;
   articleBody: string;
 }) {
@@ -53,7 +55,10 @@ export default function (props: {
       <Meta
         title={props.articleData.meta.title}
         description={props.articleData.meta.description}
+        ogType='article'
+        url={`/${props.slug}`}
       />
+
       <Hero
         title={props.articleData.meta.title}
         subtitle={props.articleData.meta.description}

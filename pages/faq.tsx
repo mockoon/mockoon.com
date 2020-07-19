@@ -13,6 +13,7 @@ const Faq: FunctionComponent = function () {
       <Meta
         title={meta.title}
         description='Find the most frequently asked question about Mockoon, the free desktop server mocking application.'
+        ogType='article'
       />
       <Hero title={meta.title} />
 

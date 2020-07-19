@@ -113,6 +113,7 @@ const Features: FunctionComponent = function () {
       <Meta
         title='Complete list of features'
         description='List of all features offered by Mockoon, the REST API mocking tool compatible with Windows, Mac and Linux.'
+        ogType='article'
       />
       <Hero title='Complete list of features' />
 

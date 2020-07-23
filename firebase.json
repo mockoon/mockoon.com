@@ -27,7 +27,7 @@
       },
       {
         "source": "/tutorial/api-mocking-proxy-mode",
-        "destination": "/proxy-mode",
+        "destination": "/docs/latest/proxy-mode",
         "type": 301
       },
       {

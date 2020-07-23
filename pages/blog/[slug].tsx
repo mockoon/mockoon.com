@@ -14,6 +14,8 @@ export async function getStaticProps({ params }) {
   const fileContent = await require(`../../content/blog/${params.slug}.md`);
   const parsedContent = matter(fileContent.default);
 
+  parsedContent.content = parsedContent.content.replace(/Issue #([0-9]+)/ig, '[Issue #$1](https://github.com/mockoon/mockoon/issues/$1)');
+
   return {
     props: {
       slug: `blog/${params.slug}`,
@@ -44,6 +46,12 @@ export default function (props: {
   articleData: ArticleData;
   articleBody: string;
 }) {
+  const linkTarget = (uri: string) => {
+    if (uri.startsWith('http')) {
+      return '_blank';
+    }
+  };
+
   return (
     <Layout>
       {props.articleData.canonical && (
@@ -71,7 +79,10 @@ export default function (props: {
           <div className='columns'>
             <div className='column is-8 is-offset-2'>
               <div className='content'>
-                <ReactMarkdown source={props.articleBody} />
+                <ReactMarkdown
+                  source={props.articleBody}
+                  linkTarget={linkTarget}
+                />
               </div>
             </div>
           </div>

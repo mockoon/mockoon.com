@@ -1,19 +1,28 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { FunctionComponent } from 'react';
+import { MetaData } from '../models/common.model';
 
-const Meta: FunctionComponent<{
-  title: string;
-  description: string;
-}> = function (props) {
+const rootUrl = 'https://mockoon.com';
+
+const Meta: FunctionComponent<MetaData> = function (props) {
+  const router = useRouter();
+
   return (
     <Head>
       <title>{props.title} - Mockoon</title>
       <meta name='description' content={props.description} />
-      <meta property='og:image' content='https://mockoon.com/images/main.jpg' />
-      <meta property='og:url' content='https://mockoon.com' />
+      <meta
+        property='og:image'
+        content={props.image || 'https://mockoon.com/images/screenshot.png'}
+      />
+      <meta
+        property='og:url'
+        content={rootUrl + (props.url ? props.url : router.pathname)}
+      />
       <meta property='og:title' content={'Mockoon - ' + props.title} />
       <meta property='og:description' content={props.description} />
-      <meta property='og:type' content='website' />
+      <meta property='og:type' content={props.ogType || 'website'} />
     </Head>
   );
 };

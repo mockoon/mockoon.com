@@ -2,10 +2,11 @@ import { FunctionComponent } from 'react';
 import Nav from './nav';
 
 const Hero: FunctionComponent<{
-  title: string;
+  title?: string;
   subtitle?: string;
   withDownloadCTA?: boolean;
   mainPicture?: string;
+  mainPictureAlt?: string;
 }> = function (props) {
   return (
     <section className='hero is-small'>
@@ -15,12 +16,14 @@ const Hero: FunctionComponent<{
 
       <div className='hero-body'>
         <div className='container has-text-centered'>
-          <h1 className='title is-spaced'>{props.title}</h1>
+          {props.title && <h1 className='title is-spaced'>{props.title}</h1>}
 
-          <h2
-            className='subtitle mt20'
-            dangerouslySetInnerHTML={{ __html: props.subtitle }}
-          ></h2>
+          {props.subtitle && (
+            <h2
+              className='subtitle mt20'
+              dangerouslySetInnerHTML={{ __html: props.subtitle }}
+            ></h2>
+          )}
 
           {props.withDownloadCTA && (
             <p>
@@ -34,7 +37,7 @@ const Hero: FunctionComponent<{
 
       {props.mainPicture && (
         <figure className='image rounded main-picture cb'>
-          <img src={props.mainPicture} />
+          <img src={props.mainPicture} alt={props.mainPictureAlt} />
         </figure>
       )}
     </section>

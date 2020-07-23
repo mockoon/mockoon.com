@@ -1,22 +1,27 @@
-@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import '../node_modules/bulma/sass/utilities/initial-variables';
 
-$blue: #1997c6;
+$blue: #008bca;
 $primary: $blue;
+$link-hover: darken($blue, 10%);
 
-@import "../node_modules/bulma/bulma.sass";
+@import '../node_modules/bulma/bulma.sass';
 
- @font-face {
+@import './material-icons.scss';
+
+@font-face {
   font-family: 'mockoon';
-  src:  url('/fonts/mockoon.eot?eu6upg');
-  src:  url('/fonts/mockoon.eot?eu6upg#iefix') format('embedded-opentype'),
+  src: url('/fonts/mockoon.eot?eu6upg');
+  src: url('/fonts/mockoon.eot?eu6upg#iefix') format('embedded-opentype'),
     url('/fonts/mockoon.ttf?eu6upg') format('truetype'),
     url('/fonts/mockoon.woff?eu6upg') format('woff'),
     url('/fonts/mockoon.svg?eu6upg#mockoon') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: auto;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^='icon-'],
+[class*=' icon-'] {
   font-family: 'mockoon' !important;
   speak: none;
   font-style: normal;
@@ -28,35 +33,38 @@ $primary: $blue;
   -moz-osx-font-smoothing: grayscale;
 }
 .icon-download:before {
-  content: "\f019";
+  content: '\f019';
 }
 .icon-twitter:before {
-  content: "\f099";
+  content: '\f099';
 }
 .icon-facebook:before {
-  content: "\f09a";
+  content: '\f09a';
 }
 .icon-apple:before {
-  content: "\f179";
+  content: '\f179';
 }
 .icon-windows:before {
-  content: "\f17a";
+  content: '\f17a';
 }
 .icon-linux:before {
-  content: "\f17c";
+  content: '\f17c';
 }
 
-body {
-  background-color: #f5f5f5;
-}
+pre code,
 code {
-  color: $grey;
+  color: $body-color;
   white-space: pre;
   padding: 0 0.5rem;
   display: inline-block;
-  background-color: #efefef;
+  background-color: #e5e5e5;
 }
-
+pre code {
+  background-color: transparent;
+}
+hr {
+  background-color: lighten($primary, 30%);
+}
 img.logo {
   height: 100%;
 }
@@ -72,7 +80,7 @@ p.is-brand {
 .footer.is-brand {
   background-color: #f7f7f9;
 }
-.is-75{
+.is-75 {
   width: 75%;
 }
 .main-picture {
@@ -83,27 +91,12 @@ p.is-brand {
 .section.is-light {
   background-color: #fbfbfb;
 }
+.section.is-xsmall {
+  padding: 0;
+}
 .cb {
   margin-left: auto;
   margin-right: auto;
-}
-
-#mc_embed_signup {
-  background: transparent;
-  clear: left;
-  font: 14px Arial, Helvetica, sans-serif;
-  margin: 0 auto;
-  width: 50%;
-}
-#mc_embed_signup div.response {
-  width: 100%;
-}
-#mc_embed_signup .button {
-  background-color: #209cee;
-}
-
-#mc_embed_signup .button:hover {
-  background-color: #118fe4;
 }
 
 .mt-40 {
@@ -128,7 +121,6 @@ p.is-brand {
   max-width: 50%;
 }
 .card-content {
-  height: 166px;
   position: relative;
   overflow: hidden;
 
@@ -139,40 +131,58 @@ p.is-brand {
     content: '';
     width: 75px;
     height: 26px;
-    background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6895133053221288) 18%, rgba(255,255,255,1) 71%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6895133053221288) 18%,
+      rgba(255, 255, 255, 1) 71%
+    );
   }
 }
 
 .card .media:not(:last-child) {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
+.menu-list {
+  a {
+    i {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+  }
+  a:not(.is-active) i {
+    color: $primary;
+  }
+}
 
 // Buy me a coffee button styles
-.bmc-button img{
+.bmc-button img {
   width: 27px !important;
   margin-bottom: 3px !important;
   box-shadow: none !important;
   border: none !important;
   vertical-align: middle !important;
 }
-.bmc-button{
+.bmc-button {
   line-height: 36px !important;
-  height:37px !important;
+  height: 37px !important;
   text-decoration: none !important;
-  display:inline-block !important;
-  color:#000000 !important;
-  background-color:#FFFFFF !important;
+  display: inline-block !important;
+  color: #000000 !important;
+  background-color: #ffffff !important;
   border-radius: 3px !important;
   border: 1px solid transparent !important;
   padding: 0px 9px !important;
   font-size: 17px !important;
-  letter-spacing:-0.08px !important;;
+  letter-spacing: -0.08px !important;
   box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;
   -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
   margin: 0 auto !important;
-  font-family:'Lato', sans-serif !important;
+  font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Helvetica', 'Arial', sans-serif !important;
   -webkit-box-sizing: border-box !important;
   box-sizing: border-box !important;
   -o-transition: 0.3s all linear !important;
@@ -181,14 +191,120 @@ p.is-brand {
   -ms-transition: 0.3s all linear !important;
   transition: 0.3s all linear !important;
 }
-.bmc-button:hover, .bmc-button:active, .bmc-button:focus {
+.bmc-button:hover,
+.bmc-button:active,
+.bmc-button:focus {
   -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
   text-decoration: none !important;
   box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
   opacity: 0.85 !important;
-  color:#000000 !important;
+  color: #000000 !important;
 }
 
 .hljs {
   border-radius: 5px;
+}
+
+/* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7
+Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
+#mc_embed_signup form {
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+.mc-field-group {
+  display: inline-block;
+} /* positions input field horizontally */
+#mc_embed_signup input.email {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, Verdana,
+    sans-serif;
+  font-size: 15px;
+  border: 1px solid #abb0b2;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: #343434;
+  background-color: #fff;
+  box-sizing: border-box;
+  height: 32px;
+  padding: 0px 0.4em;
+  display: inline-block;
+  margin: 0;
+  width: 350px;
+  vertical-align: top;
+}
+#mc_embed_signup label {
+  display: block;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+#mc_embed_signup .clear {
+  display: inline-block;
+} /* positions button horizontally in line with input */
+#mc_embed_signup .button {
+  font-size: 13px;
+  border: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  letter-spacing: 0.03em;
+  color: #fff;
+  background-color: $blue;
+  box-sizing: border-box;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 18px;
+  display: inline-block;
+  margin: 0;
+  transition: all 0.23s ease-in-out 0s;
+}
+#mc_embed_signup .button:hover {
+  background-color: darken($blue, 10%);
+  cursor: pointer;
+}
+#mc_embed_signup div#mce-responses {
+  float: left;
+  top: -1.4em;
+  padding: 0em 0.5em 0em 0.5em;
+  overflow: hidden;
+  width: 90%;
+  margin: 0 5%;
+  clear: both;
+}
+#mc_embed_signup div.response {
+  margin: 1em 0;
+  padding: 1em 0.5em 0.5em 0;
+  font-weight: bold;
+  float: left;
+  top: -1.5em;
+  z-index: 1;
+  width: 80%;
+}
+#mc_embed_signup #mce-error-response {
+  display: none;
+}
+#mc_embed_signup #mce-success-response {
+  color: #529214;
+  display: none;
+}
+#mc_embed_signup label.error {
+  display: block;
+  float: none;
+  width: auto;
+  margin-left: 1.05em;
+  text-align: left;
+  padding: 0.5em 0;
+}
+@media (max-width: 768px) {
+  #mc_embed_signup input.email {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  #mc_embed_signup .clear {
+    display: block;
+    width: 100%;
+  }
+  #mc_embed_signup .button {
+    width: 100%;
+    margin: 0;
+  }
 }

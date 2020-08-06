@@ -37,7 +37,11 @@ const Hero: FunctionComponent<{
 
       {props.mainPicture && (
         <figure className='image rounded main-picture cb'>
-          <img src={props.mainPicture} alt={props.mainPictureAlt} />
+          <img
+            src={props.mainPicture}
+            alt={props.mainPictureAlt}
+            loading='lazy'
+          />
         </figure>
       )}
     </section>

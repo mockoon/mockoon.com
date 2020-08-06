@@ -172,9 +172,14 @@ export default function (props: {
             <div className='column is-3'>
               <div className='content'>
                 <div className='select'>
-                  <select value={selectedVersion} onChange={switchVersion}>
+                  <select
+                    aria-label='Versions menu'
+                    value={selectedVersion}
+                    onChange={switchVersion}
+                  >
                     {versionsMenu.map((version, versionIndex) => (
                       <option
+                        aria-label={`Version ${version.label}`}
                         key={`version${versionIndex}`}
                         value={version.value}
                       >

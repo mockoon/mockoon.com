@@ -6,11 +6,11 @@ meta:
   description: Everything about Mockoon routing, API prefix, route parameters, query strings, and more
 ---
 
-### Routing
+## Routing
 
 ---
 
-#### API prefix
+### API prefix
 
 In order to prefix all your REST API routes, fill the **prefix** input at the top of the **environment options**:
 
@@ -20,23 +20,23 @@ The prefix will appear under your environment name in the environments list. All
 
 You need to restart the environment for the change to take effect.
 
-#### Routing 
+### Routing 
 
 Mockoon uses Express to run the mock servers. In general, most of the Express' documentation applies. Please refer to the [routing documentation](https://expressjs.com/en/guide/routing.html) for more information and examples on the following topics. 
 
-##### Route patterns
+#### Route patterns
 
 Routes support certain patterns. Here are some examples of the available ones:
 
 - `/ab?cd` will match `/acd` and `/abcd`.
 - `/ab+cd` will match `abcd`, `abbcd`, `abbbcd`, and so on.
 
-##### Route parameters
+#### Route parameters
 
 Route parameters can be defined in routes by using a colon `:`. The name of a parameter can only contains the following characters `A-Za-z0-9_`.  
 You can also retrieve the route parameters by using the `{{urlParam 'paramName'}}` [templating helper](docs:templating).
 
-##### Query parameters
+#### Query parameters
 
 Routes **must** be declared without query parameters as they are not part of the route path. They can only be added to the request when calling an endpoint.  
 Query parameters can be retrieved by using the `{{queryParam 'paramName'}}` [templating helper](docs:templating).

@@ -6,7 +6,7 @@ meta:
   description: Need to mock a secured API? Mockoon can also do this!
 ---
 
-### HTTPS mode
+## HTTPS mode
 
 ---
 

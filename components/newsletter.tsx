@@ -4,77 +4,56 @@ const Newsletter: FunctionComponent = function () {
   return (
     <section className='section is-light'>
       <div className='container has-text-centered has-text-weight-semibold'>
-        <div id='mc_embed_signup'>
+        <div>
           <form
             action='https://mockoon.us17.list-manage.com/subscribe/post?u=a8822ec82cbe40c6dc5564bd4&amp;id=e054c8a3a4'
             method='post'
-            id='mc-embedded-subscribe-form'
-            name='mc-embedded-subscribe-form'
-            className='validate'
             target='_blank'
             noValidate
           >
-            <div id='mc_embed_signup_scroll'>
-              <label htmlFor='mce-EMAIL'>
-                Enter your email address to receive Mockoon's latest updates:
-              </label>
+            <label className='label' htmlFor='newsletter-email'>
+              Enter your email address to receive Mockoon's latest updates:
+            </label>
+            <div className='field has-addons has-addons-centered'>
+              <div className='control'>
+                <input
+                  className='input'
+                  type='email'
+                  id='newsletter-email'
+                  name='EMAIL'
+                />
+              </div>
+              <div className='control'>
+                <button type='submit' className='button is-info'>
+                  Subscribe
+                </button>
+              </div>
+            </div>
+            <div
+              style={{ position: 'absolute', left: '-5000px' }}
+              aria-hidden='true'
+            >
               <input
-                type='email'
-                name='EMAIL'
-                className='email'
-                id='mce-EMAIL'
-                aria-required="true"
-                required
+                type='text'
+                name='b_a8822ec82cbe40c6dc5564bd4_e054c8a3a4'
+                tabIndex={-1}
               />
-              <div
-                style={{ position: 'absolute', left: -5000 + 'px' }}
-                aria-hidden='true'
-              >
-                <input
-                  type='text'
-                  name='b_a8822ec82cbe40c6dc5564bd4_e054c8a3a4'
-                  tabIndex={-1}
-                  defaultValue=''
-                />
-              </div>
-              <div className='clear'>
-                <input
-                  type='submit'
-                  defaultValue='Subscribe'
-                  name='subscribe'
-                  id='mc-embedded-subscribe'
-                  className='button'
-                />
-              </div>
-              <div
-                id='mce-responses'
-                className='clear'
-                style={{ float: 'none' }}
-              >
-                <div
-                  className='response'
-                  id='mce-error-response'
-                  style={{ display: 'none' }}
-                ></div>
-                <div
-                  className='response'
-                  id='mce-success-response'
-                  style={{ display: 'none' }}
-                ></div>
-              </div>
             </div>
           </form>
         </div>
+
         <p>Or follow us on Twitter</p>
         <a
-          href='https://twitter.com/GetMockoon?ref_src=twsrc%5Etfw'
-          className='twitter-follow-button'
-          data-size='large'
-          data-show-screen-name='false'
-          data-dnt='true'
-          data-show-count='false'
+          title='Follow us on Twitter'
+          rel='noopener'
+          href='https://twitter.com/intent/follow?screen_name=GetMockoon'
+          className='button is-primary twitter'
+          target='_blank'
         >
-          Follow @GetMockoon
+          <span className='icon'>
+            <i className='icon-twitter' aria-hidden='true'></i>
+          </span>
+          <span>Follow @GetMockoon</span>
         </a>
       </div>
     </section>

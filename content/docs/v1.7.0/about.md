@@ -6,7 +6,7 @@ meta:
   description: Get detailed information on Mockoon's features and options
 ---
 
-### About docs
+## About docs
 
 ---
 

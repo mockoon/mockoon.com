@@ -6,15 +6,15 @@ meta:
   description: Create dynamic responses for your mock server with Mockoon's templating system
 ---
 
-### Templating
+## Templating
 
 ---
 
 Mockoon implements [Handlebars](https://handlebarsjs.com/), [Dummy JSON](https://github.com/webroo/dummy-json), and a set of custom Handlebars helpers in order to create dynamic responses. This templating system is supported in the response's **body**, **headers**, **file content**, and **file path**.
 
-#### Helpers
+### Helpers
 
-##### Handlebars syntax and helpers
+#### Handlebars syntax and helpers
 
 All the helpers must be used according to Handlebars' syntax, for example: `{{helperName param1 param2}}`.
 
@@ -23,12 +23,12 @@ Also, parenthesis serves to prioritize a helper over another but not to symboliz
 
 All Handlebars helpers are available (`if`, `each`, etc.). For more information, please have a look at [Handlebars' documentation](https://handlebarsjs.com/).
 
-##### Dummy JSON helpers
+#### Dummy JSON helpers
 
 
 Dummy JSON offers lots of helpers: `repeat`, `int`, `float`, `date`, `time`, `title`, `firstName`, `lastName`, `company`, `latitude`, `longitude`, `domain`, `TLD`, `email`, `street`, `city`, `country`, `phone`, `color`, `hexColor`, `guid`, `ipv4`, `ipv6`, `lorem`, `lowercase`, `uppercase`, etc. Please have a look at [Dummy JSON documentation](https://github.com/webroo/dummy-json#available-helpers) to learn how to use them.
 
-##### Mockoon helpers
+#### Mockoon helpers
 
 In addition to these helpers, some custom ones have been added to Mockoon:
 
@@ -50,9 +50,9 @@ Mockoon also supports the following helpers which can return entering requests i
 - `method `: get request method (GET, PUT, POST, etc.).
 - `now 'YYYY-MM-DD'`: display the current time in the chosen format. Format syntax is based on [date-fns package (v2)](https://date-fns.org/v2.11.1/docs/format) and is optional (default to ISO string).
 
-#### Usages
+### Usages
 
-##### Body and file content templating
+#### Body and file content templating
 
 Templating will work in the body editor without consideration for the Content-Type that has been defined. It will also work with files content for a limited set of MIME types (`application/json`, `text/html`, `text/css`, `text/csv`, `application/javascript`, `application/typescript`, `text/plain`, `application/xhtml+xml`, `application/xml`).
 
@@ -156,7 +156,7 @@ Neida,Durrett,PN
 Vaughn,Neal,MO
 ```
 
-##### File input templating
+#### File input templating
 
 Templating is also supported in the **file input field**. It allows to dynamically serve files depending on the request parameters, like `urlParam` or any other helper. Example:
 
@@ -168,7 +168,7 @@ If you call this route with `/myroute/1`, `./file1.json` will be sent.
 
 ![add a templating helper in the file path](/images/docs/file-path-templating.png)
 
-##### Headers templating
+#### Headers templating
 
 Finally, templating helpers are also supported in the **headers values** both in route headers and environment headers:
 

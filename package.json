@@ -8,7 +8,7 @@
     "build": "next build",
     "export": "npm run build && next export",
     "start": "next start",
-    "deploy": "npm run export && firebase deploy --only hosting"
+    "deploy": "npm run export && firebase deploy --token \"$FIREBASE_TOKEN\" --only hosting"
   },
   "author": {
     "name": "Guillaume Monnet",

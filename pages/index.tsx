@@ -3,6 +3,7 @@ import Donate from '../components/donate';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Newsletter from '../components/newsletter';
+import Testimonial from '../components/testimonial';
 import Layout from '../layout/layout';
 const version = require('../package.json').version;
 
@@ -219,6 +220,210 @@ class Index extends React.Component {
         </section>
 
         <Donate />
+        <style jsx>{`
+          .media-content {
+            font-size: 0.2rem;
+          }
+        `}</style>
+        <section className='section' id='testimonials'>
+          <div className='container'>
+            <div className='columns'>
+              <div className='column has-text-centered'>
+                <h1 className='title'>What developers say</h1>
+              </div>
+            </div>
+
+            <div className='columns'>
+              <div className='column is-one-quarter'>
+                <Testimonial
+                  link='https://twitter.com/KechaAlex/status/1283134297067618306'
+                  imgSrc='https://pbs.twimg.com/profile_images/1282035290010419204/_9NFn5MH_400x400.jpg'
+                  name='Alexandros'
+                  username='@KechaAlex'
+                >
+                  I can wholeheartedly recommend{' '}
+                  <a
+                    href='https://twitter.com/GetMockoon'
+                    rel='noopener'
+                    target='_blank'
+                  >
+                    @GetMockoon
+                  </a>{' '}
+                  if you're looking for an easy way to{' '}
+                  <a
+                    href='https://twitter.com/hashtag/mock'
+                    rel='noopener'
+                    target='_blank'
+                  >
+                    #mock
+                  </a>{' '}
+                  Http-Endpoints locally.
+                  <br />
+                  This tool just works, it's super intuitive. Love it.❤️
+                </Testimonial>
+              </div>
+              <div className='column is-one-quarter'>
+                <Testimonial
+                  link='https://twitter.com/chumaumenze/status/1276429472057765888'
+                  imgSrc='https://pbs.twimg.com/profile_images/1236001968872660992/OfPPfWh9_400x400.jpg'
+                  name='Chuma Umenze'
+                  username='@chumaumenze'
+                >
+                  Mockoon is the best! It's the easiest and quickest way to mock
+                  APIs locally.
+                </Testimonial>
+              </div>
+              <div className='column is-one-quarter'>
+                <Testimonial
+                  link='https://twitter.com/brunoald/status/1276317161200418816'
+                  imgSrc='https://pbs.twimg.com/profile_images/654677512358748160/uoB8Zjj9_400x400.jpg'
+                  name='Bruno Dias'
+                  username='@brunoald'
+                >
+                  I've used Mockoon to mock the API of a mobile app and it is so
+                  useful for edge scenarios.
+                </Testimonial>
+              </div>
+              <div className='column is-one-quarter'>
+                <Testimonial
+                  link='https://twitter.com/rubeshgain/status/1243557172988051456'
+                  imgSrc='https://pbs.twimg.com/profile_images/814759962119270400/F3baAGfY_400x400.jpg'
+                  name='Rubesh Gain'
+                  username='@rubeshgain'
+                >
+                  OMG its a life saving tool for FrontEnd and FullStack
+                  developer. Mockoon is the easiest and quickest way to run mock
+                  APIs locally. No remote deployment, no account required, open
+                  source.
+                </Testimonial>
+              </div>
+            </div>
+            <div className='columns'>
+              <div className='column is-one-quarter'>
+                <Testimonial
+                  link='https://twitter.com/nQaze/status/1239577212883554310'
+                  imgSrc='https://pbs.twimg.com/profile_images/1292399444613201920/NFa3Y9Uk_400x400.jpg'
+                  name='Nabil Kazi'
+                  username='@nQaze'
+                >
+                  Forgot to mention an important part of this article. I am
+                  leveraging{' '}
+                  <a
+                    href='https://twitter.com/GetMockoon'
+                    rel='noopener'
+                    target='_blank'
+                  >
+                    @GetMockoon
+                  </a>{' '}
+                  to implement the APIs! <br />
+                  All credit to{' '}
+                  <a
+                    href='https://twitter.com/255kb'
+                    rel='noopener'
+                    target='_blank'
+                  >
+                    @255kb
+                  </a>{' '}
+                  who developed this wonderful tool.
+                </Testimonial>
+              </div>
+              <div className='column is-one-quarter'>
+                <Testimonial
+                  link='https://twitter.com/nicola_orritos/status/1227168377275371520'
+                  imgSrc='https://pbs.twimg.com/profile_images/643766080/photo_small_400x400.png'
+                  name='Nicola Orritos'
+                  username='@nicola_orritos'
+                >
+                  Did I already say that Mockoon is awesome? Mockoon is the
+                  easiest and quickest way I found to run mock APIs locally.{' '}
+                  <a
+                    href='https://twitter.com/hashtag/RestAPI'
+                    rel='noopener'
+                    target='_blank'
+                  >
+                    #RestAPI
+                  </a>{' '}
+                  <a
+                    href='https://twitter.com/hashtag/Prototyping'
+                    rel='noopener'
+                    target='_blank'
+                  >
+                    #Prototyping
+                  </a>{' '}
+                  <a
+                    href='https://twitter.com/hashtag/DeveloperTools'
+                    rel='noopener'
+                    target='_blank'
+                  >
+                    #DeveloperTools
+                  </a>{' '}
+                  <a
+                    href='https://twitter.com/hashtag/OpenSource'
+                    rel='noopener'
+                    target='_blank'
+                  >
+                    #OpenSource
+                  </a>
+                  <br />
+                  P.S. It&#39;s made with{' '}
+                  <a
+                    href='https://twitter.com/hashtag/Electron'
+                    rel='noopener'
+                    target='_blank'
+                  >
+                    #Electron
+                  </a>{' '}
+                  and this is a huge bonus in my eyes.
+                </Testimonial>
+              </div>
+              <div className='column is-one-quarter'>
+                <Testimonial
+                  link='https://twitter.com/Axel_V_py/status/1214821739613560832'
+                  imgSrc='https://pbs.twimg.com/profile_images/1088469327819538432/fCg5Iqt5_400x400.jpg'
+                  name='Axel'
+                  username='@Axel_V_py'
+                >
+                  <a
+                    href='https://twitter.com/255kb'
+                    rel='noopener'
+                    target='_blank'
+                  >
+                    @255kb
+                  </a>{' '}
+                  Thanks for Mockoon! such a handy tool!
+                </Testimonial>
+              </div>
+              <div className='column is-one-quarter'>
+                <Testimonial
+                  link='https://twitter.com/deciomontanhani/status/1211713659824754689'
+                  imgSrc='https://pbs.twimg.com/profile_images/1017960139326918656/mAoZtKto_400x400.jpg'
+                  name='Sr. Décio Montanhani'
+                  username='@deciomontanhani'
+                >
+                  If you're a mobile/frontend developer and you're suffering
+                  with DEV environment, start mocking your APIs with{' '}
+                  <a
+                    href='https://twitter.com/GetMockoon'
+                    rel='noopener'
+                    target='_blank'
+                  >
+                    @GetMockoon
+                  </a>{' '}
+                  . It's amazing! Thanks,{' '}
+                  <a
+                    href='https://twitter.com/255kb'
+                    rel='noopener'
+                    target='_blank'
+                  >
+                    @255kb
+                  </a>{' '}
+                  for creating this! I'm using every time that I develop new iOS
+                  projects!
+                </Testimonial>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <Newsletter />
 

@@ -30,7 +30,7 @@ Faker.js offers lots of helpers: `address.zipCode`, `address.city`, `address.cit
 
 All Faker.js helpers must be used in the following way: `{{faker 'namespace.method'}}`.  
 Examples: `{{faker 'address.zipCode'}}`, `{{faker 'address.city'}}`, `{{faker 'address.cityPrefix'}}`, `{{faker 'name.firstName'}}`, etc.  
-Before version 1.9.0, Mockoon was using [Dummy JSON](https://github.com/webroo/dummy-json) which offered similar helpers (`repeat`, `int`, `float`, `date`, `time`, `title`, `firstName`, `lastName`, `company`, etc.). All of them have been kept and remapped to Faker.js's equivalents. This means that you can still use `{{int}}` which will use Faker.js's `random.number` method behind the scene.
+Before version 1.9.0, Mockoon was using [Dummy JSON](https://github.com/webroo/dummy-json) which offered similar helpers (`int`, `float`, `date`, `time`, `title`, `firstName`, `lastName`, `company`, etc.). All of them have been kept and remapped to Faker.js's equivalents. This means that you can still use `{{int}}` which will use Faker.js's `random.number` method behind the scene.
 
 #### Mockoon helpers
 
@@ -41,6 +41,7 @@ In addition to these helpers, some custom ones have been added to Mockoon:
 - `someOf (array 'item1' 'item2' 'item3') x y`: returns x to y random items from the array passed in parameters concatenated as a string (to be used with double curly braces), result is the following: `item1,item2`.
 - `{{{someOf (array 'item1' 'item2' 'item3') x y true}}}`: returns x to y random items from the array passed in parameters as an array (to be used with triple curly braces), result is the following: `["item1","item2"]`.
 - `#switch ... #case ... #default`: select some content depending on a variable. behaves like a normal switch (see the example below).
+- `#repeat x comma=true ... /repeat`: repeat the content `x` times (see the example below). Set the `comma` parameter to `false` (default to `true`) to prevent the insertion of new lines and commas by the helper.
 
 Mockoon also supports the following helpers which can return entering requests information:
 

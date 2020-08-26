@@ -4,7 +4,7 @@ module.exports = {
   generateBuildId: async () => {
     return `v${version}`;
   },
-  exportTrailingSlash: true,
+  trailingSlash: true,
   cssLoaderOptions: {
     url: false
   },

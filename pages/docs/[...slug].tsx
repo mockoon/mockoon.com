@@ -102,7 +102,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function (props: {
+export default function Docs(props: {
   slug: string;
   navItems: DocsNavData;
   topicData: DocsTopicData;

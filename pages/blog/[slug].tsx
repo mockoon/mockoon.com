@@ -41,7 +41,7 @@ export async function getStaticPaths() {
   };
 }
 
-export default function (props: {
+export default function BlogArticle (props: {
   slug: string;
   articleData: ArticleData;
   articleBody: string;

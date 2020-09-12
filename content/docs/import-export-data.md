@@ -57,6 +57,8 @@ OpenAPI import and export currently support the following properties:
 - Server URL, port, base path (prefix) and protocol.
 - Routes paths (including parameters), methods, responses with status code (200, etc) and headers, and descriptions.
 
+Import only: sample JSON bodies are created from OpenAPI schemas during import.
+
 #### Import environment from an OpenAPI v2 or v3 JSON/YAML file
 
 To import an environment from a file, open the **Import/export** menu, select **Swagger/OpenAPI** and then **Import Swagger v2/OpenAPI v3 (JSON or YAML)**:

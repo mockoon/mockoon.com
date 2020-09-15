@@ -14,7 +14,10 @@ export async function getStaticProps({ params }) {
   const fileContent = await require(`../../content/blog/${params.slug}.md`);
   const parsedContent = matter(fileContent.default);
 
-  parsedContent.content = parsedContent.content.replace(/Issue #([0-9]+)/ig, '[Issue #$1](https://github.com/mockoon/mockoon/issues/$1)');
+  parsedContent.content = parsedContent.content.replace(
+    /Issue #([0-9]+)/gi,
+    '[Issue #$1](https://github.com/mockoon/mockoon/issues/$1)'
+  );
 
   return {
     props: {
@@ -41,7 +44,7 @@ export async function getStaticPaths() {
   };
 }
 
-export default function BlogArticle (props: {
+export default function BlogArticle(props: {
   slug: string;
   articleData: ArticleData;
   articleBody: string;
@@ -67,18 +70,21 @@ export default function BlogArticle (props: {
         url={`/${props.slug}`}
       />
 
-      <Hero
-        title={props.articleData.meta.title}
-        subtitle={props.articleData.meta.description}
-      />
-
-      <Download />
+      <Hero />
 
       <div className='section'>
         <div className='container'>
           <div className='columns'>
-            <div className='column is-8 is-offset-2'>
+            <div className='column is-3'>
               <div className='content'>
+                <Download />
+              </div>
+            </div>
+            <div className='column is-9'>
+              <div className='content'>
+                <h3>{props.articleData.title}</h3>
+                <h6>Published on {props.articleData.date}</h6>
+                <hr />
                 <ReactMarkdown
                   source={props.articleBody}
                   linkTarget={linkTarget}

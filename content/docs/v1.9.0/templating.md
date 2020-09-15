@@ -58,10 +58,8 @@ Mockoon also supports the following helpers which can return entering requests i
 - `header 'Header-Name' 'default value'`: get content from any request header or a default value if header is not present.
 - `hostname`: get request hostname.
 - `ip`: get request IP address.
-- `method`: get request method (GET, PUT, POST, etc.).
+- `method `: get request method (GET, PUT, POST, etc.).
 - `now 'YYYY-MM-DD'`: display the current time in the chosen format. Format syntax is based on [date-fns package (v2)](https://date-fns.org/v2.11.1/docs/format) and is optional (default to ISO string).
-- `newline`: add a newline `\n`.
-- `base64 'string'`: encode the parameter as base64. This can be used as an inline helper or block helper (see below).
 
 ### Usages
 
@@ -167,27 +165,6 @@ Erik,Friedrich,MX
 Stephen,Paquette,PH
 Neida,Durrett,PN
 Vaughn,Neal,MO
-```
-
-##### Base64 encoding
-
-By using the `base64` helper, you can encode parts or entirety of the response by enclosing the content in a block helper.  
-Inline helper:
-
-```
-{{base64 'test'}}
-{{base64 (body 'path.to.property)}}
-```
-
-Block helper: 
-
-```
-{{# base64}}
-firstname,lastname,countryCode
-{{# repeat 10 }}
-{{ faker 'name.firstName' }},{{ faker 'name.lastName' }},{{ faker 'address.countryCode' }}
-{{/ repeat}}
-{{/ base64}}
 ```
 
 ##### Disable body and file templating 

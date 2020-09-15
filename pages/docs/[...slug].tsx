@@ -2,6 +2,7 @@ import matter from 'gray-matter';
 import { useRouter } from 'next/router';
 import React, { ChangeEvent, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { rsort as semverSort } from 'semver';
 import Download from '../../components/download';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
@@ -44,7 +45,7 @@ export async function getStaticProps({ params }) {
   const topics = ((files) => {
     const topicPaths = files.keys();
     const fileContents: any[] = topicPaths.map(files);
-    const versions = new Set();
+    const versions = new Set<string>();
     const list = [];
 
     topicPaths.forEach((topicPath, index) => {
@@ -102,7 +103,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function (props: {
+export default function Docs(props: {
   slug: string;
   navItems: DocsNavData;
   topicData: DocsTopicData;
@@ -114,22 +115,22 @@ export default function (props: {
   let currentVersion = router.asPath.split('/')[2];
   const [selectedVersion, setSelectedVersion] = useState(currentVersion);
 
-  const versionsMenu = props.versions
-    .map((version: string) => {
-      let label = version;
-      if (version === 'latest') {
-        label = `v${latestVersion} (${version})`;
-      }
+  const sortedVersions = semverSort(
+    props.versions.filter((version) => version !== 'latest')
+  );
+  sortedVersions.unshift('latest');
+  const versionsMenu = sortedVersions.map((version: string) => {
+    let label = version;
+    if (version === 'latest') {
+      label = `v${latestVersion} (${version})`;
+    }
 
-      if (version === 'v1.7.0') {
-        label = `${version} (and older)`;
-      }
+    if (version === 'v1.7.0') {
+      label = `${version} (and older)`;
+    }
 
-      return { value: version, label };
-    })
-    .sort((a, b) => {
-      return a.label < b.label ? 1 : -1;
-    });
+    return { value: version, label };
+  });
 
   const switchVersion = (event: ChangeEvent<HTMLSelectElement>) => {
     setSelectedVersion(event.target.value);

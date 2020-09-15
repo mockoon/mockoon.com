@@ -122,22 +122,6 @@ p.is-brand {
 .card-content {
   position: relative;
   overflow: hidden;
-
-  &::after {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    content: '';
-    width: 75px;
-    height: 26px;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.6895133053221288) 18%,
-      rgba(255, 255, 255, 1) 71%
-    );
-  }
 }
 
 .card .media:not(:last-child) {

@@ -33,17 +33,11 @@ Without rules or when a request does not match the one you defined, the default 
 
 ### Defining rules
 
-You can define an unlimited number of rules for each route. At each request, Mockoon will read each route response rules and will return the response which contains the first matching rule(s). The rules are interpreted by default as follow: `[rule OR rule] OR [rule OR rule]` the brackets symbolizing each route response.
+You can define an unlimited number of rules for each route. At each request, Mockoon will read each route response rules and will return the response which contains the first matching rule. There is no logic between the rules. You can read them like this: `[rule OR rule] OR [rule OR rule]` the brackets symbolizing each route response.
 
 To add a new rule to a response, go to the route response's **Rules tab** and fill the fields:
 
 ![Click on add and fill the fields](/images/docs/add-route-response-rule.png)
-
-#### Rules operator
-
-Inside a route response, rules are interpreted by default with the OR operator. When you have more than one rule in a route response, you can easily switch the operator applied when interpreting the rules, by clicking on the `OR`/`AND` buttons at the left of the rules:
-
-![Click on add and fill the fields](/images/docs/route-response-rules-operator.png)
 
 Rules have three parts:
 

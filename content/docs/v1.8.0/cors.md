@@ -3,7 +3,7 @@ title: CORS
 icon: shuffle
 meta:
   title: Automatic handling of preflight OPTIONS requests
-  description: Front and API are not on the same domain? Handle preflight requests automatically with Mockoon
+  description: Front and mock API are not on the same domain? Handle preflight requests automatically with Mockoon
 ---
 
 ## CORS
@@ -12,7 +12,7 @@ meta:
 
 ### Automatic handling of preflight requests
 
-When mocking, chances are the front-end application and the mocked API won’t be on the **same domain**, thus triggering browsers OPTIONS [preflight requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
+When creating mock APIs, chances are the front-end application and the mocked API won’t be on the **same domain**, thus triggering browsers OPTIONS [preflight requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
 
 For your application to work, you can make Mockoon automatically answer to these OPTIONS requests:
 
@@ -38,7 +38,7 @@ Please note that Mockoon won’t send any CORS header on routes with the OPTIONS
 
 ### Add CORS headers to the environment headers
 
-You can also add the same CORS headers to an environment by clicking on the **Add CORS headers to environment** link:
+You can also add the same CORS headers to a mock API by clicking on the **Add CORS headers to environment** link:
 
 ![Click on the add CORS headers link](/images/docs/add-cors-headers.png)
 

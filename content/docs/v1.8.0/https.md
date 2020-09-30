@@ -10,7 +10,7 @@ meta:
 
 ---
 
-Mockoon supports serving your API over TLS. You can activate this option for each environment independently:
+Mockoon supports serving your mock API over TLS. You can activate this option for each environment independently:
 
 Open the **Environment Settings** by clicking on the cog in the upper right corner:
 
@@ -22,6 +22,6 @@ Enable the **HTTPS option** by ticking the checkbox. The option was successfully
 
 You need to restart the environment for the change to take effect.
 
-Your environment will now be available on `https://localhost:port` instead of `http://localhost:port`.
+Your mock API will now be available on `https://localhost:port` instead of `http://localhost:port`.
 
 Please note that Mockoon is using a self-signed certificate to serve your environment over TLS.

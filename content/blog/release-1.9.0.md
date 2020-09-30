@@ -3,7 +3,7 @@ title: ✨ New release with revamped templating system and improved error report
 excerpt: This new version brings some new features and many new improvements to the templating system and error reporting. The application also has a new documentation section on this website...
 date: '2020-07-23'
 meta:
-  title: Release v1.9.0 is out!
+  title: Mockoon release v1.9.0 is out!
   description: Discover all the new features and improvements packed in this release. Revamped templating system, improved error reporting and more.
 canonical: https://github.com/mockoon/mockoon/releases/tag/v1.9.0
 ---

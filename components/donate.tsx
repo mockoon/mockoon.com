@@ -5,7 +5,7 @@ const Donate: FunctionComponent = function () {
     <section className='section is-light'>
       <div className='container has-text-centered has-text-weight-semibold'>
         <p className='title is-6'>
-          If you like Mockoon you can support me with a one-time donation:
+          Donate to help create the best mock API tool:
         </p>
         <div>
           <div className='donate-item'>

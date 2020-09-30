@@ -12,7 +12,7 @@ meta:
 
 ### API prefix
 
-In order to prefix all your REST API routes, fill the **prefix** input at the top of the **environment options**:
+In order to prefix all your mock API routes, fill the **prefix** input at the top of the **environment options**:
 
 ![fill the prefix input](/images/docs/environment-prefix.png)
 

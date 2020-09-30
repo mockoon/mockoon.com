@@ -15,12 +15,12 @@ class Index extends React.Component {
       <Layout>
         <Meta
           title={meta.title}
-          description='Mockoon is a free and open source desktop application allowing to quickly mock servers and API.'
+          description='Mockoon is a free and open source desktop application allowing to quickly create mock API.'
         />
 
         <Hero
           title={meta.title}
-          subtitle='Mockoon is the easiest and quickest way to run mock APIs locally.<br>No remote deployment, no account required, open source.'
+          subtitle='Mockoon is the easiest and quickest way to run mock API locally.<br>No remote deployment, no account required, open source.'
           withDownloadCTA={true}
           mainPicture='/images/screenshot.png'
           mainPictureAlt='Application screenshot'
@@ -173,8 +173,8 @@ class Index extends React.Component {
                 <div className='content'>
                   <p className='title is-4'>Unlimited fast mocking</p>
                   <p>
-                    Create an unlimited number of mock local servers and routes,
-                    and run them in parallel.
+                    Create an unlimited number of mock API and run them in
+                    parallel.
                   </p>
                 </div>
               </div>

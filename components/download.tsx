@@ -5,7 +5,7 @@ const Download: FunctionComponent = function () {
     <section className='section is-light'>
       <div className='container has-text-centered has-text-weight-semibold'>
         <p className='title is-6'>
-          Get Mockoon latest version and start mocking!
+          Get Mockoon latest version and start creating mock APIs!
         </p>
         <p>
           <a className='button is-primary' href='/#download'>

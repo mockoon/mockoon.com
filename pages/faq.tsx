@@ -12,7 +12,7 @@ const Faq: FunctionComponent = function () {
     <Layout>
       <Meta
         title={meta.title}
-        description='Find the most frequently asked question about Mockoon, the free desktop server mocking application.'
+        description='Find the most frequently asked question about Mockoon, the free desktop mock API creation tool.'
         ogType='article'
       />
       <Hero title={meta.title} />
@@ -23,7 +23,7 @@ const Faq: FunctionComponent = function () {
         <div className='columns'>
           <div className='column is-6 is-offset-3'>
             <div className='content'>
-              <h3>How does Mockoon mocking works?</h3>
+              <h3>How does Mockoon mock API creation works?</h3>
               <p>
                 Unlike many other mocking tools, Mockoon uses a local server to
                 avoid latency and the hassle of deploying through a remote
@@ -34,7 +34,7 @@ const Faq: FunctionComponent = function () {
                 No, you don't need an internet connection to use Mockoon,
                 everything runs locally.
               </p>
-              <h3>Does Mockoon require an account?</h3>
+              <h3>Do you need an account to create mock API?</h3>
               <p>
                 No, you don't need to sign up or create an account to use
                 Mockoon.
@@ -63,7 +63,7 @@ const Faq: FunctionComponent = function () {
                 </code>
                 , etc.
                 <br />
-                None of your mock data, routes or URLs are collected.
+                None of your mock API, routes or URLs are collected.
               </p>
             </div>
           </div>

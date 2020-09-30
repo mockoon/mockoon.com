@@ -9,12 +9,12 @@ const featuresList = [
   {
     title: 'Unlimited mocking',
     description:
-      'Mock an unlimited number of environments with unlimited number of routes and run them in parallel.'
+      'Create an unlimited number of mock API with unlimited number of routes and run them in parallel.'
   },
   {
     title: 'Import / export',
     description:
-      'Environment import / export with Swagger/OpenAPI format support. <a href="/tutorial/import-export-environments-routes">Learn more</a>'
+      'Mock API import / export with Swagger/OpenAPI format support. <a href="/tutorial/import-export-environments-routes">Learn more</a>'
   },
   {
     title: 'Route regex',
@@ -39,7 +39,7 @@ const featuresList = [
   {
     title: 'Response headers',
     description:
-      'Add any response headers to your routes and environments. With auto-completion. <a href="/tutorial/define-response-headers">Learn more</a>'
+      'Add any response headers to your routes and mock API. With auto-completion. <a href="/tutorial/define-response-headers">Learn more</a>'
   },
   {
     title: 'Latency',
@@ -111,8 +111,8 @@ const Features: FunctionComponent = function () {
   return (
     <Layout>
       <Meta
-        title='Complete list of features'
-        description='List of all features offered by Mockoon, the REST API mocking tool compatible with Windows, Mac and Linux.'
+        title='Mockoon complete list of features'
+        description='List of all features offered by Mockoon, the mock API creation tool compatible with Windows, Mac and Linux.'
         ogType='article'
       />
       <Hero title='Complete list of features' />

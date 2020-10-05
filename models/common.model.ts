@@ -5,3 +5,16 @@ export type MetaData = {
   ogType?: string;
   url?: string;
 };
+
+export type ArticleData = {
+  title: string;
+  excerpt: string;
+  date: string;
+  meta: MetaData;
+  canonical?: string;
+};
+
+export interface TutorialData extends ArticleData {
+  image: string;
+  imageAlt: string;
+}

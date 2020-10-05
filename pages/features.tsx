@@ -14,7 +14,7 @@ const featuresList = [
   {
     title: 'Import / export',
     description:
-      'Mock API import / export with Swagger/OpenAPI format support. <a href="/tutorial/import-export-environments-routes">Learn more</a>'
+      'Mock API import / export with Swagger/OpenAPI format support. <a href="/docs/latest/import-export-data/">Learn more</a>'
   },
   {
     title: 'Route regex',
@@ -24,22 +24,22 @@ const featuresList = [
   {
     title: 'Multiple responses per route',
     description:
-      'Serve multiple <a href="/tutorial/multiple-route-responses">rules-triggered responses</a> for each route with any headers body, or HTTP status codes.'
+      'Serve multiple <a href="/docs/latest/multiple-responses/">rules-triggered responses</a> for each route with any headers body, or HTTP status codes.'
   },
   {
     title: 'CORS',
     description:
-      'Automatically send CORS headers (<code>Access-Control-Allow-Origin</code>, etc.) for OPTIONS requests. <a href="/tutorial/automatic-handling-preflight-requests">Learn more</a>'
+      'Automatically send CORS headers (<code>Access-Control-Allow-Origin</code>, etc.) for OPTIONS requests. <a href="/docs/latest/cors/">Learn more</a>'
   },
   {
     title: 'HTTPS',
     description:
-      'Serve your mock API over TLS with self-signed certificate. <a href="/tutorial/serve-mock-api-tls/">Learn more</a>'
+      'Serve your mock API over TLS with self-signed certificate. <a href="/docs/latest/https/">Learn more</a>'
   },
   {
     title: 'Response headers',
     description:
-      'Add any response headers to your routes and mock API. With auto-completion. <a href="/tutorial/define-response-headers">Learn more</a>'
+      'Add any response headers to your routes and mock API. With auto-completion. <a href="/docs/latest/response-headers/">Learn more</a>'
   },
   {
     title: 'Latency',
@@ -48,7 +48,7 @@ const featuresList = [
   {
     title: 'Requests and responses logs',
     description:
-      'All incoming requests and outgoing responses are logged for easier debugging. <a href="/tutorial/incoming-requests-logs">Learn more</a>'
+      'All incoming requests and outgoing responses are logged for easier debugging. <a href="/docs/latest/requests-logging/">Learn more</a>'
   },
   {
     title: 'Proxy mode',
@@ -68,7 +68,7 @@ const featuresList = [
   {
     title: 'Templating',
     description:
-      'Templating supported in body, file content and header, with many helpers: url params, query params, JSON body lookup, etc. <a href="/tutorial/dynamic-response-with-templating">Learn more</a>'
+      'Templating supported in body, file content and header, with many helpers: url params, query params, JSON body lookup, etc. <a href="/docs/latest/templating/">Learn more</a>'
   },
   {
     title: 'Auto-save',

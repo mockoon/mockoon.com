@@ -9,6 +9,7 @@ import Meta from '../../components/meta';
 import Newsletter from '../../components/newsletter';
 import Layout from '../../layout/layout';
 import { DocsNavData, DocsTopicData } from '../../models/docs.model';
+import { linkTarget, transformLinkUri } from '../../utils/url';
 const latestVersion = require('../../package.json').version;
 
 export async function getStaticPaths() {
@@ -137,21 +138,6 @@ export default function Docs(props: {
     router.push(`/docs/${event.target.value}/about`);
   };
 
-  const transformLinkUri = (uri: string) => {
-    if (uri.includes('docs:')) {
-      uri.split(':');
-      return `/docs/${currentVersion}/${uri.split(':')[1]}`;
-    }
-
-    return uri;
-  };
-
-  const linkTarget = (uri: string) => {
-    if (uri.startsWith('http')) {
-      return '_blank';
-    }
-  };
-
   return (
     <Layout>
       <style jsx>{`
@@ -196,7 +182,7 @@ export default function Docs(props: {
                     return (
                       <li key={`link${menuItemIndex}`}>
                         <a
-                          href={menuItem.slug}
+                          href={`${menuItem.slug}/`}
                           className={
                             router.asPath === menuItem.slug ? 'is-active' : ''
                           }
@@ -221,7 +207,7 @@ export default function Docs(props: {
               <div className='content'>
                 <ReactMarkdown
                   source={props.topicBody}
-                  transformLinkUri={transformLinkUri}
+                  transformLinkUri={transformLinkUri(currentVersion)}
                   linkTarget={linkTarget}
                 />
               </div>

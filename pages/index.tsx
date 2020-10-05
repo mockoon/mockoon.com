@@ -213,7 +213,7 @@ class Index extends React.Component {
             </div>
             <div className='columns'>
               <div className='column has-text-centered'>
-                <a href='features'>Complete list of features</a>
+                <a href='features/'>Complete list of features</a>
               </div>
             </div>
           </div>

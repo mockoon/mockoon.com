@@ -14,7 +14,9 @@ const Meta: FunctionComponent<MetaData> = function (props) {
       <meta name='description' content={props.description} />
       <meta
         property='og:image'
-        content={props.image || 'https://mockoon.com/images/screenshot.png'}
+        content={
+          'https://mockoon.com/images/' + (props.image || 'screenshot.png')
+        }
       />
       <meta
         property='og:url'

@@ -4,22 +4,32 @@ import Hero from '../../components/hero';
 import Meta from '../../components/meta';
 import Newsletter from '../../components/newsletter';
 import Layout from '../../layout/layout';
-import { ArticleData } from '../../models/common.model';
+import { TutorialList } from '../../models/tutorials.model';
 import { buildIndexStaticProps } from '../../utils/static-builders';
 
 const meta = {
-  title: "Mockoon's blog",
-  description: "Stay up to date with all Mockoon's news!"
+  title: "Learn with Mockoon's tutorials",
+  description:
+    'Learn how to get started with Mockoon and create mock APIs for your favorite languages and frameworks'
 };
 
 export async function getStaticProps() {
-  return buildIndexStaticProps(
-    require.context('../../content/blog/', false, /\.md$/)
+  const staticProps = buildIndexStaticProps(
+    require.context('../../content/tutorials/', false, /\.md$/)
   );
+  staticProps.props.articles = staticProps.props.articles.sort(
+    (firstArticle, secondArticle) =>
+      firstArticle.data.order > secondArticle.data.order
+        ? 1
+        : secondArticle.data.order > firstArticle.data.order
+        ? -1
+        : 0
+  );
+  return staticProps;
 }
 
-const Blog: FunctionComponent<{
-  articles: { data: ArticleData; slug: string }[];
+const Tutorials: FunctionComponent<{
+  articles: TutorialList;
 }> = function (props) {
   return (
     <Layout>
@@ -34,11 +44,19 @@ const Blog: FunctionComponent<{
       <div className='section'>
         <div className='container'>
           <div className='columns'>
-            <div className='column is-8 is-offset-2'>
+            <div className='column is-6 is-offset-3'>
               {props.articles.map((article) => {
                 return (
-                  <a key={article.slug} href={`/blog/${article.slug}/`}>
+                  <a key={article.slug} href={`/tutorials/${article.slug}/`}>
                     <div className='card'>
+                      <div className='card-image'>
+                        <figure className='image is-3by1'>
+                          <img
+                            src={`/images/tutorials/${article.data.image}`}
+                            alt={article.data.imageAlt}
+                          />
+                        </figure>
+                      </div>
                       <div className='card-content'>
                         <p className='title'>{article.data.title}</p>
                         <p className='subtitle'>{article.data.excerpt}</p>
@@ -56,4 +74,4 @@ const Blog: FunctionComponent<{
   );
 };
 
-export default Blog;
+export default Tutorials;

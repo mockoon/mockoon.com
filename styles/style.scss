@@ -10,11 +10,11 @@ $link-hover: darken($blue, 10%);
 
 @font-face {
   font-family: 'mockoon';
-  src: url('/fonts/mockoon.eot?eu6upg');
-  src: url('/fonts/mockoon.eot?eu6upg#iefix') format('embedded-opentype'),
-    url('/fonts/mockoon.ttf?eu6upg') format('truetype'),
-    url('/fonts/mockoon.woff?eu6upg') format('woff'),
-    url('/fonts/mockoon.svg?eu6upg#mockoon') format('svg');
+  src: url('/public/fonts/mockoon.eot?eu6upg');
+  src: url('/public/fonts/mockoon.eot?eu6upg#iefix') format('embedded-opentype'),
+    url('/public/fonts/mockoon.ttf?eu6upg') format('truetype'),
+    url('/public/fonts/mockoon.woff?eu6upg') format('woff'),
+    url('/public/fonts/mockoon.svg?eu6upg#mockoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: auto;

@@ -33,7 +33,7 @@
     "bulma": "^0.9.1",
     "gray-matter": "^4.0.2",
     "material-design-icons": "^3.0.1",
-    "next": "^9.5.3",
+    "next": "^9.5.4",
     "raw-loader": "^4.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

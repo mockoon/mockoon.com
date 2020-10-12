@@ -1,13 +1,12 @@
 ---
 title: Create the best mock API for your Angular application
 excerpt: Learn how to mock your API with Mockoon when working on an Angular application
-date: '2020-05-15'
 meta:
   title: Create the best mock API for your Angular application
   description: Learn how to mock your API with Mockoon when working on an Angular application
 image: tutorial-angular-mocking.png
 imageAlt: Mockoon and Angular logos side by side
-order: 20
+order: 30
 ---
 
 ### Create the best mock API for your Angular application

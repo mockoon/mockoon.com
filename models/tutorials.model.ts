@@ -3,7 +3,6 @@ import { MetaData } from './common.model';
 export type TutorialData = {
   title: string;
   excerpt: string;
-  date: string;
   image: string;
   imageAlt: string;
   meta: MetaData;

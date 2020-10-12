@@ -1,7 +1,6 @@
 ---
 title: Getting started with Mockoon
 excerpt: Learn how to create your first mock API with Mockoon
-date: '2020-05-15'
 meta:
   title: Getting started with Mockoon
   description: Learn how to create your first mock API with Mockoon in no time

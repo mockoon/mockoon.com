@@ -6,17 +6,17 @@ meta:
   description: Learn how to access entering requests and outgoing responses logs for easier debugging
 ---
 
-## Requests logging
+# Requests logging
 
 ---
 
-### Accessing the logs
+## Accessing the logs
 
 For easier debugging, Mockoon records all entering requests and all the corresponding outgoing responses for each of your mock API. To access an environment's log, click on the clock icon in the upper right corner:
 
 ![click the clock icon](/images/docs/open-logs.png)
 
-### Logs content
+## Logs content
 
 The list shows all intercepted requests and how Mockoon answered to them.
 Please note that all requests are intercepted, even the `/favicon` request made by the browser.
@@ -25,13 +25,13 @@ Each record contains the entering request and the outgoing response information.
 ![view the request](/images/docs/logs-request.png)
 ![view the response](/images/docs/logs-response.png)
 
-### Logs metadata
+## Logs metadata
 
 You can also easily see if a request has been caught by Mockoon (record shows a green tick) or has been passed to another URL if the [proxy mode](docs:proxy-mode) is activated (record shows a shield icon):
 
 ![view logs metadata](/images/docs/logs-metadata.png)
 
-### Route auto-mocking
+## Route auto-mocking
 
 Mockoon also offers the possibility to automatically create mocks for entering requests. Click on the "plus" icon on a record to create a route containing the same information (headers, body, etc.):
 

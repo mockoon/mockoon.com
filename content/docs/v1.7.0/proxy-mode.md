@@ -6,11 +6,11 @@ meta:
   description: Learn how to partially mock an API and proxy to another mock server with Mockoon
 ---
 
-## Proxy mode
+# Proxy mode
 
 ---
 
-### Partial mock API using the proxy mode
+## Partial mock API using the proxy mode
 
 Mockoon supports partial mocking of an API endpoints by forwarding the requests that does not match a declared route to the URL of your choice.
 

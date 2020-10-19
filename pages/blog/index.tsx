@@ -8,7 +8,7 @@ import { ArticleData } from '../../models/common.model';
 import { buildIndexStaticProps } from '../../utils/static-builders';
 
 const meta = {
-  title: "Mockoon's blog",
+  title: "Mockoon's latest news and announcements",
   description: "Stay up to date with all Mockoon's news!"
 };
 

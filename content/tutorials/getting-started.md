@@ -9,7 +9,7 @@ imageAlt: Mockoon and Angular logos side by side
 order: 10
 ---
 
-### Getting started with Mockoon
+# Create your first mock API with Mockoon
 
 ---
 
@@ -17,7 +17,7 @@ Mockoon is a free cross-platform desktop application that takes API mocking to t
 
 This tutorial will show you how to install the desktop mocking application and set up your first mock API.
 
-#### Step 1. Install the application
+## Step 1. Install the application
 
 Mockoon is available on the three major operating systems: Windows, macOS, and Linux. Visit the [download section on the homepage](/#download) to download the binary or installer for your operating system:
 
@@ -25,7 +25,7 @@ Mockoon is available on the three major operating systems: Windows, macOS, and L
 
 After downloading the installer, double click on the file to install Mockoon and follow the instructions. Now, open the application to start setting up your first mock API. 
 
-#### Step 2. Create your first mock API
+## Step 2. Create your first mock API
 
 After launching the application for the first time, you will find a demo mock API, also called **"environment"** in Mockoon. You can keep it and build from here or create a new one. 
 To create a new mock API, open the collapsible environments menu on the left and press the blue "plus" button:
@@ -36,7 +36,7 @@ You can also rename the environment, as shown below:
 
 ![Environment renaming](/images/tutorials/getting-started/rename-environment.png)
 
-#### Step 3. Create you first API route
+## Step 3. Create you first API route
 
 The newly created mock API already includes a route on `/`. You can modify it by setting up the method and path of your choice.
 
@@ -44,7 +44,7 @@ You can also create a new endpoint by clicking on the blue "plus" button at the 
 
 ![Recording of adding a new API route](/images/tutorials/getting-started/create-api-route.gif)
 
-#### Step 4. API endpoint configuration
+## Step 4. API endpoint configuration
 
 You can further customize your endpoint by adding a custom header and the following sample body (which makes use of Mockoon's [templating system](docs:templating)):
 
@@ -64,7 +64,7 @@ You can create a more complex configuration by serving files or [adding multiple
 
 ![Recording of updating an API route](/images/tutorials/getting-started/update-api-route.gif)
 
-#### Step 5. Run and call your mock API
+## Step 5. Run and call your mock API
 
 The last step is to run your mock API. For this, click on the green "play" arrow in the header: 
 
@@ -76,6 +76,6 @@ You can do a test call to the following URL `http://localhost:3000/tutorials` us
 
 ![Screenshot of the result call](/images/tutorials/getting-started/result-call.png)
 
-#### Step 6. Learn more
+## Step 6. Learn more
 
 Now that you know how to create a basic mock API, you can head over to the [official documentation](docs:about) to explore the other functionalities like [requests logging](docs:requests-logging), [partial API mocking with proxy mode](docs:proxy-mode), or the [templating system](docs:templating). 

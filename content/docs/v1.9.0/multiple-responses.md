@@ -6,13 +6,13 @@ meta:
   description: Multiple responses can be defined for each route with different body, headers and status. They are triggered with rules
 ---
 
-## Multiple responses
+# Multiple responses
 
 ---
 
 For each route, multiple responses can be defined (status, body, and headers) and triggered using a set of rules.
 
-### Adding or duplicating a response
+## Adding or duplicating a response
 
 To **add** a new response to your route, click on the "plus" icon next to the responses list:
 
@@ -22,7 +22,7 @@ You can also **duplicate** an existing route response by clicking on the "copy" 
 
 ![Click on the copy icon to duplicate a response](/images/docs/duplicate-route-response.png)
 
-### Default route response
+## Default route response
 
 There is always at least one response when you create a new route. You can modify it and add more responses. But you can never delete the last route response.
 
@@ -31,7 +31,7 @@ Without rules or when a request does not match the one you defined, the default 
 ![Reorder route responses](/images/docs/reorder-responses.png)
 
 
-### Defining rules
+## Defining rules
 
 You can define an unlimited number of rules for each route. At each request, Mockoon will read each route response rules and will return the response which contains the first matching rule. There is no logic between the rules. You can read them like this: `[rule OR rule] OR [rule OR rule]` the brackets symbolizing each route response.
 
@@ -45,7 +45,7 @@ Rules have three parts:
 - a **property name or path**
 - a **value**
 
-#### 1. Target
+### 1. Target
 
 In the dropdown menu you can choose between:
 
@@ -54,7 +54,7 @@ In the dropdown menu you can choose between:
 - the value of a **route parameter**.
 - the value of a **query string field**.
 
-#### 2. Property name or path
+### 2. Property name or path
 
 Depending on the **target**, the way to access properties may be different:
 
@@ -65,7 +65,7 @@ Depending on the **target**, the way to access properties may be different:
 
 For body and query string, if the property is an array, Mockoon will automatically check in the array if at least one item matches the value.
 
-#### 3. Value
+### 3. Value
 
 You can either set a simple text value like "expected value" or any kind of regex. To use a regex, write it without the leading and trailing slashes and tick the checkbox on the right.
 

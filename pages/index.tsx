@@ -7,7 +7,7 @@ import Testimonial from '../components/testimonial';
 import Layout from '../layout/layout';
 const version = require('../package.json').version;
 
-const meta = { title: 'Mock API in seconds' };
+const meta = { title: 'Create mock APIs in seconds' };
 
 class Index extends React.Component {
   render() {

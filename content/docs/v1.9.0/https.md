@@ -2,11 +2,11 @@
 title: HTTPS mode
 icon: lock
 meta:
-  title: Serve a mock API over TLS
+  title: Serve a mock API over HTTPS
   description: Need to mock a secured API? Mockoon can also do this!
 ---
 
-## HTTPS mode
+# HTTPS mode
 
 ---
 

@@ -140,24 +140,19 @@ export default function Docs(props: {
 
   return (
     <Layout>
-      <style jsx>{`
-        .card {
-          margin-bottom: 30px;
-        }
-      `}</style>
       <Meta
         title={props.topicData.meta.title}
         description={props.topicData.meta.description}
         ogType='article'
         url={`/${props.slug}`}
       />
-      <Hero title='Documentation' withDownloadCTA={false} />
-
+      <Hero />
       <div className='section'>
         <div className='container'>
           <div className='columns'>
             <div className='column is-3'>
               <div className='content'>
+                <h3>Documentation</h3>
                 <div className='select'>
                   <select
                     aria-label='Versions menu'

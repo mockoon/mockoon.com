@@ -5,17 +5,15 @@ import Meta from '../components/meta';
 import Newsletter from '../components/newsletter';
 import Layout from '../layout/layout';
 
-const meta = { title: 'Frequently asked questions' };
-
 const Faq: FunctionComponent = function () {
   return (
     <Layout>
       <Meta
-        title={meta.title}
-        description='Find the most frequently asked question about Mockoon, the free desktop mock API creation tool.'
+        title="Frenquently asked questions (FAQ)"
+        description='Find the most frequently asked questions about Mockoon, the free desktop mock API creation tool.'
         ogType='article'
       />
-      <Hero title={meta.title} />
+      <Hero title='Frequently asked questions' />
 
       <Download />
 

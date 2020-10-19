@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import Spectrum from './spectrum';
 
 class Nav extends Component<any, { menuOpened: boolean }> {
   constructor(props) {
@@ -58,9 +57,6 @@ class Nav extends Component<any, { menuOpened: boolean }> {
             </a>
             <a className='navbar-item' href='/faq/'>
               FAQ
-            </a>
-            <a className='navbar-item' href='https://spectrum.chat/mockoon'>
-              <Spectrum />
             </a>
           </div>
         </div>

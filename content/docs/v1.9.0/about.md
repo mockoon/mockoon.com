@@ -2,11 +2,11 @@
 title: About docs
 icon: help
 meta:
-  title: Mockoon's documentation
+  title: About Mockoon's documentation
   description: Get detailed information on Mockoon's features and options, and learn how to create mock APIs.
 ---
 
-## About docs
+# About docs
 
 ---
 

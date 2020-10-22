@@ -3,6 +3,7 @@ import Donate from '../components/donate';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Newsletter from '../components/newsletter';
+import Share from '../components/share';
 import Testimonial from '../components/testimonial';
 import Layout from '../layout/layout';
 const version = require('../package.json').version;
@@ -442,47 +443,10 @@ class Index extends React.Component {
                     .
                   </p>
                   <p>You like Mockoon? Spread the word :)</p>
-                  <p>
-                    <a
-                      title='Share on Twitter'
-                      href='http://twitter.com/share?url=https://mockoon.com&amp;text=Mockoon+is+the+easiest+and+quickest+way+to+run+mock+APIs+locally.+No+remote+deployment,+no+account+required,+open+source.&amp;via=255kb&amp;'
-                      onClick={(event) => {
-                        event.preventDefault();
-                        window.open(
-                          'http://twitter.com/share?url=https://mockoon.com&amp;text=Mockoon+is+the+easiest+and+quickest+way+to+run+mock+APIs+locally.+No+remote+deployment,+no+account+required,+open+source.%20%23RestAPI%20%23Prototyping%20%23DeveloperTools&amp;via=GetMockoon&amp;',
-                          'twitter-share',
-                          'width=800,height=600'
-                        );
-                        return false;
-                      }}
-                      className='button is-primary is-outlined twitter'
-                    >
-                      <span className='icon'>
-                        <i className='icon-twitter' aria-hidden='true'></i>
-                      </span>
-                      <span>Twitter</span>
-                    </a>
-                    <a
-                      title='Share on Facebook'
-                      href='http://www.facebook.com/sharer/sharer.php?u=https://mockoon.com'
-                      onClick={(event) => {
-                        event.preventDefault();
-                        window.open(
-                          'http://www.facebook.com/sharer/sharer.php?u=https://mockoon.com',
-                          'facebook-share',
-                          'width=800,height=600'
-                        );
-                        return false;
-                      }}
-                      className='button is-primary is-outlined facebook'
-                      style={{ marginLeft: 5 + 'px' }}
-                    >
-                      <span className='icon'>
-                        <i className='icon-facebook' aria-hidden='true'></i>
-                      </span>
-                      <span>Facebook</span>
-                    </a>
-                  </p>
+                  <Share
+                    text='Mockoon is the easiest and quickest way to run mock API locally. No remote deployment, no account required, open source.'
+                    url='https://mockoon.com'
+                  />
                 </div>
               </div>
             </div>

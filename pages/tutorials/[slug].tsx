@@ -7,6 +7,7 @@ import Download from '../../components/download';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
 import Newsletter from '../../components/newsletter';
+import Share from '../../components/share';
 import Layout from '../../layout/layout';
 import { TutorialData } from '../../models/common.model';
 import { buildSlugStaticPaths } from '../../utils/static-builders';
@@ -80,8 +81,24 @@ export default function Tutorials(props: {
         </div>
         <div className='container'>
           <div className='columns'>
-            <div className='column'>
-              <a href='/tutorials/'>⬅ Back to the tutorials</a>
+            <div className='column is-9 is-offset-3'>
+              <div className='content'>
+                <hr />
+                <h5>Find this tutorial useful? Share it!</h5>
+                <Share
+                  url={`https://mockoon.com/${props.slug}/`}
+                  text={props.articleData.meta.description}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='container'>
+          <div className='columns'>
+            <div className='column '>
+              <div className='content'>
+                <a href='/tutorials/'>⬅ Back to the tutorials</a>
+              </div>
             </div>
           </div>
         </div>

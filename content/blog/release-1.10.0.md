@@ -15,7 +15,7 @@ Welcome to this new release of Mockoon. There are several bug fixes and new feat
 - A JSON body sample is now generated during a Swagger/OpenAPI file import when a schema is present. (Issue #288) 
 - Response rules can now be interpreted as OR or AND. (Issue #201)
 - Rules can now check JSON bodies number and boolean values. (Issue #321)
-- Two new helpers are available in the templating system: `newline`, which inserts the newline character "\n", and `base64` inline or block helper to encode all your stuffs. For more information, please refer to the official [documentation](https://mockoon.com/docs/latest/templating). (Issue #331)
+- Two new helpers are available in the templating system: `newline`, which inserts the newline character "\n", and `base64` inline or block helper to encode all your stuffs. For more information, please refer to the official [documentation](https://mockoon.com/docs/latest/templating/). (Issue #331)
 
 ### Bug fixes
 

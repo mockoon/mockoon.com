@@ -135,7 +135,7 @@ export default function Docs(props: {
 
   const switchVersion = (event: ChangeEvent<HTMLSelectElement>) => {
     setSelectedVersion(event.target.value);
-    router.push(`/docs/${event.target.value}/about`);
+    router.push(`/docs/${event.target.value}/about/`);
   };
 
   return (
@@ -183,9 +183,9 @@ export default function Docs(props: {
                           }
                         >
                           {menuItem.icon && (
-                            <i className='material-icons is-primary'>
-                              {menuItem.icon}
-                            </i>
+                            <i
+                              className={`icon-${menuItem.icon} is-primary`}
+                            ></i>
                           )}
                           {menuItem.title}
                         </a>

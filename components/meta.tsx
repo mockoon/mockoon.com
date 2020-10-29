@@ -25,6 +25,16 @@ const Meta: FunctionComponent<MetaData> = function (props) {
       <meta property='og:title' content={'Mockoon - ' + props.title} />
       <meta property='og:description' content={props.description} />
       <meta property='og:type' content={props.ogType || 'website'} />
+      <meta name='twitter:card' content='summary' />
+      <meta name='twitter:site' content='@GetMockoon' />
+      <meta name='twitter:title' content={'Mockoon - ' + props.title} />
+      <meta name='twitter:description' content={props.description} />
+      <meta
+        name='twitter:image'
+        content={
+          'https://mockoon.com/images/' + (props.image || 'screenshot.png')
+        }
+      />
     </Head>
   );
 };

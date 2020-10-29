@@ -12,57 +12,57 @@
     "redirects": [
       {
         "source": "/docs",
-        "destination": "/docs/latest/about",
+        "destination": "/docs/latest/about/",
         "type": 301
       },
       {
         "source": "/docs/latest",
-        "destination": "/docs/latest/about",
+        "destination": "/docs/latest/about/",
         "type": 301
       },
       {
         "source": "/tutorial/api-mocking-proxy-mode",
-        "destination": "/docs/latest/proxy-mode",
+        "destination": "/docs/latest/proxy-mode/",
         "type": 301
       },
       {
         "source": "/tutorial/automatic-handling-preflight-requests",
-        "destination": "/docs/latest/cors",
+        "destination": "/docs/latest/cors/",
         "type": 301
       },
       {
         "source": "/tutorial/define-prefixed-api",
-        "destination": "/docs/latest/routing",
+        "destination": "/docs/latest/routing/",
         "type": 301
       },
       {
         "source": "/tutorial/define-response-headers",
-        "destination": "/docs/latest/response-headers",
+        "destination": "/docs/latest/response-headers/",
         "type": 301
       },
       {
         "source": "/tutorial/dynamic-response-with-templating",
-        "destination": "/docs/latest/templating",
+        "destination": "/docs/latest/templating/",
         "type": 301
       },
       {
         "source": "/tutorial/import-export-environments-routes",
-        "destination": "/docs/latest/import-export-data",
+        "destination": "/docs/latest/import-export-data/",
         "type": 301
       },
       {
         "source": "/tutorial/incoming-requests-logs",
-        "destination": "/docs/latest/requests-logging",
+        "destination": "/docs/latest/requests-logging/",
         "type": 301
       },
       {
         "source": "/tutorial/multiple-route-responses",
-        "destination": "/docs/latest/multiple-responses",
+        "destination": "/docs/latest/multiple-responses/",
         "type": 301
       },
       {
         "source": "/tutorial/serve-mock-api-tls",
-        "destination": "/docs/latest/https",
+        "destination": "/docs/latest/https/",
         "type": 301
       }
     ]

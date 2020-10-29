@@ -8,7 +8,7 @@ meta:
 canonical: https://github.com/mockoon/mockoon/releases/tag/v1.9.0
 ---
 
-This new version brings some new features and many new improvements to the templating system and error reporting. The application also has a new [documentation](https://mockoon.com/docs/latest) section on this website, which replaces the old tutorials section. 
+This new version brings some new features and many new improvements to the templating system and error reporting. The application also has a new [documentation](https://mockoon.com/docs/latest/) section on this website, which replaces the old tutorials section. 
 
 ### Templating system
 
@@ -20,7 +20,7 @@ This new version brings some new features and many new improvements to the templ
 - Improvements to the `queryParam` helper: as for the `body` helper, the `queryParam` helper can now retrieve paths, arrays, objects, or the full query params object. (Issue #265 )
 - Templating can now be disabled for bodies and files content. Head up to the new route response's "Settings" tab. (Issue #129)
 
-For more information about the templating system, please refer to the official [documentation](https://mockoon.com/docs/latest/templating).
+For more information about the templating system, please refer to the official [documentation](https://mockoon.com/docs/latest/templating/).
 
 ### Errors feedback
 
@@ -58,7 +58,7 @@ Application errors feedback has been greatly improved especially for JSON conten
 
 - Demo environment has been updated to better show Mockoon's capabilities. (Issue #300)
 - Release notes are now shown on startup after an update. (Issue #302)
-- This website has a new versioned [documentation](https://mockoon.com/docs/latest) regrouping the old "tutorials". It will be frequently updated to reflect the application evolution and add new topics.
+- This website has a new versioned [documentation](https://mockoon.com/docs/latest/) regrouping the old "tutorials". It will be frequently updated to reflect the application evolution and add new topics.
 
 #### Code enhancements/developer experience
 

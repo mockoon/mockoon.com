@@ -72,7 +72,7 @@ const Faq: FunctionComponent = function () {
                 ).
               </p>
               <h3>Where are my data stored?</h3>
-              <p>
+              <div>
                 Locally, in your operating system user data folder.{' '}
                 <ul>
                   <li>
@@ -87,7 +87,7 @@ const Faq: FunctionComponent = function () {
                     <code>~/Library/Application Support/mockoon/storage</code>
                   </li>
                 </ul>
-              </p>
+              </div>
               <h3>Are you collecting usage data?</h3>
               <p>
                 Yes, but only anonymous data through Google Analytics. Besides

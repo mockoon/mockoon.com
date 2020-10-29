@@ -1,6 +1,6 @@
 ---
 title: Requests logging
-icon: restore
+icon: history
 meta:
   title: Mock API requests logging
   description: Learn how to access entering requests and outgoing responses logs for easier debugging

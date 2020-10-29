@@ -31,7 +31,6 @@ export const buildSlugStaticPaths = (folder: string) => {
   const articlePaths = sync(`${process.cwd()}/content/${folder}/*.md`);
   const paths = articlePaths.map((articlePath) => {
     const pathParts = articlePath.split('/');
-    let articleName = pathParts[pathParts.length - 1].slice(0, -3);
 
     return {
       params: { slug: pathParts[pathParts.length - 1].slice(0, -3) }

@@ -58,7 +58,7 @@ Application errors feedback has been greatly improved especially for JSON conten
 
 - Demo environment has been updated to better show Mockoon's capabilities. (Issue #300)
 - Release notes are now shown on startup after an update. (Issue #302)
-- This website has a new versioned [documentation](https://mockoon.com/docs/latest/) regrouping the old "tutorials". It will be frequently updated to reflect the application evolution and add new topics.
+- This website has a new versioned [documentation](https://mockoon.com/docs/latest/about/) regrouping the old "tutorials". It will be frequently updated to reflect the application evolution and add new topics.
 
 #### Code enhancements/developer experience
 

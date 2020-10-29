@@ -70,7 +70,7 @@ The last step is to run your mock API. For this, click on the green "play" arrow
 
 ![Recording of running a mock API](/images/tutorials/getting-started/run-mock-api.gif)
 
-Your mock server is now available on http://localhost:3000 (but also on http://127.0.0.1 and all your local network adapters).
+Your mock server is now available on `http://localhost:3000` (but also on `http://127.0.0.1` and all your local network adapters).
 
 You can do a test call to the following URL `http://localhost:3000/tutorials` using your favorite tool (here using Insomnia) and see the returned response:
 

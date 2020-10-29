@@ -147,7 +147,10 @@ class Index extends React.Component {
               <div className='column has-text-centered'>
                 <p>
                   Mockoon is released under the MIT license. Feel free to{' '}
-                  <a href='https://github.com/mockoon/mockoon'>contribute</a>.
+                  <a href='https://github.com/mockoon/mockoon' rel='noopener'>
+                    contribute
+                  </a>
+                  .
                 </p>
               </div>
             </div>
@@ -214,7 +217,7 @@ class Index extends React.Component {
             </div>
             <div className='columns'>
               <div className='column has-text-centered'>
-                <a href='features/'>Complete list of features</a>
+                <a href='/features/'>Complete list of features</a>
               </div>
             </div>
           </div>
@@ -437,7 +440,7 @@ class Index extends React.Component {
                   <p>
                     You have found a bug, you have an idea? Submit them on
                     Mockoon's{' '}
-                    <a href='https://github.com/mockoon/mockoon'>
+                    <a href='https://github.com/mockoon/mockoon' rel='noopener'>
                       GitHub repository
                     </a>
                     .

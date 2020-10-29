@@ -9,14 +9,22 @@ import Newsletter from '../../components/newsletter';
 import Layout from '../../layout/layout';
 import { ArticleData } from '../../models/common.model';
 import { buildSlugStaticPaths } from '../../utils/static-builders';
+import { linkTarget } from '../../utils/url';
 
 export async function getStaticProps({ params }) {
   const fileContent = await require(`../../content/blog/${params.slug}.md`);
   const parsedContent = matter(fileContent.default);
 
+  // replace #xxx links
   parsedContent.content = parsedContent.content.replace(
     /Issue #([0-9]+)/gi,
     '[Issue #$1](https://github.com/mockoon/mockoon/issues/$1)'
+  );
+
+  // replace mockoon/cli#xxx or cli/#xxx links
+  parsedContent.content = parsedContent.content.replace(
+    /Issue ((mockoon\/)?(commons|cli)#([0-9]+))/gi,
+    '[Issue #$4](https://github.com/mockoon/$3/issues/$4)'
   );
 
   return {
@@ -37,12 +45,6 @@ export default function BlogArticle(props: {
   articleData: ArticleData;
   articleBody: string;
 }) {
-  const linkTarget = (uri: string) => {
-    if (uri.startsWith('http')) {
-      return '_blank';
-    }
-  };
-
   return (
     <Layout>
       {props.articleData.canonical && (

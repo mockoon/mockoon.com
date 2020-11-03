@@ -3,7 +3,7 @@ title: Getting started with Mockoon
 excerpt: Learn how to create your first mock API with Mockoon
 meta:
   title: Getting started with Mockoon
-  description: Learn how to create your first mock API with Mockoon in no time
+  description: Learn how to create your first local mock API server with Mockoon with custom JSON body
 image: tutorial-getting-started.png
 imageAlt: Mockoon and Angular logos side by side
 order: 10

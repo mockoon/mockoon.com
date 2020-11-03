@@ -72,9 +72,6 @@ export default function BlogArticle(props: {
             </div>
             <div className='column is-9'>
               <div className='content'>
-                <h3>{props.articleData.title}</h3>
-                <h6>Published on {props.articleData.date}</h6>
-                <hr />
                 <ReactMarkdown
                   source={props.articleBody}
                   linkTarget={linkTarget}

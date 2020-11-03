@@ -9,7 +9,7 @@ import { buildIndexStaticProps } from '../../utils/static-builders';
 
 const meta = {
   title: "Mockoon's latest news and announcements",
-  description: "Stay up to date with all Mockoon's news!"
+  description: "Stay up to date with all Mockoon's news. Learn how to create free mock REST API servers"
 };
 
 export async function getStaticProps() {

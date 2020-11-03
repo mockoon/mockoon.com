@@ -3,7 +3,7 @@ title: Import/export data
 icon: import_export
 meta:
   title: Import and export mock API and routes
-  description: Learn how to easily import and export your mock APIs and routes in OpenAPI or Mockoon format
+  description: Learn how to easily import and export or share with your team your mock API servers and routes in OpenAPI or Mockoon's own format
 ---
 
 # Import/export data

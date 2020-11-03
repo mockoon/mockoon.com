@@ -8,20 +8,21 @@ import Testimonial from '../components/testimonial';
 import Layout from '../layout/layout';
 const version = require('../package.json').version;
 
-const meta = { title: 'Create mock APIs in seconds' };
+const meta = {
+  title: 'Create mock APIs in seconds',
+  description:
+    'Mockoon is the easiest and quickest way to run mock API servers locally.<br>No remote deployment, no account required, free, open source and cross-platform.'
+};
 
 class Index extends React.Component {
   render() {
     return (
       <Layout>
-        <Meta
-          title={meta.title}
-          description='Mockoon is a free and open source desktop application allowing to quickly create mock API.'
-        />
+        <Meta title={meta.title} description={meta.description} />
 
         <Hero
           title={meta.title}
-          subtitle='Mockoon is the easiest and quickest way to run mock API locally.<br>No remote deployment, no account required, open source.'
+          subtitle={meta.description}
           withDownloadCTA={true}
           mainPicture='/images/screenshot.png'
           mainPictureAlt='Application screenshot'
@@ -31,7 +32,7 @@ class Index extends React.Component {
           <div className='container'>
             <div className='columns'>
               <div className='column has-text-centered'>
-                <h1 className='title'>
+                <h3 className='title'>
                   Download Mockoon{' '}
                   <a
                     href={
@@ -43,7 +44,7 @@ class Index extends React.Component {
                   >
                     <span className='is-size-6'>v{version}</span>
                   </a>
-                </h1>
+                </h3>
               </div>
             </div>
 
@@ -161,7 +162,7 @@ class Index extends React.Component {
           <div className='container'>
             <div className='columns'>
               <div className='column has-text-centered'>
-                <h1 className='title'>Some great features!</h1>
+                <h3 className='title'>Some great features!</h3>
               </div>
             </div>
 
@@ -233,7 +234,7 @@ class Index extends React.Component {
           <div className='container'>
             <div className='columns'>
               <div className='column has-text-centered'>
-                <h1 className='title'>What developers say</h1>
+                <h3 className='title'>What developers say</h3>
               </div>
             </div>
 
@@ -435,7 +436,7 @@ class Index extends React.Component {
           <div className='container'>
             <div className='columns'>
               <div className='column has-text-centered'>
-                <h1 className='title'>Feedback welcome!</h1>
+                <h3 className='title'>Feedback welcome!</h3>
                 <div className='content'>
                   <p>
                     You have found a bug, you have an idea? Submit them on

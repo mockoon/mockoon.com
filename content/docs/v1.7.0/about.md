@@ -2,8 +2,8 @@
 title: About docs
 icon: help
 meta:
-  title: About Mockoon's documentation
-  description: Get detailed information on Mockoon's features and options, and learn how to create mock APIs.
+  title: Learn about Mockoon's documentation
+  description: Discover Mockoon's features and options, explore advanced topics and learn how to create fast and free mock API JSON servers.
 ---
 
 # About docs

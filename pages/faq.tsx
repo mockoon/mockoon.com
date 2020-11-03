@@ -10,7 +10,7 @@ const Faq: FunctionComponent = function () {
     <Layout>
       <Meta
         title="Frenquently asked questions (FAQ)"
-        description='Find the most frequently asked questions about Mockoon, the free desktop mock API creation tool.'
+        description='Find the most frequently asked questions about Mockoon, the free cross-platform desktop mock REST API servers creation tool.'
         ogType='article'
       />
       <Hero title='Frequently asked questions' />

@@ -3,7 +3,7 @@ title: Create the best mock API for your Angular application
 excerpt: Learn how to mock your API with Mockoon when working on an Angular application
 meta:
   title: Create the best mock API for your Angular application
-  description: Learn how to mock your API with Mockoon when working on an Angular application
+  description: Learn how to mock a REST API with Mockoon when working on an Angular application by using env files or a proxy
 image: tutorial-angular-mocking.png
 imageAlt: Mockoon and Angular logos side by side
 order: 100

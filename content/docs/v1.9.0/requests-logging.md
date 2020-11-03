@@ -3,7 +3,7 @@ title: Requests logging
 icon: history
 meta:
   title: Mock API requests logging
-  description: Learn how to access entering requests and outgoing responses logs for easier debugging
+  description: Learn how to access requests and responses logs or record your REST API servers calls for easier debugging
 ---
 
 # Requests logging

@@ -3,7 +3,7 @@ title: CORS
 icon: shuffle
 meta:
   title: Automatic handling of CORS preflight OPTIONS requests
-  description: Front and mock API are not on the same domain? Handle preflight requests automatically with Mockoon
+  description: Front-end application and your JSON mock API are not on the same domain? Handle preflight OPTIONS requests automatically with Mockoon
 ---
 
 # CORS

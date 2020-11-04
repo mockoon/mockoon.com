@@ -242,7 +242,7 @@ class Index extends React.Component {
               <div className='column is-one-quarter'>
                 <Testimonial
                   link='https://twitter.com/KechaAlex/status/1283134297067618306'
-                  imgSrc='https://pbs.twimg.com/profile_images/1282035290010419204/_9NFn5MH_400x400.jpg'
+                  imgSrc='/images/testimonials/_9NFn5MH_400x400.jpg'
                   name='Alexandros'
                   username='@KechaAlex'
                 >
@@ -270,7 +270,7 @@ class Index extends React.Component {
               <div className='column is-one-quarter'>
                 <Testimonial
                   link='https://twitter.com/chumaumenze/status/1276429472057765888'
-                  imgSrc='https://pbs.twimg.com/profile_images/1236001968872660992/OfPPfWh9_400x400.jpg'
+                  imgSrc='/images/testimonials/OfPPfWh9_400x400.jpg'
                   name='Chuma Umenze'
                   username='@chumaumenze'
                 >
@@ -280,19 +280,22 @@ class Index extends React.Component {
               </div>
               <div className='column is-one-quarter'>
                 <Testimonial
-                  link='https://twitter.com/brunoald/status/1276317161200418816'
-                  imgSrc='https://pbs.twimg.com/profile_images/654677512358748160/uoB8Zjj9_400x400.jpg'
-                  name='Bruno Dias'
-                  username='@brunoald'
+                  link='https://twitter.com/ubuntu/status/1321763987361509376'
+                  imgSrc='/images/testimonials/cof_orange_hex_bigger.jpg'
+                  name='Ubuntu'
+                  username='@ubuntu'
                 >
-                  I've used Mockoon to mock the API of a mobile app and it is so
-                  useful for edge scenarios.
+                  Developers! Mockoon is the easiest and quickest way to run
+                  mock APIs locally. No remote deployment, no account required,
+                  open source.
+                  <br />
+                  snap install mockoon
                 </Testimonial>
               </div>
               <div className='column is-one-quarter'>
                 <Testimonial
                   link='https://twitter.com/rubeshgain/status/1243557172988051456'
-                  imgSrc='https://pbs.twimg.com/profile_images/814759962119270400/F3baAGfY_400x400.jpg'
+                  imgSrc='/images/testimonials/F3baAGfY_400x400.jpg'
                   name='Rubesh Gain'
                   username='@rubeshgain'
                 >
@@ -307,7 +310,7 @@ class Index extends React.Component {
               <div className='column is-one-quarter'>
                 <Testimonial
                   link='https://twitter.com/nQaze/status/1239577212883554310'
-                  imgSrc='https://pbs.twimg.com/profile_images/1292399444613201920/NFa3Y9Uk_400x400.jpg'
+                  imgSrc='/images/testimonials/NFa3Y9Uk_400x400.jpg'
                   name='Nabil Kazi'
                   username='@nQaze'
                 >
@@ -335,7 +338,7 @@ class Index extends React.Component {
               <div className='column is-one-quarter'>
                 <Testimonial
                   link='https://twitter.com/nicola_orritos/status/1227168377275371520'
-                  imgSrc='https://pbs.twimg.com/profile_images/643766080/photo_small_400x400.png'
+                  imgSrc='/images/testimonials/photo_small_400x400.jpg'
                   name='Nicola Orritos'
                   username='@nicola_orritos'
                 >
@@ -384,7 +387,7 @@ class Index extends React.Component {
               <div className='column is-one-quarter'>
                 <Testimonial
                   link='https://twitter.com/Axel_V_py/status/1214821739613560832'
-                  imgSrc='https://pbs.twimg.com/profile_images/1088469327819538432/fCg5Iqt5_400x400.jpg'
+                  imgSrc='/images/testimonials/fCg5Iqt5_400x400.jpg'
                   name='Axel'
                   username='@Axel_V_py'
                 >
@@ -401,7 +404,7 @@ class Index extends React.Component {
               <div className='column is-one-quarter'>
                 <Testimonial
                   link='https://twitter.com/deciomontanhani/status/1211713659824754689'
-                  imgSrc='https://pbs.twimg.com/profile_images/1017960139326918656/mAoZtKto_400x400.jpg'
+                  imgSrc='/images/testimonials/mAoZtKto_400x400.jpg'
                   name='Sr. Décio Montanhani'
                   username='@deciomontanhani'
                 >

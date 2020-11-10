@@ -59,6 +59,10 @@ p.is-brand {
 }
 .footer {
   background-color: #efefef;
+
+  a {
+    color: $body-color;
+  }
 }
 .donate-item {
   display: inline-block;

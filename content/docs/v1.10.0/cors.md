@@ -1,6 +1,6 @@
 ---
 title: CORS
-icon: multiple_stop
+icon: shuffle
 meta:
   title: Automatic handling of CORS preflight OPTIONS requests
   description: Front-end application and your JSON mock API are not on the same domain? Handle preflight OPTIONS requests automatically with Mockoon
@@ -22,7 +22,7 @@ Open the **Environment Settings** by clicking on the cog in the upper right corn
 
 Enable the **CORS option** by ticking the checkbox. The option was successfully activated if a blue shield is displayed next to the environment name.
 
-![tick the CORS checkbox](/images/docs/v1.11.0-enable-cors.png)
+![tick the CORS checkbox](/images/docs/enable-cors.png)
 
 You need to restart the environment for the change to take effect.
 
@@ -40,6 +40,6 @@ Please note that Mockoon won’t send any CORS header on routes with the OPTIONS
 
 You can also add the same CORS headers to a mock API by clicking on the **Add CORS headers to environment** link:
 
-![Click on the add CORS headers link](/images/docs/v1.11.0-add-cors-headers.png)
+![Click on the add CORS headers link](/images/docs/add-cors-headers.png)
 
 You need to restart the environment for the change to take effect.

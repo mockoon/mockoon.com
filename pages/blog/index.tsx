@@ -9,13 +9,21 @@ import { buildIndexStaticProps } from '../../utils/static-builders';
 
 const meta = {
   title: "Mockoon's latest news and announcements",
-  description: "Stay up to date with all Mockoon's news. Learn how to create free mock REST API servers"
+  description:
+    "Stay up to date with all Mockoon's news. Learn how to create free mock REST API servers"
 };
 
 export async function getStaticProps() {
-  return buildIndexStaticProps(
+  const staticProps = buildIndexStaticProps(
     require.context('../../content/blog/', false, /\.md$/)
   );
+
+  staticProps.props.articles = staticProps.props.articles.sort(
+    (firstArticle, secondArticle) =>
+      new Date(secondArticle.data.date).getTime() -
+      new Date(firstArticle.data.date).getTime()
+  );
+  return staticProps;
 }
 
 const Blog: FunctionComponent<{

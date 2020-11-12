@@ -62,7 +62,6 @@ Mockoon also supports the following helpers which can return entering requests i
 - `now 'YYYY-MM-DD'`: display the current time in the chosen format. Format syntax is based on [date-fns package (v2)](https://date-fns.org/v2.11.1/docs/format) and is optional (default to ISO string).
 - `newline`: add a newline `\n`.
 - `base64 'string'`: encode the parameter as base64. This can be used as an inline helper or block helper (see below).
-- `objectId 'string' | number`: creates a valid ObjectId. It can generates the ObjectId based on the specified time (in seconds) or from a 12 byte string that will act as a seed. Syntax is based on [bson-objectid package](https://www.npmjs.com/package/bson-objectid).
 
 ## Usages
 

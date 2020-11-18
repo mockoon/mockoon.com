@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import React, { ChangeEvent, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { rsort as semverSort } from 'semver';
+import CodeHighlighter from '../../components/code-highlighter';
 import Download from '../../components/download';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
@@ -202,6 +203,7 @@ export default function Docs(props: {
               <div className='content'>
                 <ReactMarkdown
                   source={props.topicBody}
+                  renderers={{ code: CodeHighlighter }}
                   transformLinkUri={transformLinkUri(currentVersion)}
                   linkTarget={linkTarget}
                 />

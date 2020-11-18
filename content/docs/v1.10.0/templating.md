@@ -71,7 +71,7 @@ Templating will work in the body editor without consideration for the Content-Ty
 
 Here is an example of what you can do with this templating system:
 
-```
+```json
 {
   "userId": "{{ urlParam 'id' }}",
   "name": "{{ queryParam 'name' 'John' }}",
@@ -105,10 +105,10 @@ Here is an example of what you can do with this templating system:
 
 The above template produces the following body with this request:
 
-```
+```http
 GET /user/123456?name=john
 Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
-Body:
+
 {
   "element": [
     {"title": "My title"}
@@ -118,7 +118,7 @@ Body:
 
 Response:
 
-```
+```json
 {
   "userId": "5",
   "name": "john",
@@ -146,7 +146,7 @@ Response:
 
 This system is flexible enough to generate a lot of different contents like CSV files:
 
-```
+```csv
 firstname,lastname,countryCode
 {{# repeat 10 }}
   {{ faker 'name.firstName' }},{{ faker 'name.lastName' }},{{ faker 'address.countryCode' }}
@@ -155,7 +155,7 @@ firstname,lastname,countryCode
 
 Response:
 
-```
+```csv
 firstname,lastname,countryCode
 Max,Magby,AZ
 Stan,Muldoon,HM
@@ -174,14 +174,14 @@ Vaughn,Neal,MO
 By using the `base64` helper, you can encode parts or entirety of the response by enclosing the content in a block helper.  
 Inline helper:
 
-```
+```html
 {{base64 'test'}}
-{{base64 (body 'path.to.property)}}
+{{base64 (body 'path.to.property')}}
 ```
 
 Block helper: 
 
-```
+```csv
 {{# base64}}
 firstname,lastname,countryCode
 {{# repeat 10 }}

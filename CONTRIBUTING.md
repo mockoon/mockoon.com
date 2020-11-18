@@ -10,6 +10,14 @@ The following rules apply to all contributions:
 - Pull requests must refer to an open issue. Pull requests not solving existing issues may not be accepted.
 - Issues and PR must follow the provided templates.
 
+## Run the application in dev mode
+
+- Clone the repository: `git@github.com:mockoon/mockoon.com.git`
+- Run `npm install`.
+- Run `npm run dev`.
+
+You will get hot reload on the Next.js application.
+
 ## Work on your feature or bugfix
 
 - Start your `feature` or `fix` from `main`

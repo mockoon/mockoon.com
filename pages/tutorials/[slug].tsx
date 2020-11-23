@@ -1,7 +1,7 @@
 import matter from 'gray-matter';
 import Head from 'next/head';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdownWithHtml from 'react-markdown/with-html';
 import CodeHighlighter from '../../components/code-highlighter';
 import Download from '../../components/download';
 import Hero from '../../components/hero';
@@ -69,8 +69,9 @@ export default function Tutorials(props: {
                     alt={props.articleData.imageAlt}
                   />
                 </figure>
-                <ReactMarkdown
+                <ReactMarkdownWithHtml
                   source={props.articleBody}
+                  escapeHtml={false}
                   renderers={{ code: CodeHighlighter }}
                   transformLinkUri={transformLinkUri()}
                   linkTarget={linkTarget}

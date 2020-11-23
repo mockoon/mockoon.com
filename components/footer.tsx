@@ -23,17 +23,22 @@ const Footer: FunctionComponent = function () {
               </p>
               <p>
                 <a href='/tutorials/getting-started/'>
-                  🚀 Getting started with Mockoon
+                  Getting started with Mockoon 🚀
                 </a>
               </p>
               <p>
                 <a href='/tutorials/partial-mocking-proxy/'>
-                  🛡️ Partial mocking with proxy mode
+                  Partial mocking with proxy mode
                 </a>
               </p>
               <p>
                 <a href='/tutorials/requests-recording-auto-mocking/'>
-                  ⏱️ Requests recording and auto-mocking
+                  Requests recording and auto-mocking
+                </a>
+              </p>
+              <p>
+                <a href='/tutorials/generate-mock-json-data/'>
+                  Generate dynamic mock data with Mockoon templating system
                 </a>
               </p>
               <p>

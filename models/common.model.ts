@@ -9,12 +9,14 @@ export type MetaData = {
 export type ArticleData = {
   title: string;
   excerpt: string;
-  date: string;
+  date?: string;
   meta: MetaData;
+  // canonical URl if different
   canonical?: string;
+  image?: string;
+  imageAlt?: string;
+  // order of the article on the index page
+  order?: number;
 };
 
-export interface TutorialData extends ArticleData {
-  image: string;
-  imageAlt: string;
-}
+export type ArticleList = { data: ArticleData; slug: string }[];

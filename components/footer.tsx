@@ -59,6 +59,9 @@ const Footer: FunctionComponent = function () {
                 <a href='/docs/latest/about/'>📚 Documentation</a>
               </p>
               <p>
+                <a href='/mock-samples/'>📄 Mock samples</a>
+              </p>
+              <p>
                 <a href='https://github.com/mockoon/mockoon/discussions'>
                   ❓ Support
                 </a>

@@ -15,23 +15,25 @@ const Hero: FunctionComponent<{
       </div>
 
       <div className='hero-body'>
-        <div className='container has-text-centered'>
-          {props.title && <h1 className='title is-spaced'>{props.title}</h1>}
+        <div className={`${props.title ? 'section' : ''}`}>
+          <div className='container has-text-centered'>
+            {props.title && <h1 className='title is-spaced'>{props.title}</h1>}
 
-          {props.subtitle && (
-            <h2
-              className='subtitle mt20'
-              dangerouslySetInnerHTML={{ __html: props.subtitle }}
-            ></h2>
-          )}
+            {props.subtitle && (
+              <h2
+                className='subtitle mt20'
+                dangerouslySetInnerHTML={{ __html: props.subtitle }}
+              ></h2>
+            )}
 
-          {props.withDownloadCTA && (
-            <p>
-              <a className='button is-primary' href='#download'>
-                <span>Download</span>
-              </a>
-            </p>
-          )}
+            {props.withDownloadCTA && (
+              <p>
+                <a className='button is-primary' href='#download'>
+                  <span>Download</span>
+                </a>
+              </p>
+            )}
+          </div>
         </div>
       </div>
 

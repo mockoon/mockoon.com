@@ -224,7 +224,15 @@ class Index extends React.Component {
           </div>
         </section>
 
-        <Donate />
+        <section className='section'>
+          <div className='container has-text-centered has-text-weight-semibold'>
+            <p className='title is-6'>
+              Donate to help create the best mock API tool:
+            </p>
+            <Donate />
+          </div>
+        </section>
+
         <style jsx>{`
           .media-content {
             font-size: 0.2rem;

@@ -9,7 +9,7 @@ const Faq: FunctionComponent = function () {
   return (
     <Layout>
       <Meta
-        title="Frenquently asked questions (FAQ)"
+        title='Frequently asked questions (FAQ)'
         description='Find the most frequently asked questions about Mockoon, the free cross-platform desktop mock REST API servers creation tool.'
         ogType='article'
       />
@@ -66,6 +66,7 @@ const Faq: FunctionComponent = function () {
                 <a
                   href='https://github.com/mockoon/mockoon/blob/master/LICENSE.md'
                   target='_blank'
+                  rel='noopener'
                 >
                   MIT license
                 </a>

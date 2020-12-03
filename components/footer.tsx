@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react';
-import GitHub from './github';
 
 const Footer: FunctionComponent = function () {
   return (
@@ -8,69 +7,86 @@ const Footer: FunctionComponent = function () {
         <div className='columns'>
           <div className='column is-4'>
             <div className='content'>
-              <a href='/' className='is-size-4 has-text-weight-semibold'>
-                Home
-              </a>
-            </div>
-            <div className='content'>
-              <p>
-                <a
-                  href='/tutorials/'
-                  className='is-size-4 has-text-weight-semibold'
-                >
-                  Tutorials
-                </a>
-              </p>
-              <p>
+              <div className='title is-size-5 has-text-weight-semibold'>
+                Tutorials
+              </div>
+              <br />
+              <div className='mb-2'>
                 <a href='/tutorials/getting-started/'>
                   Getting started with Mockoon 🚀
                 </a>
-              </p>
-              <p>
+              </div>
+              <div className='mb-2'>
                 <a href='/tutorials/partial-mocking-proxy/'>
                   Partial mocking with proxy mode
                 </a>
-              </p>
-              <p>
+              </div>
+              <div className='mb-2'>
                 <a href='/tutorials/requests-recording-auto-mocking/'>
                   Requests recording and auto-mocking
                 </a>
-              </p>
-              <p>
+              </div>
+              <div className='mb-2'>
                 <a href='/tutorials/generate-mock-json-data/'>
                   Generate dynamic mock data with Mockoon templating system
                 </a>
-              </p>
-              <p>
-                <a href='/tutorials/' className='has-text-grey'>
-                  View all tutorials
-                </a>
-              </p>
+              </div>
+              <div className='mb-2'>
+                <a href='/tutorials/'>View all tutorials</a>
+              </div>
             </div>
           </div>
 
-          <div className='column is-4 is-offset-4'>
+          <div className='column is-2 is-offset-1'>
             <div className='content'>
-              <p className='is-size-4'>More</p>
-              <p>
-                <a href='/blog/'>📓 Blog</a>
-              </p>
-              <p>
-                <a href='/docs/latest/about/'>📚 Documentation</a>
-              </p>
-              <p>
-                <a href='https://github.com/mockoon/mockoon/discussions'>
-                  ❓ Support
+              <div className='title is-size-5 has-text-weight-semibold'>
+                Resources
+              </div>
+              <div className='mb-2'>
+                <a href='/tutorials/'>Tutorials</a>
+              </div>
+              <div className='mb-2'>
+                <a href='/docs/latest/about/'>Docs</a>
+              </div>
+              <div className='mb-2'>
+                <a href='/blog/'>Blog</a>
+              </div>
+            </div>
+          </div>
+
+          <div className='column is-2'>
+            <div className='content'>
+              <div className='title is-size-5 has-text-weight-semibold'>
+                More
+              </div>
+              <div className='mb-2'>
+                <a href='/contact/'>Request support</a>
+              </div>
+              <div className='mb-2'>
+                <a href='/sponsor-us/'>Sponsor us</a>
+              </div>
+              <div className='mb-2'>
+                <a href='/about/'>About us</a>
+              </div>
+              <div className='mb-2'>
+                <a
+                  href='https://github.com/mockoon'
+                  target='_blank'
+                  rel='noopener'
+                >
+                  <i className='icon-github' aria-hidden='true'></i> GitHub
                 </a>
-              </p>
-              <p>
-                <a href='https://github.com/mockoon/mockoon/blob/master/backers.md'>
-                  👩‍💻 Backers and supporters
-                </a>
-              </p>
-              <p>
-                <GitHub />
-              </p>
+              </div>
+            </div>
+          </div>
+
+          <div className='column is-3'>
+            <div className='content has-text-centered'>
+              <img
+                src='/images/logo-eyes-grey.svg'
+                alt='Mockoon eyes logo'
+                width='96'
+              />
             </div>
           </div>
         </div>

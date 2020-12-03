@@ -2,6 +2,7 @@
 
 $blue: #008bca;
 $primary: $blue;
+$light: $grey-lighter;
 $link-hover: darken($blue, 10%);
 
 @import '../node_modules/bulma/bulma.sass';
@@ -61,7 +62,10 @@ p.is-brand {
   background-color: #efefef;
 
   a {
-    color: $body-color;
+    color: $grey;
+    &:hover {
+      color: $body-color;
+    }
   }
 }
 .donate-item {

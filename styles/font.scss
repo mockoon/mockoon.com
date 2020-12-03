@@ -1,8 +1,6 @@
 @font-face {
   font-family: 'mockoon';
-  src: url('/fonts/mockoon.ttf?pwwbie') format('truetype'),
-    url('/fonts/mockoon.woff?pwwbie') format('woff'),
-    url('/fonts/mockoon.svg?pwwbie#mockoon') format('svg');
+  src: url('/fonts/mockoon.ttf?ceqmoj') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: auto;
@@ -76,4 +74,16 @@
 }
 .icon-linux:before {
   content: '\f17c';
+}
+.icon-github:before {
+  content: '\eab0';
+}
+.icon-chat:before {
+  content: '\e90c';
+}
+.icon-email:before {
+  content: '\e90d';
+}
+.icon-star:before {
+  content: '\e90e';
 }

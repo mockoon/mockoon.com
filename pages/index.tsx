@@ -1,5 +1,4 @@
 import React from 'react';
-import Donate from '../components/donate';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Newsletter from '../components/newsletter';
@@ -221,15 +220,6 @@ class Index extends React.Component {
                 <a href='/features/'>Complete list of features</a>
               </div>
             </div>
-          </div>
-        </section>
-
-        <section className='section'>
-          <div className='container has-text-centered has-text-weight-semibold'>
-            <p className='title is-6'>
-              Donate to help create the best mock API tool:
-            </p>
-            <Donate />
           </div>
         </section>
 

@@ -76,20 +76,24 @@ p.is-brand {
     margin-right: 20px;
   }
 }
-.card-content {
-  padding: 0.8rem;
-}
 
 .image.max-50 {
   max-width: 50%;
 }
-.card-content {
-  position: relative;
-  overflow: hidden;
-}
 
-.card .media:not(:last-child) {
-  margin-bottom: 0.5rem;
+.card {
+  & .media:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  box-shadow: none;
+  border: 1px solid $grey-lighter;
+
+  .card-content {
+    padding: 0.8rem;
+    position: relative;
+    overflow: hidden;
+  }
 }
 
 .menu-list {

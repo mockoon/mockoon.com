@@ -58,6 +58,9 @@ class Nav extends Component<any, { menuOpened: boolean }> {
             <a className='navbar-item' href='/faq/'>
               FAQ
             </a>
+            <a className='navbar-item' href='/sponsor-us/'>
+              Sponsor us
+            </a>
           </div>
         </div>
       </header>

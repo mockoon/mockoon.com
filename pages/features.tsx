@@ -14,7 +14,8 @@ const featuresList = [
   {
     title: 'Import / export',
     description:
-      'Mock API import / export with Swagger/OpenAPI format support. <a href="/docs/latest/import-export-data/">Learn more</a>'
+      'Mock API import / export with Swagger/OpenAPI format support.',
+    link: '/docs/latest/import-export-data/'
   },
   {
     title: 'Route regex',
@@ -24,22 +25,25 @@ const featuresList = [
   {
     title: 'Multiple responses per route',
     description:
-      'Serve multiple <a href="/docs/latest/multiple-responses/">rules-triggered responses</a> for each route with any headers body, or HTTP status codes.'
+      'Serve multiple rules-triggered responses for each route with any headers body, or HTTP status codes.',
+    link: '/docs/latest/multiple-responses/'
   },
   {
     title: 'CORS',
     description:
-      'Automatically send CORS headers (<code>Access-Control-Allow-Origin</code>, etc.) for OPTIONS requests. <a href="/docs/latest/cors/">Learn more</a>'
+      'Automatically send CORS headers (<code>Access-Control-Allow-Origin</code>, etc.) for OPTIONS requests.',
+    link: '/docs/latest/cors/'
   },
   {
     title: 'HTTPS',
-    description:
-      'Serve your mock API over TLS with self-signed certificate. <a href="/docs/latest/https/">Learn more</a>'
+    description: 'Serve your mock API over TLS with self-signed certificate.',
+    link: '/docs/latest/https/'
   },
   {
     title: 'Response headers',
     description:
-      'Add any response headers to your routes and mock API. With auto-completion. <a href="/docs/latest/response-headers/">Learn more</a>'
+      'Add any response headers to your routes and mock API. With auto-completion.',
+    link: '/docs/latest/response-headers/'
   },
   {
     title: 'Latency',
@@ -48,7 +52,8 @@ const featuresList = [
   {
     title: 'Requests and responses logs',
     description:
-      'All incoming requests and outgoing responses are logged for easier debugging. <a href="/docs/latest/requests-logging/">Learn more</a>'
+      'All incoming requests and outgoing responses are logged for easier debugging.',
+    link: '/docs/latest/requests-logging/'
   },
   {
     title: 'Proxy mode',
@@ -68,7 +73,8 @@ const featuresList = [
   {
     title: 'Templating',
     description:
-      'Templating supported in body, file content and header, with many helpers: url params, query params, JSON body lookup, etc. <a href="/docs/latest/templating/">Learn more</a>'
+      'Templating supported in body, file content and header, with many helpers: url params, query params, JSON body lookup, etc.',
+    link: '/docs/latest/templating/'
   },
   {
     title: 'Auto-save',
@@ -87,21 +93,29 @@ const Features: FunctionComponent = function () {
 
   for (let rowIndex = 0; rowIndex < numberOfRows; rowIndex++) {
     featuresContent.push(
-      <div key={'featureRow' + rowIndex} className='tile is-horizontal'>
+      <div key={'featureRow' + rowIndex} className='columns'>
         {featuresList
           .slice(rowIndex * 3, rowIndex * 3 + 3)
           .map((feature, featureIndex) => {
             return (
-              <article
-                key={'feature' + featureIndex}
-                className='tile is-child notification'
-              >
-                <p className='title'>{feature.title}</p>
-                <p
-                  className='subtitle'
-                  dangerouslySetInnerHTML={{ __html: feature.description }}
-                ></p>
-              </article>
+              <div className='column is-4' key={'feature' + featureIndex}>
+                <div className='card'>
+                  <div className='card-content'>
+                    <p className='title is-size-5'>{feature.title}</p>
+                    <p
+                      className='mb-2'
+                      dangerouslySetInnerHTML={{ __html: feature.description }}
+                    ></p>
+                    {feature.link && (
+                      <p className='card-link'>
+                        <span>
+                          <a href={feature.link}>Documentation →</a>
+                        </span>
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
             );
           })}
       </div>
@@ -115,9 +129,23 @@ const Features: FunctionComponent = function () {
         description='List of all features offered by Mockoon, the mock API creation tool compatible with Windows, Mac and Linux.'
         ogType='article'
       />
-      <Hero title='Complete list of features' />
+      <Hero title='Why Mockoon?' />
 
       <Download />
+
+      <style>{`
+        .card {
+          height: 100%;
+        }
+        .card-content {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+        .card-link {
+          margin-top:auto;
+        }
+      `}</style>
 
       <section className='section'>
         <div className='columns'>

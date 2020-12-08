@@ -10,12 +10,12 @@ import { ArticleData } from '../../models/common.model';
 import { buildSlugStaticPaths } from '../../utils/static-builders';
 
 export async function getStaticProps({ params }) {
-  const fileContent = await require(`../../content/tutorials/${params.slug}.md`);
+  const fileContent = await require(`../../content/mock-samples/${params.slug}.md`);
   const parsedContent = matter(fileContent.default);
 
   return {
     props: {
-      slug: `tutorials/${params.slug}`,
+      slug: `mock-samples/${params.slug}`,
       articleData: parsedContent.data,
       articleBody: parsedContent.content
     }
@@ -23,10 +23,10 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  return buildSlugStaticPaths('tutorials');
+  return buildSlugStaticPaths('mock-samples');
 }
 
-export default function Tutorial(props: {
+export default function MockSample(props: {
   slug: string;
   articleData: ArticleData;
   articleBody: string;
@@ -51,11 +51,11 @@ export default function Tutorial(props: {
 
       <Article
         slug={props.slug}
-        path='tutorials'
+        path='mock-samples'
         articleBody={props.articleBody}
         articleData={props.articleData}
-        backText='⬅ Back to the tutorials'
-        shareText='Find this tutorial useful? Share it!'
+        backText='⬅ Back to the list of mock samples'
+        shareText='Find this mock sample useful? Share it!'
       />
 
       <Newsletter />

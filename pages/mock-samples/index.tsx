@@ -10,14 +10,14 @@ import { buildIndexStaticProps } from '../../utils/static-builders';
 import { orderArticles } from '../../utils/utils';
 
 const meta = {
-  title: "Learn with Mockoon's tutorials",
+  title: 'Mock API samples for your project',
   description:
-    'Learn how to get started with Mockoon and create mock APIs for your favorite languages and frameworks'
+    "Create your mock API server in no time with Mockoon's ready to use mock samples for Stripe, Paypal, Giphy, Open weather, and more"
 };
 
 export async function getStaticProps() {
   const staticProps = buildIndexStaticProps(
-    require.context('../../content/tutorials/', false, /\.md$/)
+    require.context('../../content/mock-samples/', false, /\.md$/)
   );
 
   staticProps.props.articles = orderArticles(staticProps.props.articles);
@@ -25,20 +25,25 @@ export async function getStaticProps() {
   return staticProps;
 }
 
-const Tutorials: FunctionComponent<{
+const MockSamples: FunctionComponent<{
   articles: ArticleList;
 }> = function (props) {
   return (
     <Layout>
+      <style jsx>{`
+        .card {
+          margin-bottom: 30px;
+        }
+      `}</style>
       <Meta title={meta.title} description={meta.description} />
       <Hero title={meta.title} subtitle={meta.description} />
       <Download />
 
-      <Cards path='tutorials' articles={props.articles} />
+      <Cards path='mock-samples' articles={props.articles} />
 
       <Newsletter />
     </Layout>
   );
 };
 
-export default Tutorials;
+export default MockSamples;

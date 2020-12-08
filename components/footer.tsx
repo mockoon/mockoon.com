@@ -49,6 +49,9 @@ const Footer: FunctionComponent = function () {
                 <a href='/docs/latest/about/'>Docs</a>
               </div>
               <div className='mb-2'>
+                <a href='/mock-samples/'>Mock samples</a>
+              </div>
+              <div className='mb-2'>
                 <a href='/blog/'>Blog</a>
               </div>
             </div>

@@ -1,10 +1,11 @@
 import { sync } from 'glob';
 import matter from 'gray-matter';
+import { ArticleData, ArticleList } from '../models/common.model';
 
 export const buildIndexStaticProps = (
   context: __WebpackModuleApi.RequireContext
 ) => {
-  const articles = ((files) => {
+  const articles: ArticleList = ((files) => {
     const keys = files.keys();
     const fileContents: any[] = keys.map(files);
 
@@ -15,7 +16,7 @@ export const buildIndexStaticProps = (
 
       return {
         slug: pathParts[pathParts.length - 1].slice(0, -3),
-        data: parsedContent.data
+        data: parsedContent.data as ArticleData
       };
     });
   })(context);

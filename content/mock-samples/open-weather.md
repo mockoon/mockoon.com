@@ -23,7 +23,8 @@ Our API mocking tool currently covers the following endpoints :
 > 
 > To import the file, please [follow the instructions](https://github.com/mockoon/mock-samples#how-to-import-the-samples-in-mockoon-application). 
 
-### GET /data/2.5/weather
+## GET /data/2.5/weather
+
 Access current weather data for any location on Earth using randomly generated data to mock this API as realistically as possible.
 
 ```json
@@ -72,7 +73,8 @@ Access current weather data for any location on Earth using randomly generated d
   "cod": 200
 }
 ```
-### GET /data/2.5/forecast
+
+## GET /data/2.5/forecast
 
 Easily mock Open Weather's forecast endpoint and get the hourly weather forecast for 4 days ahead.
 

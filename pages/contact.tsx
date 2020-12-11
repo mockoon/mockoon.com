@@ -11,7 +11,7 @@ const Contact: FunctionComponent = function () {
         description='Found an issue? Wondering how to use Mockoon for your specific use case? Contact us!'
       />
 
-      <Hero title='Questions? We are here to help!' />
+      <Hero title='Feedback? Questions? We are always here to help.' />
 
       <div className='section'>
         <div className='container'>

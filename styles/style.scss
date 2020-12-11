@@ -96,6 +96,19 @@ p.is-brand {
   }
 }
 
+.card.simple-card {
+  height: 100%;
+
+  .card-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-link {
+    margin-top: auto;
+  }
+}
+
 .menu-list {
   a {
     i {

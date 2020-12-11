@@ -22,7 +22,7 @@ class Index extends React.Component {
         <Hero
           title={meta.title}
           subtitle={meta.description}
-          withDownloadCTA={true}
+          cta={{ text: 'Download', link: '#download' }}
           mainPicture='/images/screenshot.png'
           mainPictureAlt='Application screenshot'
         />
@@ -31,7 +31,7 @@ class Index extends React.Component {
           <div className='container'>
             <div className='columns'>
               <div className='column has-text-centered'>
-                <h3 className='title'>
+                <h3 className='title mb-0'>
                   Download Mockoon{' '}
                   <a
                     href={
@@ -44,6 +44,9 @@ class Index extends React.Component {
                     <span className='is-size-6'>v{version}</span>
                   </a>
                 </h3>
+                <p className='is-size-7'>
+                  Mockoon is released under the MIT license.
+                </p>
               </div>
             </div>
 
@@ -142,18 +145,6 @@ class Index extends React.Component {
                 </p>
               </div>
             </div>
-
-            <div className='columns'>
-              <div className='column has-text-centered'>
-                <p>
-                  Mockoon is released under the MIT license. Feel free to{' '}
-                  <a href='https://github.com/mockoon/mockoon' rel='noopener'>
-                    contribute
-                  </a>
-                  .
-                </p>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -161,7 +152,7 @@ class Index extends React.Component {
           <div className='container'>
             <div className='columns'>
               <div className='column has-text-centered'>
-                <h3 className='title'>Some great features!</h3>
+                <h3 className='title'>Bring API mocking to the next level</h3>
               </div>
             </div>
 

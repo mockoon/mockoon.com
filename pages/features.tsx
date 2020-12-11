@@ -3,9 +3,11 @@ import Download from '../components/download';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Newsletter from '../components/newsletter';
+import SimpleCards from '../components/simple-cards';
 import Layout from '../layout/layout';
+import { ItemCard } from '../models/common.model';
 
-const featuresList = [
+const features: ItemCard = [
   {
     title: 'Unlimited mocking',
     description:
@@ -88,40 +90,6 @@ const featuresList = [
 ];
 
 const Features: FunctionComponent = function () {
-  const numberOfRows = Math.ceil(featuresList.length / 3);
-  const featuresContent = [];
-
-  for (let rowIndex = 0; rowIndex < numberOfRows; rowIndex++) {
-    featuresContent.push(
-      <div key={'featureRow' + rowIndex} className='columns'>
-        {featuresList
-          .slice(rowIndex * 3, rowIndex * 3 + 3)
-          .map((feature, featureIndex) => {
-            return (
-              <div className='column is-4' key={'feature' + featureIndex}>
-                <div className='card'>
-                  <div className='card-content'>
-                    <p className='title is-size-5'>{feature.title}</p>
-                    <p
-                      className='mb-2'
-                      dangerouslySetInnerHTML={{ __html: feature.description }}
-                    ></p>
-                    {feature.link && (
-                      <p className='card-link'>
-                        <span>
-                          <a href={feature.link}>Documentation →</a>
-                        </span>
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-      </div>
-    );
-  }
-
   return (
     <Layout>
       <Meta
@@ -129,29 +97,17 @@ const Features: FunctionComponent = function () {
         description='List of all features offered by Mockoon, the mock API creation tool compatible with Windows, Mac and Linux.'
         ogType='article'
       />
-      <Hero title='Why Mockoon?' />
+      <Hero title='Why Mockoon?' subtitle='Mockoon offers tons of features that makes API mocking a breeze.' />
 
       <Download />
 
-      <style>{`
-        .card {
-          height: 100%;
-        }
-        .card-content {
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-        }
-        .card-link {
-          margin-top:auto;
-        }
-      `}</style>
-
-      <section className='section'>
+      <div className='container'>
         <div className='columns'>
-          <div className='column is-10 is-offset-1'>{featuresContent}</div>
+          <div className='column is-10 is-offset-1'>
+            <SimpleCards items={features} />
+          </div>
         </div>
-      </section>
+      </div>
 
       <Newsletter />
     </Layout>

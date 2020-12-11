@@ -6,6 +6,14 @@ export type MetaData = {
   url?: string;
 };
 
+export type ItemCard = {
+  title: string;
+  description: string;
+  disabledLink?: boolean;
+  link?: string;
+  linkText?: string;
+}[];
+
 export type ArticleData = {
   title: string;
   excerpt: string;

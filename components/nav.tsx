@@ -49,6 +49,9 @@ class Nav extends Component<any, { menuOpened: boolean }> {
             <a className='navbar-item' href='/docs/latest/about/'>
               Docs
             </a>
+            <a className='navbar-item' href='/cli/'>
+              <span className='tag is-link is-light'>New!</span>&nbsp;CLI
+            </a>
             <a className='navbar-item' href='/tutorials/'>
               Tutorials
             </a>

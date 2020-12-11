@@ -4,7 +4,7 @@ import Nav from './nav';
 const Hero: FunctionComponent<{
   title?: string;
   subtitle?: string;
-  withDownloadCTA?: boolean;
+  cta?: { text: string; link: string };
   mainPicture?: string;
   mainPictureAlt?: string;
 }> = function (props) {
@@ -26,10 +26,10 @@ const Hero: FunctionComponent<{
               ></h2>
             )}
 
-            {props.withDownloadCTA && (
+            {props.cta && (
               <p>
-                <a className='button is-primary' href='#download'>
-                  <span>Download</span>
+                <a className='button is-primary' href={props.cta.link}>
+                  <span>{props.cta.text}</span>
                 </a>
               </p>
             )}
@@ -50,6 +50,6 @@ const Hero: FunctionComponent<{
   );
 };
 
-Hero.defaultProps = { withDownloadCTA: false, mainPicture: null };
+Hero.defaultProps = { cta: null, mainPicture: null };
 
 export default Hero;

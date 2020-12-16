@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react';
 import Cards from '../../components/cards';
+import ContactBanner from '../../components/contact-banner';
 import Download from '../../components/download';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
-import Newsletter from '../../components/newsletter';
 import Layout from '../../layout/layout';
 import { ArticleList } from '../../models/common.model';
 import { buildIndexStaticProps } from '../../utils/static-builders';
@@ -36,7 +36,7 @@ const Tutorials: FunctionComponent<{
 
       <Cards path='tutorials' articles={props.articles} />
 
-      <Newsletter />
+      <ContactBanner />
     </Layout>
   );
 };

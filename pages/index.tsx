@@ -146,6 +146,21 @@ class Index extends React.Component {
               </div>
             </div>
           </div>
+          <div className='columns'>
+            <div className='column'>
+              <p className='has-text-centered pt-4'>
+                <a
+                  href='/cli/'
+                  style={{
+                    fontFamily:
+                      'Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace'
+                  }}
+                >
+                  ~$ Looking for the CLI?
+                </a>
+              </p>
+            </div>
+          </div>
         </section>
 
         <section className='section' id='features'>
@@ -166,10 +181,12 @@ class Index extends React.Component {
                   />
                 </figure>
                 <div className='content'>
-                  <p className='title is-4'>Unlimited fast mocking</p>
+                  <p className='title is-4'>
+                    Fast mock APIs that runs everywhere
+                  </p>
                   <p>
-                    Create an unlimited number of mock API and run them in
-                    parallel.
+                    Create an unlimited number of mock APIs and run them in
+                    parallel locally or on a server with the CLI.
                   </p>
                 </div>
               </div>

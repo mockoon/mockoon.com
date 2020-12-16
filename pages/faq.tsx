@@ -51,6 +51,10 @@ const Faq: FunctionComponent = function () {
                 No, you don't need to sign up or create an account to use
                 Mockoon.
               </p>
+              <h3>Does Mockoon offer a CLI?</h3>
+              <p>
+                Yes, Mockoon has an <a href='/cli/'>official CLI</a> that allows you to run all your mock APIs in any headless or automated environment: servers, CI, GitHub Actions, etc.
+              </p>
               <h3>Is Mockoon compatible with OpenAPI?</h3>
               <p>
                 Yes, Mockoon supports most of the OpenAPI specifications (v2 and

@@ -6,11 +6,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mockoon.com</loc>
-    <lastmod>2020-11-06</lastmod>
+    <lastmod>2020-12-15</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/blog/</loc>
     <lastmod>2020-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://mockoon.com/blog/mockoon-cli-now-available/</loc>
+    <lastmod>2020-12-17</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/about/</loc>
@@ -54,11 +58,11 @@
   </url>
   <url>
     <loc>https://mockoon.com/faq/</loc>
-    <lastmod>2020-11-03</lastmod>
+    <lastmod>2020-12-15</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/features/</loc>
-    <lastmod>2020-11-03</lastmod>
+    <lastmod>2020-12-15</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/angular-mocking/</loc>

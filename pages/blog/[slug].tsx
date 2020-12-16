@@ -1,15 +1,13 @@
 import matter from 'gray-matter';
 import Head from 'next/head';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import Download from '../../components/download';
+import Article from '../../components/article';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
 import Newsletter from '../../components/newsletter';
 import Layout from '../../layout/layout';
 import { ArticleData } from '../../models/common.model';
 import { buildSlugStaticPaths } from '../../utils/static-builders';
-import { linkTarget } from '../../utils/url';
 
 export async function getStaticProps({ params }) {
   const fileContent = await require(`../../content/blog/${params.slug}.md`);
@@ -62,25 +60,14 @@ export default function BlogArticle(props: {
 
       <Hero />
 
-      <div className='section'>
-        <div className='container'>
-          <div className='columns'>
-            <div className='column is-3'>
-              <div className='content'>
-                <Download />
-              </div>
-            </div>
-            <div className='column is-9'>
-              <div className='content'>
-                <ReactMarkdown
-                  source={props.articleBody}
-                  linkTarget={linkTarget}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Article
+        slug={props.slug}
+        path='blog'
+        articleBody={props.articleBody}
+        articleData={props.articleData}
+        backText='⬅ Back to the blog posts'
+        shareText='Find this article interesting? Share it!'
+      />
 
       <Newsletter />
     </Layout>

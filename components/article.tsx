@@ -36,12 +36,14 @@ const Article: FunctionComponent<{
             </div>
             <div className='column is-9'>
               <div className='content'>
-                <figure className='image is-3by1 ml-0 mr-0'>
-                  <img
-                    src={`/images/${props.path}/${props.articleData.image}`}
-                    alt={props.articleData.imageAlt}
-                  />
-                </figure>
+                {props.articleData.image && (
+                  <figure className='image is-3by1 ml-0 mr-0'>
+                    <img
+                      src={`/images/${props.path}/${props.articleData.image}`}
+                      alt={props.articleData.imageAlt}
+                    />
+                  </figure>
+                )}
                 <ReactMarkdownWithHtml
                   source={props.articleBody}
                   escapeHtml={false}

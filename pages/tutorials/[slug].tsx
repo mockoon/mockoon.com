@@ -2,9 +2,9 @@ import matter from 'gray-matter';
 import Head from 'next/head';
 import React from 'react';
 import Article from '../../components/article';
+import ContactBanner from '../../components/contact-banner';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
-import Newsletter from '../../components/newsletter';
 import Layout from '../../layout/layout';
 import { ArticleData } from '../../models/common.model';
 import { buildSlugStaticPaths } from '../../utils/static-builders';
@@ -58,7 +58,7 @@ export default function Tutorial(props: {
         shareText='Find this tutorial useful? Share it!'
       />
 
-      <Newsletter />
+      <ContactBanner />
     </Layout>
   );
 }

@@ -1,10 +1,11 @@
 import { FunctionComponent } from 'react';
+import Cards from '../../components/cards';
 import Download from '../../components/download';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
 import Newsletter from '../../components/newsletter';
 import Layout from '../../layout/layout';
-import { ArticleData } from '../../models/common.model';
+import { ArticleList } from '../../models/common.model';
 import { buildIndexStaticProps } from '../../utils/static-builders';
 
 const meta = {
@@ -27,7 +28,7 @@ export async function getStaticProps() {
 }
 
 const Blog: FunctionComponent<{
-  articles: { data: ArticleData; slug: string }[];
+  articles: ArticleList;
 }> = function (props) {
   return (
     <Layout>
@@ -39,26 +40,9 @@ const Blog: FunctionComponent<{
       <Meta title={meta.title} description={meta.description} />
       <Hero title={meta.title} subtitle={meta.description} />
       <Download />
-      <div className='section'>
-        <div className='container'>
-          <div className='columns'>
-            <div className='column is-8 is-offset-2'>
-              {props.articles.map((article) => {
-                return (
-                  <a key={article.slug} href={`/blog/${article.slug}/`}>
-                    <div className='card'>
-                      <div className='card-content'>
-                        <p className='title'>{article.data.title}</p>
-                        <p className='subtitle'>{article.data.excerpt}</p>
-                      </div>
-                    </div>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <Cards path='blog' articles={props.articles} />
+      
       <Newsletter />
     </Layout>
   );

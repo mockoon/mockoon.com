@@ -14,6 +14,13 @@ const features: ItemCard = [
       'Create an unlimited number of mock API with unlimited number of routes and run them in parallel.'
   },
   {
+    title: 'Run your mock anywhere',
+    description:
+      'Use the CLI to run your mock APIs in any headless or automated environment: servers, CI, GitHub Actions, etc.',
+    link: '/cli/',
+    linkText: 'Discover the CLI'
+  },
+  {
     title: 'Import / export',
     description:
       'Mock API import / export with Swagger/OpenAPI format support.',
@@ -27,7 +34,7 @@ const features: ItemCard = [
   {
     title: 'Multiple responses per route',
     description:
-      'Serve multiple rules-triggered responses for each route with any headers body, or HTTP status codes.',
+      'Serve multiple rules-triggered or random responses with any headers body, or HTTP status codes.',
     link: '/docs/latest/multiple-responses/'
   },
   {
@@ -97,7 +104,10 @@ const Features: FunctionComponent = function () {
         description='List of all features offered by Mockoon, the mock API creation tool compatible with Windows, Mac and Linux.'
         ogType='article'
       />
-      <Hero title='Why Mockoon?' subtitle='Mockoon offers tons of features that makes API mocking a breeze.' />
+      <Hero
+        title='Why Mockoon?'
+        subtitle='Mockoon offers tons of features that makes API mocking a breeze.'
+      />
 
       <Download />
 

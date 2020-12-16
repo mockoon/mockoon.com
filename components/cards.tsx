@@ -7,7 +7,6 @@ const Cards: FunctionComponent<{
 }> = function (props) {
   return (
     <Fragment>
-      {' '}
       <style jsx>{`
         .card {
           margin-bottom: 30px;
@@ -24,17 +23,19 @@ const Cards: FunctionComponent<{
                     href={`/${props.path}/${article.slug}/`}
                   >
                     <div className='card'>
-                      <div className='card-image'>
-                        <figure className='image is-3by1'>
-                          <img
-                            src={`/images/${props.path}/${article.data.image}`}
-                            alt={article.data.imageAlt}
-                          />
-                        </figure>
-                      </div>
+                      {article.data.image && (
+                        <div className='card-image'>
+                          <figure className='image is-3by1'>
+                            <img
+                              src={`/images/${props.path}/${article.data.image}`}
+                              alt={article.data.imageAlt}
+                            />
+                          </figure>
+                        </div>
+                      )}
                       <div className='card-content'>
-                        <p className='title'>{article.data.title}</p>
-                        <p className='subtitle'>{article.data.excerpt}</p>
+                        <p className='title is-size-5'>{article.data.title}</p>
+                        <p>{article.data.excerpt}</p>
                       </div>
                     </div>
                   </a>

@@ -37,7 +37,7 @@ const SponsorUs: FunctionComponent = function () {
                   <span className='title is-size-5'>Guillaume</span>
                   <br />
                   <a
-                    href='https://gihub.com/255kb'
+                    href='https://github.com/255kb'
                     target='_blank'
                     rel='noopener'
                     className='has-text-grey'
@@ -60,7 +60,7 @@ const SponsorUs: FunctionComponent = function () {
                   <span className='title is-size-5'>Fabrice</span>
                   <br />
                   <a
-                    href='https://gihub.com/fabhoarau'
+                    href='https://github.com/fabhoarau'
                     target='_blank'
                     rel='noopener'
                     className='has-text-grey'

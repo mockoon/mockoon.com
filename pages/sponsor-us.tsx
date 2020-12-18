@@ -25,7 +25,7 @@ const SponsorUs: FunctionComponent = function () {
                 <p>
                   Mockoon is an open-source project created in 2017 by{' '}
                   <a
-                    href='https://gihub.com/255kb'
+                    href='https://github.com/255kb'
                     target='_blank'
                     rel='noopener'
                   >
@@ -33,7 +33,7 @@ const SponsorUs: FunctionComponent = function () {
                   </a>
                   , a developer passionate about APIs. Recently joined by{' '}
                   <a
-                    href='https://gihub.com/fabhoarau'
+                    href='https://github.com/fabhoarau'
                     target='_blank'
                     rel='noopener'
                   >

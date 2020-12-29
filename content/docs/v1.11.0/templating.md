@@ -25,6 +25,7 @@ All Handlebars helpers are available (`if`, `each`, etc.). For more information,
 
 ### Faker.js helpers
 
+
 Faker.js offers lots of helpers: `address.zipCode`, `address.city`, `address.cityPrefix`, `name.firstName`, `name.lastName`, `random.number`, `random.float`, `internet.avatar`, `internet.email`, etc. Please have a look at [Faker.js documentation](http://marak.github.io/faker.js/faker.html) to learn how to use them.
 
 All Faker.js helpers must be used in the following way: `{{faker 'namespace.method'}}`.  
@@ -41,12 +42,6 @@ In addition to these helpers, some custom ones have been added to Mockoon:
 - `{{{someOf (array 'item1' 'item2' 'item3') x y true}}}`: returns x to y random items from the array passed in parameters as an array (to be used with triple curly braces), result is the following: `["item1","item2"]`.
 - `#switch ... #case ... #default`: select some content depending on a variable. behaves like a normal switch (see the example below).
 - `#repeat x comma=true ... /repeat`: repeat the content `x` times (see the example below). Set the `comma` parameter to `false` (default to `true`) to prevent the insertion of new lines and commas by the helper.
-- `now 'YYYY-MM-DD'`: display the current time in the chosen format. Format syntax is based on [date-fns package (v2)](https://date-fns.org/v2.11.1/docs/format) and is optional (default to ISO string).
-- `newline`: add a newline `\n`.
-- `base64 'string'`: encode the parameter as base64. This can be used as an inline helper or block helper (see below).
-- `objectId 'string' | number`: create a valid ObjectId. It can generates the ObjectId based on the specified time (in seconds) or from a 12 byte string that will act as a seed. Syntax is based on [bson-objectid package](https://www.npmjs.com/package/bson-objectid).
-- `setVar 'varname' 'value'`: set a variable to be used in the template. The value can be the result of another helper: `setVar 'varname' (body 'id')`. To use it elsewhere in the template, refer to the variable with its name: `{{varname}}`. The variable can also be used as a helper parameter: `{{#repeat varname}}...{{/repeat}}`.
-- `concat 'value1' 2 'value3' ...`: concatenate multiple strings/numbers together. This helper can concatenate results from other helpers, or be used as a parameter of another helper: `concat @index (body 'id') 'value3'`, `{{#repeat (concat 1 2 3)}}...{{/repeat}}`
 
 Mockoon also supports the following helpers which can return entering requests information:
 
@@ -64,6 +59,10 @@ Mockoon also supports the following helpers which can return entering requests i
 - `hostname`: get request hostname.
 - `ip`: get request IP address.
 - `method`: get request method (GET, PUT, POST, etc.).
+- `now 'YYYY-MM-DD'`: display the current time in the chosen format. Format syntax is based on [date-fns package (v2)](https://date-fns.org/v2.11.1/docs/format) and is optional (default to ISO string).
+- `newline`: add a newline `\n`.
+- `base64 'string'`: encode the parameter as base64. This can be used as an inline helper or block helper (see below).
+- `objectId 'string' | number`: creates a valid ObjectId. It can generates the ObjectId based on the specified time (in seconds) or from a 12 byte string that will act as a seed. Syntax is based on [bson-objectid package](https://www.npmjs.com/package/bson-objectid).
 
 ## Usages
 

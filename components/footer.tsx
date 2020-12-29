@@ -80,6 +80,15 @@ const Footer: FunctionComponent = function () {
                   <i className='icon-github' aria-hidden='true'></i> GitHub
                 </a>
               </div>
+              <div className='mb-2'>
+                <a
+                  href='https://discord.gg/MutRpsY5gE'
+                  target='_blank'
+                  rel='noopener'
+                >
+                  <i className='icon-discord' aria-hidden='true'></i> Discord
+                </a>
+              </div>
             </div>
           </div>
 

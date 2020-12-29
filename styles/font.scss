@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'mockoon';
-  src: url('/fonts/mockoon.ttf?ceqmoj') format('truetype');
+  src: url('/fonts/mockoon.ttf?hkd1pj') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: auto;
@@ -86,4 +86,8 @@
 }
 .icon-star:before {
   content: '\e90e';
+}
+.icon-discord:before {
+  content: '\e90f';
+  color: #7289da;
 }

@@ -141,7 +141,7 @@ class Index extends React.Component {
                   <span>dmg</span>
                 </a>
                 <p className='content is-light'>
-                  or <code>brew cask install mockoon</code>
+                  or <code>brew install --cask mockoon</code>
                 </p>
               </div>
             </div>

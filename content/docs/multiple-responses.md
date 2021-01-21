@@ -64,7 +64,7 @@ Rules have three parts:
 
 In the dropdown menu you can choose between:
 
-- a property value in a JSON or form data **body** (if request's `Content-Type` is either `application/json` or `application/x-www-form-urlencoded`).
+- the **body** value (full raw content or one of it properties if request's `Content-Type` is either `application/json` or `application/x-www-form-urlencoded`).
 - the value of a **header**.
 - the value of a **route parameter**.
 - the value of a **query string field**.
@@ -73,7 +73,9 @@ In the dropdown menu you can choose between:
 
 Depending on the **target**, the way to access properties may be different:
 
-- **body**: access a property value using a path (based on NPM package [object-path](https://www.npmjs.com/package/object-path)) like `users.0.name` for JSON content or a single field for form data.
+- **body**: 
+  - keep empty to match against the full raw body content.
+  - use a path to access one of its properties. The syntax is based on an [object-path](https://www.npmjs.com/package/object-path) like `users.0.name`. This is compatible with request's bodies of `Content-Type` `application/json` or `application/x-www-form-urlencoded`.
 - **headers**: a header name like `Accept` or `Content-Type`.
 - **route param**: a route param name without the colon (":"), `:userId` becoming `userId`.
 - **query string**: either provide a property name like `filter` or a path if the query string field is an object `filter.primary`.

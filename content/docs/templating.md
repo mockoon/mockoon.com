@@ -47,6 +47,7 @@ In addition to these helpers, some custom ones have been added to Mockoon:
 - `objectId 'string' | number`: create a valid ObjectId. It can generates the ObjectId based on the specified time (in seconds) or from a 12 byte string that will act as a seed. Syntax is based on [bson-objectid package](https://www.npmjs.com/package/bson-objectid).
 - `setVar 'varname' 'value'`: set a variable to be used in the template. The value can be the result of another helper: `setVar 'varname' (body 'id')`. To use it elsewhere in the template, refer to the variable with its name: `{{varname}}`. The variable can also be used as a helper parameter: `{{#repeat varname}}...{{/repeat}}`.
 - `concat 'value1' 2 'value3' ...`: concatenate multiple strings/numbers together. This helper can concatenate results from other helpers, or be used as a parameter of another helper: `concat @index (body 'id') 'value3'`, `{{#repeat (concat 1 2 3)}}...{{/repeat}}`
+- `dateTimeShift date='2021-01-01' format='yyyy-MM-dd' years=1 months=1 days=1 hours=1 minutes=1 seconds=1`: shift a date by adding the number of `years`, `months`, etc. passed as parameters. The `date` and `format` parameters are optional. The helper will return the current date and time as an ISO string if omitted (`yyyy-MM-ddTHH:mm:ss.SSSxxx`).
 
 Mockoon also supports the following helpers which can return entering requests information:
 

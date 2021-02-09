@@ -21,18 +21,34 @@ const Contact: FunctionComponent = function () {
                 <p>
                   <i className='icon-chat has-text-light is-size-3'></i>
                 </p>
-                <div className='title is-4'>Community chat</div>
+                <div className='title is-4'>Forums and Discord Server</div>
                 <p>
-                  Ask for help and discuss ideas and improvements on our
-                  community chat. Usually, users get a response in under 48
-                  hours.
+                  You can ask for help or discuss ideas and improvements on our
+                  GitHub Discussions forums. You are also welcome on our Discord
+                  server. Usually, users get a response in under 48 hours.
                 </p>
                 <a
                   href='https://github.com/mockoon/mockoon/discussions'
                   target='_blank'
                   rel='noopener'
                 >
-                  Visit the community
+                  App forum
+                </a>
+                &nbsp;|&nbsp;
+                <a
+                  href='https://github.com/mockoon/cli/discussions'
+                  target='_blank'
+                  rel='noopener'
+                >
+                  CLI forum
+                </a>
+                &nbsp;|&nbsp;
+                <a
+                  href='https://discord.gg/MutRpsY5gE'
+                  target='_blank'
+                  rel='noopener'
+                >
+                  Discord server
                 </a>
               </div>
             </div>
@@ -43,7 +59,8 @@ const Contact: FunctionComponent = function () {
                 </p>
                 <div className='title is-4'>Email us</div>
                 <p>
-                  You can also request direct help by emailing the maintainers team. We will do our best to assist you.
+                  You can also request direct help by emailing the maintainers
+                  team. We will do our best to assist you.
                 </p>
                 <a href='mailto:support@mockoon.com'>support@mockoon.com</a>
               </div>

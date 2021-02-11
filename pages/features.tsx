@@ -16,7 +16,7 @@ const features: ItemCard = [
   {
     title: 'Run your mock anywhere',
     description:
-      'Use the CLI to run your mock APIs in any headless or automated environment: servers, CI, GitHub Actions, etc.',
+      'Use the CLI to run your mock APIs in any headless or automated environment: CI, GitHub Actions, Docker containers, etc.',
     link: '/cli/',
     linkText: 'Discover the CLI'
   },
@@ -91,6 +91,13 @@ const features: ItemCard = [
       'Real-time auto save as you type. Never worry again about saving!'
   },
   {
+    title: 'Docker support for the CLI',
+    description:
+      'Run the CLI directly as an NPM package or use the provided Docker image.',
+    link: 'https://github.com/mockoon/cli#docker',
+    linkText: 'Documentation'
+  },
+  {
     title: 'Offline',
     description: 'No account, no sign-up, no cloud deployment required.'
   }
@@ -111,10 +118,12 @@ const Features: FunctionComponent = function () {
 
       <Download />
 
-      <div className='container'>
-        <div className='columns'>
-          <div className='column is-10 is-offset-1'>
-            <SimpleCards items={features} />
+      <div className='section'>
+        <div className='container'>
+          <div className='columns'>
+            <div className='column is-10 is-offset-1'>
+              <SimpleCards items={features} />
+            </div>
           </div>
         </div>
       </div>

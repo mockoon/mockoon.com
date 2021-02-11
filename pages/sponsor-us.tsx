@@ -48,7 +48,7 @@ const SponsorUs: FunctionComponent = function () {
                 </p>
                 <p>
                   Reaching this level of satisfaction requires a tremendous
-                  amount of time from the maintainer. If you like Mockoon and
+                  amount of time from the maintainers. If you like Mockoon and
                   want it to propose always more great features, you can support
                   us and join the dozens of{' '}
                   <a

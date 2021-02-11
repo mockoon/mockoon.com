@@ -3,6 +3,7 @@ import ContactBanner from '../components/contact-banner';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import SimpleCards from '../components/simple-cards';
+import Terminal from '../components/terminal';
 import Layout from '../layout/layout';
 import { ItemCard } from '../models/common.model';
 
@@ -24,7 +25,7 @@ const features: ItemCard = [
   {
     title: 'Run your mocks everywhere',
     description:
-      'Soon available as Docker file, Github Action and on your favorite CI platforms!',
+      'Also available as a Docker image and soon as a Github Action or on your favorite CI platforms!',
     disabledLink: true,
     linkText: 'Stay tuned !'
   }
@@ -49,9 +50,9 @@ const SponsorUs: FunctionComponent = function () {
       />
 
       <div className='container'>
-        <div className='columns'>
-          <div className='column'>
-            <div className='section'>
+        <div className='section'>
+          <div className='columns'>
+            <div className='column'>
               <div className='content'>
                 <h3 className='mb-6 is-size-4'>
                   Mockoon's perfect complement for all your headless and
@@ -62,6 +63,35 @@ const SponsorUs: FunctionComponent = function () {
             </div>
           </div>
         </div>
+        <div className='section'>
+          <div className='columns'>
+            <div className='column'>
+              <div className='content'>
+                <h3 className='mb-6 is-size-4 has-text-centered'>
+                  NPM package quick start
+                </h3>
+                <Terminal
+                  lines={[
+                    'npm install -g @mockoon/cli',
+                    'mockoon-cli start --data ./export-file.json'
+                  ]}
+                />
+              </div>
+            </div>
+            <div className='column'>
+              <div className='content'>
+                <h3 className='mb-6 is-size-4 has-text-centered'>
+                  Docker image Quick start
+                </h3>
+                <Terminal
+                  lines={[
+                    'docker run -d --mount type=bind,source=/export-file.json,target=/data,readonly -p 3000:3000 mockoon/cli:latest -d data -i 0 -p 3000'
+                  ]}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <ContactBanner />
     </Layout>
@@ -69,18 +99,3 @@ const SponsorUs: FunctionComponent = function () {
 };
 
 export default SponsorUs;
-
-/**
- *
-
-
- I'm Guillaume. Thank you for considering supporting my open-source software work through GitHub Sponsors.
-
-I am a passionate full-stack web developer currently working on Mockoon in my spare time.
-
-Mockoon is the easiest and quickest way to run mock APIs locally. No remote deployment or account required. And it's open-source!
-I want Mockoon to be the best mocking tool out there! But this requires time. A lot of time.
-By sponsoring me you can show your appreciation for all this hard work and also allow me to dedicate more time to this project in the future.
-
-Thank you for considering support!
- */

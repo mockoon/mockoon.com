@@ -121,6 +121,62 @@ p.is-brand {
   }
 }
 
+.terminal-container {
+  text-align: center;
+
+  .terminal {
+    background-color: #21232a;
+    color: #b2b2b2;
+    font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+      'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+      'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+      monospace;
+    padding: 75px 20px 20px 20px;
+    border-radius: 10px;
+    position: relative;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: inline-block;
+    text-align: left;
+
+    .terminal-controls {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+
+      .terminal-control {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+
+        &:nth-child(1) {
+          background-color: #f15e58;
+          margin-right: 10px;
+        }
+
+        &:nth-child(2) {
+          background-color: #febb2e;
+          margin-right: 10px;
+        }
+
+        &:nth-child(3) {
+          background-color: #4cb748;
+        }
+      }
+    }
+
+    .terminal-line:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+
+    .terminal-dollar {
+      color: #3e9e30;
+      padding-right: 20px;
+    }
+  }
+}
+
 // Buy me a coffee button styles
 .bmc-button img {
   width: 27px !important;

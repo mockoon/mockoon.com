@@ -1,9 +1,9 @@
 ---
 title: Multiple responses
-icon: tune
 meta:
   title: Define multiple responses for each route
   description: Multiple responses can be defined for each route with different body, headers and status. They are triggered with rules
+order: 50
 ---
 
 # Multiple responses

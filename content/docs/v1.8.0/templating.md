@@ -1,6 +1,5 @@
 ---
 title: Templating
-icon: code
 meta:
   title: Create dynamic responses in your mock API with templating
   description: Create dynamic responses for your mock API server with Mockoon's templating system

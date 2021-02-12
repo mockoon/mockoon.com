@@ -1,9 +1,9 @@
 ---
 title: Headers
-icon: featured_play_list
 meta:
   title: Define route and environment response headers
   description: Mockoon can handle response headers at both environment and route levels for your mock server, learn how
+order: 40
 ---
 
 # Headers

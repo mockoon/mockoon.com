@@ -1,17 +1,14 @@
 import matter from 'gray-matter';
 import { useRouter } from 'next/router';
 import React, { ChangeEvent, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
 import { rsort as semverSort } from 'semver';
-import Blockquote from '../../components/blockquote';
-import CodeHighlighter from '../../components/code-highlighter';
+import ContactBanner from '../../components/contact-banner';
 import Download from '../../components/download';
 import Hero from '../../components/hero';
+import Markdown from '../../components/markdown';
 import Meta from '../../components/meta';
-import Newsletter from '../../components/newsletter';
 import Layout from '../../layout/layout';
 import { DocsNavData, DocsTopicData } from '../../models/docs.model';
-import { linkTarget, transformLinkUri } from '../../utils/url';
 const latestVersion = require('../../package.json').version;
 
 export async function getStaticPaths() {
@@ -93,11 +90,19 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       slug: `docs/${params.slug.join('/')}`,
-      navItems: topics.list.map((topic) => ({
-        title: topic.data.title,
-        icon: topic.data.icon || null,
-        slug: `/docs/${topic.slug}`
-      })),
+      navItems: topics.list
+        .map((topic) => ({
+          title: topic.data.title,
+          order: topic.data.order || 1000,
+          slug: `/docs/${topic.slug}`
+        }))
+        .sort((firstTopic, secondTopic) =>
+          firstTopic.order > secondTopic.order
+            ? 1
+            : secondTopic.order > firstTopic.order
+            ? -1
+            : 0
+        ),
       versions: topics.versions,
       topicData: parsedContent.data,
       topicBody: parsedContent.content,
@@ -184,11 +189,6 @@ export default function Docs(props: {
                             router.asPath === menuItem.slug ? 'is-active' : ''
                           }
                         >
-                          {menuItem.icon && (
-                            <i
-                              className={`icon-${menuItem.icon} is-primary`}
-                            ></i>
-                          )}
                           {menuItem.title}
                         </a>
                       </li>
@@ -202,23 +202,13 @@ export default function Docs(props: {
             </div>
             <div className='column is-9'>
               <div className='content'>
-                <ReactMarkdown
-                  source={props.topicBody}
-                  renderers={{
-                    code: CodeHighlighter,
-                    blockquote: (content) => (
-                      <Blockquote content={content.children}></Blockquote>
-                    )
-                  }}
-                  transformLinkUri={transformLinkUri(currentVersion)}
-                  linkTarget={linkTarget}
-                />
+                <Markdown body={props.topicBody} version={currentVersion} />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <Newsletter />
+      <ContactBanner />
     </Layout>
   );
 }

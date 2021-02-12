@@ -1,9 +1,9 @@
 ---
 title: CORS
-icon: multiple_stop
 meta:
   title: Automatic handling of CORS preflight OPTIONS requests
   description: Front-end application and your JSON mock API are not on the same domain? Handle preflight OPTIONS requests automatically with Mockoon
+order: 110
 ---
 
 # CORS

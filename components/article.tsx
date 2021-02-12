@@ -1,10 +1,7 @@
 import { Fragment, FunctionComponent } from 'react';
-import ReactMarkdownWithHtml from 'react-markdown/with-html';
 import { ArticleData } from '../models/common.model';
-import { linkTarget, transformLinkUri } from '../utils/url';
-import Blockquote from './blockquote';
-import CodeHighlighter from './code-highlighter';
 import Download from './download';
+import Markdown from './markdown';
 import Share from './share';
 
 const Article: FunctionComponent<{
@@ -44,18 +41,7 @@ const Article: FunctionComponent<{
                     />
                   </figure>
                 )}
-                <ReactMarkdownWithHtml
-                  source={props.articleBody}
-                  escapeHtml={false}
-                  renderers={{
-                    code: CodeHighlighter,
-                    blockquote: (content) => (
-                      <Blockquote content={content.children}></Blockquote>
-                    )
-                  }}
-                  transformLinkUri={transformLinkUri()}
-                  linkTarget={linkTarget}
-                />
+                <Markdown body={props.articleBody} />
               </div>
             </div>
           </div>

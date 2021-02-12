@@ -1,6 +1,5 @@
 ---
 title: Partial mocking with proxy mode
-icon: security
 meta:
   title: Partial API mocking with proxy mode
   description: Learn how to partially create a mock REST API and proxy to another JSON REST server with Mockoon

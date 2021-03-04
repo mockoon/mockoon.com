@@ -1,6 +1,5 @@
 ---
 title: Templating
-icon: code
 meta:
   title: Create dynamic responses with templating
   description: Create dynamic JSON responses for your mock API server with Mockoon's templating system including Faker.js

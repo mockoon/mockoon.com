@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'mockoon';
-  src: url('/fonts/mockoon.ttf?hkd1pj') format('truetype');
+  src: url('/fonts/mockoon.ttf?pergqr') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: auto;
@@ -8,7 +8,6 @@
 
 [class^='icon-'],
 [class*=' icon-'] {
-  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'mockoon' !important;
   speak: never;
   font-style: normal;
@@ -16,46 +15,12 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-shuffle:before {
-  content: '\e900';
-}
-.icon-featured_play_list:before {
-  content: '\e909';
-}
-.icon-import_export:before {
-  content: '\e901';
-}
-.icon-security:before {
-  content: '\e902';
-}
-.icon-tune:before {
-  content: '\e903';
-}
-.icon-code:before {
-  content: '\e90a';
-}
-.icon-help:before {
-  content: '\e904';
-}
-.icon-history:before {
-  content: '\e905';
-}
-.icon-https:before {
-  content: '\e906';
-}
-.icon-settings_input_component:before {
-  content: '\e90b';
-}
-.icon-compare_arrows:before {
-  content: '\e907';
-}
-.icon-multiple_stop:before {
-  content: '\e908';
+.icon-discord:before {
+  content: '\e90f';
+  color: #7289da;
 }
 .icon-download:before {
   content: '\f019';
@@ -75,9 +40,6 @@
 .icon-linux:before {
   content: '\f17c';
 }
-.icon-github:before {
-  content: '\eab0';
-}
 .icon-chat:before {
   content: '\e90c';
 }
@@ -87,7 +49,6 @@
 .icon-star:before {
   content: '\e90e';
 }
-.icon-discord:before {
-  content: '\e90f';
-  color: #7289da;
+.icon-github:before {
+  content: '\eab0';
 }

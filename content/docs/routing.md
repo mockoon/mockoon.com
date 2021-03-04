@@ -1,9 +1,9 @@
 ---
 title: Routing
-icon: settings_input_component
 meta:
   title: Mockoon routing documentation
   description: Everything about Mockoon mock API paths creation, API prefix, route parameters, query strings, wildcards and more
+order: 30
 ---
 
 # Routing

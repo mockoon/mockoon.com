@@ -7,4 +7,8 @@ export type DocsTopicData = {
 
 export type DocsTopicsList = { data: DocsTopicData; slug: string }[];
 
-export type DocsNavData = { title: string; icon: string; slug: string }[];
+export type DocsNavData = {
+  title: string;
+  slug: string;
+  order: number;
+}[];

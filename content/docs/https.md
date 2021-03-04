@@ -1,9 +1,9 @@
 ---
 title: HTTPS mode
-icon: https
 meta:
   title: Serve a mock API over HTTPS
   description: Need to mock a secured REST API server? Mockoon can also do this by serving over TLS with a self-signed certificate
+order: 100
 ---
 
 # HTTPS mode

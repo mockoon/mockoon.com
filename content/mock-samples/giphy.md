@@ -1,25 +1,27 @@
 ---
-title: Open Weather API mock sample
-excerpt: Start working with Open Weather API faster than ever with this ready to use sample for Mockoon
+title: Giphy API mock sample
+excerpt: Start working with Giphy API faster than ever with this ready to use sample for Mockoon
 meta:
-  title: Open Weather API mock sample
-  description: Start working with Open Weather API faster than ever with this ready to use sample for Mockoon
-image: open-weather.png
-imageAlt: Mockoon and Open Weather logos side by side
-order: 100
+  title: Giphy API mock sample
+  description: Start working with Giphy API faster than ever with this ready to use sample for Mockoon
+image: giphy.png
+imageAlt: Mockoon and Giphy logos side by side
+order: 110
 ---
 
-# Open Weather API mock sample
+# Giphy API mock sample
 
 ---
 
-Are you planning on using Open Weather's API and look for an easy way to mock the most relevant endpoints for free and with no need of signing up? 
+Working with APIs can be a hassle during development, especially when you want to move fast or quickly prototype something. You need to register, get a token, sometimes solve CORS problems. If you want to get started in no time, Mockoon got you covered. 
+
+Are you planning on using Giphy's API and look for an easy way to mock the most relevant endpoints for free and with no need of signing up? 
 
 Mockoon got you covered with this ready to use JSON mock sample! By simply importing it in Mockoon, you will be able to make requests to the most useful endpoints and get realistic data returned in the span of a click. 
 
 Our API mocking tool currently covers the following endpoints:
 
-> **Get the full mock ready to import in Mockoon!** <a href="https://github.com/mockoon/mock-samples/blob/main/samples/open-weather.json" className="button is-link is-small"><i className='icon-download is-primary'></i>&nbsp;Download</a>
+> **Get the full mock ready to import in Mockoon!** <a href="https://github.com/mockoon/mock-samples/blob/main/samples/giphy.json" className="button is-link is-small"><i className='icon-download is-primary'></i>&nbsp;Download</a>
 > 
 > To import the file, please [follow the instructions](https://github.com/mockoon/mock-samples#how-to-import-the-samples-in-mockoon-application). 
 

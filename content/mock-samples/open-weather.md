@@ -17,7 +17,7 @@ Are you planning on using Open Weather's API and look for an easy way to mock th
 
 Mockoon got you covered with this ready to use JSON mock sample! By simply importing it in Mockoon, you will be able to make requests to the most useful endpoints and get realistic data returned in the span of a click. 
 
-Our API mocking tool currently covers the following endpoints :
+Our API mocking tool currently covers the following endpoints:
 
 > **Get the full mock ready to import in Mockoon!** <a href="https://github.com/mockoon/mock-samples/blob/main/samples/open-weather.json" className="button is-link is-small"><i className='icon-download is-primary'></i>&nbsp;Download</a>
 > 

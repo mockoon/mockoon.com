@@ -55,6 +55,9 @@ In addition to these helpers, some custom ones have been added to Mockoon:
 
 - `concat 'value1' 2 'value3' ...`: concatenate multiple strings/numbers together. This helper can concatenate results from other helpers, or be used as a parameter of another helper: `concat @index (body 'id') 'value3'`, `{{#repeat (concat 1 2 3)}}...{{/repeat}}`
 - `dateTimeShift date='2021-01-01' format='yyyy-MM-dd' years=1 months=1 days=1 hours=1 minutes=1 seconds=1`: shift a date by adding the number of `years`, `months`, etc. passed as parameters. The `date` and `format` parameters are optional. The helper will return the current date and time as an ISO string if omitted (`yyyy-MM-ddTHH:mm:ss.SSSxxx`).
+- `indexOf 'Some data' 'data' 0` (expected output `5`): returns the index of the searched 'data' inside the string. A last parameter `position` can be passed to start the search at a specific index.
+- `includes 'Some data' 'data'` (expected output `true`): search whether a string can be found in another string and returns the appropriate boolean.
+- `substr 'Some data' 5 4` (expected output `'data'`): returns a portion of a string starting at the specified index and extending for a given number of characters afterwards.
 
 Mockoon also supports the following helpers which can return entering requests information:
 

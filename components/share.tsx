@@ -1,8 +1,10 @@
 import { FunctionComponent } from 'react';
 
-const Share: FunctionComponent<{ url: string; text: string }> = function (
-  props
-) {
+const Share: FunctionComponent<{
+  title: string;
+  url: string;
+  text: string;
+}> = function (props) {
   const url = encodeURIComponent(props.url);
   const text = encodeURIComponent(props.text);
 
@@ -194,7 +196,8 @@ const Share: FunctionComponent<{ url: string; text: string }> = function (
           }
         `}
       </style>
-
+      <hr />
+      <h5>{props.title}</h5>
       <a
         className='resp-sharing-button__link'
         href={`https://twitter.com/intent/tweet/?text=${text}&url=${url}`}

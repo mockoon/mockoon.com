@@ -34,8 +34,11 @@ const Tutorials: FunctionComponent<{
       <Hero title={meta.title} subtitle={meta.description} />
       <Download />
 
-      <Cards path='tutorials' articles={props.articles} />
-
+      <div className='section'>
+        <div className='container'>
+          <Cards path='tutorials' articles={props.articles} />
+        </div>
+      </div>
       <ContactBanner />
     </Layout>
   );

@@ -41,8 +41,12 @@ const Blog: FunctionComponent<{
       <Hero title={meta.title} subtitle={meta.description} />
       <Download />
 
-      <Cards path='blog' articles={props.articles} />
-      
+      <div className='section'>
+        <div className='container'>
+          <Cards path='blog' articles={props.articles} />
+        </div>
+      </div>
+
       <Newsletter />
     </Layout>
   );

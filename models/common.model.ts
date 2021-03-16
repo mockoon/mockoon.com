@@ -23,8 +23,29 @@ export type ArticleData = {
   canonical?: string;
   image?: string;
   imageAlt?: string;
+  // used to build a custom header
+  header?: {
+    image: string;
+    imageAlt: string;
+    overview: string;
+    industry: string;
+    employees: number;
+    link: string;
+    linkAnchor: string;
+  };
   // order of the article on the index page
   order?: number;
 };
 
-export type ArticleList = { data: ArticleData; slug: string }[];
+export type ArticleList = {
+  data: ArticleData;
+  slug: string;
+}[];
+
+export type QuoteData = {
+  type: '##quote##';
+  citation: string;
+  author: string;
+  authorRole: string;
+  pictureUrl: string;
+};

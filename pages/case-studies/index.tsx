@@ -1,23 +1,22 @@
-import { FunctionComponent } from 'react';
 import Cards from '../../components/cards';
+import ContactBanner from '../../components/contact-banner';
 import Download from '../../components/download';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
-import Newsletter from '../../components/newsletter';
 import Layout from '../../layout/layout';
 import { ArticleList } from '../../models/common.model';
 import { buildIndexStaticProps } from '../../utils/static-builders';
 import { orderArticles } from '../../utils/utils';
 
 const meta = {
-  title: 'Mock API samples for your project',
+  title: 'Case studies',
   description:
-    "Create your mock API server in no time with Mockoon's ready to use mock samples for Stripe, Paypal, Giphy, Open weather, and more"
+    'Explore how Mockoon users improve their development workflows with Mockoon API tooling'
 };
 
 export async function getStaticProps() {
   const staticProps = buildIndexStaticProps(
-    require.context('../../content/mock-samples/', false, /\.md$/)
+    require.context('../../content/case-studies/', false, /\.md$/)
   );
 
   staticProps.props.articles = orderArticles(staticProps.props.articles);
@@ -25,28 +24,19 @@ export async function getStaticProps() {
   return staticProps;
 }
 
-const MockSamples: FunctionComponent<{
-  articles: ArticleList;
-}> = function (props) {
+export default function CaseStudies(props: { articles: ArticleList }) {
   return (
     <Layout>
-      <style jsx>{`
-        .card {
-          margin-bottom: 30px;
-        }
-      `}</style>
       <Meta title={meta.title} description={meta.description} />
       <Hero title={meta.title} subtitle={meta.description} />
       <Download />
 
       <div className='section'>
         <div className='container'>
-          <Cards path='mock-samples' articles={props.articles} />
+          <Cards small={true} path='case-studies' articles={props.articles} />
         </div>
       </div>
-      <Newsletter />
+      <ContactBanner />
     </Layout>
   );
-};
-
-export default MockSamples;
+}

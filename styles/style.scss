@@ -224,3 +224,87 @@ p.is-brand {
 .hljs {
   border-radius: 5px;
 }
+
+.quote {
+  position: relative;
+  padding: 2rem;
+  margin: 40px;
+  border-left: 4px solid lighten($primary, 30%);
+  font-size: 1.6rem;
+  font-weight: 400;
+  quotes: '“' '”';
+
+  &-metadata {
+    display: flex;
+    margin-top: 20px;
+
+    & .quote-picture {
+      width: 48px;
+      height: 48px;
+      border-radius: 9999px;
+    }
+
+    & .quote-author {
+      margin-left: 20px;
+
+      div:nth-child(1) {
+        font-weight: 500;
+        font-size: 1rem;
+      }
+
+      div:nth-child(2) {
+        color: $grey;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    color: lighten($primary, 30%);
+    font-size: 3rem;
+  }
+
+  &:before {
+    content: open-quote;
+    top: 0;
+    margin-right: -2rem;
+    right: 100%;
+  }
+
+  &:after {
+    content: close-quote;
+    margin-left: -2rem;
+    left: 100%;
+    top: auto;
+    bottom: 0;
+  }
+}
+
+.article-header {
+  padding: 40px;
+  background: rgb(38, 40, 48);
+  background: linear-gradient(
+    90deg,
+    rgba(38, 40, 48, 1) 0%,
+    rgba(59, 164, 220, 1) 120%
+  );
+  color: #adeae1;
+  text-align: left;
+
+  a {
+    color: #adeae1;
+    &:visited {
+      color: #adeae1;
+    }
+    &:hover,
+    &:active {
+      color: darken(#adeae1, 40%);
+    }
+  }
+
+  img {
+    max-width: 35%;
+  }
+}

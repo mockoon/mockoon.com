@@ -1,10 +1,11 @@
 import React from 'react';
+import Cards from '../components/cards';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Newsletter from '../components/newsletter';
-import Share from '../components/share';
 import Testimonial from '../components/testimonial';
 import Layout from '../layout/layout';
+import { ArticleData } from '../models/common.model';
 const version = require('../package.json').version;
 
 const meta = {
@@ -439,32 +440,35 @@ class Index extends React.Component {
           </div>
         </section>
 
-        <Newsletter />
-
-        <section className='section' id='feedback'>
+        <section className='section'>
           <div className='container'>
             <div className='columns'>
               <div className='column has-text-centered'>
-                <h3 className='title'>Feedback welcome!</h3>
-                <div className='content'>
-                  <p>
-                    You have found a bug, you have an idea? Submit them on
-                    Mockoon's{' '}
-                    <a href='https://github.com/mockoon/mockoon' rel='noopener'>
-                      GitHub repository
-                    </a>
-                    .
-                  </p>
-                  <p>You like Mockoon? Spread the word :)</p>
-                  <Share
-                    text='Mockoon is the easiest and quickest way to run mock API locally. No remote deployment, no account required, open source.'
-                    url='https://mockoon.com'
-                  />
-                </div>
+                <h3 className='title'>Case studies</h3>
               </div>
             </div>
+
+            <Cards
+              path='case-studies'
+              articles={[
+                {
+                  slug: 'impala-api-ux-user-research',
+                  data: {
+                    title: 'API UX research with Mockoon',
+                    image: 'impala-logo-black.svg',
+                    imageAlt: 'Impala logo',
+                    header: {},
+                    excerpt:
+                      'Learn how Impala uses Mockoon to conduct API user research'
+                  } as ArticleData
+                }
+              ]}
+              small={true}
+            />
           </div>
         </section>
+
+        <Newsletter />
       </Layout>
     );
   }

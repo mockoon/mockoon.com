@@ -40,7 +40,7 @@ const Footer: FunctionComponent = function () {
           <div className='column is-2 is-offset-1'>
             <div className='content'>
               <div className='title is-size-5 has-text-weight-semibold'>
-                Resources
+                Learn
               </div>
               <div className='mb-2'>
                 <a href='/tutorials/'>Tutorials</a>
@@ -50,6 +50,9 @@ const Footer: FunctionComponent = function () {
               </div>
               <div className='mb-2'>
                 <a href='/mock-samples/'>Mock samples</a>
+              </div>
+              <div className='mb-2'>
+                <a href='/case-studies/'>Case studies</a>
               </div>
               <div className='mb-2'>
                 <a href='/blog/'>Blog</a>

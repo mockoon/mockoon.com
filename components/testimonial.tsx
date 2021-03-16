@@ -8,8 +8,8 @@ const Testimonial: FunctionComponent<{
 }> = function (props) {
   return (
     <Fragment>
-      <style>{`.card {height:100%}`}</style>
-      <div className='card'>
+      <style>{`.testimonial {height:100%}`}</style>
+      <div className='card testimonial'>
         <div className='card-content'>
           <div className='content'>{props.children}</div>
           <div>

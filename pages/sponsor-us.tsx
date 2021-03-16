@@ -3,7 +3,6 @@ import Donate from '../components/donate';
 import GitHub from '../components/github';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
-import Share from '../components/share';
 import Layout from '../layout/layout';
 
 const SponsorUs: FunctionComponent = function () {
@@ -92,12 +91,6 @@ const SponsorUs: FunctionComponent = function () {
                 </p>
                 <div className='m-4'>
                   <GitHub />
-                </div>
-                <div className='m-4'>
-                  <Share
-                    text='Mockoon is the easiest and quickest way to run mock API locally. No remote deployment, no account required, open source.'
-                    url='https://mockoon.com'
-                  />
                 </div>
               </div>
             </div>

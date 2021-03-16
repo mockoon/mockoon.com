@@ -28,7 +28,7 @@ export const buildIndexStaticProps = (
   };
 };
 
-export const buildSlugStaticPaths = (folder: string) => {
+export const buildSlugStaticPaths = (folder: string) => () => {
   const articlePaths = sync(`${process.cwd()}/content/${folder}/*.md`);
   const paths = articlePaths.map((articlePath) => {
     const pathParts = articlePath.split('/');

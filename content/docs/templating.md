@@ -61,14 +61,16 @@ In addition to these helpers, some custom ones have been added to Mockoon:
 
 Mockoon also supports the following helpers which can return entering requests information:
 
-- `body 'path' 'default value'`: 
+- `body 'path' 'default value' false|true`: 
   - get the value at a given `path` from the request body if the entering `Content-Type` is set to `application/json` or `application/x-www-form-urlencoded`. The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path). For both JSON and form params bodies, full objects or arrays can be retrieved by the helper.
   - The full request's raw body can also be fetched when the `path` is omitted (`{{body}}`) independently from the request's `Content-Type`.
   - If no value is present at the requested `path`, the default value will be used.
-- `queryParam 'path' 'default value'`: 
+  - A third parameter (boolean) can be set to true to returns a stringified value even if it's a primitive.
+- `queryParam 'path' 'default value' false|true`: 
   - get the value at a given `path` from the request's query string. Complex query strings with arrays and objects are supported. The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path). Full objects or arrays can be retrieved by the helper.
   - The full query string object can also be fetched when the `path` is omitted (`{{queryParam}}`). It will be stringified and can be used in a JSON body for example.
   - If there is no value at the requested `path`, the default value will be used.
+  - A third parameter (boolean) can be set to true to returns a stringified value even if it's a primitive.
 - `urlParam 'paramName1'`: get a param from the URL `/:paramName1/:paramName2`.
 - `cookie 'cookie_name' 'default value'`: get the content of a cookie or a default value if the cookie is not present.
 - `header 'Header-Name' 'default value'`: get content from any request header or a default value if header is not present.

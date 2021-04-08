@@ -26,7 +26,7 @@ Nowadays, most of the developers work with JSON. Generating a massive amount of 
 
 Mockoon also offers multiple helpers and embarks the Faker.js library, which can generate localized random data as various as: cities, addresses, first names, phone numbers, UUID, etc.
 
-> This tutorial will show only some examples of content generation. If you want to learn more about Mockoon templating system and all the available helpers, head over to the [official templating documentation](docs:templating).
+> This tutorial will show only some examples of content generation. If you want to learn more about Mockoon templating system and all the available helpers, head over to the [official templating documentation](docs:templating/overview).
 
 Let's see what Mockoon has to offer.
 
@@ -111,7 +111,7 @@ After a call to Mockoon, this would be the kind of body generated from this temp
 This example makes an extensive usage of what Mockoon and Faker.js have to offer. First, it generates as many "posts" items as provided in the `total` query parameter (or default to 5) when calling `GET /your/endpoint?total=140`. It is especially useful when you want to request a specific number of items depending on the pagination or a "number per pages" user setting. 
 Second, you can see that multiple properties are defined, and random mock data is generated like avatar image URLs, names, coordinates, etc.
 
-There are a lot of possibilities and combinations you can try. You can also make your template react to a lot of parameters from the entering request by using Mockoon's helpers. We've already seen `queryParam` above, but you will find many more in the [templating documentation](docs:templating). They allow you to query the request information like `body`, `urlParam`, `header`, `method`, etc.
+There are a lot of possibilities and combinations you can try. You can also make your template react to a lot of parameters from the entering request by using Mockoon's helpers. We've already seen `queryParam` above, but you will find many more in the [templating documentation](docs:templating/overview). They allow you to query the request information like `body`, `urlParam`, `header`, `method`, etc.
 
 ## Generate other types of fake data?
 
@@ -177,7 +177,7 @@ You are now ready to generate massive amounts of data for your mock APIs. The on
 ## Generate dynamic templating depending on the request
 
 We just saw some interesting use-cases but still quite simple. When working on your application, you may want to go a little bit further by making the template react to the request sent to Mockoon. 
-This is possible by using various helpers that you will find in the [templating documentation](docs:templating): `body`, `queryParam`, `urlParam`, `cookie`, `header`, `hostname`, `ip`, `method`, etc.
+This is possible by using various helpers that you will find in the [templating documentation](docs:templating/overview): `body`, `queryParam`, `urlParam`, `cookie`, `header`, `hostname`, `ip`, `method`, etc.
 
 They allow you to access the entering request's information. Combined with other helpers like `repeat`, `switch`, or `if`, you will be able to dynamically generate more complex content.
 

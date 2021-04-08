@@ -13,7 +13,7 @@ order: 10
 
 ---
 
-Mockoon is a free cross-platform desktop application that takes API mocking to the next level. Mockoon offers a fast and easy-to-use interface and gives you complete control over your mock APIs with advanced functionality like [a templating system](docs:templating), [a proxy mode](docs:proxy-mode), and [requests recording](docs:requests-logging).
+Mockoon is a free cross-platform desktop application that takes API mocking to the next level. Mockoon offers a fast and easy-to-use interface and gives you complete control over your mock APIs with advanced functionality like [a templating system](docs:templating/overview), [a proxy mode](docs:proxy-mode), and [requests recording](docs:requests-logging).
 
 This tutorial will show you how to install the desktop mocking application and set up your first mock API.
 
@@ -46,7 +46,7 @@ You can also create a new endpoint by clicking on the blue "plus" button at the 
 
 ## Step 4. API endpoint configuration
 
-You can further customize your endpoint by adding a custom header and the following sample body (which makes use of Mockoon's [templating system](docs:templating)):
+You can further customize your endpoint by adding a custom header and the following sample body (which makes use of Mockoon's [templating system](docs:templating/overview)):
 
 ```json
 // Sample body
@@ -78,4 +78,4 @@ You can do a test call to the following URL `http://localhost:3000/tutorials` us
 
 ## Step 6. Learn more
 
-Now that you know how to create a basic mock API, you can head over to the [official documentation](docs:about) to explore the other functionalities like [requests logging](docs:requests-logging), [partial API mocking with proxy mode](docs:proxy-mode), or the [templating system](docs:templating). 
+Now that you know how to create a basic mock API, you can head over to the [official documentation](docs:about) to explore the other functionalities like [requests logging](docs:requests-logging), [partial API mocking with proxy mode](docs:proxy-mode), or the [templating system](docs:templating/overview). 

@@ -26,7 +26,7 @@ This new version brings some new features and many new improvements to the templ
 - Improvements to the `queryParam` helper: as for the `body` helper, the `queryParam` helper can now retrieve paths, arrays, objects, or the full query params object. (Issue #265 )
 - Templating can now be disabled for bodies and files content. Head up to the new route response's "Settings" tab. (Issue #129)
 
-For more information about the templating system, please refer to the official [documentation](https://mockoon.com/docs/latest/templating/).
+For more information about the templating system, please refer to the official [documentation](https://mockoon.com/docs/latest/templating/overview/).
 
 ## Errors feedback
 

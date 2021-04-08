@@ -34,9 +34,9 @@ Routes support certain patterns. Here are some examples of the available ones:
 ### Route parameters
 
 Route parameters can be defined in routes by using a colon `:`. The name of a parameter can only contains the following characters `A-Za-z0-9_`.  
-You can also retrieve the route parameters by using the `{{urlParam 'paramName'}}` [templating helper](docs:templating).
+You can also retrieve the route parameters by using the `{{urlParam 'paramName'}}` [templating helper](docs:templating/overview).
 
 ### Query parameters
 
 Routes **must** be declared without query parameters as they are not part of the route path. They can only be added to the request when calling an endpoint.  
-Query parameters can be retrieved by using the `{{queryParam 'paramName'}}` [templating helper](docs:templating).
+Query parameters can be retrieved by using the `{{queryParam 'paramName'}}` [templating helper](docs:templating/overview).

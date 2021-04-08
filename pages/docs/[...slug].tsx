@@ -8,26 +8,41 @@ import Hero from '../../components/hero';
 import Markdown from '../../components/markdown';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
-import { DocsNavData, DocsTopicData } from '../../models/docs.model';
+import {
+  DocsNavCategory,
+  DocsNavData,
+  DocsNavItem,
+  DocsTopicData
+} from '../../models/docs.model';
+import { sortByOrder } from '../../utils/utils';
 const latestVersion = require('../../package.json').version;
 
+/**
+ * Browse the ./content/docs/... folder and list all the topics.
+ * Content files name must follow this pattern:
+ * {version}/{category}/{topic}.md
+ *
+ * Category depth cannot be higher than 1.
+ *
+ */
 export async function getStaticPaths() {
   const paths = ((files) => {
     const keys = files.keys();
 
     return keys.map((key) => {
       const pathParts = key.split('/');
-      let version = 'latest';
-
-      //get version in path: dot / version / topic
-      if (pathParts.length === 3) {
-        version = pathParts[pathParts.length - 2];
-      }
-
-      let topicName = pathParts[pathParts.length - 1].slice(0, -3);
-
       return {
-        params: { slug: [version, topicName] }
+        params: {
+          slug: [
+            // create slug from the path parts (version / path / file name (-ext))
+            ...pathParts.slice(1).map((part, partIndex, parts) => {
+              if (partIndex === parts.length - 1) {
+                return part.split('.')[0];
+              }
+              return part;
+            })
+          ]
+        }
       };
     });
   })(require.context('../../content/docs/', true, /\.md$/));
@@ -42,71 +57,100 @@ export async function getStaticProps({ params }) {
   const slugVersion = params.slug[0];
 
   // get all documentation file list
-  const topics = ((files) => {
-    const topicPaths = files.keys();
-    const fileContents: any[] = topicPaths.map(files);
+  const docsData = ((files) => {
+    const filePaths = files.keys();
+    const fileContents: any[] = filePaths.map(files);
     const versions = new Set<string>();
-    const list = [];
+    const topicList: {
+      slug: string;
+      data: DocsTopicData;
+      categoryName: string;
+    }[] = [];
 
-    topicPaths.forEach((topicPath, index) => {
+    filePaths.forEach((topicPath, index) => {
       const pathParts = topicPath.split('/');
-      let version = 'latest';
-
-      // only older version are in a subfolder
-      if (pathParts.length === 3) {
-        version = pathParts[pathParts.length - 2];
-      }
+      const version = pathParts[1];
 
       versions.add(version);
 
-      // only push topic from the versionSlug in the list
-      if (
-        topicPath.includes(slugVersion) ||
-        (version === 'latest' && slugVersion === 'latest')
-      ) {
-        let topicName = pathParts[pathParts.length - 1].slice(0, -3);
+      // only push topic from the current slug version in the list
+      if (topicPath.includes(slugVersion)) {
+        // we remove both /docs and version from the current slug
+        const topicPath = pathParts.slice(2).map((part, partIndex, parts) => {
+          if (partIndex === parts.length - 1) {
+            return part.split('.')[0];
+          }
+          return part;
+        });
+
         const fileContent = fileContents[index];
         const parsedContent = matter(fileContent.default);
-
-        list.push({
-          slug: `${slugVersion}/${topicName}`,
-          data: parsedContent.data as DocsTopicData
+        topicList.push({
+          slug: `${slugVersion}/${topicPath.join('/')}`,
+          data: parsedContent.data as DocsTopicData,
+          categoryName: topicPath.length === 2 ? topicPath[0] : null
         });
       }
     });
 
     return {
       versions: Array.from(versions),
-      list
+      list: topicList
     };
   })(require.context('../../content/docs', true, /\.md$/));
 
-  const topicFilePath =
-    params.slug[0] === 'latest' ? params.slug[1] : params.slug.join('/');
-
-  const fileContent = await require(`../../content/docs/${topicFilePath}.md`);
+  const fileContent = await require(`../../content/docs/${params.slug.join(
+    '/'
+  )}.md`);
   const parsedContent = matter(fileContent.default);
+
+  const navItems = docsData.list
+    .reduce((navItems: DocsNavData, topic) => {
+      const newItem: DocsNavItem = {
+        type: 'topic',
+        title: topic.data.title,
+        order: topic.data.order || 1000,
+        slug: `/docs/${topic.slug}`
+      };
+
+      if (topic.categoryName) {
+        const existingCategoryIndex = navItems.findIndex(
+          (navItem) =>
+            navItem.type === 'category' &&
+            navItem.categoryName === topic.categoryName
+        );
+
+        if (existingCategoryIndex !== -1) {
+          (navItems[existingCategoryIndex] as DocsNavCategory).items.push(
+            newItem
+          );
+          (navItems[existingCategoryIndex] as DocsNavCategory).items.sort(
+            sortByOrder
+          );
+        } else {
+          navItems.push({
+            type: 'category',
+            title: topic.categoryName,
+            categoryName: topic.categoryName,
+            order: topic.data.order,
+            items: [newItem]
+          });
+        }
+      } else {
+        navItems.push(newItem);
+      }
+
+      return navItems;
+    }, [])
+    .sort(sortByOrder);
 
   return {
     props: {
       slug: `docs/${params.slug.join('/')}`,
-      navItems: topics.list
-        .map((topic) => ({
-          title: topic.data.title,
-          order: topic.data.order || 1000,
-          slug: `/docs/${topic.slug}`
-        }))
-        .sort((firstTopic, secondTopic) =>
-          firstTopic.order > secondTopic.order
-            ? 1
-            : secondTopic.order > firstTopic.order
-            ? -1
-            : 0
-        ),
-      versions: topics.versions,
+      navItems,
+      versions: docsData.versions,
       topicData: parsedContent.data,
-      topicBody: parsedContent.content,
-      slugVersion
+      topicBody: parsedContent.content
     }
   };
 }
@@ -117,7 +161,6 @@ export default function Docs(props: {
   topicData: DocsTopicData;
   topicBody: string;
   versions: string[];
-  slugVersion: string;
 }) {
   const router = useRouter();
   let currentVersion = router.asPath.split('/')[2];
@@ -153,7 +196,9 @@ export default function Docs(props: {
         ogType='article'
         url={`/${props.slug}`}
       />
+
       <Hero />
+
       <div className='section'>
         <div className='container'>
           <div className='columns'>
@@ -181,18 +226,35 @@ export default function Docs(props: {
               <aside className='menu'>
                 <ul className='menu-list'>
                   {props.navItems.map((menuItem, menuItemIndex) => {
-                    return (
-                      <li key={`link${menuItemIndex}`}>
+                    const itemsToBuild =
+                      menuItem.type === 'category'
+                        ? menuItem.items
+                        : [menuItem];
+
+                    const itemsHtml = itemsToBuild.map((item, itemIndex) => (
+                      <li key={`link${itemIndex}`}>
                         <a
-                          href={`${menuItem.slug}/`}
+                          href={`${item.slug}/`}
                           className={
-                            router.asPath === menuItem.slug ? 'is-active' : ''
+                            router.asPath.includes(item.slug) ? 'is-active' : ''
                           }
                         >
-                          {menuItem.title}
+                          {item.title}
                         </a>
                       </li>
-                    );
+                    ));
+
+                    return [
+                      menuItem.type === 'category' && (
+                        <p
+                          className='menu-label'
+                          key={`category${menuItemIndex}`}
+                        >
+                          {menuItem.title}
+                        </p>
+                      ),
+                      itemsHtml
+                    ];
                   })}
                 </ul>
                 <div style={{ marginTop: '25px' }}>

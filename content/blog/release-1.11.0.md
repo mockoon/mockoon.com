@@ -24,7 +24,7 @@ And now the changelog:
 ### New features 
 
 - Route responses can now be randomized. This option available next to the route responses list will have priority over the rules. As a consequence, the CORS icon changed to reuse the "shuffle" icon for this feature. (Issue #269)
-- Valid MongoDB ObjectIds can now be generated with a new `objectId` helper. See the [templating documentation](https://mockoon.com/docs/latest/templating/) for more information. (Issue #342)
+- Valid MongoDB ObjectIds can now be generated with a new `objectId` helper. See the [templating documentation](https://mockoon.com/docs/latest/templating/overview/) for more information. (Issue #342)
 - The export menu has a new option to export the currently selected environment only. (Issue #251)
 - Environments can now be started/stopped all at once with a new menu option (`Action` -> `Start/stop/reload all environments`). (Issue #90)
 

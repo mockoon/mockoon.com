@@ -38,7 +38,7 @@ Mockoon offers a unique set of features like templating and rules that allow to 
 
 ### Mockoon helps you build realistic mocks
 
-Mockoon's advanced features allow Impala to quickly create realistic scenarios without the hassle of assembling multiple tools or libraries. They can easily set up endpoints returning dynamic and realistic content by [generating fake data](/tutorials/generate-mock-json-data/) and reacting to participants' entries. Simulating authentication or pagination mechanisms become a breeze thanks to the available [templating helpers](docs:templating) and [responses rules](docs:multiple-responses) system. 
+Mockoon's advanced features allow Impala to quickly create realistic scenarios without the hassle of assembling multiple tools or libraries. They can easily set up endpoints returning dynamic and realistic content by [generating fake data](/tutorials/generate-mock-json-data/) and reacting to participants' entries. Simulating authentication or pagination mechanisms become a breeze thanks to the available [templating helpers](docs:templating/overview) and [responses rules](docs:multiple-responses) system. 
 
 ### Real time API behavior adjustment
 

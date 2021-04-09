@@ -12,48 +12,30 @@ order: 1010
 
 In addition to Handlebars' built-in helpers, Mockoon offers the following helpers:
 
-- [`repeat`](#repeat)
-- [`switch`](#switch)
-- [`array`](#array)
-- [`oneOf`](#oneof)
-- [`someOf`](#someof)
-- [`now`](#now)
-- [`newline`](#newline)
-- [`base64`](#base64)
-- [`objectId`](#objectid)
-- [`setVar`](#setvar)
-- [`concat`](#concat)
-- [`dateTimeShift`](#datetimeshift)
-- [`indexOf`](#indexof)
-- [`includes`](#includes)
-- [`substr`](#substr)
-- [`int`](#int)
-- [`float`](#float)
-- [`date`](#date)
-- [`time`](#time)
-- [`boolean`](#boolean)
-- [`title`](#title)
-- [`firstName`](#firstname)
-- [`lastName`](#lastname)
-- [`company`](#company)
-- [`domain`](#domain)
-- [`tld`](#tld)
-- [`email`](#email)
-- [`street`](#street)
-- [`city`](#city)
-- [`country`](#country)
-- [`countryCode`](#countrycode)
-- [`zipcode`](#zipcode)
-- [`postcode`](#postcode)
-- [`lat`](#lat)
-- [`long`](#long)
-- [`phone`](#phone)
-- [`color`](#color)
-- [`hexColor`](#hexcolor)
-- [`guid`](#guid)
-- [`ipv4`](#ipv4)
-- [`ipv6`](#ipv6)
-- [`lorem`](#lorem)
+| Dates                             | Block helpers       | Arrays              |
+| --------------------------------- | ------------------- | ------------------- |
+| [`now`](#now)                     | [`repeat`](#repeat) | [`array`](#array)   |
+| [`dateTimeShift`](#datetimeshift) | [`switch`](#switch) | [`oneOf`](#oneof)   |
+| [`date`](#date)                   |                     | [`someOf`](#someof) |
+| [`time`](#time)                   |                     |                     |
+
+| Strings                 | Numbers           | Misc                    |
+| ----------------------- | ----------------- | ----------------------- |
+| [`concat`](#concat)     | [`int`](#int)     | [`newline`](#newline)   |
+| [`indexOf`](#indexof)   | [`float`](#float) | [`base64`](#base64)     |
+| [`includes`](#includes) |                   | [`objectId`](#objectid) |
+| [`substr`](#substr)     |                   | [`setVar`](#setvar)     |
+
+| [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                         |
+| --------------------------------------------------- | ----------------------------- | ----------------------- |
+| [`boolean`](#boolean)                               | [`street`](#street)           | [`phone`](#phone)       |
+| [`title`](#title)                                   | [`city`](#city)               | [`color`](#color)       |
+| [`firstName`](#firstname)                           | [`country`](#country)         | [`hexColor`](#hexcolor) |
+| [`lastName`](#lastname)                             | [`countryCode`](#countrycode) | [`guid`](#guid)         |
+| [`company`](#company)                               | [`zipcode`](#zipcode)         | [`ipv4`](#ipv4)         |
+| [`domain`](#domain)                                 | [`postcode`](#postcode)       | [`ipv6`](#ipv6)         |
+| [`tld`](#tld)                                       | [`lat`](#lat)                 | [`lorem`](#lorem)       |
+| [`email`](#email)                                   | [`long`](#long)               |                         |
 
 ## `repeat`
 

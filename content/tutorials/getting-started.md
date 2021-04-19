@@ -60,7 +60,7 @@ You can further customize your endpoint by adding a custom header and the follow
 ]
 ```
 
-You can create a more complex configuration by serving files or [adding multiple responses triggered by rules](docs:multiple-responses).
+You can create a more complex configuration by serving files or [adding multiple responses triggered by rules](docs:route-responses/dynamic-rules).
 
 ![Recording of updating an API route](/images/tutorials/getting-started/update-api-route.gif)
 

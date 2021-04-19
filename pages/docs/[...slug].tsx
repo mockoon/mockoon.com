@@ -130,7 +130,7 @@ export async function getStaticProps({ params }) {
         } else {
           navItems.push({
             type: 'category',
-            title: topic.categoryName,
+            title: topic.categoryName.replace('-', ' '),
             categoryName: topic.categoryName,
             order: topic.data.order,
             items: [newItem]

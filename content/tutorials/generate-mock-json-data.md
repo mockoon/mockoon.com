@@ -285,7 +285,7 @@ When calling the endpoint with `/content/products?total=2` we would receive the 
 ]
 ```
 
-For more complex cases, you could also create multiple responses for the same route, with different bodies, and trigger them by defining some rules. To learn more about using multiple responses combined with rules, you can have a look at the related [documentation](docs:multiple-responses).
+For more complex cases, you could also create multiple responses for the same route, with different bodies, and trigger them by defining some rules. To learn more about using multiple responses combined with rules, you can have a look at the related [documentation](docs:route-responses/dynamic-rules).
 
 > **Remember, you can find all this tutorial's examples ready to import on our repository!** <a href="https://github.com/mockoon/mock-samples/blob/main/samples/generate-mock-data.json" className="button is-link is-small"><i className='icon-download is-primary'></i>&nbsp;Download</a>
 > 

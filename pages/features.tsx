@@ -35,7 +35,7 @@ const features: ItemCard = [
     title: 'Multiple responses per route',
     description:
       'Serve multiple rules-triggered or random responses with any headers body, or HTTP status codes.',
-    link: '/docs/latest/multiple-responses/'
+    link: '/docs/latest/route-responses/multiple-responses/'
   },
   {
     title: 'CORS',

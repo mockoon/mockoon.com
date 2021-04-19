@@ -31,7 +31,7 @@ You can also list the running mock API processes to get some information about t
 
 ![Mockoon CLI list command output](/images/blog/cli-mockoon-list.png)
 
-Mockoon CLI supports all of Mockoon's features: [templating system](https://mockoon.com/docs/latest/templating/overview/), [proxy mode](https://mockoon.com/docs/latest/proxy-mode/), [route response rules](https://mockoon.com/docs/latest/multiple-responses/), etc.
+Mockoon CLI supports all of Mockoon's features: [templating system](https://mockoon.com/docs/latest/templating/overview/), [proxy mode](https://mockoon.com/docs/latest/proxy-mode/), [route response rules](https://mockoon.com/docs/latest/route-responses/dynamic-rules/), etc.
 
 It's also compatible with your data files in an older format as it automatically migrates them before running the mock.
 

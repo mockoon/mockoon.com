@@ -71,6 +71,11 @@
         "type": 301
       },
       {
+        "source": "/docs/latest/multiple-responses/",
+        "destination": "/docs/latest/route-responses/multiple-responses/",
+        "type": 301
+      },
+      {
         "source": "/tutorial/serve-mock-api-tls",
         "destination": "/docs/latest/https/",
         "type": 301

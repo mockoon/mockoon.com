@@ -1,6 +1,5 @@
 import React from 'react';
 import Cards from '../components/cards';
-import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Newsletter from '../components/newsletter';
 import Testimonial from '../components/testimonial';
@@ -20,13 +19,53 @@ class Index extends React.Component {
       <Layout>
         <Meta title={meta.title} description={meta.description} />
 
-        <Hero
+        {/* <Hero
           title={meta.title}
           subtitle={meta.description}
           cta={{ text: 'Download', link: '#download' }}
           mainPicture='/images/screenshot.png'
           mainPictureAlt='Application screenshot'
-        />
+        /> */}
+
+        <section className='pt-4 pt-md-11'>
+          <div className='container'>
+            <div className='row align-items-center'>
+              <div className='col-12 col-md-5 col-lg-6 order-md-2'>
+                <img
+                  src='/images/screenshot.png'
+                  className='img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0'
+                  alt='Mockoon screenshot'
+                />
+              </div>
+              <div className='col-12 col-md-7 col-lg-6 order-md-1'>
+                <h1 className='display-3 text-center text-md-start'>
+                  Create <span className='text-primary'>mock APIs</span> in
+                  seconds
+                </h1>
+
+                <p
+                  className='lead text-center text-md-start text-muted mb-6 mb-lg-8'
+                  dangerouslySetInnerHTML={{ __html: meta.description }}
+                ></p>
+
+                <div className='text-center text-md-start'>
+                  <a
+                    href='#download'
+                    className='btn btn-primary shadow lift me-1'
+                  >
+                    Download <i className='icon-download'></i>
+                  </a>
+                  <a
+                    href='/docs/latest/about/'
+                    className='btn btn-primary-soft lift'
+                  >
+                    Documentation
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className='section' id='download'>
           <div className='container'>

@@ -1,5 +1,6 @@
 import { Children, createElement, FunctionComponent } from 'react';
 import ReactMarkdownWithHtml from 'react-markdown/with-html';
+import gfm from 'remark-gfm';
 import { linkTarget, transformLinkUri } from '../utils/url';
 import Blockquote from './blockquote';
 import CodeHighlighter from './code-highlighter';
@@ -19,6 +20,7 @@ const Markdown: FunctionComponent<{
     <ReactMarkdownWithHtml
       source={props.body}
       escapeHtml={false}
+      plugins={[gfm]}
       renderers={{
         code: CodeHighlighter,
         blockquote: (content) => {
@@ -33,7 +35,11 @@ const Markdown: FunctionComponent<{
         heading: (props) => {
           var children = Children.toArray(props.children);
           var text = children.reduce(flatten, '');
-          var slug = text.toLowerCase().replace(/\W/g, '-').replace('--', '-');
+          var slug = text
+            .toLowerCase()
+            .trim()
+            .replace(/\W/g, '-')
+            .replace('--', '-');
           return createElement('h' + props.level, { id: slug }, props.children);
         }
       }}

@@ -26,6 +26,11 @@
         "type": 301
       },
       {
+        "source": "/docs/latest/templating/",
+        "destination": "/docs/latest/templating/overview/",
+        "type": 301
+      },
+      {
         "source": "/tutorial/api-mocking-proxy-mode",
         "destination": "/docs/latest/proxy-mode/",
         "type": 301
@@ -47,7 +52,7 @@
       },
       {
         "source": "/tutorial/dynamic-response-with-templating",
-        "destination": "/docs/latest/templating/",
+        "destination": "/docs/latest/templating/overview/",
         "type": 301
       },
       {
@@ -63,6 +68,11 @@
       {
         "source": "/tutorial/multiple-route-responses",
         "destination": "/docs/latest/multiple-responses/",
+        "type": 301
+      },
+      {
+        "source": "/docs/latest/multiple-responses/",
+        "destination": "/docs/latest/route-responses/multiple-responses/",
         "type": 301
       },
       {

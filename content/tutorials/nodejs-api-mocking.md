@@ -21,7 +21,7 @@ The first step is to create a new mock API in Mockoon or use one you already hav
 
 > To learn more about how to set up your first mock API with Mockoon, head over to the [Getting started tutorial](tutorials:getting-started).
 
-You can then configure it by adding as many routes and responses as you need. You can also give your mocks a more realistic behavior by using the [templating system](docs:templating) or [adding some rules](docs:multiple-responses).
+You can then configure it by adding as many routes and responses as you need. You can also give your mocks a more realistic behavior by using the [templating system](docs:templating/overview) or [adding some rules](docs:route-responses/dynamic-rules).
 
 Then start your API by clicking on the green "play" icon.
 

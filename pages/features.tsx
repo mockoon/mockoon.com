@@ -35,7 +35,7 @@ const features: ItemCard = [
     title: 'Multiple responses per route',
     description:
       'Serve multiple rules-triggered or random responses with any headers body, or HTTP status codes.',
-    link: '/docs/latest/multiple-responses/'
+    link: '/docs/latest/route-responses/multiple-responses/'
   },
   {
     title: 'CORS',
@@ -83,7 +83,7 @@ const features: ItemCard = [
     title: 'Templating',
     description:
       'Templating supported in body, file content and header, with many helpers: url params, query params, JSON body lookup, etc.',
-    link: '/docs/latest/templating/'
+    link: '/docs/latest/templating/overview/'
   },
   {
     title: 'Auto-save',

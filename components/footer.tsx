@@ -107,12 +107,7 @@ const Footer: FunctionComponent = function () {
         </div>
 
         <div className='content has-text-centered'>
-          <p>
-            &copy; Mockoon 2017 - present by{' '}
-            <a href='https://github.com/255kb' rel='noopener'>
-              255kb
-            </a>
-          </p>
+          <p>&copy; Mockoon 2017 - {new Date().getFullYear()}</p>
         </div>
       </div>
     </footer>

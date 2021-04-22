@@ -51,7 +51,7 @@ const SponsorUs: FunctionComponent = function () {
                   want it to propose always more great features, you can support
                   us and join the dozens of{' '}
                   <a
-                    href='https://github.com/mockoon/mockoon/blob/master/backers.md'
+                    href='https://github.com/mockoon/mockoon/blob/main/backers.md'
                     target='_blank'
                     rel='noopener'
                   >

@@ -79,7 +79,7 @@ const Faq: FunctionComponent = function () {
               <p>
                 Mockoon is 100% free AND open source (
                 <a
-                  href='https://github.com/mockoon/mockoon/blob/master/LICENSE.md'
+                  href='https://github.com/mockoon/mockoon/blob/main/LICENSE.md'
                   target='_blank'
                   rel='noopener'
                 >

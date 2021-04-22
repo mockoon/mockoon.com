@@ -18,8 +18,7 @@ const SponsorUs: FunctionComponent = function () {
           <div className='column is-6 is-offset-3'>
             <div className='content has-text-centered'>
               <p className='has-text-grey has-text-weight-semibold is-size-4 is-italic'>
-                &#8220;We want to craft the best API tools on the
-                market!&#8221;
+                &#8220;We want to craft the best API tools on the market!&#8221;
               </p>
             </div>
           </div>
@@ -89,15 +88,15 @@ const SponsorUs: FunctionComponent = function () {
                   level and deliver the best developer experience on the market.
                 </p>
                 <p>
-                  They believe in simplicity and efficiency and work hard
-                  every day to bring you a tool that is easy to set up yet
-                  powerful. The goal is to save you tons of time, not waste it.
+                  They believe in simplicity and efficiency and work hard every
+                  day to bring you a tool that is easy to set up yet powerful.
+                  The goal is to save you tons of time, not waste it.
                 </p>
                 <p>
                   If you believe in what we are building, you can sponsor us in
                   this journey and join the dozens of{' '}
                   <a
-                    href='https://github.com/mockoon/mockoon/blob/master/backers.md'
+                    href='https://github.com/mockoon/mockoon/blob/main/backers.md'
                     target='_blank'
                     rel='noopener'
                   >

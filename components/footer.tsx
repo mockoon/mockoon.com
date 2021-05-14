@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react';
 
 const Footer: FunctionComponent = function () {
   return (
-    <footer className='py-4 py-md-11'>
+    <footer className='py-3 py-md-8'>
       <div className='container'>
         <div className='row'>
           <div className='col-12 col-md-4 col-lg-2'>
@@ -119,6 +119,9 @@ const Footer: FunctionComponent = function () {
               </li>
             </ul>
           </div>
+        </div>
+        <div className='mt-8 text-center copyright'>
+          <p>&copy; Mockoon 2017 - {new Date().getFullYear()}</p>
         </div>
       </div>
     </footer>

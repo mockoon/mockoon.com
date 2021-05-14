@@ -38,7 +38,8 @@
     font-size: 1em;
     &:hover,
     &:active,
-    &:focus {
+    &:focus,
+    &.active {
       background-color: #fafafa;
       color: #008bca;
     }

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Component } from 'react';
 
-class Nav extends Component<any, { menuOpened: boolean }> {
+class Nav extends Component<any, {}> {
   constructor(props) {
     super(props);
   }

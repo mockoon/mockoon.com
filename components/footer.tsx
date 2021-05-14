@@ -1,113 +1,124 @@
+import Link from 'next/link';
 import { FunctionComponent } from 'react';
 
 const Footer: FunctionComponent = function () {
   return (
-    <footer className='footer'>
+    <footer className='py-4 py-md-11'>
       <div className='container'>
-        <div className='columns'>
-          <div className='column is-4'>
-            <div className='content'>
-              <div className='title is-size-5 has-text-weight-semibold'>
-                Tutorials
-              </div>
-              <br />
-              <div className='mb-2'>
-                <a href='/tutorials/getting-started/'>
-                  Getting started with Mockoon 🚀
-                </a>
-              </div>
-              <div className='mb-2'>
-                <a href='/tutorials/partial-mocking-proxy/'>
-                  Partial mocking with proxy mode
-                </a>
-              </div>
-              <div className='mb-2'>
-                <a href='/tutorials/requests-recording-auto-mocking/'>
-                  Requests recording and auto-mocking
-                </a>
-              </div>
-              <div className='mb-2'>
-                <a href='/tutorials/generate-mock-json-data/'>
-                  Generate dynamic mock data with Mockoon templating system
-                </a>
-              </div>
-              <div className='mb-2'>
-                <a href='/tutorials/'>View all tutorials</a>
-              </div>
-            </div>
+        <div className='row'>
+          <div className='col-12 col-md-4 col-lg-2'>
+            <img
+              src='/images/logo-eyes-grey.svg'
+              alt='Mockoon eyes logo'
+              width='96'
+            />
           </div>
+          <div className='col-12 col-md-12 col-lg-6'>
+            <h6 className='fw-bold text-uppercase text-gray-700'>Tutorials</h6>
 
-          <div className='column is-2 is-offset-1'>
-            <div className='content'>
-              <div className='title is-size-5 has-text-weight-semibold'>
-                Learn
-              </div>
-              <div className='mb-2'>
-                <a href='/tutorials/'>Tutorials</a>
-              </div>
-              <div className='mb-2'>
-                <a href='/docs/latest/about/'>Docs</a>
-              </div>
-              <div className='mb-2'>
-                <a href='/mock-samples/'>Mock samples</a>
-              </div>
-              <div className='mb-2'>
-                <a href='/case-studies/'>Case studies</a>
-              </div>
-              <div className='mb-2'>
-                <a href='/blog/'>Blog</a>
-              </div>
-            </div>
+            <ul className='list-unstyled text-muted mb-6 mb-md-8 mb-lg-0'>
+              <li className='mb-3'>
+                <Link href='/tutorials/getting-started/'>
+                  <a className='text-reset'>Getting started with Mockoon 🚀</a>
+                </Link>
+              </li>
+              <li className='mb-3'>
+                <Link href='/tutorials/partial-mocking-proxy/'>
+                  <a className='text-reset'>Partial mocking with proxy mode</a>
+                </Link>
+              </li>
+              <li className='mb-3'>
+                <Link href='/tutorials/requests-recording-auto-mocking/'>
+                  <a className='text-reset'>
+                    Requests recording and auto-mocking
+                  </a>
+                </Link>
+              </li>
+              <li className='mb-3'>
+                <Link href='/tutorials/generate-mock-json-data/'>
+                  <a className='text-reset'>
+                    Generate dynamic mock data with Mockoon templating system
+                  </a>
+                </Link>
+              </li>
+              <li className='mb-3'>
+                <Link href='/tutorials/'>
+                  <a className='text-reset'>View all tutorials</a>
+                </Link>
+              </li>
+            </ul>
           </div>
+          <div className='col-6 col-md-6 col-lg-2'>
+            <h6 className='fw-bold text-uppercase text-gray-700'>Learn</h6>
 
-          <div className='column is-2'>
-            <div className='content'>
-              <div className='title is-size-5 has-text-weight-semibold'>
-                More
-              </div>
-              <div className='mb-2'>
-                <a href='/contact/'>Request support</a>
-              </div>
-              <div className='mb-2'>
-                <a href='/sponsor-us/'>Sponsor us</a>
-              </div>
-              <div className='mb-2'>
-                <a href='/about/'>About us</a>
-              </div>
-              <div className='mb-2'>
-                <a
-                  href='https://github.com/mockoon'
-                  target='_blank'
-                  rel='noopener'
-                >
-                  <i className='icon-github' aria-hidden='true'></i> GitHub
-                </a>
-              </div>
-              <div className='mb-2'>
-                <a
-                  href='https://discord.gg/MutRpsY5gE'
-                  target='_blank'
-                  rel='noopener'
-                >
-                  <i className='icon-discord' aria-hidden='true'></i> Discord
-                </a>
-              </div>
-            </div>
+            <ul className='list-unstyled text-muted mb-6 mb-md-8 mb-lg-0'>
+              <li className='mb-3'>
+                <Link href='/tutorials/'>
+                  <a className='text-reset'>Tutorials</a>
+                </Link>
+              </li>
+              <li className='mb-3'>
+                <Link href='/docs/latest/about/'>
+                  <a className='text-reset'>Docs</a>
+                </Link>
+              </li>
+              <li className='mb-3'>
+                <Link href='/mock-samples/'>
+                  <a className='text-reset'>Mock samples</a>
+                </Link>
+              </li>
+              <li className='mb-3'>
+                <Link href='/case-studies/'>
+                  <a className='text-reset'>Case studies</a>
+                </Link>
+              </li>
+              <li className='mb-3'>
+                <Link href='/blog/'>
+                  <a className='text-reset'>Blog</a>
+                </Link>
+              </li>
+            </ul>
           </div>
+          <div className='col-6 col-md-6 col-lg-2 offset-lg-0'>
+            <h6 className='fw-bold text-uppercase text-gray-700'>More</h6>
 
-          <div className='column is-3'>
-            <div className='content has-text-centered'>
-              <img
-                src='/images/logo-eyes-grey.svg'
-                alt='Mockoon eyes logo'
-                width='96'
-              />
-            </div>
+            <ul className='list-unstyled text-muted mb-0'>
+              <li className='mb-3'>
+                <Link href='/contact/'>
+                  <a className='text-reset'>Request support</a>
+                </Link>
+              </li>
+              <li className='mb-3'>
+                <Link href='/sponsor-us/'>
+                  <a className='text-reset'>Sponsor us</a>
+                </Link>
+              </li>
+              <li className='mb-3'>
+                <Link href='/sponsor-us/'>
+                  <a
+                    href='https://github.com/mockoon'
+                    target='_blank'
+                    rel='noopener'
+                    className='text-reset'
+                  >
+                    <i className='icon-github' aria-hidden='true'></i> GitHub
+                  </a>
+                </Link>
+              </li>
+              <li className='mb-3'>
+                <Link href='/sponsor-us/'>
+                  <a
+                    href='https://discord.gg/MutRpsY5gE'
+                    target='_blank'
+                    rel='noopener'
+                    className='text-reset'
+                  >
+                    <i className='icon-discord' aria-hidden='true'></i> Discord
+                  </a>
+                </Link>
+              </li>
+            </ul>
           </div>
-        </div>
-
-        <div className='content has-text-centered'>
-          <p>&copy; Mockoon 2017 - {new Date().getFullYear()}</p>
         </div>
       </div>
     </footer>

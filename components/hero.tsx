@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react';
-import Nav from './nav';
 
 const Hero: FunctionComponent<{
   title?: string;
@@ -10,9 +9,7 @@ const Hero: FunctionComponent<{
 }> = function (props) {
   return (
     <section className='hero is-small'>
-      <div className='hero-head'>
-        <Nav />
-      </div>
+      <div className='hero-head'></div>
 
       <div className='hero-body'>
         <div className={`${props.title ? 'section' : ''}`}>

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import React, { Fragment } from 'react';
 import Footer from '../components/footer';
+import Nav from '../components/nav';
 
 class Layout extends React.Component {
   render() {
@@ -40,6 +41,7 @@ class Layout extends React.Component {
             }}
           ></script>
         </Head>
+        <Nav />
         {this.props.children}
         <Footer />
         <script src='https://buttons.github.io/buttons.js' defer />

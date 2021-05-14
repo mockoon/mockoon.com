@@ -26,3 +26,21 @@
 
 // Custom Scss
 // ##########
+.navbar-nav .nav-item {
+  .bg-primary-soft {
+    color: #008bca;
+  }
+  .nav-link {
+    font-weight: 100;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    color: #4a4a4a;
+    font-size: 1em;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #fafafa;
+      color: #008bca;
+    }
+  }
+}

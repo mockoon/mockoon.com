@@ -20,7 +20,6 @@ Mockoon offers the following helpers which can return information relative to th
 - [`hostname`](#hostname)
 - [`ip`](#ip)
 - [`method`](#method)
-- [`baseUrl`](#baseurl)
 
 ## `body`
 
@@ -142,14 +141,4 @@ Returns the request method (GET, PUT, POST, etc.).
 
 ```handlebars
 {{method}}
-```
-
-## `baseUrl`
-
-Returns the base URL of the request: protocol, host, port and API prefix.
-
-**Examples**
-
-```handlebars
-{{baseUrl}}
 ```

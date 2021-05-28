@@ -9,41 +9,43 @@
 
 // Color system
 
-$white: #FFFFFF !default;
-$gray-100: #F9FBFD !default;
-$gray-200: #F1F4F8 !default;
-$gray-300: #D9E2EF !default;
-$gray-400: #C6D3E6 !default;
-$gray-500: #ABBCD5 !default;
-$gray-600: #869AB8 !default;
+$white: #ffffff !default;
+$gray-100: #f9fbfd !default;
+$gray-200: #f1f4f8 !default;
+$gray-300: #d9e2ef !default;
+$gray-400: #c6d3e6 !default;
+$gray-500: #abbcd5 !default;
+$gray-600: #869ab8 !default;
 $gray-700: #506690 !default;
-$gray-800: #384C74 !default;
-$gray-900: #1B2A4E !default;
-$black: #161C2D !default;
+$gray-800: #384c74 !default;
+$gray-900: #1b2a4e !default;
+$black: #161c2d !default;
 
-$primary: #335EEA !default;
+$primary: #335eea !default;
 $secondary: $gray-700 !default;
-$primary-desat: #6C8AEC !default; // NEW
-$success: #42BA96 !default;
-$info: #7C69EF !default;
-$warning: #FAD776 !default;
-$danger: #DF4759 !default;
+$primary-desat: #6c8aec !default; // NEW
+$success: #42ba96 !default;
+$info: #7c69ef !default;
+$warning: #fad776 !default;
+$danger: #df4759 !default;
 $light: $gray-100 !default;
 $dark: $gray-900 !default;
 
 /* beautify ignore:start */
 $theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "success": $success,
-  "info": $info,
-  "warning": $warning,
-  "danger": $danger,
-  "light": $light,
-  "dark": $dark,
-  "primary-desat": $primary-desat, // NEW
-  "black": $black, // NEW
-  "white": $white // NEW
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark,
+  'primary-desat': $primary-desat,
+  // NEW
+  'black': $black,
+  // NEW
+  'white': $white // NEW
 );
 /* beautify ignore:end */
 
@@ -55,7 +57,6 @@ $min-contrast-ratio: 1.75 !default;
 $color-contrast-dark: $gray-900 !default;
 $color-contrast-light: $white !default;
 
-
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
@@ -65,7 +66,6 @@ $enable-smooth-scroll: false !default;
 $enable-rfs: false !default;
 $enable-validation-icons: false !default;
 $enable-negative-margins: true !default;
-
 
 // Spacing
 //
@@ -80,27 +80,86 @@ $spacers: () !default;
 $spacers: map-merge(
   (
     0: 0,
-    1: ($spacer * .25), // 4px
-    2: ($spacer * .5), // 8px
-    3: ($spacer * .75), // 12px
-    4: $spacer, // 16px
-    5: ($spacer * 1.5), // 24px
-    6: ($spacer * 2), // 32px
-    7: ($spacer * 2.5), // 40px
-    8: ($spacer * 3), // 48px
-    9: ($spacer * 4), // 64px
-    10: ($spacer * 5), // 80px
-    11: ($spacer * 6), // 96px
-    12: ($spacer * 8), // 128px
-    13: ($spacer * 10), // 160px 
-    14: ($spacer * 12), // 192px
-    15: ($spacer * 16), // 256px                                                     
-    16: ($spacer * 25), // 400px
+    1: (
+      $spacer * 0.25
+    ),
+    // 4px
+    2:
+      (
+        $spacer * 0.5
+      ),
+    // 8px
+    3:
+      (
+        $spacer * 0.75
+      ),
+    // 12px
+    4: $spacer,
+    // 16px
+    5:
+      (
+        $spacer * 1.5
+      ),
+    // 24px
+    6:
+      (
+        $spacer * 2
+      ),
+    // 32px
+    7:
+      (
+        $spacer * 2.5
+      ),
+    // 40px
+    8:
+      (
+        $spacer * 3
+      ),
+    // 48px
+    9:
+      (
+        $spacer * 4
+      ),
+    // 64px
+    10:
+      (
+        $spacer * 5
+      ),
+    // 80px
+    11:
+      (
+        $spacer * 6
+      ),
+    // 96px
+    12:
+      (
+        $spacer * 8
+      ),
+    // 128px
+    13:
+      (
+        $spacer * 10
+      ),
+    // 160px
+    14:
+      (
+        $spacer * 12
+      ),
+    // 192px
+    15:
+      (
+        $spacer * 16
+      ),
+    // 256px
+    16:
+      (
+        $spacer * 25
+      ),
+    // 400px
   ),
   $spacers
 );
 /* beautify ignore:end */
-
 
 // Body
 //
@@ -109,7 +168,6 @@ $spacers: map-merge(
 $body-bg: $white !default;
 $body-color: $black !default;
 
-
 // Links
 //
 // Style anchor elements.
@@ -117,13 +175,11 @@ $body-color: $black !default;
 $link-decoration: none !default;
 $link-hover-decoration: underline !default;
 
-
 // Paragraphs
 //
 // Style p element.
 
 $paragraph-margin-bottom: 1rem !default;
-
 
 // Grid containers
 //
@@ -138,13 +194,11 @@ $container-max-widths: (
 ) !default;
 /* beautify ignore:end */
 
-
 // Grid columns
 //
 // Set the number of columns and specify the width of the gutters.
 
 $grid-gutter-width: 2.5rem !default;
-
 
 // Components
 //
@@ -153,28 +207,29 @@ $grid-gutter-width: 2.5rem !default;
 $border-width: 1px !default;
 $border-color: $gray-200 !default;
 
-$border-radius-sm: .25rem !default;
+$border-radius-sm: 0.25rem !default;
 $border-radius: 0.375rem !default;
 $border-radius-lg: 0.5rem !default;
 $border-radius-xl: 1rem !default; // NEW
 $border-radius-pill: 50rem !default;
 
-$box-shadow: 0 0.5rem 1.5rem fade-out($black, .9) !default;
-$box-shadow-sm: 0 .125rem .25rem rgba($black, .075) !default;
-$box-shadow-lg: 0 1.5rem 4rem fade-out($black, .9) !default;
+$box-shadow: 0 0.5rem 1.5rem fade-out($black, 0.9) !default;
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
+$box-shadow-lg: 0 1.5rem 4rem fade-out($black, 0.9) !default;
 
-$box-shadow-light: 0 0.5rem 1.5rem fade-out($black, .95) !default;
-$box-shadow-light-lg: 0 1.5rem 4rem fade-out($black, .95) !default;
+$box-shadow-light: 0 0.5rem 1.5rem fade-out($black, 0.95) !default;
+$box-shadow-light-lg: 0 1.5rem 4rem fade-out($black, 0.95) !default;
 
-$box-shadow-dark: 0 0.5rem 1.5rem fade-out($black, .85) !default;
-$box-shadow-dark-lg: 0 1.5rem 4rem fade-out($black, .85) !default;
+$box-shadow-dark: 0 0.5rem 1.5rem fade-out($black, 0.85) !default;
+$box-shadow-dark-lg: 0 1.5rem 4rem fade-out($black, 0.85) !default;
 
-$box-shadow-lift: 0 1rem 2.5rem fade-out($black, .9), 0 .5rem 1rem -.75rem fade-out($black, .9) !default;
-$box-shadow-lift-lg: 0 2rem 5rem fade-out($black, .9), 0 .5rem 1rem -.75rem fade-out($black, .95) !default;
+$box-shadow-lift: 0 1rem 2.5rem fade-out($black, 0.9),
+  0 0.5rem 1rem -0.75rem fade-out($black, 0.9) !default;
+$box-shadow-lift-lg: 0 2rem 5rem fade-out($black, 0.9),
+  0 0.5rem 1rem -0.75rem fade-out($black, 0.95) !default;
 
 $component-active-color: $white !default;
 $component-active-bg: $primary !default;
-
 
 // Typography
 //
@@ -215,15 +270,18 @@ $font-sizes: (
 ) !default;
 /* beautify ignore:end */
 
-$headings-margin-bottom: .5rem !default;
+$headings-margin-bottom: 0.5rem !default;
 $headings-font-weight: $font-weight-normal !default;
 $headings-line-height: 1 !default;
 
 /* beautify ignore:start */
 $display-font-sizes: (
-  1: 4.375rem, // 70px
-  2: 3.8125rem, // 61px
-  3: 3rem, // 48px
+  1: 4.375rem,
+  // 70px
+  2: 3.8125rem,
+  // 61px
+  3: 3rem,
+  // 48px
   4: 2.6875rem // 43px
 ) !default;
 /* beautify ignore:end */
@@ -243,7 +301,6 @@ $blockquote-footer-font-size: $font-size-xs !default;
 
 $hr-color: $border-color !default;
 $hr-opacity: 1 !default;
-
 
 // Tables
 //
@@ -268,26 +325,25 @@ $table-bg-scale: -90% !default;
 
 /* beautify ignore:start */
 $table-variants: (
-  "primary": shift-color($primary, $table-bg-scale),
-  "secondary": shift-color($secondary, $table-bg-scale),
-  "success": shift-color($success, $table-bg-scale),
-  "info": shift-color($info, $table-bg-scale),
-  "warning": shift-color($warning, $table-bg-scale),
-  "danger": shift-color($danger, $table-bg-scale),
-  "light": $light,
-  "dark": $gray-800,
+  'primary': shift-color($primary, $table-bg-scale),
+  'secondary': shift-color($secondary, $table-bg-scale),
+  'success': shift-color($success, $table-bg-scale),
+  'info': shift-color($info, $table-bg-scale),
+  'warning': shift-color($warning, $table-bg-scale),
+  'danger': shift-color($danger, $table-bg-scale),
+  'light': $light,
+  'dark': $gray-800
 ) !default;
 /* beautify ignore:end */
 
 $table-head-bg: $table-bg !default; // NEW
 $table-head-color: $body-color !default; // NEW
 
-
 // Buttons + Forms
 //
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
-$input-btn-padding-y: .8125rem !default;
+$input-btn-padding-y: 0.8125rem !default;
 $input-btn-padding-x: 1.25rem !default;
 $input-btn-font-size: $font-size-base !default;
 $input-btn-line-height: $line-height-base !default;
@@ -296,7 +352,7 @@ $input-btn-focus-width: 0 !default;
 $input-btn-focus-color: transparent !default;
 $input-btn-focus-box-shadow: none !default;
 
-$input-btn-padding-y-sm: .5625rem !default;
+$input-btn-padding-y-sm: 0.5625rem !default;
 $input-btn-padding-x-sm: 1rem !default;
 $input-btn-font-size-sm: $font-size-base !default;
 $input-btn-line-height-sm: $line-height-base !default; // NEW
@@ -305,7 +361,6 @@ $input-btn-padding-y-lg: 1.122rem !default;
 $input-btn-padding-x-lg: 1.5rem !default;
 $input-btn-font-size-lg: $font-size-base !default;
 $input-btn-line-height-lg: $line-height-base !default; // NEW
-
 
 // Buttons
 //
@@ -317,7 +372,6 @@ $btn-active-box-shadow: none !default;
 
 $btn-border-radius-sm: $border-radius !default;
 $btn-border-radius-lg: $border-radius !default;
-
 
 // Forms
 
@@ -356,7 +410,7 @@ $form-check-input-indeterminate-color: $component-active-color !default;
 
 $form-switch-color: $white !default;
 $form-switch-width: 2.5rem !default;
-$form-switch-padding-start: $form-switch-width + .5rem !default;
+$form-switch-padding-start: $form-switch-width + 0.5rem !default;
 $form-switch-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color}'/></svg>") !default;
 
 $form-switch-focus-color: $form-switch-color !default;
@@ -381,10 +435,9 @@ $form-select-focus-box-shadow: $input-focus-box-shadow !default;
 $form-file-button-bg: $light !default;
 
 $form-floating-label-opacity: 1 !default;
-$form-floating-label-transform: translateY(-.5rem) !default;
+$form-floating-label-transform: translateY(-0.5rem) !default;
 
 $form-group-margin-bottom: 1rem !default; // NEW
-
 
 // Navbar
 
@@ -405,7 +458,6 @@ $navbar-light-color: $gray-700 !default;
 $navbar-light-hover-color: $primary !default;
 $navbar-light-active-color: $primary !default;
 $navbar-light-toggler-border-color: transparent !default;
-
 
 // Dropdowns
 //
@@ -430,7 +482,6 @@ $dropdown-item-padding-x: 1.75rem !default;
 
 $dropdown-header-color: $primary !default;
 
-
 // Pagination
 
 $pagination-padding-y: $input-btn-padding-y !default;
@@ -442,7 +493,6 @@ $pagination-padding-x-lg: $input-btn-padding-x-lg !default;
 
 $pagination-line-height: $line-height-base !default; // NEW
 
-
 // Cards
 
 $card-spacer-y: 2rem !default;
@@ -451,7 +501,6 @@ $card-title-spacer-y: 1.5rem !default;
 $card-border-width: 0px !default;
 $card-border-color: $border-color !default;
 $card-cap-padding-y: 1.5rem !default;
-
 
 // Popovers
 
@@ -471,36 +520,31 @@ $popover-body-padding-x: 2rem !default;
 $popover-arrow-width: 1.25rem !default;
 $popover-arrow-height: 0.625rem !default;
 
-
 // Toasts
 
-$toast-padding-y: .5rem !default;
-
+$toast-padding-y: 0.5rem !default;
 
 // Badges
 
-$badge-padding-y: .25rem !default;
-$badge-padding-x: .75rem !default;
+$badge-padding-y: 0.25rem !default;
+$badge-padding-x: 0.75rem !default;
 
 $border-radius-pill-padding-x: $badge-padding-x !default; // NEW
-
 
 // Modals
 
 $modal-inner-padding: 2.5rem !default;
 
-$modal-backdrop-opacity: .8 !default;
-
+$modal-backdrop-opacity: 0.8 !default;
 
 // Alerts
 
-$alert-padding-y: .75rem !default;
+$alert-padding-y: 0.75rem !default;
 $alert-padding-x: 1.25rem !default;
 
 $alert-bg-scale: 0% !default;
 $alert-border-scale: 0% !default;
 $alert-color-scale: 60% !default;
-
 
 // List group
 
@@ -508,16 +552,14 @@ $list-group-border-color: $border-color !default;
 $list-group-item-padding-y: 1.5rem !default;
 $list-group-item-padding-x: 2rem !default;
 
-
 // Figures
 
 $figure-caption-font-size: $small-font-size !default;
 $figure-caption-color: $text-muted !default;
 
-
 // Breadcrumbs
 
-$breadcrumb-padding-y: .75rem !default;
+$breadcrumb-padding-y: 0.75rem !default;
 $breadcrumb-padding-x: 0 !default;
 $breadcrumb-margin-bottom: 0 !default;
 $breadcrumb-bg: transparent !default;
@@ -525,18 +567,15 @@ $breadcrumb-divider-color: $gray-700 !default;
 $breadcrumb-active-color: $gray-700 !default;
 $breadcrumb-border-radius: 0 !default;
 
-
 // Close
 
-$btn-close-width: .5em !default;
+$btn-close-width: 0.5em !default;
 $btn-close-color: $text-muted !default;
 $btn-close-text-shadow: none !default;
-
 
 // Code
 
 $code-font-size: 0.8125rem !default;
-
 
 //
 // Theme ===================================
@@ -544,13 +583,12 @@ $code-font-size: 0.8125rem !default;
 
 // Paths
 
-$path-to-img: "../img" !default;
-$path-to-fonts: "../fonts" !default;
-
+$path-to-img: '/images' !default;
+$path-to-fonts: '../fonts' !default;
 
 // Typography
 
-$headings-letter-spacing: -.01em !default;
+$headings-letter-spacing: -0.01em !default;
 
 $h1-line-height: 1.3 !default;
 $h2-line-height: 1.35 !default;
@@ -560,7 +598,7 @@ $h5-line-height: 1.5 !default;
 $h6-line-height: 1.55 !default;
 
 $display-line-height: 1.2 !default;
-$display-letter-spacing: -.02em !default;
+$display-letter-spacing: -0.02em !default;
 
 $h1-font-size-md: 1.875rem !default; // 30px
 $h2-font-size-md: 1.5rem !default; // 24px
@@ -576,29 +614,26 @@ $font-size-lg-md: 1.0625rem !default; // 17px
 $lead-font-size-md: 1.1875rem !default; // 19px
 
 $blockquote-small-font-weight: $font-weight-bold !default;
-$blockquote-small-letter-spacing: .07em !default;
+$blockquote-small-letter-spacing: 0.07em !default;
 
-$letter-spacing-lg: .08em !default;
-
+$letter-spacing-lg: 0.08em !default;
 
 // Buttons + Forms
 
-$input-btn-padding-y-xs: .25rem !default;
-$input-btn-padding-x-xs: .625rem !default;
+$input-btn-padding-y-xs: 0.25rem !default;
+$input-btn-padding-x-xs: 0.625rem !default;
 $input-btn-font-size-xs: $font-size-sm !default;
 $input-btn-line-height-xs: $line-height-base !default;
 
-
 // Buttons
 
-$btn-soft-bg-opacity: .1 !default;
+$btn-soft-bg-opacity: 0.1 !default;
 
 $btn-line-height-sm: $input-btn-line-height-sm !default;
 $btn-line-height-lg: $input-btn-line-height-lg !default;
 
 $btn-padding-y-xs: $input-btn-padding-y-xs !default;
 $btn-padding-x-xs: $input-btn-padding-x-xs !default;
-
 
 // Forms
 
@@ -609,9 +644,12 @@ $input-padding-y-xs: $input-btn-padding-y-xs !default;
 $input-padding-x-xs: $input-btn-padding-x-xs !default;
 $input-font-size-xs: $input-btn-font-size-xs !default;
 $input-line-height-xs: $input-btn-line-height-xs !default;
-$input-height-xs: calc(#{$input-btn-padding-y-xs * 2} + #{$input-btn-font-size-xs} * #{$input-line-height-xs} + #{$input-border-width * 2});
+$input-height-xs: calc(
+  #{$input-btn-padding-y-xs * 2} + #{$input-btn-font-size-xs} * #{$input-line-height-xs} +
+    #{$input-border-width * 2}
+);
 
-$form-check-input-bg-dark: rgba($white, .2) !default;
+$form-check-input-bg-dark: rgba($white, 0.2) !default;
 $form-check-input-checked-bg-color-dark: $white !default;
 
 $form-switch-min-height: 1.375rem !default;
@@ -629,12 +667,11 @@ $form-select-padding-x-xs: $input-padding-x-xs !default;
 $form-select-font-size-xs: $input-font-size-xs !default;
 $form-select-line-height-xs: $input-line-height-xs !default;
 $form-select-height-xs: $input-height-xs !default;
-$form-select-indicator-padding-xs: .625rem !default;
-$form-select-bg-size-xs: .75em !default;
+$form-select-indicator-padding-xs: 0.625rem !default;
+$form-select-bg-size-xs: 0.75em !default;
 
 $form-floating-label-font-size: $font-size-xs !default;
 $form-floating-label-color: $input-placeholder-color !default;
-
 
 // Navbar
 
@@ -646,11 +683,10 @@ $navbar-nav-item-spacing: 1.5rem !default;
 
 $navbar-dropdown-toggle-margin-bottom: 1.5rem !default;
 
-
 // Dropdowns
 
 $dropdown-item-padding-x-lg: 2.5rem !default;
-$dropdown-item-spacing-y: .45rem !default;
+$dropdown-item-spacing-y: 0.45rem !default;
 
 $dropdown-padding-x: $dropdown-item-padding-x !default;
 $dropdown-padding-x-xs: 1.25rem !default;
@@ -663,7 +699,6 @@ $dropdown-min-width-md: 22rem !default;
 $dropdown-min-width-lg: 35rem !default;
 $dropdown-min-width-xl: 42rem !default;
 
-
 // Card
 
 $card-meta-spacer-y: 1.5rem !default;
@@ -671,30 +706,25 @@ $card-meta-spacer-y: 1.5rem !default;
 $card-row-spacer-y: 4rem !default;
 $card-row-spacer-x: 2.5rem !default;
 
-
 // Popover
 
 $popover-header-font-size: $h6-font-size !default;
 $popover-header-color: $primary !default;
 
-
 // Badges
 
-$badge-padding-y-lg: .7em !default;
+$badge-padding-y-lg: 0.7em !default;
 $badge-padding-x-lg: 1.15em !default;
 
-$badge-soft-bg-opacity: .1 !default;
-
+$badge-soft-bg-opacity: 0.1 !default;
 
 // Breadcrumbs
 
 $breadcrumb-font-size: $font-size-sm !default;
 
-
 // Code
 
 $code-line-height: 1.35 !default;
-
 
 // Avatar
 
@@ -708,7 +738,6 @@ $avatar-size-xxl: 5rem !default;
 $avatar-title-bg: $gray-500 !default;
 $avatar-title-color: $white !default;
 
-
 // Icons
 
 $icon-size-base: 3rem !default;
@@ -720,65 +749,61 @@ $icon-size-xl: 5rem !default;
 $icon-circle-size: 4.1875rem !default;
 $icon-circle-font-size: 1.875rem !default;
 
-
 // Images
 
 $img-skewed-rotate-y: 35deg !default;
 $img-skewed-rotate-x: 15deg !default;
 
-
 // List
 
-$list-item-spacing-y: .35rem;
+$list-item-spacing-y: 0.35rem;
 
 $list-link-font-size: $font-size-sm !default;
 $list-link-color: $gray-700 !default;
 $list-link-hover-color: $primary !default;
 
-
 // Screenshot
 
 $screenshot-border-radius: 0.625rem !default;
-$screenshot-box-shadow: 25px 60px 125px -25px fade-out($gray-700, .9), 16px 40px 75px -40px fade-out(black, .8) !default;
+$screenshot-box-shadow: 25px 60px 125px -25px fade-out($gray-700, 0.9),
+  16px 40px 75px -40px fade-out(black, 0.8) !default;
 
-
-
-// 
+//
 // Utilities =====================================
 //
 
 /* beautify ignore:start */
 $utilities: (
-  "position": (
+  'position': (
     responsive: true,
     property: position,
     values: static relative absolute fixed sticky
   ),
-  "top": (
+  'top': (
     property: top,
     values: (
-      0: 0,
+      0: 0
     )
   ),
-  "right": (
+  'right': (
     property: right,
     values: (
-      0: 0,
+      0: 0
     )
   ),
-  "bottom": (
+  'bottom': (
     property: bottom,
     values: (
-      0: 0,
+      0: 0
     )
   ),
-  "left": (
+  'left': (
     property: left,
     values: (
-      0: 0,
+      0: 0
     )
   ),
-  "width": (
+  'width': (
     responsive: true,
     property: width,
     class: w,
@@ -795,7 +820,7 @@ $utilities: (
       auto: auto
     )
   ),
-  "max-width": (
+  'max-width': (
     responsive: true,
     property: max-width,
     class: mw,
@@ -811,7 +836,7 @@ $utilities: (
       150: 150%
     )
   ),
-  "viewport-width": (
+  'viewport-width': (
     responsive: true,
     property: width,
     class: vw,
@@ -824,10 +849,10 @@ $utilities: (
       120: 120vw,
       130: 130vw,
       140: 140vw,
-      150: 150vw,
+      150: 150vw
     )
   ),
-  "height": (
+  'height': (
     responsive: true,
     property: height,
     class: h,
@@ -844,7 +869,7 @@ $utilities: (
       auto: auto
     )
   ),
-  "viewport-height": (
+  'viewport-height': (
     responsive: true,
     property: height,
     class: vh,
@@ -857,25 +882,26 @@ $utilities: (
       120: 120vh,
       130: 130vh,
       140: 140vh,
-      150: 150vh,
+      150: 150vh
     )
   ),
-  "background-color": (
+  'background-color': (
     property: background-color,
     class: bg,
-    values: map-merge(
-      $theme-colors,
-      (
-        "white-20": rgba($white, .2),
-        "gray-200": $gray-200,
-        "gray-300": $gray-300,
-        "gray-800": $gray-800,
-        "gray-900": $gray-900,
-        "gray-900-50": rgba($gray-900, .5)
+    values:
+      map-merge(
+        $theme-colors,
+        (
+          'white-20': rgba($white, 0.2),
+          'gray-200': $gray-200,
+          'gray-300': $gray-300,
+          'gray-800': $gray-800,
+          'gray-900': $gray-900,
+          'gray-900-50': rgba($gray-900, 0.5)
+        )
       )
-    )
   ),
-  "rounded": (
+  'rounded': (
     property: border-radius,
     class: rounded,
     values: (
@@ -889,116 +915,118 @@ $utilities: (
       pill: $border-radius-pill
     )
   ),
-  "border": (
+  'border': (
     responsive: true,
     property: border,
     values: (
       null: $border-width solid $border-color,
-      0: 0,
+      0: 0
     )
   ),
-  "border-top": (
+  'border-top': (
     responsive: true,
     property: border-top,
     values: (
       null: $border-width solid $border-color,
-      0: 0,
+      0: 0
     )
   ),
-  "border-end": (
+  'border-end': (
     responsive: true,
     property: border-right,
     values: (
       null: $border-width solid $border-color,
-      0: 0,
+      0: 0
     )
   ),
-  "border-bottom": (
+  'border-bottom': (
     responsive: true,
     property: border-bottom,
     values: (
       null: $border-width solid $border-color,
-      0: 0,
+      0: 0
     )
   ),
-  "border-start": (
+  'border-start': (
     responsive: true,
     property: border-left,
     values: (
       null: $border-width solid $border-color,
-      0: 0,
+      0: 0
     )
   ),
-  "border-color": (
+  'border-color': (
     property: border-color,
     class: border,
-    values: map-merge(
-      $theme-colors,
-      (
-        "white-10": rgba($white, .1),
-        "white-20": rgba($white, .2),
-        "gray-300": $gray-300,
-        "gray-800": $gray-800,
-        "gray-800-50": rgba($gray-800, .5),
-        "gray-900-50": rgba($gray-900, .5)
+    values:
+      map-merge(
+        $theme-colors,
+        (
+          'white-10': rgba($white, 0.1),
+          'white-20': rgba($white, 0.2),
+          'gray-300': $gray-300,
+          'gray-800': $gray-800,
+          'gray-800-50': rgba($gray-800, 0.5),
+          'gray-900-50': rgba($gray-900, 0.5)
+        )
       )
-    )
   ),
-  "shadow": (
+  'shadow': (
     property: box-shadow,
     class: shadow,
     values: (
       null: $box-shadow,
-      "sm": $box-shadow-sm,
-      "lg": $box-shadow-lg,
-      "light": $box-shadow-light,
-      "dark": $box-shadow-dark,
-      "light-lg": $box-shadow-light-lg,
-      "dark-lg": $box-shadow-dark-lg,
-      "lift": $box-shadow-lift,
-      "none": none
+      'sm': $box-shadow-sm,
+      'lg': $box-shadow-lg,
+      'light': $box-shadow-light,
+      'dark': $box-shadow-dark,
+      'light-lg': $box-shadow-light-lg,
+      'dark-lg': $box-shadow-dark-lg,
+      'lift': $box-shadow-lift,
+      'none': none
     )
   ),
-  "color": (
+  'color': (
     property: color,
     class: text,
-    values: map-merge(
-      $theme-colors,
-      (
-        "gray-100": $gray-100,
-        "gray-200": $gray-200,
-        "gray-300": $gray-300,
-        "gray-400": $gray-400,
-        "gray-500": $gray-500,
-        "gray-600": $gray-600,
-        "gray-700": $gray-700,
-        "gray-800": $gray-800,
-        "gray-900": $gray-900,
-        "white": $white,
-        "body": $body-color,
-        "muted": $text-muted,
-        "muted-80": rgba($text-muted, .8),
-        "black-50": rgba($black, .5),
-        "white-50": rgba($white, .5),
-        "white-70": rgba($white, .7),
-        "white-75": rgba($white, .75),
-        "white-80": rgba($white, .8),
-        "reset": inherit,
+    values:
+      map-merge(
+        $theme-colors,
+        (
+          'gray-100': $gray-100,
+          'gray-200': $gray-200,
+          'gray-300': $gray-300,
+          'gray-400': $gray-400,
+          'gray-500': $gray-500,
+          'gray-600': $gray-600,
+          'gray-700': $gray-700,
+          'gray-800': $gray-800,
+          'gray-900': $gray-900,
+          'white': $white,
+          'body': $body-color,
+          'muted': $text-muted,
+          'muted-80': rgba($text-muted, 0.8),
+          'black-50': rgba($black, 0.5),
+          'white-50': rgba($white, 0.5),
+          'white-70': rgba($white, 0.7),
+          'white-75': rgba($white, 0.75),
+          'white-80': rgba($white, 0.8),
+          'reset': inherit
+        )
       )
-    )
   ),
-  "letter-spacing": (
+  'letter-spacing': (
     property: letter-spacing,
     values: (
       lg: $letter-spacing-lg
     )
   ),
-  "opacity": (
+  'opacity': (
     property: opacity,
     values: (
       0: 0,
       1: 1
     )
-  ),
+  )
 );
 /* beautify ignore:end */

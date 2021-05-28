@@ -8,31 +8,38 @@ const Testimonial: FunctionComponent<{
 }> = function (props) {
   return (
     <Fragment>
-      <style>{`.testimonial {height:100%}`}</style>
-      <div className='card testimonial'>
-        <div className='card-content'>
-          <div className='content'>{props.children}</div>
-          <div>
-            <a href={props.link} rel='noopener' target='_blank'>
-              <div className='media'>
-                <div className='media-left'>
-                  <figure className='image is-32x32'>
-                    <img
-                      className='is-rounded'
-                      src={props.imgSrc}
-                      alt={props.username + ' profile picture'}
-                      loading='lazy'
-                    />
-                  </figure>
-                </div>
-                <div className='media-content'>
-                  <p className='title is-6'>{props.name}</p>
-                  <p className='subtitle content is-small'>{props.username}</p>
-                </div>
-              </div>
-            </a>
+      <div className='card shadow-light-lg'>
+        <a
+          className='card-body my-auto'
+          href={props.link}
+          rel='noopener'
+          target='_blank'
+        >
+          <p className='mb-0 text-muted'>{props.children}</p>
+        </a>
+
+        <a
+          className='card-meta'
+          href={props.link}
+          rel='noopener'
+          target='_blank'
+        >
+          <hr className='card-meta-divider' />
+
+          <div className='avatar avatar-sm me-2'>
+            <img
+              className='avatar-img rounded-circle'
+              src={props.imgSrc}
+              alt={props.username + ' profile picture'}
+              loading='lazy'
+            />
           </div>
-        </div>
+
+          <p className='h6 text-uppercase text-muted me-2 mb-0'>{props.name}</p>
+          <p className='h6 text-uppercase text-muted mb-0 ms-auto'>
+            {props.username}
+          </p>
+        </a>
       </div>
     </Fragment>
   );

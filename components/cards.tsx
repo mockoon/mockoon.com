@@ -6,44 +6,44 @@ const Cards: FunctionComponent<{
   articles: ArticleList;
   small?: boolean;
 }> = function (props) {
-  let sizing = 'is-6 is-offset-3';
+  let sizing = 'col-md-12 col-lg-12';
 
   if (props.small) {
-    sizing = 'is-4 is-offset-4';
+    sizing = 'col-md-5 col-lg-4';
   }
 
   return (
     <Fragment>
-      <div className='columns'>
-        <div className={`column ${sizing}`}>
-          {props.articles.map((article) => {
-            return (
-              <a key={article.slug} href={`/${props.path}/${article.slug}/`}>
-                <div className={`card ${'mb-6'}`}>
-                  {article.data.image && (
-                    <div
-                      className={`card-image ${
-                        article.data.header ? 'p-5' : ''
-                      }`}
-                    >
-                      <figure className='image is-3by1'>
-                        <img
-                          src={`/images/${props.path}/${article.data.image}`}
-                          alt={article.data.imageAlt}
-                        />
-                      </figure>
-                    </div>
-                  )}
-                  <div className='card-content'>
-                    <p className='title is-size-5'>{article.data.title}</p>
-                    <p>{article.data.excerpt}</p>
+      {props.articles.map((article) => {
+        return (
+          <div key={article.slug} className={`col-12 ${sizing}`}>
+            <div className='card card-border card-border-xl shadow-light-lg lift lift-lg'>
+              <div className='card-body text-center'>
+                {article.data.image && (
+                  <div
+                    className={`img-fluid mb-5 mx-auto ${
+                      article.data.header ? 'p-5' : ''
+                    }`}
+                  >
+                    <img
+                      src={`/images/${props.path}/${article.data.image}`}
+                      alt={article.data.imageAlt}
+                    />
                   </div>
-                </div>
-              </a>
-            );
-          })}
-        </div>
-      </div>
+                )}
+
+                <p className='text-gray-700 mb-5'>
+                  <b>{article.data.title}</b>
+                  <br />
+                  {article.data.excerpt}
+                </p>
+
+                <a href={`/${props.path}/${article.slug}/`}>Read more</a>
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </Fragment>
   );
 };

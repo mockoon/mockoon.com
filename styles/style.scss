@@ -26,29 +26,37 @@
 
 // Custom Scss
 // ##########
-.navbar-nav .nav-item {
-  .bg-primary-soft {
-    color: #008bca;
-  }
-  .nav-link {
-    font-weight: 100;
-    padding-left: 5px !important;
-    padding-right: 5px !important;
-    color: #4a4a4a;
-    font-size: 1em;
-    &:hover,
-    &:active,
-    &:focus,
-    &.active {
-      background-color: #fafafa;
-      color: #008bca;
-    }
+div.icon {
+  i {
+    font-size: xxx-large;
   }
 }
+pre code,
+code {
+  color: $body-color;
+  padding: 0 0.5rem;
+  display: inline-block;
+  background-color: #e5e5e5;
+}
+pre code {
+  background-color: transparent;
+}
 footer {
-  background: #efefef;
   .copyright {
     color: #869ab8;
     font-size: 0.85em;
+  }
+}
+
+.card-meta {
+  .h6 {
+    font-size: 0.5em;
+    letter-spacing: inherit;
+  }
+}
+
+.btn-primary {
+  &.twitter {
+    background-color: #55acee;
   }
 }

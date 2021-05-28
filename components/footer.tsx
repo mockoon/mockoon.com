@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react';
 
 const Footer: FunctionComponent = function () {
   return (
-    <footer className='py-3 py-md-8'>
+    <footer className='py-3 py-md-8 bg-gray-200'>
       <div className='container'>
         <div className='row'>
           <div className='col-12 col-md-4 col-lg-2'>

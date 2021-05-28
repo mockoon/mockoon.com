@@ -6,7 +6,7 @@ const Nav: FunctionComponent = function () {
   const router = useRouter();
   return (
     <div className='container'>
-      <nav className='navbar navbar-expand-lg navbar-light bg-white pt-0'>
+      <nav className='navbar navbar-expand-lg navbar-light bg-white'>
         <div className='container'>
           <Link href='/'>
             <a className='navbar-brand pt-0 mt-0 me-auto'>
@@ -35,7 +35,7 @@ const Nav: FunctionComponent = function () {
             id='navbar'
           >
             <ul className='navbar-nav ms-auto'>
-              <li className='nav-item px-2'>
+              <li className='nav-item'>
                 <Link href='/features/'>
                   <a
                     className={`nav-link ${
@@ -46,7 +46,7 @@ const Nav: FunctionComponent = function () {
                   </a>
                 </Link>
               </li>
-              <li className='nav-item px-2'>
+              <li className='nav-item'>
                 <Link href='/docs/latest/about/'>
                   <a
                     className={`nav-link ${
@@ -57,7 +57,7 @@ const Nav: FunctionComponent = function () {
                   </a>
                 </Link>
               </li>
-              <li className='nav-item px-2'>
+              <li className='nav-item'>
                 <Link href='/cli/'>
                   <a
                     className={`nav-link d-flex align-items-center ${
@@ -69,7 +69,7 @@ const Nav: FunctionComponent = function () {
                   </a>
                 </Link>
               </li>
-              <li className='nav-item px-2'>
+              <li className='nav-item'>
                 <Link href='/tutorials/'>
                   <a
                     className={`nav-link ${
@@ -80,7 +80,7 @@ const Nav: FunctionComponent = function () {
                   </a>
                 </Link>
               </li>
-              <li className='nav-item px-2'>
+              <li className='nav-item'>
                 <Link href='/blog/'>
                   <a
                     className={`nav-link ${
@@ -94,7 +94,7 @@ const Nav: FunctionComponent = function () {
                   </a>
                 </Link>
               </li>
-              <li className='nav-item px-2'>
+              <li className='nav-item'>
                 <Link href='/faq/'>
                   <a
                     className={`nav-link ${
@@ -105,7 +105,7 @@ const Nav: FunctionComponent = function () {
                   </a>
                 </Link>
               </li>
-              <li className='nav-item px-2'>
+              <li className='nav-item'>
                 <Link href='/sponsor-us/'>
                   <a
                     className={`nav-link ${

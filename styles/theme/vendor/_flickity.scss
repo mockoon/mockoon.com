@@ -5,7 +5,7 @@
 
 // Controls
 
-.flickity-button {
+.flickity-prev-next-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +25,7 @@
   }
 }
 
-.flickity-button.previous {
+.flickity-prev-next-button.previous {
   left: 0;
   transform: translate(calc(-50% + #{$grid-gutter-width / 4}), -50%);
 
@@ -38,7 +38,7 @@
   }
 }
 
-.flickity-button.next {
+.flickity-prev-next-button.next {
   right: 0;
   transform: translate(calc(50% - #{$grid-gutter-width / 4}), -50%);
 
@@ -58,7 +58,7 @@
 
 // Button white
 
-.flickity-button-white .flickity-button {
+.flickity-button-white .flickity-prev-next-button {
   background-color: $white;
   color: $primary;
 }
@@ -66,18 +66,18 @@
 
 // Button bottom
 
-.flickity-button-bottom .flickity-button {
+.flickity-button-bottom .flickity-prev-next-button {
   top: auto;
   bottom: 1.5rem;
   transform: none;
 }
 
-.flickity-button-bottom .flickity-button.previous {
+.flickity-button-bottom .flickity-prev-next-button.previous {
   left: auto;
   right: 6.375rem;
 }
 
-.flickity-button-bottom .flickity-button.next {
+.flickity-button-bottom .flickity-prev-next-button.next {
   left: auto;
   right: 2.5rem;
 }
@@ -85,15 +85,15 @@
 
 // Button inset
 
-.flickity-button-inset .flickity-button {
+.flickity-button-inset .flickity-prev-next-button {
   transform: translateY(-50%);
 }
 
-.flickity-button-inset .flickity-button.previous {
+.flickity-button-inset .flickity-prev-next-button.previous {
   left: 1.5rem;
 }
 
-.flickity-button-inset .flickity-button.next {
+.flickity-button-inset .flickity-prev-next-button.next {
   right: 1.5rem;
 }
 

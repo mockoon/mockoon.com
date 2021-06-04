@@ -4,7 +4,7 @@
 //
 
 // Font
-/*
+
 @font-face {
   font-family: "HKGroteskPro";
   font-weight: 400;
@@ -35,30 +35,19 @@
   font-weight: 400;
   font-style: normal;
 }
- */
+
 
 // Headings
 
-h1,
-h2,
-.h1,
-.h2 {
+h1, h2, .h1, .h2 {
   margin-bottom: 1rem;
 }
 
-h1,
-h2,
-h3,
-h4,
-.h1,
-.h2,
-.h3,
-.h4 {
+h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
   letter-spacing: $headings-letter-spacing;
 }
 
-h1,
-.h1 {
+h1, .h1 {
   line-height: $h1-line-height;
 
   @include media-breakpoint-down(lg) {
@@ -66,8 +55,7 @@ h1,
   }
 }
 
-h2,
-.h2 {
+h2, .h2 {
   line-height: $h2-line-height;
 
   @include media-breakpoint-down(lg) {
@@ -75,8 +63,7 @@ h2,
   }
 }
 
-h3,
-.h3 {
+h3, .h3 {
   line-height: $h3-line-height;
 
   @include media-breakpoint-down(lg) {
@@ -84,8 +71,7 @@ h3,
   }
 }
 
-h4,
-.h4 {
+h4, .h4 {
   line-height: $h4-line-height;
 
   @include media-breakpoint-down(lg) {
@@ -93,26 +79,22 @@ h4,
   }
 }
 
-h5,
-.h5 {
+h5, .h5 {
   line-height: $h5-line-height;
 }
 
-h6,
-.h6 {
+h6, .h6 {
   line-height: $h6-line-height;
 
   &.text-uppercase {
-    letter-spacing: 0.08em;
+    letter-spacing: .08em;
   }
 }
 
+
 // Display
 
-.display-1,
-.display-2,
-.display-3,
-.display-4 {
+.display-1, .display-2, .display-3, .display-4 {
   letter-spacing: $display-letter-spacing;
 }
 
@@ -148,13 +130,16 @@ h6,
   }
 }
 
+
 // Lead
 
 .lead {
+
   @include media-breakpoint-down(lg) {
     font-size: $lead-font-size-md;
   }
 }
+
 
 // Blockquote
 
@@ -172,12 +157,14 @@ h6,
   }
 }
 
+
 // Social list
 
 .list-social-icon {
   max-width: 1.25rem;
   height: auto;
 }
+
 
 // Dividers
 
@@ -191,11 +178,13 @@ h6,
 
 .hr-md {
   width: 100px;
+  ;
 }
 
 .hr-md:not([size]) {
   height: $border-width * 2;
 }
+
 
 // Code
 

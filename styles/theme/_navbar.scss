@@ -214,6 +214,11 @@
     padding-bottom: $spacer;
     padding-left: $spacer / 2;
   }
+
+  @include media-breakpoint-up(lg) {
+    left: 100%;
+    right: auto;
+  }
 }
 
 

@@ -6,7 +6,7 @@ meta:
   description: Learn how to create partial mocks of existing APIs with Mockoon's proxy mode and forward trafic to a REST API in three easy steps
 image: tutorial-partial-mocking-proxy.png
 imageAlt: Mockoon logo between a computer and a server icons
-order: 20
+order: 30
 ---
 
 # Create a partial mock API with Mockoon's proxy mode

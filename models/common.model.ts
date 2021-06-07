@@ -33,6 +33,8 @@ export type ArticleData = {
     link: string;
     linkAnchor: string;
   };
+  logo?: string;
+  logoAlt?: string;
   // order of the article on the index page
   order?: number;
 };

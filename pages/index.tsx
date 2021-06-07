@@ -592,13 +592,15 @@ class Index extends React.Component {
                       title: 'API UX research with Mockoon',
                       image: 'impala-logo-black.svg',
                       imageAlt: 'Impala logo',
+                      logo: 'impala-logo-black.svg',
+                      logoAlt: 'Impala logo',
                       header: {},
                       excerpt:
                         'Learn how Impala uses Mockoon to conduct API user research'
                     } as ArticleData
                   }
                 ]}
-                small={true}
+                medium={true}
               />
             </div>
           </div>

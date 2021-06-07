@@ -36,7 +36,7 @@ const Tutorials: FunctionComponent<{
 
       <div className='section'>
         <div className='container'>
-          <Cards path='tutorials' articles={props.articles} />
+          <Cards path='tutorials' articles={props.articles} large={true} />
         </div>
       </div>
       <ContactBanner />

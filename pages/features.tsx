@@ -120,10 +120,8 @@ const Features: FunctionComponent = function () {
 
       <div className='section'>
         <div className='container'>
-          <div className='columns'>
-            <div className='column is-10 is-offset-1'>
-              <SimpleCards items={features} />
-            </div>
+          <div className='row'>
+            <SimpleCards items={features} />
           </div>
         </div>
       </div>

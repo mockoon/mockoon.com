@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import Download from '../components/download';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Newsletter from '../components/newsletter';
@@ -15,49 +14,18 @@ const Faq: FunctionComponent = function () {
       />
 
       <Hero title='Frequently asked questions' />
-      <Download />
 
       <section className='container '>
         <div className='row'>
           <div className='col-md-12 col-12'>
-            <div
-              className='accordion shadow-light-lg mb-5 mb-md-6'
-              id='helpAccordionOne'
-            >
+            <div className='accordion shadow-light-lg mb-5 mb-md-6'>
               <div className='accordion-item'>
-                <div className='accordion-button' role='button'>
-                  <div className='me-auto'>
-                    <h2 className='fw-bold mb-0'></h2>
-
-                    <p className='fs-sm text-muted mb-0'></p>
-                  </div>
-
-                  <span className='badge rounded-pill bg-success-soft ms-4'>
-                    <span className='h6 text-uppercase'>10 answers</span>
-                  </span>
-                </div>
-              </div>
-              <div className='accordion-item'>
-                <div
-                  className='accordion-button collapsed'
-                  role='button'
-                  data-bs-toggle='collapse'
-                  data-bs-target='#helpOne'
-                  aria-expanded='false'
-                  aria-controls='helpOne'
-                >
-                  <h3 className='me-4' id='helpOneHeading'>
+                <div className='accordion-button'>
+                  <h3 className='me-4'>
                     How does Mockoon mock API creation works?
                   </h3>
-                  <div className='text-muted ms-auto'></div>
                 </div>
-
-                <div
-                  className='accordion-collapse collapse'
-                  id='helpOne'
-                  aria-labelledby='helpOneHeading'
-                  data-bs-parent='#helpAccordionOne'
-                >
+                <div className='accordion-collapse'>
                   <div className='accordion-body'>
                     <p className='text-gray-700'>
                       Unlike many other mocking tools, Mockoon is a desktop
@@ -68,27 +36,12 @@ const Faq: FunctionComponent = function () {
                 </div>
               </div>
               <div className='accordion-item'>
-                <div
-                  className='accordion-button collapsed'
-                  role='button'
-                  data-bs-toggle='collapse'
-                  data-bs-target='#helpTwo'
-                  aria-expanded='false'
-                  aria-controls='helpTwo'
-                >
-                  <h3 className='me-4' id='helpTwoHeading'>
+                <div className='accordion-button'>
+                  <h3 className='me-4'>
                     Does Mockoon need elevated rights to run?
                   </h3>
-
-                  <div className='text-muted ms-auto'></div>
                 </div>
-
-                <div
-                  className='accordion-collapse collapse'
-                  id='helpTwo'
-                  aria-labelledby='helpTwoHeading'
-                  data-bs-parent='#helpAccordionOne'
-                >
+                <div className='accordion-collapse'>
                   <div className='accordion-body'>
                     <p className='text-gray-700'>
                       No, Mockoon can be run in most environments by regular
@@ -98,27 +51,15 @@ const Faq: FunctionComponent = function () {
                 </div>
               </div>
               <div className='accordion-item'>
-                <div
-                  className='accordion-button collapsed'
-                  role='button'
-                  data-bs-toggle='collapse'
-                  data-bs-target='#helpThree'
-                  aria-expanded='false'
-                  aria-controls='helpThree'
-                >
-                  <h3 className='me-4' id='helpThreeHeading'>
+                <div className='accordion-button'>
+                  <h3 className='me-4'>
                     Does Mockoon work behind a company firewall?
                   </h3>
 
                   <div className='text-muted ms-auto'></div>
                 </div>
 
-                <div
-                  className='accordion-collapse collapse'
-                  id='helpThree'
-                  aria-labelledby='helpThreeHeading'
-                  data-bs-parent='#helpAccordionOne'
-                >
+                <div className='accordion-collapse'>
                   <div className='accordion-body'>
                     <p className='text-gray-700'>
                       Mockoon creates a local mock server running on Node.js and
@@ -132,27 +73,15 @@ const Faq: FunctionComponent = function () {
                 </div>
               </div>
               <div className='accordion-item'>
-                <div
-                  className='accordion-button collapsed'
-                  role='button'
-                  data-bs-toggle='collapse'
-                  data-bs-target='#helpFour'
-                  aria-expanded='false'
-                  aria-controls='helpFour'
-                >
-                  <h3 className='me-4' id='helpFourHeading'>
+                <div className='accordion-button '>
+                  <h3 className='me-4'>
                     Does Mockoon require an active internet connection?
                   </h3>
 
                   <div className='text-muted ms-auto'></div>
                 </div>
 
-                <div
-                  className='accordion-collapse collapse'
-                  id='helpFour'
-                  aria-labelledby='helpFourHeading'
-                  data-bs-parent='#helpAccordionOne'
-                >
+                <div className='accordion-collapse '>
                   <div className='accordion-body'>
                     <p className='text-gray-700'>
                       No, you don't need an internet connection to use Mockoon.
@@ -162,27 +91,15 @@ const Faq: FunctionComponent = function () {
                 </div>
               </div>
               <div className='accordion-item'>
-                <div
-                  className='accordion-button collapsed'
-                  role='button'
-                  data-bs-toggle='collapse'
-                  data-bs-target='#helpFive'
-                  aria-expanded='false'
-                  aria-controls='helpFive'
-                >
-                  <h3 className='me-4' id='helpFiveHeading'>
+                <div className='accordion-button '>
+                  <h3 className='me-4'>
                     Do you need an account to create mock APIs?
                   </h3>
 
                   <div className='text-muted ms-auto'></div>
                 </div>
 
-                <div
-                  className='accordion-collapse collapse'
-                  id='helpFive'
-                  aria-labelledby='helpFiveHeading'
-                  data-bs-parent='#helpAccordionOne'
-                >
+                <div className='accordion-collapse '>
                   <div className='accordion-body'>
                     <p className='text-gray-700'>
                       No, you don't need to sign up or create an account to use
@@ -193,27 +110,13 @@ const Faq: FunctionComponent = function () {
               </div>
 
               <div className='accordion-item'>
-                <div
-                  className='accordion-button collapsed'
-                  role='button'
-                  data-bs-toggle='collapse'
-                  data-bs-target='#helpSix'
-                  aria-expanded='false'
-                  aria-controls='helpSix'
-                >
-                  <h3 className='me-4' id='helpSixHeading'>
-                    Does Mockoon offer a CLI?
-                  </h3>
+                <div className='accordion-button '>
+                  <h3 className='me-4'>Does Mockoon offer a CLI?</h3>
 
                   <div className='text-muted ms-auto'></div>
                 </div>
 
-                <div
-                  className='accordion-collapse collapse'
-                  id='helpSix'
-                  aria-labelledby='helpSixHeading'
-                  data-bs-parent='#helpAccordionOne'
-                >
+                <div className='accordion-collapse '>
                   <div className='accordion-body'>
                     <p className='text-gray-700'>
                       Yes, Mockoon has an <a href='/cli/'>official CLI</a> that
@@ -234,27 +137,13 @@ const Faq: FunctionComponent = function () {
               </div>
 
               <div className='accordion-item'>
-                <div
-                  className='accordion-button collapsed'
-                  role='button'
-                  data-bs-toggle='collapse'
-                  data-bs-target='#helpSeven'
-                  aria-expanded='false'
-                  aria-controls='helpSix'
-                >
-                  <h3 className='me-4' id='helpSevenHeading'>
-                    Is Mockoon compatible with OpenAPI?
-                  </h3>
+                <div className='accordion-button '>
+                  <h3 className='me-4'>Is Mockoon compatible with OpenAPI?</h3>
 
                   <div className='text-muted ms-auto'></div>
                 </div>
 
-                <div
-                  className='accordion-collapse collapse'
-                  id='helpSeven'
-                  aria-labelledby='helpSevenHeading'
-                  data-bs-parent='#helpAccordionOne'
-                >
+                <div className='accordion-collapse '>
                   <div className='accordion-body'>
                     <p className='text-gray-700'>
                       Yes, Mockoon supports most of the OpenAPI specifications
@@ -270,27 +159,13 @@ const Faq: FunctionComponent = function () {
               </div>
 
               <div className='accordion-item'>
-                <div
-                  className='accordion-button collapsed'
-                  role='button'
-                  data-bs-toggle='collapse'
-                  data-bs-target='#helpHeight'
-                  aria-expanded='false'
-                  aria-controls='helpHeight'
-                >
-                  <h3 className='me-4' id='helpHeightHeading'>
-                    Is Mockoon free and/or open source?
-                  </h3>
+                <div className='accordion-button '>
+                  <h3 className='me-4'>Is Mockoon free and/or open source?</h3>
 
                   <div className='text-muted ms-auto'></div>
                 </div>
 
-                <div
-                  className='accordion-collapse collapse'
-                  id='helpHeight'
-                  aria-labelledby='helpHeightHeading'
-                  data-bs-parent='#helpAccordionOne'
-                >
+                <div className='accordion-collapse '>
                   <div className='accordion-body'>
                     <p className='text-gray-700'>
                       Mockoon is 100% free AND open source (
@@ -308,27 +183,13 @@ const Faq: FunctionComponent = function () {
               </div>
 
               <div className='accordion-item'>
-                <div
-                  className='accordion-button collapsed'
-                  role='button'
-                  data-bs-toggle='collapse'
-                  data-bs-target='#helpNine'
-                  aria-expanded='false'
-                  aria-controls='helpHeight'
-                >
-                  <h3 className='me-4' id='helpNineHeading'>
-                    Where are my data stored?
-                  </h3>
+                <div className='accordion-button '>
+                  <h3 className='me-4'>Where are my data stored?</h3>
 
                   <div className='text-muted ms-auto'></div>
                 </div>
 
-                <div
-                  className='accordion-collapse collapse'
-                  id='helpNine'
-                  aria-labelledby='helpNineHeading'
-                  data-bs-parent='#helpAccordionOne'
-                >
+                <div className='accordion-collapse '>
                   <div className='accordion-body'>
                     <p className='text-gray-700'>
                       Locally, in your operating system user data folder.{' '}
@@ -355,27 +216,13 @@ const Faq: FunctionComponent = function () {
               </div>
 
               <div className='accordion-item'>
-                <div
-                  className='accordion-button collapsed'
-                  role='button'
-                  data-bs-toggle='collapse'
-                  data-bs-target='#helpTen'
-                  aria-expanded='false'
-                  aria-controls='helpTen'
-                >
-                  <h3 className='me-4' id='helpTenHeading'>
-                    Are you collecting usage data?
-                  </h3>
+                <div className='accordion-button '>
+                  <h3 className='me-4'>Are you collecting usage data?</h3>
 
                   <div className='text-muted ms-auto'></div>
                 </div>
 
-                <div
-                  className='accordion-collapse collapse'
-                  id='helpTen'
-                  aria-labelledby='helpTenHeading'
-                  data-bs-parent='#helpAccordionOne'
-                >
+                <div className='accordion-collapse '>
                   <div className='accordion-body'>
                     <p className='text-gray-700'>
                       Yes, but only anonymous data through Google Analytics.
@@ -403,7 +250,6 @@ const Faq: FunctionComponent = function () {
           </div>
         </div>
       </section>
-
       <Newsletter />
     </Layout>
   );

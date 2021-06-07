@@ -8,7 +8,7 @@ const Testimonial: FunctionComponent<{
 }> = function (props) {
   return (
     <Fragment>
-      <div className='card shadow-light-lg'>
+      <div className='card shadow-light-lg my-3'>
         <a
           className='card-body my-auto'
           href={props.link}

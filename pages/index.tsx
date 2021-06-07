@@ -355,10 +355,7 @@ class Index extends React.Component {
               </div>
             </div>
             <div className='row mt-5' data-isotope='{"layoutMode": "masonry"}'>
-              <div
-                className='col-12 col-md-4 text-center py-2'
-                data-aos='fade-up'
-              >
+              <div className='col-12 col-md-4 text-center' data-aos='fade-up'>
                 <Testimonial
                   link='https://twitter.com/KechaAlex/status/1283134297067618306'
                   imgSrc='/images/testimonials/_9NFn5MH_400x400.jpg'
@@ -385,11 +382,6 @@ class Index extends React.Component {
                   <br />
                   This tool just works, it's super intuitive. Love it.❤️
                 </Testimonial>
-              </div>
-              <div
-                className='col-12 col-md-4 text-center py-2'
-                data-aos='fade-up'
-              >
                 <Testimonial
                   link='https://twitter.com/chumaumenze/status/1276429472057765888'
                   imgSrc='/images/testimonials/OfPPfWh9_400x400.jpg'
@@ -399,11 +391,6 @@ class Index extends React.Component {
                   Mockoon is the best! It's the easiest and quickest way to mock
                   APIs locally.
                 </Testimonial>
-              </div>
-              <div
-                className='col-12 col-md-4 text-center py-2'
-                data-aos='fade-up'
-              >
                 <Testimonial
                   link='https://twitter.com/ubuntu/status/1321763987361509376'
                   imgSrc='/images/testimonials/cof_orange_hex_bigger.jpg'
@@ -417,10 +404,8 @@ class Index extends React.Component {
                   snap install mockoon
                 </Testimonial>
               </div>
-              <div
-                className='col-12 col-md-4 text-center py-2'
-                data-aos='fade-up'
-              >
+
+              <div className='col-12 col-md-4 text-center' data-aos='fade-up'>
                 <Testimonial
                   link='https://twitter.com/rubeshgain/status/1243557172988051456'
                   imgSrc='/images/testimonials/F3baAGfY_400x400.jpg'
@@ -432,11 +417,6 @@ class Index extends React.Component {
                   APIs locally. No remote deployment, no account required, open
                   source.
                 </Testimonial>
-              </div>
-              <div
-                className='col-12 col-md-4 text-center py-2'
-                data-aos='fade-up'
-              >
                 <Testimonial
                   link='https://twitter.com/nQaze/status/1239577212883554310'
                   imgSrc='/images/testimonials/NFa3Y9Uk_400x400.jpg'
@@ -463,12 +443,24 @@ class Index extends React.Component {
                   </a>{' '}
                   who developed this wonderful tool.
                 </Testimonial>
+                <Testimonial
+                  link='https://twitter.com/Axel_V_py/status/1214821739613560832'
+                  imgSrc='/images/testimonials/fCg5Iqt5_400x400.jpg'
+                  name='Axel'
+                  username='@Axel_V_py'
+                >
+                  <a
+                    href='https://twitter.com/255kb'
+                    rel='noopener'
+                    target='_blank'
+                  >
+                    @255kb
+                  </a>{' '}
+                  Thanks for Mockoon! such a handy tool!
+                </Testimonial>
               </div>
 
-              <div
-                className='col-12 col-md-4 text-center py-2'
-                data-aos='fade-up'
-              >
+              <div className='col-12 col-md-4 text-center' data-aos='fade-up'>
                 <Testimonial
                   link='https://twitter.com/nicola_orritos/status/1227168377275371520'
                   imgSrc='/images/testimonials/photo_small_400x400.jpg'
@@ -516,33 +508,7 @@ class Index extends React.Component {
                   </a>{' '}
                   and this is a huge bonus in my eyes.
                 </Testimonial>
-              </div>
 
-              <div
-                className='col-12 col-md-4 text-center py-2'
-                data-aos='fade-up'
-              >
-                <Testimonial
-                  link='https://twitter.com/Axel_V_py/status/1214821739613560832'
-                  imgSrc='/images/testimonials/fCg5Iqt5_400x400.jpg'
-                  name='Axel'
-                  username='@Axel_V_py'
-                >
-                  <a
-                    href='https://twitter.com/255kb'
-                    rel='noopener'
-                    target='_blank'
-                  >
-                    @255kb
-                  </a>{' '}
-                  Thanks for Mockoon! such a handy tool!
-                </Testimonial>
-              </div>
-
-              <div
-                className='col-12 col-md-4 text-center py-2'
-                data-aos='fade-up'
-              >
                 <Testimonial
                   link='https://twitter.com/deciomontanhani/status/1211713659824754689'
                   imgSrc='/images/testimonials/mAoZtKto_400x400.jpg'

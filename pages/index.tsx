@@ -274,7 +274,7 @@ class Index extends React.Component {
                     <img
                       src='/images/feature1.png'
                       alt='Mockoon routes list view'
-                      className='screenshot'
+                      className='screenshot img-fluid'
                     />
                   </div>
                 </div>
@@ -300,7 +300,7 @@ class Index extends React.Component {
                     <img
                       src='/images/feature2.png'
                       alt='Routes configuration'
-                      className='screenshot'
+                      className='screenshot img-fluid'
                     />
                   </div>
                 </div>
@@ -326,7 +326,7 @@ class Index extends React.Component {
                     <img
                       src='/images/feature3.png'
                       alt='Routes JSON body'
-                      className='screenshot'
+                      className='screenshot img-fluid'
                     />
                   </div>
                 </div>

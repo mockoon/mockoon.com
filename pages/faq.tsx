@@ -1,5 +1,6 @@
-import { FunctionComponent } from 'react';
+import React, { FunctionComponent } from 'react';
 import Download from '../components/download';
+import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Newsletter from '../components/newsletter';
 import Layout from '../layout/layout';
@@ -12,14 +13,8 @@ const Faq: FunctionComponent = function () {
         description='Find the most frequently asked questions about Mockoon, the free cross-platform desktop mock REST API servers creation tool.'
         ogType='article'
       />
-      <section className='container py-5 py-md-5'>
-        <div className='row'>
-          <div className='col-12 col-md'>
-            <h1 className='display-4 mb-2'>Frequently asked questions</h1>
-          </div>
-        </div>
-      </section>
 
+      <Hero title='Frequently asked questions' />
       <Download />
 
       <section className='container '>

@@ -8,32 +8,26 @@ const Hero: FunctionComponent<{
   mainPictureAlt?: string;
 }> = function (props) {
   return (
-    <section className='hero is-small'>
-      <div className='hero-head'></div>
+    <section className='container text-center py-5 py-md-5'>
+      <div className='row'>
+        <div className='col-12 col-md'>
+          {props.title && <h1 className='display-4 mb-2'>{props.title}</h1>}
 
-      <div className='hero-body'>
-        <div className={`${props.title ? 'section' : ''}`}>
-          <div className='container has-text-centered'>
-            {props.title && <h1 className='title is-spaced'>{props.title}</h1>}
-
-            {props.subtitle && (
-              <h2
-                className='subtitle mt20'
-                dangerouslySetInnerHTML={{ __html: props.subtitle }}
-              ></h2>
-            )}
-
-            {props.cta && (
-              <p>
-                <a className='button is-primary' href={props.cta.link}>
-                  <span>{props.cta.text}</span>
-                </a>
-              </p>
-            )}
-          </div>
+          {props.subtitle && (
+            <h2
+              className='h4 text-muted'
+              dangerouslySetInnerHTML={{ __html: props.subtitle }}
+            ></h2>
+          )}
+          {props.cta && (
+            <p>
+              <a className='button is-primary' href={props.cta.link}>
+                <span>{props.cta.text}</span>
+              </a>
+            </p>
+          )}
         </div>
       </div>
-
       {props.mainPicture && (
         <figure className='image rounded main-picture cb'>
           <img

@@ -94,28 +94,34 @@ const Footer: FunctionComponent = function () {
                 </Link>
               </li>
               <li className='mb-3'>
-                <Link href='/sponsor-us/'>
-                  <a
-                    href='https://github.com/mockoon'
-                    target='_blank'
-                    rel='noopener'
-                    className='text-reset'
-                  >
-                    <i className='icon-github' aria-hidden='true'></i> GitHub
-                  </a>
-                </Link>
+                <a
+                  href='https://github.com/mockoon'
+                  target='_blank'
+                  rel='noopener'
+                  className='text-reset'
+                >
+                  <i className='icon-github' aria-hidden='true'></i> GitHub
+                </a>
               </li>
               <li className='mb-3'>
-                <Link href='/sponsor-us/'>
-                  <a
-                    href='https://discord.gg/MutRpsY5gE'
-                    target='_blank'
-                    rel='noopener'
-                    className='text-reset'
-                  >
-                    <i className='icon-discord' aria-hidden='true'></i> Discord
-                  </a>
-                </Link>
+                <a
+                  href='https://discord.gg/MutRpsY5gE'
+                  target='_blank'
+                  rel='noopener'
+                  className='text-reset'
+                >
+                  <i className='icon-discord' aria-hidden='true'></i> Discord
+                </a>
+              </li>
+              <li className='mb-3'>
+                <a
+                  href='https://twitter.com/intent/follow?screen_name=GetMockoon'
+                  target='_blank'
+                  rel='noopener'
+                  className='text-reset'
+                >
+                  <i className='icon-twitter' aria-hidden='true'></i> Twitter
+                </a>
               </li>
             </ul>
           </div>

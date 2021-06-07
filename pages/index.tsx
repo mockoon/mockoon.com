@@ -255,7 +255,7 @@ class Index extends React.Component {
               </div>
             </div>
 
-            <div className='row align-items-center justify-content-between'>
+            <div className='row my-5 py-5 align-items-center justify-content-between'>
               <div className='col-12 col-md-6 col-lg-5 order-md-2'>
                 <span className='badge rounded-pill bg-primary-soft mb-3'>
                   <span className='h6 text-uppercase'>Create</span>
@@ -269,26 +269,19 @@ class Index extends React.Component {
                 </p>
               </div>
               <div className='col-12 col-md-6 order-md-1' data-aos='fade-up'>
-                <div className='w-100 w-md-130 float-end mb-6 mb-md-0'>
-                  <div className='shape shape-blur-4 svg-shim text-gray-200'></div>
-
-                  <div className='device device-macbook'>
+                <div className='mb-6 mb-md-0'>
+                  <div className='col-md-12'>
                     <img
                       src='/images/feature1.png'
-                      className='device-screen'
                       alt='Mockoon routes list view'
-                    />
-                    <img
-                      src='/images/devices/macbook.svg'
-                      className='img-fluid'
-                      alt='device'
+                      className='screenshot'
                     />
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className='row align-items-center justify-content-between'>
+            <div className='row my-5 py-5 align-items-center justify-content-between'>
               <div className='col-12 col-md-6 col-lg-5 order-md-1'>
                 <span className='badge rounded-pill bg-primary-soft mb-3'>
                   <span className='h6 text-uppercase'>Customize</span>
@@ -302,26 +295,19 @@ class Index extends React.Component {
                 </p>
               </div>
               <div className='col-12 col-md-6 order-md-2' data-aos='fade-up'>
-                <div className='w-100 w-md-130 float-end mb-6 mb-md-0'>
-                  <div className='shape shape-blur-4 svg-shim text-gray-200'></div>
-
-                  <div className='device device-macbook'>
+                <div className='mb-6 mb-md-0'>
+                  <div className='col-md-12'>
                     <img
                       src='/images/feature2.png'
-                      className='device-screen'
                       alt='Routes configuration'
-                    />
-                    <img
-                      src='/images/devices/macbook.svg'
-                      className='img-fluid'
-                      alt='device'
+                      className='screenshot'
                     />
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className='row align-items-center justify-content-between'>
+            <div className='row my-5 py-5 align-items-center justify-content-between'>
               <div className='col-12 col-md-6 col-lg-5 order-md-2'>
                 <span className='badge rounded-pill bg-primary-soft mb-3'>
                   <span className='h6 text-uppercase'>More</span>
@@ -335,19 +321,12 @@ class Index extends React.Component {
                 </p>
               </div>
               <div className='col-12 col-md-6 order-md-1' data-aos='fade-up'>
-                <div className='w-100 w-md-130 float-end mb-6 mb-md-0'>
-                  <div className='shape shape-blur-4 svg-shim text-gray-200'></div>
-
-                  <div className='device device-macbook'>
+                <div className='mb-6 mb-md-0'>
+                  <div className='col-md-12'>
                     <img
                       src='/images/feature3.png'
-                      className='device-screen'
                       alt='Routes JSON body'
-                    />
-                    <img
-                      src='/images/devices/macbook.svg'
-                      className='img-fluid'
-                      alt='device'
+                      className='screenshot'
                     />
                   </div>
                 </div>

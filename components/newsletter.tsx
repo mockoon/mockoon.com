@@ -48,23 +48,6 @@ const Newsletter: FunctionComponent = function () {
             </form>
           </div>
         </div>
-        <div className='row text-center mt-5 d-flex justify-content-center'>
-          <div className='col-md-8'>
-            <span>Or follow us on Twitter</span>
-            <a
-              title='Follow us on Twitter'
-              rel='noopener'
-              href='https://twitter.com/intent/follow?screen_name=GetMockoon'
-              className='btn btn-primary twitter ms-2'
-              target='_blank'
-            >
-              <span className='icon me-2'>
-                <i className='icon-twitter' aria-hidden='true'></i>
-              </span>
-              <span>Follow @GetMockoon</span>
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

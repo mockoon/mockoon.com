@@ -1,8 +1,8 @@
 import matter from 'gray-matter';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { ChangeEvent, useState } from 'react';
 import { rsort as semverSort } from 'semver';
-import ContactBanner from '../../components/contact-banner';
 import Markdown from '../../components/markdown';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
@@ -13,6 +13,7 @@ import {
   DocsTopicData
 } from '../../models/docs.model';
 import { sortByOrder } from '../../utils/utils';
+
 const latestVersion = require('../../package.json').version;
 
 /**
@@ -195,9 +196,9 @@ export default function Docs(props: {
         url={`/${props.slug}`}
       />
       <div className='container-fluid'>
-        <div className='row justify-content-start gx-0 mx-md-0'>
-          <div className='col-12 col-md-2'>
-            <aside className='flex-grow-1 py-8 py-md-10'>
+        <div className='row justify-content-center gx-0 mx-md-0 mb-5'>
+          <div className='col-12 col-md-2 me-md-5'>
+            <aside className='sticky-top flex-grow-1 py-8 py-md-10'>
               <div className='content mb-5'>
                 <h3>Documentation</h3>
                 <div className='select'>
@@ -232,9 +233,9 @@ export default function Docs(props: {
                         router.asPath.includes(item.slug) ? 'active' : ''
                       }`}
                     >
-                      <a href={`${item.slug}/`} className={'list-link'}>
-                        {item.title}
-                      </a>
+                      <Link href={`${item.slug}/`} passHref={true}>
+                        <a className={'list-link'}>{item.title}</a>
+                      </Link>
                     </li>
                   ));
 
@@ -253,14 +254,13 @@ export default function Docs(props: {
               </ul>
             </aside>
           </div>
-          <div className='col-12 col-md-9 ps-md-5 ms-md-5'>
+          <div className='col-12 col-md-7 ps-md-5'>
             <section className='pt-md-10'>
               <Markdown body={props.topicBody} version={currentVersion} />
             </section>
           </div>
         </div>
       </div>
-      <ContactBanner />
     </Layout>
   );
 }

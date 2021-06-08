@@ -2,8 +2,8 @@ import { FunctionComponent } from 'react';
 
 const Newsletter: FunctionComponent = function () {
   return (
-    <section className='pt-6 pt-md-8 bg-gray-200'>
-      <div className='container pb-6 pb-md-8 border-bottom border-gray-300'>
+    <div className='bg-gray-200'>
+      <div className='container pb-5 border-bottom border-gray-300'>
         <div className='row align-items-center'>
           <div className='col-12 col-md-7'>
             <h4 className='mb-1 fw-bold'>Get our stories delivered</h4>
@@ -49,7 +49,7 @@ const Newsletter: FunctionComponent = function () {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -67,15 +67,20 @@ footer {
 
 aside {
   select {
-    font-weight: 700;
-    color: red;
+    &.form-select {
+      color: $primary;
+      option {
+        color: $black;
+      }
+    }
   }
   li.list-group-item {
     padding: 0.75rem 0.75rem;
-    &:active,
+    cursor: pointer;
     &.active {
+      span,
       a {
-        color: white;
+        color: $white;
       }
     }
   }

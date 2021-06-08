@@ -64,7 +64,7 @@ class Index extends React.Component {
           </div>
         </section>
 
-        <section className='bg-gray-200 py-8 py-md-11'>
+        <section className='bg-gray-200 py-8 py-md-11' id='download'>
           <div className='container'>
             <div className='row'>
               <div className='row justify-content-center'>
@@ -363,22 +363,10 @@ class Index extends React.Component {
                   username='@KechaAlex'
                 >
                   I can wholeheartedly recommend{' '}
-                  <a
-                    href='https://twitter.com/GetMockoon'
-                    rel='noopener'
-                    target='_blank'
-                  >
-                    @GetMockoon
-                  </a>{' '}
-                  if you're looking for an easy way to{' '}
-                  <a
-                    href='https://twitter.com/hashtag/mock'
-                    rel='noopener'
-                    target='_blank'
-                  >
-                    #mock
-                  </a>{' '}
-                  Http-Endpoints locally.
+                  <span className='text-info'>@GetMockoon</span> if you're
+                  looking for an easy way to{' '}
+                  <span className='text-info'>#mock</span> Http-Endpoints
+                  locally.
                   <br />
                   This tool just works, it's super intuitive. Love it.❤️
                 </Testimonial>
@@ -424,24 +412,10 @@ class Index extends React.Component {
                   username='@nQaze'
                 >
                   Forgot to mention an important part of this article. I am
-                  leveraging{' '}
-                  <a
-                    href='https://twitter.com/GetMockoon'
-                    rel='noopener'
-                    target='_blank'
-                  >
-                    @GetMockoon
-                  </a>{' '}
-                  to implement the APIs! <br />
-                  All credit to{' '}
-                  <a
-                    href='https://twitter.com/255kb'
-                    rel='noopener'
-                    target='_blank'
-                  >
-                    @255kb
-                  </a>{' '}
-                  who developed this wonderful tool.
+                  leveraging <span className='text-info'>@GetMockoon</span> to
+                  implement the APIs! <br />
+                  All credit to <span className='text-info'>@255kb</span> who
+                  developed this wonderful tool.
                 </Testimonial>
                 <Testimonial
                   link='https://twitter.com/Axel_V_py/status/1214821739613560832'
@@ -449,14 +423,8 @@ class Index extends React.Component {
                   name='Axel'
                   username='@Axel_V_py'
                 >
-                  <a
-                    href='https://twitter.com/255kb'
-                    rel='noopener'
-                    target='_blank'
-                  >
-                    @255kb
-                  </a>{' '}
-                  Thanks for Mockoon! such a handy tool!
+                  <span className='text-info'>@255kb</span> Thanks for Mockoon!
+                  such a handy tool!
                 </Testimonial>
               </div>
 
@@ -469,44 +437,14 @@ class Index extends React.Component {
                 >
                   Did I already say that Mockoon is awesome? Mockoon is the
                   easiest and quickest way I found to run mock APIs locally.{' '}
-                  <a
-                    href='https://twitter.com/hashtag/RestAPI'
-                    rel='noopener'
-                    target='_blank'
-                  >
-                    #RestAPI
-                  </a>{' '}
-                  <a
-                    href='https://twitter.com/hashtag/Prototyping'
-                    rel='noopener'
-                    target='_blank'
-                  >
-                    #Prototyping
-                  </a>{' '}
-                  <a
-                    href='https://twitter.com/hashtag/DeveloperTools'
-                    rel='noopener'
-                    target='_blank'
-                  >
-                    #DeveloperTools
-                  </a>{' '}
-                  <a
-                    href='https://twitter.com/hashtag/OpenSource'
-                    rel='noopener'
-                    target='_blank'
-                  >
-                    #OpenSource
-                  </a>
+                  <span className='text-info'>#RestAPI</span>{' '}
+                  <span className='text-info'>#Prototyping</span>{' '}
+                  <span className='text-info'>#DeveloperTools</span>{' '}
+                  <span className='text-info'>#OpenSource</span>
                   <br />
                   P.S. It&#39;s made with{' '}
-                  <a
-                    href='https://twitter.com/hashtag/Electron'
-                    rel='noopener'
-                    target='_blank'
-                  >
-                    #Electron
-                  </a>{' '}
-                  and this is a huge bonus in my eyes.
+                  <span className='text-info'>#Electron</span> and this is a
+                  huge bonus in my eyes.
                 </Testimonial>
 
                 <Testimonial
@@ -517,23 +455,9 @@ class Index extends React.Component {
                 >
                   If you're a mobile/frontend developer and you're suffering
                   with DEV environment, start mocking your APIs with{' '}
-                  <a
-                    href='https://twitter.com/GetMockoon'
-                    rel='noopener'
-                    target='_blank'
-                  >
-                    @GetMockoon
-                  </a>{' '}
-                  . It's amazing! Thanks,{' '}
-                  <a
-                    href='https://twitter.com/255kb'
-                    rel='noopener'
-                    target='_blank'
-                  >
-                    @255kb
-                  </a>{' '}
-                  for creating this! I'm using every time that I develop new iOS
-                  projects!
+                  <span className='text-info'>@GetMockoon</span> . It's amazing!
+                  Thanks, <span className='text-info'>@255kb</span> for creating
+                  this! I'm using every time that I develop new iOS projects!
                 </Testimonial>
               </div>
             </div>

@@ -60,5 +60,7 @@ footer {
 }
 
 .simple-card-min {
-  min-height: 200px;
+  p.text-muted {
+    font-size: initial;
+  }
 }

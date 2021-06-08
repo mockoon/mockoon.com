@@ -16,11 +16,11 @@ const SimpleCards: FunctionComponent<{
           .map((item, itemIndex) => {
             return (
               <div className='col-md-4 py-3' key={'feature' + itemIndex}>
-                <div className='card card-border shadow-light-lg lift lift-lg'>
-                  <div className='card-body text-center simple-card-min '>
+                <div className='card card-border shadow-light-lg'>
+                  <div className='card-body text-center simple-card-min d-flex align-content-end flex-wrap justify-content-center '>
                     <h4 className=''>{item.title}</h4>
                     <p
-                      className='h6 text-muted'
+                      className='text-muted'
                       dangerouslySetInnerHTML={{ __html: item.description }}
                     ></p>
                     {(item.link || (item.disabledLink && item.linkText)) && (

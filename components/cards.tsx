@@ -35,7 +35,7 @@ const Cards: FunctionComponent<{
           return (
             <div key={article.slug} className={`col-12 my-3 ${sizing}`}>
               <div
-                className={`card card-border ${cardRow} ${cardBorder} shadow-light-lg lift lift-lg`}
+                className={`card card-border ${cardRow} ${cardBorder} shadow-light-lg`}
               >
                 <div className='card-body text-center'>
                   <div className='row'>

@@ -49,7 +49,7 @@ class Index extends React.Component {
 
                 <a
                   href='#download'
-                  className='btn btn-primary-soft shadow lift me-1'
+                  className='btn btn-primary shadow lift me-1'
                 >
                   Download <i className='icon-download'></i>
                 </a>

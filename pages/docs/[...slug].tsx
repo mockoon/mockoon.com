@@ -3,8 +3,6 @@ import { useRouter } from 'next/router';
 import React, { ChangeEvent, useState } from 'react';
 import { rsort as semverSort } from 'semver';
 import ContactBanner from '../../components/contact-banner';
-import Download from '../../components/download';
-import Hero from '../../components/hero';
 import Markdown from '../../components/markdown';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
@@ -196,17 +194,15 @@ export default function Docs(props: {
         ogType='article'
         url={`/${props.slug}`}
       />
-
-      <Hero />
-
-      <div className='section'>
-        <div className='container'>
-          <div className='columns'>
-            <div className='column is-3'>
-              <div className='content'>
+      <div className='container-fluid'>
+        <div className='row justify-content-start gx-0 mx-md-0'>
+          <div className='col-12 col-md-2'>
+            <aside className='flex-grow-1 py-8 py-md-10'>
+              <div className='content mb-5'>
                 <h3>Documentation</h3>
                 <div className='select'>
                   <select
+                    className='form-select form-select-xs'
                     aria-label='Versions menu'
                     value={selectedVersion}
                     onChange={switchVersion}
@@ -223,50 +219,44 @@ export default function Docs(props: {
                   </select>
                 </div>
               </div>
-              <aside className='menu'>
-                <ul className='menu-list'>
-                  {props.navItems.map((menuItem, menuItemIndex) => {
-                    const itemsToBuild =
-                      menuItem.type === 'category'
-                        ? menuItem.items
-                        : [menuItem];
+              <hr />
+              <ul className='list-group menu-list list'>
+                {props.navItems.map((menuItem, menuItemIndex) => {
+                  const itemsToBuild =
+                    menuItem.type === 'category' ? menuItem.items : [menuItem];
 
-                    const itemsHtml = itemsToBuild.map((item, itemIndex) => (
-                      <li key={`link${itemIndex}`}>
-                        <a
-                          href={`${item.slug}/`}
-                          className={
-                            router.asPath.includes(item.slug) ? 'is-active' : ''
-                          }
-                        >
-                          {item.title}
-                        </a>
-                      </li>
-                    ));
+                  const itemsHtml = itemsToBuild.map((item, itemIndex) => (
+                    <li
+                      key={`link${itemIndex}`}
+                      className={`list-group-item ${
+                        router.asPath.includes(item.slug) ? 'active' : ''
+                      }`}
+                    >
+                      <a href={`${item.slug}/`} className={'list-link'}>
+                        {item.title}
+                      </a>
+                    </li>
+                  ));
 
-                    return [
-                      menuItem.type === 'category' && (
-                        <p
-                          className='menu-label'
-                          key={`category${menuItemIndex}`}
-                        >
-                          {menuItem.title}
-                        </p>
-                      ),
-                      itemsHtml
-                    ];
-                  })}
-                </ul>
-                <div style={{ marginTop: '25px' }}>
-                  <Download />
-                </div>
-              </aside>
-            </div>
-            <div className='column is-9'>
-              <div className='content'>
-                <Markdown body={props.topicBody} version={currentVersion} />
-              </div>
-            </div>
+                  return [
+                    menuItem.type === 'category' && (
+                      <h6
+                        className='fw-bold text-uppercase mt-5 mb-2'
+                        key={`category${menuItemIndex}`}
+                      >
+                        {menuItem.title}
+                      </h6>
+                    ),
+                    itemsHtml
+                  ];
+                })}
+              </ul>
+            </aside>
+          </div>
+          <div className='col-12 col-md-9 ps-md-5 ms-md-5'>
+            <section className='pt-md-10'>
+              <Markdown body={props.topicBody} version={currentVersion} />
+            </section>
           </div>
         </div>
       </div>

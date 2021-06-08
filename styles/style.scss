@@ -64,3 +64,19 @@ footer {
     font-size: initial;
   }
 }
+
+aside {
+  select {
+    font-weight: 700;
+    color: red;
+  }
+  li.list-group-item {
+    padding: 0.75rem 0.75rem;
+    &:active,
+    &.active {
+      a {
+        color: white;
+      }
+    }
+  }
+}

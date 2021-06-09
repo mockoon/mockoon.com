@@ -5,8 +5,8 @@ meta:
   title: Record API requests and HTTP traffic and auto-mock endpoints
   description: Learn how to record entering API requests and HTTP traffic and auto-mock your endpoints with Mockoon
 image: tutorial-requests-recording.png
-imageAlt: Mockoon logo between a computer and a server icons
-order: 30
+imageAlt: Mockoon logo next to a computer and a history list
+order: 40
 ---
 
 # Record API requests and HTTP traffic and auto-mock endpoints

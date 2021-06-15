@@ -18,7 +18,9 @@ const SimpleCards: FunctionComponent<{
             return (
               <div
                 key={'feature' + itemIndex}
-                className='card card-border shadow-light-lg my-2'
+                className={`${
+                  props.items.length === 3 ? 'card-min-height' : ''
+                } card card-border shadow-light-lg my-2`}
               >
                 <div className='card-body text-center simple-card-min d-flex align-content-end flex-wrap justify-content-center '>
                   <h4 className=''>{item.title}</h4>

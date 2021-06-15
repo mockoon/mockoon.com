@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react';
-import ContactBanner from '../components/contact-banner';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import SimpleCards from '../components/simple-cards';
@@ -31,14 +30,13 @@ const features: ItemCard = [
   }
 ];
 
-const SponsorUs: FunctionComponent = function () {
+const Cli: FunctionComponent = function () {
   return (
     <Layout>
       <Meta
         title='Take Mockoon to the command line'
         description='Mockoon CLI takes Mockoon where it has never been before: servers, CI environments, etc. Lightweight and fast.'
       />
-
       <Hero
         title='Take Mockoon to the command line'
         subtitle='Mockoon CLI takes Mockoon where it has never been before. Lightweight and fast.'
@@ -48,54 +46,40 @@ const SponsorUs: FunctionComponent = function () {
         }}
         mainPicture='/images/cli-screenshot.png'
       />
-
-      <div className='container'>
-        <div className='section'>
-          <div className='columns'>
-            <div className='column'>
-              <div className='content'>
-                <h3 className='mb-6 is-size-4'>
-                  Mockoon's perfect complement for all your headless and
-                  automated environments.
-                </h3>
-              </div>
-              <SimpleCards items={features} />
+      <section>
+        <div className='container'>
+          <div className='row py-5'>
+            <div className='text-center'>
+              <h3>
+                Mockoon's perfect complement for all your headless and automated
+                environments.
+              </h3>
+            </div>
+            <SimpleCards items={features} />
+          </div>
+          <div className='row py-5'>
+            <div className='col-md-6'>
+              <h3 className='text-center'>NPM package quick start</h3>
+              <Terminal
+                lines={[
+                  'npm install -g @mockoon/cli',
+                  'mockoon-cli start --data ./export-file.json'
+                ]}
+              />
+            </div>
+            <div className='col-md-6'>
+              <h3 className='text-center'>Docker image Quick start</h3>
+              <Terminal
+                lines={[
+                  'docker run -d --mount type=bind,source=/export-file.json,target=/data,readonly -p 3000:3000 mockoon/cli:latest -d data -i 0 -p 3000'
+                ]}
+              />
             </div>
           </div>
         </div>
-        <div className='section'>
-          <div className='columns'>
-            <div className='column'>
-              <div className='content'>
-                <h3 className='mb-6 is-size-4 has-text-centered'>
-                  NPM package quick start
-                </h3>
-                <Terminal
-                  lines={[
-                    'npm install -g @mockoon/cli',
-                    'mockoon-cli start --data ./export-file.json'
-                  ]}
-                />
-              </div>
-            </div>
-            <div className='column'>
-              <div className='content'>
-                <h3 className='mb-6 is-size-4 has-text-centered'>
-                  Docker image Quick start
-                </h3>
-                <Terminal
-                  lines={[
-                    'docker run -d --mount type=bind,source=/export-file.json,target=/data,readonly -p 3000:3000 mockoon/cli:latest -d data -i 0 -p 3000'
-                  ]}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <ContactBanner />
+      </section>
     </Layout>
   );
 };
 
-export default SponsorUs;
+export default Cli;

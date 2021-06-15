@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react';
 import Cards from '../../components/cards';
-import ContactBanner from '../../components/contact-banner';
 import Download from '../../components/download';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
@@ -39,7 +38,6 @@ const Tutorials: FunctionComponent<{
           <Cards path='tutorials' articles={props.articles} large={true} />
         </div>
       </div>
-      <ContactBanner />
     </Layout>
   );
 };

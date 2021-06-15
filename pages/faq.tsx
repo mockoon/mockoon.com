@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
-import Newsletter from '../components/newsletter';
 import Layout from '../layout/layout';
 
 const Faq: FunctionComponent = function () {
@@ -250,7 +249,6 @@ const Faq: FunctionComponent = function () {
           </div>
         </div>
       </section>
-      <Newsletter />
     </Layout>
   );
 };

@@ -1,16 +1,30 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FunctionComponent } from 'react';
 import ContactBanner from './contact-banner';
 import Download from './download';
 import Newsletter from './newsletter';
+
 const Footer: FunctionComponent = function () {
+  const router = useRouter();
+  const displayNewsletter = [
+    '/',
+    '/features',
+    '/blog/[slug]',
+    '/blog',
+    '/faq',
+    '/contact',
+    '/sponsor-us'
+  ];
+  const displayContact = ['/docs/[...slug]', '/cli', '/tutorials'];
+  const displayDownload = [];
   return (
-    <footer className='py-3 py-md-8 bg-gray-200'>
+    <footer className='py-3 bg-gray-200'>
       <div className='container'>
         <div className='row mb-6'>
-          <Newsletter />
-          <ContactBanner />
-          <Download />
+          {displayNewsletter.includes(router.pathname) && <Newsletter />}
+          {displayContact.includes(router.pathname) && <ContactBanner />}
+          {displayDownload.includes(router.pathname) && <Download />}
         </div>
         <div className='row'>
           <div className='col-12 col-md-4 col-lg-2'>

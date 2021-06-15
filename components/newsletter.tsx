@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react';
 
 const Newsletter: FunctionComponent = function () {
   return (
-    <div className='bg-gray-200'>
+    <div className='bg-gray-200 pt-4'>
       <div className='container pb-5 border-bottom border-gray-300'>
         <div className='row align-items-center'>
           <div className='col-12 col-md-7'>

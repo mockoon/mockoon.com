@@ -4,7 +4,7 @@ import { FunctionComponent } from 'react';
 const Download: FunctionComponent = function () {
   return (
     <section>
-      <div className='container pb-6 pb-md-8 border-bottom'>
+      <div className='container pb-5 border-bottom'>
         <div className='row align-items-center bg-gray-200 py-5 border-bottom border-gray-300'>
           <div className='col-12 col-md '>
             <h3 className='fw-bold mb-1'>

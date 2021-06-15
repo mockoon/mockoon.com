@@ -8,7 +8,11 @@ const Hero: FunctionComponent<{
   mainPictureAlt?: string;
 }> = function (props) {
   return (
-    <section className='position-relative py-8 mb-3'>
+    <section
+      className={`position-relative ${
+        props.mainPicture ? 'py-8 mb-4' : 'pt-8 pb-4'
+      }`}
+    >
       <div className='container'>
         <div className='row align-items-center'>
           {props.mainPicture && (

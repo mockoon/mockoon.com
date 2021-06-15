@@ -1,5 +1,6 @@
 import React from 'react';
 import Cards from '../components/cards';
+import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Testimonial from '../components/testimonial';
 import Layout from '../layout/layout';
@@ -18,50 +19,22 @@ class Index extends React.Component {
       <Layout>
         <Meta title={meta.title} description={meta.description} />
 
-        <section className='position-relative py-8 py-md-11 mb-9'>
-          <div className='shape shape-fluid-x shape-blur-1 svg-shim text-gray-200'></div>
-
-          <div className='container'>
-            <div className='row align-items-center'>
-              <div className='col-12 col-md-6 order-md-2'>
-                <div className='shape shape-blur-1 svg-shim text-gray-200'></div>
-                <div className='img-skewed img-skewed-start mb-8 mb-md-0'>
-                  <img
-                    src='/images/screenshot.png'
-                    alt='Mockoon screenshot'
-                    className='screenshot img-fluid mw-md-130'
-                    data-aos='img-skewed-item-start'
-                    data-aos-delay='100'
-                  />
-                </div>
-              </div>
-              <div className='col-12 col-md-6 order-md-1' data-aos='fade-up'>
-                <h1 className='display-3 text-center text-md-start'>
-                  Create <span className='text-primary'>mock APIs</span> in
-                  seconds
-                </h1>
-
-                <p
-                  className='lead text-muted mb-6 mb-md-8'
-                  dangerouslySetInnerHTML={{ __html: meta.description }}
-                ></p>
-
-                <a
-                  href='#download'
-                  className='btn btn-primary shadow lift me-1'
-                >
-                  Download <i className='icon-download'></i>
-                </a>
-                <a
-                  href='/docs/latest/about/'
-                  className='btn btn-primary-soft lift'
-                >
-                  Documentation
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Hero
+          title="Create <span class='text-primary'>mock APIs</span> in seconds"
+          subtitle={meta.description}
+          cta={[
+            {
+              text: 'Download',
+              link: '/#download'
+            },
+            {
+              text: 'Documentation',
+              link: '/docs/latest/about/'
+            }
+          ]}
+          mainPicture='/images/screenshot.png'
+          mainPictureAlt='Mockoon screenshot'
+        />
 
         <section className='bg-gray-200 py-8 py-md-11' id='download'>
           <div className='container'>

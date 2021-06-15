@@ -3,7 +3,6 @@ import Cards from '../../components/cards';
 import Download from '../../components/download';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
-import Newsletter from '../../components/newsletter';
 import Layout from '../../layout/layout';
 import { ArticleList } from '../../models/common.model';
 import { buildIndexStaticProps } from '../../utils/static-builders';
@@ -46,8 +45,6 @@ const Blog: FunctionComponent<{
           <Cards path='blog' articles={props.articles} />
         </div>
       </div>
-
-      <Newsletter />
     </Layout>
   );
 };

@@ -40,11 +40,14 @@ const Cli: FunctionComponent = function () {
       <Hero
         title='Take Mockoon to the command line'
         subtitle='Mockoon CLI takes Mockoon where it has never been before. Lightweight and fast.'
-        cta={{
-          text: 'Installation instructions →',
-          link: 'https://github.com/mockoon/cli#installation'
-        }}
+        cta={[
+          {
+            text: 'Installation instructions →',
+            link: 'https://github.com/mockoon/cli#installation'
+          }
+        ]}
         mainPicture='/images/cli-screenshot.png'
+        mainPictureAlt='Mockoon CLI screenshot'
       />
       <section>
         <div className='container'>

@@ -5,7 +5,6 @@ import Article from '../../components/article';
 import Download from '../../components/download';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
-import Newsletter from '../../components/newsletter';
 import Share from '../../components/share';
 import Layout from '../../layout/layout';
 import { ArticleData } from '../../models/common.model';
@@ -100,7 +99,6 @@ export default function BlogArticle(props: {
           </div>
         </div>
       </div>
-      <Newsletter />
     </Layout>
   );
 }

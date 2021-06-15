@@ -134,6 +134,13 @@ const Nav: FunctionComponent = function () {
                 </a>
               </Link>
             </li>
+            <li>
+              <Link href='#download'>
+                <button className='btn btn-primary'>
+                  Download <i className='icon-download'></i>
+                </button>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

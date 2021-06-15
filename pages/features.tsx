@@ -2,7 +2,6 @@ import { FunctionComponent } from 'react';
 import Download from '../components/download';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
-import Newsletter from '../components/newsletter';
 import SimpleCards from '../components/simple-cards';
 import Layout from '../layout/layout';
 import { ItemCard } from '../models/common.model';
@@ -125,8 +124,6 @@ const Features: FunctionComponent = function () {
           </div>
         </div>
       </div>
-
-      <Newsletter />
     </Layout>
   );
 };

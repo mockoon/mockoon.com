@@ -221,7 +221,7 @@ export default function Docs(props: {
                 </div>
               </div>
               <hr />
-              <ul className='list-group menu-list list'>
+              <ul className='card-list list'>
                 {props.navItems.map((menuItem, menuItemIndex) => {
                   const itemsToBuild =
                     menuItem.type === 'category' ? menuItem.items : [menuItem];
@@ -229,7 +229,7 @@ export default function Docs(props: {
                   const itemsHtml = itemsToBuild.map((item, itemIndex) => (
                     <li
                       key={`link${itemIndex}`}
-                      className={`list-group-item ${
+                      className={`list-item py-1 ${
                         router.asPath.includes(item.slug) ? 'active' : ''
                       }`}
                     >

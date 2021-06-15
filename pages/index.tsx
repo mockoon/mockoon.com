@@ -100,7 +100,7 @@ class Index extends React.Component {
                 <div className='text-muted mb-6 mb-md-0'>
                   <div className='btn-group'>
                     <a
-                      className='btn btn-primary d-flex align-items-center'
+                      className='btn btn-primary-soft d-flex align-items-center'
                       href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.exe`}
                       rel='noopener'
                       onClick={() =>
@@ -130,7 +130,7 @@ class Index extends React.Component {
                 className='col-12 col-md-4 text-center py-2'
                 data-aos='fade-up'
               >
-                <div className='icon text-primary mb-3'>
+                <div className='icon text-primary-soft mb-3'>
                   <i className='icon-linux'></i>
                 </div>
 
@@ -139,7 +139,7 @@ class Index extends React.Component {
                 <div className='text-muted mb-6 mb-md-0'>
                   <div className='btn-group'>
                     <a
-                      className='btn btn-primary d-flex align-items-center'
+                      className='btn btn-primary-soft d-flex align-items-center'
                       href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.deb`}
                       rel='noopener'
                       onClick={() =>
@@ -154,7 +154,7 @@ class Index extends React.Component {
                     </a>
 
                     <a
-                      className='btn btn-primary d-flex align-items-center'
+                      className='btn btn-primary-soft d-flex align-items-center'
                       href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.rpm`}
                       rel='noopener'
                       onClick={() =>
@@ -169,7 +169,7 @@ class Index extends React.Component {
                     </a>
 
                     <a
-                      className='btn btn-primary d-flex align-items-center'
+                      className='btn btn-primary-soft d-flex align-items-center'
                       href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.AppImage`}
                       rel='noopener'
                       onClick={() =>
@@ -203,7 +203,7 @@ class Index extends React.Component {
                 <div className='text-muted mb-6 mb-md-0'>
                   <div className='btn-group'>
                     <a
-                      className='btn btn-primary d-flex align-items-center'
+                      className='btn btn-primary-soft d-flex align-items-center'
                       href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.dmg`}
                       rel='noopener'
                       onClick={() =>
@@ -227,7 +227,7 @@ class Index extends React.Component {
               <div className='text-center'>
                 <p className='has-text-centered pt-4'>
                   <a
-                    className='btn btn-primary-soft'
+                    className='btn btn-info-soft'
                     href='/cli/'
                     style={{
                       fontFamily:
@@ -335,7 +335,7 @@ class Index extends React.Component {
             <div className='row mt-5'>
               <div className='text-center'>
                 <p className='has-text-centered pt-4'>
-                  <a className='btn btn-primary-soft' href='/features/'>
+                  <a className='btn btn-info-soft' href='/features/'>
                     Complete list of features
                   </a>
                 </p>

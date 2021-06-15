@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react';
-import Download from '../components/download';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import SimpleCards from '../components/simple-cards';
@@ -114,8 +113,6 @@ const Features: FunctionComponent = function () {
         title='Why Mockoon?'
         subtitle='Mockoon offers tons of features that makes API mocking a breeze.'
       />
-
-      <Download />
 
       <div className='section'>
         <div className='container'>

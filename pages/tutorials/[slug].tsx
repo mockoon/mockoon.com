@@ -3,7 +3,6 @@ import Head from 'next/head';
 import React from 'react';
 import Article from '../../components/article';
 import ContactBanner from '../../components/contact-banner';
-import Download from '../../components/download';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
 import Share from '../../components/share';
@@ -53,9 +52,7 @@ export default function Tutorial(props: {
         <div className='container'>
           <div className='columns'>
             <div className='column is-3'>
-              <div className='content'>
-                <Download />
-              </div>
+              <div className='content'></div>
             </div>
             <div className='column is-9'>
               <Article

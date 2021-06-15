@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react';
 import Cards from '../../components/cards';
-import Download from '../../components/download';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
@@ -38,7 +37,6 @@ const Blog: FunctionComponent<{
       `}</style>
       <Meta title={meta.title} description={meta.description} />
       <Hero title={meta.title} subtitle={meta.description} />
-      <Download />
 
       <div className='section'>
         <div className='container'>

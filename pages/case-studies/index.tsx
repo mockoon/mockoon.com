@@ -1,6 +1,5 @@
 import Cards from '../../components/cards';
 import ContactBanner from '../../components/contact-banner';
-import Download from '../../components/download';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
@@ -29,7 +28,6 @@ export default function CaseStudies(props: { articles: ArticleList }) {
     <Layout>
       <Meta title={meta.title} description={meta.description} />
       <Hero title={meta.title} subtitle={meta.description} />
-      <Download />
 
       <div className='section'>
         <div className='container'>

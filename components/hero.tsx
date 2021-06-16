@@ -10,7 +10,7 @@ const Hero: FunctionComponent<{
   return (
     <section
       className={`position-relative ${
-        props.mainPicture ? 'py-8 mb-4' : 'pt-8 pb-4'
+        props.mainPicture ? 'py-11 mb-4' : 'pt-8 pb-4'
       }`}
     >
       <div className='container'>

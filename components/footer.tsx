@@ -16,7 +16,12 @@ const Footer: FunctionComponent = function () {
     '/contact',
     '/sponsor-us'
   ];
-  const displayContact = ['/docs/[...slug]', '/cli', '/tutorials'];
+  const displayContact = [
+    '/docs/[...slug]',
+    '/cli',
+    '/tutorials',
+    '/tutorials/[slug]'
+  ];
   const displayDownload = [];
   return (
     <footer className='py-3 bg-gray-200'>

@@ -40,7 +40,7 @@ const Blog: FunctionComponent<{
 
       <div className='section'>
         <div className='container'>
-          <Cards path='blog' articles={props.articles} />
+          <Cards path='blog' articles={props.articles} small />
         </div>
       </div>
     </Layout>

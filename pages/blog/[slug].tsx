@@ -62,7 +62,7 @@ export default function BlogArticle(props: {
       />
 
       <section>
-        <div className='container text-center pt-3 pb-5'>
+        <div className='container text-center pt-3 pb-8'>
           <a href='/blog/'>⬅ Back to the blog posts</a>
         </div>
       </section>

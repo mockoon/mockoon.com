@@ -20,9 +20,11 @@ const Footer: FunctionComponent = function () {
     '/docs/[...slug]',
     '/cli',
     '/tutorials',
-    '/tutorials/[slug]'
+    '/tutorials/[slug]',
+    '/mock-samples',
+    '/mock-samples/[slug]'
   ];
-  const displayDownload = [];
+  const displayDownload = ['/case-studies', '/case-studies/[slug]'];
   return (
     <footer className='py-3 bg-gray-200'>
       <div className='container'>

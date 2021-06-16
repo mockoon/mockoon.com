@@ -14,7 +14,7 @@ const Faq: FunctionComponent = function () {
 
       <Hero title='Frequently asked questions' />
 
-      <section className='container '>
+      <section className='container pb-8'>
         <div className='row'>
           <div className='col-md-12 col-12'>
             <div className='accordion shadow-light-lg mb-5 mb-md-6'>

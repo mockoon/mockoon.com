@@ -1,5 +1,4 @@
 import Cards from '../../components/cards';
-import ContactBanner from '../../components/contact-banner';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
@@ -29,12 +28,11 @@ export default function CaseStudies(props: { articles: ArticleList }) {
       <Meta title={meta.title} description={meta.description} />
       <Hero title={meta.title} subtitle={meta.description} />
 
-      <div className='section'>
+      <section className='pb-8'>
         <div className='container'>
-          <Cards small={true} path='case-studies' articles={props.articles} />
+          <Cards medium path='case-studies' articles={props.articles} />
         </div>
-      </div>
-      <ContactBanner />
+      </section>
     </Layout>
   );
 }

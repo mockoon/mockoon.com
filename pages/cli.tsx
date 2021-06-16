@@ -49,7 +49,7 @@ const Cli: FunctionComponent = function () {
         mainPicture='/images/cli-screenshot.png'
         mainPictureAlt='Mockoon CLI screenshot'
       />
-      <section>
+      <section className='pb-8'>
         <div className='container'>
           <div className='row py-5'>
             <div className='text-center'>

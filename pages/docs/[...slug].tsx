@@ -254,7 +254,7 @@ export default function Docs(props: {
               </ul>
             </aside>
           </div>
-          <div className='col-12 col-md-7 ps-md-5'>
+          <div className='col-12 col-md-7 ps-md-5 pb-8'>
             <section className='pt-md-10'>
               <Markdown body={props.topicBody} version={currentVersion} />
             </section>

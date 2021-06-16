@@ -48,6 +48,11 @@ export default function Tutorial(props: {
         articleBody={props.articleBody}
         articleData={props.articleData}
       />
+      <section>
+        <div className='container text-center pt-3 pb-8'>
+          <a href='/tutorials/'>⬅ Back to the list of tutorials</a>
+        </div>
+      </section>
     </Layout>
   );
 }

@@ -30,19 +30,14 @@ const Blog: FunctionComponent<{
 }> = function (props) {
   return (
     <Layout>
-      <style jsx>{`
-        .card {
-          margin-bottom: 30px;
-        }
-      `}</style>
       <Meta title={meta.title} description={meta.description} />
       <Hero title={meta.title} subtitle={meta.description} />
 
-      <div className='section'>
+      <section className='pb-8'>
         <div className='container'>
-          <Cards path='blog' articles={props.articles} small />
+          <Cards path='blog' articles={props.articles} medium />
         </div>
-      </div>
+      </section>
     </Layout>
   );
 };

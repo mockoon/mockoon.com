@@ -8,19 +8,55 @@ const Article: FunctionComponent<{
   articleData: ArticleData;
   articleBody: string;
 }> = function (props) {
+  console.log(props.articleData);
   return (
     <Fragment>
       {props.articleData.header && (
-        <section
-          data-jarallax
-          data-speed='.8'
-          className='py-12 py-md-15 bg-cover jarallax'
-          style={{
-            backgroundImage: props.articleData.header.image
-              ? `url("/images/${props.path}/${props.articleData.header.image}")`
-              : ''
-          }}
-        ></section>
+        <section className='article-header pt-6 py-4'>
+          <div className='container'>
+            <div className='row d-flex align-items-center'>
+              <div className='col-4'>
+                <img
+                  src={`/images/case-studies/${props.articleData.header.image}`}
+                  alt={`${props.articleData.header.imageAlt}`}
+                />
+                <h1 className='h4'>{props.articleData.title}</h1>
+              </div>
+              <div className='col-8'>
+                <p className='pb-1'>
+                  <span className='text-white'>Overview:</span>
+                  <span className='ms-1'>
+                    {props.articleData.header.overview}
+                  </span>
+                </p>
+                <p className='pb-1'>
+                  <span className='text-white'>Industry:</span>
+                  <span className='ms-1'>
+                    {props.articleData.header.industry}
+                  </span>
+                </p>
+                <p className='pb-1'>
+                  <span className='text-white'>Employees:</span>
+                  <span className='ms-1'>
+                    {props.articleData.header.employees}
+                  </span>
+                </p>
+                <p className='pb-1'>
+                  <span className='text-white'>Website:</span>
+                  <span className='ms-1'>
+                    <a
+                      href={props.articleData.header.link}
+                      rel='noopener'
+                      target='_blank'
+                    >
+                      {props.articleData.header.linkAnchor}
+                    </a>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       )}
 
       {props.articleData.image && !props.articleData.header && (

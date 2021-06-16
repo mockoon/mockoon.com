@@ -31,11 +31,11 @@ const Tutorials: FunctionComponent<{
       <Meta title={meta.title} description={meta.description} />
       <Hero title={meta.title} subtitle={meta.description} />
 
-      <div className='section'>
+      <section className='pb-8'>
         <div className='container'>
-          <Cards path='tutorials' articles={props.articles} large={true} />
+          <Cards path='tutorials' articles={props.articles} medium />
         </div>
-      </div>
+      </section>
     </Layout>
   );
 };

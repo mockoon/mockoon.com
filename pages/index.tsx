@@ -64,7 +64,7 @@ class Index extends React.Component {
                 className='col-12 col-md-4 text-center py-2'
                 data-aos='fade-up'
               >
-                <div className='icon text-primary mb-3'>
+                <div className='icon mb-3'>
                   <i className='icon-windows'></i>
                 </div>
 
@@ -103,7 +103,7 @@ class Index extends React.Component {
                 className='col-12 col-md-4 text-center py-2'
                 data-aos='fade-up'
               >
-                <div className='icon text-primary-soft mb-3'>
+                <div className='icon mb-3'>
                   <i className='icon-linux'></i>
                 </div>
 
@@ -167,7 +167,7 @@ class Index extends React.Component {
                 className='col-12 col-md-4 text-center py-2'
                 data-aos='fade-up'
               >
-                <div className='icon text-primary mb-3'>
+                <div className='icon mb-3'>
                   <i className='icon-apple'></i>
                 </div>
 

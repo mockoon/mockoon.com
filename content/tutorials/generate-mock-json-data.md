@@ -9,10 +9,6 @@ imageAlt: Mockoon logo side by side with code
 order: 40
 ---
 
-# Generate dynamic mock data with Mockoon templating system
-
----
-
 Mocking an API can save you time. By faking the backend responses early, you don't have to worry about whether an endpoint is ready or not. You are up and running in no time and can start implementing your application. 
 However, your mock should still be realistic. "Lorem ipsum" content is often not enough to surface layout problems, container overflowed by text, etc. 
 

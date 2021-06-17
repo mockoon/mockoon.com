@@ -1,16 +1,12 @@
 ---
-title: Getting started with Mockoon
-excerpt: Learn how to create your first mock API with Mockoon
+title: Create your first mock API with Mockoon
+excerpt: Learn how to create your first mock REST API with Mockoon
 meta:
-  title: Getting started with Mockoon
+  title: Create your first mock API with Mockoon
   description: Learn how to create your first local mock API server with Mockoon with custom JSON body
 image: tutorial-getting-started.png
 imageAlt: Mockoon and Angular logos side by side
 order: 10
----
-
-# Create your first mock API with Mockoon
-
 ---
 
 Mockoon is a free cross-platform desktop application that takes API mocking to the next level. Mockoon offers a fast and easy-to-use interface and gives you complete control over your mock APIs with advanced functionality like [a templating system](docs:templating/overview), [a proxy mode](docs:proxy-mode), and [requests recording](docs:requests-logging).

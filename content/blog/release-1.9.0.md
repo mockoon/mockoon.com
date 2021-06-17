@@ -8,12 +8,6 @@ meta:
 canonical: https://github.com/mockoon/mockoon/releases/tag/v1.9.0
 ---
 
-# ✨ New release with revamped templating system and improved error reporting
-
-###### Published on 2020-07-23
-
-___ 
-
 This new version brings some new features and many new improvements to the templating system and error reporting. The application also has a new [documentation](https://mockoon.com/docs/latest/about/) section on this website, which replaces the old tutorials section. 
 
 ## Templating system

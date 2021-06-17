@@ -9,10 +9,6 @@ imageAlt: Mockoon and Angular logos side by side
 order: 100
 ---
 
-# Create the best mock API for your Angular application
-
----
-
 During the development of your Angular application, you may need to mock an API that is not ready yet, or only partially available (see [partial mocking with the proxy mode](docs:proxy-mode)). Let's have a look at the different options you have:
 
 ## Adding fake data in the service

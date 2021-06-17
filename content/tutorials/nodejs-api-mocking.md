@@ -9,9 +9,6 @@ imageAlt: Mockoon and Node.js logos side by side
 order: 90
 ---
 
-# Easily call a mock API from a Node.js application
-
----
 
 Not only frontend developers need a way to mock APIs. Backend developers building APIs with Node.js may need to mock a third-party API like Stripe for handling payment, SendGrid for emailing, or GitHub for development-related tasks. Did you know that it is as easy to mock a third-party API when working on your backend application as for your frontend or mobile application?
 

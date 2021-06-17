@@ -9,12 +9,6 @@ meta:
   description: Discover Mockoon's new v1.13.0 release with endpoints filtering, improved security and a revamped templating documentation
 ---
 
-# New release with endpoints filtering and improved security
-
-###### Published on 2021-04-21
-
-___
-
 Spring is here, and a new release of Mockoon 🌻. It comes with a usual batch of bug fixes and minor improvements you can check on the [GitHub release page](https://github.com/mockoon/mockoon/releases/tag/v1.13.0).
 
 There are also three new features and improvements that we want to share with you today. 

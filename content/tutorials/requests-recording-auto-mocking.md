@@ -9,10 +9,6 @@ imageAlt: Mockoon logo between a computer and a server icons
 order: 30
 ---
 
-# Record API requests and HTTP traffic and auto-mock endpoints
-
----
-
 When working on an application, you may want to use a mock API to speed up the development. But we all want to avoid the hassle of creating most of the endpoints manually.
 
 What if you could record all the HTTP calls made to a server and easily create mocks for them? Good news, Mockoon got you covered! 

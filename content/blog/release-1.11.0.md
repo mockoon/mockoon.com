@@ -8,12 +8,6 @@ meta:
 canonical: https://github.com/mockoon/mockoon/releases/tag/v1.11.0
 ---
 
-# 🚀 Release: Refactoring, CLI (wip) and a new team member!
-
-###### Published on 2020-11-12
-
-___ 
-
 Welcome to this new release of Mockoon. There are several bug fixes and new features in this version that we hope you will like. But first some news: 
 - There is a new [tutorials section](https://mockoon.com/tutorials/) on the website, where you will be able to learn new mocking tricks. 
 - The development of the CLI started and is progressing well (we already have a basic version working internally, yay!). It required some heavy refactoring tackled in this version. 

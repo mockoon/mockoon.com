@@ -9,10 +9,6 @@ imageAlt: Mockoon and Giphy logos side by side
 order: 110
 ---
 
-# Giphy API mock sample
-
----
-
 Working with APIs can be a hassle during development, especially when you want to move fast or quickly prototype something. You need to register, get a token, sometimes solve CORS problems, etc. Let Mockoon speed things up for you. 
 
 If you are planning to use Giphy's API and look for an easy way to mock its most relevant endpoints for free and with no need of signing up, Mockoon got you covered. With this ready-to-use mock, you will be able to make requests to the most useful endpoints and get realistic data returned in the span of a click. 

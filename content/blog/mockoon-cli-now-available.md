@@ -9,12 +9,6 @@ meta:
   description: "Take your mock APIs in all your headless and automated environments with the new CLI: servers, CI, GitHub Action, WSL, etc."
 ---
 
-# Mockoon CLI is now available 🥳
-
-###### Published on 2020-12-17
-
-___ 
-
 After months of work, Mockoon CLI is [available in beta](https://github.com/mockoon/cli) 🚀. You can now deploy your mock APIs in all your headless and automated environments. A server, your favorite CI environment, in a GitHub Action, in the Windows Subsystem Linux, you name it! 
 
 Like the main application, the CLI is free and open-source. It supports most of Mockoon features, and we tried to make it as fast as possible. 

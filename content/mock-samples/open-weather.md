@@ -9,10 +9,6 @@ imageAlt: Mockoon and Open Weather logos side by side
 order: 100
 ---
 
-# Open Weather API mock sample
-
----
-
 Are you planning on using Open Weather's API and look for an easy way to mock the most relevant endpoints for free and with no need of signing up? 
 
 Mockoon got you covered with this ready to use JSON mock sample! By simply importing it in Mockoon, you will be able to make requests to the most useful endpoints and get realistic data returned in the span of a click. 

@@ -8,12 +8,6 @@ meta:
 canonical: https://github.com/mockoon/mockoon/releases/tag/v1.10.0
 ---
 
-# 👀 OpenAPI body samples and rules "AND" are available in new version 1.10.0
-
-###### Published on 2020-09-15
-
-___ 
-
 Welcome to this new release of Mockoon. There are several bug fixes and new features in this version that we hope you will like:
 
 ## New features 

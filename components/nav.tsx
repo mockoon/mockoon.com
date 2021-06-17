@@ -54,6 +54,18 @@ const Nav: FunctionComponent = function () {
               </li>
             )}
             <li className='nav-item'>
+              <Link href='/cli/'>
+                <a
+                  className={`nav-link d-flex align-items-center ${
+                    router.pathname === '/cli' ? 'active' : ''
+                  }`}
+                >
+                  <span className='badge bg-primary-soft'>New!</span>
+                  <span>&nbsp;CLI</span>
+                </a>
+              </Link>
+            </li>
+            <li className='nav-item'>
               <Link href='/features/'>
                 <a
                   className={`nav-link ${
@@ -61,6 +73,17 @@ const Nav: FunctionComponent = function () {
                   }`}
                 >
                   Features
+                </a>
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link href='/faq/'>
+                <a
+                  className={`nav-link ${
+                    router.pathname === '/faq' ? 'active' : ''
+                  }`}
+                >
+                  FAQ
                 </a>
               </Link>
             </li>
@@ -75,18 +98,7 @@ const Nav: FunctionComponent = function () {
                 </a>
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link href='/cli/'>
-                <a
-                  className={`nav-link d-flex align-items-center ${
-                    router.pathname === '/cli' ? 'active' : ''
-                  }`}
-                >
-                  <span className='badge bg-primary-soft'>New!</span>
-                  <span>&nbsp;CLI</span>
-                </a>
-              </Link>
-            </li>
+
             <li className='nav-item'>
               <Link href='/tutorials/'>
                 <a
@@ -116,17 +128,6 @@ const Nav: FunctionComponent = function () {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link href='/faq/'>
-                <a
-                  className={`nav-link ${
-                    router.pathname === '/faq' ? 'active' : ''
-                  }`}
-                >
-                  FAQ
-                </a>
-              </Link>
-            </li>
-            <li className='nav-item'>
               <Link href='/sponsor-us/'>
                 <a
                   className={`nav-link ${
@@ -139,7 +140,7 @@ const Nav: FunctionComponent = function () {
             </li>
             <li>
               <Link href='/#download'>
-                <button className='btn btn-primary'>
+                <button className='btn btn-primary btn-xs'>
                   Download <i className='icon-download'></i>
                 </button>
               </Link>

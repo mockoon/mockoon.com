@@ -10,14 +10,14 @@ const Hero: FunctionComponent<{
   return (
     <section
       className={`position-relative ${
-        props.mainPicture ? 'py-11 mb-4' : 'pt-8 pb-4'
+        props.mainPicture ? 'py-lg-11 py-5 mb-4' : 'pt-8 pb-4'
       }`}
     >
       <div className='container'>
         <div className='row align-items-center'>
           {props.mainPicture && (
-            <div className='col-12 col-md-6 order-md-2'>
-              <div className='img-skewed img-skewed-start mb-8 mb-md-0'>
+            <div className='col-12 col-lg-6 order-lg-2'>
+              <div className='img-skewed img-skewed-start mb-8 mb-lg-0'>
                 <img
                   src={props.mainPicture}
                   alt={props.mainPictureAlt}
@@ -31,26 +31,28 @@ const Hero: FunctionComponent<{
           )}
           <div
             className={`col-12 ${
-              props.mainPicture ? 'col-md-6' : 'col-md-12 text-center'
-            } order-md-1`}
+              props.mainPicture ? 'col-lg-6' : 'col-lg-12 text-center'
+            } order-lg-1`}
             data-aos='fade-up'
           >
             {props.title && (
               <h1
                 dangerouslySetInnerHTML={{ __html: props.title }}
-                className={`display-4 ${
-                  props.mainPicture ? 'text-md-start' : 'text-center'
+                className={`display-4 text-center ${
+                  props.mainPicture ? 'text-lg-start' : ''
                 } `}
               ></h1>
             )}
             {props.subtitle && (
               <p
-                className='lead text-muted mb-6 mb-md-8'
+                className={`lead ${
+                  props.mainPicture ? 'text-lg-start' : ''
+                }  text-center text-muted mb-6 mb-lg-8`}
                 dangerouslySetInnerHTML={{ __html: props.subtitle }}
               ></p>
             )}
             {props.cta && (
-              <div className='hero-cta'>
+              <div className='hero-cta text-lg-start text-center'>
                 {props.cta.map((cta, index) => {
                   return (
                     <a href={cta.link} key={index} className='me-2'>

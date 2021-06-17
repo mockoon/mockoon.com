@@ -8,16 +8,16 @@ const ContactBanner: FunctionComponent<{
   return (
     <div className='bg-gray-200'>
       <div className='container py-5 border-bottom border-gray-300'>
-        <div className='row align-items-center'>
-          <div className='col-12 col-md-9'>
-            <h4 className='mb-1'>
+        <div className='row align-items-center text-center text-lg-start'>
+          <div className='col-12 col-lg-9'>
+            <h4 className='mb-4 mb-lg-1'>
               {props.title ||
                 'Feedback? Questions? We are always here to help.'}
             </h4>
           </div>
-          <div className='col-12 col-md-3 d-flex justify-content-end'>
+          <div className='col-12 col-lg-3 d-flex justify-content-end'>
             <Link href='/contact/'>
-              <button className='btn btn-primary-soft'>
+              <button className='col-12 btn btn-primary-soft'>
                 <span> {props.ctaText || 'Contact us'}</span>
               </button>
             </Link>

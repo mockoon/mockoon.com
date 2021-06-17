@@ -196,9 +196,9 @@ export default function Docs(props: {
         url={`/${props.slug}`}
       />
       <div className='container-fluid'>
-        <div className='row justify-content-center gx-0 mx-md-0 mb-5'>
-          <div className='col-12 col-md-2 me-md-5'>
-            <aside className='sticky-top flex-grow-1 py-8 py-md-10'>
+        <div className='row justify-content-center gx-0 mx-lg-0 mb-5'>
+          <div className='col-12 col-lg-2 me-lg-5'>
+            <aside className='sticky-top flex-grow-1 py-8 py-lg-10'>
               <div className='content mb-5'>
                 <h3>Documentation</h3>
                 <div className='select'>
@@ -254,8 +254,8 @@ export default function Docs(props: {
               </ul>
             </aside>
           </div>
-          <div className='col-12 col-md-7 ps-md-5 pb-8'>
-            <section className='pt-md-10'>
+          <div className='col-12 col-lg-7 ps-lg-5 pb-8'>
+            <section className='pt-lg-10'>
               <Markdown body={props.topicBody} version={currentVersion} />
             </section>
           </div>

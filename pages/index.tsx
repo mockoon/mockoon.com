@@ -36,41 +36,37 @@ class Index extends React.Component {
           mainPictureAlt='Mockoon screenshot'
         />
 
-        <section className='bg-gray-200 py-8 py-md-11' id='download'>
+        <section className='bg-gray-200 py-8 py-lg-11' id='download'>
           <div className='container'>
             <div className='row'>
-              <div className='row justify-content-center'>
-                <div className='col-12 col-md-10 col-lg-7 text-center'>
-                  <h2 className='fw-bold mb-1'>
-                    Download Mockoon{' '}
-                    <a
-                      href={
-                        'https://github.com/mockoon/mockoon/releases/tag/v' +
-                        version
-                      }
-                      rel='noopener'
-                      target='_blank'
-                    >
-                      <span className='badge bg-info-soft'>v{version}</span>
-                    </a>
-                  </h2>
+              <div className='justify-content-center col-12 text-center'>
+                <h2 className='mb-1 fw-bolder'>
+                  Download Mockoon{' '}
+                  <a
+                    href={
+                      'https://github.com/mockoon/mockoon/releases/tag/v' +
+                      version
+                    }
+                    rel='noopener'
+                    target='_blank'
+                  >
+                    <span className='badge bg-info-soft'>v{version}</span>
+                  </a>
+                </h2>
 
-                  <p className='fs-lg text-muted mb-7 mb-md-9'>
-                    Mockoon is released under the MIT license.
-                  </p>
-                </div>
+                <p className='fs-lg text-muted mb-7 mb-lg-9'>
+                  Mockoon is released under the MIT license.
+                </p>
               </div>
               <div
-                className='col-12 col-md-4 text-center py-2'
+                className='col-12 col-lg-4 text-center py-2'
                 data-aos='fade-up'
               >
                 <div className='icon mb-3'>
                   <i className='icon-windows'></i>
                 </div>
 
-                <h3></h3>
-
-                <div className='text-muted mb-6 mb-md-0'>
+                <div className='text-muted mb-6 mb-lg-0'>
                   <div className='btn-group'>
                     <a
                       className='btn btn-primary-soft d-flex align-items-center'
@@ -100,16 +96,14 @@ class Index extends React.Component {
               </div>
 
               <div
-                className='col-12 col-md-4 text-center py-2'
+                className='col-12 col-lg-4 text-center py-2'
                 data-aos='fade-up'
               >
                 <div className='icon mb-3'>
                   <i className='icon-linux'></i>
                 </div>
 
-                <h3></h3>
-
-                <div className='text-muted mb-6 mb-md-0'>
+                <div className='text-muted mb-6 mb-lg-0'>
                   <div className='btn-group'>
                     <a
                       className='btn btn-primary-soft d-flex align-items-center'
@@ -164,16 +158,14 @@ class Index extends React.Component {
                 </div>
               </div>
               <div
-                className='col-12 col-md-4 text-center py-2'
+                className='col-12 col-lg-4 text-center py-2'
                 data-aos='fade-up'
               >
                 <div className='icon mb-3'>
                   <i className='icon-apple'></i>
                 </div>
 
-                <h3></h3>
-
-                <div className='text-muted mb-6 mb-md-0'>
+                <div className='text-muted mb-6 mb-lg-0'>
                   <div className='btn-group'>
                     <a
                       className='btn btn-primary-soft d-flex align-items-center'
@@ -215,34 +207,34 @@ class Index extends React.Component {
           </div>
         </section>
 
-        <section id='features' className='py-8 py-md-11'>
-          <div className='container'>
+        <section id='features' className='py-8 py-lg-11'>
+          <div className='container text-lg-start text-center'>
             <div className='row'>
-              <div className='row justify-content-center'>
-                <div className='col-12 col-md-10 col-lg-7 text-center'>
-                  <h2 className='fw-bold mb-1'>
+              <div className='justify-content-center'>
+                <div className='col-12 text-center'>
+                  <h2 className='mb-1 fw-bolder'>
                     Bring API mocking to the next level
                   </h2>
                 </div>
               </div>
             </div>
 
-            <div className='row my-5 py-5 align-items-center justify-content-between'>
-              <div className='col-12 col-md-6 col-lg-5 order-md-2'>
+            <div className='row py-3 pt-8 my-lg-5 py-lg-5 align-items-center justify-content-between'>
+              <div className='col-12 col-lg-6 order-lg-2'>
                 <span className='badge rounded-pill bg-primary-soft mb-3'>
                   <span className='h6 text-uppercase'>Create</span>
                 </span>
 
                 <h2>Fast mock APIs that runs everywhere</h2>
 
-                <p className='fs-lg text-gray-700 mb-8 mb-md-0'>
+                <p className='fs-lg text-gray-700 mb-8 mb-lg-0'>
                   Create an unlimited number of mock APIs and run them in
                   parallel locally or on a server with the CLI.
                 </p>
               </div>
-              <div className='col-12 col-md-6 order-md-1' data-aos='fade-up'>
-                <div className='mb-6 mb-md-0'>
-                  <div className='col-md-12'>
+              <div className='col-12 col-lg-6 order-lg-1' data-aos='fade-up'>
+                <div className='mb-6 mb-lg-0'>
+                  <div className='col-lg-12'>
                     <img
                       src='/images/feature1.png'
                       alt='Mockoon routes list view'
@@ -253,22 +245,22 @@ class Index extends React.Component {
               </div>
             </div>
 
-            <div className='row my-5 py-5 align-items-center justify-content-between'>
-              <div className='col-12 col-md-6 col-lg-5 order-md-1'>
+            <div className='row my-2 py-3 my-lg-5 py-lg-5 align-items-center justify-content-between'>
+              <div className='col-12 col-lg-6 order-lg-1'>
                 <span className='badge rounded-pill bg-primary-soft mb-3'>
                   <span className='h6 text-uppercase'>Customize</span>
                 </span>
 
                 <h2>Complete control</h2>
 
-                <p className='fs-lg text-gray-700 mb-8 mb-md-0'>
+                <p className='fs-lg text-gray-700 mb-8 mb-lg-0'>
                   Customize routes: HTTP methods, regex paths, HTTP status, file
                   serving, custom headers...
                 </p>
               </div>
-              <div className='col-12 col-md-6 order-md-2' data-aos='fade-up'>
-                <div className='mb-6 mb-md-0'>
-                  <div className='col-md-12'>
+              <div className='col-12 col-lg-6 order-lg-2' data-aos='fade-up'>
+                <div className='mb-6 mb-lg-0'>
+                  <div className='col-lg-12'>
                     <img
                       src='/images/feature2.png'
                       alt='Routes configuration'
@@ -279,22 +271,22 @@ class Index extends React.Component {
               </div>
             </div>
 
-            <div className='row my-5 py-5 align-items-center justify-content-between'>
-              <div className='col-12 col-md-6 col-lg-5 order-md-2'>
+            <div className='row py-3 my-lg-5 py-lg-5 align-items-center justify-content-between'>
+              <div className='col-12 col-lg-6 order-lg-2'>
                 <span className='badge rounded-pill bg-primary-soft mb-3'>
                   <span className='h6 text-uppercase'>More</span>
                 </span>
 
                 <h2>... and more</h2>
 
-                <p className='fs-lg text-gray-700 mb-8 mb-md-0'>
+                <p className='fs-lg text-gray-700 mb-8 mb-lg-0'>
                   Import / export, OpenAPI compatibility, JSON templating, auto
                   save, proxy mode, HTTPS, CORS support...
                 </p>
               </div>
-              <div className='col-12 col-md-6 order-md-1' data-aos='fade-up'>
-                <div className='mb-6 mb-md-0'>
-                  <div className='col-md-12'>
+              <div className='col-12 col-lg-6 order-lg-1' data-aos='fade-up'>
+                <div className='mb-6 mb-lg-0'>
+                  <div className='col-lg-12'>
                     <img
                       src='/images/feature3.png'
                       alt='Routes JSON body'
@@ -317,17 +309,17 @@ class Index extends React.Component {
           </div>
         </section>
 
-        <section id='testimonials' className='bg-gray-200 py-8 py-md-11'>
+        <section id='testimonials' className='bg-gray-200 py-8 py-lg-11'>
           <div className='container'>
             <div className='row'>
-              <div className='row justify-content-center'>
-                <div className='col-12 col-md-10 col-lg-7 text-center'>
-                  <h2 className='fw-bold'>What developers say</h2>
+              <div className='justify-content-center'>
+                <div className='col-12 text-center'>
+                  <h2 className='mb-1 fw-bolder'>What developers say</h2>
                 </div>
               </div>
             </div>
             <div className='row mt-5' data-isotope='{"layoutMode": "masonry"}'>
-              <div className='col-12 col-md-4 text-center' data-aos='fade-up'>
+              <div className='col-12 col-lg-4 text-center' data-aos='fade-up'>
                 <Testimonial
                   link='https://twitter.com/KechaAlex/status/1283134297067618306'
                   imgSrc='/images/testimonials/_9NFn5MH_400x400.jpg'
@@ -365,7 +357,7 @@ class Index extends React.Component {
                 </Testimonial>
               </div>
 
-              <div className='col-12 col-md-4 text-center' data-aos='fade-up'>
+              <div className='col-12 col-lg-4 text-center' data-aos='fade-up'>
                 <Testimonial
                   link='https://twitter.com/rubeshgain/status/1243557172988051456'
                   imgSrc='/images/testimonials/F3baAGfY_400x400.jpg'
@@ -400,7 +392,7 @@ class Index extends React.Component {
                 </Testimonial>
               </div>
 
-              <div className='col-12 col-md-4 text-center' data-aos='fade-up'>
+              <div className='col-12 col-lg-4 text-center' data-aos='fade-up'>
                 <Testimonial
                   link='https://twitter.com/nicola_orritos/status/1227168377275371520'
                   imgSrc='/images/testimonials/photo_small_400x400.jpg'
@@ -436,12 +428,12 @@ class Index extends React.Component {
           </div>
         </section>
 
-        <section id='testimonials' className='py-8 pb-8 py-md-11'>
+        <section id='testimonials' className='py-8 pb-8 py-lg-11'>
           <div className='container'>
             <div className='row'>
-              <div className='row justify-content-center'>
-                <div className='col-12 col-md-10 col-lg-7 text-center'>
-                  <h2 className='fw-bold'>Case studies</h2>
+              <div className='justify-content-center'>
+                <div className='col-12 text-center'>
+                  <h2 className='mb-1 fw-bolder'>Case studies</h2>
                 </div>
               </div>
 

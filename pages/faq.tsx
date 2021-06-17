@@ -16,8 +16,8 @@ const Faq: FunctionComponent = function () {
 
       <section className='container pb-8'>
         <div className='row'>
-          <div className='col-md-12 col-12'>
-            <div className='accordion shadow-light-lg mb-5 mb-md-6'>
+          <div className='col-12'>
+            <div className='accordion shadow-light-lg mb-5 mb-lg-6'>
               <div className='accordion-item'>
                 <div className='accordion-button'>
                   <h3 className='me-4'>
@@ -190,9 +190,11 @@ const Faq: FunctionComponent = function () {
 
                 <div className='accordion-collapse '>
                   <div className='accordion-body'>
-                    <p className='text-gray-700'>
-                      Locally, in your operating system user data folder.{' '}
-                      <ul>
+                    <div className='text-gray-700'>
+                      <span>
+                        Locally, in your operating system user data folder.
+                      </span>{' '}
+                      <ul className='text-break'>
                         <li>
                           Windows:{' '}
                           <code>
@@ -209,7 +211,7 @@ const Faq: FunctionComponent = function () {
                           </code>
                         </li>
                       </ul>
-                    </p>
+                    </div>
                   </div>
                 </div>
               </div>

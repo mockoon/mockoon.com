@@ -5,19 +5,19 @@ const Download: FunctionComponent = function () {
   return (
     <section>
       <div className='container pb-5 border-bottom'>
-        <div className='row align-items-center py-5 pb-7 border-bottom border-gray-300'>
-          <div className='col-12 col-md '>
+        <div className='row align-items-center py-5 pb-7 border-bottom border-gray-300 text-center text-lg-start'>
+          <div className='col-12 col-lg-9'>
             <h3 className='fw-bold mb-1'>
               <i className='icon-download'></i> Get Mockoon
             </h3>
-            <p className='text-muted mb-6 mb-md-0'>
+            <p className='text-muted mb-6 mb-lg-0'>
               Get Mockoon latest version and start creating mock APIs!
             </p>
           </div>
 
-          <div className='col-auto'>
+          <div className='col-12 col-lg-3'>
             <Link href='/#download'>
-              <button className='btn btn-primary'>
+              <button className='col-12 btn btn-primary'>
                 <span>Download</span>
               </button>
             </Link>

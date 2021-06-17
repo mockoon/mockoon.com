@@ -11,117 +11,127 @@ const Article: FunctionComponent<{
   return (
     <Fragment>
       {props.articleData.header && (
-        <section className='article-header pt-6 py-4'>
+        <section className='article-header pt-7 py-5'>
           <div className='container'>
             <div className='row d-flex align-items-center'>
-              <div className='col-4'>
+              <div className='text-center col-12 col-lg-4'>
                 <img
                   src={`/images/case-studies/${props.articleData.header.image}`}
                   alt={`${props.articleData.header.imageAlt}`}
                 />
                 <h1 className='h4'>{props.articleData.title}</h1>
               </div>
-              <div className='col-8'>
-                <p className='pb-1'>
-                  <span className='text-white'>Overview:</span>
-                  <span className='ms-1'>
-                    {props.articleData.header.overview}
-                  </span>
-                </p>
-                <p className='pb-1'>
-                  <span className='text-white'>Industry:</span>
-                  <span className='ms-1'>
-                    {props.articleData.header.industry}
-                  </span>
-                </p>
-                <p className='pb-1'>
-                  <span className='text-white'>Employees:</span>
-                  <span className='ms-1'>
-                    {props.articleData.header.employees}
-                  </span>
-                </p>
-                <p className='pb-1'>
-                  <span className='text-white'>Website:</span>
-                  <span className='ms-1'>
-                    <a
-                      href={props.articleData.header.link}
-                      rel='noopener'
-                      target='_blank'
-                    >
-                      {props.articleData.header.linkAnchor}
-                    </a>
-                  </span>
-                </p>
+              <div className='col-12 col-lg-8 text-center'>
+                <div className='row pt-5 pt-lg-0'>
+                  <p className='col-12 mb-0 d-flex flex-column'>
+                    <span className='text-uppercase text-white'>Overview</span>
+                    <span className='mt-n1'>
+                      {props.articleData.header.overview}
+                    </span>
+                  </p>
+                </div>
+                <div className='d-flex flex-row my-6'>
+                  <p className='col-4 mb-0 d-flex flex-column'>
+                    <span className='text-uppercase text-white'>Industry</span>
+                    <span className='mt-n1'>
+                      {props.articleData.header.industry}
+                    </span>
+                  </p>
+                  <p className='col-4 mb-0 d-flex flex-column'>
+                    <span className='text-uppercase text-white'>Employees</span>
+                    <span className='mt-n1'>
+                      {props.articleData.header.employees}
+                    </span>
+                  </p>
+                  <p className='col-4 mb-0 d-flex flex-column'>
+                    <span className='text-uppercase text-white'>Website</span>
+                    <span className='mt-n1'>
+                      <a
+                        href={props.articleData.header.link}
+                        rel='noopener'
+                        target='_blank'
+                      >
+                        {props.articleData.header.linkAnchor}
+                      </a>
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
       )}
-
-      {props.articleData.image && !props.articleData.header && (
-        <div className='pt-5 pb-2 col-12 d-flex justify-content-center'>
-          <div className='img-skewed img-skewed-start mb-8 mb-md-0'>
-            <img
-              src={`/images/${props.path}/${props.articleData.image}`}
-              alt={props.articleData.imageAlt}
-              loading='lazy'
-              className='screenshot img-fluid'
-              data-aos='img-skewed-item-start'
-              data-aos-delay='100'
-            />
+      <div className='container'>
+        {props.articleData.image && !props.articleData.header && (
+          <div className='pt-5 pb-2 col-12 d-flex justify-content-center'>
+            <div className='img-skewed img-skewed-start mb-8 mb-lg-0'>
+              <img
+                src={`/images/${props.path}/${props.articleData.image}`}
+                alt={props.articleData.imageAlt}
+                loading='lazy'
+                className='screenshot img-fluid'
+                data-aos='img-skewed-item-start'
+                data-aos-delay='100'
+              />
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      <section className='pt-8'>
-        <div className='container'>
-          <div className='row justify-content-center'>
-            <div className='col-12 col-md-10 col-lg-10 col-xl-10'>
-              <h1 className='display-4 text-center'>
-                {props.articleData.title}
-              </h1>
+        <section className='pt-8'>
+          <div className='container'>
+            <div className='row justify-content-center'>
+              <div className='col-12 col-lg-10 col-lg-10 col-xl-10'>
+                <h1 className='display-4 text-center'>
+                  {props.articleData.title}
+                </h1>
 
-              <p className='lead mb-7 text-center text-muted'>
-                {props.articleData.excerpt}
-              </p>
+                <p className='lead mb-7 text-center text-muted'>
+                  {props.articleData.excerpt}
+                </p>
 
-              <div
-                className={`row ${
-                  props.articleData.date ? '' : 'd-flex justify-content-center'
-                } align-items-center py-5 border-top border-bottom`}
-              >
-                {props.articleData.date && (
-                  <div className='col ms-n5'>
-                    <h6 className='text-uppercase mb-0'>Guillaume Monnet</h6>
+                <div
+                  className={`row ${
+                    props.articleData.date
+                      ? ''
+                      : 'd-flex justify-content-center'
+                  } align-items-center py-5 border-top border-bottom`}
+                >
+                  {props.articleData.date && (
+                    <div className='col-12 col-lg text-center text-lg-start mb-2 mb-lg-0'>
+                      <h6 className='text-uppercase mb-0'>Guillaume</h6>
 
-                    <time className='fs-sm text-muted' dateTime='2019-05-20'>
-                      Published on {props.articleData.date}
-                    </time>
+                      <time
+                        className='col-12 fs-sm text-muted'
+                        dateTime='2019-05-20'
+                      >
+                        Published on {props.articleData.date}
+                      </time>
+                    </div>
+                  )}
+
+                  <div className='col-12 col-lg-auto my-lg-auto'>
+                    <Share
+                      title='Find this post interesting? Share it!'
+                      url={`https://mockoon.com/${props.slug}/`}
+                      text={props.articleData.meta.description}
+                    />
                   </div>
-                )}
-
-                <div className='col-auto my-auto'>
-                  <Share
-                    title='Find this post interesting? Share it!'
-                    url={`https://mockoon.com/${props.slug}/`}
-                    text={props.articleData.meta.description}
-                  />
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className='pt-6 pt-md-8 pb-8'>
-        <div className='container'>
-          <div className='row justify-content-center'>
-            <div className='col-12 col-md-10 col-lg-10 col-xl-10'>
-              <Markdown body={props.articleBody} />
+        <section className='pt-6 pt-lg-8 pb-8'>
+          <div className='container'>
+            <div className='row justify-content-center'>
+              <div className='col-12 col-lg-10 col-xl-10'>
+                <Markdown body={props.articleBody} />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </Fragment>
   );
 };

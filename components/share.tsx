@@ -9,12 +9,12 @@ const Share: FunctionComponent<{
   const text = encodeURIComponent(props.text);
 
   return (
-    <div>
-      <span className='h6 text-uppercase text-muted d-none d-md-inline me-4'>
+    <div className='d-flex flex-column flex-lg-row p-2'>
+      <span className='align-self-center h6 text-center text-lg-start text-uppercase text-muted d-inline mb-0 me-lg-2'>
         Share:
       </span>
 
-      <ul className='d-inline list-unstyled list-inline list-social'>
+      <ul className='d-inline list-unstyled list-inline list-social align-self-center mb-0'>
         <li className='list-inline-item list-social-item me-3'>
           <a
             href={`https://twitter.com/intent/tweet/?text=${text}&url=${url}`}
@@ -25,7 +25,7 @@ const Share: FunctionComponent<{
           >
             <img
               src='/images/icons/social/twitter.svg'
-              className='list-social-icon'
+              className=''
               alt='Share on Twitter'
             />
           </a>
@@ -40,7 +40,7 @@ const Share: FunctionComponent<{
           >
             <img
               src='/images/icons/social/linkedin.svg'
-              className='list-social-icon'
+              className=''
               alt='Share on Linkedin'
             />
           </a>
@@ -55,7 +55,7 @@ const Share: FunctionComponent<{
           >
             <img
               src='/images/icons/social/facebook.svg'
-              className='list-social-icon'
+              className=''
               alt='Share on Facebook'
             />
           </a>

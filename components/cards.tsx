@@ -8,20 +8,20 @@ const Cards: FunctionComponent<{
   medium?: boolean;
   large?: boolean;
 }> = function (props) {
-  let sizing = 'col-md-12 col-lg-12';
-  let textSizing = 'col-md-6 col-12';
+  let sizing = 'col-lg-12 col-lg-12';
+  let textSizing = 'col-lg-6 col-12';
   let cardRow = '';
   let cardBorder = '';
   let imgStyle = '';
 
   if (props.small) {
-    sizing = 'col-md-6 col-lg-4';
+    sizing = 'col-12';
     cardRow = '';
     cardBorder = 'card-border-xl';
-    textSizing = 'col-md-12 col-12';
+    textSizing = 'col-12';
   }
   if (props.large) {
-    textSizing = 'col-md-12 col-12';
+    textSizing = 'col-12';
   }
   if (props.medium) {
     imgStyle = 'card-img-start w-100 bg-cover img-fluid';
@@ -30,17 +30,17 @@ const Cards: FunctionComponent<{
 
   return (
     <Fragment>
-      <div className='row'>
+      <div>
         {props.articles.map((article) => {
           return (
-            <div key={article.slug} className={`col-12 my-3 ${sizing}`}>
+            <div key={article.slug} className={`col-12 my-lg-3 ${sizing}`}>
               <div
                 className={`card card-border ${cardRow} ${cardBorder} shadow-light-lg`}
               >
                 <div className='card-body text-center'>
                   <div className='row'>
                     {props.medium && article.data.image && (
-                      <div className='col-12 col-md-6'>
+                      <div className='col-12 col-lg-6'>
                         <div className='card-img-slider'>
                           <img
                             src={`/images/${props.path}/${article.data.image}`}

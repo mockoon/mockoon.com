@@ -9,7 +9,7 @@ const SimpleCards: FunctionComponent<{
   const featuresContent = [];
   for (let rowIndex = 0; rowIndex < numberOfColumns; rowIndex++) {
     featuresContent.push(
-      <div key={'featureRow' + rowIndex} className='col-md-4 py-3'>
+      <div key={'featureRow' + rowIndex} className='col-lg-4 col-12 py-lg-3'>
         {props.items
           .filter((item, itemIndex) => {
             return itemIndex % 3 === rowIndex;
@@ -18,11 +18,9 @@ const SimpleCards: FunctionComponent<{
             return (
               <div
                 key={'feature' + itemIndex}
-                className={`${
-                  props.items.length === 3 ? 'card-min-height' : ''
-                } card card-border shadow-light-lg my-2`}
+                className={`card card-border shadow-light-lg my-lg-2 my-1`}
               >
-                <div className='card-body text-center simple-card-min d-flex align-content-end flex-wrap justify-content-center '>
+                <div className='card-body text-center simple-card-min d-flex align-content-center flex-wrap flex-column justify-content-center '>
                   <h4 className=''>{item.title}</h4>
                   <p
                     className='text-muted'

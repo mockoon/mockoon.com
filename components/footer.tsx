@@ -34,14 +34,14 @@ const Footer: FunctionComponent = function () {
           {displayDownload.includes(router.pathname) && <Download />}
         </div>
         <div className='row'>
-          <div className='col-12 col-md-4 col-lg-2 d-flex flex-column align-content-start'>
+          <div className='col-12 col-lg-2 d-flex flex-column align-content-start'>
             <img
               src='/images/logo-eyes-grey.svg'
               alt='Mockoon eyes logo'
               width='100'
               className='align-self-center'
             />
-            <ul className='align-self-center footer-social list-unstyled list-inline list-social mb-6 mb-md-0 mt-4'>
+            <ul className='align-self-center footer-social list-unstyled list-inline list-social mb-6 mb-lg-0 mt-4'>
               <li className='list-inline-item list-social-item me-2'>
                 <a
                   href='https://github.com/mockoon'
@@ -83,10 +83,10 @@ const Footer: FunctionComponent = function () {
               </li>
             </ul>
           </div>
-          <div className='col-12 col-md-12 col-lg-6'>
+          <div className='col-12 col-lg-6 text-lg-start text-center py-5 py-lg-0'>
             <h6 className='fw-bold text-uppercase text-gray-700'>Tutorials</h6>
 
-            <ul className='list-unstyled text-muted mb-6 mb-md-8 mb-lg-0'>
+            <ul className='list-unstyled text-muted mb-6 mb-lg-8 mb-lg-0'>
               <li className='mb-3'>
                 <Link href='/tutorials/getting-started/' passHref={true}>
                   <a className='text-reset'>Getting started with Mockoon 🚀</a>
@@ -124,10 +124,10 @@ const Footer: FunctionComponent = function () {
               </li>
             </ul>
           </div>
-          <div className='col-6 col-md-6 col-lg-2'>
+          <div className='col-6 col-lg-2 text-lg-start text-center py-5 py-lg-0'>
             <h6 className='fw-bold text-uppercase text-gray-700'>Learn</h6>
 
-            <ul className='list-unstyled text-muted mb-6 mb-md-8 mb-lg-0'>
+            <ul className='list-unstyled text-muted mb-6 mb-lg-8 mb-lg-0'>
               <li className='mb-3'>
                 <Link href='/tutorials/' passHref={true}>
                   <a className='text-reset'>Tutorials</a>
@@ -155,7 +155,7 @@ const Footer: FunctionComponent = function () {
               </li>
             </ul>
           </div>
-          <div className='col-6 col-md-6 col-lg-2 offset-lg-0'>
+          <div className='col-6 col-lg-2 offset-lg-0 text-lg-start text-center py-5 py-lg-0'>
             <h6 className='fw-bold text-uppercase text-gray-700'>More</h6>
 
             <ul className='list-unstyled text-muted mb-0'>

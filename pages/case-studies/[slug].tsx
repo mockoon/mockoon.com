@@ -51,7 +51,9 @@ export default function CaseStudy(props: {
       />
       <section>
         <div className='container text-center pt-3 pb-8'>
-          <a href='/case-studies/'>⬅ Back to the case studies</a>
+          <a className='btn btn-secondary-soft' href='/case-studies/'>
+            ⬅ Back to the list of case studies
+          </a>
         </div>
       </section>
     </Layout>

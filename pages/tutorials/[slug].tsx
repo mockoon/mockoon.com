@@ -50,7 +50,9 @@ export default function Tutorial(props: {
       />
       <section>
         <div className='container text-center pt-3 pb-8'>
-          <a href='/tutorials/'>⬅ Back to the list of tutorials</a>
+          <a className='btn btn-secondary-soft' href='/tutorials/'>
+            ⬅ Back to the list of tutorials
+          </a>
         </div>
       </section>
     </Layout>

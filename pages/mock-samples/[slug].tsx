@@ -50,7 +50,9 @@ export default function MockSample(props: {
       />
       <section>
         <div className='container text-center pt-3 pb-8'>
-          <a href='/mock-samples/'>⬅ Back to the list of mock samples</a>
+          <a className='btn btn-secondary-soft' href='/mock-samples/'>
+            ⬅ Back to the list of mock samples
+          </a>
         </div>
       </section>
     </Layout>

@@ -38,7 +38,7 @@ const Hero: FunctionComponent<{
             {props.title && (
               <h1
                 dangerouslySetInnerHTML={{ __html: props.title }}
-                className={`display-3 ${
+                className={`display-4 ${
                   props.mainPicture ? 'text-md-start' : 'text-center'
                 } `}
               ></h1>

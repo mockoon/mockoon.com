@@ -34,12 +34,54 @@ const Footer: FunctionComponent = function () {
           {displayDownload.includes(router.pathname) && <Download />}
         </div>
         <div className='row'>
-          <div className='col-12 col-md-4 col-lg-2'>
+          <div className='col-12 col-md-4 col-lg-2 d-flex flex-column align-content-start'>
             <img
               src='/images/logo-eyes-grey.svg'
               alt='Mockoon eyes logo'
-              width='96'
+              width='100'
+              className='align-self-center'
             />
+            <ul className='align-self-center footer-social list-unstyled list-inline list-social mb-6 mb-md-0 mt-4'>
+              <li className='list-inline-item list-social-item me-2'>
+                <a
+                  href='https://github.com/mockoon'
+                  target='_blank'
+                  rel='noopener'
+                  className='text-decoration-none'
+                >
+                  <i
+                    className='text-muted icon-github list-social-icon'
+                    aria-hidden='true'
+                  ></i>
+                </a>
+              </li>
+              <li className='list-inline-item list-social-item me-2'>
+                <a
+                  href='https://discord.gg/MutRpsY5gE'
+                  target='_blank'
+                  rel='noopener'
+                  className='text-decoration-none'
+                >
+                  <i
+                    className='text-muted icon-discord list-social-icon'
+                    aria-hidden='true'
+                  ></i>
+                </a>
+              </li>
+              <li className='list-inline-item list-social-item'>
+                <a
+                  href='https://twitter.com/intent/follow?screen_name=GetMockoon'
+                  target='_blank'
+                  rel='noopener'
+                  className='text-decoration-none'
+                >
+                  <i
+                    className='text-muted icon-twitter list-social-item'
+                    aria-hidden='true'
+                  ></i>
+                </a>
+              </li>
+            </ul>
           </div>
           <div className='col-12 col-md-12 col-lg-6'>
             <h6 className='fw-bold text-uppercase text-gray-700'>Tutorials</h6>
@@ -118,6 +160,11 @@ const Footer: FunctionComponent = function () {
 
             <ul className='list-unstyled text-muted mb-0'>
               <li className='mb-3'>
+                <Link href='/about/' passHref={true}>
+                  <a className='text-reset'>About us</a>
+                </Link>
+              </li>
+              <li className='mb-3'>
                 <Link href='/contact/' passHref={true}>
                   <a className='text-reset'>Request support</a>
                 </Link>
@@ -126,36 +173,6 @@ const Footer: FunctionComponent = function () {
                 <Link href='/sponsor-us/' passHref={true}>
                   <a className='text-reset'>Sponsor us</a>
                 </Link>
-              </li>
-              <li className='mb-3'>
-                <a
-                  href='https://github.com/mockoon'
-                  target='_blank'
-                  rel='noopener'
-                  className='text-reset'
-                >
-                  <i className='icon-github' aria-hidden='true'></i> GitHub
-                </a>
-              </li>
-              <li className='mb-3'>
-                <a
-                  href='https://discord.gg/MutRpsY5gE'
-                  target='_blank'
-                  rel='noopener'
-                  className='text-reset'
-                >
-                  <i className='icon-discord' aria-hidden='true'></i> Discord
-                </a>
-              </li>
-              <li className='mb-3'>
-                <a
-                  href='https://twitter.com/intent/follow?screen_name=GetMockoon'
-                  target='_blank'
-                  rel='noopener'
-                  className='text-reset'
-                >
-                  <i className='icon-twitter' aria-hidden='true'></i> Twitter
-                </a>
               </li>
             </ul>
           </div>

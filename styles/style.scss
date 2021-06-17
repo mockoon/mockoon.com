@@ -46,6 +46,9 @@ footer {
     color: #869ab8;
     font-size: 0.85em;
   }
+  .footer-social {
+    font-size: 1.3em;
+  }
 }
 
 .card-meta {
@@ -87,7 +90,7 @@ aside {
 }
 // TERMINAL
 header.terminal {
-  background: #e0e8f0;
+  background: #30353a;
   height: 30px;
   border-radius: 8px 8px 0 0;
   padding-left: 10px;
@@ -121,13 +124,17 @@ header.terminal {
 }
 .terminal-home {
   background-color: #30353a;
-  padding: 1.5em 1em 1em 2em;
+  padding: 1em 1em 1em 2em;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   color: #fafafa;
 }
 
 p.console {
+  font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+    'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+    monospace;
   font-size: 0.9rem;
   &:before {
     content: '$';

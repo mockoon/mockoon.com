@@ -61,7 +61,7 @@ const Cli: FunctionComponent = function () {
             <SimpleCards items={features} />
           </div>
           <div className='row py-5'>
-            <div className='col-md-5'>
+            <div className='col-md-6'>
               <h3 className='text-center'>NPM package quick start</h3>
               <Terminal
                 lines={[
@@ -70,7 +70,7 @@ const Cli: FunctionComponent = function () {
                 ]}
               />
             </div>
-            <div className='col-md-7'>
+            <div className='col-md-6'>
               <h3 className='text-center'>Docker image Quick start</h3>
               <Terminal
                 lines={[

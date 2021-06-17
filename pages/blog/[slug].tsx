@@ -6,7 +6,6 @@ import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
 import { ArticleData } from '../../models/common.model';
 import { buildSlugStaticPaths } from '../../utils/static-builders';
-
 export async function getStaticProps({ params }) {
   const fileContent = await require(`../../content/blog/${params.slug}.md`);
   const parsedContent = matter(fileContent.default);
@@ -60,7 +59,6 @@ export default function BlogArticle(props: {
         articleBody={props.articleBody}
         articleData={props.articleData}
       />
-
       <section>
         <div className='container text-center pt-3 pb-8'>
           <a href='/blog/'>⬅ Back to the blog posts</a>

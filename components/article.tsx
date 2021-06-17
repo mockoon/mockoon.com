@@ -8,7 +8,6 @@ const Article: FunctionComponent<{
   articleData: ArticleData;
   articleBody: string;
 }> = function (props) {
-  console.log(props.articleData);
   return (
     <Fragment>
       {props.articleData.header && (

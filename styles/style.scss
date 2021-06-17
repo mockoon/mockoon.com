@@ -163,3 +163,37 @@ p.console {
     max-width: 50%;
   }
 }
+.quote {
+  position: relative;
+  padding: 2rem;
+  margin: 40px;
+  border-left: 4px solid lighten($primary, 30%);
+  font-size: 1.6rem;
+  font-weight: 400;
+  quotes: '“' '”';
+
+  &-metadata {
+    display: flex;
+    margin-top: 20px;
+
+    & .quote-picture {
+      width: 48px;
+      height: 48px;
+      border-radius: 9999px;
+    }
+
+    & .quote-author {
+      margin-left: 20px;
+
+      div:nth-child(1) {
+        font-weight: 500;
+        font-size: 1rem;
+      }
+
+      div:nth-child(2) {
+        color: grey;
+        font-size: 1rem;
+      }
+    }
+  }
+}

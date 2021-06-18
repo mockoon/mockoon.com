@@ -35,7 +35,7 @@ const Blog: FunctionComponent<{
 
       <section className='pb-8'>
         <div className='container'>
-          <Cards path='blog' articles={props.articles} medium />
+          <Cards path='blog' articles={props.articles} large />
         </div>
       </section>
     </Layout>

@@ -428,7 +428,7 @@ class Index extends React.Component {
           </div>
         </section>
 
-        <section id='testimonials' className='py-8 pb-8 py-lg-11'>
+        <section id='case-studies' className='py-8 pb-8 py-lg-11'>
           <div className='container'>
             <div className='row'>
               <div className='justify-content-center'>
@@ -454,7 +454,7 @@ class Index extends React.Component {
                     } as ArticleData
                   }
                 ]}
-                medium
+                large
               />
             </div>
           </div>

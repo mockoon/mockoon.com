@@ -33,7 +33,7 @@ const Tutorials: FunctionComponent<{
 
       <section className='pb-8'>
         <div className='container'>
-          <Cards path='tutorials' articles={props.articles} medium />
+          <Cards path='tutorials' articles={props.articles} large />
         </div>
       </section>
     </Layout>

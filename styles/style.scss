@@ -247,3 +247,9 @@ p.console {
   opacity: 0.85 !important;
   color: #000000 !important;
 }
+
+.card {
+  &.pointer {
+    cursor: pointer;
+  }
+}

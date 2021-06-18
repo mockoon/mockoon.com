@@ -26,7 +26,7 @@ const Newsletter: FunctionComponent = function () {
                     type='email'
                     id='newsletter-email'
                     name='EMAIL'
-                    placeholder='email address'
+                    placeholder='Email address'
                   />
                 </div>
                 <div className='col-12 col-lg-5 pt-lg-0 pt-4'>

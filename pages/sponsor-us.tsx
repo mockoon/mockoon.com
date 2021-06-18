@@ -16,82 +16,71 @@ const SponsorUs: FunctionComponent = function () {
 
       <Hero title='Sponsor Mockoon' />
 
-      <div className='container'>
-        <div className='columns'>
-          <div className='column is-6 is-offset-3'>
-            <div className='section'>
-              <div className='content mb-6'>
-                <p>
-                  Mockoon is an open-source project created in 2017 by{' '}
-                  <a
-                    href='https://github.com/255kb'
-                    target='_blank'
-                    rel='noopener'
-                  >
-                    Guillaume
-                  </a>
-                  , a developer passionate about APIs. Recently joined by{' '}
-                  <a
-                    href='https://github.com/fabhoarau'
-                    target='_blank'
-                    rel='noopener'
-                  >
-                    Fabrice
-                  </a>
-                  , they both work on the project during their free time.
-                </p>
-                <p>
-                  Entirely free, Mockoon saves time for thousands of people
-                  around the world every day and recently crossed 100&nbsp;000
-                  downloads!
-                </p>
-                <p>
-                  Reaching this level of satisfaction requires a tremendous
-                  amount of time from the maintainers. If you like Mockoon and
-                  want it to propose always more great features, you can support
-                  us and join the dozens of{' '}
-                  <a
-                    href='https://github.com/mockoon/mockoon/blob/main/backers.md'
-                    target='_blank'
-                    rel='noopener'
-                  >
-                    backers and supporters
-                  </a>
-                  .
-                </p>
-                <p>
-                  By sponsoring us, you can show your appreciation for all this
-                  hard work and also allow us to dedicate more time to this
-                  project in the future.
-                </p>
-                <p>
-                  Whatever option you choose we are grateful for your support!
-                </p>
-              </div>
-              <div className='mb-6 has-text-centered'>
-                <h4 className='title is-size-5'>
-                  Become a sponsor through GitHub Sponsors
-                </h4>
-                <iframe
-                  src='https://github.com/sponsors/255kb/button'
-                  title='Sponsor 255kb'
-                  height='35'
-                  width='116'
-                  style={{ border: 0 }}
-                ></iframe>
-              </div>
-              <div className='mb-6 has-text-centered'>
-                <h4 className='title is-size-5'>Make a one-time donation</h4>
-                <Donate />
-              </div>
-              <div className='has-text-centered'>
-                <p>
-                  If you cannot donate, you can still star the project on GitHub
-                  or help spread the word!
-                </p>
-                <div className='m-4'>
-                  <GitHub />
-                </div>
+      <div className='container pb-8'>
+        <div className='row d-flex flex-column align-items-center '>
+          <div className='col-12 col-lg-10 pt-5'>
+            <p>
+              Mockoon is an open-source project created in 2017 by{' '}
+              <a href='https://github.com/255kb' target='_blank' rel='noopener'>
+                Guillaume
+              </a>
+              , a developer passionate about APIs. Recently joined by{' '}
+              <a
+                href='https://github.com/fabhoarau'
+                target='_blank'
+                rel='noopener'
+              >
+                Fabrice
+              </a>
+              , they both work on the project during their free time.
+            </p>
+            <p>
+              Entirely free, Mockoon saves time for thousands of people around
+              the world every day and recently crossed 100&nbsp;000 downloads!
+            </p>
+            <p>
+              Reaching this level of satisfaction requires a tremendous amount
+              of time from the maintainers. If you like Mockoon and want it to
+              propose always more great features, you can support us and join
+              the dozens of{' '}
+              <a
+                href='https://github.com/mockoon/mockoon/blob/main/backers.md'
+                target='_blank'
+                rel='noopener'
+              >
+                backers and supporters
+              </a>
+              .
+            </p>
+            <p>
+              By sponsoring us, you can show your appreciation for all this hard
+              work and also allow us to dedicate more time to this project in
+              the future.
+            </p>
+            <h3 className='h4 fw-bold text-center mt-8'>
+              Whatever option you choose we are grateful for your support!
+            </h3>
+            <div className='mb-6 text-center mt-8'>
+              <h4 className=''>Become a sponsor through GitHub Sponsors</h4>
+              <iframe
+                src='https://github.com/sponsors/255kb/button'
+                title='Sponsor 255kb'
+                height='35'
+                width='116'
+                style={{ border: 0 }}
+              ></iframe>
+            </div>
+            <div className='mb-6 text-center p-5'>
+              <h4 className=''>Make a one-time donation</h4>
+              <Donate />
+            </div>
+            <div className='mb-6 text-center '>
+              <p>
+                If you cannot donate, you can still star the project on GitHub
+                or help spread the word!
+              </p>
+              <div className='m-4'>
+                <GitHub />
               </div>
             </div>
           </div>

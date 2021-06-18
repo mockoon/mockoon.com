@@ -2,8 +2,8 @@ import { FunctionComponent } from 'react';
 
 const Donate: FunctionComponent = function () {
   return (
-    <div>
-      <div className='donate-item'>
+    <div className='d-flex flex-row justify-content-center align-items-center mt-4'>
+      <div className='me-4'>
         <a href='https://paypal.me/255kb' rel='noopener' target='_blank'>
           <img
             src='https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png'
@@ -11,7 +11,7 @@ const Donate: FunctionComponent = function () {
           />
         </a>
       </div>
-      <div className='donate-item'>
+      <div>
         <a
           className='bmc-button'
           target='_blank'

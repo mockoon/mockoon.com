@@ -22,7 +22,8 @@ const Footer: FunctionComponent = function () {
     '/tutorials',
     '/tutorials/[slug]',
     '/mock-samples',
-    '/mock-samples/[slug]'
+    '/mock-samples/[slug]',
+    '/about'
   ];
   const displayDownload = ['/case-studies', '/case-studies/[slug]'];
   return (

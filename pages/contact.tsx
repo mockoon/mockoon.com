@@ -11,84 +11,94 @@ const Contact: FunctionComponent = function () {
         description='Found an issue? Wondering how to use Mockoon for your specific use case? Contact us!'
       />
 
-      <Hero title='Feedback? Questions? We are always here to help.' />
-
-      <div className='section'>
+      <Hero
+        title='Feedback? Questions?'
+        subtitle='We are always here to help.'
+      />
+      <section className='pb-8'>
         <div className='container'>
-          <div className='columns'>
-            <div className='column is-3 is-offset-2'>
-              <div className='content'>
-                <p>
-                  <i className='icon-chat has-text-light is-size-3'></i>
-                </p>
-                <div className='title is-4'>Forums and Discord Server</div>
-                <p>
+          <div className='row'>
+            <div className='col-12 col-lg-4'>
+              <div className='card p-5 shadow-light-lg'>
+                <div className='col-12 text-center '>
+                  <i className='icon-chat h1 text-muted'></i>
+                </div>
+                <h3 className='text-center'>Forums and Discord Server</h3>
+                <p className='px-2 text-center text-muted'>
                   You can ask for help or discuss ideas and improvements on our
                   GitHub Discussions forums. You are also welcome on our Discord
                   server. Usually, users get a response in under 48 hours.
                 </p>
-                <a
-                  href='https://github.com/mockoon/mockoon/discussions'
-                  target='_blank'
-                  rel='noopener'
-                >
-                  App forum
-                </a>
-                &nbsp;|&nbsp;
-                <a
-                  href='https://github.com/mockoon/cli/discussions'
-                  target='_blank'
-                  rel='noopener'
-                >
-                  CLI forum
-                </a>
-                &nbsp;|&nbsp;
-                <a
-                  href='https://discord.gg/MutRpsY5gE'
-                  target='_blank'
-                  rel='noopener'
-                >
-                  Discord server
-                </a>
+                <div className='justify-content-center align-items-center d-flex flex-row '>
+                  <a
+                    href='https://github.com/mockoon/mockoon/discussions'
+                    target='_blank'
+                    rel='noopener'
+                  >
+                    App forum
+                  </a>
+                  &nbsp;|&nbsp;
+                  <a
+                    href='https://github.com/mockoon/cli/discussions'
+                    target='_blank'
+                    rel='noopener'
+                  >
+                    CLI forum
+                  </a>
+                  &nbsp;|&nbsp;
+                  <a
+                    href='https://discord.gg/MutRpsY5gE'
+                    target='_blank'
+                    rel='noopener'
+                  >
+                    Discord
+                  </a>
+                </div>
               </div>
             </div>
-            <div className='column is-3'>
-              <div className='content'>
-                <p>
-                  <i className='icon-email has-text-light is-size-3'></i>
-                </p>
-                <div className='title is-4'>Email us</div>
-                <p>
+
+            <div className='col-12 col-lg-4'>
+              <div className='card p-5 shadow-light-lg'>
+                <div className='col-12 text-center '>
+                  <i className='icon-email h1 text-muted'></i>
+                </div>
+                <h3 className='text-center'>Email us</h3>
+                <p className='px-2 text-center text-muted'>
                   You can also request direct help by emailing the maintainers
                   team. We will do our best to assist you.
                 </p>
-                <a href='mailto:support@mockoon.com'>support@mockoon.com</a>
+                <div className='justify-content-center align-items-center d-flex flex-row '>
+                  <a href='mailto:support@mockoon.com'>support@mockoon.com</a>
+                </div>
               </div>
             </div>
-            <div className='column is-3'>
-              <div className='content'>
-                <p>
-                  <i className='icon-star has-text-warning is-size-3'></i>
-                </p>
-                <div className='title is-4'>VIP support</div>
-                <p>
+
+            <div className='col-12 col-lg-4'>
+              <div className='card p-5 shadow-light-lg'>
+                <div className='col-12 text-center '>
+                  <i className='icon-star text-warning h1'></i>
+                </div>
+                <h3 className='text-center'>VIP support</h3>
+                <p className='px-2 text-center text-muted'>
                   Sponsor us and get an official maintainer to join your team on
                   the platform of your choice (Slack, Zoom, etc.) to answer
                   support requests or any questions you may have about the
                   project.
                 </p>
-                <a
-                  href='https://github.com/sponsors/255kb'
-                  rel='noopener'
-                  target='_blank'
-                >
-                  Get VIP support
-                </a>
+                <div className='justify-content-center align-items-center d-flex flex-row '>
+                  <a
+                    href='https://github.com/sponsors/255kb'
+                    rel='noopener'
+                    target='_blank'
+                  >
+                    Get VIP support
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </Layout>
   );
 };

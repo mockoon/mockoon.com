@@ -30,7 +30,12 @@ export default function CaseStudies(props: { articles: ArticleList }) {
 
       <section className='pb-8'>
         <div className='container'>
-          <Cards large path='case-studies' articles={props.articles} />
+          <Cards
+            large
+            path='case-studies'
+            articles={props.articles}
+            cover={false}
+          />
         </div>
       </section>
     </Layout>

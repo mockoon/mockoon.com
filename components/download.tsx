@@ -5,9 +5,9 @@ const Download: FunctionComponent = function () {
   return (
     <section>
       <div className='container pb-5 border-bottom'>
-        <div className='row align-items-center py-5 pb-7 border-bottom border-gray-300 text-center text-lg-start'>
+        <div className='row align-items-center py-8 border-bottom border-gray-300 text-center text-lg-start'>
           <div className='col-12 col-lg-9'>
-            <h3 className='fw-bold mb-1'>
+            <h3 className='fw-bold text-gray-700 mb-1'>
               <i className='icon-download'></i> Get Mockoon
             </h3>
             <p className='text-muted mb-6 mb-lg-0'>

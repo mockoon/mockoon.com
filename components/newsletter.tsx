@@ -3,10 +3,12 @@ import { FunctionComponent } from 'react';
 const Newsletter: FunctionComponent = function () {
   return (
     <div className='bg-gray-200 pt-4'>
-      <div className='container pb-7 border-bottom border-gray-300'>
+      <div className='container py-8 border-bottom border-gray-300'>
         <div className='row align-items-center text-lg-start text-center'>
           <div className='col-12 col-lg-7'>
-            <h4 className='mb-1 fw-bold'>Get our stories delivered</h4>
+            <h4 className='mb-1 fw-bold text-gray-700'>
+              Get our stories delivered
+            </h4>
 
             <p className='fs-lg text-muted mb-4 mb-lg-0'>
               Enter your email address to receive Mockoon's latest updates

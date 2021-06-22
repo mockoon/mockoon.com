@@ -7,11 +7,13 @@ const Cards: FunctionComponent<{
   small?: boolean;
   medium?: boolean;
   large?: boolean;
+  cover?: boolean;
 }> = function (props) {
   let sizing = 'col-12';
   let textSizing = 'col-lg-6 col-12';
   let cardRow = '';
   let cardBorder = '';
+  let cover = props.cover !== undefined ? props.cover : true;
 
   if (props.small) {
     sizing = 'col-lg-4';
@@ -52,14 +54,19 @@ const Cards: FunctionComponent<{
                       >
                         {article.data.image && (
                           <div
-                            className={`col-12 col-lg-6 bg-cover ${
+                            className={`col-12 col-lg-6 ${
+                              cover ? 'bg-cover' : ''
+                            } ${
                               !props.large && article.data.image
                                 ? 'card-img-top'
                                 : 'card-img-start'
                             } `}
                             style={{
                               backgroundImage: `url('/images/${props.path}/${article.data.image}')`,
-                              minHeight: '200px'
+                              minHeight: '200px',
+                              backgroundRepeat: 'no-repeat',
+                              backgroundPosition: 'center',
+                              backgroundSize: cover ? 'cover' : '80%'
                             }}
                           >
                             <div className='img-fluid d-lg-none invisible'>
@@ -73,20 +80,6 @@ const Cards: FunctionComponent<{
 
                         {article.data.title && (
                           <div className={`${textSizing} p-5`}>
-                            {article.data.logo && (
-                              <div
-                                className={`img-fluid mx-auto p-5 ${
-                                  props.large ? 'w-50' : ''
-                                }`}
-                              >
-                                {article.data.logo && (
-                                  <img
-                                    src={`/images/${props.path}/${article.data.logo}`}
-                                    alt={article.data.logoAlt}
-                                  />
-                                )}
-                              </div>
-                            )}
                             <div className='text-gray-700 d-flex flex-column align-items-center'>
                               <h3 className='py-3 h4'>{article.data.title}</h3>
                               <p className='col-10 text-muted'>

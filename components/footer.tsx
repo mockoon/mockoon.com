@@ -29,7 +29,7 @@ const Footer: FunctionComponent = function () {
   return (
     <footer className='py-3 bg-gray-200'>
       <div className='container'>
-        <div className='row mb-6 py-4'>
+        <div className='row mb-6'>
           {displayNewsletter.includes(router.pathname) && <Newsletter />}
           {displayContact.includes(router.pathname) && <ContactBanner />}
           {displayDownload.includes(router.pathname) && <Download />}

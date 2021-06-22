@@ -20,13 +20,13 @@ You can define an unlimited number of rules for each route. At each request, Moc
 
 To add a new rule to a response, go to the route response's **Rules tab** and fill the fields:
 
-![Click on add and fill the fields](/images/docs/v1.14.0-add-route-response-rule.png)
+![Click on add and fill the fields](/images/docs/v1.11.0-add-route-response-rule.png)
 
 ### Rules operator
 
 Inside a route response, rules are interpreted by default with the OR operator. When you have more than one rule in a route response, you can easily switch the operator applied when interpreting the rules, by clicking on the `OR|AND` buttons at the left of the rules:
 
-![Click on add and fill the fields](/images/docs/v1.14.0-route-response-rules-operator.png)
+![Click on add and fill the fields](/images/docs/v1.11.0-route-response-rules-operator.png)
 
 Rules have three parts:
 
@@ -42,7 +42,6 @@ In the dropdown menu you can choose between:
 - the value of a **header**.
 - the value of a **route parameter**.
 - the value of a **query string field**.
-- the **request number** index starting at 1.
 
 ### 2. Property name or path
 
@@ -54,7 +53,6 @@ Depending on the **target**, the way to access properties may be different:
 - **headers**: a header name like `Accept` or `Content-Type`.
 - **route param**: a route param name without the colon (":"), `:userId` becoming `userId`.
 - **query string**: either provide a property name like `filter` or a path if the query string field is an object `filter.primary`.
-- **request number**: *nothing has to be provided here for the request number*.
 
 For body and query string, if the property is an array, Mockoon will automatically check in the array if at least one item matches the value.
 
@@ -65,5 +63,3 @@ You can either set a simple text value like "expected value" or any kind of rege
 Examples:
 `primary|secondary`, `^user1-9`, `UTF-.*`.  
 You can also test for empty values with the following regex: `^$|\s+`.
-
-The **request number** supports simple entries like `1` or `2` but also regexes, allowing you to return a different response for the first 3 calls `^[1-3]$` or failing on odd request indexes `[13579]$`.

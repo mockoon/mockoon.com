@@ -5,7 +5,7 @@ meta:
   title: Create your first mock API with Mockoon
   description: Learn how to create your first local mock API server with Mockoon with custom JSON body
 image: tutorial-getting-started.png
-imageAlt: Mockoon and Angular logos side by side
+imageAlt: Mockoon logo in a rocket
 order: 10
 ---
 

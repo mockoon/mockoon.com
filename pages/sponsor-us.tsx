@@ -60,8 +60,8 @@ const SponsorUs: FunctionComponent = function () {
             <h3 className='h4 fw-bold text-center mt-8'>
               Whatever option you choose we are grateful for your support!
             </h3>
-            <div className='mb-6 text-center mt-8'>
-              <h4 className=''>Become a sponsor through GitHub Sponsors</h4>
+            <div className='text-center mt-8'>
+              <h4>Become a sponsor through GitHub Sponsors</h4>
               <iframe
                 src='https://github.com/sponsors/255kb/button'
                 title='Sponsor 255kb'
@@ -70,11 +70,11 @@ const SponsorUs: FunctionComponent = function () {
                 style={{ border: 0 }}
               ></iframe>
             </div>
-            <div className='mb-6 text-center p-5'>
-              <h4 className=''>Make a one-time donation</h4>
+            <div className='text-center mt-8'>
+              <h4>Make a one-time donation</h4>
               <Donate />
             </div>
-            <div className='mb-6 text-center '>
+            <div className='text-center mt-8'>
               <p>
                 If you cannot donate, you can still star the project on GitHub
                 or help spread the word!

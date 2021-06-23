@@ -33,10 +33,11 @@ div.icon {
 }
 pre code,
 code {
-  color: $body-color;
-  padding: 0 0.5rem;
+  color: $primary;
+  padding: 0.4rem;
   display: inline-block;
-  background-color: #e5e5e5;
+  background-color: #ebf0ff;
+  border-radius: 5px;
 }
 pre code {
   background-color: transparent;

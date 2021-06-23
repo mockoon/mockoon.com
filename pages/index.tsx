@@ -40,7 +40,7 @@ class Index extends React.Component {
           <div className='container'>
             <div className='row'>
               <div className='justify-content-center col-12 text-center'>
-                <h2 className='mb-1 fw-bolder'>
+                <h2 className='mb-1'>
                   Download Mockoon{' '}
                   <a
                     href={
@@ -58,10 +58,7 @@ class Index extends React.Component {
                   Mockoon is released under the MIT license.
                 </p>
               </div>
-              <div
-                className='col-12 col-lg-4 text-center py-2'
-                data-aos='fade-up'
-              >
+              <div className='col-12 col-lg-4 text-center py-2'>
                 <div className='icon mb-3'>
                   <i className='icon-windows'></i>
                 </div>
@@ -90,15 +87,12 @@ class Index extends React.Component {
                     </a>
                   </div>
                   <div className='content p-3'>
-                    or <code className='p-2'>choco install mockoon</code>
+                    or <code>choco install mockoon</code>
                   </div>
                 </div>
               </div>
 
-              <div
-                className='col-12 col-lg-4 text-center py-2'
-                data-aos='fade-up'
-              >
+              <div className='col-12 col-lg-4 text-center py-2'>
                 <div className='icon mb-3'>
                   <i className='icon-linux'></i>
                 </div>
@@ -151,16 +145,13 @@ class Index extends React.Component {
                     </a>
                   </div>
                   <div className='content p-3'>
-                    or <code className='p-2'>sudo snap install mockoon</code>
+                    or <code>sudo snap install mockoon</code>
                     <br />
-                    <code className='p-2 mt-1'>yay -S mockoon-bin</code>
+                    <code className='mt-1'>yay -S mockoon-bin</code>
                   </div>
                 </div>
               </div>
-              <div
-                className='col-12 col-lg-4 text-center py-2'
-                data-aos='fade-up'
-              >
+              <div className='col-12 col-lg-4 text-center py-2'>
                 <div className='icon mb-3'>
                   <i className='icon-apple'></i>
                 </div>
@@ -183,7 +174,7 @@ class Index extends React.Component {
                     </a>
                   </div>
                   <div className='content p-3'>
-                    or <code className='p-2'>brew install --cask mockoon</code>
+                    or <code>brew install --cask mockoon</code>
                   </div>
                 </div>
               </div>
@@ -212,9 +203,7 @@ class Index extends React.Component {
             <div className='row'>
               <div className='justify-content-center'>
                 <div className='col-12 text-center'>
-                  <h2 className='mb-1 fw-bolder'>
-                    Bring API mocking to the next level
-                  </h2>
+                  <h2 className='mb-1'>Bring API mocking to the next level</h2>
                 </div>
               </div>
             </div>
@@ -300,7 +289,7 @@ class Index extends React.Component {
             <div className='row mt-5'>
               <div className='text-center'>
                 <p className='has-text-centered pt-4'>
-                  <a className='btn btn-info-soft' href='/features/'>
+                  <a className='btn btn-primary-soft' href='/features/'>
                     Complete list of features
                   </a>
                 </p>
@@ -314,12 +303,12 @@ class Index extends React.Component {
             <div className='row'>
               <div className='justify-content-center'>
                 <div className='col-12 text-center'>
-                  <h2 className='mb-1 fw-bolder'>What developers say</h2>
+                  <h2 className='mb-1'>What developers say</h2>
                 </div>
               </div>
             </div>
             <div className='row mt-5' data-isotope='{"layoutMode": "masonry"}'>
-              <div className='col-12 col-lg-4 text-center' data-aos='fade-up'>
+              <div className='col-12 col-lg-4 text-center'>
                 <Testimonial
                   link='https://twitter.com/KechaAlex/status/1283134297067618306'
                   imgSrc='/images/testimonials/_9NFn5MH_400x400.jpg'
@@ -357,7 +346,7 @@ class Index extends React.Component {
                 </Testimonial>
               </div>
 
-              <div className='col-12 col-lg-4 text-center' data-aos='fade-up'>
+              <div className='col-12 col-lg-4 text-center'>
                 <Testimonial
                   link='https://twitter.com/rubeshgain/status/1243557172988051456'
                   imgSrc='/images/testimonials/F3baAGfY_400x400.jpg'
@@ -392,7 +381,7 @@ class Index extends React.Component {
                 </Testimonial>
               </div>
 
-              <div className='col-12 col-lg-4 text-center' data-aos='fade-up'>
+              <div className='col-12 col-lg-4 text-center'>
                 <Testimonial
                   link='https://twitter.com/nicola_orritos/status/1227168377275371520'
                   imgSrc='/images/testimonials/photo_small_400x400.jpg'
@@ -433,7 +422,7 @@ class Index extends React.Component {
             <div className='row'>
               <div className='justify-content-center'>
                 <div className='col-12 text-center'>
-                  <h2 className='mb-1 fw-bolder'>Case studies</h2>
+                  <h2 className='mb-1'>Case studies</h2>
                 </div>
               </div>
 

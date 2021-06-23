@@ -23,8 +23,6 @@ const Hero: FunctionComponent<{
                   alt={props.mainPictureAlt}
                   loading='lazy'
                   className='screenshot img-fluid'
-                  data-aos='img-skewed-item-start'
-                  data-aos-delay='100'
                 />
               </div>
             </div>
@@ -33,7 +31,6 @@ const Hero: FunctionComponent<{
             className={`col-12 ${
               props.mainPicture ? 'col-lg-6' : 'col-lg-12 text-center'
             } order-lg-1`}
-            data-aos='fade-up'
           >
             {props.title && (
               <h1

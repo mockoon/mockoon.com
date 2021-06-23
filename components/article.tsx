@@ -70,8 +70,6 @@ const Article: FunctionComponent<{
                 alt={props.articleData.imageAlt}
                 loading='lazy'
                 className='screenshot img-fluid'
-                data-aos='img-skewed-item-start'
-                data-aos-delay='100'
               />
             </div>
           </div>

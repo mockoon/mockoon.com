@@ -60,7 +60,7 @@ const Nav: FunctionComponent = function () {
                     router.pathname === '/cli' ? 'active' : ''
                   }`}
                 >
-                  <span className='badge bg-primary-soft'>New!</span>
+                  <span className='badge bg-secondary-soft'>New!</span>
                   <span>&nbsp;CLI</span>
                 </a>
               </Link>

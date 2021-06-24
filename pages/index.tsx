@@ -50,7 +50,7 @@ class Index extends React.Component {
                     rel='noopener'
                     target='_blank'
                   >
-                    <span className='badge bg-info-soft'>v{version}</span>
+                    <span className='badge bg-secondary-soft'>v{version}</span>
                   </a>
                 </h2>
 
@@ -183,7 +183,7 @@ class Index extends React.Component {
               <div className='text-center'>
                 <p className='has-text-centered pt-4'>
                   <a
-                    className='btn btn-info-soft'
+                    className='btn btn-secondary-soft'
                     href='/cli/'
                     style={{
                       fontFamily:

@@ -254,3 +254,11 @@ p.console {
     cursor: pointer;
   }
 }
+
+.skewed-screenshot {
+  perspective: 1500px;
+  perspective-origin: 0;
+  img {
+    transform: rotateY(-20deg) rotateX(5deg);
+  }
+}

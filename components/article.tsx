@@ -64,7 +64,7 @@ const Article: FunctionComponent<{
       <div className='container'>
         {props.articleData.image && !props.articleData.header && (
           <div className='pt-5 pb-2 col-12 d-flex justify-content-center'>
-            <div className='img-skewed img-skewed-start mb-8 mb-lg-0'>
+            <div className='mb-8 mb-lg-0'>
               <img
                 src={`/images/${props.path}/${props.articleData.image}`}
                 alt={props.articleData.imageAlt}

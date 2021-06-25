@@ -17,12 +17,12 @@ const Hero: FunctionComponent<{
         <div className='row align-items-center'>
           {props.mainPicture && (
             <div className='col-12 col-lg-6 order-lg-2'>
-              <div className='img-skewed img-skewed-start mb-8 mb-lg-0'>
+              <div className='skewed-screenshot mb-8 mb-lg-0'>
                 <img
                   src={props.mainPicture}
                   alt={props.mainPictureAlt}
                   loading='lazy'
-                  className='screenshot img-fluid'
+                  className=' img-fluid '
                 />
               </div>
             </div>

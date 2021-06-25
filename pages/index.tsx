@@ -10,7 +10,7 @@ const version = require('../package.json').version;
 const meta = {
   title: 'Create mock APIs in seconds',
   description:
-    'Mockoon is the easiest and quickest way to run mock API servers locally.<br>No remote deployment, no account required, free, open source and cross-platform.'
+    'Mockoon is the easiest and quickest way to run mock REST API servers. No remote deployment, no account required, free, open source and cross-platform.'
 };
 
 class Index extends React.Component {
@@ -21,7 +21,7 @@ class Index extends React.Component {
 
         <Hero
           title="Create <span class='text-primary'>mock APIs</span> in seconds"
-          subtitle={meta.description}
+          subtitle='Mockoon is the easiest and quickest way to design and run mock REST API.<br>No remote deployment, no account required, <strong>free</strong> and <strong>open-source</strong>.'
           cta={[
             {
               text: 'Download',
@@ -66,7 +66,7 @@ class Index extends React.Component {
                 <div className='text-muted mb-6 mb-lg-0'>
                   <div className='btn-group'>
                     <a
-                      className='btn btn-primary-soft d-flex align-items-center'
+                      className='btn btn-primary-soft btn-sm d-flex align-items-center'
                       href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.exe`}
                       rel='noopener'
                       onClick={() =>
@@ -100,7 +100,7 @@ class Index extends React.Component {
                 <div className='text-muted mb-6 mb-lg-0'>
                   <div className='btn-group'>
                     <a
-                      className='btn btn-primary-soft d-flex align-items-center'
+                      className='btn btn-primary-soft btn-sm d-flex align-items-center'
                       href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.deb`}
                       rel='noopener'
                       onClick={() =>
@@ -115,7 +115,7 @@ class Index extends React.Component {
                     </a>
 
                     <a
-                      className='btn btn-primary-soft d-flex align-items-center'
+                      className='btn btn-primary-soft btn-sm d-flex align-items-center'
                       href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.rpm`}
                       rel='noopener'
                       onClick={() =>
@@ -130,7 +130,7 @@ class Index extends React.Component {
                     </a>
 
                     <a
-                      className='btn btn-primary-soft d-flex align-items-center'
+                      className='btn btn-primary-soft btn-sm d-flex align-items-center'
                       href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.AppImage`}
                       rel='noopener'
                       onClick={() =>
@@ -159,7 +159,7 @@ class Index extends React.Component {
                 <div className='text-muted mb-6 mb-lg-0'>
                   <div className='btn-group'>
                     <a
-                      className='btn btn-primary-soft d-flex align-items-center'
+                      className='btn btn-primary-soft btn-sm d-flex align-items-center'
                       href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.dmg`}
                       rel='noopener'
                       onClick={() =>

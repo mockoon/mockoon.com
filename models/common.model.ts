@@ -44,8 +44,8 @@ export type ArticleList = {
   slug: string;
 }[];
 
-export type QuoteData = {
-  type: '##quote##';
+export type QuotationData = {
+  type: '##quotation##';
   citation: string;
   author: string;
   authorRole: string;

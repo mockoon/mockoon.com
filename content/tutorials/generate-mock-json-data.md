@@ -26,7 +26,7 @@ Mockoon also offers multiple helpers and embarks the Faker.js library, which can
 
 Let's see what Mockoon has to offer.
 
-> **You can find on our repository all the following examples ready to import!** <a href="https://github.com/mockoon/mock-samples/blob/main/samples/generate-mock-data.json" className="button is-link is-small"><i className='icon-download is-primary'></i>&nbsp;Download</a>
+> You can find on our repository all the following examples ready to import! <a href="https://github.com/mockoon/mock-samples/blob/main/samples/generate-mock-data.json" className="btn btn-primary-desat-soft btn-xs"><i className='icon-download'></i>&nbsp;Download</a>
 > 
 > To import the file, please [follow the instructions](https://github.com/mockoon/mock-samples#how-to-import-the-samples-in-mockoon-application). 
 
@@ -283,6 +283,6 @@ When calling the endpoint with `/content/products?total=2` we would receive the 
 
 For more complex cases, you could also create multiple responses for the same route, with different bodies, and trigger them by defining some rules. To learn more about using multiple responses combined with rules, you can have a look at the related [documentation](docs:route-responses/dynamic-rules).
 
-> **Remember, you can find all this tutorial's examples ready to import on our repository!** <a href="https://github.com/mockoon/mock-samples/blob/main/samples/generate-mock-data.json" className="button is-link is-small"><i className='icon-download is-primary'></i>&nbsp;Download</a>
+> Remember, you can find all this tutorial's examples ready to import on our repository! <a href="https://github.com/mockoon/mock-samples/blob/main/samples/generate-mock-data.json" className="btn btn-primary-desat-soft btn-xs"><i className='icon-download'></i>&nbsp;Download</a>
 > 
 > To import the file, please [follow the instructions](https://github.com/mockoon/mock-samples#how-to-import-the-samples-in-mockoon-application). 

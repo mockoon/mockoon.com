@@ -15,7 +15,7 @@ Mockoon got you covered with this ready to use JSON mock sample! By simply impor
 
 Our API mocking tool currently covers the following endpoints:
 
-> **Get the full mock ready to import in Mockoon!** <a href="https://github.com/mockoon/mock-samples/blob/main/samples/open-weather.json" className="button is-link is-small"><i className='icon-download is-primary'></i>&nbsp;Download</a>
+> Get the full mock ready to import in Mockoon! <a href="https://github.com/mockoon/mock-samples/blob/main/samples/open-weather.json" className="btn btn-primary-desat-soft btn-xs"><i className='icon-download'></i>&nbsp;Download</a>
 > 
 > To import the file, please [follow the instructions](https://github.com/mockoon/mock-samples#how-to-import-the-samples-in-mockoon-application). 
 

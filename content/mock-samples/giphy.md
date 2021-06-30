@@ -15,7 +15,7 @@ If you are planning to use Giphy's API and look for an easy way to mock its most
 
 Amongst the endpoints our API mocking tool currently covers you will find:
 
-> **Get the full mock ready to import in Mockoon!** <a href="https://github.com/mockoon/mock-samples/blob/main/samples/giphy.json" className="button is-link is-small"><i className='icon-download is-primary'></i>&nbsp;Download</a>
+> Get the full mock ready to import in Mockoon! <a href="https://github.com/mockoon/mock-samples/blob/main/samples/giphy.json" className="btn btn-primary-desat-soft btn-xs"><i className='icon-download'></i>&nbsp;Download</a>
 > 
 > To import the file, please [follow the instructions](https://github.com/mockoon/mock-samples#how-to-import-the-samples-in-mockoon-application). 
 

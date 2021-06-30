@@ -34,13 +34,14 @@ div.icon {
 pre code,
 code {
   color: $primary;
-  padding: 0.4rem;
+  background-color: lighten($primary, 40%);
+  padding: 0.2rem;
   display: inline-block;
-  background-color: #ebf0ff;
   border-radius: 5px;
 }
 pre code {
   background-color: transparent;
+  padding: 0;
 }
 footer {
   .copyright {
@@ -164,11 +165,17 @@ p.console {
     max-width: 50%;
   }
 }
+
 .quote {
+  border-left: 4px solid lighten($primary, 20%);
+  background-color: lighten($primary, 40%);
+}
+
+.quotation {
   position: relative;
   padding: 2rem;
   margin: 40px;
-  border-left: 4px solid lighten($primary, 30%);
+  border-left: 4px solid lighten($primary, 20%);
   font-size: 1.6rem;
   font-weight: 400;
   quotes: '“' '”';
@@ -177,13 +184,13 @@ p.console {
     display: flex;
     margin-top: 20px;
 
-    & .quote-picture {
+    & .quotation-picture {
       width: 48px;
       height: 48px;
       border-radius: 9999px;
     }
 
-    & .quote-author {
+    & .quotation-author {
       margin-left: 20px;
 
       div:nth-child(1) {
@@ -196,6 +203,28 @@ p.console {
         font-size: 1rem;
       }
     }
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    color: lighten($primary, 30%);
+    font-size: 3rem;
+  }
+
+  &:before {
+    content: open-quote;
+    top: 0;
+    margin-right: -2rem;
+    right: 100%;
+  }
+
+  &:after {
+    content: close-quote;
+    margin-left: -2rem;
+    left: 100%;
+    top: auto;
+    bottom: 0;
   }
 }
 // Buy me a coffee button styles

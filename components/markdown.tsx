@@ -2,8 +2,8 @@ import { Children, createElement, FunctionComponent } from 'react';
 import ReactMarkdownWithHtml from 'react-markdown/with-html';
 import gfm from 'remark-gfm';
 import { linkTarget, transformLinkUri } from '../utils/url';
-import Blockquote from './blockquote';
 import CodeHighlighter from './code-highlighter';
+import Quotation from './quotation';
 import Quote from './quote';
 
 const flatten = (text, child) => {
@@ -23,13 +23,17 @@ const Markdown: FunctionComponent<{
       plugins={[gfm]}
       renderers={{
         code: CodeHighlighter,
+        image: ({ alt, src }) => (
+          <img alt={alt} src={src} className='img-fluid' />
+        ),
+        table: ({ children }) => <table className='table'>{children}</table>,
         blockquote: (content) => {
           const value = content?.node?.children?.[0]?.children?.[0]?.value;
 
-          if (value && value.includes('##quote##')) {
-            return <Quote quote={JSON.parse(value)}></Quote>;
+          if (value && value.includes('##quotation##')) {
+            return <Quotation quotation={JSON.parse(value)}></Quotation>;
           } else {
-            return <Blockquote content={content.children}></Blockquote>;
+            return <Quote content={content.children}></Quote>;
           }
         },
         heading: (props) => {

@@ -16,7 +16,7 @@
 @import 'theme/variables';
 
 // Bootstrap core
-@import '~bootstrap/scss/bootstrap';
+@import 'custom-bootstrap';
 
 // Theme core
 @import 'theme/theme';
@@ -69,16 +69,6 @@ aside {
       color: $primary;
       option {
         color: $black;
-      }
-    }
-  }
-  li.list-group-item {
-    padding: 0.75rem 0.75rem;
-    cursor: pointer;
-    &.active {
-      span,
-      a {
-        color: $white;
       }
     }
   }

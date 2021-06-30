@@ -141,7 +141,7 @@ class Index extends React.Component {
             {hpFeatures.map((feature, featureIndex) => {
               return (
                 <div
-                  className='row py-3 py-lg-5 align-items-center justify-content-between'
+                  className='row py-5 py-lg-8 align-items-center justify-content-between'
                   key={`feature${featureIndex}`}
                 >
                   <div
@@ -168,24 +168,6 @@ class Index extends React.Component {
                         </a>
                       )}
                     </div>
-
-                    {feature.keypoints && (
-                      <div className='d-flex flex-wrap'>
-                        {feature.keypoints.map((keypoint, kpIndex) => {
-                          return (
-                            <div
-                              className='d-flex flex-grow-1'
-                              key={`feature${featureIndex}kp${kpIndex}`}
-                            >
-                              <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
-                                ✔
-                              </div>
-                              <p className='text-success'>{keypoint}</p>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    )}
                   </div>
                   <div
                     className={`col-12 col-lg-7 ${

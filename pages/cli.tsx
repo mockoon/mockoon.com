@@ -38,7 +38,7 @@ const Cli: FunctionComponent = function () {
         description='Mockoon CLI takes Mockoon where it has never been before: servers, CI environments, etc. Lightweight and fast.'
       />
       <Hero
-        title='Take Mockoon to the command line'
+        title="Take Mockoon to the <span class='text-primary'>command line</span>"
         subtitle='Mockoon CLI takes Mockoon where it has never been before. Lightweight and fast.'
         cta={[
           {
@@ -49,7 +49,7 @@ const Cli: FunctionComponent = function () {
         mainPicture='/images/cli-screenshot.png'
         mainPictureAlt='Mockoon CLI screenshot'
       />
-      <section className='pb-8'>
+      <section className='py-5 py-lg-10'>
         <div className='container'>
           <div className='row py-5'>
             <div className='text-center'>

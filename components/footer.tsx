@@ -10,10 +10,8 @@ const Footer: FunctionComponent = function () {
 
   const displayNewsletter = [
     '/',
-    '/features',
     '/blog/[slug]',
     '/blog',
-    '/faq',
     '/contact',
     '/sponsor-us',
     '/download'
@@ -21,15 +19,20 @@ const Footer: FunctionComponent = function () {
 
   const displayContact = [
     '/docs/[...slug]',
-
     '/tutorials',
     '/tutorials/[slug]',
     '/mock-samples',
-    '/mock-samples/[slug]',
-    '/about'
+    '/mock-samples/[slug]'
   ];
 
-  const displayDownload = ['/cli', '/case-studies', '/case-studies/[slug]'];
+  const displayDownload = [
+    '/features',
+    '/faq',
+    '/cli',
+    '/case-studies',
+    '/case-studies/[slug]',
+    '/about'
+  ];
 
   return (
     <footer className='py-3 bg-gray-200'>

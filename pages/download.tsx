@@ -27,7 +27,7 @@ const Download: FunctionComponent = function () {
             <div className='col-6'>
               <div className='alert alert-dark' role='alert'>
                 Learn how to use Mockoon in 5 minutes with our{' '}
-                <a href='/tutorials/getting-started' className='text-gray-500'>
+                <a href='/tutorials/getting-started/' className='text-gray-500'>
                   getting started tutorial
                 </a>
                 !

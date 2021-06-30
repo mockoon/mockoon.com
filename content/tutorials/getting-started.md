@@ -15,9 +15,9 @@ This tutorial will show you how to install the desktop mocking application and s
 
 ## Step 1. Install the application
 
-Mockoon is available on the three major operating systems: Windows, macOS, and Linux. Visit the [download section on the homepage](/#download) to download the binary or installer for your operating system:
+Mockoon is available on the three major operating systems: Windows, macOS, and Linux. Visit the [download section on the homepage](/download/) to download the binary or installer for your operating system:
 
-[![Screenshot of the download section on the homepage](/images/tutorials/getting-started/app-download-screenshot.png)](/#download)
+[![Screenshot of the download section on the homepage](/images/tutorials/getting-started/app-download-screenshot.png)](/download/)
 
 After downloading the installer, double click on the file to install Mockoon and follow the instructions. Now, open the application to start setting up your first mock API. 
 

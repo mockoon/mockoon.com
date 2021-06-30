@@ -1,6 +1,7 @@
 const version = require('./package.json').version;
+const withTM = require('next-transpile-modules')(['react-github-btn']);
 
-module.exports = {
+module.exports = withTM({
   generateBuildId: async () => {
     return `v${version}`;
   },
@@ -19,4 +20,4 @@ module.exports = {
   future: {
     webpack5: true
   }
-};
+});

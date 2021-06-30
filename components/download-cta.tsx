@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { FunctionComponent } from 'react';
 
-const Download: FunctionComponent = function () {
+const DownloadCTA: FunctionComponent = function () {
   return (
     <section>
       <div className='container pb-5 border-bottom'>
@@ -16,8 +16,8 @@ const Download: FunctionComponent = function () {
           </div>
 
           <div className='col-12 col-lg-3'>
-            <Link href='/#download'>
-              <button className='col-12 btn btn-primary'>
+            <Link href='/download/'>
+              <button className='col-12 btn btn-primary-soft'>
                 <span>Download</span>
               </button>
             </Link>
@@ -28,4 +28,4 @@ const Download: FunctionComponent = function () {
   );
 };
 
-export default Download;
+export default DownloadCTA;

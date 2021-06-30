@@ -53,10 +53,10 @@ const Cli: FunctionComponent = function () {
         <div className='container'>
           <div className='row py-5'>
             <div className='text-center'>
-              <h3>
+              <h2>
                 Mockoon's perfect complement for all your headless and automated
                 environments.
-              </h3>
+              </h2>
             </div>
             <SimpleCards items={features} />
           </div>

@@ -2,11 +2,12 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent } from 'react';
 import ContactBanner from './contact-banner';
-import Download from './download';
+import DownloadCTA from './download-cta';
 import Newsletter from './newsletter';
 
 const Footer: FunctionComponent = function () {
   const router = useRouter();
+
   const displayNewsletter = [
     '/',
     '/features',
@@ -14,25 +15,29 @@ const Footer: FunctionComponent = function () {
     '/blog',
     '/faq',
     '/contact',
-    '/sponsor-us'
+    '/sponsor-us',
+    '/download'
   ];
+
   const displayContact = [
     '/docs/[...slug]',
-    '/cli',
+
     '/tutorials',
     '/tutorials/[slug]',
     '/mock-samples',
     '/mock-samples/[slug]',
     '/about'
   ];
-  const displayDownload = ['/case-studies', '/case-studies/[slug]'];
+
+  const displayDownload = ['/cli', '/case-studies', '/case-studies/[slug]'];
+
   return (
     <footer className='py-3 bg-gray-200'>
       <div className='container'>
         <div className='row mb-6'>
           {displayNewsletter.includes(router.pathname) && <Newsletter />}
           {displayContact.includes(router.pathname) && <ContactBanner />}
-          {displayDownload.includes(router.pathname) && <Download />}
+          {displayDownload.includes(router.pathname) && <DownloadCTA />}
         </div>
         <div className='row'>
           <div className='col-12 col-lg-2 d-flex flex-column align-items-start'>

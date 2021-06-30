@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Fragment, FunctionComponent } from 'react';
 import { ArticleList } from '../models/common.model';
+
 const Cards: FunctionComponent<{
   path: string;
   articles: ArticleList;
@@ -37,7 +38,10 @@ const Cards: FunctionComponent<{
             sizing = !article.data.image ? 'col-lg-4' : sizing;
             textSizing = !article.data.image ? 'col-12' : textSizing;
             return (
-              <div key={article.slug} className={`col-12 my-lg-3 ${sizing}`}>
+              <div
+                key={article.slug}
+                className={`col-12 mx-auto my-lg-3 ${sizing}`}
+              >
                 <Link href={`/${props.path}/${article.slug}/`}>
                   <div
                     className={`${

@@ -1,16 +1,16 @@
 import { FunctionComponent } from 'react';
+import GitHubButton from 'react-github-btn';
 
 const GitHub: FunctionComponent = function () {
   return (
-    <a
-      className='github-button'
+    <GitHubButton
       href='https://github.com/mockoon/mockoon'
       data-size='large'
       data-show-count='true'
       aria-label='Star Mockoon on GitHub'
     >
       Star
-    </a>
+    </GitHubButton>
   );
 };
 

@@ -10,7 +10,7 @@ const Hero: FunctionComponent<{
   return (
     <section
       className={`position-relative ${
-        props.mainPicture ? 'py-lg-11 py-5 mb-4' : 'pt-8 pb-4'
+        props.mainPicture ? 'py-lg-10 py-5 mb-4' : 'pt-8 pb-4'
       }`}
     >
       <div className='container'>
@@ -55,14 +55,12 @@ const Hero: FunctionComponent<{
                     <a href={cta.link} key={index} className='me-2'>
                       <button
                         className={`btn btn-primary${
-                          index > 0 /*|| cta.link !== '/#download'*/
-                            ? '-soft'
-                            : ''
+                          index > 0 ? '-soft' : ''
                         } lift`}
                       >
                         <span>
                           {cta.text}{' '}
-                          {cta.link === '/#download' && (
+                          {cta.link === '/download/' && (
                             <i className='icon-download'></i>
                           )}
                         </span>

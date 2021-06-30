@@ -32,7 +32,7 @@ const Newsletter: FunctionComponent = function () {
                   />
                 </div>
                 <div className='col-12 col-lg-5 pt-lg-0 pt-4'>
-                  <button className='btn btn-primary col-12' type='submit'>
+                  <button className='btn btn-primary-soft col-12' type='submit'>
                     Subscribe
                   </button>
                 </div>

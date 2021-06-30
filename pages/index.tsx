@@ -1,8 +1,12 @@
 import React from 'react';
+import Typed from 'react-typed';
 import Cards from '../components/cards';
+import DownloadSection from '../components/download-section';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Testimonial from '../components/testimonial';
+import { hpFeatures } from '../data/hp-features';
+import { testimonials } from '../data/testimonials';
 import Layout from '../layout/layout';
 import { ArticleData } from '../models/common.model';
 const version = require('../package.json').version;
@@ -25,22 +29,22 @@ class Index extends React.Component {
           cta={[
             {
               text: 'Download',
-              link: '/#download'
+              link: '/download/'
             },
             {
               text: 'Documentation',
               link: '/docs/latest/about/'
             }
           ]}
-          mainPicture='/images/screenshot.png'
-          mainPictureAlt='Mockoon screenshot'
+          mainPicture='/images/hp-hero.png'
+          mainPictureAlt='Mockoon screenshot with people working'
         />
 
-        <section className='bg-gray-200 py-8 py-lg-11' id='download'>
+        <section className='bg-gray-200 py-5 py-lg-10' id='download'>
           <div className='container'>
             <div className='row'>
               <div className='justify-content-center col-12 text-center'>
-                <h2 className='mb-1'>
+                <h2 className='mb-4'>
                   Download Mockoon{' '}
                   <a
                     href={
@@ -49,401 +53,255 @@ class Index extends React.Component {
                     }
                     rel='noopener'
                     target='_blank'
-                  >
-                    <span className='badge bg-secondary-soft'>v{version}</span>
-                  </a>
+                  ></a>
                 </h2>
-
-                <p className='fs-lg text-muted mb-7 mb-lg-9'>
-                  Mockoon is released under the MIT license.
-                </p>
-              </div>
-              <div className='col-12 col-lg-4 text-center py-2'>
-                <div className='icon mb-3'>
-                  <i className='icon-windows'></i>
-                </div>
-
-                <div className='text-muted mb-6 mb-lg-0'>
-                  <div className='btn-group'>
-                    <a
-                      className='btn btn-primary-soft btn-sm d-flex align-items-center'
-                      href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.exe`}
-                      rel='noopener'
-                      onClick={() =>
-                        ga(
-                          'send',
-                          'event',
-                          'application',
-                          'download',
-                          'windows'
-                        )
-                      }
-                    >
-                      {' '}
-                      <span className='icon me-2'>
-                        <i className='icon-download'></i>
-                      </span>
-                      <span>exe installer</span>
-                    </a>
-                  </div>
-                  <div className='content p-3'>
-                    or <code>choco install mockoon</code>
-                  </div>
-                </div>
-              </div>
-
-              <div className='col-12 col-lg-4 text-center py-2'>
-                <div className='icon mb-3'>
-                  <i className='icon-linux'></i>
-                </div>
-
-                <div className='text-muted mb-6 mb-lg-0'>
-                  <div className='btn-group'>
-                    <a
-                      className='btn btn-primary-soft btn-sm d-flex align-items-center'
-                      href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.deb`}
-                      rel='noopener'
-                      onClick={() =>
-                        ga('send', 'event', 'application', 'download', 'linux')
-                      }
-                    >
-                      {' '}
-                      <span className='icon me-2'>
-                        <i className='icon-download'></i>
-                      </span>
-                      <span>deb</span>
-                    </a>
-
-                    <a
-                      className='btn btn-primary-soft btn-sm d-flex align-items-center'
-                      href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.rpm`}
-                      rel='noopener'
-                      onClick={() =>
-                        ga('send', 'event', 'application', 'download', 'linux')
-                      }
-                    >
-                      {' '}
-                      <span className='icon me-2'>
-                        <i className='icon-download'></i>
-                      </span>
-                      <span>rpm</span>
-                    </a>
-
-                    <a
-                      className='btn btn-primary-soft btn-sm d-flex align-items-center'
-                      href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.AppImage`}
-                      rel='noopener'
-                      onClick={() =>
-                        ga('send', 'event', 'application', 'download', 'linux')
-                      }
-                    >
-                      {' '}
-                      <span className='icon me-2'>
-                        <i className='icon-download'></i>
-                      </span>
-                      <span>AppImage</span>
-                    </a>
-                  </div>
-                  <div className='content p-3'>
-                    or <code>sudo snap install mockoon</code>
-                    <br />
-                    <code className='mt-1'>yay -S mockoon-bin</code>
-                  </div>
-                </div>
-              </div>
-              <div className='col-12 col-lg-4 text-center py-2'>
-                <div className='icon mb-3'>
-                  <i className='icon-apple'></i>
-                </div>
-
-                <div className='text-muted mb-6 mb-lg-0'>
-                  <div className='btn-group'>
-                    <a
-                      className='btn btn-primary-soft btn-sm d-flex align-items-center'
-                      href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.dmg`}
-                      rel='noopener'
-                      onClick={() =>
-                        ga('send', 'event', 'application', 'download', 'osx')
-                      }
-                    >
-                      {' '}
-                      <span className='icon me-2'>
-                        <i className='icon-download'></i>
-                      </span>
-                      <span>dmg</span>
-                    </a>
-                  </div>
-                  <div className='content p-3'>
-                    or <code>brew install --cask mockoon</code>
-                  </div>
-                </div>
               </div>
             </div>
-            <div className='row mt-5'>
-              <div className='text-center'>
-                <p className='has-text-centered pt-4'>
-                  <a
-                    className='btn btn-secondary-soft'
-                    href='/cli/'
-                    style={{
-                      fontFamily:
-                        'Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace'
-                    }}
-                  >
-                    ~$ Looking for the CLI?
-                  </a>
-                </p>
+
+            <DownloadSection />
+          </div>
+        </section>
+
+        <section className='py-5 py-lg-10'>
+          <div className='container'>
+            <div className='row'>
+              <div className='col-12 col-md-4'>
+                <div className='row'>
+                  <div className='col-10 col-lg-8 text-primary mb-3'>
+                    <img
+                      src='/images/highlight1.png'
+                      className='img-fluid p-4'
+                      alt=''
+                    />
+                  </div>
+                </div>
+                <div className='row'>
+                  <div className='col-12'>
+                    <h3>API mocking that saves you time</h3>
+
+                    <p className='text-muted mb-6 mb-md-0'>
+                      Get working mock REST APIs in seconds with the intuitive
+                      and easy to use interface.
+                      <br />
+                      Run them everywhere with the CLI.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className='col-12 col-md-4'>
+                <div className='row'>
+                  <div className='col-10 col-lg-8 text-primary mb-3'>
+                    <img
+                      src='/images/highlight2.png'
+                      className='img-fluid p-4'
+                      alt=''
+                    />
+                  </div>
+                </div>
+                <div className='row'>
+                  <div className='col-12'>
+                    <h3>Integrates in your workflow</h3>
+
+                    <p className='text-muted mb-6 mb-md-0'>
+                      Compatible with the OpenAPI specification, Mockoon
+                      integrates perfectly with your existing applications and
+                      API design workflow.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className='col-12 col-md-4'>
+                <div className='row'>
+                  <div className='col-10 col-lg-8 text-primary mb-3'>
+                    <img
+                      src='/images/highlight3.png'
+                      className='img-fluid p-4'
+                      alt=''
+                    />
+                  </div>
+                </div>
+                <div className='row'>
+                  <div className='col-12'>
+                    <h3>Complete tooling</h3>
+
+                    <p className='text-muted mb-0'>
+                      Go beyond mocking with advanced features and tackle the
+                      most complex situation with HTTP requests recording,
+                      proxying, integration testing, etc.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id='features' className='py-8 py-lg-11'>
+        <section id='features' className='py-5 py-lg-10'>
           <div className='container text-lg-start text-center'>
-            <div className='row'>
-              <div className='justify-content-center'>
-                <div className='col-12 text-center'>
-                  <h2 className='mb-1'>Bring API mocking to the next level</h2>
-                </div>
-              </div>
-            </div>
+            {hpFeatures.map((feature, featureIndex) => {
+              return (
+                <div
+                  className='row py-3 py-lg-5 align-items-center justify-content-between'
+                  key={`feature${featureIndex}`}
+                >
+                  <div
+                    className={`col-12 col-lg-5 ${
+                      featureIndex % 2 === 0 ? 'order-lg-2' : 'order-lg-1'
+                    }`}
+                  >
+                    <span className='badge rounded-pill bg-secondary-soft mb-3'>
+                      <span className='h6 text-uppercase'>{feature.label}</span>
+                    </span>
 
-            <div className='row py-3 pt-8 my-lg-5 py-lg-5 align-items-center justify-content-between'>
-              <div className='col-12 col-lg-6 order-lg-2'>
-                <span className='badge rounded-pill bg-primary-soft mb-3'>
-                  <span className='h6 text-uppercase'>Create</span>
-                </span>
+                    <h3 className='h2'>{feature.title}</h3>
 
-                <h2>Fast mock APIs that runs everywhere</h2>
+                    <p className='fs-lg text-gray-700 mb-8 mb-lg-0'>
+                      {feature.description}
+                    </p>
+                    <div>
+                      {feature.cta && (
+                        <a
+                          className='btn btn-secondary-soft btn-xs mt-2'
+                          href={feature.ctaLink}
+                        >
+                          {feature.cta}&nbsp;→
+                        </a>
+                      )}
+                    </div>
 
-                <p className='fs-lg text-gray-700 mb-8 mb-lg-0'>
-                  Create an unlimited number of mock APIs and run them in
-                  parallel locally or on a server with the CLI.
-                </p>
-              </div>
-              <div className='col-12 col-lg-6 order-lg-1' data-aos='fade-up'>
-                <div className='mb-6 mb-lg-0'>
-                  <div className='col-lg-12'>
-                    <img
-                      src='/images/feature1.png'
-                      alt='Mockoon routes list view'
-                      className='screenshot img-fluid'
-                    />
+                    {feature.keypoints && (
+                      <div className='d-flex flex-wrap'>
+                        {feature.keypoints.map((keypoint, kpIndex) => {
+                          return (
+                            <div
+                              className='d-flex flex-grow-1'
+                              key={`feature${featureIndex}kp${kpIndex}`}
+                            >
+                              <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                                ✔
+                              </div>
+                              <p className='text-success'>{keypoint}</p>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                  <div
+                    className={`col-12 col-lg-7 ${
+                      featureIndex % 2 === 0 ? 'order-lg-1' : 'order-lg-2'
+                    }`}
+                  >
+                    <div
+                      className={`mb-6 mb-lg-0 ${
+                        featureIndex % 2 === 0 ? 'text-start' : 'text-end'
+                      }`}
+                    >
+                      <img
+                        src={feature.imgSrc}
+                        alt={feature.imgAlt}
+                        className='img-fluid'
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div className='row my-2 py-3 my-lg-5 py-lg-5 align-items-center justify-content-between'>
-              <div className='col-12 col-lg-6 order-lg-1'>
-                <span className='badge rounded-pill bg-primary-soft mb-3'>
-                  <span className='h6 text-uppercase'>Customize</span>
-                </span>
-
-                <h2>Complete control</h2>
-
-                <p className='fs-lg text-gray-700 mb-8 mb-lg-0'>
-                  Customize routes: HTTP methods, regex paths, HTTP status, file
-                  serving, custom headers...
-                </p>
-              </div>
-              <div className='col-12 col-lg-6 order-lg-2' data-aos='fade-up'>
-                <div className='mb-6 mb-lg-0'>
-                  <div className='col-lg-12'>
-                    <img
-                      src='/images/feature2.png'
-                      alt='Routes configuration'
-                      className='screenshot img-fluid'
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className='row py-3 my-lg-5 py-lg-5 align-items-center justify-content-between'>
-              <div className='col-12 col-lg-6 order-lg-2'>
-                <span className='badge rounded-pill bg-primary-soft mb-3'>
-                  <span className='h6 text-uppercase'>More</span>
-                </span>
-
-                <h2>... and more</h2>
-
-                <p className='fs-lg text-gray-700 mb-8 mb-lg-0'>
-                  Import / export, OpenAPI compatibility, JSON templating, auto
-                  save, proxy mode, HTTPS, CORS support...
-                </p>
-              </div>
-              <div className='col-12 col-lg-6 order-lg-1' data-aos='fade-up'>
-                <div className='mb-6 mb-lg-0'>
-                  <div className='col-lg-12'>
-                    <img
-                      src='/images/feature3.png'
-                      alt='Routes JSON body'
-                      className='screenshot img-fluid'
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className='row mt-5'>
-              <div className='text-center'>
-                <p className='has-text-centered pt-4'>
-                  <a className='btn btn-primary-soft' href='/features/'>
-                    Complete list of features
-                  </a>
-                </p>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </section>
 
-        <section id='testimonials' className='bg-gray-200 py-8 py-lg-11'>
+        <section id='testimonials' className='bg-gray-200 py-5 py-lg-10'>
           <div className='container'>
             <div className='row'>
               <div className='justify-content-center'>
                 <div className='col-12 text-center'>
-                  <h2 className='mb-1'>What developers say</h2>
+                  <h2>
+                    Trusted by thousands of
+                    <br />
+                    <Typed
+                      strings={[
+                        'developers',
+                        'testers',
+                        'product managers',
+                        'UX researchers',
+                        'API designers',
+                        'technical writers'
+                      ]}
+                      typeSpeed={50}
+                      backSpeed={50}
+                      backDelay={700}
+                      loop={true}
+                      className={'text-primary'}
+                    />
+                  </h2>
                 </div>
               </div>
             </div>
-            <div className='row mt-5' data-isotope='{"layoutMode": "masonry"}'>
-              <div className='col-12 col-lg-4 text-center'>
+            <div className='row mt-5 justify-content-center'>
+              <div
+                className='col-md-6 col-lg-4 col-xl-4 d-flex text-center'
+                key='testimonial0'
+              >
                 <Testimonial
-                  link='https://twitter.com/KechaAlex/status/1283134297067618306'
-                  imgSrc='/images/testimonials/_9NFn5MH_400x400.jpg'
-                  name='Alexandros'
-                  username='@KechaAlex'
+                  link={testimonials[0].link}
+                  imgSrc={testimonials[0].imgSrc}
+                  name={testimonials[0].name}
                 >
-                  I can wholeheartedly recommend{' '}
-                  <span className='text-info'>@GetMockoon</span> if you're
-                  looking for an easy way to{' '}
-                  <span className='text-info'>#mock</span> Http-Endpoints
-                  locally.
-                  <br />
-                  This tool just works, it's super intuitive. Love it.❤️
-                </Testimonial>
-                <Testimonial
-                  link='https://twitter.com/chumaumenze/status/1276429472057765888'
-                  imgSrc='/images/testimonials/OfPPfWh9_400x400.jpg'
-                  name='Chuma Umenze'
-                  username='@chumaumenze'
-                >
-                  Mockoon is the best! It's the easiest and quickest way to mock
-                  APIs locally.
-                </Testimonial>
-                <Testimonial
-                  link='https://twitter.com/ubuntu/status/1321763987361509376'
-                  imgSrc='/images/testimonials/cof_orange_hex_bigger.jpg'
-                  name='Ubuntu'
-                  username='@ubuntu'
-                >
-                  Developers! Mockoon is the easiest and quickest way to run
-                  mock APIs locally. No remote deployment, no account required,
-                  open source.
-                  <br />
-                  snap install mockoon
+                  {testimonials[0].text}
                 </Testimonial>
               </div>
-
-              <div className='col-12 col-lg-4 text-center'>
-                <Testimonial
-                  link='https://twitter.com/rubeshgain/status/1243557172988051456'
-                  imgSrc='/images/testimonials/F3baAGfY_400x400.jpg'
-                  name='Rubesh Gain'
-                  username='@rubeshgain'
-                >
-                  OMG its a life saving tool for FrontEnd and FullStack
-                  developer. Mockoon is the easiest and quickest way to run mock
-                  APIs locally. No remote deployment, no account required, open
-                  source.
-                </Testimonial>
-                <Testimonial
-                  link='https://twitter.com/nQaze/status/1239577212883554310'
-                  imgSrc='/images/testimonials/NFa3Y9Uk_400x400.jpg'
-                  name='Nabil Kazi'
-                  username='@nQaze'
-                >
-                  Forgot to mention an important part of this article. I am
-                  leveraging <span className='text-info'>@GetMockoon</span> to
-                  implement the APIs! <br />
-                  All credit to <span className='text-info'>@255kb</span> who
-                  developed this wonderful tool.
-                </Testimonial>
-                <Testimonial
-                  link='https://twitter.com/Axel_V_py/status/1214821739613560832'
-                  imgSrc='/images/testimonials/fCg5Iqt5_400x400.jpg'
-                  name='Axel'
-                  username='@Axel_V_py'
-                >
-                  <span className='text-info'>@255kb</span> Thanks for Mockoon!
-                  such a handy tool!
-                </Testimonial>
-              </div>
-
-              <div className='col-12 col-lg-4 text-center'>
-                <Testimonial
-                  link='https://twitter.com/nicola_orritos/status/1227168377275371520'
-                  imgSrc='/images/testimonials/photo_small_400x400.jpg'
-                  name='Nicola Orritos'
-                  username='@nicola_orritos'
-                >
-                  Did I already say that Mockoon is awesome? Mockoon is the
-                  easiest and quickest way I found to run mock APIs locally.{' '}
-                  <span className='text-info'>#RestAPI</span>{' '}
-                  <span className='text-info'>#Prototyping</span>{' '}
-                  <span className='text-info'>#DeveloperTools</span>{' '}
-                  <span className='text-info'>#OpenSource</span>
-                  <br />
-                  P.S. It&#39;s made with{' '}
-                  <span className='text-info'>#Electron</span> and this is a
-                  huge bonus in my eyes.
-                </Testimonial>
-
-                <Testimonial
-                  link='https://twitter.com/deciomontanhani/status/1211713659824754689'
-                  imgSrc='/images/testimonials/mAoZtKto_400x400.jpg'
-                  name='Sr. Décio Montanhani'
-                  username='@deciomontanhani'
-                >
-                  If you're a mobile/frontend developer and you're suffering
-                  with DEV environment, start mocking your APIs with{' '}
-                  <span className='text-info'>@GetMockoon</span> . It's amazing!
-                  Thanks, <span className='text-info'>@255kb</span> for creating
-                  this! I'm using every time that I develop new iOS projects!
-                </Testimonial>
-              </div>
+            </div>
+            <div className='row mt-5 justify-content-center'>
+              {testimonials.map((testimonial, testimonialIndex) => {
+                return (
+                  testimonialIndex > 0 && (
+                    <div
+                      className='col-md-6 col-lg-4 col-xl-3 d-flex text-center'
+                      key={`testimonial${testimonialIndex}`}
+                    >
+                      <Testimonial
+                        link={testimonial.link}
+                        imgSrc={testimonial.imgSrc}
+                        name={testimonial.name}
+                        small
+                      >
+                        {testimonial.text}
+                      </Testimonial>
+                    </div>
+                  )
+                );
+              })}
             </div>
           </div>
         </section>
 
-        <section id='case-studies' className='py-8 pb-8 py-lg-11'>
+        <section id='case-studies' className='py-5 py-lg-10'>
           <div className='container'>
-            <div className='row'>
-              <div className='justify-content-center'>
-                <div className='col-12 text-center'>
-                  <h2 className='mb-1'>Case studies</h2>
-                </div>
+            <div className='row justify-content-center'>
+              <div className='col-12 text-center'>
+                <h2 className='mb-1'>Case studies</h2>
               </div>
 
-              <Cards
-                path='case-studies'
-                articles={[
-                  {
-                    slug: 'impala-api-ux-user-research',
-                    data: {
-                      title: 'API UX research with Mockoon',
-                      image: 'impala-logo-black.svg',
-                      imageAlt: 'Impala logo',
-                      header: {},
-                      excerpt:
-                        'Learn how Impala uses Mockoon to conduct API user research'
-                    } as ArticleData
-                  }
-                ]}
-                large
-                cover={false}
-              />
+              <div className='col-12 text-center'>
+                <Cards
+                  path='case-studies'
+                  articles={[
+                    {
+                      slug: 'impala-api-ux-user-research',
+                      data: {
+                        title: 'API UX research with Mockoon',
+                        image: 'impala-logo-black.svg',
+                        imageAlt: 'Impala logo',
+                        header: {},
+                        excerpt:
+                          'Learn how Impala uses Mockoon to conduct API user research'
+                      } as ArticleData
+                    }
+                  ]}
+                  small
+                  cover={false}
+                />
+              </div>
             </div>
           </div>
         </section>

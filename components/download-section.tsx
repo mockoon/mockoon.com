@@ -1,5 +1,6 @@
 import { Fragment, FunctionComponent } from 'react';
 const version = require('../package.json').version;
+declare let ga: Function;
 
 const DownloadSection: FunctionComponent = function () {
   return (

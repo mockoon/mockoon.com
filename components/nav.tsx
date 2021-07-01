@@ -1,74 +1,154 @@
-import { Component } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { FunctionComponent, useState } from 'react';
 
-class Nav extends Component<any, { menuOpened: boolean }> {
-  constructor(props) {
-    super(props);
+const Nav: FunctionComponent = function () {
+  const router = useRouter();
+  const [show, setShow] = useState(false);
 
-    this.state = { menuOpened: false };
-  }
+  const toggler = (
+    <button
+      className='navbar-toggler'
+      type='button'
+      aria-controls='navbar'
+      aria-expanded='false'
+      aria-label='Toggle navigation'
+      onClick={() => setShow(!show)}
+    >
+      <span className='navbar-toggler-icon'></span>
+    </button>
+  );
 
-  toggleMenu() {
-    this.setState({ menuOpened: !this.state.menuOpened });
-  }
-  render() {
-    return (
-      <header className='navbar'>
-        <div className='container'>
-          <div className='navbar-brand'>
-            <a href='/'>
-              <img
-                src='/images/logo.svg'
-                className='logo'
-                alt='Logo'
-                width='150'
-              />
-            </a>
+  return (
+    <nav className='navbar navbar-expand-lg navbar-light bg-white'>
+      <div className='container-fluid'>
+        <Link href='/'>
+          <a className='navbar-brand'>
+            <img
+              src='/images/logo.svg'
+              className='navbar-brand-img'
+              alt='Logo'
+            />
+          </a>
+        </Link>
 
-            <a
-              role='button'
-              className={`navbar-burger ${
-                this.state.menuOpened ? 'is-active' : ''
-              }`}
-              aria-label='menu'
-              aria-expanded='false'
-              onClick={this.toggleMenu.bind(this)}
-            >
-              <span aria-hidden='true'></span>
-              <span aria-hidden='true'></span>
-              <span aria-hidden='true'></span>
-            </a>
-          </div>
-          <div
-            className={`navbar-menu navbar-end ${
-              this.state.menuOpened ? 'is-active' : ''
-            }`}
-          >
-            <a className='navbar-item' href='/features/'>
-              Features
-            </a>
-            <a className='navbar-item' href='/docs/latest/about/'>
-              Docs
-            </a>
-            <a className='navbar-item' href='/cli/'>
-              <span className='tag is-link is-light'>New!</span>&nbsp;CLI
-            </a>
-            <a className='navbar-item' href='/tutorials/'>
-              Tutorials
-            </a>
-            <a className='navbar-item' href='/blog/'>
-              Blog
-            </a>
-            <a className='navbar-item' href='/faq/'>
-              FAQ
-            </a>
-            <a className='navbar-item' href='/sponsor-us/'>
-              Sponsor us
-            </a>
-          </div>
+        {toggler}
+        <div
+          className={
+            show ? 'collapse navbar-collapse show' : 'collapse navbar-collapse'
+          }
+        >
+          <ul className='navbar-nav align-items-center ms-auto'>
+            {show && toggler}
+            {show && (
+              <li className='nav-item'>
+                <Link href='/'>
+                  <a
+                    className={`nav-link ${
+                      router.pathname === '/' ? 'active' : ''
+                    }`}
+                  >
+                    Home
+                  </a>
+                </Link>
+              </li>
+            )}
+            <li className='nav-item'>
+              <Link href='/cli/'>
+                <a
+                  className={`nav-link d-flex align-items-center ${
+                    router.pathname === '/cli' ? 'active' : ''
+                  }`}
+                >
+                  CLI
+                </a>
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link href='/features/'>
+                <a
+                  className={`nav-link ${
+                    router.pathname === '/features' ? 'active' : ''
+                  }`}
+                >
+                  Features
+                </a>
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link href='/faq/'>
+                <a
+                  className={`nav-link ${
+                    router.pathname === '/faq' ? 'active' : ''
+                  }`}
+                >
+                  FAQ
+                </a>
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link href='/docs/latest/about/'>
+                <a
+                  className={`nav-link ${
+                    router.pathname === '/docs/[...slug]' ? 'active' : ''
+                  }`}
+                >
+                  Docs
+                </a>
+              </Link>
+            </li>
+
+            <li className='nav-item'>
+              <Link href='/tutorials/'>
+                <a
+                  className={`nav-link ${
+                    router.pathname === '/tutorials' ||
+                    router.pathname === '/tutorials/[slug]'
+                      ? 'active'
+                      : ''
+                  }`}
+                >
+                  Tutorials
+                </a>
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link href='/blog/'>
+                <a
+                  className={`nav-link ${
+                    router.pathname === '/blog' ||
+                    router.pathname === '/blog/[slug]'
+                      ? 'active'
+                      : ''
+                  }`}
+                >
+                  Blog
+                </a>
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link href='/sponsor-us/'>
+                <a
+                  className={`nav-link ${
+                    router.pathname === '/sponsor-us' ? 'active' : ''
+                  }`}
+                >
+                  Sponsor us
+                </a>
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link href='/download/'>
+                <button className='btn btn-primary btn-xs'>
+                  Download <i className='icon-download'></i>
+                </button>
+              </Link>
+            </li>
+          </ul>
         </div>
-      </header>
-    );
-  }
-}
+      </div>
+    </nav>
+  );
+};
 
 export default Nav;

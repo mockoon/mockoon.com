@@ -2,15 +2,10 @@ import matter from 'gray-matter';
 import Head from 'next/head';
 import React from 'react';
 import Article from '../../components/article';
-import Download from '../../components/download';
-import Hero from '../../components/hero';
 import Meta from '../../components/meta';
-import Newsletter from '../../components/newsletter';
-import Share from '../../components/share';
 import Layout from '../../layout/layout';
 import { ArticleData } from '../../models/common.model';
 import { buildSlugStaticPaths } from '../../utils/static-builders';
-
 export async function getStaticProps({ params }) {
   const fileContent = await require(`../../content/blog/${params.slug}.md`);
   const parsedContent = matter(fileContent.default);
@@ -58,49 +53,19 @@ export default function BlogArticle(props: {
         url={`/${props.slug}`}
       />
 
-      <Hero />
-      <div className='section'>
-        <div className='container'>
-          <div className='columns'>
-            <div className='column is-3'>
-              <div className='content'>
-                <Download />
-              </div>
-            </div>
-            <div className='column is-9'>
-              <Article
-                slug={props.slug}
-                path='blog'
-                articleBody={props.articleBody}
-                articleData={props.articleData}
-              />
-            </div>
-          </div>
+      <Article
+        slug={props.slug}
+        path='blog'
+        articleBody={props.articleBody}
+        articleData={props.articleData}
+      />
+      <section>
+        <div className='container text-center pt-3 pb-8'>
+          <a className='btn btn-secondary-soft' href='/blog/'>
+            ⬅ Back to the blog posts
+          </a>
         </div>
-        <div className='container'>
-          <div className='columns'>
-            <div className='column is-9 is-offset-3'>
-              <div className='content'>
-                <Share
-                  title='Find this post interesting? Share it!'
-                  url={`https://mockoon.com/${props.slug}/`}
-                  text={props.articleData.meta.description}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='container'>
-          <div className='columns'>
-            <div className='column'>
-              <div className='content'>
-                <a href='/blog/'>⬅ Back to the blog posts</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Newsletter />
+      </section>
     </Layout>
   );
 }

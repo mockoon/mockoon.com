@@ -1,7 +1,5 @@
 import { FunctionComponent } from 'react';
 import Cards from '../../components/cards';
-import ContactBanner from '../../components/contact-banner';
-import Download from '../../components/download';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
@@ -32,14 +30,12 @@ const Tutorials: FunctionComponent<{
     <Layout>
       <Meta title={meta.title} description={meta.description} />
       <Hero title={meta.title} subtitle={meta.description} />
-      <Download />
 
-      <div className='section'>
+      <section className='pb-8'>
         <div className='container'>
-          <Cards path='tutorials' articles={props.articles} />
+          <Cards path='tutorials' articles={props.articles} large />
         </div>
-      </div>
-      <ContactBanner />
+      </section>
     </Layout>
   );
 };

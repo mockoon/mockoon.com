@@ -1,16 +1,12 @@
 ---
-title: Getting started with Mockoon
-excerpt: Learn how to create your first mock API with Mockoon
+title: Create your first mock API with Mockoon
+excerpt: Learn how to create your first mock REST API with Mockoon
 meta:
-  title: Getting started with Mockoon
+  title: Create your first mock API with Mockoon
   description: Learn how to create your first local mock API server with Mockoon with custom JSON body
 image: tutorial-getting-started.png
 imageAlt: Mockoon logo in a rocket
 order: 10
----
-
-# Create your first mock API with Mockoon
-
 ---
 
 Mockoon is a free cross-platform desktop application that takes API mocking to the next level. Mockoon offers a fast and easy-to-use interface and gives you complete control over your mock APIs with advanced functionality like [a templating system](docs:templating/overview), [a proxy mode](docs:proxy-mode), and [requests recording](docs:requests-logging).
@@ -19,9 +15,9 @@ This tutorial will show you how to install the desktop mocking application and s
 
 ## Step 1. Install the application
 
-Mockoon is available on the three major operating systems: Windows, macOS, and Linux. Visit the [download section on the homepage](/#download) to download the binary or installer for your operating system:
+Mockoon is available on the three major operating systems: Windows, macOS, and Linux. Visit the [download section on the homepage](/download/) to download the binary or installer for your operating system:
 
-[![Screenshot of the download section on the homepage](/images/tutorials/getting-started/app-download-screenshot.png)](/#download)
+[![Screenshot of the download section on the homepage](/images/tutorials/getting-started/app-download-screenshot.png)](/download/)
 
 After downloading the installer, double click on the file to install Mockoon and follow the instructions. Now, open the application to start setting up your first mock API. 
 

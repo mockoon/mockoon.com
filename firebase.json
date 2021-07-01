@@ -11,11 +11,6 @@
     ],
     "redirects": [
       {
-        "source": "/download",
-        "destination": "/#download",
-        "type": 301
-      },
-      {
         "source": "/docs",
         "destination": "/docs/latest/about/",
         "type": 301

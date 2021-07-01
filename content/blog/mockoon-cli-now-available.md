@@ -9,12 +9,6 @@ meta:
   description: "Take your mock APIs in all your headless and automated environments with the new CLI: servers, CI, GitHub Action, WSL, etc."
 ---
 
-# Mockoon CLI is now available 🥳
-
-###### Published on 2020-12-17
-
-___ 
-
 After months of work, Mockoon CLI is [available in beta](https://github.com/mockoon/cli) 🚀. You can now deploy your mock APIs in all your headless and automated environments. A server, your favorite CI environment, in a GitHub Action, in the Windows Subsystem Linux, you name it! 
 
 Like the main application, the CLI is free and open-source. It supports most of Mockoon features, and we tried to make it as fast as possible. 
@@ -25,11 +19,11 @@ You are one command away to using it. Check the [installation instructions](http
 
 The CLI takes a [Mockoon data export file](docs:import-export-data) and runs the specified environment. You can either provide the data as a local file or a URL where you host it. 
 
-![Mockoon CLI start command output](/images/blog/cli-mockoon-start.png)
+![Mockoon CLI start command output](/images/blog/cli-available/cli-mockoon-start.png)
 
 You can also list the running mock API processes to get some information about them (port, PID, CPU, memory, etc.) or stop them completely.
 
-![Mockoon CLI list command output](/images/blog/cli-mockoon-list.png)
+![Mockoon CLI list command output](/images/blog/cli-available/cli-mockoon-list.png)
 
 Mockoon CLI supports all of Mockoon's features: [templating system](https://mockoon.com/docs/latest/templating/overview/), [proxy mode](https://mockoon.com/docs/latest/proxy-mode/), [route response rules](https://mockoon.com/docs/latest/route-responses/dynamic-rules/), etc.
 

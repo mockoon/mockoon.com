@@ -33,6 +33,8 @@ export type ArticleData = {
     link: string;
     linkAnchor: string;
   };
+  logo?: string;
+  logoAlt?: string;
   // order of the article on the index page
   order?: number;
 };
@@ -42,8 +44,8 @@ export type ArticleList = {
   slug: string;
 }[];
 
-export type QuoteData = {
-  type: '##quote##';
+export type QuotationData = {
+  type: '##quotation##';
   citation: string;
   author: string;
   authorRole: string;

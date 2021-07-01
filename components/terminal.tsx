@@ -5,23 +5,23 @@ const Terminal: FunctionComponent<{
 }> = function (props) {
   return (
     <Fragment>
-      <div className='terminal-container'>
-        <div className='terminal'>
-          <div className='terminal-controls'>
-            <div className='terminal-control'></div>
-            <div className='terminal-control'></div>
-            <div className='terminal-control'></div>
-          </div>
+      <section className='terminal-container terminal-fixed-top'>
+        <header className='terminal'>
+          <span className='button red'></span>
+          <span className='button yellow'></span>
+          <span className='button green'></span>
+        </header>
+
+        <div className='terminal-home'>
           {props.lines.map((line, lineIndex) => {
             return (
-              <div className='terminal-line' key={'terminal-line-' + lineIndex}>
-                <span className='terminal-dollar'>$</span>
-                {line}
-              </div>
+              <p className='console mb-1' key={'terminal-line-' + lineIndex}>
+                <span className='ps-2'>{line}</span>
+              </p>
             );
           })}
         </div>
-      </div>
+      </section>
     </Fragment>
   );
 };

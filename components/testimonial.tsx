@@ -4,35 +4,44 @@ const Testimonial: FunctionComponent<{
   link: string;
   imgSrc: string;
   name: string;
-  username: string;
+  small?: boolean;
 }> = function (props) {
   return (
     <Fragment>
-      <style>{`.testimonial {height:100%}`}</style>
-      <div className='card testimonial'>
-        <div className='card-content'>
-          <div className='content'>{props.children}</div>
-          <div>
-            <a href={props.link} rel='noopener' target='_blank'>
-              <div className='media'>
-                <div className='media-left'>
-                  <figure className='image is-32x32'>
-                    <img
-                      className='is-rounded'
-                      src={props.imgSrc}
-                      alt={props.username + ' profile picture'}
-                      loading='lazy'
-                    />
-                  </figure>
-                </div>
-                <div className='media-content'>
-                  <p className='title is-6'>{props.name}</p>
-                  <p className='subtitle content is-small'>{props.username}</p>
-                </div>
-              </div>
-            </a>
+      <div className='card shadow-light-lg my-3'>
+        <a
+          className={`card-body ${props.small ? 'p-3' : ''} my-auto`}
+          href={props.link}
+          rel='noopener'
+          target='_blank'
+        >
+          <p
+            className={`mb-0 text-muted text-left ${props.small ? 'fs-5' : ''}`}
+            dangerouslySetInnerHTML={{ __html: props.children.toString() }}
+          ></p>
+        </a>
+
+        <a
+          className={`card-meta ${props.small ? 'pb-3 px-3' : ''}`}
+          href={props.link}
+          rel='noopener'
+          target='_blank'
+        >
+          <hr
+            className={`card-meta-divider ${props.small ? 'mb-3 px-3' : ''}`}
+          />
+
+          <div className='avatar me-2'>
+            <img
+              className='avatar-img rounded-circle'
+              src={props.imgSrc}
+              alt={props.name + ' profile picture'}
+              loading='lazy'
+            />
           </div>
-        </div>
+
+          <p className='h6 text-uppercase text-muted mb-0'>{props.name}</p>
+        </a>
       </div>
     </Fragment>
   );

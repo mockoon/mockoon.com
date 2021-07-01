@@ -1,10 +1,8 @@
 import matter from 'gray-matter';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { ChangeEvent, useState } from 'react';
 import { rsort as semverSort } from 'semver';
-import ContactBanner from '../../components/contact-banner';
-import Download from '../../components/download';
-import Hero from '../../components/hero';
 import Markdown from '../../components/markdown';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
@@ -15,6 +13,7 @@ import {
   DocsTopicData
 } from '../../models/docs.model';
 import { sortByOrder } from '../../utils/utils';
+
 const latestVersion = require('../../package.json').version;
 
 /**
@@ -196,17 +195,15 @@ export default function Docs(props: {
         ogType='article'
         url={`/${props.slug}`}
       />
-
-      <Hero />
-
-      <div className='section'>
-        <div className='container'>
-          <div className='columns'>
-            <div className='column is-3'>
-              <div className='content'>
+      <div className='container-fluid'>
+        <div className='row justify-content-center gx-0 mx-lg-0 mb-5'>
+          <div className='col-12 col-lg-2 me-lg-5'>
+            <aside className='sticky-top flex-grow-1 py-8 py-lg-10'>
+              <div className='content mb-5'>
                 <h3>Documentation</h3>
                 <div className='select'>
                   <select
+                    className='form-select form-select-xs'
                     aria-label='Versions menu'
                     value={selectedVersion}
                     onChange={switchVersion}
@@ -223,54 +220,47 @@ export default function Docs(props: {
                   </select>
                 </div>
               </div>
-              <aside className='menu'>
-                <ul className='menu-list'>
-                  {props.navItems.map((menuItem, menuItemIndex) => {
-                    const itemsToBuild =
-                      menuItem.type === 'category'
-                        ? menuItem.items
-                        : [menuItem];
+              <hr />
+              <ul className='card-list list'>
+                {props.navItems.map((menuItem, menuItemIndex) => {
+                  const itemsToBuild =
+                    menuItem.type === 'category' ? menuItem.items : [menuItem];
 
-                    const itemsHtml = itemsToBuild.map((item, itemIndex) => (
-                      <li key={`link${itemIndex}`}>
-                        <a
-                          href={`${item.slug}/`}
-                          className={
-                            router.asPath.includes(item.slug) ? 'is-active' : ''
-                          }
-                        >
-                          {item.title}
-                        </a>
-                      </li>
-                    ));
+                  const itemsHtml = itemsToBuild.map((item, itemIndex) => (
+                    <li
+                      key={`link${itemIndex}`}
+                      className={`list-item py-1 ${
+                        router.asPath.includes(item.slug) ? 'active' : ''
+                      }`}
+                    >
+                      <Link href={`${item.slug}/`} passHref={true}>
+                        <a className={'list-link'}>{item.title}</a>
+                      </Link>
+                    </li>
+                  ));
 
-                    return [
-                      menuItem.type === 'category' && (
-                        <p
-                          className='menu-label'
-                          key={`category${menuItemIndex}`}
-                        >
-                          {menuItem.title}
-                        </p>
-                      ),
-                      itemsHtml
-                    ];
-                  })}
-                </ul>
-                <div style={{ marginTop: '25px' }}>
-                  <Download />
-                </div>
-              </aside>
-            </div>
-            <div className='column is-9'>
-              <div className='content'>
-                <Markdown body={props.topicBody} version={currentVersion} />
-              </div>
-            </div>
+                  return [
+                    menuItem.type === 'category' && (
+                      <h6
+                        className='fw-bold text-uppercase mt-5 mb-2'
+                        key={`category${menuItemIndex}`}
+                      >
+                        {menuItem.title}
+                      </h6>
+                    ),
+                    itemsHtml
+                  ];
+                })}
+              </ul>
+            </aside>
+          </div>
+          <div className='col-12 col-lg-7 ps-lg-5 pb-8'>
+            <section className='pt-lg-10'>
+              <Markdown body={props.topicBody} version={currentVersion} />
+            </section>
           </div>
         </div>
       </div>
-      <ContactBanner />
     </Layout>
   );
 }

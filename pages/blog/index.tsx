@@ -1,9 +1,7 @@
 import { FunctionComponent } from 'react';
 import Cards from '../../components/cards';
-import Download from '../../components/download';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
-import Newsletter from '../../components/newsletter';
 import Layout from '../../layout/layout';
 import { ArticleList } from '../../models/common.model';
 import { buildIndexStaticProps } from '../../utils/static-builders';
@@ -32,22 +30,14 @@ const Blog: FunctionComponent<{
 }> = function (props) {
   return (
     <Layout>
-      <style jsx>{`
-        .card {
-          margin-bottom: 30px;
-        }
-      `}</style>
       <Meta title={meta.title} description={meta.description} />
       <Hero title={meta.title} subtitle={meta.description} />
-      <Download />
 
-      <div className='section'>
+      <section className='pb-8'>
         <div className='container'>
-          <Cards path='blog' articles={props.articles} />
+          <Cards path='blog' articles={props.articles} large />
         </div>
-      </div>
-
-      <Newsletter />
+      </section>
     </Layout>
   );
 };

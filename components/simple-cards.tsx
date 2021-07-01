@@ -1,42 +1,49 @@
+import Link from 'next/link';
 import { Fragment, FunctionComponent } from 'react';
 import { ItemCard } from '../models/common.model';
 
 const SimpleCards: FunctionComponent<{
   items: ItemCard;
 }> = function (props) {
-  const numberOfRows = Math.ceil(props.items.length / 3);
+  const numberOfColumns = 3;
   const featuresContent = [];
-
-  for (let rowIndex = 0; rowIndex < numberOfRows; rowIndex++) {
+  for (let rowIndex = 0; rowIndex < numberOfColumns; rowIndex++) {
     featuresContent.push(
-      <div key={'featureRow' + rowIndex} className='columns'>
+      <div key={'featureRow' + rowIndex} className='col-lg-4 col-12 py-lg-3'>
         {props.items
-          .slice(rowIndex * 3, rowIndex * 3 + 3)
+          .filter((item, itemIndex) => {
+            return itemIndex % 3 === rowIndex;
+          })
           .map((item, itemIndex) => {
             return (
-              <div className='column is-4' key={'feature' + itemIndex}>
-                <div className='card simple-card'>
-                  <div className='card-content'>
-                    <p className='title is-size-5'>{item.title}</p>
-                    <p
-                      className='mb-2'
-                      dangerouslySetInnerHTML={{ __html: item.description }}
-                    ></p>
-                    {(item.link || (item.disabledLink && item.linkText)) && (
-                      <p className={`card-link ${item.disabledLink ? 'has-text-centered has-text-weight-bold': ''}`}>
-                        <span>
-                          {!item.disabledLink && (
-                            <a href={item.link}>
+              <div
+                key={'feature' + itemIndex}
+                className={`card card-border shadow-light-lg my-lg-2 my-1`}
+              >
+                <div className='card-body text-center simple-card-min d-flex align-content-center flex-wrap flex-column justify-content-center '>
+                  <h4 className=''>{item.title}</h4>
+                  <p
+                    className='text-muted'
+                    dangerouslySetInnerHTML={{ __html: item.description }}
+                  ></p>
+                  {(item.link || (item.disabledLink && item.linkText)) && (
+                    <div
+                      className={`${item.disabledLink ? 'text-center' : ''}`}
+                    >
+                      <span>
+                        {!item.disabledLink && (
+                          <Link href={item.link}>
+                            <span className='btn btn-primary-soft btn-xs mb-0 mt-3 pb-0'>
                               {item.linkText || 'Documentation'} →
-                            </a>
-                          )}
-                          {item.disabledLink && (
-                            <Fragment>{item.linkText}</Fragment>
-                          )}
-                        </span>
-                      </p>
-                    )}
-                  </div>
+                            </span>
+                          </Link>
+                        )}
+                        {item.disabledLink && (
+                          <Fragment>{item.linkText}</Fragment>
+                        )}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             );

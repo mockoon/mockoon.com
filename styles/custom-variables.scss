@@ -1,0 +1,13 @@
+$font-family-base: sans-serif;
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1040px,
+  xxl: 1400px
+) !default;
+
+$path-to-img: '/images' !default;
+$navbar-nav-link-font-weight: 500;
+$table-cell-padding-y: 0.5rem;
+$table-cell-padding-x: 0.5rem;

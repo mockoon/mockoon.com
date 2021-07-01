@@ -1,8 +1,6 @@
 import { FunctionComponent } from 'react';
-import Download from '../components/download';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
-import Newsletter from '../components/newsletter';
 import SimpleCards from '../components/simple-cards';
 import Layout from '../layout/layout';
 import { ItemCard } from '../models/common.model';
@@ -116,19 +114,13 @@ const Features: FunctionComponent = function () {
         subtitle='Mockoon offers tons of features that makes API mocking a breeze.'
       />
 
-      <Download />
-
       <div className='section'>
         <div className='container'>
-          <div className='columns'>
-            <div className='column is-10 is-offset-1'>
-              <SimpleCards items={features} />
-            </div>
+          <div className='row'>
+            <SimpleCards items={features} />
           </div>
         </div>
       </div>
-
-      <Newsletter />
     </Layout>
   );
 };

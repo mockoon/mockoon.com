@@ -31,6 +31,7 @@ div.icon {
     font-size: xxx-large;
   }
 }
+
 pre code,
 code {
   color: $primary;
@@ -39,10 +40,55 @@ code {
   display: inline-block;
   border-radius: 5px;
 }
+
+// disable some style for blocks of code
 pre code {
   background-color: transparent;
   padding: 0;
 }
+
+h1,
+.h1 {
+  code {
+    font-size: $h1-font-size;
+  }
+}
+
+h2,
+.h2 {
+  code {
+    font-size: $h2-font-size;
+  }
+}
+
+h3,
+.h3 {
+  code {
+    font-size: $h3-font-size;
+  }
+}
+
+h4,
+.h4 {
+  code {
+    font-size: $h4-font-size;
+  }
+}
+
+h5,
+.h5 {
+  code {
+    font-size: $h5-font-size;
+  }
+}
+
+h6,
+.h6 {
+  code {
+    font-size: $h6-font-size;
+  }
+}
+
 footer {
   .copyright {
     color: $secondary;
@@ -159,6 +205,10 @@ p.console {
 .quote {
   border-left: 4px solid lighten($primary, 20%);
   background-color: lighten($primary, 40%);
+  p {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .quotation {

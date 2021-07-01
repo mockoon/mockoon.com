@@ -18,8 +18,8 @@ const Contact: FunctionComponent = function () {
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
-            <div className='col-12 col-lg-4'>
-              <div className='card p-5 shadow-light-lg'>
+            <div className='col-12 col-lg-4 d-flex'>
+              <div className='card p-5 my-5 shadow-light-lg'>
                 <div className='col-12 text-center '>
                   <i className='icon-chat h1 text-muted'></i>
                 </div>
@@ -57,8 +57,8 @@ const Contact: FunctionComponent = function () {
               </div>
             </div>
 
-            <div className='col-12 col-lg-4'>
-              <div className='card p-5 shadow-light-lg'>
+            <div className='col-12 col-lg-4 d-flex'>
+              <div className='card p-5 my-5 shadow-light-lg'>
                 <div className='col-12 text-center '>
                   <i className='icon-email h1 text-muted'></i>
                 </div>
@@ -73,8 +73,8 @@ const Contact: FunctionComponent = function () {
               </div>
             </div>
 
-            <div className='col-12 col-lg-4'>
-              <div className='card p-5 shadow-light-lg'>
+            <div className='col-12 col-lg-4 d-flex'>
+              <div className='card p-5 my-5 shadow-light-lg'>
                 <div className='col-12 text-center '>
                   <i className='icon-star text-warning h1'></i>
                 </div>

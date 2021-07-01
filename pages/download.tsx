@@ -24,7 +24,7 @@ const Download: FunctionComponent = function () {
       <section className='py-5'>
         <div className='container'>
           <div className='row justify-content-center'>
-            <div className='col-6'>
+            <div className='col-lg-6'>
               <div className='alert alert-dark' role='alert'>
                 Learn how to use Mockoon in 5 minutes with our{' '}
                 <a href='/tutorials/getting-started/' className='text-gray-500'>

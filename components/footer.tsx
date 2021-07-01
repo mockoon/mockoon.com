@@ -146,7 +146,7 @@ const Footer: FunctionComponent = function () {
             <ul className='align-self-center footer-social list-unstyled list-inline list-social mt-4'>
               <li className='list-inline-item list-social-item me-2'>
                 <a
-                  href='https://github.com/mockoon'
+                  href='https://github.com/mockoon/mockoon'
                   target='_blank'
                   rel='noopener'
                   className='text-decoration-none'

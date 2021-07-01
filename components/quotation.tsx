@@ -9,7 +9,7 @@ const Quotation: FunctionComponent<{ quotation: QuotationData }> = function ({
       {quotation.citation}
       <div className='quotation-metadata'>
         <img
-          className='quotation-picture'
+          className='quotation-picture img-thumbnail'
           src={`/images/${quotation.pictureUrl}`}
         />
         <div className='quotation-author'>

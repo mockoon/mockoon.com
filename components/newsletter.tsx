@@ -14,28 +14,24 @@ const Newsletter: FunctionComponent = function () {
               Enter your email address to receive Mockoon's latest updates
             </p>
           </div>
-          <div className='col-12 col-lg-5'>
+          <div className='col-12 col-lg-5 justify-content-end'>
             <form
               action='https://mockoon.us17.list-manage.com/subscribe/post?u=a8822ec82cbe40c6dc5564bd4&amp;id=e054c8a3a4'
               method='post'
               target='_blank'
               noValidate
             >
-              <div className='row'>
-                <div className='col-12 col-lg-7'>
-                  <input
-                    className='form-control'
-                    type='email'
-                    id='newsletter-email'
-                    name='EMAIL'
-                    placeholder='Email address'
-                  />
-                </div>
-                <div className='col-12 col-lg-5 pt-lg-0 pt-4'>
-                  <button className='btn btn-primary-soft col-12' type='submit'>
-                    Subscribe
-                  </button>
-                </div>
+              <div className='input-group'>
+                <input
+                  className='form-control'
+                  type='email'
+                  id='newsletter-email'
+                  name='EMAIL'
+                  placeholder='Email address'
+                />
+                <button className='btn btn-primary-soft' type='submit'>
+                  Subscribe
+                </button>
               </div>
               <div
                 style={{ position: 'absolute', left: '-5000px' }}

@@ -94,20 +94,15 @@ const Article: FunctionComponent<{
                       : 'd-flex justify-content-center'
                   } align-items-center py-5 border-top border-bottom`}
                 >
-                  {props.articleData.date && (
-                    <div className='col-12 col-lg text-center text-lg-start mb-2 mb-lg-0'>
-                      <h6 className='text-uppercase mb-0'>Guillaume</h6>
-
+                  <div className='col-12 d-flex align-items-center flex-column text-center text-lg-start mb-2 mb-lg-0'>
+                    {props.articleData.date && (
                       <time
-                        className='col-12 fs-sm text-muted'
-                        dateTime='2019-05-20'
+                        className='fs-sm text-muted'
+                        dateTime={props.articleData.date}
                       >
                         Published on {props.articleData.date}
                       </time>
-                    </div>
-                  )}
-
-                  <div className='col-12 col-lg-auto my-lg-auto'>
+                    )}
                     <Share
                       title='Find this post interesting? Share it!'
                       url={`https://mockoon.com/${props.slug}/`}

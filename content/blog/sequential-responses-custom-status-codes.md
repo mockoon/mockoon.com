@@ -9,12 +9,6 @@ meta:
   description: Discover Mockoon's new v1.14.0 release with sequential responses, custom status codes, new rules and more
 ---
 
-# New update with sequential responses, custom status codes, and out-of beta CLI!
-
-###### Published on 2021-05-18
-
-___
-
 This new release comes with the usual load of bug fixes and minor improvements you can check on the [v1.14.0 release page](https://github.com/mockoon/mockoon/releases/tag/v1.14.0). 
 
 We also decided to take the [CLI](https://github.com/mockoon/cli) out of beta with a new v1.0.0 🎉. There is still space for improvements, but it is now stable enough thanks to the feedback and contributions from our great community!

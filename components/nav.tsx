@@ -60,8 +60,7 @@ const Nav: FunctionComponent = function () {
                     router.pathname === '/cli' ? 'active' : ''
                   }`}
                 >
-                  <span className='badge bg-secondary-soft'>New!</span>
-                  <span>&nbsp;CLI</span>
+                  CLI
                 </a>
               </Link>
             </li>
@@ -138,7 +137,7 @@ const Nav: FunctionComponent = function () {
                 </a>
               </Link>
             </li>
-            <li>
+            <li className='nav-item'>
               <Link href='/download/'>
                 <button className='btn btn-primary btn-xs'>
                   Download <i className='icon-download'></i>

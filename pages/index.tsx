@@ -6,6 +6,7 @@ import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Testimonial from '../components/testimonial';
 import { hpFeatures } from '../data/hp-features';
+import { hpHighlights } from '../data/hp-highlights';
 import { testimonials } from '../data/testimonials';
 import Layout from '../layout/layout';
 import { ArticleData } from '../models/common.model';
@@ -25,7 +26,7 @@ class Index extends React.Component {
 
         <Hero
           title="Create <span class='text-primary'>mock APIs</span> in seconds"
-          subtitle='Mockoon is the easiest and quickest way to design and run mock REST API.<br>No remote deployment, no account required, <strong>free</strong> and <strong>open-source</strong>.'
+          subtitle='Mockoon is the easiest and quickest way to design and run mock REST APIs.<br>No remote deployment, no account required, <strong>free</strong> and <strong>open-source</strong>.'
           cta={[
             {
               text: 'Download',
@@ -44,7 +45,7 @@ class Index extends React.Component {
           <div className='container'>
             <div className='row'>
               <div className='justify-content-center col-12 text-center'>
-                <h2 className='mb-4'>
+                <h2 className='mb-4 fw-bold'>
                   Download Mockoon{' '}
                   <a
                     href={
@@ -65,73 +66,34 @@ class Index extends React.Component {
         <section className='py-5 py-lg-10'>
           <div className='container'>
             <div className='row'>
-              <div className='col-12 col-md-4'>
-                <div className='row'>
-                  <div className='col-10 col-lg-8 text-primary mb-3'>
-                    <img
-                      src='/images/highlight1.png'
-                      className='img-fluid p-4'
-                      alt=''
-                    />
+              {hpHighlights.map((highlight, highlightIndex) => (
+                <div
+                  className='col-12 col-md-4'
+                  key={`highlight${highlightIndex}`}
+                >
+                  <div className='row'>
+                    <div className='col-10 col-lg-8 text-primary mb-3'>
+                      <img
+                        src={highlight.imgSrc}
+                        className='img-fluid p-4'
+                        alt={highlight.imgAlt}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className='row'>
-                  <div className='col-12'>
-                    <h3>API mocking that saves you time</h3>
+                  <div className='row'>
+                    <div className='col-12'>
+                      <h3 className='fw-bold'>{highlight.title}</h3>
 
-                    <p className='text-muted mb-6 mb-md-0'>
-                      Get working mock REST APIs in seconds with the intuitive
-                      and easy to use interface.
-                      <br />
-                      Run them everywhere with the CLI.
-                    </p>
+                      <p
+                        className='text-muted mb-6 mb-md-0'
+                        dangerouslySetInnerHTML={{
+                          __html: highlight.description
+                        }}
+                      ></p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className='col-12 col-md-4'>
-                <div className='row'>
-                  <div className='col-10 col-lg-8 text-primary mb-3'>
-                    <img
-                      src='/images/highlight2.png'
-                      className='img-fluid p-4'
-                      alt=''
-                    />
-                  </div>
-                </div>
-                <div className='row'>
-                  <div className='col-12'>
-                    <h3>Integrates in your workflow</h3>
-
-                    <p className='text-muted mb-6 mb-md-0'>
-                      Compatible with the OpenAPI specification, Mockoon
-                      integrates perfectly with your existing applications and
-                      API design workflow.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className='col-12 col-md-4'>
-                <div className='row'>
-                  <div className='col-10 col-lg-8 text-primary mb-3'>
-                    <img
-                      src='/images/highlight3.png'
-                      className='img-fluid p-4'
-                      alt=''
-                    />
-                  </div>
-                </div>
-                <div className='row'>
-                  <div className='col-12'>
-                    <h3>Complete tooling</h3>
-
-                    <p className='text-muted mb-0'>
-                      Go beyond mocking with advanced features and tackle the
-                      most complex situation with HTTP requests recording,
-                      proxying, integration testing, etc.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -149,11 +111,11 @@ class Index extends React.Component {
                       featureIndex % 2 === 0 ? 'order-lg-2' : 'order-lg-1'
                     }`}
                   >
-                    <span className='badge rounded-pill bg-secondary-soft mb-3'>
+                    <span className='badge rounded-pill bg-primary-soft mb-3'>
                       <span className='h6 text-uppercase'>{feature.label}</span>
                     </span>
 
-                    <h3 className='h2'>{feature.title}</h3>
+                    <h3 className='h2 fw-bold'>{feature.title}</h3>
 
                     <p className='fs-lg text-gray-700 mb-8 mb-lg-0'>
                       {feature.description}
@@ -161,7 +123,7 @@ class Index extends React.Component {
                     <div>
                       {feature.cta && (
                         <a
-                          className='btn btn-secondary-soft btn-xs mt-2'
+                          className='btn btn-secondary-soft btn-xs mt-5'
                           href={feature.ctaLink}
                         >
                           {feature.cta}&nbsp;→
@@ -197,7 +159,7 @@ class Index extends React.Component {
             <div className='row'>
               <div className='justify-content-center'>
                 <div className='col-12 text-center'>
-                  <h2>
+                  <h2 className='fw-bold'>
                     Trusted by thousands of
                     <br />
                     <Typed
@@ -261,7 +223,7 @@ class Index extends React.Component {
           <div className='container'>
             <div className='row justify-content-center'>
               <div className='col-12 text-center'>
-                <h2 className='mb-1'>Case studies</h2>
+                <h2 className='mb-1 fw-bold'>Case studies</h2>
               </div>
 
               <div className='col-12 text-center'>

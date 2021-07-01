@@ -1,6 +1,5 @@
 import { Fragment, FunctionComponent } from 'react';
 const version = require('../package.json').version;
-declare let ga: Function;
 
 const DownloadSection: FunctionComponent = function () {
   return (
@@ -17,9 +16,6 @@ const DownloadSection: FunctionComponent = function () {
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.exe`}
                 rel='noopener'
-                onClick={() =>
-                  ga('send', 'event', 'application', 'download', 'windows')
-                }
               >
                 <span className='icon me-2'>
                   <i className='icon-download'></i>
@@ -44,9 +40,6 @@ const DownloadSection: FunctionComponent = function () {
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.deb`}
                 rel='noopener'
-                onClick={() =>
-                  ga('send', 'event', 'application', 'download', 'linux')
-                }
               >
                 <span className='icon me-2'>
                   <i className='icon-download'></i>
@@ -58,9 +51,6 @@ const DownloadSection: FunctionComponent = function () {
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.rpm`}
                 rel='noopener'
-                onClick={() =>
-                  ga('send', 'event', 'application', 'download', 'linux')
-                }
               >
                 <span className='icon me-2'>
                   <i className='icon-download'></i>
@@ -72,9 +62,6 @@ const DownloadSection: FunctionComponent = function () {
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.AppImage`}
                 rel='noopener'
-                onClick={() =>
-                  ga('send', 'event', 'application', 'download', 'linux')
-                }
               >
                 <span className='icon me-2'>
                   <i className='icon-download'></i>
@@ -100,9 +87,6 @@ const DownloadSection: FunctionComponent = function () {
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.dmg`}
                 rel='noopener'
-                onClick={() =>
-                  ga('send', 'event', 'application', 'download', 'osx')
-                }
               >
                 <span className='icon me-2'>
                   <i className='icon-download'></i>

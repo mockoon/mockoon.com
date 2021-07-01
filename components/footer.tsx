@@ -188,7 +188,10 @@ const Footer: FunctionComponent = function () {
         </div>
         <div className='mt-8 text-center'>
           <p className='text-gray-500 h6'>
-            &copy; Mockoon 2017 - {new Date().getFullYear()}
+            &copy; Mockoon 2017 - {new Date().getFullYear()} -{' '}
+            <a href='/privacy/' className='text-reset'>
+              Privacy policy
+            </a>
           </p>
         </div>
       </div>

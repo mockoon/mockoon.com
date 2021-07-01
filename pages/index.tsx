@@ -107,7 +107,7 @@ class Index extends React.Component {
                   key={`feature${featureIndex}`}
                 >
                   <div
-                    className={`col-12 col-lg-5 ${
+                    className={`col-12 col-lg-5 pb-sm-10 pb-lg-0 ${
                       featureIndex % 2 === 0 ? 'order-lg-2' : 'order-lg-1'
                     }`}
                   >
@@ -117,9 +117,7 @@ class Index extends React.Component {
 
                     <h3 className='h2 fw-bold'>{feature.title}</h3>
 
-                    <p className='fs-lg text-gray-700 mb-8 mb-lg-0'>
-                      {feature.description}
-                    </p>
+                    <p className='fs-lg text-gray-700'>{feature.description}</p>
                     <div>
                       {feature.cta && (
                         <a

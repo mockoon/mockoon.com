@@ -186,8 +186,10 @@ const Footer: FunctionComponent = function () {
             </ul>
           </div>
         </div>
-        <div className='mt-8 text-center copyright'>
-          <p>&copy; Mockoon 2017 - {new Date().getFullYear()}</p>
+        <div className='mt-8 text-center'>
+          <p className='text-gray-500 h6'>
+            &copy; Mockoon 2017 - {new Date().getFullYear()}
+          </p>
         </div>
       </div>
     </footer>

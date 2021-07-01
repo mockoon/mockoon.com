@@ -22,7 +22,9 @@ const Testimonial: FunctionComponent<{
         </a>
 
         <a
-          className={`card-meta ${props.small ? 'pb-3 px-3' : ''}`}
+          className={`card-meta justify-content-center ${
+            props.small ? 'pb-3 px-3' : ''
+          }`}
           href={props.link}
           rel='noopener'
           target='_blank'

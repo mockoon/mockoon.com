@@ -33,9 +33,9 @@ const SimpleCards: FunctionComponent<{
                       <span>
                         {!item.disabledLink && (
                           <Link href={item.link}>
-                            <span className='btn btn-primary-soft btn-xs mb-0 mt-3 pb-0'>
+                            <a className='btn btn-primary-soft btn-xs mb-0 mt-3'>
                               {item.linkText || 'Documentation'} →
-                            </span>
+                            </a>
                           </Link>
                         )}
                         {item.disabledLink && (

@@ -11,6 +11,7 @@ const Quotation: FunctionComponent<{ quotation: QuotationData }> = function ({
         <img
           className='quotation-picture img-thumbnail'
           src={`/images/${quotation.pictureUrl}`}
+          alt={quotation.authorRole}
         />
         <div className='quotation-author'>
           <div>{quotation.author}</div>

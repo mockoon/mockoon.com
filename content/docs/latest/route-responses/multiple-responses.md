@@ -1,7 +1,7 @@
 ---
 title: Multiple route responses
 meta:
-  title: "Define multiple responses for each route: 200, 404, 500, etc."
+  title: Define multiple responses for each route
   description: Multiple responses can be defined for each route with different body, headers and status. Learn how to create them and randomize them.
 order: 900
 ---

@@ -110,9 +110,9 @@ const SponsorUs: FunctionComponent = function () {
             </p>
           </div>
           <Link href='/sponsor-us/'>
-            <button className='col-10 col-lg-4 mt-4 btn btn-primary'>
+            <a className='col-10 col-lg-4 mt-4 btn btn-primary'>
               View sponsorship options
-            </button>
+            </a>
           </Link>
         </div>
       </div>

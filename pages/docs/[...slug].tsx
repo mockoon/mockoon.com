@@ -233,8 +233,8 @@ export default function Docs(props: {
                         router.asPath.includes(item.slug) ? 'active' : ''
                       }`}
                     >
-                      <Link href={`${item.slug}/`} passHref={true}>
-                        <a className={'list-link'}>{item.title}</a>
+                      <Link href={`${item.slug}/`}>
+                        <a className='list-link'>{item.title}</a>
                       </Link>
                     </li>
                   ));

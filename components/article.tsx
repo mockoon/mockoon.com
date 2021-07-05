@@ -19,7 +19,7 @@ const Article: FunctionComponent<{
                   src={`/images/case-studies/${props.articleData.header.image}`}
                   alt={`${props.articleData.header.imageAlt}`}
                 />
-                <h1 className='h4'>{props.articleData.title}</h1>
+                <p className='h4'>{props.articleData.title}</p>
               </div>
               <div className='col-12 col-lg-8 text-center'>
                 <div className='row pt-5 pt-lg-0'>
@@ -79,9 +79,9 @@ const Article: FunctionComponent<{
           <div className='container'>
             <div className='row justify-content-center'>
               <div className='col-12 col-lg-10 col-lg-10 col-xl-10'>
-                <p className='display-4 text-center'>
+                <h1 className='display-4 text-center'>
                   {props.articleData.title}
-                </p>
+                </h1>
 
                 <p className='lead mb-7 text-center text-muted'>
                   {props.articleData.excerpt}

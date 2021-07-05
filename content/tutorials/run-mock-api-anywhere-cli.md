@@ -9,10 +9,6 @@ imageAlt: a terminal
 order: 20
 ---
 
-# Run your mock REST APIs anywhere with Mockoon CLI
-
----
-
 Mockoon is a set of free and open-source API mocking tools. They help you get ready to work in no time. Should you be a front-end or back-end developer or a QA tester, Mockoon got you covered with a flexible user interface and a CLI that allows you to bring your mocking scenarios on servers and headless environments. 
 
 This tutorial will help you put up on track with the CLI and all its possibilities. 

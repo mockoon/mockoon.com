@@ -79,9 +79,9 @@ const Article: FunctionComponent<{
           <div className='container'>
             <div className='row justify-content-center'>
               <div className='col-12 col-lg-10 col-lg-10 col-xl-10'>
-                <h1 className='display-4 text-center'>
+                <p className='display-4 text-center'>
                   {props.articleData.title}
-                </h1>
+                </p>
 
                 <p className='lead mb-7 text-center text-muted'>
                   {props.articleData.excerpt}

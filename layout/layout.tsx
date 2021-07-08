@@ -34,10 +34,11 @@ class Layout extends React.Component {
           <link rel='manifest' href='/manifest.json' />
           <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#252830' />
           <meta name='theme-color' content='#ffffff' />
+
           <script
             async
-            src='https://www.googletagmanager.com/gtag/js?id=G-TKYQRWTZ0P'
-          />
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
+          ></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${process.env.NEXT_PUBLIC_ANALYTICS_ID}', { 'anonymize_ip': true });`

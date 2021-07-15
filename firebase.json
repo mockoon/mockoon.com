@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "out",
+    "target": "website",
     "ignore": [
       ".firebaserc",
       "database.rules.json",

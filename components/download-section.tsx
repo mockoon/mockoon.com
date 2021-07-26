@@ -41,8 +41,7 @@ const DownloadSection: FunctionComponent = function () {
             <div className='btn-group'>
               <a
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
-                /* href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.exe`} */
-                href='#'
+                href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.exe`}
                 rel='noopener'
                 onClick={() => postDownload('windows')}
               >

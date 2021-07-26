@@ -1,10 +1,36 @@
-import { Fragment, FunctionComponent } from 'react';
+import { Fragment, FunctionComponent, useState } from 'react';
+import GitHub from './github';
 const version = require('../package.json').version;
 declare let gtag: Function;
 
 const DownloadSection: FunctionComponent = function () {
+  const [showSupport, setShowSupport] = useState(false);
+
+  const postDownload = (platform: string) => {
+    gtag('event', 'download', { event_category: platform });
+    setTimeout(() => {
+      setShowSupport(true);
+    }, 500);
+  };
+
   return (
     <Fragment>
+      {showSupport && (
+        <div className='row justify-content-center fade-in'>
+          <div className='col-8 text-center pt-4 pb-8'>
+            <div className='alert alert-light shadow-dark' role='alert'>
+              <p className='h1'>🚀</p>
+              <h4 className='alert-heading'>Thanks for downloading Mockoon!</h4>
+              <p>
+                Mockoon is an open-source developer tool created by a{' '}
+                <a href='/about/'>team of passionate developers</a>.{' '}
+              </p>
+              <p>Support us by starring our GitHub repository!</p>
+              <GitHub />
+            </div>
+          </div>
+        </div>
+      )}
       <div className='row'>
         <div className='col-12 col-lg-4 text-center py-2'>
           <div className='icon mb-3'>
@@ -15,11 +41,10 @@ const DownloadSection: FunctionComponent = function () {
             <div className='btn-group'>
               <a
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
-                href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.exe`}
+                /* href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.exe`} */
+                href='#'
                 rel='noopener'
-                onClick={() =>
-                  gtag('event', 'download', { event_category: 'windows' })
-                }
+                onClick={() => postDownload('windows')}
               >
                 <span className='icon me-2'>
                   <i className='icon-download'></i>
@@ -44,9 +69,7 @@ const DownloadSection: FunctionComponent = function () {
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.deb`}
                 rel='noopener'
-                onClick={() =>
-                  gtag('event', 'download', { event_category: 'linux' })
-                }
+                onClick={() => postDownload('linux')}
               >
                 <span className='icon me-2'>
                   <i className='icon-download'></i>
@@ -58,9 +81,7 @@ const DownloadSection: FunctionComponent = function () {
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.rpm`}
                 rel='noopener'
-                onClick={() =>
-                  gtag('event', 'download', { event_category: 'linux' })
-                }
+                onClick={() => postDownload('linux')}
               >
                 <span className='icon me-2'>
                   <i className='icon-download'></i>
@@ -72,9 +93,7 @@ const DownloadSection: FunctionComponent = function () {
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.AppImage`}
                 rel='noopener'
-                onClick={() =>
-                  gtag('event', 'download', { event_category: 'linux' })
-                }
+                onClick={() => postDownload('linux')}
               >
                 <span className='icon me-2'>
                   <i className='icon-download'></i>
@@ -100,9 +119,7 @@ const DownloadSection: FunctionComponent = function () {
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.dmg`}
                 rel='noopener'
-                onClick={() =>
-                  gtag('event', 'download', { event_category: 'osx' })
-                }
+                onClick={() => postDownload('osx')}
               >
                 <span className='icon me-2'>
                   <i className='icon-download'></i>

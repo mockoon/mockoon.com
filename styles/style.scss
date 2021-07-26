@@ -314,3 +314,16 @@ p.console {
     transform: rotateY(-20deg) rotateX(5deg);
   }
 }
+
+.fade-in {
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

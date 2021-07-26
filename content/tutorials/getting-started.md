@@ -3,7 +3,7 @@ title: Create your first mock API with Mockoon
 excerpt: Learn how to create your first mock REST API with Mockoon
 meta:
   title: Create your first mock API with Mockoon
-  description: Learn how to create your first local mock API server with Mockoon with custom JSON body
+  description: Use Mockoon to create your first mock API server in no time and generate fake realistic JSON body for your frontends.
 image: tutorial-getting-started.png
 imageAlt: Mockoon logo in a rocket
 order: 10

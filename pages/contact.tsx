@@ -8,7 +8,7 @@ const Contact: FunctionComponent = function () {
     <Layout>
       <Meta
         title='Request support'
-        description='Found an issue? Wondering how to use Mockoon for your specific use case? Contact us!'
+        description='Found an issue? Wondering how to use Mockoon for your specific use case or how to create awesome mock APIs? Contact us!'
       />
 
       <Hero

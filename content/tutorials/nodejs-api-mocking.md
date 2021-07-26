@@ -3,7 +3,7 @@ title: Easily call a mock API from a Node.js application
 excerpt: Learn how to mock a third party API with Mockoon when working on your Node.js backend application
 meta:
   title: Easily call a mock API from a Node.js application
-  description: Learn how to mock a third party API with Mockoon when working on your Node.js backend application
+  description: Learn how to mock a third party JSON REST API with Mockoon when working on your Node.js backend application. Be ready to work in no time.
 image: tutorial-nodejs-mocking.png
 imageAlt: Mockoon and Node.js logos side by side
 order: 90

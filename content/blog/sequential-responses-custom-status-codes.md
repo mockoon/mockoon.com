@@ -5,7 +5,7 @@ date: '2021-05-18'
 image: sequential-responses-status-codes.png
 imageAlt: Mockoon logo with secure schield
 meta:
-  title: Sequential responses, custom status codes, and out-of beta CLI!
+  title: Sequential responses, custom codes, and out-of beta CLI!
   description: Discover Mockoon's new v1.14.0 release with sequential responses, custom status codes, new rules and more
 ---
 

@@ -2,7 +2,7 @@
 title: Request helpers
 meta:
   title: Create dynamic responses with templating request helpers
-  description: Create dynamic fake mock data for your mock environments with Mockoon's templating request helpers
+  description: "Create dynamic fake mock data for your mock environments with Mockoon's templating request helpers. All formats are supported: JSON, CSV, HTML, etc."
 order: 1020
 ---
 

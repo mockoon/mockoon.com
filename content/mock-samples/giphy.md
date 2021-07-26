@@ -3,7 +3,7 @@ title: Giphy API mock sample
 excerpt: Start mocking Giphy API in no time with this ready to use sample for Mockoon
 meta:
   title: Giphy API mock sample
-  description: Start mocking Giphy API in no time with this ready to use sample for Mockoon
+  description: Start mocking Giphy API in no time with this ready to use sample for Mockoon. Use it when developing your frontend and start working right away.
 image: giphy.png
 imageAlt: Mockoon and Giphy logos side by side
 order: 110

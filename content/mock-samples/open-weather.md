@@ -3,7 +3,7 @@ title: Open Weather API mock sample
 excerpt: Start working with Open Weather API faster than ever with this ready to use sample for Mockoon
 meta:
   title: Open Weather API mock sample
-  description: Start working with Open Weather API faster than ever with this ready to use sample for Mockoon
+  description: Start working with Open Weather API faster than ever with this ready to use sample for Mockoon. Mock the API and be ready in minutes.
 image: open-weather.png
 imageAlt: Mockoon and Open Weather logos side by side
 order: 100

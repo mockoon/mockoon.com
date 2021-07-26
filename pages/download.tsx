@@ -9,7 +9,7 @@ const Download: FunctionComponent = function () {
     <Layout>
       <Meta
         title='Download'
-        description='Found an issue? Wondering how to use Mockoon for your specific use case? Contact us!'
+        description='Download Mockoon, the easiest and fastest way to create realistic mock REST APIs. No account required, free and open-source.'
       />
 
       <Hero

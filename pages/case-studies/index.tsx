@@ -9,7 +9,7 @@ import { orderArticles } from '../../utils/utils';
 const meta = {
   title: 'Case studies',
   description:
-    'Explore how Mockoon users improve their development workflows with Mockoon API tooling'
+    "Discover how Mockoon's users improve their API design and development workflows with our fast and easy to use API tooling."
 };
 
 export async function getStaticProps() {

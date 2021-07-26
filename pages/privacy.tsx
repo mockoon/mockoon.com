@@ -6,7 +6,10 @@ import Layout from '../layout/layout';
 const Privacy: FunctionComponent = function () {
   return (
     <Layout>
-      <Meta title='Privacy policy' description="Mockoon's privacy policy" />
+      <Meta
+        title='Privacy policy'
+        description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy highly regulated environments friendly'
+      />
 
       <Hero title='Privacy policy' />
       <section className='pb-8'>

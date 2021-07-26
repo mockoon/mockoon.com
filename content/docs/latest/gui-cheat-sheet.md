@@ -2,7 +2,7 @@
 title: Mockoon GUI cheat sheet
 meta:
   title: Mockoon GUI cheat sheet
-  description: Have a doubt? Not sure how to navigate Mockoon's UI? This cheat sheet is for you!
+  description: Have a doubt? Not sure how to navigate Mockoon's UI? This cheat sheet listing Mockoon\'s major features is for you!
 order: 20
 ---
 

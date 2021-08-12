@@ -191,9 +191,7 @@ const Faq: FunctionComponent = function () {
                 <div className='accordion-collapse '>
                   <div className='accordion-body'>
                     <div className='text-gray-700'>
-                      <span>
-                        Locally, in your operating system user data folder.
-                      </span>{' '}
+                      In your operating system user data folder:
                       <ul className='text-break'>
                         <li>
                           Windows:{' '}
@@ -211,6 +209,11 @@ const Faq: FunctionComponent = function () {
                           </code>
                         </li>
                       </ul>
+                      If you use the Windows portable version, your data will be
+                      stored next to the executable in a{' '}
+                      <code>./mockoon-data/storage</code> folder. The{' '}
+                      <code>./mockoon-data</code> folder also contains all the
+                      files necessary to run the application.
                     </div>
                   </div>
                 </div>

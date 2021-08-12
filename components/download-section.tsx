@@ -48,7 +48,18 @@ const DownloadSection: FunctionComponent = function () {
                 <span className='icon me-2'>
                   <i className='icon-download'></i>
                 </span>
-                <span>exe installer</span>
+                <span>installer</span>
+              </a>
+              <a
+                className='btn btn-primary-soft btn-sm d-flex align-items-center'
+                href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.portable.${version}.exe`}
+                rel='noopener'
+                onClick={() => postDownload('windows')}
+              >
+                <span className='icon me-2'>
+                  <i className='icon-download'></i>
+                </span>
+                <span>portable</span>
               </a>
             </div>
             <div className='content p-3'>

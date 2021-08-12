@@ -13,7 +13,9 @@ order: 1020
 Mockoon offers the following helpers which can return information relative to the entering request:
 
 - [`body`](#body)
+- [`bodyRaw`](#bodyraw)
 - [`queryParam`](#queryparam)
+- [`queryParamRaw`](#queryparamraw)
 - [`urlParam`](#urlparam)
 - [`cookie`](#cookie)
 - [`header`](#header)
@@ -25,7 +27,8 @@ Mockoon offers the following helpers which can return information relative to th
 ## `body`
 
 Get the value at a given `path` from the request body if the entering `Content-Type` is set to `application/json` or `application/x-www-form-urlencoded`.
-- The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path). 
+
+- The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path).
 - For both JSON and form params bodies, full objects or arrays can be retrieved by the helper.
 - The full request's raw body can also be fetched when the `path` is omitted (`{{body}}`) independently from the request's `Content-Type`.
 - If no value is present at the requested `path`, the default value will be used.
@@ -46,9 +49,41 @@ Get the value at a given `path` from the request body if the entering `Content-T
 {{body 'path' 'default value' true}}
 ```
 
+## `bodyRaw`
+
+Get the **raw** value at a given `path` from the request body if the entering `Content-Type` is set to `application/json` or `application/x-www-form-urlencoded`.
+
+- The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path).
+- For both JSON and form params bodies, full objects or arrays can be retrieved by the helper.
+- The full request's raw body can also be fetched when the `path` is omitted (`{{bodyRaw}}`) independently from the request's `Content-Type`.
+- If no value is present at the requested `path`, the default value will be used.
+- This helper allows the use of `body` within handlebars' helpers such as `{{#each}}` and `{{#if}}`.
+
+| Arguments (ordered) | Type   | Description                            |
+| ------------------- | ------ | -------------------------------------- |
+| 0                   | string | Path to the body property              |
+| 1                   | string | Default value if property is not found |
+
+**Examples**
+
+```handlebars
+{{bodyRaw}}
+{{bodyRaw 'path.to.property'}}
+{{bodyRaw 'path' 'default value'}}
+
+{{#each (bodyRaw 'path.to.array.property' 'default value')}}
+  value
+{{/each}}
+
+{{#if (bodyRaw 'path.to.boolean.property' 'default value')}}
+  value
+{{/if}}
+```
+
 ## `queryParam`
 
 Get the value at a given `path` from the request's query string. Complex query strings with arrays and objects are supported.
+
 - The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path).
 - Full objects or arrays can be retrieved by the helper.
 - The full query string object can also be fetched when the `path` is omitted (`{{queryParam}}`). It will be stringified and can be used in a JSON body for example.
@@ -68,6 +103,37 @@ Get the value at a given `path` from the request's query string. Complex query s
 {{queryParam 'path.to.property'}}
 {{queryParam 'path' 'default value'}}
 {{queryParam 'path' 'default value' true}}
+```
+
+## `queryParamRaw`
+
+Get the **raw** value at a given `path` from the request's query string. Complex query strings with arrays and objects are supported.
+
+- The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path).
+- Full objects or arrays can be retrieved by the helper.
+- The full query string object can also be fetched when the `path` is omitted (`{{queryParamRaw}}`).
+- If there is no value at the requested `path`, the default value will be used.
+- This helper allows the use of `queryParam` within handlebars' helpers such as `{{#each}}` and `{{#if}}`.
+
+| Arguments (ordered) | Type   | Description                            |
+| ------------------- | ------ | -------------------------------------- |
+| 0                   | string | Path to the query param property       |
+| 1                   | string | Default value if property is not found |
+
+**Examples**
+
+```handlebars
+{{queryParamRaw}}
+{{queryParamRaw 'path.to.property'}}
+{{queryParamRaw 'path' 'default value'}}
+
+{{#each (queryParamRaw 'path.to.array.query' 'default value')}}
+  value
+{{/each}}
+
+{{#if (queryParamRaw 'path.to.boolean.query' 'default value')}}
+  value
+{{/if}}
 ```
 
 ## `urlParam`

@@ -20,17 +20,19 @@ You can define an unlimited number of rules for each route. At each request, Moc
 
 To add a new rule to a response, go to the route response's **Rules tab** and fill the fields:
 
-![Click on add and fill the fields](/images/docs/v1.14.0-add-route-response-rule.png)
+![Click on add and fill the fields](/images/docs/v1.15.0-add-route-response-rule.png)
 
 ### Reordering rules
 
-By default, rules are executed in the order you added them. You can then customise the order in which rules are being executed by drag and dropping them.
+By default, rules are interpreted in the order you added them. You can change their interpretation order by drag and dropping them:
+
+![Drag and drop rules to reorder them](/images/docs/route-response-rule-reorder.gif)
 
 ### Rules operator
 
 Inside a route response, rules are interpreted by default with the OR operator. When you have more than one rule in a route response, you can easily switch the operator applied when interpreting the rules, by clicking on the `OR|AND` buttons at the left of the rules:
 
-![Click on add and fill the fields](/images/docs/v1.14.0-route-response-rules-operator.png)
+![Choose the rule operator OR AND](/images/docs/v1.15.0-route-response-rules-operator.png)
 
 Rules have three parts:
 

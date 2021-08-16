@@ -118,6 +118,7 @@ const DownloadSection: FunctionComponent = function () {
             </div>
           </div>
         </div>
+
         <div className='col-12 col-lg-4 text-center py-2'>
           <div className='icon mb-3'>
             <i className='icon-apple'></i>
@@ -143,18 +144,20 @@ const DownloadSection: FunctionComponent = function () {
           </div>
         </div>
       </div>
-      <div className='justify-content-center col-12 text-center my-5'>
-        <h4 className='text-muted'>
-          Mockoon is released under the MIT license.{' '}
-          <a
-            href={'https://github.com/mockoon/mockoon/releases/tag/v' + version}
-            rel='noopener'
-            target='_blank'
-          >
-            <span className='badge bg-secondary-soft'>v{version}</span>
-          </a>
-        </h4>
+
+      <div className='row'>
+        <div className='col-12 text-center'>
+          <p className='text-center'>
+            <a
+              className='text-gray-600'
+              href={`https://github.com/mockoon/mockoon/releases/tag/v${version}`}
+            >
+              See all downloads
+            </a>
+          </p>
+        </div>
       </div>
+
       <div className='row mt-6'>
         <div className='text-center'>
           <p className='has-text-centered pt-4'>

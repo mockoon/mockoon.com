@@ -2,7 +2,7 @@
 title: Helpers
 meta:
   title: Create dynamic responses with templating helpers
-  description: "Create dynamic fake data for your mock server with Mockoon's templating helpers. All formats are supported: JSON, CSV, HTML, etc."
+  description: Create dynamic fake data for your mock server with Mockoon's templating helpers
 order: 1010
 ---
 
@@ -12,19 +12,19 @@ order: 1010
 
 In addition to Handlebars' built-in helpers, Mockoon offers the following helpers:
 
-| Block helpers       | Arrays              | Math                    |                     | Misc                    |
-| ------------------- | ------------------- | ----------------------- | ------------------- | ----------------------- |
-| [`repeat`](#repeat) | [`array`](#array)   | [`add`](#add)           | [`modulo`](#modulo) | [`newline`](#newline)   |
-| [`switch`](#switch) | [`oneOf`](#oneof)   | [`subtract`](#subtract) | [`ceil`](#ceil)     | [`base64`](#base64)     |
-|                     | [`someOf`](#someof) | [`multiply`](#multiply) | [`floor`](#floor)   | [`objectId`](#objectid) |
-|                     |                     | [`divide`](#divide)     |                     | [`setVar`](#setvar)     |
+| Dates                             | Block helpers       | Arrays              |
+| --------------------------------- | ------------------- | ------------------- |
+| [`now`](#now)                     | [`repeat`](#repeat) | [`array`](#array)   |
+| [`dateTimeShift`](#datetimeshift) | [`switch`](#switch) | [`oneOf`](#oneof)   |
+| [`date`](#date)                   |                     | [`someOf`](#someof) |
+| [`time`](#time)                   |                     |                     |
 
-| Strings                 |                   | Numbers               | Dates                             |
-| ----------------------- | ----------------- | --------------------- | --------------------------------- |
-| [`int`](#int)           | [`split`](#split) | [`concat`](#concat)   | [`now`](#now)                     |
-| [`float`](#float)       |                   | [`indexOf`](#indexof) | [`dateTimeShift`](#datetimeshift) |
-| [`includes`](#includes) |                   |                       | [`date`](#date)                   |
-| [`substr`](#substr)     |                   |                       | [`time`](#time)                   |
+| Strings                 | Numbers           | Misc                    |
+| ----------------------- | ----------------- | ----------------------- |
+| [`concat`](#concat)     | [`int`](#int)     | [`newline`](#newline)   |
+| [`indexOf`](#indexof)   | [`float`](#float) | [`base64`](#base64)     |
+| [`includes`](#includes) |                   | [`objectId`](#objectid) |
+| [`substr`](#substr)     |                   | [`setVar`](#setvar)     |
 
 | [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                         |
 | --------------------------------------------------- | ----------------------------- | ----------------------- |
@@ -50,15 +50,14 @@ Repeat the block content a random number of times if two arguments are provided,
 **Examples**
 
 ```handlebars
-{{#repeat 5 10 comma=true}}test{{/repeat}}
+{{# repeat 5 10 comma=true}}test{{/ repeat}}
 
-<!-- 
-result: 
+// result
 test,
 test,
 test,
 test,
-test -->
+test
 ```
 
 ## `switch`
@@ -106,7 +105,8 @@ Select a random item in the array passed in parameters.
 ```handlebars
 {{oneOf (array 'item1' 'item2' 'item3')}}
 
-result: item2
+// result
+item2
 ```
 
 ## `someOf`
@@ -125,159 +125,28 @@ Return a random number of items from the array passed in parameters, concatenate
 ```handlebars
 {{someOf (array 'item1' 'item2' 'item3') 1 2}}
 
-result: item1,item2
-<!-- Use triple curly braces to avoid character escaping -->
+// result
+item1,item2
+
+// use triple curly braces to avoid character escaping
 {{{someOf (array 'item1' 'item2' 'item3') x y true}}}
 
-result: item1,item2
+// result
+item1,item2
 ```
 
-## `add`
+## `now`
 
-Add the numbers passed as parameters to each others. Unrecognized strings passed as arguments will be ignored.
+Display the current time in the chosen format. Format syntax is based on [date-fns package (v2)](https://date-fns.org/v2.11.1/docs/format) and is optional (default to ISO string).
 
-| Arguments (ordered) | Type  | Description                                              |
-| ------------------- | ----- | -------------------------------------------------------- |
-| 0..n                | any[] | Value of the operandes (can process numbers and strings) |
+| Arguments (ordered) | Type   | Description |
+| ------------------- | ------ | ----------- |
+| 0                   | string | Date format |
 
 **Examples**
 
 ```handlebars
-{{add 1 1}}
-
-result: '2'
-{{add '1' '1'}}
-
-result: '2'
-{{add '1' 'foo' 1}}
-
-result: '2'
-```
-
-## `subtract`
-
-Subtract the numbers passed as parameters to the first parameter. Unrecognized strings passed as arguments will be ignored.
-
-| Arguments (ordered) | Type  | Description                                              |
-| ------------------- | ----- | -------------------------------------------------------- |
-| 0..n                | any[] | Value of the operandes (can process numbers and strings) |
-
-**Examples**
-
-```handlebars
-{{subtract 2 1}}
-
-result: '1'
-{{subtract '2' '1'}}
-
-result: '1'
-{{subtract '2' 'foo' 1}}
-
-result: '1'
-```
-
-## `multiply`
-
-Multiply the numbers passed as parameters to each others. Unrecognized strings passed as arguments will be ignored.
-| Arguments (ordered) | Type | Description |
-| ------------------- | ----- | -------------------------------------------------------- |
-| 0..n | any[] | Value of the operandes (can process numbers and strings) |
-
-**Examples**
-
-```handlebars
-{{multiply 2 3}}
-
-result: '6'
-{{multiply '2' '3'}}
-
-result: '6'
-{{multiply '2' 'foo' 3}}
-
-result: '6'
-```
-
-## `divide`
-
-Divide the first parameter by the other numbers passed as parameters. Unrecognized strings passed as arguments will be ignored.
-
-| Arguments (ordered) | Type  | Description                                              |
-| ------------------- | ----- | -------------------------------------------------------- |
-| 0..n                | any[] | Value of the operandes (can process numbers and strings) |
-
-**Examples**
-
-```handlebars
-{{divide 4 2}}
-
-result: '2'
-{{divide '4' '2'}}
-
-result: '2'
-{{divide '4' 'foo' 2}}
-
-result: '2'
-```
-
-## `modulo`
-
-Compute the modulo of the first parameter by the second.
-
-| Arguments (ordered) | Type   | Description                                    |
-| ------------------- | ------ | ---------------------------------------------- |
-| 0                   | number | First value (can process numbers and strings)  |
-| 1                   | number | Second value (can process numbers and strings) |
-
-**Examples**
-
-```handlebars
-{{modulo 5 4}}
-
-result: '1'
-{{modulo '5' '4'}}
-
-result: '1'
-{{modulo '5' 'foo' 4}}
-
-result: '1'
-```
-
-## `ceil`
-
-Ceil the value of the number passed as parameter.
-
-| Arguments (ordered) | Type   | Description                                     |
-| ------------------- | ------ | ----------------------------------------------- |
-| 0                   | number | Value to ceil (can process numbers and strings) |
-
-**Examples**
-
-```handlebars
-{{ceil 1.5}}
-
-result: '2'
-{{ceil '1.5'}}
-
-result: '2'
-```
-
-## `floor`
-
-Floor the value of the number passed as parameter.
-
-| Arguments (ordered) | Type   | Description                                      |
-| ------------------- | ------ | ------------------------------------------------ |
-| 0                   | number | Value to floor (can process numbers and strings) |
-
-**Examples**
-
-```handlebars
-{{floor 2.5}}
-
-result: '2'
-{{floor '2.5'}}
-
-result: '2'
+{{now 'YYYY-MM-DD'}}
 ```
 
 ## `newline`
@@ -303,14 +172,12 @@ Encode the parameter as base64. This can be used as an inline helper or block he
 ```handlebars
 {{base64 'test'}}
 
-{{#base64}}
+{{# base64}}
   firstname,lastname,countryCode
-  {{#repeat 10}}
-    {{faker 'name.firstName'}},{{faker 'name.lastName'}},{{faker
-      'address.countryCode'
-    }}
-  {{/repeat}}
-{{/base64}}
+  {{# repeat 10 }}
+    {{ faker 'name.firstName' }},{{ faker 'name.lastName' }},{{ faker 'address.countryCode' }}
+  {{/ repeat}}
+{{/ base64}}
 ```
 
 ## `objectId`
@@ -343,16 +210,108 @@ Set a variable to be used later in the template. The value can be the result of 
 {{setVar 'varname' 'value'}}
 {{setVar 'varname' (body 'id')}}
 
-usage:
+// usage
 {{varname}}
 {{@root.varname}}
 {{#repeat varname}}...{{/repeat}}
 
-declare a variable in a block helper:
-{{#repeat 5}}
+// declare a variable in a block helper
+{{# repeat 5}}
   {{setVar 'random' (oneOf (array '1' '2' '3'))}}
   {{@random}}
-{{/repeat}}
+{{/ repeat}}
+```
+
+## `concat`
+
+Concatenate multiple strings/numbers together. This helper can concatenate results from other helpers, or be used as a parameter of another helper (see examples below).
+
+| Arguments (ordered) | Type | Description           |
+| ------------------- | ---- | --------------------- |
+| 0..n                | any  | Values to concatenate |
+
+**Examples**
+
+```handlebars
+{{concat 'value1' 2 'value3'}}
+{{concat @index (body 'id') 'value3'}}
+{{#repeat (concat 1 2 3)}}...{{/repeat}}
+```
+
+## `dateTimeShift`
+
+Shift a date by adding the number of `years`, `months`, etc. passed as parameters. The `date` and `format` parameters are optional. The helper will return the current date and time as an ISO string if omitted (`yyyy-MM-ddTHH:mm:ss.SSSxxx`).
+
+| Parameters (named)                      | Type   | Description                |
+| --------------------------------------- | ------ | -------------------------- |
+| date                                    | string | Date to shift              |
+| [format = 'yyyy-MM-ddTHH:mm:ss.SSSxxx'] | string | Format of the shifted date |
+| [years = 0]                             | number | Years to shift             |
+| [months = 0]                            | number | Months to shift            |
+| [days = 0]                              | number | Days to shift              |
+| [hours = 0]                             | number | Hours to shift             |
+| [minutes = 0]                           | number | Minutes to shift           |
+| [seconds = 0]                           | number | Seconds to shift           |
+
+**Examples**
+
+```handlebars
+{{dateTimeShift date='2021-01-01' format='yyyy-MM-dd HH:mm:ss' years=1 months=1 days=1 hours=1 minutes=1 seconds=1}}
+```
+
+## `indexOf`
+
+Return the index of the searched 'data' inside the string. A last parameter (number) can be passed to start the search at a specific index.
+
+| Arguments (ordered) | Type   | Description           |
+| ------------------- | ------ | --------------------- |
+| 0                   | any    | Data to search into   |
+| 1                   | any    | Data to search        |
+| [2 = 0]             | number | Search starting index |
+
+**Examples**
+
+```handlebars
+{{indexOf 'Some data' 'data' 0}}
+
+// result
+5
+```
+
+## `includes`
+
+Search whether a string can be found in another string and returns the appropriate boolean.
+
+| Arguments (ordered) | Type | Description         |
+| ------------------- | ---- | ------------------- |
+| 0                   | any  | Data to search into |
+| 1                   | any  | Data to search      |
+
+**Examples**
+
+```handlebars
+{{includes 'Some data' 'data'}}
+
+// result
+true
+```
+
+## `substr`
+
+Return a portion of a string starting at the specified index and extending for a given number of characters afterwards.
+
+| Arguments (ordered) | Type | Description    |
+| ------------------- | ---- | -------------- |
+| 0                   | any  | Starting index |
+| [1 = max length]    | any  | Length         |
+
+**Examples**
+
+```handlebars
+{{substr 'Some data' 5 4}}
+
+// result
+'data'
 ```
 
 ## `int`
@@ -383,143 +342,6 @@ Return a random float. Alias of `faker 'random.number` with precision = 10.
 
 ```handlebars
 {{float 0 100}}
-```
-
-## `includes`
-
-Search whether a string can be found in another string and returns the appropriate boolean.
-
-| Arguments (ordered) | Type | Description         |
-| ------------------- | ---- | ------------------- |
-| 0                   | any  | Data to search into |
-| 1                   | any  | Data to search      |
-
-**Examples**
-
-```handlebars
-{{includes 'Some data' 'data'}}
-
-result: true
-```
-
-## `substr`
-
-Return a portion of a string starting at the specified index and extending for a given number of characters afterwards.
-
-| Arguments (ordered) | Type | Description    |
-| ------------------- | ---- | -------------- |
-| 0                   | any  | Starting index |
-| [1 = max length]    | any  | Length         |
-
-**Examples**
-
-```handlebars
-{{substr 'Some data' 5 4}}
-
-result: 'data'
-```
-
-## `split`
-
-Split a string and return an array containing the multiples substrings. This helper can be used within handlebars' iterative helpers such as `each`. (Default separator is " ")
-
-| Arguments (ordered) | Type   | Description   |
-| ------------------- | ------ | ------------- |
-| 0                   | string | Data to split |
-| 1                   | string | Separator     |
-
-**Examples**
-
-```handlebars
-{{#each (split '1 2 3 4')}}
-  itemthis,
-{{/each}}
-
-result: item1,item2,item3,item4
-
-{{#each (split 'This is my string.')}}
-  this,
-{{/each}}
-
-result: This,is,my,string,
-```
-
-## `concat`
-
-Concatenate multiple strings/numbers together. This helper can concatenate results from other helpers, or be used as a parameter of another helper (see examples below).
-
-| Arguments (ordered) | Type | Description           |
-| ------------------- | ---- | --------------------- |
-| 0..n                | any  | Values to concatenate |
-
-**Examples**
-
-```handlebars
-{{concat 'value1' 2 'value3'}}
-{{concat @index (body 'id') 'value3'}}
-{{#repeat (concat 1 2 3)}}...{{/repeat}}
-```
-
-## `indexOf`
-
-Return the index of the searched 'data' inside the string. A last parameter (number) can be passed to start the search at a specific index.
-
-| Arguments (ordered) | Type   | Description           |
-| ------------------- | ------ | --------------------- |
-| 0                   | any    | Data to search into   |
-| 1                   | any    | Data to search        |
-| [2 = 0]             | number | Search starting index |
-
-**Examples**
-
-```handlebars
-{{indexOf 'Some data' 'data' 0}}
-
-result: 5
-```
-
-## `now`
-
-Display the current time in the chosen format. Format syntax is based on [date-fns package (v2)](https://date-fns.org/v2.11.1/docs/format) and is optional (default to ISO string).
-
-| Arguments (ordered) | Type   | Description |
-| ------------------- | ------ | ----------- |
-| 0                   | string | Date format |
-
-**Examples**
-
-```handlebars
-{{now 'YYYY-MM-DD'}}
-```
-
-## `dateTimeShift`
-
-Shift a date by adding the number of `years`, `months`, etc. passed as parameters. The `date` and `format` parameters are optional. The helper will return the current date and time as an ISO string if omitted (`yyyy-MM-ddTHH:mm:ss.SSSxxx`).
-
-| Parameters (named)                      | Type   | Description                |
-| --------------------------------------- | ------ | -------------------------- |
-| date                                    | string | Date to shift              |
-| [format = 'yyyy-MM-ddTHH:mm:ss.SSSxxx'] | string | Format of the shifted date |
-| [years = 0]                             | number | Years to shift             |
-| [months = 0]                            | number | Months to shift            |
-| [days = 0]                              | number | Days to shift              |
-| [hours = 0]                             | number | Hours to shift             |
-| [minutes = 0]                           | number | Minutes to shift           |
-| [seconds = 0]                           | number | Seconds to shift           |
-
-**Examples**
-
-```handlebars
-{{dateTimeShift
-  date='2021-01-01'
-  format='yyyy-MM-dd HH:mm:ss'
-  years=1
-  months=1
-  days=1
-  hours=1
-  minutes=1
-  seconds=1
-}}
 ```
 
 ## `date`

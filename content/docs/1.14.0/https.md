@@ -18,7 +18,7 @@ Open the **Environment Settings** by clicking on the cog in the upper right corn
 
 Enable the **HTTPS option** by ticking the checkbox. The option was successfully activated if a yellow lock is displayed next to the environment name.
 
-![tick the HTTPS checkbox](/images/docs/v1.15.0-enable-https.png)
+![tick the HTTPS checkbox](/images/docs/enable-https.png)
 
 > You may need to restart your environment for the change to take effect.
 

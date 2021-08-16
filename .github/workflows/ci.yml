@@ -16,6 +16,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "12.x"
+      - name: Update NPM
+        run: |
+          npm install -g npm@latest
       - name: Install, build and deploy
         run: |
           npm ci

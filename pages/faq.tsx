@@ -20,7 +20,10 @@ const Faq: FunctionComponent = function () {
             <div className='accordion shadow-light-lg mb-5 mb-lg-6'>
               <div className='accordion-item'>
                 <div className='accordion-button'>
-                  <h3 className='me-4'>
+                  <h3
+                    id='how-does-mockoon-mock-api-creation-works'
+                    className='me-4'
+                  >
                     How does Mockoon mock API creation works?
                   </h3>
                 </div>
@@ -36,7 +39,10 @@ const Faq: FunctionComponent = function () {
               </div>
               <div className='accordion-item'>
                 <div className='accordion-button'>
-                  <h3 className='me-4'>
+                  <h3
+                    id='does-mockoon-need-elevated-rights-to-run'
+                    className='me-4'
+                  >
                     Does Mockoon need elevated rights to run?
                   </h3>
                 </div>
@@ -51,11 +57,12 @@ const Faq: FunctionComponent = function () {
               </div>
               <div className='accordion-item'>
                 <div className='accordion-button'>
-                  <h3 className='me-4'>
+                  <h3
+                    id='does-mockoon-work-behind-a-company-firewall'
+                    className='me-4'
+                  >
                     Does Mockoon work behind a company firewall?
                   </h3>
-
-                  <div className='text-muted ms-auto'></div>
                 </div>
 
                 <div className='accordion-collapse'>
@@ -73,11 +80,12 @@ const Faq: FunctionComponent = function () {
               </div>
               <div className='accordion-item'>
                 <div className='accordion-button '>
-                  <h3 className='me-4'>
+                  <h3
+                    id='does-mockoon-require-an-active-internet-connection'
+                    className='me-4'
+                  >
                     Does Mockoon require an active internet connection?
                   </h3>
-
-                  <div className='text-muted ms-auto'></div>
                 </div>
 
                 <div className='accordion-collapse '>
@@ -91,11 +99,12 @@ const Faq: FunctionComponent = function () {
               </div>
               <div className='accordion-item'>
                 <div className='accordion-button '>
-                  <h3 className='me-4'>
+                  <h3
+                    id='do-you-need-an-account-to-create-mock-apis'
+                    className='me-4'
+                  >
                     Do you need an account to create mock APIs?
                   </h3>
-
-                  <div className='text-muted ms-auto'></div>
                 </div>
 
                 <div className='accordion-collapse '>
@@ -110,9 +119,9 @@ const Faq: FunctionComponent = function () {
 
               <div className='accordion-item'>
                 <div className='accordion-button '>
-                  <h3 className='me-4'>Does Mockoon offer a CLI?</h3>
-
-                  <div className='text-muted ms-auto'></div>
+                  <h3 id='does-mockoon-offer-a-cli' className='me-4'>
+                    Does Mockoon offer a CLI?
+                  </h3>
                 </div>
 
                 <div className='accordion-collapse '>
@@ -137,9 +146,9 @@ const Faq: FunctionComponent = function () {
 
               <div className='accordion-item'>
                 <div className='accordion-button '>
-                  <h3 className='me-4'>Is Mockoon compatible with OpenAPI?</h3>
-
-                  <div className='text-muted ms-auto'></div>
+                  <h3 id='is-mockoon-compatible-with-openapi' className='me-4'>
+                    Is Mockoon compatible with OpenAPI?
+                  </h3>
                 </div>
 
                 <div className='accordion-collapse '>
@@ -159,9 +168,9 @@ const Faq: FunctionComponent = function () {
 
               <div className='accordion-item'>
                 <div className='accordion-button '>
-                  <h3 className='me-4'>Is Mockoon free and/or open source?</h3>
-
-                  <div className='text-muted ms-auto'></div>
+                  <h3 id='is-mockoon-free-and-or-open-source' className='me-4'>
+                    Is Mockoon free and/or open source?
+                  </h3>
                 </div>
 
                 <div className='accordion-collapse '>
@@ -183,17 +192,15 @@ const Faq: FunctionComponent = function () {
 
               <div className='accordion-item'>
                 <div className='accordion-button '>
-                  <h3 className='me-4'>Where are my data stored?</h3>
-
-                  <div className='text-muted ms-auto'></div>
+                  <h3 id='where-are-my-data-stored' className='me-4'>
+                    Where are my data stored?
+                  </h3>
                 </div>
 
                 <div className='accordion-collapse '>
                   <div className='accordion-body'>
                     <div className='text-gray-700'>
-                      <span>
-                        Locally, in your operating system user data folder.
-                      </span>{' '}
+                      In your operating system user data folder:
                       <ul className='text-break'>
                         <li>
                           Windows:{' '}
@@ -211,6 +218,11 @@ const Faq: FunctionComponent = function () {
                           </code>
                         </li>
                       </ul>
+                      If you use the Windows portable version, your data will be
+                      stored next to the executable in a{' '}
+                      <code>./mockoon-data/storage</code> folder. The{' '}
+                      <code>./mockoon-data</code> folder also contains all the
+                      files necessary to run the application.
                     </div>
                   </div>
                 </div>
@@ -218,19 +230,29 @@ const Faq: FunctionComponent = function () {
 
               <div className='accordion-item'>
                 <div className='accordion-button '>
-                  <h3 className='me-4'>Are you collecting usage data?</h3>
-
-                  <div className='text-muted ms-auto'></div>
+                  <h3
+                    id='is-the-application-collecting-usage-data'
+                    className='me-4'
+                  >
+                    Is the application collecting usage data?
+                  </h3>
                 </div>
 
                 <div className='accordion-collapse '>
                   <div className='accordion-body'>
                     <p className='text-gray-700'>
-                      Yes, but only anonymous data through Google Analytics.
-                      Besides Google Analytics standard collected data (OS,
-                      screen size, etc.) we are also collecting some events
-                      happening in the application. A typical event includes the
-                      following JSON{' '}
+                      Yes. Since version 1.15.0, we use a custom telemetry
+                      system collecting anonymous and basic usage data like
+                      number of users, number of sessions, session duration,
+                      country, operating system, application version, and number
+                      of environments. You can opt out of this telemetry system
+                      in the application settings.
+                    </p>
+                    <p className='text-gray-700'>
+                      We also use a basic Google Analytics setup that collects
+                      the usual data like sessions, OS, screen size, etc. It is
+                      also collecting some events happening in the application.
+                      A typical event includes the following JSON{' '}
                       <code>
                         {'{'}category: 'delete', action: 'environment'{'}'}
                       </code>
@@ -240,9 +262,20 @@ const Faq: FunctionComponent = function () {
                       </code>
                       , etc.
                       <br />
-                      None of your mock API, routes or URLs are collected. You
-                      can always opt-out of the data collection inside the
-                      application.
+                      The application will prompt you to accept or refuse this
+                      data collection at the first launch. You can always enable
+                      or disable Google Analytics in the application settings.
+                      <br />
+                      We plan to remove Google Analytics in the future and only
+                      keep our privacy-friendly telemetry system.
+                    </p>
+                    <p className='text-gray-700'>
+                      None of your mock API data like route names, headers,
+                      bodies are collected.
+                    </p>
+                    <p className='text-gray-700'>
+                      No data or telemetry is collected when using the{' '}
+                      <a href='/cli/'>CLI</a>.
                     </p>
                   </div>
                 </div>

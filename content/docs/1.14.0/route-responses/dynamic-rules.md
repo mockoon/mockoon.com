@@ -20,19 +20,13 @@ You can define an unlimited number of rules for each route. At each request, Moc
 
 To add a new rule to a response, go to the route response's **Rules tab** and fill the fields:
 
-![Click on add and fill the fields](/images/docs/v1.15.0-add-route-response-rule.png)
-
-### Reordering rules
-
-By default, rules are interpreted in the order you added them. You can change their interpretation order by drag and dropping them:
-
-![Drag and drop rules to reorder them](/images/docs/route-response-rule-reorder.gif)
+![Click on add and fill the fields](/images/docs/v1.14.0-add-route-response-rule.png)
 
 ### Rules operator
 
 Inside a route response, rules are interpreted by default with the OR operator. When you have more than one rule in a route response, you can easily switch the operator applied when interpreting the rules, by clicking on the `OR|AND` buttons at the left of the rules:
 
-![Choose the rule operator OR AND](/images/docs/v1.15.0-route-response-rules-operator.png)
+![Click on add and fill the fields](/images/docs/v1.14.0-route-response-rules-operator.png)
 
 Rules have three parts:
 
@@ -54,13 +48,13 @@ In the dropdown menu you can choose between:
 
 Depending on the **target**, the way to access properties may be different:
 
-- **body**:
+- **body**: 
   - keep empty to match against the full raw body content.
   - use a path to access one of its properties. The syntax is based on an [object-path](https://www.npmjs.com/package/object-path) like `users.0.name`. This is compatible with request's bodies of `Content-Type` `application/json` or `application/x-www-form-urlencoded`.
 - **headers**: a header name like `Accept` or `Content-Type`.
 - **route param**: a route param name without the colon (":"), `:userId` becoming `userId`.
 - **query string**: either provide a property name like `filter` or a path if the query string field is an object `filter.primary`.
-- **request number**: _nothing has to be provided here for the request number_.
+- **request number**: *nothing has to be provided here for the request number*.
 
 For body and query string, if the property is an array, Mockoon will automatically check in the array if at least one item matches the value.
 

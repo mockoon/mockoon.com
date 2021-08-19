@@ -26,10 +26,10 @@ Mockoon offers the following helpers which can return information relative to th
 
 ## `body`
 
-Get the value at a given `path` from the request body if the entering `Content-Type` is set to `application/json` or `application/x-www-form-urlencoded`.
+Get the value at a given `path` from the request body if the entering `Content-Type` is set to `application/json`, `application/x-www-form-urlencoded`, `application/xml` or `text/xml`.
 
-- The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path).
-- For both JSON and form params bodies, full objects or arrays can be retrieved by the helper.
+- The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path). Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties.
+- Full objects or arrays can be retrieved by the helper.
 - The full request's raw body can also be fetched when the `path` is omitted (`{{body}}`) independently from the request's `Content-Type`.
 - If no value is present at the requested `path`, the default value will be used.
 - A third parameter (boolean) can be set to true to returns a stringified value even if it's a primitive.
@@ -51,10 +51,10 @@ Get the value at a given `path` from the request body if the entering `Content-T
 
 ## `bodyRaw`
 
-Get the **raw** value at a given `path` from the request body if the entering `Content-Type` is set to `application/json` or `application/x-www-form-urlencoded`.
+Get the **raw** value at a given `path` from the request body if the entering `Content-Type` is set to `application/json`, `application/x-www-form-urlencoded`, `application/xml` or `text/xml`.
 
-- The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path).
-- For both JSON and form params bodies, full objects or arrays can be retrieved by the helper.
+- The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path). Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties.
+- Full objects or arrays can be retrieved by the helper.
 - The full request's raw body can also be fetched when the `path` is omitted (`{{bodyRaw}}`) independently from the request's `Content-Type`.
 - If no value is present at the requested `path`, the default value will be used.
 - This helper allows the use of `body` within handlebars' helpers such as `{{#each}}` and `{{#if}}`.

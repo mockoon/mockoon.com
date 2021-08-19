@@ -6,7 +6,7 @@ meta:
 order: 1020
 ---
 
-# Templating request helpers <!-- omit in toc -->
+# Templating request helpers
 
 ---
 
@@ -24,7 +24,8 @@ Mockoon offers the following helpers which can return information relative to th
 ## `body`
 
 Get the value at a given `path` from the request body if the entering `Content-Type` is set to `application/json` or `application/x-www-form-urlencoded`.
-- The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path). 
+
+- The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path).
 - For both JSON and form params bodies, full objects or arrays can be retrieved by the helper.
 - The full request's raw body can also be fetched when the `path` is omitted (`{{body}}`) independently from the request's `Content-Type`.
 - If no value is present at the requested `path`, the default value will be used.
@@ -48,6 +49,7 @@ Get the value at a given `path` from the request body if the entering `Content-T
 ## `queryParam`
 
 Get the value at a given `path` from the request's query string. Complex query strings with arrays and objects are supported.
+
 - The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path).
 - Full objects or arrays can be retrieved by the helper.
 - The full query string object can also be fetched when the `path` is omitted (`{{queryParam}}`). It will be stringified and can be used in a JSON body for example.

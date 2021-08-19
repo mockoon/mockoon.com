@@ -6,7 +6,7 @@ meta:
 order: 1010
 ---
 
-# Mockoon templating helpers <!-- omit in toc -->
+# Mockoon templating helpers
 
 ---
 

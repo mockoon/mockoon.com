@@ -6,7 +6,7 @@ meta:
 order: 1020
 ---
 
-# Templating request helpers <!-- omit in toc -->
+# Templating request helpers
 
 ---
 

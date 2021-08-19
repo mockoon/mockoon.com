@@ -198,7 +198,7 @@ export default function Docs(props: {
       <div className='container-fluid'>
         <div className='row justify-content-center gx-0 mx-lg-0 mb-5'>
           <div className='col-12 col-lg-2 me-lg-5'>
-            <aside className='sticky-top flex-grow-1 py-8 py-lg-10'>
+            <aside className='flex-grow-1 py-8 py-lg-10'>
               <div className='content mb-5'>
                 <h3>Documentation</h3>
                 <div className='select'>

@@ -9,15 +9,15 @@ imageAlt: Mockoon and Giphy logos side by side
 order: 110
 ---
 
-Working with APIs can be a hassle during development, especially when you want to move fast or quickly prototype something. You need to register, get a token, sometimes solve CORS problems, etc. Let Mockoon speed things up for you. 
+Working with APIs can be a hassle during development, especially when you want to move fast or quickly prototype something. You need to register, get a token, sometimes solve CORS problems, etc. Let Mockoon speed things up for you.
 
-If you are planning to use Giphy's API and look for an easy way to mock its most relevant endpoints for free and with no need of signing up, Mockoon got you covered. With this ready-to-use mock, you will be able to make requests to the most useful endpoints and get realistic data returned in the span of a click. 
+If you are planning to use Giphy's API and look for an easy way to mock its most relevant endpoints for free and with no need of signing up, Mockoon got you covered. With this ready-to-use mock, you will be able to make requests to the most useful endpoints and get realistic data returned in the span of a click.
 
 Amongst the endpoints our API mocking tool currently covers you will find:
 
-> Get the full mock ready to import in Mockoon! <a href="https://github.com/mockoon/mock-samples/blob/main/samples/giphy.json" className="btn btn-primary-desat-soft btn-xs"><i className='icon-download'></i>&nbsp;Download</a>
-> 
-> To import the file, please [follow the instructions](https://github.com/mockoon/mock-samples#how-to-import-the-samples-in-mockoon-application). 
+> Get the full mock ready to import in Mockoon! <a href="https://github.com/mockoon/mock-samples/blob/main/apis/giphy.json" className="btn btn-primary-desat-soft btn-xs"><i className='icon-download'></i>&nbsp;Download</a>
+>
+> To import the file, please [follow the instructions](https://github.com/mockoon/mock-samples#how-to-import-the-samples-in-mockoon-application).
 
 ## GET /v1/gifs/search
 
@@ -77,7 +77,7 @@ Get instant access to a selection of gifs.
     "offset": 0,
     "total_count": 1,
     "count": 1
-  },  
+  },
   "meta": {
     "msg": "OK",
     "status": 200,

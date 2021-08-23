@@ -9,15 +9,15 @@ imageAlt: Mockoon and Open Weather logos side by side
 order: 100
 ---
 
-Are you planning on using Open Weather's API and look for an easy way to mock the most relevant endpoints for free and with no need of signing up? 
+Are you planning on using Open Weather's API and look for an easy way to mock the most relevant endpoints for free and with no need of signing up?
 
-Mockoon got you covered with this ready to use JSON mock sample! By simply importing it in Mockoon, you will be able to make requests to the most useful endpoints and get realistic data returned in the span of a click. 
+Mockoon got you covered with this ready to use JSON mock sample! By simply importing it in Mockoon, you will be able to make requests to the most useful endpoints and get realistic data returned in the span of a click.
 
 Our API mocking tool currently covers the following endpoints:
 
-> Get the full mock ready to import in Mockoon! <a href="https://github.com/mockoon/mock-samples/blob/main/samples/open-weather.json" className="btn btn-primary-desat-soft btn-xs"><i className='icon-download'></i>&nbsp;Download</a>
-> 
-> To import the file, please [follow the instructions](https://github.com/mockoon/mock-samples#how-to-import-the-samples-in-mockoon-application). 
+> Get the full mock ready to import in Mockoon! <a href="https://github.com/mockoon/mock-samples/blob/main/apis/open-weather.json" className="btn btn-primary-desat-soft btn-xs"><i className='icon-download'></i>&nbsp;Download</a>
+>
+> To import the file, please [follow the instructions](https://github.com/mockoon/mock-samples#how-to-import-the-samples-in-mockoon-application).
 
 ## GET /data/2.5/weather
 

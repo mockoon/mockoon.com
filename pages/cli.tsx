@@ -1,32 +1,39 @@
 import { FunctionComponent } from 'react';
+import Card from '../components/card';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
-import SimpleCards from '../components/simple-cards';
 import Terminal from '../components/terminal';
 import Layout from '../layout/layout';
-import { ItemCard } from '../models/common.model';
+import { CardData } from '../models/common.model';
 
-const features: ItemCard = [
+const features: CardData[] = [
   {
     title: "Supports all Mockoon's features",
     description:
       "The CLI supports all of Mockoon's features: dynamic templating, response rules, proxy mode, etc.",
-    linkText: 'View all features',
-    link: '/features/'
+    links: [{ src: '/features/', text: 'View all features' }]
   },
   {
     title: 'Lightweight and fast',
     description:
       'Deploy light and fast mocks in your CI environment with a simple and easy to use NPM package.',
-    link: 'https://github.com/mockoon/cli#installation',
-    linkText: 'How to use it'
+    links: [
+      {
+        src: 'https://github.com/mockoon/cli#installation',
+        text: 'How to use it'
+      }
+    ]
   },
   {
     title: 'Run your mocks everywhere',
     description:
-      'Also available as a Docker image and soon as a Github Action or on your favorite CI platforms!',
-    disabledLink: true,
-    linkText: 'Stay tuned !'
+      'Also available as a Docker image, run your mock APIs in Github Actions or on your favorite CI platform!',
+    links: [
+      {
+        src: '/tutorials/run-mock-api-anywhere-cli/',
+        text: 'Getting started tutorial'
+      }
+    ]
   }
 ];
 
@@ -52,13 +59,28 @@ const Cli: FunctionComponent = function () {
       <section className='py-5 py-lg-10'>
         <div className='container'>
           <div className='row py-5'>
-            <div className='text-center'>
-              <h2>
-                Mockoon's perfect complement for all your headless and automated
-                environments.
-              </h2>
+            <div className='col-12'>
+              <div className='text-center'>
+                <h2>
+                  Mockoon's perfect complement for all your headless and
+                  automated environments.
+                </h2>
+              </div>
             </div>
-            <SimpleCards items={features} />
+            <div className='col-12'>
+              <div className='row'>
+                {features.map((feature) => {
+                  return (
+                    <div
+                      key={feature.links[0]}
+                      className='mx-auto my-lg-3 col-12 col-lg-4'
+                    >
+                      <Card data={feature} cover={false} />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
           <div className='row py-5'>
             <div className='col-md-6'>

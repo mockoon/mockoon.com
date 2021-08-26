@@ -6,23 +6,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mockoon.com</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/blog/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/blog/mockoon-cli-now-available/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/blog/api-endpoints-filtering-improved-security/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/blog/sequential-responses-custom-status-codes/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/blog/windows-portable-gzip-rules-reordering/</loc>
@@ -30,142 +30,134 @@
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/about/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/gui-cheat-sheet/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/cors/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/https/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/import-export-data/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/route-responses/multiple-responses/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/route-responses/dynamic-rules/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/proxy-mode/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/requests-logging/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/response-headers/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/routing/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/templating/overview/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/templating/mockoon-helpers/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/templating/mockoon-request-helpers/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/templating/fakerjs-helpers/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/faq/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/features/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/angular-mocking/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/getting-started/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/partial-mocking-proxy/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/requests-recording-auto-mocking/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/generate-mock-json-data/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/nodejs-api-mocking/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/run-mock-api-anywhere-cli/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/mock-samples/</loc>
-    <lastmod>2021-07-01</lastmod>
-  </url>
-  <url>
-    <loc>https://mockoon.com/mock-samples/open-weather/</loc>
-    <lastmod>2021-07-01</lastmod>
-  </url>
-  <url>
-    <loc>https://mockoon.com/mock-samples/giphy/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/case-studies/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/case-studies/impala-api-ux-user-research/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/about/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/contact/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/sponsor-us/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/cli/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/download/</loc>
-    <lastmod>2021-07-01</lastmod>
+    <lastmod>2021-08-20</lastmod>
   </url>
 </urlset>

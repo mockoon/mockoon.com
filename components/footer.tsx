@@ -21,8 +21,7 @@ const Footer: FunctionComponent = function () {
     '/docs/[...slug]',
     '/tutorials',
     '/tutorials/[slug]',
-    '/mock-samples',
-    '/mock-samples/[slug]'
+    '/mock-samples'
   ];
 
   const displayDownload = [

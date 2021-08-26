@@ -1,4 +1,4 @@
-import Cards from '../../components/cards';
+import Card from '../../components/card';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
@@ -30,12 +30,30 @@ export default function CaseStudies(props: { articles: ArticleList }) {
 
       <section className='pb-8'>
         <div className='container'>
-          <Cards
-            large
-            path='case-studies'
-            articles={props.articles}
-            cover={false}
-          />
+          <div className='row d-flex flex-column flex-lg-row'>
+            <div className='mx-auto my-lg-3 col-12 col-xxl-10'>
+              {props.articles.map((article) => {
+                return (
+                  <Card
+                    key={article.slug}
+                    data={{
+                      title: article.data.title,
+                      description: article.data.excerpt,
+                      imageSrc: `/images/case-studies/${article.data.image}`,
+                      imageAlt: article.data.imageAlt,
+                      links: [
+                        {
+                          src: `/case-studies/${article.slug}`,
+                          text: 'Read more'
+                        }
+                      ]
+                    }}
+                    cover={false}
+                  />
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
     </Layout>

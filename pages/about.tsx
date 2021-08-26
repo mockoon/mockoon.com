@@ -20,59 +20,55 @@ const SponsorUs: FunctionComponent = function () {
       <div className='container'>
         <div className='row d-flex justify-content-center'>
           <div className='col-6 col-lg-4'>
-            <div className='card card-row p-5'>
-              <div className='row gx-0 d-flex align-items-center justify-content-center flex-column'>
-                <div className='col-12 col-lg-7'>
-                  <img
-                    src='/images/about/guillaume.jpg'
-                    alt='Mockoon maintainer'
-                    className='img-fluid rounded-circle mb-3 img-thumbnail shadow'
-                  />
-                </div>
-                <div className='col-12 order-lg-1 d-flex justify-content-center'>
-                  <div className='card-meta pb-0 d-flex flex-column flex-lg-row'>
-                    <h6 className='text-uppercase text-muted me-lg-2 mb-lg-0 mb-1'>
-                      Guillaume
-                    </h6>
+            <div className='row gx-0 d-flex align-items-center justify-content-center flex-column'>
+              <div className='col-12 col-lg-7'>
+                <img
+                  src='/images/about/guillaume.jpg'
+                  alt='Mockoon maintainer'
+                  className='img-fluid rounded-circle mb-3 img-thumbnail shadow'
+                />
+              </div>
+              <div className='col-12 order-lg-1 d-flex justify-content-center'>
+                <div className='align-items-center pb-0 d-flex flex-column flex-lg-row'>
+                  <h6 className='text-uppercase text-muted me-lg-2 mb-lg-0 mb-1'>
+                    Guillaume
+                  </h6>
 
-                    <a
-                      href='https://github.com/255kb'
-                      target='_blank'
-                      rel='noopener'
-                      className='text-decoration-none'
-                    >
-                      <i className='icon-github fs-3 text-muted'></i>
-                    </a>
-                  </div>
+                  <a
+                    href='https://github.com/255kb'
+                    target='_blank'
+                    rel='noopener'
+                    className='text-decoration-none'
+                  >
+                    <i className='icon-github fs-3 text-muted'></i>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
           <div className='col-6 col-lg-4'>
-            <div className='card card-row p-5'>
-              <div className='row gx-0 d-flex align-items-center justify-content-center flex-column'>
-                <div className='col-12 col-lg-7'>
-                  <img
-                    src='/images/about/fabrice.jpg'
-                    alt='Mockoon maintainer'
-                    className='img-fluid rounded-circle mb-3 img-thumbnail shadow'
-                  />
-                </div>
-                <div className='col-12 order-lg-1 d-flex justify-content-center'>
-                  <div className='card-meta pb-0 d-flex flex-column flex-lg-row'>
-                    <h6 className='text-uppercase text-muted me-lg-2 mb-lg-0 mb-1'>
-                      Fabrice
-                    </h6>
+            <div className='gx-0 d-flex align-items-center justify-content-center flex-column'>
+              <div className='col-12 col-lg-7'>
+                <img
+                  src='/images/about/fabrice.jpg'
+                  alt='Mockoon maintainer'
+                  className='img-fluid rounded-circle mb-3 img-thumbnail shadow'
+                />
+              </div>
+              <div className='col-12 order-lg-1 d-flex justify-content-center'>
+                <div className='align-items-center pb-0 d-flex flex-column flex-lg-row'>
+                  <h6 className='text-uppercase text-muted me-lg-2 mb-lg-0 mb-1'>
+                    Fabrice
+                  </h6>
 
-                    <a
-                      href='https://github.com/fabhoarau'
-                      target='_blank'
-                      rel='noopener'
-                      className='text-decoration-none'
-                    >
-                      <i className='icon-github fs-3 text-muted'></i>
-                    </a>
-                  </div>
+                  <a
+                    href='https://github.com/fabhoarau'
+                    target='_blank'
+                    rel='noopener'
+                    className='text-decoration-none'
+                  >
+                    <i className='icon-github fs-3 text-muted'></i>
+                  </a>
                 </div>
               </div>
             </div>

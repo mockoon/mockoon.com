@@ -1,11 +1,11 @@
 import { FunctionComponent } from 'react';
+import Card from '../components/card';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
-import SimpleCards from '../components/simple-cards';
 import Layout from '../layout/layout';
-import { ItemCard } from '../models/common.model';
+import { CardData } from '../models/common.model';
 
-const features: ItemCard = [
+const features: CardData[] = [
   {
     title: 'Unlimited mocking',
     description:
@@ -15,14 +15,15 @@ const features: ItemCard = [
     title: 'Run your mock anywhere',
     description:
       'Use the CLI to run your mock APIs in any headless or automated environment: CI, GitHub Actions, Docker containers, etc.',
-    link: '/cli/',
-    linkText: 'Discover the CLI'
+    links: [{ src: '/cli/', text: 'Discover the CLI →' }]
   },
   {
     title: 'Import / export',
     description:
       'Mock API import / export with Swagger/OpenAPI format support.',
-    link: '/docs/latest/import-export-data/'
+    links: [
+      { src: '/docs/latest/import-export-data/', text: 'Documentation →' }
+    ]
   },
   {
     title: 'Route regex',
@@ -33,24 +34,29 @@ const features: ItemCard = [
     title: 'Multiple responses per route',
     description:
       'Serve multiple rules-triggered or random responses with any headers body, or HTTP status codes.',
-    link: '/docs/latest/route-responses/multiple-responses/'
+    links: [
+      {
+        src: '/docs/latest/route-responses/multiple-responses/',
+        text: 'Documentation →'
+      }
+    ]
   },
   {
     title: 'CORS',
     description:
       'Automatically send CORS headers (<code>Access-Control-Allow-Origin</code>, etc.) for OPTIONS requests.',
-    link: '/docs/latest/cors/'
+    links: [{ src: '/docs/latest/cors/', text: 'Documentation →' }]
   },
   {
     title: 'HTTPS',
     description: 'Serve your mock API over TLS with self-signed certificate.',
-    link: '/docs/latest/https/'
+    links: [{ src: '/docs/latest/https/', text: 'Documentation →' }]
   },
   {
     title: 'Response headers',
     description:
       'Add any response headers to your routes and mock API. With auto-completion.',
-    link: '/docs/latest/response-headers/'
+    links: [{ src: '/docs/latest/response-headers/', text: 'Documentation →' }]
   },
   {
     title: 'Latency',
@@ -60,7 +66,7 @@ const features: ItemCard = [
     title: 'Requests and responses logs',
     description:
       'All incoming requests and outgoing responses are logged for easier debugging.',
-    link: '/docs/latest/requests-logging/'
+    links: [{ src: '/docs/latest/requests-logging/', text: 'Documentation →' }]
   },
   {
     title: 'Proxy mode',
@@ -81,7 +87,9 @@ const features: ItemCard = [
     title: 'Templating',
     description:
       'Templating supported in body, file content and header, with many helpers: url params, query params, JSON body lookup, etc.',
-    link: '/docs/latest/templating/overview/'
+    links: [
+      { src: '/docs/latest/templating/overview/', text: 'Documentation →' }
+    ]
   },
   {
     title: 'Auto-save',
@@ -92,11 +100,12 @@ const features: ItemCard = [
     title: 'Docker support for the CLI',
     description:
       'Run the CLI directly as an NPM package or use the provided Docker image.',
-    link: 'https://github.com/mockoon/cli#docker',
-    linkText: 'Documentation'
+    links: [
+      { src: 'https://github.com/mockoon/cli#docker', text: 'Documentation →' }
+    ]
   },
   {
-    title: 'Offline',
+    title: 'Offline first',
     description: 'No account, no sign-up, no cloud deployment required.'
   }
 ];
@@ -117,7 +126,16 @@ const Features: FunctionComponent = function () {
       <div className='section'>
         <div className='container'>
           <div className='row'>
-            <SimpleCards items={features} />
+            {features.map((feature) => {
+              return (
+                <div
+                  key={feature.title}
+                  className='mx-auto my-lg-3 col-12 col-lg-4 d-flex'
+                >
+                  <Card data={feature} cover={false} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

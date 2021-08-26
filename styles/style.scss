@@ -327,3 +327,11 @@ p.console {
     opacity: 1;
   }
 }
+
+.card-img-start-lg {
+  border-radius: $border-radius $border-radius 0 0;
+
+  @include media-breakpoint-up(lg) {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+}

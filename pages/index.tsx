@@ -1,6 +1,6 @@
 import React from 'react';
 import Typed from 'react-typed';
-import Cards from '../components/cards';
+import Card from '../components/card';
 import DownloadSection from '../components/download-section';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
@@ -9,7 +9,6 @@ import { hpFeatures } from '../data/hp-features';
 import { hpHighlights } from '../data/hp-highlights';
 import { testimonials } from '../data/testimonials';
 import Layout from '../layout/layout';
-import { ArticleData } from '../models/common.model';
 const version = require('../package.json').version;
 
 const meta = {
@@ -225,24 +224,27 @@ class Index extends React.Component {
               </div>
 
               <div className='col-12 text-center'>
-                <Cards
-                  path='case-studies'
-                  articles={[
-                    {
-                      slug: 'impala-api-ux-user-research',
-                      data: {
+                <div className='row'>
+                  <div className='mx-auto my-lg-3 col-12 col-lg-4 '>
+                    <Card
+                      data={{
                         title: 'API UX research with Mockoon',
-                        image: 'impala-logo-black.svg',
+                        description:
+                          'Learn how Impala uses Mockoon to conduct API user research',
+                        imageSrc: '/images/case-studies/impala-logo-black.svg',
                         imageAlt: 'Impala logo',
-                        header: {},
-                        excerpt:
-                          'Learn how Impala uses Mockoon to conduct API user research'
-                      } as ArticleData
-                    }
-                  ]}
-                  small
-                  cover={false}
-                />
+                        links: [
+                          {
+                            src: '/case-studies/impala-api-ux-user-research',
+                            text: 'Read more'
+                          }
+                        ]
+                      }}
+                      vertical
+                      cover={false}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -72,7 +72,7 @@ const Cli: FunctionComponent = function () {
                 {features.map((feature) => {
                   return (
                     <div
-                      key={feature.links[0]}
+                      key={feature.title}
                       className='mx-auto my-lg-3 col-12 col-lg-4'
                     >
                       <Card data={feature} cover={false} />

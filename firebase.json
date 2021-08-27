@@ -75,6 +75,16 @@
         "source": "/tutorial/serve-mock-api-tls",
         "destination": "/docs/latest/https/",
         "type": 301
+      },
+      {
+        "source": "/mock-samples/open-weather/",
+        "destination": "/mock-samples/",
+        "type": 301
+      },
+      {
+        "source": "/mock-samples/giphy/",
+        "destination": "/mock-samples/",
+        "type": 301
       }
     ]
   }

@@ -200,7 +200,8 @@ const Faq: FunctionComponent = function () {
                 <div className='accordion-collapse '>
                   <div className='accordion-body'>
                     <div className='text-gray-700'>
-                      In your operating system user data folder:
+                      Mockoon application data and settings are stored in your
+                      operating system user data folder:
                       <ul className='text-break'>
                         <li>
                           Windows:{' '}
@@ -218,11 +219,33 @@ const Faq: FunctionComponent = function () {
                           </code>
                         </li>
                       </ul>
-                      If you use the Windows portable version, your data will be
-                      stored next to the executable in a{' '}
-                      <code>./mockoon-data/storage</code> folder. The{' '}
-                      <code>./mockoon-data</code> folder also contains all the
-                      files necessary to run the application.
+                      <p>
+                        If you use the Windows portable version, your data will
+                        be stored next to the executable in a{' '}
+                        <code>./mockoon-data/storage</code> folder. The{' '}
+                        <code>./mockoon-data</code> folder also contains all the
+                        files necessary to run the application.
+                      </p>
+                      <p>
+                        Mockoon's <code>storage</code> folder contains mainly
+                        two files: a <code>settings.json</code> file with your
+                        application settings and preferences and an{' '}
+                        <code>environments.json</code> file containing all your
+                        API mocks data. Starting with{' '}
+                        <a
+                          href='https://github.com/mockoon/mockoon/releases/tag/v1.16.0'
+                          target='_blank'
+                          rel='noopener'
+                        >
+                          v1.16.0
+                        </a>
+                        , your mock APIs are stored in separated files and can
+                        reside anywhere on your hard drive. After the migration
+                        to v1.16.0, the <code>storage</code> folder will contain
+                        as many <code>environment-x.json</code> files as you had
+                        mock APIs created in Mockoon. You can then move them
+                        elsewhere.
+                      </p>
                     </div>
                   </div>
                 </div>

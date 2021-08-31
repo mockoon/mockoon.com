@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Fragment, FunctionComponent } from 'react';
 import { CardData } from '../models/common.model';
+import ConditionalWrapper from './conditional-wrapper';
 
 const Card: FunctionComponent<{
   data: CardData;
@@ -43,21 +44,34 @@ const Card: FunctionComponent<{
             className='col-10 text-muted'
             dangerouslySetInnerHTML={{ __html: props.data.description }}
           ></p>
-          {props.data.links &&
-            props.data.links.map((link, linkIndex) => {
-              return (
-                <Link key={props.data.title + linkIndex} href={link.src}>
-                  <a className='btn-xs btn btn-primary-soft mt-auto'>
-                    {link.icon && (
-                      <span className='icon me-2'>
-                        <i className={link.icon}></i>
-                      </span>
-                    )}
-                    {link.text}
-                  </a>
-                </Link>
-              );
-            })}
+          {props.data.links?.length && (
+            <ConditionalWrapper
+              condition={props.data.links?.length > 1}
+              wrapper={(children) => (
+                <div className='btn-group mt-auto'>{children}</div>
+              )}
+            >
+              {props.data.links.map((link, linkIndex) => {
+                return (
+                  <Link key={props.data.title + linkIndex} href={link.src}>
+                    <a
+                      className={`btn-xs btn btn-primary-soft d-flex align-items-center ${
+                        props.data.links?.length > 1 ? '' : 'mt-auto'
+                      }`}
+                      onClick={link.clickHandler}
+                    >
+                      {link.icon && (
+                        <span className='icon me-2'>
+                          <i className={link.icon}></i>
+                        </span>
+                      )}
+                      {link.text}
+                    </a>
+                  </Link>
+                );
+              })}
+            </ConditionalWrapper>
+          )}
         </div>
       </div>
     </Fragment>

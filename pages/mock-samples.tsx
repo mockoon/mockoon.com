@@ -1,9 +1,28 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, MouseEvent } from 'react';
 import Card from '../components/card';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Layout from '../layout/layout';
 import { CardData } from '../models/common.model';
+
+const clickHandler = (event: MouseEvent) => {
+  event.preventDefault();
+
+  const command = (event.target as HTMLLinkElement).href.split(
+    'clipboardcopy://'
+  )[1];
+
+  navigator.clipboard
+    .writeText(command)
+    .then(() => {
+      (event.target as HTMLLinkElement).childNodes[1].textContent = 'Copied!';
+
+      setTimeout(() => {
+        (event.target as HTMLLinkElement).childNodes[1].textContent = 'CLI';
+      }, 5000);
+    })
+    .catch(() => {});
+};
 
 const mockSamples: CardData[] = [
   {
@@ -14,6 +33,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/1password-connect.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/1password-connect.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/1password-connect.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/1password.svg'
@@ -26,6 +56,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/archive-search-services.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/archive-search-services.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/archive-search-services.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/internet-archive.svg'
@@ -38,6 +79,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/archives-wayback.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/archives-wayback.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/archives-wayback.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/internet-archive.svg'
@@ -51,6 +103,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/bitbucket.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/bitbucket.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/bitbucket.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/bitbucket.svg'
@@ -63,6 +126,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/bufferapp.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/bufferapp.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/bufferapp.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/buffer.svg'
@@ -76,6 +150,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/circleci.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/circleci.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/circleci.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/circle-ci.svg'
@@ -88,6 +173,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/dev-to.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/dev-to.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/dev-to.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/devto.svg'
@@ -101,6 +197,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/digitalocean.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/digitalocean.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/digitalocean.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/digitalocean.svg'
@@ -114,6 +221,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/discourse.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/discourse.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/discourse.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/discourse.svg'
@@ -127,6 +245,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/docusign.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/docusign.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/docusign.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/docusign.svg'
@@ -141,6 +270,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/readme-io.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/readme-io.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/readme-io.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/readmeio.svg'
@@ -154,6 +294,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/giphy.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/giphy.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/giphy.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/giphy.svg'
@@ -167,6 +318,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/gitlab.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/gitlab.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/gitlab.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/gitlab.svg'
@@ -180,6 +342,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/healthcare-gov.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/healthcare-gov.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/healthcare-gov.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/healthcare-gov.svg'
@@ -193,6 +366,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/jira.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/jira.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/jira.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/jira.svg'
@@ -206,6 +390,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/linode.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/linode.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/linode.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/linode.svg'
@@ -218,6 +413,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/lyft.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/lyft.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/lyft.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/lyft.svg'
@@ -230,6 +436,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/mastodon.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/mastodon.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/mastodon.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/mastodon.svg'
@@ -243,6 +460,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/notion.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/notion.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/notion.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/notion.svg'
@@ -256,6 +484,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/docker.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/docker.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/docker.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/docker.svg'
@@ -269,6 +508,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/netlify.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/netlify.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/netlify.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/netlify.svg'
@@ -282,6 +532,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/slack.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/slack.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/slack.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/slack.svg'
@@ -295,6 +556,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/okta-users.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/okta-users.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/okta-users.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/okta.svg'
@@ -308,6 +580,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/open-weather.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/open-weather.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/open-weather.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/open-weather.svg'
@@ -320,6 +603,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/data-gov-regulations.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/data-gov-regulations.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/data-gov-regulations.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/regulations-gov.svg'
@@ -332,6 +626,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/sendgrid-email-activity.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/sendgrid-email-activity.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/sendgrid-email-activity.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/sendgrid.svg'
@@ -344,6 +649,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/spotify.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/spotify.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/spotify.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/spotify.svg'
@@ -357,6 +673,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/stripe.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/stripe.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/stripe.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/stripe.svg'
@@ -369,6 +696,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/twitter.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/twitter.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/twitter.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/twitter.svg'
@@ -381,6 +719,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/vercel.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/vercel.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/vercel.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/vercel.svg'
@@ -394,6 +743,17 @@ const mockSamples: CardData[] = [
         src: 'https://github.com/mockoon/mock-samples/blob/main/apis/zoom.json',
         text: 'Download',
         icon: 'icon-download'
+      },
+      {
+        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/zoom.json',
+        text: 'Open',
+        icon: 'icon-open'
+      },
+      {
+        src: 'clipboardcopy://mockoon-cli start --data https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/zoom.json',
+        text: 'CLI',
+        icon: 'icon-copy',
+        clickHandler
       }
     ],
     imageSrc: '/images/mock-samples/zoom.svg'
@@ -415,13 +775,49 @@ const MockSamples: FunctionComponent = function () {
 
       <div className='section'>
         <div className='container'>
-          <div className='alert quote'>
-            <p>
-              Please follow the{' '}
+          <div className='alert alert-light border'>
+            <p className='pb-2'>
+              You have three choices to use our mock samples:
+            </p>
+            <p className='pb-2'>
+              <button
+                type='button'
+                className='btn-xs btn btn-primary-soft'
+                disabled
+              >
+                <i className='icon-download'></i> Download
+              </button>{' '}
+              Download them manually before{' '}
               <a href='/docs/latest/import-export-data/#import-from-a-json-file'>
-                JSON import documentation
+                importing
               </a>{' '}
-              to import the following mock API files in Mockoon.
+              them into the application or{' '}
+              <a href='/tutorials/run-mock-api-anywhere-cli/'>run them</a> with
+              the CLI.
+            </p>
+            <p className='pb-2'>
+              <button
+                type='button'
+                className='btn-xs btn btn-primary-soft'
+                disabled
+              >
+                <i className='icon-open'></i> Open
+              </button>{' '}
+              Open them directly in Mockoon if you already{' '}
+              <a href='/download/'>installed the application</a>. You will be
+              prompted by the application to save the mock API.
+            </p>
+            <p>
+              <button
+                type='button'
+                className='btn-xs btn btn-primary-soft'
+                disabled
+              >
+                <i className='icon-copy'></i> CLI
+              </button>{' '}
+              Copy the CLI command to run them immediately. Make sure that you{' '}
+              <a href='/cli/'>installed the CLI</a> on your machine before
+              running this command.
             </p>
           </div>
           <div className='row'>
@@ -435,7 +831,7 @@ const MockSamples: FunctionComponent = function () {
                 return (
                   <div
                     key={sample.title}
-                    className='mx-auto my-lg-3 col-12 col-lg-4 d-flex'
+                    className='mx-auto my-lg-3 col-12 col-lg-6 col-xl-4 d-flex'
                   >
                     <Card data={sample} vertical cover={false} />
                   </div>

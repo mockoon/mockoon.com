@@ -19,14 +19,14 @@ Mockoon is available on the three major operating systems: Windows, macOS, and L
 
 [![Screenshot of the download section on the homepage](/images/tutorials/getting-started/app-download-screenshot.png)](/download/)
 
-After downloading the installer, double click on the file to install Mockoon and follow the instructions. Now, open the application to start setting up your first mock API. 
+After downloading the installer, double click on the file to install Mockoon and follow the instructions. Now, open the application to start setting up your first mock API.
 
 ## Step 2. Create your first mock API
 
-After launching the application for the first time, you will find a demo mock API, also called **"environment"** in Mockoon. You can keep it and build from here or create a new one. 
-To create a new mock API, open the collapsible environments menu on the left and press the blue "plus" button:
+After launching the application for the first time, you will find a demo mock API, also called **"environment"** in Mockoon. You can keep it and build from here or create a new one.
+To create a new mock API, click on the "New environment" button. You will be prompted to save the environment's JSON file:
 
-![Recording of adding a new environment](/images/tutorials/getting-started/create-mock-api.gif)
+![Recording of creating a new environment](/images/tutorials/getting-started/create-mock-api.gif)
 
 You can also rename the environment, as shown below:
 
@@ -56,13 +56,13 @@ You can further customize your endpoint by adding a custom header and the follow
 ]
 ```
 
-You can create a more complex configuration by serving files or [adding multiple responses triggered by rules](docs:route-responses/dynamic-rules).
-
 ![Recording of updating an API route](/images/tutorials/getting-started/update-api-route.gif)
+
+You can create a more complex configuration by serving files or [adding multiple responses triggered by rules](docs:route-responses/dynamic-rules).
 
 ## Step 5. Run and call your mock API
 
-The last step is to run your mock API. For this, click on the green "play" arrow in the header: 
+The last step is to run your mock API. For this, click on the green "play" arrow in the header:
 
 ![Recording of running a mock API](/images/tutorials/getting-started/run-mock-api.gif)
 
@@ -74,4 +74,4 @@ You can do a test call to the following URL `http://localhost:3000/tutorials` us
 
 ## Step 6. Learn more
 
-Now that you know how to create a basic mock API, you can head over to the [official documentation](docs:about) to explore the other functionalities like [requests logging](docs:requests-logging), [partial API mocking with proxy mode](docs:proxy-mode), or the [templating system](docs:templating/overview). 
+Now that you know how to create a basic mock API, you can head over to the [official documentation](docs:about) to explore the other functionalities like [requests logging](docs:requests-logging), [partial API mocking with proxy mode](docs:proxy-mode), or the [templating system](docs:templating/overview).

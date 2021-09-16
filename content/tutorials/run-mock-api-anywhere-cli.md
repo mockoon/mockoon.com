@@ -17,7 +17,7 @@ This tutorial will help you put up on track with the CLI and all its possibiliti
 
 Mockoon CLI is an [NPM package](https://www.npmjs.com/package/@mockoon/cli) that can run on all environments where Node.js is installed. A [Docker image](https://hub.docker.com/r/mockoon/cli) is also available (see [Step 7](#step-7-deploy-mockoon-cli-using-docker) below).
 
-The CLI is a companion application to Mockoon's main interface designed to receive an exported Mockoon data file.
+The CLI is a companion application to Mockoon's main interface designed to receive a Mockoon data file.
 
 It has been written in JavaScript/TypeScript and uses some great libraries like [oclif](https://oclif.io/) and [PM2](https://pm2.io/). One of the benefits of using PM2 is that you can easily manage your running mock APIs through the CLI or by using PM2 commands if you are used to them.
 
@@ -29,13 +29,13 @@ As Mockoon CLI is designed to work in pair with the main user interface, you wil
 
 One of the prerequisites for using the CLI is to create a mock API in the main application. If you already have a setup in Mockoon, you can jump straight to the next section.
 
-To create a new mock API, we have a [Getting started tutorial](tutorials:getting-started) that will guide you step by step. Once your mock is created, come back to this tutorial to learn how to use it in the CLI.
+> To create a new mock API, we have a [Getting started tutorial](tutorials:getting-started) that will guide you step by step. Once your mock is created, come back to this tutorial to learn how to use it in the CLI.
 
 ### Step 2. Install the CLI
 
 Before importing your mock API in the CLI, you must install it. First ensure that Node.js is installed on your computer by running `node -v` in your terminal:
 
-```text
+```sh-sessions
 $ node -v
 v14.15.4
 ```
@@ -44,7 +44,7 @@ If it's not installed, head over to [Node.js' download page](https://nodejs.org/
 
 You are now ready to install the CLI by running the following command `npm i -g @mockoon/cli`:
 
-```text
+```sh-sessions
 $ npm i -g @mockoon/cli
 
 + @mockoon/cli@1.0.0
@@ -53,33 +53,52 @@ added 423 packages from 339 contributors in 15s
 
 You can also install Mockoon CLI in the scope of a local project by running `npm i @mockoon/cli`. You will then need to use `npx mockoon-cli ...` to run it.
 
-### Step 3. Export your mock API to a JSON file
+### Step 3. Prepare your data file
 
-To use your mock API with the CLI, you need to export it. The CLI is compatible with Mockoon export files starting from version 1.7.0.
+The CLI currently supports only data files (exported or not) in Mockoon's format.
+The CLI can import and migrate data from older versions of Mockoon. However, it doesn't alter the file you provide and only migrates a copy. If you created or exported your mock with a more recent version of the application, you need to update your CLI with the following command: `npm install -g @mockoon/cli`.
 
-> As an alternative, you can also provide a URL pointing to a Mockoon export file, and Mockoon CLI will take care of downloading it. Continue to [step 4](#step-4-start-you-mock-api), and feel free to skip this step.
+Two methods are available to run your mocks with the CLI: directly using a Mockoon's environment file or an export file.
 
-To export your environment, open the "Import/export" application menu and choose "Mockoon's format" -> "Export all environments to a file (JSON)" or "Export current environment to a file (JSON)".
+#### Use a Mockoon's environment file (preferred method since v1.16.0)
+
+Following Mockoon's changes in version [1.16.0](https://github.com/mockoon/mockoon/releases/tag/v1.16.0) and starting with CLI [v1.2.0](https://github.com/mockoon/cli/releases/tag/v1.2.0), the latter is directly compatible with Mockoon's environment files, without the need to use the export method (see below).
+
+You can run your mock in one single step by providing the actual location of your Mockoon environment file. To locate your environment file from the main application, right-click on an environment and select "Show in folder" in the context menu:
+
+![show in folder menu entry](/images/docs/environment-show-in-folder.png)
+
+Let's pretend your file is name `data.json` and resides in the current directory.
+
+#### Use a Mockoon's export file
+
+To run one or more mock APIs in the CLI, you can also export them using the main application. The advantage of this method is that it allows running multiple mocks with one `start` command combined with the `--all` flag.
+
+To export your environment, open the "Import/export" application menu and choose "Mockoon's format" → "Export all environments to a file (JSON)" or "Export current environment to a file (JSON)".
 
 ![export current environment](/images/tutorials/getting-started-cli/export-current-environment.png)
 
 > Depending on which option you select, your export file will contain the active mock API or all your mocks. If you selected the second option, you will be able to choose the mock to run when starting the CLI.
 
-You can then select a location to save the export data file. Let's name the file `data-export.json`.
+You can then select a location to save the export data file. Let's name the file `data.json`.
+
+#### Provide a URL
+
+As an alternative, you can also provide a URL pointing to a Mockoon environment or export file, and Mockoon CLI will take care of downloading it.
 
 ### Step 4. Start you mock API
 
-After exporting your data file, you are ready to run your API mock with the CLI.
+After locating your environment file or exporting your data file, you are ready to run your API mock with the CLI.
 
-In your terminal, navigate to the folder where your export data file is and run the following command:
+In your terminal, navigate to the folder where your data file is and run the following command:
 
-`mockoon-cli start --data ./data-export.json`
+`mockoon-cli start --data ./data.json`
 
 If you want to use a remotely hosted file, you can also provide a URL to the `--data` flag like this:
 
-`mockoon-cli start --data https://domain.com/data-export.json`
+`mockoon-cli start --data https://domain.com/data.json`
 
-You will be prompted to chose which environment you want to run. Depending on what option you selected during export, you may have a list of environments to choose from.
+Depending on what option you selected during export, the CLI may prompt you to chose which environment you want to run. If your environment file or export file contains only one mock, it will run by default.
 
 You can also provide multiple parameters to customize your mock:
 
@@ -93,7 +112,7 @@ You will find more information regarding the [`start` command](https://github.co
 
 After running one or more API server mock, you might want to check their health and statuses. To do so you can type `mockoon-cli list`:
 
-```text
+```sh-sessions
 $ mockoon-cli list
 Name          Id   Status    Cpu    Memory    Hostname       Port
 mockoon-test  0    online    0.1    45.6 MB   0.0.0.0        3000
@@ -122,7 +141,7 @@ All of `mockoon-cli start` flags (`--port`, `--index`, etc.) must be provided wh
 
 To load a data file, you can either mount a local file and pass `mockoon-cli start` flags at the end of the command:
 
-`docker run -d --mount type=bind,source=./data-export.json,target=/data,readonly -p 3000:3000 mockoon/cli:latest -d data -i 0 -p 3000`
+`docker run -d --mount type=bind,source=./data.json,target=/data,readonly -p 3000:3000 mockoon/cli:latest -d data -i 0 -p 3000`
 
 Or directly pass a URL to the `mockoon-cli start` command:
 
@@ -134,7 +153,7 @@ Mockoon CLI also offers a `dockerize` command which generates a new Dockerfile t
 
 Run the `dockerize` command:
 
-`mockoon-cli dockerize --data ./data-export.json --port 3000 --index 0 --output ./tmp/Dockerfile`
+`mockoon-cli dockerize --data ./data.json --port 3000 --index 0 --output ./tmp/Dockerfile`
 
 Then, navigate to the `tmp` folder, where the Dockerfile has been generated, and build the image:
 
@@ -174,6 +193,6 @@ jobs:
           npm run build
 #         If mockoon-cli is not a devDependency:
 #         npm install -D mockoon-cli
-          npx mockoon-cli start --data https://domain.com/data-export.json --index 0 --port 3000
+          npx mockoon-cli start --data https://domain.com/data.json --index 0 --port 3000
           npm run test
 ```

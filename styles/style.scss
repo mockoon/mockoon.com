@@ -39,6 +39,10 @@ code {
   padding: 0.2rem;
   display: inline-block;
   border-radius: 5px;
+  font-size: $font-size-base !important;
+}
+pre .code {
+  border-radius: 5px;
 }
 
 // disable some style for blocks of code

@@ -24,7 +24,7 @@ We are already planning to improve this feature in the future, notably by adding
 
 ## Improved security
 
-Even if invisible, the main focus of this release was the application security and Electron's best practices. After several weeks of work, Mockoon is now more secure by a combination of enabling Chrome [sandboxing](https://www.electronjs.org/docs/api/sandbox-option#sandbox-option) and Electron [context isolation](https://www.electronjs.org/docs/tutorial/context-isolation#security-considerations). Node.js integration has also been disabled, and we stopped relying on Electron's `remote` module in the renderer process.
+Even if invisible, the main focus of this release was the application security and Electron's best practices. After several weeks of work, Mockoon is now more secure by a combination of enabling Chrome [sandboxing](https://www.electronjs.org/docs/latest/tutorial/sandbox/) and Electron [context isolation](https://www.electronjs.org/docs/latest/tutorial/context-isolation/). Node.js integration has also been disabled, and we stopped relying on Electron's `remote` module in the renderer process.
 
 These chanes have been pushed by Electron's team, and some of them were enabled default in recent Electron releases. We took it on ourselves to follow all these best practices and rewrote a big part of the application architecture. The main idea was to stop using Node.js libraries and features like `fs` directly from the renderer and instead communicate with the main process through the Inter-Process Communication (IPC). The main process would then perform the requested task and send the result to the renderer process. This was not a small change and required a lot of testing.
 

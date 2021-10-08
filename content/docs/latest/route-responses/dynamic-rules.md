@@ -20,27 +20,30 @@ You can define an unlimited number of rules for each route. At each request, Moc
 
 To add a new rule to a response, go to the route response's **Rules tab** and fill the fields:
 
-![Click on add and fill the fields](/images/docs/v1.15.0-add-route-response-rule.png)
+![Click on add and fill the fields](/images/docs/v1.16.0-add-route-response-rule.png)
 
 ### Reordering rules
 
 By default, rules are interpreted in the order you added them. You can change their interpretation order by drag and dropping them:
 
-![Drag and drop rules to reorder them](/images/docs/route-response-rule-reorder.gif)
+![Drag and drop rules to reorder them](/images/docs/v1.16.0-route-response-rule-reorder.gif)
 
-### Rules operator
+### Rules logical operator
 
-Inside a route response, rules are interpreted by default with the OR operator. When you have more than one rule in a route response, you can easily switch the operator applied when interpreting the rules, by clicking on the `OR|AND` buttons at the left of the rules:
+Inside a route response, rules are interpreted by default with the OR logical operator. When you have more than one rule in a route response, you can easily switch the operator applied when interpreting the rules, by clicking on the `OR|AND` buttons at the left of the rules:
 
-![Choose the rule operator OR AND](/images/docs/v1.15.0-route-response-rules-operator.png)
+![Choose the rule operator OR AND](/images/docs/v1.16.0-route-response-rules-operator.png)
 
-Rules have three parts:
+Rules have four parts:
 
 - a **target**
 - a **property name or path**
+- a comparison **operator**
 - a **value**
 
 ### 1. Target
+
+![Rule target](/images/docs/route-response-rules-target.png)
 
 In the dropdown menu you can choose between:
 
@@ -51,6 +54,8 @@ In the dropdown menu you can choose between:
 - the **request number** index starting at 1.
 
 ### 2. Property name or path
+
+![Rule property](/images/docs/route-response-rules-property.png)
 
 Depending on the **target**, the way to access properties may be different:
 
@@ -64,11 +69,24 @@ Depending on the **target**, the way to access properties may be different:
 
 For body and query string, if the property is an array, Mockoon will automatically check in the array if at least one item matches the value.
 
-### 3. Value
+### 3. Comparison operator
 
-You can either set a simple text value like "expected value" or any kind of regex. To use a regex, write it without the leading and trailing slashes and tick the checkbox on the right.
+![Rule comparison operator](/images/docs/route-response-rules-comparison-operator.png)
 
-Examples:
+Multiple comparison operators are available in each rule:
+
+- **equals**: asserts that the targeted property is equal to the **value**.
+- **regex match**: asserts that the targeted property matches the regex **value**.
+- **null**: asserts that the targeted property is null.
+- **empty array**: asserts that the targeted property is an empty array.
+
+### 4. Value
+
+![Rule value](/images/docs/route-response-rules-value.png)
+
+Depending on the comparison operator chosen, **equals** or **regex match**, you can either set a simple text value like "expected value" or any kind of regex. To use a regex, you must write it without the leading and trailing slashes.
+
+Regex examples:
 `primary|secondary`, `^user1-9`, `UTF-.*`.  
 You can also test for empty values with the following regex: `^$|\s+`.
 

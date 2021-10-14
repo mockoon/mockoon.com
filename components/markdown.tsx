@@ -62,7 +62,9 @@ const Markdown: FunctionComponent<{
         },
         table: ({ children }) => <table className='table'>{children}</table>,
         blockquote: (content) => {
-          const value = content?.node?.children?.[1]?.children?.[0]?.value;
+          const value = (content?.node?.children?.[1] as any)?.children?.[0]
+            ?.value;
+
           if (value && value.includes('##quotation##')) {
             return <Quotation quotation={JSON.parse(value)}></Quotation>;
           } else {

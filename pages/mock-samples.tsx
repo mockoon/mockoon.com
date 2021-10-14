@@ -827,18 +827,13 @@ const MockSamples: FunctionComponent = function () {
                   ? 1
                   : -1
               )
-              .map((sample, sampleIndex) => {
+              .map((sample) => {
                 return (
                   <div
-                    key={`sample${sampleIndex}`}
+                    key={sample.title}
                     className='mx-auto my-lg-3 col-12 col-lg-6 col-xl-4 d-flex'
                   >
-                    <Card
-                      data={sample}
-                      vertical
-                      cover={false}
-                      indexPrefix={`sample${sampleIndex}`}
-                    />
+                    <Card data={sample} vertical cover={false} />
                   </div>
                 );
               })}

@@ -7,7 +7,6 @@ const Card: FunctionComponent<{
   data: CardData;
   vertical?: boolean;
   cover?: boolean;
-  indexPrefix?: string;
 }> = function (props) {
   let cover = props.cover !== undefined ? props.cover : true;
 
@@ -54,16 +53,7 @@ const Card: FunctionComponent<{
             >
               {props.data.links.map((link, linkIndex) => {
                 return (
-                  <ConditionalWrapper
-                    key={`${props.indexPrefix}linkwrapper${linkIndex}`}
-                    condition={
-                      !link.src.includes('mockoon://') &&
-                      !link.src.includes('clipboardcopy://')
-                    }
-                    wrapper={(children) => (
-                      <Link href={link.src}>{children}</Link>
-                    )}
-                  >
+                  <Link key={props.data.title + linkIndex} href={link.src}>
                     <a
                       className={`btn-xs btn btn-primary-soft d-flex align-items-center ${
                         props.data.links?.length > 1 ? '' : 'mt-auto'
@@ -77,7 +67,7 @@ const Card: FunctionComponent<{
                       )}
                       {link.text}
                     </a>
-                  </ConditionalWrapper>
+                  </Link>
                 );
               })}
             </ConditionalWrapper>

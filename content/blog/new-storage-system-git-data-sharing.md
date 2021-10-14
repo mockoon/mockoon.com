@@ -1,7 +1,7 @@
 ---
 title: New storage system and improved data sharing
 excerpt: Share your mock API data more easily with the new storage system and start working in no time with our ready-to-use API mock samples
-date: '2021-09-30'
+date: '2021-10-14'
 image: new-storage-system.png
 imageAlt: Mockoon logo with suitcase
 meta:

@@ -1,6 +1,9 @@
 import { Children, createElement, FunctionComponent } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import {
+  Prism as SyntaxHighlighter,
+  SyntaxHighlighterProps
+} from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import rehypeRaw from 'rehype-raw';
 import gfm from 'remark-gfm';
@@ -39,7 +42,8 @@ const Markdown: FunctionComponent<{
               language={match[1]}
               PreTag='div'
               children={String(children).replace(/\n$/, '')}
-              {...props}
+              {...(props as SyntaxHighlighterProps)}
+              className='code'
             />
           ) : (
             <code className={className} {...props}>

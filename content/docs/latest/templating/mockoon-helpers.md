@@ -6,7 +6,7 @@ meta:
 order: 1010
 ---
 
-# Mockoon templating helpers <!-- omit in toc -->
+# Mockoon templating helpers
 
 ---
 
@@ -432,13 +432,13 @@ Split a string and return an array containing the multiples substrings. This hel
 
 ```handlebars
 {{#each (split '1 2 3 4')}}
-  itemthis,
+  item{{this}},
 {{/each}}
 
 result: item1,item2,item3,item4
 
 {{#each (split 'This is my string.')}}
-  this,
+  {{this}},
 {{/each}}
 
 result: This,is,my,string,

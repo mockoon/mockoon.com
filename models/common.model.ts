@@ -1,3 +1,5 @@
+import { MouseEvent } from 'react';
+
 export type MetaData = {
   title: string;
   description: string;
@@ -11,7 +13,12 @@ export type CardData = {
   imageAlt?: string;
   title: string;
   description?: string;
-  links?: { src: string; text: string; icon?: string }[];
+  links?: {
+    src: string;
+    text: string;
+    icon?: string;
+    clickHandler?: (event: MouseEvent) => void;
+  }[];
 };
 
 export type ArticleData = {

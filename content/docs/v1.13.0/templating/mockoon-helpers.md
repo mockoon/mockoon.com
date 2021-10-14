@@ -6,7 +6,7 @@ meta:
 order: 1010
 ---
 
-# Mockoon templating helpers <!-- omit in toc -->
+# Mockoon templating helpers
 
 ---
 
@@ -50,14 +50,9 @@ Repeat the block content a random number of times if two arguments are provided,
 **Examples**
 
 ```handlebars
-{{# repeat 5 10 comma=true}}test{{/ repeat}}
+{{#repeat 5 10 comma=true}}test{{/repeat}}
 
-// result
-test,
-test,
-test,
-test,
-test
+// result test, test, test, test, test
 ```
 
 ## `switch`
@@ -105,8 +100,7 @@ Select a random item in the array passed in parameters.
 ```handlebars
 {{oneOf (array 'item1' 'item2' 'item3')}}
 
-// result
-item2
+// result item2
 ```
 
 ## `someOf`
@@ -125,14 +119,10 @@ Return a random number of items from the array passed in parameters, concatenate
 ```handlebars
 {{someOf (array 'item1' 'item2' 'item3') 1 2}}
 
-// result
-item1,item2
-
-// use triple curly braces to avoid character escaping
+// result item1,item2 // use triple curly braces to avoid character escaping
 {{{someOf (array 'item1' 'item2' 'item3') x y true}}}
 
-// result
-item1,item2
+// result item1,item2
 ```
 
 ## `now`
@@ -172,12 +162,14 @@ Encode the parameter as base64. This can be used as an inline helper or block he
 ```handlebars
 {{base64 'test'}}
 
-{{# base64}}
+{{#base64}}
   firstname,lastname,countryCode
-  {{# repeat 10 }}
-    {{ faker 'name.firstName' }},{{ faker 'name.lastName' }},{{ faker 'address.countryCode' }}
-  {{/ repeat}}
-{{/ base64}}
+  {{#repeat 10}}
+    {{faker 'name.firstName'}},{{faker 'name.lastName'}},{{faker
+      'address.countryCode'
+    }}
+  {{/repeat}}
+{{/base64}}
 ```
 
 ## `objectId`
@@ -216,10 +208,10 @@ Set a variable to be used later in the template. The value can be the result of 
 {{#repeat varname}}...{{/repeat}}
 
 // declare a variable in a block helper
-{{# repeat 5}}
+{{#repeat 5}}
   {{setVar 'random' (oneOf (array '1' '2' '3'))}}
   {{@random}}
-{{/ repeat}}
+{{/repeat}}
 ```
 
 ## `concat`
@@ -256,7 +248,16 @@ Shift a date by adding the number of `years`, `months`, etc. passed as parameter
 **Examples**
 
 ```handlebars
-{{dateTimeShift date='2021-01-01' format='yyyy-MM-dd HH:mm:ss' years=1 months=1 days=1 hours=1 minutes=1 seconds=1}}
+{{dateTimeShift
+  date='2021-01-01'
+  format='yyyy-MM-dd HH:mm:ss'
+  years=1
+  months=1
+  days=1
+  hours=1
+  minutes=1
+  seconds=1
+}}
 ```
 
 ## `indexOf`
@@ -274,8 +275,7 @@ Return the index of the searched 'data' inside the string. A last parameter (num
 ```handlebars
 {{indexOf 'Some data' 'data' 0}}
 
-// result
-5
+// result 5
 ```
 
 ## `includes`
@@ -292,8 +292,7 @@ Search whether a string can be found in another string and returns the appropria
 ```handlebars
 {{includes 'Some data' 'data'}}
 
-// result
-true
+// result true
 ```
 
 ## `substr`
@@ -310,8 +309,7 @@ Return a portion of a string starting at the specified index and extending for a
 ```handlebars
 {{substr 'Some data' 5 4}}
 
-// result
-'data'
+// result 'data'
 ```
 
 ## `int`

@@ -5,12 +5,10 @@ import Meta from '../components/meta';
 import Layout from '../layout/layout';
 import { CardData } from '../models/common.model';
 
-const clickHandler = (event: MouseEvent) => {
+const clickHandler = (target) => (event: MouseEvent) => {
   event.preventDefault();
 
-  const command = (event.target as HTMLLinkElement).href.split(
-    'clipboardcopy://'
-  )[1];
+  const command = target.split('clipboardcopy://')[1];
 
   navigator.clipboard
     .writeText(command)
@@ -827,13 +825,18 @@ const MockSamples: FunctionComponent = function () {
                   ? 1
                   : -1
               )
-              .map((sample) => {
+              .map((sample, sampleIndex) => {
                 return (
                   <div
-                    key={sample.title}
+                    key={`sample${sampleIndex}`}
                     className='mx-auto my-lg-3 col-12 col-lg-6 col-xl-4 d-flex'
                   >
-                    <Card data={sample} vertical cover={false} />
+                    <Card
+                      data={sample}
+                      vertical
+                      cover={false}
+                      indexPrefix={`sample${sampleIndex}`}
+                    />
                   </div>
                 );
               })}

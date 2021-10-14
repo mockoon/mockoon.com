@@ -17,7 +17,7 @@ export type CardData = {
     src: string;
     text: string;
     icon?: string;
-    clickHandler?: (event: MouseEvent) => void;
+    clickHandler?: (target: string) => (event: MouseEvent) => void;
   }[];
 };
 

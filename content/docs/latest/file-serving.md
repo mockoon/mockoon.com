@@ -2,7 +2,7 @@
 title: File serving
 meta:
   title: Mockoon file serving documentation
-  description: Everything about Mockoon mock API file serving, templating system and relative or absolute paths.
+  description: Serve files as body for your mock API, use the templating system and set relative or absolute paths for easier sharing.
 order: 35
 ---
 

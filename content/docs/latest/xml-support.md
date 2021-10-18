@@ -2,7 +2,7 @@
 title: XML support
 meta:
   title: XML support
-  description: Mockoon realistic fake content generation and scenarios support XML in requests body
+  description: Create realistic mock APIs and generate fake XML content with Mockoon's templating and rules system
 order: 130
 ---
 

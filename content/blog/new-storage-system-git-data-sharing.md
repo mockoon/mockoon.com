@@ -84,4 +84,4 @@ Starting with this version, you can load them directly in Mockoon by clicking on
 
 ## XML support
 
-Last but not least, we added [support for the XML format](https://mockoon.com/docs/latest/dynamic-xml-support/). It means that you can now reuse part of the entering XML bodies with various [templating helpers](docs:templating/overview) (`body`, etc.) and [define rules](docs:route-responses/dynamic-rules) to serve different responses depending on the XML content.
+Last but not least, we added [support for the XML format](docs:xml-support). It means that you can now reuse part of the entering XML bodies with various [templating helpers](docs:templating/overview) (`body`, etc.) and [define rules](docs:route-responses/dynamic-rules) to serve different responses depending on the XML content.

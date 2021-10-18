@@ -10,7 +10,7 @@ const Meta: FunctionComponent<MetaData> = function (props) {
 
   return (
     <Head>
-      <title>{props.title} - Mockoon</title>
+      <title>{props.title}</title>
       <meta name='description' content={props.description} />
       <meta
         property='og:image'

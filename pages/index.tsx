@@ -12,7 +12,7 @@ import Layout from '../layout/layout';
 const version = require('../package.json').version;
 
 const meta = {
-  title: 'Create mock APIs in seconds',
+  title: 'Create mock APIs in seconds with Mockoon',
   description:
     'Mockoon is the easiest and quickest way to run mock REST API servers. No remote deployment, no account required, free, open source and cross-platform.'
 };

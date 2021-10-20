@@ -40,7 +40,7 @@ const Card: FunctionComponent<{
             props.vertical || !props.data.imageSrc ? '' : 'w-100 w-lg-50'
           } flex-grow-1 text-gray-700 d-flex flex-column align-items-center py-5`}
         >
-          <h3 className='pb-3 h4'>{props.data.title}</h3>
+          <h3 className='pb-3 h4 col-10'>{props.data.title}</h3>
           <p
             className='col-10 text-muted'
             dangerouslySetInnerHTML={{ __html: props.data.description }}

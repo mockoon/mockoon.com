@@ -231,11 +231,31 @@ class Index extends React.Component {
                         title: 'API UX research with Mockoon',
                         description:
                           'Learn how Impala uses Mockoon to conduct API user research',
-                        imageSrc: '/images/case-studies/impala-logo-black.svg',
+                        imageSrc: '/images/case-studies/impala/logo-dark.svg',
                         imageAlt: 'Impala logo',
                         links: [
                           {
-                            src: '/case-studies/impala-api-ux-user-research',
+                            src: '/case-studies/impala-api-ux-user-research/',
+                            text: 'Read more'
+                          }
+                        ]
+                      }}
+                      vertical
+                      cover={false}
+                    />
+                  </div>
+                  <div className='mx-auto my-lg-3 col-12 col-lg-4 '>
+                    <Card
+                      data={{
+                        title:
+                          'Use API mocking to speed up application development',
+                        description:
+                          'Save time and build better applications by testing specific scenarios and edge cases with Mockoon',
+                        imageSrc: '/images/case-studies/localazy/logo-dark.svg',
+                        imageAlt: 'Localazy logo',
+                        links: [
+                          {
+                            src: '/case-studies/localazy-speed-development-api-mocking/',
                             text: 'Read more'
                           }
                         ]

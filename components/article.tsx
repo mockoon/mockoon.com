@@ -19,7 +19,6 @@ const Article: FunctionComponent<{
                   src={`/images/case-studies/${props.articleData.header.image}`}
                   alt={`${props.articleData.header.imageAlt}`}
                 />
-                <p className='h4'>{props.articleData.title}</p>
               </div>
               <div className='col-12 col-lg-8 text-center'>
                 <div className='row pt-5 pt-lg-0'>

@@ -38,9 +38,9 @@ Localazy needed one tool that would bring more flexibility and could cover all t
 
 ## Using Mockoon during prototyping, development, and testing phases
 
-After looking into the available API mocking tools, Localazy settled with Mockoon. Lots of developer tools on the market promise to streamline the process of creating API mocks but often have a steep learning curve or are cluttered with unrelated features. With Mockoon, the learning curve is minimal, and all the team members can be up and running in no time. They can start mocking missing endpoints or specific scenarios efficiently only minutes after installing the application.
+After looking into the available API mocking tools, Localazy settled with Mockoon. Lots of developer tools on the market promise to streamline the process of creating API mocks but often have a steep learning curve or are cluttered with unrelated features. With Mockoon, the learning curve is minimal, and all the team members can be up and running in no time. They can [start mocking missing endpoints](/tutorials/getting-started/) or specific scenarios efficiently only minutes after installing the application.
 
-Also, having a desktop application, coupled with a CLI, brings the flexibility that testing servers or simple browser extensions usually lacks. Mock APIs can be created and shared within the team and easily modified in real-time during prototyping, development, or even demos. There is no server deployment to wait for or long startup time.
+Also, having a desktop application, coupled with a [CLI](/cli/), brings the flexibility that testing servers or simple browser extensions usually lacks. Mock APIs can be created and shared within the team and easily modified in real-time during prototyping, development, or even demos. There is no server deployment to wait for or long startup time.
 
 Mockoon is also multi-purpose. Localazy's front-end team uses the tool during development to test edge cases like failures or errors, without having to simulate them with the staging API server. It also allows them to work with API endpoints that are still under development and reduce dependencies between front-end and back-end teams.
 

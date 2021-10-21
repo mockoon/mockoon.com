@@ -17,10 +17,6 @@ header:
 order: 30
 ---
 
-TODO : add links
-
----
-
 Localazy is building a set of tools to manage all the localization and translation needs of its customers. They focus on delivering a stellar experience with easy-to-use yet flexible applications.
 But building bug-free SaaS or applications is a complex task. It requires prototyping new features using the right scenarios and in-depth testing during and after the development phase. All these steps require having access to the correct test data at the right time, especially when testing edge cases or specific application states.
 Localazy chose to integrate Mockoon in their workflow to mock their APIs for its ease of use and flexibility. They drastically sped up their development and testing processes while keeping their product at a high-quality standard.

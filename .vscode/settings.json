@@ -2,5 +2,8 @@
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": { "source.organizeImports": true },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "[xml]": {
+    "editor.defaultFormatter": "DotJoshJohnson.xml"
+  }
 }

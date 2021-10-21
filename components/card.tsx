@@ -8,15 +8,23 @@ const Card: FunctionComponent<{
   vertical?: boolean;
   cover?: boolean;
   indexPrefix?: string;
+  border?: boolean;
+  borderColor?: string;
+  // synchronize colors between border and link
+  synchronizedColors?: boolean;
 }> = function (props) {
   let cover = props.cover !== undefined ? props.cover : true;
+  let border = props.border !== undefined ? props.border : false;
+  let synchronizedColors =
+    props.synchronizedColors !== undefined ? props.synchronizedColors : false;
 
   return (
     <Fragment>
       <div
-        className={`card d-flex ${
+        className={`card ${border ? 'card-border' : ''} d-flex ${
           props.vertical ? 'flex-column' : 'flex-column flex-lg-row'
         } flex-fill shadow-light-lg mb-6 text-center`}
+        style={{ borderTopColor: props.borderColor }}
       >
         {props.data.imageSrc && (
           <div
@@ -41,10 +49,12 @@ const Card: FunctionComponent<{
           } flex-grow-1 text-gray-700 d-flex flex-column align-items-center py-5`}
         >
           <h3 className='pb-3 h4 col-10'>{props.data.title}</h3>
-          <p
-            className='col-10 text-muted'
-            dangerouslySetInnerHTML={{ __html: props.data.description }}
-          ></p>
+          {props.data.description && (
+            <p
+              className='col-10 text-muted'
+              dangerouslySetInnerHTML={{ __html: props.data.description }}
+            ></p>
+          )}
           {props.data.links?.length && (
             <ConditionalWrapper
               condition={props.data.links?.length > 1}
@@ -63,6 +73,7 @@ const Card: FunctionComponent<{
                       className={`btn-xs btn btn-primary-soft d-flex align-items-center ${
                         props.data.links?.length > 1 ? '' : 'mt-auto'
                       }`}
+                      style={{ color: synchronizedColors && props.borderColor }}
                     >
                       {link.icon && (
                         <span className='icon me-2'>

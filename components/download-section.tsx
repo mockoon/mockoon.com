@@ -152,7 +152,7 @@ const DownloadSection: FunctionComponent = function () {
               className='text-gray-600'
               href={`https://github.com/mockoon/mockoon/releases/tag/v${version}`}
             >
-              See all downloads
+              See the v{version} changelog
             </a>
           </p>
         </div>

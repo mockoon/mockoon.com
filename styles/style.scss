@@ -198,7 +198,7 @@ p.console {
   }
 
   img {
-    max-width: 50%;
+    max-width: 80%;
   }
 }
 
@@ -215,7 +215,6 @@ p.console {
   position: relative;
   padding: 2rem;
   margin: 40px;
-  border-left: 4px solid lighten($primary, 20%);
   font-size: 1.6rem;
   font-weight: 400;
   quotes: '“' '”';
@@ -248,21 +247,19 @@ p.console {
   &:before,
   &:after {
     position: absolute;
-    color: lighten($primary, 30%);
+    color: lighten($primary, 20%);
     font-size: 3rem;
   }
 
   &:before {
     content: open-quote;
     top: 0;
-    margin-right: -2rem;
-    right: 100%;
+    left: 0;
   }
 
   &:after {
     content: close-quote;
-    margin-left: -2rem;
-    left: 100%;
+    right: 0;
     top: auto;
     bottom: 0;
   }

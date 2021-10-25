@@ -7,7 +7,7 @@ import { buildIndexStaticProps } from '../../utils/static-builders';
 import { orderArticles } from '../../utils/utils';
 
 const meta = {
-  title: 'Case studies',
+  title: "Mockoon's users case studies",
   description:
     "Discover how Mockoon's users improve their API design and development workflows with our fast and easy to use API tooling."
 };

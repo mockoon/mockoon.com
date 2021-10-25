@@ -3,7 +3,7 @@ title: Use API mocking to speed up application development
 excerpt: Save time and build better applications by testing specific scenarios and edge cases with Mockoon
 meta:
   title: Use API mocking to speed up application development
-  description: Save time and build better applications by testing specific scenarios and edge cases with Mockoon
+  description: Save time and build better applications by testing specific scenarios and edge cases with Mockoon API mocking tools
 image: localazy/logo-dark.svg
 imageAlt: Localazy logo
 header:

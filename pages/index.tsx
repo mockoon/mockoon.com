@@ -15,18 +15,18 @@ const meta = {
     'Mockoon is the easiest and quickest way to run mock REST API servers. No remote deployment, no account required, free, open source and cross-platform.'
 };
 const companyLogos = [
-  { src: '/images/logos/impala.svg' },
-  { src: '/images/logos/picpay.svg' },
-  { src: '/images/logos/daimler.svg' },
-  { src: '/images/logos/amadeus.svg' },
-  { src: '/images/logos/localazy.svg' },
-  { src: '/images/logos/koreanair.svg' },
-  { src: '/images/logos/wargaming.svg' },
-  { src: '/images/logos/rbc.svg' },
-  { src: '/images/logos/cloudflight.svg' },
-  { src: '/images/logos/shopee.svg' },
-  { src: '/images/logos/ford.svg' },
-  { src: '/images/logos/walmart.svg' }
+  { src: '/images/logos/impala.svg', alt: 'Impala logo' },
+  { src: '/images/logos/picpay.svg', alt: 'PicPay logo' },
+  { src: '/images/logos/daimler.svg', alt: 'Daimler logo' },
+  { src: '/images/logos/amadeus.svg', alt: 'Amadeus logo' },
+  { src: '/images/logos/localazy.svg', alt: 'Localazy logo' },
+  { src: '/images/logos/koreanair.svg', alt: 'Korean Air logo' },
+  { src: '/images/logos/wargaming.svg', alt: 'War Gaming logo' },
+  { src: '/images/logos/rbc.svg', alt: 'RBC logo' },
+  { src: '/images/logos/cloudflight.svg', alt: 'CloudFlight logo' },
+  { src: '/images/logos/shopee.svg', alt: 'Shopee logo' },
+  { src: '/images/logos/ford.svg', alt: 'Ford logo' },
+  { src: '/images/logos/walmart.svg', alt: 'Walmart logo' }
 ];
 
 class Index extends React.Component<{}, { companyLogos: any }> {
@@ -76,7 +76,7 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                   className='col-6 col-sm-3 col-lg-2 mb-4 mb-md-0 px-xl-8 text-center'
                 >
                   <div className='img-fluid mb-2 mb-md-0'>
-                    <img src={logo.src} alt='' />
+                    <img src={logo.src} alt={logo.alt} />
                   </div>
                 </div>
               ))}

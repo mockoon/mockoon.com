@@ -8,7 +8,7 @@ const SponsorUs: FunctionComponent = function () {
   return (
     <Layout>
       <Meta
-        title='About Mockoon'
+        title="About Mockoon's team"
         description='Mockoon is the fastest and easiest way to create mock API servers. It is a free and open-source project built by a team of passionate developers.'
       />
 

@@ -1,8 +1,8 @@
 ---
 title: XML support
 meta:
-  title: XML support
-  description: Create realistic mock APIs and generate fake XML content with Mockoon's templating and rules system
+  title: XML support for entering requests
+  description: Create realistic mock APIs and generate fake data with Mockoon's templating and rules system supporting the XML format
 order: 130
 ---
 

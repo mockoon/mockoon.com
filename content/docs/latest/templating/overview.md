@@ -39,26 +39,33 @@ Templating will work in the body editor without consideration for the Content-Ty
 
 Here is an example of what you can do with this templating system:
 
+<!-- prettier-ignore -->
 ```handlebars
-{ "userId": "{{urlParam 'id'}}", "name": "{{queryParam 'name' 'John'}}", "lang":
-"{{{header 'Accept-Language' 'en'}}}", "elementTitle": "{{body
-  'elements.0.title'
-  'default'
-}}", "ip": "{{ip}}", "method": "{{method}}", "hostname": "{{hostname}}",
-"friends": [
-{{#repeat 2}}
-  { "id":
-  {{@index}}, "name": "{{faker 'name.firstName'}}
-  {{faker 'name.lastName'}}" }
-{{/repeat}}
-], "oneItem": "{{oneOf (array 'item1' 'item2' 'item3')}}", "someItemsAsString":
-"{{someOf (array 'item1' 'item2' 'item3') 1 2}}", "someItemsAsArray":
-{{{someOf (array 'item1' 'item2' 'item3') 1 2 true}}}, "userName":
-{{#switch (urlParam 'id')}}
-  {{#case '1'}}"John"{{/case}}
-  {{#case '2'}}"Jack"{{/case}}
-  {{#default}}"Peter"{{/default}}
-{{/switch}}
+{
+  "userId": "{{urlParam 'id'}}",
+  "name": "{{queryParam 'name' 'John'}}",
+  "lang": "{{{header 'Accept-Language' 'en'}}}",
+  "elementTitle": "{{body 'elements.0.title' 'default'}}",
+  "ip": "{{ip}}",
+  "method": "{{method}}",
+  "hostname": "{{hostname}}",
+  "friends": [
+    {{#repeat 2}}
+    { 
+      "id": {{@index}}, 
+      "name": "{{faker 'name.firstName'}} {{faker 'name.lastName'}}" 
+    }
+    {{/repeat}}
+  ], 
+  "oneItem": "{{oneOf (array 'item1' 'item2' 'item3')}}", 
+  "someItemsAsString": "{{someOf (array 'item1' 'item2' 'item3') 1 2}}", 
+  "someItemsAsArray": {{{someOf (array 'item1' 'item2' 'item3') 1 2 true}}}, 
+  "userName": 
+    {{#switch (urlParam 'id')}}
+      {{#case '1'}}"John"{{/case}}
+      {{#case '2'}}"Jack"{{/case}}
+      {{#default}}"Peter"{{/default}}
+    {{/switch}}
 }
 ```
 

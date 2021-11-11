@@ -12,19 +12,22 @@ order: 1010
 
 In addition to Handlebars' built-in helpers, Mockoon offers the following helpers:
 
-| Block helpers       | Arrays              | Math                    |                     | Misc                    |
-| ------------------- | ------------------- | ----------------------- | ------------------- | ----------------------- |
-| [`repeat`](#repeat) | [`array`](#array)   | [`add`](#add)           | [`modulo`](#modulo) | [`newline`](#newline)   |
-| [`switch`](#switch) | [`oneOf`](#oneof)   | [`subtract`](#subtract) | [`ceil`](#ceil)     | [`base64`](#base64)     |
-|                     | [`someOf`](#someof) | [`multiply`](#multiply) | [`floor`](#floor)   | [`objectId`](#objectid) |
-|                     |                     | [`divide`](#divide)     |                     | [`setVar`](#setvar)     |
+| Block helpers       | Arrays              | Math                    |                       | Misc                    |
+| ------------------- | ------------------- | ----------------------- | --------------------- | ----------------------- |
+| [`repeat`](#repeat) | [`array`](#array)   | [`add`](#add)           | [`eq`](#eq)           | [`newline`](#newline)   |
+| [`switch`](#switch) | [`oneOf`](#oneof)   | [`subtract`](#subtract) | [`gt`](#gt)           | [`base64`](#base64)     |
+|                     | [`someOf`](#someof) | [`multiply`](#multiply) | [`gte`](#gte)         | [`objectId`](#objectid) |
+|                     | [`join`](#join)     | [`divide`](#divide)     | [`lt`](#lt)           | [`setVar`](#setvar)     |
+|                     | [`slice`](#slice)   | [`modulo`](#modulo)     | [`lte`](#lte)         |                         |
+|                     | [`len`](#len)       | [`ceil`](#ceil)         | [`toFixed`](#toFixed) |                         |
+|                     |                     | [`floor`](#floor)       | [`round`](#round)     |                         |
 
-| Strings                 |                   | Numbers               | Dates                             |
-| ----------------------- | ----------------- | --------------------- | --------------------------------- |
-| [`int`](#int)           | [`split`](#split) | [`concat`](#concat)   | [`now`](#now)                     |
-| [`float`](#float)       |                   | [`indexOf`](#indexof) | [`dateTimeShift`](#datetimeshift) |
-| [`includes`](#includes) |                   |                       | [`date`](#date)                   |
-| [`substr`](#substr)     |                   |                       | [`time`](#time)                   |
+| Strings                 |                           | Numbers               | Dates                             |
+| ----------------------- | ------------------------- | --------------------- | --------------------------------- |
+| [`int`](#int)           | [`split`](#split)         | [`concat`](#concat)   | [`now`](#now)                     |
+| [`float`](#float)       | [`stringify`](#stringify) | [`indexOf`](#indexof) | [`dateTimeShift`](#datetimeshift) |
+| [`includes`](#includes) |                           |                       | [`date`](#date)                   |
+| [`substr`](#substr)     |                           |                       | [`time`](#time)                   |
 
 | [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                         |
 | --------------------------------------------------- | ----------------------------- | ----------------------- |
@@ -105,7 +108,6 @@ Select a random item in the array passed in parameters.
 
 ```handlebars
 {{oneOf (array 'item1' 'item2' 'item3')}}
-
 result: item2
 ```
 
@@ -124,12 +126,62 @@ Return a random number of items from the array passed in parameters, concatenate
 
 ```handlebars
 {{someOf (array 'item1' 'item2' 'item3') 1 2}}
-
 result: item1,item2
+
 <!-- Use triple curly braces to avoid character escaping -->
 {{{someOf (array 'item1' 'item2' 'item3') x y true}}}
-
 result: item1,item2
+```
+
+## `join`
+
+Return a new string by concatenating all the elements in an array.
+
+| Arguments (ordered) | Type   | Description     |
+| ------------------- | ------ | --------------- |
+| 0                   | []     | Array of values |
+| 1                   | string | Separator       |
+
+**Examples**
+
+```handlebars
+{{join (array 'item1' 'item2' 'item3') '#'}}
+result: item1#item2#item3
+```
+
+## `slice`
+
+Return a copy of a portion of an array from start to end indexes (not included).
+
+| Arguments (ordered) | Type   | Description     |
+| ------------------- | ------ | --------------- |
+| 0                   | []     | Array of values |
+| 1                   | number | Start index     |
+| 2                   | number | End index       |
+
+**Examples**
+
+```handlebars
+{{slice (array 'item1' 'item2' 'item3') 0 2}}
+result: ['item1', 'item2']
+```
+
+## `len`
+
+Return an array or string length.
+
+| Arguments (ordered) | Type         | Description     |
+| ------------------- | ------------ | --------------- |
+| 0                   | [] \| string | Array or string |
+
+**Examples**
+
+```handlebars
+{{len (array 'item1' 'item2' 'item3')}}
+result: 3
+
+{{len 'hello'}}
+result: 5
 ```
 
 ## `add`
@@ -144,13 +196,12 @@ Add the numbers passed as parameters to each others. Unrecognized strings passed
 
 ```handlebars
 {{add 1 1}}
-
 result: '2'
+
 {{add '1' '1'}}
-
 result: '2'
-{{add '1' 'foo' 1}}
 
+{{add '1' 'foo' 1}}
 result: '2'
 ```
 
@@ -166,13 +217,12 @@ Subtract the numbers passed as parameters to the first parameter. Unrecognized s
 
 ```handlebars
 {{subtract 2 1}}
-
 result: '1'
+
 {{subtract '2' '1'}}
-
 result: '1'
-{{subtract '2' 'foo' 1}}
 
+{{subtract '2' 'foo' 1}}
 result: '1'
 ```
 
@@ -187,13 +237,12 @@ Multiply the numbers passed as parameters to each others. Unrecognized strings p
 
 ```handlebars
 {{multiply 2 3}}
-
 result: '6'
+
 {{multiply '2' '3'}}
-
 result: '6'
-{{multiply '2' 'foo' 3}}
 
+{{multiply '2' 'foo' 3}}
 result: '6'
 ```
 
@@ -209,13 +258,12 @@ Divide the first parameter by the other numbers passed as parameters. Unrecogniz
 
 ```handlebars
 {{divide 4 2}}
-
 result: '2'
+
 {{divide '4' '2'}}
-
 result: '2'
-{{divide '4' 'foo' 2}}
 
+{{divide '4' 'foo' 2}}
 result: '2'
 ```
 
@@ -232,13 +280,12 @@ Compute the modulo of the first parameter by the second.
 
 ```handlebars
 {{modulo 5 4}}
-
 result: '1'
+
 {{modulo '5' '4'}}
-
 result: '1'
-{{modulo '5' 'foo' 4}}
 
+{{modulo '5' 'foo' 4}}
 result: '1'
 ```
 
@@ -254,10 +301,9 @@ Ceil the value of the number passed as parameter.
 
 ```handlebars
 {{ceil 1.5}}
-
 result: '2'
-{{ceil '1.5'}}
 
+{{ceil '1.5'}}
 result: '2'
 ```
 
@@ -273,11 +319,131 @@ Floor the value of the number passed as parameter.
 
 ```handlebars
 {{floor 2.5}}
-
 result: '2'
+
 {{floor '2.5'}}
-
 result: '2'
+```
+
+## `eq`
+
+Verify if two numbers are equal. Returns a boolean.
+
+| Arguments (ordered) | Type   | Description   |
+| ------------------- | ------ | ------------- |
+| 0                   | number | First number  |
+| 1                   | number | Second number |
+
+**Examples**
+
+```handlebars
+{{#if (eq 55 55}}
+  true
+{{/if}}
+Result: true
+```
+
+## `gt`
+
+Verify if the first number is greater than the second number. Returns a boolean.
+
+| Arguments (ordered) | Type   | Description   |
+| ------------------- | ------ | ------------- |
+| 0                   | number | First number  |
+| 1                   | number | Second number |
+
+**Examples**
+
+```handlebars
+{{#if (gt 56 55)}}
+  true
+{{/if}}
+Result: true
+```
+
+## `gte`
+
+Verify if the first number is greater than or equal to the second number. Returns a boolean.
+
+| Arguments (ordered) | Type   | Description   |
+| ------------------- | ------ | ------------- |
+| 0                   | number | First number  |
+| 1                   | number | Second number |
+
+**Examples**
+
+```handlebars
+{{#if (gte 55 55)}}
+  true
+{{/if}}
+Result: true
+```
+
+## `lt`
+
+Verify if the first number is lower than the second number. Returns a boolean.
+
+| Arguments (ordered) | Type   | Description   |
+| ------------------- | ------ | ------------- |
+| 0                   | number | First number  |
+| 1                   | number | Second number |
+
+**Examples**
+
+```handlebars
+{{#if (lt 55 56)}}
+  true
+{{/if}}
+Result: true
+```
+
+## `lte`
+
+Verify if the first number is lower than or equal to the second number. Returns a boolean.
+
+| Arguments (ordered) | Type   | Description   |
+| ------------------- | ------ | ------------- |
+| 0                   | number | First number  |
+| 1                   | number | Second number |
+
+**Examples**
+
+```handlebars
+{{#if (lte 55 55)}}
+  true
+{{/if}}
+Result: true
+```
+
+## `toFixed`
+
+Format a number using fixed-point notation.
+
+| Arguments (ordered) | Type   | Description      |
+| ------------------- | ------ | ---------------- |
+| 0                   | number | A number         |
+| 1                   | number | Number of digits |
+
+**Examples**
+
+```handlebars
+{{toFixed 1.11111 2}}
+Result: 1.11
+```
+
+## `round`
+
+Return the value of a number rounded to the nearest integer.
+
+| Arguments (ordered) | Type   | Description       |
+| ------------------- | ------ | ----------------- |
+| 0                   | number | A number to round |
+
+**Examples**
+
+```handlebars
+{{round 0.499}}
+Result: 0
 ```
 
 ## `newline`
@@ -434,14 +600,43 @@ Split a string and return an array containing the multiples substrings. This hel
 {{#each (split '1 2 3 4')}}
   item{{this}},
 {{/each}}
-
 result: item1,item2,item3,item4
 
 {{#each (split 'This is my string.')}}
   {{this}},
 {{/each}}
-
 result: This,is,my,string,
+```
+
+## `stringify`
+
+Return objects and arrays as a formatted JSON string indented with two spaces.
+
+| Arguments (ordered) | Type | Description     |
+| ------------------- | ---- | --------------- |
+| 0                   | any  | Object or array |
+
+**Examples**
+
+Considering an entering body:
+
+```json
+{
+  "prop1": "123",
+  "prop2": {
+    "data": "test"
+  }
+}
+```
+
+```handlebars
+{{{stringify (bodyRaw 'prop2')}}}
+```
+
+```json
+{
+  "data": "test"
+}
 ```
 
 ## `concat`

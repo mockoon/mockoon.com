@@ -86,12 +86,6 @@
         "destination": "/mock-samples/",
         "type": 301
       }
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
     ]
   }
 }

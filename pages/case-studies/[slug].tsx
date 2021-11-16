@@ -41,7 +41,6 @@ export default function CaseStudy(props: {
         description={props.articleData.meta.description}
         ogType='article'
         url={`/${props.slug}`}
-        image={props.articleData.image}
       />
 
       <Article

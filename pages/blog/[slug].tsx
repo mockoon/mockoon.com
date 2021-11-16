@@ -50,7 +50,8 @@ export default function BlogArticle(props: {
         title={props.articleData.meta.title}
         description={props.articleData.meta.description}
         ogType='article'
-        url={`/${props.slug}`}
+        url={`/${props.slug}/`}
+        image={`/blog/${props.articleData.image}`}
       />
 
       <Article

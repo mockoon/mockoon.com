@@ -20,7 +20,7 @@ const Meta: FunctionComponent<MetaData> = function (props) {
       />
       <meta
         property='og:url'
-        content={rootUrl + (props.url ? props.url : router.pathname)}
+        content={rootUrl + (props.url ? props.url : router.pathname + '/')}
       />
       <meta property='og:title' content={'Mockoon - ' + props.title} />
       <meta property='og:description' content={props.description} />

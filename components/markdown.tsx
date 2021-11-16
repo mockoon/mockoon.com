@@ -56,7 +56,7 @@ const Markdown: FunctionComponent<{
             <img
               alt={alt as string}
               src={src as string}
-              className='img-fluid'
+              className='img-fluid mx-auto d-block'
             />
           );
         },

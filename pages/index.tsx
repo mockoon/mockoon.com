@@ -44,7 +44,7 @@ class Index extends React.Component<{}, { companyLogos: any }> {
 
   render() {
     return (
-      <Layout>
+      <Layout footerBanner='newsletter'>
         <Meta title={meta.title} description={meta.description} />
 
         <Hero

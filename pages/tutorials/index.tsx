@@ -27,7 +27,7 @@ const Tutorials: FunctionComponent<{
   articles: ArticleList;
 }> = function (props) {
   return (
-    <Layout>
+    <Layout footerBanner='download'>
       <Meta title={meta.title} description={meta.description} />
       <Hero title={meta.title} subtitle={meta.description} />
 
@@ -35,22 +35,27 @@ const Tutorials: FunctionComponent<{
         <div className='container'>
           <div className='row d-flex flex-column flex-lg-row'>
             <div className='mx-auto my-lg-3 col-12 col-xxl-10'>
-              {props.articles.map((article) => {
-                return (
-                  <Card
-                    key={article.slug}
-                    data={{
-                      title: article.data.title,
-                      description: article.data.excerpt,
-                      imageSrc: `/images/tutorials/${article.data.image}`,
-                      imageAlt: article.data.imageAlt,
-                      links: [
-                        { src: `/tutorials/${article.slug}`, text: 'Read more' }
-                      ]
-                    }}
-                  />
-                );
-              })}
+              {props.articles
+                .filter((article) => !article.data.hidden)
+                .map((article) => {
+                  return (
+                    <Card
+                      key={article.slug}
+                      data={{
+                        title: article.data.title,
+                        description: article.data.excerpt,
+                        imageSrc: `/images/tutorials/${article.data.image}`,
+                        imageAlt: article.data.imageAlt,
+                        links: [
+                          {
+                            src: `/tutorials/${article.slug}`,
+                            text: 'Read more'
+                          }
+                        ]
+                      }}
+                    />
+                  );
+                })}
             </div>
           </div>
         </div>

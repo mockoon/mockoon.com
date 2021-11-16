@@ -75,39 +75,35 @@ const Article: FunctionComponent<{
         )}
 
         <section className='pt-8'>
-          <div className='container'>
-            <div className='row justify-content-center'>
-              <div className='col-12 col-lg-10 col-lg-10 col-xl-10'>
-                <h1 className='display-4 text-center'>
-                  {props.articleData.title}
-                </h1>
+          <div className='row justify-content-center'>
+            <div className='col-12 col-lg-10 col-lg-10 col-xl-10'>
+              <h1 className='display-4 text-center'>
+                {props.articleData.title}
+              </h1>
 
-                <p className='lead mb-7 text-center text-muted'>
-                  {props.articleData.excerpt}
-                </p>
+              <p className='lead mb-7 text-center text-muted'>
+                {props.articleData.excerpt}
+              </p>
 
-                <div
-                  className={`row ${
-                    props.articleData.date
-                      ? ''
-                      : 'd-flex justify-content-center'
-                  } align-items-center py-5 border-top border-bottom`}
-                >
-                  <div className='col-12 d-flex align-items-center flex-column text-center text-lg-start mb-2 mb-lg-0'>
-                    {props.articleData.date && (
-                      <time
-                        className='fs-sm text-muted'
-                        dateTime={props.articleData.date}
-                      >
-                        Published on {props.articleData.date}
-                      </time>
-                    )}
-                    <Share
-                      title='Find this post interesting? Share it!'
-                      url={`https://mockoon.com/${props.slug}/`}
-                      text={props.articleData.meta.description}
-                    />
-                  </div>
+              <div
+                className={`row ${
+                  props.articleData.date ? '' : 'd-flex justify-content-center'
+                } align-items-center py-5 border-top border-bottom`}
+              >
+                <div className='col-12 d-flex align-items-center flex-column text-center text-lg-start mb-2 mb-lg-0'>
+                  {props.articleData.date && (
+                    <time
+                      className='fs-sm text-muted'
+                      dateTime={props.articleData.date}
+                    >
+                      Published on {props.articleData.date}
+                    </time>
+                  )}
+                  <Share
+                    title='Find this post interesting? Share it!'
+                    url={`https://mockoon.com/${props.slug}/`}
+                    text={props.articleData.meta.description}
+                  />
                 </div>
               </div>
             </div>
@@ -115,11 +111,9 @@ const Article: FunctionComponent<{
         </section>
 
         <section className='pt-6 pt-lg-8 pb-8'>
-          <div className='container'>
-            <div className='row justify-content-center'>
-              <div className='col-12 col-lg-10 col-xl-10'>
-                <Markdown body={props.articleBody} />
-              </div>
+          <div className='row justify-content-center'>
+            <div className='col-12 col-lg-10 col-xl-10'>
+              <Markdown body={props.articleBody} />
             </div>
           </div>
         </section>

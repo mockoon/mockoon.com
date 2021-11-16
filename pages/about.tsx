@@ -6,7 +6,7 @@ import Layout from '../layout/layout';
 
 const SponsorUs: FunctionComponent = function () {
   return (
-    <Layout>
+    <Layout footerBanner='download'>
       <Meta
         title="About Mockoon's team"
         description='Mockoon is the fastest and easiest way to create mock API servers. It is a free and open-source project built by a team of passionate developers.'
@@ -117,18 +117,3 @@ const SponsorUs: FunctionComponent = function () {
 };
 
 export default SponsorUs;
-
-/**
- *
-
-
- I'm Guillaume. Thank you for considering supporting my open-source software work through GitHub Sponsors.
-
-I am a passionate full-stack web developer currently working on Mockoon in my spare time.
-
-Mockoon is the easiest and quickest way to run mock APIs locally. No remote deployment or account required. And it's open-source!
-I want Mockoon to be the best mocking tool out there! But this requires time. A lot of time.
-By sponsoring me you can show your appreciation for all this hard work and also allow me to dedicate more time to this project in the future.
-
-Thank you for considering support!
- */

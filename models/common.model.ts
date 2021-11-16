@@ -21,6 +21,8 @@ export type CardData = {
   }[];
 };
 
+export type FooterCTA = 'newsletter' | 'contact' | 'download';
+
 export type ArticleData = {
   title: string;
   excerpt: string;
@@ -44,6 +46,13 @@ export type ArticleData = {
   logoAlt?: string;
   // order of the article on the index page
   order?: number;
+  // if present add a link to the previous/next page (when tutorials follows)
+  previousLink?: string;
+  nextLink?: string;
+  previousText?: string;
+  nextText?: string;
+  // hide article from the list of tutorials
+  hidden?: boolean;
 };
 
 export type ArticleList = {

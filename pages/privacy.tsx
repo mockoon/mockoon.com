@@ -5,7 +5,7 @@ import Layout from '../layout/layout';
 
 const Privacy: FunctionComponent = function () {
   return (
-    <Layout>
+    <Layout footerBanner='download'>
       <Meta
         title="Mockoon's Privacy policy"
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy highly regulated environments friendly'

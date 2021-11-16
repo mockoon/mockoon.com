@@ -13,6 +13,8 @@ Mockoon is a free cross-platform desktop application that takes API mocking to t
 
 This tutorial will show you how to install the desktop mocking application and set up your first mock API.
 
+> To learn more about API in general, head over to our [API guide](/tutorials/api-guide-what-are-api/)
+
 ## Step 1. Install the application
 
 Mockoon is available on the three major operating systems: Windows, macOS, and Linux. Visit the [download section on the homepage](/download/) to download the binary or installer for your operating system:

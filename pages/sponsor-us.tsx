@@ -7,7 +7,7 @@ import Layout from '../layout/layout';
 
 const SponsorUs: FunctionComponent = function () {
   return (
-    <Layout>
+    <Layout footerBanner='newsletter'>
       <Meta
         title='Sponsor Mockoon'
         description='Mockoon is an open source project. You can help the maintainers by sponsoring the project through GitHub Sponsors or by making a one-time donation.'

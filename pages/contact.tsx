@@ -5,7 +5,7 @@ import Layout from '../layout/layout';
 
 const Contact: FunctionComponent = function () {
   return (
-    <Layout>
+    <Layout footerBanner='newsletter'>
       <Meta
         title='Request support'
         description='Found an issue? Wondering how to use Mockoon for your specific use case or how to create awesome mock APIs? Contact us!'

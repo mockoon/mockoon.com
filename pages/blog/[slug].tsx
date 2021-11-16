@@ -39,7 +39,7 @@ export default function BlogArticle(props: {
   articleBody: string;
 }) {
   return (
-    <Layout>
+    <Layout footerBanner='newsletter'>
       {props.articleData.canonical && (
         <Head>
           <link rel='canonical' href={`${props.articleData.canonical}/`} />

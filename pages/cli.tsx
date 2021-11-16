@@ -39,7 +39,7 @@ const features: CardData[] = [
 
 const Cli: FunctionComponent = function () {
   return (
-    <Layout>
+    <Layout footerBanner='download'>
       <Meta
         title='Take Mockoon to the command line'
         description='Mockoon CLI takes Mockoon where it has never been before: servers, CI environments, etc. Lightweight and fast.'

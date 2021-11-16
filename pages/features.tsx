@@ -112,7 +112,7 @@ const features: CardData[] = [
 
 const Features: FunctionComponent = function () {
   return (
-    <Layout>
+    <Layout footerBanner='download'>
       <Meta
         title='Mockoon complete list of features'
         description='List of all features offered by Mockoon, the mock API creation tool compatible with Windows, Mac and Linux.'

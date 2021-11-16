@@ -6,7 +6,7 @@ import Layout from '../layout/layout';
 
 const Download: FunctionComponent = function () {
   return (
-    <Layout>
+    <Layout footerBanner='newsletter'>
       <Meta
         title='Download Mockoon, the best API mocking tool'
         description='Download Mockoon, the easiest and fastest way to create realistic mock REST APIs. No account required, free and open-source.'

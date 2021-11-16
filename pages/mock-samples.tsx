@@ -760,7 +760,7 @@ const mockSamples: CardData[] = [
 
 const MockSamples: FunctionComponent = function () {
   return (
-    <Layout>
+    <Layout footerBanner='download'>
       <Meta
         title='Mock API samples for your project'
         description="Create your mock API server in no time with Mockoon's ready to use mock samples for Stripe, Giphy, Open weather, and more"

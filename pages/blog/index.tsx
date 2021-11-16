@@ -29,7 +29,7 @@ const Blog: FunctionComponent<{
   articles: ArticleList;
 }> = function (props) {
   return (
-    <Layout>
+    <Layout footerBanner='newsletter'>
       <Meta title={meta.title} description={meta.description} />
       <Hero title={meta.title} subtitle={meta.description} />
 

@@ -24,7 +24,7 @@ export async function getStaticProps() {
 
 export default function CaseStudies(props: { articles: ArticleList }) {
   return (
-    <Layout>
+    <Layout footerBanner='download'>
       <Meta title={meta.title} description={meta.description} />
       <Hero title={meta.title} subtitle={meta.description} />
 

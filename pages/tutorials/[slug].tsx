@@ -1,6 +1,7 @@
 import matter from 'gray-matter';
 import Head from 'next/head';
-import React from 'react';
+import Link from 'next/link';
+import React, { Fragment } from 'react';
 import Article from '../../components/article';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
@@ -8,7 +9,8 @@ import { ArticleData } from '../../models/common.model';
 import { buildSlugStaticPaths } from '../../utils/static-builders';
 
 export async function getStaticProps({ params }) {
-  const fileContent = await require(`../../content/tutorials/${params.slug}.md`);
+  const fileContent =
+    await require(`../../content/tutorials/${params.slug}.md`);
   const parsedContent = matter(fileContent.default);
 
   return {
@@ -28,7 +30,7 @@ export default function Tutorial(props: {
   articleBody: string;
 }) {
   return (
-    <Layout>
+    <Layout footerBanner='download'>
       {props.articleData.canonical && (
         <Head>
           <link rel='canonical' href={`${props.articleData.canonical}/`} />
@@ -48,13 +50,55 @@ export default function Tutorial(props: {
         articleBody={props.articleBody}
         articleData={props.articleData}
       />
-      <section>
-        <div className='container text-center pt-3 pb-8'>
-          <a className='btn btn-secondary-soft' href='/tutorials/'>
-            ⬅ Back to the list of tutorials
-          </a>
-        </div>
-      </section>
+      <div className='container'>
+        <section className='row pt-3 pb-8'>
+          <div
+            className={`col d-flex ${
+              props.articleData.nextLink && props.articleData.previousLink
+                ? 'justify-content-between'
+                : 'justify-content-center'
+            }`}
+          >
+            {!props.articleData.nextLink && !props.articleData.previousLink && (
+              <Link href='/tutorials/'>
+                <a className='btn btn-secondary-soft'>
+                  ⬅ Back to the list of tutorials
+                </a>
+              </Link>
+            )}
+            {(props.articleData.previousLink || props.articleData.nextLink) && (
+              <Fragment>
+                {props.articleData.previousLink && (
+                  <Link
+                    href={`/tutorials/${
+                      props.articleData.previousLink
+                        ? props.articleData.previousLink + '/'
+                        : ''
+                    }`}
+                  >
+                    <a className='btn btn-secondary-soft'>
+                      ⬅&nbsp;{props.articleData.previousText}
+                    </a>
+                  </Link>
+                )}
+                {props.articleData.nextLink && (
+                  <Link
+                    href={`/tutorials/${
+                      props.articleData.nextLink
+                        ? props.articleData.nextLink + '/'
+                        : ''
+                    }`}
+                  >
+                    <a className='btn btn-secondary-soft'>
+                      {props.articleData.nextText}&nbsp;➡
+                    </a>
+                  </Link>
+                )}
+              </Fragment>
+            )}
+          </div>
+        </section>
+      </div>
     </Layout>
   );
 }

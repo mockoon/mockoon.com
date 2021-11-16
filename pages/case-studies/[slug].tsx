@@ -8,7 +8,8 @@ import { ArticleData } from '../../models/common.model';
 import { buildSlugStaticPaths } from '../../utils/static-builders';
 
 export async function getStaticProps({ params }) {
-  const fileContent = await require(`../../content/case-studies/${params.slug}.md`);
+  const fileContent =
+    await require(`../../content/case-studies/${params.slug}.md`);
   const parsedContent = matter(fileContent.default);
 
   return {
@@ -28,7 +29,7 @@ export default function CaseStudy(props: {
   articleBody: string;
 }) {
   return (
-    <Layout>
+    <Layout footerBanner='download'>
       {props.articleData.canonical && (
         <Head>
           <link rel='canonical' href={`${props.articleData.canonical}/`} />

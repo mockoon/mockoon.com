@@ -188,7 +188,7 @@ export default function Docs(props: {
   };
 
   return (
-    <Layout>
+    <Layout footerBanner='contact'>
       <Meta
         title={props.topicData.meta.title}
         description={props.topicData.meta.description}

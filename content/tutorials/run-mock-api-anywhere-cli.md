@@ -13,6 +13,8 @@ Mockoon is a set of free and open-source API mocking tools. They help you get re
 
 This tutorial will help you put up on track with the CLI and all its possibilities.
 
+> To learn more about API in general, head over to our [API guide](/tutorials/api-guide-what-are-api/)
+
 ## What is Mockoon CLI?
 
 Mockoon CLI is an [NPM package](https://www.npmjs.com/package/@mockoon/cli) that can run on all environments where Node.js is installed. A [Docker image](https://hub.docker.com/r/mockoon/cli) is also available (see [Step 7](#step-7-deploy-mockoon-cli-using-docker) below).

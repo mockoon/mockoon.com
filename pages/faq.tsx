@@ -5,7 +5,7 @@ import Layout from '../layout/layout';
 
 const Faq: FunctionComponent = function () {
   return (
-    <Layout>
+    <Layout footerBanner='download'>
       <Meta
         title='Frequently asked questions (FAQ)'
         description='Find the most frequently asked questions about Mockoon, the free cross-platform desktop mock REST API servers creation tool.'

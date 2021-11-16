@@ -42,7 +42,7 @@ export default function Tutorial(props: {
         description={props.articleData.meta.description}
         ogType='article'
         url={`/${props.slug}/`}
-        image={`/tutorials/${props.articleData.image}`}
+        image={`tutorials/${props.articleData.image}`}
       />
       <Article
         slug={props.slug}

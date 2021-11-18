@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { FunctionComponent } from 'react';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
@@ -245,6 +246,11 @@ const Faq: FunctionComponent = function () {
                         as many <code>environment-x.json</code> files as you had
                         mock APIs created in Mockoon. You can then move them
                         elsewhere.
+                      </p>
+                      <p>
+                        <Link href='/docs/latest/mockoon-data-files/data-storage-location/'>
+                          <a>Learn more about Mockoon's data storage</a>
+                        </Link>
                       </p>
                     </div>
                   </div>

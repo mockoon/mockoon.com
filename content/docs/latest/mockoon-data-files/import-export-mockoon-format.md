@@ -1,18 +1,17 @@
 ---
-title: Import/export data
+title: Import/export in Mockoon's format
 meta:
-  title: Import and export mock API and routes
-  description: Learn how to easily import and export or share with your team your mock API servers and routes in OpenAPI or Mockoon's own format
-order: 70
+  title: Import/export in Mockoon's format
+  description: Learn how to easily import and export or share with your team your mock API servers and routes using Mockoon own file format
+order: 803
 ---
 
-# Import/export data
+# Import/export in Mockoon's format [deprecated]
 
 ---
 
-Mockoon supports import/export in two formats: Mockoon own format (JSON) and Swagger (v2) or OpenAPI (v3) format.
-
-## 1. Mockoon's format
+> Before [v1.16.0](https://github.com/mockoon/mockoon/releases/tag/v1.16.0), exporting data in Mockoon's format was necessary to share your mocks with other users and to run them with the [CLI](/cli/). Since this update, both the desktop application and the CLI can load Mockoon's environments files directly without exporting them. [Learn more](docs:mockoon-data-files/sharing-mock-api-files)  
+> **Import/export in Mockoon's format may be removed in the future**
 
 ### Export all environments to a JSON file
 
@@ -47,26 +46,3 @@ To import data from the clipboard, open the **Import/export** menu, select **Moc
 ![Click on Import from clipboard](/images/docs/v1.8.0-import-clipboard.png)
 
 As for the JSON import, any type of exported data can be imported through this method.
-
-## 2. Swagger/OpenAPI format
-
-Mockoon also supports import in both OpenAPI v2 (Swagger) and v3 formats. Environments can be exported to OpenAPI v3 format only.
-
-OpenAPI import and export currently support the following properties:
-- API title.
-- Server URL, port, base path (prefix) and protocol.
-- Routes paths (including parameters), methods, responses with status code (200, etc) and headers, and descriptions.
-
-Import only: sample JSON bodies are created from OpenAPI schemas during import.
-
-### Import environment from an OpenAPI v2 or v3 JSON/YAML file
-
-To import an environment from a file, open the **Import/export** menu, select **Swagger/OpenAPI** and then **Import Swagger v2/OpenAPI v3 (JSON or YAML)**:
-
-![Click on Import Swagger v2/OpenAPI v3 (JSON or YAML)](/images/docs/v1.8.0-import-openapi.png)
-
-### Export an environment to an OpenAPI v3 JSON file
-
-To export an environment to a JSON file, open the **Import/export** menu, select **Swagger/OpenAPI** and then **Export current environment to OpenAPI v3 (JSON)**:
-
-![Click on Export current environment to OpenAPI v3 (JSON)](/images/docs/v1.8.0-export-openapi.png)

@@ -53,7 +53,12 @@
       },
       {
         "source": "/tutorial/import-export-environments-routes",
-        "destination": "/docs/latest/import-export-data/",
+        "destination": "/docs/latest/mockoon-data-files/import-export-openapi-format/",
+        "type": 301
+      },
+      {
+        "source": "/docs/latest/import-export-data/",
+        "destination": "/docs/latest/mockoon-data-files/import-export-openapi-format/",
         "type": 301
       },
       {

@@ -15,7 +15,7 @@ nextText: 'API guide part 3: Rest API components'
 
 ## Definition of a REST (or RESTful) API
 
-As we saw in the [previous part of this guide](/tutorials/api-guide-what-are-api), there are many types of web APIs. What interests us most is one of the most popular implementations, the [REST, or RESTful, API](https://en.wikipedia.org/wiki/Representational_state_transfer).
+As we saw in the [previous part of this guide](/tutorials/api-guide-what-are-api/), there are many types of web APIs. What interests us most is one of the most popular implementations, the [REST, or RESTful, API](https://en.wikipedia.org/wiki/Representational_state_transfer).
 REST stands for **RE**presentational **S**tate **T**ransfer. It's a software architectural style that defines a set of **constraints** used to create standardized APIs. Web APIs adhering to the REST architectural constraints are called **RESTful APIs**.
 
 RESTful APIs must follow six constraints: **client-server architecture**, **statelessness**, **cacheability**, **layered system**, **code on demand**, and **uniform interface**. We will see four of them, perhaps the most important.
@@ -84,7 +84,7 @@ BLANK_LINE
 BODY
 ```
 
-As we will see in the [third part of this guide](/tutorials/api-guide-rest-api-components), the method and URL are always present and mandatory. They identify the target endpoint requested by the client on the API server.
+As we will see in the [third part of this guide](/tutorials/api-guide-rest-api-components/), the method and URL are always present and mandatory. They identify the target endpoint requested by the client on the API server.
 On the contrary, the headers and body are optional. However, it's rare to have a request (or a response) without headers.
 
 ### The response

@@ -1,9 +1,9 @@
 ---
 title: "Mockoon's API guide part 1: What are APIs?"
-excerpt: Learn what APIs and web APIs are, how they work, and what are the benefits of using them
+excerpt: Learn what APIs and web APIs are, how they work, and what are the benefits of using and integrating third party APIs
 meta:
   title: "Mockoon's API guide part 1: What are APIs?"
-  description: Learn what APIs and web APIs are, how they work, and what are the benefits of using them
+  description: Learn what APIs and web APIs are, how they work, and what are the benefits of using and integrating third party APIs
 image: api-guide.png
 imageAlt: API illustration
 order: 150

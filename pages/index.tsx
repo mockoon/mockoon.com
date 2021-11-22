@@ -93,7 +93,7 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                     <img
                       src='/images/case-studies/impala/logo-dark.svg'
                       style={{ maxWidth: '40%' }}
-                      alt=''
+                      alt='Impala logo'
                     />
                   </div>
 
@@ -121,7 +121,7 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                     <img
                       src='/images/case-studies/localazy/logo-dark.svg'
                       style={{ maxWidth: '40%' }}
-                      alt=''
+                      alt='Localazy logo'
                     />
                   </div>
 

@@ -1,9 +1,9 @@
 ---
 title: "Mockoon's API guide part 3: REST APIs components"
-excerpt: 'Discover what composes REST API request and response: method, URL, headers, body'
+excerpt: 'Discover what composes RESTful API request and response: HTTP methods, resource URL, HTTP headers, payload or body'
 meta:
   title: "Mockoon's API guide part 3: REST APIs components"
-  description: 'Discover what composes REST API request and response: method, URL, headers, body'
+  description: 'Discover what composes RESTful API request and response: HTTP methods, resource URL, HTTP headers, payload or body'
 image: api-guide.png
 imageAlt: API illustration
 order: 152
@@ -13,7 +13,7 @@ previousText: 'API guide part 2: Rest APIs'
 
 ## Components of a REST API request and response
 
-After seeing [how an API call works](/tutorials/api-guide-what-are-rest-api), with a request and a response, in the second part of this guide, we will now see what are the request's and response's components: the request's **method** and **URL**, the response's **status code**, and the **headers** and **body**, present in both the request and the response.
+After seeing [how an API call works](/tutorials/api-guide-what-are-rest-api/), with a request and a response, in the second part of this guide, we will now see what are the request's and response's components: the request's **method** and **URL**, the response's **status code**, and the **headers** and **body**, present in both the request and the response.
 
 ![REST API call payload components](/images/tutorials/api-guide/rest-api-call-components.png)
 

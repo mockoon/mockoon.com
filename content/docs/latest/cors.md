@@ -16,13 +16,13 @@ When creating mock APIs, chances are the front-end application and the mocked AP
 
 For your application to work, you can make Mockoon automatically answer to these OPTIONS requests:
 
-Open the **Environment Settings** by clicking on the cog in the upper right corner:
+Open the **Environment Settings** by clicking on the tab at the top of the window:
 
-![click on cog icon](/images/docs/open-settings.png)
+![click on the settings tab](/images/docs/v1.17.0/open-environment-settings.png)
 
-Enable the **CORS option** by ticking the checkbox. The option was successfully activated if a blue shield is displayed next to the environment name.
+Enable the **Automatically handle OPTIONS pre-flight requests ** by ticking the checkbox:
 
-![tick the CORS checkbox](/images/docs/v1.11.0-enable-cors.png)
+![tick the CORS checkbox](/images/docs/v1.17.0/enable-cors.png)
 
 You need to restart the environment for the change to take effect.
 
@@ -38,8 +38,16 @@ Please note that Mockoon won’t send any CORS header on routes with the OPTIONS
 
 ## Add CORS headers to the environment headers
 
-You can also add the same CORS headers to a mock API by clicking on the **Add CORS headers to environment** link:
+You can also add the same CORS headers to all routes of a mock API with one click.
 
-![Click on the add CORS headers link](/images/docs/v1.11.0-add-cors-headers.png)
+Open the **Environment Headers** by clicking on the tab at the top of the window:
 
-You need to restart the environment for the change to take effect.
+![click on the headers tab](/images/docs/v1.17.0/open-environment-headers.png)
+
+Then, click on the **Add CORS headers** link:
+
+![Click on the add CORS headers link](/images/docs/v1.17.0/add-cors-headers.png)
+
+The above headers will be automatically added to your list of headers:
+
+![view cors headers in the list](/images/docs/v1.17.0/view-cors-headers.png)

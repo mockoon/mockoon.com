@@ -3,7 +3,7 @@ title: Data storage location
 meta:
   title: Data storage location
   description: Learn where Mockoon's data storage files and application settings are located and how to move them to other folders
-order: 800
+order: 1100
 ---
 
 # Data storage location
@@ -16,7 +16,7 @@ Since [v1.16.0](https://github.com/mockoon/mockoon/releases/tag/v1.16.0), Mockoo
 
 You can locate the folder in which the API data are stored by right-clicking on each environment and selecting **"Show in folder"**:
 
-![click on show in folder in the context menu](/images/docs/environment-show-in-folder.png)
+![click on show in folder in the context menu](/images/docs/v1.17.0/environment-show-in-folder.png)
 
 You can move these files anywhere on your hard drive and re-open them from there.
 

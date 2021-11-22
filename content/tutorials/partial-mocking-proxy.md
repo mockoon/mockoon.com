@@ -31,21 +31,13 @@ The Star Wars API does not have any character with an ID above 83, and we want t
 ```json
 {
   "name": "Mock Oon",
-  "height": "60",
-  "mass": "25",
-  "hair_color": "grey",
+  "height": "50",
+  "mass": "10",
+  "hair_color": "black",
   "skin_color": "grey",
-  "eye_color": "black",
+  "eye_color": "grey",
   "birth_year": "2017",
-  "gender": "male",
-  "homeworld": "http://swapi.dev/api/planets/41/",
-  "films": ["http://swapi.dev/api/films/4/"],
-  "species": ["http://swapi.dev/api/species/19/"],
-  "vehicles": [],
-  "starships": [],
-  "created": "2014-12-20T10:08:33.777000Z",
-  "edited": "2014-12-20T21:17:50.417000Z",
-  "url": "http://swapi.dev/api/people/90/"
+  "gender": "raccoon"
 }
 ```
 

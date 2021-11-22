@@ -78,7 +78,12 @@
       },
       {
         "source": "/tutorial/serve-mock-api-tls",
-        "destination": "/docs/latest/https/",
+        "destination": "/docs/latest/serving-over-tls/",
+        "type": 301
+      },
+      {
+        "source": "/docs/latest/https/",
+        "destination": "/docs/latest/serving-over-tls/",
         "type": 301
       },
       {

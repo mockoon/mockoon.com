@@ -12,22 +12,22 @@ order: 1010
 
 In addition to Handlebars' built-in helpers, Mockoon offers the following helpers:
 
-| Block helpers       | Arrays              | Math                    |                       | Misc                    |
-| ------------------- | ------------------- | ----------------------- | --------------------- | ----------------------- |
-| [`repeat`](#repeat) | [`array`](#array)   | [`add`](#add)           | [`eq`](#eq)           | [`newline`](#newline)   |
-| [`switch`](#switch) | [`oneOf`](#oneof)   | [`subtract`](#subtract) | [`gt`](#gt)           | [`base64`](#base64)     |
-|                     | [`someOf`](#someof) | [`multiply`](#multiply) | [`gte`](#gte)         | [`objectId`](#objectid) |
-|                     | [`join`](#join)     | [`divide`](#divide)     | [`lt`](#lt)           | [`setVar`](#setvar)     |
-|                     | [`slice`](#slice)   | [`modulo`](#modulo)     | [`lte`](#lte)         |                         |
-|                     | [`len`](#len)       | [`ceil`](#ceil)         | [`toFixed`](#toFixed) |                         |
-|                     |                     | [`floor`](#floor)       | [`round`](#round)     |                         |
+| Block helpers       | Arrays              | Math                    |                       |
+| ------------------- | ------------------- | ----------------------- | --------------------- |
+| [`repeat`](#repeat) | [`array`](#array)   | [`add`](#add)           | [`eq`](#eq)           |
+| [`switch`](#switch) | [`oneOf`](#oneof)   | [`subtract`](#subtract) | [`gt`](#gt)           |
+|                     | [`someOf`](#someof) | [`multiply`](#multiply) | [`gte`](#gte)         |
+|                     | [`join`](#join)     | [`divide`](#divide)     | [`lt`](#lt)           |
+|                     | [`slice`](#slice)   | [`modulo`](#modulo)     | [`lte`](#lte)         |
+|                     | [`len`](#len)       | [`ceil`](#ceil)         | [`toFixed`](#toFixed) |
+|                     |                     | [`floor`](#floor)       | [`round`](#round)     |
 
-| Strings                 |                           | Numbers               | Dates                             |
-| ----------------------- | ------------------------- | --------------------- | --------------------------------- |
-| [`int`](#int)           | [`split`](#split)         | [`concat`](#concat)   | [`now`](#now)                     |
-| [`float`](#float)       | [`stringify`](#stringify) | [`indexOf`](#indexof) | [`dateTimeShift`](#datetimeshift) |
-| [`includes`](#includes) |                           |                       | [`date`](#date)                   |
-| [`substr`](#substr)     |                           |                       | [`time`](#time)                   |
+| Strings                 |                           | Dates                             | Misc                    |
+| ----------------------- | ------------------------- | --------------------------------- | ----------------------- |
+| [`int`](#int)           | [`split`](#split)         | [`now`](#now)                     | [`newline`](#newline)   |
+| [`float`](#float)       | [`stringify`](#stringify) | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)     |
+| [`includes`](#includes) | [`concat`](#concat)       | [`date`](#date)                   | [`objectId`](#objectid) |
+| [`substr`](#substr)     | [`indexOf`](#indexof)     | [`time`](#time)                   | [`setVar`](#setvar)     |
 
 | [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                         |
 | --------------------------------------------------- | ----------------------------- | ----------------------- |

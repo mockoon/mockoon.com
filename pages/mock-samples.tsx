@@ -786,7 +786,7 @@ const MockSamples: FunctionComponent = function () {
                 <i className='icon-download'></i> Download
               </button>{' '}
               Download them manually before{' '}
-              <a href='/docs/latest/import-export-data/#import-from-a-json-file'>
+              <a href='/docs/latest/mockoon-data-files/import-export-mockoon-format/#import-from-a-json-file'>
                 importing
               </a>{' '}
               them into the application or{' '}

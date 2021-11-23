@@ -158,7 +158,7 @@ const Faq: FunctionComponent = function () {
                       Yes, Mockoon supports most of the OpenAPI specifications
                       (v2 and v3) both for import and export. You can learn more
                       on{' '}
-                      <a href='/docs/latest/import-export-data/'>
+                      <a href='/docs/latest/mockoon-data-files/import-export-openapi-format/'>
                         Mockoon's OpenAPI documentation page
                       </a>
                       .

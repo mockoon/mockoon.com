@@ -52,8 +52,8 @@ const features: CardData[] = [
   },
   {
     title: 'HTTPS',
-    description: 'Serve your mock API over TLS with self-signed certificate.',
-    links: [{ src: '/docs/latest/https/', text: 'Documentation →' }]
+    description: 'Serve your mock API over TLS with a custom certificate.',
+    links: [{ src: '/docs/latest/serving-over-tls/', text: 'Documentation →' }]
   },
   {
     title: 'Response headers',

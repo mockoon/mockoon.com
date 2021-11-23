@@ -10,9 +10,11 @@ order: 100
 
 ---
 
-Mockoon supports serving your mock API over TLS with a self signed certificate. You can activate this option for each environment independently:
+Mockoon supports serving your mock API over TLS with a self-signed certificate by default. You can also provide your certificate and trusted CA certificates.
 
-Open the **Environment Settings** by clicking on the tab at the top of the window:
+## Activate the TLS option
+
+You can activate the TLSoption for each environment independently. Open the **Environment Settings** by clicking on the tab at the top of the window:
 
 ![click on the settings tab](/images/docs/v1.17.0/open-environment-settings.png)
 
@@ -24,4 +26,14 @@ Enable the **TLS option** by ticking the checkbox. The option was successfully a
 
 Your mock API will now be available on `https://localhost:port` instead of `http://localhost:port`.
 
-> Please note that Mockoon is using a self-signed certificate to serve your environment over TLS.
+Please note that Mockoon is using a self-signed certificate to serve your environment over TLS.
+
+## Provide your own certificate
+
+You can also provide your certificate in both PKCS12 or PEM formats by filling out the input fields with the path to the file(s).
+
+![add certificate path](/images/docs/v1.17.0/enable-tls-custom-certificate.png)
+
+Mockoon also supports passphrase-protected keys and custom-trusted CA certificates. As Mockoon is using Node.js' `tls`, you can refer to the [`tls.createSecureContext()` documentation](https://nodejs.org/dist/latest-v16.x/docs/api/tls.html#tlscreatesecurecontextoptions) for a full description of the available options.
+
+> All the path fields support both absolute and relative paths. Relative paths are resolved from the environment's file location.

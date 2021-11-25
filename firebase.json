@@ -87,6 +87,11 @@
         "type": 301
       },
       {
+        "source": "/tutorials/angular-mocking/",
+        "destination": "/tutorials/angular-api-call-and-mocking/",
+        "type": 301
+      },
+      {
         "source": "/mock-samples/open-weather/",
         "destination": "/mock-samples/",
         "type": 301

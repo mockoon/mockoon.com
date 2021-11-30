@@ -22,7 +22,10 @@ const features: CardData[] = [
     description:
       'Mock API import / export with Swagger/OpenAPI format support.',
     links: [
-      { src: '/docs/latest/import-export-data/', text: 'Documentation →' }
+      {
+        src: '/docs/latest/mockoon-data-files/import-export-openapi-format/',
+        text: 'Documentation →'
+      }
     ]
   },
   {
@@ -49,8 +52,8 @@ const features: CardData[] = [
   },
   {
     title: 'HTTPS',
-    description: 'Serve your mock API over TLS with self-signed certificate.',
-    links: [{ src: '/docs/latest/https/', text: 'Documentation →' }]
+    description: 'Serve your mock API over TLS with a custom certificate.',
+    links: [{ src: '/docs/latest/serving-over-tls/', text: 'Documentation →' }]
   },
   {
     title: 'Response headers',

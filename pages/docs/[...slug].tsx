@@ -129,7 +129,7 @@ export async function getStaticProps({ params }) {
         } else {
           navItems.push({
             type: 'category',
-            title: topic.categoryName.replace('-', ' '),
+            title: topic.categoryName.replace(/\-/g, ' '),
             categoryName: topic.categoryName,
             order: topic.data.order,
             items: [newItem]
@@ -230,8 +230,8 @@ export default function Docs(props: {
                     <li
                       key={`link${itemIndex}`}
                       className={`list-item py-1 ${
-                        router.asPath.includes(item.slug) ? 'active' : ''
-                      }`}
+                        menuItem.type === 'category' ? 'ps-2' : ''
+                      } ${router.asPath.includes(item.slug) ? 'active' : ''}`}
                     >
                       <Link href={`${item.slug}/`}>
                         <a className='list-link'>{item.title}</a>

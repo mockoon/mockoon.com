@@ -68,7 +68,7 @@ Following Mockoon's changes in version [1.16.0](https://github.com/mockoon/mocko
 
 You can run your mock in one single step by providing the actual location of your Mockoon environment file. To locate your environment file from the main application, right-click on an environment and select "Show in folder" in the context menu:
 
-![show in folder menu entry](/images/docs/environment-show-in-folder.png)
+![show in folder menu entry](/images/tutorials/getting-started-cli/environment-show-in-folder.png)
 
 Let's pretend your file is name `data.json` and resides in the current directory.
 

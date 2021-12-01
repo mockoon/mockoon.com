@@ -128,14 +128,36 @@ const DownloadSection: FunctionComponent = function () {
             <div className='btn-group'>
               <a
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
-                href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.dmg`}
+                href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.universal.dmg`}
                 rel='noopener'
                 onClick={() => postDownload('osx')}
               >
                 <span className='icon me-2'>
                   <i className='icon-download'></i>
                 </span>
-                <span>dmg</span>
+                <span>Universal</span>
+              </a>
+              <a
+                className='btn btn-primary-soft btn-sm d-flex align-items-center'
+                href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.x64.dmg`}
+                rel='noopener'
+                onClick={() => postDownload('osx')}
+              >
+                <span className='icon me-2'>
+                  <i className='icon-download'></i>
+                </span>
+                <span>Intel</span>
+              </a>
+              <a
+                className='btn btn-primary-soft btn-sm d-flex align-items-center'
+                href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.arm64.dmg`}
+                rel='noopener'
+                onClick={() => postDownload('osx')}
+              >
+                <span className='icon me-2'>
+                  <i className='icon-download'></i>
+                </span>
+                <span>Silicon</span>
               </a>
             </div>
             <div className='content p-3'>

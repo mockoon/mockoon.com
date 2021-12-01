@@ -92,6 +92,11 @@
         "type": 301
       },
       {
+        "source": "/tutorials/nodejs-api-mocking/",
+        "destination": "/tutorials/nodejs-api-call-and-mocking/",
+        "type": 301
+      },
+      {
         "source": "/mock-samples/open-weather/",
         "destination": "/mock-samples/",
         "type": 301

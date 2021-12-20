@@ -29,7 +29,7 @@ const Hero: FunctionComponent<{
           )}
           <div
             className={`col-12 ${
-              props.mainPicture ? 'col-lg-6' : 'col-lg-12 text-center'
+              props.mainPicture ? 'col-lg-6' : 'col-lg-8 mx-auto text-center'
             } order-lg-1`}
           >
             {props.title && (

@@ -29,31 +29,38 @@ const Footer: FunctionComponent<{
             <h6 className='fw-bold text-uppercase text-gray-700'>Tutorials</h6>
 
             <ul className='list-unstyled text-muted'>
-              <li className='mb-3'>
+              <li className='mb-2'>
                 <Link href='/tutorials/getting-started/'>
                   <a className='text-reset'>Getting started with Mockoon 🚀</a>
                 </Link>
               </li>
-              <li className='mb-3'>
+              <li className='mb-2'>
+                <Link href='/tutorials/run-mock-api-anywhere-cli/'>
+                  <a className='text-reset'>
+                    Run your mock APIs anywhere with the CLI
+                  </a>
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/tutorials/partial-mocking-proxy/'>
                   <a className='text-reset'>Partial mocking with proxy mode</a>
                 </Link>
               </li>
-              <li className='mb-3'>
+              <li className='mb-2'>
                 <Link href='/tutorials/requests-recording-auto-mocking/'>
                   <a className='text-reset'>
                     Requests recording and auto-mocking
                   </a>
                 </Link>
               </li>
-              <li className='mb-3'>
+              <li className='mb-2'>
                 <Link href='/tutorials/generate-mock-json-data/'>
                   <a className='text-reset'>
                     Generate dynamic mock data with Mockoon templating system
                   </a>
                 </Link>
               </li>
-              <li className='mb-3'>
+              <li className='mb-2'>
                 <Link href='/tutorials/'>
                   <a className='text-reset'>View all tutorials</a>
                 </Link>
@@ -64,27 +71,32 @@ const Footer: FunctionComponent<{
             <h6 className='fw-bold text-uppercase text-gray-700'>Learn</h6>
 
             <ul className='list-unstyled text-muted'>
-              <li className='mb-3'>
+              <li className='mb-2'>
                 <Link href='/tutorials/'>
                   <a className='text-reset'>Tutorials</a>
                 </Link>
               </li>
-              <li className='mb-3'>
+              <li className='mb-2'>
                 <Link href='/docs/latest/about/'>
                   <a className='text-reset'>Docs</a>
                 </Link>
               </li>
-              <li className='mb-3'>
+              <li className='mb-2'>
                 <Link href='/mock-samples/'>
                   <a className='text-reset'>Mock samples</a>
                 </Link>
               </li>
-              <li className='mb-3'>
+              <li className='mb-2'>
                 <Link href='/case-studies/'>
                   <a className='text-reset'>Case studies</a>
                 </Link>
               </li>
-              <li className='mb-3'>
+              <li className='mb-2'>
+                <Link href='/use-cases/'>
+                  <a className='text-reset'>Use cases</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/blog/'>
                   <a className='text-reset'>Blog</a>
                 </Link>
@@ -95,17 +107,17 @@ const Footer: FunctionComponent<{
             <h6 className='fw-bold text-uppercase text-gray-700'>More</h6>
 
             <ul className='list-unstyled text-muted mb-0'>
-              <li className='mb-3'>
+              <li className='mb-2'>
                 <Link href='/about/'>
                   <a className='text-reset'>About us</a>
                 </Link>
               </li>
-              <li className='mb-3'>
+              <li className='mb-2'>
                 <Link href='/contact/'>
                   <a className='text-reset'>Request support</a>
                 </Link>
               </li>
-              <li className='mb-3'>
+              <li className='mb-2'>
                 <Link href='/sponsor-us/'>
                   <a className='text-reset'>Sponsor us</a>
                 </Link>

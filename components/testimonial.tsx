@@ -8,7 +8,10 @@ const Testimonial: FunctionComponent<{
 }> = function (props) {
   return (
     <Fragment>
-      <div className='card shadow-light-lg my-3'>
+      <div
+        className='card card-border shadow-light-lg my-3'
+        style={{ borderTopColor: '#1DA1F2' }}
+      >
         <a
           className={`card-body ${props.small ? 'p-3' : ''} my-auto`}
           href={props.link}

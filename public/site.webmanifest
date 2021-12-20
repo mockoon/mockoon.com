@@ -1,5 +1,6 @@
 {
   "name": "Mockoon",
+  "short_name": "Mockoon",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

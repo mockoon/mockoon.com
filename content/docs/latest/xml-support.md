@@ -36,7 +36,7 @@ JSON equivalent (compacted):
     "_attributes": {
       "userID": "123"
     },
-    "first": {
+    "firstname": {
       "_text": "John"
     },
     "lastname": {

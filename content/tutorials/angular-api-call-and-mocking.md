@@ -6,7 +6,7 @@ meta:
   description: Learn how to call a REST API from your Angular application service and mock it using Mockoon API mocking tools
 image: tutorial-angular-api-call.png
 imageAlt: Mockoon and Angular logos side by side
-order: 100
+order: 91
 ---
 
 In this guide, we will learn how to call a REST API from an Angular application. If you already have an existing API that you want to use, you can skip the first step, in which we create a mock REST API using Mockoon.

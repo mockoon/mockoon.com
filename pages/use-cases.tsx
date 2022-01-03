@@ -68,12 +68,12 @@ const UseCases: FunctionComponent = function () {
   return (
     <Layout footerBanner='download'>
       <Meta
-        title='Use cases'
+        title='API mocking use cases'
         description='Discover how mocking APIs with Mockoon can accelerate and streamline your applications development, integration, testing, and demos'
         ogType='article'
       />
       <Hero
-        title='Use cases'
+        title='API mocking use cases'
         subtitle='Discover how mocking APIs with Mockoon can accelerate and streamline your applications development, integration, testing, and demos'
       />
 

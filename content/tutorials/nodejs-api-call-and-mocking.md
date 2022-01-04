@@ -15,7 +15,7 @@ If you already have an existing API that you want to use, you can skip the first
 
 ## 1. Create a mock API endpoint with Mockoon
 
-You may already have access to the internal or third-party API you want to call, but this is not always the case. The API may be under development or require account creation, and you may want to start working with it as soon as possible. For this, the easiest way is to create a mock API using a tool like Mockoon.
+You may already have access to the internal or third-party API you want to call, but this is not always the case. The API may be under development or require account creation, and you may want to start working with it as soon as possible. For this, the easiest way is to create a mock API using a tool like Mockoon. (Read more about the [benefits of API mocking](/use-cases/)).
 
 > To learn more about how to set up your first mock API with Mockoon, head over to the [Getting started tutorial](tutorials:getting-started).
 

@@ -87,8 +87,8 @@ class Index extends React.Component<{}, { companyLogos: any }> {
         <section className='py-5 py-lg-10' id='download'>
           <div className='container'>
             <div className='row justify-content-around'>
-              <div className='col-12 col-md-4'>
-                <blockquote className='blockquote mb-8 mb-md-0'>
+              <div className='col-12 col-lg-4'>
+                <blockquote className='blockquote mb-8 mb-lg-0'>
                   <div className='img-fluid mb-5 mb-md-6'>
                     <img
                       src='/images/case-studies/impala/logo-dark.svg'
@@ -97,9 +97,9 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                     />
                   </div>
 
-                  <p className='lead text-gray-700 mb-5 mb-md-6'>
-                    "Mockoon is the answer to just about every mocking need you
-                    might have."
+                  <p className='quotation p-5 lead text-gray-700 mb-0'>
+                    Mockoon is the answer to just about every mocking need you
+                    might have.
                     <br />
                     <a
                       href='/case-studies/impala-api-ux-user-research/'
@@ -108,15 +108,23 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                       Read more
                     </a>
                   </p>
-
-                  <p className='fs-sm fw-bold mb-0'>Yasmin Desai</p>
-                  <p className='fs-sm text-muted mb-0'>
-                    Senior Product Manager @ Impala
-                  </p>
+                  <div className='d-flex align-items-center'>
+                    <img
+                      className='img-thumbnail avatar-xl avatar-img rounded-circle mr-4'
+                      src='/images/case-studies/impala/yasmin-desai.jpg'
+                      alt='Senior Product Manager @ Impala'
+                    />
+                    <div className='ps-5'>
+                      <p className='fs-sm fw-bold mb-0'>Yasmin Desai</p>
+                      <p className='fs-sm text-muted mb-0'>
+                        Senior Product Manager @ Impala
+                      </p>
+                    </div>
+                  </div>
                 </blockquote>
               </div>
-              <div className='col-12 col-md-4'>
-                <blockquote className='blockquote mb-0'>
+              <div className='col-12 col-lg-4'>
+                <blockquote className='mb-8 mb-lg-0'>
                   <div className='img-fluid mb-5 mb-md-6'>
                     <img
                       src='/images/case-studies/localazy/logo-dark.svg'
@@ -125,10 +133,9 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                     />
                   </div>
 
-                  <p className='lead text-gray-700 mb-4 mb-md-6'>
-                    "Mockoon was easy to start with, was fast and lightweight.
-                    One clear purpose tool which immediately solved our
-                    problem."
+                  <p className='quotation p-5 lead text-gray-700 mb-0'>
+                    Mockoon was easy to start with, was fast and lightweight.
+                    One clear purpose tool which immediately solved our problem.
                     <br />
                     <a
                       href='/case-studies/localazy-speed-development-api-mocking/'
@@ -137,11 +144,19 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                       Read more
                     </a>
                   </p>
-
-                  <p className='fs-sm fw-bold mb-0'>Jan Bílek</p>
-                  <p className='fs-sm text-muted mb-0'>
-                    Product Manager @ Localazy
-                  </p>
+                  <div className='d-flex align-items-center'>
+                    <img
+                      className='img-thumbnail avatar-xl avatar-img rounded-circle mr-4'
+                      src='/images/case-studies/localazy/jan-bilek.png'
+                      alt='Product Manager @ Localazy'
+                    />
+                    <div className='ps-5'>
+                      <p className='fs-sm fw-bold mb-0'>Jan Bílek</p>
+                      <p className='fs-sm text-muted mb-0'>
+                        Product Manager @ Localazy
+                      </p>
+                    </div>
+                  </div>
                 </blockquote>
               </div>
             </div>

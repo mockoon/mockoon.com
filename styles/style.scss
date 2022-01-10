@@ -213,36 +213,7 @@ p.console {
 
 .quotation {
   position: relative;
-  padding: 2rem;
-  margin: 40px;
-  font-size: 1.6rem;
-  font-weight: 400;
   quotes: '“' '”';
-
-  &-metadata {
-    display: flex;
-    margin-top: 20px;
-
-    & .quotation-picture {
-      width: 48px;
-      height: 48px;
-      border-radius: 9999px;
-    }
-
-    & .quotation-author {
-      margin-left: 20px;
-
-      div:nth-child(1) {
-        font-weight: 500;
-        font-size: 1rem;
-      }
-
-      div:nth-child(2) {
-        color: grey;
-        font-size: 1rem;
-      }
-    }
-  }
 
   &:before,
   &:after {
@@ -264,6 +235,7 @@ p.console {
     bottom: 0;
   }
 }
+
 // Buy me a coffee button styles
 .bmc-button img {
   width: 27px !important;

@@ -10,8 +10,10 @@ order: 1030
 
 ---
 
-Mockoon implements [Faker.js](https://github.com/Marak/faker.js) library by wrapping most of the available helpers.
-Faker.js offers lots of helpers: `address.zipCode`, `address.city`, `address.cityPrefix`, `name.firstName`, `name.lastName`, `datatype.number`, `datatype.float`, `internet.avatar`, `internet.email`, etc. Please have a look at [Faker.js documentation](http://marak.github.io/faker.js/faker.html) to learn how to use them.
+Mockoon implements [Faker.js v5.5.3](https://www.npmjs.com/package/faker/v/5.5.3) library by wrapping most of the available helpers.
+Faker.js offers lots of helpers: `address.zipCode`, `address.city`, `address.cityPrefix`, `name.firstName`, `name.lastName`, `datatype.number`, `datatype.float`, `internet.avatar`, `internet.email`, etc. Please have a look at [Faker.js documentation](https://www.npmjs.com/package/faker/v/5.5.3) to learn how to use them.
+
+> Note: Faker.js has been deleted by its author and probably won't be maintained anymore in the future.
 
 ## Usage
 
@@ -35,8 +37,6 @@ Faker.js methods may use two different ways of passing parameters: ordered argum
 // ordered arguments (here count=25)
 {{faker 'random.alphaNumeric' 25}}
 ```
-
-Please refer to [Faker.js documentation](http://marak.github.io/faker.js/faker.html) to check the underlying implementation.
 
 ## Set Faker.js' locale and seed
 

@@ -32,11 +32,11 @@ const SponsorUs: FunctionComponent = function () {
               >
                 Fabrice
               </a>
-              , they both work on the project during their free time.
+              .
             </p>
             <p>
               Entirely free, Mockoon saves time for thousands of people around
-              the world every day and recently crossed 150&nbsp;000 downloads!
+              the world every day and recently crossed 200&nbsp;000 downloads!
             </p>
             <p>
               Reaching this level of satisfaction requires a tremendous amount
@@ -61,7 +61,10 @@ const SponsorUs: FunctionComponent = function () {
               Whatever option you choose we are grateful for your support!
             </h3>
             <div className='text-center mt-8'>
-              <h4>Become a sponsor through GitHub Sponsors</h4>
+              <h4>
+                Become a sponsor or make a one-time donation through GitHub
+                Sponsors
+              </h4>
               <iframe
                 src='https://github.com/sponsors/255kb/button'
                 title='Sponsor 255kb'
@@ -77,7 +80,7 @@ const SponsorUs: FunctionComponent = function () {
             <div className='text-center mt-8'>
               <p>
                 If you cannot donate, you can still star the project on GitHub
-                or help spread the word!
+                to help spread the word!
               </p>
               <div className='m-4'>
                 <GitHub />

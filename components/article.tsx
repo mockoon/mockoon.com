@@ -2,6 +2,7 @@ import { Fragment, FunctionComponent } from 'react';
 import { ArticleData } from '../models/common.model';
 import Markdown from './markdown';
 import Share from './share';
+
 const Article: FunctionComponent<{
   slug: string;
   path: string;

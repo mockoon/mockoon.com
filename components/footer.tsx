@@ -61,6 +61,11 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
+                <Link href='/tutorials/api-guide-what-are-api/'>
+                  <a className='text-reset'>Mockoon's API guide</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/tutorials/'>
                   <a className='text-reset'>View all tutorials</a>
                 </Link>
@@ -79,6 +84,11 @@ const Footer: FunctionComponent<{
               <li className='mb-2'>
                 <Link href='/docs/latest/about/'>
                   <a className='text-reset'>Docs</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/faq/'>
+                  <a className='text-reset'>FAQ</a>
                 </Link>
               </li>
               <li className='mb-2'>
@@ -115,6 +125,11 @@ const Footer: FunctionComponent<{
               <li className='mb-2'>
                 <Link href='/contact/'>
                   <a className='text-reset'>Request support</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/enterprise/'>
+                  <a className='text-reset'>Enterprise</a>
                 </Link>
               </li>
               <li className='mb-2'>

@@ -1,5 +1,10 @@
 import { MouseEvent } from 'react';
 
+export type AccordionData = {
+  title: string;
+  items: { question: string; answer: string }[];
+}[];
+
 export type MetaData = {
   title: string;
   description: string;

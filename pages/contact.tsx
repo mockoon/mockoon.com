@@ -17,17 +17,21 @@ const Contact: FunctionComponent = function () {
       />
       <section className='pb-8'>
         <div className='container'>
-          <div className='row'>
+          <div className='row justify-content-center'>
             <div className='col-12 col-lg-4 d-flex'>
               <div className='card p-5 my-5 shadow-light-lg'>
-                <div className='col-12 text-center '>
-                  <i className='icon-chat h1 text-muted'></i>
+                <div className='col-12 text-center'>
+                  <img
+                    src='/images/illustrations/chat.svg'
+                    alt=''
+                    className='w-25 mb-4'
+                  />
                 </div>
                 <h3 className='text-center'>Forums and Discord Server</h3>
                 <p className='px-2 text-center text-muted'>
                   You can ask for help or discuss ideas and improvements on our
                   GitHub Discussions forums. You are also welcome on our Discord
-                  server. Usually, users get a response in under 48 hours.
+                  server.
                 </p>
                 <div className='justify-content-center align-items-center d-flex flex-row '>
                   <a
@@ -60,39 +64,20 @@ const Contact: FunctionComponent = function () {
             <div className='col-12 col-lg-4 d-flex'>
               <div className='card p-5 my-5 shadow-light-lg'>
                 <div className='col-12 text-center '>
-                  <i className='icon-email h1 text-muted'></i>
+                  <img
+                    src='/images/illustrations/visio.svg'
+                    alt=''
+                    className='w-25 mb-4'
+                  />
                 </div>
-                <h3 className='text-center'>Email us</h3>
+                <h3 className='text-center'>Enterprise support</h3>
                 <p className='px-2 text-center text-muted'>
-                  You can also request direct help by emailing the maintainers
-                  team. We will do our best to assist you.
+                  Get an official maintainer to join your team on the platform
+                  of your choice (Slack, Zoom, etc.) to answer support requests
+                  or any questions you may have about the project.
                 </p>
                 <div className='justify-content-center align-items-center d-flex flex-row '>
-                  <a href='mailto:support@mockoon.com'>support@mockoon.com</a>
-                </div>
-              </div>
-            </div>
-
-            <div className='col-12 col-lg-4 d-flex'>
-              <div className='card p-5 my-5 shadow-light-lg'>
-                <div className='col-12 text-center '>
-                  <i className='icon-star text-warning h1'></i>
-                </div>
-                <h3 className='text-center'>VIP support</h3>
-                <p className='px-2 text-center text-muted'>
-                  Sponsor us and get an official maintainer to join your team on
-                  the platform of your choice (Slack, Zoom, etc.) to answer
-                  support requests or any questions you may have about the
-                  project.
-                </p>
-                <div className='justify-content-center align-items-center d-flex flex-row '>
-                  <a
-                    href='https://github.com/sponsors/255kb'
-                    rel='noopener'
-                    target='_blank'
-                  >
-                    Get VIP support
-                  </a>
+                  <a href='/enterprise'>Get enterprise support</a>
                 </div>
               </div>
             </div>

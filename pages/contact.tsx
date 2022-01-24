@@ -77,7 +77,7 @@ const Contact: FunctionComponent = function () {
                   or any questions you may have about the project.
                 </p>
                 <div className='justify-content-center align-items-center d-flex flex-row '>
-                  <a href='/enterprise'>Get enterprise support</a>
+                  <a href='/enterprise/'>Get enterprise support</a>
                 </div>
               </div>
             </div>

@@ -9,7 +9,7 @@ meta:
 
 ---
 
-Mockoon implements [Handlebars](https://handlebarsjs.com/), [Faker.js](https://github.com/Marak/faker.js), and a set of custom Handlebars helpers in order to create dynamic responses. This templating system is supported in the response's **body**, **headers**, **file content**, and **file path**.
+Mockoon implements [Handlebars](https://handlebarsjs.com/), [Faker.js](https://fakerjs.dev/), and a set of custom Handlebars helpers in order to create dynamic responses. This templating system is supported in the response's **body**, **headers**, **file content**, and **file path**.
 
 ## Helpers
 
@@ -24,8 +24,7 @@ All Handlebars helpers are available (`if`, `each`, etc.). For more information,
 
 ### Faker.js helpers
 
-
-Faker.js offers lots of helpers: `address.zipCode`, `address.city`, `address.cityPrefix`, `name.firstName`, `name.lastName`, `random.number`, `random.float`, `internet.avatar`, `internet.email`, etc. Please have a look at [Faker.js documentation](http://marak.github.io/faker.js/faker.html) to learn how to use them.
+Faker.js offers lots of helpers: `address.zipCode`, `address.city`, `address.cityPrefix`, `name.firstName`, `name.lastName`, `random.number`, `random.float`, `internet.avatar`, `internet.email`, etc. Please have a look at [Faker.js documentation](https://fakerjs.dev/) to learn how to use them.
 
 All Faker.js helpers must be used in the following way: `{{faker 'namespace.method'}}`.  
 Examples: `{{faker 'address.zipCode'}}`, `{{faker 'address.city'}}`, `{{faker 'address.cityPrefix'}}`, `{{faker 'name.firstName'}}`, etc.  
@@ -44,11 +43,11 @@ In addition to these helpers, some custom ones have been added to Mockoon:
 
 Mockoon also supports the following helpers which can return entering requests information:
 
-- `body 'path' 'default value'`: 
+- `body 'path' 'default value'`:
   - get the value at a given `path` from the request body if the entering `Content-Type` is set to `application/json` or `application/x-www-form-urlencoded`. The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path). For both JSON and form params bodies, full objects or arrays can be retrieved by the helper.
   - The full request's raw body can also be fetched when the `path` is omitted (`{{body}}`) independently from the request's `Content-Type`.
   - If no value is present at the requested `path`, the default value will be used.
-- `queryParam 'path' 'default value'`: 
+- `queryParam 'path' 'default value'`:
   - get the value at a given `path` from the request's query string. Complex query strings with arrays and objects are supported. The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path). Full objects or arrays can be retrieved by the helper.
   - The full query string object can also be fetched when the `path` is omitted (`{{queryParam}}`). It will be stringified and can be used in a JSON body for example.
   - If there is no value at the requested `path`, the default value will be used.
@@ -100,7 +99,6 @@ Here is an example of what you can do with this templating system:
 ```
 
 ![body editor content](/images/docs/v1.8.0-body-templating.png)
-
 
 The above template produces the following body with this request:
 
@@ -174,11 +172,10 @@ By using the `base64` helper, you can encode parts or entirety of the response b
 Inline helper:
 
 ```html
-{{base64 'test'}}
-{{base64 (body 'path.to.property')}}
+{{base64 'test'}} {{base64 (body 'path.to.property')}}
 ```
 
-Block helper: 
+Block helper:
 
 ```csv
 {{# base64}}
@@ -189,7 +186,7 @@ firstname,lastname,countryCode
 {{/ base64}}
 ```
 
-#### Disable body and file templating 
+#### Disable body and file templating
 
 Templating can be disabled for the body and file content in each route response separately. Thus, no helper will be interpreted by the templating engine.
 
@@ -197,7 +194,7 @@ First, open the **Route response settings**:
 
 ![click on route response fourth settings tab](/images/docs/open-route-response-settings.png)
 
-Then, disable the templating by checking the box: 
+Then, disable the templating by checking the box:
 
 ![check the disable templating box](/images/docs/disable-route-response-templating.png)
 
@@ -218,4 +215,3 @@ If you call this route with `/myroute/1`, `./file1.json` will be sent.
 Finally, templating helpers are also supported in the **headers values** both in route headers and environment headers:
 
 ![add a templating helper in the header value](/images/docs/headers-templating.png)
-

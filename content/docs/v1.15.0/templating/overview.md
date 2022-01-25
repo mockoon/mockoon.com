@@ -10,7 +10,7 @@ order: 1000
 
 ---
 
-Mockoon implements [Handlebars](https://handlebarsjs.com/), [Faker.js](https://github.com/Marak/faker.js), and a set of custom helpers to create dynamic responses. This templating system is supported in the response's **body**, **headers**, **file content**, and **file path**. You will find below a global overview of how and where you can use helpers. You can also check the [available helpers](#available-helpers) on specific documentation pages.
+Mockoon implements [Handlebars](https://handlebarsjs.com/), [Faker.js](https://fakerjs.dev/), and a set of custom helpers to create dynamic responses. This templating system is supported in the response's **body**, **headers**, **file content**, and **file path**. You will find below a global overview of how and where you can use helpers. You can also check the [available helpers](#available-helpers) on specific documentation pages.
 
 ## Helpers
 
@@ -25,11 +25,11 @@ All Handlebars helpers are available (`if`, `each`, etc.). For more information,
 
 ### Available helpers
 
-Besides Handlebars built-in helpers, Mockoon offers many of them: 
+Besides Handlebars built-in helpers, Mockoon offers many of them:
 
-- [custom helpers](docs:templating/mockoon-helpers) 
-- [request helpers](docs:templating/mockoon-request-helpers) 
-- [Faker.js library helpers](docs:templating/fakerjs-helpers) 
+- [custom helpers](docs:templating/mockoon-helpers)
+- [request helpers](docs:templating/mockoon-request-helpers)
+- [Faker.js library helpers](docs:templating/fakerjs-helpers)
 
 ## Usages
 
@@ -40,36 +40,29 @@ Templating will work in the body editor without consideration for the Content-Ty
 Here is an example of what you can do with this templating system:
 
 ```handlebars
-{
-  "userId": "{{ urlParam 'id' }}",
-  "name": "{{ queryParam 'name' 'John' }}",
-  "lang": "{{{ header 'Accept-Language' 'en' }}}",
-  "elementTitle": "{{ body 'elements.0.title' 'default' }}",
-  "ip": "{{ ip }}",
-  "method": "{{ method }}",
-  "hostname": "{{ hostname }}",
-  "friends": [
-    {{# repeat 2 }}
-      {
-        "id": {{ @index }},
-        "name": "{{ faker 'name.firstName' }} {{ faker 'name.lastName' }}"
-      }
-    {{/ repeat }}
-  ],
-  "oneItem": "{{ oneOf (array 'item1' 'item2' 'item3') }}",
-  "someItemsAsString": "{{ someOf (array 'item1' 'item2' 'item3') 1 2 }}",
-  "someItemsAsArray": {{{ someOf (array 'item1' 'item2' 'item3') 1 2 true }}},
-  "userName":
-    {{# switch (urlParam 'id') }}
-      {{# case "1" }}"John"{{/ case }}
-      {{# case "2" }}"Jack"{{/ case }}
-      {{# default }}"Peter"{{/ default }}
-    {{/ switch}}
+{ "userId": "{{urlParam 'id'}}", "name": "{{queryParam 'name' 'John'}}", "lang":
+"{{{header 'Accept-Language' 'en'}}}", "elementTitle": "{{body
+  'elements.0.title'
+  'default'
+}}", "ip": "{{ip}}", "method": "{{method}}", "hostname": "{{hostname}}",
+"friends": [
+{{#repeat 2}}
+  { "id":
+  {{@index}}, "name": "{{faker 'name.firstName'}}
+  {{faker 'name.lastName'}}" }
+{{/repeat}}
+], "oneItem": "{{oneOf (array 'item1' 'item2' 'item3')}}", "someItemsAsString":
+"{{someOf (array 'item1' 'item2' 'item3') 1 2}}", "someItemsAsArray":
+{{{someOf (array 'item1' 'item2' 'item3') 1 2 true}}}, "userName":
+{{#switch (urlParam 'id')}}
+  {{#case '1'}}"John"{{/case}}
+  {{#case '2'}}"Jack"{{/case}}
+  {{#default}}"Peter"{{/default}}
+{{/switch}}
 }
 ```
 
 ![body editor content](/images/docs/v1.8.0-body-templating.png)
-
 
 The above template produces the following body with this request:
 
@@ -116,9 +109,11 @@ This system is flexible enough to generate a lot of different contents like CSV 
 
 ```handlebars
 firstname,lastname,countryCode
-{{# repeat 10 }}
-  {{ faker 'name.firstName' }},{{ faker 'name.lastName' }},{{ faker 'address.countryCode' }}
-{{/ repeat}}
+{{#repeat 10}}
+  {{faker 'name.firstName'}},{{faker 'name.lastName'}},{{faker
+    'address.countryCode'
+  }}
+{{/repeat}}
 ```
 
 Response:
@@ -147,7 +142,7 @@ Inline helper:
 {{base64 (body 'path.to.property')}}
 ```
 
-Block helper: 
+Block helper:
 
 ```csv
 {{# base64}}
@@ -158,7 +153,7 @@ firstname,lastname,countryCode
 {{/ base64}}
 ```
 
-#### Disable body and file templating 
+#### Disable body and file templating
 
 Templating can be disabled for the body and file content in each route response separately. Thus, no helper will be interpreted by the templating engine.
 
@@ -166,7 +161,7 @@ First, open the **Route response settings**:
 
 ![click on route response fourth settings tab](/images/docs/open-route-response-settings.png)
 
-Then, disable the templating by checking the box: 
+Then, disable the templating by checking the box:
 
 ![check the disable templating box](/images/docs/disable-route-response-templating.png)
 

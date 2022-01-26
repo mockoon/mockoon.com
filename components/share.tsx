@@ -1,18 +1,20 @@
 import { FunctionComponent } from 'react';
 
 const Share: FunctionComponent<{
-  title: string;
   url: string;
   text: string;
+  showLabel: boolean;
 }> = function (props) {
   const url = encodeURIComponent(props.url);
   const text = encodeURIComponent(props.text);
 
   return (
     <div className='d-flex flex-column flex-lg-row p-2'>
-      <span className='align-self-center h6 text-center text-lg-start text-uppercase text-muted d-inline mb-0 me-lg-2'>
-        Share:
-      </span>
+      {props.showLabel && (
+        <span className='align-self-center h6 text-center text-lg-start text-uppercase text-muted d-inline mb-0 me-lg-2'>
+          Share:
+        </span>
+      )}
 
       <ul className='d-inline list-unstyled list-inline list-social align-self-center mb-0'>
         <li className='list-inline-item list-social-item me-3'>
@@ -45,7 +47,7 @@ const Share: FunctionComponent<{
             />
           </a>
         </li>
-        <li className='list-inline-item list-social-item me-3'>
+        <li className='list-inline-item list-social-item'>
           <a
             href={`https://facebook.com/sharer/sharer.php?u=${url}`}
             target='_blank'

@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
-import Donate from '../components/donate';
 import GitHub from '../components/github';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
+import Share from '../components/share';
 import Layout from '../layout/layout';
 
 const SponsorUs: FunctionComponent = function () {
@@ -57,34 +57,50 @@ const SponsorUs: FunctionComponent = function () {
               work and also allow us to dedicate more time to this project in
               the future.
             </p>
-            <h3 className='h4 fw-bold text-center mt-8'>
-              Whatever option you choose we are grateful for your support!
-            </h3>
             <div className='text-center mt-8'>
               <h4>
                 Become a sponsor or make a one-time donation through GitHub
                 Sponsors
               </h4>
-              <iframe
-                src='https://github.com/sponsors/255kb/button'
-                title='Sponsor 255kb'
-                height='35'
-                width='116'
-                style={{ border: 0 }}
-              ></iframe>
+              <p className='mt-4'>
+                <a
+                  href='https://github.com/sponsors/mockoon'
+                  target='_blank'
+                  rel='noopener'
+                >
+                  <img src='/images/sponsor-btn.png' alt='sponsor button' />
+                </a>
+              </p>
             </div>
-            <div className='text-center mt-8'>
-              <h4>Make a one-time donation</h4>
-              <Donate />
-            </div>
+
             <div className='text-center mt-8'>
               <p>
-                If you cannot donate, you can still star the project on GitHub
-                to help spread the word!
+                If donating is not an option, you can still help us spread the
+                word by starring the project on GitHub or sharing it with your
+                peers!
               </p>
               <div className='m-4'>
                 <GitHub />
               </div>
+              <div className='d-flex align-items-center flex-column '>
+                <Share
+                  url={`https://mockoon.com/`}
+                  text='Mockoon is the easiest and quickest way to run mock REST API servers. No remote deployment, no account required, free, open source and cross-platform.'
+                  showLabel={false}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='row justify-content-center mt-8'>
+          <div className='col-lg-8 text-center'>
+            <div className='alert alert-dark' role='alert'>
+              Looking for enterprise grade dedicated support?
+              <br /> Discover our{' '}
+              <a href='/enterprise/' className='text-gray-500'>
+                enterprise services
+              </a>
+              .
             </div>
           </div>
         </div>

@@ -101,9 +101,9 @@ const Article: FunctionComponent<{
                     </time>
                   )}
                   <Share
-                    title='Find this post interesting? Share it!'
                     url={`https://mockoon.com/${props.slug}/`}
                     text={props.articleData.meta.description}
+                    showLabel={true}
                   />
                 </div>
               </div>

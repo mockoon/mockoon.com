@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent } from 'react';
 import { useForm } from 'react-hook-form';
 import Accordion from '../components/accordion';
 import Hero from '../components/hero';
@@ -59,30 +59,29 @@ const Enterprise: FunctionComponent = function () {
     handleSubmit,
     setError,
     reset,
-    formState: { errors }
+    clearErrors,
+    formState: { errors, isSubmitting, isSubmitSuccessful }
   } = useForm();
-  const [submitted, setSubmitted] = useState(false);
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    console.log(data);
     if (!data['work_address']) {
       delete data['work_address'];
 
-      fetch(process.env.NEXT_PUBLIC_SEND_EMAIL_API, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      })
-        .then(() => {
-          setSubmitted(true);
-          reset();
-        })
-        .catch(() => {
-          setError('error', {
-            type: 'manual',
-            message:
-              'Something went wrong! We are sorry for the inconvenience. You can contact us manually by email at team@mockoon.com.'
-          });
+      try {
+        await fetch(process.env.NEXT_PUBLIC_SEND_EMAIL_API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
         });
+        reset();
+      } catch {
+        setError('error', {
+          type: 'manual',
+          message:
+            'Something went wrong! We are sorry for the inconvenience. You can contact us manually by email at team@mockoon.com.'
+        });
+      }
     }
   };
 
@@ -221,7 +220,12 @@ const Enterprise: FunctionComponent = function () {
           </div>
           <div className='row justify-content-center'>
             <div className='col-12 col-lg-6'>
-              <form onSubmit={handleSubmit(onSubmit)}>
+              <form
+                onSubmit={(e) => {
+                  clearErrors();
+                  handleSubmit(onSubmit)(e);
+                }}
+              >
                 <div className='row'>
                   <div className='form-group mb-5'>
                     <label className='form-label' htmlFor='contactName'>
@@ -266,21 +270,21 @@ const Enterprise: FunctionComponent = function () {
                       {...registerFormField('contactCompany')}
                     />
                   </div>
-                </div>
-                <div className='form-group mb-7 mb-md-9'>
-                  <label className='form-label' htmlFor='contactMessage'>
-                    Message
-                  </label>
+                  <div className='form-group mb-5'>
+                    <label className='form-label' htmlFor='contactMessage'>
+                      Message
+                    </label>
 
-                  <textarea
-                    className='form-control'
-                    name='contactMessage'
-                    id='contactMessage'
-                    rows={5}
-                    placeholder='Tell us more about your project and your needs.'
-                    required
-                    {...registerFormField('contactMessage')}
-                  ></textarea>
+                    <textarea
+                      className='form-control'
+                      name='contactMessage'
+                      id='contactMessage'
+                      rows={5}
+                      placeholder='Tell us more about your project and your needs.'
+                      required
+                      {...registerFormField('contactMessage')}
+                    ></textarea>
+                  </div>
                 </div>
                 <label
                   style={{
@@ -318,16 +322,29 @@ const Enterprise: FunctionComponent = function () {
                     </div>
                   </div>
                 )}
-                {submitted && (
+                {isSubmitSuccessful && (
                   <div className='row justify-content-center'>
                     <div className='col-auto text-success text-center fw-bold pb-4'>
                       Message sent! We will get back to you shortly.
                     </div>
                   </div>
                 )}
+
+                {isSubmitting && (
+                  <div className='text-center mb-4'>
+                    <div className='spinner-border text-primary' role='status'>
+                      <span className='visually-hidden'>Loading...</span>
+                    </div>
+                  </div>
+                )}
+
                 <div className='row justify-content-center'>
                   <div className='col-auto'>
-                    <button type='submit' className='btn btn-primary-soft lift'>
+                    <button
+                      type='submit'
+                      className='btn btn-primary-soft lift'
+                      disabled={isSubmitting}
+                    >
                       Send message
                     </button>
                   </div>

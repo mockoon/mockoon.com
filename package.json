@@ -4,6 +4,7 @@
   "description": "Mockoon app website repository",
   "main": "index.js",
   "scripts": {
+    "release": "git checkout -b release/next && npm version minor --git-tag-version=false && cross-var cp -r ./content/docs/latest/ ./content/docs/v$npm_package_version && git add . && git commit -m \"Prepare new release\"",
     "dev": "cross-env NODE_OPTIONS='--inspect' next",
     "build": "next build",
     "export": "npm run build && next export",
@@ -56,6 +57,7 @@
     "@types/webpack": "^5.28.0",
     "@types/webpack-env": "^1.16.2",
     "cross-env": "^7.0.3",
+    "cross-var": "^1.1.0",
     "firebase-tools": "^9.17.0",
     "prettier": "^2.3.2",
     "typescript": "^4.4.2"

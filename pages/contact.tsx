@@ -23,7 +23,7 @@ const Contact: FunctionComponent = function () {
                 <div className='col-12 text-center'>
                   <img
                     src='/images/illustrations/chat.svg'
-                    alt=''
+                    alt='support forums'
                     className='w-25 mb-4'
                   />
                 </div>
@@ -66,7 +66,7 @@ const Contact: FunctionComponent = function () {
                 <div className='col-12 text-center '>
                   <img
                     src='/images/illustrations/visio.svg'
-                    alt=''
+                    alt='dedicated support'
                     className='w-25 mb-4'
                   />
                 </div>

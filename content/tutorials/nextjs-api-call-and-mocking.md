@@ -41,7 +41,7 @@ Note that your mock API will be available at the following URL: `http://localhos
 ## 2. Make a call to the API endpoint in your Next.js page
 
 After creating a mock REST API endpoint in Mockoon, you can now call it from your Next.js page.
-To do so, we need to use either the `getStaticProps` or the `getServerSideProps` functions. You can read more about these functions in the [official documentation](https://nextjs.org/docs/basic-features/data-fetching).
+To do so, we need to use either the `getStaticProps` or the `getServerSideProps` functions. You can read more about these functions in the [official documentation](https://nextjs.org/docs/basic-features/data-fetching/overview).
 
 Using the `getStaticProps` function will allow you to pre-render the page at build time using the props returned by `getStaticProps`:
 

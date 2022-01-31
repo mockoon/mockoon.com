@@ -47,7 +47,6 @@ const Layout: FunctionComponent<{
       <Nav />
       {props.children}
       <Footer banner={props.footerBanner} />
-      <script src='https://buttons.github.io/buttons.js' defer />
     </Fragment>
   );
 };

@@ -61,7 +61,7 @@ const Markdown: FunctionComponent<{
               src={src as string}
               width={width}
               height={height}
-              className='img-fluid mx-auto d-block'
+              className='img-fluid mx-auto d-block my-4 rounded'
             />
           );
         },

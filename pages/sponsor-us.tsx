@@ -68,7 +68,12 @@ const SponsorUs: FunctionComponent = function () {
                   target='_blank'
                   rel='noopener'
                 >
-                  <img src='/images/sponsor-btn.png' alt='sponsor button' />
+                  <img
+                    src='/images/sponsor-btn.png'
+                    alt='sponsor button'
+                    width={300}
+                    height={86}
+                  />
                 </a>
               </p>
             </div>

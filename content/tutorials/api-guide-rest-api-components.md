@@ -6,6 +6,8 @@ meta:
   description: 'Discover what composes RESTful API request and response: HTTP methods, resource URL, HTTP headers, payload or body'
 image: api-guide.png
 imageAlt: API illustration
+imageWidth: 1200
+imageHeight: 400
 order: 152
 previousLink: api-guide-what-are-rest-api
 previousText: 'API guide part 2: Rest APIs'
@@ -15,7 +17,7 @@ previousText: 'API guide part 2: Rest APIs'
 
 After seeing [how an API call works](/tutorials/api-guide-what-are-rest-api/), with a request and a response, in the second part of this guide, we will now see what are the request's and response's components: the request's **method** and **URL**, the response's **status code**, and the **headers** and **body**, present in both the request and the response.
 
-![REST API call payload components](/images/tutorials/api-guide/rest-api-call-components.png)
+![REST API call payload components{800x224}](/images/tutorials/api-guide/rest-api-call-components.png)
 
 ### Resource URL (request)
 

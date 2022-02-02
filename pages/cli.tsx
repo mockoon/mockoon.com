@@ -56,6 +56,8 @@ const Cli: FunctionComponent = function () {
         ]}
         mainPicture='/images/cli-screenshot.png'
         mainPictureAlt='Mockoon CLI screenshot'
+        mainPictureWidth={1200}
+        mainPictureHeight={430}
       />
       <section className='py-5 py-lg-10'>
         <div className='container'>

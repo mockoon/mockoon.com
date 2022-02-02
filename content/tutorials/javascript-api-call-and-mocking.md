@@ -6,6 +6,8 @@ meta:
   description: Learn how to call a REST API endpoint from your JavaScript application and mock it using Mockoon API mocking tools
 image: tutorial-javascript-api-call.png
 imageAlt: Mockoon and JavaScript logos side by side
+imageWidth: 1200
+imageHeight: 400
 order: 94
 ---
 
@@ -19,7 +21,7 @@ When working on your JavaScript application, you may need to mock an API that do
 
 For the rest of the tutorial, we will use an array of imaginary blog posts. In Mockoon, create a `GET /posts` API endpoint that returns an array of simple blog posts with an id and a title:
 
-![create a mock API endpoint](/images/tutorials/blog-posts-mock-endpoint.png)
+![create a mock API endpoint{1261x704}](/images/tutorials/blog-posts-mock-endpoint.png)
 
 You can use the following JSON as the body returned by the endpoint:
 
@@ -80,7 +82,7 @@ By default, `fetch` will make a GET call on the provided endpoint. As we receive
 
 After opening your `index.html` file in your browser, you should see a call in the network tab and your data displayed in the console:
 
-![Data displayed in developer tools console](/images/tutorials/javascript-api-call/javascript-data-console.png)
+![Data displayed in developer tools console{1250x838}](/images/tutorials/javascript-api-call/javascript-data-console.png)
 
 ## 3. Use the `posts` in your HTML
 

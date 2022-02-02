@@ -6,15 +6,17 @@ meta:
   description: Learn how to generate dynamic JSON, CSV or XML realistic mock data with Mockoon powerful templating system and helpers
 image: generate-mock-json-data.png
 imageAlt: Mockoon logo side by side with code
+imageWidth: 1200
+imageHeight: 400
 order: 50
 ---
 
-Mocking an API can save you time. By faking the backend responses early, you don't have to worry about whether an endpoint is ready or not. You are up and running in no time and can start implementing your application. 
-However, your mock should still be realistic. "Lorem ipsum" content is often not enough to surface layout problems, container overflowed by text, etc. 
+Mocking an API can save you time. By faking the backend responses early, you don't have to worry about whether an endpoint is ready or not. You are up and running in no time and can start implementing your application.
+However, your mock should still be realistic. "Lorem ipsum" content is often not enough to surface layout problems, container overflowed by text, etc.
 
 When mocking using Mockoon, you can easily customize your endpoints to make them look like real ones and even behave realistically, thanks to the dynamic templating system.
 
-Let's dig into this templating system and see how it allows you to generate random data of any type (JSON, CSV, XML, HTML, etc.) and make it behaves dynamically. 
+Let's dig into this templating system and see how it allows you to generate random data of any type (JSON, CSV, XML, HTML, etc.) and make it behaves dynamically.
 
 ## Generate random fake data
 
@@ -27,13 +29,13 @@ Mockoon also offers multiple helpers and embarks the Faker.js library, which can
 Let's see what Mockoon has to offer.
 
 > You can find on our repository all the following examples ready to import! <a href="https://github.com/mockoon/mock-samples/blob/main/samples/generate-mock-data.json" className="btn btn-primary-desat-soft btn-xs"><i className='icon-download'></i>&nbsp;Download</a>
-> 
-> To import the file, please [follow the instructions](https://github.com/mockoon/mock-samples#how-to-import-the-samples-in-mockoon-application). 
+>
+> To import the file, please [follow the instructions](https://github.com/mockoon/mock-samples#how-to-import-the-samples-in-mockoon-application).
 
 ## Complete JSON example: posts list
 
-Let's say you are working on the next great social network, building the front-end with your favorite framework while the backend team works hard to implements more and more API endpoints. 
-You switch on your favorite mock server tool (yes, Mockoon), and start wondering how you could return a huge amount of realistic posts on a `GET /posts` endpoint. Here is where the helpers available in Mockoon comes into play. By using a combination of `repeat`, `image.avatar`, `lorem.sentences`, etc. you can quickly get a massive amount of random data. Combined with the latency option, you can even simulate a slow server and check how your application behaves under stress. 
+Let's say you are working on the next great social network, building the front-end with your favorite framework while the backend team works hard to implements more and more API endpoints.
+You switch on your favorite mock server tool (yes, Mockoon), and start wondering how you could return a huge amount of realistic posts on a `GET /posts` endpoint. Here is where the helpers available in Mockoon comes into play. By using a combination of `repeat`, `image.avatar`, `lorem.sentences`, etc. you can quickly get a massive amount of random data. Combined with the latency option, you can even simulate a slow server and check how your application behaves under stress.
 
 To use the templating system, you only have to use the response body editor and start adding your content. Remember to use the double curly braces to delimit your helpers `{{ helperName }}`
 Let's have a look at what such a body could look like:
@@ -74,7 +76,7 @@ Let's have a look at what such a body could look like:
 ]
 ```
 
-After a call to Mockoon, this would be the kind of body generated from this template: 
+After a call to Mockoon, this would be the kind of body generated from this template:
 
 ```json
 [
@@ -104,15 +106,15 @@ After a call to Mockoon, this would be the kind of body generated from this temp
 ...
 ```
 
-This example makes an extensive usage of what Mockoon and Faker.js have to offer. First, it generates as many "posts" items as provided in the `total` query parameter (or default to 5) when calling `GET /your/endpoint?total=140`. It is especially useful when you want to request a specific number of items depending on the pagination or a "number per pages" user setting. 
+This example makes an extensive usage of what Mockoon and Faker.js have to offer. First, it generates as many "posts" items as provided in the `total` query parameter (or default to 5) when calling `GET /your/endpoint?total=140`. It is especially useful when you want to request a specific number of items depending on the pagination or a "number per pages" user setting.
 Second, you can see that multiple properties are defined, and random mock data is generated like avatar image URLs, names, coordinates, etc.
 
 There are a lot of possibilities and combinations you can try. You can also make your template react to a lot of parameters from the entering request by using Mockoon's helpers. We've already seen `queryParam` above, but you will find many more in the [templating documentation](docs:templating/overview). They allow you to query the request information like `body`, `urlParam`, `header`, `method`, etc.
 
 ## Generate other types of fake data?
 
-Mockoon does not limit you to JSON. The templating language based on Handlebars is compatible with any content type. It means that you can generate CSV, HTML, XML, etc. 
-You will find below some examples of what can you can achieve with the templating system. 
+Mockoon does not limit you to JSON. The templating language based on Handlebars is compatible with any content type. It means that you can generate CSV, HTML, XML, etc.
+You will find below some examples of what can you can achieve with the templating system.
 
 ### Generate geographical fake CSV data
 
@@ -172,12 +174,12 @@ You are now ready to generate massive amounts of data for your mock APIs. The on
 
 ## Generate dynamic templating depending on the request
 
-We just saw some interesting use-cases but still quite simple. When working on your application, you may want to go a little bit further by making the template react to the request sent to Mockoon. 
+We just saw some interesting use-cases but still quite simple. When working on your application, you may want to go a little bit further by making the template react to the request sent to Mockoon.
 This is possible by using various helpers that you will find in the [templating documentation](docs:templating/overview): `body`, `queryParam`, `urlParam`, `cookie`, `header`, `hostname`, `ip`, `method`, etc.
 
 They allow you to access the entering request's information. Combined with other helpers like `repeat`, `switch`, or `if`, you will be able to dynamically generate more complex content.
 
-You will find below some examples: 
+You will find below some examples:
 
 ### New user after a POST request
 
@@ -194,7 +196,7 @@ This first example tries to reproduce a call to a `POST /users` route, which wou
 }
 ```
 
-After a call to this endpoint with the following body: 
+After a call to this endpoint with the following body:
 
 ```http
 POST /users
@@ -221,7 +223,7 @@ We would receive this kind of response content, containing the request informati
 }
 ```
 
-Here, we mainly used the `body` helper, but we can imagine more complex examples. 
+Here, we mainly used the `body` helper, but we can imagine more complex examples.
 
 ### Variable content depending on multiple request parameters
 
@@ -284,5 +286,5 @@ When calling the endpoint with `/content/products?total=2` we would receive the 
 For more complex cases, you could also create multiple responses for the same route, with different bodies, and trigger them by defining some rules. To learn more about using multiple responses combined with rules, you can have a look at the related [documentation](docs:route-responses/dynamic-rules).
 
 > Remember, you can find all this tutorial's examples ready to import on our repository! <a href="https://github.com/mockoon/mock-samples/blob/main/samples/generate-mock-data.json" className="btn btn-primary-desat-soft btn-xs"><i className='icon-download'></i>&nbsp;Download</a>
-> 
-> To import the file, please [follow the instructions](https://github.com/mockoon/mock-samples#how-to-import-the-samples-in-mockoon-application). 
+>
+> To import the file, please [follow the instructions](https://github.com/mockoon/mock-samples#how-to-import-the-samples-in-mockoon-application).

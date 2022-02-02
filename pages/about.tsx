@@ -26,6 +26,8 @@ const SponsorUs: FunctionComponent = function () {
                   src='/images/about/guillaume.jpg'
                   alt='Mockoon maintainer'
                   className='img-fluid rounded-circle mb-3 img-thumbnail shadow'
+                  width={440}
+                  height={440}
                 />
               </div>
               <div className='col-12 order-lg-1 d-flex justify-content-center'>
@@ -53,6 +55,8 @@ const SponsorUs: FunctionComponent = function () {
                   src='/images/about/fabrice.jpg'
                   alt='Mockoon maintainer'
                   className='img-fluid rounded-circle mb-3 img-thumbnail shadow'
+                  width={440}
+                  height={440}
                 />
               </div>
               <div className='col-12 order-lg-1 d-flex justify-content-center'>

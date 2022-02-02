@@ -6,6 +6,8 @@ meta:
   description: Learn how to create mock REST APIs and run them in all headless and server environments with Mockoon CLI
 image: tutorial-getting-started-cli.png
 imageAlt: a terminal
+imageWidth: 1200
+imageHeight: 400
 order: 20
 ---
 
@@ -68,7 +70,7 @@ Following Mockoon's changes in version [1.16.0](https://github.com/mockoon/mocko
 
 You can run your mock in one single step by providing the actual location of your Mockoon environment file. To locate your environment file from the main application, right-click on an environment and select "Show in folder" in the context menu:
 
-![show in folder menu entry](/images/tutorials/getting-started-cli/environment-show-in-folder.png)
+![show in folder menu entry{481x228}](/images/tutorials/getting-started-cli/environment-show-in-folder.png)
 
 Let's pretend your file is name `data.json` and resides in the current directory.
 
@@ -78,7 +80,7 @@ To run one or more mock APIs in the CLI, you can also export them using the main
 
 To export your environment, open the "Import/export" application menu and choose "Mockoon's format" → "Export all environments to a file (JSON)" or "Export current environment to a file (JSON)".
 
-![export current environment](/images/tutorials/getting-started-cli/export-current-environment.png)
+![export current environment{781x228}](/images/tutorials/getting-started-cli/export-current-environment.png)
 
 > Depending on which option you select, your export file will contain the active mock API or all your mocks. If you selected the second option, you will be able to choose the mock to run when starting the CLI.
 

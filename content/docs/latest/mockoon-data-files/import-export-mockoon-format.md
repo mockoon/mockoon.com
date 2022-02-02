@@ -17,7 +17,7 @@ order: 1130
 
 To export all environments to a file, open the **Import/export** menu, select **Mockoon's format** and then **Export all environments to a file (JSON)**:
 
-![Click on Export all environments to a file (JSON)](/images/docs/v1.17.0/export-all.png)
+![Click on Export all environments to a file (JSON){816x141}](/images/docs/v1.17.0/export-all.png)
 
 The environments exported in older versions will be automatically migrated if imported in a more recent version. Once migrated, environments cannot be imported anymore in an older version.
 
@@ -25,7 +25,7 @@ The environments exported in older versions will be automatically migrated if im
 
 To export a specific environment or route's JSON data to the clipboard, right-click on the environment or route and select **Copy to clipboard (JSON)**:
 
-![Right click on an environment and click on Copy to clipboard (JSON)](/images/docs/v1.17.0/export-clipboard-env.png)
+![Right click on an environment and click on Copy to clipboard (JSON){621x225}](/images/docs/v1.17.0/export-clipboard-env.png)
 
 The resulting JSON is fully compatible with the file-based import. It can either be imported through **Import/export** > **Mockoon's format** > **Import from the clipboard**, or copied in a JSON file and imported through **Import/export** > **Mockoon's format** > **Import from a file**.
 
@@ -35,7 +35,7 @@ One limitation: a single route copied to the clipboard cannot be imported on a d
 
 To import data from a JSON file, open the **Import/export** menu, select **Mockoon's format** and then **Import from a file (JSON)**:
 
-![Click on Import from a file](/images/docs/v1.17.0/import-file.png)
+![Click on Import from a file{778x151}](/images/docs/v1.17.0/import-file.png)
 
 Any type of export can be imported from a JSON file: environments JSON files or single environment/route copied to the clipboard (see below) and saved to a JSON file. Environments imported from a file will be added at the end of the environments list. No data will be overwritten even if imported environments share the same names. Imported routes will be added to the active environment.
 
@@ -43,6 +43,6 @@ Any type of export can be imported from a JSON file: environments JSON files or 
 
 To import data from the clipboard, open the **Import/export** menu, select **Mockoon's format** and then **Import from clipboard**:
 
-![Click on Import from clipboard](/images/docs/v1.17.0/import-clipboard.png)
+![Click on Import from clipboard{778x151}](/images/docs/v1.17.0/import-clipboard.png)
 
 As for the JSON import, any type of exported data can be imported through this method.

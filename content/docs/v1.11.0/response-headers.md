@@ -15,7 +15,7 @@ In Mockoon you can easily define **response headers** for **each route** but als
 
 To add response headers like `Content-Type` to your route, go to the route's **Headers tab** and fill the name and value fields:
 
-![Add route response header](/images/docs/add-route-header.png)
+![Add route response header{834x271}](/images/docs/add-route-header.png)
 
 ## Environment level response headers
 
@@ -23,8 +23,8 @@ You can also add response headers at the environment level. Headers defined in a
 
 Open the **Environment Settings** by clicking on the cog in the upper right corner:
 
-![click on cog icon](/images/docs/open-settings.png)
+![click on cog icon{832x277}](/images/docs/open-settings.png)
 
 And add one or more headers at the bottom of the page:
 
-![Add environment response header](/images/docs/add-environment-header.png)
+![Add environment response header{834x397}](/images/docs/add-environment-header.png)

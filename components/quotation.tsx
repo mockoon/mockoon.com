@@ -1,6 +1,12 @@
 import { FunctionComponent } from 'react';
 import { QuotationData } from '../models/common.model';
 
+/**
+ * Image must be 128x128
+ *
+ * @param param0
+ * @returns
+ */
 const Quotation: FunctionComponent<{ quotation: QuotationData }> = function ({
   quotation
 }) {
@@ -12,6 +18,8 @@ const Quotation: FunctionComponent<{ quotation: QuotationData }> = function ({
           className='img-thumbnail avatar-xl avatar-img rounded-circle'
           src={`/images/${quotation.pictureUrl}`}
           alt={quotation.authorRole}
+          width={128}
+          height={128}
         />
         <div className='ms-5'>
           <div className='fw-bold fs-sm'>{quotation.author}</div>

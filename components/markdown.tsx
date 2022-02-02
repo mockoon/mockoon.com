@@ -52,10 +52,15 @@ const Markdown: FunctionComponent<{
           );
         },
         img: ({ alt, src }) => {
+          const [match, width, height] =
+            /\{([0-9]{1,})x([0-9]{1,})\}/gi.exec(alt) || [];
+
           return (
             <img
-              alt={alt as string}
+              alt={alt.replace(match, '')}
               src={src as string}
+              width={width}
+              height={height}
               className='img-fluid mx-auto d-block'
             />
           );

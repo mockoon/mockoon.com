@@ -15,14 +15,14 @@ order: 1110
 Each file can be easily shared with other Mockoon's users, "as-is". Since [v1.16.0](https://github.com/mockoon/mockoon/releases/tag/v1.16.0), there is no need to export in Mockoon's format on one computer and re-import on another one.
 After sharing and saving an environment file in any folder, the application can open them directly using the "Open environment" button:
 
-![open an environment](/images/docs/v1.17.0/open-environment.png)
+![open an environment{553x203}](/images/docs/v1.17.0/open-environment.png)
 
 ### Use a Git-tracked folder
 
 You can save your environment data files in a Git-tracked folder to make sharing easier. By default, an environment file JSON content is saved pretty-printed to allow comparing changes between two commits.
 You can disable pretty printing in the settings:
 
-![disable pretty printing](/images/docs/v1.17.0/storage-pretty-printing.png)
+![disable pretty printing{800x613}](/images/docs/v1.17.0/storage-pretty-printing.png)
 
 ### Use a mock API with the CLI
 

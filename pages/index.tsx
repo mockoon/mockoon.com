@@ -62,6 +62,8 @@ class Index extends React.Component<{}, { companyLogos: any }> {
           ]}
           mainPicture='/images/hp-hero.png'
           mainPictureAlt='Mockoon screenshot with people working'
+          mainPictureWidth={1200}
+          mainPictureHeight={783}
         />
 
         <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
@@ -113,6 +115,8 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                       className='img-thumbnail avatar-xl avatar-img rounded-circle mr-4'
                       src='/images/case-studies/impala/yasmin-desai.jpg'
                       alt='Senior Product Manager @ Impala'
+                      width={128}
+                      height={128}
                     />
                     <div className='ps-5'>
                       <p className='fs-sm fw-bold mb-0'>Yasmin Desai</p>
@@ -149,6 +153,8 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                       className='img-thumbnail avatar-xl avatar-img rounded-circle mr-4'
                       src='/images/case-studies/localazy/jan-bilek.png'
                       alt='Product Manager @ Localazy'
+                      width={128}
+                      height={128}
                     />
                     <div className='ps-5'>
                       <p className='fs-sm fw-bold mb-0'>Jan Bílek</p>
@@ -168,15 +174,17 @@ class Index extends React.Component<{}, { companyLogos: any }> {
             <div className='row'>
               {hpHighlights.map((highlight, highlightIndex) => (
                 <div
-                  className='col-12 col-md-4'
+                  className='col-12 col-lg-4'
                   key={`highlight${highlightIndex}`}
                 >
                   <div className='row'>
-                    <div className='col-10 col-lg-8 text-primary mb-3'>
+                    <div className='col-12 col-md-8 text-primary mb-3'>
                       <img
                         src={highlight.imgSrc}
                         className='img-fluid p-4'
                         alt={highlight.imgAlt}
+                        width={800}
+                        height={522}
                       />
                     </div>
                   </div>
@@ -243,6 +251,8 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                         src={feature.imgSrc}
                         alt={feature.imgAlt}
                         className='img-fluid'
+                        width={1200}
+                        height={783}
                       />
                     </div>
                   </div>

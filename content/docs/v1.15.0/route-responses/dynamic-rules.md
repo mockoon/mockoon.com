@@ -16,23 +16,23 @@ After creating [multiple responses](docs:route-responses/multiple-responses) for
 
 You can define an unlimited number of rules for each route. At each request, Mockoon will assert each response's rules and serve the response which contains the first matching rule(s). The rules are interpreted in the order they are declared: `[rule OR|AND rule] OR [rule OR|AND rule]`, the brackets symbolizing each route response.
 
-![Rules interpretation order](/images/docs/dynamic-rules-schema.png)
+![Rules interpretation order{455x395}](/images/docs/dynamic-rules-schema.png)
 
 To add a new rule to a response, go to the route response's **Rules tab** and fill the fields:
 
-![Click on add and fill the fields](/images/docs/v1.15.0-add-route-response-rule.png)
+![Click on add and fill the fields{1008x159}](/images/docs/v1.15.0-add-route-response-rule.png)
 
 ### Reordering rules
 
 By default, rules are interpreted in the order you added them. You can change their interpretation order by drag and dropping them:
 
-![Drag and drop rules to reorder them](/images/docs/route-response-rule-reorder.gif)
+![Drag and drop rules to reorder them{1008x191}](/images/docs/route-response-rule-reorder.gif)
 
 ### Rules operator
 
 Inside a route response, rules are interpreted by default with the OR operator. When you have more than one rule in a route response, you can easily switch the operator applied when interpreting the rules, by clicking on the `OR|AND` buttons at the left of the rules:
 
-![Choose the rule operator OR AND](/images/docs/v1.15.0-route-response-rules-operator.png)
+![Choose the rule operator OR AND{1008x207}](/images/docs/v1.15.0-route-response-rules-operator.png)
 
 Rules have three parts:
 

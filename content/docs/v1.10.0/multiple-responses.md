@@ -15,11 +15,11 @@ For each route, multiple responses can be defined (status, body, and headers) an
 
 To **add** a new response to your route, click on the "plus" icon next to the responses list:
 
-![Click on the icon to add a new response](/images/docs/add-route-response.png)
+![Click on the icon to add a new response{817x262}](/images/docs/add-route-response.png)
 
 You can also **duplicate** an existing route response by clicking on the "copy" icon on the right:
 
-![Click on the copy icon to duplicate a response](/images/docs/duplicate-route-response.png)
+![Click on the copy icon to duplicate a response{956x131}](/images/docs/duplicate-route-response.png)
 
 ## Default route response
 
@@ -27,7 +27,7 @@ There is always at least one response when you create a new route. You can modif
 
 Without rules or when a request does not match the one you defined, the default response will always be the first one in the list. You can easily change the default response by reordering the responses menu with a drag and drop:
 
-![Reorder route responses](/images/docs/reorder-responses.png)
+![Reorder route responses{817x262}](/images/docs/reorder-responses.png)
 
 ## Defining rules
 
@@ -35,13 +35,13 @@ You can define an unlimited number of rules for each route. At each request, Moc
 
 To add a new rule to a response, go to the route response's **Rules tab** and fill the fields:
 
-![Click on add and fill the fields](/images/docs/add-route-response-rule.png)
+![Click on add and fill the fields{817x262}](/images/docs/add-route-response-rule.png)
 
 ### Rules operator
 
 Inside a route response, rules are interpreted by default with the OR operator. When you have more than one rule in a route response, you can easily switch the operator applied when interpreting the rules, by clicking on the `OR`/`AND` buttons at the left of the rules:
 
-![Click on add and fill the fields](/images/docs/route-response-rules-operator.png)
+![Click on add and fill the fields{1301x220}](/images/docs/route-response-rules-operator.png)
 
 Rules have three parts:
 

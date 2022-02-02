@@ -1,48 +1,44 @@
 ---
-title: Import/export in Mockoon's format
+title: Legacy export files
 meta:
-  title: Import/export in Mockoon's format
-  description: Learn how to easily import and export or share with your team your mock API servers and routes using Mockoon own file format
-order: 1130
+  title: Legacy export files
+  description: Learn how to run your mock API server using deprecated legacy Mockoon export files, both supported by the desktop application and the CLI
+order: 1140
 ---
 
-# Import/export in Mockoon's format [deprecated]
+# Legacy export files
 
 ---
 
-> Before [v1.16.0](https://github.com/mockoon/mockoon/releases/tag/v1.16.0), exporting data in Mockoon's format was necessary to share your mocks with other users and to run them with the [CLI](/cli/). Since this update, both the desktop application and the CLI can load Mockoon's environments files directly without exporting them. [Learn more](docs:mockoon-data-files/sharing-mock-api-files)  
-> **Import/export in Mockoon's format may be removed in the future**
+## Pre v1.16.0 export format
 
-### Export all environments to a JSON file
+Before [v1.16.0](https://github.com/mockoon/mockoon/releases/tag/v1.16.0), exporting data in Mockoon's format was necessary to share your mocks with other users and to run them with the [CLI](/cli/). Since this update, both the desktop application and the CLI can use or load Mockoon's environments files directly without exporting them ([Learn more](docs:mockoon-data-files/sharing-mock-api-files)).
 
-To export all environments to a file, open the **Import/export** menu, select **Mockoon's format** and then **Export all environments to a file (JSON)**:
+Export files looked like regular environment files, wrapped in Mockoon's specific format:
 
-![Click on Export all environments to a file (JSON){816x141}](/images/docs/v1.17.0/export-all.png)
+```json
+{
+  "source": "mockoon:1.17.0",
+  "data": [
+    {
+      "type": "environment",
+      "item": {
+        "uuid": "",
+        "lastMigration": 19,
+        "name": "Exported environment",
+        ...
+      }
+    }
+  ]
+}
+```
 
-The environments exported in older versions will be automatically migrated if imported in a more recent version. Once migrated, environments cannot be imported anymore in an older version.
+## v1.18.0 deprecation
 
-### Single environment or route export to clipboard
+In [v1.18.0](https://github.com/mockoon/mockoon/releases/tag/v1.18.0), the options to import/export in Mockoon's format have been removed from the application. You won't be able to export your environments in this format anymore.
 
-To export a specific environment or route's JSON data to the clipboard, right-click on the environment or route and select **Copy to clipboard (JSON)**:
+However, both the CLI and the desktop application can load these legacy export files.
 
-![Right click on an environment and click on Copy to clipboard (JSON){621x225}](/images/docs/v1.17.0/export-clipboard-env.png)
+When opening an old export file, Mockoon will ask for confirmation before opening it. Upon confirmation, the export file will be migrated to the new format automatically:
 
-The resulting JSON is fully compatible with the file-based import. It can either be imported through **Import/export** > **Mockoon's format** > **Import from the clipboard**, or copied in a JSON file and imported through **Import/export** > **Mockoon's format** > **Import from a file**.
-
-One limitation: a single route copied to the clipboard cannot be imported on a different version of Mockoon as data migration cannot be applied on routes only.
-
-### Import from a JSON file
-
-To import data from a JSON file, open the **Import/export** menu, select **Mockoon's format** and then **Import from a file (JSON)**:
-
-![Click on Import from a file{778x151}](/images/docs/v1.17.0/import-file.png)
-
-Any type of export can be imported from a JSON file: environments JSON files or single environment/route copied to the clipboard (see below) and saved to a JSON file. Environments imported from a file will be added at the end of the environments list. No data will be overwritten even if imported environments share the same names. Imported routes will be added to the active environment.
-
-### Import from clipboard
-
-To import data from the clipboard, open the **Import/export** menu, select **Mockoon's format** and then **Import from clipboard**:
-
-![Click on Import from clipboard{778x151}](/images/docs/v1.17.0/import-clipboard.png)
-
-As for the JSON import, any type of exported data can be imported through this method.
+![prompt before opening legacy export file{565x440}](/images/docs/v1.18.0/legacy-export-file-open-prompt.png)

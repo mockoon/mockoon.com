@@ -33,7 +33,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/1password-connect.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/1password-connect.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -56,7 +56,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/archive-search-services.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/archive-search-services.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -79,7 +79,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/archives-wayback.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/archives-wayback.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -103,7 +103,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/bitbucket.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/bitbucket.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -126,7 +126,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/bufferapp.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/bufferapp.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -150,7 +150,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/circleci.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/circleci.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -173,7 +173,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/dev-to.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/dev-to.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -197,7 +197,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/digitalocean.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/digitalocean.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -221,7 +221,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/discourse.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/discourse.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -245,7 +245,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/docusign.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/docusign.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -270,7 +270,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/readme-io.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/readme-io.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -294,7 +294,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/giphy.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/giphy.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -318,7 +318,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/gitlab.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/gitlab.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -342,7 +342,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/healthcare-gov.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/healthcare-gov.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -366,7 +366,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/jira.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/jira.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -390,7 +390,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/linode.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/linode.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -413,7 +413,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/lyft.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/lyft.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -436,7 +436,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/mastodon.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/mastodon.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -460,7 +460,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/notion.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/notion.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -484,7 +484,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/docker.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/docker.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -508,7 +508,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/netlify.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/netlify.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -532,7 +532,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/slack.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/slack.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -556,7 +556,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/okta-users.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/okta-users.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -580,7 +580,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/open-weather.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/open-weather.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -603,7 +603,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/data-gov-regulations.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/data-gov-regulations.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -626,7 +626,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/sendgrid-email-activity.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/sendgrid-email-activity.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -649,7 +649,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/spotify.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/spotify.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -673,7 +673,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/stripe.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/stripe.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -696,7 +696,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/twitter.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/twitter.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -719,7 +719,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/vercel.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/vercel.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -743,7 +743,7 @@ const mockSamples: CardData[] = [
         icon: 'icon-download'
       },
       {
-        src: 'mockoon://load-export-data?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/zoom.json',
+        src: 'mockoon://load-environment?url=https://raw.githubusercontent.com/mockoon/mock-samples/main/apis/zoom.json',
         text: 'Open',
         icon: 'icon-open'
       },
@@ -785,11 +785,7 @@ const MockSamples: FunctionComponent = function () {
               >
                 <i className='icon-download'></i> Download
               </button>{' '}
-              Download them manually before{' '}
-              <a href='/docs/latest/mockoon-data-files/import-export-mockoon-format/#import-from-a-json-file'>
-                importing
-              </a>{' '}
-              them into the application or{' '}
+              Download them manually before opening them into the application or{' '}
               <a href='/tutorials/run-mock-api-anywhere-cli/'>run them</a> with
               the CLI.
             </p>

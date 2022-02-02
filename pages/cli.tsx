@@ -91,7 +91,7 @@ const Cli: FunctionComponent = function () {
               <Terminal
                 lines={[
                   'npm install -g @mockoon/cli',
-                  'mockoon-cli start --data ./export-file.json'
+                  'mockoon-cli start --data ./data-file.json'
                 ]}
               />
             </div>
@@ -99,7 +99,7 @@ const Cli: FunctionComponent = function () {
               <h3 className='text-center'>Docker image Quick start</h3>
               <Terminal
                 lines={[
-                  'docker run -d --mount type=bind,source=/export-file.json,target=/data,readonly -p 3000:3000 mockoon/cli:latest -d data -i 0 -p 3000'
+                  'docker run -d --mount type=bind,source=/data-file.json,target=/data,readonly -p 3000:3000 mockoon/cli:latest -d data -p 3000'
                 ]}
               />
             </div>

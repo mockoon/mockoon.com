@@ -13,13 +13,13 @@ meta:
 
 After months of work, Mockoon CLI is [available in beta](https://github.com/mockoon/cli) 🚀. You can now deploy your mock APIs in all your headless and automated environments. A server, your favorite CI environment, in a GitHub Action, in the Windows Subsystem Linux, you name it!
 
-Like the main application, the CLI is free and open-source. It supports most of Mockoon features, and we tried to make it as fast as possible.
+Like the main application, the CLI is free and open-source. It supports all of Mockoon features, and we tried to make it as fast as possible.
 
 You are one command away to using it. Check the [installation instructions](https://github.com/mockoon/cli#installation), and most of all, let us know what you think and what we could improve on the [official forum](https://github.com/mockoon/cli/discussions).
 
 ## How does it work
 
-The CLI takes a Mockoon [environment](docs:mockoon-data-files/sharing-mock-api-files) or [export file](docs:mockoon-data-files/import-export-mockoon-format) and runs the specified environment. You can either provide the data as a local file or a URL where you host it.
+The CLI can directly run a Mockoon [environment](docs:mockoon-data-files/sharing-mock-api-files) file. You can either provide the data as a local file or a URL where you host it.
 
 ![Mockoon CLI start command output{800x213}](/images/blog/cli-available/cli-mockoon-start.png)
 

@@ -6,226 +6,230 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mockoon.com</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/blog/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/blog/mockoon-cli-now-available/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/blog/api-endpoints-filtering-improved-security/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/blog/sequential-responses-custom-status-codes/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/blog/windows-portable-gzip-rules-reordering/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/blog/new-storage-system-git-data-sharing/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/blog/ui-redesign-custom-tls-cert/</loc>
-    <lastmod>2021-11-30</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/about/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/gui-cheat-sheet/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/cors/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/serving-over-tls/</loc>
-    <lastmod>2021-11-23</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/mockoon-data-files/data-storage-location/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/mockoon-data-files/import-export-mockoon-format/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/mockoon-data-files/import-export-openapi-format/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/mockoon-data-files/sharing-mock-api-files/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
+  </url>
+  <url>
+    <loc>https://mockoon.com/docs/latest/mockoon-data-files/environment-clipboard-copy/</loc>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/route-responses/multiple-responses/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/route-responses/dynamic-rules/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/proxy-mode/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/requests-logging/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/response-headers/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/routing/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/templating/overview/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/templating/mockoon-helpers/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/templating/mockoon-request-helpers/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/templating/fakerjs-helpers/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/xml-support/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/docs/latest/file-serving/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/faq/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/features/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/angular-api-call-and-mocking/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/ionic-api-call-and-mocking/</loc>
-    <lastmod>2022-01-28</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/getting-started/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/partial-mocking-proxy/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/requests-recording-auto-mocking/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/generate-mock-json-data/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/nodejs-api-call-and-mocking/</loc>
-    <lastmod>2021-11-25</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/nextjs-api-call-and-mocking/</loc>
-    <lastmod>2022-01-03</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/javascript-api-call-and-mocking/</loc>
-    <lastmod>2022-01-26</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/react-api-call-and-mocking/</loc>
-    <lastmod>2022-01-04</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/run-mock-api-anywhere-cli/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/api-guide-rest-api-components/</loc>
-    <lastmod>2021-11-16</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/api-guide-what-are-api/</loc>
-    <lastmod>2021-11-16</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/api-guide-what-are-rest-api/</loc>
-    <lastmod>2021-11-16</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/tutorials/</loc>
-    <lastmod>2021-11-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/mock-samples/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/case-studies/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/use-cases/</loc>
-    <lastmod>2021-12-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/case-studies/impala-api-ux-user-research/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/case-studies/localazy-speed-development-api-mocking/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/about/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/contact/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/sponsor-us/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/cli/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/download/</loc>
-    <lastmod>2021-10-20</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
   <url>
     <loc>https://mockoon.com/enterprise/</loc>
-    <lastmod>2022-01-10</lastmod>
+    <lastmod>2022-02-02</lastmod>
   </url>
 </urlset>

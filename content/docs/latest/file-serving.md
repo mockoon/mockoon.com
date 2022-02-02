@@ -38,11 +38,11 @@ As for the body editor, templating will be parsed inside files for a limited set
 
 Templating can be disabled both for the body editor and the file content. Please refer to the [templating documentation](docs:templating/overview#disable-body-and-file-templating) for more information.
 
-> ### ⚡ A note on performances
+> **⚡ A note on performances**
 >
 > Parsing the templating helpers inside big files can be a very intensive task (CPU and memory intensive). All the files in different formats than the one mentioned above will be streamed to improve performances.  
 > If you need to send big files in one of the above formats but don't need to parse the templating, you can disable it in the route response settings. It will stream the file instead of parsing it and improve the performance.  
-> ![disable templating in route response](/images/docs/v1.18.0/route-response-disable-templating.png)
+> ![disable templating in route response{731x180}](/images/docs/v1.18.0/route-response-disable-templating.png)
 
 ### File input templating
 

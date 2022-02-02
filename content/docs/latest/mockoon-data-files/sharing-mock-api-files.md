@@ -12,8 +12,8 @@ order: 1110
 
 ### Sharing a mock API
 
-Each file can be easily shared with other Mockoon's users, "as-is". Since [v1.16.0](https://github.com/mockoon/mockoon/releases/tag/v1.16.0), there is no need to export in Mockoon's format on one computer and re-import on another one.
-After sharing and saving an environment file in any folder, the application can open them directly using the "Open environment" button:
+Each file can be easily shared with other Mockoon's users, "as-is". Since [v1.16.0](https://github.com/mockoon/mockoon/releases/tag/v1.16.0), there is no need to export in Mockoon's format on one computer and re-import on another one (see [legacy export file](docs:mockoon-data-files/import-export-mockoon-format)).
+After [locating your environment file](docs:mockoon-data-files/data-storage-location#locating-the-files), you can share it with your coworkers by using Git for example. You coworkers can then save the file in any folder and open it directly using the "Open environment" button:
 
 ![open an environment{553x203}](/images/docs/v1.17.0/open-environment.png)
 
@@ -26,4 +26,4 @@ You can disable pretty printing in the settings:
 
 ### Use a mock API with the CLI
 
-Before v1.16.0 and CLI's v1.2.0, the latter was only compatible with export files. Since v1.2.0, the CLI is also directly [compatible with environment files](https://github.com/mockoon/cli#use-a-mockoon-environment-file-preferred-method).
+The CLI is directly [compatible with environment files](https://github.com/mockoon/cli#use-your-mocks-in-the-cli). After locating your environment file, you run them with the CLI using the following command: `mockoon-cli start -d ./path-to-file/environment-data-file.json`.

@@ -18,10 +18,22 @@ const flatten = (text, child) => {
 };
 
 const heading = (props) => {
-  var children = Children.toArray(props.children);
-  var text = children.reduce(flatten, '');
-  var slug = text.toLowerCase().trim().replace(/\W/g, '-').replace('--', '-');
-  return createElement('h' + props.level, { id: slug }, props.children);
+  const levelsSpacing = {
+    '1': '', //h1 are not used in md as they are usually in the hero component
+    '2': 'mt-8',
+    '3': 'mt-6',
+    '4': 'mt-6',
+    '5': 'mt-4',
+    '6': 'mt-4'
+  };
+  const children = Children.toArray(props.children);
+  const text = children.reduce(flatten, '');
+  const slug = text.toLowerCase().trim().replace(/\W/g, '-').replace('--', '-');
+  return createElement(
+    'h' + props.level,
+    { id: slug, className: levelsSpacing[props.level] },
+    props.children
+  );
 };
 
 const Markdown: FunctionComponent<{

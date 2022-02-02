@@ -14,7 +14,7 @@ order: 30
 
 In order to prefix all your mock API routes, fill the **prefix** input at the top of the **environment options**:
 
-![fill the prefix input](/images/docs/environment-prefix.png)
+![fill the prefix input{832x277}](/images/docs/environment-prefix.png)
 
 The prefix will appear under your environment name in the environments list. All your environment's routes will now be prefixed and available at the following address `http://localhost:port/myprefix/myroute` instead of `http://localhost:port/myroute`.
 

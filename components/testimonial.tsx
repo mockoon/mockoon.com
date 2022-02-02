@@ -1,5 +1,11 @@
 import { Fragment, FunctionComponent } from 'react';
 
+/**
+ * Image must be 64x64
+ *
+ * @param props
+ * @returns
+ */
 const Testimonial: FunctionComponent<{
   link: string;
   imgSrc: string;
@@ -42,6 +48,8 @@ const Testimonial: FunctionComponent<{
               src={props.imgSrc}
               alt={props.name + ' profile picture'}
               loading='lazy'
+              width={64}
+              height={64}
             />
           </div>
 

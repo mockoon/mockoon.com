@@ -62,7 +62,7 @@ Here is an example of what you can do with this templating system:
 }
 ```
 
-![body editor content](/images/docs/v1.8.0-body-templating.png)
+![body editor content{700x370}](/images/docs/v1.8.0-body-templating.png)
 
 The above template produces the following body with this request:
 
@@ -159,11 +159,11 @@ Templating can be disabled for the body and file content in each route response 
 
 First, open the **Route response settings**:
 
-![click on route response fourth settings tab](/images/docs/open-route-response-settings.png)
+![click on route response fourth settings tab{836x138}](/images/docs/open-route-response-settings.png)
 
 Then, disable the templating by checking the box:
 
-![check the disable templating box](/images/docs/disable-route-response-templating.png)
+![check the disable templating box{836x138}](/images/docs/disable-route-response-templating.png)
 
 ### File input templating
 
@@ -175,7 +175,7 @@ If you have a set of files named `./file1.json` and `./file2.json`, a route para
 
 If you call this route with `/myroute/1`, `./file1.json` will be sent.
 
-![add a templating helper in the file path](/images/docs/file-path-templating.png)
+![add a templating helper in the file path{700x103}](/images/docs/file-path-templating.png)
 
 > For more information about absolute and relative file paths, please refer to our [file serving](docs:file-serving#absolute-or-relative-paths) documentation.
 
@@ -183,4 +183,4 @@ If you call this route with `/myroute/1`, `./file1.json` will be sent.
 
 Finally, templating helpers are also supported in the **headers values** both in route headers and environment headers:
 
-![add a templating helper in the header value](/images/docs/headers-templating.png)
+![add a templating helper in the header value{700x165}](/images/docs/headers-templating.png)

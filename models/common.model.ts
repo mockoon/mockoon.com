@@ -37,6 +37,8 @@ export type ArticleData = {
   canonical?: string;
   image?: string;
   imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   // used to build a custom header
   header?: {
     image: string;

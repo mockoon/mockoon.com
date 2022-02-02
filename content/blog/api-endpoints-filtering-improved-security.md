@@ -4,6 +4,8 @@ excerpt: Discover Mockoon's new v1.13.0 release with endpoints filtering, improv
 date: '2021-04-21'
 image: api-filtering-improved-security.png
 imageAlt: Mockoon logo with secure shield
+imageWidth: 1200
+imageHeight: 400
 meta:
   title: New release with endpoints filtering and improved security
   description: Discover Mockoon's new v1.13.0 release with endpoints filtering, improved security and a revamped templating documentation
@@ -18,7 +20,7 @@ There are also three new features and improvements that we want to share with yo
 In this iteration, we worked on a long-awaited feature. Nothing big or complex, but one of those improvements that make developers' life easier: endpoints filtering.
 It was requested a lot as many of you have to scroll among many mock endpoints. Only one step to use it, start typing some text in the filtering input, and it will filter the API endpoints by path or documentation.
 
-![api endpoints filtering](/images/tutorials/misc/routes-filtering.gif)
+![api endpoints filtering{610x266}](/images/tutorials/misc/routes-filtering.gif)
 
 We are already planning to improve this feature in the future, notably by adding keyboard shortcuts.
 

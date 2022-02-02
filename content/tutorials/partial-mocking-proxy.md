@@ -6,6 +6,8 @@ meta:
   description: Learn how to create partial mocks of existing APIs with Mockoon's proxy mode and forward trafic to a REST API in three easy steps
 image: tutorial-partial-mocking-proxy.png
 imageAlt: Mockoon logo between a computer and a server icons
+imageWidth: 1200
+imageHeight: 400
 order: 30
 ---
 
@@ -21,7 +23,7 @@ The first step is to create a new API in Mockoon or use one you already have.
 
 As soon as you have your new mock API, you are ready to enable the [proxy mode](docs:proxy-mode) and forward all the calls to another URL. For this tutorial, we will be using the Star Wars API available at `https://swapi.dev/api/`. Head over to the environment settings by clicking on the "cog" icon at the top right of the window. Then, enable the proxy mode and add the Star Wars API URL to which Mockoon will forward the requests:
 
-![Recording of enabling proxy mode](/images/tutorials/proxy-mode/enable-proxy-mode.gif)
+![Recording of enabling proxy mode{1052x358}](/images/tutorials/proxy-mode/enable-proxy-mode.gif)
 
 ## Step 2. Add the missing endpoints
 
@@ -43,7 +45,7 @@ The Star Wars API does not have any character with an ID above 83, and we want t
 
 To configure this missing endpoint, click on the blue "plus" button at the top of the endpoints list. Then, set the path to `/people/90` and copy-paste the JSON body above.
 
-![Recording of adding a new endpoint](/images/tutorials/proxy-mode/add-new-endpoint.gif)
+![Recording of adding a new endpoint{1052x685}](/images/tutorials/proxy-mode/add-new-endpoint.gif)
 
 ## Step 3. Run the API and make test calls
 
@@ -51,17 +53,17 @@ You are ready to use your partial mock. Start the API by clicking on the green "
 
 You can now make a call to an existing endpoint of the Star Wars API, like `/planets/1`, and get the expected result from the Star Wars API, forwarded by Mockoon:
 
-![Screenshot of the result call](/images/tutorials/proxy-mode/result-call-existing-endpoint.png)
+![Screenshot of the result call{1045x476}](/images/tutorials/proxy-mode/result-call-existing-endpoint.png)
 
 You can also call your custom endpoint `GET /people/90` and see that Mockoon intercepted your call and returned the body you defined in your new route.
 
-![Screenshot of the result call](/images/tutorials/proxy-mode/result-call-endpoint.png)
+![Screenshot of the result call{1045x476}](/images/tutorials/proxy-mode/result-call-endpoint.png)
 
 ## Step 4. Check the environment logs
 
 Finally, you can check the different calls that have been made to Mockoon by going to the [environment logs](docs:requests-logging). You will see that the forwarded calls have a blue "shield" icon next to them, while the requests caught by Mockoon's routes have a green "tick" icon.
 To open the requests logs, click on the "clock" icon in the upper right corner of the screen:
 
-![Recording of checking the logs](/images/tutorials/proxy-mode/verify-call-logs.gif)
+![Recording of checking the logs{1052x685}](/images/tutorials/proxy-mode/verify-call-logs.gif)
 
 You are now ready to unleash your creativity and create more awesome partial mocks!

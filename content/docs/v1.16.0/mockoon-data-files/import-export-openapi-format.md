@@ -24,10 +24,10 @@ Import only: sample JSON bodies are created from OpenAPI schemas during import.
 
 To import an environment from a file, open the **Import/export** menu, select **Swagger/OpenAPI** and then **Import Swagger v2/OpenAPI v3 (JSON or YAML)**:
 
-![Click on Import Swagger v2/OpenAPI v3 (JSON or YAML)](/images/docs/v1.8.0-import-openapi.png)
+![Click on Import Swagger v2/OpenAPI v3 (JSON or YAML){706x282}](/images/docs/v1.8.0-import-openapi.png)
 
 ### Export an environment to an OpenAPI v3 JSON file
 
 To export an environment to a JSON file, open the **Import/export** menu, select **Swagger/OpenAPI** and then **Export current environment to OpenAPI v3 (JSON)**:
 
-![Click on Export current environment to OpenAPI v3 (JSON)](/images/docs/v1.8.0-export-openapi.png)
+![Click on Export current environment to OpenAPI v3 (JSON){706x282}](/images/docs/v1.8.0-export-openapi.png)

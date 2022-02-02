@@ -70,6 +70,8 @@ const Article: FunctionComponent<{
                 alt={props.articleData.imageAlt}
                 loading='lazy'
                 className='screenshot img-fluid'
+                width={props.articleData.imageWidth}
+                height={props.articleData.imageHeight}
               />
             </div>
           </div>

@@ -6,6 +6,8 @@ meta:
   description: Learn more about REST(ful) APIs, their constraints and what requests and responses between a client and a server contains
 image: api-guide.png
 imageAlt: API illustration
+imageWidth: 1200
+imageHeight: 400
 order: 151
 previousLink: api-guide-what-are-api
 previousText: 'API guide part 1: APIs'
@@ -51,7 +53,7 @@ An API call is always composed of a **request** and a **response**.
 
 REST APIs communicate over HTTP/HTTPS the same as web browsers do. API calls look very similar to navigating web pages, which are, in the end, only GET requests on specific URLs.
 
-![API call schema with a request and a response](/images/tutorials/api-guide/api-call-request-response.png)
+![API call schema with a request and a response{800x172}](/images/tutorials/api-guide/api-call-request-response.png)
 
 ### The request
 

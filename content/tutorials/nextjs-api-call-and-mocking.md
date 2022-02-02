@@ -6,6 +6,8 @@ meta:
   description: Learn how to call a REST API from your Next.js application service and mock it using Mockoon API mocking tools
 image: tutorial-nextjs-api-call.png
 imageAlt: Mockoon and Next.js logos side by side
+imageWidth: 1200
+imageHeight: 400
 order: 92
 ---
 
@@ -19,7 +21,7 @@ When working on your Next.js application, you may need to mock an API that doesn
 
 For the rest of the tutorial, we will use an array of fake blog posts. In Mockoon, create a `GET /posts` API endpoint that returns an array of blog posts:
 
-![create a mock API endpoint](/images/tutorials/blog-posts-mock-endpoint.png)
+![create a mock API endpoint{1261x704}](/images/tutorials/blog-posts-mock-endpoint.png)
 
 You can use the following JSON as the body returned by the endpoint:
 

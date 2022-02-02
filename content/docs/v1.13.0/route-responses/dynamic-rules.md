@@ -16,17 +16,17 @@ After creating [multiple responses](docs:route-responses/multiple-responses) for
 
 You can define an unlimited number of rules for each route. At each request, Mockoon will assert each response's rules and serve the response which contains the first matching rule(s). The rules are interpreted in the order they are declared: `[rule OR|AND rule] OR [rule OR|AND rule]`, the brackets symbolizing each route response.
 
-![Rules interpretation order](/images/docs/dynamic-rules-schema.png)
+![Rules interpretation order{455x395}](/images/docs/dynamic-rules-schema.png)
 
 To add a new rule to a response, go to the route response's **Rules tab** and fill the fields:
 
-![Click on add and fill the fields](/images/docs/v1.11.0-add-route-response-rule.png)
+![Click on add and fill the fields{819x268}](/images/docs/v1.11.0-add-route-response-rule.png)
 
 ### Rules operator
 
 Inside a route response, rules are interpreted by default with the OR operator. When you have more than one rule in a route response, you can easily switch the operator applied when interpreting the rules, by clicking on the `OR|AND` buttons at the left of the rules:
 
-![Click on add and fill the fields](/images/docs/v1.11.0-route-response-rules-operator.png)
+![Click on add and fill the fields{819x268}](/images/docs/v1.11.0-route-response-rules-operator.png)
 
 Rules have three parts:
 

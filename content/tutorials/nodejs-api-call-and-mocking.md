@@ -6,6 +6,8 @@ meta:
   description: Learn how to call a third-party REST API  and to mock it with Mockoon when working on your Node.js backend application
 image: tutorial-nodejs-api-call.png
 imageAlt: Mockoon and Node.js logos side by side
+imageWidth: 1200
+imageHeight: 400
 order: 90
 ---
 
@@ -23,7 +25,7 @@ For the rest of the tutorial, we will simulate a call to the GitHub API by creat
 
 In Mockoon, create a `GET /users/:username` API endpoint that returns a payload containing a fake user object:
 
-![create a mock API endpoint](/images/tutorials/nodejs-api-call/github-users-mock-endpoint.png)
+![create a mock API endpoint{1347x725}](/images/tutorials/nodejs-api-call/github-users-mock-endpoint.png)
 
 You can use the following JSON (taken from GitHub's documentation) as the body returned by the endpoint:
 
@@ -72,7 +74,7 @@ You can further configure your mock API by adding as many routes and responses a
 
 You can now start your API by clicking on the green "play" icon:
 
-![start a mock api](/images/tutorials/nodejs-api-call/start-mock-api.png)
+![start a mock api{834x271}](/images/tutorials/nodejs-api-call/start-mock-api.png)
 
 ## 3. Call your mock API server
 
@@ -125,6 +127,6 @@ With this kind of setup, you will be able to locally switch from the original AP
 You may also want to keep using the third-party API while mocking only a part of it. It's useful when testing API failures (500, 503, 504, etc.) or quickly prototyping a new feature.
 It is also possible with Mockoon by enabling the [proxy mode](docs:proxy-mode):
 
-![enable proxy mode](/images/tutorials/nodejs-api-call/enable-proxy-mode.gif)
+![enable proxy mode{1052x358}](/images/tutorials/nodejs-api-call/enable-proxy-mode.gif)
 
 > To learn more about the proxy mode and how to use it, head over to the tutorial on [Partial API mocking](tutorials:partial-mocking-proxy).

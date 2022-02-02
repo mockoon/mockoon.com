@@ -15,11 +15,11 @@ You can configure each environment to listen on `127.0.0.1`, and thus `localhost
 
 Open the **Environment Settings** by clicking on the cog in the upper right corner:
 
-![click on cog icon](/images/docs/open-settings.png)
+![click on cog icon{832x277}](/images/docs/open-settings.png)
 
 Enable the **Localhost Only** option by ticking the checkbox.
 
-![tick the localhost only checkbox](/images/docs/enable-localhost-only.png)
+![tick the localhost only checkbox{934x300}](/images/docs/enable-localhost-only.png)
 
 > You may need to restart your environment for the change to take effect.
 

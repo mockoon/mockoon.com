@@ -42,4 +42,4 @@ Please refer to [Faker.js documentation](https://fakerjs.dev/) to check the unde
 
 Faker.js locale and seed can be defined in the settings:
 
-![faker](/images/docs/settings-faker.png)
+![faker{824x597}](/images/docs/settings-faker.png)

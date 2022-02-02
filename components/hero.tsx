@@ -6,6 +6,8 @@ const Hero: FunctionComponent<{
   cta?: { text: string; link: string }[];
   mainPicture?: string;
   mainPictureAlt?: string;
+  mainPictureWidth?: number;
+  mainPictureHeight?: number;
 }> = function (props) {
   return (
     <section
@@ -15,22 +17,10 @@ const Hero: FunctionComponent<{
     >
       <div className='container'>
         <div className='row align-items-center'>
-          {props.mainPicture && (
-            <div className='col-12 col-lg-6 order-lg-2'>
-              <div className='skewed-screenshot mb-8 mb-lg-0'>
-                <img
-                  src={props.mainPicture}
-                  alt={props.mainPictureAlt}
-                  loading='lazy'
-                  className=' img-fluid '
-                />
-              </div>
-            </div>
-          )}
           <div
             className={`col-12 ${
               props.mainPicture ? 'col-lg-6' : 'col-lg-8 mx-auto text-center'
-            } order-lg-1`}
+            }`}
           >
             {props.title && (
               <h1
@@ -71,6 +61,20 @@ const Hero: FunctionComponent<{
               </div>
             )}
           </div>
+          {props.mainPicture && (
+            <div className='col-12 col-lg-6 mt-10 mt-lg-0'>
+              <div className='skewed-screenshot mb-8 mb-lg-0'>
+                <img
+                  src={props.mainPicture}
+                  alt={props.mainPictureAlt}
+                  loading='lazy'
+                  className=' img-fluid '
+                  width={props.mainPictureWidth}
+                  height={props.mainPictureHeight}
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

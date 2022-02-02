@@ -6,6 +6,8 @@ meta:
   description: Learn how to call a REST API from your Ionic mobile application and mock it using Mockoon API mocking tools
 image: tutorial-ionic-api-call.png
 imageAlt: Mockoon and Ionic logos side by side
+imageWidth: 1200
+imageHeight: 400
 order: 95
 ---
 
@@ -19,7 +21,7 @@ During the development of your Ionic mobile application, you may need to mock an
 
 For the rest of the tutorial, we will use an array of fake blog posts. In Mockoon, create a `GET /posts` API endpoint that returns an array of blog posts:
 
-![create a mock API endpoint](/images/tutorials/blog-posts-mock-endpoint.png)
+![create a mock API endpoint{1261x704}](/images/tutorials/blog-posts-mock-endpoint.png)
 
 You can use the following JSON as the body returned by the endpoint:
 
@@ -140,4 +142,4 @@ We can now display our list of post titles using `ion_item` elements. We will re
 
 We can now see the result after running the `ionic serve` command:
 
-![post titles list](/images/tutorials/ionic-api-call/posts-list.png)
+![post titles list{302x641}](/images/tutorials/ionic-api-call/posts-list.png)

@@ -13,11 +13,11 @@ Mockoon supports serving your mock API over TLS with a self signed certificate. 
 
 Open the **Environment Settings** by clicking on the cog in the upper right corner:
 
-![click on cog icon](/images/docs/open-settings.png)
+![click on cog icon{832x277}](/images/docs/open-settings.png)
 
 Enable the **HTTPS option** by ticking the checkbox. The option was successfully activated if a yellow lock is displayed next to the environment name.
 
-![tick the HTTPS checkbox](/images/docs/enable-https.png)
+![tick the HTTPS checkbox{797x321}](/images/docs/enable-https.png)
 
 > You may need to restart your environment for the change to take effect.
 

@@ -6,6 +6,8 @@ meta:
   description: Learn how to record entering API requests and HTTP traffic and auto-mock your endpoints with Mockoon
 image: tutorial-requests-recording.png
 imageAlt: Mockoon logo next to a computer and a history list
+imageWidth: 1200
+imageHeight: 400
 order: 40
 ---
 
@@ -27,7 +29,7 @@ The first step is to create a new API in Mockoon or use one you already have and
 
 As soon as you have your mock API running, open the requests logging page by clicking on "Logs" tab at the top of the window. The page you are seeing may be empty, which is normal. You are now ready to make your first calls.
 
-![Accessing the requests recording](/images/tutorials/requests-recording/open-request-logging.gif)
+![Accessing the requests recording{1171x754}](/images/tutorials/requests-recording/open-request-logging.gif)
 
 ## Step 2. Call your mock server
 
@@ -35,7 +37,7 @@ Now that you have your mock API running, you can call any route that should exis
 
 Mockoon will answer with 404 to each of them, and you will start seeing the entering requests appearing on the left of the page in the form of a list.
 
-![List of entering requests screenshot](/images/tutorials/requests-recording/records-list.png)
+![List of entering requests screenshot{1173x365}](/images/tutorials/requests-recording/records-list.png)
 
 ## Step 3. Explore the recorded requests
 
@@ -43,7 +45,7 @@ Click on one of the entering requests in the list. The details should appear on 
 
 You will see that the right panel has two tabs: **Request** and **Response**. You will find the entering call payload in the **Request** tab. The **Response** tab contains the actual response sent by Mockoon.
 
-![Select a request record](/images/tutorials/requests-recording/select-record.gif)
+![Select a request record{1171x754}](/images/tutorials/requests-recording/select-record.gif)
 
 For each of them, you can see the headers, body, and params. The request and response bodies are also viewable in a separate editor with JSON linting enabled. It is especially useful when your body consists of [dynamic templating helpers](docs:templating/overview), which cannot be linted before being parsed and sent by Mockoon.
 
@@ -55,4 +57,4 @@ You are now ready to create your first mock API endpoints automatically.
 
 Next to each record, you will see a small "plus" icon. Click on these icons to create each corresponding route in your mock server. It will reuse most of the requests information (path, headers, etc.) to create the missing endpoint. From there, you can further customize your endpoint or create more mocks from the rest of the entering requests.
 
-![Auto-mock by clicking on the plus icon](/images/tutorials/requests-recording/auto-mock-record.gif)
+![Auto-mock by clicking on the plus icon{1171x754}](/images/tutorials/requests-recording/auto-mock-record.gif)

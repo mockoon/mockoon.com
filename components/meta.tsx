@@ -15,7 +15,7 @@ const Meta: FunctionComponent<MetaData> = function (props) {
       <meta
         property='og:image'
         content={
-          'https://mockoon.com/images/' + (props.image || 'screenshot.png')
+          'https://mockoon.com/images/' + (props.image || 'og-image.png')
         }
       />
       <meta
@@ -32,7 +32,7 @@ const Meta: FunctionComponent<MetaData> = function (props) {
       <meta
         name='twitter:image'
         content={
-          'https://mockoon.com/images/' + (props.image || 'screenshot.png')
+          'https://mockoon.com/images/' + (props.image || 'twitter-image.png')
         }
       />
     </Head>

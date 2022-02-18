@@ -77,7 +77,7 @@ The import/export feature in the OpenAPI format is, of course, still relevant.
 
 ## New mock samples
 
-We added more API samples to help you start working in no time with your favorite APIs: Buffer, Notion, GitHub, etc. You can find them on our website [mock samples page](https://mockoon.com/mock-samples/).
+We added more API samples to help you start working in no time with your favorite APIs: Buffer, Notion, GitHub, etc. You can find them on our website [mock samples page](https://mockoon.com/mock-samples/category/all/).
 Starting with this version, you can load them directly in Mockoon by clicking on the "Open" buttons present on the page.
 
 ![mock api samples page{1078x637}](/images/blog/new-storage/mock-api-samples.png)

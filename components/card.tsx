@@ -7,7 +7,6 @@ const Card: FunctionComponent<{
   data: CardData;
   vertical?: boolean;
   cover?: boolean;
-  indexPrefix?: string;
   border?: boolean;
   borderColor?: string;
   // synchronize colors between border and link
@@ -65,10 +64,7 @@ const Card: FunctionComponent<{
               {props.data.links.map((link, linkIndex) => {
                 return !link.src.includes('mockoon://') &&
                   !link.src.includes('clipboardcopy://') ? (
-                  <Link
-                    key={`${props.indexPrefix}link${linkIndex}`}
-                    href={link.src}
-                  >
+                  <Link key={`link${linkIndex}`} href={link.src}>
                     <a
                       className={`btn-xs btn btn-primary-soft d-flex align-items-center ${
                         props.data.links?.length > 1 ? '' : 'mt-auto'
@@ -85,16 +81,11 @@ const Card: FunctionComponent<{
                   </Link>
                 ) : (
                   <a
-                    key={`${props.indexPrefix}link${linkIndex}`}
+                    key={`link${linkIndex}`}
                     className={`btn-xs btn btn-primary-soft d-flex align-items-center ${
                       props.data.links?.length > 1 ? '' : 'mt-auto'
                     }`}
                     href={link.src}
-                    onClick={
-                      link.clickHandler
-                        ? link.clickHandler(link.src)
-                        : undefined
-                    }
                   >
                     {link.icon && (
                       <span className='icon me-2'>

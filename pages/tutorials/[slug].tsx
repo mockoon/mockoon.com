@@ -61,7 +61,7 @@ export default function Tutorial(props: {
           >
             {!props.articleData.nextLink && !props.articleData.previousLink && (
               <Link href='/tutorials/'>
-                <a className='btn btn-secondary-soft'>
+                <a className='btn btn-sm btn-secondary-soft'>
                   ⬅ Back to the list of tutorials
                 </a>
               </Link>
@@ -76,7 +76,7 @@ export default function Tutorial(props: {
                         : ''
                     }`}
                   >
-                    <a className='btn btn-secondary-soft'>
+                    <a className='btn btn-sm btn-secondary-soft'>
                       ⬅&nbsp;{props.articleData.previousText}
                     </a>
                   </Link>
@@ -89,7 +89,7 @@ export default function Tutorial(props: {
                         : ''
                     }`}
                   >
-                    <a className='btn btn-secondary-soft'>
+                    <a className='btn btn-sm btn-secondary-soft'>
                       {props.articleData.nextText}&nbsp;➡
                     </a>
                   </Link>

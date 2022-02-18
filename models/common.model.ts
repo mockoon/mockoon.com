@@ -1,9 +1,27 @@
-import { MouseEvent } from 'react';
-
 export type AccordionData = {
   title: string;
   items: { question: string; answer: string }[];
 }[];
+
+export type MockAPI = {
+  title: string;
+  slug: string;
+  version: string;
+  description: string;
+  categories: string[];
+  provider: string;
+  environmentSrc: string;
+  logoSrc: string | null;
+  logoBg: string;
+  externalLink: string;
+};
+
+export type MockAPIsDescriptor = {
+  items: MockAPI[];
+  categories: string[];
+};
+
+export type MockAPIsCategories = { slug: string; title: string }[];
 
 export type MetaData = {
   title: string;
@@ -22,7 +40,6 @@ export type CardData = {
     src: string;
     text: string;
     icon?: string;
-    clickHandler?: (target: string) => (event: MouseEvent) => void;
   }[];
 };
 

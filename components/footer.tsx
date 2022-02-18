@@ -92,7 +92,7 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/mock-samples/'>
+                <Link href='/mock-samples/category/all/'>
                   <a className='text-reset'>Mock samples</a>
                 </Link>
               </li>

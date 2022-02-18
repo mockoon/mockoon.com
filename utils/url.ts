@@ -20,10 +20,6 @@ export const transformLinkUri = (docsVersion?: string) => (uri: string) => {
     return `/${schemeSplit[0]}${docsSuffix}/${pathSplit[0]}/${
       pathSplit[1] ? '#' + pathSplit[1] : ''
     }`;
-  } else if (uri.includes('mock-samples:')) {
-    uri = `https://github.com/mockoon/mock-samples/blob/main/samples/${
-      uri.split(':')[1]
-    }.json`;
   }
 
   return uri;
@@ -35,7 +31,7 @@ export const transformLinkUri = (docsVersion?: string) => (uri: string) => {
  * @param uri
  */
 export const linkTarget = (uri: string) => {
-  if (uri.startsWith('http') || uri.startsWith('mock-samples')) {
+  if (uri.startsWith('http')) {
     return '_blank';
   }
 };

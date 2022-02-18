@@ -98,12 +98,22 @@
       },
       {
         "source": "/mock-samples/open-weather/",
-        "destination": "/mock-samples/",
+        "destination": "/mock-samples/category/all/",
         "type": 301
       },
       {
         "source": "/mock-samples/giphy/",
-        "destination": "/mock-samples/",
+        "destination": "/mock-samples/category/all/",
+        "type": 301
+      },
+      {
+        "source": "/mock-samples/",
+        "destination": "/mock-samples/category/all/",
+        "type": 301
+      },
+      {
+        "source": "/mock-samples/category/",
+        "destination": "/mock-samples/category/all/",
         "type": 301
       }
     ]

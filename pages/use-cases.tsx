@@ -22,7 +22,7 @@ export const useCases = [
     imgSrc: '/images/use-cases/third-party-api-integration.svg',
     imgAlt: 'Two people connecting applications',
     cta: 'Discover our mock samples',
-    ctaLink: '/mock-samples/'
+    ctaLink: '/mock-samples/category/all/'
   },
   {
     label: 'Testing',

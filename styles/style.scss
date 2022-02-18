@@ -36,7 +36,7 @@ pre code,
 code {
   color: $primary;
   background-color: lighten($primary, 40%);
-  padding: 0.2rem;
+  padding: 0 0.5rem;
   display: inline-block;
   border-radius: 5px;
   font-size: $font-size-base !important;
@@ -306,5 +306,20 @@ p.console {
 
   @include media-breakpoint-up(lg) {
     border-radius: $border-radius 0 0 $border-radius;
+  }
+}
+
+.ellipsis {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(180deg, #00000000 10%, white);
+    text-align: right;
+    height: 80px;
+    left: 0;
   }
 }

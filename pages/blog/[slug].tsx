@@ -62,7 +62,7 @@ export default function BlogArticle(props: {
       />
       <section>
         <div className='container text-center pt-3 pb-8'>
-          <a className='btn btn-secondary-soft' href='/blog/'>
+          <a className='btn btn-sm btn-secondary-soft' href='/blog/'>
             ⬅ Back to the blog posts
           </a>
         </div>

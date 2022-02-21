@@ -57,4 +57,4 @@ Besides, Mockoon makes it easy to test new features that are part of larger work
 Impala's found that thanks to Mockoon's complete set of options but minimal learning curve and easy-to-use interface, they can offer more complex mocking scenarios during user interviews without spending too much time setting up throwaway mocks.
 The result is thorough UX research by testing and validating more complex scenarios, accelerating feedback, and ensuring a high-quality release.
 
-If you want to learn more about how Impala implemented their API user research workflow, you can read their [detailed article](https://impala.travel/en-gb/blog/using-ux-research-to-build-apis-that-developers-love).
+If you want to learn more about how Impala implemented their API user research workflow, you can read their [detailed article](https://impala.travel/en/blog/using-ux-research-to-build-apis-that-developers-love).

@@ -59,7 +59,7 @@ You can also install Mockoon CLI in the scope of a local project by running `npm
 
 ### Step 3. Prepare your data file
 
-The CLI currently supports only data files in Mockoon's format. The CLI can open and migrate data from older versions of Mockoon. However, it doesn't alter the file you provide and only migrates a copy. If you created your mock with a more recent version of the application, you need to update your CLI with the following command: `npm install -g @mockoon/cli`.
+The CLI can open and migrate data from older versions of Mockoon. However, it doesn't alter the file you provide and only migrates a copy. If you created your mock with a more recent version of the application, you need to update your CLI with the following command: `npm install -g @mockoon/cli`.
 
 #### Provide a Mockoon's environment file
 
@@ -69,19 +69,27 @@ You can run your mock in one single step by providing the actual location of you
 
 Let's pretend your file name is `data.json` and resides in the current directory.
 
-#### Provide a URL
-
 As an alternative, you can also provide a URL pointing to a Mockoon environment file, and Mockoon CLI will take care of downloading it.
+
+#### Use an OpenAPI specification file
+
+Another option is to directly pass an OpenAPI specification file. Mockoon supports both JSON and YAML formats in versions 2.0.0 and 3.0.0.
+
+As above, you can provide a path to a local OpenAPI specification file or directly the file's URL.
 
 ### Step 4. Start you mock API
 
 After locating your environment file, you are ready to run your API mock with the CLI.
 
-In your terminal, navigate to the folder where your data file is and run the following command:
+In your terminal, navigate to the folder where your Mockoon's data file or OpenAPI file is and run the following command:
 
 `mockoon-cli start --data ./data.json`
 
-If you want to use a remotely hosted file, you can also provide a URL to the `--data` flag like this:
+Or:
+
+`mockoon-cli start --data ./openapi-spec.yaml`
+
+If you want to use a remotely hosted files, you can also provide a URL to the `--data` flag like this:
 
 `mockoon-cli start --data https://domain.com/data.json`
 

@@ -10,13 +10,13 @@ const features: CardData[] = [
   {
     title: "Supports all Mockoon's features",
     description:
-      "The CLI supports all of Mockoon's features: dynamic templating, response rules, proxy mode, etc.",
+      "The CLI supports all of Mockoon's features: dynamic templating, response rules, proxy mode, OpenAPI compatibility, etc.",
     links: [{ src: '/features/', text: 'View all features' }]
   },
   {
     title: 'Lightweight and fast',
     description:
-      'Deploy light and fast mocks in your CI environment with a simple and easy to use NPM package.',
+      'Deploy lighting fast mock servers in your CI environment with a simple and easy to use NPM package.',
     links: [
       {
         src: 'https://github.com/mockoon/cli#installation',

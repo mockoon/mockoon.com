@@ -26,7 +26,11 @@ const companyLogos = [
   { src: '/images/logos/cloudflight.svg', alt: 'CloudFlight logo' },
   { src: '/images/logos/shopee.svg', alt: 'Shopee logo' },
   { src: '/images/logos/ford.svg', alt: 'Ford logo' },
-  { src: '/images/logos/walmart.svg', alt: 'Walmart logo' }
+  { src: '/images/logos/walmart.svg', alt: 'Walmart logo' },
+  { src: '/images/logos/ntt-docomo.svg', alt: 'NTT Docomo logo' },
+  { src: '/images/logos/jpmchase.svg', alt: 'JP Morgan Chase logo' },
+  { src: '/images/logos/cryptocom.svg', alt: 'Crypto.com logo' },
+  { src: '/images/logos/audi.svg', alt: 'Audi logo' }
 ];
 
 class Index extends React.Component<{}, { companyLogos: any }> {

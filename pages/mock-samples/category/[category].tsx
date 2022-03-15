@@ -62,17 +62,31 @@ const MockSamplesCategory: FunctionComponent<{
     setMockAPIsList(mockAPIs.slice(0, itemsPerPage));
   }, [router.asPath]);
 
+  const filterAPIs = (query: string) => {
+    return mockAPIs.filter(
+      (mockAPI) =>
+        mockAPI.title.includes(query) ||
+        mockAPI.description.includes(query) ||
+        mockAPI.slug.includes(query)
+    );
+  };
+
   const onFilterChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFilter(event.target.value);
 
-    const filteredAPIs = mockAPIs.filter(
-      (mockAPI) =>
-        mockAPI.title.includes(event.target.value) ||
-        mockAPI.description.includes(event.target.value) ||
-        mockAPI.slug.includes(event.target.value)
-    );
+    const filteredAPIs = filterAPIs(filter);
     setTotalItems(filteredAPIs.length);
     setMockAPIsList(filteredAPIs.slice(0, itemsPerPage));
+  };
+
+  const loadMore = () => {
+    let apiList = mockAPIs;
+
+    if (filter) {
+      apiList = filterAPIs(filter);
+    }
+
+    setMockAPIsList(apiList.slice(0, mockAPIsList.length + itemsPerPage));
   };
 
   return (
@@ -183,9 +197,7 @@ const MockSamplesCategory: FunctionComponent<{
                   <button
                     className='btn btn-sm btn-secondary-soft'
                     onClick={() => {
-                      setMockAPIsList(
-                        mockAPIs.slice(0, mockAPIsList.length + itemsPerPage)
-                      );
+                      loadMore();
                     }}
                   >
                     <span>Load more </span>

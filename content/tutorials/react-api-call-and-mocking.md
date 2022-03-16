@@ -38,7 +38,7 @@ You can use the following JSON as the body returned by the endpoint:
 ]
 ```
 
-Note that your mock API will be available at the following URL: `http://localhost:3000`. It is the URL we will need to use in our React component.
+Note that your fake mock server will be available at the following URL: `http://localhost:3000`. It is the URL we will need to use in our React component.
 
 ## 2. Make a call to the API endpoint in your React component
 

@@ -66,7 +66,7 @@ You can use the following JSON (taken from GitHub's documentation) as the body r
 }
 ```
 
-Note that your mock API will be available at the following URL: `http://localhost:3000`. It is the URL we will need to use in our Node.js application.
+Note that your fake mock server will be available at the following URL: `http://localhost:3000`. It is the URL we will need to use in our Node.js application.
 
 You can further configure your mock API by adding as many routes and responses as you need. You can also give your mocks a more realistic behavior by using the [templating system](docs:templating/overview) or [adding rules](docs:route-responses/dynamic-rules).
 

@@ -104,7 +104,10 @@ const features: CardData[] = [
     description:
       'Run the CLI directly as an NPM package or use the provided Docker image.',
     links: [
-      { src: 'https://github.com/mockoon/cli#docker', text: 'Documentation →' }
+      {
+        src: 'https://github.com/mockoon/mockoon/blob/main/packages/cli#docker',
+        text: 'Documentation →'
+      }
     ]
   },
   {

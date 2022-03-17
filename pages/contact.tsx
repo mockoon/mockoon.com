@@ -30,7 +30,7 @@ const Contact: FunctionComponent = function () {
                 <h3 className='text-center'>Forums and Discord Server</h3>
                 <p className='px-2 text-center text-muted'>
                   You can ask for help or discuss ideas and improvements on our
-                  GitHub Discussions forums. You are also welcome on our Discord
+                  GitHub Discussion forum. You are also welcome on our Discord
                   server.
                 </p>
                 <div className='justify-content-center align-items-center d-flex flex-row '>
@@ -39,15 +39,7 @@ const Contact: FunctionComponent = function () {
                     target='_blank'
                     rel='noopener'
                   >
-                    App forum
-                  </a>
-                  &nbsp;|&nbsp;
-                  <a
-                    href='https://github.com/mockoon/cli/discussions'
-                    target='_blank'
-                    rel='noopener'
-                  >
-                    CLI forum
+                    Forum
                   </a>
                   &nbsp;|&nbsp;
                   <a

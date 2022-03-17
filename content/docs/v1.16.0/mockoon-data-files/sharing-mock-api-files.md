@@ -26,4 +26,4 @@ You can disable pretty printing in the settings:
 
 ### Use a mock API with the CLI
 
-Before v1.16.0 and CLI's v1.2.0, the latter was only compatible with export files. Since v1.2.0, the CLI is also directly [compatible with environment files](https://github.com/mockoon/cli#use-a-mockoon-environment-file-preferred-method).
+Before v1.16.0 and CLI's v1.2.0, the latter was only compatible with export files. Since v1.2.0, the CLI is also directly [compatible with environment files](https://github.com/mockoon/mockoon/blob/main/packages/cli#use-your-mockoon-environment-file).

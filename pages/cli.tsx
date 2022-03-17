@@ -19,7 +19,7 @@ const features: CardData[] = [
       'Deploy lighting fast mock servers in your CI environment with a simple and easy to use NPM package.',
     links: [
       {
-        src: 'https://github.com/mockoon/cli#installation',
+        src: 'https://github.com/mockoon/mockoon/blob/main/packages/cli#installation',
         text: 'How to use it'
       }
     ]

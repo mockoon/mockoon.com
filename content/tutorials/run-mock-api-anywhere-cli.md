@@ -98,7 +98,7 @@ You can also provide multiple parameters to customize your mock:
 - `--pname`: to provide a different name for the API mock process. The name will always be prefixed with 'mockoon-'.
 - `--port`: to override the port on which the mock process will run.
 
-You will find more information regarding the [`start` command](https://github.com/mockoon/cli#mockoon-cli-start), including all the available flags on the official repository.
+You will find more information regarding the [`start` command](https://github.com/mockoon/mockoon/blob/main/packages/cli#mockoon-cli-start), including all the available flags on the official repository.
 
 ### Step 5. Manage your API mock
 

@@ -25,4 +25,4 @@ Enable the **Localhost Only** option by ticking the checkbox.
 
 Your mock API will now be available on `https://localhost:{port}` and `https://127.0.0.1:{port}` only.
 
-> When using the CLI, you can choose a specific adapter to listen to (e.g. `192.168.1.1`) by using the `--hostname` flag with the [`start` command](https://github.com/mockoon/cli#mockoon-cli-start).
+> When using the CLI, you can choose a specific adapter to listen to (e.g. `192.168.1.1`) by using the `--hostname` flag with the [`start` command](https://github.com/mockoon/mockoon/blob/main/packages/cli#mockoon-cli-start).

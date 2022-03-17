@@ -11,11 +11,11 @@ meta:
   description: 'Take your mock APIs in all your headless and automated environments with the new CLI: servers, CI, GitHub Action, WSL, etc.'
 ---
 
-After months of work, Mockoon CLI is [available in beta](https://github.com/mockoon/cli) 🚀. You can now deploy your mock APIs in all your headless and automated environments. A server, your favorite CI environment, in a GitHub Action, in the Windows Subsystem Linux, you name it!
+After months of work, Mockoon CLI is [available in beta](https://github.com/mockoon/mockoon/blob/main/packages/cli) 🚀. You can now deploy your mock APIs in all your headless and automated environments. A server, your favorite CI environment, in a GitHub Action, in the Windows Subsystem Linux, you name it!
 
 Like the main application, the CLI is free and open-source. It supports all of Mockoon features, and we tried to make it as fast as possible.
 
-You are one command away to using it. Check the [installation instructions](https://github.com/mockoon/cli#installation), and most of all, let us know what you think and what we could improve on the [official forum](https://github.com/mockoon/cli/discussions).
+You are one command away to using it. Check the [installation instructions](https://github.com/mockoon/mockoon/blob/main/packages/cli#installation), and most of all, let us know what you think and what we could improve on the [official forum](https://github.com/mockoon/mockoon/discussions).
 
 ## How does it work
 
@@ -35,7 +35,7 @@ It's also compatible with your data files in an older format as it automatically
 
 We chose to create an [NPM package](https://www.npmjs.com/package/@mockoon/cli) as it is a widely used and well-known format. It's also the technology we know best, and we wanted to be sure to create something simple to use, fast and lightweight.
 
-Before actually working on the CLI, we needed first to extract a lot of code from the main application into a [new library](https://github.com/mockoon/commons). Luckily, this part of the main application was already relatively independent. But we still had some challenges and learned a lot about creating a Typescript library 😄.
+Before actually working on the CLI, we needed first to extract a lot of code from the main application into a [new library](https://github.com/mockoon/mockoon/blob/main/packages/commons). Luckily, this part of the main application was already relatively independent. But we still had some challenges and learned a lot about creating a Typescript library 😄.
 
 Under the hood, we used Typescript (as for the main application and the library), [Oclif](https://oclif.io/) to create the command-line tool, and [PM2](https://pm2.keymetrics.io/docs/usage/pm2-api/) to manage your mock API processes.
 It means that, while we wrap our CLI around all of PM2 commands, you can leverage everything PM2 has to offer if you are used to it!

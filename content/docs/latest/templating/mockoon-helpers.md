@@ -79,7 +79,7 @@ Select some content depending on a variable. Behaves like a regular switch.
   {{# case "1" }}"John"{{/ case }}
   {{# case "2" }}"Jack"{{/ case }}
   {{# default }}"Peter"{{/ default }}
-{{# /}}
+{{/ switch}}
 ```
 
 ## `array`

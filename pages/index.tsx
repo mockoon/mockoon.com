@@ -1,9 +1,9 @@
 import React from 'react';
-import Typed from 'react-typed';
 import Card from '../components/card';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Testimonial from '../components/testimonial';
+import Typed from '../components/typed';
 import { hpFeatures } from '../data/hp-features';
 import { hpHighlights } from '../data/hp-highlights';
 import { testimonials } from '../data/testimonials';
@@ -277,21 +277,24 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                   <h2 className='fw-bold'>
                     Trusted by thousands of
                     <br />
-                    <Typed
-                      strings={[
-                        'developers',
-                        'testers',
-                        'product managers',
-                        'UX researchers',
-                        'API designers',
-                        'technical writers'
-                      ]}
-                      typeSpeed={50}
-                      backSpeed={50}
-                      backDelay={700}
-                      loop={true}
-                      className={'text-primary'}
-                    />
+                    <span className='text-primary'>
+                      <Typed
+                        options={{
+                          strings: [
+                            'developers',
+                            'testers',
+                            'product managers',
+                            'UX researchers',
+                            'API designers',
+                            'technical writers'
+                          ],
+                          typeSpeed: 50,
+                          backSpeed: 50,
+                          backDelay: 700,
+                          loop: true
+                        }}
+                      />
+                    </span>
                   </h2>
                 </div>
               </div>

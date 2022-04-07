@@ -44,11 +44,11 @@
     "react-hook-form": "^7.23.0",
     "react-markdown": "^7.0.1",
     "react-syntax-highlighter": "^15.4.4",
-    "react-typed": "^1.2.0",
     "rehype-raw": "^6.1.0",
     "remark-gfm": "^2.0.0",
     "sass": "^1.39.0",
-    "semver": "^7.3.5"
+    "semver": "^7.3.5",
+    "typed.js": "^2.0.12"
   },
   "devDependencies": {
     "@types/glob": "^7.1.4",

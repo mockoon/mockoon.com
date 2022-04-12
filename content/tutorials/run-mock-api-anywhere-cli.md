@@ -112,7 +112,7 @@ mockoon-test  0    online    0.1    45.6 MB   0.0.0.0        3000
 
 > Mockoon CLI is using [PM2](https://pm2.io/), the Node.js process manager, behind the scene. It allows you to use all PM2 usual commands to manage your running mock servers: `pm2 list`, `pm2 kill`, etc.
 
-To stop a process, type the following command: `mockoon-cli {id|name}`, where `id|name` is your process id or name. If you omit the id, you will be prompted to choose a mock to stop. You can also stop all running servers at once with `mockoon-cli stop all`
+To stop a process, type the following command: `mockoon-cli stop {id|name}`, where `id|name` is your process id or name. If you omit the id, you will be prompted to choose a mock to stop. You can also stop all running servers at once with `mockoon-cli stop all`
 
 ### Step 6. View a running mock's logs
 

@@ -51,6 +51,10 @@ For a complete overview on how to use and declare route parameters, please refer
 
 You can also retrieve the route parameters by using the `{{urlParam 'paramName'}}` [templating helper](docs:templating/mockoon-request-helpers#urlparam).
 
+> To use a colon `:` in your route path as a normal character, you can escape it by either using double backslashes `\\` or square brackets `[]`:
+> `/part1[:]part2`
+> `/part1\\:part2`
+
 ### Query parameters
 
 Routes **must** be declared without query parameters as they are not part of the route path. They can only be added to the request when calling an endpoint.  

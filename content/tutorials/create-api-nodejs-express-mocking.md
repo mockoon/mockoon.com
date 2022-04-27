@@ -1,9 +1,9 @@
 ---
-title: Create your first API with Express (or mock it!)
-excerpt: Learn how to create your first REST API and endpoints with the Node.js Express framework or mock it to accelerate your application development
+title: Create your first API with Express (or mock it using Mockoon!)
+excerpt: Learn how to create your first REST API and endpoints with the Node.js Express framework or mock it using Mockoon to accelerate your application development
 meta:
-  title: Create your first API with ExpressJS (or mock it!)
-  description: Learn how to create your first REST API and endpoints with the Node.js Express framework or mock it to accelerate your application development
+  title: Create your first API with ExpressJS (or mock it using Mockoon!)
+  description: Learn how to create your first REST API and endpoints with the Node.js Express framework or mock it using Mockoon to accelerate your application development
 image: tutorial-express-api-mocking.png
 imageAlt: ExpressJS logo side by side with Mockoon
 imageWidth: 1200

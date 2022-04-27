@@ -1,9 +1,9 @@
 ---
-title: Create your first API with Python and Flask (or mock it!)
-excerpt: Learn how to create your first REST API and endpoints with Python's Flask microframework or mock it to accelerate your application development
+title: Create your first API with Python and Flask (or mock it using Mockoon!)
+excerpt: Learn how to create your first REST API and endpoints with Python's Flask microframework or mock it using Mockoon to accelerate your application development
 meta:
-  title: Create your first API with Python and Flask (or mock it!)
-  description: Learn how to create your first REST API and endpoints with Python's Flask microframework or mock it to accelerate your application development
+  title: Create your first API with Python and Flask (or mock it using Mockoon!)
+  description: Learn how to create your first REST API and endpoints with Python's Flask microframework or mock it using Mockoon to accelerate your application development
 image: tutorial-python-flask-api-mocking.png
 imageAlt: Python Flask logo side by side with Mockoon
 imageWidth: 1200

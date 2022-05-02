@@ -1,5 +1,9 @@
 import { GetStaticPropsContext } from 'next';
 import {
+  getMockSamplesIntro,
+  mockSamplesIntrosNb
+} from '../data/mock-samples-intros';
+import {
   MockAPI,
   MockAPIsCategories,
   MockAPIsDescriptor
@@ -31,15 +35,24 @@ export const getMockSamplesSlugProps = async (
   context: GetStaticPropsContext
 ) => {
   const mockAPIs = await getAPIList();
-  let mockAPI: MockAPI;
+  let mockAPIIndex: number;
 
   if (context.params.slug) {
-    mockAPI = mockAPIs.items.find(
+    mockAPIIndex = mockAPIs.items.findIndex(
       (item) => item.slug === (context.params.slug as string)
     );
   }
 
-  return { props: { mockAPI } };
+  return {
+    props: {
+      mockAPI: mockAPIs.items[mockAPIIndex],
+      // use a cycle of 5 random intros
+      intro: getMockSamplesIntro(
+        mockAPIIndex % mockSamplesIntrosNb,
+        mockAPIs.items[mockAPIIndex]
+      )
+    }
+  };
 };
 
 export const getMockSamplesSlugPaths = async () => {

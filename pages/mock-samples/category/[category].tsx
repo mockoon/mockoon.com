@@ -94,6 +94,7 @@ const MockSamplesCategory: FunctionComponent<{
       <Meta
         title={meta.title}
         description={meta.description}
+        url={`/mock-samples/category/${currentCategory}/`}
         ogType='article'
       />
       <Hero title={meta.title} subtitle={meta.description} />

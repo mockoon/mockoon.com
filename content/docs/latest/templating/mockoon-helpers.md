@@ -22,13 +22,13 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 |                     | [`len`](#len)       | [`ceil`](#ceil)         | [`toFixed`](#toFixed) |
 |                     |                     | [`floor`](#floor)       | [`round`](#round)     |
 
-| Strings                   |                           | Dates                             | Misc                    |
-| ------------------------- | ------------------------- | --------------------------------- | ----------------------- |
-| [`int`](#int)             | [`uppercase`](#uppercase) | [`now`](#now)                     | [`newline`](#newline)   |
-| [`float`](#float)         | [`split`](#split)         | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)     |
-| [`includes`](#includes)   | [`stringify`](#stringify) | [`date`](#date)                   | [`objectId`](#objectid) |
-| [`substr`](#substr)       | [`concat`](#concat)       | [`time`](#time)                   | [`setVar`](#setvar)     |
-| [`lowercase`](#lowercase) | [`indexOf`](#indexof)     |                                   |                         |
+| Strings                   |                           | Dates                             | Misc                            |
+| ------------------------- | ------------------------- | --------------------------------- | ------------------------------- |
+| [`int`](#int)             | [`uppercase`](#uppercase) | [`now`](#now)                     | [`newline`](#newline)           |
+| [`float`](#float)         | [`split`](#split)         | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)             |
+| [`includes`](#includes)   | [`stringify`](#stringify) | [`date`](#date)                   | [`base64Decode`](#base64decode) |
+| [`substr`](#substr)       | [`concat`](#concat)       | [`time`](#time)                   | [`objectId`](#objectid)         |
+| [`lowercase`](#lowercase) | [`indexOf`](#indexof)     |                                   | [`setVar`](#setvar)             |
 
 | [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                         |
 | --------------------------------------------------- | ----------------------------- | ----------------------- |
@@ -478,6 +478,24 @@ Encode the parameter as base64. This can be used as an inline helper or block he
     }}
   {{/repeat}}
 {{/base64}}
+```
+
+## `base64Decode`
+
+Decode a base64 string. This can be used as an inline helper or block helper (see examples below).
+
+| Arguments (ordered) | Type   | Description                                                    |
+| ------------------- | ------ | -------------------------------------------------------------- |
+| [0]                 | string | Base64 string to decode (optional when used as a block helper) |
+
+**Examples**
+
+```handlebars
+{{base64Decode 'YWJjZA=='}}
+
+{{#base64Decode}}
+  {{body 'base64content'}}
+{{/base64Decode}}
 ```
 
 ## `objectId`

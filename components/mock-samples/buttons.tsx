@@ -54,7 +54,7 @@ export const MockSamplesCLIButton: FunctionComponent<{
       <span className='icon me-2 text-success'>
         <i className='icon-copy'></i>
       </span>
-      Copy CLI command
+      Copy the CLI command
     </button>
   );
 };
@@ -81,12 +81,12 @@ export const MockSamplesHelpButton: FunctionComponent<{
   onClick: () => void;
 }> = function ({ onClick }) {
   return (
-    <button
-      type='button'
-      className='btn badge badge-lg bg-secondary-soft'
+    <a
+      href='#!'
+      className='fw-bold fs-sm text-decoration-none'
       onClick={onClick}
     >
       📖 How to use?
-    </button>
+    </a>
   );
 };

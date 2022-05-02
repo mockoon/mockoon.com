@@ -40,7 +40,7 @@ export default function CaseStudy(props: {
         title={props.articleData.meta.title}
         description={props.articleData.meta.description}
         ogType='article'
-        url={`/${props.slug}`}
+        url={`/${props.slug}/`}
       />
 
       <Article

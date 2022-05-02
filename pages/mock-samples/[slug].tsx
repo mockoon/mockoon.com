@@ -35,9 +35,9 @@ const MockSamples: FunctionComponent<{
     } mock sample for your project`,
     description: `Integrate with "${
       mockAPI.title.includes('API') ? mockAPI.title : mockAPI.title + ' API'
-    }" from <strong>${
+    }" from ${
       mockAPI.provider
-    }</strong> in no time with Mockoon's ready to use mock sample`
+    } in no time with Mockoon's ready to use mock sample`
   };
   const [showHelp, setShowHelp] = useState<boolean>(false);
 
@@ -46,6 +46,7 @@ const MockSamples: FunctionComponent<{
       <Meta
         title={meta.title}
         description={meta.description}
+        url={`/mock-samples/${mockAPI.slug}/`}
         ogType='article'
       />
       <Hero title={meta.title} subtitle={meta.description} />

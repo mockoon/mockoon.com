@@ -193,7 +193,7 @@ export default function Docs(props: {
         title={props.topicData.meta.title}
         description={props.topicData.meta.description}
         ogType='article'
-        url={`/${props.slug}`}
+        url={`/${props.slug}/`}
       />
       <div className='container-fluid'>
         <div className='row justify-content-center gx-0 mx-lg-0 mb-5'>

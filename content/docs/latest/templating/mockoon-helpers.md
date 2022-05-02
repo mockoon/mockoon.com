@@ -22,12 +22,13 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 |                     | [`len`](#len)       | [`ceil`](#ceil)         | [`toFixed`](#toFixed) |
 |                     |                     | [`floor`](#floor)       | [`round`](#round)     |
 
-| Strings                 |                           | Dates                             | Misc                    |
-| ----------------------- | ------------------------- | --------------------------------- | ----------------------- |
-| [`int`](#int)           | [`split`](#split)         | [`now`](#now)                     | [`newline`](#newline)   |
-| [`float`](#float)       | [`stringify`](#stringify) | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)     |
-| [`includes`](#includes) | [`concat`](#concat)       | [`date`](#date)                   | [`objectId`](#objectid) |
-| [`substr`](#substr)     | [`indexOf`](#indexof)     | [`time`](#time)                   | [`setVar`](#setvar)     |
+| Strings                   |                           | Dates                             | Misc                    |
+| ------------------------- | ------------------------- | --------------------------------- | ----------------------- |
+| [`int`](#int)             | [`uppercase`](#uppercase) | [`now`](#now)                     | [`newline`](#newline)   |
+| [`float`](#float)         | [`split`](#split)         | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)     |
+| [`includes`](#includes)   | [`stringify`](#stringify) | [`date`](#date)                   | [`objectId`](#objectid) |
+| [`substr`](#substr)       | [`concat`](#concat)       | [`time`](#time)                   | [`setVar`](#setvar)     |
+| [`lowercase`](#lowercase) | [`indexOf`](#indexof)     |                                   |                         |
 
 | [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                         |
 | --------------------------------------------------- | ----------------------------- | ----------------------- |
@@ -75,11 +76,11 @@ Select some content depending on a variable. Behaves like a regular switch.
 **Examples**
 
 ```handlebars
-{{# switch (urlParam 'id')}}
-  {{# case "1" }}"John"{{/ case }}
-  {{# case "2" }}"Jack"{{/ case }}
-  {{# default }}"Peter"{{/ default }}
-{{/ switch}}
+{{#switch (urlParam 'id')}}
+  {{#case '1'}}"John"{{/case}}
+  {{#case '2'}}"Jack"{{/case}}
+  {{#default}}"Peter"{{/default}}
+{{/switch}}
 ```
 
 ## `array`
@@ -583,6 +584,38 @@ Return a portion of a string starting at the specified index and extending for a
 {{substr 'Some data' 5 4}}
 
 result: 'data'
+```
+
+## `lowercase`
+
+Return the first string parameter lowercased.
+
+| Arguments (ordered) | Type   | Description         |
+| ------------------- | ------ | ------------------- |
+| 0                   | string | String to lowercase |
+
+**Examples**
+
+```handlebars
+{{lowercase 'ABCD'}}
+
+result: 'abcd'
+```
+
+## `uppercase`
+
+Return the first string parameter uppercased.
+
+| Arguments (ordered) | Type   | Description         |
+| ------------------- | ------ | ------------------- |
+| 0                   | string | String to uppercase |
+
+**Examples**
+
+```handlebars
+{{uppercase 'abcd'}}
+
+result: 'ABCD'
 ```
 
 ## `split`

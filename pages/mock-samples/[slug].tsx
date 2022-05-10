@@ -70,11 +70,11 @@ const MockSamples: FunctionComponent<{
                   </div>
                 )}
 
-                <h1
+                <h2
                   className={`display-4 mb-0 ${mockAPI.logoSrc ? 'ms-4' : ''}`}
                 >
                   {mockAPI.title}
-                </h1>
+                </h2>
               </div>
 
               <p className='fs-lg text-gray-700 mb-5 mb-md-0'>

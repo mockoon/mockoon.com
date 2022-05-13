@@ -10,7 +10,7 @@ order: 900
 
 ---
 
-For each route, multiple responses can be defined (status, body, and headers) and [triggered using a set of rules](docs:route-responses/dynamic-rules).
+For each route, multiple responses can be defined (status, body, and headers) and [triggered using a set of rules](docs:route-responses/dynamic-rules). There is always at least one response when you create a new route. You can modify it and add more responses but you can never delete the last route response.
 
 ## Adding or duplicating a response
 
@@ -24,13 +24,21 @@ You can also **duplicate** an existing route response by clicking on the "copy" 
 
 Everything will be copied to the new response: documentation, file/body, headers and rules.
 
+## Route responses precedence
+
+Route responses order define the order in which the [rules are interpreted](docs:route-responses/dynamic-rules). You can easily change the default response by reordering the responses menu with a drag and drop:
+
+![Reorder route responses{718x121}](/images/docs/v1.19.0/reorder-responses.gif)
+
 ## Default route response
 
-There is always at least one response when you create a new route. You can modify it and add more responses. But you can never delete the last route response.
+Without rules or when a request does not match the one you defined, the default response will always be the one marked with the blue flag.
 
-Without rules or when a request does not match the one you defined, the default response will always be the first one in the list. You can easily change the default response by reordering the responses menu with a drag and drop:
+![Default route response{724x150}](/images/docs/v1.19.0/route-responses-default.png)
 
-![Reorder route responses{777x226}](/images/docs/v1.17.0/reorder-responses.png)
+You can easily change the default response by clicking on the grey flags in the menu:
+
+![Define a new default route response{724x150}](/images/docs/v1.19.0/change-route-responses-default.png)
 
 ## Random route response
 
@@ -40,7 +48,7 @@ To activate this option, click on the "shuffle" icon next to the response list:
 
 ![Random route responses{777x226}](/images/docs/v1.17.0/random-route-responses.png)
 
-> When this option is active, all the rules defined on this route will be ignored. Also, this option cannot be selected in addition to the sequential responses option below.
+> When this option is active, the default response and all the rules defined on this route will be ignored. Also, this option cannot be selected in addition to the sequential responses option below.
 
 ## Sequential route response
 
@@ -50,4 +58,4 @@ To activate this option, click on the "repeat" icon next to the response list:
 
 ![Sequential route responses{777x226}](/images/docs/v1.17.0/sequential-route-responses.png)
 
-> When this option is active, all the rules defined on this route will be ignored. Also, this option cannot be selected in addition to the random responses option above.
+> When this option is active, the default response and all the rules defined on this route will be ignored. Also, this option cannot be selected in addition to the random responses option above.

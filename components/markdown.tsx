@@ -1,13 +1,9 @@
 import { Children, createElement, FunctionComponent } from 'react';
 import ReactMarkdown from 'react-markdown';
-import {
-  Prism as SyntaxHighlighter,
-  SyntaxHighlighterProps
-} from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import rehypeRaw from 'rehype-raw';
 import gfm from 'remark-gfm';
 import { linkTarget, transformLinkUri } from '../utils/url';
+import CodeBlock from './code-block';
 import Quotation from './quotation';
 import Quote from './quote';
 
@@ -49,13 +45,10 @@ const Markdown: FunctionComponent<{
         code: ({ node, inline, className, children, ...props }) => {
           const match = /language-(\w+)/.exec(className || '');
           return !inline && match ? (
-            <SyntaxHighlighter
-              style={vscDarkPlus}
+            <CodeBlock
+              code={String(children).replace(/\n$/, '')}
+              dark
               language={match[1]}
-              PreTag='div'
-              children={String(children).replace(/\n$/, '')}
-              {...(props as SyntaxHighlighterProps)}
-              className='code'
             />
           ) : (
             <code className={className} {...props}>

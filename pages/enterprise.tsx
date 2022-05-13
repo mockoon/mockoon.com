@@ -64,7 +64,6 @@ const Enterprise: FunctionComponent = function () {
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
     if (!data['work_address']) {
       delete data['work_address'];
 

@@ -45,6 +45,16 @@ pre .code {
   border-radius: 5px;
 }
 
+.code-block {
+  position: relative;
+
+  .code-block-copy {
+    position: absolute;
+    top: 0;
+    right: 15px;
+  }
+}
+
 // disable some style for blocks of code
 pre code {
   background-color: transparent;

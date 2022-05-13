@@ -25,7 +25,7 @@ const Footer: FunctionComponent<{
               className='align-self-center'
             />
           </div>
-          <div className='col-12 col-lg-6 text-lg-start text-center pt-8 pb-4 pb-lg-0 pt-lg-0'>
+          <div className='col-12 col-lg-4 text-lg-start text-center pt-8 pb-4 pb-lg-0 pt-lg-0'>
             <h6 className='fw-bold text-uppercase text-gray-700'>Tutorials</h6>
 
             <ul className='list-unstyled text-muted'>
@@ -56,7 +56,7 @@ const Footer: FunctionComponent<{
               <li className='mb-2'>
                 <Link href='/tutorials/generate-mock-json-data/'>
                   <a className='text-reset'>
-                    Generate dynamic mock data with Mockoon templating system
+                    Dynamic mock data with Mockoon's templating system
                   </a>
                 </Link>
               </li>
@@ -72,7 +72,7 @@ const Footer: FunctionComponent<{
               </li>
             </ul>
           </div>
-          <div className='col-6 col-lg-2 text-lg-start text-center'>
+          <div className='col-12 col-md-4 col-lg-2 text-lg-start text-center'>
             <h6 className='fw-bold text-uppercase text-gray-700'>Learn</h6>
 
             <ul className='list-unstyled text-muted'>
@@ -92,11 +92,6 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/mock-samples/category/all/'>
-                  <a className='text-reset'>Mock samples</a>
-                </Link>
-              </li>
-              <li className='mb-2'>
                 <Link href='/case-studies/'>
                   <a className='text-reset'>Case studies</a>
                 </Link>
@@ -113,7 +108,23 @@ const Footer: FunctionComponent<{
               </li>
             </ul>
           </div>
-          <div className='col-6 col-lg-2 offset-lg-0 text-lg-start text-center'>
+          <div className='col-12 col-md-4 col-lg-2 text-lg-start text-center'>
+            <h6 className='fw-bold text-uppercase text-gray-700'>Tools</h6>
+
+            <ul className='list-unstyled text-muted'>
+              <li className='mb-2'>
+                <Link href='/mock-samples/category/all/'>
+                  <a className='text-reset'>Mock samples</a>
+                </Link>
+              </li>{' '}
+              <li className='mb-2'>
+                <Link href='/integrations/embedded-button/'>
+                  <a className='text-reset'>Mockoon button</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className='col-12 col-md-4 col-lg-2 offset-lg-0 text-lg-start text-center'>
             <h6 className='fw-bold text-uppercase text-gray-700'>More</h6>
 
             <ul className='list-unstyled text-muted mb-0'>

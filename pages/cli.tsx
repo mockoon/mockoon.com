@@ -37,7 +37,7 @@ const features: CardData[] = [
   }
 ];
 
-const Cli: FunctionComponent = function () {
+const CLI: FunctionComponent = function () {
   return (
     <Layout footerBanner='download'>
       <Meta
@@ -126,4 +126,4 @@ const Cli: FunctionComponent = function () {
   );
 };
 
-export default Cli;
+export default CLI;

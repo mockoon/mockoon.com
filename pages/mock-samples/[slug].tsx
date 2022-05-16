@@ -133,6 +133,17 @@ const MockSamples: FunctionComponent<{
                     />
                   </div>
                 </div>
+                <div className='card-footer border-top'>
+                  <div className='text-muted fs-6'>
+                    Own this API? Add a{' '}
+                    <Link
+                      href={`/integrations/embedded-button/?dataURL=${mockAPI.environmentSrc}`}
+                    >
+                      Mockoon button
+                    </Link>{' '}
+                    on your website.
+                  </div>
+                </div>
               </div>
             </div>
             <div className='col-12 col-md-6 col-lg-8 order-md-1'>
@@ -142,7 +153,7 @@ const MockSamples: FunctionComponent<{
                   __html: intro
                 }}
               ></p>
-              <h3>Official description</h3>
+              <h3>Description</h3>
               <p
                 className='text-gray-800 mb-6 mb-md-8'
                 dangerouslySetInnerHTML={{

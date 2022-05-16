@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { FunctionComponent } from 'react';
+import { useRouter } from 'next/router';
+import { FunctionComponent, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import CodeBlock from '../../components/code-block';
 import Hero from '../../components/hero';
@@ -7,42 +8,29 @@ import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
 
 const EmbeddedButton: FunctionComponent = function () {
+  const router = useRouter();
   const {
     register: register,
-    handleSubmit,
-    setError,
-    reset,
-    getValues,
-    getFieldState,
-    clearErrors,
     watch,
-    formState: { errors, isSubmitting, isSubmitSuccessful }
+    setValue
   } = useForm({
-    defaultValues: { btnText: 'Mock with Mockoon', dataURL: '' }
+    defaultValues: {
+      btnText: 'Mock with Mockoon',
+      dataURL: router.query.dataURL || ''
+    }
   });
   const urlPrefix = 'mockoon://load-environment?url=';
   let btnStyles =
     '.mockoon-btn{display:inline-block;padding:5px;border-radius:5px;border:1px solid #d8dbdf;background-color:#5066901a;color:#506690;text-decoration:none;white-space:nowrap;}.mockoon-btn:hover{border:1px solid #d8dbdf;background-color:#50669026;color:#506690;text-decoration:none;}.mockoon-btn img{width:35px;margin: 0 5px}';
-  let buttonCode = `<style>${btnStyles}</style><a href="${urlPrefix}${watch(
-    'dataURL'
-  )}"><img src="https://mockoon.com/images/logo-eyes.svg" width="50" />${watch(
+  let buttonCode = `<style>${btnStyles}</style><a href="${urlPrefix}${
+    watch('dataURL') || '{data_URL}'
+  }"><img src="https://mockoon.com/images/logo-eyes.svg" width="50" />${watch(
     'btnText'
   )}</a>`;
 
-  const onSubmit = async (data) => {
-    if (!data['work_address']) {
-      delete data['work_address'];
-
-      try {
-        await fetch(process.env.NEXT_PUBLIC_SEND_EMAIL_API, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-        reset();
-      } catch {}
-    }
-  };
+  useEffect(() => {
+    setValue('dataURL', router.query.dataURL);
+  }, []);
 
   return (
     <Layout footerBanner='download'>
@@ -115,7 +103,7 @@ const EmbeddedButton: FunctionComponent = function () {
                   <div className='ps-4'>
                     <style>{btnStyles}</style>
                     <a
-                      href={`${urlPrefix}${watch('dataURL')}`}
+                      href={`${urlPrefix}${watch('dataURL') || '{data_URL}'}`}
                       className='mockoon-btn'
                     >
                       <img src='/images/logo-eyes.svg' />
@@ -147,7 +135,9 @@ const EmbeddedButton: FunctionComponent = function () {
                     :
                   </p>
                   <div className='ps-4'>
-                    <code>mockoon-cli start -d {watch('dataURL')}</code>
+                    <code>
+                      mockoon-cli start -d {watch('dataURL') || '{data_URL}'}
+                    </code>
                   </div>
                 </div>
               </div>

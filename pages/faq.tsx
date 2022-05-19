@@ -270,38 +270,19 @@ const Faq: FunctionComponent = function () {
                 <div className='accordion-collapse '>
                   <div className='accordion-body'>
                     <p className='text-gray-700'>
-                      Yes. Since version 1.15.0, we use a custom telemetry
-                      system collecting anonymous and basic usage data like
-                      number of users, number of sessions, session duration,
-                      country, operating system, application version, and number
-                      of environments. You can opt out of this telemetry system
-                      in the application settings.
-                    </p>
-                    <p className='text-gray-700'>
-                      We also use a basic Google Analytics setup that collects
-                      the usual data like sessions, OS, screen size, etc. It is
-                      also collecting some events happening in the application.
-                      A typical event includes the following JSON{' '}
-                      <code>
-                        {'{'}category: 'delete', action: 'environment'{'}'}
-                      </code>
-                      ,{' '}
-                      <code>
-                        {'{'}category: 'server', action: 'start' {'}'}
-                      </code>
-                      , etc.
-                      <br />
-                      The application will prompt you to accept or refuse this
-                      data collection at the first launch. You can always enable
-                      or disable Google Analytics in the application settings.
-                      <br />
-                      We plan to remove Google Analytics in the future and only
-                      keep our privacy-friendly telemetry system.
+                      Yes. Since version 1.15.0, the desktop application uses a
+                      custom telemetry system collecting anonymous and basic
+                      usage data like session duration, country, operating
+                      system, application version, and number of environments.
+                      You can opt out of this telemetry system in the
+                      application settings. Starting with version 1.19.0, the
+                      desktop application is not using Google Analytics anymore.
                     </p>
                     <p className='text-gray-700'>
                       None of your mock API data like route names, headers,
                       bodies are collected.
                     </p>
+                    <p className='text-gray-700'></p>
                     <p className='text-gray-700'>
                       No data or telemetry is collected when using the{' '}
                       <a href='/cli/'>CLI</a>.

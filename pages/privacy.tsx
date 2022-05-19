@@ -57,7 +57,7 @@ const Privacy: FunctionComponent = function () {
               </p>
               <ul>
                 <li>
-                  Use a mobile device or web browser to access our content: in
+                  Use a mobile device or web browser to access our website: in
                   addition to the above-mentioned log data, we collect anonymous
                   navigation statistics using Google Analytics. We took the
                   proper steps to anonymize your personal information such as

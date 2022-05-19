@@ -62,7 +62,7 @@ const features: CardData[] = [
     links: [{ src: '/docs/latest/response-headers/', text: 'Documentation →' }]
   },
   {
-    title: 'Latency',
+    title: 'Simulated latency',
     description: 'Add latency at environment or route level or even both.'
   },
   {
@@ -109,6 +109,11 @@ const features: CardData[] = [
         text: 'Documentation →'
       }
     ]
+  },
+  {
+    title: 'Privacy friendly',
+    description:
+      'Offline and privacy friendly making Mockoon the best choice for highly regulated or high-security environments.'
   },
   {
     title: 'Offline first',

@@ -40,5 +40,13 @@ export const hpFeatures = [
     imgAlt: 'Mockoon CLI start and list commands screenshot',
     cta: 'Discover the CLI',
     ctaLink: '/cli/'
+  },
+  {
+    label: 'Privacy',
+    title: 'Privacy friendly and offline first',
+    description:
+      'Our tools are offline first and require no account creation. They are privacy-friendly, making them the best choice for highly regulated or high-security environments.',
+    imgSrc: '/images/feature5.png',
+    imgAlt: 'Mockoon interface with a security lock'
   }
 ];

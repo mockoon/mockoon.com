@@ -23,7 +23,7 @@ const features: CardData[] = [
       'Mock API import / export with Swagger/OpenAPI format support.',
     links: [
       {
-        src: '/docs/latest/mockoon-data-files/import-export-openapi-format/',
+        src: '/docs/latest/openapi/import-export-openapi-format/',
         text: 'Documentation →'
       }
     ]

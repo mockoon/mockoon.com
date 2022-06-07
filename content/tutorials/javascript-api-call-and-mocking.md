@@ -1,8 +1,8 @@
 ---
-title: Call an API from your JavaScript application
+title: Call a mock API from your JavaScript application
 excerpt: Learn how to call a REST API endpoint from your JavaScript application and mock it using Mockoon API mocking tools
 meta:
-  title: Call an API from your JavaScript application
+  title: Call a mock API from your JavaScript application
   description: Learn how to call a REST API endpoint from your JavaScript application and mock it using Mockoon API mocking tools
 image: tutorial-javascript-api-call.png
 imageAlt: Mockoon and JavaScript logos side by side

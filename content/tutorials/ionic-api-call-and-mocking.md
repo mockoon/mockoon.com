@@ -1,8 +1,8 @@
 ---
-title: Call an API from your Ionic mobile application
+title: Call a mock API from your Ionic mobile application
 excerpt: Learn how to call a REST API from your Ionic mobile application and mock it using Mockoon API mocking tools
 meta:
-  title: Call an API from your Ionic mobile application
+  title: Call a mock API from your Ionic mobile application
   description: Learn how to call a REST API from your Ionic mobile application and mock it using Mockoon API mocking tools
 image: tutorial-ionic-api-call.png
 imageAlt: Mockoon and Ionic logos side by side

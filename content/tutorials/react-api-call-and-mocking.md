@@ -1,8 +1,8 @@
 ---
-title: Call a REST API from your React application
+title: Call a mock REST API from your React application
 excerpt: Learn how to call a REST API from your React application service and mock it using Mockoon API mocking tools
 meta:
-  title: Call an API from your React application
+  title: Call a mock API from your React application
   description: Learn how to call a REST API from your React application service and mock it using Mockoon API mocking tools
 image: tutorial-react-api-call.png
 imageAlt: Mockoon and React logos side by side

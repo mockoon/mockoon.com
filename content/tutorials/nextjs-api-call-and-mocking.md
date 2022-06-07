@@ -1,8 +1,8 @@
 ---
-title: Call an API from your Next.js application
+title: Call a mock API from your Next.js application
 excerpt: Learn how to call a REST API from your Next.js application service and mock it using Mockoon API mocking tools
 meta:
-  title: Call an API from your Next.js application
+  title: Call a mock API from your Next.js application
   description: Learn how to call a REST API from your Next.js application service and mock it using Mockoon API mocking tools
 image: tutorial-nextjs-api-call.png
 imageAlt: Mockoon and Next.js logos side by side

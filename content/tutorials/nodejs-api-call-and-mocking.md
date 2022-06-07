@@ -1,8 +1,8 @@
 ---
-title: Easily call a REST API from a Node.js application
+title: Easily call a mock REST API from a Node.js application
 excerpt: Learn how to call a third-party REST API  and to mock it with Mockoon when working on your Node.js backend application
 meta:
-  title: Easily call a REST API from a Node.js application
+  title: Easily call a mock REST API from a Node.js application
   description: Learn how to call a third-party REST API  and to mock it with Mockoon when working on your Node.js backend application
 image: tutorial-nodejs-api-call.png
 imageAlt: Mockoon and Node.js logos side by side

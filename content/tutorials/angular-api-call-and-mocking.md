@@ -11,7 +11,7 @@ imageHeight: 400
 order: 91
 ---
 
-In this guide, we will learn how to call a REST API from an Angular application. If you already have an existing API that you want to use, you can skip the first step, in which we create a mock REST API using Mockoon.
+In this guide, we will learn how to call a REST API from an Angular application. If you already have an existing API that you want to use, you can skip the first step, in which we create a fake REST API using Mockoon.
 
 ## 1. Create a mock API endpoint with Mockoon
 

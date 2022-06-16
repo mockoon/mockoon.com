@@ -11,7 +11,7 @@ imageHeight: 400
 order: 94
 ---
 
-This short tutorial will teach you how to call any REST API endpoint from your JavaScript application. If you already have an existing API that you want to use, you can skip the first step, in which we create a mock REST API using Mockoon.
+This short tutorial will teach you how to call any REST API endpoint from your JavaScript application. If you already have an existing API that you want to use, you can skip the first step, in which we create a fake REST API using Mockoon.
 
 ## 1. Create a mock API endpoint with Mockoon
 

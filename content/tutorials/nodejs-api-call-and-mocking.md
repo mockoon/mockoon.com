@@ -13,7 +13,7 @@ order: 90
 
 In this guide, we will learn how to call a REST API from a Node.js application. Calling REST API is not the privilege of front-end developers! There are many reasons you may want to connect your back-end to a REST API: call to another internal API, user authentication, fetching data from providers, sending analytics data, etc.
 
-If you already have an existing API that you want to use, you can skip the first step, in which we create a mock REST API using Mockoon.
+If you already have an existing API that you want to use, you can skip the first step, in which we create a fake REST API using Mockoon.
 
 ## 1. Create a mock API endpoint with Mockoon
 

@@ -212,6 +212,6 @@ API mocking is a technique that consists in imitating an unavailable API by simu
 
 Mocking an API with Mockoon is easy and requires only some small steps to start working.
 
-> To learn more about setting up Mockoon and creating your first API mock in less than 5 minutes, head over to our [getting start tutorial](/tutorials/getting-started/)
+> To learn more about setting up Mockoon and creating your first fake API in less than 5 minutes, head over to our [getting start tutorial](/tutorials/getting-started/)
 
 ![API mocking demo{1430x748}](/images/tutorials/api-mocking-demo.gif)

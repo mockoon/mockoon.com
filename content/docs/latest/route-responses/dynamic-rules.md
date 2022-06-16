@@ -18,21 +18,29 @@ You can define an unlimited number of rules for each route. At each request, Moc
 
 ![Rules interpretation order{455x395}](/images/docs/dynamic-rules-schema.png)
 
-To add a new rule to a response, go to the route response's **Rules tab** and fill the fields:
+To add a new rule to a response, go to the route response's **Rules tab**, click on "Add rule" and fill the fields:
 
-![Click on add and fill the fields{768x187}](/images/docs/v1.17.0/add-route-response-rule.png)
+![Click on add and fill the fields{912x206}](/images/docs/v1.20.0/add-route-response-rule.png)
 
 ### Reordering rules
 
 By default, rules are interpreted in the order you added them. You can change their interpretation order by drag and dropping them:
 
-![Drag and drop rules to reorder them{768x210}](/images/docs/v1.17.0/route-response-rule-reorder.png)
+![Drag and drop rules to reorder them{912x206}](/images/docs/v1.20.0/route-response-rule-reorder.png)
+
+### Disabling rules
+
+You can temporarily disable the rules and serve the default response only. To activate this option, click on the "rules" icon next to the response list:
+
+![Disable rules{912x206}](/images/docs/v1.20.0/disable-rules.png)
+
+> When this option is active, the default response will be always served and all the rules defined on this route will be ignored. Also, this option cannot be selected in addition to the random or sequential responses.
 
 ### Rules logical operator
 
 Inside a route response, rules are interpreted by default with the OR logical operator. When you have more than one rule in a route response, you can easily switch the operator applied when interpreting the rules, by clicking on the `OR|AND` buttons at the left of the rules:
 
-![Choose the rule operator OR AND{768x210}](/images/docs/v1.17.0/route-response-rules-operator.png)
+![Choose the rule operator OR AND{912x218}](/images/docs/v1.20.0/route-response-rules-operator.png)
 
 Rules have four parts:
 
@@ -43,7 +51,7 @@ Rules have four parts:
 
 ### 1. Target
 
-![Rule target{768x172}](/images/docs/v1.17.0/route-response-rules-target.png)
+![Rule target{912x218}](/images/docs/v1.20.0/route-response-rules-target.png)
 
 In the dropdown menu you can choose between:
 
@@ -56,7 +64,7 @@ In the dropdown menu you can choose between:
 
 ### 2. Property name or path
 
-![Rule property{768x172}](/images/docs/v1.17.0/route-response-rules-property.png)
+![Rule property{912x218}](/images/docs/v1.20.0/route-response-rules-property.png)
 
 Depending on the **target**, the way to access properties may be different:
 
@@ -73,7 +81,7 @@ For body and query string, if the property is an array, Mockoon will automatical
 
 ### 3. Comparison operator
 
-![Rule comparison operator{768x172}](/images/docs/v1.17.0/route-response-rules-comparison-operator.png)
+![Rule comparison operator{912x218}](/images/docs/v1.20.0/route-response-rules-comparison-operator.png)
 
 Multiple comparison operators are available in each rule:
 
@@ -84,7 +92,7 @@ Multiple comparison operators are available in each rule:
 
 ### 4. Value
 
-![Rule value{768x172}](/images/docs/v1.17.0/route-response-rules-value.png)
+![Rule value{912x218}](/images/docs/v1.20.0/route-response-rules-value.png)
 
 Depending on the comparison operator chosen, **equals** or **regex match**, you can either set a simple text value like "expected value" or any kind of regex. To use a regex, you must write it without the leading and trailing slashes.
 

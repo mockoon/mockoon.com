@@ -26,7 +26,9 @@ const Footer: FunctionComponent<{
             />
           </div>
           <div className='col-12 col-lg-4 text-lg-start text-center pt-8 pb-4 pb-lg-0 pt-lg-0'>
-            <h6 className='fw-bold text-uppercase text-gray-700'>Tutorials</h6>
+            <h6 className='fw-bold text-uppercase text-gray-700'>
+              Popular tutorials
+            </h6>
 
             <ul className='list-unstyled text-muted'>
               <li className='mb-2'>
@@ -66,8 +68,13 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
+                <Link href='/tutorials/what-is-api-mocking/'>
+                  <a className='text-reset'>Mockoon's API mocking guide</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/tutorials/'>
-                  <a className='text-reset'>View all tutorials</a>
+                  <a className='text-reset'>View all tutorials →</a>
                 </Link>
               </li>
             </ul>

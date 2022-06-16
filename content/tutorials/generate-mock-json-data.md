@@ -18,6 +18,8 @@ When mocking using Mockoon, you can easily customize your endpoints to make them
 
 Let's dig into this templating system and see how it allows you to generate random data of any type (JSON, CSV, XML, HTML, etc.) and make it behaves dynamically.
 
+> To learn more about APIs and API mocking in general, head over to our [API guide](/tutorials/api-guide-what-are-api/) or [API mocking guide](/tutorials/what-is-api-mocking/)
+
 ## Generate random fake data
 
 Nowadays, most of the developers work with JSON. Generating a massive amount of fake JSON data with Mockoon is a breeze thanks to the powerful templating system based on Handlebars syntax. But it's also perfect to generate any type of content: CSV, XML, HTML, you name it!
@@ -53,9 +55,9 @@ Let's have a look at what such a body could look like:
       "avatar": "{{faker 'image.avatar'}}"
     },
     "comments": [
-      {{#repeat (faker 'random.number' 5)}}
+      {{#repeat (faker 'datatype.number' 5)}}
       {
-        "id": "{{faker 'random.uuid'}}",
+        "id": "{{faker 'datatype.uuid'}}",
         "content": "{{faker 'lorem.sentence'}}",
         "author": {
           "name": "{{faker 'name.firstName'}} {{faker 'name.firstName'}}",
@@ -64,13 +66,13 @@ Let's have a look at what such a body could look like:
       }
       {{/repeat}}
     ],
-    "likes": {{faker 'random.number' 100}},
-    "shares": {{faker 'random.number' 100}},
+    "likes": {{faker 'datatype.number' 100}},
+    "shares": {{faker 'datatype.number' 100}},
     "location": {
       "lat": {{faker 'address.latitude'}},
       "long": {{faker 'address.longitude'}}
     },
-    "archived": {{faker 'random.boolean'}}
+    "archived": {{faker 'datatype.boolean'}}
   }
   {{/repeat}}
 ]
@@ -146,11 +148,11 @@ Generating an XML file with fake data would also be done in no time. You will fi
 <PRODUCTS>
   {{# repeat 50}}
   <PRODUCT>
-    <UUID>{{faker 'random.uuid'}}</UUID>
+    <UUID>{{faker 'datatype.uuid'}}</UUID>
     <NAME>{{faker 'commerce.product'}}</NAME>
     <PRICE>{{faker 'commerce.price'}}</PRICE>
     <COLOR>{{faker 'commerce.color'}}</COLOR>
-    <INVENTORY>{{faker 'random.number' 50}}</INVENTORY>
+    <INVENTORY>{{faker 'datatype.number' 50}}</INVENTORY>
   </PRODUCT>
   {{/ repeat}}
 </PRODUCTS>
@@ -187,7 +189,7 @@ This first example tries to reproduce a call to a `POST /users` route, which wou
 
 ```json
 {
-  "id": "{{faker 'random.uuid'}}",
+  "id": "{{faker 'datatype.uuid'}}",
   "firstname": "{{body 'firstname'}}",
   "lastname": "{{body 'lastname'}}",
   "birthdate": "{{body 'birthdate'}}",
@@ -233,7 +235,7 @@ Let's imagine an endpoint `GET /inventory/:type` returning either "products" or 
 [
   {{#repeat (queryParam 'total')}}
   {
-    "id": "{{faker 'random.uuid'}}",
+    "id": "{{faker 'datatype.uuid'}}",
     {{# switch (urlParam 'type')}}
     {{# case 'products'}}
     "name": "{{faker 'commerce.product'}}",
@@ -241,7 +243,7 @@ Let's imagine an endpoint `GET /inventory/:type` returning either "products" or 
     {{/ case}}
     {{# case 'materials'}}
     "name": "{{faker 'commerce.productMaterial'}}",
-    "quantity": "{{faker 'random.number' 50}}"
+    "quantity": "{{faker 'datatype.number' 50}}"
     {{/ case}}
     {{/ switch}}
   }

@@ -77,7 +77,7 @@ const UseCases: FunctionComponent = function () {
         subtitle='Discover how mocking APIs with Mockoon can accelerate and streamline your applications development, integration, testing, and demos'
       />
 
-      <div className='section'>
+      <section className='py-5 py-lg-10'>
         <div className='container text-lg-start text-center'>
           {useCases.map((feature, featureIndex) => {
             return (
@@ -127,7 +127,25 @@ const UseCases: FunctionComponent = function () {
             );
           })}
         </div>
-      </div>
+      </section>
+      <section className='pb-5 pb-lg-10'>
+        <div className='container'>
+          <div className='row justify-content-center'>
+            <div className='col-lg-6'>
+              <div className='alert alert-dark' role='alert'>
+                Learn more about API mocking with our{' '}
+                <a
+                  href='/tutorials/what-is-api-mocking/'
+                  className='text-gray-500'
+                >
+                  complete guide
+                </a>
+                !
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };

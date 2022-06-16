@@ -15,7 +15,7 @@ Mockoon is a set of free and open-source API mocking tools. They help you get re
 
 This tutorial will help you put up on track with the CLI and all its possibilities.
 
-> To learn more about API in general, head over to our [API guide](/tutorials/api-guide-what-are-api/)
+> To learn more about APIs and API mocking in general, head over to our [API guide](/tutorials/api-guide-what-are-api/) or [API mocking guide](/tutorials/what-is-api-mocking/)
 
 ## What is Mockoon CLI?
 

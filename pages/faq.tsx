@@ -25,6 +25,27 @@ const Faq: FunctionComponent = function () {
                     id='how-does-mockoon-mock-api-creation-works'
                     className='me-4'
                   >
+                    What is API mocking?
+                  </h3>
+                </div>
+                <div className='accordion-collapse'>
+                  <div className='accordion-body'>
+                    <p className='text-gray-700'>
+                      To learn more about APIs and API mocking in general, you
+                      can read our{' '}
+                      <a href='/tutorials/api-guide-what-are-api/'>API</a> and{' '}
+                      <a href='/tutorials/what-is-api-mocking/'>API mocking</a>{' '}
+                      guides.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className='accordion-item'>
+                <div className='accordion-button'>
+                  <h3
+                    id='how-does-mockoon-mock-api-creation-works'
+                    className='me-4'
+                  >
                     How does Mockoon mock API creation works?
                   </h3>
                 </div>
@@ -33,7 +54,12 @@ const Faq: FunctionComponent = function () {
                     <p className='text-gray-700'>
                       Unlike many other mocking tools, Mockoon is a desktop
                       application using a local Node.js server to avoid latency
-                      and the hassle of deploying through a remote service.
+                      and the hassle of deploying through a remote service. You
+                      can read our{' '}
+                      <a href='/tutorials/getting-started/'>
+                        getting started tutorial
+                      </a>{' '}
+                      for an overview of how Mockoon works.
                     </p>
                   </div>
                 </div>

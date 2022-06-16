@@ -166,6 +166,6 @@ During development, you may encounter blockers that will slow you down. For exam
 Or you would like to work with a third-party API (authentication, payment, weather or financial data, etc.) without too much hassle like creating an account or provision authentication tokens.
 API mocking is a technique that will allow you to work with an API by faking it. It helps you integrate an API without registering with the provider, provisioning a token, or waiting for another team to develop it. Thus vastly improving your developer experience and reducing development time.
 
-Mockoon is here to help you start integrating APIs in no time by quickly mocking them locally.
+Mockoon is here to help you start integrating APIs in no time by quickly mocking them locally. Head over to our [getting started tutorial](/tutorials/getting-started/) to learn how to mock your first API.
 
-> Head over to our [Getting started](/tutorials/getting-started/) tutorial to learn more about API mocking.
+> To learn more about API mocking in general, you can read our [API mocking guide](/tutorials/what-is-api-mocking/).

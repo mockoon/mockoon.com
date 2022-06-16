@@ -541,7 +541,7 @@ declare a variable in a block helper:
 
 ## `int`
 
-Return a random integer. Alias of `faker 'random.number`.
+Return a random integer. Alias of `faker 'datatype.number`.
 
 | Arguments (ordered) | Type   | Description |
 | ------------------- | ------ | ----------- |
@@ -556,7 +556,7 @@ Return a random integer. Alias of `faker 'random.number`.
 
 ## `float`
 
-Return a random float. Alias of `faker 'random.number` with precision = 10.
+Return a random float. Alias of `faker 'datatype.number` with precision = 10.
 
 | Arguments (ordered) | Type   | Description |
 | ------------------- | ------ | ----------- |
@@ -801,7 +801,7 @@ Return a random formatted (using [date-fns package format](https://date-fns.org/
 
 ## `boolean`
 
-Return a random boolean. Alias of `faker 'random.boolean'`.
+Return a random boolean. Alias of `faker 'datatype.boolean'`.
 
 **Examples**
 
@@ -991,7 +991,7 @@ Return a random hexadecimal color code.
 
 ## `guid`
 
-Return a random GUID. Alias of `faker 'random.uuid'`.
+Return a random GUID. Alias of `faker 'datatype.uuid'`.
 
 **Examples:**
 

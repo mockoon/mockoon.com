@@ -13,7 +13,7 @@ order: 30
 
 During the development of an application, you may use an API that is still under development. Rather than waiting for new API endpoints to be added and rely on your memory or documentation to continue your application development, you could use Mockoon to create a partial mock API. The idea is simple. Mockoon would serve the API endpoints you define while forwarding anything else to the URL of your choice. Let's dive through this with a simple example.
 
-> To learn more about API in general, head over to our [API guide](/tutorials/api-guide-what-are-api/)
+> To learn more about APIs and API mocking in general, head over to our [API guide](/tutorials/api-guide-what-are-api/) or [API mocking guide](/tutorials/what-is-api-mocking/)
 
 ## Step 1. Create a new API and enable the proxy mode
 

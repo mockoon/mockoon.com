@@ -21,6 +21,8 @@ Another useful usage of this feature is to be able to quickly investigate bugs a
 
 Let's have a look on how this feature works.
 
+> To learn more about APIs and API mocking in general, head over to our [API guide](/tutorials/api-guide-what-are-api/) or [API mocking guide](/tutorials/what-is-api-mocking/)
+
 ## Step 1. Open the requests recording page
 
 The first step is to create a new API in Mockoon or use one you already have and run it by clicking on the green "play" button.

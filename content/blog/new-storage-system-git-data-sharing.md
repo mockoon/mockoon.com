@@ -59,7 +59,7 @@ We also decided to save your environment JSON files pretty-printed by default. I
 
 Some long-awaited changes were made to the body files path resolving. From now on, Mockoon will try to resolve your body files from the environment's file directory. It allows you to store an environment's body files alongside the main file and share them with your coworkers without having relative or absolute path issues.
 
-![body file path{836x291}](/images/docs/file-path.png)
+![body file path{836x291}](/images/blog/new-storage/file-path.png)
 
 > This is also true with the [CLI v1.2.0](https://github.com/mockoon/cli/releases/tag/v1.2.0) which will resolve the files relatively to the environment or export file that was passed as an argument.
 

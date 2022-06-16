@@ -31,7 +31,7 @@ Rules can now be reordered with a simple drag and drop. It allows you to influen
 
 A new option is available that allows your mocks API to listen to localhost (and 127.0.0.1) only, instead of all network adapters (0.0.0.0). This feature can be easily enabled for each environment in the settings:
 
-![tick the localhost only checkbox{934x300}](/images/docs/enable-localhost-only.png)
+![tick the localhost only checkbox{934x300}](/images/blog/windows-portable/enable-localhost-only.png)
 
 This option is also available in the [CLI](/cli/)'s latest version but is even more customizable. You can pass any hostname at runtime `mockoon-cli ... --hostname 192.168.x.x.` to listen on a specific network adapter on your machine.
 
@@ -39,7 +39,7 @@ This option is also available in the [CLI](/cli/)'s latest version but is even m
 
 A new option has been added to the route response to automatically send a 404 status when a file was not found. This option only overrides the status code and will revert to serving the body present in the editor instead of the file.
 
-![tick the 404 fallback checkbox{753x213}](/images/docs/enable-404-fallback.png)
+![tick the 404 fallback checkbox{753x213}](/images/blog/windows-portable/enable-404-fallback.png)
 
 ## Gzip decoding
 

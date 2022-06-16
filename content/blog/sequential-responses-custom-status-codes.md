@@ -21,7 +21,7 @@ Here are some new features that we would like to highlight in this blog post:
 
 You can now configure Mockoon to serve your responses sequentially. When enabled, your responses will be served in the order, repeating from the beginning indefinitely. With three responses 200, 201, 202, you would get the following sequence: `200 → 201 → 202 → 200 → 201...` and so on. Restarting the server will reset this sequence.
 
-![enable sequential responses{874x225}](/images/docs/v1.14.0-sequential-route-responses.png)
+![enable sequential responses{874x225}](/images/blog/sequential-responses/v1.14.0-sequential-route-responses.png)
 
 Similar to the [random responses](docs:route-responses/multiple-responses) feature, this option disables the rules temporarily.
 

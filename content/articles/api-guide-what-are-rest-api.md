@@ -8,7 +8,7 @@ image: api-guide.png
 imageAlt: API illustration
 imageWidth: 1200
 imageHeight: 400
-order: 151
+order: 21
 previousLink: api-guide-what-are-api
 previousText: 'API guide part 1: APIs'
 nextLink: api-guide-rest-api-components
@@ -17,7 +17,7 @@ nextText: 'API guide part 3: Rest API components'
 
 ## Definition of a REST (or RESTful) API
 
-As we saw in the [previous part of this guide](/tutorials/api-guide-what-are-api/), there are many types of web APIs. What interests us most is one of the most popular implementations, the [REST, or RESTful, API](https://en.wikipedia.org/wiki/Representational_state_transfer).
+As we saw in the [previous part of this guide](/articles/api-guide-what-are-api/), there are many types of web APIs. What interests us most is one of the most popular implementations, the [REST, or RESTful, API](https://en.wikipedia.org/wiki/Representational_state_transfer).
 REST stands for **RE**presentational **S**tate **T**ransfer. It's a software architectural style that defines a set of **constraints** used to create standardized APIs. Web APIs adhering to the REST architectural constraints are called **RESTful APIs**.
 
 RESTful APIs must follow six constraints: **client-server architecture**, **statelessness**, **cacheability**, **layered system**, **code on demand**, and **uniform interface**. We will see four of them, perhaps the most important.
@@ -53,7 +53,7 @@ An API call is always composed of a **request** and a **response**.
 
 REST APIs communicate over HTTP/HTTPS the same as web browsers do. API calls look very similar to navigating web pages, which are, in the end, only GET requests on specific URLs.
 
-![API call schema with a request and a response{800x172}](/images/tutorials/api-guide/api-call-request-response.png)
+![API call schema with a request and a response{800x172}](/images/articles/api-guide/api-call-request-response.png)
 
 ### The request
 
@@ -86,7 +86,7 @@ BLANK_LINE
 BODY
 ```
 
-As we will see in the [third part of this guide](/tutorials/api-guide-rest-api-components/), the method and URL are always present and mandatory. They identify the target endpoint requested by the client on the API server.
+As we will see in the [third part of this guide](/articles/api-guide-rest-api-components/), the method and URL are always present and mandatory. They identify the target endpoint requested by the client on the API server.
 On the contrary, the headers and body are optional. However, it's rare to have a request (or a response) without headers.
 
 ### The response

@@ -4,11 +4,11 @@ excerpt: Learn what API mocking is, how it works, the use cases, and the benefit
 meta:
   title: Mockoon's guide to API mocking
   description: Learn what API mocking is, how it works, the use cases, and the benefits of faking internals or third-party APIs
-image: tutorial-api-mocking-guide.png
+image: api-mocking-guide.png
 imageAlt: Mockoon logo connected to a server
 imageWidth: 1200
 imageHeight: 400
-order: 160
+order: 30
 ---
 
 Designing, building, and testing applications consuming internal or third-party APIs are not always easy. You may hit some bottlenecks, like dependencies between teams, external API unavailable for testing, etc.
@@ -21,7 +21,7 @@ It is also a fast and easy way to test your applications with the APIs you are i
 
 API mocking should strive to mimic the original API as close as possible. It also lets you go the extra mile by simulating more complex scenarios like failures or experimenting with new features.
 
-![client communicating with an API or a mock{800x445}](/images/tutorials/api-mocking-guide/api-mocking-server-call.png)
+![client communicating with an API or a mock{800x445}](/images/articles/api-mocking-guide/api-mocking-server-call.png)
 
 ## Use cases: why do we need mock APIs?
 

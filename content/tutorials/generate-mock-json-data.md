@@ -18,7 +18,7 @@ When mocking using Mockoon, you can easily customize your endpoints to make them
 
 Let's dig into this templating system and see how it allows you to generate random data of any type (JSON, CSV, XML, HTML, etc.) and make it behaves dynamically.
 
-> To learn more about APIs and API mocking in general, head over to our [API guide](/tutorials/api-guide-what-are-api/) or [API mocking guide](/tutorials/what-is-api-mocking/)
+> To learn more about APIs and API mocking in general, head over to our [API guide](/articles/api-guide-what-are-api/) or [API mocking guide](/articles/what-is-api-mocking/)
 
 ## Generate random fake data
 

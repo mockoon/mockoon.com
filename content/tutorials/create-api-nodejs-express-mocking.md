@@ -13,7 +13,7 @@ order: 200
 
 In this tutorial, you will learn how to create a small REST API using the [Express library](https://expressjs.com/) for Node.js. Express is one of the most popular libraries for API creation. It is also available in some major Cloud functions providers like Firebase.
 
-> Before continuing, you can learn more about REST APIs in general, how they work, their components, etc. in our [series of tutorials](/tutorials/api-guide-what-are-api/)
+> Before continuing, you can learn more about REST APIs in general, how they work, their components, etc. in our [series of tutorials](/articles/api-guide-what-are-api/)
 
 Creating an API using this library is easy, straightforward, and only requires the following basic steps.
 

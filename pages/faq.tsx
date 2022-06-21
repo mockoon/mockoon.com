@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Layout from '../layout/layout';
@@ -33,8 +33,8 @@ const Faq: FunctionComponent = function () {
                     <p className='text-gray-700'>
                       To learn more about APIs and API mocking in general, you
                       can read our{' '}
-                      <a href='/tutorials/api-guide-what-are-api/'>API</a> and{' '}
-                      <a href='/tutorials/what-is-api-mocking/'>API mocking</a>{' '}
+                      <a href='/articles/api-guide-what-are-api/'>API</a> and{' '}
+                      <a href='/articles/what-is-api-mocking/'>API mocking</a>{' '}
                       guides.
                     </p>
                   </div>

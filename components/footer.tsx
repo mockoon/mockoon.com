@@ -27,7 +27,7 @@ const Footer: FunctionComponent<{
           </div>
           <div className='col-12 col-lg-4 text-lg-start text-center pt-8 pb-4 pb-lg-0 pt-lg-0'>
             <h6 className='fw-bold text-uppercase text-gray-700'>
-              Popular tutorials
+              Popular tutorials and articles
             </h6>
 
             <ul className='list-unstyled text-muted'>
@@ -63,12 +63,12 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/tutorials/api-guide-what-are-api/'>
+                <Link href='/articles/api-guide-what-are-api/'>
                   <a className='text-reset'>Mockoon's API guide</a>
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/tutorials/what-is-api-mocking/'>
+                <Link href='/articles/what-is-api-mocking/'>
                   <a className='text-reset'>Mockoon's API mocking guide</a>
                 </Link>
               </li>
@@ -91,6 +91,11 @@ const Footer: FunctionComponent<{
               <li className='mb-2'>
                 <Link href='/docs/latest/about/'>
                   <a className='text-reset'>Docs</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/articles/'>
+                  <a className='text-reset'>Articles</a>
                 </Link>
               </li>
               <li className='mb-2'>

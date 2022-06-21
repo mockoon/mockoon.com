@@ -120,6 +120,26 @@
         "source": "/mock-samples/category/",
         "destination": "/mock-samples/category/all/",
         "type": 301
+      },
+      {
+        "source": "/tutorials/what-is-api-mocking/",
+        "destination": "/articles/what-is-api-mocking/",
+        "type": 301
+      },
+      {
+        "source": "/tutorials/api-guide-what-are-api/",
+        "destination": "/articles/api-guide-what-are-api/",
+        "type": 301
+      },
+      {
+        "source": "/tutorials/api-guide-what-are-rest-api/",
+        "destination": "/articles/api-guide-what-are-rest-api/",
+        "type": 301
+      },
+      {
+        "source": "/tutorials/api-guide-rest-api-components/",
+        "destination": "/articles/api-guide-rest-api-components/",
+        "type": 301
       }
     ]
   }

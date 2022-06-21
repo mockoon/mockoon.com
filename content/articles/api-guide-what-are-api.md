@@ -8,7 +8,7 @@ image: api-guide.png
 imageAlt: API illustration
 imageWidth: 1200
 imageHeight: 400
-order: 150
+order: 20
 nextLink: api-guide-what-are-rest-api
 nextText: 'API guide part 2: Rest APIs'
 ---
@@ -21,7 +21,7 @@ APIs are everywhere, and they power almost all the internet. From weather foreca
 
 API is the acronym for [Application Programming Interface](https://en.wikipedia.org/wiki/API). In contrast to a User Interface (UI) that connects a person to a computer, it's a software-to-software interface, or intermediary, enabling two applications to talk to each other.
 
-![machine to machine communication{800x172}](/images/tutorials/api-guide/machine-to-machine.png)
+![machine to machine communication{800x172}](/images/articles/api-guide/machine-to-machine.png)
 
 APIs are not designed to be used by a person other than the developer using or implementing them. APIs are a way to expose a simple interface, a layer of abstraction, to interact with a more complex system without knowing its internal way of working.
 

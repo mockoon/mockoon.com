@@ -13,7 +13,7 @@ order: 220
 
 In this tutorial, you will learn how to create a basic REST API using Java's [Spring](https://spring.io/) framework. Spring is one of the most popular Java frameworks for web applications development and REST API creation.
 
-> Before continuing, you can learn more about REST APIs in general, how they work, their components, etc. in our [series of tutorials](/tutorials/api-guide-what-are-api/)
+> Before continuing, you can learn more about REST APIs in general, how they work, their components, etc. in our [series of tutorials](/articles/api-guide-what-are-api/)
 
 Creating an API using this framework is easy, straightforward, and only requires the following basic steps.
 

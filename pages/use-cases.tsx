@@ -135,7 +135,7 @@ const UseCases: FunctionComponent = function () {
               <div className='alert alert-dark' role='alert'>
                 Learn more about API mocking with our{' '}
                 <a
-                  href='/tutorials/what-is-api-mocking/'
+                  href='/articles/what-is-api-mocking/'
                   className='text-gray-500'
                 >
                   complete guide

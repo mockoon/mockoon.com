@@ -8,16 +8,16 @@ image: api-guide.png
 imageAlt: API illustration
 imageWidth: 1200
 imageHeight: 400
-order: 152
+order: 22
 previousLink: api-guide-what-are-rest-api
 previousText: 'API guide part 2: Rest APIs'
 ---
 
 ## Components of a REST API request and response
 
-After seeing [how an API call works](/tutorials/api-guide-what-are-rest-api/), with a request and a response, in the second part of this guide, we will now see what are the request's and response's components: the request's **method** and **URL**, the response's **status code**, and the **headers** and **body**, present in both the request and the response.
+After seeing [how an API call works](/articles/api-guide-what-are-rest-api/), with a request and a response, in the second part of this guide, we will now see what are the request's and response's components: the request's **method** and **URL**, the response's **status code**, and the **headers** and **body**, present in both the request and the response.
 
-![REST API call payload components{800x224}](/images/tutorials/api-guide/rest-api-call-components.png)
+![REST API call payload components{800x224}](/images/articles/api-guide/rest-api-call-components.png)
 
 ### Resource URL (request)
 
@@ -168,4 +168,4 @@ API mocking is a technique that will allow you to work with an API by faking it.
 
 Mockoon is here to help you start integrating APIs in no time by quickly mocking them locally. Head over to our [getting started tutorial](/tutorials/getting-started/) to learn how to mock your first API.
 
-> To learn more about API mocking in general, you can read our [API mocking guide](/tutorials/what-is-api-mocking/).
+> To learn more about API mocking in general, you can read our [API mocking guide](/articles/what-is-api-mocking/).

@@ -24,7 +24,12 @@ const heading = (props) => {
   };
   const children = Children.toArray(props.children);
   const text = children.reduce(flatten, '');
-  const slug = text.toLowerCase().trim().replace(/\W/g, '-').replace('--', '-');
+  const slug = text
+    .toLowerCase()
+    .trim()
+    .replace(/\W/g, '-')
+    .replace('--', '-')
+    .replace(/^\-|\-$/g, '');
   return createElement(
     'h' + props.level,
     { id: slug, className: levelsSpacing[props.level] },

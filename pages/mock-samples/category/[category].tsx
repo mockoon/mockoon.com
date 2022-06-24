@@ -1,12 +1,7 @@
 import { GetServerSidePropsContext } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, {
-  ChangeEvent,
-  FunctionComponent,
-  useEffect,
-  useState
-} from 'react';
+import { ChangeEvent, FunctionComponent, useEffect, useState } from 'react';
 import ConditionalWrapper from '../../../components/conditional-wrapper';
 import Hero from '../../../components/hero';
 import Meta from '../../../components/meta';
@@ -35,7 +30,7 @@ const MockSamplesCategory: FunctionComponent<{
   currentCategory: string;
 }> = function ({ mockAPIs, mockAPIsCategories, totalAPIs, currentCategory }) {
   const router = useRouter();
-  const itemsPerPage = 8;
+  const itemsPerPage = 80;
   const [showHelp, setShowHelp] = useState<boolean>(false);
   const [mockAPIsList, setMockAPIsList] = useState<MockAPI[]>([]);
   const [filter, setFilter] = useState<string>('');

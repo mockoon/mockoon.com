@@ -2,6 +2,7 @@ import matter from 'gray-matter';
 import Head from 'next/head';
 import React from 'react';
 import Article from '../../components/article';
+import Breadcrumb from '../../components/breadcrumb';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
 import { ArticleData } from '../../models/common.model';
@@ -53,7 +54,11 @@ export default function BlogArticle(props: {
         url={`/${props.slug}/`}
         image={`blog/${props.articleData.image}`}
       />
-
+      <Breadcrumb
+        currentTitle={props.articleData.title}
+        parentLink='/blog/'
+        parentTitle='Blog'
+      />
       <Article
         slug={props.slug}
         path='blog'

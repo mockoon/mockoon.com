@@ -1,7 +1,7 @@
 import matter from 'gray-matter';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { rsort as semverSort } from 'semver';
 import Markdown from '../../components/markdown';
 import Meta from '../../components/meta';

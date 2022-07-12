@@ -333,3 +333,12 @@ p.console {
     left: 0;
   }
 }
+
+.breadcrumb-item {
+  + .breadcrumb-item {
+    &::before {
+      content: '→';
+      font-family: inherit;
+    }
+  }
+}

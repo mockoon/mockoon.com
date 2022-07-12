@@ -2,6 +2,7 @@ import { GetServerSidePropsContext } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ChangeEvent, FunctionComponent, useEffect, useState } from 'react';
+import Breadcrumb from '../../../components/breadcrumb';
 import ConditionalWrapper from '../../../components/conditional-wrapper';
 import Hero from '../../../components/hero';
 import Meta from '../../../components/meta';
@@ -42,8 +43,10 @@ const MockSamplesCategory: FunctionComponent<{
       "Create your mock API server in no time with Mockoon's ready to use mock samples for you favorite APIs: 1Password, BitBucket, GitHub and more"
   };
 
+  let currentCategoryTitle = 'All';
+
   if (!router.asPath.includes('all')) {
-    const currentCategoryTitle = mockAPIsCategories.find(
+    currentCategoryTitle = mockAPIsCategories.find(
       (category) => category.slug === currentCategory
     ).title;
     meta.title = `${currentCategoryTitle} APIs mock samples for your project`;
@@ -95,6 +98,12 @@ const MockSamplesCategory: FunctionComponent<{
       <Hero title={meta.title} subtitle={meta.description} />
 
       <HelpModal showHelp={showHelp} setShowHelp={setShowHelp} />
+
+      <Breadcrumb
+        currentTitle={currentCategoryTitle}
+        parentLink='/mock-samples/category/all/'
+        parentTitle='Mock samples'
+      />
 
       <div className='container'>
         <section className='py-8'>

@@ -2,6 +2,7 @@ import matter from 'gray-matter';
 import Head from 'next/head';
 import React from 'react';
 import Article from '../../components/article';
+import Breadcrumb from '../../components/breadcrumb';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
 import { ArticleData } from '../../models/common.model';
@@ -41,6 +42,12 @@ export default function CaseStudy(props: {
         description={props.articleData.meta.description}
         ogType='article'
         url={`/${props.slug}/`}
+      />
+
+      <Breadcrumb
+        currentTitle={props.articleData.title}
+        parentLink='/case-studies/'
+        parentTitle='Case studies'
       />
 
       <Article

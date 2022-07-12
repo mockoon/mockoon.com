@@ -1,8 +1,9 @@
 import matter from 'gray-matter';
 import Head from 'next/head';
 import Link from 'next/link';
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import Article from '../../components/article';
+import Breadcrumb from '../../components/breadcrumb';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
 import { ArticleData } from '../../models/common.model';
@@ -44,6 +45,13 @@ export default function Tutorial(props: {
         url={`/${props.slug}/`}
         image={`tutorials/${props.articleData.image}`}
       />
+
+      <Breadcrumb
+        currentTitle={props.articleData.title}
+        parentLink='/tutorials/'
+        parentTitle='Tutorials'
+      />
+
       <Article
         slug={props.slug}
         path='tutorials'

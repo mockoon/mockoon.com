@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Fragment } from 'react';
 import Article from '../../components/article';
+import Breadcrumb from '../../components/breadcrumb';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
 import { ArticleData } from '../../models/common.model';
@@ -43,6 +44,13 @@ export default function ArticlePage(props: {
         url={`/${props.slug}/`}
         image={`articles/${props.articleData.image}`}
       />
+
+      <Breadcrumb
+        currentTitle={props.articleData.title}
+        parentLink='/articles/'
+        parentTitle='Articles'
+      />
+
       <Article
         slug={props.slug}
         path='articles'

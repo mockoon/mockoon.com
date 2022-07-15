@@ -39,7 +39,7 @@ const Contact: FunctionComponent = function () {
                     target='_blank'
                     rel='noopener'
                   >
-                    Forum
+                    GitHub
                   </a>
                   &nbsp;|&nbsp;
                   <a
@@ -64,9 +64,9 @@ const Contact: FunctionComponent = function () {
                 </div>
                 <h3 className='text-center'>Enterprise support</h3>
                 <p className='px-2 text-center text-muted'>
-                  Get an official maintainer to join your team on the platform
-                  of your choice (Slack, Zoom, etc.) to answer support requests
-                  or any questions you may have about the project.
+                  Get enterprise-grade support with help from an official
+                  maintainer to answer support requests or any questions you may
+                  have about the project.
                 </p>
                 <div className='justify-content-center align-items-center d-flex flex-row '>
                   <a href='/enterprise/'>Get enterprise support</a>

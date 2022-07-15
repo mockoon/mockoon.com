@@ -147,12 +147,12 @@ const Footer: FunctionComponent<{
               </li>
               <li className='mb-2'>
                 <Link href='/contact/'>
-                  <a className='text-reset'>Request support</a>
+                  <a className='text-reset'>Get support</a>
                 </Link>
               </li>
               <li className='mb-2'>
                 <Link href='/enterprise/'>
-                  <a className='text-reset'>Enterprise</a>
+                  <a className='text-reset'>Enterprise plans</a>
                 </Link>
               </li>
               <li className='mb-2'>

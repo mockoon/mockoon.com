@@ -11,12 +11,17 @@ const faq: AccordionData = [
     title: 'Enterprise support',
     items: [
       {
-        question: 'What dedicated support means?',
+        question: 'What is asynchronous support?',
         answer:
-          'One of the official maintainers will join and be available on the platform of your choice (email, Slack, etc.) to answer support requests and any questions you may have about the project.'
+          'One of the official maintainers will join and be available through the platform of your choice (email, Slack, etc.) to answer support requests and any questions you may have about the project by writing. This line of support is subject to our opening hours (see below).'
       },
       {
-        question: 'Bug reports prioritization',
+        question: 'How does video support works?',
+        answer:
+          'You will be able to schedule video meetings with one of the official maintainers through the platform of your choice (Zoom, Google Meet, etc.) to answer support requests and any questions you may have about the project.'
+      },
+      {
+        question: 'Priority handling of bug reports',
         answer:
           "Bug reports that you open, and confirmed as bugs, will be prioritized on the roadmap. However, this may not directly influence the rhythm of Mockoon's releases."
       },
@@ -100,7 +105,69 @@ const Enterprise: FunctionComponent = function () {
       <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
         <div className='container'>
           <div className='row gx-4'>
-            <div className='col-12 col-lg-4 offset-lg-2'>
+            <div className='col-12 col-lg-4'>
+              <div className='card shadow-lg mb-6 mb-lg-0'>
+                <div className='card-body'>
+                  <div className='text-center mb-3'>
+                    <span className='badge rounded-pill bg-primary-soft'>
+                      <span className='h6 text-uppercase'>
+                        Community support
+                      </span>
+                    </span>
+                  </div>
+
+                  <div className='d-flex justify-content-center mb-4'>
+                    <span className='price display-3 mb-0'>Free</span>
+                  </div>
+
+                  <div className='d-flex'>
+                    <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                      <i className='icon-check'></i>
+                    </div>
+
+                    <p>
+                      Available via{' '}
+                      <a
+                        href='https://github.com/mockoon/mockoon/discussions'
+                        target='_blank'
+                        rel='noopener'
+                      >
+                        GitHub
+                      </a>{' '}
+                      or{' '}
+                      <a
+                        href='https://discord.gg/MutRpsY5gE'
+                        target='_blank'
+                        rel='noopener'
+                      >
+                        Discord
+                      </a>
+                    </p>
+                  </div>
+                  <div className='d-flex'>
+                    <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                      <i className='icon-check'></i>
+                    </div>
+
+                    <p>
+                      Access to the{' '}
+                      <a href='/docs/latest/about/'>documentation</a> and{' '}
+                      <a href='/tutorials/'>tutorials</a>
+                    </p>
+                  </div>
+                  <div className='d-flex'>
+                    <div className='badge badge-rounded-circle bg-secondary-soft mt-1 me-4'>
+                      <i className='icon-remove'></i>
+                    </div>
+
+                    <p className='mb-5'>
+                      No guarantee of support or problem resolution
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='col-12 col-lg-4'>
               <div className='card shadow-lg mb-6 mb-lg-0'>
                 <div className='card-body'>
                   <div className='text-center mb-3'>
@@ -113,11 +180,7 @@ const Enterprise: FunctionComponent = function () {
 
                   <div className='d-flex justify-content-center mb-4'>
                     <span className='h3 mb-0 mt-1'>$</span>
-                    <span
-                      className='price display-3 mb-0'
-                      data-annual='0'
-                      data-monthly='0'
-                    >
+                    <span className='price display-3 mb-0' data-monthly='500'>
                       500
                     </span>
                     <span className='h3 align-self-end mb-1'>/mo</span>
@@ -128,14 +191,30 @@ const Enterprise: FunctionComponent = function () {
                       <i className='icon-check'></i>
                     </div>
 
-                    <p>Dedicated support</p>
+                    <p>Unlimited asynchronous support (email, Slack, etc.)</p>
                   </div>
                   <div className='d-flex'>
                     <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
                       <i className='icon-check'></i>
                     </div>
 
-                    <p className='mb-5'>Prioritized bug reports</p>
+                    <p>Video support and training (up to 4 hours per month)</p>
+                  </div>
+                  <div className='d-flex'>
+                    <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                      <i className='icon-check'></i>
+                    </div>
+
+                    <p className='mb-5'>Priority handling of bug reports</p>
+                  </div>
+                  <div className='d-flex'>
+                    <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                      <i className='icon-check'></i>
+                    </div>
+
+                    <p className='mb-5'>
+                      Supports our work on the open-source tools
+                    </p>
                   </div>
 
                   <a href='#form' className='btn w-100 btn-primary'>
@@ -162,7 +241,7 @@ const Enterprise: FunctionComponent = function () {
                       <i className='icon-check'></i>
                     </div>
 
-                    <p>Mockoon's tool deployment and management</p>
+                    <p>Mockoon tools deployment and management</p>
                   </div>
                   <div className='d-flex'>
                     <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>

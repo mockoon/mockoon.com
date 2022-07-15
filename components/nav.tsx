@@ -102,20 +102,7 @@ const Nav: FunctionComponent = function () {
                 </a>
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link href='/blog/'>
-                <a
-                  className={`nav-link ${
-                    router.pathname === '/blog' ||
-                    router.pathname === '/blog/[slug]'
-                      ? 'active'
-                      : ''
-                  }`}
-                >
-                  Blog
-                </a>
-              </Link>
-            </li>
+
             <li className='nav-item'>
               <Link href='/enterprise/'>
                 <a
@@ -123,7 +110,7 @@ const Nav: FunctionComponent = function () {
                     router.pathname === '/enterprise' ? 'active' : ''
                   }`}
                 >
-                  Enterprise
+                  Enterprise plans
                 </a>
               </Link>
             </li>

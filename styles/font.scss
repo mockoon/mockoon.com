@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'mockoon';
-  src: url('/fonts/mockoon.ttf?wmyo4t') format('truetype');
+  src: url('/fonts/mockoon.ttf?auad7v') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -48,6 +48,9 @@
 }
 .icon-copy:before {
   content: '\e900';
+}
+.icon-remove:before {
+  content: '\e903';
 }
 .icon-check:before {
   content: '\e902';

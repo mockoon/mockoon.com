@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Accordion from '../components/accordion';
 import Hero from '../components/hero';
@@ -62,29 +62,31 @@ const Enterprise: FunctionComponent = function () {
   const {
     register: registerFormField,
     handleSubmit,
-    setError,
     reset,
-    clearErrors,
-    formState: { errors, isSubmitting, isSubmitSuccessful }
+    formState: { isSubmitting }
   } = useForm();
+  const [apiError, setApiError] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const onSubmit = async (data) => {
     if (!data['work_address']) {
       delete data['work_address'];
 
       try {
-        await fetch(process.env.NEXT_PUBLIC_SEND_EMAIL_API, {
+        const response = await fetch(process.env.NEXT_PUBLIC_SEND_EMAIL_API, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
-        reset();
+
+        if (response.status === 200) {
+          setSubmitSuccess(true);
+          reset();
+        } else {
+          setApiError(true);
+        }
       } catch {
-        setError('error', {
-          type: 'manual',
-          message:
-            'Something went wrong! We are sorry for the inconvenience. You can contact us manually by email at team@mockoon.com.'
-        });
+        setApiError(true);
       }
     }
   };
@@ -300,7 +302,8 @@ const Enterprise: FunctionComponent = function () {
             <div className='col-12 col-lg-6'>
               <form
                 onSubmit={(e) => {
-                  clearErrors();
+                  setSubmitSuccess(false);
+                  setApiError(false);
                   handleSubmit(onSubmit)(e);
                 }}
               >
@@ -393,14 +396,15 @@ const Enterprise: FunctionComponent = function () {
                   placeholder='Your address here'
                   {...registerFormField('work_address')}
                 ></input>
-                {errors.error && (
+                {apiError && (
                   <div className='row justify-content-center'>
                     <div className='col-auto text-danger text-center fw-bold pb-4'>
-                      {errors.error.message}
+                      Something went wrong! We are sorry for the inconvenience.
+                      You can contact us manually by email at team@mockoon.com
                     </div>
                   </div>
                 )}
-                {isSubmitSuccessful && (
+                {submitSuccess && (
                   <div className='row justify-content-center'>
                     <div className='col-auto text-success text-center fw-bold pb-4'>
                       Message sent! We will get back to you shortly.

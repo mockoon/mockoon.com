@@ -11,11 +11,11 @@ meta:
   description: 'Take your mock APIs in all your headless and automated environments with the new CLI: servers, CI, GitHub Action, WSL, etc.'
 ---
 
-After months of work, Mockoon CLI is [available in beta](https://github.com/mockoon/mockoon/blob/main/packages/cli) 🚀. You can now deploy your mock APIs in all your headless and automated environments. A server, your favorite CI environment, in a GitHub Action, in the Windows Subsystem Linux, you name it!
+After months of work, Mockoon CLI is [available in beta](https://github.com/mockoon/mockoon/tree/main/packages/cli) 🚀. You can now deploy your mock APIs in all your headless and automated environments. A server, your favorite CI environment, in a GitHub Action, in the Windows Subsystem Linux, you name it!
 
 Like the main application, the CLI is free and open-source. It supports all of Mockoon features, and we tried to make it as fast as possible.
 
-You are one command away to using it. Check the [installation instructions](https://github.com/mockoon/mockoon/blob/main/packages/cli#installation), and most of all, let us know what you think and what we could improve on the [official forum](https://github.com/mockoon/mockoon/discussions).
+You are one command away to using it. Check the [installation instructions](https://github.com/mockoon/mockoon/tree/main/packages/cli#installation), and most of all, let us know what you think and what we could improve on the [official forum](https://github.com/mockoon/mockoon/discussions).
 
 ## How does it work
 
@@ -48,4 +48,4 @@ We were initially planning a beta release for November. It seems the initial est
 
 We hope that you will love using this tool as much as we loved creating it!
 
-One of the oldest requests from our users ([September 2018](https://github.com/mockoon/cli/issues/1)! 😱) is now closed, but this is just the beginning! More improvements are already in the pipe. Stay tuned!
+One of the oldest requests from our users (September 2018! 😱) is now closed, but this is just the beginning! More improvements are already in the pipe. Stay tuned!

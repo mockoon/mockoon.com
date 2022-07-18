@@ -21,7 +21,7 @@ You may already have access to the internal or third-party API you want to call,
 
 > To learn more about how to set up your first mock API with Mockoon, head over to the [Getting started tutorial](tutorials:getting-started).
 
-For the rest of the tutorial, we will simulate a call to the GitHub API by creating a fake [GET /users/:username endpoint](https://docs.github.com/en/rest/reference/users#get-a-user).
+For the rest of the tutorial, we will simulate a call to the GitHub API by creating a fake [GET /users/:username endpoint](https://docs.github.com/en/rest/users#get-a-user).
 
 In Mockoon, create a `GET /users/:username` API endpoint that returns a payload containing a fake user object:
 

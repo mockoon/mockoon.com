@@ -10,7 +10,7 @@ import { orderArticles } from '../../utils/utils';
 const meta = {
   title: "Mockoon's API related articles",
   description:
-    'Learn more about HTTP, APIs, REST servers, and API mocking with this series of articles and guides'
+    'Learn more about APIs, REST API servers, API mocking, HTTP, headers, status codes, methods, proxies and more, with this series of articles and guides'
 };
 
 export async function getStaticProps() {

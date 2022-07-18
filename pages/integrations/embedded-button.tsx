@@ -24,7 +24,7 @@ const EmbeddedButton: FunctionComponent = function () {
     '.mockoon-btn{display:inline-block;padding:5px;border-radius:5px;border:1px solid #d8dbdf;background-color:#5066901a;color:#506690;text-decoration:none;white-space:nowrap;}.mockoon-btn:hover{border:1px solid #d8dbdf;background-color:#50669026;color:#506690;text-decoration:none;}.mockoon-btn img{width:35px;margin: 0 5px}';
   let buttonCode = `<style>${btnStyles}</style><a href="${urlPrefix}${
     watch('dataURL') || '{data_URL}'
-  }"><img src="https://mockoon.com/images/logo-eyes.svg" width="50" />${watch(
+  }"><img src="https://mockoon.com/images/logo-eyes.svg" width="50" alt="Mockoon logo" />${watch(
     'btnText'
   )}</a>`;
 
@@ -35,13 +35,13 @@ const EmbeddedButton: FunctionComponent = function () {
   return (
     <Layout footerBanner='download'>
       <Meta
-        title='Mockoon button'
-        description='Add a button to your API website or documentation to launch your mock API in Mockoon in one click'
+        title='One-click API mock launch button'
+        description='Add a button to your API website or documentation to launch your mock API definitions in Mockoon desktop application or CLI in one click'
         ogType='article'
       />
       <Hero
-        title='Mockoon button'
-        subtitle='Add a one-click API mocking button to your API documentation'
+        title='One-click API mock launch button'
+        subtitle='Add a button to your API website or documentation to launch your mock API definitions in Mockoon desktop application or CLI in one click'
       />
 
       <section className='py-8 py-md-11'>
@@ -106,7 +106,7 @@ const EmbeddedButton: FunctionComponent = function () {
                       href={`${urlPrefix}${watch('dataURL') || '{data_URL}'}`}
                       className='mockoon-btn'
                     >
-                      <img src='/images/logo-eyes.svg' />
+                      <img src='/images/logo-eyes.svg' alt='Mockoon logo' />
                       {watch('btnText')}
                     </a>
                   </div>

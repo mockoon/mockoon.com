@@ -7,6 +7,14 @@ const rootUrl = 'https://mockoon.com';
 
 const Meta: FunctionComponent<MetaData> = function (props) {
   const router = useRouter();
+  console.log(router.pathname);
+  const ogURL =
+    rootUrl +
+    (props.url
+      ? props.url
+      : router.pathname === '/'
+      ? ''
+      : router.pathname + '/');
 
   return (
     <Head>
@@ -18,10 +26,7 @@ const Meta: FunctionComponent<MetaData> = function (props) {
           'https://mockoon.com/images/' + (props.image || 'og-image.png')
         }
       />
-      <meta
-        property='og:url'
-        content={rootUrl + (props.url ? props.url : router.pathname + '/')}
-      />
+      <meta property='og:url' content={ogURL} />
       <meta property='og:title' content={'Mockoon - ' + props.title} />
       <meta property='og:description' content={props.description} />
       <meta property='og:type' content={props.ogType || 'website'} />

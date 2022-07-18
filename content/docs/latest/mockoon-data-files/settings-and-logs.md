@@ -2,7 +2,7 @@
 title: Settings and logs
 meta:
   title: Settings and logs
-  description: Learn where Mockoon's settings and log files are located for each operating system
+  description: Learn where Mockoon's desktop application settings and log files are located for each operating system
 order: 1140
 ---
 

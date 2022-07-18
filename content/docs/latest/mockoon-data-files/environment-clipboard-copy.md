@@ -2,7 +2,7 @@
 title: Copy data to the clipboard
 meta:
   title: Copy data to the clipboard
-  description: Learn how to easily copy or share your environments with your team by copying them to the clipboard
+  description: Learn how to easily share your Mockoon's mock API JSON definitions with your team by copying them to the clipboard and importing them in the application
 order: 1120
 ---
 

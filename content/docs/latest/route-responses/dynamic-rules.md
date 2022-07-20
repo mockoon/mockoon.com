@@ -56,7 +56,7 @@ Rules have four parts:
 
 In the dropdown menu you can choose between:
 
-- the **body** value (full raw content or one of it properties if request's `Content-Type` is either `application/json`, `application/x-www-form-urlencoded`, `application/xml` or `text/xml`).
+- the **body** value (full raw content or one of its properties if request's `Content-Type` is either `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`).
 - the value of a **header**.
 - the value of a **cookie**.
 - the value of a **route parameter**.
@@ -71,7 +71,9 @@ Depending on the **target**, the way to access properties may be different:
 
 - **body**:
   - keep empty to match against the full raw body content.
-  - use a path to access one of its properties. The syntax is based on an [object-path](https://www.npmjs.com/package/object-path) like `users.0.name`. This is compatible with request's bodies of `Content-Type` `application/json`, `application/x-www-form-urlencoded`, `application/xml` or `text/xml`. Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties.
+  - use a path to access one of its properties. The syntax is based on an [object-path](https://www.npmjs.com/package/object-path) like `users.0.name`. This is compatible with request's bodies of `Content-Type` `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`.  
+    _Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties._  
+    _Please also note that `multipart/form-data` only supports fields. Uploaded files will be ignored._
 - **headers**: a header name like `Accept` or `Content-Type`.
 - **cookies**: the cookie name like `Session-id`.
 - **route param**: a route param name without the colon (":"), `:userId` becoming `userId`.

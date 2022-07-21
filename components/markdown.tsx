@@ -65,17 +65,33 @@ const Markdown: FunctionComponent<{
           const [match, width, height] =
             /\{([0-9]{1,})x([0-9]{1,})\}/gi.exec(alt) || [];
 
+          const hasSub = alt.includes('#sub#');
+          const altCleaned = alt.replace(match, '').replace('#sub#', '');
+
           return (
-            <img
-              alt={alt.replace(match, '')}
-              src={src as string}
-              width={width}
-              height={height}
-              className='img-fluid mx-auto d-block my-4 rounded'
-            />
+            <>
+              <img
+                alt={altCleaned}
+                src={src as string}
+                width={width}
+                height={height}
+                className={`img-fluid mx-auto d-block mt-8 ${
+                  hasSub ? 'mb-4' : 'mb-8'
+                } rounded`}
+              />
+              {hasSub && (
+                <span className='d-block fs-6 text-center text-muted mb-8'>
+                  {altCleaned}
+                </span>
+              )}
+            </>
           );
         },
-        table: ({ children }) => <table className='table'>{children}</table>,
+        table: ({ children }) => (
+          <div className='card shadow-light-lg p-4 mt-4'>
+            <table className='table'>{children}</table>
+          </div>
+        ),
         blockquote: (content) => {
           const value = (content?.node?.children?.[1] as any)?.children?.[0]
             ?.value;

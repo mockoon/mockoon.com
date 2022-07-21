@@ -99,6 +99,11 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
+                <Link href='/compare/'>
+                  <a className='text-reset'>Comparisons</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/faq/'>
                   <a className='text-reset'>FAQ</a>
                 </Link>
@@ -110,7 +115,7 @@ const Footer: FunctionComponent<{
               </li>
               <li className='mb-2'>
                 <Link href='/use-cases/'>
-                  <a className='text-reset'>Use cases</a>
+                  <a className='text-reset'>API mocking use cases</a>
                 </Link>
               </li>
               <li className='mb-2'>
@@ -125,10 +130,15 @@ const Footer: FunctionComponent<{
 
             <ul className='list-unstyled text-muted'>
               <li className='mb-2'>
+                <Link href='/cli/'>
+                  <a className='text-reset'>CLI</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/mock-samples/category/all/'>
                   <a className='text-reset'>Mock samples</a>
                 </Link>
-              </li>{' '}
+              </li>
               <li className='mb-2'>
                 <Link href='/integrations/embedded-button/'>
                   <a className='text-reset'>Mockoon button</a>

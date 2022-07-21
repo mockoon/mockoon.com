@@ -1,7 +1,7 @@
 import { Children, createElement, FunctionComponent } from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
-import gfm from 'remark-gfm';
+import remarkGfm from 'remark-gfm';
 import { linkTarget, transformLinkUri } from '../utils/url';
 import CodeBlock from './code-block';
 import Quotation from './quotation';
@@ -45,7 +45,7 @@ const Markdown: FunctionComponent<{
     <ReactMarkdown
       children={props.body}
       rehypePlugins={[rehypeRaw]}
-      plugins={[gfm]}
+      remarkPlugins={[remarkGfm]}
       components={{
         code: ({ node, inline, className, children, ...props }) => {
           const match = /language-(\w+)/.exec(className || '');

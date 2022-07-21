@@ -1,12 +1,14 @@
 import Head from 'next/head';
-import React, { Fragment, FunctionComponent } from 'react';
+import Script from 'next/script';
+import { Fragment, FunctionComponent } from 'react';
 import Footer from '../components/footer';
 import Nav from '../components/nav';
 import { FooterCTA } from '../models/common.model';
 
 const Layout: FunctionComponent<{
   footerBanner: FooterCTA;
-}> = function (props) {
+  children: JSX.Element | JSX.Element[];
+}> = function ({ footerBanner, children }) {
   return (
     <Fragment>
       <Head>
@@ -34,19 +36,19 @@ const Layout: FunctionComponent<{
         <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#252830' />
         <meta name='theme-color' content='#ffffff' />
 
-        <script
+        <Script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
-        ></script>
-        <script
+        ></Script>
+        <Script
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${process.env.NEXT_PUBLIC_ANALYTICS_ID}', { 'anonymize_ip': true });`
           }}
-        ></script>
+        ></Script>
       </Head>
       <Nav />
-      {props.children}
-      <Footer banner={props.footerBanner} />
+      {children}
+      <Footer banner={footerBanner} />
     </Fragment>
   );
 };

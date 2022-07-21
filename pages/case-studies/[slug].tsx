@@ -1,6 +1,5 @@
 import matter from 'gray-matter';
 import Head from 'next/head';
-import React from 'react';
 import Article from '../../components/article';
 import Breadcrumb from '../../components/breadcrumb';
 import Meta from '../../components/meta';

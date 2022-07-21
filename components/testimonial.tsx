@@ -1,4 +1,4 @@
-import { Fragment, FunctionComponent } from 'react';
+import React, { Fragment, FunctionComponent } from 'react';
 
 /**
  * Image must be 64x64
@@ -11,7 +11,7 @@ const Testimonial: FunctionComponent<{
   imgSrc: string;
   name: string;
   small?: boolean;
-  children: JSX.Element | JSX.Element[];
+  children: React.ReactNode;
 }> = function (props) {
   return (
     <Fragment>

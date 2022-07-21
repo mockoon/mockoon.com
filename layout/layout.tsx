@@ -7,7 +7,7 @@ import { FooterCTA } from '../models/common.model';
 
 const Layout: FunctionComponent<{
   footerBanner: FooterCTA;
-  children: JSX.Element | JSX.Element[];
+  children: React.ReactNode;
 }> = function ({ footerBanner, children }) {
   return (
     <Fragment>

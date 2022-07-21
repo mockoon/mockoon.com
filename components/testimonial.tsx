@@ -11,6 +11,7 @@ const Testimonial: FunctionComponent<{
   imgSrc: string;
   name: string;
   small?: boolean;
+  children: JSX.Element | JSX.Element[];
 }> = function (props) {
   return (
     <Fragment>

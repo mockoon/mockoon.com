@@ -7,7 +7,6 @@ const rootUrl = 'https://mockoon.com';
 
 const Meta: FunctionComponent<MetaData> = function (props) {
   const router = useRouter();
-  console.log(router.pathname);
   const ogURL =
     rootUrl +
     (props.url

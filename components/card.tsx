@@ -69,7 +69,11 @@ const Card: FunctionComponent<{
                       className={`btn-xs btn btn-primary-soft d-flex align-items-center ${
                         props.data.links?.length > 1 ? '' : 'mt-auto'
                       }`}
-                      style={{ color: synchronizedColors && props.borderColor }}
+                      style={{
+                        color: synchronizedColors
+                          ? props.borderColor
+                          : undefined
+                      }}
                     >
                       {link.icon && (
                         <span className='icon me-2'>

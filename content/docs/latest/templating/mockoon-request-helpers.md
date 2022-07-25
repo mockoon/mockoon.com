@@ -28,7 +28,9 @@ Mockoon offers the following helpers which can return information relative to th
 
 Get the value at a given `path` from the request body if the entering `Content-Type` is set to `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`.
 
-- The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path). Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties. Please also note that `multipart/form-data` only supports fields. Uploaded files will be ignored.
+- The `path` takes the following form `key.0.key.5.key` and is based on the [**object-path** library](https://www.npmjs.com/package/object-path). Properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
+  Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties.  
+  Please also note that `multipart/form-data` only supports fields. Uploaded files will be ignored.
 - Full objects or arrays can be retrieved by the helper.
 - The full request's raw body can also be fetched when the `path` is omitted (`{{body}}`) independently from the request's `Content-Type`.
 - If no value is present at the requested `path`, the default value will be used.
@@ -45,6 +47,7 @@ Get the value at a given `path` from the request body if the entering `Content-T
 ```handlebars
 {{body}}
 {{body 'path.to.property'}}
+{{body 'deep.property\.with\.dot'}}
 {{body 'path' 'default value'}}
 {{body 'path' 'default value' true}}
 ```
@@ -53,7 +56,9 @@ Get the value at a given `path` from the request body if the entering `Content-T
 
 Get the **raw** value at a given `path` from the request body if the entering `Content-Type` is set to `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`.
 
-- The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path). Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties. Please also note that `multipart/form-data` only supports fields. Uploaded files will be ignored.
+- The `path` takes the following form `key.0.key.5.key` and is based on the [**object-path** library](https://www.npmjs.com/package/object-path). Properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
+  Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties.  
+  Please also note that `multipart/form-data` only supports fields. Uploaded files will be ignored.
 - Full objects or arrays can be retrieved by the helper.
 - The full request's raw body can also be fetched when the `path` is omitted (`{{bodyRaw}}`) independently from the request's `Content-Type`.
 - If no value is present at the requested `path`, the default value will be used.
@@ -69,6 +74,7 @@ Get the **raw** value at a given `path` from the request body if the entering `C
 ```handlebars
 {{bodyRaw}}
 {{bodyRaw 'path.to.property'}}
+{{bodyRaw 'deep.property\.with\.dot'}}
 {{bodyRaw 'path' 'default value'}}
 
 {{#each (bodyRaw 'path.to.array.property' 'default value')}}

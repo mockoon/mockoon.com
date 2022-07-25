@@ -71,7 +71,7 @@ Depending on the **target**, the way to access properties may be different:
 
 - **body**:
   - keep empty to match against the full raw body content.
-  - use a path to access one of its properties. The syntax is based on an [object-path](https://www.npmjs.com/package/object-path) like `users.0.name`. This is compatible with request's bodies of `Content-Type` `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`.  
+  - use a path to access one of its properties. The syntax is based on the [object-path library](https://www.npmjs.com/package/object-path) like `users.0.name`. This is compatible with request's bodies of `Content-Type` `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`. Properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
     _Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties._  
     _Please also note that `multipart/form-data` only supports fields. Uploaded files will be ignored._
 - **headers**: a header name like `Accept` or `Content-Type`.

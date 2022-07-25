@@ -19,27 +19,29 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 |                     | [`someOf`](#someof) | [`multiply`](#multiply) | [`gte`](#gte)         |
 |                     | [`join`](#join)     | [`divide`](#divide)     | [`lt`](#lt)           |
 |                     | [`slice`](#slice)   | [`modulo`](#modulo)     | [`lte`](#lte)         |
-|                     | [`len`](#len)       | [`ceil`](#ceil)         | [`toFixed`](#toFixed) |
+|                     | [`len`](#len)       | [`ceil`](#ceil)         | [`toFixed`](#tofixed) |
 |                     |                     | [`floor`](#floor)       | [`round`](#round)     |
 
 | Strings                   |                           | Dates                             | Misc                            |
 | ------------------------- | ------------------------- | --------------------------------- | ------------------------------- |
-| [`int`](#int)             | [`uppercase`](#uppercase) | [`now`](#now)                     | [`newline`](#newline)           |
-| [`float`](#float)         | [`split`](#split)         | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)             |
-| [`includes`](#includes)   | [`stringify`](#stringify) | [`date`](#date)                   | [`base64Decode`](#base64decode) |
-| [`substr`](#substr)       | [`concat`](#concat)       | [`time`](#time)                   | [`objectId`](#objectid)         |
-| [`lowercase`](#lowercase) | [`indexOf`](#indexof)     |                                   | [`setVar`](#setvar)             |
+| [`includes`](#includes)   | [`stringify`](#stringify) | [`now`](#now)                     | [`newline`](#newline)           |
+| [`substr`](#substr)       | [`concat`](#concat)       | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)             |
+| [`lowercase`](#lowercase) | [`indexOf`](#indexof)     | [`date`](#date)                   | [`base64Decode`](#base64decode) |
+| [`uppercase`](#uppercase) |                           | [`time`](#time)                   | [`objectId`](#objectid)         |
+| [`split`](#split)         |                           |                                   | [`setVar`](#setvar)             |
 
 | [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                         |
 | --------------------------------------------------- | ----------------------------- | ----------------------- |
-| [`boolean`](#boolean)                               | [`street`](#street)           | [`phone`](#phone)       |
-| [`title`](#title)                                   | [`city`](#city)               | [`color`](#color)       |
-| [`firstName`](#firstname)                           | [`country`](#country)         | [`hexColor`](#hexcolor) |
-| [`lastName`](#lastname)                             | [`countryCode`](#countrycode) | [`guid`](#guid)         |
-| [`company`](#company)                               | [`zipcode`](#zipcode)         | [`ipv4`](#ipv4)         |
-| [`domain`](#domain)                                 | [`postcode`](#postcode)       | [`ipv6`](#ipv6)         |
-| [`tld`](#tld)                                       | [`lat`](#lat)                 | [`lorem`](#lorem)       |
-| [`email`](#email)                                   | [`long`](#long)               |                         |
+| [`int`](#int)                                       | [`street`](#street)           | [`hexColor`](#hexcolor) |
+| [`float`](#float)                                   | [`city`](#city)               | [`guid`](#guid)         |
+| [`boolean`](#boolean)                               | [`country`](#country)         | [`ipv4`](#ipv4)         |
+| [`title`](#title)                                   | [`countryCode`](#countrycode) | [`ipv6`](#ipv6)         |
+| [`firstName`](#firstname)                           | [`zipcode`](#zipcode)         | [`lorem`](#lorem)       |
+| [`lastName`](#lastname)                             | [`postcode`](#postcode)       |                         |
+| [`company`](#company)                               | [`lat`](#lat)                 |                         |
+| [`domain`](#domain)                                 | [`long`](#long)               |                         |
+| [`tld`](#tld)                                       | [`phone`](#phone)             |                         |
+| [`email`](#email)                                   | [`color`](#color)             |                         |
 
 ## `repeat`
 
@@ -539,36 +541,6 @@ declare a variable in a block helper:
 {{/repeat}}
 ```
 
-## `int`
-
-Return a random integer. Alias of `faker 'datatype.number`.
-
-| Arguments (ordered) | Type   | Description |
-| ------------------- | ------ | ----------- |
-| 0                   | number | Minimum     |
-| 1                   | number | Maximum     |
-
-**Examples**
-
-```handlebars
-{{int 0 100}}
-```
-
-## `float`
-
-Return a random float. Alias of `faker 'datatype.number` with precision = 10.
-
-| Arguments (ordered) | Type   | Description |
-| ------------------- | ------ | ----------- |
-| 0                   | number | Minimum     |
-| 1                   | number | Maximum     |
-
-**Examples**
-
-```handlebars
-{{float 0 100}}
-```
-
 ## `includes`
 
 Search whether a string can be found in another string and returns the appropriate boolean.
@@ -797,6 +769,36 @@ Return a random formatted (using [date-fns package format](https://date-fns.org/
 
 ```handlebars
 {{time '09:00' '10:00' 'HH:mm'}}
+```
+
+## `int`
+
+Return a random integer. Alias of `faker 'datatype.number`.
+
+| Arguments (ordered) | Type   | Description |
+| ------------------- | ------ | ----------- |
+| 0                   | number | Minimum     |
+| 1                   | number | Maximum     |
+
+**Examples**
+
+```handlebars
+{{int 0 100}}
+```
+
+## `float`
+
+Return a random float. Alias of `faker 'datatype.number` with precision = 10.
+
+| Arguments (ordered) | Type   | Description |
+| ------------------- | ------ | ----------- |
+| 0                   | number | Minimum     |
+| 1                   | number | Maximum     |
+
+**Examples**
+
+```handlebars
+{{float 0 100}}
 ```
 
 ## `boolean`

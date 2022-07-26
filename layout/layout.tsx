@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Script from 'next/script';
 import { Fragment, FunctionComponent } from 'react';
 import Footer from '../components/footer';
 import Nav from '../components/nav';
@@ -35,16 +34,6 @@ const Layout: FunctionComponent<{
         <link rel='manifest' href='/site.webmanifest' />
         <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#252830' />
         <meta name='theme-color' content='#ffffff' />
-
-        <Script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
-        ></Script>
-        <Script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${process.env.NEXT_PUBLIC_ANALYTICS_ID}', { 'anonymize_ip': true });`
-          }}
-        ></Script>
       </Head>
       <Nav />
       {children}

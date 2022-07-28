@@ -1,9 +1,10 @@
 import { Fragment, FunctionComponent, useState } from 'react';
 import GitHub from './github';
-const version = require('../package.json').version;
 declare let gtag: Function;
 
-const DownloadSection: FunctionComponent = function () {
+const DownloadSection: FunctionComponent<{ version: string }> = function ({
+  version
+}) {
   const [showSupport, setShowSupport] = useState(false);
 
   const postDownload = (platform: string) => {
@@ -170,10 +171,7 @@ const DownloadSection: FunctionComponent = function () {
       <div className='row'>
         <div className='col-12 text-center'>
           <p className='text-center'>
-            <a
-              className='text-gray-600'
-              href={`https://github.com/mockoon/mockoon/releases/tag/v${version}`}
-            >
+            <a className='text-gray-600' href={`/releases/desktop/${version}/`}>
               See the v{version} changelog
             </a>
           </p>

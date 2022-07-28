@@ -12,9 +12,7 @@ import {
   DocsNavItem,
   DocsTopicData
 } from '../../models/docs.model';
-import { sortByOrder } from '../../utils/utils';
-
-const latestVersion = require('../../package.json').version;
+import { getDesktopLatestVersion, sortByOrder } from '../../utils/utils';
 
 /**
  * Browse the ./content/docs/... folder and list all the topics.
@@ -145,6 +143,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
+      latestVersion: await getDesktopLatestVersion(),
       slug: `docs/${params.slug.join('/')}`,
       navItems,
       versions: docsData.versions,
@@ -155,6 +154,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Docs(props: {
+  latestVersion: string;
   slug: string;
   navItems: DocsNavData;
   topicData: DocsTopicData;
@@ -172,7 +172,7 @@ export default function Docs(props: {
   const versionsMenu = sortedVersions.map((version: string) => {
     let label = version;
     if (version === 'latest') {
-      label = `v${latestVersion} (${version})`;
+      label = `v${props.latestVersion} (${version})`;
     }
 
     if (version === 'v1.7.0') {

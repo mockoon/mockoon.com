@@ -52,7 +52,7 @@ Mockoon is still, after five years, an open-source tool built by volunteer maint
 
 So, to continue working on this project, we recently started looking for sponsors. And we were excited to announce in July that Mockoon was chosen by AppWrite as the first sponsored open-source project in their [OSS Fund](https://dev.to/appwrite/appwrite-oss-fund-sponsors-mockoon-119k). AppWrite is now our first Platinum sponsor 💪
 
-[![Appwrite logo{300x86}](/images/sponsors/appwrite-300.png)](https://appwrite.io/)
+[![Appwrite logo{300x64}](/images/sponsors/appwrite-300.png)](https://appwrite.io/)
 
 If you like our application, please consider sponsoring us too and join all the [Sponsors and Backers](https://github.com/mockoon/mockoon/blob/main/backers.md) who helped this project over time!
 

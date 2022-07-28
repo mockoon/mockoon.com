@@ -1,13 +1,14 @@
 {
   "name": "mockoon-com",
-  "version": "1.20.0",
+  "version": "1.0.0",
   "description": "Mockoon app website repository",
   "main": "index.js",
   "scripts": {
-    "release": "git checkout -b release/next && npm version minor --git-tag-version=false && cross-var cp -r ./content/docs/latest/ ./content/docs/v$npm_package_version && git add . && git commit -m \"Prepare new release\"",
+    "release": "git checkout -b release/next && node ./scripts/new-release.js && git add . && git commit -m \"Prepare new release\"",
+    "imagesize": "node ./scripts/markdown-image-size.js",
     "dev": "cross-env NODE_OPTIONS='--inspect' next",
     "build": "next build",
-    "postbuild": "next-sitemap --config next-sitemap.config.js",
+    "postbuild": "next-sitemap --config next-sitemap.config.js && cp -R ./content/releases/desktop/ ./public/desktop-changelogs-markdown",
     "export": "npm run build && next export",
     "start": "next start",
     "deploy": "npm run export && firebase deploy --token \"$FIREBASE_TOKEN\" --only hosting"
@@ -59,6 +60,7 @@
     "@types/semver": "^7.3.10",
     "@types/webpack": "^5.28.0",
     "@types/webpack-env": "^1.17.0",
+    "axios": "^0.27.2",
     "cross-env": "^7.0.3",
     "cross-var": "^1.1.0",
     "firebase-tools": "^11.3.0",

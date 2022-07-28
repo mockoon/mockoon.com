@@ -1,3 +1,9 @@
+/**
+ * Add the image size to all markdown image tags:
+ * ![alt text](/images/x/y/z.png)
+ * --> ![alt text{5000x5000}](/images/x/y/z.png)
+ */
+
 const imageSize = require('image-size');
 const { readFileSync, writeFileSync } = require('fs');
 var glob = require('glob');
@@ -10,7 +16,7 @@ glob('./content/**/*.md', function (err, files) {
   files.forEach((file) => {
     console.log('\n', file);
     let fileContent = readFileSync(file).toString();
-    const regex = /\!(\[.*\])\((\/images.*)\)/g;
+    const regex = /\!(\[.*\])\((\/images[0-9A-Za-z\_\-\.\/]{0,})\)/g;
     let matches = fileContent.matchAll(regex);
 
     for (const match of matches) {

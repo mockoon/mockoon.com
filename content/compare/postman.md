@@ -19,7 +19,7 @@ From a powerful templating system to generate dynamic and realistic mock data to
 
 > What is API mocking for? Discover the different [use cases](/use-cases/) or read our [API mocking guide](/articles/what-is-api-mocking/).
 
-![#sub#Postman (left) and Mockoon (right) UIs side by side](/images/compare/comparison-mockoon-postman-screenshot.png)
+![#sub#Postman (left) and Mockoon (right) UIs side by side{1600x467}](/images/compare/comparison-mockoon-postman-screenshot.png)
 
 ## Features comparison
 

@@ -3,8 +3,15 @@ import DownloadSection from '../components/download-section';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Layout from '../layout/layout';
+import { getDesktopLatestVersion } from '../utils/utils';
 
-const Download: FunctionComponent = function () {
+export async function getStaticProps() {
+  return { props: { version: await getDesktopLatestVersion() } };
+}
+
+const Download: FunctionComponent<{ version: string }> = function ({
+  version
+}) {
   return (
     <Layout footerBanner='newsletter'>
       <Meta
@@ -18,7 +25,7 @@ const Download: FunctionComponent = function () {
       />
       <section className='pb-8'>
         <div className='container'>
-          <DownloadSection />
+          <DownloadSection version={version} />
         </div>
       </section>
       <section className='py-5'>

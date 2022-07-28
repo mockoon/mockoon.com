@@ -73,6 +73,11 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
+                <Link href='/use-cases/'>
+                  <a className='text-reset'>API mocking use cases</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/tutorials/'>
                   <a className='text-reset'>View all tutorials →</a>
                 </Link>
@@ -84,13 +89,28 @@ const Footer: FunctionComponent<{
 
             <ul className='list-unstyled text-muted'>
               <li className='mb-2'>
-                <Link href='/tutorials/'>
-                  <a className='text-reset'>Tutorials</a>
+                <Link href='/docs/latest/about/'>
+                  <a className='text-reset'>Docs</a>
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/docs/latest/about/'>
-                  <a className='text-reset'>Docs</a>
+                <Link href='/faq/'>
+                  <a className='text-reset'>FAQ</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/blog/'>
+                  <a className='text-reset'>Blog</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/releases/desktop/'>
+                  <a className='text-reset'>Releases</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/tutorials/'>
+                  <a className='text-reset'>Tutorials</a>
                 </Link>
               </li>
               <li className='mb-2'>
@@ -104,23 +124,8 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/faq/'>
-                  <a className='text-reset'>FAQ</a>
-                </Link>
-              </li>
-              <li className='mb-2'>
                 <Link href='/case-studies/'>
                   <a className='text-reset'>Case studies</a>
-                </Link>
-              </li>
-              <li className='mb-2'>
-                <Link href='/use-cases/'>
-                  <a className='text-reset'>API mocking use cases</a>
-                </Link>
-              </li>
-              <li className='mb-2'>
-                <Link href='/blog/'>
-                  <a className='text-reset'>Blog</a>
                 </Link>
               </li>
             </ul>

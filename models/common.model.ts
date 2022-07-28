@@ -46,10 +46,10 @@ export type CardData = {
 export type FooterCTA = 'newsletter' | 'contact' | 'download';
 
 export type ArticleData = {
-  title: string;
-  excerpt: string;
+  title?: string;
+  excerpt?: string;
   date?: string;
-  meta: MetaData;
+  meta?: MetaData;
   // canonical URl if different
   canonical?: string;
   image?: string;
@@ -82,6 +82,12 @@ export type ArticleData = {
 export type ArticleList = {
   data: ArticleData;
   slug: string;
+}[];
+
+export type ReleaseList = {
+  version: string;
+  data: ArticleData;
+  content: string;
 }[];
 
 export type QuotationData = {

@@ -27,7 +27,7 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 | [`includes`](#includes)   | [`stringify`](#stringify) | [`now`](#now)                     | [`newline`](#newline)           |
 | [`substr`](#substr)       | [`concat`](#concat)       | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)             |
 | [`lowercase`](#lowercase) | [`indexOf`](#indexof)     | [`date`](#date)                   | [`base64Decode`](#base64decode) |
-| [`uppercase`](#uppercase) |                           | [`time`](#time)                   | [`objectId`](#objectid)         |
+| [`uppercase`](#uppercase) | [`parseInt`](#parseint)   | [`time`](#time)                   | [`objectId`](#objectid)         |
 | [`split`](#split)         |                           |                                   | [`setVar`](#setvar)             |
 
 | [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                         |
@@ -693,6 +693,20 @@ Return the index of the searched 'data' inside the string. A last parameter (num
 {{indexOf 'Some data' 'data' 0}}
 
 result: 5
+```
+
+## `parseInt`
+
+Parse a number from a string.
+
+| Arguments (ordered) | Type   | Description     |
+| ------------------- | ------ | --------------- |
+| 0                   | string | String to parse |
+
+**Examples**
+
+```handlebars
+{{parseInt '10'}}
 ```
 
 ## `now`

@@ -1,6 +1,6 @@
 ---
 title: Celebrating 4000 GitHub stars 🎉
-excerpt: Let's celebrate this milestone by doing a recap of Mockoon's past year's news and announcements
+excerpt: Let's celebrates this milestone by doing a recap of Mockoon's past year's news, announcements, new features and sponsors
 date: '2022-07-21'
 image: mockoon-celebrating-4000-github-stars.png
 imageAlt: Mockoon user interface
@@ -8,7 +8,7 @@ imageWidth: 1200
 imageHeight: 400
 meta:
   title: Celebrating 4000 GitHub stars 🎉
-  description: Let's celebrate this milestone by doing a recap of Mockoon's past year's news and announcements
+  description: Let's celebrates this milestone by doing a recap of Mockoon's past year's news, announcements, new features and sponsors
 ---
 
 Mockoon reached **4000 stargazers on GitHub** 🎉. We would like to thank our awesome community for following us since the beginning and recommending Mockoon to their friends and coworkers!

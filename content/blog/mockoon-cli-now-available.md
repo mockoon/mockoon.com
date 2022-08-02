@@ -35,7 +35,7 @@ It's also compatible with your data files in an older format as it automatically
 
 We chose to create an [NPM package](https://www.npmjs.com/package/@mockoon/cli) as it is a widely used and well-known format. It's also the technology we know best, and we wanted to be sure to create something simple to use, fast and lightweight.
 
-Before actually working on the CLI, we needed first to extract a lot of code from the main application into a [new library](https://github.com/mockoon/mockoon/blob/main/packages/commons). Luckily, this part of the main application was already relatively independent. But we still had some challenges and learned a lot about creating a Typescript library 😄.
+Before actually working on the CLI, we needed first to extract a lot of code from the main application into a [new library](https://github.com/mockoon/mockoon/tree/main/packages/commons). Luckily, this part of the main application was already relatively independent. But we still had some challenges and learned a lot about creating a Typescript library 😄.
 
 Under the hood, we used Typescript (as for the main application and the library), [Oclif](https://oclif.io/) to create the command-line tool, and [PM2](https://pm2.keymetrics.io/docs/usage/pm2-api/) to manage your mock API processes.
 It means that, while we wrap our CLI around all of PM2 commands, you can leverage everything PM2 has to offer if you are used to it!

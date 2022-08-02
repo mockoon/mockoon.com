@@ -10,7 +10,7 @@ import { orderArticles } from '../../utils/utils';
 const meta = {
   title: 'How does Mockoon compare to ...?',
   description:
-    'Discover how Mockoon compares to other API mocking tools: ease of use, features, etc.'
+    'Discover how Mockoon desktop and CLI applications compare to other API mocking tools: ease of use, features, cloud deployments, etc.'
 };
 
 export async function getStaticProps() {

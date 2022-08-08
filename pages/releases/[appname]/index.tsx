@@ -74,7 +74,11 @@ export default function ReleasesIndex(props: {
 
   return (
     <Layout footerBanner='download'>
-      <Meta title={meta.title} description={meta.description} />
+      <Meta
+        title={meta.title}
+        description={meta.description}
+        url={`/releases/${props.appname}/`}
+      />
       <Hero title={meta.title} />
 
       <section className='pb-8'>

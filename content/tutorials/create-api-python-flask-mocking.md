@@ -159,4 +159,4 @@ Mocking an API with Mockoon is easy and requires only some small steps to start 
 
 > To learn more about setting up Mockoon and creating your first fake API in less than 5 minutes, head over to our [getting start tutorial](/tutorials/getting-started/)
 
-![API mocking demo{1430x748}](/images/tutorials/api-mocking-demo.gif)
+![#sub#API mocking with Mockoon{1430x748}](/images/tutorials/api-mocking-demo.gif)

@@ -1,8 +1,8 @@
 ---
-title: Create your first API Java Spring (or mock it using Mockoon!)
+title: Create your first Java Spring API (or mock it using Mockoon!)
 excerpt: Learn how to create your first REST API and endpoints with java Spring framework or mock it using Mockoon to accelerate your application development
 meta:
-  title: Create your first API Java Spring (or mock it using Mockoon!)
+  title: Create your first Java Spring API (or mock it using Mockoon!)
   description: Learn how to create your first REST API and endpoints with java Spring framework or mock it using Mockoon to accelerate your application development
 image: tutorial-java-spring-api-mocking.png
 imageAlt: java Spring logo side by side with Mockoon
@@ -214,4 +214,4 @@ Mocking an API with Mockoon is easy and requires only some small steps to start 
 
 > To learn more about setting up Mockoon and creating your first fake API in less than 5 minutes, head over to our [getting start tutorial](/tutorials/getting-started/)
 
-![API mocking demo{1430x748}](/images/tutorials/api-mocking-demo.gif)
+![#sub#API mocking with Mockoon{1430x748}](/images/tutorials/api-mocking-demo.gif)

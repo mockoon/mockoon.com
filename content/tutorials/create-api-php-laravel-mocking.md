@@ -99,7 +99,7 @@ We now have a basic setup that allows us to serve the application and test our e
 To serve the PHP Laravel application, run the following command:
 
 ```sh-sessions
-$  php artisan serve
+$ php artisan serve
    INFO  Server running on [http://127.0.0.1:8000].
 ```
 

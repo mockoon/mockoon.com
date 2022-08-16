@@ -25,6 +25,7 @@ You will get hot reload on the Next.js application.
 - Do not forget to add "Closes #xx" in one of the commit messages or in the pull request description (where xx is the GitHub issue number)
 
 Branches naming convention:
+
 - features and enhancements: `feature/name-or-issue-number`
 - bug fixes: `fix/name-or-issue-number`
 
@@ -32,3 +33,18 @@ Branches naming convention:
 
 Open a pull request to be merge in the `main` branch. All branches should start from `main` and must be merged into `main`.
 Ask maintainers to review the code.
+
+## Misc
+
+### Markdown changelogs
+
+An NPM script automatically copy the desktop release changelogs markdown files to the `public` folder. They are then loaded by the desktop application.
+
+### Download page binaries version
+
+The latest binaries version on the download page (and documentation menu) is pulled from api.mockoon.com.
+
+### Sitemap
+
+The sitemap is automatically generated after the build and placed in the `public`.
+It is split in multiple files by categories of content.

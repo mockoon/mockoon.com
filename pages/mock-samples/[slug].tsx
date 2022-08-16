@@ -11,6 +11,7 @@ import {
   MockSamplesHelpButton,
   MockSamplesOpenButton
 } from '../../components/mock-samples/buttons';
+import MockSampleCards from '../../components/mock-samples/cards';
 import HelpModal from '../../components/mock-samples/help-modal';
 import Layout from '../../layout/layout';
 import { MockAPI } from '../../models/common.model';
@@ -29,8 +30,10 @@ export async function getStaticPaths() {
 
 const MockSamples: FunctionComponent<{
   mockAPI: MockAPI;
+  providerMockAPIs: MockAPI[];
+  categoryMockAPIs: MockAPI[];
   intro: string;
-}> = function ({ mockAPI, intro }) {
+}> = function ({ mockAPI, providerMockAPIs, categoryMockAPIs, intro }) {
   const seoTitle = mockAPI.title.includes('API')
     ? mockAPI.title
     : mockAPI.title + ' API';
@@ -146,7 +149,7 @@ const MockSamples: FunctionComponent<{
                     <Link
                       href={`/integrations/embedded-button/?dataURL=${mockAPI.environmentSrc}`}
                     >
-                      Mockoon button
+                      <a rel='nofollow'>Mockoon button</a>
                     </Link>{' '}
                     on your website.
                   </div>
@@ -169,6 +172,40 @@ const MockSamples: FunctionComponent<{
               ></p>
             </div>
           </div>
+          {providerMockAPIs.length > 0 && (
+            <>
+              <div className='row'>
+                <div className='col'>
+                  <div className='mt-8'>
+                    <h3>Other APIs by {mockAPI.provider}</h3>
+                  </div>
+                </div>
+              </div>
+              <div className='row gx-8'>
+                <MockSampleCards
+                  ratioPerItemXl={4}
+                  mockAPIsList={providerMockAPIs}
+                />
+              </div>
+            </>
+          )}
+          {categoryMockAPIs.length > 0 && (
+            <>
+              <div className='row'>
+                <div className='col'>
+                  <div className='mt-8'>
+                    <h3>Other APIs in the same category</h3>
+                  </div>
+                </div>
+              </div>
+              <div className='row gx-8'>
+                <MockSampleCards
+                  ratioPerItemXl={4}
+                  mockAPIsList={categoryMockAPIs}
+                />
+              </div>
+            </>
+          )}
           <div className='row'>
             <div className='col'>
               <div className='mt-8 text-center'>

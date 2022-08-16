@@ -43,14 +43,25 @@ export const getMockSamplesSlugProps = async (
     );
   }
 
+  const mockAPI = mockAPIs.items[mockAPIIndex];
+  const providerMockAPIs = mockAPIs.items
+    .filter(
+      (item) => item.provider === mockAPI.provider && item.slug !== mockAPI.slug
+    )
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 12);
+  const categoryMockAPIs = mockAPIs.items
+    .filter((item) => item.categories.includes(mockAPI.categories[0] || ''))
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 12);
+
   return {
     props: {
-      mockAPI: mockAPIs.items[mockAPIIndex],
+      mockAPI,
+      providerMockAPIs,
+      categoryMockAPIs,
       // use a cycle of 5 random intros
-      intro: getMockSamplesIntro(
-        mockAPIIndex % mockSamplesIntrosNb,
-        mockAPIs.items[mockAPIIndex]
-      )
+      intro: getMockSamplesIntro(mockAPIIndex % mockSamplesIntrosNb, mockAPI)
     }
   };
 };

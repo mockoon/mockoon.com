@@ -78,12 +78,14 @@ async function generateMockSamplesCategorySitemap() {
       .filter((item) => item.categories.includes(category))
       .map((item) => `/mock-samples/${item.slug}`);
 
-    fs.writeFileSync(
-      `public/sitemaps/mock-samples-category-${category}.xml`,
-      buildSitemap(filteredItemsPaths)
-    );
+    if (filteredItemsPaths.length) {
+      fs.writeFileSync(
+        `public/sitemaps/mock-samples-category-${category}.xml`,
+        buildSitemap(filteredItemsPaths)
+      );
 
-    sitemapList.push(`/sitemaps/mock-samples-category-${category}.xml`);
+      sitemapList.push(`/sitemaps/mock-samples-category-${category}.xml`);
+    }
   });
 
   // create sitemap for uncategorized APIs

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
@@ -109,11 +108,26 @@ const SponsorUs: FunctionComponent = function () {
               .
             </p>
           </div>
-          <Link href='/sponsor-us/'>
-            <a className='col-10 col-lg-4 mt-4 btn btn-primary'>
-              View sponsorship options
-            </a>
-          </Link>
+          <div className='text-center mt-8'>
+            <h4>
+              Become a sponsor or make a one-time donation through GitHub
+              Sponsors
+            </h4>
+            <p className='mt-4'>
+              <a
+                href='https://github.com/sponsors/mockoon'
+                target='_blank'
+                rel='noopener'
+              >
+                <img
+                  src='/images/sponsor-btn.png'
+                  alt='sponsor button'
+                  width={300}
+                  height={86}
+                />
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </Layout>

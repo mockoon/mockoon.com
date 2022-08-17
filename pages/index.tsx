@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import React from 'react';
 import Card from '../components/card';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
+import Sponsors from '../components/sponsors';
 import Testimonial from '../components/testimonial';
 import Typed from '../components/typed';
 import { hpFeatures } from '../data/hp-features';
@@ -268,33 +268,7 @@ class Index extends React.Component<{}, { companyLogos: any }> {
         </section>
 
         <section className='py-5 py-lg-10 border-top bg-gradient-light-white'>
-          <div className='container'>
-            <div className='col-12 text-center pb-4'>
-              <h2 className='mb-0 fw-bold'>Sponsors</h2>
-              <p className='text-gray-700 fs-lg'>
-                <Link href='/sponsor-us/'>
-                  <a className='link-secondary fs-sm'>Become a sponsor</a>
-                </Link>
-              </p>
-            </div>
-            <h4 className='text-muted text-center pt-6 pb-4 fw-bold'>
-              Platinum
-            </h4>
-            <div className='row align-items-center justify-content-center'>
-              <div className='col-12 col-sm-6 col-lg-3 mb-4 mb-md-0 px-xl-8 text-center'>
-                <div className='img-fluid mb-2 mb-md-0'>
-                  <Link href='https://appwrite.io'>
-                    <a className='link-secondary fs-sm' target='_blank'>
-                      <img
-                        src='/images/sponsors/appwrite.svg'
-                        alt='Appwrite logo'
-                      />
-                    </a>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Sponsors showLink={true} showHonorary={false} />
         </section>
 
         <section

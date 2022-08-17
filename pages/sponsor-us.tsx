@@ -3,6 +3,7 @@ import GitHub from '../components/github';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Share from '../components/share';
+import Sponsors from '../components/sponsors';
 import Layout from '../layout/layout';
 
 const SponsorUs: FunctionComponent = function () {
@@ -97,19 +98,10 @@ const SponsorUs: FunctionComponent = function () {
             </div>
           </div>
         </div>
-        <div className='row justify-content-center mt-8'>
-          <div className='col-lg-8 text-center'>
-            <div className='alert alert-dark' role='alert'>
-              Looking for enterprise grade dedicated support?
-              <br /> Discover our{' '}
-              <a href='/enterprise/' className='text-gray-500'>
-                enterprise services
-              </a>
-              .
-            </div>
-          </div>
-        </div>
       </div>
+      <section className='py-5 py-lg-10 border-top bg-gradient-light-white'>
+        <Sponsors showLink={false} showHonorary={true} />
+      </section>
     </Layout>
   );
 };

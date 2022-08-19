@@ -91,7 +91,7 @@ class Index extends React.Component<{}, { companyLogos: any }> {
           </div>
         </section>
 
-        <section className='py-5 py-lg-10' id='download'>
+        <section className='py-5 py-lg-10'>
           <div className='container'>
             <div className='row justify-content-around'>
               <div className='col-12 col-lg-4'>

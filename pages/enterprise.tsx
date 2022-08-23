@@ -8,17 +8,17 @@ import { AccordionData } from '../models/common.model';
 
 const faq: AccordionData = [
   {
-    title: 'Enterprise support',
+    title: 'Pro and Enterprise support plans',
     items: [
       {
-        question: 'What is asynchronous support?',
+        question: 'What is asynchronous priority support?',
         answer:
-          'One of the official maintainers will join and be available through the platform of your choice (email, Slack, etc.) to answer support requests and any questions you may have about the project by writing. This line of support is subject to our opening hours (see below).'
+          'One of the official maintainers will join and be available through the platform of your choice (email, Slack, etc.) to answer support requests and any questions you may have about the project by writing. This line of support is subject to our response time policy (see below).'
       },
       {
-        question: 'How does video support works?',
+        question: 'How does live video support works?',
         answer:
-          'You will be able to schedule video meetings with one of the official maintainers through the platform of your choice (Zoom, Google Meet, etc.) to answer support requests and any questions you may have about the project.'
+          'You will be able to schedule video meetings with one of the official maintainers through the platform of your choice (Zoom, Google Meet, etc.) to answer support requests and any questions you may have about the project. This line of support is subject to our response time and business hours policies (see below).'
       },
       {
         question: 'Priority handling of bug reports',
@@ -50,9 +50,14 @@ const faq: AccordionData = [
     title: 'Misc',
     items: [
       {
+        question: 'VAT',
+        answer:
+          "The VAT is not included in the current plan's pricing. VAT may or may not be charged depending on various criteria like your location and quality (individual or business)."
+      },
+      {
         question: 'Invoicing and contracting company',
         answer:
-          'Our enterprise services are provided by <strong>1kB SARL-S</strong>, a company incorporated in Luxembourg under the no. B257186.<br/>We can invoice in different currencies and provide quotes. Let us know your specific needs.<br/><br/>VAT number: LU33209738'
+          'Our enterprise services are provided by <a href="https://1kb.software" rel="noopener"><strong>1kB SARL-S</strong></a>, a company incorporated in Luxembourg under the no. B257186.<br/>We can invoice in different currencies and provide quotes. Let us know your specific needs.<br/><br/>VAT number: LU33209738'
       }
     ]
   }
@@ -107,7 +112,7 @@ const Enterprise: FunctionComponent = function () {
       <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
         <div className='container'>
           <div className='row gx-4'>
-            <div className='col-12 col-lg-4'>
+            <div className='col-12 col-lg-3'>
               <div className='card shadow-lg mb-6 mb-lg-0'>
                 <div className='card-body'>
                   <div className='text-center mb-3'>
@@ -169,22 +174,18 @@ const Enterprise: FunctionComponent = function () {
                 </div>
               </div>
             </div>
-            <div className='col-12 col-lg-4'>
+            <div className='col-12 col-lg-3'>
               <div className='card shadow-lg mb-6 mb-lg-0'>
                 <div className='card-body'>
                   <div className='text-center mb-3'>
                     <span className='badge rounded-pill bg-primary-soft'>
-                      <span className='h6 text-uppercase'>
-                        Enterprise support
-                      </span>
+                      <span className='h6 text-uppercase'>Pro support</span>
                     </span>
                   </div>
 
                   <div className='d-flex justify-content-center mb-4'>
                     <span className='h3 mb-0 mt-1'>$</span>
-                    <span className='price display-3 mb-0' data-monthly='500'>
-                      500
-                    </span>
+                    <span className='price display-3 mb-0'>99</span>
                     <span className='h3 align-self-end mb-1'>/mo</span>
                   </div>
 
@@ -193,21 +194,10 @@ const Enterprise: FunctionComponent = function () {
                       <i className='icon-check'></i>
                     </div>
 
-                    <p>Unlimited asynchronous support (email, Slack, etc.)</p>
-                  </div>
-                  <div className='d-flex'>
-                    <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
-                      <i className='icon-check'></i>
-                    </div>
-
-                    <p>Video support and training (up to 4 hours per month)</p>
-                  </div>
-                  <div className='d-flex'>
-                    <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
-                      <i className='icon-check'></i>
-                    </div>
-
-                    <p className='mb-5'>Priority handling of bug reports</p>
+                    <p>
+                      Unlimited asynchronous priority support (email, Slack,
+                      etc.)
+                    </p>
                   </div>
                   <div className='d-flex'>
                     <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
@@ -225,7 +215,55 @@ const Enterprise: FunctionComponent = function () {
                 </div>
               </div>
             </div>
-            <div className='col-12 col-lg-4'>
+            <div className='col-12 col-lg-3'>
+              <div className='card shadow-lg mb-6 mb-lg-0'>
+                <div className='card-body'>
+                  <div className='text-center mb-3'>
+                    <span className='badge rounded-pill bg-primary-soft'>
+                      <span className='h6 text-uppercase'>
+                        Enterprise support
+                      </span>
+                    </span>
+                  </div>
+
+                  <div className='d-flex justify-content-center mb-4'>
+                    <span className='h3 mb-0 mt-1'>$</span>
+                    <span className='price display-3 mb-0'>499</span>
+                    <span className='h3 align-self-end mb-1'>/mo</span>
+                  </div>
+
+                  <div className='d-flex'>
+                    <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                      <i className='icon-check'></i>
+                    </div>
+
+                    <p>Includes everything in the Pro support plan</p>
+                  </div>
+                  <div className='d-flex'>
+                    <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                      <i className='icon-check'></i>
+                    </div>
+
+                    <p>
+                      Live support (video) and training (up to 4 hours per
+                      month)
+                    </p>
+                  </div>
+                  <div className='d-flex'>
+                    <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                      <i className='icon-check'></i>
+                    </div>
+
+                    <p className='mb-5'>Priority handling of bug reports</p>
+                  </div>
+
+                  <a href='#form' className='btn w-100 btn-primary'>
+                    Contact us
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className='col-12 col-lg-3'>
               <div className='card shadow-lg mb-6 mb-md-0'>
                 <div className='card-body'>
                   <div className='text-center mb-3'>
@@ -292,9 +330,13 @@ const Enterprise: FunctionComponent = function () {
               <h2 className='fw-bold'>Mockoon enterprise services</h2>
 
               <p className='fs-lg text-muted mb-7 mb-md-9'>
-                Contact us to get more information about our Enterprise support
-                plan or the custom services we offer. We will be glad to help
-                you.
+                Send us an email to{' '}
+                <a href='mailto:team@mockoon.com' className='h4'>
+                  team@mockoon.com
+                </a>{' '}
+                or fill the form below, to get more information about our
+                support plans or the custom services we offer. We will be glad
+                to help you.
               </p>
             </div>
           </div>

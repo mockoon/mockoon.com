@@ -517,7 +517,8 @@ Create a valid ObjectId. It can generates the ObjectId based on the specified ti
 
 ## `setVar`
 
-Set a variable to be used later in the template. The value can be the result of another helper. To use it elsewhere in the template, refer to the variable with its name: `{{varname}}`. The variable can also be used as a helper parameter: `{{#repeat varname}}...{{/repeat}}`.
+Set a variable to be used later in the template. The value can be the result of another helper. To use it elsewhere in the template, refer to the variable with its name prefixed with an `@`: `{{@varname}}`. The variable can also be used as a helper parameter: `{{#repeat @varname}}...{{/repeat}}`.
+Variables declared in a block helper will be scoped to the block and unavailable outside.
 
 | Arguments (ordered) | Type   | Description    |
 | ------------------- | ------ | -------------- |
@@ -531,13 +532,19 @@ Set a variable to be used later in the template. The value can be the result of 
 {{setVar 'varname' (body 'id')}}
 
 usage:
-{{varname}}
-{{#repeat varname}}...{{/repeat}}
+{{@varname}}
+{{#repeat @varname}}...{{/repeat}}
 
 declare a variable in a block helper:
 {{#repeat 5}}
   {{setVar 'random' (oneOf (array '1' '2' '3'))}}
-  {{random}}
+  {{@random}}
+{{/repeat}}
+
+{{setVar 'myArray' (array '1' '2' '3')}}
+{{#each @myArray}}
+  {{setVar 'eachIndex' @index}}
+  {{@eachIndex}}
 {{/repeat}}
 ```
 

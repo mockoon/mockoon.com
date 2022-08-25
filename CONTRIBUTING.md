@@ -40,11 +40,13 @@ Ask maintainers to review the code.
 
 An NPM script automatically copy the desktop release changelogs markdown files to the `public` folder. They are then loaded by the desktop application.
 
+> /!\ For this reason, changelogs markdown files cannot contain custom markdown elements like `##quotation##`. Links must also be absolutes.
+
 ### Download page binaries version
 
 The latest binaries version on the download page (and documentation menu) is pulled from api.mockoon.com.
 
 ### Sitemap
 
-The sitemap is automatically generated after the build and placed in the `public`.
+The sitemap is automatically generated after the build by the `./scripts/generate-sitemap.js` script, and placed in the `public` folder.
 It is split in multiple files by categories of content.

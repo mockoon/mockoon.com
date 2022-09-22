@@ -175,6 +175,14 @@ const Footer: FunctionComponent<{
                   <a className='text-reset'>Sponsor us</a>
                 </Link>
               </li>
+              <li className='mb-2'>
+                <Link href='https://mockoon.threadless.com/'>
+                  <a className='text-reset' target='_blank' rel='noopener'>
+                    Shop{' '}
+                    <i className='text-muted icon-open' aria-hidden='true'></i>
+                  </a>
+                </Link>
+              </li>
             </ul>
             <ul className='align-self-center footer-social list-unstyled list-inline list-social mt-4'>
               <li className='list-inline-item list-social-item me-2'>

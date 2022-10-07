@@ -11,11 +11,11 @@ imageHeight: 400
 order: 93
 ---
 
-This guide will teach you how to call any REST API from a React application create with the [Create React App](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) package. If you already have an existing API that you want to call from your application, you can skip the first step, in which we will create a fake REST API using Mockoon.
+This guide will teach you how to call any REST API from a React application created with the [Create React App](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) package. If you already have an existing API that you want to call from your application, you can skip the first step, in which we will create a fake REST API using Mockoon.
 
 ## 1. Create a mock API endpoint with Mockoon
 
-When working on your React application, you may need to mock an API is still under development, or that is only [partially available](docs:proxy-mode). The easiest way to start working without having to wait is to create a mock API using a tool like Mockoon. (Read more about the [benefits of API mocking](/use-cases/)).
+When working on your React application, you may need to mock an API that is still under development, or that is only [partially available](docs:proxy-mode). The easiest way to start working without having to wait is to create a mock API using a tool like Mockoon. (Read more about the [benefits of API mocking](/use-cases/)).
 
 > To learn more about how to set up your first mock API with Mockoon, head over to the [Getting started tutorial](tutorials:getting-started).
 

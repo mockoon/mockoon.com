@@ -8,7 +8,7 @@ image: tutorial-ionic-api-call.png
 imageAlt: Mockoon and Ionic logos side by side
 imageWidth: 1200
 imageHeight: 400
-order: 95
+order: 96
 ---
 
 In this guide, we will learn how to call an API endpoint from an Ionic mobile application using the Angular framework. If you already have an existing API that you want to use, you can skip the first step, in which we create a fake REST API endpoint using Mockoon.

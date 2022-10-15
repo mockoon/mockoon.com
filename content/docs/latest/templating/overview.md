@@ -184,7 +184,7 @@ If you call this route with `/myroute/1`, `./file1.json` will be sent.
 
 ![add a templating helper in the file path{762x91}](/images/docs/v1.17.0/file-path-templating.png)
 
-> For more information about absolute and relative file paths, please refer to our [file serving](docs:file-serving#absolute-or-relative-paths) documentation.
+> For more information about absolute and relative file paths, please refer to our [file serving](docs:response-body/file-serving#absolute-or-relative-paths) documentation.
 
 ### Headers templating
 

@@ -32,11 +32,7 @@ Route responses order define the order in which the [rules are interpreted](docs
 
 ## Default route response
 
-Without rules or when a request does not match the one you defined, the default response will always be the one marked with the blue flag.
-
-![Default route response{912x206}](/images/docs/v1.20.0/route-responses-default.png)
-
-You can easily change the default response by clicking on the grey flags in the menu:
+Without rules or when a request does not match the one you defined, the default response will always be the one marked with the blue flag. You can easily change the default response by clicking on the grey flags in the menu:
 
 ![Define a new default route response{912x206}](/images/docs/v1.20.0/change-route-responses-default.png)
 

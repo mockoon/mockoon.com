@@ -40,7 +40,7 @@ Ask maintainers to review the code.
 
 An NPM script automatically copy the desktop release changelogs markdown files to the `public` folder. They are then loaded by the desktop application.
 
-> /!\ For this reason, changelogs markdown files cannot contain custom markdown elements like `##quotation##`. Links must also be absolutes.
+> /!\ For this reason, changelogs markdown files cannot contain custom markdown elements like `##quotation##`. Links must also be absolutes. However, images src can omit the domain (`/images/xxxx`), they will be resolved from mockoon.com in the desktop application.
 
 ### Download page binaries version
 

@@ -12,15 +12,25 @@ order: 1010
 
 In addition to Handlebars' built-in helpers, Mockoon offers the following helpers:
 
-| Block helpers       | Arrays              | Math                    |                       |
-| ------------------- | ------------------- | ----------------------- | --------------------- |
-| [`repeat`](#repeat) | [`array`](#array)   | [`add`](#add)           | [`eq`](#eq)           |
-| [`switch`](#switch) | [`oneOf`](#oneof)   | [`subtract`](#subtract) | [`gt`](#gt)           |
-|                     | [`someOf`](#someof) | [`multiply`](#multiply) | [`gte`](#gte)         |
-|                     | [`join`](#join)     | [`divide`](#divide)     | [`lt`](#lt)           |
-|                     | [`slice`](#slice)   | [`modulo`](#modulo)     | [`lte`](#lte)         |
-|                     | [`len`](#len)       | [`ceil`](#ceil)         | [`toFixed`](#tofixed) |
-|                     |                     | [`floor`](#floor)       | [`round`](#round)     |
+| Block helpers       | Data buckets          | Arrays              |
+| ------------------- | --------------------- | ------------------- |
+| [`repeat`](#repeat) | [`data`](#data)       | [`array`](#array)   |
+| [`switch`](#switch) | [`dataRaw`](#dataraw) | [`oneOf`](#oneof)   |
+|                     |                       | [`someOf`](#someof) |
+|                     |                       | [`join`](#join)     |
+|                     |                       | [`slice`](#slice)   |
+|                     |                       | [`len`](#len)       |
+|                     |                       |                     |
+
+| Math                    |                       |
+| ----------------------- | --------------------- |
+| [`add`](#add)           | [`eq`](#eq)           |
+| [`subtract`](#subtract) | [`gt`](#gt)           |
+| [`multiply`](#multiply) | [`gte`](#gte)         |
+| [`divide`](#divide)     | [`lt`](#lt)           |
+| [`modulo`](#modulo)     | [`lte`](#lte)         |
+| [`ceil`](#ceil)         | [`toFixed`](#tofixed) |
+| [`floor`](#floor)       | [`round`](#round)     |
 
 | Strings                   |                           | Dates                             | Misc                            |
 | ------------------------- | ------------------------- | --------------------------------- | ------------------------------- |
@@ -83,6 +93,58 @@ Select some content depending on a variable. Behaves like a regular switch.
   {{#case '2'}}"Jack"{{/case}}
   {{#default}}"Peter"{{/default}}
 {{/switch}}
+```
+
+## `data`
+
+Get the **stringified** value at a given `path` from a [data bucket](docs:data-buckets/overview) selected by **ID or name**.
+
+- The `path` takes the following form `key.0.key.5.key` and is based on the [**object-path** library](https://www.npmjs.com/package/object-path). Properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
+  Please note that a value can be retrieved at the path if the data bucket contains valid JSON.
+- Full objects or arrays can be retrieved by the helper and will be stringified.
+- The full data bucket content can be fetched when the `path` is omitted (`{{data 'ID'}}`).
+
+| Arguments (ordered) | Type   | Description                      |
+| ------------------- | ------ | -------------------------------- |
+| 0                   | string | ID or name of the daa bucket     |
+| 1                   | string | Path to the data bucket property |
+
+**Examples**
+
+```handlebars
+{{data 'abcd'}}
+{{data 'abcd' 'path.to.property'}}
+{{data 'abcd' 'deep.property\.with\.dot'}}
+```
+
+## `dataRaw`
+
+Get the **raw** value (array, object, etc.) at a given `path` from a [data bucket](docs:data-buckets/overview) selected by **ID or name**.
+
+- The `path` takes the following form `key.0.key.5.key` and is based on the [**object-path** library](https://www.npmjs.com/package/object-path). Properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
+  Please note that a value can be retrieved at the path if the data bucket contains valid JSON.
+- Primitives and data structures can be retrieved by the helper and reused in other helpers (see example below).
+- The full data bucket content (array, object, etc.) can be fetched when the `path` is omitted (`{{dataRaw 'ID'}}`).
+
+| Arguments (ordered) | Type   | Description                      |
+| ------------------- | ------ | -------------------------------- |
+| 0                   | string | ID or name of the daa bucket     |
+| 1                   | string | Path to the data bucket property |
+
+**Examples**
+
+```handlebars
+{{dataRaw 'abcd'}}
+{{dataRaw 'abcd' 'path.to.property'}}
+{{dataRaw 'abcd' 'deep.property\.with\.dot'}}
+
+{{#each (dataRaw 'path.to.array.property')}}
+  value
+{{/each}}
+
+{{#if (dataRaw 'path.to.boolean.property')}}
+  value
+{{/if}}
 ```
 
 ## `array`

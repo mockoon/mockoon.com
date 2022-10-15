@@ -97,6 +97,11 @@
         "type": 301
       },
       {
+        "source": "/docs/latest/file-serving/",
+        "destination": "/docs/latest/response-body/file-serving/",
+        "type": 301
+      },
+      {
         "source": "/tutorials/angular-mocking/",
         "destination": "/tutorials/angular-api-call-and-mocking/",
         "type": 301

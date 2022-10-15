@@ -22,12 +22,12 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 |                     | [`len`](#len)       | [`ceil`](#ceil)         | [`toFixed`](#toFixed) |
 |                     |                     | [`floor`](#floor)       | [`round`](#round)     |
 
-| Strings                 |                           | Dates                             | Misc                    |
-| ----------------------- | ------------------------- | --------------------------------- | ----------------------- |
-| [`int`](#int)           | [`split`](#split)         | [`now`](#now)                     | [`newline`](#newline)   |
-| [`float`](#float)       | [`stringify`](#stringify) | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)     |
-| [`includes`](#includes) | [`concat`](#concat)       | [`date`](#date)                   | [`objectId`](#objectid) |
-| [`substr`](#substr)     | [`indexOf`](#indexof)     | [`time`](#time)                   | [`setVar`](#setvar)     |
+| Strings                 |                           | Dates                             | Misc                  |
+| ----------------------- | ------------------------- | --------------------------------- | --------------------- | ------------------- |
+| [`int`](#int)           | [`split`](#split)         | [`now`](#now)                     | [`newline`](#newline) |
+| [`float`](#float)       | [`stringify`](#stringify) | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)   |
+| [`includes`](#includes) | [`concat`](#concat)       | [`date`](#date)                   |                       | [`setVar`](#setvar) |
+| [`substr`](#substr)     | [`indexOf`](#indexof)     | [`time`](#time)                   |                       |
 
 | [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                         |
 | --------------------------------------------------- | ----------------------------- | ----------------------- |
@@ -38,7 +38,7 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 | [`company`](#company)                               | [`zipcode`](#zipcode)         | [`ipv4`](#ipv4)         |
 | [`domain`](#domain)                                 | [`postcode`](#postcode)       | [`ipv6`](#ipv6)         |
 | [`tld`](#tld)                                       | [`lat`](#lat)                 | [`lorem`](#lorem)       |
-| [`email`](#email)                                   | [`long`](#long)               |                         |
+| [`email`](#email)                                   | [`long`](#long)               | [`objectId`](#objectid) |
 
 ## `repeat`
 
@@ -477,21 +477,6 @@ Encode the parameter as base64. This can be used as an inline helper or block he
     }}
   {{/repeat}}
 {{/base64}}
-```
-
-## `objectId`
-
-Create a valid ObjectId. It can generates the ObjectId based on the specified time (in seconds) or from a 12 byte string that will act as a seed. Syntax is based on [bson-objectid package](https://www.npmjs.com/package/bson-objectid).
-
-| Arguments (ordered) | Type             | Description |
-| ------------------- | ---------------- | ----------- |
-| 0                   | string \| number | Seed        |
-
-**Examples**
-
-```handlebars
-{{objectId 1414093117}}
-{{objectId '54495ad94c934721ede76d90'}}
 ```
 
 ## `setVar`
@@ -981,4 +966,14 @@ Return random lorem ipsum text. Alias of `faker 'lorem.sentence'`.
 
 ```handlebars
 {{lorem 50}}
+```
+
+## `objectId`
+
+Create a MongoDB ObjectId.
+
+**Examples**
+
+```handlebars
+{{objectId}}
 ```

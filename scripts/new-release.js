@@ -18,6 +18,16 @@ axios
         console.log(error);
       }
     );
+    fs.cp(
+      './images/docs/latest',
+      './images/docs/v' + response.data.tag,
+      {
+        recursive: true
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   })
   .catch((error) => {
     console.log(error);

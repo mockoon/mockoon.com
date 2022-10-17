@@ -18,11 +18,11 @@ For your application to work, you can make Mockoon automatically answer to these
 
 Open the **Environment Settings** by clicking on the tab at the top of the window:
 
-![click on the settings tab](docs-img:open-environment-settings.png)
+![click on the settings tab{1071x160}](docs-img:open-environment-settings.png)
 
 Enable the **Automatically handle OPTIONS pre-flight requests ** by ticking the checkbox:
 
-![tick the CORS checkbox](docs-img:enable-cors.png)
+![tick the CORS checkbox{1061x572}](docs-img:enable-cors.png)
 
 You need to restart the environment for the change to take effect.
 
@@ -42,12 +42,12 @@ You can also add the same CORS headers to all routes of a mock API with one clic
 
 Open the **Environment Headers** by clicking on the tab at the top of the window:
 
-![click on the headers tab](docs-img:open-environment-headers.png)
+![click on the headers tab{1264x160}](docs-img:open-environment-headers.png)
 
 Then, click on the **Add CORS headers** link:
 
-![Click on the add CORS headers link](docs-img:add-cors-headers.png)
+![Click on the add CORS headers link{1264x137}](docs-img:add-cors-headers.png)
 
 The above headers will be automatically added to your list of headers:
 
-![view cors headers in the list](docs-img:view-cors-headers.png)
+![view cors headers in the list{1264x233}](docs-img:view-cors-headers.png)

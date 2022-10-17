@@ -16,7 +16,7 @@ Since [v1.16.0](https://github.com/mockoon/mockoon/releases/tag/v1.16.0), Mockoo
 
 You can locate the folder in which the API data are stored by right-clicking on each environment and selecting **"Show in folder"**:
 
-![click on show in folder in the context menu](docs-img:environment-show-in-folder.png)
+![click on show in folder in the context menu{455x311}](docs-img:environment-show-in-folder.png)
 
 You can move these files anywhere on your hard drive and re-open them from there.
 

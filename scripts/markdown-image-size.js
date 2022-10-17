@@ -16,11 +16,21 @@ glob('./content/**/*.md', function (err, files) {
   files.forEach((file) => {
     console.log('\n', file);
     let fileContent = readFileSync(file).toString();
-    const regex = /\!(\[.*\])\((\/images[0-9A-Za-z\_\-\.\/]{0,})\)/g;
+    const regex =
+      /\!(\[.*\])\((\/images|docs\-img\:[0-9A-Za-z\_\-\.\/]{0,})\)/g;
     let matches = fileContent.matchAll(regex);
 
     for (const match of matches) {
-      const size = imageSize('./public' + match[2]);
+      let size;
+      if (match[2].startsWith('docs-img:')) {
+        size = imageSize(
+          `./public/images/${file
+            .replace('./content/', '')
+            .replace('.md', '')}/${match[2].replace('docs-img:', '')}`
+        );
+      } else {
+        size = imageSize('./public' + match[2]);
+      }
 
       console.log(match[1], match[2], size);
       const newString = match[1].replace(/\{[0-9]{1,}x[0-9]{1,}\}/g, '');

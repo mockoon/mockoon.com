@@ -16,7 +16,7 @@ Besides using the body editor, Mockoon allows you to serve different files for e
 
 To serve a file, you must provide a path in the file input field:
 
-![fill the file input field](docs-img:file-path.png)
+![fill the file input field{987x354}](docs-img:file-path.png)
 
 > When a file path is provided, the body editor content will be ignored.
 
@@ -24,7 +24,7 @@ To serve a file, you must provide a path in the file input field:
 
 You can either provide an absolute path like `/home/username/file.json` or a relative path. Starting with [v1.16.0](https://github.com/mockoon/mockoon/releases/tag/v1.16.0), relative paths are resolved from the environment's file location. You can check the environment's file location by right-clicking on an environment en select "Show in folder" in the contextual menu:
 
-![show in folder menu entry](docs-img:environment-show-in-folder.png)
+![show in folder menu entry{455x311}](docs-img:environment-show-in-folder.png)
 
 > Prior to v1.16.0, relative file paths were resolved from the application executable. This is also supported by the CLI since its version [1.2.0](https://github.com/mockoon/cli/releases/tag/v1.2.0).
 
@@ -42,7 +42,7 @@ Templating can be disabled both for the body editor and the file content. Please
 >
 > Parsing the templating helpers inside big files can be a very intensive task (CPU and memory intensive). All the files in different formats than the one mentioned above will be streamed to improve performances.  
 > If you need to send big files in one of the above formats but don't need to parse the templating, you can disable it in the route response settings. It will stream the file instead of parsing it and improve the performance.  
-> ![disable templating in route response](docs-img:route-response-disable-templating.png)
+> ![disable templating in route response{1066x181}](docs-img:route-response-disable-templating.png)
 
 ### File input templating
 
@@ -52,6 +52,6 @@ Templating is also supported directly in the **file input field**. It allows to 
 
 By default, Mockoon will return an error in the body when a file is not found. It will still keep the status code you set up on your route response. You can instead choose to automatically return a 404 by activating an option in the route response settings:
 
-![tick the 404 fallback checkbox](docs-img:enable-404-fallback.png)
+![tick the 404 fallback checkbox{1066x231}](docs-img:enable-404-fallback.png)
 
 This option will also fall back to use the content present in the body editor.

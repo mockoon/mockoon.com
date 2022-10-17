@@ -40,4 +40,4 @@ Faker.js methods may use two different ways of passing parameters: ordered argum
 
 Faker.js locale and seed can be defined in the settings:
 
-![faker{801x612}](/images/docs/v1.17.0/settings-faker.png)
+![fakerjs settings](docs-img:settings-faker.png)

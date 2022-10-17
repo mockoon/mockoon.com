@@ -2,6 +2,7 @@ import matter from 'gray-matter';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ChangeEvent, useState } from 'react';
+import { NavItem } from 'react-bootstrap';
 import { rsort as semverSort } from 'semver';
 import Markdown from '../../components/markdown';
 import Meta from '../../components/meta';
@@ -256,7 +257,11 @@ export default function Docs(props: {
           </div>
           <div className='col-12 col-lg-7 ps-lg-5 pb-8'>
             <section className='pt-lg-10'>
-              <Markdown body={props.topicBody} version={currentVersion} />
+              <Markdown
+                body={props.topicBody}
+                version={currentVersion}
+                slug={props.slug}
+              />
             </section>
           </div>
         </div>

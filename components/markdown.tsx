@@ -40,6 +40,7 @@ const heading = (props) => {
 const Markdown: FunctionComponent<{
   body: string;
   version?: string;
+  slug?: string;
 }> = function (props) {
   return (
     <ReactMarkdown
@@ -62,11 +63,17 @@ const Markdown: FunctionComponent<{
           );
         },
         img: ({ alt, src }) => {
+          // find optional subtitle and size info
           const [match, width, height] =
             /\{([0-9]{1,})x([0-9]{1,})\}/gi.exec(alt) || [];
 
           const hasSub = alt.includes('#sub#');
           const altCleaned = alt.replace(match, '').replace('#sub#', '');
+
+          // rewrite docs src
+          if (src.startsWith('docs-img:')) {
+            src = `/images/${props.slug}/${src.replace('docs-img:', '')}`;
+          }
 
           return (
             <>

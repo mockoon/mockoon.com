@@ -41,4 +41,4 @@ However, both the CLI and the desktop application can load these legacy export f
 
 When opening an old export file, Mockoon will ask for confirmation before opening it. Upon confirmation, the export file will be migrated to the new format automatically:
 
-![prompt before opening legacy export file{565x440}](/images/docs/v1.18.0/legacy-export-file-open-prompt.png)
+![prompt before opening legacy export file](docs-img:legacy-export-file-open-prompt.png)

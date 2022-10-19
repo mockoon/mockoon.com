@@ -46,9 +46,11 @@ An NPM script automatically copy the desktop release changelogs markdown files t
 
 > /!\ For this reason, changelogs markdown files cannot contain custom markdown elements like `##quotation##`. Links must also be absolutes. However, images src can omit the domain (`/images/xxxx`), they will be resolved from mockoon.com in the desktop application.
 
-### Download page binaries version
+### Download page binaries and documentation version
 
-The latest binaries version on the download page (and documentation menu) is pulled from api.mockoon.com.
+The latest binaries version on the download page (and documentation menu) are pulled from `https://api.mockoon.com/releases/desktop/stable.json`.
+Website needs to be deployed before distributing the desktop application, so the application can load the changelog.
+A second deployment will be needed to update the versioned links after the API depoyed.
 
 ### Sitemap
 

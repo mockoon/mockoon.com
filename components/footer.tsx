@@ -64,17 +64,17 @@ const Footer: FunctionComponent<{
               </li>
               <li className='mb-2'>
                 <Link href='/articles/api-guide-what-are-api/'>
-                  <a className='text-reset'>Mockoon's API guide</a>
+                  <a className='text-reset'>What are APIs?</a>
                 </Link>
               </li>
               <li className='mb-2'>
                 <Link href='/articles/what-is-api-mocking/'>
-                  <a className='text-reset'>Mockoon's API mocking guide</a>
+                  <a className='text-reset'>What is API mocking?</a>
                 </Link>
               </li>
               <li className='mb-2'>
                 <Link href='/use-cases/'>
-                  <a className='text-reset'>API mocking use cases</a>
+                  <a className='text-reset'>Why do you need API mocking?</a>
                 </Link>
               </li>
               <li className='mb-2'>

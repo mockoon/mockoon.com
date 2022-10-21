@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'mockoon';
-  src: url('/fonts/mockoon.ttf?auad7v') format('truetype');
+  src: url('/fonts/mockoon.ttf?ozadee') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -60,6 +60,9 @@
 }
 .icon-open:before {
   content: '\e901';
+}
+.icon-youtube:before {
+  content: '\ea9d';
 }
 .icon-github:before {
   content: '\eab0';

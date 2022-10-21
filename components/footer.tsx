@@ -224,6 +224,19 @@ const Footer: FunctionComponent<{
                   ></i>
                 </a>
               </li>
+              <li className='list-inline-item list-social-item'>
+                <a
+                  href='https://www.youtube.com/channel/UCzkVOmqzbh2CdSU4yHa54wg'
+                  target='_blank'
+                  rel='noopener'
+                  className='text-decoration-none'
+                >
+                  <i
+                    className='text-muted icon-youtube list-social-item'
+                    aria-hidden='true'
+                  ></i>
+                </a>
+              </li>
             </ul>
           </div>
         </div>

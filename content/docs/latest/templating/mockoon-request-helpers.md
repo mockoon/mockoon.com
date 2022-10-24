@@ -26,7 +26,7 @@ Mockoon offers the following helpers which can return information relative to th
 
 ## `body`
 
-Get the value at a given `path` from the request body if the entering `Content-Type` is set to `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`.
+Get the value at a given `path` from the request body if the entering `Content-Type` is set to `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`. This helper is designed to retrieve data to be served in a response. To reuse the retrieved data with other helpers (`each`, `if`, etc.), use the [`bodyRaw` helper](#bodyraw) below.
 
 - The `path` takes the following form `key.0.key.5.key` and is based on the [**object-path** library](https://www.npmjs.com/package/object-path). Properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
   Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties.  
@@ -54,7 +54,7 @@ Get the value at a given `path` from the request body if the entering `Content-T
 
 ## `bodyRaw`
 
-Get the **raw** value at a given `path` from the request body if the entering `Content-Type` is set to `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`.
+Get the **raw** value at a given `path` from the request body if the entering `Content-Type` is set to `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`. This "raw" helper is designed to work with other helpers (`each`, `if`, etc.). To directly use the retrieved data in the response, use the [`body` helper](#body) above.
 
 - The `path` takes the following form `key.0.key.5.key` and is based on the [**object-path** library](https://www.npmjs.com/package/object-path). Properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
   Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties.  
@@ -88,7 +88,7 @@ Get the **raw** value at a given `path` from the request body if the entering `C
 
 ## `queryParam`
 
-Get the value at a given `path` from the request's query string. Complex query strings with arrays and objects are supported.
+Get the value at a given `path` from the request's query string. Complex query strings with arrays and objects are supported. This helper is designed to retrieve data to be served in a response. To reuse the retrieved data with other helpers (`each`, `if`, etc.), use the [`queryParamRaw` helper](#queryparamraw) below.
 
 - The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path).
 - Full objects or arrays can be retrieved by the helper.
@@ -113,7 +113,7 @@ Get the value at a given `path` from the request's query string. Complex query s
 
 ## `queryParamRaw`
 
-Get the **raw** value at a given `path` from the request's query string. Complex query strings with arrays and objects are supported.
+Get the **raw** value at a given `path` from the request's query string. Complex query strings with arrays and objects are supported. This "raw" helper is designed to work with other helpers (`each`, `if`, etc.). To directly use the retrieved data in the response, use the [`queryParam` helper](#queryparam) above.
 
 - The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path).
 - Full objects or arrays can be retrieved by the helper.

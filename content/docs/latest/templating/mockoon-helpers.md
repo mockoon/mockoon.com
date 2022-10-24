@@ -97,7 +97,7 @@ Select some content depending on a variable. Behaves like a regular switch.
 
 ## `data`
 
-Get the **stringified** value at a given `path` from a [data bucket](docs:data-buckets/overview) selected by **ID or name**.
+Get the **stringified** value at a given `path` from a [data bucket](docs:data-buckets/overview) selected by **ID or name**. This helper is designed to retrieve data to be served in a response. To reuse the retrieved data with other helpers (`each`, `if`, etc.), use the [`dataRaw` helper](#dataraw) below.
 
 - The `path` takes the following form `key.0.key.5.key` and is based on the [**object-path** library](https://www.npmjs.com/package/object-path). Properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
   Please note that a value can be retrieved at the path if the data bucket contains valid JSON.
@@ -119,7 +119,7 @@ Get the **stringified** value at a given `path` from a [data bucket](docs:data-b
 
 ## `dataRaw`
 
-Get the **raw** value (array, object, etc.) at a given `path` from a [data bucket](docs:data-buckets/overview) selected by **ID or name**.
+Get the **raw** value (array, object, etc.) at a given `path` from a [data bucket](docs:data-buckets/overview) selected by **ID or name**. This "raw" helper is designed to work with other helpers (`each`, `if`, etc.). To directly use the retrieved data in the response, use [data buckets direct linking](docs:data-buckets/using-data-buckets#referencing-in-a-route-response) or the [`data` helper](#data) above.
 
 - The `path` takes the following form `key.0.key.5.key` and is based on the [**object-path** library](https://www.npmjs.com/package/object-path). Properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
   Please note that a value can be retrieved at the path if the data bucket contains valid JSON.

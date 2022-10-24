@@ -30,6 +30,12 @@ You need to restart the environment for the change to take effect.
 
 Mockoon uses Express to run the mock servers. In general, most of the Express' documentation applies. Please refer to the [routing documentation](https://expressjs.com/en/guide/routing.html) for more information and examples on the following topics.
 
+### Routes order
+
+Routes are declared in the server in the order displayed in the application. It means that a the first ones takes precedence over the following ones.
+
+One consequence is that a route parameter will capture any value at the specific URL segment. For example, `/users/:id` will intercept `/users/search`. The more specific "search" route should be declared first. You can always reorder routes by dragging and dropping them.
+
 ### Route patterns
 
 Routes support certain patterns. Here are some examples of the available ones:

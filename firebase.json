@@ -43,7 +43,7 @@
       },
       {
         "source": "/tutorial/define-prefixed-api",
-        "destination": "/docs/latest/routing/",
+        "destination": "/docs/latest/api-endpoints/routing/",
         "type": 301
       },
       {
@@ -99,6 +99,16 @@
       {
         "source": "/docs/latest/file-serving/",
         "destination": "/docs/latest/response-body/file-serving/",
+        "type": 301
+      },
+      {
+        "source": "/docs/latest/routing/",
+        "destination": "/docs/latest/api-endpoints/routing/",
+        "type": 301
+      },
+      {
+        "source": "/docs/latest/api-endpoints/",
+        "destination": "/docs/latest/api-endpoints/routing/",
         "type": 301
       },
       {

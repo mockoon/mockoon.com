@@ -18,3 +18,7 @@ If you find a mistake in the documentation, you can open an issue on the [websit
 ## CLI docs
 
 You will find the [CLI documentation](https://github.com/mockoon/mockoon/tree/main/packages/cli) in its dedicated readme file on the repository. It covers the CLI's specific features, like the available flags or how to use the Docker file.
+
+## Serverless docs
+
+You will find the [serverless package documentation](https://github.com/mockoon/mockoon/tree/main/packages/serverless) in its dedicated readme file on the repository. It covers the package usage instructions and specific features.

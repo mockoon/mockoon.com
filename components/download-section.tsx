@@ -112,6 +112,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 <span>AppImage</span>
               </a>
             </div>
+            <div className='content'>(x86 only)</div>
             <div className='content p-3'>
               or <code>sudo snap install mockoon</code>
               <br />

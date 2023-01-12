@@ -173,6 +173,27 @@ const Faq: FunctionComponent = function () {
 
               <div className='accordion-item'>
                 <div className='accordion-button '>
+                  <h3 id='is-mockoon-compatible-serverless' className='me-4'>
+                    Is Mockoon compatible with cloud functions and serverless
+                    environments?
+                  </h3>
+                </div>
+
+                <div className='accordion-collapse '>
+                  <div className='accordion-body'>
+                    <p className='text-gray-700'>
+                      Yes, Mockoon has an{' '}
+                      <a href='/serverless/'>official NPM package</a> that
+                      allows you to run all your mock API servers in cloud
+                      functions and serverless environments: AWS Lambda, GCP
+                      Functions, Firebase Functions, etc.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='accordion-item'>
+                <div className='accordion-button '>
                   <h3 id='is-mockoon-compatible-with-openapi' className='me-4'>
                     Is Mockoon compatible with OpenAPI?
                   </h3>

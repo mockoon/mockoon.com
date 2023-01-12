@@ -109,7 +109,7 @@ const CLI: FunctionComponent = function () {
           <div className='row justify-content-center'>
             <div className='col-lg-6'>
               <div className='alert alert-dark' role='alert'>
-                Learn how to use Mockoon CLI in 5 minutes with our{' '}
+                🚀 Learn how to use Mockoon CLI in 5 minutes with our{' '}
                 <a
                   href='/tutorials/run-mock-api-anywhere-cli/'
                   className='text-gray-500'

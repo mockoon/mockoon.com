@@ -18,6 +18,17 @@ const features: CardData[] = [
     links: [{ src: '/cli/', text: 'Discover the CLI →' }]
   },
   {
+    title: 'Serverless compatibility',
+    description:
+      'Run your mock APIs in serverless environments: AWS Lambda, GCP/Firebase Functions, etc.',
+    links: [
+      {
+        src: '/serverless/',
+        text: 'Serverless library →'
+      }
+    ]
+  },
+  {
     title: 'Import / export',
     description:
       'Mock API import / export with Swagger/OpenAPI format support.',

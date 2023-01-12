@@ -5,6 +5,7 @@ import Breadcrumb from '../../../components/breadcrumb';
 import Hero from '../../../components/hero';
 import Markdown from '../../../components/markdown';
 import Meta from '../../../components/meta';
+import { appsList } from '../../../constants/releases';
 import Layout from '../../../layout/layout';
 import { ArticleData } from '../../../models/common.model';
 
@@ -30,7 +31,10 @@ export function getStaticPaths() {
 export async function getStaticProps({
   params
 }: {
-  params: { appname: string; version: string };
+  params: {
+    appname: string;
+    version: string;
+  };
 }) {
   const fileContent =
     await require(`../../../content/releases/${params.appname}/${params.version}.md`);
@@ -38,7 +42,7 @@ export async function getStaticProps({
 
   return {
     props: {
-      appname: params.appname,
+      app: appsList.find((app) => app.appname === params.appname),
       version: params.version,
       release: release.content,
       releaseData: release.data
@@ -47,29 +51,24 @@ export async function getStaticProps({
 }
 
 export default function Release(props: {
-  appname: string;
+  app: { name: string; appname: string };
   version: string;
   release: string;
   releaseData: ArticleData;
 }) {
-  const appnameHuman = { desktop: 'desktop', cli: 'CLI' };
-
   return (
     <Layout footerBanner='newsletter'>
       <Meta
         title={props.releaseData.meta.title}
         description={props.releaseData.meta.description}
         ogType='article'
-        url={`/releases/${props.appname}/${props.version}/`}
+        url={`/releases/${props.app.appname}/${props.version}/`}
       />
 
       <Breadcrumb
         currentTitle={`${props.version}`}
-        parentLink={`/releases/${props.appname}/`}
-        parentTitle={`${
-          appnameHuman[props.appname].charAt(0).toUpperCase() +
-          appnameHuman[props.appname].slice(1)
-        } releases`}
+        parentLink={`/releases/${props.app.appname}/`}
+        parentTitle={`${props.app.name} releases`}
       />
       <Hero title={props.releaseData.meta.title} />
 
@@ -83,9 +82,9 @@ export default function Release(props: {
         </section>
         <section className='row pt-3 pb-8'>
           <div className='col d-flex justify-content-center'>
-            <Link href={`/releases/${props.appname}`}>
+            <Link href={`/releases/${props.app.appname}`}>
               <a className='btn btn-sm btn-secondary-soft'>
-                ⬅ Back to the list of {appnameHuman[props.appname]} releases
+                ⬅ Back to the list of {props.app.name} releases
               </a>
             </Link>
           </div>

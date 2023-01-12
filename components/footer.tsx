@@ -140,6 +140,11 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
+                <Link href='/serverless/'>
+                  <a className='text-reset'>Serverless</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/mock-samples/category/all/'>
                   <a className='text-reset'>Mock samples</a>
                 </Link>

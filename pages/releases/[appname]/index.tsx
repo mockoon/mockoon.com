@@ -1,26 +1,23 @@
 import matter from 'gray-matter';
 import { useRouter } from 'next/router';
+import { Fragment } from 'react';
 import Hero from '../../../components/hero';
 import Markdown from '../../../components/markdown';
 import Meta from '../../../components/meta';
+import { appsList } from '../../../constants/releases';
 import Layout from '../../../layout/layout';
 import { ReleaseList } from '../../../models/common.model';
 import { sortPathBySemver } from '../../../utils/utils';
 
 export function getStaticPaths() {
   return {
-    paths: [
-      {
+    paths: appsList.map((app) => {
+      return {
         params: {
-          appname: 'desktop'
+          appname: app.appname
         }
-      },
-      {
-        params: {
-          appname: 'cli'
-        }
-      }
-    ],
+      };
+    }),
     fallback: false
   };
 }
@@ -50,7 +47,7 @@ export async function getStaticProps({
 
   return {
     props: {
-      appname: params.appname,
+      app: appsList.find((app) => app.appname === params.appname),
       releases
     }
   };
@@ -58,18 +55,12 @@ export async function getStaticProps({
 
 export default function ReleasesIndex(props: {
   releases: ReleaseList;
-  appname: string;
+  app: { name: string; appname: string };
 }) {
   const router = useRouter();
-  const appnameHuman = { desktop: 'desktop', cli: 'CLI' };
   const meta = {
-    title: `${
-      appnameHuman[props.appname].charAt(0).toUpperCase() +
-      appnameHuman[props.appname].slice(1)
-    } application releases`,
-    description: `Discover Mockoon ${
-      appnameHuman[props.appname]
-    } application new releases content: latest news from the project, new features, improvements and bug fixes`
+    title: `${props.app.name} application releases`,
+    description: `Discover Mockoon ${props.app.name} application new releases content: latest news from the project, new features, improvements and bug fixes`
   };
 
   return (
@@ -77,7 +68,7 @@ export default function ReleasesIndex(props: {
       <Meta
         title={meta.title}
         description={meta.description}
-        url={`/releases/${props.appname}/`}
+        url={`/releases/${props.app.appname}/`}
       />
       <Hero title={meta.title} />
 
@@ -87,47 +78,33 @@ export default function ReleasesIndex(props: {
             <div className='col-12 col-lg-4 mb-8 pe-lg-8'>
               <aside className='flex-grow-1 sticky-top pt-4'>
                 <div className='list-group'>
-                  <a
-                    href='/releases/desktop/'
-                    className={`list-group-item list-group-item-action p-4 ${
-                      router.asPath.includes('desktop') ? 'active' : ''
-                    }`}
-                    aria-current='true'
-                  >
-                    <h5 className='m-0'>Desktop</h5>
-                  </a>
-
-                  {props.appname === 'desktop' &&
-                    props.releases.map((release, releaseIndex) => {
-                      return (
-                        <div
-                          key={`releasesAnchors${releaseIndex}`}
-                          className='list-group-item p-2 ps-8'
+                  {appsList.map((app, appIndex) => {
+                    return (
+                      <Fragment key={`appAnchors${appIndex}`}>
+                        <a
+                          href={`/releases/${app.appname}/`}
+                          className={`list-group-item list-group-item-action p-4 ${
+                            router.asPath.includes(app.appname) ? 'active' : ''
+                          }`}
                         >
-                          <a href={`#${release.version}`}>{release.version}</a>
-                        </div>
-                      );
-                    })}
-
-                  <a
-                    href='/releases/cli/'
-                    className={`list-group-item list-group-item-action p-4 ${
-                      router.asPath.includes('cli') ? 'active' : ''
-                    }`}
-                  >
-                    <h5 className='m-0'>CLI</h5>
-                  </a>
-                  {props.appname === 'cli' &&
-                    props.releases.map((release, releaseIndex) => {
-                      return (
-                        <div
-                          key={`releasesAnchors${releaseIndex}`}
-                          className='list-group-item p-2 ps-8'
-                        >
-                          <a href={`#${release.version}`}>{release.version}</a>
-                        </div>
-                      );
-                    })}
+                          <h5 className='m-0'>{app.name}</h5>
+                        </a>
+                        {props.app.appname === app.appname &&
+                          props.releases.map((release, releaseIndex) => {
+                            return (
+                              <div
+                                key={`releasesAnchors${releaseIndex}`}
+                                className='list-group-item p-2 ps-8'
+                              >
+                                <a href={`#${release.version}`}>
+                                  {release.version}
+                                </a>
+                              </div>
+                            );
+                          })}
+                      </Fragment>
+                    );
+                  })}
                 </div>
               </aside>
             </div>
@@ -137,24 +114,24 @@ export default function ReleasesIndex(props: {
                   <div key={`release${releaseIndex}`} className='mb-12'>
                     <h2 id={`${release.version}`}>
                       <a
-                        href={`/releases/${props.appname}/${release.version}/`}
+                        href={`/releases/${props.app.appname}/${release.version}/`}
                         className='display-4'
                       >
                         {`${release.version}`}
                       </a>
-                      <a
-                        href={`https://github.com/mockoon/mockoon/releases/tag/${
-                          props.appname === 'desktop' ? 'v' : 'cli-v'
-                        }${release.version}`}
-                        target='_blank'
-                        rel='noopener'
-                        className='text-decoration-none ms-4 fs-4'
-                      >
-                        <i
-                          className='text-muted icon-github list-social-icon'
-                          aria-hidden='true'
-                        ></i>
-                      </a>
+                      {props.app.appname === 'desktop' && (
+                        <a
+                          href={`https://github.com/mockoon/mockoon/releases/tag/v${release.version}`}
+                          target='_blank'
+                          rel='noopener'
+                          className='text-decoration-none ms-4 fs-4'
+                        >
+                          <i
+                            className='text-muted icon-github list-social-icon'
+                            aria-hidden='true'
+                          ></i>
+                        </a>
+                      )}
                     </h2>
                     <div>
                       <Markdown body={release.content} />

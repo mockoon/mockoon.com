@@ -67,7 +67,7 @@ New screenshots will be created in `./packages/desktop/tmp/docs`. They can be co
 
 Some screenshots still need to be created manually:
 
-- the cheat sheet
+- the cheat sheet (screenshot is taken but text overlay is added manually)
 - `/docs/latest/openapi/import-export-openapi-format/`: the import/export options in native menu (Native menu cannot be opened programmatically)
 - `/docs/latest/mockoon-data-files/environment-clipboard-copy/`: the two add from clipboard native menu (Native menu cannot be opened programmatically)
 

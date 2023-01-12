@@ -38,7 +38,7 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 | [`substr`](#substr)       | [`concat`](#concat)       | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)             |
 | [`lowercase`](#lowercase) | [`indexOf`](#indexof)     | [`date`](#date)                   | [`base64Decode`](#base64decode) |
 | [`uppercase`](#uppercase) | [`parseInt`](#parseint)   | [`time`](#time)                   | [`objectId`](#objectid)         |
-| [`split`](#split)         |                           |                                   | [`setVar`](#setvar)             |
+| [`split`](#split)         |                           | [`dateFormat`](#dateformat)       | [`setVar`](#setvar)             |
 
 | [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                         |
 | --------------------------------------------------- | ----------------------------- | ----------------------- |
@@ -824,12 +824,12 @@ Shift a date by adding the number of `years`, `months`, etc. passed as parameter
 
 ## `date`
 
-Return a random formatted (using [date-fns package format](https://date-fns.org/docs/format)) date between a minimum and a maximum. Uses `faker 'date.between'` to generate the random date.
+Return a random formatted date (using [date-fns package format](https://date-fns.org/docs/format)) between a minimum and a maximum. Uses `faker 'date.between'` to generate the random date.
 
 | Arguments (ordered) | Type   | Description   |
 | ------------------- | ------ | ------------- |
-| 0                   | number | Starting date |
-| 1                   | number | Ending date   |
+| 0                   | string | Starting date |
+| 1                   | string | Ending date   |
 | 2                   | string | Date format   |
 
 **Examples**
@@ -840,7 +840,7 @@ Return a random formatted (using [date-fns package format](https://date-fns.org/
 
 ## `time`
 
-Return a random formatted (using [date-fns package format](https://date-fns.org/docs/format)) time between a minimum and a maximum. Uses `faker 'date.between'` to generate the random time.
+Return a random formatted time (using [date-fns package format](https://date-fns.org/docs/format)) between a minimum and a maximum. Uses `faker 'date.between'` to generate the random time.
 
 | Arguments (ordered) | Type   | Description   |
 | ------------------- | ------ | ------------- |
@@ -852,6 +852,21 @@ Return a random formatted (using [date-fns package format](https://date-fns.org/
 
 ```handlebars
 {{time '09:00' '10:00' 'HH:mm'}}
+```
+
+## `dateFormat`
+
+Return a formatted date (using [date-fns package format](https://date-fns.org/docs/format)).
+
+| Arguments (ordered) | Type   | Description    |
+| ------------------- | ------ | -------------- |
+| 0                   | string | Date to format |
+| 1                   | string | Output format  |
+
+**Examples**
+
+```handlebars
+{{dateFormat '2021-01-01' 'yyyy'}}
 ```
 
 ## `int`

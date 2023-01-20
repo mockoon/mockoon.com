@@ -97,11 +97,10 @@ const Serverless: FunctionComponent = function () {
               <h3 className='text-center'>AWS Lambda quick start</h3>
               <pre>
                 <CodeBlock
-                  code={`import { MockoonServerless } from '@mockoon/serverless';
-
+                  code={`const mockoon = require('@mockoon/serverless');
 const mockEnv = require('./mockoon-datafile.json');
 
-const mockoonServerless = new MockoonServerless(mockEnv);
+const mockoonServerless = new mockoon.MockoonServerless(mockEnv);
 
 module.exports.handler = mockoonServerless.awsHandler();`}
                   dark

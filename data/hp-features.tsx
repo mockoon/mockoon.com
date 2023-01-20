@@ -32,7 +32,7 @@ export const hpFeatures = [
     ctaLink: '/tutorials/partial-mocking-proxy/'
   },
   {
-    label: 'Ubiquitous',
+    label: 'Containers',
     title: 'Run your mock servers anywhere',
     description:
       'Use the CLI and the Docker image to run your mock REST APIs on servers and headless environments: GitHub Actions, CircleCI, TravisCI, etc.',
@@ -40,6 +40,16 @@ export const hpFeatures = [
     imgAlt: 'Mockoon CLI start and list commands screenshot',
     cta: 'Discover the CLI',
     ctaLink: '/cli/'
+  },
+  {
+    label: 'Cloud',
+    title: 'Serverless compatible',
+    description:
+      'Deploy your mock REST APIs in cloud functions compatible with any provider: AWS Lambda, GCP Functions, Firebase Functions, etc.',
+    imgSrc: '/images/feature6.png',
+    imgAlt: 'Mockoon CLI start and list commands screenshot',
+    cta: 'Discover the serverless package',
+    ctaLink: '/serverless/'
   },
   {
     label: 'Privacy',

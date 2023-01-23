@@ -1,8 +1,8 @@
 ---
-title: Create your first API with the Golang Gin framework (or mock it using Mockoon!)
+title: Create your first API with the Golang Gin (or mock it using Mockoon!)
 excerpt: Learn how to create your first REST API and endpoints with the Golang Gin framework or mock it using Mockoon to accelerate your application development
 meta:
-  title: Create your first API with the Golang Gin framework (or mock it using Mockoon!)
+  title: Create your first API with the Golang Gin (or mock it using Mockoon!)
   description: Learn how to create your first REST API and endpoints with the Golang Gin framework or mock it using Mockoon to accelerate your application development
 image: tutorial-golang-api-mocking.png
 imageAlt: Golang logo side by side with Mockoon

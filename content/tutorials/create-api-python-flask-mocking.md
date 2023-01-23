@@ -11,7 +11,7 @@ imageHeight: 400
 order: 210
 ---
 
-In this guide, you will learn how to create a basic REST API using [Flask microframework](https://flask.palletsprojects.com/) for Python. Flask is one of the most popular and easy-to-use Python libraries for API creation.
+In this guide, you will learn how to create a basic REST API using [Flask microframework](https://flask.palletsprojects.com/en/2.2.x/) for Python. Flask is one of the most popular and easy-to-use Python libraries for API creation.
 
 > Before continuing, you can learn more about REST APIs in general, how they work, their components, etc. in our [series of tutorials](/articles/api-guide-what-are-api/)
 

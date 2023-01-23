@@ -55,7 +55,7 @@ Let's have a look at what such a body could look like:
       "avatar": "{{faker 'image.avatar'}}"
     },
     "comments": [
-      {{#repeat (faker 'datatype.number' 5)}}
+      {{#repeat (faker 'random.numeric' 5)}}
       {
         "id": "{{faker 'datatype.uuid'}}",
         "content": "{{faker 'lorem.sentence'}}",
@@ -66,8 +66,8 @@ Let's have a look at what such a body could look like:
       }
       {{/repeat}}
     ],
-    "likes": {{faker 'datatype.number' 100}},
-    "shares": {{faker 'datatype.number' 100}},
+    "likes": {{faker 'random.numeric' 100}},
+    "shares": {{faker 'random.numeric' 100}},
     "location": {
       "lat": {{faker 'address.latitude'}},
       "long": {{faker 'address.longitude'}}
@@ -151,8 +151,8 @@ Generating an XML file with fake data would also be done in no time. You will fi
     <UUID>{{faker 'datatype.uuid'}}</UUID>
     <NAME>{{faker 'commerce.product'}}</NAME>
     <PRICE>{{faker 'commerce.price'}}</PRICE>
-    <COLOR>{{faker 'commerce.color'}}</COLOR>
-    <INVENTORY>{{faker 'datatype.number' 50}}</INVENTORY>
+    <COLOR>{{faker 'color.human'}}</COLOR>
+    <INVENTORY>{{faker 'random.numeric' 50}}</INVENTORY>
   </PRODUCT>
   {{/ repeat}}
 </PRODUCTS>
@@ -243,7 +243,7 @@ Let's imagine an endpoint `GET /inventory/:type` returning either "products" or 
     {{/ case}}
     {{# case 'materials'}}
     "name": "{{faker 'commerce.productMaterial'}}",
-    "quantity": "{{faker 'datatype.number' 50}}"
+    "quantity": "{{faker 'random.numeric' 50}}"
     {{/ case}}
     {{/ switch}}
   }

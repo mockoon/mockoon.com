@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react';
 import { FooterCTA } from '../models/common.model';
 import ContactBanner from './contact-banner';
 import DownloadCTA from './download-cta';
-import Newsletter from './newsletter';
+import EmailForm from './email-form';
 
 const Footer: FunctionComponent<{
   banner: FooterCTA;
@@ -12,9 +12,15 @@ const Footer: FunctionComponent<{
     <footer className='py-3 bg-gray-200'>
       <div className='container'>
         <div className='row mb-6'>
-          {(props.banner === 'newsletter' && <Newsletter />) ||
-            (props.banner === 'contact' && <ContactBanner />) ||
-            (props.banner === 'download' && <DownloadCTA />) || <DownloadCTA />}
+          <div className='py-8 border-bottom border-gray-300'>
+            {(props.banner === 'newsletter' && (
+              <EmailForm formType='newsletter' />
+            )) ||
+              (props.banner === 'contact' && <ContactBanner />) ||
+              (props.banner === 'download' && <DownloadCTA />) || (
+                <DownloadCTA />
+              )}
+          </div>
         </div>
         <div className='row'>
           <div className='col-12 col-lg-2 d-flex flex-column align-items-start'>

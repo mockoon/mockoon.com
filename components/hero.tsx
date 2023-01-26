@@ -4,6 +4,7 @@ const Hero: FunctionComponent<{
   title?: string;
   subtitle?: string;
   cta?: { text: string; link: string }[];
+  ctaContent?: any;
   mainPicture?: string;
   mainPictureAlt?: string;
   mainPictureWidth?: number;
@@ -34,7 +35,7 @@ const Hero: FunctionComponent<{
               <p
                 className={`lead ${
                   props.mainPicture ? 'text-lg-start' : ''
-                }  text-center text-muted mb-6 mb-lg-8`}
+                }  text-center text-gray-700 mb-6 mb-lg-8`}
                 dangerouslySetInnerHTML={{ __html: props.subtitle }}
               ></p>
             )}
@@ -60,6 +61,7 @@ const Hero: FunctionComponent<{
                 })}
               </div>
             )}
+            {props.ctaContent}
           </div>
           {props.mainPicture && (
             <div className='col-12 col-lg-6 mt-10 mt-lg-0'>

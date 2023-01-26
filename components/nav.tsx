@@ -5,6 +5,7 @@ import { FunctionComponent, useState } from 'react';
 const Nav: FunctionComponent = function () {
   const router = useRouter();
   const [show, setShow] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggler = (
     <button
@@ -103,16 +104,42 @@ const Nav: FunctionComponent = function () {
               </Link>
             </li>
 
-            <li className='nav-item'>
-              <Link href='/enterprise/'>
-                <a
-                  className={`nav-link ${
-                    router.pathname === '/enterprise' ? 'active' : ''
-                  }`}
-                >
-                  Enterprise plans
-                </a>
-              </Link>
+            <li
+              className='nav-item dropdown text-center'
+              onMouseEnter={() => {
+                !show && setDropdownOpen(true);
+              }}
+              onMouseLeave={() => {
+                !show && setDropdownOpen(false);
+              }}
+            >
+              <a
+                className={`nav-link dropdown-toggle`}
+                href='#'
+                aria-haspopup='true'
+                aria-expanded='false'
+              >
+                Pro {!show && <span className='h6 vertical-middle'>▼</span>}
+              </a>
+              <ul
+                className={`dropdown-menu ${show ? 'text-center' : ''} ${
+                  dropdownOpen ? 'show' : ''
+                }`}
+              >
+                <li className='dropdown-item'>
+                  <Link href='/pro/'>
+                    <a className='dropdown-link'>
+                      Pro plans{' '}
+                      <span className='badge bg-primary-soft'>Coming soon</span>
+                    </a>
+                  </Link>
+                </li>
+                <li className='dropdown-item'>
+                  <Link href='/enterprise/'>
+                    <a className='dropdown-link'>Enterprise support</a>
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className='nav-item'>
               <Link href='/download/'>

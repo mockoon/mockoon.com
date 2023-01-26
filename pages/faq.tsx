@@ -248,8 +248,10 @@ const Faq: FunctionComponent = function () {
                 <div className='accordion-collapse '>
                   <div className='accordion-body'>
                     <div className='text-gray-700'>
-                      Mockoon application data and settings are stored in your
-                      operating system user data folder:
+                      <p>
+                        Mockoon application data and settings are stored in your
+                        operating system user data folder:
+                      </p>
                       <ul className='text-break'>
                         <li>
                           Windows:{' '}

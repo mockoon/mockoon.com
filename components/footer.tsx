@@ -172,18 +172,26 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
+                <Link href='/sponsor-us/'>
+                  <a className='text-reset'>Sponsor us</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/contact/'>
                   <a className='text-reset'>Get support</a>
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/enterprise/'>
-                  <a className='text-reset'>Enterprise plans</a>
+                <Link href='/pro/'>
+                  <a className='text-reset'>
+                    Pro plans{' '}
+                    <span className='badge bg-primary-soft'>Coming soon</span>
+                  </a>
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/sponsor-us/'>
-                  <a className='text-reset'>Sponsor us</a>
+                <Link href='/enterprise/'>
+                  <a className='text-reset'>Enterprise support</a>
                 </Link>
               </li>
               <li className='mb-2'>

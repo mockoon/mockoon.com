@@ -111,7 +111,7 @@ const Enterprise: FunctionComponent = function () {
 
       <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
         <div className='container'>
-          <div className='row gx-4'>
+          <div className='row gx-4 align-items-center'>
             <div className='col-12 col-lg-3'>
               <div className='card shadow-lg mb-6 mb-lg-0'>
                 <div className='card-body'>
@@ -208,10 +208,6 @@ const Enterprise: FunctionComponent = function () {
                       Supports our work on the open-source tools
                     </p>
                   </div>
-
-                  <a href='#form' className='btn w-100 btn-primary'>
-                    Contact us
-                  </a>
                 </div>
               </div>
             </div>
@@ -256,10 +252,6 @@ const Enterprise: FunctionComponent = function () {
 
                     <p className='mb-5'>Priority handling of bug reports</p>
                   </div>
-
-                  <a href='#form' className='btn w-100 btn-primary'>
-                    Contact us
-                  </a>
                 </div>
               </div>
             </div>
@@ -297,12 +289,27 @@ const Enterprise: FunctionComponent = function () {
 
                     <p>Training</p>
                   </div>
-
-                  <a href='#form' className='btn w-100 btn-primary'>
-                    Get a quote
-                  </a>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className='py-6 py-md-8'>
+        <div className='container'>
+          <div className='row gx-4'>
+            <div className='col text-center '>
+              <a href='#form' className='btn btn-primary mx-4'>
+                Get a quote
+              </a>
+              <a
+                href='https://book.stripe.com/7sIaGggAt8rPeOs000'
+                className='btn btn-primary-soft mx-4'
+                target={'_blank'}
+              >
+                Book a demo
+              </a>
             </div>
           </div>
         </div>

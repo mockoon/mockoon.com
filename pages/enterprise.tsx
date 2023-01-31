@@ -107,6 +107,17 @@ const Enterprise: FunctionComponent = function () {
       <Hero
         title="Mockoon's enterprise services"
         subtitle="Keep your infrastructure and workflows running smoothly with access to Mockoon's dedicated support and custom services."
+        cta={[
+          {
+            text: 'Get a quote',
+            link: '#form'
+          },
+          {
+            text: 'Book a demo',
+            link: 'https://book.stripe.com/7sIaGggAt8rPeOs000',
+            blank: true
+          }
+        ]}
       />
 
       <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
@@ -291,25 +302,6 @@ const Enterprise: FunctionComponent = function () {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className='py-6 py-md-8'>
-        <div className='container'>
-          <div className='row gx-4'>
-            <div className='col text-center '>
-              <a href='#form' className='btn btn-primary mx-4'>
-                Get a quote
-              </a>
-              <a
-                href='https://book.stripe.com/7sIaGggAt8rPeOs000'
-                className='btn btn-primary-soft mx-4'
-                target={'_blank'}
-              >
-                Book a demo
-              </a>
             </div>
           </div>
         </div>

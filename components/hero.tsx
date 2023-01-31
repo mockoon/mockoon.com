@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react';
 const Hero: FunctionComponent<{
   title?: string;
   subtitle?: string;
-  cta?: { text: string; link: string }[];
+  cta?: { text: string; link: string; blank?: boolean }[];
   ctaContent?: any;
   mainPicture?: string;
   mainPictureAlt?: string;
@@ -40,10 +40,19 @@ const Hero: FunctionComponent<{
               ></p>
             )}
             {props.cta && (
-              <div className='hero-cta text-lg-start text-center'>
+              <div
+                className={`hero-cta ${
+                  props.mainPicture ? 'text-lg-start' : ''
+                } text-center`}
+              >
                 {props.cta.map((cta, index) => {
                   return (
-                    <a href={cta.link} key={index} className='me-2'>
+                    <a
+                      href={cta.link}
+                      key={index}
+                      target={cta.blank ? '_blank' : undefined}
+                      className='me-2'
+                    >
                       <button
                         className={`btn btn-primary${
                           index > 0 ? '-soft' : ''

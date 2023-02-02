@@ -120,6 +120,11 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
+                <Link href='/video-tutorials/'>
+                  <a className='text-reset'>Video tutorials</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/articles/'>
                   <a className='text-reset'>Articles</a>
                 </Link>

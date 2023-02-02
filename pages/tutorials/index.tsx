@@ -30,9 +30,26 @@ const Tutorials: FunctionComponent<{
     <Layout footerBanner='download'>
       <Meta title={meta.title} description={meta.description} />
       <Hero title={meta.title} subtitle={meta.description} />
+      <div className='container'>
+        <div className='row justify-content-center'>
+          <div className='col-lg-6'></div>
+        </div>
+      </div>
 
       <section className='pb-8'>
         <div className='container'>
+          <div className='row d-flex flex-column flex-lg-row'>
+            <div className='mx-auto my-lg-3 col-12 col-xxl-10 mb-6 text-center'>
+              <a href='/video-tutorials/'>
+                <img
+                  className='img-fluid'
+                  src='/images/video-tutorials-btn-250.png'
+                  alt=''
+                />
+              </a>
+            </div>
+          </div>
+
           <div className='row d-flex flex-column flex-lg-row'>
             <div className='mx-auto my-lg-3 col-12 col-xxl-10'>
               {props.articles

@@ -41,11 +41,11 @@ const VideoTutorials = function () {
                   title: 'Responses and rules',
                   description:
                     'Learn how to add more responses to your routes and serve them using the rules system.',
-                  imageSrc: `https://img.youtube.com/vi/KaABR8umkiU/maxresdefault.jpg`,
+                  imageSrc: `https://img.youtube.com/vi/HDGeslYAEAc/maxresdefault.jpg`,
                   imageAlt: '',
                   links: [
                     {
-                      src: 'https://youtu.be/KaABR8umkiU',
+                      src: 'https://youtu.be/HDGeslYAEAc',
                       text: 'Watch on YouTube',
                       icon: 'icon-youtube'
                     }

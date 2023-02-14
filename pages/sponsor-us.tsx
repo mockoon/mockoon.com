@@ -56,7 +56,10 @@ const SponsorUs: FunctionComponent = function () {
             <p>
               By sponsoring us, you can show your appreciation for all this hard
               work and also allow us to dedicate more time to this project in
-              the future.
+              the future. For higher sponsor tiers, this is the opportunity to
+              show your brand in front of many developers interested in APIs and
+              automated testing (~35k views per month, more details on GitHub
+              Sponsors).
             </p>
             <div className='text-center mt-8'>
               <h4>

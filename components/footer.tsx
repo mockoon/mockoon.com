@@ -182,6 +182,11 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
+                <Link href='/public-roadmap/'>
+                  <a className='text-reset'>Public roadmap</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/contact/'>
                   <a className='text-reset'>Get support</a>
                 </Link>

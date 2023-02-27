@@ -20,7 +20,7 @@ const Roadmap: FunctionComponent = function () {
         cta={[
           {
             text: 'View the roadmap →',
-            link: 'https://github.com/orgs/mockoon/projects/2',
+            link: 'https://github.com/orgs/mockoon/projects/9',
             blank: true
           }
         ]}

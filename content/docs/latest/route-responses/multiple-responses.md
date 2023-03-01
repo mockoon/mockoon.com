@@ -28,7 +28,7 @@ Everything will be copied to the new response: documentation, file/body, headers
 
 Route responses order define the order in which the [rules are interpreted](docs:route-responses/dynamic-rules). You can easily change the default response by reordering the responses menu with a drag and drop:
 
-![Reorder route responses{968x214}](docs-img:reorder-responses.png)
+![Reorder route responses{968x221}](docs-img:reorder-responses.png)
 
 ## Default route response
 

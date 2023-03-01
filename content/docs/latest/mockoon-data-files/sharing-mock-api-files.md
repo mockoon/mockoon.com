@@ -24,7 +24,7 @@ After [locating your environment file](docs:mockoon-data-files/data-storage-loca
 You can save your environment data files in a Git-tracked folder to make sharing easier. By default, an environment file JSON content is saved pretty-printed to allow comparing changes between two commits.
 You can disable pretty printing in the settings:
 
-![disable pretty printing{860x754}](docs-img:storage-pretty-printing.png)
+![disable pretty printing{860x812}](docs-img:storage-pretty-printing.png)
 
 ### Use a mock API with the CLI
 

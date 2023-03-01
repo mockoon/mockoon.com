@@ -27,4 +27,4 @@ OpenAPI import and export currently support the following API information:
 - Server URL, port, base path (prefix) and protocol.
 - Routes paths (including route parameters translated to `/:param`), methods, responses with status code (200, etc.), headers, and descriptions.
 
-Import only: sample JSON bodies are created from OpenAPI schemas during import.
+_Import only_: sample responses and JSON bodies are created from OpenAPI schemas and examples during import.

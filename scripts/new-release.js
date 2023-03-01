@@ -19,8 +19,8 @@ axios
       }
     );
     fs.cp(
-      './images/docs/latest',
-      './images/docs/v' + response.data.tag,
+      './public/images/docs/latest',
+      './public/images/docs/v' + response.data.tag,
       {
         recursive: true
       },

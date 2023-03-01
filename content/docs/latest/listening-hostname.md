@@ -10,19 +10,16 @@ order: 120
 
 ---
 
-By default, Mockoon's mock APIs will listen to all available network adapters, often described as `0.0.0.0`. It means that your mock server will be available on all your adapter as `localhost`, `127.0.0.1`, your local IP address `192.168.x.x`, etc.
-You can configure each environment to listen on `127.0.0.1`, and thus `localhost` too, by checking a simple option.
+By default, Mockoon's mock APIs will listen to all available network adapters on IPv4 and IPv6, often described as `0.0.0.0` and `::`. Your mock server will be available on all your adapters, such as `localhost`, `127.0.0.1`, your local IPv4 address(es) `192.168.x.x`, `::1`, etc.
 
-Open the **Environment Settings** by clicking on the tab at the top of the window:
+To configure each environment to listen on a specific hostname, open the **Environment Settings** by clicking on the tab at the top of the window:
 
 ![click on the settings tab{1071x160}](docs-img:open-environment-settings.png)
 
-Enable the **Localhost Only** option by ticking the checkbox.
+Add a **custom hostname** in the input field:
 
-![tick the localhost only checkbox{1264x253}](docs-img:enable-localhost-only.png)
+![field to set a custom hostname{1264x213}](docs-img:custom-hostname-setting.png)
 
 > You may need to restart your environment for the change to take effect.
-
-Your mock API will now be available on `https://localhost:{port}` and `https://127.0.0.1:{port}` only.
 
 > When using the CLI, you can choose a specific adapter to listen to (e.g. `192.168.1.1`) by using the `--hostname` flag with the [`start` command](https://github.com/mockoon/mockoon/tree/main/packages/cli#mockoon-cli-start).

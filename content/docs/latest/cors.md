@@ -22,7 +22,7 @@ Open the **Environment Settings** by clicking on the tab at the top of the windo
 
 Enable the **Automatically handle OPTIONS pre-flight requests ** by ticking the checkbox:
 
-![tick the CORS checkbox{1061x572}](docs-img:enable-cors.png)
+![tick the CORS checkbox{1061x537}](docs-img:enable-cors.png)
 
 You need to restart the environment for the change to take effect.
 

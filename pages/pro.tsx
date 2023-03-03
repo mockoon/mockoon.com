@@ -19,7 +19,7 @@ const faq: AccordionData = [
       {
         question: 'What services will be available?',
         answer:
-          '<p>We plan to provide the following services:</p><ul><li>Data synchronization for individual developers (2023).</li><li>Data synchronization for teams (no ETA).</li><li>Cloud deployment of mock APIs (no ETA).</li></ul>'
+          '<p>We plan to provide the following services:</p><ul><li>Data synchronization for individual developers (2023).</li><li>IA-powered API mocks generation (2023).</li><li>Data synchronization for teams (no ETA).</li><li>Cloud deployment of mock APIs (no ETA).</li></ul>'
       },
       {
         question: 'When will these services be available?',
@@ -46,7 +46,7 @@ const Pro: FunctionComponent = function () {
 
       <Hero
         title="Mockoon's <span class='text-primary'>Pro plans</span>"
-        subtitle='We are building a cloud platform for Mockoon. Subscribe below to join the beta waiting list and be informed when the services are generally available.'
+        subtitle="We are building a cloud platform for Mockoon with some exciting features such as data synchronization and IA-powered API mocks generation. Join the waitlist for our beta program and we'll let you know when the services are generally available."
         ctaContent={<EmailForm formType='productpreview' />}
         mainPicture='/images/pro-hero.png'
         mainPictureAlt='Mockoon logo in the cloud interconnected with other services'

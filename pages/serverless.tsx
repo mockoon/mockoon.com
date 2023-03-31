@@ -21,7 +21,8 @@ const features: CardData[] = [
     links: [
       {
         src: 'https://github.com/mockoon/mockoon/tree/main/packages/serverless#using-this-package',
-        text: 'How to use it'
+        text: 'How to use it',
+        blank: true
       }
     ]
   },
@@ -32,7 +33,8 @@ const features: CardData[] = [
     links: [
       {
         src: 'https://github.com/mockoon/mockoon/tree/main/packages/serverless#request-listener-express-application',
-        text: 'See code samples'
+        text: 'See code samples',
+        blank: true
       }
     ]
   }
@@ -52,7 +54,8 @@ const Serverless: FunctionComponent = function () {
         cta={[
           {
             text: 'Usage instructions →',
-            link: 'https://github.com/mockoon/mockoon/tree/main/packages/serverless#using-this-package'
+            link: 'https://github.com/mockoon/mockoon/tree/main/packages/serverless#using-this-package',
+            blank: true
           }
         ]}
         mainPicture='/images/serverless-screenshot.png'

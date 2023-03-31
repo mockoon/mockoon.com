@@ -40,6 +40,7 @@ export type CardData = {
     src: string;
     text: string;
     icon?: string;
+    blank?: boolean;
   }[];
 };
 

@@ -20,7 +20,8 @@ const features: CardData[] = [
     links: [
       {
         src: 'https://github.com/mockoon/mockoon/tree/main/packages/cli#installation',
-        text: 'How to use it'
+        text: 'How to use it',
+        blank: true
       }
     ]
   },
@@ -51,7 +52,8 @@ const CLI: FunctionComponent = function () {
         cta={[
           {
             text: 'Installation instructions →',
-            link: 'https://github.com/mockoon/mockoon/tree/main/packages/cli#installation'
+            link: 'https://github.com/mockoon/mockoon/tree/main/packages/cli#installation',
+            blank: true
           }
         ]}
         mainPicture='/images/cli-screenshot.png'

@@ -74,6 +74,7 @@ const Card: FunctionComponent<{
                           ? props.borderColor
                           : undefined
                       }}
+                      target={link.blank ? '_blank' : undefined}
                     >
                       {link.icon && (
                         <span className='icon me-2'>
@@ -90,6 +91,7 @@ const Card: FunctionComponent<{
                       props.data.links?.length > 1 ? '' : 'mt-auto'
                     }`}
                     href={link.src}
+                    target={link.blank ? '_blank' : undefined}
                   >
                     {link.icon && (
                       <span className='icon me-2'>

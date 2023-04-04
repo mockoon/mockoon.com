@@ -10,8 +10,8 @@ order: 1030
 
 ---
 
-Mockoon implements [Faker.js v6.3.1](https://fakerjs.dev/) library by wrapping most of the available helpers.
-Faker.js offers lots of helpers: `address.zipCode`, `address.city`, `address.cityPrefix`, `name.firstName`, `name.lastName`, `datatype.number`, `datatype.float`, `internet.avatar`, `internet.email`, etc. Please have a look at [Faker.js documentation](https://fakerjs.dev/) to learn how to use them.
+Mockoon implements [Faker.js v6.3.1](https://v6.fakerjs.dev/) library by wrapping most of the available helpers.
+Faker.js offers lots of helpers: `address.zipCode`, `address.city`, `address.cityPrefix`, `name.firstName`, `name.lastName`, `datatype.number`, `datatype.float`, `internet.avatar`, `internet.email`, etc. Please have a look at [Faker.js documentation](https://v6.fakerjs.dev/) to learn how to use them.
 
 ## Usage
 

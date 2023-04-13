@@ -21,6 +21,19 @@ const Sponsors: FunctionComponent<{
       <div className='row align-items-center justify-content-center'>
         <div className='col-12 col-sm-6 col-lg-3 mb-4 mb-md-0 px-xl-8 text-center'>
           <div className='img-fluid mb-2 mb-md-0'>
+            <Link href='https://github.blog/2023-04-12-github-accelerator-our-first-cohort-and-whats-next/'>
+              <a
+                className='link-secondary fs-sm'
+                target='_blank'
+                rel='sponsored noopener'
+              >
+                <img src='/images/sponsors/github.svg' alt='GitHub logo' />
+              </a>
+            </Link>
+          </div>
+        </div>
+        <div className='col-12 col-sm-6 col-lg-3 mb-4 mb-md-0 px-xl-8 text-center'>
+          <div className='img-fluid mb-2 mb-md-0'>
             <Link href='https://appwrite.io'>
               <a
                 className='link-secondary fs-sm'
@@ -50,7 +63,7 @@ const Sponsors: FunctionComponent<{
                     <img
                       src='/images/sponsors/pragm.png'
                       className='img-fluid'
-                      alt='Appwrite logo'
+                      alt='Pragm logo'
                       width=''
                     />
                   </a>

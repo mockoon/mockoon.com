@@ -95,7 +95,7 @@ const Markdown: FunctionComponent<{
           );
         },
         table: ({ children }) => (
-          <div className='card shadow-light-lg p-4 mt-4'>
+          <div className='card border shadow-lg p-4 my-6'>
             <table className='table'>{children}</table>
           </div>
         ),

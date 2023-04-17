@@ -96,7 +96,9 @@ const Markdown: FunctionComponent<{
         },
         table: ({ children }) => (
           <div className='card border shadow-lg p-4 my-6'>
-            <table className='table'>{children}</table>
+            <div className='table-responsive'>
+              <table className='table'>{children}</table>
+            </div>
           </div>
         ),
         blockquote: (content) => {

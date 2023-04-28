@@ -21,22 +21,22 @@ module.exports = withTM({
     return [
       {
         source: '/releases/',
-        destination: `/releases/${data.tag}`,
+        destination: `/releases/${data.tag}/`,
         permanent: true
       },
       {
-        source: '/releases/desktop/:path*',
-        destination: '/old-releases/desktop/:path*',
+        source: '/releases/desktop/:path*/',
+        destination: '/old-releases/desktop/:path*/',
         permanent: true
       },
       {
         source: '/releases/cli/:path*',
-        destination: '/old-releases/cli/:path*',
+        destination: '/old-releases/cli/:path*/',
         permanent: true
       },
       {
-        source: '/releases/serverless/:path*',
-        destination: '/old-releases/serverless/:path*',
+        source: '/releases/serverless/:path*/',
+        destination: '/old-releases/serverless/:path*/',
         permanent: true
       }
     ];

@@ -33,7 +33,7 @@ const heading = (props) => {
 
   let hasVertBar = false;
 
-  if ((children[0] as string).includes('|')) {
+  if (typeof children[0] === 'string' && children[0].includes('|')) {
     hasVertBar = true;
     children[0] = (children[0] as string).replace('|', '');
   }

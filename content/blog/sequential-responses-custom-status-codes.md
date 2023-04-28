@@ -29,7 +29,7 @@ Similar to the [random responses](docs:route-responses/multiple-responses) featu
 
 A new type of rule has been created to allow you to serve a specific response depending on the entering request number. In the following example, a 404 would be served at the first request only.
 
-![request number rule{1368x195}](/images/docs/response-rules-request-number.png)
+![request number rule{1368x195}](/images/blog/sequential-responses/response-rules-request-number.png)
 
 The entering requests counter is on a per route basis and gets reset when the server is restarted.
 
@@ -37,4 +37,4 @@ The entering requests counter is on a per route basis and gets reset when the se
 
 For this update, we worked on revamping the status code dropdown to offer more suggestions, organized by categories. Even if not standards, you can also provide custom status codes from 100 to 999.
 
-![enter a custom status code{625x392}](/images/docs/custom-status-codes.gif)
+![enter a custom status code{625x392}](/images/blog/sequential-responses/custom-status-codes.gif)

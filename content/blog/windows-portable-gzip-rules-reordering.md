@@ -25,7 +25,7 @@ A portable version for Windows is now available. Head over to our [download page
 
 Rules can now be reordered with a simple drag and drop. It allows you to influence the order in which the rules are interpreted. You can check our [documentation](docs:route-responses/dynamic-rules) for more information on rules order interpretation.
 
-![Drag and drop rules to reorder them{1008x191}](/images/docs/route-response-rule-reorder.gif)
+![Drag and drop rules to reorder them{1008x191}](/images/blog/windows-portable/route-response-rule-reorder.gif)
 
 ## Listen to localhost only
 

@@ -172,7 +172,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
       <div className='row'>
         <div className='col-12 text-center'>
           <p className='text-center'>
-            <a className='text-gray-600' href={`/releases/desktop/${version}/`}>
+            <a className='text-gray-600' href={`/releases/${version}/`}>
               See the v{version} changelog
             </a>
           </p>

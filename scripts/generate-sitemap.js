@@ -166,11 +166,12 @@ Promise.all([
     '^(content|pages)'
   ),
   generateSitemap(
-    '{pages,content}/releases/!(\\[)**/!(\\[)*.{tsx,md}',
-    'releases',
+    'content/old-releases/**/*.md',
+    'old-releases',
     '^(content|pages)',
-    ['/releases/cli', '/releases/desktop']
+    ['/old-releases/cli', '/old-releases/desktop', '/old-releases/serverless']
   ),
+  generateSitemap('content/releases/*.md', 'releases', '^(content|pages)'),
   generateMockSamplesCategoriesSitemap(),
   generateMockSamplesCategorySitemap()
 ]).then(() => {

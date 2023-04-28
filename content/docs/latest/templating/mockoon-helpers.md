@@ -22,23 +22,24 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 |                     |                       | [`len`](#len)       |
 |                     |                       |                     |
 
-| Math                    |                       |
-| ----------------------- | --------------------- |
-| [`add`](#add)           | [`eq`](#eq)           |
-| [`subtract`](#subtract) | [`gt`](#gt)           |
-| [`multiply`](#multiply) | [`gte`](#gte)         |
-| [`divide`](#divide)     | [`lt`](#lt)           |
-| [`modulo`](#modulo)     | [`lte`](#lte)         |
-| [`ceil`](#ceil)         | [`toFixed`](#tofixed) |
-| [`floor`](#floor)       | [`round`](#round)     |
+| Math                    |                       | Variables           |
+| ----------------------- | --------------------- | ------------------- |
+| [`add`](#add)           | [`eq`](#eq)           | [`setVar`](#setvar) |
+| [`subtract`](#subtract) | [`gt`](#gt)           | [`getVar`](#getvar) |
+| [`multiply`](#multiply) | [`gte`](#gte)         |                     |
+| [`divide`](#divide)     | [`lt`](#lt)           |                     |
+| [`modulo`](#modulo)     | [`lte`](#lte)         |                     |
+| [`ceil`](#ceil)         | [`toFixed`](#tofixed) |                     |
+| [`floor`](#floor)       | [`round`](#round)     |                     |
 
-| Strings                   |                           | Dates                             | Misc                            |
-| ------------------------- | ------------------------- | --------------------------------- | ------------------------------- |
-| [`includes`](#includes)   | [`stringify`](#stringify) | [`now`](#now)                     | [`newline`](#newline)           |
-| [`substr`](#substr)       | [`concat`](#concat)       | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)             |
-| [`lowercase`](#lowercase) | [`indexOf`](#indexof)     | [`date`](#date)                   | [`base64Decode`](#base64decode) |
-| [`uppercase`](#uppercase) | [`parseInt`](#parseint)   | [`time`](#time)                   | [`objectId`](#objectid)         |
-| [`split`](#split)         |                           | [`dateFormat`](#dateformat)       | [`setVar`](#setvar)             |
+| Strings                   |                         | Dates                             | Misc                            |
+| ------------------------- | ----------------------- | --------------------------------- | ------------------------------- |
+| [`includes`](#includes)   | [`concat`](#concat)     | [`now`](#now)                     | [`newline`](#newline)           |
+| [`substr`](#substr)       | [`indexOf`](#indexof)   | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)             |
+| [`lowercase`](#lowercase) | [`parseInt`](#parseint) | [`date`](#date)                   | [`base64Decode`](#base64decode) |
+| [`uppercase`](#uppercase) | [`padStart`](#padstart) | [`time`](#time)                   | [`objectId`](#objectid)         |
+| [`split`](#split)         | [`padEnd`](#padend)     | [`dateFormat`](#dateformat)       |                                 |
+| [`stringify`](#stringify) |                         |                                   |                                 |
 
 | [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                         |
 | --------------------------------------------------- | ----------------------------- | ----------------------- |
@@ -610,6 +611,24 @@ declare a variable in a block helper:
 {{/repeat}}
 ```
 
+## `getVar`
+
+Dynamically get a variable set with [`setVar`](#setvar).
+
+| Arguments (ordered) | Type   | Description   |
+| ------------------- | ------ | ------------- |
+| 0                   | string | Variable name |
+
+**Examples**
+
+```handlebars
+{{setVar 'varname' 'value'}}
+
+{{getVar 'varname'}}
+{{getVar (concat 'var' 'name')}}
+{{getVar (body 'property')}}
+```
+
 ## `includes`
 
 Search whether a string can be found in another string and returns the appropriate boolean.
@@ -772,10 +791,38 @@ Parse a number from a string.
 | ------------------- | ------ | --------------- |
 | 0                   | string | String to parse |
 
+## `padStart`
+
+Pads a string with a given string (repeated, if needed) until the resulting string reaches the given length. The padding is applied from the start of the string.
+
+| Arguments (ordered) | Type   | Description                                   |
+| ------------------- | ------ | --------------------------------------------- |
+| 0                   | string | String to pad                                 |
+| 1                   | number | pad length                                    |
+| [2 = ' ']           | string | Padding character(s) (default to blank space) |
+
+```handlebars
+{{padStart '5' 5 '0'}}
+
+result: 00005
+```
+
+## `padEnd`
+
+Pads a string with a given string (repeated, if needed) until the resulting string reaches the given length. The padding is applied from the end of the string.
+
+| Arguments (ordered) | Type   | Description                                   |
+| ------------------- | ------ | --------------------------------------------- |
+| 0                   | string | String to pad                                 |
+| 1                   | number | pad length                                    |
+| [2 = ' ']           | string | Padding character(s) (default to blank space) |
+
 **Examples**
 
 ```handlebars
-{{parseInt '10'}}
+{{padEnd '5' 5 '0'}}
+
+result: 50000
 ```
 
 ## `now`
@@ -858,15 +905,16 @@ Return a random formatted time (using [date-fns package format](https://date-fns
 
 Return a formatted date (using [date-fns package format](https://date-fns.org/docs/format)).
 
-| Arguments (ordered) | Type   | Description    |
-| ------------------- | ------ | -------------- |
-| 0                   | string | Date to format |
-| 1                   | string | Output format  |
+| Arguments (ordered) | Type           | Description    |
+| ------------------- | -------------- | -------------- |
+| 0                   | string \| Date | Date to format |
+| 1                   | string         | Output format  |
 
 **Examples**
 
 ```handlebars
 {{dateFormat '2021-01-01' 'yyyy'}}
+{{dateFormat (faker 'date.recent') 'yyyy'}}
 ```
 
 ## `int`

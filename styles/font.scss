@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'mockoon';
-  src: url('/fonts/mockoon.ttf?ozadee') format('truetype');
+  src: url('/fonts/mockoon.ttf?9oxwoo') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -21,6 +21,7 @@
 
 .icon-discord:before {
   content: '\e90f';
+  color: #7289da;
 }
 .icon-download:before {
   content: '\f019';
@@ -40,6 +41,9 @@
 .icon-linux:before {
   content: '\f17c';
 }
+.icon-new_releases:before {
+  content: '\e908';
+}
 .icon-chat:before {
   content: '\e90c';
 }
@@ -52,11 +56,23 @@
 .icon-remove:before {
   content: '\e903';
 }
+.icon-arrow_drop_down:before {
+  content: '\e905';
+}
 .icon-check:before {
   content: '\e902';
 }
 .icon-star:before {
   content: '\e90e';
+}
+.icon-account_circle:before {
+  content: '\e904';
+}
+.icon-history:before {
+  content: '\e907';
+}
+.icon-hourglass_empty:before {
+  content: '\e906';
 }
 .icon-open:before {
   content: '\e901';

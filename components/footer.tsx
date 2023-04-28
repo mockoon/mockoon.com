@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import { FooterCTA } from '../models/common.model';
+import { getDesktopLatestVersion } from '../utils/utils';
 import ContactBanner from './contact-banner';
 import DownloadCTA from './download-cta';
 import EmailForm from './email-form';
@@ -110,7 +111,7 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/releases/desktop/'>
+                <Link href='/releases/'>
                   <a className='text-reset'>Releases</a>
                 </Link>
               </li>

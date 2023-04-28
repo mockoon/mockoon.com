@@ -8,7 +8,7 @@
     "imagesize": "node ./scripts/markdown-image-size.js",
     "dev": "cross-env NODE_OPTIONS='--inspect' next",
     "build": "next build",
-    "postbuild": "node ./scripts/generate-sitemap.js && cp -R ./content/releases/desktop/ ./public/desktop-changelogs-markdown",
+    "postbuild": "node ./scripts/generate-sitemap.js && cp -R ./content/old-releases/desktop/ ./public/desktop-changelogs-markdown && cp -R -T ./content/releases/ ./public/desktop-changelogs-markdown/",
     "export": "npm run build && next export",
     "start": "next start",
     "deploy": "npm run export && firebase deploy --token \"$FIREBASE_TOKEN\" --only hosting"

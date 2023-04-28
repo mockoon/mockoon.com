@@ -11,7 +11,7 @@ order: 10
 ---
 
 This documentation covers Mockoon's most used features and options to help you create the best mock APIs. These topics apply to the desktop application and the CLI, which supports the same features.
-We maintain a documentation for the four latest desktop versions. Head over to our [releases section](/releases/desktop/) for more details about the changes in each version.
+We maintain a documentation for the four latest desktop versions. Head over to our [releases section](/releases/) for more details about the changes in each version.
 
 If you find a mistake in the documentation, you can open an issue on the [website's repository](https://github.com/mockoon/mockoon.com).
 

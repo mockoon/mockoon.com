@@ -12,6 +12,26 @@
     ],
     "redirects": [
       {
+        "source": "/releases/",
+        "destination": "/releases/3.0.0/",
+        "permanent": 302
+      },
+      {
+        "source": "/releases/desktop{,/**}",
+        "destination": "/old-releases/desktop/",
+        "permanent": 301
+      },
+      {
+        "source": "/releases/cli{,/**}",
+        "destination": "/old-releases/cli/",
+        "permanent": 301
+      },
+      {
+        "source": "/releases/serverless{,/**}",
+        "destination": "/old-releases/serverless/",
+        "permanent": 301
+      },
+      {
         "source": "/docs",
         "destination": "/docs/latest/about/",
         "type": 301

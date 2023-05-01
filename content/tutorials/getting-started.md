@@ -38,7 +38,7 @@ You can also rename the environment, as shown below:
 
 ![Environment renaming{670x143}](/images/tutorials/getting-started/rename-environment.png)
 
-## Step 3. Create you first API route
+## Step 3. Create your first API route
 
 The newly created mock API already includes a route on `/`. You can modify it by setting up the method and path of your choice.
 

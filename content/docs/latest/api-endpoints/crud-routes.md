@@ -2,7 +2,7 @@
 title: CRUD routes
 meta:
   title: Mockoon CRUD routes documentation
-  description: Everything about Mockoon mock API CRUD routes creation, behavior, data bucket operations, etc.
+  description: All you need to know about Mockoon's mock API CRUD routes creation, behavior, data bucket operations and data manipulation.
 order: 710
 ---
 

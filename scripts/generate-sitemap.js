@@ -171,6 +171,7 @@ Promise.all([
     '^(content|pages)',
     ['/old-releases/cli', '/old-releases/desktop', '/old-releases/serverless']
   ),
+  generateSitemap('content/docs/latest/**/*.md', 'docs', '^(content|pages)'),
   generateSitemap('content/releases/*.md', 'releases', '^(content|pages)'),
   generateMockSamplesCategoriesSitemap(),
   generateMockSamplesCategorySitemap()

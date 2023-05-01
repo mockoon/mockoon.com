@@ -44,7 +44,7 @@ const Tutorials: FunctionComponent<{
                 <img
                   className='img-fluid'
                   src='/images/video-tutorials-btn-250.png'
-                  alt=''
+                  alt='button with mockoon logo and text: video tutorials'
                 />
               </a>
             </div>

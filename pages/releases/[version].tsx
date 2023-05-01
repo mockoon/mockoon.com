@@ -40,7 +40,6 @@ export async function getStaticProps({
   const fileContent =
     await require(`../../content/releases/${params.version}.md`);
   const release = matter(fileContent.default);
-  console.log(release.data);
 
   let releases = releasePaths.map((releasePath, releasePathIndex) => {
     const pathparts = releasePath.split('/');
@@ -93,9 +92,9 @@ export default function Release(props: {
                           router.asPath.includes(release) ? 'active' : ''
                         }`}
                       >
-                        <Link href={`/releases/${release}/`}>
-                          <a className='list-link'>v{release}</a>
-                        </Link>
+                        <a href={`/releases/${release}/`} className='list-link'>
+                          v{release}
+                        </a>
                       </li>
                     );
                   })}

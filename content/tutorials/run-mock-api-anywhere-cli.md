@@ -44,7 +44,7 @@ $ node -v
 v14.15.4
 ```
 
-If it's not installed, head over to [Node.js' download page](https://nodejs.org/en/download/) and follow the instructions for your operating system.
+If it's not installed, head over to [Node.js' download page](https://nodejs.org/en/download) and follow the instructions for your operating system.
 
 You are now ready to install the CLI by running the following command `npm i -g @mockoon/cli`:
 

@@ -6,7 +6,7 @@ import Layout from '../layout/layout';
 const meta = {
   title: "Learn with Mockoon's video tutorials",
   description:
-    'Learn how to begin with Mockoon and create mock APIs by utilizing its features effectively.'
+    'Learn how to start working with Mockoon and create mock APIs in no time by making the most out of its features.'
 };
 
 const VideoTutorials = function () {

@@ -35,7 +35,7 @@ $ npm -v
 7.24.1
 ```
 
-Go to [Node.js' website](https://nodejs.org/en/) to install Node.js and NPM if it is not already done.
+Go to [Node.js' website](https://nodejs.org/en) to install Node.js and NPM if it is not already done.
 
 After verifying that Node.js and NPM are installed, you can initialize a new NPM application by running the `npm init` command in a new folder. For this tutorial, you can safely ignore all the questions that NPM will ask and press Enter for each of them. You can also run `npm init --yes` to automatically answer all the questions with the default values.
 

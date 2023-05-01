@@ -11,7 +11,7 @@ imageHeight: 400
 order: 55
 ---
 
-Data buckets were introduced in Mockoon's [v1.21.0](/releases/desktop/1.21.0/). They are persisting key-value stores that allow you to reuse data across your routes and body responses.
+Data buckets were introduced in Mockoon's [v1.21.0](/old-releases/desktop/1.21.0/). They are persisting key-value stores that allow you to reuse data across your routes and body responses.
 You can reuse the data buckets content wherever the templating helpers are available: headers, body responses, file paths, etc.
 Although, their state persist between calls, which allow for more realistic behaviors and dynamic configuration of your responses.
 

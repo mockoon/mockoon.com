@@ -17,6 +17,7 @@ const Roadmap: FunctionComponent = function () {
         title='Public roadmap'
         subtitle='Mockoon is an open-source project with a public roadmap'
         mainPicture='/images/roadmap.png'
+        mainPictureAlt='Screenshot of the roadmap kanban board'
         cta={[
           {
             text: 'View the roadmap →',

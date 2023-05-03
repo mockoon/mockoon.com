@@ -19,56 +19,53 @@ const Sponsors: FunctionComponent<{
       </div>
       <h4 className='text-muted text-center pt-6 pb-4 fw-bold'>Platinum</h4>
       <div className='row align-items-center justify-content-center'>
-        <div className='col-12 col-sm-6 col-lg-3 mb-4 mb-md-0 px-xl-8 text-center'>
-          <div className='img-fluid mb-2 mb-md-0'>
-            <Link href='https://github.blog/2023-04-12-github-accelerator-our-first-cohort-and-whats-next/'>
-              <a
-                className='link-secondary fs-sm'
-                target='_blank'
-                rel='sponsored noopener'
-              >
-                <img src='/images/sponsors/github.svg' alt='GitHub logo' />
-              </a>
-            </Link>
-          </div>
-        </div>
-        <div className='col-12 col-sm-6 col-lg-3 mb-4 mb-md-0 px-xl-8 text-center'>
-          <div className='img-fluid mb-2 mb-md-0'>
-            <Link href='https://appwrite.io'>
-              <a
-                className='link-secondary fs-sm'
-                target='_blank'
-                rel='sponsored noopener'
-              >
-                <img src='/images/sponsors/appwrite.svg' alt='Appwrite logo' />
-              </a>
-            </Link>
-          </div>
+        <div className='col col-md-10 text-center'>
+          <Link href='https://github.blog/2023-04-12-github-accelerator-our-first-cohort-and-whats-next/'>
+            <a className='d-inline-block p-4' target='_blank'>
+              <img
+                src='/images/sponsors/github.png'
+                className='img-fluid m-4'
+                alt='GitHub logo'
+              />
+            </a>
+          </Link>
+          <Link href='https://appwrite.io'>
+            <a className='d-inline-block p-4' target='_blank'>
+              <img
+                src='/images/sponsors/appwrite.png'
+                className='img-fluid m-4'
+                alt='Appwrite logo'
+              />
+            </a>
+          </Link>
+          <Link href='https://www.peakcrypto.com/'>
+            <a className='d-inline-block p-4' target='_blank'>
+              <img
+                src='/images/sponsors/peakcrypto.png'
+                className='img-fluid m-4'
+                alt='Peak Crypto logo'
+              />
+            </a>
+          </Link>
         </div>
       </div>
+
       {showHonorary && (
         <>
           <h4 className='text-muted text-center pt-6 pb-4 fw-bold'>
             Special thanks
           </h4>
           <div className='row align-items-center justify-content-center'>
-            <div className='col-12 col-sm-6 col-lg-3 mb-4 mb-md-0 px-xl-8 text-center'>
-              <div className='img-fluid mb-2 mb-md-0'>
-                <Link href='https://www.pragm.co/en/about/about-pragm'>
-                  <a
-                    className='link-secondary fs-sm'
-                    target='_blank'
-                    rel='sponsored noopener'
-                  >
-                    <img
-                      src='/images/sponsors/pragm.png'
-                      className='img-fluid'
-                      alt='Pragm logo'
-                      width=''
-                    />
-                  </a>
-                </Link>
-              </div>
+            <div className='col text-center'>
+              <Link href='https://www.pragm.co/en/about/about-pragm'>
+                <a className='d-inline-block p-4' target='_blank'>
+                  <img
+                    src='/images/sponsors/pragm.png'
+                    className='img-fluid'
+                    alt='Pragm logo'
+                  />
+                </a>
+              </Link>
             </div>
           </div>
         </>

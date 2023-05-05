@@ -58,7 +58,7 @@ Testing advanced scenarios and edge cases may require complex setup and data pre
 Sometimes you have to make your APIs available to clients or users before they commit to using them. With API mocking, you can provide a simulation of the actual API for testing purposes without the need to give access to your product or provision credentials. Internal or pre-sales demos can benefit from API mocking in the same way.  
 The design phase of an API ([API UX research](/case-studies/impala-api-ux-user-research/)) can also benefit from API mocking, especially when doing user experience research or focus groups with your potential users. It allows you to seamlessly and quickly change and refine the API contract without waiting for a server deployment or the development team's availability.
 
-## How does API mocking works?
+## How does API mocking work?
 
 API mocking is quite simple to put in place. The easiest way to start with API mocking is to use an online or local API mocking tool like Mockoon.  
 After installing the tool and setting up some fake API endpoints, it will expose the mock API locally on a specific port. You will use this mock server in your application in place of the original API. So, you may have to change the URL and port to which your frontend or backend application are connecting during development.

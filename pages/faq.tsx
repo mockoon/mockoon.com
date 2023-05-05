@@ -43,10 +43,10 @@ const Faq: FunctionComponent = function () {
               <div className='accordion-item'>
                 <div className='accordion-button'>
                   <h3
-                    id='how-does-mockoon-mock-api-creation-works'
+                    id='how-does-mockoon-mock-api-creation-work'
                     className='me-4'
                   >
-                    How does Mockoon mock API creation works?
+                    How does Mockoon mock API creation work?
                   </h3>
                 </div>
                 <div className='accordion-collapse'>

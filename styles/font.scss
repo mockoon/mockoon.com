@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'mockoon';
-  src: url('/fonts/mockoon.ttf?9oxwoo') format('truetype');
+  src: url('/fonts/mockoon.ttf?ypawj6') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -61,6 +61,9 @@
 }
 .icon-check:before {
   content: '\e902';
+}
+.icon-refresh:before {
+  content: '\e909';
 }
 .icon-star:before {
   content: '\e90e';

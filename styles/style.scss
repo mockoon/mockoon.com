@@ -303,3 +303,37 @@ p.console {
 .table > :not(:first-child) {
   border-top: inherit;
 }
+
+/* Only works with h5 font size and badge-lg */
+.badge-arrow {
+  position: relative;
+  border-radius: 0;
+
+  $arrow-height: 0.75rem * 2 + $h5-font-size;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $arrow-height;
+    height: $arrow-height;
+    border-top: $arrow-height/2 solid transparent;
+    border-bottom: $arrow-height/2 solid transparent;
+    border-left: $arrow-height/2 solid white;
+    border-right: $arrow-height/2 solid transparent;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: $arrow-height;
+    height: $arrow-height;
+    border-top: $arrow-height/2 solid white;
+    border-bottom: $arrow-height/2 solid white;
+    border-right: $arrow-height/2 solid white;
+    border-left: $arrow-height/2 solid transparent;
+  }
+}

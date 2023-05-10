@@ -21,7 +21,7 @@ const Download: FunctionComponent<{ version: string }> = function ({
 
       <Hero
         title='Download Mockoon'
-        subtitle='Mockoon is available on the three major OS.'
+        subtitle='Mockoon is available on the three major OS and is released under the MIT license'
       />
       <section className='pb-8'>
         <div className='container'>

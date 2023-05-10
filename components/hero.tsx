@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react';
 const Hero: FunctionComponent<{
   title?: string;
   subtitle?: string;
-  cta?: { text: string; link: string; blank?: boolean }[];
+  cta?: { text: string; link: string; blank?: boolean; subtitle?: string }[];
   ctaContent?: any;
   mainPicture?: string;
   mainPictureAlt?: string;
@@ -47,25 +47,33 @@ const Hero: FunctionComponent<{
               >
                 {props.cta.map((cta, index) => {
                   return (
-                    <a
-                      href={cta.link}
-                      key={index}
-                      target={cta.blank ? '_blank' : undefined}
-                      className='me-2'
-                    >
-                      <button
-                        className={`btn btn-primary${
-                          index > 0 ? '-soft' : ''
-                        } lift`}
+                    <>
+                      {' '}
+                      <a
+                        href={cta.link}
+                        key={index}
+                        target={cta.blank ? '_blank' : undefined}
+                        className='me-2'
                       >
-                        <span>
-                          {cta.text}{' '}
-                          {cta.link === '/download/' && (
-                            <i className='icon-download'></i>
-                          )}
-                        </span>
-                      </button>
-                    </a>
+                        <button
+                          className={`btn btn-primary${
+                            index > 0 ? '-soft' : ''
+                          } lift`}
+                        >
+                          <span>
+                            {cta.text}{' '}
+                            {cta.link === '/download/' && (
+                              <i className='icon-download'></i>
+                            )}
+                          </span>
+                        </button>
+                      </a>
+                      {cta.subtitle && (
+                        <p className='m-0 text-muted fst-italic'>
+                          <small>{cta.subtitle}</small>
+                        </p>
+                      )}
+                    </>
                   );
                 })}
               </div>

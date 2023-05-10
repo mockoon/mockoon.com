@@ -55,7 +55,8 @@ const Serverless: FunctionComponent = function () {
           {
             text: 'Usage instructions →',
             link: 'https://github.com/mockoon/mockoon/tree/main/packages/serverless#using-this-package',
-            blank: true
+            blank: true,
+            subtitle: 'MIT license'
           }
         ]}
         mainPicture='/images/serverless-screenshot.png'

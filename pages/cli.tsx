@@ -53,7 +53,8 @@ const CLI: FunctionComponent = function () {
           {
             text: 'Installation instructions →',
             link: 'https://github.com/mockoon/mockoon/tree/main/packages/cli#installation',
-            blank: true
+            blank: true,
+            subtitle: 'MIT license'
           }
         ]}
         mainPicture='/images/cli-screenshot.png'

@@ -4,6 +4,7 @@ import '../styles/style.scss';
 function MyApp({ Component, pageProps }) {
   return (
     <>
+      <Script>{`if(document.location.host.indexOf('mockoon.xyz') > -1){document.location.replace('https://mockoon.com')}`}</Script>
       <Component {...pageProps} />{' '}
       <Script
         async

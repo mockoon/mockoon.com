@@ -64,7 +64,8 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
               </a>
             </div>
             <div className='content p-3'>
-              or <code>choco install mockoon</code>
+              <span className='user-select-none'>or </span>
+              <code>choco install mockoon</code>
             </div>
           </div>
         </div>
@@ -114,9 +115,10 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
             </div>
             <div className='content'>(x86 only)</div>
             <div className='content p-3'>
-              or <code>sudo snap install mockoon</code>
+              <span className='user-select-none'>or </span>
+              <code>sudo snap install mockoon</code>
               <br />
-              <code className='mt-1'>yay -S mockoon-bin</code>
+              <code className='mt-1 user-select-text'>yay -S mockoon-bin</code>
             </div>
           </div>
         </div>
@@ -163,7 +165,8 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
               </a>
             </div>
             <div className='content p-3'>
-              or <code>brew install --cask mockoon</code>
+              <span className='user-select-none'>or </span>
+              <code>brew install --cask mockoon</code>
             </div>
           </div>
         </div>

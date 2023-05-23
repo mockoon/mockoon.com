@@ -84,7 +84,7 @@ const Enterprise: FunctionComponent = function () {
           body: JSON.stringify(data)
         });
 
-        if (response.status === 200) {
+        if (response.status === 204) {
           setSubmitSuccess(true);
           reset();
         } else {

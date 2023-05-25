@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { Fragment, FunctionComponent } from 'react';
 
 const Hero: FunctionComponent<{
   title?: string;
@@ -47,11 +47,9 @@ const Hero: FunctionComponent<{
               >
                 {props.cta.map((cta, index) => {
                   return (
-                    <>
-                      {' '}
+                    <Fragment key={index}>
                       <a
                         href={cta.link}
-                        key={index}
                         target={cta.blank ? '_blank' : undefined}
                         className='me-2'
                       >
@@ -73,7 +71,7 @@ const Hero: FunctionComponent<{
                           <small>{cta.subtitle}</small>
                         </p>
                       )}
-                    </>
+                    </Fragment>
                   );
                 })}
               </div>

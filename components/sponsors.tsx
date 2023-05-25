@@ -29,15 +29,6 @@ const Sponsors: FunctionComponent<{
               />
             </a>
           </Link>
-          <Link href='https://appwrite.io'>
-            <a className='d-inline-block p-4' target='_blank'>
-              <img
-                src='/images/sponsors/appwrite.png'
-                className='img-fluid m-4'
-                alt='Appwrite logo'
-              />
-            </a>
-          </Link>
           <Link href='https://www.peakcrypto.com/'>
             <a className='d-inline-block p-4' target='_blank'>
               <img

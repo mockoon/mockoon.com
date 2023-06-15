@@ -84,7 +84,7 @@ export default function OldReleasesIndex(props: {
               <aside className='flex-grow-1 sticky-top pt-4'>
                 <p className='mb-6'>
                   <span className='icon me-2'>
-                    <i className='icon-new_releases'></i>
+                    <i className='icon-new_releases text-warning'></i>
                   </span>
                   <Link href={'/releases/'}>New unified versioning</Link>
                 </p>

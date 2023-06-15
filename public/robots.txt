@@ -1,6 +1,12 @@
 # *
 User-agent: *
-Allow: /
+Disallow: /login
+Disallow: /signup
+Disallow: /app-auth
+Disallow: /email-verification
+Disallow: /account
+Disallow: /terms
+Disallow: /privacy
 
 # Host
 Host: https://mockoon.com

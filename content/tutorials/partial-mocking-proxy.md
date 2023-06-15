@@ -61,7 +61,7 @@ You can also call your custom endpoint `GET /people/90` and see that Mockoon int
 
 ## Step 4. Check the environment logs
 
-Finally, you can check the different calls that have been made to Mockoon by going to the [environment logs](docs:requests-logging). You will see that the forwarded calls have a blue "shield" icon next to them, while the requests caught by Mockoon's routes have a green "tick" icon.
+Finally, you can check the different calls that have been made to Mockoon by going to the [environment logs](docs:logging-and-recording/requests-logging). You will see that the forwarded calls have a blue "shield" icon next to them, while the requests caught by Mockoon's routes have a green "tick" icon.
 To open the requests logs, click on the "clock" icon in the upper right corner of the screen:
 
 ![Recording of checking the logs{1052x685}](/images/tutorials/proxy-mode/verify-call-logs.gif)

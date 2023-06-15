@@ -51,7 +51,7 @@ const EmailForm: FunctionComponent<{ formType: keyof typeof groups }> =
                 tabIndex={-1}
               ></input>
               <button className='btn btn-primary-soft' type='submit'>
-                {formType === 'newsletter' ? 'Subscribe' : "I'm interested!"}
+                {formType === 'newsletter' ? 'Subscribe' : 'Keep me posted'}
               </button>
             </div>
             {formType === 'productpreview' && (

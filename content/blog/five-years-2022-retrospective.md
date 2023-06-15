@@ -43,7 +43,7 @@ If you like our application, please consider sponsoring us too and join all the 
 
 [![sponsor button{300x86}](/images/sponsor-btn.png)](https://github.com/sponsors/mockoon)
 
-As part of this search for sustainability, we are now offering [enterprise services](/enterprise/): live support, applications deployment, bug prioritization, custom development, etc. Do not hesitate to reach out if your company needs such services.
+As part of this search for sustainability, we now have [Pro plans](/pro/) including, AI-powered API mocks generation, enterprise-grade support, and more!
 
 ---
 

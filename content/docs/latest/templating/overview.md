@@ -23,12 +23,17 @@ Also, parenthesis serves to prioritize a helper over another but not to symboliz
 
 All Handlebars helpers are available (`if`, `each`, etc.). For more information, please have a look at [Handlebars' documentation](https://handlebarsjs.com/).
 
+### Special characters escaping
+
+Handlebars will escape special characters (& < > " ' \` =) by default. If you want to avoid this behavior, you can use the triple curly braces syntax:`{{{helperName}}}`.
+
 ### Available helpers
 
 Besides Handlebars built-in helpers, Mockoon offers many of them:
 
 - [custom helpers](docs:templating/mockoon-helpers)
 - [request helpers](docs:templating/mockoon-request-helpers)
+- [response helpers](docs:templating/mockoon-response-helpers)
 - [Faker.js library helpers](docs:templating/fakerjs-helpers)
 
 ## Usages
@@ -117,9 +122,7 @@ This system is flexible enough to generate a lot of different contents like CSV 
 ```handlebars
 firstname,lastname,countryCode
 {{#repeat 10}}
-  {{faker 'name.firstName'}},{{faker 'name.lastName'}},{{faker
-    'address.countryCode'
-  }}
+  {{faker 'name.firstName'}},{{faker 'name.lastName'}},{{faker 'address.countryCode'}}
 {{/repeat}}
 ```
 

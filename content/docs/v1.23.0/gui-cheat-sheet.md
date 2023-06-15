@@ -35,7 +35,7 @@ The [**data buckets**](docs:data-buckets/overview) view let you create and modif
 ## Environment's requests logs view
 
 The **request logging** view is especially useful to debug the entering calls and how Mockoon responded to them. For each, you will find the usual information: path, headers, body, etc.
-You can also see if the call has been caught or forwarded through the [proxy](docs:proxy-mode) (if enabled) and [automatically mock](docs:requests-logging) entering requests that were not caught.
+You can also see if the call has been caught or forwarded through the [proxy](docs:proxy-mode) (if enabled) and [automatically mock](docs:logging-and-recording/auto-mocking-and-recording) entering requests that were not caught.
 Each environment (or mock API) has its own entering requests recording.
 
 ![Mockoon logs view{1200x753}](/images/docs/shared/cheat-sheet/logs-view.png)

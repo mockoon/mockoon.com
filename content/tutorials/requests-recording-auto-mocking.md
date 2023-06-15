@@ -15,7 +15,7 @@ When working on an application, you may want to use a mock API to speed up the d
 
 What if you could record all the HTTP calls made to a server and easily create mocks for them? Good news, Mockoon got you covered!
 
-By using Mockoon's [request recording feature](docs:requests-logging), you can intercept all the entering request to your mock server and create the corresponding endpoint in one click.
+By using Mockoon's [request recording feature](docs:logging-and-recording/auto-mocking-and-recording), you can intercept all the entering request to your mock server and create the corresponding endpoint automatically.
 
 Another useful usage of this feature is to be able to quickly investigate bugs and communication problems by looking at the exact payload of a request.
 
@@ -60,3 +60,9 @@ You are now ready to create your first mock API endpoints automatically.
 Next to each record, you will see a small "plus" icon. Click on these icons to create each corresponding route in your mock server. It will reuse most of the requests information (path, headers, etc.) to create the missing endpoint. From there, you can further customize your endpoint or create more mocks from the rest of the entering requests.
 
 ![Auto-mock by clicking on the plus icon{1171x754}](/images/tutorials/requests-recording/auto-mock-record.gif)
+
+## Step 5. Enable recording mode to automatically create new endpoints
+
+You can also enable the [recording mode](docs:logging-and-recording/auto-mocking-and-recording) to automatically create new endpoints when a new request is made to your mock server. To do so, click on the "recording" icon at the top of the page:
+
+![Enable recording mode](/images/tutorials/requests-recording/logs-start-recording.png)

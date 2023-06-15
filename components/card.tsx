@@ -45,8 +45,19 @@ const Card: FunctionComponent<{
         <div
           className={`${
             props.vertical || !props.data.imageSrc ? '' : 'w-100 w-lg-50'
-          } flex-grow-1 text-gray-700 d-flex flex-column align-items-center py-5`}
+          } card-body flex-grow-1 text-gray-700 d-flex flex-column align-items-center py-5`}
         >
+          {props.data.topTag && (
+            <span
+              className={`badge badge-float badge-float-outside ${
+                props.data.topTagClasses
+                  ? props.data.topTagClasses
+                  : 'bg-primary-soft'
+              }`}
+            >
+              {props.data.topTag}
+            </span>
+          )}
           <h3 className='pb-3 h4 col-10'>{props.data.title}</h3>
           {props.data.description && (
             <p

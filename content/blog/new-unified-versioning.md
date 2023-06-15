@@ -11,7 +11,7 @@ meta:
   description: Mockoon is now using unified versioning across all its packages, starting with release v3.0.0. Learn more!
 ---
 
-## Semantic versioning, sort of
+## 🔢 Semantic versioning, sort of
 
 Mockoon has been employing semantic versioning throughout all its applications since the start. However, the [desktop application](/download/), the [CLI](/cli/), and later the [serverless package](/serverless/), were not published under the same version.
 
@@ -22,7 +22,7 @@ Same for the CLI and serverless package which were following semantic versioning
 
 As a result, the CLI could be upgraded automatically without requiring any action from the user if a new release only incremented the minor version. However, if the user continued to use the previous version of the desktop application, it could potentially disrupt automated workflows if a data migration was part of the release.
 
-## Unified versioning 🥳
+## 🏷️ Unified versioning
 
 Starting with release [v3.0.0](/releases/3.0.0/), we unified the versioning across all our packages. The desktop application, the CLI, and the serverless package will all be released with the same version number.
 Our intention with this change is to simplify your experience and provide clarity regarding the compatibility of the CLI or serverless package version with the latest functionalities of the desktop application.

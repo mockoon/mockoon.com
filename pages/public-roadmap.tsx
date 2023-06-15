@@ -44,7 +44,7 @@ const Roadmap: FunctionComponent = function () {
       />
 
       <Hero
-        title='Public roadmap'
+        title='Public <span class="text-primary">roadmap</span>'
         subtitle='Mockoon is an open-source project with a public roadmap'
         mainPicture='/images/roadmap.png'
         mainPictureAlt='Screenshot of the roadmap kanban board'
@@ -82,6 +82,31 @@ const Roadmap: FunctionComponent = function () {
                   </div>
 
                   <p className='text-gray-800'>
+                    <Link href={'/pro/'}>AI-powered mocks</Link>
+                    <span className='badge text-bg-warning ms-2'>Pro</span>
+                  </p>
+                </div>
+                <div className='d-flex'>
+                  <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                    <i className='icon icon-check'></i>
+                  </div>
+
+                  <p className='text-gray-800'>
+                    <Link
+                      href={
+                        '/docs/latest/logging-and-recording/auto-mocking-and-recording/#record-your-api-calls'
+                      }
+                    >
+                      Auto-mocking with recording
+                    </Link>
+                  </p>
+                </div>
+                <div className='d-flex'>
+                  <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                    <i className='icon icon-check'></i>
+                  </div>
+
+                  <p className='text-gray-800'>
                     <Link href={'/docs/latest/api-endpoints/crud-routes/'}>
                       CRUD routes
                     </Link>
@@ -107,17 +132,6 @@ const Roadmap: FunctionComponent = function () {
                     </Link>
                   </p>
                 </div>
-                <div className='d-flex'>
-                  <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
-                    <i className='icon icon-check'></i>
-                  </div>
-
-                  <p className='text-gray-800'>
-                    <Link href={'/docs/latest/api-endpoints/folders/'}>
-                      Route folders
-                    </Link>
-                  </p>
-                </div>
               </div>
             </div>
             <div className='col-12 col-md-4 p-0'>
@@ -132,15 +146,13 @@ const Roadmap: FunctionComponent = function () {
                     <i className='icon icon-refresh'></i>
                   </div>
 
-                  <p className='text-gray-800'>Auto-mocking with recording</p>
-                </div>
-                <div className='d-flex'>
-                  <div className='badge badge-rounded-circle bg-primary-soft mt-1 me-4'>
-                    <i className='icon icon-refresh'></i>
-                  </div>
-
                   <p className='text-gray-800'>
-                    Environment variable support in templating
+                    <Link
+                      href={'https://github.com/mockoon/mockoon/issues/849'}
+                      target='_blank'
+                    >
+                      Environment variable support in templating
+                    </Link>
                   </p>
                 </div>
                 <div className='d-flex'>
@@ -149,8 +161,12 @@ const Roadmap: FunctionComponent = function () {
                   </div>
 
                   <p className='text-gray-800'>
-                    <Link href={'/pro/'}>AI-powered mocks</Link>
-                    <span className='badge bg-primary-soft ms-2'>Pro</span>
+                    <Link
+                      href={'https://github.com/mockoon/mockoon/issues/709'}
+                      target='_blank'
+                    >
+                      Trigger requests after a call
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -172,7 +188,7 @@ const Roadmap: FunctionComponent = function () {
                     <Link href={'/pro/'}>
                       Data synchronization for solo developers
                     </Link>
-                    <span className='badge bg-primary-soft ms-2'>Pro</span>
+                    <span className='badge text-bg-warning ms-2'>Pro</span>
                   </p>
                 </div>
               </div>
@@ -205,8 +221,8 @@ const Roadmap: FunctionComponent = function () {
           <div className='row'>
             <div className='text-center'>
               <p className='has-text-centered pt-4'>
-                <a className='btn btn-primary-soft' href='/enterprise/'>
-                  Prioritize your bug reports with our Enterprise support plans
+                <a className='btn btn-primary-soft' href='/pro/'>
+                  Get enterprise support with Mockoon Pro
                 </a>
               </p>
             </div>

@@ -3,7 +3,7 @@ import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Layout from '../layout/layout';
 
-const SponsorUs: FunctionComponent = function () {
+const About: FunctionComponent = function () {
   return (
     <Layout footerBanner='download'>
       <Meta
@@ -108,25 +108,40 @@ const SponsorUs: FunctionComponent = function () {
               .
             </p>
           </div>
-          <div className='text-center mt-8'>
-            <h4>
-              Become a sponsor or make a one-time donation through GitHub
-              Sponsors
-            </h4>
-            <p className='mt-4'>
-              <a
-                href='https://github.com/sponsors/mockoon'
-                target='_blank'
-                rel='noopener'
-              >
-                <img
-                  src='/images/sponsor-btn.png'
-                  alt='sponsor button'
-                  width={300}
-                  height={86}
-                />
-              </a>
+          <div className='text-center my-8'>
+            <a
+              href='https://github.com/sponsors/mockoon'
+              target='_blank'
+              rel='noopener'
+            >
+              <img
+                src='/images/sponsor-btn-250.png'
+                alt='sponsor button'
+                width={250}
+                height={71}
+              />
+            </a>
+          </div>
+
+          <hr />
+
+          <div className='col-lg-10 col-12 text-center text-lg-start mt-8'>
+            <p>
+              You can also support us by subscribing to our{' '}
+              <strong>Pro plans</strong> and enjoy a whole new level of
+              capabilities: AI-powered API mocks generation, enterprise-grade
+              support, and more!
             </p>
+          </div>
+          <div className='text-center my-8'>
+            <a href='/pro/'>
+              <img
+                src='/images/pro-btn-250.png'
+                alt='discover mockoon pro button'
+                width={250}
+                height={71}
+              />
+            </a>
           </div>
         </div>
       </div>
@@ -134,4 +149,4 @@ const SponsorUs: FunctionComponent = function () {
   );
 };
 
-export default SponsorUs;
+export default About;

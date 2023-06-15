@@ -19,57 +19,80 @@ const Contact: FunctionComponent = function () {
         <div className='container'>
           <div className='row justify-content-center'>
             <div className='col-12 col-lg-4 d-flex'>
-              <div className='card p-5 my-5 shadow-light-lg'>
-                <div className='col-12 text-center'>
+              <div className='card my-5 shadow-light-lg'>
+                <div className='card-body d-flex flex-column h-100'>
                   <img
                     src='/images/illustrations/chat.svg'
                     alt='support forums'
-                    className='w-25 mb-4'
+                    className='w-25 mb-6 align-self-center'
                   />
-                </div>
-                <h3 className='text-center'>Forums and Discord Server</h3>
-                <p className='px-2 text-center text-muted'>
-                  You can ask for help or discuss ideas and improvements on our
-                  GitHub Discussion forum. You are also welcome on our Discord
-                  server.
-                </p>
-                <div className='justify-content-center align-items-center d-flex flex-row '>
-                  <a
-                    href='https://github.com/mockoon/mockoon/discussions'
-                    target='_blank'
-                    rel='noopener'
-                  >
-                    GitHub
-                  </a>
-                  &nbsp;|&nbsp;
-                  <a
-                    href='https://discord.gg/MutRpsY5gE'
-                    target='_blank'
-                    rel='noopener'
-                  >
-                    Discord
-                  </a>
+                  <h3 className='text-center'>Community support</h3>
+                  <p className='px-2 text-center text-muted'>
+                    You can ask for help or discuss ideas and improvements on
+                    our GitHub Discussion forum. You are also welcome on our
+                    Discord server.
+                  </p>
+                  <div className='mt-auto text-center'>
+                    <a
+                      href='https://github.com/mockoon/mockoon/discussions'
+                      target='_blank'
+                      rel='noopener'
+                    >
+                      GitHub
+                    </a>
+                    &nbsp;|&nbsp;
+                    <a
+                      href='https://discord.gg/MutRpsY5gE'
+                      target='_blank'
+                      rel='noopener'
+                    >
+                      Discord
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className='col-12 col-lg-4 d-flex'>
-              <div className='card p-5 my-5 shadow-light-lg'>
-                <div className='col-12 text-center '>
+              <div className='card my-5 shadow-light-lg'>
+                <div className='card-body d-flex flex-column h-100'>
+                  <span className='badge text-bg-warning badge-float badge-float-outside'>
+                    PRO
+                  </span>
                   <img
                     src='/images/illustrations/visio.svg'
                     alt='dedicated support'
-                    className='w-25 mb-4'
+                    className='w-25 mb-6 align-self-center'
                   />
+                  <h3 className='text-center'>Enterprise support</h3>
+                  <p className='px-2 text-center text-muted'>
+                    Get enterprise-grade support with help from an official
+                    maintainer to answer support requests or any questions you
+                    may have about the project.
+                  </p>
+                  <div className='mt-auto text-center'>
+                    <a href='/pro/'>Get enterprise support</a>
+                  </div>
                 </div>
-                <h3 className='text-center'>Enterprise support</h3>
-                <p className='px-2 text-center text-muted'>
-                  Get enterprise-grade support with help from an official
-                  maintainer to answer support requests or any questions you may
-                  have about the project.
-                </p>
-                <div className='justify-content-center align-items-center d-flex flex-row '>
-                  <a href='/enterprise/'>Get enterprise support</a>
+              </div>
+            </div>
+
+            <div className='col-12 col-lg-4 d-flex'>
+              <div className='card my-5 shadow-light-lg'>
+                <div className='card-body d-flex flex-column h-100'>
+                  <img
+                    src='/images/illustrations/form.svg'
+                    alt='other enquiries'
+                    className='w-25 mb-6 align-self-center'
+                  />
+                  <h3 className='text-center'>Other inquiries</h3>
+                  <p className='px-2 text-center text-muted'>
+                    If you have any other non-support inquiries (sponsoring, pro
+                    plans, etc.), please contact us using our contact form.
+                  </p>
+                  <div className='mt-auto text-center'>
+                    <a href='/contact-form/'>Contact us</a>
+                  </div>
                 </div>
               </div>
             </div>

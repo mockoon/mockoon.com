@@ -1,0 +1,82 @@
+import {
+  User,
+  applyActionCode,
+  createUserWithEmailAndPassword,
+  getAuth,
+  sendEmailVerification,
+  signInWithEmailAndPassword
+} from 'firebase/auth';
+import { useEffect, useState } from 'react';
+
+const useAuth = () => {
+  const [user, setUser] = useState<User>(null);
+  const [isAuth, setIsAuth] = useState(false);
+  const auth = getAuth();
+  const [isLoading, setIsLoading] = useState(true);
+
+  const logout = async () => {
+    await auth.signOut();
+  };
+
+  const getIdToken = async (force = false) => {
+    if (!auth.currentUser) {
+      return null;
+    }
+
+    return await auth.currentUser.getIdToken(force);
+  };
+
+  const reload = async () => {
+    await auth.currentUser.reload();
+  };
+
+  const signIn = async (email, password) => {
+    await signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const signUp = async (email, password) => {
+    return await createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const emailVerification = async () => {
+    return await sendEmailVerification(auth.currentUser);
+  };
+
+  const applyEmailVerificationCode = async (code: string) => {
+    await applyActionCode(auth, code);
+  };
+
+  useEffect(() => {
+    const unsubscribe = auth.onIdTokenChanged((user) => {
+      if (user) {
+        setUser(user);
+
+        if (user.emailVerified) {
+          setIsAuth(true);
+        }
+      } else {
+        setUser(null);
+        setIsAuth(false);
+      }
+
+      setIsLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  return {
+    isLoading,
+    user,
+    isAuth,
+    logout,
+    getIdToken,
+    reload,
+    signIn,
+    signUp,
+    emailVerification,
+    applyEmailVerificationCode
+  };
+};
+
+export { useAuth };

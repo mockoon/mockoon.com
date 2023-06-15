@@ -11,7 +11,7 @@ meta:
   description: Mockoon has been accepted to be part of the first-ever GitHub Accelerator cohort among 20 other open-source projects.
 ---
 
-## Mockoon joins GitHub Accelerator
+## 🚀 Mockoon joins GitHub Accelerator
 
 We are excited to announce that we have been [accepted to the first GitHub Accelerator cohort](https://github.blog/2023-04-12-github-accelerator-our-first-cohort-and-whats-next/). This is a major milestone for our project and we are honored to be a part of such an amazing community of developers.
 
@@ -45,13 +45,13 @@ We are excited to see what the future holds, and we would like to thank GitHub f
 
 ---
 
-## Sponsoring and pro plan
+## 💁‍♂️ Sponsoring and pro plans
 
 Because developing open-source softwares is not free, we (still) need your help to guarantee a bright future for our favorite raccoon.
 If you like our work, you can support us in multiple ways:
 
 - Spread the word! The more, the merrier 🙂.
 - [Sponsor us](https://github.com/sponsors/mockoon) and join all the [Sponsors and Backers](https://github.com/mockoon/mockoon/blob/main/backers.md) who helped this project over time. It's a great way to support us and show your brand in front of thousands of developers interested in APIs.
-- Subscribe to our [enterprise services](/enterprise/): live support, applications deployment, bug prioritization, etc. Do not hesitate to reach out if your company needs such services.
+- Subscribe to our new [Pro plans](/pro/): AI-powered API mocks generation, enterprise-grade support, and more!
 
 We are also working on a [Pro plan](/pro/) available later this year. It will offer exciting features such as data synchronization and AI-powered API mocks generation. Stay tuned!

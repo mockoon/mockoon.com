@@ -1,5 +1,4 @@
 import { Fragment, FunctionComponent, useState } from 'react';
-import GitHub from './github';
 declare let gtag: Function;
 
 const DownloadSection: FunctionComponent<{ version: string }> = function ({
@@ -23,11 +22,16 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
               <p className='h1'>🚀</p>
               <h4 className='alert-heading'>Thanks for downloading Mockoon!</h4>
               <p>
-                Mockoon is an open-source developer tool created by a{' '}
-                <a href='/about/'>team of passionate developers</a>.{' '}
+                Mockoon tools are proudly offered as <strong>free</strong> and{' '}
+                <strong>open-source</strong>, crafted with dedication by a team
+                of passionate developers. We rely on your invaluable support to
+                ensure their continued development and maintenance.
               </p>
-              <p>Support us by starring our GitHub repository!</p>
-              <GitHub />
+              <p>
+                <a href='/sponsor-us/' className='btn btn-primary-soft'>
+                  Support us →
+                </a>
+              </p>
             </div>
           </div>
         </div>
@@ -62,10 +66,42 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 </span>
                 <span>portable</span>
               </a>
+              <a
+                className='btn btn-primary-soft btn-sm d-flex align-items-center'
+                href='https://apps.microsoft.com/store/detail/mockoon/9PK8DMSN00JJ?hl=en-us&gl=us'
+                rel='noopener'
+                target='_blank'
+                onClick={() => postDownload('windows')}
+              >
+                <span className='icon me-2'>
+                  <i className='icon-windows'></i>
+                </span>
+                <span>store</span>
+              </a>
             </div>
             <div className='content p-3'>
               <span className='user-select-none'>or </span>
-              <code>choco install mockoon</code>
+              <br />
+              <a
+                href='https://community.chocolatey.org/packages/mockoon'
+                className='text-decoration-none'
+                target='_blank'
+                rel='noopener'
+              >
+                {' '}
+                <code>choco install mockoon</code>
+                <i className='text-muted icon-open ps-2' aria-hidden='true'></i>
+              </a>
+              <br />
+              <a
+                href='https://apps.microsoft.com/store/detail/mockoon/9PK8DMSN00JJ?hl=en-us&gl=us'
+                className='text-decoration-none'
+                target='_blank'
+                rel='noopener'
+              >
+                <code>winget install mockoon</code>
+                <i className='text-muted icon-open ps-2' aria-hidden='true'></i>
+              </a>
             </div>
           </div>
         </div>
@@ -116,9 +152,28 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
             <div className='content'>(x86 only)</div>
             <div className='content p-3'>
               <span className='user-select-none'>or </span>
-              <code>sudo snap install mockoon</code>
               <br />
-              <code className='mt-1 user-select-text'>yay -S mockoon-bin</code>
+              <a
+                href='https://snapcraft.io/mockoon'
+                className='text-decoration-none'
+                target='_blank'
+                rel='noopener'
+              >
+                <code>sudo snap install mockoon</code>
+                <i className='text-muted icon-open ps-2' aria-hidden='true'></i>
+              </a>
+              <br />
+              <a
+                href='https://aur.archlinux.org/packages/mockoon-bin'
+                className='text-decoration-none'
+                target='_blank'
+                rel='noopener'
+              >
+                <code className='mt-1 user-select-text'>
+                  yay -S mockoon-bin
+                </code>
+                <i className='text-muted icon-open ps-2' aria-hidden='true'></i>
+              </a>
             </div>
           </div>
         </div>
@@ -166,7 +221,16 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
             </div>
             <div className='content p-3'>
               <span className='user-select-none'>or </span>
-              <code>brew install --cask mockoon</code>
+              <br />
+              <a
+                href='https://formulae.brew.sh/cask/mockoon'
+                className='text-decoration-none'
+                target='_blank'
+                rel='noopener'
+              >
+                <code>brew install --cask mockoon</code>
+                <i className='text-muted icon-open ps-2' aria-hidden='true'></i>
+              </a>
             </div>
           </div>
         </div>

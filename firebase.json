@@ -12,8 +12,18 @@
     ],
     "redirects": [
       {
+        "source": "/enterprise/",
+        "destination": "/pro/",
+        "type": 301
+      },
+      {
+        "source": "/account",
+        "destination": "/account/info/",
+        "type": 301
+      },
+      {
         "source": "/releases{,/}",
-        "destination": "/releases/3.0.0/",
+        "destination": "/releases/3.1.0/",
         "type": 302
       },
       {
@@ -89,6 +99,11 @@
       {
         "source": "/tutorial/incoming-requests-logs",
         "destination": "/docs/latest/requests-logging/",
+        "type": 301
+      },
+      {
+        "source": "/docs/latest/requests-logging/",
+        "destination": "/docs/latest/logging-and-recording/requests-logging/",
         "type": 301
       },
       {

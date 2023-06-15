@@ -7,7 +7,8 @@ const CodeBlock: FunctionComponent<{
   language: string;
   dark?: boolean;
   maxHeight?: string;
-}> = function ({ code, language, dark, maxHeight }) {
+  lineBreak?: boolean;
+}> = function ({ code, language, dark, maxHeight, lineBreak }) {
   const optionalProps: { style?: any } = {};
 
   if (dark) {
@@ -38,6 +39,11 @@ const CodeBlock: FunctionComponent<{
       </div>
 
       <SyntaxHighlighter
+        lineProps={
+          lineBreak && {
+            style: { wordBreak: 'break-all', whiteSpace: 'pre-wrap' }
+          }
+        }
         wrapLongLines
         language={language}
         PreTag='div'

@@ -1,24 +1,34 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent, MouseEvent, useState } from 'react';
+import { useAuth } from '../utils/auth';
 
 const Nav: FunctionComponent = function () {
   const router = useRouter();
   const [show, setShow] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [appsDropdownOpen, setAppsDropdownOpen] = useState(false);
+  const [accountDropdownOpen, setAccountDropdownOpen] = useState(false);
+  const auth = useAuth();
 
   const toggler = (
     <button
       className='navbar-toggler'
       type='button'
       aria-controls='navbar'
-      aria-expanded='false'
+      aria-expanded={show}
       aria-label='Toggle navigation'
       onClick={() => setShow(!show)}
     >
       <span className='navbar-toggler-icon'></span>
     </button>
   );
+
+  const logout = async (e: MouseEvent) => {
+    e.preventDefault();
+
+    await auth.logout();
+    setAccountDropdownOpen(false);
+  };
 
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-white'>
@@ -54,17 +64,60 @@ const Nav: FunctionComponent = function () {
                 </Link>
               </li>
             )}
+            <li
+              className='nav-item dropdown text-center'
+              onMouseEnter={() => {
+                !show && setAppsDropdownOpen(true);
+              }}
+              onMouseLeave={() => {
+                !show && setAppsDropdownOpen(false);
+              }}
+            >
+              <a
+                className={`nav-link dropdown-toggle`}
+                href='#'
+                aria-haspopup='true'
+                aria-expanded={appsDropdownOpen}
+              >
+                Apps {!show && <i className='icon-arrow_drop_down'></i>}
+              </a>
+              <ul
+                className={`dropdown-menu ${show ? 'text-center' : ''} ${
+                  appsDropdownOpen ? 'show' : ''
+                }`}
+              >
+                {/* <h6 className='dropdown-header'>Career</h6> */}
+                <li className='dropdown-item mb-5'>
+                  <Link href='/download/'>
+                    <a className='dropdown-link'>Desktop application</a>
+                  </Link>
+                </li>
+                <h6 className='dropdown-header'>Tools</h6>
+                <li className='dropdown-item'>
+                  <Link href='/cli/'>
+                    <a className='dropdown-link'>CLI</a>
+                  </Link>
+                </li>
+                <li className='dropdown-item'>
+                  <Link href='/serverless/'>
+                    <a className='dropdown-link'>Serveless package</a>
+                  </Link>
+                </li>
+              </ul>
+            </li>
+
             <li className='nav-item'>
-              <Link href='/cli/'>
+              <Link href='/pro/'>
                 <a
-                  className={`nav-link d-flex align-items-center ${
-                    router.pathname === '/cli' ? 'active' : ''
+                  className={`nav-link ${
+                    router.pathname === '/pro' ? 'active' : ''
                   }`}
                 >
-                  CLI
+                  Pro
                 </a>
               </Link>
             </li>
+
             <li className='nav-item'>
               <Link href='/features/'>
                 <a
@@ -107,46 +160,65 @@ const Nav: FunctionComponent = function () {
             <li
               className='nav-item dropdown text-center'
               onMouseEnter={() => {
-                !show && setDropdownOpen(true);
+                !show && setAccountDropdownOpen(true);
               }}
               onMouseLeave={() => {
-                !show && setDropdownOpen(false);
+                !show && setAccountDropdownOpen(false);
               }}
             >
               <a
                 className={`nav-link dropdown-toggle`}
                 href='#'
                 aria-haspopup='true'
-                aria-expanded='false'
+                aria-expanded={accountDropdownOpen}
               >
-                Pro {!show && <span className='h6 vertical-middle'>▼</span>}
+                <span
+                  className={`me-2 vertical-bottom ${
+                    auth.isAuth ? 'with-indicator' : ''
+                  }`}
+                >
+                  <i className='icon-account_circle'></i>
+                </span>
+                {!show && <i className='icon-arrow_drop_down'></i>}
               </a>
               <ul
                 className={`dropdown-menu ${show ? 'text-center' : ''} ${
-                  dropdownOpen ? 'show' : ''
+                  accountDropdownOpen ? 'show' : ''
                 }`}
               >
-                <li className='dropdown-item'>
-                  <Link href='/pro/'>
-                    <a className='dropdown-link'>
-                      Pro plans{' '}
-                      <span className='badge bg-primary-soft'>Coming soon</span>
-                    </a>
-                  </Link>
-                </li>
-                <li className='dropdown-item'>
-                  <Link href='/enterprise/'>
-                    <a className='dropdown-link'>Enterprise support</a>
-                  </Link>
-                </li>
+                {!auth.isAuth && (
+                  <>
+                    <li className='dropdown-item'>
+                      <Link href='/login/'>
+                        <a className='dropdown-link'>Log in</a>
+                      </Link>
+                    </li>
+                    <li className='dropdown-item'>
+                      <Link href='/signup/'>
+                        <a className='dropdown-link'>Sign up</a>
+                      </Link>
+                    </li>
+                  </>
+                )}
+                {auth.isAuth && (
+                  <>
+                    <li className='dropdown-item'>
+                      <Link href='/account/info/'>
+                        <a className='dropdown-link'>My account</a>
+                      </Link>
+                    </li>
+                    <li className='dropdown-item'>
+                      <a
+                        href=''
+                        className='dropdown-link'
+                        onClick={async (e) => logout(e)}
+                      >
+                        Log out
+                      </a>
+                    </li>
+                  </>
+                )}
               </ul>
-            </li>
-            <li className='nav-item'>
-              <Link href='/download/'>
-                <a className='btn btn-primary btn-xs'>
-                  Download <i className='icon-download'></i>
-                </a>
-              </Link>
             </li>
           </ul>
         </div>

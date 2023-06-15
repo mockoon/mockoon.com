@@ -10,12 +10,15 @@ const SponsorUs: FunctionComponent = function () {
   return (
     <Layout footerBanner='newsletter'>
       <Meta
-        title='Sponsor Mockoon'
-        description='Mockoon is an open source project. You can help the maintainers by sponsoring the project through GitHub Sponsors or by making a one-time donation.'
+        title='Support our work on Mockoon'
+        description='Mockoon is an open-source project. You can help the maintainers by sponsoring the project through GitHub Sponsors or by subscribing to our Pro plans.'
         ogType='article'
       />
 
-      <Hero title='Sponsor Mockoon' />
+      <Hero
+        title='<span class="text-primary">Support our work</span> on Mockoon'
+        subtitle='Mockoon is an open-source project. You can support our work by sponsoring the project or by subscribing to our Pro plans.'
+      />
 
       <div className='container pb-8'>
         <div className='row d-flex flex-column align-items-center '>
@@ -37,7 +40,8 @@ const SponsorUs: FunctionComponent = function () {
             </p>
             <p>
               Entirely free, Mockoon saves time for thousands of people around
-              the world every day and recently crossed 300&nbsp;000 downloads!
+              the world every day and recently crossed{' '}
+              <strong>400&nbsp;000 downloads</strong>!
             </p>
             <p>
               Reaching this level of satisfaction requires a tremendous amount
@@ -61,11 +65,7 @@ const SponsorUs: FunctionComponent = function () {
               automated testing (~35k views per month, more details on GitHub
               Sponsors).
             </p>
-            <div className='text-center mt-8'>
-              <h4>
-                Become a sponsor or make a one-time donation through GitHub
-                Sponsors
-              </h4>
+            <div className='text-center my-8'>
               <p className='mt-4'>
                 <a
                   href='https://github.com/sponsors/mockoon'
@@ -73,20 +73,44 @@ const SponsorUs: FunctionComponent = function () {
                   rel='noopener'
                 >
                   <img
-                    src='/images/sponsor-btn.png'
+                    src='/images/sponsor-btn-250.png'
                     alt='sponsor button'
-                    width={300}
-                    height={86}
+                    width={250}
+                    height={71}
                   />
                 </a>
               </p>
             </div>
 
+            <hr />
+
+            <div className='col-lg-10 col-12 text-center text-lg-start mt-8'>
+              <p>
+                You can also support us by subscribing to our{' '}
+                <strong>Pro plans</strong> and enjoy a whole new level of
+                capabilities: AI-powered API mocks generation, enterprise-grade
+                support, and more!
+              </p>
+            </div>
+            <div className='text-center my-8'>
+              <a href='/pro/'>
+                <img
+                  src='/images/pro-btn-250.png'
+                  alt='discover mockoon pro button'
+                  width={250}
+                  height={71}
+                />
+              </a>
+            </div>
+
+            <hr />
+
             <div className='text-center mt-8'>
               <p>
-                If donating is not an option, you can still help us spread the
-                word by starring the project on GitHub or sharing it with your
-                peers!
+                If subscribing to the <strong>Pro plans</strong> or{' '}
+                <strong>donating</strong> is not an option, you can still help
+                us <strong>spread the word</strong> by starring the project on
+                GitHub or sharing it with your peers!
               </p>
               <div className='m-4'>
                 <GitHub />

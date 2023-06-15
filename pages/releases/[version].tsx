@@ -73,7 +73,10 @@ export default function Release(props: {
         url={`/releases/${props.version}/`}
       />
 
-      <Hero title={props.releaseData.meta.title} />
+      <Hero
+        title={props.releaseData.meta.title}
+        subtitle={props.releaseData.date}
+      />
 
       <section className='pb-8'>
         <div className='container'>

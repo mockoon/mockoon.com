@@ -110,7 +110,7 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/releases/3.0.0/'>
+                <Link href='/releases/3.1.0/'>
                   <a className='text-reset'>Releases</a>
                 </Link>
               </li>
@@ -146,18 +146,33 @@ const Footer: FunctionComponent<{
 
             <ul className='list-unstyled text-muted'>
               <li className='mb-2'>
+                <Link href='/download/'>
+                  <a className='text-reset'>Desktop application</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/cli/'>
                   <a className='text-reset'>CLI</a>
                 </Link>
               </li>
               <li className='mb-2'>
                 <Link href='/serverless/'>
-                  <a className='text-reset'>Serverless</a>
+                  <a className='text-reset'>Serverless package</a>
                 </Link>
               </li>
               <li className='mb-2'>
                 <Link href='/mock-samples/category/all/'>
                   <a className='text-reset'>Mock samples</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/templates/'>
+                  <a className='text-reset'>Templates</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/ai-powered-api-mocking/'>
+                  <a className='text-reset'>AI-powered API mocking</a>
                 </Link>
               </li>
               <li className='mb-2'>
@@ -193,23 +208,31 @@ const Footer: FunctionComponent<{
               </li>
               <li className='mb-2'>
                 <Link href='/pro/'>
-                  <a className='text-reset'>
-                    Pro plans{' '}
-                    <span className='badge bg-primary-soft'>Coming soon</span>
-                  </a>
+                  <a className='text-reset'>Pro plans</a>
                 </Link>
               </li>
-              <li className='mb-2'>
-                <Link href='/enterprise/'>
-                  <a className='text-reset'>Enterprise support</a>
-                </Link>
-              </li>
+
               <li className='mb-2'>
                 <Link href='https://mockoon.threadless.com/'>
                   <a className='text-reset' target='_blank' rel='noopener'>
                     Shop{' '}
                     <i className='text-muted icon-open' aria-hidden='true'></i>
                   </a>
+                </Link>
+              </li>
+            </ul>
+
+            <h6 className='fw-bold text-uppercase text-gray-700 mt-4'>Legal</h6>
+
+            <ul className='list-unstyled text-muted mb-0'>
+              <li className='mb-2'>
+                <Link href='/terms/'>
+                  <a className='text-reset'>Terms of service</a>
+                </Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/privacy/'>
+                  <a className='text-reset'>Privacy policy</a>
                 </Link>
               </li>
             </ul>
@@ -271,10 +294,7 @@ const Footer: FunctionComponent<{
         </div>
         <div className='mt-8 text-center'>
           <p className='text-gray-500 h6'>
-            &copy; Mockoon 2017 - {new Date().getFullYear()} -{' '}
-            <a href='/privacy/' className='text-reset'>
-              Privacy policy
-            </a>
+            &copy; Mockoon 2017 - {new Date().getFullYear()}
           </p>
         </div>
       </div>

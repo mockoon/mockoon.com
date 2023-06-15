@@ -40,6 +40,19 @@ const features: CardData[] = [
     ]
   },
   {
+    title: 'Quick prototyping using AI',
+    topTag: 'PRO',
+    topTagClasses: 'text-bg-warning',
+    description:
+      'Use our read-to-use templates and AI assistant to quickly prototype your mock APIs',
+    links: [
+      {
+        src: '/templates/',
+        text: 'Learn more →'
+      }
+    ]
+  },
+  {
     title: 'Route regex',
     description:
       'Route regex supported (/.*, /[a-z]{3}, ...), based on ExpressJS syntax.'
@@ -80,17 +93,45 @@ const features: CardData[] = [
     title: 'Requests and responses logs',
     description:
       'All incoming requests and outgoing responses are logged for easier debugging.',
-    links: [{ src: '/docs/latest/requests-logging/', text: 'Documentation →' }]
+    links: [
+      {
+        src: '/docs/latest/logging-and-recording/requests-logging/',
+        text: 'Documentation →'
+      }
+    ]
+  },
+  {
+    title: 'Auto-mocking',
+    description:
+      'Auto-mock your API by recording requests and responses from a real API.',
+    links: [
+      {
+        src: '/docs/latest/logging-and-recording/auto-mocking-and-recording/',
+        text: 'Documentation →'
+      }
+    ]
   },
   {
     title: 'Proxy mode',
     description:
-      "Redirect all non-defined routes to the specified host with Mockoon's proxy mode."
+      "Redirect all non-defined routes to the specified host with Mockoon's proxy mode.",
+    links: [
+      {
+        src: '/docs/latest/proxy-mode/',
+        text: 'Documentation →'
+      }
+    ]
   },
   {
     title: 'File serving',
     description:
-      'File serving with automatic mime type detection and templating support.'
+      'File serving with automatic mime type detection and templating support.',
+    links: [
+      {
+        src: '/docs/latest/response-body/file-serving/',
+        text: 'Documentation →'
+      }
+    ]
   },
   {
     title: 'Rich text editor',

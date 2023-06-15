@@ -232,7 +232,43 @@ const Faq: FunctionComponent = function () {
                       >
                         MIT license
                       </a>
-                      ).
+                      ). We also have a Pro version that offers additional
+                      features (see below).
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='accordion-item'>
+                <div className='accordion-button '>
+                  <h3 id='is-mockoon-free-and-or-open-source' className='me-4'>
+                    Do you offer a Pro version?
+                  </h3>
+                </div>
+
+                <div className='accordion-collapse '>
+                  <div className='accordion-body'>
+                    <p className='text-gray-700'>
+                      Yes, we have <a href='/pro/'>Pro plans</a> that offers
+                      additional features like AI-powered API mocks generation,
+                      enterprise-grade support, and more!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='accordion-item'>
+                <div className='accordion-button '>
+                  <h3 id='is-mockoon-free-and-or-open-source' className='me-4'>
+                    Do you offer enterprise-grade support?
+                  </h3>
+                </div>
+
+                <div className='accordion-collapse '>
+                  <div className='accordion-body'>
+                    <p className='text-gray-700'>
+                      Yes, you can get enterprise-grade support with our{' '}
+                      <a href='/pro/'>Pro plans</a>.
                     </p>
                   </div>
                 </div>

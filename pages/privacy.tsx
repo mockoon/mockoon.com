@@ -8,10 +8,10 @@ const Privacy: FunctionComponent = function () {
     <Layout footerBanner='download'>
       <Meta
         title="Mockoon's Privacy policy"
-        description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy highly regulated environments friendly'
+        description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Privacy policy' />
+      <Hero title='Privacy policy' subtitle='Last update July 1st, 2021' />
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>

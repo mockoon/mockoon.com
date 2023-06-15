@@ -36,6 +36,8 @@ export type CardData = {
   imageAlt?: string;
   title: string;
   description?: string;
+  topTag?: string;
+  topTagClasses?: string;
   links?: {
     src: string;
     text: string;

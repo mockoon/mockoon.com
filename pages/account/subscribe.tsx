@@ -16,7 +16,7 @@ const AccountSubscribe: FunctionComponent = function () {
 
       <AccountHeader />
 
-      <Plans showFree={false} />
+      <Plans showFree={false} showTagline={false} />
     </Layout>
   );
 };

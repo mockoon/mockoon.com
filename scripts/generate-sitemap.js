@@ -113,7 +113,13 @@ if (!fs.existsSync('public/sitemaps/')) {
  * @param {*} toRemove
  * @param {*} additionalPaths
  */
-async function generateSitemap(path, filename, toRemove, additionalPaths) {
+async function generateSitemap(
+  path,
+  filename,
+  toRemove,
+  additionalPaths,
+  exclude
+) {
   let files = await glob(path);
 
   files = files.map((file) => {
@@ -122,6 +128,12 @@ async function generateSitemap(path, filename, toRemove, additionalPaths) {
       .replace('.tsx', '')
       .replace('.md', '');
   });
+
+  if (exclude && exclude.length) {
+    files = files.filter(
+      (file) => !exclude.some((excluded) => file.includes(excluded))
+    );
+  }
 
   if (additionalPaths && additionalPaths.length) {
     files = [...files, ...additionalPaths];
@@ -138,7 +150,14 @@ if (!fs.existsSync('public/sitemaps/')) {
 }
 
 Promise.all([
-  generateSitemap('pages/!(_|index)*.tsx', 'root-pages', '^pages'),
+  generateSitemap('pages/!(_|index)*.tsx', 'root-pages', '^pages', null, [
+    'app-auth',
+    'login',
+    'signup',
+    'privacy',
+    'terms',
+    'email-verification'
+  ]),
   generateSitemap('pages/integrations/*.tsx', 'integrations', '^pages'),
   generateSitemap(
     '{pages,content}/tutorials/!(\\[)*.{tsx,md}',

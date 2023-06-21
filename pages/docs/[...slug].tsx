@@ -2,7 +2,6 @@ import matter from 'gray-matter';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ChangeEvent, useState } from 'react';
-import { NavItem } from 'react-bootstrap';
 import { rsort as semverSort } from 'semver';
 import Markdown from '../../components/markdown';
 import Meta from '../../components/meta';
@@ -104,11 +103,13 @@ export async function getStaticProps({ params }) {
 
   const navItems = docsData.list
     .reduce((navItems: DocsNavData, topic) => {
+      console.log(topic);
       const newItem: DocsNavItem = {
         type: 'topic',
         title: topic.data.title,
         order: topic.data.order || 1000,
-        slug: `/docs/${topic.slug}`
+        slug: `/docs/${topic.slug}`,
+        proBadge: topic.data.proBadge || false
       };
 
       if (topic.categoryName) {
@@ -235,7 +236,14 @@ export default function Docs(props: {
                       } ${router.asPath.includes(item.slug) ? 'active' : ''}`}
                     >
                       <Link href={`${item.slug}/`}>
-                        <a className='list-link'>{item.title}</a>
+                        <a className='list-link'>
+                          {item.title}
+                          {item.proBadge && (
+                            <span className='badge text-bg-warning ms-2'>
+                              Pro
+                            </span>
+                          )}
+                        </a>
                       </Link>
                     </li>
                   ));

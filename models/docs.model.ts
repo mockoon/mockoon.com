@@ -4,6 +4,7 @@ export type DocsTopicData = {
   title: string;
   meta: MetaData;
   order: number;
+  proBadge?: boolean;
 };
 
 export type DocsTopicsList = { data: DocsTopicData; slug: string }[];
@@ -13,6 +14,7 @@ export type DocsNavItem = {
   title: string;
   slug: string;
   order: number;
+  proBadge?: boolean;
 };
 
 export type DocsNavCategory = {
@@ -21,6 +23,7 @@ export type DocsNavCategory = {
   categoryName: string;
   order: number;
   items: DocsNavItem[];
+  proBadge?: boolean;
 };
 
 export type DocsNavData = (DocsNavItem | DocsNavCategory)[];

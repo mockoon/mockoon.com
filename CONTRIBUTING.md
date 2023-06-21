@@ -65,6 +65,8 @@ Documentation screenshots can be automatically generated using the [monorepo](ht
 Run the following commands: `npm run build:desktop:ci` then `npm run documentation:desktop`.
 New screenshots will be created in `./packages/desktop/tmp/docs`. They can be copied in this repository's `/public/images/docs/latest` folder.
 
+Generating the documentation requires the Firebase emulator and API to run locally and the app to be authenticated with a fake paid account (in order to generate screenshots for Pro features).
+
 Some screenshots still need to be created manually:
 
 - the cheat sheet (screenshot is taken but text overlay is added manually)

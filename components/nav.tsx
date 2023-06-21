@@ -86,19 +86,19 @@ const Nav: FunctionComponent = function () {
                   appsDropdownOpen ? 'show' : ''
                 }`}
               >
-                {/* <h6 className='dropdown-header'>Career</h6> */}
-                <li className='dropdown-item mb-5'>
+                <h6 className='dropdown-header'>Main application</h6>
+                <li className='dropdown-item mb-5 ps-lg-8'>
                   <Link href='/download/'>
-                    <a className='dropdown-link'>Desktop application</a>
+                    <a className='dropdown-link'>Mockoon Desktop</a>
                   </Link>
                 </li>
                 <h6 className='dropdown-header'>Tools</h6>
-                <li className='dropdown-item'>
+                <li className='dropdown-item ps-lg-8'>
                   <Link href='/cli/'>
                     <a className='dropdown-link'>CLI</a>
                   </Link>
                 </li>
-                <li className='dropdown-item'>
+                <li className='dropdown-item ps-lg-8'>
                   <Link href='/serverless/'>
                     <a className='dropdown-link'>Serveless package</a>
                   </Link>

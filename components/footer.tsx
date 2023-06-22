@@ -235,6 +235,11 @@ const Footer: FunctionComponent<{
                   <a className='text-reset'>Privacy policy</a>
                 </Link>
               </li>
+              <li className='mb-2'>
+                <Link href='/brand/'>
+                  <a className='text-reset'>Brand assets</a>
+                </Link>
+              </li>
             </ul>
             <ul className='align-self-center footer-social list-unstyled list-inline list-social mt-4'>
               <li className='list-inline-item list-social-item me-2'>

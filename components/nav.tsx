@@ -33,15 +33,20 @@ const Nav: FunctionComponent = function () {
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-white'>
       <div className='container-fluid'>
-        <Link href='/'>
-          <a className='navbar-brand'>
-            <img
-              src='/images/logo.svg'
-              className='navbar-brand-img'
-              alt='Logo'
-            />
-          </a>
-        </Link>
+        <a
+          className='navbar-brand'
+          href='/'
+          onContextMenu={(e) => {
+            e.preventDefault();
+            router.push('/brand/');
+          }}
+          onClick={(e) => {
+            e.preventDefault();
+            router.push('/');
+          }}
+        >
+          <img src='/images/logo.svg' className='navbar-brand-img' alt='Logo' />
+        </a>
 
         {toggler}
         <div

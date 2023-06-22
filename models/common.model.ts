@@ -34,6 +34,7 @@ export type MetaData = {
 export type CardData = {
   imageSrc?: string;
   imageAlt?: string;
+  imagePaddingClasses?: string;
   title: string;
   description?: string;
   topTag?: string;

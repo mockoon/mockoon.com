@@ -16,6 +16,9 @@ const Card: FunctionComponent<{
   let border = props.border !== undefined ? props.border : false;
   let synchronizedColors =
     props.synchronizedColors !== undefined ? props.synchronizedColors : false;
+  let padding = props.data.imagePaddingClasses
+    ? props.data.imagePaddingClasses
+    : 'px-8 py-4';
 
   return (
     <Fragment>
@@ -28,7 +31,7 @@ const Card: FunctionComponent<{
         {props.data.imageSrc && (
           <div
             className={`${props.vertical ? '' : 'w-100 w-lg-50'} ${
-              cover ? 'bg-cover' : 'px-8 py-4'
+              cover ? 'bg-cover' : padding
             } ${props.vertical ? 'card-img-top' : 'card-img-start-lg'}`}
             style={{
               backgroundImage: `url('${props.data.imageSrc}')`,

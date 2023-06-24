@@ -103,7 +103,6 @@ export async function getStaticProps({ params }) {
 
   const navItems = docsData.list
     .reduce((navItems: DocsNavData, topic) => {
-      console.log(topic);
       const newItem: DocsNavItem = {
         type: 'topic',
         title: topic.data.title,

@@ -34,4 +34,4 @@ A data buckets can also be directly linked to a route response. Linking a data b
 
 To link a data bucket to a route response, choose "Data" in the body selector and select your data bucket.
 
-![Using data bucket in a route response{1002x497}](docs-img:link-data-bucket-response.png)
+![Using data bucket in a route response{1002x464}](docs-img:link-data-bucket-response.png)

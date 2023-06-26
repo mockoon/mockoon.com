@@ -16,7 +16,7 @@ Mockoon supports serving your mock API over TLS with a self-signed certificate b
 
 You can activate the TLSoption for each environment independently. Open the **Environment Settings** by clicking on the tab at the top of the window:
 
-![click on the settings tab{1071x160}](docs-img:open-environment-settings.png)
+![click on the settings tab{1034x160}](docs-img:open-environment-settings.png)
 
 Enable the **TLS option** by ticking the checkbox. The option was successfully activated if a yellow lock is displayed next to the environment name.
 

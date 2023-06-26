@@ -20,7 +20,7 @@ The data buckets are defined at the **environment level** and are **generated wh
 
 To create a new data bucket, open the **Data** options by clicking on the tab at the top of the window:
 
-![Open data bucket view{755x160}](docs-img:open-data-view.png)
+![Open data bucket view{742x160}](docs-img:open-data-view.png)
 
 Add a new data bucket by clicking on the "plus" button:
 

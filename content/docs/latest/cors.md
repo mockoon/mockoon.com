@@ -18,7 +18,7 @@ For your application to work, you can make Mockoon automatically answer to these
 
 Open the **Environment Settings** by clicking on the tab at the top of the window:
 
-![click on the settings tab{1071x160}](docs-img:open-environment-settings.png)
+![click on the settings tab{1034x160}](docs-img:open-environment-settings.png)
 
 Enable the **Automatically handle OPTIONS pre-flight requests ** by ticking the checkbox:
 

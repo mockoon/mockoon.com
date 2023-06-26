@@ -16,7 +16,7 @@ In order to prefix all your mock API routes,
 
 Open the **Environment Settings** by clicking on the tab at the top of the window:
 
-![click on the settings tab{796x160}](docs-img:open-environment-settings.png)
+![click on the settings tab{767x160}](docs-img:open-environment-settings.png)
 
 Then, fill the **API prefix** input at the top of the **environment Settings**:
 

@@ -16,7 +16,7 @@ Mockoon supports partial mocking of an API endpoints by forwarding the requests 
 
 To activate the proxy mode, open the **Environment Proxy** options by clicking on the tab at the top of the window:
 
-![click on proxy tab{916x160}](docs-img:open-proxy-options.png)
+![click on proxy tab{887x160}](docs-img:open-proxy-options.png)
 
 Enable the proxy mode by checking the box and enter the server URL to which you want to forward the calls. A small shield icon should appear on the right of your environment name indicating that the proxy mode has been enabled:
 

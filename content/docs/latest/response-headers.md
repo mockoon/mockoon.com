@@ -28,7 +28,7 @@ You can also add response headers at the environment level. Headers defined in a
 
 Open the **Environment Headers** by clicking on the tab at the top of the window:
 
-![click on the headers tab{763x160}](docs-img:open-environment-headers.png)
+![click on the headers tab{746x160}](docs-img:open-environment-headers.png)
 
 And add one or more headers by clicking on the "Add header" button at the bottom of the list:
 

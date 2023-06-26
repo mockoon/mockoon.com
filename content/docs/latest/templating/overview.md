@@ -74,7 +74,7 @@ Here is an example of what you can do with this templating system:
 }
 ```
 
-![body editor content{963x545}](docs-img:body-templating.png)
+![body editor content{963x543}](docs-img:body-templating.png)
 
 The above template produces the following body with this request:
 

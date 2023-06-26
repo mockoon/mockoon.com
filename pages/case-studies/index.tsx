@@ -14,7 +14,7 @@ const meta = {
 
 export async function getStaticProps() {
   const staticProps = buildIndexStaticProps(
-    require.context('../../content/case-studies/', false, /\.md$/)
+    require.context('../../content/case-studies/', false, /\.\/.+\.md$/)
   );
 
   staticProps.props.articles = orderArticles(staticProps.props.articles);

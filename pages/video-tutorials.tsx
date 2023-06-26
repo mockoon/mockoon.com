@@ -93,9 +93,11 @@ const VideoTutorials = function () {
               </div>
 
               <p>
-                <Link href={activeVideo.link}>
-                  {/* with arrow */}
-                  <a className='btn btn-secondary-soft'>📃 Text version →</a>
+                <Link
+                  href={activeVideo.link}
+                  className='btn btn-secondary-soft'
+                >
+                  📃 Text version →
                 </Link>
               </p>
             </div>

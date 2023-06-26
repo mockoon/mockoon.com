@@ -1,10 +1,6 @@
-const withTM = require('next-transpile-modules')(['react-github-btn']);
-
-module.exports = withTM({
+module.exports = {
+  output: 'export',
   trailingSlash: true,
-  cssLoaderOptions: {
-    url: false
-  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.md$/,
@@ -13,6 +9,6 @@ module.exports = withTM({
 
     return config;
   },
-  webpack5: true
+  transpilePackages: ['react-github-btn']
   // do not add redirects as we are using a static export (next export) and it doesn't support redirects
-});
+};

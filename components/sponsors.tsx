@@ -11,8 +11,8 @@ const Sponsors: FunctionComponent<{
         <h2 className='mb-0 fw-bold'>Sponsors</h2>
         {showLink && (
           <p className='text-gray-700 fs-lg'>
-            <Link href='/sponsor-us/'>
-              <a className='link-secondary fs-sm'>Become a sponsor</a>
+            <Link href='/sponsor-us/' className='link-secondary fs-sm'>
+              Become a sponsor
             </Link>
           </p>
         )}
@@ -20,23 +20,27 @@ const Sponsors: FunctionComponent<{
       <h4 className='text-muted text-center pt-6 pb-4 fw-bold'>Platinum</h4>
       <div className='row align-items-center justify-content-center'>
         <div className='col col-md-10 text-center'>
-          <Link href='https://github.blog/2023-04-12-github-accelerator-our-first-cohort-and-whats-next/'>
-            <a className='d-inline-block p-4' target='_blank'>
-              <img
-                src='/images/sponsors/github.png'
-                className='img-fluid m-4'
-                alt='GitHub logo'
-              />
-            </a>
+          <Link
+            href='https://github.blog/2023-04-12-github-accelerator-our-first-cohort-and-whats-next/'
+            className='d-inline-block p-4'
+            target='_blank'
+          >
+            <img
+              src='/images/sponsors/github.png'
+              className='img-fluid m-4'
+              alt='GitHub logo'
+            />
           </Link>
-          <Link href='https://www.peakcrypto.com/'>
-            <a className='d-inline-block p-4' target='_blank'>
-              <img
-                src='/images/sponsors/peakcrypto.png'
-                className='img-fluid m-4'
-                alt='Peak Crypto logo'
-              />
-            </a>
+          <Link
+            href='https://www.peakcrypto.com/'
+            className='d-inline-block p-4'
+            target='_blank'
+          >
+            <img
+              src='/images/sponsors/peakcrypto.png'
+              className='img-fluid m-4'
+              alt='Peak Crypto logo'
+            />
           </Link>
         </div>
       </div>
@@ -48,14 +52,16 @@ const Sponsors: FunctionComponent<{
           </h4>
           <div className='row align-items-center justify-content-center'>
             <div className='col text-center'>
-              <Link href='https://www.pragm.co/en/about/about-pragm'>
-                <a className='d-inline-block p-4' target='_blank'>
-                  <img
-                    src='/images/sponsors/pragm.png'
-                    className='img-fluid'
-                    alt='Pragm logo'
-                  />
-                </a>
+              <Link
+                href='https://www.pragm.co/en/about/about-pragm'
+                className='d-inline-block p-4'
+                target='_blank'
+              >
+                <img
+                  src='/images/sponsors/pragm.png'
+                  className='img-fluid'
+                  alt='Pragm logo'
+                />
               </Link>
             </div>
           </div>

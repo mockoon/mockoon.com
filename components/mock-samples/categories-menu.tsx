@@ -17,8 +17,12 @@ const CategoriesMenu: FunctionComponent<{
             router.asPath.includes('all') ? 'active' : ''
           }`}
         >
-          <Link href='/mock-samples/category/all/' scroll={false}>
-            <a className='list-link'>All</a>
+          <Link
+            href='/mock-samples/category/all/'
+            scroll={false}
+            className='list-link'
+          >
+            All
           </Link>
         </li>
 
@@ -30,8 +34,11 @@ const CategoriesMenu: FunctionComponent<{
                 router.asPath.includes(category.slug) ? 'active' : ''
               }`}
             >
-              <Link href={`/mock-samples/category/${category.slug}/`}>
-                <a className='list-link'>{category.title}</a>
+              <Link
+                href={`/mock-samples/category/${category.slug}/`}
+                className='list-link'
+              >
+                {category.title}
               </Link>
             </li>
           );

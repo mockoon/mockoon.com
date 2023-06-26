@@ -334,7 +334,7 @@ const Faq: FunctionComponent = function () {
                       </p>
                       <p>
                         <Link href='/docs/latest/mockoon-data-files/data-storage-location/'>
-                          <a>Learn more about Mockoon's data storage</a>
+                          Learn more about Mockoon's data storage
                         </Link>
                       </p>
                     </div>

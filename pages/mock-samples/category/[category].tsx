@@ -1,4 +1,3 @@
-import { GetServerSidePropsContext } from 'next';
 import { useRouter } from 'next/router';
 import { ChangeEvent, FunctionComponent, useEffect, useState } from 'react';
 import Breadcrumb from '../../../components/breadcrumb';
@@ -15,7 +14,7 @@ import {
   getMockSamplesCategoriesProps
 } from '../../../utils/mock-samples-static';
 
-export async function getStaticProps(context: GetServerSidePropsContext) {
+export async function getStaticProps(context) {
   return await getMockSamplesCategoriesProps(context);
 }
 

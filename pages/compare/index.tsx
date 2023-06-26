@@ -15,7 +15,7 @@ const meta = {
 
 export async function getStaticProps() {
   const staticProps = buildIndexStaticProps(
-    require.context('../../content/compare/', false, /\.md$/)
+    require.context('../../content/compare/', false, /\.\/.+\.md$/)
   );
 
   staticProps.props.articles = orderArticles(staticProps.props.articles);

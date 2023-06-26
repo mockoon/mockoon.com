@@ -9,7 +9,9 @@ import {
 import { useEffect, useState } from 'react';
 
 const useAuth = () => {
+  // user is set when user is authenticated but email is not necessarily verified
   const [user, setUser] = useState<User>(null);
+  // is auth set when user is authenticated and email is verified
   const [isAuth, setIsAuth] = useState(false);
   const auth = getAuth();
   const [isLoading, setIsLoading] = useState(true);
@@ -66,6 +68,7 @@ const useAuth = () => {
   }, []);
 
   return {
+    authInstance: auth,
     isLoading,
     user,
     isAuth,

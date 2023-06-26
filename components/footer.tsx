@@ -38,54 +38,66 @@ const Footer: FunctionComponent<{
 
             <ul className='list-unstyled text-muted'>
               <li className='mb-2'>
-                <Link href='/tutorials/getting-started/'>
-                  <a className='text-reset'>Getting started with Mockoon 🚀</a>
+                <Link href='/tutorials/getting-started/' className='text-reset'>
+                  Getting started with Mockoon 🚀
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/tutorials/run-mock-api-anywhere-cli/'>
-                  <a className='text-reset'>
-                    Run your mock APIs anywhere with the CLI
-                  </a>
+                <Link
+                  href='/tutorials/run-mock-api-anywhere-cli/'
+                  className='text-reset'
+                >
+                  Run your mock APIs anywhere with the CLI
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/tutorials/partial-mocking-proxy/'>
-                  <a className='text-reset'>Partial mocking with proxy mode</a>
+                <Link
+                  href='/tutorials/partial-mocking-proxy/'
+                  className='text-reset'
+                >
+                  Partial mocking with proxy mode
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/tutorials/requests-recording-auto-mocking/'>
-                  <a className='text-reset'>
-                    Requests recording and auto-mocking
-                  </a>
+                <Link
+                  href='/tutorials/requests-recording-auto-mocking/'
+                  className='text-reset'
+                >
+                  Requests recording and auto-mocking
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/tutorials/generate-mock-json-data/'>
-                  <a className='text-reset'>
-                    Dynamic mock data with Mockoon's templating system
-                  </a>
+                <Link
+                  href='/tutorials/generate-mock-json-data/'
+                  className='text-reset'
+                >
+                  Dynamic mock data with Mockoon's templating system
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/articles/api-guide-what-are-api/'>
-                  <a className='text-reset'>What are APIs?</a>
+                <Link
+                  href='/articles/api-guide-what-are-api/'
+                  className='text-reset'
+                >
+                  What are APIs?
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/articles/what-is-api-mocking/'>
-                  <a className='text-reset'>What is API mocking?</a>
+                <Link
+                  href='/articles/what-is-api-mocking/'
+                  className='text-reset'
+                >
+                  What is API mocking?
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/use-cases/'>
-                  <a className='text-reset'>Why do you need API mocking?</a>
+                <Link href='/use-cases/' className='text-reset'>
+                  Why do you need API mocking?
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/tutorials/'>
-                  <a className='text-reset'>View all tutorials →</a>
+                <Link href='/tutorials/' className='text-reset'>
+                  View all tutorials →
                 </Link>
               </li>
             </ul>
@@ -95,48 +107,48 @@ const Footer: FunctionComponent<{
 
             <ul className='list-unstyled text-muted'>
               <li className='mb-2'>
-                <Link href='/docs/latest/about/'>
-                  <a className='text-reset'>Docs</a>
+                <Link href='/docs/latest/about/' className='text-reset'>
+                  Docs
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/faq/'>
-                  <a className='text-reset'>FAQ</a>
+                <Link href='/faq/' className='text-reset'>
+                  FAQ
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/blog/'>
-                  <a className='text-reset'>Blog</a>
+                <Link href='/blog/' className='text-reset'>
+                  Blog
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/releases/3.1.0/'>
-                  <a className='text-reset'>Releases</a>
+                <Link href='/releases/3.1.0/' className='text-reset'>
+                  Releases
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/tutorials/'>
-                  <a className='text-reset'>Tutorials</a>
+                <Link href='/tutorials/' className='text-reset'>
+                  Tutorials
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/video-tutorials/'>
-                  <a className='text-reset'>Video tutorials</a>
+                <Link href='/video-tutorials/' className='text-reset'>
+                  Video tutorials
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/articles/'>
-                  <a className='text-reset'>Articles</a>
+                <Link href='/articles/' className='text-reset'>
+                  Articles
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/compare/'>
-                  <a className='text-reset'>Comparisons</a>
+                <Link href='/compare/' className='text-reset'>
+                  Comparisons
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/case-studies/'>
-                  <a className='text-reset'>Case studies</a>
+                <Link href='/case-studies/' className='text-reset'>
+                  Case studies
                 </Link>
               </li>
             </ul>
@@ -146,38 +158,41 @@ const Footer: FunctionComponent<{
 
             <ul className='list-unstyled text-muted'>
               <li className='mb-2'>
-                <Link href='/download/'>
-                  <a className='text-reset'>Desktop application</a>
+                <Link href='/download/' className='text-reset'>
+                  Desktop application
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/cli/'>
-                  <a className='text-reset'>CLI</a>
+                <Link href='/cli/' className='text-reset'>
+                  CLI
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/serverless/'>
-                  <a className='text-reset'>Serverless package</a>
+                <Link href='/serverless/' className='text-reset'>
+                  Serverless package
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/mock-samples/category/all/'>
-                  <a className='text-reset'>Mock samples</a>
+                <Link href='/mock-samples/category/all/' className='text-reset'>
+                  Mock samples
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/templates/'>
-                  <a className='text-reset'>Templates</a>
+                <Link href='/templates/' className='text-reset'>
+                  Templates
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/ai-powered-api-mocking/'>
-                  <a className='text-reset'>AI-powered API mocking</a>
+                <Link href='/ai-powered-api-mocking/' className='text-reset'>
+                  AI-powered API mocking
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/integrations/embedded-button/'>
-                  <a className='text-reset'>Mockoon button</a>
+                <Link
+                  href='/integrations/embedded-button/'
+                  className='text-reset'
+                >
+                  Mockoon button
                 </Link>
               </li>
             </ul>
@@ -187,37 +202,42 @@ const Footer: FunctionComponent<{
 
             <ul className='list-unstyled text-muted mb-0'>
               <li className='mb-2'>
-                <Link href='/about/'>
-                  <a className='text-reset'>About us</a>
+                <Link href='/about/' className='text-reset'>
+                  About us
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/sponsor-us/'>
-                  <a className='text-reset'>Sponsor us</a>
+                <Link href='/sponsor-us/' className='text-reset'>
+                  Sponsor us
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/public-roadmap/'>
-                  <a className='text-reset'>Public roadmap</a>
+                <Link href='/public-roadmap/' className='text-reset'>
+                  Public roadmap
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/contact/'>
-                  <a className='text-reset'>Get support</a>
+                <Link href='/contact/' className='text-reset'>
+                  Get support
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/pro/'>
-                  <a className='text-reset'>Pro plans</a>
+                <Link href='/pro/' className='text-reset'>
+                  Pro plans
                 </Link>
               </li>
 
               <li className='mb-2'>
-                <Link href='https://mockoon.threadless.com/'>
-                  <a className='text-reset' target='_blank' rel='noopener'>
+                <Link
+                  href='https://mockoon.threadless.com/'
+                  className='text-reset'
+                  target='_blank'
+                  rel='noopener'
+                >
+                  <>
                     Shop{' '}
                     <i className='text-muted icon-open' aria-hidden='true'></i>
-                  </a>
+                  </>
                 </Link>
               </li>
             </ul>
@@ -226,18 +246,18 @@ const Footer: FunctionComponent<{
 
             <ul className='list-unstyled text-muted mb-0'>
               <li className='mb-2'>
-                <Link href='/terms/'>
-                  <a className='text-reset'>Terms of service</a>
+                <Link href='/terms/' className='text-reset'>
+                  Terms of service
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/privacy/'>
-                  <a className='text-reset'>Privacy policy</a>
+                <Link href='/privacy/' className='text-reset'>
+                  Privacy policy
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/brand/'>
-                  <a className='text-reset'>Brand assets</a>
+                <Link href='/brand/' className='text-reset'>
+                  Brand assets
                 </Link>
               </li>
             </ul>

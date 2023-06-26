@@ -42,10 +42,12 @@ const MockSampleCards: FunctionComponent<{
                       <ConditionalWrapper
                         condition={!!mockAPI.externalLink}
                         wrapper={(children) => (
-                          <Link href={mockAPI.externalLink}>
-                            <a target={'_blank'} rel='noopener'>
-                              {children}
-                            </a>
+                          <Link
+                            href={mockAPI.externalLink}
+                            target={'_blank'}
+                            rel='noopener'
+                          >
+                            <>{children}</>
                           </Link>
                         )}
                       >
@@ -62,8 +64,11 @@ const MockSampleCards: FunctionComponent<{
                 ></div>
                 <div className='text-center'>
                   <hr />
-                  <Link href={`/mock-samples/${mockAPI.slug}/`}>
-                    <a className='btn-xs btn btn-primary-soft '>Use API →</a>
+                  <Link
+                    href={`/mock-samples/${mockAPI.slug}/`}
+                    className='btn-xs btn btn-primary-soft '
+                  >
+                    Use API →
                   </Link>
                 </div>
               </div>

@@ -17,8 +17,8 @@ const AccountMenu: FunctionComponent = function () {
                 router.pathname.includes('account/info') ? 'active' : ''
               }`}
             >
-              <Link href='/account/info/'>
-                <a className='list-link text-reset'>General</a>
+              <Link href='/account/info/' className='list-link text-reset'>
+                General
               </Link>
             </li>
             <li
@@ -26,8 +26,8 @@ const AccountMenu: FunctionComponent = function () {
                 router.pathname.includes('account/subscription') ? 'active' : ''
               }`}
             >
-              <Link href='/account/subscription/'>
-                <a className='list-link text-reset'>Subscription</a>
+              <Link href='/account/subscription/' className='list-link text-reset'>
+                Subscription
               </Link>
             </li>
             {!isLoading &&
@@ -38,8 +38,8 @@ const AccountMenu: FunctionComponent = function () {
                     router.pathname.includes('account/users') ? 'active' : ''
                   }`}
                 >
-                  <Link href='/account/users/'>
-                    <a className='list-link text-reset'>Users</a>
+                  <Link href='/account/users/' className='list-link text-reset'>
+                    Users
                   </Link>
                 </li>
               )}

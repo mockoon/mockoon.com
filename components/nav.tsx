@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FunctionComponent, MouseEvent, useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 import { useAuth } from '../utils/auth';
 
 const Nav: FunctionComponent = function () {
@@ -58,14 +58,13 @@ const Nav: FunctionComponent = function () {
             {show && toggler}
             {show && (
               <li className='nav-item'>
-                <Link href='/'>
-                  <a
-                    className={`nav-link ${
-                      router.pathname === '/' ? 'active' : ''
-                    }`}
-                  >
-                    Home
-                  </a>
+                <Link
+                  href='/'
+                  className={`nav-link ${
+                    router.pathname === '/' ? 'active' : ''
+                  }`}
+                >
+                  Home
                 </Link>
               </li>
             )}
@@ -93,72 +92,68 @@ const Nav: FunctionComponent = function () {
               >
                 <h6 className='dropdown-header'>Main application</h6>
                 <li className='dropdown-item mb-5 ps-lg-8'>
-                  <Link href='/download/'>
-                    <a className='dropdown-link'>Mockoon Desktop</a>
+                  <Link href='/download/' className='dropdown-link'>
+                    Mockoon Desktop
                   </Link>
                 </li>
                 <h6 className='dropdown-header'>Tools</h6>
                 <li className='dropdown-item ps-lg-8'>
-                  <Link href='/cli/'>
-                    <a className='dropdown-link'>CLI</a>
+                  <Link href='/cli/' className='dropdown-link'>
+                    CLI
                   </Link>
                 </li>
                 <li className='dropdown-item ps-lg-8'>
-                  <Link href='/serverless/'>
-                    <a className='dropdown-link'>Serveless package</a>
+                  <Link href='/serverless/' className='dropdown-link'>
+                    Serveless package
                   </Link>
                 </li>
               </ul>
             </li>
 
             <li className='nav-item'>
-              <Link href='/pro/'>
-                <a
-                  className={`nav-link ${
-                    router.pathname === '/pro' ? 'active' : ''
-                  }`}
-                >
-                  Pro
-                </a>
+              <Link
+                href='/pro/'
+                className={`nav-link ${
+                  router.pathname === '/pro' ? 'active' : ''
+                }`}
+              >
+                Pro
               </Link>
             </li>
 
             <li className='nav-item'>
-              <Link href='/features/'>
-                <a
-                  className={`nav-link ${
-                    router.pathname === '/features' ? 'active' : ''
-                  }`}
-                >
-                  Features
-                </a>
+              <Link
+                href='/features/'
+                className={`nav-link ${
+                  router.pathname === '/features' ? 'active' : ''
+                }`}
+              >
+                Features
               </Link>
             </li>
 
             <li className='nav-item'>
-              <Link href='/docs/latest/about/'>
-                <a
-                  className={`nav-link ${
-                    router.pathname === '/docs/[...slug]' ? 'active' : ''
-                  }`}
-                >
-                  Docs
-                </a>
+              <Link
+                href='/docs/latest/about/'
+                className={`nav-link ${
+                  router.pathname === '/docs/[...slug]' ? 'active' : ''
+                }`}
+              >
+                Docs
               </Link>
             </li>
 
             <li className='nav-item'>
-              <Link href='/tutorials/'>
-                <a
-                  className={`nav-link ${
-                    router.pathname === '/tutorials' ||
-                    router.pathname === '/tutorials/[slug]'
-                      ? 'active'
-                      : ''
-                  }`}
-                >
-                  Tutorials
-                </a>
+              <Link
+                href='/tutorials/'
+                className={`nav-link ${
+                  router.pathname === '/tutorials' ||
+                  router.pathname === '/tutorials/[slug]'
+                    ? 'active'
+                    : ''
+                }`}
+              >
+                Tutorials
               </Link>
             </li>
 
@@ -194,13 +189,13 @@ const Nav: FunctionComponent = function () {
                 {!auth.isAuth && (
                   <>
                     <li className='dropdown-item'>
-                      <Link href='/login/'>
-                        <a className='dropdown-link'>Log in</a>
+                      <Link href='/login/' className='dropdown-link'>
+                        Log in
                       </Link>
                     </li>
                     <li className='dropdown-item'>
-                      <Link href='/signup/'>
-                        <a className='dropdown-link'>Sign up</a>
+                      <Link href='/signup/' className='dropdown-link'>
+                        Sign up
                       </Link>
                     </li>
                   </>
@@ -208,15 +203,15 @@ const Nav: FunctionComponent = function () {
                 {auth.isAuth && (
                   <>
                     <li className='dropdown-item'>
-                      <Link href='/account/info/'>
-                        <a className='dropdown-link'>My account</a>
+                      <Link href='/account/info/' className='dropdown-link'>
+                        My account
                       </Link>
                     </li>
                     <li className='dropdown-item'>
                       <a
                         href=''
                         className='dropdown-link'
-                        onClick={async (e) => logout(e)}
+                        onClick={async (e: any) => logout(e)}
                       >
                         Log out
                       </a>

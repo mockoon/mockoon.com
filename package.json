@@ -9,9 +9,8 @@
     "dev": "cross-env NODE_OPTIONS='--inspect' next",
     "build": "next build",
     "postbuild": "node ./scripts/generate-sitemap.js && cp -R ./content/old-releases/desktop/ ./public/desktop-changelogs-markdown && cp -R -T ./content/releases/ ./public/desktop-changelogs-markdown/ && sed -i 's./images/sponsors/./images/sponsors/light/.g' ./public/desktop-changelogs-markdown/*",
-    "export": "npm run build && next export",
     "start": "next start",
-    "deploy": "npm run export && firebase deploy --token \"$FIREBASE_TOKEN\" --only hosting"
+    "deploy": "npm run build && firebase deploy --token \"$FIREBASE_TOKEN\" --only hosting"
   },
   "author": {
     "name": "Guillaume Monnet",
@@ -33,12 +32,13 @@
     "trailingComma": "none"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.29.17",
     "bootstrap": "^5.2.0",
+    "eslint-config-next": "^13.4.7",
     "firebase": "^9.17.2",
     "glob": "^8.0.3",
     "gray-matter": "^4.0.3",
-    "next": "^12.2.2",
-    "next-transpile-modules": "^9.0.0",
+    "next": "^13.4.7",
     "raw-loader": "^4.0.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
@@ -46,7 +46,6 @@
     "react-github-btn": "^1.3.0",
     "react-hook-form": "^7.33.1",
     "react-markdown": "^8.0.3",
-    "react-query": "^3.39.3",
     "react-syntax-highlighter": "^15.5.0",
     "rehype-raw": "^6.1.1",
     "remark-gfm": "^3.0.1",

@@ -34,7 +34,7 @@ export async function getStaticProps({
     version: string;
   };
 }) {
-  const files = require.context('../../content/releases/', true, /\.md$/);
+  const files = require.context('../../content/releases/', true, /\.\/.+\.md$/);
   const releasePaths = files.keys().sort(sortPathBySemver);
 
   const fileContent =

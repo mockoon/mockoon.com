@@ -70,7 +70,7 @@ const EmbeddedButton: FunctionComponent = function () {
                   <label className='form-label text-gray-700' htmlFor='dataURL'>
                     Mockoon{' '}
                     <Link href='/docs/latest/mockoon-data-files/data-storage-location/'>
-                      <a>data file</a>
+                      data file
                     </Link>{' '}
                     URL
                   </label>{' '}
@@ -130,7 +130,7 @@ const EmbeddedButton: FunctionComponent = function () {
                   <p className='text-gray-700 mb-2'>
                     Run a mock with the{' '}
                     <Link href={'/cli/'}>
-                      <a>CLI</a>
+                      CLI
                     </Link>
                     :
                   </p>

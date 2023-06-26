@@ -1,11 +1,8 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { initializeApp } from 'firebase/app';
 import { connectAuthEmulator, getAuth } from 'firebase/auth';
-import { useRouter } from 'next/router';
 import Script from 'next/script';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import ProtectedRoutes from '../components/protected-routes';
 import '../styles/style.scss';
-import { useAuth } from '../utils/auth';
 
 const queryClient = new QueryClient();
 
@@ -28,15 +25,10 @@ if (process.env.NODE_ENV === 'development') {
 export { firebaseApp };
 
 function MyApp({ Component, pageProps }) {
-  const router = useRouter();
-  const auth = useAuth();
-
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <ProtectedRoutes router={router} auth={auth}>
-          {!auth.isLoading && <Component {...pageProps} />}
-        </ProtectedRoutes>
+        <Component {...pageProps} />
         <Script>{`if(document.location.host.indexOf('mockoon.xyz') > -1){document.location.replace('https://mockoon.com')}`}</Script>
         <Script
           async

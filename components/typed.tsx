@@ -1,7 +1,7 @@
-import { useEffect, useRef, VoidFunctionComponent } from 'react';
+import { FunctionComponent, useEffect, useRef } from 'react';
 import { default as TypedLib } from 'typed.js';
 
-const Typed: VoidFunctionComponent<{ options: any }> = ({ options }) => {
+const Typed: FunctionComponent<{ options: any }> = ({ options }) => {
   const ref = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {

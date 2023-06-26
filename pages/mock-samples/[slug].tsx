@@ -1,4 +1,3 @@
-import { GetServerSidePropsContext } from 'next';
 import Link from 'next/link';
 import { FunctionComponent, useState } from 'react';
 import Breadcrumb from '../../components/breadcrumb';
@@ -20,7 +19,7 @@ import {
   getMockSamplesSlugProps
 } from '../../utils/mock-samples-static';
 
-export async function getStaticProps(context: GetServerSidePropsContext) {
+export async function getStaticProps(context) {
   return await getMockSamplesSlugProps(context);
 }
 
@@ -91,10 +90,12 @@ const MockSamples: FunctionComponent<{
                 <ConditionalWrapper
                   condition={!!mockAPI.externalLink}
                   wrapper={(children) => (
-                    <Link href={mockAPI.externalLink}>
-                      <a target={'_blank'} rel='noopener'>
-                        {children}
-                      </a>
+                    <Link
+                      href={mockAPI.externalLink}
+                      target={'_blank'}
+                      rel='noopener'
+                    >
+                      {children}
                     </Link>
                   )}
                 >
@@ -148,8 +149,9 @@ const MockSamples: FunctionComponent<{
                     Own this API? Add a{' '}
                     <Link
                       href={`/integrations/embedded-button/?dataURL=${mockAPI.environmentSrc}`}
+                      rel='nofollow'
                     >
-                      <a rel='nofollow'>Mockoon button</a>
+                      Mockoon button
                     </Link>{' '}
                     on your website.
                   </div>
@@ -209,10 +211,11 @@ const MockSamples: FunctionComponent<{
           <div className='row'>
             <div className='col'>
               <div className='mt-8 text-center'>
-                <Link href='/mock-samples/category/all/'>
-                  <a className='btn btn-sm btn-secondary-soft'>
-                    ⬅ Back to the list of mock samples
-                  </a>
+                <Link
+                  href='/mock-samples/category/all/'
+                  className='btn btn-sm btn-secondary-soft'
+                >
+                  ⬅ Back to the list of mock samples
                 </Link>
               </div>
             </div>

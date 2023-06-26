@@ -1,4 +1,4 @@
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import { Team, User } from '../models/user.model';
 import { useAuth } from './auth';
 
@@ -7,6 +7,7 @@ const useCurrentUser = () => {
 
   const { isLoading, error, data, isFetching } = useQuery<User>({
     queryKey: ['currentUser'],
+    enabled: auth.isAuth,
     refetchOnMount: false,
     queryFn: async () => {
       const token = await auth.getIdToken();
@@ -77,4 +78,4 @@ const useCurrentTeam = (teamId, teamRole) => {
   };
 };
 
-export { useCurrentUser, useCurrentTeam };
+export { useCurrentTeam, useCurrentUser };

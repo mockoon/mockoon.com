@@ -66,10 +66,8 @@ export default function ComparisonGuide(props: {
             }`}
           >
             {!props.articleData.nextLink && !props.articleData.previousLink && (
-              <Link href='/compare/'>
-                <a className='btn btn-sm btn-secondary-soft'>
-                  ⬅ Back to the list of comparison guides
-                </a>
+              <Link href='/compare/' className='btn btn-sm btn-secondary-soft'>
+                ⬅ Back to the list of comparison guides
               </Link>
             )}
             {(props.articleData.previousLink || props.articleData.nextLink) && (
@@ -81,10 +79,9 @@ export default function ComparisonGuide(props: {
                         ? props.articleData.previousLink + '/'
                         : ''
                     }`}
+                    className='btn btn-sm btn-secondary-soft'
                   >
-                    <a className='btn btn-sm btn-secondary-soft'>
-                      ⬅&nbsp;{props.articleData.previousText}
-                    </a>
+                    ⬅{props.articleData.previousText}
                   </Link>
                 )}
                 {props.articleData.nextLink && (
@@ -94,10 +91,9 @@ export default function ComparisonGuide(props: {
                         ? props.articleData.nextLink + '/'
                         : ''
                     }`}
+                    className='btn btn-sm btn-secondary-soft'
                   >
-                    <a className='btn btn-sm btn-secondary-soft'>
-                      {props.articleData.nextText}&nbsp;➡
-                    </a>
+                    {props.articleData.nextText}➡
                   </Link>
                 )}
               </Fragment>

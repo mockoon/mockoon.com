@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+    <loc>https://mockoon.com/compare/beeceptor/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-06-24T11:23:57.720Z</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mockoon.com/compare/mocklab/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-06-24T11:23:57.720Z</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mockoon.com/compare/postman/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-06-24T11:23:57.720Z</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mockoon.com/compare/wiremock/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-06-24T11:23:57.720Z</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mockoon.com/compare/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-06-24T11:23:57.720Z</lastmod>
+    <priority>0.7</priority>
+  </url>
+  </urlset>

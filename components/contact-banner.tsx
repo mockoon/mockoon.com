@@ -10,10 +10,8 @@ const ContactBanner: FunctionComponent<{}> = function (props) {
         </h4>
       </div>
       <div className='col-12 col-lg-3 d-flex justify-content-end'>
-        <Link href='/contact/'>
-          <a className='col-12 btn btn-primary-soft'>
-            <span> Contact us</span>
-          </a>
+        <Link href='/contact/' className='col-12 btn btn-primary-soft'>
+          <span> Contact us</span>
         </Link>
       </div>
     </div>

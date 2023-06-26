@@ -78,25 +78,23 @@ const Card: FunctionComponent<{
               {props.data.links.map((link, linkIndex) => {
                 return !link.src.includes('mockoon://') &&
                   !link.src.includes('clipboardcopy://') ? (
-                  <Link key={`link${linkIndex}`} href={link.src}>
-                    <a
-                      className={`btn-xs btn btn-primary-soft d-flex align-items-center ${
-                        props.data.links?.length > 1 ? '' : 'mt-auto'
-                      }`}
-                      style={{
-                        color: synchronizedColors
-                          ? props.borderColor
-                          : undefined
-                      }}
-                      target={link.blank ? '_blank' : undefined}
-                    >
-                      {link.icon && (
-                        <span className='icon me-2'>
-                          <i className={link.icon}></i>
-                        </span>
-                      )}
-                      {link.text}
-                    </a>
+                  <Link
+                    key={`link${linkIndex}`}
+                    href={link.src}
+                    className={`btn-xs btn btn-primary-soft d-flex align-items-center ${
+                      props.data.links?.length > 1 ? '' : 'mt-auto'
+                    }`}
+                    style={{
+                      color: synchronizedColors ? props.borderColor : undefined
+                    }}
+                    target={link.blank ? '_blank' : undefined}
+                  >
+                    {link.icon && (
+                      <span className='icon me-2'>
+                        <i className={link.icon}></i>
+                      </span>
+                    )}
+                    {link.text}
                   </Link>
                 ) : (
                   <a

@@ -42,7 +42,7 @@ export async function getStaticPaths() {
         }
       };
     });
-  })(require.context('../../content/docs/', true, /\.md$/));
+  })(require.context('../../content/docs/', true, /\.\/.+\.md$/));
 
   return {
     paths,
@@ -94,7 +94,7 @@ export async function getStaticProps({ params }) {
       versions: Array.from(versions),
       list: topicList
     };
-  })(require.context('../../content/docs', true, /\.md$/));
+  })(require.context('../../content/docs', true, /\.\/.+\.md$/));
 
   const fileContent = await require(`../../content/docs/${params.slug.join(
     '/'
@@ -234,15 +234,15 @@ export default function Docs(props: {
                         menuItem.type === 'category' ? 'ps-2' : ''
                       } ${router.asPath.includes(item.slug) ? 'active' : ''}`}
                     >
-                      <Link href={`${item.slug}/`}>
-                        <a className='list-link'>
+                      <Link href={`${item.slug}/`} className='list-link'>
+                        <>
                           {item.title}
                           {item.proBadge && (
                             <span className='badge text-bg-warning ms-2'>
                               Pro
                             </span>
                           )}
-                        </a>
+                        </>
                       </Link>
                     </li>
                   ));

@@ -68,10 +68,11 @@ export default function Tutorial(props: {
             }`}
           >
             {!props.articleData.nextLink && !props.articleData.previousLink && (
-              <Link href='/tutorials/'>
-                <a className='btn btn-sm btn-secondary-soft'>
-                  ⬅ Back to the list of tutorials
-                </a>
+              <Link
+                href='/tutorials/'
+                className='btn btn-sm btn-secondary-soft'
+              >
+                ⬅ Back to the list of tutorials
               </Link>
             )}
             {(props.articleData.previousLink || props.articleData.nextLink) && (
@@ -83,10 +84,9 @@ export default function Tutorial(props: {
                         ? props.articleData.previousLink + '/'
                         : ''
                     }`}
+                    className='btn btn-sm btn-secondary-soft'
                   >
-                    <a className='btn btn-sm btn-secondary-soft'>
-                      ⬅&nbsp;{props.articleData.previousText}
-                    </a>
+                    ⬅{props.articleData.previousText}
                   </Link>
                 )}
                 {props.articleData.nextLink && (
@@ -96,10 +96,9 @@ export default function Tutorial(props: {
                         ? props.articleData.nextLink + '/'
                         : ''
                     }`}
+                    className='btn btn-sm btn-secondary-soft'
                   >
-                    <a className='btn btn-sm btn-secondary-soft'>
-                      {props.articleData.nextText}&nbsp;➡
-                    </a>
+                    {props.articleData.nextText}➡
                   </Link>
                 )}
               </Fragment>

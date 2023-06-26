@@ -1,8 +1,11 @@
-import { FunctionComponent } from 'react';
+import { useRouter } from 'next/router';
+import { FunctionComponent, useEffect } from 'react';
 import AccountHeader from '../../components/account-header';
+import LoadingPage from '../../components/loading-page';
 import Meta from '../../components/meta';
 import Plans from '../../components/plans';
 import Layout from '../../layout/layout';
+import { useAuth } from '../../utils/auth';
 
 const meta = {
   title: 'My account',
@@ -10,13 +13,31 @@ const meta = {
 };
 
 const AccountSubscribe: FunctionComponent = function () {
+  const { isAuth, user, isLoading: isAuthLoading } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isAuthLoading) {
+      if (!user) {
+        router.push('/login/');
+      } else if (user && !isAuth) {
+        router.push('/email-verification/');
+      }
+    }
+  }, [isAuthLoading, user, isAuth]);
+
   return (
     <Layout footerBanner='download'>
       <Meta title={meta.title} description={meta.description} />
 
-      <AccountHeader />
+      {isAuthLoading && <LoadingPage />}
 
-      <Plans showFree={false} showTagline={false} />
+      {!isAuthLoading && isAuth && (
+        <>
+          <AccountHeader />
+          <Plans showFree={false} showTagline={false} />
+        </>
+      )}
     </Layout>
   );
 };

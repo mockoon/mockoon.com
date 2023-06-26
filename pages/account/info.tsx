@@ -1,7 +1,9 @@
 import Link from 'next/link';
-import { FunctionComponent } from 'react';
+import { useRouter } from 'next/router';
+import { FunctionComponent, useEffect } from 'react';
 import AccountHeader from '../../components/account-header';
 import AccountMenu from '../../components/account-menu';
+import LoadingPage from '../../components/loading-page';
 import Meta from '../../components/meta';
 import { planNames } from '../../constants/plans';
 import Layout from '../../layout/layout';
@@ -15,93 +17,113 @@ const meta = {
 };
 
 const AccountInfo: FunctionComponent = function () {
-  const auth = useAuth();
-  const { isLoading, data: userData } = useCurrentUser();
+  const { isAuth, user, isLoading: isAuthLoading } = useAuth();
+  const router = useRouter();
+  const { data: userData } = useCurrentUser();
+
+  useEffect(() => {
+    if (!isAuthLoading) {
+      if (!user) {
+        router.push('/login/');
+      } else if (user && !isAuth) {
+        router.push('/email-verification/');
+      }
+    }
+  }, [isAuthLoading, user, isAuth]);
 
   return (
     <Layout footerBanner='download'>
       <Meta title={meta.title} description={meta.description} />
 
-      <AccountHeader />
+      {isAuthLoading && <LoadingPage />}
 
-      <main className='pb-8 pb-md-11 mt-md-n6'>
-        <div className='container-md'>
-          <div className='row'>
-            <div className='col-12 col-md-3'>
-              <AccountMenu />
-            </div>
-            <div className='col-12 col-md-9'>
-              <div className='card card-bleed shadow-light-lg mb-6'>
-                <div className='card-header'>
-                  <h4 className='mb-0'>Basic Information</h4>
+      {!isAuthLoading && isAuth && (
+        <>
+          <AccountHeader />
+
+          <main className='pb-8 pb-md-11 mt-md-n6'>
+            <div className='container-md'>
+              <div className='row'>
+                <div className='col-12 col-md-3'>
+                  <AccountMenu />
                 </div>
-                <div className='card-body'>
-                  <div className='list-group list-group-flush'>
-                    <div className='list-group-item'>
-                      <div className='row align-items-center'>
-                        <div className='col'>
-                          <p className='mb-0'>Email address</p>
+                <div className='col-12 col-md-9'>
+                  <div className='card card-bleed shadow-light-lg mb-6'>
+                    <div className='card-header'>
+                      <h4 className='mb-0'>Basic Information</h4>
+                    </div>
+                    <div className='card-body'>
+                      <div className='list-group list-group-flush'>
+                        <div className='list-group-item'>
+                          <div className='row align-items-center'>
+                            <div className='col'>
+                              <p className='mb-0'>Email address</p>
 
-                          <small className='text-gray-700'>
-                            {auth?.user?.email}
-                          </small>
+                              <small className='text-gray-700'>
+                                {user?.email}
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='list-group-item'>
+                          <div className='row align-items-center'>
+                            <div className='col'>
+                              <p className='mb-0'>Subscription</p>
+
+                              <small className='text-gray-700'>
+                                <span className='text-primary'>
+                                  {planNames[userData?.plan]}
+                                </span>{' '}
+                                plan
+                              </small>
+                            </div>
+                            <div className='col-auto'>
+                              <Link
+                                href={'/account/subscription/'}
+                                className='btn btn-xs btn-primary-soft'
+                              >
+                                View
+                              </Link>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className='list-group-item'>
+                  </div>
+
+                  <div className='card card-bleed shadow-light-lg mb-6'>
+                    <div className='card-header'>
                       <div className='row align-items-center'>
                         <div className='col'>
-                          <p className='mb-0'>Subscription</p>
-
-                          <small className='text-gray-700'>
-                            <span className='text-primary'>
-                              {planNames[userData?.plan]}
-                            </span>{' '}
-                            plan
-                          </small>
+                          <h4 className='mb-0'>Misc</h4>
                         </div>
-                        <div className='col-auto'>
-                          <Link href={'/account/subscription/'}>
-                            <a className='btn btn-xs btn-primary-soft'>View</a>
-                          </Link>
+                      </div>
+                    </div>
+                    <div className='card-body'>
+                      <div className='list-group list-group-flush'>
+                        <div className='list-group-item'>
+                          <div className='row align-items-center'>
+                            <div className='col'>
+                              <p className='mb-0'>Delete account</p>
+
+                              <small className='text-gray-700'>
+                                To delete your account, please contact us at{' '}
+                                <a href='mailto:support@mockoon.com'>
+                                  support@mockoon.com
+                                </a>
+                              </small>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <div className='card card-bleed shadow-light-lg mb-6'>
-                <div className='card-header'>
-                  <div className='row align-items-center'>
-                    <div className='col'>
-                      <h4 className='mb-0'>Misc</h4>
-                    </div>
-                  </div>
-                </div>
-                <div className='card-body'>
-                  <div className='list-group list-group-flush'>
-                    <div className='list-group-item'>
-                      <div className='row align-items-center'>
-                        <div className='col'>
-                          <p className='mb-0'>Delete account</p>
-
-                          <small className='text-gray-700'>
-                            To delete your account, please contact us at{' '}
-                            <a href='mailto:support@mockoon.com'>
-                              support@mockoon.com
-                            </a>
-                          </small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </main>
+          </main>
+        </>
+      )}
     </Layout>
   );
 };

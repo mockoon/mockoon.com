@@ -31,7 +31,7 @@ export async function getStaticProps({
   const files = require.context(
     '../../../content/old-releases/',
     true,
-    /\.md$/
+    /\.\/.+\.md$/
   );
   const releasePaths = files
     .keys()

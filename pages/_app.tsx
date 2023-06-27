@@ -1,8 +1,12 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { initializeApp } from 'firebase/app';
 import { connectAuthEmulator, getAuth } from 'firebase/auth';
+import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/router';
 import Script from 'next/script';
+import { useEffect } from 'react';
 import '../styles/style.scss';
+import { sendEvent } from '../utils/analytics';
 
 const queryClient = new QueryClient();
 
@@ -25,6 +29,12 @@ if (process.env.NODE_ENV === 'development') {
 export { firebaseApp };
 
 function MyApp({ Component, pageProps }) {
+  const pathName = usePathname();
+
+  useEffect(() => {
+    sendEvent('pageview');
+  }, [pathName]);
+
   return (
     <>
       <QueryClientProvider client={queryClient}>
@@ -35,6 +45,7 @@ function MyApp({ Component, pageProps }) {
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
         ></Script>
         <Script
+          async
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${process.env.NEXT_PUBLIC_ANALYTICS_ID}', { 'anonymize_ip': true });`
           }}

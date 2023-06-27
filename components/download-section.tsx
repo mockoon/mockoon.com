@@ -1,4 +1,5 @@
 import { Fragment, FunctionComponent, useState } from 'react';
+import { sendEvent } from '../utils/analytics';
 declare let gtag: Function;
 
 const DownloadSection: FunctionComponent<{ version: string }> = function ({
@@ -6,8 +7,14 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
 }) {
   const [showSupport, setShowSupport] = useState(false);
 
-  const postDownload = (platform: string) => {
+  const postDownload = (platform: 'windows' | 'osx' | 'linux') => {
     gtag('event', 'download', { event_category: platform });
+    sendEvent(
+      'event',
+      'download',
+      platform === 'windows' ? 'win' : platform === 'osx' ? 'mac' : 'linux'
+    );
+
     setTimeout(() => {
       setShowSupport(true);
     }, 500);

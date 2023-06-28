@@ -148,6 +148,20 @@ const Roadmap: FunctionComponent = function () {
 
                   <p className='text-gray-800'>
                     <Link
+                      href={'https://github.com/mockoon/mockoon/issues/1063'}
+                      target='_blank'
+                    >
+                      Applications logging standardization
+                    </Link>
+                  </p>
+                </div>
+                <div className='d-flex'>
+                  <div className='badge badge-rounded-circle bg-primary-soft mt-1 me-4'>
+                    <i className='icon icon-refresh'></i>
+                  </div>
+
+                  <p className='text-gray-800'>
+                    <Link
                       href={'https://github.com/mockoon/mockoon/issues/849'}
                       target='_blank'
                     >

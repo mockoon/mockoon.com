@@ -16,11 +16,11 @@ Where Mockoon routes are independent and stateless, CRUD routes can generate mul
 
 A CRUD endpoint will automatically create a series of routes during runtime, allowing you to perform actions on your data bucket. A typical example is an array of resources (users, invoices, etc.) you can update through a PUT request and see the result in a subsequent GET request.
 
-To create a CRUD route, click on the "CRUD route" entry in the add menu:
+To create a CRUD route, click on the "CRUD route" entry in the add route menu:
 
 ![Add a new CRUD route{390x304}](docs-img:add-crud-route.png)
 
-Then, set its path, usually a resource name:
+Then, set its path, usually a [resource name](/articles/api-guide-rest-api-components/#resource-url-request):
 
 ![Set the CRUD route path{1264x176}](docs-img:set-crud-route-path.png)
 

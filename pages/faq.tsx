@@ -157,13 +157,21 @@ const Faq: FunctionComponent = function () {
                       Yes, Mockoon has an <a href='/cli/'>official CLI</a> that
                       allows you to run all your mock APIs in any headless or
                       automated environment: servers, CI, GitHub Actions, Docker
-                      containers, etc. A Docker image is also available on{' '}
+                      containers, etc. A Docker image is available on{' '}
                       <a
                         href='https://hub.docker.com/u/mockoon'
                         target='_blank'
                         rel='noopener'
                       >
                         Mockoon's Docker Hub
+                      </a>{' '}
+                      as well as a{' '}
+                      <a
+                        href='https://github.com/marketplace/actions/mockoon-cli'
+                        target='_blank'
+                        rel='noopener'
+                      >
+                        GitHub Action
                       </a>
                       .
                     </p>

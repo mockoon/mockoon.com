@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react';
 import Card from '../components/card';
+import CodeBlock from '../components/code-block';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Terminal from '../components/terminal';
@@ -28,7 +29,7 @@ const features: CardData[] = [
   {
     title: 'Run your mocks everywhere',
     description:
-      'Also available as a Docker image, run your mock APIs in Github Actions or on your favorite CI platform!',
+      'Also available as a Docker image and a GitHub Action, run your mock APIs in your favorite CI platform!',
     links: [
       {
         src: '/tutorials/run-mock-api-anywhere-cli/',
@@ -90,7 +91,20 @@ const CLI: FunctionComponent = function () {
           </div>
           <div className='row py-5'>
             <div className='col-md-6'>
-              <h3 className='text-center'>NPM package quick start</h3>
+              <h3 className='text-center'>
+                NPM package quick start
+                <a
+                  href='https://www.npmjs.com/package/@mockoon/cli'
+                  className='text-decoration-none'
+                  target='_blank'
+                  rel='noopener'
+                >
+                  <i
+                    className='text-muted icon-open ps-2'
+                    aria-hidden='true'
+                  ></i>
+                </a>
+              </h3>
               <Terminal
                 lines={[
                   'npm install -g @mockoon/cli',
@@ -99,12 +113,61 @@ const CLI: FunctionComponent = function () {
               />
             </div>
             <div className='col-md-6'>
-              <h3 className='text-center'>Docker image Quick start</h3>
+              <h3 className='text-center'>
+                Docker image quick start
+                <a
+                  href='https://hub.docker.com/r/mockoon/cli'
+                  className='text-decoration-none'
+                  target='_blank'
+                  rel='noopener'
+                >
+                  <i
+                    className='text-muted icon-open ps-2'
+                    aria-hidden='true'
+                  ></i>
+                </a>
+              </h3>
               <Terminal
                 lines={[
                   'docker run -d --mount type=bind,source=/data-file.json,target=/data,readonly -p 3000:3000 mockoon/cli:latest -d data -p 3000'
                 ]}
               />
+            </div>
+          </div>
+          <div className='row py-5 justify-content-center'>
+            <div className='col-md-8'>
+              <h3 className='text-center'>
+                GitHub Action quick start
+                <a
+                  href='https://github.com/marketplace/actions/mockoon-cli'
+                  className='text-decoration-none'
+                  target='_blank'
+                  rel='noopener'
+                >
+                  <i
+                    className='text-muted icon-open ps-2'
+                    aria-hidden='true'
+                  ></i>
+                </a>
+              </h3>
+              <pre>
+                <CodeBlock
+                  code={`- name: Run Mockoon CLI
+  uses: mockoon/cli-action@v1
+  with:
+    # Mockoon CLI version, default to 'latest'
+    version: "latest"
+    # Mockoon local data file or URL
+    data-file: "./mockoon-data.json"
+    # port, default to 3000
+    port: 3000
+- name: Make test call
+  run: curl -X GET http://localhost:3000/endpoint`}
+                  dark
+                  lineBreak
+                  language='yaml'
+                />
+              </pre>
             </div>
           </div>
         </div>

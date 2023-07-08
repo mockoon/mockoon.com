@@ -64,11 +64,14 @@ const Download: FunctionComponent<{ version: string }> = function ({
         </div>
       </section>
 
-      <section className='py-5 py-lg-10 border-top bg-gradient-light-white'>
+      <section
+        id='download-section'
+        className='py-5 py-lg-10 border-top bg-gradient-light-white'
+      >
         <div className='container'>
           <div className='row'>
             <div className='col text-center'>
-              <h2>Downloads</h2>
+              <h2>Application download</h2>
               <DownloadSection version={version} />
             </div>
           </div>

@@ -58,7 +58,7 @@ class Index extends React.Component<{}, { companyLogos: any }> {
           cta={[
             {
               text: 'Download',
-              link: '/download/'
+              link: '/download/#download-section'
             },
             {
               text: 'Documentation',

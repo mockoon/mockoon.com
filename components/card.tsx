@@ -25,7 +25,7 @@ const Card: FunctionComponent<{
       <div
         className={`card ${border ? 'card-border' : ''} d-flex ${
           props.vertical ? 'flex-column' : 'flex-column flex-lg-row'
-        } flex-fill shadow-light-lg mb-6 text-center`}
+        } flex-fill shadow-light-lg text-center h-100`}
         style={{ borderTopColor: props.borderColor }}
       >
         {props.data.imageSrc && (

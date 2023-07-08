@@ -19,7 +19,7 @@ const Contact: FunctionComponent = function () {
         <div className='container'>
           <div className='row justify-content-center'>
             <div className='col-12 col-lg-4 d-flex'>
-              <div className='card my-5 shadow-light-lg'>
+              <div className='card card-border my-5 shadow-light-lg'>
                 <div className='card-body d-flex flex-column h-100'>
                   <img
                     src='/images/illustrations/chat.svg'
@@ -54,7 +54,7 @@ const Contact: FunctionComponent = function () {
             </div>
 
             <div className='col-12 col-lg-4 d-flex'>
-              <div className='card my-5 shadow-light-lg'>
+              <div className='card card-border my-5 shadow-light-lg'>
                 <div className='card-body d-flex flex-column h-100'>
                   <span className='badge text-bg-warning badge-float badge-float-outside'>
                     PRO
@@ -78,7 +78,7 @@ const Contact: FunctionComponent = function () {
             </div>
 
             <div className='col-12 col-lg-4 d-flex'>
-              <div className='card my-5 shadow-light-lg'>
+              <div className='card card-border my-5 shadow-light-lg'>
                 <div className='card-body d-flex flex-column h-100'>
                   <img
                     src='/images/illustrations/form.svg'

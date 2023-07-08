@@ -50,14 +50,13 @@ const Tutorials: FunctionComponent<{
             </div>
           </div>
 
-          <div className='row d-flex flex-column flex-lg-row'>
-            <div className='mx-auto my-lg-3 col-12 col-xxl-10'>
-              {props.articles
-                .filter((article) => !article.data.hidden)
-                .map((article) => {
-                  return (
+          {props.articles
+            .filter((article) => !article.data.hidden)
+            .map((article) => {
+              return (
+                <div key={article.slug} className='row py-2'>
+                  <div className='mx-auto my-lg-3 col-12 col-xxl-10'>
                     <Card
-                      key={article.slug}
                       data={{
                         title: article.data.title,
                         description: article.data.excerpt,
@@ -71,10 +70,10 @@ const Tutorials: FunctionComponent<{
                         ]
                       }}
                     />
-                  );
-                })}
-            </div>
-          </div>
+                  </div>
+                </div>
+              );
+            })}
         </div>
       </section>
     </Layout>

@@ -63,7 +63,7 @@ const CLI: FunctionComponent = function () {
         mainPictureWidth={1200}
         mainPictureHeight={430}
       />
-      <section className='py-5 py-lg-10'>
+      <section className='py-8 py-lg-10'>
         <div className='container'>
           <div className='row py-5'>
             <div className='col-12'>
@@ -89,7 +89,7 @@ const CLI: FunctionComponent = function () {
               </div>
             </div>
           </div>
-          <div className='row py-5'>
+          <div className='row py-8'>
             <div className='col-md-6'>
               <h3 className='text-center'>
                 NPM package quick start

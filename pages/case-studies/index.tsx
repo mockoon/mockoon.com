@@ -30,12 +30,11 @@ export default function CaseStudies(props: { articles: ArticleList }) {
 
       <section className='pb-8'>
         <div className='container'>
-          <div className='row d-flex flex-column flex-lg-row'>
-            <div className='mx-auto my-lg-3 col-12 col-xxl-10'>
-              {props.articles.map((article) => {
-                return (
+          {props.articles.map((article) => {
+            return (
+              <div key={article.slug} className='row py-2'>
+                <div className='mx-auto my-lg-3 col-12 col-xxl-10'>
                   <Card
-                    key={article.slug}
                     data={{
                       title: article.data.title,
                       description: article.data.excerpt,
@@ -50,10 +49,10 @@ export default function CaseStudies(props: { articles: ArticleList }) {
                     }}
                     cover={false}
                   />
-                );
-              })}
-            </div>
-          </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
     </Layout>

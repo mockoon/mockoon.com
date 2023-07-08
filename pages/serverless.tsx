@@ -83,20 +83,20 @@ const Serverless: FunctionComponent = function () {
                       key={feature.title}
                       className='mx-auto my-lg-3 col-12 col-lg-4'
                     >
-                      <Card data={feature} cover={false} />
+                      <Card data={feature} cover={false} border />
                     </div>
                   );
                 })}
               </div>
             </div>
           </div>
-          <div className='row py-5 justify-content-center'>
+          <div className='row py-8 justify-content-center'>
             <div className='col-md-6'>
               <h3 className='text-center'>NPM package installation</h3>
               <Terminal lines={['npm install @mockoon/serverless']} />
             </div>
           </div>
-          <div className='row py-5 justify-content-center'>
+          <div className='row py-8 justify-content-center'>
             <div className='col-md-6'>
               <h3 className='text-center'>AWS Lambda quick start</h3>
               <pre>

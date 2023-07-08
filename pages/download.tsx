@@ -1,13 +1,36 @@
 import { FunctionComponent } from 'react';
+import Card from '../components/card';
 import DownloadSection from '../components/download-section';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Layout from '../layout/layout';
+import { CardData } from '../models/common.model';
 import { getDesktopLatestVersion } from '../utils/utils';
 
 export async function getStaticProps() {
   return { props: { version: await getDesktopLatestVersion() } };
 }
+
+const features: CardData[] = [
+  {
+    title: 'API mocking that saves you time',
+    description:
+      'Get working mock REST APIs in seconds with an intuitive and easy-to-use interface. Run them everywhere with the CLI.',
+    imageSrc: '/images/highlight1.png'
+  },
+  {
+    title: 'Complete tooling',
+    description:
+      'Go beyond mocking with advanced features and tackle the most complex situation with HTTP requests recording, proxying, integration testing, etc.',
+    imageSrc: '/images/highlight3.png'
+  },
+  {
+    title: 'Integrates with your workflow',
+    description:
+      'Compatible with the OpenAPI specification, Mockoon integrates perfectly with your existing applications and API design workflow.',
+    imageSrc: '/images/highlight2.png'
+  }
+];
 
 const Download: FunctionComponent<{ version: string }> = function ({
   version
@@ -20,14 +43,11 @@ const Download: FunctionComponent<{ version: string }> = function ({
       />
 
       <Hero
-        title='Download Mockoon'
-        subtitle='Mockoon is available on the three major OS and is released under the MIT license'
+        title='<span class="text-primary">Design your mock API</span> with Mockoon desktop'
+        subtitle='  Stop waiting for APIs to be ready and start working immediately with realistic mock APIs. Design your API in seconds with Mockoon and start testing your app right away.'
+        mainPicture='/images/desktop-stylized.png'
       />
-      <section className='pb-8'>
-        <div className='container'>
-          <DownloadSection version={version} />
-        </div>
-      </section>
+
       <section className='py-5'>
         <div className='container'>
           <div className='row justify-content-center'>
@@ -38,6 +58,46 @@ const Download: FunctionComponent<{ version: string }> = function ({
                   getting started tutorial
                 </a>
                 !
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className='py-5 py-lg-10 border-top bg-gradient-light-white'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col text-center'>
+              <h2>Downloads</h2>
+              <DownloadSection version={version} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className='py-5 py-lg-10'>
+        <div className='container'>
+          <div className='row py-5'>
+            <div className='col-12'>
+              <div className='text-center'>
+                <h2>
+                  Design the perfect{' '}
+                  <span className='text-primary'>mock API</span> with Mockoon
+                </h2>
+              </div>
+            </div>
+            <div className='col-12'>
+              <div className='row'>
+                {features.map((feature) => {
+                  return (
+                    <div
+                      key={feature.title}
+                      className='mx-auto my-lg-3 col-12 col-lg-4'
+                    >
+                      <Card data={feature} cover={false} border vertical />
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>

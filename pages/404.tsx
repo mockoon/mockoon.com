@@ -21,7 +21,7 @@ const Custom404: FunctionComponent = function () {
         </div>
       </section>
 
-      <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
+      <section className='py-6 py-md-8'>
         <div className='container'>
           <div className='row justify-content-center'>
             <div className='col-12 col-lg-4 d-flex'>
@@ -35,6 +35,7 @@ const Custom404: FunctionComponent = function () {
                   ]
                 }}
                 cover={false}
+                border
               />
             </div>
 
@@ -47,6 +48,7 @@ const Custom404: FunctionComponent = function () {
                   links: [{ src: '/cli/', text: 'Discover the CLI' }]
                 }}
                 cover={false}
+                border
               />
             </div>
 
@@ -63,6 +65,7 @@ const Custom404: FunctionComponent = function () {
                   ]
                 }}
                 cover={false}
+                border
               />
             </div>
           </div>

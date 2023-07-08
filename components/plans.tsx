@@ -336,7 +336,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
 
                       <p>
-                        Access to dozens of pro{' '}
+                        📃 Access to dozens of pro{' '}
                         <Link href={'/templates/'}>templates</Link>
                       </p>
                     </div>
@@ -346,7 +346,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
 
                       <p className='mb-0'>
-                        {pricing.SOLO.templatesQuota}{' '}
+                        🪄 {pricing.SOLO.templatesQuota}{' '}
                         <Link href={'/ai-powered-api-mocking/'}>
                           AI-generated templates
                         </Link>{' '}
@@ -438,7 +438,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
 
                       <p>
-                        Access to dozens of pro{' '}
+                        📃 Access to dozens of pro{' '}
                         <Link href={'/templates/'}>templates</Link>
                       </p>
                     </div>
@@ -448,7 +448,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
 
                       <p className='mb-0'>
-                        {pricing.TEAM.templatesQuota}{' '}
+                        🪄 {pricing.TEAM.templatesQuota}{' '}
                         <Link href={'/ai-powered-api-mocking/'}>
                           AI-generated templates
                         </Link>{' '}
@@ -552,7 +552,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
 
                       <p>
-                        Access to dozens of pro{' '}
+                        📃 Access to dozens of pro{' '}
                         <Link href={'/templates/'}>templates</Link>
                       </p>
                     </div>
@@ -562,7 +562,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
 
                       <p className='mb-0'>
-                        {pricing.ENTERPRISE.templatesQuota}{' '}
+                        🪄 {pricing.ENTERPRISE.templatesQuota}{' '}
                         <Link href={'/ai-powered-api-mocking/'}>
                           AI-generated templates
                         </Link>{' '}

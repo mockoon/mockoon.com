@@ -220,7 +220,7 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                   key={`feature${featureIndex}`}
                 >
                   <div
-                    className={`col-12 col-lg-5 pb-sm-10 pb-lg-0 ${
+                    className={`col-12 col-lg-4 pb-sm-10 pb-lg-0 ${
                       featureIndex % 2 === 0 ? 'order-lg-2' : 'order-lg-1'
                     }`}
                   >
@@ -243,7 +243,7 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                     </div>
                   </div>
                   <div
-                    className={`col-12 col-lg-7 ${
+                    className={`col-12 col-lg-8 ${
                       featureIndex % 2 === 0 ? 'order-lg-1' : 'order-lg-2'
                     }`}
                   >
@@ -255,7 +255,7 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                       <img
                         src={feature.imgSrc}
                         alt={feature.imgAlt}
-                        className='img-fluid'
+                        className='img-fluid p-2'
                         width={1200}
                         height={783}
                       />

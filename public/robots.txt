@@ -7,6 +7,7 @@ Disallow: /email-verification
 Disallow: /account
 Disallow: /terms
 Disallow: /privacy
+Disallow: /404
 
 # Host
 Host: https://mockoon.com

@@ -156,7 +156,8 @@ Promise.all([
     'signup',
     'privacy',
     'terms',
-    'email-verification'
+    'email-verification',
+    '404'
   ]),
   generateSitemap('pages/integrations/*.tsx', 'integrations', '^pages'),
   generateSitemap(

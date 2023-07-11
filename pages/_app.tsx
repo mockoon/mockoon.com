@@ -2,7 +2,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { initializeApp } from 'firebase/app';
 import { connectAuthEmulator, getAuth } from 'firebase/auth';
 import { usePathname } from 'next/navigation';
-import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { useEffect } from 'react';
 import '../styles/style.scss';
@@ -40,16 +39,6 @@ function MyApp({ Component, pageProps }) {
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
         <Script>{`if(document.location.host.indexOf('mockoon.xyz') > -1){document.location.replace('https://mockoon.com')}`}</Script>
-        <Script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
-        ></Script>
-        <Script
-          async
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${process.env.NEXT_PUBLIC_ANALYTICS_ID}', { 'anonymize_ip': true });`
-          }}
-        ></Script>
       </QueryClientProvider>
     </>
   );

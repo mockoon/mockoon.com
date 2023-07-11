@@ -1,19 +1,13 @@
 import { Fragment, FunctionComponent, useState } from 'react';
 import { sendEvent } from '../utils/analytics';
-declare let gtag: Function;
 
 const DownloadSection: FunctionComponent<{ version: string }> = function ({
   version
 }) {
   const [showSupport, setShowSupport] = useState(false);
 
-  const postDownload = (platform: 'windows' | 'osx' | 'linux') => {
-    gtag('event', 'download', { event_category: platform });
-    sendEvent(
-      'event',
-      'download',
-      platform === 'windows' ? 'win' : platform === 'osx' ? 'mac' : 'linux'
-    );
+  const postDownload = (platform: 'win' | 'mac' | 'linux') => {
+    sendEvent('event', 'download', platform);
 
     setTimeout(() => {
       setShowSupport(true);
@@ -55,7 +49,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.exe`}
                 rel='noopener'
-                onClick={() => postDownload('windows')}
+                onClick={() => postDownload('win')}
               >
                 <span className='icon me-2'>
                   <i className='icon-download'></i>
@@ -66,7 +60,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.portable.${version}.exe`}
                 rel='noopener'
-                onClick={() => postDownload('windows')}
+                onClick={() => postDownload('win')}
               >
                 <span className='icon me-2'>
                   <i className='icon-download'></i>
@@ -78,7 +72,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 href='https://apps.microsoft.com/store/detail/mockoon/9PK8DMSN00JJ?hl=en-us&gl=us'
                 rel='noopener'
                 target='_blank'
-                onClick={() => postDownload('windows')}
+                onClick={() => postDownload('win')}
               >
                 <span className='icon me-2'>
                   <i className='icon-windows'></i>
@@ -196,7 +190,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.universal.dmg`}
                 rel='noopener'
-                onClick={() => postDownload('osx')}
+                onClick={() => postDownload('mac')}
               >
                 <span className='icon me-2'>
                   <i className='icon-download'></i>
@@ -207,7 +201,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.x64.dmg`}
                 rel='noopener'
-                onClick={() => postDownload('osx')}
+                onClick={() => postDownload('mac')}
               >
                 <span className='icon me-2'>
                   <i className='icon-download'></i>
@@ -218,7 +212,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 className='btn btn-primary-soft btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.arm64.dmg`}
                 rel='noopener'
-                onClick={() => postDownload('osx')}
+                onClick={() => postDownload('mac')}
               >
                 <span className='icon me-2'>
                   <i className='icon-download'></i>

@@ -19,7 +19,7 @@ const pricing = {
       price: 100
     },
     templatesQuota: 100,
-    discount: '2 months free'
+    discount: '🏷️ 2 months free'
   },
   TEAM: {
     MONTHLY: {
@@ -29,7 +29,7 @@ const pricing = {
       price: 250
     },
     templatesQuota: 200,
-    discount: '2 months free',
+    discount: '🏷️ 2 months free',
     maxSeats: 20
   },
   ENTERPRISE: {
@@ -604,18 +604,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
 
                       <p>Unlimited seats</p>
                     </div>
-                    <div className='text-center'>
-                      <Link
-                        href={'/contact-form/'}
-                        className='btn btn-primary-soft btn-sm my-6'
-                      >
-                        <>
-                          Specific needs?
-                          <br />
-                          Contact sales
-                        </>
-                      </Link>
-                    </div>
+
                     <div className='py-4 mt-auto'>
                       <span className='badge rounded-pill bg-gray-300 text-gray-800'>
                         <span className='h6 text-uppercase'>Coming soon</span>
@@ -643,6 +632,24 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
               <Link href={'/terms/'}>terms of service</Link> for more
               information.
             </p>
+            <div className='text-center'>
+              <h4 className='fw-bold mt-6 mb-4'>Specific needs?</h4>
+              <div className='btn-group'>
+                <Link
+                  href={'/contact-form/'}
+                  className='btn btn-outline-secondary btn-sm'
+                >
+                  Contact sales
+                </Link>
+                <Link
+                  href={'https://cal.com/mockoon/demo'}
+                  target='_blank'
+                  className='btn btn-outline-secondary btn-sm'
+                >
+                  Book a demo
+                </Link>
+              </div>
+            </div>
 
             {showTagline && (
               <div className='py-8'>

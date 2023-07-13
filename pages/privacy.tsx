@@ -11,7 +11,7 @@ const Privacy: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Privacy policy' subtitle='Last update July 1st, 2021' />
+      <Hero title='Privacy policy' subtitle='Last update July 13, 2023' />
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
@@ -39,7 +39,7 @@ const Privacy: FunctionComponent = function () {
               <p>
                 When you visit our website or use our application, our servers
                 may automatically log the standard data provided by your web
-                browser. It may include your device’s Internet Protocol (IP)
+                browser. It may include your device's Internet Protocol (IP)
                 address, your browser type and version, the pages you visit, the
                 time and date of your visit, the time spent on each page, other
                 details about your visit, and technical details that occur in
@@ -59,10 +59,9 @@ const Privacy: FunctionComponent = function () {
                 <li>
                   Use a mobile device or web browser to access our website: in
                   addition to the above-mentioned log data, we collect anonymous
-                  navigation statistics using Google Analytics. We took the
-                  proper steps to anonymize your personal information such as
-                  your IP address and disable any data sharing or profiling
-                  options.
+                  navigation statistics. We do not collect any personal
+                  information neither do we use cookies or any other tracking
+                  technology.
                 </li>
                 <li>
                   Contact us via email, social media, or on any similar
@@ -120,7 +119,7 @@ const Privacy: FunctionComponent = function () {
                 scientific, or historical research purposes or statistical
                 purposes.
               </p>
-              <h3>Children’s Privacy</h3>
+              <h3>Children's Privacy</h3>
               <p>
                 We do not aim any of our products or services directly at
                 children under the age of 13, and we do not knowingly collect
@@ -154,7 +153,7 @@ const Privacy: FunctionComponent = function () {
                 If we receive personal information about you from a third party,
                 we will protect it as set out in this privacy policy. If you are
                 a third party providing personal information about somebody
-                else, you represent and warrant that you have such person’s
+                else, you represent and warrant that you have such person's
                 consent to provide the personal information to us.
               </p>
               <p>

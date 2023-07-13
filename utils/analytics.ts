@@ -8,6 +8,11 @@ export const sendEvent = (
     referrer = document.referrer || 'direct';
     sessionStorage.setItem('referrer', referrer);
   }
+  let entryPage = sessionStorage.getItem('entryPage');
+  if (!entryPage) {
+    entryPage = window.location.pathname;
+    sessionStorage.setItem('entryPage', entryPage);
+  }
 
   fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/events/website`, {
     method: 'POST',
@@ -18,6 +23,7 @@ export const sendEvent = (
       type,
       referrer,
       path: window.location.pathname,
+      entryPage,
       eventName,
       eventCategory
     })

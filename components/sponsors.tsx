@@ -32,6 +32,17 @@ const Sponsors: FunctionComponent<{
             />
           </Link>
           <Link
+            href='https://localazy.com/register?ref=a9CiDC61gOac-azO'
+            className='d-inline-block p-4'
+            target='_blank'
+          >
+            <img
+              src='/images/sponsors/localazy.png'
+              className='img-fluid m-4'
+              alt='Localazy logo'
+            />
+          </Link>
+          <Link
             href='https://www.peakcrypto.com/'
             className='d-inline-block p-4'
             target='_blank'

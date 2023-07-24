@@ -45,7 +45,7 @@ const CLI: FunctionComponent = function () {
       <Meta
         title='Take Mockoon to the command line'
         description='Mockoon CLI takes Mockoon where it has never been before: servers, CI environments, etc. Lightweight and fast.'
-        image='cli-screenshot.png'
+        image='cli-hero.png'
       />
       <Hero
         title="Take Mockoon to the <span class='text-primary'>command line</span>"
@@ -58,7 +58,7 @@ const CLI: FunctionComponent = function () {
             subtitle: 'MIT license'
           }
         ]}
-        mainPicture='/images/cli-screenshot.png'
+        mainPicture='/images/cli-hero.png'
         mainPictureAlt='Mockoon CLI screenshot'
         mainPictureWidth={1200}
         mainPictureHeight={430}

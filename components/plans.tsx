@@ -452,7 +452,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         <Link href={'/ai-powered-api-mocking/'}>
                           AI-generated templates
                         </Link>{' '}
-                        per month
+                        per month per seat
                       </p>
                     </div>
                     <hr />
@@ -566,7 +566,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         <Link href={'/ai-powered-api-mocking/'}>
                           AI-generated templates
                         </Link>{' '}
-                        per month
+                        per month per seat
                       </p>
                     </div>
                     <hr />

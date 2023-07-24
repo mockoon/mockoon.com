@@ -164,6 +164,12 @@ $ curl http://localhost:3000/users
 ]
 ```
 
+## Customizing the "id" property
+
+By default, CRUD endpoints will use the `id` property to identify objects in an array in all the routes manipulating a single resource (e.g. GET `/resource/:id`). However, you can change this property to anything you want, like `uuid`, `custom_id`, etc:
+
+![Customize the CRUD id property{1264x176}](/images/tutorials/create-full-rest-api-crud-routes/customize-crud-id-property-key.png)
+
 ## Data persistence
 
 As you can see, the data bucket content is generated once when the server starts, and its state persists between calls. You can reset the bucket to its initial state by restarting your mock API.

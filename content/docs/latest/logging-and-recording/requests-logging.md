@@ -37,3 +37,64 @@ The interface is showing truncated bodies for both the request and the response 
 You can also easily see if a request has been caught by Mockoon (record shows a green tick) or has been passed to another URL if the [proxy mode](docs:proxy-mode) is activated (record shows a shield icon):
 
 ![view logs metadata{1214x632}](docs-img:logs-metadata.png)
+
+## File logging
+
+Mockoon records all transactions in the [logs file](docs:mockoon-data-files/settings-and-logs#application-logs) in JSON format:
+
+```json
+{
+  "app": "mockoon-server",
+  "level": "info",
+  "message": "Transaction recorded",
+  "timestamp": "2023-06-29T09:40:01.772Z"
+  "environmentName": "Demo API",
+  "environmentUUID": "6a5ccd5b-fd28-471a-bbdc-cbbd7ea54157",
+  "requestMethod": "GET",
+  "requestPath": "/test",
+  "requestProxied": false,
+  "responseStatus": 200,
+}
+```
+
+You can also enable full transaction logging in the application settings by checking the "Log the full transactions" checkbox in the settings dialog.
+
+When using this option, logs will contain the full transaction (request and response) with the same information you can see in the desktop application "Logs" tab:
+
+```json
+{
+  "app": "mockoon-server",
+  "level": "info",
+  "message": "Transaction recorded",
+  "timestamp": "2023-06-29T09:02:09.801Z",
+  "environmentName": "Demo API",
+  "environmentUUID": "d682bfab-52aa-4ec5-a3a5-853e6d3950cc",
+  "requestMethod": "GET",
+  "requestPath": "/test",
+  "requestProxied": false,
+  "responseStatus": 200,
+  "transaction": {
+    "proxied": false,
+    "request": {
+      "body": "{}",
+      "headers": [{ "key": "accept", "value": "*/*" }],
+      "method": "GET",
+      "params": [],
+      "query": "",
+      "queryParams": {},
+      "route": "/test",
+      "urlPath": "/test"
+    },
+    "response": {
+      "body": "{}",
+      "headers": [{ "key": "content-type", "value": "application/json; charset=utf-8" }],
+      "statusCode": 200,
+      "statusMessage": "OK"
+    },
+    "routeResponseUUID": "173e37f8-7edd-4ca4-9244-32ca14eeb158",
+    "routeUUID": "03a3f8de-7a4e-4dd1-a008-719e6165207c"
+  }
+}
+```
+
+> ⚠️ Enabling this option will generate a lot of logs and can quickly fill up your disk space. Use it with caution.

@@ -14,11 +14,17 @@ order: 1100
 
 Since [v1.16.0](https://github.com/mockoon/mockoon/releases/tag/v1.16.0), Mockoon is storing each mock API's data in a separate file.
 
-You can locate the folder in which the API data are stored by right-clicking on each environment and selecting **"Show in folder"**:
+You can locate the folder in which the API data are stored by right-clicking on each environment and selecting **"Show data file in explorer/finder"**:
 
-![click on show in folder in the context menu{455x314}](docs-img:environment-show-in-folder.png)
+![click on show in folder in the context menu{455x312}](docs-img:environment-show-in-folder.png)
 
-You can move these files anywhere on your hard drive and re-open them from there.
+## Moving the files
+
+You can move the data files to another folder by right-clicking on an environment and selecting **"Move data file to folder"**:
+
+![click on Move data file to folder in folder in the context menu{455x344}](docs-img:environment-move-to-folder.png)
+
+> Please note that the environment file will be copied to the new folder, and the original file will **not** be deleted. If you want to delete the original file, you will have to do it manually.
 
 ## Old system
 

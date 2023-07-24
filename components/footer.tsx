@@ -122,7 +122,7 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/releases/3.1.0/' className='text-reset'>
+                <Link href='/releases/4.0.0/' className='text-reset'>
                   Releases
                 </Link>
               </li>

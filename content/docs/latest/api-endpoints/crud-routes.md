@@ -30,7 +30,7 @@ Then, set its path, usually a [resource name](/articles/api-guide-rest-api-compo
 
 After creating a CRUD endpoint, you need to link it to a data bucket:
 
-![Link a data bucket to a CRUD route{1007x334}](docs-img:link-data-bucket-crud-route.png)
+![Link a data bucket to a CRUD route{1264x334}](docs-img:link-data-bucket-crud-route.png)
 
 > Head over to our [data buckets](docs:data-buckets/overview) documentation to learn how to create a new data bucket.
 
@@ -73,6 +73,12 @@ Mockoon will automatically translate a CRUD endpoint to multiple routes allowing
 \* Supports [sorting and pagination](#sorting-and-pagination-on-the-main-get-route)
 
 > ⚠️ _Note:_ You can expect the above results assuming that you are sending the same type of content that the one stored in the data bucket (array ↔ array, object ↔ object, etc.). However, the system is very permissive, and you may push any content in an array, ending up with mixted type contents or replacing content with data of a different type.
+
+## Customizing the "id" property
+
+By default, CRUD endpoints will use the `id` property to identify objects in an array in all the routes manipulating a single resource (e.g. GET `/resource/:id`). However, you can change this property to anything you want, like `uuid`, `custom_id`, etc:
+
+![Customize the CRUD id property{1264x334}](docs-img:customize-crud-id-property-key.png)
 
 ## Overriding a route
 

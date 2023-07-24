@@ -164,11 +164,12 @@ Create an array from the given items. This helper is mostly used with the follow
 
 ## `oneOf`
 
-Select a random item in the array passed in parameters.
+Select a random item in the array passed in parameters. `oneOf` will return the actual value in the array. Set the `stringify` parameter to `true` (default to `false`) to get a JSON stringified result.
 
-| Arguments (ordered) | Type  | Description     |
-| ------------------- | ----- | --------------- |
-| 0                   | any[] | Array of values |
+| Arguments (ordered) | Type    | Description          |
+| ------------------- | ------- | -------------------- |
+| 0                   | any[]   | Array of values      |
+| [1 = false]         | boolean | Stringify the result |
 
 **Examples**
 

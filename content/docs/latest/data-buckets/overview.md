@@ -31,11 +31,27 @@ Mockoon will automatically attribute a new **unique ID** to your data bucket. Yo
 
 ## Content of a data bucket
 
-Data buckets can contain any text content. They also support all of Mockoon's [templating helpers](docs:templating/overview).
-Mockoon will always try to parse the data bucket's content from JSON to allow you to reference only part of it using the [`data` helpers](docs:data-buckets/using-data-buckets#using-data-helpers).
+Data buckets can contain any text content. They also support all of Mockoon's [templating helpers](docs:templating/overview) including the [`data` and `dataRaw` helpers](docs:data-buckets/using-data-buckets#using-data-helpers).
+
+Mockoon will always try to parse the data bucket's content from JSON to allow you to reference only part of it using the `data` helpers and an object path.
+
+## Combining data buckets
+
+You can easily combine your data bucket contents by referencing other data buckets using the `dataRaw` helper:
+
+```json
+//data bucket content
+{
+  "data": {
+    "id": "{{ dataRaw 'other-data-bucket-content' }}"
+  }
+}
+```
+
+> ⚠️ However, data buckets are generated in the order they are defined in the environment. As a consequence, you cannot reference a data bucket that is defined **after** the current one.
 
 ## Data buckets generation
 
-Data buckets are generated when the server starts, and their state persist during all mock API calls. To regenerate a data bucket's content, restart the mock server.
+Data buckets are generated when the server starts in the order they are defined in the environment. Their state persist during all mock API calls. To regenerate a data bucket's content, restart the mock server.
 
 If a data bucket contains [request helpers](docs:templating/mockoon-request-helpers), Mockoon will generate the bucket content only after the first call made to a route using this data bucket (by referencing it directly or using a data helper). It allows you to create bucket "configuration" routes that you can call programmatically with the content you want to reuse in your bucket using the request helpers (`body`, `queryParams`, etc.).

@@ -82,6 +82,19 @@ const Roadmap: FunctionComponent = function () {
                   </div>
 
                   <p className='text-gray-800'>
+                    <Link
+                      href={'https://github.com/mockoon/mockoon/issues/1063'}
+                    >
+                      Applications logging standardization
+                    </Link>
+                  </p>
+                </div>
+                <div className='d-flex'>
+                  <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                    <i className='icon icon-check'></i>
+                  </div>
+
+                  <p className='text-gray-800'>
                     <Link href={'/pro/'}>AI-powered mocks</Link>
                     <span className='badge text-bg-warning ms-2'>Pro</span>
                   </p>
@@ -148,20 +161,6 @@ const Roadmap: FunctionComponent = function () {
 
                   <p className='text-gray-800'>
                     <Link
-                      href={'https://github.com/mockoon/mockoon/issues/1063'}
-                      target='_blank'
-                    >
-                      Applications logging standardization
-                    </Link>
-                  </p>
-                </div>
-                <div className='d-flex'>
-                  <div className='badge badge-rounded-circle bg-primary-soft mt-1 me-4'>
-                    <i className='icon icon-refresh'></i>
-                  </div>
-
-                  <p className='text-gray-800'>
-                    <Link
                       href={'https://github.com/mockoon/mockoon/issues/849'}
                       target='_blank'
                     >
@@ -180,6 +179,20 @@ const Roadmap: FunctionComponent = function () {
                       target='_blank'
                     >
                       Trigger requests after a call
+                    </Link>
+                  </p>
+                </div>
+                <div className='d-flex'>
+                  <div className='badge badge-rounded-circle bg-primary-soft mt-1 me-4'>
+                    <i className='icon icon-refresh'></i>
+                  </div>
+
+                  <p className='text-gray-800'>
+                    <Link
+                      href={'https://github.com/mockoon/mockoon/issues/1044'}
+                      target='_blank'
+                    >
+                      Support for Range header
                     </Link>
                   </p>
                 </div>

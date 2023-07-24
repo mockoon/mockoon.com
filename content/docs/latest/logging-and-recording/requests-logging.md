@@ -87,7 +87,9 @@ When using this option, logs will contain the full transaction (request and resp
     },
     "response": {
       "body": "{}",
-      "headers": [{ "key": "content-type", "value": "application/json; charset=utf-8" }],
+      "headers": [
+        { "key": "content-type", "value": "application/json; charset=utf-8" }
+      ],
       "statusCode": 200,
       "statusMessage": "OK"
     },
@@ -98,3 +100,5 @@ When using this option, logs will contain the full transaction (request and resp
 ```
 
 > ⚠️ Enabling this option will generate a lot of logs and can quickly fill up your disk space. Use it with caution.
+
+> 🔏 Our logging system will automatically anonymize any credentials present in the `Authorization` or `Proxy-Authorization` headers.

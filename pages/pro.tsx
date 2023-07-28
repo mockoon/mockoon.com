@@ -101,7 +101,7 @@ const faq: AccordionData = [
       {
         question: 'Do you offer custom services?',
         answer:
-          'Our custom services can vary. Here is a brief overview of what type of service we provided in the past:<ul><li>Feature prioritization on the roadmap.</li><li>Advanced support during Mockoon tools deployment or configuration.</li><li>Online training with live video conference.</li></ul><a href="/contact-form/">Contact us</a> for more information.'
+          'Our custom services can vary. Here is a brief overview of what type of service we provided in the past:<ul><li>Feature prioritization on the roadmap.</li><li>Advanced support during Mockoon tools deployment or configuration.</li><li>Help with your API mock creation.</li><li>Online training with live video conference.</li></ul><a href="/contact-form/">Contact us</a> for more information.'
       },
       {
         question: 'Contracting company',
@@ -149,7 +149,11 @@ const Pro: FunctionComponent = function () {
               <h2 className='fw-bold text-center mb-6'>
                 Stay up-to-date with Mockoon Pro feature releases
               </h2>
-              <EmailForm formType='productpreview' />
+              <div className='row align-items-center text-lg-start text-center'>
+                <div className='col-12 justify-content-end'>
+                  <EmailForm formType='productpreview' />
+                </div>
+              </div>
             </div>
           </div>
         </div>

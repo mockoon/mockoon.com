@@ -14,7 +14,20 @@ const Footer: FunctionComponent<{
         <div className='row mb-6'>
           <div className='py-8 border-bottom border-gray-300'>
             {(props.banner === 'newsletter' && (
-              <EmailForm formType='newsletter' />
+              <div className='row align-items-center text-lg-start text-center'>
+                <div className='col-12 col-lg-7'>
+                  <h4 className='mb-1 fw-bold text-gray-700'>
+                    Get our stories delivered
+                  </h4>
+
+                  <p className='fs-lg text-muted mb-4 mb-lg-0'>
+                    Enter your email address to receive Mockoon's latest updates
+                  </p>
+                </div>
+                <div className='col-lg-5 justify-content-end'>
+                  <EmailForm formType='newsletter' />
+                </div>
+              </div>
             )) ||
               (props.banner === 'contact' && <ContactBanner />) ||
               (props.banner === 'download' && <DownloadCTA />) || (
@@ -154,6 +167,16 @@ const Footer: FunctionComponent<{
             </ul>
           </div>
           <div className='col-12 col-md-4 col-lg-2 text-lg-start text-center'>
+            <h6 className='fw-bold text-uppercase text-gray-700'>Services</h6>
+
+            <ul className='list-unstyled text-muted'>
+              <li className='mb-2'>
+                <Link href='/pro/' className='text-reset'>
+                  Pro plans
+                </Link>
+              </li>
+            </ul>
+
             <h6 className='fw-bold text-uppercase text-gray-700'>Tools</h6>
 
             <ul className='list-unstyled text-muted'>
@@ -222,8 +245,8 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/pro/' className='text-reset'>
-                  Pro plans
+                <Link href='/newsletter/' className='text-reset'>
+                  Newsletter
                 </Link>
               </li>
 

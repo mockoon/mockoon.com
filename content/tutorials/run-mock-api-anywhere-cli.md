@@ -197,3 +197,5 @@ jobs:
       - name: Run tests
         run: npm run test
 ```
+
+> 💡 If you are building your own actions with the CLI, do not forget to add an `&` at the end of the command to run it in the background: `mockoon-cli start -d ./data-file.json &`.

@@ -43,6 +43,7 @@ export type CardData = {
     src: string;
     text: string;
     icon?: string;
+    iconAfter?: boolean;
     blank?: boolean;
   }[];
 };

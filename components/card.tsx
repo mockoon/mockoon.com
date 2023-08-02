@@ -61,7 +61,9 @@ const Card: FunctionComponent<{
               {props.data.topTag}
             </span>
           )}
+
           <h3 className='pb-3 h4 col-10'>{props.data.title}</h3>
+
           {props.data.description && (
             <p
               className='col-10 text-muted'
@@ -89,12 +91,17 @@ const Card: FunctionComponent<{
                     }}
                     target={link.blank ? '_blank' : undefined}
                   >
-                    {link.icon && (
+                    {link.icon && !link.iconAfter && (
                       <span className='icon me-2'>
                         <i className={link.icon}></i>
                       </span>
                     )}
                     {link.text}
+                    {link.icon && link.iconAfter && (
+                      <span className='icon ms-2'>
+                        <i className={link.icon}></i>
+                      </span>
+                    )}
                   </Link>
                 ) : (
                   <a
@@ -105,12 +112,17 @@ const Card: FunctionComponent<{
                     href={link.src}
                     target={link.blank ? '_blank' : undefined}
                   >
-                    {link.icon && (
+                    {link.icon && !link.iconAfter && (
                       <span className='icon me-2'>
                         <i className={link.icon}></i>
                       </span>
                     )}
                     {link.text}
+                    {link.icon && link.iconAfter && (
+                      <span className='icon ms-2'>
+                        <i className={link.icon}></i>
+                      </span>
+                    )}
                   </a>
                 );
               })}

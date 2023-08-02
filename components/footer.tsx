@@ -263,6 +263,12 @@ const Footer: FunctionComponent<{
                   </>
                 </Link>
               </li>
+
+              <li className='mb-2'>
+                <Link href='/oss-friends/' className='text-reset'>
+                  OSS friends
+                </Link>
+              </li>
             </ul>
 
             <h6 className='fw-bold text-uppercase text-gray-700 mt-4'>Legal</h6>

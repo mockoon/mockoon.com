@@ -186,22 +186,22 @@ const Features: FunctionComponent = function () {
         subtitle='Mockoon offers tons of features that makes API mocking a breeze.'
       />
 
-      <div className='section'>
+      <section className='py-5 py-lg-10'>
         <div className='container'>
           <div className='row'>
             {features.map((feature) => {
               return (
                 <div
                   key={feature.title}
-                  className='mx-auto my-lg-3 col-12 col-lg-4 d-flex'
+                  className='mx-auto my-4 col-12 col-lg-4 d-flex'
                 >
-                  <Card data={feature} cover={false} />
+                  <Card data={feature} cover={false} border />
                 </div>
               );
             })}
           </div>
         </div>
-      </div>
+      </section>
     </Layout>
   );
 };

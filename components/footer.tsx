@@ -167,16 +167,6 @@ const Footer: FunctionComponent<{
             </ul>
           </div>
           <div className='col-12 col-md-4 col-lg-2 text-lg-start text-center'>
-            <h6 className='fw-bold text-uppercase text-gray-700'>Services</h6>
-
-            <ul className='list-unstyled text-muted'>
-              <li className='mb-2'>
-                <Link href='/pro/' className='text-reset'>
-                  Pro plans
-                </Link>
-              </li>
-            </ul>
-
             <h6 className='fw-bold text-uppercase text-gray-700'>Tools</h6>
 
             <ul className='list-unstyled text-muted'>
@@ -216,6 +206,24 @@ const Footer: FunctionComponent<{
                   className='text-reset'
                 >
                   Mockoon button
+                </Link>
+              </li>
+            </ul>
+
+            <h6 className='fw-bold text-uppercase text-gray-700'>Services</h6>
+
+            <ul className='list-unstyled text-muted'>
+              <li className='mb-2'>
+                <Link href='/pro/' className='text-reset'>
+                  Pro plans
+                </Link>
+              </li>
+            </ul>
+
+            <ul className='list-unstyled text-muted'>
+              <li className='mb-2'>
+                <Link href='/custom-services/' className='text-reset'>
+                  Custom services
                 </Link>
               </li>
             </ul>

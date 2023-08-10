@@ -119,7 +119,7 @@ const UseCases: FunctionComponent = function () {
                     <img
                       src={feature.imgSrc}
                       alt={feature.imgAlt}
-                      className='img-fluid w-75'
+                      className='img-fluid w-lg-50'
                     />
                   </div>
                 </div>

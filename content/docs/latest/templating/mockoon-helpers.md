@@ -12,15 +12,22 @@ order: 1010
 
 In addition to Handlebars' built-in helpers, Mockoon offers the following helpers:
 
-| Block helpers       | Data buckets          | Arrays              |
-| ------------------- | --------------------- | ------------------- |
-| [`repeat`](#repeat) | [`data`](#data)       | [`array`](#array)   |
-| [`switch`](#switch) | [`dataRaw`](#dataraw) | [`oneOf`](#oneof)   |
-|                     |                       | [`someOf`](#someof) |
-|                     |                       | [`join`](#join)     |
-|                     |                       | [`slice`](#slice)   |
-|                     |                       | [`len`](#len)       |
-|                     |                       |                     |
+| Block helpers       | Data buckets          |
+| ------------------- |-----------------------|
+| [`repeat`](#repeat) | [`data`](#data)       |
+| [`switch`](#switch) | [`dataRaw`](#dataraw) |
+|                     |                       |
+
+| Arrays              | Objects              |
+|---------------------|----------------------|
+| [`array`](#array)   | [`object`](#object)  |
+| [`oneOf`](#oneof)   |                      |
+| [`someOf`](#someof) |                      |
+| [`join`](#join)     |                      |
+| [`slice`](#slice)   |                      |
+| [`len`](#len)       |                      |
+| [`filter`](#filter) |                      |
+|                     |                      |
 
 | Math                    |                       | Variables           |
 | ----------------------- | --------------------- | ------------------- |
@@ -249,6 +256,103 @@ result: 3
 
 {{len 'hello'}}
 result: 5
+```
+
+## `filter`
+
+Return filtered array.
+
+| Arguments (ordered) | Type                         | Description         |
+|---------------------|------------------------------|---------------------|
+| 0                   | any[]                        | Input array         |
+| 1..n                | primitive or object or array | OR conditions level |
+ 
+- The filter could be used with data buckets, use [dataRaw](dataraw) for that.
+- Each argument starts from 1 is a condition `filter (array 1 2 3) 1 3 5 6 ....`.
+- The condition could be primitive (string, number) or [object](#object) or [array](#array) with sub-conditions.
+- The condition could be mixed and includes primitive, object, and sub-conditions at the same time.
+- When the condition is an object then all keys and values work as `AND`
+- Conditions support infinite nesting of conditions if the condition is an array, this means it's a list of sub-conditions.
+- The first level of filer arguments works as OR conditions `filter (array 1 2 3) 1 3` equals fo `[1,2,3].filter(x => x === 3 || x === 1)`.
+- The second level of conditions works as `AND` sub-conditions list.
+- The third level of conditions works as `OR` sub-conditions list.
+- Nesting of conditions matches the rule `OR` (the first level of the arguments) -> `AND` -> `OR` -> `AND` -> ...
+- For a better understanding of how to build `AND` queries with objects please check the [object](#object) documentation.
+
+**Structure**
+
+```handlebars
+<!-- filter query base OR structure -->
+{{ filter (array 1 2 3 ... ) c1 c2 c3 ... }}
+result: c1 OR c2 OR c3
+
+<!-- filter query base AND structure (the AND conditions described as sub-conditions) -->
+{{ filter (array x y z) (array c1 c2 c3) }}
+result: items that fit to c1 AND c2 AND c3
+
+<!-- filter query a few OR from several AND conditions -->
+{{ filter (array x y z) (array a1 a2 a3) (array b1 b2 b3) (array c1 c2 c3) }}
+result: (a1 AND a2 AND a3) OR (b1 AND b2 AND b3) OR (c1 AND c2 AND c3)
+
+<!-- filter with complex nested structure -->
+{{ filter (array 1 2 3) (array a1 a2 (array x1 x2) ) (array b1 b2 b3) }}
+results: items that fit to (a1 AND a2 AND (x1 OR x2) ) OR (b1 AND b2 AND b3)
+``` 
+
+**Examples**
+
+```handlebars
+<!-- Simple OR filter -->
+{{ filter (array 1 2 3) 1 3 }}
+result: 1,3
+
+<!-- Simple OR filter -->
+{{ filter (array 'item1' 'item2' 'item3' 'item4' 'item3') 'item1' 'item2' 'item3' }}
+result: item1,item2,item3,item3
+
+<!-- Data bucket get all users with type='item1' -->
+{{ filter (dataRaw 'Users') (object type='item1') }}
+
+<!-- Data bucket get all users with type='item1' OR type='item2' OR type='item3' -->
+{{ filter (dataRaw 'Users') (object type='item1') (object type='item2') (object type='item3') }}
+
+<!-- Data bucket get all users with type='item1' AND category='some-category' -->
+{{ filter (dataRaw 'Users') (object type='item1' category='some-category') }}
+
+<!-- Data bucket get all users with type='item1' OR category='some-category' -->
+{{ filter (dataRaw 'Users') (array (object type='item1') (object category='some-category')) }}
+
+<!-- Mixed data filter -->
+{{ filter (array 'item1' 'item2' (object type='type1') (object type='type2')) 'item1' (object type='type2') }}
+
+```
+
+## `object`
+
+Return objects, supported all helpers.
+
+| Arguments | Type              | Description                      |
+|-----------|-------------------|----------------------------------|
+| 0...n     | key=value         | key=value notation of the object |
+
+**Examples**
+
+```handlebars
+{{{ object type='item1' }}}
+result: {type: 'item1'}
+
+{{{ object type='item1' category='cat1' }}}
+result: {type: 'item1', category: 'cat1'}
+
+{{{ object type=(array 1 2 3) }}}
+result: {type: [1,2,3]}
+
+{{{ object type=(array 1 2 3) }}}
+result: {type: [1,2,3]}
+
+{{{ object type=(filter (array 1 2 3) 1 3) }}}
+result: {type: [1,3]}
+
 ```
 
 ## `add`

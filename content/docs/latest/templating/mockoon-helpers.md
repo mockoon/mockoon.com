@@ -33,13 +33,13 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 | [`floor`](#floor)       | [`round`](#round)     |                     |
 
 | Strings                   |                         | Dates                             | Misc                            |
-| ------------------------- | ----------------------- | --------------------------------- | ------------------------------- |
+| ------------------------- |-------------------------| --------------------------------- | ------------------------------- |
 | [`includes`](#includes)   | [`concat`](#concat)     | [`now`](#now)                     | [`newline`](#newline)           |
 | [`substr`](#substr)       | [`indexOf`](#indexof)   | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)             |
 | [`lowercase`](#lowercase) | [`parseInt`](#parseint) | [`date`](#date)                   | [`base64Decode`](#base64decode) |
 | [`uppercase`](#uppercase) | [`padStart`](#padstart) | [`time`](#time)                   | [`objectId`](#objectid)         |
 | [`split`](#split)         | [`padEnd`](#padend)     | [`dateFormat`](#dateformat)       |                                 |
-| [`stringify`](#stringify) |                         |                                   |                                 |
+| [`stringify`](#stringify) | [`eq`](#eq)             |                                   |                                 |
 
 | [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                         |
 | --------------------------------------------------- | ----------------------------- | ----------------------- |
@@ -394,18 +394,31 @@ result: '2'
 
 ## `eq`
 
-Verify if two numbers are equal. Returns a boolean.
+Verify if two numbers or strings are equal. Returns a boolean.  
+Returns false if type of the value not equals.  
 
-| Arguments (ordered) | Type   | Description   |
-| ------------------- | ------ | ------------- |
-| 0                   | number | First number  |
-| 1                   | number | Second number |
+| Arguments (ordered) | Type             | Description             |
+| ------------------- |------------------|-------------------------|
+| 0                   | string \| number | First number or string  |
+| 1                   | string \| number | Second number or string |
 
 **Examples**
 
 ```handlebars
-{{#if (eq 55 55}}
+{{#if (eq 55 55) }}
   true
+{{/if}}
+Result: true
+
+{{#if (eq 55 '55') }}
+    true
+{{else}}
+    false
+{{/if}}
+Result: false
+
+{{#if (eq "x1" "x1") }}
+    true
 {{/if}}
 Result: true
 ```

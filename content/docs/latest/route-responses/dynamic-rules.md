@@ -110,3 +110,5 @@ Regex examples:
 You can also test for empty values with the following regex: `^$|\s+`.
 
 The **request number** supports simple entries like `1` or `2` but also regexes, allowing you to return a different response for the first 3 calls `^[1-3]$` or failing on odd request indexes `[13579]$`.
+
+> 💡 The response rule values also support templating helpers to create dynamic rules. See the [templating helpers](docs:templating/overview) documentation for more information.

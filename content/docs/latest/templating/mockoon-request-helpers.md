@@ -90,7 +90,7 @@ Get the **raw** value at a given `path` from the request body if the entering `C
 
 Get the value at a given `path` from the request's query string. Complex query strings with arrays and objects are supported. This helper is designed to retrieve data to be served in a response. To reuse the retrieved data with other helpers (`each`, `if`, etc.), use the [`queryParamRaw` helper](#queryparamraw) below.
 
-- The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path).
+- The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path). Properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.
 - Full objects or arrays can be retrieved by the helper.
 - The full query string object can also be fetched when the `path` is omitted (`{{queryParam}}`). It will be stringified and can be used in a JSON body for example.
 - If there is no value at the requested `path`, the default value will be used.
@@ -107,6 +107,7 @@ Get the value at a given `path` from the request's query string. Complex query s
 ```handlebars
 {{queryParam}}
 {{queryParam 'path.to.property'}}
+{{queryParam 'deep.property\.with\.dot'}}
 {{queryParam 'path' 'default value'}}
 {{queryParam 'path' 'default value' true}}
 ```
@@ -115,7 +116,7 @@ Get the value at a given `path` from the request's query string. Complex query s
 
 Get the **raw** value at a given `path` from the request's query string. Complex query strings with arrays and objects are supported. This "raw" helper is designed to work with other helpers (`each`, `if`, etc.). To directly use the retrieved data in the response, use the [`queryParam` helper](#queryparam) above.
 
-- The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path).
+- The `path` takes the following form `key.0.key.5.key`. The syntax is based on [NPM **object-path** package](https://www.npmjs.com/package/object-path). Properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.
 - Full objects or arrays can be retrieved by the helper.
 - The full query string object can also be fetched when the `path` is omitted (`{{queryParamRaw}}`).
 - If there is no value at the requested `path`, the default value will be used.
@@ -131,6 +132,7 @@ Get the **raw** value at a given `path` from the request's query string. Complex
 ```handlebars
 {{queryParamRaw}}
 {{queryParamRaw 'path.to.property'}}
+{{queryParamRaw 'deep.property\.with\.dot'}}
 {{queryParamRaw 'path' 'default value'}}
 
 {{#each (queryParamRaw 'path.to.array.query' 'default value')}}

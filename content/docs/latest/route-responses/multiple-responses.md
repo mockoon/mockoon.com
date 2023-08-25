@@ -44,7 +44,7 @@ To activate this option, click on the "shuffle" icon next to the response list:
 
 ![Random route responses{1001x174}](docs-img:random-route-responses.png)
 
-> When this option is active, the default response and all the rules defined on this route will be ignored. Also, this option cannot be selected in addition to the sequential responses option below.
+> ⚠️ When this option is active, the [default response](#default-route-response) and all the rules defined on this route will be ignored. Also, this option cannot be selected in addition to the sequential responses option below.
 
 ## Sequential route response
 
@@ -54,4 +54,21 @@ To activate this option, click on the "repeat" icon next to the response list:
 
 ![Sequential route responses{990x174}](docs-img:sequential-route-responses.png)
 
-> When this option is active, the default response and all the rules defined on this route will be ignored. Also, this option cannot be selected in addition to the random responses option above.
+> ⚠️ When this option is active, the [default response](#default-route-response) and all the rules defined on this route will be ignored. Also, this option cannot be selected in addition to the random responses option above.
+
+## Fallback mode
+
+When the **fallback mode** is enabled, Mockoon will automatically pass the request to the proxy (or the next route, see below) when none of the responses' rules match.
+
+To activate this option, click on the "fallback" icon next to the response list:
+
+![fallback mode responses](docs-img:fallback-mode-responses.png)
+
+Behind the scene, the server will automatically jump to the next route and, ultimately, the proxied server. It allows to create more complex setups where a wildcard or parameterized route's rules would not match, but the next route would catch the call (according to the [order of the routes](docs:api-endpoints/routing#routes-order)):
+
+```
+GET /users/:id --> no rule matches
+GET /users --> served
+```
+
+> ⚠️ When this option is active, the [default response](#default-route-response) will be ignored. Also, this option cannot be selected in addition to the other response options above and could result in a 404 if the proxy is not enabled.

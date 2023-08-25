@@ -122,7 +122,9 @@ This system is flexible enough to generate a lot of different contents like CSV 
 ```handlebars
 firstname,lastname,countryCode
 {{#repeat 10}}
-  {{faker 'name.firstName'}},{{faker 'name.lastName'}},{{faker 'address.countryCode'}}
+  {{faker 'name.firstName'}},{{faker 'name.lastName'}},{{faker
+    'address.countryCode'
+  }}
 {{/repeat}}
 ```
 
@@ -189,8 +191,12 @@ If you call this route with `/myroute/1`, `./file1.json` will be sent.
 
 > For more information about absolute and relative file paths, please refer to our [file serving](docs:response-body/file-serving#absolute-or-relative-paths) documentation.
 
-### Headers templating
+### Headers and rule values
 
-Finally, templating helpers are also supported in the **headers values** both in route headers and environment headers:
+Templating helpers can also be used in the **headers values** both in route headers and environment headers:
 
 ![add a templating helper in the header value{1004x238}](docs-img:headers-templating.png)
+
+Finally, templating helpers can be used in the response **rule values** to create dynamic rules:
+
+![screenshot showing a response rule with a template helper in the value field](docs-img:template-helper-response-rule-value.png)

@@ -26,22 +26,33 @@ const AccountMenu: FunctionComponent = function () {
                 router.pathname.includes('account/subscription') ? 'active' : ''
               }`}
             >
-              <Link href='/account/subscription/' className='list-link text-reset'>
+              <Link
+                href='/account/subscription/'
+                className='list-link text-reset'
+              >
                 Subscription
               </Link>
             </li>
             {!isLoading &&
               (userData?.plan === 'TEAM' || userData?.plan === 'ENTERPRISE') &&
               userData?.teamRole === 'owner' && (
-                <li
-                  className={`list-item ${
-                    router.pathname.includes('account/users') ? 'active' : ''
-                  }`}
-                >
-                  <Link href='/account/users/' className='list-link text-reset'>
-                    Users
-                  </Link>
-                </li>
+                <>
+                  <h6 className='fw-bold text-uppercase mt-4 mb-3'>
+                    Manage plan
+                  </h6>
+                  <li
+                    className={`list-item ${
+                      router.pathname.includes('account/users') ? 'active' : ''
+                    }`}
+                  >
+                    <Link
+                      href='/account/users/'
+                      className='list-link text-reset'
+                    >
+                      Users
+                    </Link>
+                  </li>
+                </>
               )}
           </ul>
         </div>

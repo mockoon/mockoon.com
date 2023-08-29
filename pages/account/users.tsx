@@ -7,6 +7,7 @@ import AccountMenu from '../../components/account-menu';
 import LoadingPage from '../../components/loading-page';
 import Meta from '../../components/meta';
 import Spinner from '../../components/spinner';
+import { planNames } from '../../constants/plans';
 import Layout from '../../layout/layout';
 import { useAuth } from '../../utils/auth';
 import { useCurrentTeam, useCurrentUser } from '../../utils/queries';
@@ -14,13 +15,6 @@ import { useCurrentTeam, useCurrentUser } from '../../utils/queries';
 const meta = {
   title: 'My account - Users',
   description: 'Manage your Mockoon Cloud subscription users'
-};
-
-const planLabels = {
-  FREE: 'Free',
-  SOLO: 'Solo',
-  TEAM: 'Team',
-  ENTERPRISE: 'Enterprise'
 };
 
 const AccountUsers: FunctionComponent = function () {
@@ -186,7 +180,7 @@ const AccountUsers: FunctionComponent = function () {
                       <div className='row align-items-center'>
                         <div className='col'>
                           <h4 className='mb-0'>
-                            {planLabels[teamData?.plan]} plan users
+                            {planNames[teamData?.plan]} plan users
                           </h4>
                           <small className='text-gray-700 ms-auto'>
                             Need more seats? Contact us at{' '}

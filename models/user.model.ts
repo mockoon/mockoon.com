@@ -26,6 +26,7 @@ export type User = {
   templatesQuota: number;
   templatesQuotaUsed: number;
   subscription: {
+    provider: 'stripe' | 'paddle';
     renewOn: number;
     createdOn: number;
     frequency: string;

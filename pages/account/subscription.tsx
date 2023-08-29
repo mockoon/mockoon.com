@@ -5,7 +5,9 @@ import AccountHeader from '../../components/account-header';
 import AccountMenu from '../../components/account-menu';
 import LoadingPage from '../../components/loading-page';
 import Meta from '../../components/meta';
+import PaddleScript from '../../components/paddle';
 import Spinner from '../../components/spinner';
+import { frequencyNames, planNames } from '../../constants/plans';
 import Layout from '../../layout/layout';
 import { useAuth } from '../../utils/auth';
 import { useCurrentUser } from '../../utils/queries';
@@ -13,18 +15,6 @@ import { useCurrentUser } from '../../utils/queries';
 const meta = {
   title: 'My account - Subscription',
   description: 'Manage your Mockoon Cloud subscription'
-};
-
-const planLabels = {
-  FREE: 'Free',
-  SOLO: 'Solo',
-  TEAM: 'Team',
-  ENTERPRISE: 'Enterprise'
-};
-
-const frequencyLabels = {
-  MONTHLY: 'monthly',
-  YEARLY: 'yearly'
 };
 
 const AccountSubscription: FunctionComponent = function () {
@@ -55,6 +45,7 @@ const AccountSubscription: FunctionComponent = function () {
 
       {!isAuthLoading && isAuth && (
         <>
+          <PaddleScript />
           <AccountHeader />
 
           <main className='pb-8 pb-md-11 mt-md-n6'>
@@ -78,12 +69,12 @@ const AccountSubscription: FunctionComponent = function () {
                               <div className='col'>
                                 <p className='mb-0'>
                                   <span className='text-primary'>
-                                    {planLabels[userData?.plan]}
+                                    {planNames[userData?.plan]}
                                   </span>{' '}
                                   plan
                                   {userData?.plan !== 'FREE' && displayPlanInfo
                                     ? ` (${
-                                        frequencyLabels[
+                                        frequencyNames[
                                           userData?.subscription?.frequency
                                         ]
                                       })`
@@ -125,22 +116,26 @@ const AccountSubscription: FunctionComponent = function () {
                                   </Link>
                                 </div>
                               )}
-                              {userData?.plan !== 'FREE' && displayPlanInfo && (
-                                <div className='col-auto'>
-                                  <Link
-                                    href={
-                                      process.env
-                                        .NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL
-                                    }
-                                    className='btn btn-xs btn-primary'
-                                  >
-                                    Manage subscription
-                                  </Link>
-                                </div>
-                              )}
+                              {userData?.plan !== 'FREE' &&
+                                displayPlanInfo &&
+                                userData?.subscription?.provider ===
+                                  'stripe' && (
+                                  <div className='col-auto'>
+                                    <Link
+                                      href={
+                                        process.env
+                                          .NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL
+                                      }
+                                      className='btn btn-xs btn-primary'
+                                    >
+                                      Manage subscription
+                                    </Link>
+                                  </div>
+                                )}
                             </div>
                             {userData?.plan === 'FREE' &&
-                              userData?.subscription?.portalEnabled && (
+                              userData?.subscription?.portalEnabled &&
+                              userData?.subscription?.provider === 'stripe' && (
                                 <div className='row pt-2'>
                                   <div className='col text-end'>
                                     <Link

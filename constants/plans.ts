@@ -4,3 +4,8 @@ export const planNames = {
   TEAM: 'Team',
   ENTERPRISE: 'Enterprise'
 };
+
+export const frequencyNames = {
+  MONTHLY: 'monthly',
+  YEARLY: 'yearly'
+};

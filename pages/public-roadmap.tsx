@@ -83,6 +83,21 @@ const Roadmap: FunctionComponent = function () {
 
                   <p className='text-gray-800'>
                     <Link
+                      href={
+                        '/docs/latest/route-responses/multiple-responses/#fallback-mode'
+                      }
+                    >
+                      Response fallback mode
+                    </Link>
+                  </p>
+                </div>
+                <div className='d-flex'>
+                  <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                    <i className='icon icon-check'></i>
+                  </div>
+
+                  <p className='text-gray-800'>
+                    <Link
                       href={'https://github.com/mockoon/mockoon/issues/1063'}
                     >
                       Applications logging standardization
@@ -154,6 +169,20 @@ const Roadmap: FunctionComponent = function () {
                 </div>
               </div>
               <div className='px-4'>
+                <div className='d-flex'>
+                  <div className='badge badge-rounded-circle bg-primary-soft mt-1 me-4'>
+                    <i className='icon icon-refresh'></i>
+                  </div>
+
+                  <p className='text-gray-800'>
+                    <Link
+                      href={'https://github.com/mockoon/mockoon/issues/995'}
+                      target='_blank'
+                    >
+                      Support for JSON path
+                    </Link>
+                  </p>
+                </div>
                 <div className='d-flex'>
                   <div className='badge badge-rounded-circle bg-primary-soft mt-1 me-4'>
                     <i className='icon icon-refresh'></i>

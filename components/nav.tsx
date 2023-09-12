@@ -104,7 +104,7 @@ const Nav: FunctionComponent = function () {
                 </li>
                 <li className='dropdown-item ps-lg-8'>
                   <Link href='/serverless/' className='dropdown-link'>
-                    Serveless package
+                    Serverless package
                   </Link>
                 </li>
               </ul>

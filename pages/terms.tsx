@@ -326,13 +326,14 @@ const Terms: FunctionComponent = function () {
               </p>
               <p>
                 Depending on the subscription term and plan you select, you
-                authorize us to automatically charge the payment method you
-                provided on a recurring basis for the fees associated with your
-                chosen subscription. The charges will occur according to the
-                billing cycle specified in your plan, whether it is monthly,
-                annually, or as otherwise indicated. You agree to ensure that
-                your payment information remains accurate, up to date, and valid
-                throughout the subscription period.
+                authorize our payment provider (Paddle.com) to automatically
+                charge the payment method you provided on a recurring basis for
+                the fees associated with your chosen subscription. The charges
+                will occur according to the billing cycle specified in your
+                plan, whether it is monthly, annually, or as otherwise
+                indicated. You agree to ensure that your payment information
+                remains accurate, up to date, and valid throughout the
+                subscription period.
                 <br />
                 If you fail to pay the fees when due or if your payment method
                 is declined, we may suspend or terminate your access to our

@@ -58,9 +58,14 @@ const faq: AccordionData = [
           'For Team and Enterprise plans, you can choose the number of seats you need. Each seat is billed monthly. You can <a href="/contact-form/">contact us</a> to add or remove seats at any time.'
       },
       {
+        question: 'I received emails from Paddle.com, what is it?',
+        answer:
+          'Paddle.com is our payment provider. You will receive emails from them when you purchase a plan, when your subscription is renewed or when you cancel your subscription.'
+      },
+      {
         question: 'What payment methods do you accept?',
         answer:
-          'We accept credit cards (Visa, Mastercard, etc.) through our payment provider Stripe. You can also pay by bank transfer for the Enterprise plan. <a href="/contact-form/">Contact us</a> before purchasing for more information.'
+          'We accept credit cards (Visa, Mastercard, etc.) through our payment provider Paddle. You can also pay by bank transfer for the Enterprise plan. <a href="/contact-form/">Contact us</a> before purchasing for more information.'
       },
       {
         question:
@@ -86,7 +91,7 @@ const faq: AccordionData = [
       {
         question: 'VAT',
         answer:
-          'Prices are in USD and exclude VAT where applicable. VAT may or may not be charged during checkout depending on various criteria like your location and quality (individual or business).'
+          'Prices are in USD and exclude VAT. VAT may or may not be charged during checkout depending on various criteria like your location and quality (individual or business).'
       }
     ]
   },

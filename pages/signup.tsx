@@ -15,6 +15,12 @@ const meta = {
 };
 
 const Signup: FunctionComponent = function () {
+  const emailTypos = {
+    'gmai.com': 'gmail.com',
+    'gamil.com': 'gmail.com',
+    'gmal.com': 'gmail.com'
+  };
+
   const {
     isAuth,
     user,
@@ -28,6 +34,7 @@ const Signup: FunctionComponent = function () {
 
   const {
     register: registerFormField,
+    watch,
     handleSubmit,
     formState: { isSubmitting }
   } = useForm();
@@ -109,6 +116,15 @@ const Signup: FunctionComponent = function () {
                       required
                       {...registerFormField('email')}
                     />
+                    {emailTypos[watch('email')?.split('@')[1]] && (
+                      <p className='text-center text-gray-800'>
+                        Did you mean{' '}
+                        <span className='fw-bold'>
+                          {emailTypos[watch('email')?.split('@')?.[1]]}
+                        </span>
+                        ?
+                      </p>
+                    )}
                   </div>
 
                   <div className='form-group mb-5'>

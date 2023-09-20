@@ -42,7 +42,7 @@ const Contact: FunctionComponent = function () {
                     </a>
                     &nbsp;|&nbsp;
                     <a
-                      href='https://discord.gg/MutRpsY5gE'
+                      href='https://discord.gg/FtJjkejKGp'
                       target='_blank'
                       rel='noopener'
                     >

@@ -25,7 +25,7 @@ const faq: AccordionData = [
       {
         question: 'Can I give feedback or join a beta test?',
         answer:
-          'Sure! You can join us on our <a href="https://discord.gg/MutRpsY5gE" target="_blank">Discord server</a>. We will be happy to hear from you.'
+          'Sure! You can join us on our <a href="https://discord.gg/FtJjkejKGp" target="_blank">Discord server</a>. We will be happy to hear from you.'
       }
     ]
   },
@@ -35,7 +35,7 @@ const faq: AccordionData = [
       {
         question: 'What is the "community support"?',
         answer:
-          "Community support is the free support channel for Mockoon users. It is available on our <a href='https://github.com/mockoon/mockoon/discussions' target='_blank' rel='noopener'>GitHub repository</a> or <a href='https://discord.gg/MutRpsY5gE' target='_blank' rel='noopener'>Discord server</a>."
+          "Community support is the free support channel for Mockoon users. It is available on our <a href='https://github.com/mockoon/mockoon/discussions' target='_blank' rel='noopener'>GitHub repository</a> or <a href='https://discord.gg/FtJjkejKGp' target='_blank' rel='noopener'>Discord server</a>."
       },
       {
         question: 'What is the "priority support" (Team and Enterprise plan)?',

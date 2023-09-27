@@ -68,7 +68,7 @@ const AccountInfo: FunctionComponent = function () {
                         <div className='list-group-item'>
                           <div className='row align-items-center'>
                             <div className='col'>
-                              <p className='mb-0'>Subscription</p>
+                              <p className='mb-0'>Mockoon Pro Subscription</p>
 
                               <small className='text-gray-700'>
                                 <span className='text-primary'>

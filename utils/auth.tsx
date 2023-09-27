@@ -1,10 +1,13 @@
 import {
+  EmailAuthProvider,
   User,
   applyActionCode,
   createUserWithEmailAndPassword,
   getAuth,
+  reauthenticateWithCredential,
   sendEmailVerification,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  updatePassword
 } from 'firebase/auth';
 import { useEffect, useState } from 'react';
 
@@ -48,6 +51,17 @@ const useAuth = () => {
     await applyActionCode(auth, code);
   };
 
+  const changePassword = async (params: {
+    currentPassword: string;
+    newPassword: string;
+  }) => {
+    await reauthenticateWithCredential(
+      user,
+      EmailAuthProvider.credential(user.email, params.currentPassword)
+    );
+    await updatePassword(auth.currentUser, params.newPassword);
+  };
+
   useEffect(() => {
     const unsubscribe = auth.onIdTokenChanged((user) => {
       if (user) {
@@ -78,7 +92,8 @@ const useAuth = () => {
     signIn,
     signUp,
     emailVerification,
-    applyEmailVerificationCode
+    applyEmailVerificationCode,
+    changePassword
   };
 };
 

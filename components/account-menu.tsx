@@ -30,7 +30,7 @@ const AccountMenu: FunctionComponent = function () {
                 href='/account/subscription/'
                 className='list-link text-reset'
               >
-                Subscription
+                Mockoon Pro Subscription
               </Link>
             </li>
             {!isLoading &&
@@ -53,7 +53,16 @@ const AccountMenu: FunctionComponent = function () {
                     </Link>
                   </li>
                 </>
-              )}
+              )}{' '}
+            <li
+              className={`list-item ${
+                router.pathname.includes('account/security') ? 'active' : ''
+              }`}
+            >
+              <Link href='/account/security/' className='list-link text-reset'>
+                Security
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

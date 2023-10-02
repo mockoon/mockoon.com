@@ -31,6 +31,7 @@ export type User = {
     createdOn: number;
     frequency: string;
     portalEnabled?: boolean;
+    cancellationScheduled?: boolean;
   };
 };
 

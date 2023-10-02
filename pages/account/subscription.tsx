@@ -90,12 +90,24 @@ const AccountSubscription: FunctionComponent = function () {
                                       ).toDateString()}
                                     </small>{' '}
                                     -{' '}
-                                    <small className='text-gray-700'>
-                                      Next renewal on{' '}
-                                      {new Date(
-                                        userData?.subscription.renewOn * 1000
-                                      ).toDateString()}
-                                    </small>
+                                    {!userData.subscription
+                                      .cancellationScheduled && (
+                                      <small className='text-gray-700'>
+                                        Next renewal on{' '}
+                                        {new Date(
+                                          userData?.subscription.renewOn * 1000
+                                        ).toDateString()}
+                                      </small>
+                                    )}
+                                    {userData.subscription
+                                      .cancellationScheduled && (
+                                      <small className='text-danger'>
+                                        Will be cancelled on{' '}
+                                        {new Date(
+                                          userData?.subscription.renewOn * 1000
+                                        ).toDateString()}
+                                      </small>
+                                    )}
                                   </p>
                                 )}
                                 {userData?.plan !== 'FREE' && !displayPlanInfo && (

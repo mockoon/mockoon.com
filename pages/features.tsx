@@ -72,18 +72,33 @@ const features: CardData[] = [
     title: 'CORS',
     description:
       'Automatically send CORS headers (<code>Access-Control-Allow-Origin</code>, etc.) for OPTIONS requests.',
-    links: [{ src: '/docs/latest/cors/', text: 'Documentation →' }]
+    links: [
+      {
+        src: '/docs/latest/server-configuration/cors/',
+        text: 'Documentation →'
+      }
+    ]
   },
   {
     title: 'HTTPS',
     description: 'Serve your mock API over TLS with a custom certificate.',
-    links: [{ src: '/docs/latest/serving-over-tls/', text: 'Documentation →' }]
+    links: [
+      {
+        src: '/docs/latest/server-configuration/serving-over-tls/',
+        text: 'Documentation →'
+      }
+    ]
   },
   {
     title: 'Response headers',
     description:
       'Add any response headers to your routes and mock API. With auto-completion.',
-    links: [{ src: '/docs/latest/response-headers/', text: 'Documentation →' }]
+    links: [
+      {
+        src: '/docs/latest/response-configuration/response-headers/',
+        text: 'Documentation →'
+      }
+    ]
   },
   {
     title: 'Simulated latency',
@@ -117,7 +132,7 @@ const features: CardData[] = [
       "Redirect all non-defined routes to the specified host with Mockoon's proxy mode.",
     links: [
       {
-        src: '/docs/latest/proxy-mode/',
+        src: '/docs/latest/server-configuration/proxy-mode/',
         text: 'Documentation →'
       }
     ]
@@ -128,7 +143,7 @@ const features: CardData[] = [
       'File serving with automatic mime type detection and templating support.',
     links: [
       {
-        src: '/docs/latest/response-body/file-serving/',
+        src: '/docs/latest/response-configuration/file-serving/',
         text: 'Documentation →'
       }
     ]

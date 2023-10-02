@@ -15,7 +15,7 @@ This guide will teach you how to call any REST API from your Next.js application
 
 ## 1. Create a mock API endpoint with Mockoon
 
-When working on your Next.js application, you may need to mock an API that doesn't exists yet, or is only partially available (see [partial mocking with the proxy mode](docs:proxy-mode)). For this, the easiest way is to create a mock API using a tool like Mockoon. (Read more about the [benefits of API mocking](/use-cases/)).
+When working on your Next.js application, you may need to mock an API that doesn't exists yet, or is only partially available (see [partial mocking with the proxy mode](docs:server-configuration/proxy-mode)). For this, the easiest way is to create a mock API using a tool like Mockoon. (Read more about the [benefits of API mocking](/use-cases/)).
 
 > To learn more about how to set up your first mock API with Mockoon, head over to the [Getting started tutorial](tutorials:getting-started).
 

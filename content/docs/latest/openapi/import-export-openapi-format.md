@@ -3,7 +3,7 @@ title: Import/export in OpenAPI format
 meta:
   title: Import/export in OpenAPI format
   description: Learn how to easily import and export or share with your team your mock API servers and routes using the OpenAPI specification
-order: 1050
+order: 800
 ---
 
 # Import/export in OpenAPI format

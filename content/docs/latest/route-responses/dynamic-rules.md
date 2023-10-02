@@ -3,7 +3,7 @@ title: Responses rules
 meta:
   title: Server different responses based on rules
   description: Learn how to define multiple route responses for each route and triggered them with rules based on the entering request parameters.
-order: 910
+order: 310
 ---
 
 # Adding response rules
@@ -32,7 +32,7 @@ By default, rules are interpreted in the order you added them. You can change th
 
 You can temporarily disable the rules and serve the default response only. To activate this option, click on the "rules" icon next to the response list:
 
-![Disable rules{979x244}](docs-img:disable-rules.png)
+![Disable rules{1010x244}](docs-img:disable-rules.png)
 
 > When this option is active, the default response will be always served and all the rules defined on this route will be ignored. Also, this option cannot be selected in addition to the random or sequential responses.
 
@@ -71,8 +71,9 @@ Depending on the **target**, the way to access properties may be different:
 
 - **body**:
   - keep empty to match against the full raw body content.
-  - use a path to access one of its properties. The syntax is based on the [object-path library](https://www.npmjs.com/package/object-path) like `users.0.name`. This is compatible with request's bodies of `Content-Type` `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`. Properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
-    _Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties._  
+  - use a path to access one of its properties. Two syntaxes are supported, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.
+    Fetching object properties is compatible with request's bodies of `Content-Type` `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`.  
+    _Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:response-configuration/xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties._  
     _Please also note that `multipart/form-data` only supports fields. Uploaded files will be ignored._
 - **headers**: a header name like `Accept` or `Content-Type`.
 - **cookies**: the cookie name like `Session-id`.
@@ -80,7 +81,7 @@ Depending on the **target**, the way to access properties may be different:
 - **query string**: either provide a property name like `filter` or a path if the query string field is an object `filter.primary`.
 - **request number**: _nothing has to be provided here for the request number_.
 
-For body and query string, if the property is an array, Mockoon will automatically check in the array if at least one item matches the value.
+For **body** and **query string**, if the property is an array, Mockoon will automatically check in the array if at least one item matches the value.
 
 ### 3. Invert operator
 

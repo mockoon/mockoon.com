@@ -3,7 +3,7 @@ title: Routing
 meta:
   title: Mockoon routing documentation
   description: Everything about Mockoon mock API paths creation, API prefix, route parameters, query strings, wildcards and more
-order: 700
+order: 200
 ---
 
 # Routing
@@ -34,14 +34,16 @@ Mockoon uses Express to run the mock servers. In general, most of the Express' d
 
 Routes are declared in the server in the order displayed in the application (inside folders or not). It means that a the first ones takes precedence over the following ones.
 
-One consequence is that a route parameter will capture any value at the specific URL segment. For example, `/users/:id` will intercept `/users/search`. The more specific "search" route should be declared first. You can always reorder routes by dragging and dropping them.
+One consequence is that a route parameter will capture any value at the specific URL segment. For example, `/users/:id` or `/users/*` will intercept `/users/search`. The more specific "search" route should be declared first. You can always reorder routes by dragging and dropping them.
 
-### Route patterns
+### Route patterns and regexes
 
-Routes support certain patterns. Here are some examples of the available ones:
+Routes support certain patterns and a subset of regular expressions. Here are some examples of the available ones:
 
+- `/path/*` will match `/path/anything`.
 - `/ab?cd` will match `/acd` and `/abcd`.
 - `/ab+cd` will match `abcd`, `abbcd`, `abbbcd`, and so on.
+- `/ab(cd)?e` will match `/abe` and `/abcde`.
 
 ![route pattern{956x74}](docs-img:route-patterns.png)
 

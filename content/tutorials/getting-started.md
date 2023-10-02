@@ -11,7 +11,7 @@ imageHeight: 400
 order: 10
 ---
 
-Mockoon is a free cross-platform desktop application that takes API mocking to the next level. Mockoon offers a fast and easy-to-use interface and gives you complete control over your mock APIs with advanced functionality like [a templating system](docs:templating/overview), [a proxy mode](docs:proxy-mode), and [requests recording](docs:logging-and-recording/auto-mocking-and-recording).
+Mockoon is a free cross-platform desktop application that takes API mocking to the next level. Mockoon offers a fast and easy-to-use interface and gives you complete control over your mock APIs with advanced functionality like [a templating system](docs:templating/overview), [a proxy mode](docs:server-configuration/proxy-mode), and [requests recording](docs:logging-and-recording/auto-mocking-and-recording).
 
 This tutorial will show you how to install the desktop mocking application and set up your first mock API.
 
@@ -80,4 +80,4 @@ You can do a test call to the following URL `http://localhost:3000/tutorials` us
 
 ## Step 6. Learn more
 
-Now that you know how to create a basic mock API, you can head over to the [official documentation](docs:about) to explore the other functionalities like [requests logging](docs:logging-and-recording/requests-logging), [partial API mocking with proxy mode](docs:proxy-mode), or the [templating system](docs:templating/overview).
+Now that you know how to create a basic mock API, you can head over to the [official documentation](docs:about) to explore the other functionalities like [requests logging](docs:logging-and-recording/requests-logging), [partial API mocking with proxy mode](docs:server-configuration/proxy-mode), or the [templating system](docs:templating/overview).

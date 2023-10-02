@@ -26,10 +26,10 @@ Last year, we added many features for the desktop application and the CLI. It's 
 
 - We switched to a [new way of storing your mocks](/blog/new-storage-system-git-data-sharing/) to make them easily shareable over git and directly launch them with the CLI without relying anymore on an import/export feature.
 - We added a [file monitoring option](/blog/file-monitoring-mock-api-samples/#file-monitoring) for the desktop application to automatically reload the application when an external change to a mock file is detected.
-- Mockoon now supports [custom TLS certificates](/docs/latest/serving-over-tls/#provide-your-own-certificate) to serve your mock securely without relying on Mockoon's self-signed certificate.
+- Mockoon now supports [custom TLS certificates](/docs/latest/server-configuration/serving-over-tls/#provide-your-own-certificate) to serve your mock securely without relying on Mockoon's self-signed certificate.
 - We improved the system of [rules](/docs/latest/route-responses/dynamic-rules/) by adding a lot of features: support for cookies, reordering, rule inversion (coming soon!), rule disabling (coming soon!), `multipart/form-data` support (coming soon!)
 - We removed Google Analytics from the desktop application to increase your privacy.
-- We added [XML support](/docs/latest/xml-support/) for both templating helpers and rules.
+- We added [XML support](/docs/latest/response-configuration/xml-support/) for both templating helpers and rules.
 - We added more binaries formats: Apple Silicon, Windows portable, and Microsoft Store.
 - The [CLI](https://github.com/mockoon/mockoon/tree/main/packages/cli#mockoon-cli-start) can now run multiple mocks at once, log the complete HTTP transaction (`--log-transaction` flag), and run as a foreground process (`--daemon-off` flag).
 

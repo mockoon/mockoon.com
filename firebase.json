@@ -23,7 +23,7 @@
       },
       {
         "source": "/releases{,/}",
-        "destination": "/releases/4.1.0/",
+        "destination": "/releases/5.0.0/",
         "type": 302
       },
       {
@@ -57,13 +57,33 @@
         "type": 301
       },
       {
+        "source": "/docs/latest/xml-support/",
+        "destination": "/docs/latest/response-configuration/xml-support/",
+        "type": 301
+      },
+      {
         "source": "/tutorial/api-mocking-proxy-mode",
-        "destination": "/docs/latest/proxy-mode/",
+        "destination": "/docs/latest/server-configuration/proxy-mode/",
+        "type": 301
+      },
+      {
+        "source": "/docs/latest/proxy-mode/",
+        "destination": "/docs/latest/server-configuration/proxy-mode/",
         "type": 301
       },
       {
         "source": "/tutorial/automatic-handling-preflight-requests",
         "destination": "/docs/latest/cors/",
+        "type": 301
+      },
+      {
+        "source": "/docs/latest/cors/",
+        "destination": "/docs/latest/server-configuration/cors/",
+        "type": 301
+      },
+      {
+        "source": "/docs/latest/listening-hostname/",
+        "destination": "/docs/latest/server-configuration/listening-hostname/",
         "type": 301
       },
       {
@@ -73,7 +93,12 @@
       },
       {
         "source": "/tutorial/define-response-headers",
-        "destination": "/docs/latest/response-headers/",
+        "destination": "/docs/latest/response-configuration/response-headers/",
+        "type": 301
+      },
+      {
+        "source": "/docs/latest/response-headers/",
+        "destination": "/docs/latest/response-configuration/response-headers/",
         "type": 301
       },
       {
@@ -127,8 +152,13 @@
         "type": 301
       },
       {
+        "source": "/docs/latest/serving-over-tls/",
+        "destination": "/docs/latest/server-configuration/serving-over-tls/",
+        "type": 301
+      },
+      {
         "source": "/docs/latest/file-serving/",
-        "destination": "/docs/latest/response-body/file-serving/",
+        "destination": "/docs/latest/response-configuration/file-serving/",
         "type": 301
       },
       {
@@ -139,6 +169,21 @@
       {
         "source": "/docs/latest/api-endpoints/",
         "destination": "/docs/latest/api-endpoints/routing/",
+        "type": 301
+      },
+      {
+        "source": "/docs/latest/response-body/overview/",
+        "destination": "/docs/latest/response-configuration/response-body/",
+        "type": 301
+      },
+      {
+        "source": "/docs/latest/response-body/file-serving/",
+        "destination": "/docs/latest/response-configuration/file-serving/",
+        "type": 301
+      },
+      {
+        "source": "/docs/latest/response-body/xml-support/",
+        "destination": "/docs/latest/response-configuration/xml-support/",
         "type": 301
       },
       {

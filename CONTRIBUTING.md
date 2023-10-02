@@ -17,6 +17,8 @@ The following rules apply to all contributions:
 - Run `npm run dev`.
 
 You will get hot reload on the Next.js application.
+Accessing the documentation requires a mock of Mockoon's API release endpoint. Run `npm run api:mock` to start the mock server.
+You can use the `npm run dev:all` command to start both the Next.js application and the API mock server.
 
 ## Work on your feature or bugfix
 
@@ -61,11 +63,13 @@ It is split in multiple files by categories of content.
 
 Documentation links can be directly generated using `docs:section_name/topic_name` as the URL in the Markdown tag. It will translate to links that include the documentation version: `/docs/latest/section_name/topic_name/` or `/docs/vx.x.x/section_name/topic_name/`.
 
+### Documentation screenshots
+
 Documentation screenshots can be automatically generated using the [monorepo](https://github.com/mockoon/mockoon).
 Run the following commands: `npm run build:desktop:ci` then `npm run documentation:desktop`.
 New screenshots will be created in `./packages/desktop/tmp/docs`. They can be copied in this repository's `/public/images/docs/latest` folder.
 
-Generating the documentation requires the Firebase emulator and API to run locally and the app to be authenticated with a fake paid account (in order to generate screenshots for Pro features).
+Generating the documentation screenshots requires the Firebase emulator and API to run locally and the app to be authenticated with a fake paid account (in order to generate screenshots for Pro features).
 
 Some screenshots still need to be created manually:
 

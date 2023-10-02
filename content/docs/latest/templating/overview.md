@@ -3,14 +3,14 @@ title: Overview
 meta:
   title: Create dynamic responses with templating
   description: Create dynamic JSON responses for your mock API server with Mockoon's templating system including Faker.js
-order: 1000
+order: 500
 ---
 
 # Templating overview
 
 ---
 
-Mockoon implements [Handlebars](https://handlebarsjs.com/), [Faker.js v7.6.0](https://fakerjs.dev/), and a set of custom helpers to create dynamic responses. This templating system is supported in the response's **body**, **headers**, **file content**, and **file path**. You will find below a global overview of how and where you can use helpers. You can also check the [available helpers](#available-helpers) on specific documentation pages.
+Mockoon implements [Handlebars](https://handlebarsjs.com/), [Faker.js v7.6.0](https://fakerjs.dev/), and a set of custom helpers to create dynamic responses. This templating system is supported in the [**data buckets**](#content-of-a-data-bucket), [**response's body**](#body-and-file-content-templating), [**header values**](#headers-and-rule-values), [**file content**](#body-and-file-content-templating), [**file path**](#file-input-templating) and [**rule values**](#headers-and-rule-values). You will find below a global overview of how and where you can use helpers. You can also check the [available helpers](#available-helpers) on specific documentation pages.
 
 ## Helpers
 
@@ -189,7 +189,7 @@ If you call this route with `/myroute/1`, `./file1.json` will be sent.
 
 ![add a templating helper in the file path{977x184}](docs-img:file-path-templating.png)
 
-> For more information about absolute and relative file paths, please refer to our [file serving](docs:response-body/file-serving#absolute-or-relative-paths) documentation.
+> For more information about absolute and relative file paths, please refer to our [file serving](docs:response-configuration/file-serving#absolute-or-relative-paths) documentation.
 
 ### Headers and rule values
 
@@ -199,4 +199,4 @@ Templating helpers can also be used in the **headers values** both in route head
 
 Finally, templating helpers can be used in the response **rule values** to create dynamic rules:
 
-![screenshot showing a response rule with a template helper in the value field](docs-img:template-helper-response-rule-value.png)
+![screenshot showing a response rule with a template helper in the value field{997x171}](docs-img:template-helper-response-rule-value.png)

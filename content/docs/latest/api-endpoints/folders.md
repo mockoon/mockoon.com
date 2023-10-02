@@ -3,7 +3,7 @@ title: Folders
 meta:
   title: Mockoon folders documentation
   description: Everything about Mockoon API endpoint folder and sub-folders organization, reordering, auto repair and route precedence
-order: 720
+order: 230
 ---
 
 # Folders

@@ -51,7 +51,7 @@ You will see that the right panel has two tabs: **Request** and **Response**. Yo
 
 For each of them, you can see the headers, body, and params. The request and response bodies are also viewable in a separate editor with JSON linting enabled. It is especially useful when your body consists of [dynamic templating helpers](docs:templating/overview), which cannot be linted before being parsed and sent by Mockoon.
 
-> When used in conjunction with the [proxy mode](docs:proxy-mode), this feature can also be used to debug what was forwarded to or answered by the proxied API.
+> When used in conjunction with the [proxy mode](docs:server-configuration/proxy-mode), this feature can also be used to debug what was forwarded to or answered by the proxied API.
 
 You are now ready to create your first mock API endpoints automatically.
 

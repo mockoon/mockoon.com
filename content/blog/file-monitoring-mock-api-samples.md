@@ -18,7 +18,7 @@ Check the changelogs for a list of the other improvements and bug fixes.
 
 ## File monitoring
 
-Mockoon can now monitors environment files external changes and automatically reloads the interface with the new data. You can activate this option in the settings:
+Mockoon can now monitor environment files external changes and automatically reload the interface with the new data. You can activate this option in the settings:
 
 ![Mockoon settings view with file monitoring option{825x158}](/images/blog/file-monitoring/file-monitoring-setting.png)
 

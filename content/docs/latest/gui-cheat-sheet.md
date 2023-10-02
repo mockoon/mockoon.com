@@ -20,7 +20,7 @@ The **main view** (below) contains your environments (or mock API) list, the env
 
 ![Mockoon routes view{1200x637}](/images/docs/shared/cheat-sheet/routes-view.png)
 
-The endpoint's responses configuration (below) lets you manage each endpoint responses list and each response parameter: serving a [file](docs:response-body/file-serving), a [body](docs:response-body/overview#body-editor-inline), or a [data bucket](docs:data-buckets/overview), with [rules](docs:route-responses/dynamic-rules) or not, etc.
+The endpoint's responses configuration (below) lets you manage each endpoint responses list and each response parameter: serving a [file](docs:response-configuration/file-serving), a [body](docs:response-configuration/response-body#body-editor-inline), or a [data bucket](docs:data-buckets/overview), with [rules](docs:route-responses/dynamic-rules) or not, etc.
 
 ![Mockoon responses view{1200x661}](/images/docs/shared/cheat-sheet/responses-view.png)
 
@@ -35,19 +35,19 @@ The [**data buckets**](docs:data-buckets/overview) view let you create and modif
 ## Environment's requests logs view
 
 The **request logging** view is especially useful to debug the entering calls and how Mockoon responded to them. For each, you will find the usual information: path, headers, body, etc.
-You can also see if the call has been caught or forwarded through the [proxy](docs:proxy-mode) (if enabled) and [automatically mock](docs:logging-and-recording/auto-mocking-and-recording) entering requests that were not caught.
+You can also see if the call has been caught or forwarded through the [proxy](docs:server-configuration/proxy-mode) (if enabled) and [automatically mock](docs:logging-and-recording/auto-mocking-and-recording) entering requests that were not caught.
 Each environment (or mock API) has its own entering requests recording.
 
 ![Mockoon logs view{1200x753}](/images/docs/shared/cheat-sheet/logs-view.png)
 
 ## Environment's proxy parameters view
 
-This view allows you to [enable the proxy mode](docs:proxy-mode) and modify its behavior: removing the API prefix, adding specific headers to the proxied server request or response, etc.
+This view allows you to [enable the proxy mode](docs:server-configuration/proxy-mode) and modify its behavior: removing the API prefix, adding specific headers to the proxied server request or response, etc.
 
 ![Mockoon proxy view{1200x551}](/images/docs/shared/cheat-sheet/proxy-view.png)
 
 ## Environment's settings view
 
-This view is the place where you can set up global settings for each environment. Changing the environment name, port, or API prefix, [enabling HTTPS and using a custom certificate](docs:serving-over-tls), [handling OPTIONS pre-flight requests automatically](docs:cors), etc.
+This view is the place where you can set up global settings for each environment. Changing the environment name, port, or API prefix, [enabling HTTPS and using a custom certificate](docs:server-configuration/serving-over-tls), [handling OPTIONS pre-flight requests automatically](docs:server-configuration/cors), etc.
 
 ![Mockoon settings view{1200x645}](/images/docs/shared/cheat-sheet/settings-view.png)

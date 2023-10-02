@@ -6,7 +6,10 @@
   "scripts": {
     "release": "git checkout -b release/next && node ./scripts/new-release.js && git add . && git commit -m \"Prepare new release\"",
     "imagesize": "node ./scripts/markdown-image-size.js",
-    "dev": "cross-env NODE_OPTIONS='--inspect' next",
+    "debug": "cross-env NODE_OPTIONS='--inspect' next",
+    "api:mock": "mockoon-cli start --data ./mocks/mockoon-api.json",
+    "dev": "next",
+    "dev:all": "concurrently \"npm run dev\" \"npm run api:mock\"",
     "build": "next build",
     "prebuild": "node ./scripts/generate-sitemap.js && cp -R ./content/old-releases/desktop/ ./public/desktop-changelogs-markdown && cp -R -T ./content/releases/ ./public/desktop-changelogs-markdown/ && sed -i 's./images/sponsors/./images/sponsors/light/.g' ./public/desktop-changelogs-markdown/*",
     "start": "next start",
@@ -54,6 +57,7 @@
     "typed.js": "^2.0.12"
   },
   "devDependencies": {
+    "@mockoon/cli": "^4.1.0",
     "@types/glob": "^7.2.0",
     "@types/node": "^18.0.6",
     "@types/react": "^18.0.15",
@@ -62,6 +66,7 @@
     "@types/webpack": "^5.28.0",
     "@types/webpack-env": "^1.17.0",
     "axios": "^0.27.2",
+    "concurrently": "^8.2.1",
     "cross-env": "^7.0.3",
     "cross-var": "^1.1.0",
     "firebase-tools": "^11.3.0",

@@ -59,7 +59,7 @@ We removed the redundant Content-Type information in the "Status & body" tab tha
 
 ## Custom TLS certificate
 
-You can now provide a custom TLS certificate to serve your mocks over HTTPS in PKCS12 or PEM format. Mockoon still uses the same self-signed certificate as before if you don't provide a custom one. Head over to the documentation for more information about the [TLS configuration](docs:serving-over-tls).
+You can now provide a custom TLS certificate to serve your mocks over HTTPS in PKCS12 or PEM format. Mockoon still uses the same self-signed certificate as before if you don't provide a custom one. Head over to the documentation for more information about the [TLS configuration](docs:server-configuration/serving-over-tls).
 
 ![add custom TLS certificate{978x466}](/images/blog/ui-redesign-custom-tls/custom-tls-settings.png)
 

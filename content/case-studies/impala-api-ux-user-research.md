@@ -48,7 +48,7 @@ One advantage of using Mockoon is the possibility to quickly adjust and modify t
 
 Impala is creating their API documentation using the OpenAPI specification, with which Mockoon is compatible. By importing OpenAPI specification files in Mockoon, they can quickly create a skeleton for the mock. It allows Impala to retain their API design tool of choice while ensuring an excellent mocking experience.
 
-Besides, Mockoon makes it easy to test new features that are part of larger workflows thanks to its [proxy mode](docs:proxy-mode). Impala can set up partial mocks covering the endpoints related to the new feature while forwarding the rest of the calls to their existing APIs.
+Besides, Mockoon makes it easy to test new features that are part of larger workflows thanks to its [proxy mode](docs:server-configuration/proxy-mode). Impala can set up partial mocks covering the endpoints related to the new feature while forwarding the rest of the calls to their existing APIs.
 
 ### Using Mockoon for user research is a no-brainer
 

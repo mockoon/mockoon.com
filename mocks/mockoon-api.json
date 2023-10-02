@@ -1,0 +1,79 @@
+{
+  "uuid": "72998fd1-41d2-4e66-9c67-c504b1fc8b54",
+  "lastMigration": 28,
+  "name": "Mockoon api",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 5003,
+  "hostname": "",
+  "routes": [
+    {
+      "uuid": "fd188009-3825-4214-ba85-028e3521c9b2",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "releases/desktop/stable.json",
+      "responses": [
+        {
+          "uuid": "6bd199ae-db7f-42f9-8056-c47490765ce9",
+          "body": "{\n  \"tag\": \"5.0.0\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null,
+      "type": "http"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "folders": [],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "fd188009-3825-4214-ba85-028e3521c9b2"
+    }
+  ]
+}

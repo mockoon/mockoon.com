@@ -81,7 +81,7 @@ const faq: AccordionData = [
       {
         question: 'How can I cancel my subscription?',
         answer:
-          'You can cancel your subscription at any time from your <a href="/account/subscription/">account page</a>.'
+          'You can manage your subscription using the links in the emails you received from Paddle.com. You can also <a href="/contact-form/">contact us</a> and we will help you cancel your subscription.'
       },
       {
         question: 'Can I get a refund?',

@@ -3,7 +3,7 @@ title: Multiple route responses
 meta:
   title: Define multiple responses for each route
   description: Multiple responses can be defined for each route with different body, headers and status. Learn how to create them and randomize them.
-order: 900
+order: 300
 ---
 
 # Multiple responses
@@ -34,7 +34,7 @@ Route responses order define the order in which the [rules are interpreted](docs
 
 Without rules or when a request does not match the one you defined, the default response will always be the one marked with the blue flag. You can easily change the default response by clicking on the grey flags in the menu:
 
-![Define a new default route response{1002x216}](docs-img:change-route-responses-default.png)
+![Define a new default route response{1033x216}](docs-img:change-route-responses-default.png)
 
 ## Random route response
 
@@ -42,7 +42,7 @@ Mockoon can serve the route responses randomly (200, 500, 404) to simulate an un
 
 To activate this option, click on the "shuffle" icon next to the response list:
 
-![Random route responses{1001x174}](docs-img:random-route-responses.png)
+![Random route responses{1032x174}](docs-img:random-route-responses.png)
 
 > ⚠️ When this option is active, the [default response](#default-route-response) and all the rules defined on this route will be ignored. Also, this option cannot be selected in addition to the sequential responses option below.
 
@@ -52,23 +52,25 @@ Mockoon can serve the route responses sequentially (200 → 500 → 404). Mockoo
 
 To activate this option, click on the "repeat" icon next to the response list:
 
-![Sequential route responses{990x174}](docs-img:sequential-route-responses.png)
+![Sequential route responses{1021x174}](docs-img:sequential-route-responses.png)
 
 > ⚠️ When this option is active, the [default response](#default-route-response) and all the rules defined on this route will be ignored. Also, this option cannot be selected in addition to the random responses option above.
 
 ## Fallback mode
 
-When the **fallback mode** is enabled, Mockoon will automatically pass the request to the proxy (or the next route, see below) when none of the responses' rules match.
+When the **fallback mode** is enabled, Mockoon will automatically pass the request to the proxy (or the next route, see below) when none of the [responses' rules](docs:route-responses/dynamic-rules) match.
 
 To activate this option, click on the "fallback" icon next to the response list:
 
-![fallback mode responses](docs-img:fallback-mode-responses.png)
+![fallback mode responses{999x174}](docs-img:fallback-mode-responses.png)
 
-Behind the scene, the server will automatically jump to the next route and, ultimately, the proxied server. It allows to create more complex setups where a wildcard or parameterized route's rules would not match, but the next route would catch the call (according to the [order of the routes](docs:api-endpoints/routing#routes-order)):
+Behind the scene, the server will automatically jump to the next route in the [order](docs:api-endpoints/routing#routes-order) they were declared and, ultimately, to the proxied server. It allows to create complex setups where a wildcard or parameterized route contains rules to protect the access to other routes:
 
 ```
-GET /users/:id --> no rule matches
-GET /users --> served
+GET /users/* --> Authorization header required
+GET /users/:id --> No rules
 ```
+
+> 💡 Header over to our ["Global routes with rules"](docs:route-responses/global-routes-with-rules) documentation section to learn more about this feature.
 
 > ⚠️ When this option is active, the [default response](#default-route-response) will be ignored. Also, this option cannot be selected in addition to the other response options above and could result in a 404 if the proxy is not enabled.

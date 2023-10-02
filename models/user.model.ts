@@ -19,6 +19,7 @@ export type Team = {
 };
 
 export type User = {
+  uid: string;
   email: string;
   plan: Plans;
   teamId: string;

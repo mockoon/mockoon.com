@@ -1,9 +1,9 @@
 ---
-title: Helpers
+title: Custom helpers
 meta:
   title: Create dynamic responses with templating helpers
   description: "Create dynamic fake data for your mock server with Mockoon's templating helpers. All formats are supported: JSON, CSV, HTML, etc."
-order: 1010
+order: 510
 ---
 
 # Mockoon templating helpers
@@ -38,7 +38,7 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 | [`floor`](#floor)       | [`round`](#round)     |                     |
 
 | Strings                   |                         | Dates                             | Misc                            |
-| ------------------------- |-------------------------| --------------------------------- | ------------------------------- |
+| ------------------------- | ----------------------- | --------------------------------- | ------------------------------- |
 | [`includes`](#includes)   | [`concat`](#concat)     | [`now`](#now)                     | [`newline`](#newline)           |
 | [`substr`](#substr)       | [`indexOf`](#indexof)   | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)             |
 | [`lowercase`](#lowercase) | [`parseInt`](#parseint) | [`date`](#date)                   | [`base64Decode`](#base64decode) |
@@ -105,29 +105,34 @@ Select some content depending on a variable. Behaves like a regular switch.
 
 Get the **stringified** value at a given `path` from a [data bucket](docs:data-buckets/overview) selected by **ID or name**. This helper is designed to retrieve data to be served in a response. To reuse the retrieved data with other helpers (`each`, `if`, etc.), use the [`dataRaw` helper](#dataraw) below.
 
-- The `path` takes the following form `key.0.key.5.key` and is based on the [**object-path** library](https://www.npmjs.com/package/object-path). Properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
+- The `path` supports two syntaxes, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
   Please note that a value can be retrieved at the path if the data bucket contains valid JSON.
 - Full objects or arrays can be retrieved by the helper and will be stringified.
 - The full data bucket content can be fetched when the `path` is omitted (`{{data 'ID'}}`).
 
 | Arguments (ordered) | Type   | Description                      |
 | ------------------- | ------ | -------------------------------- |
-| 0                   | string | ID or name of the daa bucket     |
+| 0                   | string | ID or name of the data bucket    |
 | 1                   | string | Path to the data bucket property |
 
 **Examples**
 
 ```handlebars
 {{data 'abcd'}}
+
+<!-- Using object-path syntax -->
 {{data 'abcd' 'path.to.property'}}
 {{data 'abcd' 'deep.property\.with\.dot'}}
+
+<!-- using JSONPath syntax -->
+{{data 'abcd' '$.array.[*].property'}}
 ```
 
 ## `dataRaw`
 
 Get the **raw** value (array, object, etc.) at a given `path` from a [data bucket](docs:data-buckets/overview) selected by **ID or name**. This "raw" helper is designed to work with other helpers (`each`, `if`, etc.). To directly use the retrieved data in the response, use [data buckets direct linking](docs:data-buckets/using-data-buckets#referencing-in-a-route-response) or the [`data` helper](#data) above.
 
-- The `path` takes the following form `key.0.key.5.key` and is based on the [**object-path** library](https://www.npmjs.com/package/object-path). Properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
+- The `path` supports two syntaxes, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
   Please note that a value can be retrieved at the path if the data bucket contains valid JSON.
 - Primitives and data structures can be retrieved by the helper and reused in other helpers (see example below).
 - The full data bucket content (array, object, etc.) can be fetched when the `path` is omitted (`{{dataRaw 'ID'}}`).
@@ -141,8 +146,13 @@ Get the **raw** value (array, object, etc.) at a given `path` from a [data bucke
 
 ```handlebars
 {{dataRaw 'abcd'}}
+
+<!-- Using object-path syntax -->
 {{dataRaw 'abcd' 'path.to.property'}}
 {{dataRaw 'abcd' 'deep.property\.with\.dot'}}
+
+<!-- using JSONPath syntax -->
+{{dataRaw 'abcd' '$.array.[*].property'}}
 
 {{#each (dataRaw 'path.to.array.property')}}
   value
@@ -512,30 +522,30 @@ result: '2'
 ## `eq`
 
 Verify if two numbers or strings are equal. Returns a boolean.  
-Returns false if type of the value not equals.  
+Returns false if type of the value not equals.
 
 | Arguments (ordered) | Type             | Description             |
-| ------------------- |------------------|-------------------------|
+| ------------------- | ---------------- | ----------------------- |
 | 0                   | string \| number | First number or string  |
 | 1                   | string \| number | Second number or string |
 
 **Examples**
 
 ```handlebars
-{{#if (eq 55 55) }}
+{{#if (eq 55 55)}}
   true
 {{/if}}
 Result: true
 
-{{#if (eq 55 '55') }}
-    true
+{{#if (eq 55 '55')}}
+  true
 {{else}}
-    false
+  false
 {{/if}}
 Result: false
 
-{{#if (eq "x1" "x1") }}
-    true
+{{#if (eq 'x1' 'x1')}}
+  true
 {{/if}}
 Result: true
 ```

@@ -125,7 +125,7 @@ With this kind of setup, you will be able to locally switch from the original AP
 ## 4. (optional) Use the proxy mode to partially mock GitHub's API
 
 You may also want to keep using the third-party API while mocking only a part of it. It's useful when testing API failures (500, 503, 504, etc.) or quickly prototyping a new feature.
-It is also possible with Mockoon by enabling the [proxy mode](docs:proxy-mode):
+It is also possible with Mockoon by enabling the [proxy mode](docs:server-configuration/proxy-mode):
 
 ![enable proxy mode{1052x358}](/images/tutorials/nodejs-api-call/enable-proxy-mode.gif)
 

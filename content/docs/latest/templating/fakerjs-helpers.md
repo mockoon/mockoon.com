@@ -3,7 +3,7 @@ title: Faker.js helpers
 meta:
   title: Create dynamic responses with templating Faker.js helpers
   description: Create realistic mock data for your mock API servers with Mockoon's templating system including Faker.js
-order: 1040
+order: 540
 ---
 
 # Faker.js helpers

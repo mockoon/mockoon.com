@@ -110,7 +110,7 @@ Some widely used response headers:
 - `Cache-Control: max-age=604800`: to indicate the duration after which the response should be refreshed.
 - `Last-Modified: Fri, 24 June 2022 08:00:00 GMT`: indicate the data when the resource was last modified.
 
-[→ Learn how to setup headers with Mockoon](/docs/latest/response-headers/)
+[→ Learn how to setup headers with Mockoon](/docs/latest/response-configuration/response-headers/)
 
 ## I
 

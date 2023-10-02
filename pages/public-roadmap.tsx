@@ -34,6 +34,93 @@ const faq: AccordionData = [
   }
 ];
 
+const tasks = {
+  released: [
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/995',
+      title: 'Support for JSON path',
+      pro: false,
+      target: '_blank'
+    },
+    {
+      link: '/docs/latest/route-responses/multiple-responses/#fallback-mode',
+      title: 'Response fallback mode',
+      pro: false
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1063',
+      title: 'Applications logging standardization',
+      pro: false,
+      target: '_blank'
+    },
+    {
+      link: '/pro/',
+      title: 'AI-powered mocks',
+      pro: true
+    },
+    {
+      link: '/docs/latest/logging-and-recording/auto-mocking-and-recording/#record-your-api-calls',
+      title: 'Auto-mocking with recording',
+      pro: false
+    },
+    {
+      link: '/docs/latest/api-endpoints/crud-routes/',
+      title: 'CRUD routes',
+      pro: false
+    },
+    {
+      link: '/serverless/',
+      title: 'Serverless package',
+      pro: false
+    }
+  ],
+  inProgress: [
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1150',
+      title: 'Faker.js v8 support',
+      pro: false,
+      target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/678',
+      title: 'OpenAPI import/export in CLI',
+      pro: false,
+      target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/849',
+      title: 'Environment variable support in templating',
+      pro: false,
+      target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/709',
+      title: 'Trigger requests after a call',
+      pro: false,
+      target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1044',
+      title: 'Support for Range header',
+      pro: false,
+      target: '_blank'
+    },
+    {
+      link: '/pro/',
+      title: 'Data synchronization for solo developers',
+      pro: true
+    }
+  ],
+  comingSoon: [
+    {
+      link: '/pro/',
+      title: 'Real-time collaboration for teams',
+      pro: true,
+      target: null
+    }
+  ]
+};
+
 const Roadmap: FunctionComponent = function () {
   return (
     <Layout footerBanner='newsletter'>
@@ -76,90 +163,25 @@ const Roadmap: FunctionComponent = function () {
                 </div>
               </div>
               <div className='px-4'>
-                <div className='d-flex'>
-                  <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
-                    <i className='icon icon-check'></i>
-                  </div>
+                {tasks.released.map((task, taskIndex) => (
+                  <div key={`taskreleased${taskIndex}`} className='d-flex'>
+                    <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                      <i className='icon icon-check'></i>
+                    </div>
 
-                  <p className='text-gray-800'>
-                    <Link
-                      href={
-                        '/docs/latest/route-responses/multiple-responses/#fallback-mode'
-                      }
-                    >
-                      Response fallback mode
-                    </Link>
-                  </p>
-                </div>
-                <div className='d-flex'>
-                  <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
-                    <i className='icon icon-check'></i>
+                    <p className='text-gray-800'>
+                      <Link
+                        href={task.link}
+                        target={task.target ? task.target : undefined}
+                      >
+                        {task.title}
+                      </Link>
+                      {task.pro && (
+                        <span className='badge text-bg-warning ms-2'>Pro</span>
+                      )}
+                    </p>
                   </div>
-
-                  <p className='text-gray-800'>
-                    <Link
-                      href={'https://github.com/mockoon/mockoon/issues/1063'}
-                    >
-                      Applications logging standardization
-                    </Link>
-                  </p>
-                </div>
-                <div className='d-flex'>
-                  <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
-                    <i className='icon icon-check'></i>
-                  </div>
-
-                  <p className='text-gray-800'>
-                    <Link href={'/pro/'}>AI-powered mocks</Link>
-                    <span className='badge text-bg-warning ms-2'>Pro</span>
-                  </p>
-                </div>
-                <div className='d-flex'>
-                  <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
-                    <i className='icon icon-check'></i>
-                  </div>
-
-                  <p className='text-gray-800'>
-                    <Link
-                      href={
-                        '/docs/latest/logging-and-recording/auto-mocking-and-recording/#record-your-api-calls'
-                      }
-                    >
-                      Auto-mocking with recording
-                    </Link>
-                  </p>
-                </div>
-                <div className='d-flex'>
-                  <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
-                    <i className='icon icon-check'></i>
-                  </div>
-
-                  <p className='text-gray-800'>
-                    <Link href={'/docs/latest/api-endpoints/crud-routes/'}>
-                      CRUD routes
-                    </Link>
-                  </p>
-                </div>
-                <div className='d-flex'>
-                  <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
-                    <i className='icon icon-check'></i>
-                  </div>
-
-                  <p className='text-gray-800'>
-                    <Link href={'/serverless/'}>Serverless package</Link>
-                  </p>
-                </div>
-                <div className='d-flex'>
-                  <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
-                    <i className='icon icon-check'></i>
-                  </div>
-
-                  <p className='text-gray-800'>
-                    <Link href={'/docs/latest/data-buckets/overview/'}>
-                      Data buckets
-                    </Link>
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
             <div className='col-12 col-md-4 p-0'>
@@ -169,62 +191,25 @@ const Roadmap: FunctionComponent = function () {
                 </div>
               </div>
               <div className='px-4'>
-                <div className='d-flex'>
-                  <div className='badge badge-rounded-circle bg-primary-soft mt-1 me-4'>
-                    <i className='icon icon-refresh'></i>
-                  </div>
+                {tasks.inProgress.map((task, taskIndex) => (
+                  <div key={`taskinprogress${taskIndex}`} className='d-flex'>
+                    <div className='badge badge-rounded-circle bg-primary-soft mt-1 me-4'>
+                      <i className='icon icon-refresh'></i>
+                    </div>
 
-                  <p className='text-gray-800'>
-                    <Link
-                      href={'https://github.com/mockoon/mockoon/issues/995'}
-                      target='_blank'
-                    >
-                      Support for JSON path
-                    </Link>
-                  </p>
-                </div>
-                <div className='d-flex'>
-                  <div className='badge badge-rounded-circle bg-primary-soft mt-1 me-4'>
-                    <i className='icon icon-refresh'></i>
+                    <p className='text-gray-800'>
+                      <Link
+                        href={task.link}
+                        target={task.target ? task.target : undefined}
+                      >
+                        {task.title}
+                      </Link>
+                      {task.pro && (
+                        <span className='badge text-bg-warning ms-2'>Pro</span>
+                      )}
+                    </p>
                   </div>
-
-                  <p className='text-gray-800'>
-                    <Link
-                      href={'https://github.com/mockoon/mockoon/issues/849'}
-                      target='_blank'
-                    >
-                      Environment variable support in templating
-                    </Link>
-                  </p>
-                </div>
-                <div className='d-flex'>
-                  <div className='badge badge-rounded-circle bg-primary-soft mt-1 me-4'>
-                    <i className='icon icon-refresh'></i>
-                  </div>
-
-                  <p className='text-gray-800'>
-                    <Link
-                      href={'https://github.com/mockoon/mockoon/issues/709'}
-                      target='_blank'
-                    >
-                      Trigger requests after a call
-                    </Link>
-                  </p>
-                </div>
-                <div className='d-flex'>
-                  <div className='badge badge-rounded-circle bg-primary-soft mt-1 me-4'>
-                    <i className='icon icon-refresh'></i>
-                  </div>
-
-                  <p className='text-gray-800'>
-                    <Link
-                      href={'https://github.com/mockoon/mockoon/issues/1044'}
-                      target='_blank'
-                    >
-                      Support for Range header
-                    </Link>
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
             <div className='col-12 col-md-4 p-0'>
@@ -235,18 +220,25 @@ const Roadmap: FunctionComponent = function () {
               </div>
 
               <div className='px-4'>
-                <div className='d-flex'>
-                  <div className='badge badge-rounded-circle bg-secondary-soft mt-1 me-4'>
-                    <i className='icon icon-hourglass_empty'></i>
-                  </div>
+                {tasks.comingSoon.map((task, taskIndex) => (
+                  <div key={`taskcomingsoon${taskIndex}`} className='d-flex'>
+                    <div className='badge badge-rounded-circle bg-secondary-soft mt-1 me-4'>
+                      <i className='icon icon-hourglass_empty'></i>
+                    </div>
 
-                  <p className='text-gray-800'>
-                    <Link href={'/pro/'}>
-                      Data synchronization for solo developers
-                    </Link>
-                    <span className='badge text-bg-warning ms-2'>Pro</span>
-                  </p>
-                </div>
+                    <p className='text-gray-800'>
+                      <Link
+                        href={task.link}
+                        target={task.target ? task.target : undefined}
+                      >
+                        {task.title}
+                      </Link>
+                      {task.pro && (
+                        <span className='badge text-bg-warning ms-2'>Pro</span>
+                      )}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

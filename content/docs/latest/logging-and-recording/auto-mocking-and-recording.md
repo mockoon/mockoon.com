@@ -3,14 +3,14 @@ title: Auto-mocking and recording
 meta:
   title: Automatic API mock creation
   description: Learn how to automatically mock your API endpoints manually or by recording entering requests
-order: 851
+order: 710
 ---
 
 # Automatically create mock routes
 
 ---
 
-You can automatically create mock routes from HTTP transactions (request/response). This is especially useful when used in pair with the [proxy mode](docs:proxy-mode) to create a mock API from an existing API.
+You can automatically create mock routes from HTTP transactions (request/response). This is especially useful when used in pair with the [proxy mode](docs:server-configuration/proxy-mode) to create a mock API from an existing API.
 
 ## Manually create a mock from a request
 
@@ -30,4 +30,4 @@ You can record in multiple environments at the same time. A red blinking recordi
 
 The recording will only create a route once, based on the path and HTTP method.
 
-> The recording mode works best with the [proxy mode](docs:proxy-mode) enabled and intercepting all the entering requests.
+> The recording mode works best with the [proxy mode](docs:server-configuration/proxy-mode) enabled and intercepting all the entering requests.

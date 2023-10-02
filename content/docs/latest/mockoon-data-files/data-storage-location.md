@@ -3,7 +3,7 @@ title: Data storage location
 meta:
   title: Data storage location
   description: Learn where Mockoon's data storage files and application settings are located and how to move them to other folders
-order: 1100
+order: 900
 ---
 
 # Data storage location
@@ -26,7 +26,13 @@ You can move the data files to another folder by right-clicking on an environmen
 
 > Please note that the environment file will be copied to the new folder, and the original file will **not** be deleted. If you want to delete the original file, you will have to do it manually.
 
-## Old system
+## Enabling data file watching
+
+Mockoon can monitor data files' external changes and automatically reload the interface with the new information. This is particularly useful when you are editing the data files with an external editor or pulling changes from a git repository. You can activate this option in the settings:
+
+![enable file monitoring in the settings{860x812}](docs-img:enable-file-watching.png)
+
+## Old system (pre v1.16.0)
 
 Before version 1.16.0, all of your environments were stored in the same `environments.json` file in the **application data folder**. The file was located in your operating system's user folder:
 
@@ -37,3 +43,5 @@ Before version 1.16.0, all of your environments were stored in the same `environ
 When updating to version 1.16.0, Mockoon automatically migrated the old `environments.json` file (see below) and split it into as many files as you had environments. These files were created in the same `storage` folder with incremental names: `environment-0.json`, `environment-1.json`, etc.
 
 ![one file vs multiple files after the migration{600x252}](/images/docs/shared/storage-migration.png)
+
+> ⚠️ The automatic migration was dropped in [version 5.0.0](/releases/5.0.0/). If you are updating from v1.15.0, please first update to any version between v1.16.0 and v4.1.0, then to v5.0.0.

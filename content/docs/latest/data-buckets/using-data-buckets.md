@@ -3,7 +3,7 @@ title: Using data buckets
 meta:
   title: Using data buckets
   description: Learn how to use Mockoon's data buckets, using the two data and dataRaw helpers, or by directly linking the bucket to a route response
-order: 951
+order: 610
 ---
 
 # Using data buckets

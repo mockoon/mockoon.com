@@ -38,9 +38,11 @@ const OssFriends: FunctionComponent<{
             {ossFriends.map((friend, friendIndex) => {
               return (
                 !friend.name.toLowerCase().includes('mockoon') && (
-                  <div className='mx-auto my-4 col-12 col-lg-4  d-flex'>
+                  <div
+                    className='mx-auto my-4 col-12 col-lg-4 d-flex'
+                    key={`friend${friendIndex}`}
+                  >
                     <Card
-                      key={`friend${friendIndex}`}
                       data={{
                         title: friend.name,
                         description: friend.description,

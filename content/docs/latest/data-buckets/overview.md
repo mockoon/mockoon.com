@@ -3,7 +3,7 @@ title: Overview
 meta:
   title: Data buckets overview
   description: Learn what are Mockoon's data buckets, how they work, what type of content is supported and how to create one
-order: 950
+order: 600
 ---
 
 # Data buckets overview

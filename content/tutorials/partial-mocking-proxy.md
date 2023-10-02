@@ -21,7 +21,7 @@ The first step is to create a new API in Mockoon or use one you already have.
 
 > To learn more about how to set up your first mock API with Mockoon, head over to the [Getting started tutorial](tutorials:getting-started).
 
-As soon as you have your new mock API, you are ready to enable the [proxy mode](docs:proxy-mode) and forward all the calls to another URL. For this tutorial, we will be using the Star Wars API available at `https://swapi.dev/api/`. Head over to the environment proxy settings by clicking on the "proxy" tab at the top of the window. Then, enable the proxy mode and add the Star Wars API URL to which Mockoon will forward the requests:
+As soon as you have your new mock API, you are ready to enable the [proxy mode](docs:server-configuration/proxy-mode) and forward all the calls to another URL. For this tutorial, we will be using the Star Wars API available at `https://swapi.dev/api/`. Head over to the environment proxy settings by clicking on the "proxy" tab at the top of the window. Then, enable the proxy mode and add the Star Wars API URL to which Mockoon will forward the requests:
 
 ![Recording of enabling proxy mode{1052x358}](/images/tutorials/proxy-mode/enable-proxy-mode.gif)
 

@@ -15,7 +15,7 @@ This tutorial will show you how to call a REST API from a simple Vue.js applicat
 
 ## 1. Create a mock API endpoint with Mockoon
 
-When working on your Vue.js single page application, you may need to mock an API that is still under development, or that is only [partially available](docs:proxy-mode). The easiest way to start working without having to wait is to create a mock API using a tool like Mockoon. (Read more about the [benefits of API mocking](/use-cases/)).
+When working on your Vue.js single page application, you may need to mock an API that is still under development, or that is only [partially available](docs:server-configuration/proxy-mode). The easiest way to start working without having to wait is to create a mock API using a tool like Mockoon. (Read more about the [benefits of API mocking](/use-cases/)).
 
 > To learn more about how to set up your first mock API with Mockoon, head over to the [Getting started tutorial](tutorials:getting-started).
 

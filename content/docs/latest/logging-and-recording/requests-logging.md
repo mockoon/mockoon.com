@@ -3,7 +3,7 @@ title: Requests logging
 meta:
   title: Mock API requests logging
   description: Learn how to access requests and responses logs or record your REST API servers calls for easier debugging
-order: 850
+order: 700
 ---
 
 # Requests logging
@@ -34,7 +34,7 @@ The interface is showing truncated bodies for both the request and the response 
 
 ## Logs metadata
 
-You can also easily see if a request has been caught by Mockoon (record shows a green tick) or has been passed to another URL if the [proxy mode](docs:proxy-mode) is activated (record shows a shield icon):
+You can also easily see if a request has been caught by Mockoon (record shows a green tick) or has been passed to another URL if the [proxy mode](docs:server-configuration/proxy-mode) is activated (record shows a shield icon):
 
 ![view logs metadata{1214x632}](docs-img:logs-metadata.png)
 

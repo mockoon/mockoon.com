@@ -218,9 +218,6 @@ const Footer: FunctionComponent<{
                   Pro plans
                 </Link>
               </li>
-            </ul>
-
-            <ul className='list-unstyled text-muted'>
               <li className='mb-2'>
                 <Link href='/custom-services/' className='text-reset'>
                   Custom services

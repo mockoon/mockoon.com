@@ -99,11 +99,6 @@ const faq: AccordionData = [
     title: 'Misc',
     items: [
       {
-        question: 'Can I book a demo?',
-        answer:
-          'Yes, we can provide a 30-minute demo of our solutions. <a href="https://cal.com/mockoon/demo" target="_blank">Book a demo</a> now.'
-      },
-      {
         question: 'Do you offer custom services?',
         answer:
           'Our custom services can vary. Here is a brief overview of what type of service we provided in the past:<ul><li>Feature prioritization on the roadmap.</li><li>Advanced support during Mockoon tools deployment or configuration.</li><li>Help with your API mock creation.</li><li>Online training with live video conference.</li></ul><a href="/custom-services/">Learn more</a> about our custom services.'

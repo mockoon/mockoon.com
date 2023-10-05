@@ -647,21 +647,13 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
               </p>
               <div className='text-center'>
                 <h4 className='fw-bold mt-6 mb-4'>Specific needs?</h4>
-                <div className='btn-group'>
-                  <Link
-                    href={'/contact-form/'}
-                    className='btn btn-outline-secondary btn-sm'
-                  >
-                    Contact sales
-                  </Link>
-                  <Link
-                    href={'https://cal.com/mockoon/demo'}
-                    target='_blank'
-                    className='btn btn-outline-secondary btn-sm'
-                  >
-                    Book a demo
-                  </Link>
-                </div>
+
+                <Link
+                  href={'/contact-form/'}
+                  className='btn btn-outline-secondary btn-sm'
+                >
+                  Contact sales
+                </Link>
               </div>
 
               {showTagline && (

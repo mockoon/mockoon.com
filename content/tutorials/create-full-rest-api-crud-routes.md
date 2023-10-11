@@ -56,7 +56,7 @@ Here is the JSON content we used:
   {{#repeat 3}}
     {
       "id": {{add @index 1}},
-      "name": "{{faker 'name.firstName'}} {{faker 'name.lastName'}}",
+      "name": "{{faker 'person.firstName'}} {{faker 'person.lastName'}}",
       "email": "{{faker 'internet.email'}}"
     }
     {{#unless @last}},{{/unless}}

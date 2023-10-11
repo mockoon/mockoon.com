@@ -10,7 +10,7 @@ order: 500
 
 ---
 
-Mockoon implements [Handlebars](https://handlebarsjs.com/), [Faker.js v7.6.0](https://fakerjs.dev/), and a set of custom helpers to create dynamic responses. This templating system is supported in the [**data buckets**](#content-of-a-data-bucket), [**response's body**](#body-and-file-content-templating), [**header values**](#headers-and-rule-values), [**file content**](#body-and-file-content-templating), [**file path**](#file-input-templating) and [**rule values**](#headers-and-rule-values). You will find below a global overview of how and where you can use helpers. You can also check the [available helpers](#available-helpers) on specific documentation pages.
+Mockoon implements [Handlebars](https://handlebarsjs.com/), [Faker.js v8.1.0](https://fakerjs.dev/), and a set of custom helpers to create dynamic responses. This templating system is supported in the [**data buckets**](#content-of-a-data-bucket), [**response's body**](#body-and-file-content-templating), [**header values**](#headers-and-rule-values), [**file content**](#body-and-file-content-templating), [**file path**](#file-input-templating) and [**rule values**](#headers-and-rule-values). You will find below a global overview of how and where you can use helpers. You can also check the [available helpers](#available-helpers) on specific documentation pages.
 
 ## Helpers
 
@@ -58,7 +58,7 @@ Here is an example of what you can do with this templating system:
     {{#repeat 2}}
     { 
       "id": {{@index}}, 
-      "name": "{{faker 'name.firstName'}} {{faker 'name.lastName'}}" 
+      "name": "{{faker 'person.firstName'}} {{faker 'person.lastName'}}" 
     }
     {{/repeat}}
   ], 
@@ -122,8 +122,8 @@ This system is flexible enough to generate a lot of different contents like CSV 
 ```handlebars
 firstname,lastname,countryCode
 {{#repeat 10}}
-  {{faker 'name.firstName'}},{{faker 'name.lastName'}},{{faker
-    'address.countryCode'
+  {{faker 'person.firstName'}},{{faker 'person.lastName'}},{{faker
+    'location.countryCode'
   }}
 {{/repeat}}
 ```
@@ -160,7 +160,7 @@ Block helper:
 {{# base64}}
 firstname,lastname,countryCode
 {{# repeat 10 }}
-{{ faker 'name.firstName' }},{{ faker 'name.lastName' }},{{ faker 'address.countryCode' }}
+{{ faker 'person.firstName' }},{{ faker 'person.lastName' }},{{ faker 'location.countryCode' }}
 {{/ repeat}}
 {{/ base64}}
 ```

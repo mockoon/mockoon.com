@@ -10,8 +10,8 @@ order: 540
 
 ---
 
-Mockoon implements [Faker.js v7.6.0](https://fakerjs.dev/) library by wrapping most of the available helpers.
-Faker.js offers lots of helpers: `address.zipCode`, `address.city`, `address.cityPrefix`, `name.firstName`, `name.lastName`, `datatype.number`, `datatype.float`, `internet.avatar`, `internet.email`, etc. Please have a look at [Faker.js documentation](https://fakerjs.dev/) to learn how to use them.
+Mockoon implements [Faker.js v8.1.0](https://fakerjs.dev/) library by wrapping most of the available helpers.
+Faker.js offers lots of helpers: `location.zipCode`, `location.city`, `location.count`, `person.firstName`, `person.lastName`, `number.int`, `number.float`, `internet.avatar`, `internet.email`, etc. Please have a look at [Faker.js documentation](https://fakerjs.dev/) to learn how to use them.
 
 ## Usage
 
@@ -19,10 +19,10 @@ All Faker.js helpers must be used with the following syntax: `{{faker 'namespace
 **Examples:**
 
 ```js
-{{faker 'address.zipCode'}}
-{{faker 'address.city'}}
-{{faker 'address.cityPrefix'}}
-{{faker 'name.firstName'}}
+{{faker 'location.zipCode'}}
+{{faker 'location.city'}}
+{{faker 'location.county'}}
+{{faker 'person.firstName'}}
 ...
 ```
 
@@ -30,10 +30,10 @@ Faker.js methods may use two different ways of passing parameters: ordered argum
 
 ```js
 // named parameters
-{{faker 'datatype.number' min=0 max=25}}
+{{faker 'number.int' min=0 max=25}}
 
 // ordered arguments (here count=25)
-{{faker 'random.alphaNumeric' 25}}
+{{faker 'string.alphanumeric' 25}}
 ```
 
 ## Set Faker.js' locale and seed

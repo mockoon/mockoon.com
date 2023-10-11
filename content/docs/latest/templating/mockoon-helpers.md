@@ -679,7 +679,7 @@ Encode the parameter as base64. This can be used as an inline helper or block he
 {{#base64}}
   firstname,lastname,countryCode
   {{#repeat 10}}
-    {{faker 'name.firstName'}},{{faker 'name.lastName'}},{{faker
+    {{faker 'person.firstName'}},{{faker 'person.lastName'}},{{faker
       'address.countryCode'
     }}
   {{/repeat}}
@@ -1060,7 +1060,7 @@ Return a formatted date (using [date-fns package format](https://date-fns.org/do
 
 ## `int`
 
-Return a random integer. Alias of `faker 'datatype.number`.
+Return a random integer. Alias of `faker 'number.int`.
 
 | Arguments (ordered) | Type   | Description |
 | ------------------- | ------ | ----------- |
@@ -1075,7 +1075,7 @@ Return a random integer. Alias of `faker 'datatype.number`.
 
 ## `float`
 
-Return a random float. Alias of `faker 'datatype.number` with precision = 10.
+Return a random float. Alias of `faker 'number.float` with precision = 10.
 
 | Arguments (ordered) | Type   | Description |
 | ------------------- | ------ | ----------- |
@@ -1100,17 +1100,21 @@ Return a random boolean. Alias of `faker 'datatype.boolean'`.
 
 ## `title`
 
-Return a random title. Alias of `faker 'name.title'`.
+Return a random title. Alias of `faker 'name.prefix'`.
+
+| Arguments (ordered) | Type   | Description |
+| ------------------- | ------ | ----------- |
+| 0                   | string | Sex         |
 
 **Examples:**
 
 ```handlebars
-{{title}}
+{{title 'male'}}
 ```
 
 ## `firstName`
 
-Return a random first name. Alias of `faker 'name.firstName'`.
+Return a random first name. Alias of `faker 'person.firstName'`.
 
 **Examples:**
 
@@ -1120,7 +1124,7 @@ Return a random first name. Alias of `faker 'name.firstName'`.
 
 ## `lastName`
 
-Return a random last name. Alias of `faker 'name.lastName'`.
+Return a random last name. Alias of `faker 'person.lastName'`.
 
 **Examples:**
 
@@ -1170,7 +1174,7 @@ Return a random email address. Alias of `faker 'internet.email'`.
 
 ## `street`
 
-Return a random address. Alias of `faker 'address.streetAddress'`.
+Return a random address. Alias of `faker 'location.streetAddress'`.
 
 **Examples:**
 
@@ -1180,7 +1184,7 @@ Return a random address. Alias of `faker 'address.streetAddress'`.
 
 ## `city`
 
-Return a random city name. Alias of `faker 'address.city'`.
+Return a random city name. Alias of `faker 'location.city'`.
 
 **Examples:**
 
@@ -1190,7 +1194,7 @@ Return a random city name. Alias of `faker 'address.city'`.
 
 ## `country`
 
-Return a random country name. Alias of `faker 'address.country'`.
+Return a random country name. Alias of `faker 'location.country'`.
 
 **Examples:**
 
@@ -1200,7 +1204,7 @@ Return a random country name. Alias of `faker 'address.country'`.
 
 ## `countryCode`
 
-Return a random country code. Alias of `faker 'address.countryCode'`.
+Return a random country code. Alias of `faker 'location.countryCode'`.
 
 **Examples:**
 
@@ -1210,7 +1214,7 @@ Return a random country code. Alias of `faker 'address.countryCode'`.
 
 ## `zipcode`
 
-Return a random zip code. Alias of `faker 'address.zipCode'`.
+Return a random zip code. Alias of `faker 'location.zipCode'`.
 
 **Examples:**
 
@@ -1220,7 +1224,7 @@ Return a random zip code. Alias of `faker 'address.zipCode'`.
 
 ## `postcode`
 
-Return a random zip code. Alias of `faker 'address.zipCode'`.
+Return a random zip code. Alias of `faker 'location.zipCode'`.
 
 **Examples:**
 
@@ -1230,7 +1234,7 @@ Return a random zip code. Alias of `faker 'address.zipCode'`.
 
 ## `lat`
 
-Return a random latitude. Alias of `faker 'address.latitude'`.
+Return a random latitude. Alias of `faker 'location.latitude'`.
 
 **Examples:**
 
@@ -1240,7 +1244,7 @@ Return a random latitude. Alias of `faker 'address.latitude'`.
 
 ## `long`
 
-Return a random longitude. Alias of `faker 'address.longitude'`.
+Return a random longitude. Alias of `faker 'location.longitude'`.
 
 **Examples:**
 
@@ -1250,7 +1254,7 @@ Return a random longitude. Alias of `faker 'address.longitude'`.
 
 ## `phone`
 
-Return a random phone number. Alias of `faker 'phone.phoneNumber'`.
+Return a random phone number. Alias of `faker 'phone.number'`.
 
 **Examples:**
 
@@ -1260,7 +1264,7 @@ Return a random phone number. Alias of `faker 'phone.phoneNumber'`.
 
 ## `color`
 
-Return a random color. Alias of `faker 'commerce.color'`.
+Return a random color. Alias of `faker 'color.human'`.
 
 **Examples:**
 
@@ -1280,7 +1284,7 @@ Return a random hexadecimal color code.
 
 ## `guid`
 
-Return a random GUID. Alias of `faker 'datatype.uuid'`.
+Return a random GUID. Alias of `faker 'string.uuid'`.
 
 **Examples:**
 

@@ -49,28 +49,28 @@ Let's have a look at what such a body could look like:
     "id": {{@index}},
     "title": "{{faker 'lorem.sentence'}}",
     "content": "{{faker 'lorem.sentences'}}",
-    "media": "{{faker 'image.nature'}}",
+    "media": "{{faker 'image.urlLoremFlickr' category='nature'}}",
     "author": {
-      "name": "{{faker 'name.firstName'}} {{faker 'name.firstName'}}",
+      "name": "{{faker 'person.firstName'}} {{faker 'person.firstName'}}",
       "avatar": "{{faker 'image.avatar'}}"
     },
     "comments": [
-      {{#repeat (faker 'random.numeric' 5)}}
+      {{#repeat (faker 'string.numeric' 5)}}
       {
-        "id": "{{faker 'datatype.uuid'}}",
+        "id": "{{faker 'string.uuid'}}",
         "content": "{{faker 'lorem.sentence'}}",
         "author": {
-          "name": "{{faker 'name.firstName'}} {{faker 'name.firstName'}}",
+          "name": "{{faker 'person.firstName'}} {{faker 'person.firstName'}}",
           "avatar": "{{faker 'image.avatar'}}"
         }
       }
       {{/repeat}}
     ],
-    "likes": {{faker 'random.numeric' 100}},
-    "shares": {{faker 'random.numeric' 100}},
+    "likes": {{faker 'string.numeric' 100}},
+    "shares": {{faker 'string.numeric' 100}},
     "location": {
-      "lat": {{faker 'address.latitude'}},
-      "long": {{faker 'address.longitude'}}
+      "lat": {{faker 'location.latitude'}},
+      "long": {{faker 'location.longitude'}}
     },
     "archived": {{faker 'datatype.boolean'}}
   }
@@ -125,7 +125,7 @@ Generating realistic mock CSV data is also very easy. You will see below that it
 ```csv
 city,state,address,latitude,longitude,timezone
 {{#repeat 5000}}
-{{faker 'address.city'}},{{faker 'address.stateAbbr'}},{{faker 'address.streetAddress'}},{{faker 'address.latitude'}},{{faker 'address.longitude'}},{{faker 'address.timeZone'}}
+{{faker 'location.city'}},{{faker 'location.state' abbreviated=true}},{{faker 'location.streetAddress'}},{{faker 'location.latitude'}},{{faker 'location.longitude'}},{{faker 'location.timeZone'}}
 {{/repeat}}
 ```
 
@@ -148,11 +148,11 @@ Generating an XML file with fake data would also be done in no time. You will fi
 <PRODUCTS>
   {{# repeat 50}}
   <PRODUCT>
-    <UUID>{{faker 'datatype.uuid'}}</UUID>
+    <UUID>{{faker 'string.uuid'}}</UUID>
     <NAME>{{faker 'commerce.product'}}</NAME>
     <PRICE>{{faker 'commerce.price'}}</PRICE>
     <COLOR>{{faker 'color.human'}}</COLOR>
-    <INVENTORY>{{faker 'random.numeric' 50}}</INVENTORY>
+    <INVENTORY>{{faker 'string.numeric' 2}}</INVENTORY>
   </PRODUCT>
   {{/ repeat}}
 </PRODUCTS>
@@ -189,7 +189,7 @@ This first example tries to reproduce a call to a `POST /users` route, which wou
 
 ```json
 {
-  "id": "{{faker 'datatype.uuid'}}",
+  "id": "{{faker 'string.uuid'}}",
   "firstname": "{{body 'firstname'}}",
   "lastname": "{{body 'lastname'}}",
   "birthdate": "{{body 'birthdate'}}",
@@ -235,7 +235,7 @@ Let's imagine an endpoint `GET /inventory/:type` returning either "products" or 
 [
   {{#repeat (queryParam 'total')}}
   {
-    "id": "{{faker 'datatype.uuid'}}",
+    "id": "{{faker 'string.uuid'}}",
     {{# switch (urlParam 'type')}}
     {{# case 'products'}}
     "name": "{{faker 'commerce.product'}}",
@@ -243,7 +243,7 @@ Let's imagine an endpoint `GET /inventory/:type` returning either "products" or 
     {{/ case}}
     {{# case 'materials'}}
     "name": "{{faker 'commerce.productMaterial'}}",
-    "quantity": "{{faker 'random.numeric' 50}}"
+    "quantity": "{{faker 'string.numeric' 2}}"
     {{/ case}}
     {{/ switch}}
   }

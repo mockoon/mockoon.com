@@ -56,7 +56,7 @@ Several options are available to fine-tune the generated templates:
 
 - **JSON**: the generated template will be a valid JSON object.
 - **array**: the generated template root level will be a JSON array (usually used with the **JSON** option).
-- **templating**: the generated template will contain Handlebars [templating helpers](docs:templating/overview) (e.g. `{{faker 'name.firstName'}}`). Please note that disabling this option usually results in longer templates.
+- **templating**: the generated template will contain Handlebars [templating helpers](docs:templating/overview) (e.g. `{{faker 'person.firstName'}}`). Please note that disabling this option usually results in longer templates.
 
 ![prompt options buttons{860x801}](docs-img:ai-assistant-template-generate-options.png)
 

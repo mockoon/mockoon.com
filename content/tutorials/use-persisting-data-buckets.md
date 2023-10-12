@@ -48,9 +48,9 @@ For example, if your data bucket contains the following JSON:
 
 ```json
 {
-  "uuid": "{{faker 'datatype.uuid'}}",
-  "firstName": "{{faker 'name.firstName'}}",
-  "lastName": "{{faker 'name.lastName'}}"
+  "uuid": "{{faker 'string.uuid'}}",
+  "firstName": "{{faker 'person.firstName'}}",
+  "lastName": "{{faker 'person.lastName'}}"
 }
 ```
 
@@ -139,7 +139,7 @@ Let's say we have a route `GET /users` linking to a data bucket containing the f
 
 After starting the mock server, we can call the following endpoint:
 
-`GET http://localhost:3001/posts1?firstKey=firstName&firstValue=name.firstName&secondKey=email&secondValue=internet.email&total=10`
+`GET http://localhost:3001/posts1?firstKey=firstName&firstValue=person.firstName&secondKey=email&secondValue=internet.email&total=10`
 
 The `queryParamRaw` helper will retrieve the values passed in the query string, and your bucket will be generated accordingly. Here, we choose to generate 10 items, with a first name and an email. We could then get this kind of content after subsequent calls to routes using the data bucket:
 

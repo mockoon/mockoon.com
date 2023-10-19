@@ -139,7 +139,7 @@ Get the **raw** value (array, object, etc.) at a given `path` from a [data bucke
 
 | Arguments (ordered) | Type   | Description                      |
 | ------------------- | ------ | -------------------------------- |
-| 0                   | string | ID or name of the daa bucket     |
+| 0                   | string | ID or name of the data bucket    |
 | 1                   | string | Path to the data bucket property |
 
 **Examples**

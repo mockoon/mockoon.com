@@ -32,7 +32,7 @@ Mockoon uses Express to run the mock servers. In general, most of the Express' d
 
 ### Routes order
 
-Routes are declared in the server in the order displayed in the application (inside folders or not). It means that a the first ones takes precedence over the following ones.
+Routes are declared in the server in the order displayed in the application (inside folders or not). This means that the first ones take precedence over the following ones.
 
 One consequence is that a route parameter will capture any value at the specific URL segment. For example, `/users/:id` or `/users/*` will intercept `/users/search`. The more specific "search" route should be declared first. You can always reorder routes by dragging and dropping them.
 

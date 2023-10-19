@@ -72,7 +72,7 @@ Mockoon will automatically translate a CRUD endpoint to multiple routes allowing
 
 \* Supports [sorting and pagination](#sorting-and-pagination-on-the-main-get-route)
 
-> ⚠️ _Note:_ You can expect the above results assuming that you are sending the same type of content that the one stored in the data bucket (array ↔ array, object ↔ object, etc.). However, the system is very permissive, and you may push any content in an array, ending up with mixted type contents or replacing content with data of a different type.
+> ⚠️ _Note:_ You can expect the above results assuming that you are sending the same type of content as the one stored in the data bucket (array ↔ array, object ↔ object, etc.). However, the system is very permissive, and you may push any content in an array, ending up with mixed type contents or replacing content with data of a different type.
 
 ## Customizing the "id" property
 

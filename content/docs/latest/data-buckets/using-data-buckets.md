@@ -30,7 +30,7 @@ Head over to the [data helpers' documentation](docs:templating/mockoon-helpers#d
 
 ## Referencing in a route response
 
-A data buckets can also be directly linked to a route response. Linking a data bucket will serve the generated data bucket content "as-is".
+A data bucket can also be directly linked to a route response. Linking a data bucket will serve the generated data bucket content "as-is".
 
 To link a data bucket to a route response, choose "Data" in the body selector and select your data bucket.
 

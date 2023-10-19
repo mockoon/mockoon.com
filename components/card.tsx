@@ -48,7 +48,7 @@ const Card: FunctionComponent<{
         <div
           className={`${
             props.vertical || !props.data.imageSrc ? '' : 'w-100 w-lg-50'
-          } card-body flex-grow-1 text-gray-700 d-flex flex-column align-items-center py-5`}
+          } card-body flex-grow-1 d-flex flex-column align-items-center py-5`}
         >
           {props.data.topTag && (
             <span
@@ -66,7 +66,7 @@ const Card: FunctionComponent<{
 
           {props.data.description && (
             <p
-              className='col-10 text-muted'
+              className='col-10 text-gray-700'
               dangerouslySetInnerHTML={{ __html: props.data.description }}
             ></p>
           )}

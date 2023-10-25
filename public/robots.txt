@@ -8,7 +8,6 @@ Disallow: /account
 Disallow: /terms
 Disallow: /privacy
 Disallow: /404
-Disallow: /status
 
 # Host
 Host: https://mockoon.com

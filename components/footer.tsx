@@ -335,7 +335,7 @@ const Footer: FunctionComponent<{
                   className='text-decoration-none'
                 >
                   <i
-                    className='text-muted icon-twitter list-social-item'
+                    className='text-muted icon-x list-social-item'
                     aria-hidden='true'
                   ></i>
                 </a>
@@ -349,6 +349,19 @@ const Footer: FunctionComponent<{
                 >
                   <i
                     className='text-muted icon-youtube list-social-item'
+                    aria-hidden='true'
+                  ></i>
+                </a>
+              </li>
+              <li className='list-inline-item list-social-item'>
+                <a
+                  href='https://www.linkedin.com/company/mockoon'
+                  target='_blank'
+                  rel='noopener'
+                  className='text-decoration-none'
+                >
+                  <i
+                    className='text-muted icon-linkedin list-social-item'
                     aria-hidden='true'
                   ></i>
                 </a>

@@ -223,6 +223,11 @@ const Footer: FunctionComponent<{
                   Custom services
                 </Link>
               </li>
+              <li className='mb-2'>
+                <Link href='/status/' className='text-reset'>
+                  Status
+                </Link>
+              </li>
             </ul>
           </div>
           <div className='col-12 col-md-4 col-lg-2 offset-lg-0 text-lg-start text-center'>

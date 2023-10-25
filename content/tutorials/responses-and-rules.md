@@ -24,15 +24,15 @@ In this tutorial, we will create a typical setup: one response returning a 200 s
 
 The first step is to **create a new route** by clicking on the blue "Add route" button.
 
-![Add a route by clicking on the add route button](/images/tutorials/route-responses-rules/add-route.png)
+![Add a route by clicking on the add route button{474x289}](/images/tutorials/route-responses-rules/add-route.png)
 
 When you create a new endpoint, there is always at least **one default response** with a 200 status code.
 
-![Responses menu with the default response](/images/tutorials/route-responses-rules/default-route-response.png)
+![Responses menu with the default response{1035x275}](/images/tutorials/route-responses-rules/default-route-response.png)
 
 We can customize its body with a simple JSON object.
 
-![Responses menu with the default response](/images/tutorials/route-responses-rules/custom-json-body.png)
+![Responses menu with the default response{846x417}](/images/tutorials/route-responses-rules/custom-json-body.png)
 
 ## Step 2. Add a "401 Unauthorized" response
 
@@ -40,17 +40,17 @@ The next step is to add a second response returning a 401 status code when the "
 
 To add a new response, click on the blue "plus" button next to the response list.
 
-![Add a response by clicking on the plus button](/images/tutorials/route-responses-rules/add-response.png)
+![Add a response by clicking on the plus button{1035x275}](/images/tutorials/route-responses-rules/add-response.png)
 
 You can also **duplicate** a response or **delete** it by clicking the buttons on the right.
 
 The **blue flag** in the menu indicates which response will be served by **default when no rule matches** or when rules are disabled. We will keep the flag on our 200 "success" response.
 
-![Blue flag icon indicates the default response](/images/tutorials/route-responses-rules/blue-flag-default-response.png)
+![Blue flag icon indicates the default response{860x224}](/images/tutorials/route-responses-rules/blue-flag-default-response.png)
 
 The next step is to customize our response. Let’s change the status code to 401 "Unauthorized" and add a description: "Error unauthorized". Here too, we can customize the body with a simple JSON object.
 
-![customize the response by changing the status code and adding documentation](/images/tutorials/route-responses-rules/error-response-customized.png)
+![customize the response by changing the status code and adding documentation{872x389}](/images/tutorials/route-responses-rules/error-response-customized.png)
 
 ## Step 3. Add a rule
 
@@ -58,13 +58,13 @@ The final step is to add a rule on the new response to serve it only when the "A
 
 Click on the rules tab and on the "Add rule" button.
 
-![Add a new rule by clicking on the rule tab and the green add rule button](/images/tutorials/route-responses-rules/add-rule.png)
+![Add a new rule by clicking on the rule tab and the green add rule button{871x245}](/images/tutorials/route-responses-rules/add-rule.png)
 
 In the new rule, select "Header" and enter "Authorization" as the "Header name".
 
 Finally, select "null" as the value instead of "equals".
 
-![Customize the rule by entering its target, name and value](/images/tutorials/route-responses-rules/new-rule-customized.png)
+![Customize the rule by entering its target, name and value{871x245}](/images/tutorials/route-responses-rules/new-rule-customized.png)
 
 You can now test your setup by **calling** your mock API with and without an Authorization header.
 
@@ -100,7 +100,7 @@ Keep-Alive: timeout=5
 
 Three options are also available next to the responses list: **random**, **sequential**, and **rules disabled**.
 
-![Three buttons allows for random or sequential responses, or rules disabling](/images/tutorials/route-responses-rules/route-responses-options.png)
+![Three buttons allows for random or sequential responses, or rules disabling{872x218}](/images/tutorials/route-responses-rules/route-responses-options.png)
 
 You can **randomize the responses** with the first option or **cycle through them sequentially** with the second. Both options will **disable the rules**.
 The third option allows you to disable the rules and always serve the default response marked with a blue flag.

@@ -33,13 +33,13 @@ We have released three new versions since the last June newsletter, as we have m
 
 Thanks to the [response fallback mode](https://mockoon.com/docs/latest/route-responses/multiple-responses/#fallback-mode) introduced in [v4.1.0](https://mockoon.com/releases/4.1.0/), it is now possible to create wildcard routes containing global rules, such as validating the presence of an Authorization header or verifying that the request body contains a specific property. Head over to our new [Global routes with rules](https://mockoon.com/docs/latest/route-responses/global-routes-with-rules/) documentation section to learn how to create reusable responses and rules and apply them to all your routes.
 
-![application screenshot with a wildcard route](/images/blog/september-2023-news/create-wildcard-route.png)
+![application screenshot with a wildcard route{599x329}](/images/blog/september-2023-news/create-wildcard-route.png)
 
 ## 🎬 New GitHub Action
 
 We have officially launched a [GitHub Action](https://github.com/marketplace/actions/mockoon-cli) for the CLI, allowing you to effortlessly run your mocks within your GitHub CI environment.
 
-![screenshot of mockoon github action code](/images/blog/september-2023-news/mockoon-github-action-code-screenshot.png)
+![screenshot of mockoon github action code{690x298}](/images/blog/september-2023-news/mockoon-github-action-code-screenshot.png)
 
 No complex setup is required. Simply add the action to your workflow and provide a path to a local data file, or a URL, and you're good to go.
 
@@ -55,7 +55,7 @@ We have recently removed Google Analytics from our website as part of our commit
 
 We have partnered with several other open-source projects that we admire and wish to support. Feel free to [explore them!](https://mockoon.com/oss-friends/)
 
-![](/images/blog/september-2023-news/oss-friends.png)
+![{1150x735}](/images/blog/september-2023-news/oss-friends.png)
 
 ## 🛠️ Custom services
 

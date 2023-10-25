@@ -17,7 +17,7 @@ glob('./content/**/*.md', function (err, files) {
     console.log('\n', file);
     let fileContent = readFileSync(file).toString();
     const regex =
-      /\!(\[.*\])\((\/images|docs\-img\:[0-9A-Za-z\_\-\.\/]{0,})\)/g;
+      /\!(\[.*\])\(((?:\/images|docs\-img\:)[0-9A-Za-z\_\-\.\/]{0,})\)/g;
     let matches = fileContent.matchAll(regex);
 
     for (const match of matches) {

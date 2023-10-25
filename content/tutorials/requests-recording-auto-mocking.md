@@ -65,4 +65,4 @@ Next to each record, you will see a small "plus" icon. Click on these icons to c
 
 You can also enable the [recording mode](docs:logging-and-recording/auto-mocking-and-recording) to automatically create new endpoints when a new request is made to your mock server. To do so, click on the "recording" icon at the top of the page:
 
-![Enable recording mode](/images/tutorials/requests-recording/logs-start-recording.png)
+![Enable recording mode{1214x633}](/images/tutorials/requests-recording/logs-start-recording.png)

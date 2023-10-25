@@ -18,17 +18,17 @@ Let's see how to create a full REST API in seconds using Mockoon's CRUD routes.
 
 The first step is to create a new automated CRUD route. To create a CRUD route, click on the "CRUD route" entry in the add route menu:
 
-![Add a new CRUD route](/images/tutorials/create-full-rest-api-crud-routes/add-crud-route.png)
+![Add a new CRUD route{390x304}](/images/tutorials/create-full-rest-api-crud-routes/add-crud-route.png)
 
 Then, set its path, usually a [resource name](/articles/api-guide-rest-api-components/#resource-url-request):
 
-![Set the CRUD route path](/images/tutorials/create-full-rest-api-crud-routes/set-crud-route-path.png)
+![Set the CRUD route path{1264x176}](/images/tutorials/create-full-rest-api-crud-routes/set-crud-route-path.png)
 
 ## 2. Create and link a data bucket to the CRUD route
 
 You may have noticed that the CRUD route is not linked to a data bucket yet, hence the "Select a data bucket for CRUD operations" message in the route response:
 
-![no databucket linked message](/images/tutorials/create-full-rest-api-crud-routes/no-databucket-linked-message.png)
+![no databucket linked message{1264x334}](/images/tutorials/create-full-rest-api-crud-routes/no-databucket-linked-message.png)
 
 A [data bucket](docs:data-buckets/overview) is a **key-value store** where you can define some string content that you can reuse in multiple route responses.
 
@@ -43,11 +43,11 @@ Let's create one and link it to the route.
 
 To create a new data bucket, open the **Data** options by clicking on the tab at the top of the window:
 
-![Open data bucket view](/images/tutorials/create-full-rest-api-crud-routes/open-data-view.png)
+![Open data bucket view{1073x343}](/images/tutorials/create-full-rest-api-crud-routes/open-data-view.png)
 
 Add a new data bucket by clicking on the "plus" button and personalize your data bucket name and content on the right part of the screen. Here, we named it "Users" and added some JSON content with templating to generate three fake users at runtime:
 
-![Add a data bucket and personalize it with some content](/images/tutorials/create-full-rest-api-crud-routes/add-data-bucket-name-content.png)
+![Add a data bucket and personalize it with some content{1551x435}](/images/tutorials/create-full-rest-api-crud-routes/add-data-bucket-name-content.png)
 
 Here is the JSON content we used:
 
@@ -68,7 +68,7 @@ Here is the JSON content we used:
 
 You can now link the data bucket to the CRUD route we created previously. To link the data bucket, select your data bucket in the dropdown:
 
-![Select the data bucket in the crud route dropdown](/images/tutorials/create-full-rest-api-crud-routes/select-data-bucket-crud-route.png)
+![Select the data bucket in the crud route dropdown{1362x371}](/images/tutorials/create-full-rest-api-crud-routes/select-data-bucket-crud-route.png)
 
 ## 3. Perform CRUD operations
 
@@ -168,7 +168,7 @@ $ curl http://localhost:3000/users
 
 By default, CRUD endpoints will use the `id` property to identify objects in an array in all the routes manipulating a single resource (e.g. GET `/resource/:id`). However, you can change this property to anything you want, like `uuid`, `custom_id`, etc:
 
-![Customize the CRUD id property{1264x176}](/images/tutorials/create-full-rest-api-crud-routes/customize-crud-id-property-key.png)
+![Customize the CRUD id property{1406x373}](/images/tutorials/create-full-rest-api-crud-routes/customize-crud-id-property-key.png)
 
 ## Data persistence
 

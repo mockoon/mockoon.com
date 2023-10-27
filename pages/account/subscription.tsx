@@ -10,7 +10,10 @@ import Spinner from '../../components/spinner';
 import { frequencyNames, planNames } from '../../constants/plans';
 import Layout from '../../layout/layout';
 import { useAuth } from '../../utils/auth';
-import { useCurrentUser } from '../../utils/queries';
+import {
+  useCurrentSubscriptionLinks,
+  useCurrentUser
+} from '../../utils/queries';
 
 const meta = {
   title: 'My account - Subscription',
@@ -21,6 +24,7 @@ const AccountSubscription: FunctionComponent = function () {
   const { isAuth, user, isLoading: isAuthLoading } = useAuth();
   const router = useRouter();
   const { isLoading: isUserLoading, data: userData } = useCurrentUser();
+  const { data: subscriptionLinksData } = useCurrentSubscriptionLinks(userData);
 
   useEffect(() => {
     if (!isAuthLoading) {
@@ -79,6 +83,12 @@ const AccountSubscription: FunctionComponent = function () {
                                         ]
                                       })`
                                     : ''}
+                                  {userData?.plan !== 'FREE' &&
+                                    userData.subscription.pastDue && (
+                                      <span className='badge bg-warning ms-2'>
+                                        Invoice past due
+                                      </span>
+                                    )}
                                 </p>
 
                                 {userData?.plan !== 'FREE' && displayPlanInfo && (
@@ -119,12 +129,6 @@ const AccountSubscription: FunctionComponent = function () {
                                 )}
                               </div>
                               <div className='col-auto'>
-                                {userData?.plan !== 'FREE' &&
-                                  userData.subscription.pastDue && (
-                                    <span className='badge bg-warning ms-2'>
-                                      Invoice past due
-                                    </span>
-                                  )}
                                 {userData?.plan === 'FREE' && (
                                   <Link
                                     href={'/account/subscribe/'}
@@ -166,6 +170,61 @@ const AccountSubscription: FunctionComponent = function () {
                                 </div>
                               )}
                           </div>
+
+                          {userData?.plan !== 'FREE' && subscriptionLinksData && (
+                            <>
+                              <div className='list-group-item'>
+                                <div className='row align-items-center'>
+                                  <div className='col'>
+                                    <p className='mb-0'>
+                                      Update payment method
+                                    </p>
+                                    {userData?.subscription?.pastDue && (
+                                      <p className='m-0'>
+                                        <small className='text-gray-700'>
+                                          Update your payment method and pay the
+                                          past due invoice
+                                        </small>
+                                      </p>
+                                    )}
+                                  </div>
+                                  <div className='col-auto'>
+                                    <Link
+                                      href={
+                                        subscriptionLinksData?.update_payment_method
+                                      }
+                                      className='btn btn-xs btn-secondary'
+                                    >
+                                      Update
+                                      {userData?.subscription?.pastDue &&
+                                        ' and pay'}
+                                    </Link>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className='list-group-item'>
+                                <div className='row align-items-center'>
+                                  <div className='col'>
+                                    <p className='mb-0'>Cancel subscription</p>
+                                    <p className='m-0'>
+                                      <small className='text-gray-700'>
+                                        Will be cancelled at the end of the
+                                        current billing period
+                                      </small>
+                                    </p>
+                                  </div>
+                                  <div className='col-auto'>
+                                    <Link
+                                      href={subscriptionLinksData?.cancel}
+                                      className='btn btn-xs btn-danger'
+                                    >
+                                      Cancel
+                                    </Link>
+                                  </div>
+                                </div>
+                              </div>
+                            </>
+                          )}
                         </div>
                       )}
                     </div>

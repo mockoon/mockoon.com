@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { Team, User } from '../models/user.model';
+import { Plans, Team, User } from '../models/user.model';
 import { useAuth } from './auth';
 
 const useCurrentUser = () => {
@@ -78,4 +78,44 @@ const useCurrentTeam = (teamId, teamRole) => {
   };
 };
 
-export { useCurrentTeam, useCurrentUser };
+const useCurrentSubscriptionLinks = (user: User) => {
+  const auth = useAuth();
+
+  const { isLoading, error, data, isFetching } = useQuery<{
+    update_payment_method: string;
+    cancel: string;
+  }>({
+    queryKey: ['currentSubscriptionLinks'],
+    refetchOnMount: false,
+    enabled: auth.isAuth && user?.plan !== Plans.FREE,
+    queryFn: async () => {
+      const token = await auth.getIdToken();
+
+      if (!token) {
+        return null;
+      }
+
+      return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/subscription`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }).then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+
+        throw new Error();
+      });
+    },
+    refetchOnWindowFocus: false
+  });
+
+  return {
+    isLoading,
+    error,
+    data,
+    isFetching
+  };
+};
+
+export { useCurrentSubscriptionLinks, useCurrentTeam, useCurrentUser };

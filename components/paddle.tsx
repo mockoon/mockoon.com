@@ -17,6 +17,7 @@ const PaddleScript: FunctionComponent = function () {
         // @ts-ignore
         Paddle.Setup({
           seller: parseInt(process.env.NEXT_PUBLIC_PADDLE_SELLER_ID),
+          pwAuth: process.env.NEXT_PUBLIC_PADDLE_RETAIN_AUTH,
           eventCallback: function (data) {
             if (data.name === 'checkout.completed') {
               setTimeout(() => {

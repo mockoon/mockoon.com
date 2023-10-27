@@ -33,6 +33,7 @@ export type User = {
     frequency: string;
     portalEnabled?: boolean;
     cancellationScheduled?: boolean;
+    pastDue?: boolean;
   };
 };
 

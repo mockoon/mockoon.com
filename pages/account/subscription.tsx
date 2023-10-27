@@ -118,21 +118,25 @@ const AccountSubscription: FunctionComponent = function () {
                                   </p>
                                 )}
                               </div>
-                              {userData?.plan === 'FREE' && (
-                                <div className='col-auto'>
+                              <div className='col-auto'>
+                                {userData?.plan !== 'FREE' &&
+                                  userData.subscription.pastDue && (
+                                    <span className='badge bg-warning ms-2'>
+                                      Invoice past due
+                                    </span>
+                                  )}
+                                {userData?.plan === 'FREE' && (
                                   <Link
                                     href={'/account/subscribe/'}
                                     className='btn btn-xs btn-primary'
                                   >
                                     Upgrade plan
                                   </Link>
-                                </div>
-                              )}
-                              {userData?.plan !== 'FREE' &&
-                                displayPlanInfo &&
-                                userData?.subscription?.provider ===
-                                  'stripe' && (
-                                  <div className='col-auto'>
+                                )}
+                                {userData?.plan !== 'FREE' &&
+                                  displayPlanInfo &&
+                                  userData?.subscription?.provider ===
+                                    'stripe' && (
                                     <Link
                                       href={
                                         process.env
@@ -142,8 +146,8 @@ const AccountSubscription: FunctionComponent = function () {
                                     >
                                       Manage subscription
                                     </Link>
-                                  </div>
-                                )}
+                                  )}
+                              </div>
                             </div>
                             {userData?.plan === 'FREE' &&
                               userData?.subscription?.portalEnabled &&
@@ -166,6 +170,7 @@ const AccountSubscription: FunctionComponent = function () {
                       )}
                     </div>
                   </div>
+
                   {!isUserLoading && userData?.plan !== 'FREE' && (
                     <div className='card card-bleed shadow-light-lg mb-6'>
                       <div className='card-header'>

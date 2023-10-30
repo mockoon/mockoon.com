@@ -37,6 +37,21 @@ const faq: AccordionData = [
 const tasks = {
   released: [
     {
+      link: '/releases/5.1.0#new-command-palette',
+      title: 'Desktop application command palette',
+      pro: false
+    },
+    {
+      link: '/docs/latest/templating/fakerjs-helpers/',
+      title: 'Faker.js v8 support',
+      pro: false
+    },
+    {
+      link: '/docs/latest/response-configuration/file-serving/#serving-a-range-of-bytes-from-a-file',
+      title: 'Support for Range header',
+      pro: false
+    },
+    {
       link: 'https://github.com/mockoon/mockoon/issues/995',
       title: 'Support for JSON path',
       pro: false,
@@ -62,25 +77,9 @@ const tasks = {
       link: '/docs/latest/logging-and-recording/auto-mocking-and-recording/#record-your-api-calls',
       title: 'Auto-mocking with recording',
       pro: false
-    },
-    {
-      link: '/docs/latest/api-endpoints/crud-routes/',
-      title: 'CRUD routes',
-      pro: false
-    },
-    {
-      link: '/serverless/',
-      title: 'Serverless package',
-      pro: false
     }
   ],
   inProgress: [
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/1150',
-      title: 'Faker.js v8 support',
-      pro: false,
-      target: '_blank'
-    },
     {
       link: 'https://github.com/mockoon/mockoon/issues/678',
       title: 'OpenAPI import/export in CLI',
@@ -99,12 +98,7 @@ const tasks = {
       pro: false,
       target: '_blank'
     },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/1044',
-      title: 'Support for Range header',
-      pro: false,
-      target: '_blank'
-    },
+
     {
       link: '/pro/',
       title: 'Data synchronization for solo developers',

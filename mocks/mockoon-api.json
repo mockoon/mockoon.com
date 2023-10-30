@@ -15,7 +15,7 @@
       "responses": [
         {
           "uuid": "6bd199ae-db7f-42f9-8056-c47490765ce9",
-          "body": "{\n  \"tag\": \"5.0.0\"\n}",
+          "body": "{\n  \"tag\": \"5.1.0\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",

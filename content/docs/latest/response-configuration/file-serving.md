@@ -55,3 +55,11 @@ By default, Mockoon will return an error in the body when a file is not found. I
 ![tick the 404 fallback checkbox{1066x231}](docs-img:enable-404-fallback.png)
 
 This option will also fall back to use the content present in the body editor.
+
+## Serving a range of bytes from a file
+
+Mockoon supports the `Range` header for files that are not parsed by the templating engine or when the templating is disabled on the response (see [above](#file-content-templating)).
+
+To use this feature, you must provide a `Range` header in your request. The header value must be in the form `bytes=start-end` where `start` and `end` are the byte positions of the file you want to return. For example, `bytes=0-100` will return the first 100 bytes of the file.
+
+The server will answer with a `206 Partial Content` status code and the `Content-Range` header containing the range of bytes returned. If the range is invalid, the server will answer with a `416 Range Not Satisfiable` status code.

@@ -6,6 +6,7 @@ import { linkTarget, transformLinkUri } from '../utils/url';
 import CodeBlock from './code-block';
 import Quotation from './quotation';
 import Quote from './quote';
+import SponsoringMessage from './sponsoring-message';
 
 const flatten = (text, child) => {
   return typeof child === 'string'
@@ -169,6 +170,12 @@ const Markdown: FunctionComponent<{
 
           if (value && value.includes('##quotation##')) {
             return <Quotation quotation={JSON.parse(value)}></Quotation>;
+          } else if (value && value.includes('##sponsoring##')) {
+            return (
+              <SponsoringMessage
+                sponsoringMessage={JSON.parse(value)}
+              ></SponsoringMessage>
+            );
           } else {
             return <Quote content={content.children}></Quote>;
           }

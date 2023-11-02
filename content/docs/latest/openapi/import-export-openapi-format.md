@@ -27,3 +27,5 @@ To export an environment to a JSON file, open the **Import/export** menu, select
 ### Compatibility
 
 Compatibility between the OpenAPI specification and Mockoon's features is only partial and detailed in the [next article](docs:openapi/openapi-specification-compatibility).
+
+> <pre>{"type": "##sponsoring##", "text": "For those looking to further leverage OpenAPI specifications in their workflow, consider Fern. Fern is an open-source toolkit that uses your API definition to generate idiomatic SDKs, server-side code, and beautiful documentation. Its schema-first design approach and automated outputs can provide a comprehensive solution for those seeking to optimize their OpenAPI workflow.", "link": "https://www.devmark.ai/fern/?utm_source=mockoon&utm_loc=docs-1&utm_type=embedding"}</pre>

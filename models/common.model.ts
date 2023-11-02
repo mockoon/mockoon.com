@@ -102,3 +102,9 @@ export type QuotationData = {
   authorRole: string;
   pictureUrl: string;
 };
+
+export type SponsoringMessageData = {
+  type: '##sponsoring##';
+  text: string;
+  link: string;
+};

@@ -21,18 +21,33 @@ const Brand: FunctionComponent = function () {
       <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
         <div className='container'>
           <div className='row justify-content-center'>
-            <div className='col-12 col-md-4'>
+            <div className='col-12 col-md-6'>
               <Card
                 data={{
-                  title: 'Mockoon eyes logo',
+                  title: 'Mockoon eyes logo for light or dark backgrounds',
                   imageSrc: '/images/logo-eyes.svg',
                   imageAlt: 'Mockoon eyes logo',
-                  imagePaddingClasses: 'px-12',
+                  imagePaddingClasses: 'py-8',
                   links: [
                     {
                       // keep URL absolute to go through Cloudflare rules and trigger download
                       src: 'https://mockoon.com/images/logo-eyes.svg?download=true',
-                      text: 'Download'
+                      text: 'SVG (light)'
+                    },
+                    {
+                      // keep URL absolute to go through Cloudflare rules and trigger download
+                      src: 'https://mockoon.com/images/logo-eyes-sticker.svg?download=true',
+                      text: 'SVG (dark)'
+                    },
+                    {
+                      // keep URL absolute to go through Cloudflare rules and trigger download
+                      src: 'https://mockoon.com/images/logo-eyes.png?download=true',
+                      text: 'PNG (light)'
+                    },
+                    {
+                      // keep URL absolute to go through Cloudflare rules and trigger download
+                      src: 'https://mockoon.com/images/logo-eyes-sticker.png?download=true',
+                      text: 'PNG (dark)'
                     }
                   ]
                 }}
@@ -43,17 +58,32 @@ const Brand: FunctionComponent = function () {
                 synchronizedColors={true}
               />
             </div>
-            <div className='col-12 col-md-4'>
+            <div className='col-12 col-md-6'>
               <Card
                 data={{
-                  title: 'Mockoon full logo',
+                  title: 'Mockoon full logo for light or dark backgrounds',
                   imageSrc: '/images/logo.svg',
                   imageAlt: 'Mockoon full logo',
                   links: [
                     {
                       // keep URL absolute to go through Cloudflare rules and trigger download
-                      src: 'https://mockoon.com/images/logo.svg?download=true',
-                      text: 'Download'
+                      src: 'https://mockoon.com/images/logo-text.svg?download=true',
+                      text: 'SVG (light)'
+                    },
+                    {
+                      // keep URL absolute to go through Cloudflare rules and trigger download
+                      src: 'https://mockoon.com/images/logo-text-sticker.svg?download=true',
+                      text: 'SVG (dark)'
+                    },
+                    {
+                      // keep URL absolute to go through Cloudflare rules and trigger download
+                      src: 'https://mockoon.com/images/logo-text.png?download=true',
+                      text: 'PNG (light)'
+                    },
+                    {
+                      // keep URL absolute to go through Cloudflare rules and trigger download
+                      src: 'https://mockoon.com/images/logo-text-sticker.png?download=true',
+                      text: 'PNG (dark)'
                     }
                   ]
                 }}

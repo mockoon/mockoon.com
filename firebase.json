@@ -12,6 +12,11 @@
     ],
     "redirects": [
       {
+        "source": "/discord/",
+        "destination": "https://discord.gg/FtJjkejKGp",
+        "type": 301
+      },
+      {
         "source": "/enterprise/",
         "destination": "/pro/",
         "type": 301

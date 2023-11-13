@@ -50,9 +50,9 @@ const AccountUsers: FunctionComponent = function () {
     mutate: addUser,
     isError: isAddUserError,
     error: addUserError,
-    isLoading: isAddingUser
-  } = useMutation(
-    async (email: string) => {
+    isPending: isAddingUser
+  } = useMutation({
+    mutationFn: async (email: string) => {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/team`,
         {
@@ -71,22 +71,15 @@ const AccountUsers: FunctionComponent = function () {
         throw new Error(data.message);
       }
     },
-    {
-      onError: (error) => {},
-      onSuccess: (data) => {
-        teamRefetch();
-        setShowAddModal(false);
-      }
+    onError: (error) => {},
+    onSuccess: (data) => {
+      teamRefetch();
+      setShowAddModal(false);
     }
-  );
+  });
 
-  const {
-    mutate: removeUser,
-    isError: isRemoveUserError,
-    error: removeUserError,
-    isLoading: isRemovingUser
-  } = useMutation(
-    async (email: string) => {
+  const { mutate: removeUser, isPending: isRemovingUser } = useMutation({
+    mutationFn: async (email: string) => {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/team`,
         {
@@ -105,13 +98,11 @@ const AccountUsers: FunctionComponent = function () {
         throw new Error(data.message);
       }
     },
-    {
-      onError: (error) => {},
-      onSuccess: (data) => {
-        teamRefetch();
-      }
+    onError: (error) => {},
+    onSuccess: (data) => {
+      teamRefetch();
     }
-  );
+  });
 
   return (
     <Layout footerBanner='download'>
@@ -270,7 +261,7 @@ const AccountUsers: FunctionComponent = function () {
                 </div>
               </div>
             </div>
-          </main>{' '}
+          </main>
         </>
       )}
     </Layout>

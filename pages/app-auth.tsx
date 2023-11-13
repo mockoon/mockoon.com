@@ -17,8 +17,9 @@ const AppAuth = function () {
   const { isAuth, user, isLoading: isAuthLoading, getIdToken } = useAuth();
   const router = useRouter();
 
-  const { mutate, isLoading, isSuccess, isError, data } = useMutation(
-    async () => {
+  const { mutate, isPending, isSuccess, isError, data } = useMutation(
+
+    {mutationFn:async () => {
       return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/token`, {
         method: 'GET',
         headers: {
@@ -32,7 +33,6 @@ const AppAuth = function () {
         throw new Error();
       });
     },
-    {
       onSuccess: (data) => {
         window.location.assign(`mockoon://auth?token=${data.token}`);
       }
@@ -72,7 +72,7 @@ const AppAuth = function () {
                 <h1 className='mb-0 fw-bold text-center'>
                   Log in to the Mockoon app
                 </h1>
-                {isLoading && <Spinner />}
+                {isPending && <Spinner />}
                 {isError && (
                   <div className='alert alert-danger mt-6 fs-5'>
                     An error occured. Please try again later.

@@ -4,27 +4,29 @@
 //
 
 .dropdown-menu {
-  padding-left: $dropdown-padding-x;
-  padding-right: $dropdown-padding-x;
+  padding-right: var(--#{$prefix}dropdown-padding-x);
+  padding-left: var(--#{$prefix}dropdown-padding-x);
 }
+
 
 // Item
 
 .dropdown-item {
   width: auto;
   min-width: 100%;
-  margin-left: -$dropdown-padding-x;
-  margin-right: -$dropdown-padding-x;
+  margin-left: calc(#{$dropdown-padding-x} * -1);
+  margin-right: calc(#{$dropdown-padding-x} * -1);
 
-  &:hover,
-  &:focus {
+  &:hover, &:focus {
     outline: none;
   }
 }
 
+.dropdown-menu > li + li,
 .dropdown-item + .dropdown-item {
   margin-top: $dropdown-item-spacing-y;
 }
+
 
 // Link (optional)
 
@@ -35,73 +37,75 @@
     text-decoration: inherit;
   }
 
-  &:hover,
-  &:focus {
+  &:hover, &:focus {
     outline: none;
   }
 }
 
+
 // Header
 
 .dropdown-header {
-  margin-left: -$dropdown-padding-x;
-  margin-right: -$dropdown-padding-x;
-  padding-top: 0;
-  padding-bottom: $headings-margin-bottom;
+  margin-left: calc(#{$dropdown-padding-x} * -1);
+  margin-right: calc(#{$dropdown-padding-x} * -1);
+  padding: 0 var(--#{$prefix}dropdown-item-padding-x) $headings-margin-bottom;
   font-size: $h6-font-size;
   font-weight: $font-weight-bold;
   line-height: $h6-line-height;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: .08em;
 }
+
 
 // Toggle
 
 .dropdown-toggle::after {
-  font-family: 'Feather';
+  font-family: "Feather";
   vertical-align: middle;
   border: none !important;
-  content: '\e92e';
+  content: "\e92e";
 }
 
 .dropend > .dropdown-toggle::after {
-  content: '\e930';
+  content: "\e930";
 }
+
 
 // Sizing
 
 .dropdown-menu-xs {
-  min-width: $dropdown-min-width-xs;
-  padding: $dropdown-padding-y-xs $dropdown-padding-x-xs;
+  --#{$prefix}dropdown-min-width: #{$dropdown-min-width-xs};
+  --#{prefix}dropdown-padding-y: #{$dropdown-padding-y-xs};
+  --#{prefix}dropdown-padding-x: #{$dropdown-padding-x-xs};
 }
 
 .dropdown-menu-md {
-  min-width: $dropdown-min-width-md;
+  --#{$prefix}dropdown-min-width: #{$dropdown-min-width-md};
 }
 
 .dropdown-menu-lg {
-  min-width: $dropdown-min-width-lg;
+  --#{$prefix}dropdown-min-width: #{$dropdown-min-width-lg};
+  --#{$prefix}dropdown-padding-y: #{$dropdown-padding-y-lg};
+  --#{$prefix}dropdown-padding-x: #{$dropdown-padding-x-lg};
+  --#{$prefix}dropdown-item-padding-x: #{$dropdown-item-padding-x-lg};
 }
 
 .dropdown-menu-xl {
-  min-width: $dropdown-min-width-xl;
-}
-
-.dropdown-menu-lg,
-.dropdown-menu-xl {
-  padding: $dropdown-padding-y-lg $dropdown-padding-x-lg;
+  --#{$prefix}dropdown-min-width: #{$dropdown-min-width-xl};
+  --#{$prefix}dropdown-padding-y: #{$dropdown-padding-y-lg};
+  --#{$prefix}dropdown-padding-x: #{$dropdown-padding-x-lg};
+  --#{$prefix}dropdown-item-padding-x: #{$dropdown-item-padding-x-lg};
 }
 
 .dropdown-menu-lg .dropdown-item,
 .dropdown-menu-xl .dropdown-header {
-  margin-left: -$dropdown-padding-x-lg;
-  margin-right: -$dropdown-padding-x-lg;
-  padding-left: $dropdown-item-padding-x-lg;
-  padding-right: $dropdown-item-padding-x-lg;
+  margin-left: calc(var(--#{$prefix}dropdown-padding-x) * -1);
+  margin-right: calc(var(--#{$prefix}dropdown-padding-x) * -1);
 }
+
 
 // Positioning
 
 .dropend > .dropdown-menu {
-  top: -$dropdown-padding-y;
+  top: calc(#{$dropdown-padding-y} * -1);
 }

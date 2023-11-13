@@ -152,14 +152,14 @@ const Roadmap: FunctionComponent = function () {
           <div className='row'>
             <div className='col-12 col-md-4 p-0'>
               <div className='mb-6'>
-                <div className='badge badge-lg badge-arrow bg-success-soft d-block fs-5'>
+                <div className='badge badge-lg badge-arrow text-bg-success-subtle d-block fs-5'>
                   Recently released
                 </div>
               </div>
               <div className='px-4'>
                 {tasks.released.map((task, taskIndex) => (
                   <div key={`taskreleased${taskIndex}`} className='d-flex'>
-                    <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                    <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                       <i className='icon icon-check'></i>
                     </div>
 
@@ -180,14 +180,14 @@ const Roadmap: FunctionComponent = function () {
             </div>
             <div className='col-12 col-md-4 p-0'>
               <div className='mb-6'>
-                <div className='badge badge-lg badge-arrow bg-primary-soft d-block fs-5'>
+                <div className='badge badge-lg badge-arrow text-bg-primary-subtle d-block fs-5'>
                   In progress
                 </div>
               </div>
               <div className='px-4'>
                 {tasks.inProgress.map((task, taskIndex) => (
                   <div key={`taskinprogress${taskIndex}`} className='d-flex'>
-                    <div className='badge badge-rounded-circle bg-primary-soft mt-1 me-4'>
+                    <div className='badge badge-rounded-circle text-bg-primary-subtle mt-1 me-4'>
                       <i className='icon icon-refresh'></i>
                     </div>
 
@@ -208,7 +208,7 @@ const Roadmap: FunctionComponent = function () {
             </div>
             <div className='col-12 col-md-4 p-0'>
               <div className='mb-6'>
-                <div className='badge badge-lg badge-arrow bg-secondary-soft d-block fs-5'>
+                <div className='badge badge-lg badge-arrow text-bg-secondary-subtle d-block fs-5'>
                   Coming soon
                 </div>
               </div>
@@ -216,7 +216,7 @@ const Roadmap: FunctionComponent = function () {
               <div className='px-4'>
                 {tasks.comingSoon.map((task, taskIndex) => (
                   <div key={`taskcomingsoon${taskIndex}`} className='d-flex'>
-                    <div className='badge badge-rounded-circle bg-secondary-soft mt-1 me-4'>
+                    <div className='badge badge-rounded-circle text-bg-secondary-subtle mt-1 me-4'>
                       <i className='icon icon-hourglass_empty'></i>
                     </div>
 
@@ -263,7 +263,7 @@ const Roadmap: FunctionComponent = function () {
           <div className='row'>
             <div className='text-center'>
               <p className='has-text-centered pt-4'>
-                <a className='btn btn-primary-soft' href='/pro/'>
+                <a className='btn btn-primary-subtle' href='/pro/'>
                   Get enterprise support with Mockoon Pro
                 </a>
               </p>

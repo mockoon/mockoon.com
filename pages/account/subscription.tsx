@@ -85,7 +85,7 @@ const AccountSubscription: FunctionComponent = function () {
                                     : ''}
                                   {userData?.plan !== 'FREE' &&
                                     userData.subscription.pastDue && (
-                                      <span className='badge bg-warning ms-2'>
+                                      <span className='badge text-bg-warning ms-2'>
                                         Invoice past due
                                       </span>
                                     )}

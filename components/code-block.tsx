@@ -19,7 +19,7 @@ const CodeBlock: FunctionComponent<{
     <div className='code-block'>
       <div
         className={`code-block-copy btn btn-xs ${
-          dark ? 'btn-light-soft' : 'btn-secondary-soft'
+          dark ? 'btn-light-subtle' : 'btn-secondary-subtle'
         }`}
         style={{ right: maxHeight ? '15px' : 0 }}
         onClick={(event) => {

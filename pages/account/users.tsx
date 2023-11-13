@@ -238,8 +238,8 @@ const AccountUsers: FunctionComponent = function () {
                                       <span
                                         className={`badge rounded-pill ms-4 ${
                                           member.role === 'owner'
-                                            ? 'bg-primary-soft'
-                                            : 'bg-secondary-soft'
+                                            ? 'text-bg-primary-subtle'
+                                            : 'text-bg-secondary-subtle'
                                         }`}
                                       >
                                         <span className='h6 text-uppercase fw-bold'>

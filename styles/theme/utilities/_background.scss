@@ -27,11 +27,11 @@
 // Gradients
 
 .bg-gradient-light-white {
-  background-image: linear-gradient(to bottom, $light 0%, $white 100%);
+  background-image: linear-gradient(to bottom, var(--#{$prefix}light) 0%, var(--#{$prefix}white) 100%);
 }
 
 .bg-gradient-dark-black {
-  background-image: linear-gradient(to bottom, $dark 0%, $black 100%);
+  background-image: linear-gradient(to bottom, var(--#{$prefix}dark) 0%, var(--#{$prefix}black) 100%);
 }
 
 .bg-gradient-multicolor {
@@ -48,5 +48,5 @@
 // Patterns
 
 .bg-pattern-2 {
-  background-image: linear-gradient(to bottom, transparent 0%, $black 100%), url('#{$path-to-img}/patterns/pattern-2.png');
+  background-image: linear-gradient(to bottom, transparent 0%, var(--#{$prefix}black) 100%), url('#{$path-to-img}/patterns/pattern-2.png');
 }

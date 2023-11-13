@@ -25,7 +25,7 @@ export const MockSamplesOpenButton: FunctionComponent<{
 }> = function ({ href, disabled }) {
   return (
     <a
-      className={`btn-xs btn btn-primary-soft mb-2 ${
+      className={`btn-xs btn btn-primary-subtle mb-2 ${
         disabled ? 'disabled' : ''
       }`}
       style={{ backgroundColor: '#383944', color: 'white', opacity: 1 }}
@@ -46,7 +46,7 @@ export const MockSamplesCLIButton: FunctionComponent<{
   return (
     <button
       type='button'
-      className={`btn-xs btn btn-primary-soft mb-2 text-gray-200`}
+      className={`btn-xs btn btn-primary-subtle mb-2 text-gray-200`}
       style={{ backgroundColor: '#22232a', opacity: 1 }}
       onClick={href ? cliLinkHandler(href) : undefined}
       disabled={disabled}
@@ -65,7 +65,9 @@ export const MockSamplesDownloadButton: FunctionComponent<{
 }> = function ({ href, disabled }) {
   return (
     <a
-      className={`btn-xs btn btn-secondary-soft ${disabled ? 'disabled' : ''}`}
+      className={`btn-xs btn btn-secondary-subtle ${
+        disabled ? 'disabled' : ''
+      }`}
       href={href}
       style={{ opacity: 1 }}
     >

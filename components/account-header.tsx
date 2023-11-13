@@ -12,6 +12,7 @@ const AccountHeader: FunctionComponent = function () {
 
   const subtitles = {
     info: 'General information',
+    security: 'Manage your password',
     subscription: 'Manage your subscription',
     users: 'Manage your plan users'
   };
@@ -22,13 +23,13 @@ const AccountHeader: FunctionComponent = function () {
         <div className='row align-items-center'>
           <div className='col'>
             <h1 className='fw-bold text-white mb-2'>My account</h1>
-            <p className='fs-lg text-white-75 mb-0'>
+            <p className='fs-lg text-white text-opacity-75 mb-0'>
               {subtitles[router.asPath.split('/')[2]]}
             </p>
           </div>
           <div className='col-auto'>
             <button
-              className='btn btn-sm btn-gray-300-20'
+              className='btn btn-sm bg-gray-300 bg-opacity-20 bg-opacity-25-hover text-white'
               onClick={async () => logout()}
             >
               Log Out

@@ -3,9 +3,13 @@
 // Theme component
 //
 
+.icon {
+  --#{$prefix}icon-size: #{$icon-size-base};
+}
+
 .icon > svg {
-  width: $icon-size-base;
-  height: $icon-size-base;
+  width: var(--#{$prefix}icon-size);
+  height: var(--#{$prefix}icon-size);
 }
 
 // Use "text-" utilities to fill svg icons
@@ -16,38 +20,36 @@
 
 // Sizing
 
-.icon-xs > svg {
-  width: $icon-size-xs;
-  height: $icon-size-xs;
+.icon-xs {
+  --#{$prefix}icon-size: #{$icon-size-xs};
 }
 
-.icon-sm > svg {
-  width: $icon-size-sm;
-  height: $icon-size-sm;
+.icon-sm {
+  --#{$prefix}icon-size: #{$icon-size-sm};
 }
 
-.icon-lg > svg {
-  width: $icon-size-lg;
-  height: $icon-size-lg;
+.icon-lg {
+  --#{$prefix}icon-size: #{$icon-size-lg};
 }
 
-.icon-xl > svg {
-  width: $icon-size-xl;
-  height: $icon-size-xl;
+.icon-xl {
+  --#{$prefix}icon-size: #{$icon-size-xl};
 }
 
 
 // Circle
 
 .icon-circle {
+  --#{$prefix}icon-circle-size: #{$icon-circle-size};
+  --#{$prefix}icon-circle-font-size: #{$icon-circle-font-size};
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: $icon-circle-size;
-  height: $icon-circle-size;
+  width: var(--#{$prefix}icon-circle-size);
+  height: var(--#{$prefix}icon-circle-size);
   border-radius: 50%;
 
   > .fe {
-    font-size: $icon-circle-font-size;
+    font-size: var(--#{$prefix}icon-circle-font-size);
   }
 }

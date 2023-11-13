@@ -11,23 +11,23 @@
   justify-content: center;
   width: $input-height;
   height: $input-height;
-  background-color: $primary;
+  background-color: var(--#{$prefix}primary);
   box-shadow: $box-shadow-light;
-  color: $white;
+  color: var(--#{$prefix}white);
 
   &::before, &::after {
     font-family: "Feather";
   }
 
   &:hover, &:focus {
-    background-color: $primary;
+    background-color: var(--#{$prefix}primary);
     box-shadow: $box-shadow;
   }
 }
 
 .flickity-prev-next-button.previous {
   left: 0;
-  transform: translate(calc(-50% + #{$grid-gutter-width / 4}), -50%);
+  transform: translate(calc(-50% + #{$grid-gutter-width * .25}), -50%);
 
   @include media-breakpoint-up(lg) {
     transform: translate(-50%, -50%);
@@ -40,7 +40,7 @@
 
 .flickity-prev-next-button.next {
   right: 0;
-  transform: translate(calc(50% - #{$grid-gutter-width / 4}), -50%);
+  transform: translate(calc(50% - #{$grid-gutter-width * .25}), -50%);
 
   @include media-breakpoint-up(lg) {
     transform: translate(50%, -50%);
@@ -59,8 +59,8 @@
 // Button white
 
 .flickity-button-white .flickity-prev-next-button {
-  background-color: $white;
-  color: $primary;
+  background-color: var(--#{$prefix}white);
+  color: var(--#{$prefix}primary);
 }
 
 
@@ -114,7 +114,7 @@
 
 // Fixing .col gutters because Bootstrap sets it to 0 if they are not direct children of a .row
 
-.flickity-slider > [class^="col"] {
-  padding-left: $grid-gutter-width / 2;
-  padding-right: $grid-gutter-width / 2;
+.flickity-slider > [class*="col"] {
+  padding-left: $grid-gutter-width * .5;
+  padding-right: $grid-gutter-width * .5;
 }

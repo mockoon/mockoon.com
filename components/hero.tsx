@@ -55,7 +55,7 @@ const Hero: FunctionComponent<{
                       >
                         <button
                           className={`btn btn-primary${
-                            index > 0 ? '-soft' : ''
+                            index > 0 ? '-subtle' : ''
                           } lift`}
                         >
                           <span>

@@ -1,8 +1,9 @@
 import { Children, FunctionComponent } from 'react';
 import ReactMarkdown from 'react-markdown';
+import rehypeExternalLinks from 'rehype-external-links';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
-import { linkTarget, transformLinkUri } from '../utils/url';
+import { urlTransform } from '../utils/url';
 import CodeBlock from './code-block';
 import Quotation from './quotation';
 import Quote from './quote';
@@ -90,12 +91,12 @@ const Markdown: FunctionComponent<{
   return (
     <ReactMarkdown
       children={props.body}
-      rehypePlugins={[rehypeRaw]}
+      rehypePlugins={[rehypeRaw, [rehypeExternalLinks,{rel: 'noopener',target: '_blank'}]]}
       remarkPlugins={[remarkGfm]}
       components={{
-        code: ({ node, inline, className, children, ...props }) => {
+        code: ({ node, className, children, ...props }) => {
           const match = /language-(\w+)/.exec(className || '');
-          return !inline && match ? (
+          return /* !inline &&  */match ? (
             <CodeBlock
               code={String(children).replace(/\n$/, '')}
               dark
@@ -187,8 +188,7 @@ const Markdown: FunctionComponent<{
         h5: heading,
         h6: heading
       }}
-      transformLinkUri={transformLinkUri(props.version)}
-      linkTarget={linkTarget}
+      urlTransform={urlTransform(props.version)}
     />
   );
 };

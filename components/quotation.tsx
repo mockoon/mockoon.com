@@ -14,13 +14,15 @@ const Quotation: FunctionComponent<{ quotation: QuotationData }> = function ({
     <div className='quotation p-6 m-8'>
       <p className='text-gray-700 lead'>{quotation.citation}</p>
       <div className='d-flex mt-5 align-items-center'>
-        <img
-          className='img-thumbnail avatar-xl avatar-img rounded-circle'
-          src={`/images/${quotation.pictureUrl}`}
-          alt={quotation.authorRole}
-          width={128}
-          height={128}
-        />
+        <div className='avatar avatar-xl'>
+          <img
+            className='avatar-img img-thumbnail rounded-circle'
+            src={`/images/${quotation.pictureUrl}`}
+            alt={quotation.authorRole}
+            width={128}
+            height={128}
+          />
+        </div>
         <div className='ms-5'>
           <div className='fw-bold fs-sm'>{quotation.author}</div>
           <div className='text-muted fs-sm'>{quotation.authorRole}</div>

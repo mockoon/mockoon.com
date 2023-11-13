@@ -4,6 +4,8 @@
 //
 
 .screenshot {
-  border-radius: $screenshot-border-radius;
-  box-shadow: $screenshot-box-shadow;
+  --#{$prefix}screenshot-border-radius: #{$screenshot-border-radius};
+  --#{$prefix}screenshot-box-shadow: #{$screenshot-box-shadow};
+  border-radius: var(--#{$prefix}screenshot-border-radius);
+  box-shadow: var(--#{$prefix}screenshot-box-shadow);
 }

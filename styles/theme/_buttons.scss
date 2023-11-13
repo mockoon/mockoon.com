@@ -16,124 +16,74 @@
 // Sizing
 
 .btn-xs {
-  padding: $input-btn-padding-y-xs $input-btn-padding-x-xs;
-  font-size: $input-btn-font-size-xs;
+  --#{$prefix}btn-padding-y: #{$input-btn-padding-y-xs};
+  --#{$prefix}btn-padding-x: #{$input-btn-padding-x-xs};
+  --#{$prefix}btn-font-size: #{$input-btn-font-size-xs};
 }
 
 
 // Custom colors
 
 .btn-white {
-  background-color: $white;
-  color: $primary;
-
-  &:hover, &:focus {
-    background-color: $white;
-    color: darken($primary, 5%);
-  }
-
-  &.active {
-    background-color: darken($white, 5%);
-    color: darken($primary, 5%);
-  }
+  --#{$prefix}btn-bg: var(--#{$prefix}white);
+  --#{$prefix}btn-color: var(--#{$prefix}primary);
+  --#{$prefix}btn-hover-bg: var(--#{$prefix}white);
+  --#{$prefix}btn-hover-color: #{darken($primary, 5%)};
+  --#{$prefix}btn-focus-bg: var(--#{$prefix}white);
+  --#{$prefix}btn-focus-color: #{darken($primary, 5%)};
+  --#{$prefix}btn-active-bg: #{darken($white, 5%)};
+  --#{$prefix}btn-active-color: #{darken($primary, 5%)};
 }
 
 .btn-group .btn-white {
-  border-color: $gray-300 !important;
-  color: $text-muted;
-
-  &.active {
-    background-color: darken($white, 5%);
-    color: darken($text-muted, 5%);
-    box-shadow: none;
-  }
-}
-
-.btn-gray-300-20 {
-  background-color: rgba($gray-300, .2);
-  color: $white;
-
-  &:hover, &:focus {
-    background-color: rgba($gray-300, .25);
-    color: $white;
-  }
-
-  &.active {
-    background-color: rgba($gray-300, .25);
-    color: $white;
-  }
-}
-
-.btn-gray-400 {
-  background-color: $gray-400;
-  color: $white;
-
-  &:hover, &:focus {
-    background-color: darken($gray-400, 5%);
-    color: darken($white, 5%);
-  }
-
-  &.active {
-    background-color: darken($gray-400, 5%);
-    color: darken($white, 5%);
-  }
-}
-
-.btn-gray-400-10 {
-  background-color: rgba($gray-400, .1);
-  color: $white;
-
-  &:hover, &:focus {
-    background-color: rgba($gray-400, .15);
-    color: $white;
-  }
-
-  &.active {
-    background-color: rgba($gray-400, .15);
-    color: $white;
-  }
+  --#{$prefix}btn-border-color: var(--#{$prefix}gray-300);
+  --#{$prefix}btn-color: var(--#{$prefix}secondary-color);
+  --#{$prefix}btn-active-border-color:  var(--#{$prefix}gray-300);
+  --#{$prefix}btn-active-color: var(--#{$prefix}body-color);
+  border-color: var(--#{$prefix}btn-border-color) !important;
 }
 
 .btn-outline-white {
-  border-color: $gray-300;
-  color: $body-color;
-
-  &:hover, &:focus {
-    background-color: darken($white, 5%);
-    border-color: $gray-400;
-    color: $body-color;
-  }
-
-  &.active {
-    background-color: darken($white, 5%);
-    border-color: $gray-400;
-    color: $body-color;
-  }
+  --#{$prefix}btn-border-color: var(--#{$prefix}gray-300);
+  --#{$prefix}btn-color: var(--#{$prefix}body-color);
+  --#{$prefix}btn-hover-bg: #{darken($white, 5%)};
+  --#{$prefix}btn-hover-border-color: var(--#{$prefix}gray-400);
+  --#{$prefix}btn-hover-color: var(--#{$prefix}body-color);
+  --#{$prefix}btn-active-bg: #{darken($white, 5%)};
+  --#{$prefix}btn-active-border-color: var(--#{$prefix}gray-400);
+  --#{$prefix}btn-active-color: var(--#{$prefix}body-color);
+  --#{$prefix}btn-disabled-border-color: var(--#{$prefix}gray-300);
+  --#{$prefix}btn-disabled-color: var(--#{$prefix}body-color);
 }
 
 .btn-outline-gray-300 {
-  border-color: $gray-300;
-  color: $primary;
-
-  &:hover, &:focus {
-    background-color: $primary;
-    border-color: $primary;
-    color: $white;
-  }
-
-  &.active {
-    background-color: $primary;
-    border-color: $primary;
-    color: $white;
-  }
+  --#{$prefix}btn-border-color: var(--#{$prefix}gray-300);
+  --#{$prefix}btn-color: var(--#{$prefix}primary);
+  --#{$prefix}btn-hover-bg: var(--#{$prefix}primary);
+  --#{$prefix}btn-hover-border-color: var(--#{$prefix}primary);
+  --#{$prefix}btn-hover-color: var(--#{$prefix}white);
+  --#{$prefix}btn-active-bg: var(--#{$prefix}primary);
+  --#{$prefix}btn-active-border-color: var(--#{$prefix}primary);
+  --#{$prefix}btn-active-color: var(--#{$prefix}white);
 }
 
 
-// Soft variants
+// Subtle variants
+
+.btn[class*="-subtle"] {
+  --#{$prefix}btn-subtle-bg-opacity: #{$btn-subtle-bg-opacity};
+}
 
 @each $color, $value in $theme-colors {
-  .btn-#{$color}-soft {
-    @include btn-variant-soft(rgba($value, $btn-soft-bg-opacity), $value);
+  .btn-#{$color}-subtle {
+    --#{$prefix}btn-bg: RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}btn-subtle-bg-opacity));
+    --#{$prefix}btn-color: var(--#{$prefix}#{$color});
+    --#{$prefix}btn-hover-bg: RGBA(var(--#{$prefix}#{$color}-rgb), calc(var(--#{$prefix}btn-subtle-bg-opacity) * 1.5));
+    --#{$prefix}btn-hover-color: var(--#{$prefix}#{$color});
+    --#{$prefix}btn-active-bg: RGBA(var(--#{$prefix}#{$color}-rgb), calc(var(--#{$prefix}btn-subtle-bg-opacity) * 1.5));
+    --#{$prefix}btn-active-color: var(--#{$prefix}#{$color});
+    --#{$prefix}btn-disabled-bg: RGBA(var(--#{$prefix}#{$color}-rgb), calc(var(--#{$prefix}btn-subtle-bg-opacity) * 1));
+    --#{$prefix}btn-disabled-color: var(--#{$prefix}#{$color});
   }
 }
 
@@ -141,35 +91,19 @@
 // Pill
 
 .btn-pill {
-  border-radius: $border-radius-pill;
+  --#{$prefix}btn-border-radius: var(--#{$prefix}border-radius-pill);
 }
 
 
 // Rounded circle
 
 .btn-rounded-circle {
-  padding-left: $btn-padding-y;
-  padding-right: $btn-padding-y;
-  border-radius: $border-radius-pill;
-}
+  --#{$prefix}btn-padding-x: var(--#{$prefix}btn-padding-y);
+  --#{$prefix}btn-border-radius: var(--#{$prefix}border-radius-pill);
 
-.btn-rounded-circle > * {
-  display: block;
-  line-height: 1;
-  width: 1em;
-}
-
-.btn-rounded-circle.btn-lg {
-  padding-left: $btn-padding-y-lg;
-  padding-right: $btn-padding-y-lg;
-}
-
-.btn-rounded-circle.btn-sm {
-  padding-left: $btn-padding-y-sm;
-  padding-right: $btn-padding-y-sm;
-}
-
-.btn-rounded-circle.btn-xs {
-  padding-left: $btn-padding-y-xs;
-  padding-right: $btn-padding-y-xs;
+  & > * {
+    display: block;
+    line-height: 1 !important;
+    width: 1em;
+  }
 }

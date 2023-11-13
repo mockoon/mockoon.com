@@ -84,7 +84,7 @@ export default function OldRelease(props: {
           <div className='col d-flex justify-content-center'>
             <Link
               href={`/old-releases/${props.app.appname}`}
-              className='btn btn-sm btn-secondary-soft'
+              className='btn btn-sm btn-secondary-subtle'
             >
               ⬅ Back to the list of {props.app.name} releases
             </Link>

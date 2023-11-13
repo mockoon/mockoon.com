@@ -3,6 +3,10 @@
 // Extended from Bootstrap
 //
 
+.table > :not(:first-child) {
+  border-top: 0;
+}
+
 // Alignment
 
 .table-align-middle {

@@ -164,7 +164,7 @@ const ContactForm: FunctionComponent = function () {
                   <div className='col-auto'>
                     <button
                       type='submit'
-                      className='btn btn-primary-soft lift'
+                      className='btn btn-primary-subtle lift'
                       disabled={isSubmitting}
                     >
                       Send message

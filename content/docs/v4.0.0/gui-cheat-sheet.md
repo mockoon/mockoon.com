@@ -12,7 +12,7 @@ order: 20
 
 Are you discovering Mockoon's GUI or forgot what this button is used for? These cheat sheets are for you!
 
-> The GUI cheat sheet is also available in PDF version <a href="/images/docs/shared/cheat-sheet/mockoon-cheat-sheet.pdf" className="btn btn-primary-desat-soft btn-xs"><i className='icon-download'></i>&nbsp;Download</a>
+> The GUI cheat sheet is also available in PDF version <a href="/images/docs/shared/cheat-sheet/mockoon-cheat-sheet.pdf" className="btn btn-primary-desat-subtle btn-xs"><i className='icon-download'></i>&nbsp;Download</a>
 
 ## Main endpoints view
 

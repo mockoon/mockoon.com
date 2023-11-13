@@ -17,7 +17,7 @@
 
 // Colors
 
-@each $color, $value in $theme-colors {
+@each $color, $value in $theme-colors-overlay {
 
   // Solid
   .overlay-#{$color} {
@@ -43,7 +43,7 @@
   .overlay-#{$i * 10} {
 
     &::before {
-      opacity: #{$i / 10};
+      opacity: #{$i * .1};
     }
   }
 }

@@ -90,7 +90,7 @@ const UseCases: FunctionComponent = function () {
                     featureIndex % 2 === 0 ? 'order-lg-2' : 'order-lg-1'
                   }`}
                 >
-                  <span className='badge rounded-pill bg-primary-soft mb-3'>
+                  <span className='badge rounded-pill text-bg-primary-subtle mb-3'>
                     <span className='h6 text-uppercase'>{feature.label}</span>
                   </span>
 
@@ -102,7 +102,7 @@ const UseCases: FunctionComponent = function () {
                   <div>
                     {feature.cta && (
                       <a
-                        className='btn btn-secondary-soft btn-xs mt-5'
+                        className='btn btn-secondary-subtle btn-xs mt-5'
                         href={feature.ctaLink}
                       >
                         {feature.cta}&nbsp;→

@@ -80,7 +80,7 @@ const AccountInfo: FunctionComponent = function () {
                             <div className='col-auto'>
                               <Link
                                 href={'/account/subscription/'}
-                                className='btn btn-xs btn-primary-soft'
+                                className='btn btn-xs btn-primary-subtle'
                               >
                                 View
                               </Link>

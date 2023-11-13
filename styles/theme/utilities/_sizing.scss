@@ -12,7 +12,7 @@
   @each $width, $value in $container-max-widths {
 
     @include media-breakpoint-up(#{$width}) {
-      width: calc(100% + (100vw - #{$value}) / 2 + #{$grid-gutter-width});
+      width: calc(100% + (100vw - #{$value}) * .5 + #{$grid-gutter-width});
     }
   }
 }

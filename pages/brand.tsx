@@ -105,26 +105,26 @@ const Brand: FunctionComponent = function () {
               <h2>Dos</h2>
               <ul className='list'>
                 <li>
-                  <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                  <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                     <i className='icon-check'></i>
                   </div>
                   Use the logos above to link to Mockoon
                 </li>
                 <li>
-                  <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                  <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                     <i className='icon-check'></i>
                   </div>
                   Use the logos above to indicate that your project integrates
                   with Mockoon
                 </li>
                 <li>
-                  <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                  <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                     <i className='icon-check'></i>
                   </div>
                   Use the logos above in an article or blog post about Mockoon
                 </li>
                 <li>
-                  <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                  <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                     <i className='icon-check'></i>
                   </div>
                   Use the logos less prominently than your company or brand logo
@@ -135,28 +135,28 @@ const Brand: FunctionComponent = function () {
               <h2>Don'ts</h2>
               <ul className='list'>
                 <li>
-                  <div className='badge badge-rounded-circle bg-danger-soft mt-1 me-4'>
+                  <div className='badge badge-rounded-circle text-bg-danger-subtle mt-1 me-4'>
                     <i className='icon-clear'></i>
                   </div>
                   Use Mockoon logos in a way that implies partnership,
                   sponsorship, or endorsement
                 </li>
                 <li>
-                  <div className='badge badge-rounded-circle bg-danger-soft mt-1 me-4'>
+                  <div className='badge badge-rounded-circle text-bg-danger-subtle mt-1 me-4'>
                     <i className='icon-clear'></i>
                   </div>
                   Use Mockoon logos in a way that confuses Mockoon with another
                   brand
                 </li>
                 <li>
-                  <div className='badge badge-rounded-circle bg-danger-soft mt-1 me-4'>
+                  <div className='badge badge-rounded-circle text-bg-danger-subtle mt-1 me-4'>
                     <i className='icon-clear'></i>
                   </div>
                   Use Mockoon logos as part of your own product, business, or
                   service's name
                 </li>
                 <li>
-                  <div className='badge badge-rounded-circle bg-danger-soft mt-1 me-4'>
+                  <div className='badge badge-rounded-circle text-bg-danger-subtle mt-1 me-4'>
                     <i className='icon-clear'></i>
                   </div>
                   Alter the logos in any way, or combine them with any other

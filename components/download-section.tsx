@@ -29,7 +29,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 ensure their continued development and maintenance.
               </p>
               <p>
-                <a href='/sponsor-us/' className='btn btn-primary-soft'>
+                <a href='/sponsor-us/' className='btn btn-primary-subtle'>
                   Support us →
                 </a>
               </p>
@@ -46,7 +46,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
           <div className='text-muted mb-6 mb-lg-0'>
             <div className='btn-group'>
               <a
-                className='btn btn-primary-soft btn-sm d-flex align-items-center'
+                className='btn btn-primary-subtle btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.exe`}
                 rel='noopener'
                 onClick={() => postDownload('win')}
@@ -57,7 +57,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 <span>installer</span>
               </a>
               <a
-                className='btn btn-primary-soft btn-sm d-flex align-items-center'
+                className='btn btn-primary-subtle btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.portable.${version}.exe`}
                 rel='noopener'
                 onClick={() => postDownload('win')}
@@ -68,7 +68,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 <span>portable</span>
               </a>
               <a
-                className='btn btn-primary-soft btn-sm d-flex align-items-center'
+                className='btn btn-primary-subtle btn-sm d-flex align-items-center'
                 href='https://apps.microsoft.com/store/detail/mockoon/9PK8DMSN00JJ?hl=en-us&gl=us'
                 rel='noopener'
                 target='_blank'
@@ -115,7 +115,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
           <div className='text-muted mb-6 mb-lg-0'>
             <div className='btn-group'>
               <a
-                className='btn btn-primary-soft btn-sm d-flex align-items-center'
+                className='btn btn-primary-subtle btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.deb`}
                 rel='noopener'
                 onClick={() => postDownload('linux')}
@@ -127,7 +127,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
               </a>
 
               <a
-                className='btn btn-primary-soft btn-sm d-flex align-items-center'
+                className='btn btn-primary-subtle btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.rpm`}
                 rel='noopener'
                 onClick={() => postDownload('linux')}
@@ -139,7 +139,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
               </a>
 
               <a
-                className='btn btn-primary-soft btn-sm d-flex align-items-center'
+                className='btn btn-primary-subtle btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.AppImage`}
                 rel='noopener'
                 onClick={() => postDownload('linux')}
@@ -187,7 +187,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
           <div className='text-muted mb-6 mb-lg-0'>
             <div className='btn-group'>
               <a
-                className='btn btn-primary-soft btn-sm d-flex align-items-center'
+                className='btn btn-primary-subtle btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.universal.dmg`}
                 rel='noopener'
                 onClick={() => postDownload('mac')}
@@ -198,7 +198,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 <span>Universal</span>
               </a>
               <a
-                className='btn btn-primary-soft btn-sm d-flex align-items-center'
+                className='btn btn-primary-subtle btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.x64.dmg`}
                 rel='noopener'
                 onClick={() => postDownload('mac')}
@@ -209,7 +209,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 <span>Intel</span>
               </a>
               <a
-                className='btn btn-primary-soft btn-sm d-flex align-items-center'
+                className='btn btn-primary-subtle btn-sm d-flex align-items-center'
                 href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon.setup.${version}.arm64.dmg`}
                 rel='noopener'
                 onClick={() => postDownload('mac')}
@@ -251,7 +251,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
         <div className='text-center'>
           <p className='has-text-centered pt-4'>
             <a
-              className='btn btn-secondary-soft'
+              className='btn btn-secondary-subtle'
               href='/cli/'
               style={{
                 fontFamily:

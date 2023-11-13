@@ -95,7 +95,7 @@ const VideoTutorials = function () {
               <p>
                 <Link
                   href={activeVideo.link}
-                  className='btn btn-secondary-soft'
+                  className='btn btn-secondary-subtle'
                 >
                   📃 Text version →
                 </Link>

@@ -67,7 +67,10 @@ export default function ArticlePage(props: {
             }`}
           >
             {!props.articleData.nextLink && !props.articleData.previousLink && (
-              <Link href='/articles/' className='btn btn-sm btn-secondary-soft'>
+              <Link
+                href='/articles/'
+                className='btn btn-sm btn-secondary-subtle'
+              >
                 ⬅ Back to the list of articles
               </Link>
             )}
@@ -80,7 +83,7 @@ export default function ArticlePage(props: {
                         ? props.articleData.previousLink + '/'
                         : ''
                     }`}
-                    className='btn btn-sm btn-secondary-soft'
+                    className='btn btn-sm btn-secondary-subtle'
                   >
                     ⬅{props.articleData.previousText}
                   </Link>
@@ -92,7 +95,7 @@ export default function ArticlePage(props: {
                         ? props.articleData.nextLink + '/'
                         : ''
                     }`}
-                    className='btn btn-sm btn-secondary-soft'
+                    className='btn btn-sm btn-secondary-subtle'
                   >
                     {props.articleData.nextText}➡
                   </Link>

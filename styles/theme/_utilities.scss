@@ -3,6 +3,13 @@
 // Extended from Bootstrap
 //
 
+@import "bootstrap/scss/functions";
+@import "./variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
 @import 'utilities/background';
 @import 'utilities/images';
 @import 'utilities/lift';
@@ -11,3 +18,316 @@
 @import 'utilities/shadows';
 @import 'utilities/sizing';
 @import 'utilities/type';
+
+// Bootstrap overrides
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "position": map-merge(
+      map-get($utilities, "position"),
+      (
+        responsive: true,
+      ),
+    ),
+    "width": map-merge(
+      map-get($utilities, "width"),
+      (
+        responsive: true,
+        values: map-merge(
+          map-get(map-get($utilities, "width"), "values"),
+          (
+            110: 110%,
+            120: 120%,
+            130: 130%,
+            140: 140%,
+            150: 150%,
+          ),
+        )
+      ),
+    ),
+    "max-width": map-merge(
+      map-get($utilities, "max-width"),
+      (
+        responsive: true,
+        values: map-merge(
+          map-get(map-get($utilities, "max-width"), "values"),
+          (
+            25: 25%,
+            50: 50%,
+            75: 75%,
+            110: 110%,
+            120: 120%,
+            130: 130%,
+            140: 140%,
+            150: 150%
+          ),
+        )
+      ),
+    ),
+    "viewport-width": map-merge(
+      map-get($utilities, "viewport-width"),
+      (
+        responsive: true,
+        values: map-merge(
+          map-get(map-get($utilities, "viewport-width"), "values"),
+          (
+            25: 25vw,
+            50: 50vw,
+            75: 75vw,
+            110: 110vw,
+            120: 120vw,
+            130: 130vw,
+            140: 140vw,
+            150: 150vw
+          ),
+        )
+      ),
+    ),
+    "height": map-merge(
+      map-get($utilities, "height"),
+      (
+        responsive: true,
+        values: map-merge(
+          map-get(map-get($utilities, "height"), "values"),
+          (
+            110: 110%,
+            120: 120%,
+            130: 130%,
+            140: 140%,
+            150: 150%
+          ),
+        )
+      ),
+    ),
+    "viewport-height": map-merge(
+      map-get($utilities, "viewport-height"),
+      (
+        responsive: true,
+        values: map-merge(
+          map-get(map-get($utilities, "viewport-height"), "values"),
+          (
+            25: 25vw,
+            50: 50vw,
+            75: 75vw,
+            110: 110vw,
+            120: 120vw,
+            130: 130vw,
+            140: 140vw,
+            150: 150vw
+          ),
+        )
+      ),
+    ),
+    "background-color": map-merge(
+      map-get($utilities, "background-color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "background-color"), "values"),
+          (
+            "gray-100": rgba(to-rgb($gray-100), var(--#{$prefix}bg-opacity)),
+            "gray-200": rgba(to-rgb($gray-200), var(--#{$prefix}bg-opacity)),
+            "gray-300": rgba(to-rgb($gray-300), var(--#{$prefix}bg-opacity)),
+            "gray-400": rgba(to-rgb($gray-400), var(--#{$prefix}bg-opacity)),
+            "gray-500": rgba(to-rgb($gray-500), var(--#{$prefix}bg-opacity)),
+            "gray-600": rgba(to-rgb($gray-600), var(--#{$prefix}bg-opacity)),
+            "gray-700": rgba(to-rgb($gray-700), var(--#{$prefix}bg-opacity)),
+            "gray-800": rgba(to-rgb($gray-800), var(--#{$prefix}bg-opacity)),
+            "gray-900": rgba(to-rgb($gray-900), var(--#{$prefix}bg-opacity))
+          ),
+        )
+      ),
+    ),
+    "bg-opacity": map-merge(
+      map-get($utilities, "bg-opacity"),
+      (
+        state: hover,
+        values: map-merge(
+          map-get(map-get($utilities, "bg-opacity"), "values"),
+          (
+            5: .05,
+            15: .15,
+            20: .2,
+            30: .3,
+            35: .35,
+            40: .4,
+            45: .45,
+            55: .55,
+            60: .6,
+            65: .65,
+            70: .7,
+            80: .8,
+            85: .85,
+            90: .9,
+            95: .95
+          ),
+        )
+      ),
+    ),
+    "subtle-background-color": map-merge(
+      map-get($utilities, "subtle-background-color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "subtle-background-color"), "values"),
+          (
+            "primary-desat-subtle": var(--#{$prefix}primary-desat-bg-subtle),
+            "white-subtle": var(--#{$prefix}white-bg-subtle),
+            "gray-700-subtle": var(--#{$prefix}gray-700-bg-subtle),
+          ),
+        )
+      ),
+    ),
+    "rounded": map-merge(
+      map-get($utilities, "rounded"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "rounded"), "values"),
+          (
+            5: null
+          ),
+        )
+      ),
+    ),
+    "border": map-merge(
+      map-get($utilities, "border"),
+      (
+        responsive: true,
+      ),
+    ),
+    "border-top": map-merge(
+      map-get($utilities, "border-top"),
+      (
+        responsive: true,
+      ),
+    ),
+    "border-end": map-merge(
+      map-get($utilities, "border-end"),
+      (
+        responsive: true,
+      ),
+    ),
+    "border-bottom": map-merge(
+      map-get($utilities, "border-bottom"),
+      (
+        responsive: true,
+      ),
+    ),
+    "border-start": map-merge(
+      map-get($utilities, "border-start"),
+      (
+        responsive: true,
+      ),
+    ),
+    "border-color": map-merge(
+      map-get($utilities, "border-color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "border-color"), "values"),
+          (
+            "gray-100": rgba(to-rgb($gray-100), var(--#{$prefix}border-opacity)),
+            "gray-200": rgba(to-rgb($gray-200), var(--#{$prefix}border-opacity)),
+            "gray-300": rgba(to-rgb($gray-300), var(--#{$prefix}border-opacity)),
+            "gray-400": rgba(to-rgb($gray-400), var(--#{$prefix}border-opacity)),
+            "gray-500": rgba(to-rgb($gray-500), var(--#{$prefix}border-opacity)),
+            "gray-600": rgba(to-rgb($gray-600), var(--#{$prefix}border-opacity)),
+            "gray-700": rgba(to-rgb($gray-700), var(--#{$prefix}border-opacity)),
+            "gray-800": rgba(to-rgb($gray-800), var(--#{$prefix}border-opacity)),
+            "gray-900": rgba(to-rgb($gray-900), var(--#{$prefix}border-opacity))
+          ),
+        )
+      ),
+    ),
+    "border-opacity": map-merge(
+      map-get($utilities, "border-opacity"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "border-opacity"), "values"),
+          (
+            5: .05,
+            15: .15,
+            20: .2,
+            30: .3,
+            35: .35,
+            40: .4,
+            45: .45,
+            55: .55,
+            60: .6,
+            65: .65,
+            70: .7,
+            80: .8,
+            85: .85,
+            90: .9,
+            95: .95
+          ),
+        )
+      ),
+    ),
+    "shadow": map-merge(
+      map-get($utilities, "shadow"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "shadow"), "values"),
+          (
+            "light": $box-shadow-light,
+            "dark": $box-shadow-dark,
+            "light-lg": $box-shadow-light-lg,
+            "dark-lg": $box-shadow-dark-lg,
+            "lift": $box-shadow-lift
+          ),
+        )
+      ),
+    ),
+    "color": map-merge(
+      map-get($utilities, "color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "color"), "values"),
+          (
+            "gray-100": rgba(to-rgb($gray-100), var(--#{$prefix}text-opacity)),
+            "gray-200": rgba(to-rgb($gray-200), var(--#{$prefix}text-opacity)),
+            "gray-300": rgba(to-rgb($gray-300), var(--#{$prefix}text-opacity)),
+            "gray-400": rgba(to-rgb($gray-400), var(--#{$prefix}text-opacity)),
+            "gray-500": rgba(to-rgb($gray-500), var(--#{$prefix}text-opacity)),
+            "gray-600": rgba(to-rgb($gray-600), var(--#{$prefix}text-opacity)),
+            "gray-700": rgba(to-rgb($gray-700), var(--#{$prefix}text-opacity)),
+            "gray-800": rgba(to-rgb($gray-800), var(--#{$prefix}text-opacity)),
+            "gray-900": rgba(to-rgb($gray-900), var(--#{$prefix}text-opacity)),
+            "body-secondary": rgba(to-rgb($body-secondary-color), var(--#{$prefix}text-opacity))
+          ),
+        )
+      ),
+    ),
+    "text-opacity": map-merge(
+      map-get($utilities, "text-opacity"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "text-opacity"), "values"),
+          (
+            5: .05,
+            10: .1,
+            15: .15,
+            20: .2,
+            30: .3,
+            35: .35,
+            40: .4,
+            45: .45,
+            55: .55,
+            60: .6,
+            65: .65,
+            70: .7,
+            80: .8,
+            85: .85,
+            90: .9,
+            95: .95
+          ),
+        )
+      ),
+    ),
+    "letter-spacing": (
+      property: letter-spacing,
+      values: (
+        lg: $letter-spacing-lg
+      )
+    ),
+  )
+);

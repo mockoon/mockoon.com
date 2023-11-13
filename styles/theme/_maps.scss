@@ -1,0 +1,34 @@
+//
+// maps.scss
+// Extended from Bootstrap
+//
+
+@import "bootstrap/scss/maps";
+
+
+// Bootstrap overrides
+
+$theme-colors-bg-subtle: (
+  "primary": $primary-bg-subtle,
+  "primary-desat": $primary-bg-subtle, // NEW
+  "secondary": $secondary-bg-subtle,
+  "success": $success-bg-subtle,
+  "info": $info-bg-subtle,
+  "warning": $warning-bg-subtle,
+  "danger": $danger-bg-subtle,
+  "light": $light-bg-subtle,
+  "dark": $dark-bg-subtle,
+  "white": $white-bg-subtle, // NEW
+  "gray-700": $gray-700-bg-subtle // NEW
+);
+
+
+// Theme
+
+$theme-colors-overlay: map-merge(
+  $theme-colors,
+  (
+    "black": $black,
+    "white": $white
+  )
+) !default;

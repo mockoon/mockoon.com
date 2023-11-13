@@ -213,7 +213,7 @@ const MockSamples: FunctionComponent<{
               <div className='mt-8 text-center'>
                 <Link
                   href='/mock-samples/category/all/'
-                  className='btn btn-sm btn-secondary-soft'
+                  className='btn btn-sm btn-secondary-subtle'
                 >
                   ⬅ Back to the list of mock samples
                 </Link>

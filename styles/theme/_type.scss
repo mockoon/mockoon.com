@@ -4,8 +4,8 @@
 //
 
 // Font
-/*
-@font-face {
+
+/* @font-face {
   font-family: "HKGroteskPro";
   font-weight: 400;
   src: url("#{$path-to-fonts}/HK%20Grotesk%20Pro/HKGroteskPro-Regular.woff2") format("woff2"),
@@ -31,14 +31,12 @@
 
 @font-face {
   font-family: 'Feather';
-  src: url('#{$path-to-fonts}/Feather/Feather.ttf?sdxovp') format('truetype'),
-    url('#{$path-to-fonts}/Feather/Feather.woff?sdxovp') format('woff'),
-    url('#{$path-to-fonts}/Feather/Feather.svg?sdxovp#Feather') format('svg');
+  src: url('#{$path-to-fonts}/Feather/Feather.ttf?sdxovp') format('truetype'), url('#{$path-to-fonts}/Feather/Feather.woff?sdxovp') format('woff'), url('#{$path-to-fonts}/Feather/Feather.svg?sdxovp#Feather') format('svg');
   font-weight: 400;
   font-style: normal;
-}
-*/
-@at-root // Headings
+} */
+
+// Headings
 
 h1,
 h2,
@@ -182,12 +180,17 @@ h6,
 
 // Dividers
 
+[class*='hr-'] {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .hr-sm {
   width: 60px;
 }
 
 .hr-sm:not([size]) {
-  height: $border-width * 2;
+  height: calc(var(--#{$prefix}border-width) * 2);
 }
 
 .hr-md {
@@ -195,11 +198,12 @@ h6,
 }
 
 .hr-md:not([size]) {
-  height: $border-width * 2;
+  height: calc(var(--#{$prefix}border-width) * 2);
 }
 
 // Code
 
 code {
-  line-height: $code-line-height;
+  --#{$prefix}code-line-height: #{$code-line-height};
+  line-height: var(--#{$prefix}code-line-height);
 }

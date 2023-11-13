@@ -249,14 +249,14 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         <div className='text-center mb-6'>
                           <Link
                             href={'/download/'}
-                            className='btn btn-primary-soft'
+                            className='btn btn-primary-subtle'
                           >
                             Download now
                           </Link>
                         </div>
 
                         <div className='d-flex'>
-                          <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                          <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                             <i className='icon-check'></i>
                           </div>
 
@@ -267,7 +267,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </div>
 
                         <div className='d-flex'>
-                          <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                          <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                             <i className='icon-check'></i>
                           </div>
 
@@ -277,7 +277,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </div>
 
                         <div className='d-flex'>
-                          <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                          <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                             <i className='icon-check'></i>
                           </div>
 
@@ -295,7 +295,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         <span className='text-primary'>Solo</span>
                         <span className='ms-1'>plan</span>
                         {planFrequency === 'YEARLY' && (
-                          <span className='badge bg-success-soft ms-3 fs-sm align-self-center'>
+                          <span className='badge text-bg-success-subtle ms-3 fs-sm align-self-center'>
                             {pricing.SOLO.discount}
                           </span>
                         )}
@@ -323,7 +323,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
 
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -333,7 +333,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </p>
                       </div>
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -343,7 +343,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
                       <hr />
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -353,7 +353,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </p>
                       </div>
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -367,7 +367,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
                       <hr />
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -398,7 +398,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         <span className='text-primary'>Team</span>
                         <span className='ms-1'>plan</span>
                         {planFrequency === 'YEARLY' && (
-                          <span className='badge bg-success-soft ms-3 fs-sm align-self-center'>
+                          <span className='badge text-bg-success-subtle ms-3 fs-sm align-self-center'>
                             {pricing.TEAM.discount}
                           </span>
                         )}
@@ -425,7 +425,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
 
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -435,7 +435,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </p>
                       </div>
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -445,7 +445,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
                       <hr />
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -455,7 +455,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </p>
                       </div>
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -469,7 +469,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
                       <hr />
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -479,7 +479,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
                       <hr />
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -511,7 +511,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         <span className='ms-1'>plan</span>
                         {planFrequency === 'YEARLY' &&
                           pricing.ENTERPRISE.discount && (
-                            <span className='badge bg-success-soft ms-3 fs-sm align-self-center'>
+                            <span className='badge text-bg-success-subtle ms-3 fs-sm align-self-center'>
                               {pricing.ENTERPRISE.discount}
                             </span>
                           )}
@@ -539,7 +539,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
 
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -549,7 +549,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </p>
                       </div>
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -559,7 +559,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
                       <hr />
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -569,7 +569,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </p>
                       </div>
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -583,7 +583,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
                       <hr />
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -593,7 +593,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
                       <hr />
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -604,14 +604,14 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
                       <hr />
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
                         <p>Custom payment options</p>
                       </div>
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-success-soft mt-1 me-4'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
@@ -664,13 +664,15 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                     independent and open-source.
                   </p>
                   <div className='d-flex align-items-center justify-content-center'>
-                    <img
-                      className='img-thumbnail avatar-xl avatar-img rounded-circle mr-4'
-                      src='/images/about/guillaume.jpg'
-                      alt='Founder @ Mockoon'
-                      width={128}
-                      height={128}
-                    />
+                    <div className='avatar avatar-xl'>
+                      <img
+                        className='avatar-img img-thumbnail rounded-circle mr-4'
+                        src='/images/about/guillaume.jpg'
+                        alt='Founder @ Mockoon'
+                        width={128}
+                        height={128}
+                      />
+                    </div>
                     <div className='ps-5'>
                       <p className='fs-sm fw-bold mb-0'>Guillaume</p>
                       <p className='fs-sm text-muted mb-0'>Founder @ Mockoon</p>

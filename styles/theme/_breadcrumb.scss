@@ -3,8 +3,12 @@
 // Extended from Bootstrap
 //
 
+.breadcrumb {
+  --#{$prefix}breadcrumb-font-size: #{$breadcrumb-font-size};
+}
+
 .breadcrumb-item {
-  font-size: $breadcrumb-font-size;
+  font-size: var(--#{$prefix}breadcrumb-font-size);
 
   + .breadcrumb-item {
 

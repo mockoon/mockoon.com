@@ -70,7 +70,7 @@ export default function Tutorial(props: {
             {!props.articleData.nextLink && !props.articleData.previousLink && (
               <Link
                 href='/tutorials/'
-                className='btn btn-sm btn-secondary-soft'
+                className='btn btn-sm btn-secondary-subtle'
               >
                 ⬅ Back to the list of tutorials
               </Link>
@@ -84,7 +84,7 @@ export default function Tutorial(props: {
                         ? props.articleData.previousLink + '/'
                         : ''
                     }`}
-                    className='btn btn-sm btn-secondary-soft'
+                    className='btn btn-sm btn-secondary-subtle'
                   >
                     ⬅{props.articleData.previousText}
                   </Link>
@@ -96,7 +96,7 @@ export default function Tutorial(props: {
                         ? props.articleData.nextLink + '/'
                         : ''
                     }`}
-                    className='btn btn-sm btn-secondary-soft'
+                    className='btn btn-sm btn-secondary-subtle'
                   >
                     {props.articleData.nextText}➡
                   </Link>

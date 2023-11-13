@@ -33,7 +33,7 @@ const EmailForm: FunctionComponent<{ formType: keyof typeof groups }> =
             readOnly
             tabIndex={-1}
           ></input>
-          <button className='btn btn-primary-soft' type='submit'>
+          <button className='btn btn-primary-subtle' type='submit'>
             {formType === 'newsletter' ? 'Subscribe' : 'Keep me posted'}
           </button>
         </div>

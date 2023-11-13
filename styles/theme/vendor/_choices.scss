@@ -28,8 +28,8 @@
   margin-bottom: $spacer;
 }
 
-.choices > .dropdown-menu > .dropdown-item.is-highlighted {
-  color: $dropdown-link-hover-color;
+.choices > .dropdown-menu .dropdown-item.is-highlighted {
+  color: var(--#{$prefix}dropdown-link-hover-color);
 }
 
 // Sizing
@@ -47,13 +47,13 @@
   padding-right: $dropdown-padding-x-xs;
 }
 
-.choices > .form-select-xs + .dropdown-menu > .dropdown-item,
-.choices > .form-control-xs + .dropdown-menu > .dropdown-item {
-  margin-left: -$dropdown-padding-x-xs;
-  margin-right: -$dropdown-padding-x-xs;
-  padding-left: -$dropdown-padding-x-xs;
-  padding-left: -$dropdown-padding-x-xs;
-}
+// .choices > .form-select-xs + .dropdown-menu > .dropdown-item,
+// .choices > .form-control-xs + .dropdown-menu > .dropdown-item {
+//   margin-left: calc(#{$dropdown-padding-x-xs} * -1);
+//   margin-right: calc(#{$dropdown-padding-x-xs} * -1);
+//   padding-left: calc(#{$dropdown-padding-x-xs} * -1);
+//   padding-left: calc(#{$dropdown-padding-x-xs} * -1);
+// }
 
 .choices > .form-select-lg + .dropdown-menu,
 .choices > .form-control-lg + .dropdown-menu {
@@ -61,13 +61,13 @@
   padding-right: $dropdown-padding-x-lg;
 }
 
-.choices > .form-select-lg + .dropdown-menu > .dropdown-item,
-.choices > .form-control-lg + .dropdown-menu > .dropdown-item {
-  margin-left: -$dropdown-padding-x-lg;
-  margin-right: -$dropdown-padding-x-lg;
-  padding-left: -$dropdown-padding-x-lg;
-  padding-left: -$dropdown-padding-x-lg;
-}
+// .choices > .form-select-lg + .dropdown-menu > .dropdown-item,
+// .choices > .form-control-lg + .dropdown-menu > .dropdown-item {
+//   margin-left: calc(#{$dropdown-padding-x-lg} * -1);
+//   margin-right: calc(#{$dropdown-padding-x-lg} * -1);
+//   padding-left: calc(#{$dropdown-padding-x-lg} * -1);
+//   padding-left: calc(#{$dropdown-padding-x-lg} * -1);
+// }
 
 
 // Placeholder
@@ -88,7 +88,7 @@
 
 .choices.is-open > .form-control + .dropdown-menu,
 .choices.is-open > .form-select + .dropdown-menu {
-  margin-top: -$dropdown-border-width;
+  margin-top: calc(#{$dropdown-border-width} * -1);
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -127,8 +127,8 @@
   padding-right: .375rem;
   padding-left: .375rem;
   font-size: $font-size-sm;
-  background-color: $light;
-  border-radius: $border-radius-sm;
+  background-color: var(--#{$prefix}light);
+  border-radius: var(--#{$prefix}border-radius-sm);
 }
 
 .choices__list--multiple > .choices__item > .choices__button {
@@ -140,7 +140,7 @@
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(escape-svg("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#{$body-color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='18' y1='6' x2='6' y2='18'></line><line x1='6' y1='6' x2='18' y2='18'></line></svg>"));
+  background-image: url(escape-svg("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#{var(--#{$prefix}body-color)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='18' y1='6' x2='6' y2='18'></line><line x1='6' y1='6' x2='18' y2='18'></line></svg>"));
   background-size: 100% auto;
   text-indent: -9999px;
   opacity: .5;

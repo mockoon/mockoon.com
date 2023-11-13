@@ -13,7 +13,7 @@
 
 .device::before {
   content: "";
-  background-color: $light;
+  background-color: var(--#{$prefix}light);
 }
 
 .device::before,

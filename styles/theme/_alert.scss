@@ -7,16 +7,19 @@
 //
 // Using Bootstrap's core alert-variant mixin to generate solid background color + yiq colorized text (and making close/links match those colors)
 
-@each $color, $value in $theme-colors {
-  .alert-#{$color} {
-    @include alert-variant(shift-color($value, $alert-bg-scale), shift-color($value, $alert-border-scale), color-contrast(shift-color($value, $alert-bg-scale)));
+@each $state, $value in $theme-colors {
+  .alert-#{$state} {
+    --#{$prefix}alert-color: #{color-contrast($value)};
+    --#{$prefix}alert-bg: var(--#{$prefix}#{$state});
+    --#{$prefix}alert-border-color: var(--#{$prefix}#{$state});
+    --#{$prefix}alert-link-color: #{color-contrast($value)};
 
-    .alert-link, .btn-close {
-      color: color-contrast(shift-color($value, $alert-bg-scale));
+    .btn-close {
+      color: var(--#{$prefix}alert-link-color);
     }
 
     hr {
-      background-color: darken(shift-color($value, $alert-border-scale), 5%);
+      color: darken($value, 5%);
     }
   }
 }

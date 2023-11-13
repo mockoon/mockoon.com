@@ -65,7 +65,7 @@ const EmbeddedButton: FunctionComponent = function () {
               </p>
             </div>
             <div className='col-12 col-md-6 col-lg-6 offset-lg-1'>
-              <div className='card card-border border-secondary-soft shadow-lg mb-5'>
+              <div className='card card-border border-secondary-subtle shadow-lg mb-5'>
                 <div className='card-body'>
                   <label className='form-label text-gray-700' htmlFor='dataURL'>
                     Mockoon{' '}
@@ -128,11 +128,7 @@ const EmbeddedButton: FunctionComponent = function () {
               <div className='card card-border border-black shadow-lg mt-8'>
                 <div className='card-body'>
                   <p className='text-gray-700 mb-2'>
-                    Run a mock with the{' '}
-                    <Link href={'/cli/'}>
-                      CLI
-                    </Link>
-                    :
+                    Run a mock with the <Link href={'/cli/'}>CLI</Link>:
                   </p>
                   <div className='ps-4'>
                     <code>

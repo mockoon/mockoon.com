@@ -40,8 +40,8 @@
 
 .navbar > .container,
 .navbar > .container-fluid {
-  padding-left: $grid-gutter-width / 2 !important;
-  padding-right: $grid-gutter-width / 2 !important;
+  padding-left: $grid-gutter-width * .5 !important;
+  padding-right: $grid-gutter-width * .5 !important;
 }
 
 
@@ -67,10 +67,10 @@
 
   @include media-breakpoint-down(lg) {
     width: 100%;
-    padding: $btn-padding-y $btn-padding-x;
+    padding: var(--#{$prefix}btn-padding-y) var(--#{$prefix}btn-padding-x);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    font-size: $btn-font-size;
+    font-size: var(--#{$prefix}btn-font-size);
   }
 }
 
@@ -95,9 +95,9 @@
     content: "";
     position: absolute;
     right: 0;
-    bottom: -$navbar-padding-y;
+    bottom: calc(#{$navbar-padding-y} * -1);
     left: 0;
-    border-top: $border-width solid fade-out($white, .8);
+    border-top: var(--#{$prefix}border-width) solid fade-out($white, .8);
   }
 }
 
@@ -113,8 +113,8 @@
     height: auto;
     max-height: calc(100% - #{$spacer * 2}) !important;
     width: calc(100% - #{$spacer * 2});
-    background-color: $dropdown-bg;
-    border-radius: $dropdown-border-radius;
+    background-color: var(--#{$prefix}white);
+    border-radius: var(--#{$prefix}dropdown-border-radius);
     box-shadow: $box-shadow-dark-lg;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -168,7 +168,7 @@
     padding: $navbar-nav-item-spacing;
 
     + .nav-item {
-      border-top: $border-width solid $gray-200;
+      border-top: var(--#{$prefix}border-width) solid var(--#{$prefix}gray-200);
     }
   }
 }
@@ -212,7 +212,7 @@
   @include media-breakpoint-down(lg) {
     padding-top: $spacer;
     padding-bottom: $spacer;
-    padding-left: $spacer / 2;
+    padding-left: $spacer * .5;
   }
 
   @include media-breakpoint-up(lg) {
@@ -285,10 +285,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: $dropdown-padding-y $dropdown-padding-x;
+  padding: var(--#{$prefix}dropdown-padding-y) var(--#{$prefix}dropdown-padding-x);
   background: no-repeat center center / cover;
-  border-top-left-radius: $border-radius;
-  border-bottom-left-radius: $border-radius;
+  border-top-left-radius: var(--#{$prefix}border-radius);
+  border-bottom-left-radius: var(--#{$prefix}border-radius);
 
   @include media-breakpoint-up(lg) {
     display: flex;
@@ -328,7 +328,7 @@
 .navbar-nav .dropdown-body {
 
   @include media-breakpoint-up(lg) {
-    padding: $dropdown-padding-y $dropdown-padding-x;
+    padding: var(--#{$prefix}dropdown-padding-y) var(--#{$prefix}dropdown-padding-x);
   }
 }
 

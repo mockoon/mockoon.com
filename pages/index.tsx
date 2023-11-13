@@ -116,13 +116,15 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                     </a>
                   </p>
                   <div className='d-flex align-items-center'>
-                    <img
-                      className='img-thumbnail avatar-xl avatar-img rounded-circle mr-4'
-                      src='/images/case-studies/impala/yasmin-desai.jpg'
-                      alt='Senior Product Manager @ Impala'
-                      width={128}
-                      height={128}
-                    />
+                    <div className='avatar avatar-xl'>
+                      <img
+                        className='avatar-img img-thumbnail rounded-circle mr-4'
+                        src='/images/case-studies/impala/yasmin-desai.jpg'
+                        alt='Senior Product Manager @ Impala'
+                        width={128}
+                        height={128}
+                      />
+                    </div>
                     <div className='ps-5'>
                       <p className='fs-sm fw-bold mb-0'>Yasmin Desai</p>
                       <p className='fs-sm text-muted mb-0'>
@@ -154,13 +156,15 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                     </a>
                   </p>
                   <div className='d-flex align-items-center'>
-                    <img
-                      className='img-thumbnail avatar-xl avatar-img rounded-circle mr-4'
-                      src='/images/case-studies/localazy/jan-bilek.png'
-                      alt='Product Manager @ Localazy'
-                      width={128}
-                      height={128}
-                    />
+                    <div className='avatar avatar-xl'>
+                      <img
+                        className='avatar-img img-thumbnail rounded-circle mr-4'
+                        src='/images/case-studies/localazy/jan-bilek.png'
+                        alt='Product Manager @ Localazy'
+                        width={128}
+                        height={128}
+                      />
+                    </div>
                     <div className='ps-5'>
                       <p className='fs-sm fw-bold mb-0'>Jan Bílek</p>
                       <p className='fs-sm text-muted mb-0'>
@@ -224,7 +228,7 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                       featureIndex % 2 === 0 ? 'order-lg-2' : 'order-lg-1'
                     }`}
                   >
-                    <span className='badge rounded-pill bg-primary-soft mb-3'>
+                    <span className='badge rounded-pill text-bg-primary-subtle mb-3'>
                       <span className='h6 text-uppercase'>{feature.label}</span>
                     </span>
 
@@ -234,7 +238,7 @@ class Index extends React.Component<{}, { companyLogos: any }> {
                     <div>
                       {feature.cta && (
                         <a
-                          className='btn btn-secondary-soft btn-xs mt-5'
+                          className='btn btn-secondary-subtle btn-xs mt-5'
                           href={feature.ctaLink}
                         >
                           {feature.cta}&nbsp;→

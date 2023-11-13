@@ -13,7 +13,7 @@ const DownloadCTA: FunctionComponent = function () {
       </div>
 
       <div className='col-12 col-lg-3'>
-        <Link href='/download/' className='col-12 btn btn-primary-soft'>
+        <Link href='/download/' className='col-12 btn btn-primary-subtle'>
           <span>
             <i className='icon-download'></i> Download
           </span>

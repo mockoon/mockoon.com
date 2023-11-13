@@ -16,28 +16,22 @@
 // Sizing
 
 .badge-lg {
-  padding: $badge-padding-y-lg $badge-padding-x-lg;
+  --#{$prefix}badge-padding-y: #{$badge-padding-y-lg};
+  --#{$prefix}badge-padding-x: #{$badge-padding-x-lg};
 }
 
 
 // Rounded circle
 
 .badge-rounded-circle {
-  height: calc(1em + #{$badge-padding-y * 2});
-  padding-left: $badge-padding-y;
-  padding-right: $badge-padding-y;
-  border-radius: $border-radius-pill;
+  height: calc(1em + #{var(--#{$prefix}badge-padding-y)} * 2);
+  padding-left: var(--#{$prefix}badge-padding-y);
+  padding-right: var(--#{$prefix}badge-padding-y);
+  border-radius: var(--#{$prefix}border-radius-pill);
 
   > * {
     display: block;
     width: 1em;
-  }
-
-
-  &.badge-lg {
-    height: calc(1em + #{$badge-padding-y-lg * 2});
-    padding-left: $badge-padding-y-lg;
-    padding-right: $badge-padding-y-lg;
   }
 }
 
@@ -60,56 +54,37 @@
 }
 
 
+// Subtle badge variants
+
+@each $color, $value in $theme-colors-bg-subtle {
+  .badge.text-bg-#{$color}-subtle {
+    
+    &[href]:hover,
+    &[href]:focus {
+      --#{$prefix}bg-opacity: .2;
+    }
+  }
+}
+
+@each $color, $value in $grays {
+  .badge.text-bg-gray-#{$color} {
+    
+    &[href]:hover,
+    &[href]:focus {
+      --#{$prefix}bg-opacity: .2;
+    }
+  }
+}
+
+
 // Active states
 
-.badge.bg-white-soft.active {
-  background-color: $white !important;
-  color: $primary !important;
-
-  &:hover, &:focus {
-    background-color: darken($white, 5%);
-    color: $primary;
-  }
+.badge.text-bg-white-subtle.active {
+  background-color: var(--#{$prefix}white) !important;
+  color: var(--#{$prefix}primary) !important;
 }
 
-.badge.bg-secondary-soft.active {
-  background-color: $primary !important;
-  color: color-contrast($primary) !important;
-
-  &:hover, &:focus {
-    background-color: darken($primary, 5%);
-    color: color-contrast(darken($primary, 5%));
-  }
-}
-
-
-// Creates the "soft" badge variant
-
-@each $color, $value in $theme-colors {
-  .badge.bg-#{$color}-soft {
-    @include badge-variant-soft($value, $badge-soft-bg-opacity);
-  }
-}
-
-.badge.bg-gray-700-soft {
-  @include badge-variant-soft($gray-700, $badge-soft-bg-opacity);
-}
-
-
-// Color options
-
-.badge.bg-gray-600 {
-  background-color: $gray-600;
-  color: $white;
-}
-
-
-// Text color
-//
-// Replacing the default white text color
-
-@each $color, $value in $theme-colors {
-  .badge.bg-#{$color} {
-    color: color-contrast($value);
-  }
+.badge.text-bg-secondary-subtle.active {
+  background-color: var(--#{$prefix}primary) !important;
+  color: var(--#{$prefix}white) !important;
 }

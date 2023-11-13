@@ -17,7 +17,7 @@
 }
 
 .ql-toolbar + .ql-container {
-  margin-top: -$border-width;
+  margin-top: calc(#{$border-width} * -1);
 }
 
 .ql-toolbar + .ql-container .ql-editor {
@@ -101,12 +101,12 @@
   padding: 0 .25rem;
   background: none;
   border: none;
-  color: $body-color;
+  color: var(--#{$prefix}body-color);
   cursor: pointer;
   transition: $transition-base;
 
   &:hover {
-    color: $primary;
+    color: var(--#{$prefix}primary);
   }
 
   &:first-child {
@@ -115,7 +115,7 @@
 }
 
 .ql-toolbar .ql-active {
-  color: $primary;
+  color: var(--#{$prefix}primary);
 }
 
 .ql-toolbar button svg {
@@ -152,12 +152,12 @@
   display: flex;
   flex-wrap: nowrap;
   width: 18.5rem;
-  background-color: $popover-bg;
-  border: $popover-border-width solid $popover-border-color;
-  border-radius: $popover-border-radius;
+  background-color: var(--#{$prefix}popover-bg);
+  border: var(--#{$prefix}popover-border-width) solid var(--#{$prefix}popover-border-color);
+  border-radius: var(--#{$prefix}popover-border-radius);
   padding: $input-padding-y $input-padding-x;
   margin-top: .6rem; // arrow width
-  box-shadow: $popover-box-shadow;
+  box-shadow: var(--#{$prefix}popover-box-shadow);
 
   // Arrow
 
@@ -170,13 +170,13 @@
   }
 
   &:before {
-    border-bottom: .6rem solid $popover-border-color;
+    border-bottom: .6rem solid var(--#{$prefix}popover-border-color);
     border-left: .6rem solid transparent;
     border-right: .6rem solid transparent;
   }
 
   &:after {
-    border-bottom: .5rem solid $popover-bg;
+    border-bottom: .5rem solid var(--#{$prefix}popover-bg);
     border-left: .5rem solid transparent;
     border-right: .5rem solid transparent;
   }
@@ -225,12 +225,12 @@
 .ql-tooltip .ql-action::before,
 .ql-tooltip .ql-remove::before {
   display: inline-block;
-  font-weight: $btn-font-weight;
+  font-weight: var(--#{$prefix}btn-font-weight);
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
-  border: $btn-border-width solid transparent;
+  border: var(--#{$prefix}btn-border-width) solid transparent;
   cursor: pointer;
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
   @include transition($btn-transition);
@@ -243,7 +243,7 @@
   &:focus,
   &.focus {
     outline: 0;
-    box-shadow: $btn-focus-box-shadow;
+    box-shadow: var(--#{$prefix}btn-focus-box-shadow);
   }
 }
 
@@ -263,7 +263,7 @@
 .ql-tooltip .ql-remove::before {
   @include button-variant($white, $white);
   content: 'Remove';
-  border-color: $gray-300;
+  border-color: var(--#{$prefix}gray-300);
 }
 
 .ql-tooltip.ql-editing .ql-remove::before {

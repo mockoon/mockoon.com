@@ -3,7 +3,7 @@
  *
  * @param docsVersion
  */
-export const transformLinkUri = (docsVersion?: string) => (uri: string) => {
+export const urlTransform = (docsVersion?: string) => (uri: string) => {
   if (uri.includes('docs:') || uri.includes('tutorials:')) {
     const schemeSplit = uri.split(':');
     const pathSplit = schemeSplit[1].split('#');

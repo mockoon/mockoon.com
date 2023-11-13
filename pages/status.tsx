@@ -81,17 +81,17 @@ const Status: FunctionComponent = function () {
                         <h4 className='mb-0'>
                           {(data?.indicator === 'maintenance' ||
                             data?.indicator === 'incident') && (
-                            <span className='badge badge-rounded-circle bg-warning me-2'>
+                            <span className='badge badge-rounded-circle text-bg-warning me-2'>
                               <i className='icon-remove'></i>
                             </span>
                           )}
                           {data?.indicator === 'outage' && (
-                            <span className='badge badge-rounded-circle bg-danger me-2'>
+                            <span className='badge badge-rounded-circle text-bg-danger me-2'>
                               <i className='icon-clear'></i>
                             </span>
                           )}
                           {data?.indicator === 'up' && (
-                            <span className='badge badge-rounded-circle bg-success me-2'>
+                            <span className='badge badge-rounded-circle text-bg-success me-2'>
                               <i className='icon-check'></i>
                             </span>
                           )}{' '}
@@ -100,7 +100,7 @@ const Status: FunctionComponent = function () {
                       </div>
                       <div className='col-auto'>
                         <a
-                          className='btn btn-xs btn-primary-soft'
+                          className='btn btn-xs btn-primary-subtle'
                           href='https://mockoon.hyperping.app/'
                           target='_blank'
                         >
@@ -117,7 +117,7 @@ const Status: FunctionComponent = function () {
                     <h4 className='mb-0'>Average uptime (last 90 days)</h4>
                   </div>
                   <div className='col-auto'>
-                    <span className='badge badge-rounded bg-secondary-soft'>
+                    <span className='badge badge-rounded text-bg-secondary-subtle'>
                       <span className='h6 text-uppercase fw-bold'>
                         {data?.uptime}
                       </span>
@@ -151,7 +151,7 @@ const Status: FunctionComponent = function () {
                               </p>
                             </div>
                             <div className='col-auto'>
-                              <span className='badge badge-lg badge-rounded-circle bg-warning'>
+                              <span className='badge badge-lg badge-rounded-circle text-bg-warning'>
                                 <i className='icon-hourglass_empty'></i>
                               </span>
                             </div>
@@ -189,7 +189,7 @@ const Status: FunctionComponent = function () {
                               </p>
                             </div>
                             <div className='col-auto'>
-                              <span className='badge badge-lg badge-rounded-circle bg-success'>
+                              <span className='badge badge-lg badge-rounded-circle text-bg-success'>
                                 <i className='icon-check'></i>
                               </span>
                             </div>

@@ -57,7 +57,7 @@ export default function CaseStudy(props: {
       />
       <section>
         <div className='container text-center pt-3 pb-8'>
-          <a className='btn btn-sm btn-secondary-soft' href='/case-studies/'>
+          <a className='btn btn-sm btn-secondary-subtle' href='/case-studies/'>
             ⬅ Back to the list of case studies
           </a>
         </div>

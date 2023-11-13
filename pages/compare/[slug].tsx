@@ -66,7 +66,10 @@ export default function ComparisonGuide(props: {
             }`}
           >
             {!props.articleData.nextLink && !props.articleData.previousLink && (
-              <Link href='/compare/' className='btn btn-sm btn-secondary-soft'>
+              <Link
+                href='/compare/'
+                className='btn btn-sm btn-secondary-subtle'
+              >
                 ⬅ Back to the list of comparison guides
               </Link>
             )}
@@ -79,7 +82,7 @@ export default function ComparisonGuide(props: {
                         ? props.articleData.previousLink + '/'
                         : ''
                     }`}
-                    className='btn btn-sm btn-secondary-soft'
+                    className='btn btn-sm btn-secondary-subtle'
                   >
                     ⬅{props.articleData.previousText}
                   </Link>
@@ -91,7 +94,7 @@ export default function ComparisonGuide(props: {
                         ? props.articleData.nextLink + '/'
                         : ''
                     }`}
-                    className='btn btn-sm btn-secondary-soft'
+                    className='btn btn-sm btn-secondary-subtle'
                   >
                     {props.articleData.nextText}➡
                   </Link>

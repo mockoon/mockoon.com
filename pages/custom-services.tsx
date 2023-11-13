@@ -57,7 +57,7 @@ const Services: FunctionComponent = function () {
                     serviceIndex % 2 === 0 ? 'order-lg-2' : 'order-lg-1'
                   }`}
                 >
-                  <span className='badge rounded-pill bg-primary-soft mb-3'>
+                  <span className='badge rounded-pill text-bg-primary-subtle mb-3'>
                     <span className='h6 text-uppercase'>{service.label}</span>
                   </span>
 

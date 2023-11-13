@@ -18,7 +18,7 @@
   perspective-origin: left center;
 
   .img-skewed-item {
-    transform: rotateY(-$img-skewed-rotate-y) rotateX($img-skewed-rotate-x);
+    transform: rotateY(calc(#{$img-skewed-rotate-y} * -1)) rotateX($img-skewed-rotate-x);
     backface-visibility: hidden;
   }
 }

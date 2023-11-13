@@ -55,7 +55,7 @@ const Card: FunctionComponent<{
               className={`badge badge-float badge-float-outside ${
                 props.data.topTagClasses
                   ? props.data.topTagClasses
-                  : 'bg-primary-soft'
+                  : 'text-bg-primary-subtle'
               }`}
             >
               {props.data.topTag}
@@ -83,7 +83,7 @@ const Card: FunctionComponent<{
                   <Link
                     key={`link${linkIndex}`}
                     href={link.src}
-                    className={`btn-xs btn btn-primary-soft d-flex align-items-center ${
+                    className={`btn-xs btn btn-primary-subtle d-flex align-items-center ${
                       props.data.links?.length > 1 ? '' : 'mt-auto'
                     }`}
                     style={{
@@ -106,7 +106,7 @@ const Card: FunctionComponent<{
                 ) : (
                   <a
                     key={`link${linkIndex}`}
-                    className={`btn-xs btn btn-primary-soft d-flex align-items-center ${
+                    className={`btn-xs btn btn-primary-subtle d-flex align-items-center ${
                       props.data.links?.length > 1 ? '' : 'mt-auto'
                     }`}
                     href={link.src}

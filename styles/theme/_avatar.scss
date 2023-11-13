@@ -6,11 +6,14 @@
 // General
 
 .avatar {
+  --#{$prefix}avatar-size: #{$avatar-size-base};
+  --#{$prefix}avatar-title-bg: #{$avatar-title-bg};
+  --#{$prefix}avatar-title-color: #{$avatar-title-color};
   position: relative;
   display: inline-block;
-  width: $avatar-size-base;
-  height: $avatar-size-base;
-  font-size: $avatar-size-base / 3;
+  width: var(--#{$prefix}avatar-size);
+  height: var(--#{$prefix}avatar-size);
+  font-size: calc(var(--#{$prefix}avatar-size) / 3);
 
   // Loads mask images so they don't lag on hover
 
@@ -38,8 +41,8 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: $avatar-title-bg;
-  color: $avatar-title-color;
+  background-color: var(--#{$prefix}avatar-title-bg);
+  color: var(--#{$prefix}avatar-title-color);
 }
 
 
@@ -65,55 +68,41 @@
 }
 
 .avatar-online::before {
-  background-color: $success;
+  background-color: var(--#{$prefix}success);
 }
 
 .avatar-offline::before {
-  background-color: $gray-500;
+  background-color: var(--#{$prefix}gray-500);
 }
 
 
 // Sizing
 
 .avatar-xs {
-  width: $avatar-size-xs;
-  height: $avatar-size-xs;
-  font-size: $avatar-size-xs / 3;
+  --#{$prefix}avatar-size: #{$avatar-size-xs};
 }
 
 .avatar-sm {
-  width: $avatar-size-sm;
-  height: $avatar-size-sm;
-  font-size: $avatar-size-sm / 3;
+  --#{$prefix}avatar-size: #{$avatar-size-sm};
 }
 
 .avatar-lg {
-  width: $avatar-size-lg;
-  height: $avatar-size-lg;
-  font-size: $avatar-size-lg / 3;
+  --#{$prefix}avatar-size: #{$avatar-size-lg};
 }
 
 .avatar-xl {
-  width: $avatar-size-lg;
-  height: $avatar-size-lg;
-  font-size: $avatar-size-lg / 3;
+  --#{$prefix}avatar-size: #{$avatar-size-lg};
 
   @include media-breakpoint-up(lg) {
-    width: $avatar-size-xl;
-    height: $avatar-size-xl;
-    font-size: $avatar-size-xl / 3;
+    --#{$prefix}avatar-size: #{$avatar-size-xl};
   }
 }
 
 .avatar-xxl {
-  width: $avatar-size-xl;
-  height: $avatar-size-xl;
-  font-size: $avatar-size-xl / 3;
+  --#{$prefix}avatar-size: #{$avatar-size-xl};
 
   @include media-breakpoint-up(lg) {
-    width: $avatar-size-xxl;
-    height: $avatar-size-xxl;
-    font-size: $avatar-size-xxl / 3;
+    --#{$prefix}avatar-size: #{$avatar-size-xxl};
   }
 }
 
@@ -121,27 +110,7 @@
 // Ratio
 
 .avatar.avatar-4by3 {
-  width: $avatar-size-base * 4 / 3;
-}
-
-.avatar-xs.avatar-4by3 {
-  width: $avatar-size-xs * 4 / 3;
-}
-
-.avatar-sm.avatar-4by3 {
-  width: $avatar-size-sm * 4 / 3;
-}
-
-.avatar-lg.avatar-4by3 {
-  width: $avatar-size-lg * 4 / 3;
-}
-
-.avatar-xl.avatar-4by3 {
-  width: $avatar-size-xl * 4 / 3;
-}
-
-.avatar-xxl.avatar-4by3 {
-  width: $avatar-size-xxl * 4 / 3;
+  width: calc(var(--#{$prefix}avatar-size) * 4 / 3);
 }
 
 
@@ -153,27 +122,7 @@
   // Shift every next avatar left
 
   .avatar + .avatar {
-    margin-left: -$avatar-size-base / 4;
-  }
-
-  .avatar-xs + .avatar-xs {
-    margin-left: -$avatar-size-xs / 4;
-  }
-
-  .avatar-sm + .avatar-sm {
-    margin-left: -$avatar-size-sm / 4;
-  }
-
-  .avatar-lg + .avatar-lg {
-    margin-left: -$avatar-size-lg / 4;
-  }
-
-  .avatar-xl + .avatar-xl {
-    margin-left: -$avatar-size-xl / 4;
-  }
-
-  .avatar-xxl + .avatar-xxl {
-    margin-left: -$avatar-size-xxl / 4;
+    margin-left: calc(#{var(--#{$prefix}avatar-size)} * -.25);
   }
 
   // Add some spacing between avatars

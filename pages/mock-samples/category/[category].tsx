@@ -134,7 +134,7 @@ const MockSamplesCategory: FunctionComponent<{
               {mockAPIsList.length < totalItems && (
                 <div className='pb-8 text-center'>
                   <button
-                    className='btn btn-sm btn-secondary-soft'
+                    className='btn btn-sm btn-secondary-subtle'
                     onClick={() => {
                       loadMore();
                     }}

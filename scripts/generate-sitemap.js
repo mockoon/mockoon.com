@@ -1,7 +1,6 @@
 const fs = require('fs');
-const util = require('util');
 const axios = require('axios');
-const glob = util.promisify(require('glob'));
+const {glob} = require('glob')
 
 const websiteURL = 'https://mockoon.com';
 const sitemapList = [];

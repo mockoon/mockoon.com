@@ -1,3 +1,4 @@
+import { slug } from 'github-slugger';
 import { Children, FunctionComponent } from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeExternalLinks from 'rehype-external-links';
@@ -16,70 +17,39 @@ const flatten = (text, child) => {
 };
 
 const heading = (props) => {
-  const levelsSpacing = {
-    '1': '', //h1 are not used in md as they are usually in the hero component
-    '2': 'mt-8',
-    '3': 'mt-6',
-    '4': 'mt-6',
-    '5': 'mt-4',
-    '6': 'mt-4'
-  };
-  const children = Children.toArray(props.children);
-  let text = children.reduce(flatten, '');
-  const slug = text
-    .toLowerCase()
-    .trim()
-    .replace(/\W/g, '-')
-    .replace('--', '-')
-    .replace(/^\-|\-$/g, '');
+  let linkSlug = '';
 
-  let hasVertBar = false;
+  const textChildren = Children.toArray(props.children);
+  let text = textChildren.reduce(flatten, '');
 
-  if (typeof children[0] === 'string' && children[0].includes('|')) {
-    hasVertBar = true;
-    children[0] = (children[0] as string).replace('|', '');
-  }
+  linkSlug = slug(text);
 
   // add anchor link
-
   const container = (children: React.ReactNode): JSX.Element => (
     <>
-      {hasVertBar && <span className='text-primary pe-2'>|</span>}
       {children}
       <a
-        id={slug}
-        href={`#${slug}`}
+        id={linkSlug}
+        href={`#${linkSlug}`}
         className='ms-2 fs-3 fw-bold text-muted text-decoration-none'
       >
         <small>#</small>
       </a>
     </>
   );
-  switch (props.level) {
-    case 1:
-      return (
-        <h1 className={levelsSpacing[props.level]}>{container(children)}</h1>
-      );
-    case 2:
-      return (
-        <h2 className={levelsSpacing[props.level]}>{container(children)}</h2>
-      );
-    case 3:
-      return (
-        <h3 className={levelsSpacing[props.level]}>{container(children)}</h3>
-      );
-    case 4:
-      return (
-        <h4 className={levelsSpacing[props.level]}>{container(children)}</h4>
-      );
-    case 5:
-      return (
-        <h5 className={levelsSpacing[props.level]}>{container(children)}</h5>
-      );
-    case 6:
-      return (
-        <h6 className={levelsSpacing[props.level]}>{container(children)}</h6>
-      );
+  switch (props.node.tagName) {
+    case 'h1':
+      return <h1>{container(props.children)}</h1>;
+    case 'h2':
+      return <h2 className='mt-8'>{container(props.children)}</h2>;
+    case 'h3':
+      return <h3 className='mt-6'>{container(props.children)}</h3>;
+    case 'h4':
+      return <h4 className='mt-6'>{container(props.children)}</h4>;
+    case 'h5':
+      return <h5 className='mt-4'>{container(props.children)}</h5>;
+    case 'h6':
+      return <h6 className='mt-4'>{container(props.children)}</h6>;
   }
 };
 
@@ -91,12 +61,15 @@ const Markdown: FunctionComponent<{
   return (
     <ReactMarkdown
       children={props.body}
-      rehypePlugins={[rehypeRaw, [rehypeExternalLinks,{rel: 'noopener',target: '_blank'}]]}
+      rehypePlugins={[
+        rehypeRaw,
+        [rehypeExternalLinks, { rel: 'noopener', target: '_blank' }]
+      ]}
       remarkPlugins={[remarkGfm]}
       components={{
         code: ({ node, className, children, ...props }) => {
           const match = /language-(\w+)/.exec(className || '');
-          return /* !inline &&  */match ? (
+          return /* !inline &&  */ match ? (
             <CodeBlock
               code={String(children).replace(/\n$/, '')}
               dark
@@ -146,11 +119,11 @@ const Markdown: FunctionComponent<{
         table: ({ children }) => {
           // check if 'NOSTYLE' is present in the header first cell
           let noStyle = false;
-          let firstCell = (children[0] as any)?.props?.children[0]?.props
-            ?.children[0]?.props?.children;
+
+          let firstCell =
+            children[0]?.props?.children?.props?.children?.[0]?.props?.children;
           if (firstCell && firstCell.includes('NOSTYLE')) {
             noStyle = true;
-            firstCell[0] = '';
           }
 
           return (
@@ -160,7 +133,9 @@ const Markdown: FunctionComponent<{
               }`}
             >
               <div className='table-responsive'>
-                <table className='table'>{children}</table>
+                <table className={`table ${noStyle ? 'table-borderless' : ''}`}>
+                  {noStyle ? children[1] : children}
+                </table>
               </div>
             </div>
           );

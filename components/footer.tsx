@@ -36,20 +36,20 @@ const Footer: FunctionComponent<{
           </div>
         </div>
         <div className='row'>
-          <div className='col-12 col-lg-2 d-flex flex-column align-items-start'>
+          <div className='col-12 col-lg-1 d-flex flex-column align-items-start opacity-75'>
             <img
-              src='/images/logo-eyes-grey.svg'
+              src='/images/logo-eyes.svg'
               alt='Mockoon eyes logo'
               width='100'
               className='align-self-center'
             />
           </div>
-          <div className='col-12 col-lg-4 text-lg-start text-center pt-8 pb-4 pb-lg-0 pt-lg-0'>
-            <h6 className='fw-bold text-uppercase text-gray-700'>
+          <div className='col-12 col-lg-3 text-lg-start text-center pt-8 pb-4 pb-lg-0 pt-lg-0'>
+            <h6 className='fw-bold text-uppercase text-gray-800'>
               Popular tutorials and articles
             </h6>
 
-            <ul className='list-unstyled text-muted'>
+            <ul className='list-unstyled text-gray-700'>
               <li className='mb-2'>
                 <Link href='/tutorials/getting-started/' className='text-reset'>
                   Getting started with Mockoon 🚀
@@ -115,10 +115,10 @@ const Footer: FunctionComponent<{
               </li>
             </ul>
           </div>
-          <div className='col-12 col-md-4 col-lg-2 text-lg-start text-center'>
-            <h6 className='fw-bold text-uppercase text-gray-700'>Learn</h6>
+          <div className='col-12 col-md-6 col-lg-2 text-lg-start text-center'>
+            <h6 className='fw-bold text-uppercase text-gray-800'>Learn</h6>
 
-            <ul className='list-unstyled text-muted'>
+            <ul className='list-unstyled text-gray-700'>
               <li className='mb-2'>
                 <Link href='/docs/latest/about/' className='text-reset'>
                   Docs
@@ -172,10 +172,29 @@ const Footer: FunctionComponent<{
               </li>
             </ul>
           </div>
-          <div className='col-12 col-md-4 col-lg-2 text-lg-start text-center'>
+          <div className='col-12 col-md-6 col-lg-2 text-lg-start text-center'>
+            <h6 className='fw-bold text-uppercase text-gray-800'>Services</h6>
+
+            <ul className='list-unstyled text-gray-700'>
+              <li className='mb-2'>
+                <Link href='/pro/' className='text-reset'>
+                  Pro plans
+                </Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/custom-services/' className='text-reset'>
+                  Custom services
+                </Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/status/' className='text-reset'>
+                  Status
+                </Link>
+              </li>
+            </ul>
             <h6 className='fw-bold text-uppercase text-gray-700'>Tools</h6>
 
-            <ul className='list-unstyled text-muted'>
+            <ul className='list-unstyled text-gray-700'>
               <li className='mb-2'>
                 <Link href='/download/' className='text-reset'>
                   Desktop application
@@ -215,31 +234,11 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
             </ul>
-
-            <h6 className='fw-bold text-uppercase text-gray-700'>Services</h6>
-
-            <ul className='list-unstyled text-muted'>
-              <li className='mb-2'>
-                <Link href='/pro/' className='text-reset'>
-                  Pro plans
-                </Link>
-              </li>
-              <li className='mb-2'>
-                <Link href='/custom-services/' className='text-reset'>
-                  Custom services
-                </Link>
-              </li>
-              <li className='mb-2'>
-                <Link href='/status/' className='text-reset'>
-                  Status
-                </Link>
-              </li>
-            </ul>
           </div>
-          <div className='col-12 col-md-4 col-lg-2 offset-lg-0 text-lg-start text-center'>
-            <h6 className='fw-bold text-uppercase text-gray-700'>More</h6>
+          <div className='col-12 col-md-6 col-lg-2 offset-lg-0 text-lg-start text-center'>
+            <h6 className='fw-bold text-uppercase text-gray-800'>More</h6>
 
-            <ul className='list-unstyled text-muted mb-0'>
+            <ul className='list-unstyled text-gray-700 mb-0'>
               <li className='mb-2'>
                 <Link href='/about/' className='text-reset'>
                   About us
@@ -265,7 +264,11 @@ const Footer: FunctionComponent<{
                   Newsletter
                 </Link>
               </li>
-
+              <li className='mb-2'>
+                <Link href='/brand/' className='text-reset'>
+                  Assets
+                </Link>
+              </li>
               <li className='mb-2'>
                 <Link
                   href='https://mockoon.threadless.com/'
@@ -274,22 +277,22 @@ const Footer: FunctionComponent<{
                   rel='noopener'
                 >
                   <>
-                    Shop{' '}
-                    <i className='text-muted icon-open' aria-hidden='true'></i>
+                    Shop <i className='icon-open' aria-hidden='true'></i>
                   </>
                 </Link>
               </li>
-
               <li className='mb-2'>
                 <Link href='/oss-friends/' className='text-reset'>
                   OSS friends
                 </Link>
               </li>
             </ul>
+          </div>
 
-            <h6 className='fw-bold text-uppercase text-gray-700 mt-4'>Legal</h6>
+          <div className='col-12 col-md-6 col-lg-2 offset-lg-0 text-lg-start text-center'>
+            <h6 className='fw-bold text-uppercase text-gray-800'>Policies</h6>
 
-            <ul className='list-unstyled text-muted mb-0'>
+            <ul className='list-unstyled text-gray-700 mb-0'>
               <li className='mb-2'>
                 <Link href='/terms/' className='text-reset'>
                   Terms of service
@@ -300,22 +303,18 @@ const Footer: FunctionComponent<{
                   Privacy policy
                 </Link>
               </li>
-              <li className='mb-2'>
-                <Link href='/brand/' className='text-reset'>
-                  Brand assets
-                </Link>
-              </li>
             </ul>
-            <ul className='align-self-center footer-social list-unstyled list-inline list-social mt-4'>
+
+            <ul className='align-self-center footer-social list-unstyled list-inline list-social mt-8'>
               <li className='list-inline-item list-social-item me-2'>
                 <a
                   href='https://github.com/mockoon/mockoon'
                   target='_blank'
                   rel='noopener'
-                  className='text-decoration-none'
+                  className='text-decoration-none text-reset'
                 >
                   <i
-                    className='text-muted icon-github list-social-icon'
+                    className='icon-github list-social-icon'
                     aria-hidden='true'
                   ></i>
                 </a>
@@ -325,10 +324,10 @@ const Footer: FunctionComponent<{
                   href='https://discord.gg/FtJjkejKGp'
                   target='_blank'
                   rel='noopener'
-                  className='text-decoration-none'
+                  className='text-decoration-none text-reset'
                 >
                   <i
-                    className='text-muted icon-discord list-social-icon'
+                    className='icon-discord list-social-icon'
                     aria-hidden='true'
                   ></i>
                 </a>
@@ -338,12 +337,9 @@ const Footer: FunctionComponent<{
                   href='https://twitter.com/intent/follow?screen_name=GetMockoon'
                   target='_blank'
                   rel='noopener'
-                  className='text-decoration-none'
+                  className='text-decoration-none text-reset'
                 >
-                  <i
-                    className='text-muted icon-x list-social-item'
-                    aria-hidden='true'
-                  ></i>
+                  <i className='icon-x list-social-item' aria-hidden='true'></i>
                 </a>
               </li>
               <li className='list-inline-item list-social-item'>
@@ -351,10 +347,10 @@ const Footer: FunctionComponent<{
                   href='https://www.youtube.com/channel/UCzkVOmqzbh2CdSU4yHa54wg'
                   target='_blank'
                   rel='noopener'
-                  className='text-decoration-none'
+                  className='text-decoration-none text-reset'
                 >
                   <i
-                    className='text-muted icon-youtube list-social-item'
+                    className='icon-youtube list-social-item'
                     aria-hidden='true'
                   ></i>
                 </a>
@@ -364,10 +360,10 @@ const Footer: FunctionComponent<{
                   href='https://www.linkedin.com/company/mockoon'
                   target='_blank'
                   rel='noopener'
-                  className='text-decoration-none'
+                  className='text-decoration-none text-reset'
                 >
                   <i
-                    className='text-muted icon-linkedin list-social-item'
+                    className='icon-linkedin list-social-item'
                     aria-hidden='true'
                   ></i>
                 </a>

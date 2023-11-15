@@ -21,7 +21,7 @@ const Brand: FunctionComponent = function () {
       <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
         <div className='container'>
           <div className='row justify-content-center'>
-            <div className='col-12 col-md-6'>
+            <div className='col-12 col-md-6 col-lg-4'>
               <Card
                 data={{
                   title: 'Mockoon eyes logo for light or dark backgrounds',
@@ -55,10 +55,9 @@ const Brand: FunctionComponent = function () {
                 cover={false}
                 border={true}
                 borderColor={'var(--bs-body-color)'}
-                synchronizedColors={true}
               />
             </div>
-            <div className='col-12 col-md-6'>
+            <div className='col-12 col-md-6 col-lg-4'>
               <Card
                 data={{
                   title: 'Mockoon full logo for light or dark backgrounds',
@@ -91,7 +90,6 @@ const Brand: FunctionComponent = function () {
                 cover={false}
                 border={true}
                 borderColor={'var(--bs-body-color)'}
-                synchronizedColors={true}
               />
             </div>
           </div>

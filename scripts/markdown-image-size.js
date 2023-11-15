@@ -6,16 +6,17 @@
 
 const imageSize = require('image-size');
 const { readFileSync, writeFileSync } = require('fs');
-var glob = require('glob');
+const { glob } = require('glob');
 
 function insert(str, index, value) {
   return str.substr(0, index) + value + str.substr(index);
 }
 
-glob('./content/**/*.md', function (err, files) {
-  files.forEach((file) => {
-    console.log('\n', file);
-    let fileContent = readFileSync(file).toString();
+glob('./content/**/*.md').then((files) => {
+  files.forEach((filePath) => {
+    filePath = filePath.replace(/\\/g, '/');
+    console.log('\n', filePath);
+    let fileContent = readFileSync(filePath).toString();
     const regex =
       /\!(\[.*\])\(((?:\/images|docs\-img\:)[0-9A-Za-z\_\-\.\/]{0,})\)/g;
     let matches = fileContent.matchAll(regex);
@@ -24,8 +25,9 @@ glob('./content/**/*.md', function (err, files) {
       let size;
       if (match[2].startsWith('docs-img:')) {
         size = imageSize(
-          `./public/images/${file
+          `./public/images/${filePath
             .replace('./content/', '')
+            .replace('content/', '')
             .replace('.md', '')}/${match[2].replace('docs-img:', '')}`
         );
       } else {
@@ -45,6 +47,8 @@ glob('./content/**/*.md', function (err, files) {
       );
     }
 
-    writeFileSync(file, fileContent);
+    writeFileSync(filePath, fileContent);
   });
+
+  console.log('✅ Done');
 });

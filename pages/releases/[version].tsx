@@ -12,7 +12,7 @@ import { sortPathBySemver } from '../../utils/utils';
 export function getStaticPaths() {
   const releasesPaths = sync(`./content/releases/*.md`);
   const paths = releasesPaths.map((path) => {
-    const pathParts = path.split('/');
+    const pathParts = path.replaceAll('\\', '/').split('/');
 
     return {
       params: {

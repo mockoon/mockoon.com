@@ -1,12 +1,22 @@
 import { Fragment, FunctionComponent, useState } from 'react';
 import { AccordionData } from '../models/common.model';
 
-const Accordion: FunctionComponent<{ data: AccordionData }> = function (props) {
-  const [accordionState, setAccordionState] = useState({});
+const Accordion: FunctionComponent<{
+  data: AccordionData;
+  openFirst?: boolean;
+  counterSuffix?: { singular: string; plural: string };
+}> = function ({ data, openFirst, counterSuffix }) {
+  const [accordionState, setAccordionState] = useState(
+    openFirst
+      ? {
+          '0-0': true
+        }
+      : {}
+  );
 
   return (
     <Fragment>
-      {props.data.map((dataGroup, dataGroupIndex) => {
+      {data.map((dataGroup, dataGroupIndex) => {
         const header = (
           <div
             className='accordion-item'
@@ -49,10 +59,19 @@ const Accordion: FunctionComponent<{ data: AccordionData }> = function (props) {
                   className='me-4'
                   id={`accordionContent${dataGroupIndex}${dataItemIndex}`}
                 >
-                  {dataItem.question}
+                  {dataItem.title}
                 </span>
 
-                <div className='ms-auto'></div>
+                <div className='ms-auto'>
+                  {Array.isArray(dataItem.text) && (
+                    <span className='badge text-bg-gray-200 rounded-pill'>
+                      {dataItem.text.length}{' '}
+                      {dataItem.text.length > 1
+                        ? counterSuffix.plural
+                        : counterSuffix.singular}
+                    </span>
+                  )}
+                </div>
               </div>
 
               <div
@@ -63,10 +82,25 @@ const Accordion: FunctionComponent<{ data: AccordionData }> = function (props) {
                 aria-labelledby={`accordionContent${dataGroupIndex}${dataItemIndex}`}
                 data-bs-parent={`#accordion${dataGroupIndex}${dataItemIndex}`}
               >
-                <div
-                  className='accordion-body text-gray-700'
-                  dangerouslySetInnerHTML={{ __html: dataItem.answer }}
-                ></div>
+                {Array.isArray(dataItem.text) && (
+                  <ol className='accordion-body text-gray-700 list-group-numbered'>
+                    {dataItem.text.map((textItem, textItemIndex) => {
+                      return (
+                        <li
+                          key={`dataGroup${dataGroupIndex}dataItem${dataItemIndex}textItem${textItemIndex}`}
+                          className='list-group-item ps-4 py-4'
+                          dangerouslySetInnerHTML={{ __html: textItem }}
+                        ></li>
+                      );
+                    })}
+                  </ol>
+                )}
+                {!Array.isArray(dataItem.text) && (
+                  <div
+                    className='accordion-body text-gray-700'
+                    dangerouslySetInnerHTML={{ __html: dataItem.text }}
+                  ></div>
+                )}
               </div>
             </div>
           );
@@ -77,7 +111,7 @@ const Accordion: FunctionComponent<{ data: AccordionData }> = function (props) {
             className='accordion shadow-light-lg mb-5 mb-md-6'
             key={`dataGroup${dataGroupIndex}`}
           >
-            {header}
+            {dataGroup.title ? header : undefined}
             {items}
           </div>
         ];

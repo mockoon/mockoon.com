@@ -3,7 +3,8 @@ import { FunctionComponent } from 'react';
 // mailchimp groups fields names
 const groups = {
   newsletter: 'group[302881][1]',
-  productpreview: 'group[302881][2]'
+  productpreview: 'group[302881][2]',
+  coursepreview: 'group[302881][4]'
 };
 
 const EmailForm: FunctionComponent<{ formType: keyof typeof groups }> =

@@ -151,6 +151,11 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
+                <Link href='/course/' className='text-reset'>
+                  Course
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/articles/' className='text-reset'>
                   Articles
                 </Link>

@@ -375,16 +375,20 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
                       <div className='py-4 mt-auto'>
                         <span className='badge rounded-pill bg-gray-300 text-gray-800'>
-                          <span className='h6 text-uppercase'>Coming soon</span>
+                          <span className='h6 text-uppercase'>
+                            <i className='icon-hourglass_empty'></i> Coming soon
+                          </span>
                         </span>
                       </div>
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-gray-300 text-gray-800 mt-1 me-4'>
-                          <i className='icon-hourglass_empty'></i>
-                        </div>
-
                         <p className='mb-0'>
-                          Sync your API mocks accross your devices
+                          ☁️ Sync your API mocks accross your devices
+                        </p>
+                      </div>
+                      <div className='d-flex'>
+                        <p className='mb-0'>
+                          🎓 Access to the{' '}
+                          <Link href={'/course/'}>online course</Link>
                         </p>
                       </div>
                     </div>
@@ -487,16 +491,20 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       </div>
                       <div className='py-4 mt-auto'>
                         <span className='badge rounded-pill bg-gray-300 text-gray-800'>
-                          <span className='h6 text-uppercase'>Coming soon</span>
+                          <span className='h6 text-uppercase'>
+                            <i className='icon-hourglass_empty'></i> Coming soon
+                          </span>
                         </span>
                       </div>
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-gray-300 text-gray-800 mt-1 me-4'>
-                          <i className='icon-hourglass_empty'></i>
-                        </div>
-
                         <p className='mb-0'>
-                          Sync your API mocks accross your team
+                          ☁️ Sync your API mocks accross your team
+                        </p>
+                      </div>
+                      <div className='d-flex'>
+                        <p className='mb-0'>
+                          🎓 Access to the{' '}
+                          <Link href={'/course/'}>online course</Link>
                         </p>
                       </div>
                     </div>
@@ -620,16 +628,20 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
 
                       <div className='py-4 mt-auto'>
                         <span className='badge rounded-pill bg-gray-300 text-gray-800'>
-                          <span className='h6 text-uppercase'>Coming soon</span>
+                          <span className='h6 text-uppercase'>
+                            <i className='icon-hourglass_empty'></i> Coming soon
+                          </span>
                         </span>
                       </div>
                       <div className='d-flex'>
-                        <div className='badge badge-rounded-circle bg-gray-300 text-gray-800 mt-1 me-4'>
-                          <i className='icon-hourglass_empty'></i>
-                        </div>
-
                         <p className='mb-0'>
-                          Sync your API mocks accross your team
+                          ☁️ Sync your API mocks accross your team
+                        </p>
+                      </div>
+                      <div className='d-flex'>
+                        <p className='mb-0'>
+                          🎓 Access to the{' '}
+                          <Link href={'/course/'}>online course</Link>
                         </p>
                       </div>
                     </div>

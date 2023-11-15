@@ -31,7 +31,7 @@ export const buildIndexStaticProps = (
 export const buildSlugStaticPaths = (folder: string) => () => {
   const articlePaths = sync(`./content/${folder}/*.md`);
   const paths = articlePaths.map((articlePath) => {
-    const pathParts = articlePath.split('/');
+    const pathParts = articlePath.replaceAll('\\', '/').split('/');
 
     return {
       params: { slug: pathParts[pathParts.length - 1].slice(0, -3) }

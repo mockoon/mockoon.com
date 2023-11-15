@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
+import SidebarBanner from '../components/sidebar-banner';
 import Layout from '../layout/layout';
 
 const meta = {
@@ -24,30 +25,14 @@ const AIPoweredMocking = function () {
           <div className='row justify-content-center g-10'>
             <div className='col-12 col-lg-3'>
               <aside className='flex-grow-1 sticky-top pt-4'>
-                <div className='card shadow-light-lg mb-6 mb-md-0 lift lift-lg'>
-                  <div className='card-body'>
-                    <span className='badge text-bg-warning badge-float badge-float-outside'>
-                      PRO
-                    </span>
-
-                    <h4 className='fw-bold'>
-                      Generate your own templates using AI
-                    </h4>
-
-                    <p className='text-muted'>
-                      With Mockoon Pro, you can unlock dozens of templates and
-                      generate your own using our AI assistant.
-                    </p>
-
-                    <a
-                      href='/pro/'
-                      className='fs-sm fw-bold text-decoration-none'
-                    >
-                      Discover Mockoon Pro →
-                      <i className='fe fe-arrow-right ms-3'></i>
-                    </a>
-                  </div>
-                </div>
+                <SidebarBanner
+                  pro
+                  title='Generate your own templates using AI'
+                  text='With Mockoon Pro, you can unlock dozens of templates and
+        generate your own using our AI assistant.'
+                  link='/pro/'
+                  ctaText='Discover Mockoon Pro →'
+                />
               </aside>
             </div>
             <div className='col-12 col-lg-9'>

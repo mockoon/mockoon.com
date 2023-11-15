@@ -157,6 +157,19 @@ const Nav: FunctionComponent = function () {
               </Link>
             </li>
 
+            <li className='nav-item'>
+              <Link
+                href='/course/'
+                className={`nav-link ${
+                  router.pathname === '/course'
+                    ? 'active'
+                    : ''
+                }`}
+              >
+                Course
+              </Link>
+            </li>
+
             <li
               className='nav-item dropdown text-center'
               onMouseEnter={() => {

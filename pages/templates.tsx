@@ -3,6 +3,7 @@ import { FunctionComponent, useState } from 'react';
 import CodeBlock from '../components/code-block';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
+import SidebarBanner from '../components/sidebar-banner';
 import Layout from '../layout/layout';
 import { Template } from '../models/templates.model';
 import { getFreeTemplates } from '../utils/utils';
@@ -70,30 +71,14 @@ const Templates: FunctionComponent<{
                     );
                   })}
                 </ul>
-                <div className='card shadow-light-lg mb-6 mb-md-0 lift lift-lg'>
-                  <div className='card-body'>
-                    <span className='badge text-bg-warning badge-float badge-float-outside'>
-                      PRO
-                    </span>
-
-                    <h4 className='fw-bold'>
-                      Unlock more templates and generate your own
-                    </h4>
-
-                    <p className='text-muted'>
-                      With Mockoon Pro, you can unlock more templates and
-                      generate your own using our AI assistant.
-                    </p>
-
-                    <a
-                      href='/pro/'
-                      className='fs-sm fw-bold text-decoration-none'
-                    >
-                      Discover Mockoon Pro →
-                      <i className='fe fe-arrow-right ms-3'></i>
-                    </a>
-                  </div>
-                </div>
+                <SidebarBanner
+                  pro
+                  title='Unlock more templates and generate your own'
+                  text='With Mockoon Pro, you can unlock more templates and
+                  generate your own using our AI assistant.'
+                  link='/pro/'
+                  ctaText='Discover Mockoon Pro →'
+                />
               </aside>
             </div>
             <div className='col-12 col-lg-9'>

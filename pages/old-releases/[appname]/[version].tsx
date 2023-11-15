@@ -12,7 +12,7 @@ import { ArticleData } from '../../../models/common.model';
 export function getStaticPaths() {
   const releasesPaths = sync(`./content/old-releases/**/*.md`);
   const paths = releasesPaths.map((path) => {
-    const pathParts = path.split('/');
+    const pathParts = path.replaceAll('\\', '/').split('/');
 
     return {
       params: {

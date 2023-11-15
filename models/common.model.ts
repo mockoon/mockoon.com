@@ -1,6 +1,6 @@
 export type AccordionData = {
-  title: string;
-  items: { question: string; answer: string }[];
+  title?: string;
+  items: { title: string; text: string | string[] }[];
 }[];
 
 export type MockAPI = {

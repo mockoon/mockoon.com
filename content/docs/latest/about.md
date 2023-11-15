@@ -22,3 +22,5 @@ You will find the [CLI documentation](https://github.com/mockoon/mockoon/blob/ma
 ## Serverless documentation
 
 You will find the [serverless package documentation](https://github.com/mockoon/mockoon/blob/main/packages/serverless/README.md) in its dedicated readme file on the repository. It covers the package usage instructions and specific features.
+
+> 🎓 Discover our official online course designed to help you get started with API mocking and API design. Coming soon! [Learn more](/course/)

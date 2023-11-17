@@ -16,6 +16,11 @@ class MyDocument extends Document {
             as='font'
             crossOrigin=''
           />
+          <link
+            rel='preconnect'
+            href='https://HV1IDAB8IU-dsn.algolia.net'
+            crossOrigin='anonymous'
+          />
         </Head>
         <body>
           <Main />

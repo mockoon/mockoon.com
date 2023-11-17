@@ -2,6 +2,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useState } from 'react';
 import { useAuth } from '../utils/auth';
+import { useHotkeys } from 'react-hotkeys-hook';
+import SearchModal from './search-modal';
+import { DocSearch } from '@docsearch/react';
+import '@docsearch/css';
 
 const Nav: FunctionComponent = function () {
   const router = useRouter();
@@ -9,6 +13,13 @@ const Nav: FunctionComponent = function () {
   const [appsDropdownOpen, setAppsDropdownOpen] = useState(false);
   const [accountDropdownOpen, setAccountDropdownOpen] = useState(false);
   const auth = useAuth();
+  const [showSearch, setShowSearch] = useState<boolean>(false);
+
+  useHotkeys('ctrl+k', (event) => {
+    event.preventDefault();
+    setShowSearch(true);
+    setShow(false);
+  });
 
   const toggler = (
     <button
@@ -33,6 +44,8 @@ const Nav: FunctionComponent = function () {
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-white'>
       <div className='container-fluid'>
+        <SearchModal show={showSearch} setShow={setShowSearch} />
+
         <a
           className='navbar-brand'
           href='/'
@@ -49,6 +62,7 @@ const Nav: FunctionComponent = function () {
         </a>
 
         {toggler}
+
         <div
           className={
             show ? 'collapse navbar-collapse show' : 'collapse navbar-collapse'
@@ -68,6 +82,25 @@ const Nav: FunctionComponent = function () {
                 </Link>
               </li>
             )}
+            <li
+              className='nav-item'
+              onClick={() => {
+                setShowSearch(true);
+                setShow(false);
+              }}
+            >
+              <button className='btn btn-xs btn-secondary-subtle'>
+                <i className='icon-search me-2'></i>Search{' '}
+                <kbd className='ms-2'>ctrl K</kbd>
+              </button>
+            </li>
+            <li className='nav-item'>
+              <DocSearch
+                appId='HV1IDAB8IU'
+                indexName='mockoon'
+                apiKey='c3396e739c9949cf6ccf7305b8da46aa'
+              />
+            </li>
             <li
               className='nav-item dropdown text-center'
               onMouseEnter={() => {
@@ -161,9 +194,7 @@ const Nav: FunctionComponent = function () {
               <Link
                 href='/course/'
                 className={`nav-link ${
-                  router.pathname === '/course'
-                    ? 'active'
-                    : ''
+                  router.pathname === '/course' ? 'active' : ''
                 }`}
               >
                 Course

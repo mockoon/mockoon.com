@@ -71,13 +71,6 @@ const Nav: FunctionComponent = function () {
               </li>
             )}
 
-            <li className='nav-item'>
-              <DocSearch
-                appId='HV1IDAB8IU'
-                indexName='mockoon'
-                apiKey='c3396e739c9949cf6ccf7305b8da46aa'
-              />
-            </li>
             <li
               className='nav-item dropdown text-center'
               onMouseEnter={() => {
@@ -177,7 +170,13 @@ const Nav: FunctionComponent = function () {
                 Course
               </Link>
             </li>
-
+            <li className='nav-item'>
+              <DocSearch
+                appId='HV1IDAB8IU'
+                indexName='mockoon'
+                apiKey='c3396e739c9949cf6ccf7305b8da46aa'
+              />
+            </li>
             <li
               className='nav-item dropdown text-center'
               onMouseEnter={() => {

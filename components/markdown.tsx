@@ -29,7 +29,6 @@ const heading = (props) => {
     <>
       {children}
       <a
-        id={linkSlug}
         href={`#${linkSlug}`}
         className='ms-2 fs-3 fw-bold text-muted text-decoration-none'
       >
@@ -39,17 +38,37 @@ const heading = (props) => {
   );
   switch (props.node.tagName) {
     case 'h1':
-      return <h1>{container(props.children)}</h1>;
+      return <h1 id={linkSlug}>{container(props.children)}</h1>;
     case 'h2':
-      return <h2 className='mt-8'>{container(props.children)}</h2>;
+      return (
+        <h2 id={linkSlug} className='mt-8'>
+          {container(props.children)}
+        </h2>
+      );
     case 'h3':
-      return <h3 className='mt-6'>{container(props.children)}</h3>;
+      return (
+        <h3 id={linkSlug} className='mt-6'>
+          {container(props.children)}
+        </h3>
+      );
     case 'h4':
-      return <h4 className='mt-6'>{container(props.children)}</h4>;
+      return (
+        <h4 id={linkSlug} className='mt-6'>
+          {container(props.children)}
+        </h4>
+      );
     case 'h5':
-      return <h5 className='mt-4'>{container(props.children)}</h5>;
+      return (
+        <h5 id={linkSlug} className='mt-4'>
+          {container(props.children)}
+        </h5>
+      );
     case 'h6':
-      return <h6 className='mt-4'>{container(props.children)}</h6>;
+      return (
+        <h6 id={linkSlug} className='mt-4'>
+          {container(props.children)}
+        </h6>
+      );
   }
 };
 

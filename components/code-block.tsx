@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 const CodeBlock: FunctionComponent<{
   code: string;
@@ -12,7 +12,7 @@ const CodeBlock: FunctionComponent<{
   const optionalProps: { style?: any } = {};
 
   if (dark) {
-    optionalProps.style = vscDarkPlus;
+    optionalProps.style = nord;
   }
 
   return (

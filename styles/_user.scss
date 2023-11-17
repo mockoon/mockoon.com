@@ -6,6 +6,12 @@ div.icon {
   }
 }
 
+kbd {
+  background-color: $light;
+  color: $primary-desat;
+  border: $border-width solid $border-color;
+}
+
 pre code,
 code {
   color: $primary;

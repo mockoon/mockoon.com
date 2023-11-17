@@ -1,0 +1,30 @@
+@import '~@docsearch/css/dist/_variables.css';
+
+:root {
+  --docsearch-primary-color: var(--bs-primary);
+  --docsearch-logo-color: var(--bs-primary);
+}
+.DocSearch-Container {
+  z-index: 1100;
+}
+.DocSearch-Modal {
+  margin: 120px auto auto;
+}
+.DocSearch-Hits a:hover {
+  text-decoration: none;
+}
+.DocSearch-Hits mark {
+  font-weight: bold;
+}
+.DocSearch-Hit[aria-selected='true'] mark {
+  text-decoration: none;
+}
+.DocSearch-Hit-title {
+  overflow: hidden;
+}
+.DocSearch-Hit-title mark {
+  padding: 0;
+}
+
+@import '~@docsearch/css/dist/button.css';
+@import '~@docsearch/css/dist/modal.css';

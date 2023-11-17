@@ -1,3 +1,4 @@
+import { DocSearch } from '@docsearch/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useState } from 'react';
@@ -49,6 +50,7 @@ const Nav: FunctionComponent = function () {
         </a>
 
         {toggler}
+
         <div
           className={
             show ? 'collapse navbar-collapse show' : 'collapse navbar-collapse'
@@ -68,6 +70,14 @@ const Nav: FunctionComponent = function () {
                 </Link>
               </li>
             )}
+
+            <li className='nav-item'>
+              <DocSearch
+                appId='HV1IDAB8IU'
+                indexName='mockoon'
+                apiKey='c3396e739c9949cf6ccf7305b8da46aa'
+              />
+            </li>
             <li
               className='nav-item dropdown text-center'
               onMouseEnter={() => {
@@ -161,9 +171,7 @@ const Nav: FunctionComponent = function () {
               <Link
                 href='/course/'
                 className={`nav-link ${
-                  router.pathname === '/course'
-                    ? 'active'
-                    : ''
+                  router.pathname === '/course' ? 'active' : ''
                 }`}
               >
                 Course

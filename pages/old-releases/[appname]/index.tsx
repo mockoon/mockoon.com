@@ -113,6 +113,24 @@ export default function OldReleasesIndex(props: {
                               </div>
                             );
                           })}
+                        {props.app.appname === app.appname &&
+                          (props.app.appname === 'desktop' ||
+                            props.app.appname === 'cli') && (
+                            <div className='list-group-item p-2 ps-8'>
+                              <a
+                                href={
+                                  (props.app.appname === 'desktop' &&
+                                    'https://github.com/mockoon/mockoon/releases') ||
+                                  (props.app.appname === 'cli' &&
+                                    'https://github.com/mockoon/cli/releases')
+                                }
+                                rel='noopener'
+                                target='_blank'
+                              >
+                                Older changelogs on GitHub
+                              </a>
+                            </div>
+                          )}
                       </Fragment>
                     );
                   })}

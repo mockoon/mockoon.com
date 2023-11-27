@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { FunctionComponent, useState } from 'react';
 import { frequencyNames, planNames } from '../constants/plans';
 import { useAuth } from '../utils/auth';
+import { useCountdown } from '../utils/countdown';
 import { useCurrentUser } from '../utils/queries';
 import PaddleScript from './paddle';
 
@@ -50,6 +51,13 @@ const pricing = {
   }
 };
 
+const discounts = {
+  SOLO: {
+    MONTHLY: process.env.NEXT_PUBLIC_PADDLE_PLAN_SOLO_MONTHLY_DISCOUNT,
+    YEARLY: process.env.NEXT_PUBLIC_PADDLE_PLAN_SOLO_YEARLY_DISCOUNT
+  }
+};
+
 const suffixes = {
   MONTHLY: 'mo',
   YEARLY: 'yr'
@@ -63,6 +71,11 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
     const [planFrequency, setPlanFrequency] = useState('MONTHLY');
     const [seats, setSeats] = useState(1);
     const [configurePlan, setConfigurePlan] = useState(null);
+    const discountLimit =
+      parseInt(process.env.NEXT_PUBLIC_DISCOUNT_TIME_LIMIT, 10) - 3600000;
+    const discountEnabled = new Date().getTime() < discountLimit;
+    const [countdownDays, countdownHours, countdownMinutes, countdownSeconds] =
+      useCountdown(discountLimit);
 
     const openCheckout = (planId: string) => {
       // @ts-ignore
@@ -71,6 +84,9 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
           theme: 'light',
           locale: 'en'
         },
+        discountId: discountEnabled
+          ? discounts[planId][planFrequency] || null
+          : null,
         items: [
           {
             priceId: pricing[planId][planFrequency].priceId,
@@ -118,6 +134,39 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
         <QueryClientProvider client={queryClient}>
           <section className='mb-8'>
             <div className='container'>
+              {discountEnabled && (
+                <div className='text-center my-6 col-md-8 mx-auto'>
+                  <div className='alert alert-light border-success border-2 shadow'>
+                    🤖 <strong>Cyber Monday!</strong> Get 50% off a new Solo
+                    plan subscription! <br /> (50% off the first year or first 6
+                    months, discount applied at checkout)
+                    <br />
+                    Remaining time:{' '}
+                    {countdownDays > 0 && (
+                      <strong>
+                        <span>
+                          {countdownDays} day{countdownDays > 1 ? 's' : ''}
+                        </span>
+                      </strong>
+                    )}{' '}
+                    {countdownHours > 0 && (
+                      <strong>
+                        <span>
+                          {countdownHours} hour{countdownHours > 1 ? 's' : ''}
+                        </span>
+                      </strong>
+                    )}{' '}
+                    {countdownMinutes > 0 && (
+                      <strong>
+                        <span>
+                          {countdownMinutes} minute
+                          {countdownMinutes > 1 ? 's' : ''}
+                        </span>
+                      </strong>
+                    )}
+                  </div>
+                </div>
+              )}
               <div className='text-center my-6'>
                 <div
                   className='btn-group'

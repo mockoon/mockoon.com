@@ -18,7 +18,7 @@ Three parts are required to create a global route:
 
 To create a global route, you first need to create a new HTTP route that will match all the endpoints you want to protect. To do so, create a new route and select "All methods" in the method dropdown:
 
-![wildcard route on all methods{599x329}](docs-img:create-wildcard-route.png)
+![wildcard route on all methods{599x325}](docs-img:create-wildcard-route.png)
 
 In this example, the wildcard route is placed above the `GET /users` route, which is important as it will be [evaluated first](docs:api-endpoints/routing#routes-order) and catch all the requests. You can create it first or move it up in the routes list with a drag and drop.
 
@@ -30,11 +30,11 @@ In this example, the wildcard route is placed above the `GET /users` route, whic
 The second step is to create one or more responses with rules. For example, you can create a response checking that the request contains an `Authorization` header and returning a `401` error if's not present.
 To follow this example, use the existing response or create a new one and set the status code to `401`:
 
-![create response with status code 401{1006x261}](docs-img:response-status-code-401.png)
+![create response with status code 401{1237x261}](docs-img:response-status-code-401.png)
 
 Add a new rule to this response by clicking on the "add rule" button and selecting the "Header" rule type. Then, set the rule to check that the `Authorization` header is null as we want to return a `401` error if it is not present:
 
-![create rule to check that the Authorization header is null{987x311}](docs-img:response-rule-header-null.png)
+![create rule to check that the Authorization header is null{1218x304}](docs-img:response-rule-header-null.png)
 
 > 💡 You can create more responses with associated rules to verify more criteria on the request and serve different responses accordingly (errors, etc.).
 
@@ -42,7 +42,7 @@ Add a new rule to this response by clicking on the "add rule" button and selecti
 
 Once your route is created and your responses customized, activate the fallback mode by clicking on the "fallback" icon next to the response list:
 
-![Activate fallback mode{999x174}](docs-img:activate-fallback-mode.png)
+![Activate fallback mode{1289x174}](docs-img:activate-fallback-mode.png)
 
 This will automatically pass the request to the next route when none of the [responses' rules](docs:route-responses/dynamic-rules) match.
 

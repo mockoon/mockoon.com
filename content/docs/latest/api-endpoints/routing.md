@@ -16,11 +16,11 @@ In order to prefix all your mock API routes,
 
 Open the **Environment Settings** by clicking on the tab at the top of the window:
 
-![click on the settings tab{767x160}](docs-img:open-environment-settings.png)
+![click on the settings tab{871x160}](docs-img:open-environment-settings.png)
 
 Then, fill the **API prefix** input at the top of the **environment Settings**:
 
-![fill the prefix input{995x298}](docs-img:environment-prefix.png)
+![fill the prefix input{1108x298}](docs-img:environment-prefix.png)
 
 The prefix will appear under your environment name in the environments list. All your environment's routes will now be prefixed and available at the following address `http://localhost:port/myprefix/myroute` instead of `http://localhost:port/myroute`.
 
@@ -45,15 +45,18 @@ Routes support certain patterns and a subset of regular expressions. Here are so
 - `/ab+cd` will match `abcd`, `abbcd`, `abbbcd`, and so on.
 - `/ab(cd)?e` will match `/abe` and `/abcde`.
 
-![route pattern{956x74}](docs-img:route-patterns.png)
+![route pattern{1168x74}](docs-img:route-patterns.png)
 
 For a complete overview of the patterns available, please refer to Express' [route paths documentation](https://expressjs.com/en/guide/routing.html#route-paths).
+
+> To use parentheses in your path as a normal character, you can escape them by either using a backslashe `\` or square brackets `[]`:
+> `/part1[(]part2[)]` > `/part1\(part2\)`
 
 ### Route parameters
 
 Route parameters can be defined in routes by using a colon `:`. The name of a parameter can only contains the following characters `A-Za-z0-9_`.
 
-![route parameter{956x74}](docs-img:route-params.png)
+![route parameter{1168x74}](docs-img:route-params.png)
 
 For a complete overview on how to use and declare route parameters, please refer to Express' [route parameters documentation](https://expressjs.com/en/guide/routing.html#route-parameters).
 

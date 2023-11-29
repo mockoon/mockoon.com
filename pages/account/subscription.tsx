@@ -76,7 +76,9 @@ const AccountSubscription: FunctionComponent = function () {
                                     {planNames[userData?.plan]}
                                   </span>{' '}
                                   plan
-                                  {userData?.plan !== 'FREE' && displayPlanInfo
+                                  {userData?.subscription?.frequency &&
+                                  userData?.plan !== 'FREE' &&
+                                  displayPlanInfo
                                     ? ` (${
                                         frequencyNames[
                                           userData?.subscription?.frequency
@@ -91,42 +93,49 @@ const AccountSubscription: FunctionComponent = function () {
                                     )}
                                 </p>
 
-                                {userData?.plan !== 'FREE' && displayPlanInfo && (
-                                  <p className='m-0'>
-                                    <small className='text-gray-700'>
-                                      Subscribed on{' '}
-                                      {new Date(
-                                        userData?.subscription.createdOn * 1000
-                                      ).toDateString()}
-                                    </small>{' '}
-                                    -{' '}
-                                    {!userData.subscription
-                                      .cancellationScheduled && (
+                                {userData?.plan !== 'FREE' &&
+                                  userData?.subscription.createdOn &&
+                                  userData?.subscription.renewOn &&
+                                  displayPlanInfo && (
+                                    <p className='m-0'>
                                       <small className='text-gray-700'>
-                                        Next renewal on{' '}
+                                        Subscribed on{' '}
                                         {new Date(
-                                          userData?.subscription.renewOn * 1000
+                                          userData?.subscription.createdOn *
+                                            1000
                                         ).toDateString()}
+                                      </small>{' '}
+                                      -{' '}
+                                      {!userData.subscription
+                                        .cancellationScheduled && (
+                                        <small className='text-gray-700'>
+                                          Next renewal on{' '}
+                                          {new Date(
+                                            userData?.subscription.renewOn *
+                                              1000
+                                          ).toDateString()}
+                                        </small>
+                                      )}
+                                      {userData.subscription
+                                        .cancellationScheduled && (
+                                        <small className='text-danger'>
+                                          Will be cancelled on{' '}
+                                          {new Date(
+                                            userData?.subscription.renewOn *
+                                              1000
+                                          ).toDateString()}
+                                        </small>
+                                      )}
+                                    </p>
+                                  )}
+                                {userData?.plan !== 'FREE' &&
+                                  !displayPlanInfo && (
+                                    <p className='m-0'>
+                                      <small className='text-gray-700'>
+                                        Your plan is managed by your team owner
                                       </small>
-                                    )}
-                                    {userData.subscription
-                                      .cancellationScheduled && (
-                                      <small className='text-danger'>
-                                        Will be cancelled on{' '}
-                                        {new Date(
-                                          userData?.subscription.renewOn * 1000
-                                        ).toDateString()}
-                                      </small>
-                                    )}
-                                  </p>
-                                )}
-                                {userData?.plan !== 'FREE' && !displayPlanInfo && (
-                                  <p className='m-0'>
-                                    <small className='text-gray-700'>
-                                      Your plan is managed by your team owner
-                                    </small>
-                                  </p>
-                                )}
+                                    </p>
+                                  )}
                               </div>
                               <div className='col-auto'>
                                 {userData?.plan === 'FREE' && (
@@ -171,60 +180,63 @@ const AccountSubscription: FunctionComponent = function () {
                               )}
                           </div>
 
-                          {userData?.plan !== 'FREE' && subscriptionLinksData && (
-                            <>
-                              <div className='list-group-item'>
-                                <div className='row align-items-center'>
-                                  <div className='col'>
-                                    <p className='mb-0'>
-                                      Update payment method
-                                    </p>
-                                    {userData?.subscription?.pastDue && (
+                          {userData?.plan !== 'FREE' &&
+                            subscriptionLinksData && (
+                              <>
+                                <div className='list-group-item'>
+                                  <div className='row align-items-center'>
+                                    <div className='col'>
+                                      <p className='mb-0'>
+                                        Update payment method
+                                      </p>
+                                      {userData?.subscription?.pastDue && (
+                                        <p className='m-0'>
+                                          <small className='text-gray-700'>
+                                            Update your payment method and pay
+                                            the past due invoice
+                                          </small>
+                                        </p>
+                                      )}
+                                    </div>
+                                    <div className='col-auto'>
+                                      <Link
+                                        href={
+                                          subscriptionLinksData?.update_payment_method
+                                        }
+                                        className='btn btn-xs btn-secondary'
+                                      >
+                                        Update
+                                        {userData?.subscription?.pastDue &&
+                                          ' and pay'}
+                                      </Link>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className='list-group-item'>
+                                  <div className='row align-items-center'>
+                                    <div className='col'>
+                                      <p className='mb-0'>
+                                        Cancel subscription
+                                      </p>
                                       <p className='m-0'>
                                         <small className='text-gray-700'>
-                                          Update your payment method and pay the
-                                          past due invoice
+                                          Will be cancelled at the end of the
+                                          current billing period
                                         </small>
                                       </p>
-                                    )}
-                                  </div>
-                                  <div className='col-auto'>
-                                    <Link
-                                      href={
-                                        subscriptionLinksData?.update_payment_method
-                                      }
-                                      className='btn btn-xs btn-secondary'
-                                    >
-                                      Update
-                                      {userData?.subscription?.pastDue &&
-                                        ' and pay'}
-                                    </Link>
+                                    </div>
+                                    <div className='col-auto'>
+                                      <Link
+                                        href={subscriptionLinksData?.cancel}
+                                        className='btn btn-xs btn-danger'
+                                      >
+                                        Cancel
+                                      </Link>
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
-                              <div className='list-group-item'>
-                                <div className='row align-items-center'>
-                                  <div className='col'>
-                                    <p className='mb-0'>Cancel subscription</p>
-                                    <p className='m-0'>
-                                      <small className='text-gray-700'>
-                                        Will be cancelled at the end of the
-                                        current billing period
-                                      </small>
-                                    </p>
-                                  </div>
-                                  <div className='col-auto'>
-                                    <Link
-                                      href={subscriptionLinksData?.cancel}
-                                      className='btn btn-xs btn-danger'
-                                    >
-                                      Cancel
-                                    </Link>
-                                  </div>
-                                </div>
-                              </div>
-                            </>
-                          )}
+                              </>
+                            )}
                         </div>
                       )}
                     </div>

@@ -40,7 +40,7 @@ Faker.js methods may use two different ways of passing parameters: ordered argum
 
 Faker.js locale and seed can be defined in the settings:
 
-![fakerjs settings{860x812}](docs-img:settings-faker.png)
+![fakerjs settings{860x770}](docs-img:settings-faker.png)
 
 > 📝**A note on Faker.js seeding**  
 > By providing a seed value, you can generate repeatable **sequences** of fake data. Using seeding will not always generate the same value but rather a predictable sequence.

@@ -12,23 +12,19 @@ const faq: AccordionData = [
     items: [
       {
         title: 'Where is the roadmap?',
-        text:
-          'Our <a href="https://github.com/orgs/mockoon/projects/9" target="_blank">public roadmap</a> for our open-source projects is hosted on GitHub. Above is a summary of the current state of the roadmap with the most important features, including the non-open-source ones.'
+        text: 'Our <a href="https://github.com/orgs/mockoon/projects/9" target="_blank">public roadmap</a> for our open-source projects is hosted on GitHub. Above is a summary of the current state of the roadmap with the most important features, including the non-open-source ones.'
       },
       {
         title: 'Where are the features listed? How can I contribute?',
-        text:
-          'All our issues for the public open-source projects are on our <a href="https://github.com/mockoon/mockoon/issues" target="_blank">GitHub repository</a>. This is where you can upvote them and contribute to the <a href="https://github.com/mockoon/mockoon/discussions" target="_blank">discussions</a>.'
+        text: 'All our issues for the public open-source projects are on our <a href="https://github.com/mockoon/mockoon/issues" target="_blank">GitHub repository</a>. This is where you can upvote them and contribute to the <a href="https://github.com/mockoon/mockoon/discussions" target="_blank">discussions</a>.'
       },
       {
         title: 'What are the different steps of the public roadmap?',
-        text:
-          '<ul><li><span class="fw-bold">Backlog:</span> contains features that are potential candidates due to their number of upvotes. Number of upvotes is only one indicator, and we may add features with less upvotes if they are more relevant to the project. We avoid adding too many features to the backlog as they may never get implemented.</li><li><span class="fw-bold">Analysis/POC:</span> contains the features that we are currently analyzing. They may be transferred to "To do" or be rejected if we realize they are not a good fit.</li><li><span class="fw-bold">To do:</span> planned features and tasks.</li><li><span class="fw-bold">In progress:</span> features currently being worked on by the maintainers or external contributors.</li><li><span class="fw-bold">Done:</span> contains the features and bug fixes merged to the main branch. As Mockoon is mainly a desktop application, releases happen less often than for web applications. The repository\'s main branch is stable but may contain features not yet released.</li></ul>'
+        text: '<ul><li><span class="fw-bold">Backlog:</span> contains features that are potential candidates due to their number of upvotes. Number of upvotes is only one indicator, and we may add features with less upvotes if they are more relevant to the project. We avoid adding too many features to the backlog as they may never get implemented.</li><li><span class="fw-bold">Analysis/POC:</span> contains the features that we are currently analyzing. They may be transferred to "To do" or be rejected if we realize they are not a good fit.</li><li><span class="fw-bold">To do:</span> planned features and tasks.</li><li><span class="fw-bold">In progress:</span> features currently being worked on by the maintainers or external contributors.</li><li><span class="fw-bold">Done:</span> contains the features and bug fixes merged to the main branch. As Mockoon is mainly a desktop application, releases happen less often than for web applications. The repository\'s main branch is stable but may contain features not yet released.</li></ul>'
       },
       {
         title: 'Is everything on the public roadmap?',
-        text:
-          'No. Some work may not be listed on the roadmap. It is the case for chores like dependencies updates or work happening on non-open-source products (backend, cloud offering, etc.).'
+        text: 'No. Some work may not be listed on the roadmap. It is the case for chores like dependencies updates or work happening on non-open-source products (backend, cloud offering, etc.).'
       }
     ]
   }
@@ -36,6 +32,17 @@ const faq: AccordionData = [
 
 const tasks = {
   released: [
+    {
+      link: '/docs/latest/callbacks/overview',
+      title: 'Trigger requests after a call (callbacks)',
+      pro: false
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/blob/main/packages/cli/README.md#import-command',
+      title: 'OpenAPI import/export in CLI',
+      pro: false,
+      target: '_blank'
+    },
     {
       link: '/releases/5.1.0#new-command-palette',
       title: 'Desktop application command palette',
@@ -67,38 +74,15 @@ const tasks = {
       title: 'Applications logging standardization',
       pro: false,
       target: '_blank'
-    },
-    {
-      link: '/pro/',
-      title: 'AI-powered mocks',
-      pro: true
-    },
-    {
-      link: '/docs/latest/logging-and-recording/auto-mocking-and-recording/#record-your-api-calls',
-      title: 'Auto-mocking with recording',
-      pro: false
     }
   ],
   inProgress: [
     {
-      link: 'https://github.com/mockoon/mockoon/issues/678',
-      title: 'OpenAPI import/export in CLI',
-      pro: false,
-      target: '_blank'
-    },
-    {
       link: 'https://github.com/mockoon/mockoon/issues/849',
-      title: 'Environment variable support in templating',
+      title: 'Environment variables support in templating',
       pro: false,
       target: '_blank'
     },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/709',
-      title: 'Trigger requests after a call',
-      pro: false,
-      target: '_blank'
-    },
-
     {
       link: '/pro/',
       title: 'Data synchronization for solo developers',

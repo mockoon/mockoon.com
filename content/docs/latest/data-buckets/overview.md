@@ -20,11 +20,11 @@ The data buckets are defined at the **environment level** and are **generated wh
 
 To create a new data bucket, open the **Data** options by clicking on the tab at the top of the window:
 
-![Open data bucket view{742x160}](docs-img:open-data-view.png)
+![Open data bucket view{745x160}](docs-img:open-data-view.png)
 
 Add a new data bucket by clicking on the "plus" button:
 
-![Add a data bucket{1264x578}](docs-img:add-data-bucket.png)
+![Add a data bucket{1495x578}](docs-img:add-data-bucket.png)
 
 You can change the data bucket title and content on the right part of the screen.
 Mockoon will automatically attribute a new **unique ID** to your data bucket. You can use this ID to reference the data using the [`data` helpers](docs:data-buckets/using-data-buckets#using-data-helpers). To retrieve a bucket's unique ID, look in the footer under the data bucket content or right-click on a bucket name in the list and click on "Copy ID to clipboard".

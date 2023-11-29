@@ -16,11 +16,11 @@ For each route, multiple responses can be defined (status, body, and headers) an
 
 To **add** a new response to your route, click on the "plus" icon next to the responses list:
 
-![Click on the icon to add a new response{987x164}](docs-img:add-route-response.png)
+![Click on the icon to add a new response{1218x164}](docs-img:add-route-response.png)
 
 You can also **duplicate** an existing route response by clicking on the "copy" icon on the right:
 
-![Click on the copy icon to duplicate a response{985x195}](docs-img:duplicate-route-response.png)
+![Click on the copy icon to duplicate a response{1185x195}](docs-img:duplicate-route-response.png)
 
 Everything will be copied to the new response: documentation, file/body, headers and rules.
 
@@ -28,13 +28,13 @@ Everything will be copied to the new response: documentation, file/body, headers
 
 Route responses order define the order in which the [rules are interpreted](docs:route-responses/dynamic-rules). You can easily change the default response by reordering the responses menu with a drag and drop:
 
-![Reorder route responses{968x221}](docs-img:reorder-responses.png)
+![Reorder route responses{1199x214}](docs-img:reorder-responses.png)
 
 ## Default route response
 
 Without rules or when a request does not match the one you defined, the default response will always be the one marked with the blue flag. You can easily change the default response by clicking on the grey flags in the menu:
 
-![Define a new default route response{1033x216}](docs-img:change-route-responses-default.png)
+![Define a new default route response{1183x216}](docs-img:change-route-responses-default.png)
 
 ## Random route response
 
@@ -42,7 +42,7 @@ Mockoon can serve the route responses randomly (200, 500, 404) to simulate an un
 
 To activate this option, click on the "shuffle" icon next to the response list:
 
-![Random route responses{1032x174}](docs-img:random-route-responses.png)
+![Random route responses{1232x174}](docs-img:random-route-responses.png)
 
 > ⚠️ When this option is active, the [default response](#default-route-response) and all the rules defined on this route will be ignored. Also, this option cannot be selected in addition to the sequential responses option below.
 
@@ -52,7 +52,7 @@ Mockoon can serve the route responses sequentially (200 → 500 → 404). Mockoo
 
 To activate this option, click on the "repeat" icon next to the response list:
 
-![Sequential route responses{1021x174}](docs-img:sequential-route-responses.png)
+![Sequential route responses{1221x174}](docs-img:sequential-route-responses.png)
 
 > ⚠️ When this option is active, the [default response](#default-route-response) and all the rules defined on this route will be ignored. Also, this option cannot be selected in addition to the random responses option above.
 
@@ -62,7 +62,7 @@ When the **fallback mode** is enabled, Mockoon will automatically pass the reque
 
 To activate this option, click on the "fallback" icon next to the response list:
 
-![fallback mode responses{999x174}](docs-img:fallback-mode-responses.png)
+![fallback mode responses{1199x174}](docs-img:fallback-mode-responses.png)
 
 Behind the scene, the server will automatically jump to the next route in the [order](docs:api-endpoints/routing#routes-order) they were declared and, ultimately, to the proxied server. It allows to create complex setups where a wildcard or parameterized route contains rules to protect the access to other routes:
 

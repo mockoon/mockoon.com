@@ -74,7 +74,7 @@ Here is an example of what you can do with this templating system:
 }
 ```
 
-![body editor content{963x543}](docs-img:body-templating.png)
+![body editor content{1194x493}](docs-img:body-templating.png)
 
 The above template produces the following body with this request:
 
@@ -171,11 +171,11 @@ Templating can be disabled for the body and file content in each route response 
 
 First, open the **Route response settings**:
 
-![click on route response fourth settings tab{1004x168}](docs-img:open-route-response-settings.png)
+![click on route response fourth settings tab{1228x153}](docs-img:open-route-response-settings.png)
 
 Then, disable the templating by checking the box:
 
-![check the disable templating box{1046x181}](docs-img:disable-route-response-templating.png)
+![check the disable templating box{1277x181}](docs-img:disable-route-response-templating.png)
 
 ### File input templating
 
@@ -187,7 +187,7 @@ If you have a set of files named `./file1.json` and `./file2.json`, a route para
 
 If you call this route with `/myroute/1`, `./file1.json` will be sent.
 
-![add a templating helper in the file path{977x184}](docs-img:file-path-templating.png)
+![add a templating helper in the file path{1208x184}](docs-img:file-path-templating.png)
 
 > For more information about absolute and relative file paths, please refer to our [file serving](docs:response-configuration/file-serving#absolute-or-relative-paths) documentation.
 
@@ -195,8 +195,8 @@ If you call this route with `/myroute/1`, `./file1.json` will be sent.
 
 Templating helpers can also be used in the **headers values** both in route headers and environment headers:
 
-![add a templating helper in the header value{1004x238}](docs-img:headers-templating.png)
+![add a templating helper in the header value{1228x223}](docs-img:headers-templating.png)
 
 Finally, templating helpers can be used in the response **rule values** to create dynamic rules:
 
-![screenshot showing a response rule with a template helper in the value field{997x171}](docs-img:template-helper-response-rule-value.png)
+![screenshot showing a response rule with a template helper in the value field{1228x164}](docs-img:template-helper-response-rule-value.png)

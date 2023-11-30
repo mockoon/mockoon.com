@@ -1,16 +1,18 @@
 import { useQuery } from '@tanstack/react-query';
+import { useRouter } from 'next/router';
 import { Plans, Team, User } from '../models/user.model';
 import { useAuth } from './auth';
 
 const useCurrentUser = () => {
-  const auth = useAuth();
+  const { getIdToken, isAuth, logout } = useAuth();
+  const router = useRouter();
 
   const { isLoading, error, data, isFetching } = useQuery<User>({
     queryKey: ['currentUser'],
-    enabled: auth.isAuth,
+    enabled: isAuth,
     refetchOnMount: false,
     queryFn: async () => {
-      const token = await auth.getIdToken();
+      const token = await getIdToken();
 
       if (!token) {
         return null;
@@ -23,6 +25,13 @@ const useCurrentUser = () => {
       }).then((res) => {
         if (res.ok) {
           return res.json();
+        }
+
+        if (res.status === 401) {
+          logout();
+          router.push('/login/');
+
+          return;
         }
 
         throw new Error();

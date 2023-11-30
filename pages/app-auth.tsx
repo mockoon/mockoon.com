@@ -14,12 +14,17 @@ const meta = {
 };
 
 const AppAuth = function () {
-  const { isAuth, user, isLoading: isAuthLoading, getIdToken } = useAuth();
+  const {
+    isAuth,
+    user,
+    isLoading: isAuthLoading,
+    getIdToken,
+    logout
+  } = useAuth();
   const router = useRouter();
 
-  const { mutate, isPending, isSuccess, isError, data } = useMutation(
-
-    {mutationFn:async () => {
+  const { mutate, isPending, isSuccess, isError, data } = useMutation({
+    mutationFn: async () => {
       return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/token`, {
         method: 'GET',
         headers: {
@@ -30,14 +35,20 @@ const AppAuth = function () {
           return res.json();
         }
 
+        if (res.status === 401) {
+          logout();
+          router.push('/login/');
+
+          return;
+        }
+
         throw new Error();
       });
     },
-      onSuccess: (data) => {
-        window.location.assign(`mockoon://auth?token=${data.token}`);
-      }
+    onSuccess: (data) => {
+      window.location.assign(`mockoon://auth?token=${data.token}`);
     }
-  );
+  });
 
   useEffect(() => {
     if (!isAuthLoading) {

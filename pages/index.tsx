@@ -41,7 +41,9 @@ const HomePage: FunctionComponent = function () {
         mainPictureHeight={783}
       />
 
-      <CompanyLogos />
+      <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
+        <CompanyLogos />
+      </section>
 
       <section className='py-5 py-lg-10'>
         <div className='container'>

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import Accordion from '../components/accordion';
 import CompanyLogos from '../components/company-logos';
@@ -19,6 +18,29 @@ const keyPoints = [
   'Course delivered by the creator of Mockoon!',
   'Learn to use all Mockoon features',
   'Apply your knowledge with practical exercises'
+];
+
+const faq: AccordionData = [
+  {
+    items: [
+      {
+        title: 'When will the course be available?',
+        text: 'The course is currently in production and will be available in Q1 2024. You can subscribe to our newsletter to be notified when the course is released.'
+      },
+      {
+        title: 'How long do I have access to the course?',
+        text: 'You will have lifetime access to the course. You will also have access to all future updates to the course.'
+      },
+      {
+        title: 'Can I share my course with my team or someone else?',
+        text: 'Each course purchase is for a single user. If you want to share the course with your team, you can purchase a team license. <a href="/contact-form/">Contact us</a> for more information.'
+      },
+      {
+        title: 'Do you offer discounts?',
+        text: 'We offer a discount on the course price for students, teams and non-profit organizations. Do not hesitate to <a href="/contact-form/">contact our support</a> to get a discount.'
+      }
+    ]
+  }
 ];
 
 const courseContent: AccordionData = [
@@ -116,11 +138,7 @@ const Course: FunctionComponent = function () {
                 you <strong>master API mocking</strong> and many{' '}
                 <strong>API concepts</strong>.
               </p>
-              <p>
-                {' '}
-                This course will be available as a video course and will be
-                included in the <Link href={'/pro/'}>Pro subscription</Link>.
-              </p>
+              <p>This course will be available as a video course.</p>
 
               <div className='mt-6'>
                 {keyPoints.map((keyPoint, keyPointIndex) => (
@@ -180,11 +198,8 @@ const Course: FunctionComponent = function () {
                     <span className='h3 mb-0 mt-2'>*</span>
                   </div>
                   <p className='text-center text-body-secondary mb-5'>
-                    one time purchase
+                    One-time payment - Individual license
                   </p>
-                  <div className='alert alert-light text-center'>
-                    💡 This course will also be part of the Pro subscription.
-                  </div>
                   <p className='text-center'>
                     Get informed when the course is available and get a{' '}
                     <strong>25% discount</strong> on the regular course price.
@@ -202,7 +217,23 @@ const Course: FunctionComponent = function () {
         </div>
       </section>
 
-      <CompanyLogos />
+      <section className='py-6 py-md-8'>
+        <CompanyLogos />
+      </section>
+
+      <section
+        className='py-6 py-md-8 border-bottom bg-gradient-light-white'
+        id='faq'
+      >
+        <div className='container'>
+          <div className='row justify-content-center'>
+            <div className='col-12 col-lg-8 align-items-center'>
+              <h2 className='fw-bold mb-6 text-center'>Official course FAQ</h2>
+              <Accordion data={faq} />
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };

@@ -26,25 +26,23 @@ const CompanyLogos = function () {
   }, []);
 
   return (
-    <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
-      <div className='container'>
-        <h4 className='text-muted text-center pb-6 fw-bold'>
-          Trusted by awesome teams
-        </h4>
-        <div className='row align-items-center justify-content-center'>
-          {logos.slice(0, 6).map((logo, logoIndex) => (
-            <div
-              key={`logo${logoIndex}`}
-              className='col-6 col-sm-3 col-lg-2 mb-4 mb-md-0 px-xl-8 text-center'
-            >
-              <div className='img-fluid mb-2 mb-md-0'>
-                <img src={logo.src} alt={logo.alt} />
-              </div>
+    <div className='container'>
+      <h4 className='text-muted text-center pb-6 fw-bold'>
+        Trusted by awesome teams
+      </h4>
+      <div className='row align-items-center justify-content-center'>
+        {logos.slice(0, 6).map((logo, logoIndex) => (
+          <div
+            key={`logo${logoIndex}`}
+            className='col-6 col-sm-3 col-lg-2 mb-4 mb-md-0 px-xl-8 text-center'
+          >
+            <div className='img-fluid mb-2 mb-md-0'>
+              <img src={logo.src} alt={logo.alt} />
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 

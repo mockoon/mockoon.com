@@ -434,12 +434,6 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                           ☁️ Sync your API mocks accross your devices
                         </p>
                       </div>
-                      <div className='d-flex'>
-                        <p className='mb-0'>
-                          🎓 Access to the{' '}
-                          <Link href={'/course/'}>online course</Link>
-                        </p>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -548,12 +542,6 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       <div className='d-flex'>
                         <p className='mb-0'>
                           ☁️ Sync your API mocks accross your team
-                        </p>
-                      </div>
-                      <div className='d-flex'>
-                        <p className='mb-0'>
-                          🎓 Access to the{' '}
-                          <Link href={'/course/'}>online course</Link>
                         </p>
                       </div>
                     </div>
@@ -685,12 +673,6 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                       <div className='d-flex'>
                         <p className='mb-0'>
                           ☁️ Sync your API mocks accross your team
-                        </p>
-                      </div>
-                      <div className='d-flex'>
-                        <p className='mb-0'>
-                          🎓 Access to the{' '}
-                          <Link href={'/course/'}>online course</Link>
                         </p>
                       </div>
                     </div>

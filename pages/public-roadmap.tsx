@@ -78,6 +78,18 @@ const tasks = {
   ],
   inProgress: [
     {
+      link: 'https://github.com/mockoon/mockoon/issues/83',
+      title: 'WebSockets support',
+      pro: false,
+      target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1047',
+      title: 'CRUD routes filtering',
+      pro: false,
+      target: '_blank'
+    },
+    {
       link: 'https://github.com/mockoon/mockoon/issues/849',
       title: 'Environment variables support in templating',
       pro: false,

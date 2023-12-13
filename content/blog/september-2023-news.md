@@ -2,7 +2,7 @@
 title: September 2023 news
 excerpt: 'Mockoon quarterly news for September 2023: new releases, global rules, GitHub Action, and more.'
 date: '2023-10-06'
-image: september-news.png
+image: september-2023-news.png
 imageAlt: mockoon logo with screenshot
 imageWidth: 1200
 imageHeight: 400

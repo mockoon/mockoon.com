@@ -130,6 +130,13 @@ Moreover, nesting is supported:
 GET /path?user.email_end=@example.com
 ```
 
+The `like`, `start` and `end` operators support regex patterns:
+
+```
+GET /path?user.name_like=^john
+GET /path?user.id_like=^(123|456|789)$
+```
+
 #### Searching
 
 To search an array, you can use the `search` query parameter. Search is a special kind of filter that will look for a partial match in any values (with nesting) in the array. For instance, if you want to search for `john` in an array of users, you can use:

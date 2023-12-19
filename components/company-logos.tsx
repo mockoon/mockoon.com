@@ -27,7 +27,7 @@ const CompanyLogos = function () {
 
   return (
     <div className='container'>
-      <h4 className='text-muted text-center pb-6 fw-bold'>
+      <h4 className='text-gray-700 text-center pb-6 fw-bold'>
         Trusted by awesome teams
       </h4>
       <div className='row align-items-center justify-content-center'>

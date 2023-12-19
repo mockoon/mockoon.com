@@ -39,7 +39,7 @@ const EmailForm: FunctionComponent<{ formType: keyof typeof groups }> =
           </button>
         </div>
 
-        <p className='text-muted text-center h6 pt-2'>
+        <p className='text-gray-700 text-center h6 pt-2'>
           Your email will not be shared or used for any other purpose.
         </p>
 

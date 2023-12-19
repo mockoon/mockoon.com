@@ -67,7 +67,7 @@ const Hero: FunctionComponent<{
                         </button>
                       </a>
                       {cta.subtitle && (
-                        <p className='m-0 text-muted fst-italic'>
+                        <p className='m-0 text-gray-700 fst-italic'>
                           <small>{cta.subtitle}</small>
                         </p>
                       )}

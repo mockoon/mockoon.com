@@ -290,7 +290,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                           >
                             0
                           </span>
-                          <span className='h4 text-muted align-self-end mb-2'>
+                          <span className='h4 text-gray-700 align-self-end mb-2'>
                             /{suffixes[planFrequency]}
                           </span>
                         </div>
@@ -354,7 +354,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         <span className='price display-2 mb-0'>
                           {pricing.SOLO[planFrequency].price}
                         </span>
-                        <span className='h4 text-muted align-self-end mb-2'>
+                        <span className='h4 text-gray-700 align-self-end mb-2'>
                           /{suffixes[planFrequency]}
                         </span>
                       </div>
@@ -455,7 +455,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         <span className='price display-2 mb-0'>
                           {pricing.TEAM[planFrequency].price}
                         </span>
-                        <span className='h4 text-muted align-self-end mb-2'>
+                        <span className='h4 text-gray-700 align-self-end mb-2'>
                           /{suffixes[planFrequency]}/seat
                         </span>
                       </div>
@@ -566,7 +566,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         <span className='price display-2 mb-0'>
                           {pricing.ENTERPRISE[planFrequency].price}
                         </span>
-                        <span className='h4 text-muted align-self-end mb-2'>
+                        <span className='h4 text-gray-700 align-self-end mb-2'>
                           /{suffixes[planFrequency]}/seat
                         </span>
                       </div>
@@ -679,7 +679,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                   </div>
                 </div>
               </div>
-              <p className='fs-sm text-muted text-center mt-1'>
+              <p className='fs-sm text-gray-700 text-center mt-1'>
                 Prices are in USD and exclude VAT where applicable. By
                 proceeding to payment you agree to our{' '}
                 <Link href={'/privacy/'}>privacy policy</Link> and{' '}
@@ -718,7 +718,9 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                     </div>
                     <div className='ps-5'>
                       <p className='fs-sm fw-bold mb-0'>Guillaume</p>
-                      <p className='fs-sm text-muted mb-0'>Founder @ Mockoon</p>
+                      <p className='fs-sm text-gray-700 mb-0'>
+                        Founder @ Mockoon
+                      </p>
                     </div>
                   </div>
                 </div>

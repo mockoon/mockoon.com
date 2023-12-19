@@ -93,7 +93,7 @@ const Signup: FunctionComponent = function () {
               <div className='col-12 col-md-5 col-lg-4 py-8 py-md-11'>
                 <h1 className='mb-0 fw-bold text-center'>Sign up</h1>
 
-                <p className='mb-6 text-center text-muted'>
+                <p className='mb-6 text-center text-gray-700'>
                   Get access to the Mockoon Cloud service.
                 </p>
 
@@ -177,7 +177,7 @@ const Signup: FunctionComponent = function () {
                   </button>
                 </form>
 
-                <p className='mb-0 fs-sm text-center text-muted'>
+                <p className='mb-0 fs-sm text-center text-gray-700'>
                   Already have an account? <Link href={'login/'}>Log in</Link>
                 </p>
               </div>

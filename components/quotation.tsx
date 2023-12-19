@@ -11,21 +11,21 @@ const Quotation: FunctionComponent<{ quotation: QuotationData }> = function ({
   quotation
 }) {
   return (
-    <div className='quotation p-6 m-8'>
-      <p className='text-gray-700 lead'>{quotation.citation}</p>
-      <div className='d-flex mt-5 align-items-center'>
-        <div className='avatar avatar-xl'>
-          <img
-            className='avatar-img img-thumbnail rounded-circle'
-            src={`/images/${quotation.pictureUrl}`}
-            alt={quotation.authorRole}
-            width={128}
-            height={128}
-          />
-        </div>
+    <div className='mx-md-8 my-8'>
+      <p className='quotation p-5 mb-0 text-gray-700 lead text-center'>
+        {quotation.citation}
+      </p>
+      <div className='d-flex align-items-center'>
+        <img
+          className='avatar avatar-xl img-thumbnail rounded-circle'
+          src={`/images/${quotation.pictureUrl}`}
+          alt={quotation.authorRole}
+          width={128}
+          height={128}
+        />
         <div className='ms-5'>
           <div className='fw-bold fs-sm'>{quotation.author}</div>
-          <div className='text-muted fs-sm'>{quotation.authorRole}</div>
+          <div className='text-gray-700 fs-sm'>{quotation.authorRole}</div>
         </div>
       </div>
     </div>

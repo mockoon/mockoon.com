@@ -15,7 +15,7 @@ const Custom404: FunctionComponent = function () {
               <img src='/images/logo-weep.svg' alt='' width='250' />
               <h1 className='mb-0 fw-bold text-center'>Page not found!</h1>
 
-              <p className='mb-6 text-center text-muted'></p>
+              <p className='mb-6 text-center text-gray-700'></p>
             </div>
           </div>
         </div>

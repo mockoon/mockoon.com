@@ -96,7 +96,11 @@ const useCurrentSubscriptionLinks = (user: User) => {
   }>({
     queryKey: ['currentSubscriptionLinks'],
     refetchOnMount: false,
-    enabled: auth.isAuth && !!user && user.plan !== Plans.FREE,
+    enabled:
+      auth.isAuth &&
+      !!user &&
+      user.plan !== Plans.FREE &&
+      user.subscription.provider !== null,
     queryFn: async () => {
       const token = await auth.getIdToken();
 

@@ -17,7 +17,7 @@ const Sponsors: FunctionComponent<{
           </p>
         )}
       </div>
-      <h4 className='text-muted text-center pt-6 pb-4 fw-bold'>Platinum</h4>
+      <h4 className='text-gray-700 text-center pt-6 pb-4 fw-bold'>Platinum</h4>
       <div className='row align-items-center justify-content-center'>
         <div className='col col-md-10 text-center'>
           <Link
@@ -58,7 +58,7 @@ const Sponsors: FunctionComponent<{
 
       {showHonorary && (
         <>
-          <h4 className='text-muted text-center pt-6 pb-4 fw-bold'>
+          <h4 className='text-gray-700 text-center pt-6 pb-4 fw-bold'>
             Special thanks
           </h4>
           <div className='row align-items-center justify-content-center'>

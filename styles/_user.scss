@@ -95,7 +95,7 @@ footer {
 }
 
 .simple-card-min {
-  p.text-muted {
+  p.text-gray-700 {
     font-size: initial;
   }
 }
@@ -209,7 +209,7 @@ p.console {
   &:before,
   &:after {
     position: absolute;
-    color: lighten($primary, 20%);
+    color: lighten($custom-gray, 20%);
     font-size: 3rem;
   }
 
@@ -339,4 +339,33 @@ p.console {
     border-right: $arrow-height/2 solid white;
     border-left: $arrow-height/2 solid transparent;
   }
+}
+
+.anchor-link {
+  position: absolute;
+  left: calc(-1em - 0.2rem);
+  padding-right: 0.2rem;
+  align-items: center;
+  width: calc(1em + 0.2rem);
+  min-height: 1em;
+  line-height: inherit;
+
+  i {
+    position: absolute;
+    top: calc(50% - 0.5em);
+    display: none;
+    font-size: 0.8em;
+
+    transform: rotate(45deg);
+  }
+}
+
+h1:hover .anchor-link i,
+h2:hover .anchor-link i,
+h3:hover .anchor-link i,
+h4:hover .anchor-link i,
+h5:hover .anchor-link i,
+h6:hover .anchor-link i,
+.anchor-link:hover i {
+  display: block;
 }

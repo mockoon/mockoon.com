@@ -69,7 +69,7 @@ const Login: FunctionComponent = function () {
             <div className='row align-items-center justify-content-center gx-0'>
               <div className='col-12 col-md-5 col-lg-4 py-8 py-md-11'>
                 <h1 className='mb-0 fw-bold text-center'>Log in</h1>
-                <p className='mb-6 text-center text-muted'>
+                <p className='mb-6 text-center text-gray-700'>
                   Access your Mockoon Cloud account.
                 </p>
 
@@ -128,7 +128,7 @@ const Login: FunctionComponent = function () {
                   )}
                 </form>
 
-                <p className='mb-0 fs-sm text-center text-muted'>
+                <p className='mb-0 fs-sm text-center text-gray-700'>
                   Don't have an account yet?{' '}
                   <Link href={'signup/'}>Sign up</Link>
                 </p>

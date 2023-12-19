@@ -26,7 +26,9 @@ const Testimonial: FunctionComponent<{
           target='_blank'
         >
           <p
-            className={`mb-0 text-muted text-left ${props.small ? 'fs-5' : ''}`}
+            className={`mb-0 text-gray-700 text-left ${
+              props.small ? 'fs-5' : ''
+            }`}
             dangerouslySetInnerHTML={{ __html: props.children.toString() }}
           ></p>
         </a>
@@ -54,7 +56,7 @@ const Testimonial: FunctionComponent<{
             />
           </div>
 
-          <p className='h6 text-uppercase text-muted mb-0'>{props.name}</p>
+          <p className='h6 text-uppercase text-gray-700 mb-0'>{props.name}</p>
         </a>
       </div>
     </Fragment>

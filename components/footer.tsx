@@ -20,7 +20,7 @@ const Footer: FunctionComponent<{
                     Get our stories delivered
                   </h4>
 
-                  <p className='fs-lg text-muted mb-4 mb-lg-0'>
+                  <p className='fs-lg text-gray-700 mb-4 mb-lg-0'>
                     Enter your email address to receive Mockoon's latest updates
                   </p>
                 </div>

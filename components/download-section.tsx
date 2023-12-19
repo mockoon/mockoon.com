@@ -43,7 +43,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
             <i className='icon-windows'></i>
           </div>
 
-          <div className='text-muted mb-6 mb-lg-0'>
+          <div className='text-gray-700 mb-6 mb-lg-0'>
             <div className='btn-group'>
               <a
                 className='btn btn-primary-subtle btn-sm d-flex align-items-center'
@@ -91,7 +91,10 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
               >
                 {' '}
                 <code>choco install mockoon</code>
-                <i className='text-muted icon-open ps-2' aria-hidden='true'></i>
+                <i
+                  className='text-gray-700 icon-open ps-2'
+                  aria-hidden='true'
+                ></i>
               </a>
               <br />
               <a
@@ -101,7 +104,10 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 rel='noopener'
               >
                 <code>winget install mockoon</code>
-                <i className='text-muted icon-open ps-2' aria-hidden='true'></i>
+                <i
+                  className='text-gray-700 icon-open ps-2'
+                  aria-hidden='true'
+                ></i>
               </a>
             </div>
           </div>
@@ -112,7 +118,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
             <i className='icon-linux'></i>
           </div>
 
-          <div className='text-muted mb-6 mb-lg-0'>
+          <div className='text-gray-700 mb-6 mb-lg-0'>
             <div className='btn-group'>
               <a
                 className='btn btn-primary-subtle btn-sm d-flex align-items-center'
@@ -161,7 +167,10 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 rel='noopener'
               >
                 <code>sudo snap install mockoon</code>
-                <i className='text-muted icon-open ps-2' aria-hidden='true'></i>
+                <i
+                  className='text-gray-700 icon-open ps-2'
+                  aria-hidden='true'
+                ></i>
               </a>
               <br />
               <a
@@ -173,7 +182,10 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 <code className='mt-1 user-select-text'>
                   yay -S mockoon-bin
                 </code>
-                <i className='text-muted icon-open ps-2' aria-hidden='true'></i>
+                <i
+                  className='text-gray-700 icon-open ps-2'
+                  aria-hidden='true'
+                ></i>
               </a>
             </div>
           </div>
@@ -184,7 +196,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
             <i className='icon-apple'></i>
           </div>
 
-          <div className='text-muted mb-6 mb-lg-0'>
+          <div className='text-gray-700 mb-6 mb-lg-0'>
             <div className='btn-group'>
               <a
                 className='btn btn-primary-subtle btn-sm d-flex align-items-center'
@@ -230,7 +242,10 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 rel='noopener'
               >
                 <code>brew install --cask mockoon</code>
-                <i className='text-muted icon-open ps-2' aria-hidden='true'></i>
+                <i
+                  className='text-gray-700 icon-open ps-2'
+                  aria-hidden='true'
+                ></i>
               </a>
             </div>
           </div>
@@ -240,7 +255,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
       <div className='row'>
         <div className='col-12 text-center'>
           <p className='text-center'>
-            <a className='text-gray-600' href={`/releases/${version}/`}>
+            <a className='text-gray-700' href={`/releases/${version}/`}>
               See the v{version} changelog
             </a>
           </p>

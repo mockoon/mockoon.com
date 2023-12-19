@@ -106,7 +106,9 @@ const MockSamples: FunctionComponent<{
             <div className='col-auto'>
               <p className='fs-sm text-gray-700 mb-5 mb-md-0'>
                 {mockAPI.version && (
-                  <span className='text-muted'>Version: {mockAPI.version}</span>
+                  <span className='text-gray-700'>
+                    Version: {mockAPI.version}
+                  </span>
                 )}
               </p>
             </div>
@@ -145,7 +147,7 @@ const MockSamples: FunctionComponent<{
                   </div>
                 </div>
                 <div className='card-footer border-top'>
-                  <div className='text-muted fs-6'>
+                  <div className='text-gray-700 fs-6'>
                     Own this API? Add a{' '}
                     <Link
                       href={`/integrations/embedded-button/?dataURL=${mockAPI.environmentSrc}`}

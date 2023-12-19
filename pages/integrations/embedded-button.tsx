@@ -119,7 +119,7 @@ const EmbeddedButton: FunctionComponent = function () {
                       language='html'
                       maxHeight='100px'
                     />
-                    <p className='fs-6 text-muted'>
+                    <p className='fs-6 text-gray-700'>
                       Feel free to modify this code!
                     </p>
                   </div>

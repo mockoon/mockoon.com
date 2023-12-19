@@ -81,7 +81,7 @@ const HomePage: FunctionComponent = function () {
                   </div>
                   <div className='ps-5'>
                     <p className='fs-sm fw-bold mb-0'>Yasmin Desai</p>
-                    <p className='fs-sm text-muted mb-0'>
+                    <p className='fs-sm text-gray-700 mb-0'>
                       Senior Product Manager @ Impala
                     </p>
                   </div>
@@ -121,7 +121,7 @@ const HomePage: FunctionComponent = function () {
                   </div>
                   <div className='ps-5'>
                     <p className='fs-sm fw-bold mb-0'>Jan Bílek</p>
-                    <p className='fs-sm text-muted mb-0'>
+                    <p className='fs-sm text-gray-700 mb-0'>
                       Product Manager @ Localazy
                     </p>
                   </div>
@@ -156,7 +156,7 @@ const HomePage: FunctionComponent = function () {
                     <h3 className='fw-bold'>{highlight.title}</h3>
 
                     <p
-                      className='text-muted mb-6 mb-md-0'
+                      className='text-gray-700 mb-6 mb-md-0'
                       dangerouslySetInnerHTML={{
                         __html: highlight.description
                       }}

@@ -100,7 +100,7 @@ const CLI: FunctionComponent = function () {
                   rel='noopener'
                 >
                   <i
-                    className='text-muted icon-open ps-2'
+                    className='text-gray-700 icon-open ps-2'
                     aria-hidden='true'
                   ></i>
                 </a>
@@ -122,7 +122,7 @@ const CLI: FunctionComponent = function () {
                   rel='noopener'
                 >
                   <i
-                    className='text-muted icon-open ps-2'
+                    className='text-gray-700 icon-open ps-2'
                     aria-hidden='true'
                   ></i>
                 </a>
@@ -145,7 +145,7 @@ const CLI: FunctionComponent = function () {
                   rel='noopener'
                 >
                   <i
-                    className='text-muted icon-open ps-2'
+                    className='text-gray-700 icon-open ps-2'
                     aria-hidden='true'
                   ></i>
                 </a>

@@ -1,3 +1,4 @@
+$custom-gray: #242830;
 $font-family-base: sans-serif;
 $container-max-widths: (
   sm: 540px,
@@ -10,3 +11,21 @@ $container-max-widths: (
 $path-to-img: '/images' !default;
 $table-cell-padding-y: 0.5rem;
 $table-cell-padding-x: 0.5rem;
+
+$thumbnail-padding: 0;
+$thumbnail-border-width: 3px;
+$thumbnail-border-color: $custom-gray;
+$thumbnail-box-shadow: none;
+
+// put back bs5 font sizes
+$font-size-base: 1rem;
+$font-size-xs: $font-size-base * 0.6;
+$font-size-sm: $font-size-base * 0.875;
+$font-size-lg: $font-size-base * 1.25;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;

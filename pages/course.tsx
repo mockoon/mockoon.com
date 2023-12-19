@@ -186,7 +186,7 @@ const Course: FunctionComponent = function () {
                       </div>
                       <div className='ps-5'>
                         <p className='fs-sm fw-bold mb-0'>Guillaume</p>
-                        <p className='fs-sm text-muted mb-0'>
+                        <p className='fs-sm text-gray-700 mb-0'>
                           Creator of Mockoon
                         </p>
                       </div>
@@ -207,7 +207,7 @@ const Course: FunctionComponent = function () {
                   <EmailForm formType='coursepreview' />
                 </div>
                 <div className='card-footer'>
-                  <p className='mb-0 text-center h6 text-muted'>
+                  <p className='mb-0 text-center h6 text-gray-700'>
                     * Price in USD excluding VAT or sales tax where applicable.
                   </p>
                 </div>

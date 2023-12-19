@@ -31,7 +31,7 @@ const About: FunctionComponent = function () {
               </div>
               <div className='col-12 order-lg-1 d-flex justify-content-center'>
                 <div className='align-items-center pb-0 d-flex flex-column flex-lg-row'>
-                  <h6 className='text-uppercase text-muted me-lg-2 mb-lg-0 mb-1'>
+                  <h6 className='text-uppercase text-gray-700 me-lg-2 mb-lg-0 mb-1'>
                     Guillaume
                   </h6>
 
@@ -41,7 +41,7 @@ const About: FunctionComponent = function () {
                     rel='noopener'
                     className='text-decoration-none'
                   >
-                    <i className='icon-github fs-3 text-muted'></i>
+                    <i className='icon-github fs-3 text-gray-700'></i>
                   </a>
                 </div>
               </div>
@@ -60,7 +60,7 @@ const About: FunctionComponent = function () {
               </div>
               <div className='col-12 order-lg-1 d-flex justify-content-center'>
                 <div className='align-items-center pb-0 d-flex flex-column flex-lg-row'>
-                  <h6 className='text-uppercase text-muted me-lg-2 mb-lg-0 mb-1'>
+                  <h6 className='text-uppercase text-gray-700 me-lg-2 mb-lg-0 mb-1'>
                     Fabrice
                   </h6>
 
@@ -70,7 +70,7 @@ const About: FunctionComponent = function () {
                     rel='noopener'
                     className='text-decoration-none'
                   >
-                    <i className='icon-github fs-3 text-muted'></i>
+                    <i className='icon-github fs-3 text-gray-700'></i>
                   </a>
                 </div>
               </div>

@@ -156,7 +156,7 @@ export default function OldReleasesIndex(props: {
                           className='text-decoration-none ms-4 fs-4'
                         >
                           <i
-                            className='text-muted icon-github list-social-icon'
+                            className='text-gray-700 icon-github list-social-icon'
                             aria-hidden='true'
                           ></i>
                         </a>

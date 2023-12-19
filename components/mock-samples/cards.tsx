@@ -38,7 +38,7 @@ const MockSampleCards: FunctionComponent<{
                     }`}
                   >
                     <h3 className={'fs-4 mb-0'}>{mockAPI.title}</h3>
-                    <div className='text-muted fs-6'>
+                    <div className='text-gray-700 fs-6'>
                       <ConditionalWrapper
                         condition={!!mockAPI.externalLink}
                         wrapper={(children) => (

@@ -27,45 +27,50 @@ const heading = (props) => {
   // add anchor link
   const container = (children: React.ReactNode): JSX.Element => (
     <>
-      {children}
       <a
         href={`#${linkSlug}`}
-        className='ms-2 fs-3 fw-bold text-muted text-decoration-none'
+        className='fw-bold text-gray-700 text-decoration-none anchor-link'
       >
-        <small>#</small>
+        &nbsp;
+        <i className='icon-link'></i>
       </a>
+      {children}
     </>
   );
   switch (props.node.tagName) {
     case 'h1':
-      return <h1 id={linkSlug}>{container(props.children)}</h1>;
+      return (
+        <h1 id={linkSlug} className='position-relative '>
+          {container(props.children)}
+        </h1>
+      );
     case 'h2':
       return (
-        <h2 id={linkSlug} className='mt-8'>
+        <h2 id={linkSlug} className='position-relative mt-8'>
           {container(props.children)}
         </h2>
       );
     case 'h3':
       return (
-        <h3 id={linkSlug} className='mt-6'>
+        <h3 id={linkSlug} className='position-relative mt-6'>
           {container(props.children)}
         </h3>
       );
     case 'h4':
       return (
-        <h4 id={linkSlug} className='mt-6'>
+        <h4 id={linkSlug} className='position-relative mt-6'>
           {container(props.children)}
         </h4>
       );
     case 'h5':
       return (
-        <h5 id={linkSlug} className='mt-4'>
+        <h5 id={linkSlug} className='position-relative mt-4'>
           {container(props.children)}
         </h5>
       );
     case 'h6':
       return (
-        <h6 id={linkSlug} className='mt-4'>
+        <h6 id={linkSlug} className='position-relative mt-4'>
           {container(props.children)}
         </h6>
       );
@@ -128,7 +133,7 @@ const Markdown: FunctionComponent<{
                 } rounded`}
               />
               {hasSub && (
-                <span className='d-block fs-6 text-center text-muted mb-8'>
+                <span className='d-block fs-6 text-center text-gray-700 mb-8'>
                   {altCleaned}
                 </span>
               )}

@@ -1,7 +1,6 @@
 import { Fragment, FunctionComponent } from 'react';
 import { ArticleData } from '../models/common.model';
 import Markdown from './markdown';
-import Share from './share';
 
 const Article: FunctionComponent<{
   slug: string;
@@ -84,29 +83,24 @@ const Article: FunctionComponent<{
                 {props.articleData.title}
               </h1>
 
-              <p className='lead mb-7 text-center text-muted'>
+              <p className='lead mb-4 text-center text-gray-700'>
                 {props.articleData.excerpt}
               </p>
 
               <div
                 className={`row ${
                   props.articleData.date ? '' : 'd-flex justify-content-center'
-                } align-items-center py-5 border-top border-bottom`}
+                } align-items-center pb-5 border-bottom`}
               >
                 <div className='col-12 d-flex align-items-center flex-column text-center text-lg-start mb-2 mb-lg-0'>
                   {props.articleData.date && (
                     <time
-                      className='fs-sm text-muted'
+                      className='fs-sm text-gray-700'
                       dateTime={props.articleData.date}
                     >
                       Published on {props.articleData.date}
                     </time>
                   )}
-                  <Share
-                    url={`https://mockoon.com/${props.slug}/`}
-                    text={props.articleData.meta.description}
-                    showLabel={true}
-                  />
                 </div>
               </div>
             </div>

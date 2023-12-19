@@ -115,13 +115,6 @@ const SponsorUs: FunctionComponent = function () {
               <div className='m-4'>
                 <GitHub />
               </div>
-              <div className='d-flex align-items-center flex-column '>
-                <Share
-                  url={`https://mockoon.com/`}
-                  text='Mockoon is the easiest and quickest way to run mock REST API servers. No remote deployment, no account required, free, open source and cross-platform.'
-                  showLabel={false}
-                />
-              </div>
             </div>
           </div>
         </div>

@@ -61,7 +61,7 @@ const ContactForm: FunctionComponent = function () {
         <div className='container'>
           <div className='row justify-content-center'>
             <div className='col-12 col-md-10 col-lg-8 text-center'>
-              <p className='fs-lg text-muted mb-7 mb-md-9'>
+              <p className='fs-lg text-gray-700 mb-7 mb-md-9'>
                 Send us an email to{' '}
                 <a href='mailto:team@mockoon.com' className='h4'>
                   team@mockoon.com

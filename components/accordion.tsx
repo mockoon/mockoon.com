@@ -58,17 +58,21 @@ const Accordion: FunctionComponent<{
                 <span
                   className='me-4'
                   id={`accordionContent${dataGroupIndex}${dataItemIndex}`}
-                >
-                  {dataItem.title}
-                </span>
+                  dangerouslySetInnerHTML={{ __html: dataItem.title }}
+                ></span>
 
                 <div className='ms-auto'>
-                  {Array.isArray(dataItem.text) && (
+                  {(Array.isArray(dataItem.content) ||
+                    dataItem.count !== undefined) && (
                     <span className='badge text-bg-gray-200 rounded-pill'>
-                      {dataItem.text.length}{' '}
-                      {dataItem.text.length > 1
-                        ? counterSuffix.plural
-                        : counterSuffix.singular}
+                      {Array.isArray(dataItem.content)
+                        ? dataItem.content.length
+                        : dataItem.count}{' '}
+                      {(Array.isArray(dataItem.content)
+                        ? dataItem.content.length
+                        : dataItem.count) > 1
+                        ? counterSuffix?.plural
+                        : counterSuffix?.singular}
                     </span>
                   )}
                 </div>
@@ -78,13 +82,12 @@ const Accordion: FunctionComponent<{
                 className={`accordion-collapse ${
                   accordionItemState ? '' : 'collapse'
                 }`}
-                id='helpOne'
                 aria-labelledby={`accordionContent${dataGroupIndex}${dataItemIndex}`}
                 data-bs-parent={`#accordion${dataGroupIndex}${dataItemIndex}`}
               >
-                {Array.isArray(dataItem.text) && (
+                {Array.isArray(dataItem.content) && (
                   <ol className='accordion-body text-gray-700 list-group-numbered'>
-                    {dataItem.text.map((textItem, textItemIndex) => {
+                    {dataItem.content.map((textItem, textItemIndex) => {
                       return (
                         <li
                           key={`dataGroup${dataGroupIndex}dataItem${dataItemIndex}textItem${textItemIndex}`}
@@ -95,12 +98,16 @@ const Accordion: FunctionComponent<{
                     })}
                   </ol>
                 )}
-                {!Array.isArray(dataItem.text) && (
-                  <div
-                    className='accordion-body text-gray-700'
-                    dangerouslySetInnerHTML={{ __html: dataItem.text }}
-                  ></div>
-                )}
+                {!Array.isArray(dataItem.content) &&
+                  typeof dataItem.content === 'string' && (
+                    <div
+                      className='accordion-body text-gray-700'
+                      dangerouslySetInnerHTML={{ __html: dataItem.content }}
+                    ></div>
+                  )}
+                {!Array.isArray(dataItem.content) &&
+                  typeof dataItem.content !== 'string' &&
+                  dataItem.content}
               </div>
             </div>
           );

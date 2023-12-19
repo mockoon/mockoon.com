@@ -188,11 +188,11 @@ const Footer: FunctionComponent<{
               </li>
               <li className='mb-2'>
                 <Link href='/status/' className='text-reset'>
-                  Status
+                  Services status
                 </Link>
               </li>
             </ul>
-            <h6 className='fw-bold text-uppercase text-gray-700'>Tools</h6>
+            <h6 className='fw-bold text-uppercase text-gray-700'>Apps</h6>
 
             <ul className='list-unstyled text-gray-700'>
               <li className='mb-2'>

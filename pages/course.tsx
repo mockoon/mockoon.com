@@ -25,19 +25,23 @@ const faq: AccordionData = [
     items: [
       {
         title: 'When will the course be available?',
-        text: 'The course is currently in production and will be available in Q1 2024. You can subscribe to our newsletter to be notified when the course is released.'
+        content:
+          'The course is currently in production and will be available in Q1 2024. You can subscribe to our newsletter to be notified when the course is released.'
       },
       {
         title: 'How long do I have access to the course?',
-        text: 'You will have lifetime access to the course. You will also have access to all future updates to the course.'
+        content:
+          'You will have lifetime access to the course. You will also have access to all future updates to the course.'
       },
       {
         title: 'Can I share my course with my team or someone else?',
-        text: 'Each course purchase is for a single user. If you want to share the course with your team, you can purchase a team license. <a href="/contact-form/">Contact us</a> for more information.'
+        content:
+          'Each course purchase is for a single user. If you want to share the course with your team, you can purchase a team license. <a href="/contact-form/">Contact us</a> for more information.'
       },
       {
         title: 'Do you offer discounts?',
-        text: 'We offer a discount on the course price for students, teams and non-profit organizations. Do not hesitate to <a href="/contact-form/">contact our support</a> to get a discount.'
+        content:
+          'We offer a discount on the course price for students, teams and non-profit organizations. Do not hesitate to <a href="/contact-form/">contact our support</a> to get a discount.'
       }
     ]
   }
@@ -48,7 +52,7 @@ const courseContent: AccordionData = [
     items: [
       {
         title: 'Getting started',
-        text: [
+        content: [
           'Introduction to Mockoon',
           'Installing Mockoon desktop application',
           'Create your first mock API'
@@ -56,7 +60,7 @@ const courseContent: AccordionData = [
       },
       {
         title: 'Creating responses',
-        text: [
+        content: [
           'Adding a JSON body',
           'Serving external files',
           'Create reusable mock data with the data buckets',
@@ -66,7 +70,7 @@ const courseContent: AccordionData = [
       },
       {
         title: 'Create more realistic responses with templating',
-        text: [
+        content: [
           'Introduction to Handlebars templating',
           'Templating helpers support',
           'Using Mockoon helpers',
@@ -76,7 +80,7 @@ const courseContent: AccordionData = [
       },
       {
         title: 'Dynamic responses with rules',
-        text: [
+        content: [
           'Create multiple responses for a route',
           'Identifying the default response',
           'Random and sequential modes',
@@ -86,7 +90,7 @@ const courseContent: AccordionData = [
       },
       {
         title: 'Create fully automated CRUD mock endpoints',
-        text: [
+        content: [
           'Overview of the CRUD endpoints',
           'Creating a CRUD endpoint',
           'Sorting and pagination'
@@ -94,18 +98,18 @@ const courseContent: AccordionData = [
       },
       {
         title: 'Partial mocking with the proxy mode',
-        text: ['Configure the proxy mode', 'Create a partial mock API']
+        content: ['Configure the proxy mode', 'Create a partial mock API']
       },
       {
         title: 'Logging and recording',
-        text: [
+        content: [
           'Overview of the logs',
           'Record entering requests to create mocks'
         ]
       },
       {
         title: 'Deploy your mocks anywhere with the CLI',
-        text: [
+        content: [
           'Installing the CLI',
           'Deploying your mocks to a server',
           'Using the CLI with CI/CD: GitHub Actions'
@@ -121,7 +125,7 @@ const Course: FunctionComponent = function () {
       <Meta title={meta.title} description={meta.description} />
 
       <Hero
-        title='🎓 Mockoon <span class="text-primary">Official Course</span> <span class="badge text-bg-gray-300 fs-4 align-text-top ms-2">Coming soon</span>'
+        title='🎓 Mockoon <span class="text-primary">Official Course</span> <span class="badge text-bg-gray-300 fs-4 align-text-top ms-2"><i class="icon-new_releases pe-2 text-warning"></i>Coming soon</span>'
         subtitle='Mockoon offers an official course to help you get started with API mocking and API design. Learn how to create and manage your mock APIs with Mockoon.'
         mainPictureWidth={1200}
         mainPictureHeight={783}

@@ -1,6 +1,12 @@
+import { ReactElement } from 'react';
+
 export type AccordionData = {
   title?: string;
-  items: { title: string; text: string | string[] }[];
+  items: {
+    title: string;
+    content: string | string[] | ReactElement;
+    count?: number;
+  }[];
 }[];
 
 export type MockAPI = {

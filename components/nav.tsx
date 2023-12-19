@@ -4,11 +4,17 @@ import { useRouter } from 'next/router';
 import { FunctionComponent, useState } from 'react';
 import { useAuth } from '../utils/auth';
 
+enum Dropdowns {
+  NONE = 'NONE',
+  APPS = 'APPS',
+  ACCOUNT = 'ACCOUNT',
+  RESOURCES = 'RESOURCES'
+}
+
 const Nav: FunctionComponent = function () {
   const router = useRouter();
   const [show, setShow] = useState(false);
-  const [appsDropdownOpen, setAppsDropdownOpen] = useState(false);
-  const [accountDropdownOpen, setAccountDropdownOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(Dropdowns.NONE);
   const auth = useAuth();
 
   const toggler = (
@@ -28,7 +34,7 @@ const Nav: FunctionComponent = function () {
     e.preventDefault();
 
     await auth.logout();
-    setAccountDropdownOpen(false);
+    setDropdownOpen(Dropdowns.NONE);
   };
 
   return (
@@ -71,41 +77,49 @@ const Nav: FunctionComponent = function () {
               </li>
             )}
 
+            <li className='nav-item'>
+              <DocSearch
+                appId='HV1IDAB8IU'
+                indexName='mockoon'
+                apiKey='c3396e739c9949cf6ccf7305b8da46aa'
+              />
+            </li>
+
             <li
               className='nav-item dropdown text-center'
               onMouseEnter={() => {
-                !show && setAppsDropdownOpen(true);
+                !show && setDropdownOpen(Dropdowns.APPS);
               }}
               onMouseLeave={() => {
-                !show && setAppsDropdownOpen(false);
+                !show && setDropdownOpen(Dropdowns.NONE);
               }}
             >
               <a
                 className={`nav-link dropdown-toggle`}
                 href='#'
                 aria-haspopup='true'
-                aria-expanded={appsDropdownOpen}
+                aria-expanded={dropdownOpen === Dropdowns.APPS}
               >
                 Apps {!show && <i className='icon-arrow_drop_down'></i>}
               </a>
               <ul
                 className={`dropdown-menu ${show ? 'text-center' : ''} ${
-                  appsDropdownOpen ? 'show' : ''
+                  dropdownOpen === Dropdowns.APPS ? 'show' : ''
                 }`}
               >
                 <h6 className='dropdown-header'>Main application</h6>
-                <li className='dropdown-item mb-5 ps-lg-8'>
+                <li className='dropdown-item mb-5'>
                   <Link href='/download/' className='dropdown-link'>
                     Mockoon Desktop
                   </Link>
                 </li>
-                <h6 className='dropdown-header'>Tools</h6>
-                <li className='dropdown-item ps-lg-8'>
+                <h6 className='dropdown-header'>Libs</h6>
+                <li className='dropdown-item'>
                   <Link href='/cli/' className='dropdown-link'>
                     CLI
                   </Link>
                 </li>
-                <li className='dropdown-item ps-lg-8'>
+                <li className='dropdown-item'>
                   <Link href='/serverless/' className='dropdown-link'>
                     Serverless package
                   </Link>
@@ -124,73 +138,178 @@ const Nav: FunctionComponent = function () {
               </Link>
             </li>
 
-            <li className='nav-item'>
-              <Link
-                href='/features/'
-                className={`nav-link ${
-                  router.pathname === '/features' ? 'active' : ''
-                }`}
-              >
-                Features
-              </Link>
-            </li>
-
-            <li className='nav-item'>
-              <Link
-                href='/docs/latest/about/'
-                className={`nav-link ${
-                  router.pathname === '/docs/[...slug]' ? 'active' : ''
-                }`}
-              >
-                Docs
-              </Link>
-            </li>
-
-            <li className='nav-item'>
-              <Link
-                href='/tutorials/'
-                className={`nav-link ${
-                  router.pathname === '/tutorials' ||
-                  router.pathname === '/tutorials/[slug]'
-                    ? 'active'
-                    : ''
-                }`}
-              >
-                Tutorials
-              </Link>
-            </li>
-
-            <li className='nav-item'>
-              <Link
-                href='/course/'
-                className={`nav-link ${
-                  router.pathname === '/course' ? 'active' : ''
-                }`}
-              >
-                Course
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <DocSearch
-                appId='HV1IDAB8IU'
-                indexName='mockoon'
-                apiKey='c3396e739c9949cf6ccf7305b8da46aa'
-              />
-            </li>
             <li
               className='nav-item dropdown text-center'
               onMouseEnter={() => {
-                !show && setAccountDropdownOpen(true);
+                !show && setDropdownOpen(Dropdowns.RESOURCES);
               }}
               onMouseLeave={() => {
-                !show && setAccountDropdownOpen(false);
+                !show && setDropdownOpen(Dropdowns.NONE);
               }}
             >
               <a
                 className={`nav-link dropdown-toggle`}
                 href='#'
                 aria-haspopup='true'
-                aria-expanded={accountDropdownOpen}
+                aria-expanded={dropdownOpen === Dropdowns.RESOURCES}
+              >
+                Resources {!show && <i className='icon-arrow_drop_down'></i>}
+              </a>
+              <div
+                className={`dropdown-menu dropdown-menu-lg ${
+                  show ? 'text-center' : ''
+                } ${dropdownOpen === Dropdowns.RESOURCES ? 'show' : ''}`}
+              >
+                <div className='row gx-0 gx-md-4'>
+                  <div className='col-md-4 mb-4 mb-md-0'>
+                    <div className='row gx-0'>
+                      <div className='col-12 col-lg-6'>
+                        <h6 className='dropdown-header'>Learn</h6>
+
+                        <Link
+                          href='/course/'
+                          className={`dropdown-item ${
+                            router.pathname === '/course' ? 'active' : ''
+                          }`}
+                        >
+                          Course{' '}
+                          <i className='icon-new_releases text-warning'></i>
+                        </Link>
+                        <Link
+                          href='/docs/latest/about/'
+                          className={`dropdown-item ${
+                            router.pathname === '/docs/[...slug]'
+                              ? 'active'
+                              : ''
+                          }`}
+                        >
+                          Docs
+                        </Link>
+                        <Link
+                          href='/tutorials/'
+                          className={`dropdown-item ${
+                            router.pathname === '/tutorials' ||
+                            router.pathname === '/tutorials/[slug]'
+                              ? 'active'
+                              : ''
+                          }`}
+                        >
+                          Tutorials
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='col-md-4 mb-4 mb-md-0'>
+                    <div className='row gx-0'>
+                      <div className='col-12 col-lg-6'>
+                        <h6 className='dropdown-header'>Tools</h6>
+
+                        <Link
+                          href='/playground/'
+                          className={`dropdown-item ${
+                            router.pathname === '/playground' ? 'active' : ''
+                          }`}
+                        >
+                          API Playground{' '}
+                          <i className='icon-new_releases text-warning'></i>
+                        </Link>
+                        <Link
+                          href='/mock-samples/category/all/'
+                          className={`dropdown-item ${
+                            router.pathname === '/mock-samples/[slug]' ||
+                            router.pathname ===
+                              '/mock-samples/category/[category]'
+                              ? 'active'
+                              : ''
+                          }`}
+                        >
+                          Mock samples
+                        </Link>
+                        <Link
+                          href='/templates/'
+                          className={`dropdown-item ${
+                            router.pathname === '/templates' ? 'active' : ''
+                          }`}
+                        >
+                          Templates
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='col-md-4 mb-4 mb-md-0'>
+                    <div className='row gx-0'>
+                      <div className='col-12 col-lg-6'>
+                        <h6 className='dropdown-header'>Misc</h6>
+
+                        <Link
+                          href='/blog/'
+                          className={`dropdown-item ${
+                            router.pathname === '/blog' ||
+                            router.pathname === '/blog/[slug]'
+                              ? 'active'
+                              : ''
+                          }`}
+                        >
+                          Blog
+                        </Link>
+                        <a
+                          href='/releases/6.0.1/'
+                          className={`dropdown-item ${
+                            router.pathname === '/releases' ||
+                            router.pathname === '/releases/[version]'
+                              ? 'active'
+                              : ''
+                          }`}
+                        >
+                          Releases
+                        </a>
+                        <Link
+                          href='/features/'
+                          className={`dropdown-item ${
+                            router.pathname === '/features' ? 'active' : ''
+                          }`}
+                        >
+                          Features
+                        </Link>
+                        <Link
+                          href='/faq/'
+                          className={`dropdown-item ${
+                            router.pathname === '/faq' ? 'active' : ''
+                          }`}
+                        >
+                          FAQ
+                        </Link>
+                        <Link
+                          href='/public-roadmap/'
+                          className={`dropdown-item ${
+                            router.pathname === '/public-roadmap'
+                              ? 'active'
+                              : ''
+                          }`}
+                        >
+                          Roadmap
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li
+              className='nav-item dropdown text-center'
+              onMouseEnter={() => {
+                !show && setDropdownOpen(Dropdowns.ACCOUNT);
+              }}
+              onMouseLeave={() => {
+                !show && setDropdownOpen(Dropdowns.NONE);
+              }}
+            >
+              <a
+                className={`nav-link dropdown-toggle`}
+                href='#'
+                aria-haspopup='true'
+                aria-expanded={dropdownOpen === Dropdowns.ACCOUNT}
               >
                 <span
                   className={`me-2 vertical-bottom ${
@@ -203,7 +322,7 @@ const Nav: FunctionComponent = function () {
               </a>
               <ul
                 className={`dropdown-menu ${show ? 'text-center' : ''} ${
-                  accountDropdownOpen ? 'show' : ''
+                  dropdownOpen === Dropdowns.ACCOUNT ? 'show' : ''
                 }`}
               >
                 {!auth.isAuth && (

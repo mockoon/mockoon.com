@@ -2,7 +2,6 @@ import { FunctionComponent } from 'react';
 import GitHub from '../components/github';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
-import Share from '../components/share';
 import Sponsors from '../components/sponsors';
 import Layout from '../layout/layout';
 

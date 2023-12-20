@@ -24,14 +24,3 @@ export const urlTransform = (docsVersion?: string) => (uri: string) => {
 
   return uri;
 };
-
-/**
- * Set target for outgoing links
- *
- * @param uri
- */
-export const linkTarget = (uri: string) => {
-  if (uri.startsWith('http')) {
-    return '_blank';
-  }
-};

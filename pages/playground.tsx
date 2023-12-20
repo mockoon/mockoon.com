@@ -115,7 +115,7 @@ const resources: AccordionData = [
             <CodeBlock
               code={`{
   "id": "f50bf6e1-fbb2-4096-aff1-dad2a3dda30f",
-  "url": "https://loremflickr.com/640/480",
+  "url": "https://loremflickr.com/1024/768",
   "caption": "Adsidue amplexus quam pecco armarium [...]",
   "likes": 12,
   "isFeatured": true
@@ -134,7 +134,7 @@ const resources: AccordionData = [
           <div className='px-4'>
             <CodeBlock
               code={`{
-  "uuid": "0fd57703-4755-40a1-bbf7-2bee858c3a67",
+  "id": "0fd57703-4755-40a1-bbf7-2bee858c3a67",
   "title": "Sumptus appono tametsi [...]",
   "author": "Jermaine Daniel",
   "date": "2023-04-30T10:10:02.970Z",

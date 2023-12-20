@@ -1,7 +1,6 @@
 import { slug } from 'github-slugger';
 import { Children, FunctionComponent } from 'react';
 import ReactMarkdown from 'react-markdown';
-import rehypeExternalLinks from 'rehype-external-links';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import { urlTransform } from '../utils/url';
@@ -85,10 +84,7 @@ const Markdown: FunctionComponent<{
   return (
     <ReactMarkdown
       children={props.body}
-      rehypePlugins={[
-        rehypeRaw,
-        [rehypeExternalLinks, { rel: 'noopener', target: '_blank' }]
-      ]}
+      rehypePlugins={[rehypeRaw]}
       remarkPlugins={[remarkGfm]}
       components={{
         code: ({ node, className, children, ...props }) => {

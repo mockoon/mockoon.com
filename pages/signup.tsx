@@ -18,7 +18,8 @@ const Signup: FunctionComponent = function () {
   const emailTypos = {
     'gmai.com': 'gmail.com',
     'gamil.com': 'gmail.com',
-    'gmal.com': 'gmail.com'
+    'gmal.com': 'gmail.com',
+    'gmaill.com': 'gmail.com'
   };
 
   const {

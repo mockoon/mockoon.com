@@ -55,7 +55,7 @@ We have recently removed Google Analytics from our website as part of our commit
 
 We have partnered with several other open-source projects that we admire and wish to support. Feel free to [explore them!](https://mockoon.com/oss-friends/)
 
-![{1150x735}](/images/blog/september-2023-news/oss-friends.png)
+![screenshot of the OSS friends page showing a grid of project names and descriptions{1150x735}](/images/blog/september-2023-news/oss-friends.png)
 
 ## 🛠️ Custom services
 

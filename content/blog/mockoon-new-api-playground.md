@@ -21,7 +21,7 @@ The API playground is available at [`https://playground.mockoon.com`](https://pl
 
 Even better, all actions like updates or deletes are **persisted** (until the next reset 😉)! Making it a great tool to test your frontend applications in a more realistic environment.
 
-> ➡️ Head over to the [API playground documentation](https://mockoon.com/playground/) to learn more!
+> ➡️ Head over to the [API playground documentation](/playground/) to learn more!
 
 ## ⚙️ How we built the API playground
 

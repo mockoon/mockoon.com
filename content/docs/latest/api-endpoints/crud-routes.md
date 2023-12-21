@@ -70,7 +70,7 @@ Mockoon will automatically translate a CRUD endpoint to multiple routes allowing
 | **DELETE** | `/resources`     | Deletes the data bucket content                                                  | Deletes the data bucket content                              | Deletes the content                       |
 | **DELETE** | `/resources/:id` | Deletes an object by its `id`                                                    | Deletes an item at index                                     | Deletes the content                       |
 
-\* Supports [sorting and pagination](#sorting-and-pagination-on-the-main-get-route)
+\* Supports [filtering, sorting and pagination](#filtering-sorting-and-pagination-on-the-main-get-route)
 
 > ⚠️ _Note:_ You can expect the above results assuming that you are sending the same type of content as the one stored in the data bucket (array ↔ array, object ↔ object, etc.). However, the system is very permissive, and you may push any content in an array, ending up with mixed type contents or replacing content with data of a different type.
 
@@ -84,9 +84,68 @@ By default, CRUD endpoints will use the `id` property to identify objects in an 
 
 You can easily override a CRUD operation route by declaring a regular HTTP route and putting it above the CRUD route (see [routes order](docs:api-endpoints/routing#routes-order)). This route will intercept the request allowing you to serve custom content for this operation.
 
-## Sorting and pagination on the main GET route
+## Filtering, sorting and pagination on the main GET route
 
-The main `GET /path` route supports **sorting** and **pagination** when working with an **array**.
+The main `GET /path` route supports **filtering**, **sorting** and **pagination** when working with an **array**.
+
+### Filtering
+
+To filter an array, you can use query parameters in the form `[property]_[operator]`. For instance, if you want to filter an array of objects by their `status` property, you can use:
+
+```
+GET /path?status_eq=success
+```
+
+Currently, the following operators are supported:
+
+| Operator | Description                                   | Example             |
+| -------- | --------------------------------------------- | ------------------- |
+| `eq`     | Filters by equality                           | `status_eq=success` |
+| `ne`     | Filters by inequality                         | `status_ne=error`   |
+| `gt`     | Filters by greater                            | `price_gt=10`       |
+| `gte`    | Filters by greater or equal                   | `price_gte=10`      |
+| `lt`     | Filters by lower                              | `price_lt=10`       |
+| `lte`    | Filters by lower or equal                     | `price_lte=10`      |
+| `like`   | Filters by partial match \*                   | `name_like=ohn do`  |
+| `start`  | Filters properties that start with a value \* | `name_start=john`   |
+| `end`    | Filters properties that end with a value \*   | `name_end=doe`      |
+
+\* Case insensitive
+
+Filters work on every primitive value (strings, numbers, booleans, etc.), so you can filter by `true` or `false` values, or even `null` values:
+
+```
+GET /path?is_active_eq=true
+```
+
+It also works on arrays of primitives, in which case using `_[operator]` is enough:
+
+```
+GET /path?_gte=10
+```
+
+Moreover, nesting is supported:
+
+```
+GET /path?user.email_end=@example.com
+```
+
+The `like`, `start` and `end` operators support regex patterns:
+
+```
+GET /path?user.name_like=^john
+GET /path?user.id_like=^(123|456|789)$
+```
+
+#### Searching
+
+To search an array, you can use the `search` query parameter. Search is a special kind of filter that will look for a partial match in any values (with nesting) in the array. For instance, if you want to search for `john` in an array of users, you can use:
+
+```
+GET /path?search=john
+```
+
+> Searching also works on arrays of primitives (strings, numbers, etc.)
 
 ### Sorting
 
@@ -125,10 +184,15 @@ Examples:
   GET /path?page=2
   ```
 
-Pagination will be applied after sorting, both can be cumulated:
+Filtering, sorting and pagination can work together and are applied in the order: filtering / searching, sorting, pagination.
 
 ```
-GET /path?sort=name&page=2&limit=25
+GET /path?search=j&email_end=@example.com&sort=name&page=2&limit=25
 ```
 
-> When using pagination, a `X-Total-Count` header will be present in the response with the total number of items.
+### Meta data
+
+When using CRUD endpoints, you can access meta data about the data bucket content through response headers:
+
+- `X-Total-Count`: total number of items in the bucket
+- `X-Filtered-Count`: number of items after filtering (not taking into account pagination)

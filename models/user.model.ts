@@ -26,6 +26,7 @@ export type User = {
   teamRole: TeamRoles;
   templatesQuota: number;
   templatesQuotaUsed: number;
+  newsletter?: boolean;
   subscription: {
     provider: 'stripe' | 'paddle';
     renewOn: number;

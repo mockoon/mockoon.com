@@ -46,6 +46,10 @@ const Signup: FunctionComponent = function () {
     if (!data['work_address']) {
       delete data['work_address'];
 
+      if (data['newsletter']) {
+        localStorage.setItem('newsletter', 'true');
+      }
+
       try {
         const userCredentials = await signUp(data.email, data.password);
 
@@ -142,7 +146,8 @@ const Signup: FunctionComponent = function () {
                       {...registerFormField('password')}
                     />
                   </div>
-                  <div className='form-check mb-5'>
+
+                  <div className='form-check mb-2'>
                     <input
                       className='form-check-input'
                       type='checkbox'
@@ -155,6 +160,20 @@ const Signup: FunctionComponent = function () {
                       I agree to Mockoon's{' '}
                       <Link href={'/privacy/'}>privacy policy</Link> and{' '}
                       <Link href={'/terms/'}>terms of service</Link>.
+                    </label>
+                  </div>
+                  <div className='form-check mb-5'>
+                    <input
+                      className='form-check-input'
+                      type='checkbox'
+                      value=''
+                      id='newsletter'
+                      {...registerFormField('newsletter')}
+                    />
+                    <label className='form-check-label' htmlFor='newsletter'>
+                      I want to receive Mockoon's newsletter (usually once a
+                      month or less). Your email will not be shared or used for
+                      any other purpose.
                     </label>
                   </div>
                   <FormHoneypot

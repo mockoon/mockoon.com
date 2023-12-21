@@ -13,12 +13,18 @@ const useCurrentUser = () => {
     refetchOnMount: false,
     queryFn: async () => {
       const token = await getIdToken();
+      let query = '';
 
       if (!token) {
         return null;
       }
 
-      return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/user`, {
+      if (localStorage.getItem('newsletter')) {
+        localStorage.removeItem('newsletter');
+        query = '?newsletter=true';
+      }
+
+      return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/user${query}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

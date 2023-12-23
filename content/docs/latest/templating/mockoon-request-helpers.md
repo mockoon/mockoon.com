@@ -3,7 +3,7 @@ title: Request helpers
 meta:
   title: Create dynamic responses with templating request helpers
   description: "Create dynamic fake mock data for your mock environments with Mockoon's templating request helpers. All formats are supported: JSON, CSV, HTML, etc."
-order: 520
+order: 502
 ---
 
 # Templating request helpers
@@ -24,7 +24,7 @@ Mockoon offers the following helpers which can return information relative to th
 - [`method`](#method)
 - [`baseUrl`](#baseurl)
 
-## `body`
+## body
 
 Get the value at a given `path` from the request body if the entering `Content-Type` is set to `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`. This helper is designed to retrieve data to be served in a response. To reuse the retrieved data with other helpers (`each`, `if`, etc.), use the [`bodyRaw` helper](#bodyraw) below.
 
@@ -58,7 +58,7 @@ Get the value at a given `path` from the request body if the entering `Content-T
 {{body 'path' 'default value' true}}
 ```
 
-## `bodyRaw`
+## bodyRaw
 
 Get the **raw** value at a given `path` from the request body if the entering `Content-Type` is set to `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`. This "raw" helper is designed to work with other helpers (`each`, `if`, etc.). To directly use the retrieved data in the response, use the [`body` helper](#body) above.
 
@@ -98,7 +98,7 @@ Get the **raw** value at a given `path` from the request body if the entering `C
 {{/if}}
 ```
 
-## `queryParam`
+## queryParam
 
 Get the value at a given `path` from the request's query string. Complex query strings with arrays and objects are supported. This helper is designed to retrieve data to be served in a response. To reuse the retrieved data with other helpers (`each`, `if`, etc.), use the [`queryParamRaw` helper](#queryparamraw) below.
 
@@ -130,7 +130,7 @@ Get the value at a given `path` from the request's query string. Complex query s
 {{queryParam 'path' 'default value' true}}
 ```
 
-## `queryParamRaw`
+## queryParamRaw
 
 Get the **raw** value at a given `path` from the request's query string. Complex query strings with arrays and objects are supported. This "raw" helper is designed to work with other helpers (`each`, `if`, etc.). To directly use the retrieved data in the response, use the [`queryParam` helper](#queryparam) above.
 
@@ -168,7 +168,7 @@ Get the **raw** value at a given `path` from the request's query string. Complex
 {{/if}}
 ```
 
-## `urlParam`
+## urlParam
 
 Get a named parameter from the route `/:paramName1/:paramName2`.
 
@@ -182,7 +182,7 @@ Get a named parameter from the route `/:paramName1/:paramName2`.
 {{urlParam 'paramName1'}}
 ```
 
-## `cookie`
+## cookie
 
 Get the content of a cookie or returns a default value if the cookie is not present.
 
@@ -197,7 +197,7 @@ Get the content of a cookie or returns a default value if the cookie is not pres
 {{cookie 'cookie_name' 'default value'}}
 ```
 
-## `header`
+## header
 
 Get content from any request header or returns a default value if header is not present.
 
@@ -212,7 +212,7 @@ Get content from any request header or returns a default value if header is not 
 {{header 'Header-Name' 'default value'}}
 ```
 
-## `hostname`
+## hostname
 
 Returns the request hostname.
 
@@ -222,7 +222,7 @@ Returns the request hostname.
 {{hostname}}
 ```
 
-## `ip`
+## ip
 
 Returns the request IP address.
 
@@ -232,7 +232,7 @@ Returns the request IP address.
 {{ip}}
 ```
 
-## `method`
+## method
 
 Returns the request method (GET, PUT, POST, etc.).
 
@@ -242,7 +242,7 @@ Returns the request method (GET, PUT, POST, etc.).
 {{method}}
 ```
 
-## `baseUrl`
+## baseUrl
 
 Returns the base URL of the request: protocol, host, port and API prefix.
 

@@ -75,6 +75,7 @@ const courseContent: AccordionData = [
           'Templating helpers support',
           'Using Mockoon helpers',
           'Using Faker.js helpers',
+          'Defining global variables',
           'Using the AI assistant'
         ]
       },
@@ -93,6 +94,7 @@ const courseContent: AccordionData = [
         content: [
           'Overview of the CRUD endpoints',
           'Creating a CRUD endpoint',
+          'Filtering and searching',
           'Sorting and pagination'
         ]
       },

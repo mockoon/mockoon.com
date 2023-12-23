@@ -37,6 +37,21 @@ const faq: AccordionData = [
 const tasks = {
   released: [
     {
+      link: 'TODO',
+      title: 'Global variables',
+      pro: false
+    },
+    {
+      link: '/docs/latest/api-endpoints/crud-routes/#filtering-sorting-and-pagination-on-the-main-get-route',
+      title: 'CRUD routes filtering',
+      pro: false
+    },
+    {
+      link: '/playground/',
+      title: 'API playground',
+      pro: false
+    },
+    {
       link: '/docs/latest/callbacks/overview',
       title: 'Trigger requests after a call (callbacks)',
       pro: false
@@ -72,24 +87,12 @@ const tasks = {
       link: '/docs/latest/route-responses/multiple-responses/#fallback-mode',
       title: 'Response fallback mode',
       pro: false
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/1063',
-      title: 'Applications logging standardization',
-      pro: false,
-      target: '_blank'
     }
   ],
   inProgress: [
     {
       link: 'https://github.com/mockoon/mockoon/issues/83',
       title: 'WebSockets support',
-      pro: false,
-      target: '_blank'
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/1047',
-      title: 'CRUD routes filtering',
       pro: false,
       target: '_blank'
     },

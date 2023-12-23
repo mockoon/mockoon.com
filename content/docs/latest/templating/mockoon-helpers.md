@@ -3,7 +3,7 @@ title: Custom helpers
 meta:
   title: Create dynamic responses with templating helpers
   description: "Create dynamic fake data for your mock server with Mockoon's templating helpers. All formats are supported: JSON, CSV, HTML, etc."
-order: 510
+order: 501
 ---
 
 # Mockoon templating helpers
@@ -27,15 +27,15 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 | [`len`](#len)       |                     |
 | [`filter`](#filter) |                     |
 
-| Math                    |                       | Variables           |
-| ----------------------- | --------------------- | ------------------- |
-| [`add`](#add)           | [`eq`](#eq)           | [`setVar`](#setvar) |
-| [`subtract`](#subtract) | [`gt`](#gt)           | [`getVar`](#getvar) |
-| [`multiply`](#multiply) | [`gte`](#gte)         |                     |
-| [`divide`](#divide)     | [`lt`](#lt)           |                     |
-| [`modulo`](#modulo)     | [`lte`](#lte)         |                     |
-| [`ceil`](#ceil)         | [`toFixed`](#tofixed) |                     |
-| [`floor`](#floor)       | [`round`](#round)     |                     |
+| Math                    |                       | Variables                       |
+| ----------------------- | --------------------- | ------------------------------- |
+| [`add`](#add)           | [`eq`](#eq)           | [`setVar`](#setvar)             |
+| [`subtract`](#subtract) | [`gt`](#gt)           | [`getVar`](#getvar)             |
+| [`multiply`](#multiply) | [`gte`](#gte)         | [`setGlobalVar`](#setglobalvar) |
+| [`divide`](#divide)     | [`lt`](#lt)           | [`getGlobalVar`](#getglobalvar) |
+| [`modulo`](#modulo)     | [`lte`](#lte)         |                                 |
+| [`ceil`](#ceil)         | [`toFixed`](#tofixed) |                                 |
+| [`floor`](#floor)       | [`round`](#round)     |                                 |
 
 | Strings                   |                         | Dates                             | Misc                            |
 | ------------------------- | ----------------------- | --------------------------------- | ------------------------------- |
@@ -59,7 +59,7 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 | [`tld`](#tld)                                       | [`phone`](#phone)             |                         |
 | [`email`](#email)                                   | [`color`](#color)             |                         |
 
-## `repeat`
+## repeat
 
 Repeat the block content a random number of times if two arguments are provided, or a fixed amount of time if only one argument is provided. Set the `comma` parameter to `false` (default to `true`) to prevent the insertion of new lines and commas by the helper.
 
@@ -83,7 +83,7 @@ test,
 test -->
 ```
 
-## `switch`
+## switch
 
 Select some content depending on a variable. Behaves like a regular switch.
 
@@ -101,7 +101,7 @@ Select some content depending on a variable. Behaves like a regular switch.
 {{/switch}}
 ```
 
-## `data`
+## data
 
 Get the **stringified** value at a given `path` from a [data bucket](docs:data-buckets/overview) selected by **ID or name**. This helper is designed to retrieve data to be served in a response. To reuse the retrieved data with other helpers (`each`, `if`, etc.), use the [`dataRaw` helper](#dataraw) below.
 
@@ -118,17 +118,17 @@ Get the **stringified** value at a given `path` from a [data bucket](docs:data-b
 **Examples**
 
 ```handlebars
-{{data 'abcd'}}
+{{data 'bucketNameOrId'}}
 
 <!-- Using object-path syntax -->
-{{data 'abcd' 'path.to.property'}}
-{{data 'abcd' 'deep.property\.with\.dot'}}
+{{data 'bucketNameOrId' 'path.to.property'}}
+{{data 'bucketNameOrId' 'deep.property\.with\.dot'}}
 
 <!-- using JSONPath syntax -->
-{{data 'abcd' '$.array.[*].property'}}
+{{data 'bucketNameOrId' '$.array.[*].property'}}
 ```
 
-## `dataRaw`
+## dataRaw
 
 Get the **raw** value (array, object, etc.) at a given `path` from a [data bucket](docs:data-buckets/overview) selected by **ID or name**. This "raw" helper is designed to work with other helpers (`each`, `if`, etc.). To directly use the retrieved data in the response, use [data buckets direct linking](docs:data-buckets/using-data-buckets#referencing-in-a-route-response) or the [`data` helper](#data) above.
 
@@ -145,25 +145,25 @@ Get the **raw** value (array, object, etc.) at a given `path` from a [data bucke
 **Examples**
 
 ```handlebars
-{{dataRaw 'abcd'}}
+{{dataRaw 'bucketNameOrId'}}
 
 <!-- Using object-path syntax -->
-{{dataRaw 'abcd' 'path.to.property'}}
-{{dataRaw 'abcd' 'deep.property\.with\.dot'}}
+{{dataRaw 'bucketNameOrId' 'path.to.property'}}
+{{dataRaw 'bucketNameOrId' 'deep.property\.with\.dot'}}
 
 <!-- using JSONPath syntax -->
-{{dataRaw 'abcd' '$.array.[*].property'}}
+{{dataRaw 'bucketNameOrId' '$.array.[*].property'}}
 
-{{#each (dataRaw 'path.to.array.property')}}
+{{#each (dataRaw 'bucketNameOrId' 'path.to.array.property')}}
   value
 {{/each}}
 
-{{#if (dataRaw 'path.to.boolean.property')}}
+{{#if (dataRaw 'bucketNameOrId' 'path.to.boolean.property')}}
   value
 {{/if}}
 ```
 
-## `array`
+## array
 
 Create an array from the given items. This helper is mostly used with the following helpers: `oneOf`, `someOf`.
 
@@ -177,7 +177,7 @@ Create an array from the given items. This helper is mostly used with the follow
 {{array 'item1' 'item2' 'item3'}}
 ```
 
-## `oneOf`
+## oneOf
 
 Select a random item in the array passed in parameters. `oneOf` will return the actual value in the array. Set the `stringify` parameter to `true` (default to `false`) to get a JSON stringified result.
 
@@ -193,7 +193,7 @@ Select a random item in the array passed in parameters. `oneOf` will return the 
 result: item2
 ```
 
-## `someOf`
+## someOf
 
 Return a random number of items from the array passed in parameters, concatenated as a string. Use it with triple curly braces to get a JSON representation.
 
@@ -215,7 +215,7 @@ result: item1,item2
 result: item1,item2
 ```
 
-## `join`
+## join
 
 Return a new string by concatenating all the elements in an array.
 
@@ -231,7 +231,7 @@ Return a new string by concatenating all the elements in an array.
 result: item1#item2#item3
 ```
 
-## `slice`
+## slice
 
 Return a copy of a portion of an array from start to end indexes (not included).
 
@@ -248,7 +248,7 @@ Return a copy of a portion of an array from start to end indexes (not included).
 result: ['item1', 'item2']
 ```
 
-## `len`
+## len
 
 Return an array or string length.
 
@@ -266,7 +266,7 @@ result: 3
 result: 5
 ```
 
-## `filter`
+## filter
 
 Return a filtered array. This helper can be used with data buckets, use the [dataRaw](#dataraw) for that.
 
@@ -314,43 +314,26 @@ results: items that fit to (a1 AND a2 AND (x1 OR x2) ) OR (b1 AND b2 AND b3)
 result: 1,3
 
 <!-- Simple OR filter -->
-{{filter
-  (array 'item1' 'item2' 'item3' 'item4' 'item3')
-  'item1'
-  'item2'
-  'item3'
-}}
+{{filter (array 'item1' 'item2' 'item3' 'item4' 'item3') 'item1' 'item2' 'item3'}}
 result: item1,item2,item3,item3
 
 <!-- Data bucket get all users with type='item1' -->
 {{filter (dataRaw 'Users') (object type='item1')}}
 
 <!-- Data bucket get all users with type='item1' OR type='item2' OR type='item3' -->
-{{filter
-  (dataRaw 'Users')
-  (object type='item1')
-  (object type='item2')
-  (object type='item3')
-}}
+{{filter (dataRaw 'Users') (object type='item1') (object type='item2') (object type='item3')}}
 
 <!-- Data bucket get all users with type='item1' AND category='some-category' -->
 {{filter (dataRaw 'Users') (object type='item1' category='some-category')}}
 
 <!-- Data bucket get all users with type='item1' OR category='some-category' -->
-{{filter
-  (dataRaw 'Users')
-  (array (object type='item1') (object category='some-category'))
-}}
+{{filter (dataRaw 'Users') (array (object type='item1') (object category='some-category'))}}
 
 <!-- Mixed data filter -->
-{{filter
-  (array 'item1' 'item2' (object type='type1') (object type='type2'))
-  'item1'
-  (object type='type2')
-}}
+{{filter (array 'item1' 'item2' (object type='type1') (object type='type2')) 'item1' (object type='type2')}}
 ```
 
-## `object`
+## object
 
 Return an object that can be used in other helpers.
 
@@ -377,7 +360,7 @@ result: {type: [1,2,3]}
 result: {type: [1,3]}
 ```
 
-## `add`
+## add
 
 Add the numbers passed as parameters to each others. Unrecognized strings passed as arguments will be ignored.
 
@@ -398,7 +381,7 @@ result: '2'
 result: '2'
 ```
 
-## `subtract`
+## subtract
 
 Subtract the numbers passed as parameters to the first parameter. Unrecognized strings passed as arguments will be ignored.
 
@@ -419,7 +402,7 @@ result: '1'
 result: '1'
 ```
 
-## `multiply`
+## multiply
 
 Multiply the numbers passed as parameters to each others. Unrecognized strings passed as arguments will be ignored.
 
@@ -440,7 +423,7 @@ result: '6'
 result: '6'
 ```
 
-## `divide`
+## divide
 
 Divide the first parameter by the other numbers passed as parameters. Unrecognized strings passed as arguments will be ignored.
 
@@ -461,7 +444,7 @@ result: '2'
 result: '2'
 ```
 
-## `modulo`
+## modulo
 
 Compute the modulo of the first parameter by the second.
 
@@ -483,7 +466,7 @@ result: '1'
 result: '1'
 ```
 
-## `ceil`
+## ceil
 
 Ceil the value of the number passed as parameter.
 
@@ -501,7 +484,7 @@ result: '2'
 result: '2'
 ```
 
-## `floor`
+## floor
 
 Floor the value of the number passed as parameter.
 
@@ -519,7 +502,7 @@ result: '2'
 result: '2'
 ```
 
-## `eq`
+## eq
 
 Verify if two numbers or strings are equal. Returns a boolean.  
 Returns false if type of the value not equals.
@@ -550,7 +533,7 @@ Result: false
 Result: true
 ```
 
-## `gt`
+## gt
 
 Verify if the first number is greater than the second number. Returns a boolean.
 
@@ -568,7 +551,7 @@ Verify if the first number is greater than the second number. Returns a boolean.
 Result: true
 ```
 
-## `gte`
+## gte
 
 Verify if the first number is greater than or equal to the second number. Returns a boolean.
 
@@ -586,7 +569,7 @@ Verify if the first number is greater than or equal to the second number. Return
 Result: true
 ```
 
-## `lt`
+## lt
 
 Verify if the first number is lower than the second number. Returns a boolean.
 
@@ -604,7 +587,7 @@ Verify if the first number is lower than the second number. Returns a boolean.
 Result: true
 ```
 
-## `lte`
+## lte
 
 Verify if the first number is lower than or equal to the second number. Returns a boolean.
 
@@ -622,7 +605,7 @@ Verify if the first number is lower than or equal to the second number. Returns 
 Result: true
 ```
 
-## `toFixed`
+## toFixed
 
 Format a number using fixed-point notation.
 
@@ -638,7 +621,7 @@ Format a number using fixed-point notation.
 Result: 1.11
 ```
 
-## `round`
+## round
 
 Return the value of a number rounded to the nearest integer.
 
@@ -653,7 +636,7 @@ Return the value of a number rounded to the nearest integer.
 Result: 0
 ```
 
-## `newline`
+## newline
 
 Add a newline `\n`.
 
@@ -663,7 +646,7 @@ Add a newline `\n`.
 {{newline}}
 ```
 
-## `base64`
+## base64
 
 Encode the parameter as base64. This can be used as an inline helper or block helper (see examples below).
 
@@ -679,14 +662,12 @@ Encode the parameter as base64. This can be used as an inline helper or block he
 {{#base64}}
   firstname,lastname,countryCode
   {{#repeat 10}}
-    {{faker 'person.firstName'}},{{faker 'person.lastName'}},{{faker
-      'address.countryCode'
-    }}
+    {{faker 'person.firstName'}},{{faker 'person.lastName'}},{{faker 'address.countryCode'}}
   {{/repeat}}
 {{/base64}}
 ```
 
-## `base64Decode`
+## base64Decode
 
 Decode a base64 string. This can be used as an inline helper or block helper (see examples below).
 
@@ -704,7 +685,7 @@ Decode a base64 string. This can be used as an inline helper or block helper (se
 {{/base64Decode}}
 ```
 
-## `objectId`
+## objectId
 
 Create a valid ObjectId. It can generates the ObjectId based on the specified time (in seconds) or from a 12 byte string that will act as a seed. Syntax is based on [bson-objectid package](https://www.npmjs.com/package/bson-objectid).
 
@@ -719,7 +700,7 @@ Create a valid ObjectId. It can generates the ObjectId based on the specified ti
 {{objectId '54495ad94c934721ede76d90'}}
 ```
 
-## `setVar`
+## setVar
 
 Set a variable to be used later in the template. The value can be the result of another helper. To use it elsewhere in the template, refer to the variable with its name prefixed with an `@`: `{{@varname}}`. The variable can also be used as a helper parameter: `{{#repeat @varname}}...{{/repeat}}`.
 Variables declared in a block helper will be scoped to the block and unavailable outside.
@@ -752,7 +733,7 @@ declare a variable in a block helper:
 {{/repeat}}
 ```
 
-## `getVar`
+## getVar
 
 Dynamically get a variable set with [`setVar`](#setvar).
 
@@ -770,7 +751,65 @@ Dynamically get a variable set with [`setVar`](#setvar).
 {{getVar (body 'property')}}
 ```
 
-## `includes`
+## setGlobalVar
+
+Set a global variable to be used anywhere templating is supported (body, headers, etc.). Global variables are available on all the routes of an environment and they are reset when the environment is restarted.
+
+- The variable name and values can be dynamically created using other helpers.
+- The variable can store any kind of data (arrays, objects, string, etc.).
+- To get the value of a global variable, use the [`{{getGlobalVar 'varName'}}` helper below](#getglobalvar).
+
+| Arguments (ordered) | Type   | Description    |
+| ------------------- | ------ | -------------- |
+| 0                   | string | Variable name  |
+| 1                   | any    | Variable value |
+
+**Examples**
+
+```handlebars
+{{setGlobalVar 'varName' 'value'}}
+{{setGlobalVar 'varName' (bodyRaw 'id')}}
+{{setGlobalVar (queryParam 'param1') (bodyRaw 'id')}}
+```
+
+## getGlobalVar
+
+Get a global variable's value set with [`setGlobalVar`](#setglobalvar). Global variables are available on all the routes of an environment and they are reset when the environment is restarted.
+
+- The variable name and path can be dynamically created using other helpers.
+- The `path` supports two syntaxes, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
+  Please note that a value can be retrieved at the path if the variable contains valid JSON.
+- Primitives and data structures can be retrieved by the helper and reused in other helpers (see example below).
+- The full variable content (array, object, etc.) can be fetched when the `path` is omitted (`{{getGlobalVar 'varname'}}`).
+
+| Arguments (ordered) | Type   | Description                |
+| ------------------- | ------ | -------------------------- |
+| 0                   | string | Variable name              |
+| 1                   | string | Path to the value property |
+
+**Examples**
+
+```handlebars
+{{getGlobalVar 'varname'}}
+{{getGlobalVar (bodyRaw 'property')}}
+{{getGlobalVar (urlParam 'id')}}
+
+<!-- Using object-path syntax -->
+{{getGlobalVar 'varName' 'path.to.property'}}
+{{getGlobalVar 'varName' 'deep.property\.with\.dot'}}
+
+<!-- using JSONPath syntax -->
+{{getGlobalVar 'varName' '$.array.[*].property'}}
+
+{{#repeat (getGlobalVar 'varname')}}...{{/repeat}}
+
+{{#each (getGlobalVar 'varName')}}...{{/each}}
+
+<!-- Stringify the variable content -->
+{{{stringify (getGlobalVar 'varName')}}}
+```
+
+## includes
 
 Search whether a string can be found in another string and returns the appropriate boolean.
 
@@ -787,7 +826,7 @@ Search whether a string can be found in another string and returns the appropria
 result: true
 ```
 
-## `substr`
+## substr
 
 Return a portion of a string starting at the specified index and extending for a given number of characters afterwards.
 
@@ -804,7 +843,7 @@ Return a portion of a string starting at the specified index and extending for a
 result: 'data'
 ```
 
-## `lowercase`
+## lowercase
 
 Return the first string parameter lowercased.
 
@@ -820,7 +859,7 @@ Return the first string parameter lowercased.
 result: 'abcd'
 ```
 
-## `uppercase`
+## uppercase
 
 Return the first string parameter uppercased.
 
@@ -836,7 +875,7 @@ Return the first string parameter uppercased.
 result: 'ABCD'
 ```
 
-## `split`
+## split
 
 Split a string and return an array containing the multiples substrings. This helper can be used within handlebars' iterative helpers such as `each`. (Default separator is " ")
 
@@ -859,7 +898,7 @@ result: item1,item2,item3,item4
 result: This,is,my,string,
 ```
 
-## `stringify`
+## stringify
 
 Return objects and arrays as a formatted JSON string indented with two spaces.
 
@@ -890,7 +929,7 @@ Considering an entering body:
 }
 ```
 
-## `concat`
+## concat
 
 Concatenate multiple strings/numbers together. This helper can concatenate results from other helpers, or be used as a parameter of another helper (see examples below).
 
@@ -906,7 +945,7 @@ Concatenate multiple strings/numbers together. This helper can concatenate resul
 {{#repeat (concat 1 2 3)}}...{{/repeat}}
 ```
 
-## `indexOf`
+## indexOf
 
 Return the index of the searched 'data' inside the string. A last parameter (number) can be passed to start the search at a specific index.
 
@@ -924,7 +963,7 @@ Return the index of the searched 'data' inside the string. A last parameter (num
 result: 5
 ```
 
-## `parseInt`
+## parseInt
 
 Parse a number from a string.
 
@@ -932,7 +971,7 @@ Parse a number from a string.
 | ------------------- | ------ | --------------- |
 | 0                   | string | String to parse |
 
-## `padStart`
+## padStart
 
 Pads a string with a given string (repeated, if needed) until the resulting string reaches the given length. The padding is applied from the start of the string.
 
@@ -948,7 +987,7 @@ Pads a string with a given string (repeated, if needed) until the resulting stri
 result: 00005
 ```
 
-## `padEnd`
+## padEnd
 
 Pads a string with a given string (repeated, if needed) until the resulting string reaches the given length. The padding is applied from the end of the string.
 
@@ -966,7 +1005,7 @@ Pads a string with a given string (repeated, if needed) until the resulting stri
 result: 50000
 ```
 
-## `now`
+## now
 
 Display the current time in the chosen format. Format syntax is based on [date-fns package (v2)](https://date-fns.org/v2.11.1/docs/format) and is optional (default to ISO string).
 
@@ -980,7 +1019,7 @@ Display the current time in the chosen format. Format syntax is based on [date-f
 {{now 'YYYY-MM-DD'}}
 ```
 
-## `dateTimeShift`
+## dateTimeShift
 
 Shift a date by adding the number of `years`, `months`, etc. passed as parameters. The `date` and `format` parameters are optional. The helper will return the current date and time as an ISO string if omitted (`yyyy-MM-ddTHH:mm:ss.SSSxxx`).
 
@@ -998,19 +1037,10 @@ Shift a date by adding the number of `years`, `months`, etc. passed as parameter
 **Examples**
 
 ```handlebars
-{{dateTimeShift
-  date='2021-01-01'
-  format='yyyy-MM-dd HH:mm:ss'
-  years=1
-  months=1
-  days=1
-  hours=1
-  minutes=1
-  seconds=1
-}}
+{{dateTimeShift date='2021-01-01' format='yyyy-MM-dd HH:mm:ss' years=1 months=1 days=1 hours=1 minutes=1 seconds=1}}
 ```
 
-## `date`
+## date
 
 Return a random formatted date (using [date-fns package format](https://date-fns.org/docs/format)) between a minimum and a maximum. Uses `faker 'date.between'` to generate the random date.
 
@@ -1026,7 +1056,7 @@ Return a random formatted date (using [date-fns package format](https://date-fns
 {{date '2020-11-20' '2020-11-25' "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"}}
 ```
 
-## `time`
+## time
 
 Return a random formatted time (using [date-fns package format](https://date-fns.org/docs/format)) between a minimum and a maximum. Uses `faker 'date.between'` to generate the random time.
 
@@ -1042,7 +1072,7 @@ Return a random formatted time (using [date-fns package format](https://date-fns
 {{time '09:00' '10:00' 'HH:mm'}}
 ```
 
-## `dateFormat`
+## dateFormat
 
 Return a formatted date (using [date-fns package format](https://date-fns.org/docs/format)).
 
@@ -1058,7 +1088,7 @@ Return a formatted date (using [date-fns package format](https://date-fns.org/do
 {{dateFormat (faker 'date.recent') 'yyyy'}}
 ```
 
-## `int`
+## int
 
 Return a random integer. Alias of `faker 'number.int`.
 
@@ -1073,7 +1103,7 @@ Return a random integer. Alias of `faker 'number.int`.
 {{int 0 100}}
 ```
 
-## `float`
+## float
 
 Return a random float. Alias of `faker 'number.float` with precision = 10.
 
@@ -1088,7 +1118,7 @@ Return a random float. Alias of `faker 'number.float` with precision = 10.
 {{float 0 100}}
 ```
 
-## `boolean`
+## boolean
 
 Return a random boolean. Alias of `faker 'datatype.boolean'`.
 
@@ -1098,7 +1128,7 @@ Return a random boolean. Alias of `faker 'datatype.boolean'`.
 {{boolean}}
 ```
 
-## `title`
+## title
 
 Return a random title. Alias of `faker 'name.prefix'`.
 
@@ -1112,7 +1142,7 @@ Return a random title. Alias of `faker 'name.prefix'`.
 {{title 'male'}}
 ```
 
-## `firstName`
+## firstName
 
 Return a random first name. Alias of `faker 'person.firstName'`.
 
@@ -1122,7 +1152,7 @@ Return a random first name. Alias of `faker 'person.firstName'`.
 {{firstName}}
 ```
 
-## `lastName`
+## lastName
 
 Return a random last name. Alias of `faker 'person.lastName'`.
 
@@ -1132,7 +1162,7 @@ Return a random last name. Alias of `faker 'person.lastName'`.
 {{lastName}}
 ```
 
-## `company`
+## company
 
 Return a random company name. Alias of `faker 'company.companyName'`.
 
@@ -1142,7 +1172,7 @@ Return a random company name. Alias of `faker 'company.companyName'`.
 {{company}}
 ```
 
-## `domain`
+## domain
 
 Return a random domain name. Alias of `faker 'internet.domainName'`.
 
@@ -1152,7 +1182,7 @@ Return a random domain name. Alias of `faker 'internet.domainName'`.
 {{domain}}
 ```
 
-## `tld`
+## tld
 
 Return a random top level domain. Alias of `faker 'internet.domainSuffix'`.
 
@@ -1162,7 +1192,7 @@ Return a random top level domain. Alias of `faker 'internet.domainSuffix'`.
 {{tld}}
 ```
 
-## `email`
+## email
 
 Return a random email address. Alias of `faker 'internet.email'`.
 
@@ -1172,7 +1202,7 @@ Return a random email address. Alias of `faker 'internet.email'`.
 {{email}}
 ```
 
-## `street`
+## street
 
 Return a random address. Alias of `faker 'location.streetAddress'`.
 
@@ -1182,7 +1212,7 @@ Return a random address. Alias of `faker 'location.streetAddress'`.
 {{street}}
 ```
 
-## `city`
+## city
 
 Return a random city name. Alias of `faker 'location.city'`.
 
@@ -1192,7 +1222,7 @@ Return a random city name. Alias of `faker 'location.city'`.
 {{city}}
 ```
 
-## `country`
+## country
 
 Return a random country name. Alias of `faker 'location.country'`.
 
@@ -1202,7 +1232,7 @@ Return a random country name. Alias of `faker 'location.country'`.
 {{country}}
 ```
 
-## `countryCode`
+## countryCode
 
 Return a random country code. Alias of `faker 'location.countryCode'`.
 
@@ -1212,7 +1242,7 @@ Return a random country code. Alias of `faker 'location.countryCode'`.
 {{countryCode}}
 ```
 
-## `zipcode`
+## zipcode
 
 Return a random zip code. Alias of `faker 'location.zipCode'`.
 
@@ -1222,7 +1252,7 @@ Return a random zip code. Alias of `faker 'location.zipCode'`.
 {{zipcode}}
 ```
 
-## `postcode`
+## postcode
 
 Return a random zip code. Alias of `faker 'location.zipCode'`.
 
@@ -1232,7 +1262,7 @@ Return a random zip code. Alias of `faker 'location.zipCode'`.
 {{postcode}}
 ```
 
-## `lat`
+## lat
 
 Return a random latitude. Alias of `faker 'location.latitude'`.
 
@@ -1242,7 +1272,7 @@ Return a random latitude. Alias of `faker 'location.latitude'`.
 {{lat}}
 ```
 
-## `long`
+## long
 
 Return a random longitude. Alias of `faker 'location.longitude'`.
 
@@ -1252,7 +1282,7 @@ Return a random longitude. Alias of `faker 'location.longitude'`.
 {{long}}
 ```
 
-## `phone`
+## phone
 
 Return a random phone number. Alias of `faker 'phone.number'`.
 
@@ -1262,7 +1292,7 @@ Return a random phone number. Alias of `faker 'phone.number'`.
 {{phone}}
 ```
 
-## `color`
+## color
 
 Return a random color. Alias of `faker 'color.human'`.
 
@@ -1272,7 +1302,7 @@ Return a random color. Alias of `faker 'color.human'`.
 {{color}}
 ```
 
-## `hexColor`
+## hexColor
 
 Return a random hexadecimal color code.
 
@@ -1282,7 +1312,7 @@ Return a random hexadecimal color code.
 {{hexColor}}
 ```
 
-## `guid`
+## guid
 
 Return a random GUID. Alias of `faker 'string.uuid'`.
 
@@ -1292,7 +1322,7 @@ Return a random GUID. Alias of `faker 'string.uuid'`.
 {{guid}}
 ```
 
-## `ipv4`
+## ipv4
 
 Return a random IP v4. Alias of `faker 'internet.ip'`.
 
@@ -1302,7 +1332,7 @@ Return a random IP v4. Alias of `faker 'internet.ip'`.
 {{ipv4}}
 ```
 
-## `ipv6`
+## ipv6
 
 Return a random IP v6. Alias of `faker 'internet.ipv6'`.
 
@@ -1312,7 +1342,7 @@ Return a random IP v6. Alias of `faker 'internet.ipv6'`.
 {{ipv6}}
 ```
 
-## `lorem`
+## lorem
 
 Return random lorem ipsum text. Alias of `faker 'lorem.sentence'`.
 

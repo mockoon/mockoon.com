@@ -3,7 +3,7 @@ title: Faker.js helpers
 meta:
   title: Create dynamic responses with templating Faker.js helpers
   description: Create realistic mock data for your mock API servers with Mockoon's templating system including Faker.js
-order: 540
+order: 504
 ---
 
 # Faker.js helpers
@@ -38,9 +38,11 @@ Faker.js methods may use two different ways of passing parameters: ordered argum
 
 ## Set Faker.js' locale and seed
 
-Faker.js locale and seed can be defined in the settings:
+Faker.js locale and seed can be defined in the application settings:
 
 ![fakerjs settings{860x770}](docs-img:settings-faker.png)
+
+The locale and seed can also be set when running your mock using the [CLI's flags](https://github.com/mockoon/mockoon/blob/main/packages/cli/README.md#fakerjs-options) or the [serverless package options](https://github.com/mockoon/mockoon/blob/main/packages/serverless/README.md#options).
 
 > 📝**A note on Faker.js seeding**  
 > By providing a seed value, you can generate repeatable **sequences** of fake data. Using seeding will not always generate the same value but rather a predictable sequence.

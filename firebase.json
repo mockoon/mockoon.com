@@ -28,7 +28,7 @@
       },
       {
         "source": "/releases{,/}",
-        "destination": "/releases/6.0.1/",
+        "destination": "/releases/6.1.0/",
         "type": 302
       },
       {

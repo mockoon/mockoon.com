@@ -253,7 +253,7 @@ const Nav: FunctionComponent = function () {
                           Blog
                         </Link>
                         <a
-                          href='/releases/6.0.1/'
+                          href='/releases/6.1.0/'
                           className={`dropdown-item ${
                             router.pathname === '/releases' ||
                             router.pathname === '/releases/[version]'

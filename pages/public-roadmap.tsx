@@ -37,7 +37,7 @@ const faq: AccordionData = [
 const tasks = {
   released: [
     {
-      link: 'TODO',
+      link: '/docs/latest/global-variables/overview/',
       title: 'Global variables',
       pro: false
     },

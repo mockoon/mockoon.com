@@ -1,4 +1,5 @@
 import { Fragment, FunctionComponent, useState } from 'react';
+import GitHubButton from 'react-github-btn';
 import { sendEvent } from '../utils/analytics';
 
 const DownloadSection: FunctionComponent<{ version: string }> = function ({
@@ -28,11 +29,28 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 of passionate developers. We rely on your invaluable support to
                 ensure their continued development and maintenance.
               </p>
-              <p>
-                <a href='/sponsor-us/' className='btn btn-primary-subtle'>
-                  Support us →
-                </a>
-              </p>
+              <div className='row mt-6'>
+                <div className='col-6'>
+                  <GitHubButton
+                    href='https://github.com/mockoon/mockoon'
+                    data-size='large'
+                    data-show-count='true'
+                    aria-label='Star mockoon/mockoon on GitHub'
+                  >
+                    Star
+                  </GitHubButton>
+                </div>
+                <div className='col-6'>
+                  <GitHubButton
+                    href='https://github.com/sponsors/mockoon'
+                    data-icon='octicon-heart'
+                    data-size='large'
+                    aria-label='Sponsor @mockoon on GitHub'
+                  >
+                    Sponsor
+                  </GitHubButton>
+                </div>
+              </div>
             </div>
           </div>
         </div>

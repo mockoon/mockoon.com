@@ -10,7 +10,7 @@ import { AccordionData } from '../models/common.model';
 const meta = {
   title: "Mockoon's Official Course",
   description:
-    'Mockoon offers an official course to help you get started with API mocking and API design. Learn how to create and manage your mock APIs with Mockoon.'
+    'We will soon offer an online course to help you get started with Mockoon applications and learn how to make the most of them.'
 };
 
 const keyPoints = [
@@ -128,7 +128,7 @@ const Course: FunctionComponent = function () {
 
       <Hero
         title='🎓 Mockoon <span class="text-primary">Official Course</span> <span class="badge text-bg-gray-300 fs-4 align-text-top ms-2"><i class="icon-new_releases pe-2 text-warning"></i>Coming soon</span>'
-        subtitle='Mockoon offers an official course to help you get started with API mocking and API design. Learn how to create and manage your mock APIs with Mockoon.'
+        subtitle='We will soon offer an online course to help you get started with Mockoon applications and learn how to make the most of them.'
         mainPictureWidth={1200}
         mainPictureHeight={783}
       />
@@ -139,12 +139,13 @@ const Course: FunctionComponent = function () {
             <div className='col-12 col-lg-7'>
               <p>
                 This course has been designed to help you{' '}
-                <strong>get started</strong> with Mockoon and learn{' '}
-                <strong>how to use all its features</strong>. It will also help
-                you <strong>master API mocking</strong> and many{' '}
+                <strong>get started</strong> with Mockoon applications (desktop
+                and CLI), and learn{' '}
+                <strong>how to use all their features</strong>. It will also
+                help you <strong>master API mocking</strong> and many{' '}
                 <strong>API concepts</strong>.
               </p>
-              <p>This course will be available as a video course.</p>
+              <p>This course will be available in 2024 as a video course.</p>
 
               <div className='mt-6'>
                 {keyPoints.map((keyPoint, keyPointIndex) => (

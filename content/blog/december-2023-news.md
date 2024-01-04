@@ -29,9 +29,9 @@ We have released three new versions since September:
 
 Callbacks are a way to **make one or more HTTP calls after an entering request** reaches your route. This is useful to call other APIs or micro-services, or to trigger a webhook. Callbacks are fully configurable and can be activated after a certain delay:
 
-![callbacks configuration interface](/images/blog/december-2023-news/callbacks-configuration-interface.png)
+![callbacks configuration interface{1310x476}](/images/blog/december-2023-news/callbacks-configuration-interface.png)
 
-![callback invocation interface](/images/blog/december-2023-news/callbacks-invocation-interface.png)
+![callback invocation interface{1310x476}](/images/blog/december-2023-news/callbacks-invocation-interface.png)
 
 📘&nbsp;[Read the documentation](/docs/latest/callbacks/overview/)
 
@@ -66,7 +66,7 @@ We added a new **command palette** in the desktop application to quickly access 
 
 It currently supports most common actions like creating new environments, starting/stopping them, opening the settings, etc. You can also search for any environment, route, or data bucket by typing their name or path. We will add more actions in the future. Let us know what you think, and do not hesitate to suggest new actions on our [Discord server](https://discord.gg/FtJjkejKGp) or [GitHub discussions](https://github.com/mockoon/mockoon/discussions).
 
-![screenshot of the desktop application with the command palette opened](/images/blog/december-2023-news/command-palette.png)
+![screenshot of the desktop application with the command palette opened{1410x568}](/images/blog/december-2023-news/command-palette.png)
 
 ## 🔌 Upcoming WebSocket support
 
@@ -79,7 +79,7 @@ We have created a new [API playground](https://mockoon.com/playground/). It is a
 
 The API playground is available at `https://playground.mockoon.com` and was built with Mockoon, of course!
 
-![screenshot of the API playground in mockoon desktop](/images/blog/december-2023-news/creating-crud-endpoints-mockoon-desktop.png)
+![screenshot of the API playground in mockoon desktop{1175x632}](/images/blog/december-2023-news/creating-crud-endpoints-mockoon-desktop.png)
 
 ## 🧑‍🏫 Official course
 
@@ -90,4 +90,4 @@ You can already [subscribe to the waiting list](/course/) to be notified when it
 
 We added a **search feature** to the website covering all the pages, tutorials, documentation, or mock samples. No more being lost in the documentation!
 
-![screenshot of the search modal on the website](/images/blog/december-2023-news/website-search.png)
+![screenshot of the search modal on the website{1335x850}](/images/blog/december-2023-news/website-search.png)

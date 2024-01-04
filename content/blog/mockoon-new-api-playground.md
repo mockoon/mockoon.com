@@ -29,7 +29,7 @@ All the fake data were generated using Faker.js and our [templating system](/doc
 
 We then created a Mockoon project with all the [CRUD endpoints](/docs/latest/api-endpoints/crud-routes/). CRUD endpoints are fully automated and create multiple routes at runtime to let you manipulate a [data bucket](/docs/latest/data-buckets/overview/), a sort of basic JSON database.
 
-![Mockoon CRUD endpoints](/images/blog/mockoon-new-api-playground/creating-crud-endpoints-mockoon-desktop.png)
+![Mockoon CRUD endpoints{1175x632}](/images/blog/mockoon-new-api-playground/creating-crud-endpoints-mockoon-desktop.png)
 
 We saved the project data file in a [new repository](https://github.com/mockoon/playground) and created a **Dockerfile** using Mockoon CLI.
 

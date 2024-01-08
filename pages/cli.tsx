@@ -3,7 +3,6 @@ import Card from '../components/card';
 import CodeBlock from '../components/code-block';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
-import Terminal from '../components/terminal';
 import Layout from '../layout/layout';
 import { CardData } from '../models/common.model';
 
@@ -68,7 +67,7 @@ const CLI: FunctionComponent = function () {
           <div className='row py-5'>
             <div className='col-12'>
               <div className='text-center'>
-                <h2>
+                <h2 className='fw-medium'>
                   Mockoon's perfect complement for all your headless and
                   automated environments.
                 </h2>
@@ -91,7 +90,7 @@ const CLI: FunctionComponent = function () {
           </div>
           <div className='row py-8'>
             <div className='col-md-6'>
-              <h3 className='text-center'>
+              <h3 className='text-center fw-medium'>
                 NPM package quick start
                 <a
                   href='https://www.npmjs.com/package/@mockoon/cli'
@@ -105,15 +104,17 @@ const CLI: FunctionComponent = function () {
                   ></i>
                 </a>
               </h3>
-              <Terminal
-                lines={[
-                  'npm install -g @mockoon/cli',
-                  'mockoon-cli start --data ./data-file.json'
-                ]}
+
+              <CodeBlock
+                code={`$ npm install -g @mockoon/cli
+$ mockoon-cli start --data ./data-file.json`}
+                dark
+                lineBreak
+                language='bash'
               />
             </div>
             <div className='col-md-6'>
-              <h3 className='text-center'>
+              <h3 className='text-center fw-medium'>
                 Docker image quick start
                 <a
                   href='https://hub.docker.com/r/mockoon/cli'
@@ -127,16 +128,17 @@ const CLI: FunctionComponent = function () {
                   ></i>
                 </a>
               </h3>
-              <Terminal
-                lines={[
-                  'docker run -d --mount type=bind,source=/data-file.json,target=/data,readonly -p 3000:3000 mockoon/cli:latest -d data -p 3000'
-                ]}
+              <CodeBlock
+                code={`$ docker run -d --mount type=bind,source=/data-file.json,target=/data,readonly -p 3000:3000 mockoon/cli:latest -d data -p 3000`}
+                dark
+                lineBreak
+                language='bash'
               />
             </div>
           </div>
           <div className='row py-5 justify-content-center'>
             <div className='col-md-8'>
-              <h3 className='text-center'>
+              <h3 className='text-center fw-medium'>
                 GitHub Action quick start
                 <a
                   href='https://github.com/marketplace/actions/mockoon-cli'

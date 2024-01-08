@@ -1,14 +1,15 @@
 $custom-gray: #242830;
-$font-family-base: sans-serif;
+$path-to-fonts: '/fonts';
+$font-family-base: 'HKGroteskPro', sans-serif;
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
   xl: 1040px,
   xxl: 1400px
-) !default;
+);
 
-$path-to-img: '/images' !default;
+$path-to-img: '/images';
 $table-cell-padding-y: 0.5rem;
 $table-cell-padding-x: 0.5rem;
 

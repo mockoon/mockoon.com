@@ -45,7 +45,7 @@ const Footer: FunctionComponent<{
             />
           </div>
           <div className='col-12 col-lg-3 text-lg-start text-center pt-8 pb-4 pb-lg-0 pt-lg-0'>
-            <h6 className='fw-bold text-uppercase text-gray-800'>
+            <h6 className='fw-bold text-uppercase'>
               Popular tutorials and articles
             </h6>
 
@@ -116,7 +116,7 @@ const Footer: FunctionComponent<{
             </ul>
           </div>
           <div className='col-12 col-md-6 col-lg-2 text-lg-start text-center'>
-            <h6 className='fw-bold text-uppercase text-gray-800'>Learn</h6>
+            <h6 className='fw-bold text-uppercase'>Learn</h6>
 
             <ul className='list-unstyled text-gray-700'>
               <li className='mb-2'>
@@ -173,7 +173,7 @@ const Footer: FunctionComponent<{
             </ul>
           </div>
           <div className='col-12 col-md-6 col-lg-2 text-lg-start text-center'>
-            <h6 className='fw-bold text-uppercase text-gray-800'>Services</h6>
+            <h6 className='fw-bold text-uppercase'>Services</h6>
 
             <ul className='list-unstyled text-gray-700'>
               <li className='mb-2'>
@@ -192,7 +192,7 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
             </ul>
-            <h6 className='fw-bold text-uppercase text-gray-700'>Apps</h6>
+            <h6 className='fw-bold text-uppercase'>Apps</h6>
 
             <ul className='list-unstyled text-gray-700'>
               <li className='mb-2'>
@@ -208,6 +208,17 @@ const Footer: FunctionComponent<{
               <li className='mb-2'>
                 <Link href='/serverless/' className='text-reset'>
                   Serverless package
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className='col-12 col-md-6 col-lg-2 offset-lg-0 text-lg-start text-center'>
+            {' '}
+            <h6 className='fw-bold text-uppercase'>Tools</h6>
+            <ul className='list-unstyled text-gray-700'>
+              <li className='mb-2'>
+                <Link href='/playground/' className='text-reset'>
+                  API playground
                 </Link>
               </li>
               <li className='mb-2'>
@@ -233,10 +244,16 @@ const Footer: FunctionComponent<{
                   Mockoon button
                 </Link>
               </li>
+              <li className='mb-2'>
+                <Link href='/tools/json-validator/' className='text-reset'>
+                  JSON validator
+                </Link>
+              </li>
             </ul>
           </div>
+
           <div className='col-12 col-md-6 col-lg-2 offset-lg-0 text-lg-start text-center'>
-            <h6 className='fw-bold text-uppercase text-gray-800'>More</h6>
+            <h6 className='fw-bold text-uppercase'>More</h6>
 
             <ul className='list-unstyled text-gray-700 mb-0'>
               <li className='mb-2'>
@@ -287,10 +304,8 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
             </ul>
-          </div>
 
-          <div className='col-12 col-md-6 col-lg-2 offset-lg-0 text-lg-start text-center'>
-            <h6 className='fw-bold text-uppercase text-gray-800'>Policies</h6>
+            <h6 className='fw-bold text-uppercase'>Policies</h6>
 
             <ul className='list-unstyled text-gray-700 mb-0'>
               <li className='mb-2'>

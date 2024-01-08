@@ -30,9 +30,14 @@ pre .code {
   position: relative;
 
   .code-block-copy {
+    display: none;
     position: absolute;
     top: 0;
     right: 15px;
+  }
+
+  &:hover .code-block-copy {
+    display: block;
   }
 }
 
@@ -110,59 +115,6 @@ aside {
     }
   }
 }
-// TERMINAL
-header.terminal {
-  background: #30353a;
-  height: 30px;
-  border-radius: 8px 8px 0 0;
-  padding-left: 10px;
-}
-.terminal-container header .button {
-  width: 12px;
-  height: 12px;
-  margin: 10px 4px 0 0;
-  display: inline-block;
-  border-radius: 8px;
-}
-.green {
-  background-color: #3bb662 !important;
-}
-.red {
-  background-color: #e75448 !important;
-}
-.yellow {
-  background-color: #e5c30f !important;
-}
-.terminal-container {
-  text-align: left;
-  width: 100%;
-  border-radius: 10px;
-  margin: auto;
-  margin-bottom: 14px;
-  position: relative;
-}
-.terminal-fixed-top {
-  margin-top: 30px;
-}
-.terminal-home {
-  background-color: #30353a;
-  padding: 1em 1em 1em 2em;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-  color: #fafafa;
-}
-
-p.console {
-  font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
-    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
-    'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
-    monospace;
-  font-size: 0.9rem;
-  &:before {
-    content: '$';
-    color: #3bb662;
-  }
-}
 
 .card-min-height {
   min-height: 260px;
@@ -214,12 +166,14 @@ p.console {
   }
 
   &:before {
+    font-family: sans-serif;
     content: open-quote;
     top: 0;
     left: 0;
   }
 
   &:after {
+    font-family: sans-serif;
     content: close-quote;
     right: 0;
     top: auto;

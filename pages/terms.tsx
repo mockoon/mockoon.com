@@ -51,7 +51,7 @@ const Terms: FunctionComponent = function () {
                 with this Agreement, you must not accept this Agreement and may
                 not use the Service.
               </p>
-              <h3 className='mt-6'>1. Account registration</h3>
+              <h3 className='mt-6 fw-medium'>1. Account registration</h3>
               <p>
                 By creating an account or signing up for our Service, you agree
                 to provide accurate, up-to-date, and complete information during
@@ -66,7 +66,7 @@ const Terms: FunctionComponent = function () {
                 account, you must notify us immediately to take appropriate
                 action and mitigate any potential harm.
               </p>
-              <h3 className='mt-6'>2. Account termination</h3>
+              <h3 className='mt-6 fw-medium'>2. Account termination</h3>
               <p>
                 You may request the termination of your account at any time by
                 contacting us through the provided contact information.
@@ -91,7 +91,7 @@ const Terms: FunctionComponent = function () {
                 you of any obligations or liabilities accrued prior to the
                 termination.
               </p>
-              <h3 className='mt-6'>3. Temporary use license</h3>
+              <h3 className='mt-6 fw-medium'>3. Temporary use license</h3>
               <p>
                 During the period for which you are authorized to use the
                 Service and subject to your compliance with the terms of this
@@ -112,7 +112,7 @@ const Terms: FunctionComponent = function () {
                 conditions, and your use of such applications is governed by
                 those licenses.
               </p>
-              <h3 className='mt-6'>4. Your content and data</h3>
+              <h3 className='mt-6 fw-medium'>4. Your content and data</h3>
               <p>
                 Our Service may allow you to upload, submit, store, send, or
                 receive various types of content, including data, files,
@@ -155,7 +155,7 @@ const Terms: FunctionComponent = function () {
                 license to use, modify, distribute, and incorporate them into
                 our Service or future offerings.
               </p>
-              <h3 className='mt-6'>5. Fair use</h3>
+              <h3 className='mt-6 fw-medium'>5. Fair use</h3>
               <p>
                 We strive to ensure that all plan levels receive an adequate
                 allocation of bandwidth or compute power, which we consider to
@@ -170,7 +170,7 @@ const Terms: FunctionComponent = function () {
                 including shutting down and terminating projects or accounts
                 that create such an unreasonable burden.
               </p>
-              <h3 className='mt-6'>6. Acceptable use</h3>
+              <h3 className='mt-6 fw-medium'>6. Acceptable use</h3>
               <p>
                 By accessing and using our Service, you agree to abide by this
                 Acceptable Use clause and refrain from engaging in any
@@ -229,7 +229,7 @@ const Terms: FunctionComponent = function () {
                 Acceptable Use clause, please promptly notify us so that we can
                 address the situation appropriately.
               </p>
-              <h3 className='mt-6'>7. Electronic communications</h3>
+              <h3 className='mt-6 fw-medium'>7. Electronic communications</h3>
               <p>
                 By using our Service, you consent to receive communications from
                 us electronically. These communications may include notices,
@@ -257,7 +257,7 @@ const Terms: FunctionComponent = function () {
                 communication sent to us is subject to our review and may be
                 retained for record-keeping and support purposes.
               </p>
-              <h3 className='mt-6'>8. Indemnification</h3>
+              <h3 className='mt-6 fw-medium'>8. Indemnification</h3>
               <p>
                 You agree to indemnify, defend, and hold us harmless from and
                 against any claims, liabilities, damages, losses, and expenses,
@@ -294,7 +294,7 @@ const Terms: FunctionComponent = function () {
                 with our defense of such a claim and provide any necessary
                 assistance.
               </p>
-              <h3 className='mt-6'>9. Customer name</h3>
+              <h3 className='mt-6 fw-medium'>9. Customer name</h3>
               <p>
                 By using our Service, you grant us a limited, non-exclusive,
                 worldwide license to use your company or business name for the
@@ -303,7 +303,7 @@ const Terms: FunctionComponent = function () {
                 our website, promotional materials, case studies, and customer
                 testimonials.
               </p>
-              <h3 className='mt-6'>10. Payment of fees</h3>
+              <h3 className='mt-6 fw-medium'>10. Payment of fees</h3>
               <p>
                 By accessing or using our Service, you agree to pay the
                 applicable fee and any applicable tax as specified in the
@@ -379,7 +379,7 @@ const Terms: FunctionComponent = function () {
                 Service does not relieve you of the obligation to pay any
                 outstanding fees accrued prior to the termination or cessation.
               </p>
-              <h3 className='mt-6'>11. Usage quotas</h3>
+              <h3 className='mt-6 fw-medium'>11. Usage quotas</h3>
               <p>
                 Our Service may include certain usage quotas, such as storage,
                 deployments, or AI assistant invocations, depending on the plan
@@ -406,7 +406,7 @@ const Terms: FunctionComponent = function () {
                 written notice, email notifications, or by posting the updated
                 quotas within our Service.
               </p>
-              <h3 className='mt-6'>12. Priority support services</h3>
+              <h3 className='mt-6 fw-medium'>12. Priority support services</h3>
               <p>
                 Support services are available for customers subscribed to the
                 Pro and Enterprise plans of our Service. These plans include
@@ -484,7 +484,7 @@ const Terms: FunctionComponent = function () {
                 communicated to you through written notice or by posting updated
                 information within our Service.
               </p>
-              <h3 className='mt-6'>13. Welcome training</h3>
+              <h3 className='mt-6 fw-medium'>13. Welcome training</h3>
               <p>
                 As part of our Enterprise plan, we offer a one hour online video
                 call training session per company, per year. This training
@@ -496,7 +496,7 @@ const Terms: FunctionComponent = function () {
                 After subscribing, a representative from our Company will reach
                 out to you to coordinate the training session.
               </p>
-              <h3 className='mt-6'>14. Term and termination</h3>
+              <h3 className='mt-6 fw-medium'>14. Term and termination</h3>
               <p>
                 The term of this Agreement shall begin upon your acceptance of
                 these terms of service and shall automatically renew for the
@@ -534,7 +534,7 @@ const Terms: FunctionComponent = function () {
                 clauses relating to intellectual property rights, limitation of
                 liability, indemnification, and dispute resolution.
               </p>
-              <h3 className='mt-6'>15. Disclaimer</h3>
+              <h3 className='mt-6 fw-medium'>15. Disclaimer</h3>
               <p>
                 THE SERVICES AND SUPPORT SERVICES ARE PROVIDED "AS IS" AND THE
                 COMPANY DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING,
@@ -545,7 +545,7 @@ const Terms: FunctionComponent = function () {
                 TO THE RESULTS THAT MAY BE OBTAINED FROM USE OF THE SERVICES OR
                 DELIVERABLES.
               </p>
-              <h3 className='mt-6'>
+              <h3 className='mt-6 fw-medium'>
                 16. Limit of Liability and Waiver of Consequential Damages.
               </h3>
               <p>
@@ -573,7 +573,7 @@ const Terms: FunctionComponent = function () {
                 THE PARTIES HAVE RELIED ON THESE LIMITATIONS IN DETERMINING
                 WHETHER TO ENTER THIS AGREEMENT.
               </p>
-              <h3 className='mt-6'>17. Miscellaneous</h3>
+              <h3 className='mt-6 fw-medium'>17. Miscellaneous</h3>
               <p>
                 This Agreement, including its terms and conditions, may be
                 updated or modified by us from time to time. Any updates or
@@ -616,7 +616,7 @@ const Terms: FunctionComponent = function () {
                 communications, or understandings, whether written or oral,
                 relating to such subject matter.
               </p>
-              <h3 className='mt-6'>18. Governing law</h3>
+              <h3 className='mt-6 fw-medium'>18. Governing law</h3>
               <p>
                 This Agreement and any dispute arising out of or in connection
                 with this Agreement shall be governed by and construed in
@@ -630,7 +630,7 @@ const Terms: FunctionComponent = function () {
                 venue of such courts and waive any objections to the exercise of
                 personal jurisdiction over you by such courts.
               </p>
-              <h3 className='mt-6'>19. Binding agreement</h3>
+              <h3 className='mt-6 fw-medium'>19. Binding agreement</h3>
               <p>
                 This Agreement constitutes a binding contract between you and
                 us. You may not assign or transfer any rights or obligations

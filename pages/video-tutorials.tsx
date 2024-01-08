@@ -80,7 +80,7 @@ const VideoTutorials = function () {
               </aside>
             </div>
             <div className='col-12 col-lg-9'>
-              <h2>{activeVideo.name}</h2>
+              <h2 className='fw-medium'>{activeVideo.name}</h2>
               <p className='mt-6'>{activeVideo.description}</p>
               <div className='ratio ratio-16x9 mb-4'>
                 <iframe

@@ -5,31 +5,33 @@
 
 // Font
 
-/* @font-face {
-  font-family: "HKGroteskPro";
+@font-face {
+  font-family: 'HKGroteskPro';
   font-weight: 400;
-  src: url("#{$path-to-fonts}/HK%20Grotesk%20Pro/HKGroteskPro-Regular.woff2") format("woff2"),
-  url("#{$path-to-fonts}/HK%20Grotesk%20Pro/HKGroteskPro-Regular.woff") format("woff");
+  src:
+    url('#{$path-to-fonts}/HKGroteskPro-Regular.woff2') format('woff2'),
+    url('#{$path-to-fonts}/HKGroteskPro-Regular.woff') format('woff');
 }
 
 @font-face {
-  font-family: "HKGroteskPro";
+  font-family: 'HKGroteskPro';
+  font-weight: 500;
+  src:
+    url('#{$path-to-fonts}/HKGroteskPro-Medium.woff2') format('woff2'),
+    url('#{$path-to-fonts}/HKGroteskPro-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'HKGroteskPro';
   font-weight: 600;
-  src: url("#{$path-to-fonts}/HK%20Grotesk%20Pro/HKGroteskPro-Medium.woff2") format("woff2"),
-  url("#{$path-to-fonts}/HK%20Grotesk%20Pro/HKGroteskPro-Medium.woff") format("woff");
+  src:
+    url('#{$path-to-fonts}/HKGroteskPro-SemiBold.woff2') format('woff2'),
+    url('#{$path-to-fonts}/HKGroteskPro-SemiBold.woff') format('woff');
 }
-
-@font-face {
-  font-family: "HKGroteskPro";
-  font-weight: 700;
-  src: url("#{$path-to-fonts}/HK%20Grotesk%20Pro/HKGroteskPro-Bold.woff2") format("woff2"),
-  url("#{$path-to-fonts}/HK%20Grotesk%20Pro/HKGroteskPro-Bold.woff") format("woff");
-}
-
 
 // Feather icons
 
-@font-face {
+/*@font-face {
   font-family: 'Feather';
   src: url('#{$path-to-fonts}/Feather/Feather.ttf?sdxovp') format('truetype'), url('#{$path-to-fonts}/Feather/Feather.woff?sdxovp') format('woff'), url('#{$path-to-fonts}/Feather/Feather.svg?sdxovp#Feather') format('svg');
   font-weight: 400;

@@ -261,11 +261,11 @@ const Course: FunctionComponent = function () {
             <div className='col-12 col-lg-5 sticky-top'>
               <div className='card shadow-light-lg mb-6 mb-md-0'>
                 <div className='card-body'>
-                  <h3>Playground base URL</h3>
+                  <h3 className='fw-medium'>Playground base URL</h3>
                   <p>
                     <code>https://playground.mockoon.com/</code>
                   </p>
-                  <h4 className='my-6'>
+                  <h4 className='my-6 fw-medium'>
                     Available routes/methods for each resource
                   </h4>
                   <ul className='list-group list-group-flush mb-6'>

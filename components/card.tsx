@@ -62,7 +62,7 @@ const Card: FunctionComponent<{
             </span>
           )}
 
-          <h3 className='pb-3 h4 col-10'>{props.data.title}</h3>
+          <h3 className='pb-3 h4 col-10 fw-medium'>{props.data.title}</h3>
 
           {props.data.description && (
             <p

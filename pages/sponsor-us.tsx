@@ -40,7 +40,7 @@ const SponsorUs: FunctionComponent = function () {
             <p>
               Entirely free, Mockoon saves time for thousands of people around
               the world every day and recently crossed{' '}
-              <strong>400&nbsp;000 downloads</strong>!
+              <strong>500&nbsp;000 downloads</strong>!
             </p>
             <p>
               Reaching this level of satisfaction requires a tremendous amount

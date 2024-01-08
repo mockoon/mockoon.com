@@ -56,7 +56,7 @@ const Accordion: FunctionComponent<{
                 }
               >
                 <span
-                  className='me-4'
+                  className='me-4 fw-medium'
                   id={`accordionContent${dataGroupIndex}${dataItemIndex}`}
                   dangerouslySetInnerHTML={{ __html: dataItem.title }}
                 ></span>

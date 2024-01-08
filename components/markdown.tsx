@@ -39,37 +39,37 @@ const heading = (props) => {
   switch (props.node.tagName) {
     case 'h1':
       return (
-        <h1 id={linkSlug} className='position-relative '>
+        <h1 id={linkSlug} className='fw-medium position-relative '>
           {container(props.children)}
         </h1>
       );
     case 'h2':
       return (
-        <h2 id={linkSlug} className='position-relative mt-8'>
+        <h2 id={linkSlug} className='fw-medium position-relative mt-8'>
           {container(props.children)}
         </h2>
       );
     case 'h3':
       return (
-        <h3 id={linkSlug} className='position-relative mt-6'>
+        <h3 id={linkSlug} className='fw-medium position-relative mt-6'>
           {container(props.children)}
         </h3>
       );
     case 'h4':
       return (
-        <h4 id={linkSlug} className='position-relative mt-6'>
+        <h4 id={linkSlug} className='fw-medium position-relative mt-6'>
           {container(props.children)}
         </h4>
       );
     case 'h5':
       return (
-        <h5 id={linkSlug} className='position-relative mt-4'>
+        <h5 id={linkSlug} className='fw-medium position-relative mt-4'>
           {container(props.children)}
         </h5>
       );
     case 'h6':
       return (
-        <h6 id={linkSlug} className='position-relative mt-4'>
+        <h6 id={linkSlug} className='fw-medium position-relative mt-4'>
           {container(props.children)}
         </h6>
       );

@@ -23,7 +23,7 @@ const Faq: FunctionComponent = function () {
                 <div className='accordion-button'>
                   <h3
                     id='how-does-mockoon-mock-api-creation-works'
-                    className='me-4'
+                    className='me-4 fw-medium'
                   >
                     What is API mocking?
                   </h3>
@@ -44,7 +44,7 @@ const Faq: FunctionComponent = function () {
                 <div className='accordion-button'>
                   <h3
                     id='how-does-mockoon-mock-api-creation-work'
-                    className='me-4'
+                    className='me-4 fw-medium'
                   >
                     How does Mockoon mock API creation work?
                   </h3>
@@ -68,7 +68,7 @@ const Faq: FunctionComponent = function () {
                 <div className='accordion-button'>
                   <h3
                     id='does-mockoon-need-elevated-rights-to-run'
-                    className='me-4'
+                    className='me-4 fw-medium'
                   >
                     Does Mockoon need elevated rights to run?
                   </h3>
@@ -86,7 +86,7 @@ const Faq: FunctionComponent = function () {
                 <div className='accordion-button'>
                   <h3
                     id='does-mockoon-work-behind-a-company-firewall'
-                    className='me-4'
+                    className='me-4 fw-medium'
                   >
                     Does Mockoon work behind a company firewall?
                   </h3>
@@ -109,7 +109,7 @@ const Faq: FunctionComponent = function () {
                 <div className='accordion-button '>
                   <h3
                     id='does-mockoon-require-an-active-internet-connection'
-                    className='me-4'
+                    className='me-4 fw-medium'
                   >
                     Does Mockoon require an active internet connection?
                   </h3>
@@ -128,7 +128,7 @@ const Faq: FunctionComponent = function () {
                 <div className='accordion-button '>
                   <h3
                     id='do-you-need-an-account-to-create-mock-apis'
-                    className='me-4'
+                    className='me-4 fw-medium'
                   >
                     Do you need an account to create mock APIs?
                   </h3>
@@ -146,7 +146,7 @@ const Faq: FunctionComponent = function () {
 
               <div className='accordion-item'>
                 <div className='accordion-button '>
-                  <h3 id='does-mockoon-offer-a-cli' className='me-4'>
+                  <h3 id='does-mockoon-offer-a-cli' className='me-4 fw-medium'>
                     Does Mockoon offer a CLI?
                   </h3>
                 </div>
@@ -181,7 +181,10 @@ const Faq: FunctionComponent = function () {
 
               <div className='accordion-item'>
                 <div className='accordion-button '>
-                  <h3 id='is-mockoon-compatible-serverless' className='me-4'>
+                  <h3
+                    id='is-mockoon-compatible-serverless'
+                    className='me-4 fw-medium'
+                  >
                     Is Mockoon compatible with cloud functions and serverless
                     environments?
                   </h3>
@@ -202,7 +205,10 @@ const Faq: FunctionComponent = function () {
 
               <div className='accordion-item'>
                 <div className='accordion-button '>
-                  <h3 id='is-mockoon-compatible-with-openapi' className='me-4'>
+                  <h3
+                    id='is-mockoon-compatible-with-openapi'
+                    className='me-4 fw-medium'
+                  >
                     Is Mockoon compatible with OpenAPI?
                   </h3>
                 </div>
@@ -224,7 +230,10 @@ const Faq: FunctionComponent = function () {
 
               <div className='accordion-item'>
                 <div className='accordion-button '>
-                  <h3 id='is-mockoon-free-and-or-open-source' className='me-4'>
+                  <h3
+                    id='is-mockoon-free-and-or-open-source'
+                    className='me-4 fw-medium'
+                  >
                     Is Mockoon free and/or open source?
                   </h3>
                 </div>
@@ -249,7 +258,10 @@ const Faq: FunctionComponent = function () {
 
               <div className='accordion-item'>
                 <div className='accordion-button '>
-                  <h3 id='is-mockoon-free-and-or-open-source' className='me-4'>
+                  <h3
+                    id='is-mockoon-free-and-or-open-source'
+                    className='me-4 fw-medium'
+                  >
                     Do you offer a Pro version?
                   </h3>
                 </div>
@@ -267,7 +279,10 @@ const Faq: FunctionComponent = function () {
 
               <div className='accordion-item'>
                 <div className='accordion-button '>
-                  <h3 id='is-mockoon-free-and-or-open-source' className='me-4'>
+                  <h3
+                    id='is-mockoon-free-and-or-open-source'
+                    className='me-4 fw-medium'
+                  >
                     Do you offer enterprise-grade support?
                   </h3>
                 </div>
@@ -284,7 +299,7 @@ const Faq: FunctionComponent = function () {
 
               <div className='accordion-item'>
                 <div className='accordion-button '>
-                  <h3 id='where-are-my-data-stored' className='me-4'>
+                  <h3 id='where-are-my-data-stored' className='me-4 fw-medium'>
                     Where are my data stored?
                   </h3>
                 </div>
@@ -354,7 +369,7 @@ const Faq: FunctionComponent = function () {
                 <div className='accordion-button '>
                   <h3
                     id='is-the-application-collecting-usage-data'
-                    className='me-4'
+                    className='me-4 fw-medium'
                   >
                     Is the application collecting usage data?
                   </h3>

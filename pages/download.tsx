@@ -71,7 +71,7 @@ const Download: FunctionComponent<{ version: string }> = function ({
         <div className='container'>
           <div className='row'>
             <div className='col text-center'>
-              <h2>Application download</h2>
+              <h2 className='fw-medium'>Application download</h2>
               <DownloadSection version={version} />
             </div>
           </div>
@@ -83,7 +83,7 @@ const Download: FunctionComponent<{ version: string }> = function ({
           <div className='row py-5'>
             <div className='col-12'>
               <div className='text-center'>
-                <h2>
+                <h2 className='fw-medium'>
                   Design the perfect{' '}
                   <span className='text-primary'>mock API</span> with Mockoon
                 </h2>

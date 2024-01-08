@@ -27,7 +27,7 @@ const Privacy: FunctionComponent = function () {
                 This policy is effective as of 1 July 2021 and was last updated
                 on 1 July 2021.
               </p>
-              <h3>Information We Collect</h3>
+              <h3 className='mt-6 fw-medium'>1. Information We Collect</h3>
               <p>
                 Information we collect includes both information you knowingly
                 and actively provide us when using or participating in any of
@@ -35,7 +35,7 @@ const Privacy: FunctionComponent = function () {
                 sent by your devices in the course of accessing our products and
                 services.
               </p>
-              <h3>Log Data</h3>
+              <h3 className='mt-6 fw-medium'>2. Log Data</h3>
               <p>
                 When you visit our website or use our application, our servers
                 may automatically log the standard data provided by your web
@@ -50,7 +50,9 @@ const Privacy: FunctionComponent = function () {
                 personally identifying by itself, it may be possible to combine
                 it with other data to personally identify individual persons.
               </p>
-              <h3>Collection and Use of Information</h3>
+              <h3 className='mt-6 fw-medium'>
+                3. Collection and Use of Information
+              </h3>
               <p>
                 We may collect personal information from you when you do any of
                 the following on our website:
@@ -85,7 +87,9 @@ const Privacy: FunctionComponent = function () {
                   collected.
                 </li>
               </ul>
-              <h3>Security of Your Personal Information</h3>
+              <h3 className='mt-6 fw-medium'>
+                4. Security of Your Personal Information
+              </h3>
               <p>
                 When we collect and process personal information, and while we
                 retain this information, we will protect it within commercially
@@ -104,7 +108,9 @@ const Privacy: FunctionComponent = function () {
                 security strength, ensuring the security of your own information
                 within the bounds of our services.
               </p>
-              <h3>How Long We Keep Your Personal Information</h3>
+              <h3 className='mt-6 fw-medium'>
+                5. How Long We Keep Your Personal Information
+              </h3>
               <p>
                 We keep your personal information only for as long as we need
                 to. This time period may depend on what we are using your
@@ -119,13 +125,15 @@ const Privacy: FunctionComponent = function () {
                 scientific, or historical research purposes or statistical
                 purposes.
               </p>
-              <h3>Children's Privacy</h3>
+              <h3 className='mt-6 fw-medium'>6. Children's Privacy</h3>
               <p>
                 We do not aim any of our products or services directly at
                 children under the age of 13, and we do not knowingly collect
                 personal information about children under 13.
               </p>
-              <h3>International Transfers of Personal Information</h3>
+              <h3 className='mt-6 fw-medium'>
+                7. International Transfers of Personal Information
+              </h3>
               <p>
                 The personal information we collect is stored and/or processed
                 where we or our partners, affiliates, and third-party providers
@@ -138,7 +146,9 @@ const Privacy: FunctionComponent = function () {
                 applicable law; and (ii) we will protect the transferred
                 personal information in accordance with this privacy policy.
               </p>
-              <h3>Your Rights and Controlling Your Personal Information</h3>
+              <h3 className='mt-6 fw-medium'>
+                8. Your Rights and Controlling Your Personal Information
+              </h3>
               <p>
                 You always retain the right to withhold personal information
                 from us, with the understanding that your experience of our
@@ -181,7 +191,7 @@ const Privacy: FunctionComponent = function () {
                 have the right to contact a regulatory body or data protection
                 authority in relation to your complaint.
               </p>
-              <h3>Use of Cookies</h3>
+              <h3 className='mt-6 fw-medium'>9. Use of Cookies</h3>
               <p>
                 We use “cookies” to collect information about you and your
                 activity across our site. A cookie is a small piece of data that
@@ -189,14 +199,14 @@ const Privacy: FunctionComponent = function () {
                 visit, so we can understand how you use our site. This helps us
                 serve you content based on preferences you have specified.
               </p>
-              <h3>Limits of Our Policy</h3>
+              <h3 className='mt-6 fw-medium'>10 Limits of Our Policy</h3>
               <p>
                 Our website may link to external sites that are not operated by
                 us. Please be aware that we have no control over the content and
                 policies of those sites, and cannot accept responsibility or
                 liability for their respective privacy practices.
               </p>
-              <h3>Changes to This Policy</h3>
+              <h3 className='mt-6 fw-medium'>11. Changes to This Policy</h3>
               <p>
                 At our discretion, we may change our privacy policy to reflect
                 updates to our business processes, current acceptable practices,
@@ -209,7 +219,7 @@ const Privacy: FunctionComponent = function () {
                 opportunity to opt in to or opt out of, as applicable, any new
                 uses of your personal information.
               </p>
-              <h3>Contact Us</h3>
+              <h3 className='mt-6 fw-medium'>12. Contact Us</h3>
               <p>
                 For any questions or concerns regarding your privacy, you may
                 contact us using the following details:{' '}

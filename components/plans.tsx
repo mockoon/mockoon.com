@@ -276,7 +276,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                   <div className='col-12 col-md-6 col-xl-3'>
                     <div className='card shadow-lg mb-6 mb-md-0 h-100'>
                       <div className='card-body h-100 d-flex flex-column'>
-                        <h3 className='d-flex justify-content-center mb-3'>
+                        <h3 className='d-flex justify-content-center mb-3 fw-medium'>
                           <span className='text-primary'>Free</span>
                           <span className='ms-1'>plan</span>
                         </h3>
@@ -340,7 +340,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                 <div className='col-12 col-md-6 col-xl-3'>
                   <div className='card shadow-lg mb-6 mb-md-0 h-100'>
                     <div className='card-body h-100 d-flex flex-column'>
-                      <h3 className='d-flex justify-content-center mb-3'>
+                      <h3 className='d-flex justify-content-center mb-3 fw-medium'>
                         <span className='text-primary'>Solo</span>
                         <span className='ms-1'>plan</span>
                         {planFrequency === 'YEARLY' && (
@@ -441,7 +441,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                 <div className='col-12 col-md-6 col-xl-3'>
                   <div className='card shadow-lg mb-md-0 h-100'>
                     <div className='card-body h-100 d-flex flex-column'>
-                      <h3 className='d-flex justify-content-center mb-3'>
+                      <h3 className='d-flex justify-content-center mb-3 fw-medium'>
                         <span className='text-primary'>Team</span>
                         <span className='ms-1'>plan</span>
                         {planFrequency === 'YEARLY' && (
@@ -551,7 +551,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                 <div className='col-12 col-md-6 col-xl-3'>
                   <div className='card shadow-lg mb-md-0 h-100'>
                     <div className='card-body h-100 d-flex flex-column'>
-                      <h3 className='d-flex justify-content-center mb-3'>
+                      <h3 className='d-flex justify-content-center mb-3 fw-medium'>
                         <span className='text-primary'>Enterprise</span>
                         <span className='ms-1'>plan</span>
                         {planFrequency === 'YEARLY' &&

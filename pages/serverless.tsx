@@ -3,7 +3,6 @@ import Card from '../components/card';
 import CodeBlock from '../components/code-block';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
-import Terminal from '../components/terminal';
 import Layout from '../layout/layout';
 import { CardData } from '../models/common.model';
 
@@ -69,7 +68,7 @@ const Serverless: FunctionComponent = function () {
           <div className='row py-5'>
             <div className='col-12'>
               <div className='text-center'>
-                <h2 className='mb-10'>
+                <h2 className='mb-10 fw-medium'>
                   Mockoon's perfect complement for cloud functions and
                   serverless environments.
                 </h2>
@@ -92,13 +91,20 @@ const Serverless: FunctionComponent = function () {
           </div>
           <div className='row py-8 justify-content-center'>
             <div className='col-md-6'>
-              <h3 className='text-center'>NPM package installation</h3>
-              <Terminal lines={['npm install @mockoon/serverless']} />
+              <h3 className='text-center fw-medium'>
+                NPM package installation
+              </h3>
+              <CodeBlock
+                code={`$ npm install @mockoon/serverless`}
+                dark
+                lineBreak
+                language='bash'
+              />
             </div>
           </div>
           <div className='row py-8 justify-content-center'>
             <div className='col-md-6'>
-              <h3 className='text-center'>AWS Lambda quick start</h3>
+              <h3 className='text-center fw-medium'>AWS Lambda quick start</h3>
               <pre>
                 <CodeBlock
                   code={`const mockoon = require('@mockoon/serverless');
@@ -113,7 +119,9 @@ module.exports.handler = mockoonServerless.awsHandler();`}
               </pre>
             </div>
             <div className='col-md-6'>
-              <h3 className='text-center'>Firebase Functions quick start</h3>
+              <h3 className='text-center fw-medium'>
+                Firebase Functions quick start
+              </h3>
               <pre>
                 <CodeBlock
                   code={`import * as functions from 'firebase-functions';

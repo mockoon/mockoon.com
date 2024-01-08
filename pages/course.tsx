@@ -161,7 +161,7 @@ const Course: FunctionComponent = function () {
                 ))}
               </div>
 
-              <h3 className='my-6'>What's inside the course...</h3>
+              <h3 className='my-6 fw-medium'>What's inside the course...</h3>
 
               <Accordion
                 data={courseContent}

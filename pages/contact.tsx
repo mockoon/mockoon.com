@@ -26,7 +26,7 @@ const Contact: FunctionComponent = function () {
                     alt='support forums'
                     className='w-25 mb-6 align-self-center'
                   />
-                  <h3 className='text-center'>Community support</h3>
+                  <h3 className='text-center fw-medium'>Community support</h3>
                   <p className='px-2 text-center text-gray-700'>
                     You can ask for help or discuss ideas and improvements on
                     our GitHub Discussion forum. You are also welcome on our
@@ -64,7 +64,7 @@ const Contact: FunctionComponent = function () {
                     alt='dedicated support'
                     className='w-25 mb-6 align-self-center'
                   />
-                  <h3 className='text-center'>Enterprise support</h3>
+                  <h3 className='text-center fw-medium'>Enterprise support</h3>
                   <p className='px-2 text-center text-gray-700'>
                     Get enterprise-grade support with help from an official
                     maintainer to answer support requests or any questions you
@@ -85,7 +85,7 @@ const Contact: FunctionComponent = function () {
                     alt='other enquiries'
                     className='w-25 mb-6 align-self-center'
                   />
-                  <h3 className='text-center'>Other inquiries</h3>
+                  <h3 className='text-center fw-medium'>Other inquiries</h3>
                   <p className='px-2 text-center text-gray-700'>
                     If you have any other non-support inquiries (sponsoring, pro
                     plans, etc.), please contact us using our contact form.

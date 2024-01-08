@@ -352,12 +352,13 @@ const Course: FunctionComponent = function () {
 
                   <div className='alert quote mt-4 fst-italic'>
                     <p>
-                      💡 You can also use the <code className='p-0'>sort</code>,{' '}
-                      <code className='p-0'>order</code>,{' '}
-                      <code className='p-0'>limit</code> and{' '}
-                      <code className='p-0'>page</code> query parameters. You
-                      will find more information about the CRUD routes behavior
-                      in our{' '}
+                      💡 You can also use the sorting, searching and filtering
+                      query parameters on the main GET route, example:{' '}
+                      <code className='p-0'>
+                        ?property_eq=test&page=2&limit=50
+                      </code>
+                      . You will find more information about the CRUD routes
+                      behavior in our{' '}
                       <Link href={'/docs/latest/api-endpoints/crud-routes/'}>
                         documentation
                       </Link>

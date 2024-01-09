@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
-        <Script>{`if(document.location.host.indexOf('mockoon.xyz') > -1){document.location.replace('https://mockoon.com')}`}</Script>
+        <Script>{`if(document.location.host.indexOf('mockoon.xyz') > -1 || document.location.host.indexOf('mockoon.online') > -1){document.location.replace('https://mockoon.com')}`}</Script>
       </QueryClientProvider>
     </>
   );

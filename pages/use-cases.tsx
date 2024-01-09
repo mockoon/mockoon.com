@@ -73,7 +73,7 @@ const UseCases: FunctionComponent = function () {
         ogType='article'
       />
       <Hero
-        title='API mocking use cases'
+        title='API mocking <span class="text-primary">use cases</span>'
         subtitle='Discover how mocking APIs with Mockoon can accelerate and streamline your applications development, integration, testing, and demos'
       />
 

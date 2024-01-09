@@ -11,7 +11,7 @@ const Article: FunctionComponent<{
   return (
     <Fragment>
       {props.articleData.header && (
-        <section className='article-header pt-7 py-5'>
+        <section className='article-header text-gray-300 pt-7 py-5'>
           <div className='container'>
             <div className='row d-flex align-items-center'>
               <div className='text-center col-12 col-lg-4'>
@@ -23,7 +23,7 @@ const Article: FunctionComponent<{
               <div className='col-12 col-lg-8 text-center'>
                 <div className='row pt-5 pt-lg-0'>
                   <p className='col-12 mb-0 d-flex flex-column'>
-                    <span className='text-uppercase text-white'>Overview</span>
+                    <span className='text-uppercase text-white'>About</span>
                     <span className='mt-n1'>
                       {props.articleData.header.overview}
                     </span>

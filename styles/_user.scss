@@ -121,22 +121,18 @@ aside {
 }
 .article-header {
   background: rgb(38, 40, 48);
-  background: linear-gradient(
-    90deg,
-    rgba(38, 40, 48, 1) 0%,
-    rgba(59, 164, 220, 1) 120%
-  );
-  color: #adeae1;
+  background: linear-gradient(90deg, #262830 0%, #3ba4dc 120%);
+  color: $gray-300;
   text-align: left;
 
   a {
-    color: #adeae1;
+    color: $gray-300;
     &:visited {
-      color: #adeae1;
+      color: $gray-300;
     }
     &:hover,
     &:active {
-      color: darken(#adeae1, 40%);
+      color: white;
     }
   }
 

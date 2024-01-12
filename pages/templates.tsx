@@ -106,7 +106,6 @@ const Templates: FunctionComponent<{
                 <CodeBlock
                   code={activeTemplate?.content || ''}
                   maxHeight='40vh'
-                  dark
                   language='typescript'
                 />
               </pre>

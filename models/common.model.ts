@@ -67,6 +67,7 @@ export type ArticleData = {
   imageAlt?: string;
   imageWidth?: number;
   imageHeight?: number;
+  tags: string[];
   // used to build a custom header
   header?: {
     image: string;

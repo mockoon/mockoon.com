@@ -6,6 +6,8 @@ image: ui-redesign-custom-tls.png
 imageAlt: Mockoon logo with security shield
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - releases
 meta:
   title: UI redesign and custom TLS certificates
   description: Discover this update's new UI header redesign and interface polish, custom TLS certificate support, and cookie rules

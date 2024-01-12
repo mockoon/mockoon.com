@@ -6,6 +6,9 @@ image: mockoon-api-playground.png
 imageAlt: mockoon logo with application screenshot
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - dev blog
+  - product
 meta:
   title: Mockoon new API playground
   description: 'Discover Mockoon new API playground, a ready-to-use mock API for all your prototyping needs: fake JSON data, JSON placeholders, realistic CRUD API mock, etc.'

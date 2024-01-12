@@ -6,6 +6,9 @@ image: december-2023-news.png
 imageAlt: mockoon logo with screenshot
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - news
+  - releases
 meta:
   title: December 2023 news
   description: 'Mockoon quarterly news for December 2023: new releases, callbacks, global variables, API playground, and more.'

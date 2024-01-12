@@ -6,6 +6,9 @@ image: mockoon-github-accelerator.png
 imageAlt: Mockoon logo next to GitHub logo
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - news
+  - funding
 meta:
   title: Mockoon is part of the first GitHub Accelerator cohort 🚀
   description: Mockoon has been accepted to be part of the first-ever GitHub Accelerator cohort among 20 other open-source projects.

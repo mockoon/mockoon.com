@@ -1,12 +1,14 @@
 import { Fragment, FunctionComponent } from 'react';
 import { ArticleData } from '../models/common.model';
 import Markdown from './markdown';
+import Tags from './tags';
 
 const Article: FunctionComponent<{
   slug: string;
   path: string;
   articleData: ArticleData;
   articleBody: string;
+  tags: string[];
 }> = function (props) {
   return (
     <Fragment>
@@ -78,7 +80,7 @@ const Article: FunctionComponent<{
 
         <section className='pt-8'>
           <div className='row justify-content-center'>
-            <div className='col-12 col-lg-10 col-lg-10 col-xl-10'>
+            <div className='col-12 col-lg-10 col-lg-10 col-xl-10 border-bottom'>
               <h1 className='display-4 text-center'>
                 {props.articleData.title}
               </h1>
@@ -90,7 +92,7 @@ const Article: FunctionComponent<{
               <div
                 className={`row ${
                   props.articleData.date ? '' : 'd-flex justify-content-center'
-                } align-items-center pb-5 border-bottom`}
+                } align-items-center pb-5`}
               >
                 <div className='col-12 d-flex align-items-center flex-column text-center text-lg-start mb-2 mb-lg-0'>
                   {props.articleData.date && (
@@ -103,6 +105,11 @@ const Article: FunctionComponent<{
                   )}
                 </div>
               </div>
+              {props.tags?.length > 0 && (
+                <div className='pb-5 text-center'>
+                  <Tags tags={props.tags} />
+                </div>
+              )}
             </div>
           </div>
         </section>

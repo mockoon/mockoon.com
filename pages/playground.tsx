@@ -79,7 +79,6 @@ const resources: AccordionData = [
   "age": 56
 }`}
               language='json'
-              dark
               lineBreak
             ></CodeBlock>
           </div>
@@ -101,7 +100,6 @@ const resources: AccordionData = [
   "isPopular": false
 }`}
               language='json'
-              dark
               lineBreak
             ></CodeBlock>
           </div>
@@ -121,7 +119,6 @@ const resources: AccordionData = [
   "isFeatured": true
 }`}
               language='json'
-              dark
               lineBreak
             ></CodeBlock>
           </div>
@@ -143,7 +140,6 @@ const resources: AccordionData = [
   "isPublished": true
 }`}
               language='json'
-              dark
               lineBreak
             ></CodeBlock>
           </div>
@@ -163,7 +159,6 @@ const resources: AccordionData = [
   "dueDate": "2024-09-24T10:13:39.649Z"
 }`}
               language='json'
-              dark
               lineBreak
             ></CodeBlock>
           </div>
@@ -185,7 +180,6 @@ const resources: AccordionData = [
   "isActive": true
 }`}
               language='json'
-              dark
               lineBreak
             ></CodeBlock>
           </div>

@@ -6,6 +6,8 @@ image: api-filtering-improved-security.png
 imageAlt: Mockoon logo with secure shield
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - releases
 meta:
   title: New release with endpoints filtering and improved security
   description: Discover Mockoon's new v1.13.0 release with endpoints filtering, improved security and a revamped templating documentation

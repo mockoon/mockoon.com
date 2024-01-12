@@ -6,6 +6,8 @@ image: new-unified-versioning.png
 imageAlt: Mockoon logo with screenshot
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - releases
 meta:
   title: New unified versioning v3.0.0
   description: Mockoon is now using unified versioning across all its packages, starting with release v3.0.0. Learn more!

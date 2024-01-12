@@ -6,6 +6,9 @@ image: contributor-spotlight-harry-martland.png
 imageAlt: Article title with picture of Harry Martland
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - open-source
+  - contributors
 meta:
   title: Contributor spotlight with Harry Martland
   description: This is the first in a series of interviews with Mockoon's open-source contributors. Today we are talking with Harry Martland, Principal Engineer at Booking.com.

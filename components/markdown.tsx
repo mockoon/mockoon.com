@@ -92,7 +92,6 @@ const Markdown: FunctionComponent<{
           return /* !inline &&  */ match ? (
             <CodeBlock
               code={String(children).replace(/\n$/, '')}
-              dark
               language={match[1]}
             />
           ) : (

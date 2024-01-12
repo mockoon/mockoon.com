@@ -5,22 +5,15 @@ import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 const CodeBlock: FunctionComponent<{
   code: string;
   language: string;
-  dark?: boolean;
   maxHeight?: string;
   lineBreak?: boolean;
-}> = function ({ code, language, dark, maxHeight, lineBreak }) {
-  const optionalProps: { style?: any } = {};
-
-  if (dark) {
-    optionalProps.style = nord;
-  }
+}> = function ({ code, language, maxHeight, lineBreak }) {
+  const optionalProps: { style?: any } = { style: nord };
 
   return (
     <div className='code-block'>
       <div
-        className={`code-block-copy btn btn-xs ${
-          dark ? 'btn-light-subtle' : 'btn-secondary-subtle'
-        }`}
+        className={`code-block-copy btn btn-xs btn-light-subtle`}
         style={{ right: maxHeight ? '15px' : 0 }}
         onClick={(event) => {
           navigator.clipboard

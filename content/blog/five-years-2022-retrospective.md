@@ -6,6 +6,8 @@ image: five-years-2022-retrospective.png
 imageAlt: Mockoon user interface
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - news
 meta:
   title: 2022 retrospective and Mockoon 5th anniversary
   description: Let's celebrate the new year by putting some light on recent new features (folders, data buckets, etc.) and five years of Mockooning

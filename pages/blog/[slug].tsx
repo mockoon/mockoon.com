@@ -63,6 +63,7 @@ export default function BlogArticle(props: {
         path='blog'
         articleBody={props.articleBody}
         articleData={props.articleData}
+        tags={props.articleData.tags}
       />
       <section>
         <div className='container text-center pt-3 pb-8'>

@@ -6,6 +6,10 @@ image: mockoon-celebrating-4000-github-stars.png
 imageAlt: Mockoon user interface
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - open-source
+  - news
+  - releases
 meta:
   title: Celebrating 4000 GitHub stars 🎉
   description: Let's celebrates this milestone by doing a recap of Mockoon's past year's news, announcements, new features and sponsors

@@ -108,7 +108,6 @@ const CLI: FunctionComponent = function () {
               <CodeBlock
                 code={`$ npm install -g @mockoon/cli
 $ mockoon-cli start --data ./data-file.json`}
-                dark
                 lineBreak
                 language='bash'
               />
@@ -130,7 +129,6 @@ $ mockoon-cli start --data ./data-file.json`}
               </h3>
               <CodeBlock
                 code={`$ docker run -d --mount type=bind,source=/data-file.json,target=/data,readonly -p 3000:3000 mockoon/cli:latest -d data -p 3000`}
-                dark
                 lineBreak
                 language='bash'
               />
@@ -165,7 +163,6 @@ $ mockoon-cli start --data ./data-file.json`}
     port: 3000
 - name: Make test call
   run: curl -X GET http://localhost:3000/endpoint`}
-                  dark
                   lineBreak
                   language='yaml'
                 />

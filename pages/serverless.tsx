@@ -96,7 +96,6 @@ const Serverless: FunctionComponent = function () {
               </h3>
               <CodeBlock
                 code={`$ npm install @mockoon/serverless`}
-                dark
                 lineBreak
                 language='bash'
               />
@@ -113,7 +112,6 @@ const mockEnv = require('./mockoon-datafile.json');
 const mockoonServerless = new mockoon.MockoonServerless(mockEnv);
 
 module.exports.handler = mockoonServerless.awsHandler();`}
-                  dark
                   language='typescript'
                 />
               </pre>
@@ -131,7 +129,6 @@ const mockEnv = require('./mockoon-datafile.json');
 
 const app = new MockoonServerless(mockEnv);
 exports.app = functions.https.onRequest(app);`}
-                  dark
                   language='typescript'
                 />
               </pre>

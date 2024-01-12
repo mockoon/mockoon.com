@@ -101,12 +101,7 @@ const AppAuth = function () {
                       enter it manually in the desktop application:
                     </p>
                     <pre>
-                      <CodeBlock
-                        code={data?.token}
-                        dark
-                        lineBreak
-                        language='text'
-                      />
+                      <CodeBlock code={data?.token} lineBreak language='text' />
                     </pre>
                   </>
                 )}

@@ -6,6 +6,9 @@ image: september-2023-news.png
 imageAlt: mockoon logo with screenshot
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - news
+  - releases
 meta:
   title: September 2023 news
   description: 'Mockoon quarterly news for September 2023: new releases, global rules, GitHub Action, and more.'

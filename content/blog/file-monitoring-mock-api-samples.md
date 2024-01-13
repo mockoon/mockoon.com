@@ -8,6 +8,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - releases
+author: guillaume
 meta:
   title: File monitoring and 2000+ new mock samples
   description: Discover this update's mock files monitoring, thousands of new mock samples, import/export deprecation, Google Analytics removal

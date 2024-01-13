@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { authors } from '../constants/authors';
 
 export type AccordionData = {
   title?: string;
@@ -68,6 +69,7 @@ export type ArticleData = {
   imageWidth?: number;
   imageHeight?: number;
   tags: string[];
+  author?: keyof typeof authors;
   // used to build a custom header
   header?: {
     image: string;

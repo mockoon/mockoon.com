@@ -10,6 +10,7 @@ tags:
   - open-source
   - news
   - releases
+author: guillaume
 meta:
   title: Celebrating 4000 GitHub stars 🎉
   description: Let's celebrates this milestone by doing a recap of Mockoon's past year's news, announcements, new features and sponsors

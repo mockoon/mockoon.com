@@ -8,6 +8,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - releases
+author: guillaume
 meta:
   title: Sequential responses, custom codes, and out-of beta CLI!
   description: Discover Mockoon's new v1.14.0 release with sequential responses, custom status codes, new rules and more

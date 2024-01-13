@@ -8,6 +8,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - releases
+author: guillaume
 meta:
   title: UI redesign and custom TLS certificates
   description: Discover this update's new UI header redesign and interface polish, custom TLS certificate support, and cookie rules

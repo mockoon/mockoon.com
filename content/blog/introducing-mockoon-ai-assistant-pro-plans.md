@@ -9,6 +9,7 @@ imageHeight: 400
 tags:
   - releases
   - product
+author: guillaume
 meta:
   title: Introducing AI assistant and Pro plans
   description: With Mockoon Pro plan AI assistant, unleash the power of API mocking for all your prototyping and API teaching needs. Learn more!

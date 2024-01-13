@@ -1,5 +1,7 @@
 import { Fragment, FunctionComponent } from 'react';
+import { authors } from '../constants/authors';
 import { ArticleData } from '../models/common.model';
+import Author from './author';
 import Markdown from './markdown';
 import Tags from './tags';
 
@@ -8,7 +10,8 @@ const Article: FunctionComponent<{
   path: string;
   articleData: ArticleData;
   articleBody: string;
-  tags: string[];
+  tags?: string[];
+  author?: keyof typeof authors;
 }> = function (props) {
   return (
     <Fragment>
@@ -80,7 +83,7 @@ const Article: FunctionComponent<{
 
         <section className='pt-8'>
           <div className='row justify-content-center'>
-            <div className='col-12 col-lg-10 col-lg-10 col-xl-10 border-bottom'>
+            <div className='col-12 col-lg-10 col-lg-10 col-xl-10 border-bottom pb-4'>
               <h1 className='display-4 text-center'>
                 {props.articleData.title}
               </h1>
@@ -89,24 +92,28 @@ const Article: FunctionComponent<{
                 {props.articleData.excerpt}
               </p>
 
-              <div
-                className={`row ${
-                  props.articleData.date ? '' : 'd-flex justify-content-center'
-                } align-items-center pb-5`}
-              >
-                <div className='col-12 d-flex align-items-center flex-column text-center text-lg-start mb-2 mb-lg-0'>
-                  {props.articleData.date && (
-                    <time
-                      className='fs-sm text-gray-700'
-                      dateTime={props.articleData.date}
-                    >
-                      Published on {props.articleData.date}
-                    </time>
-                  )}
-                </div>
+              <div className='d-flex align-items-center justify-content-center'>
+                {props.author && <Author author={props.author} />}
+                {props.articleData.date && (
+                  <div
+                    className={
+                      'd-flex justify-content-center align-items-center'
+                    }
+                  >
+                    <div className='mb-2 mb-lg-0'>
+                      <span className='px-4 fw-bold'>|</span>{' '}
+                      <time
+                        className='fs-sm text-gray-700'
+                        dateTime={props.articleData.date}
+                      >
+                        Published on {props.articleData.date}
+                      </time>
+                    </div>
+                  </div>
+                )}
               </div>
               {props.tags?.length > 0 && (
-                <div className='pb-5 text-center'>
+                <div className='text-center mt-2'>
                   <Tags tags={props.tags} />
                 </div>
               )}

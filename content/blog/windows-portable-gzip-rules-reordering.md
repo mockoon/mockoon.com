@@ -8,6 +8,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - releases
+author: guillaume
 meta:
   title: New Windows portable version and more in v1.15.0
   description: Discover Mockoon's new v1.15.0 release with Windows portable version, rules reordering, gzip decoding and more

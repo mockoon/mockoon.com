@@ -8,6 +8,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - releases
+author: guillaume
 meta:
   title: New storage system and improved data sharing
   description: Share your mock API data more easily with the new storage system and start working in no time with our ready-to-use API mock samples

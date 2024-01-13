@@ -9,6 +9,7 @@ imageHeight: 400
 tags:
   - news
   - releases
+author: guillaume
 meta:
   title: Mockoon CLI is now available!
   description: 'Take your mock APIs in all your headless and automated environments with the new CLI: servers, CI, GitHub Action, WSL, etc.'

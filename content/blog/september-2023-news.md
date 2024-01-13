@@ -9,6 +9,7 @@ imageHeight: 400
 tags:
   - news
   - releases
+author: guillaume
 meta:
   title: September 2023 news
   description: 'Mockoon quarterly news for September 2023: new releases, global rules, GitHub Action, and more.'

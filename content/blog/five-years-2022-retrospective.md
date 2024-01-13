@@ -8,6 +8,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - news
+author: guillaume
 meta:
   title: 2022 retrospective and Mockoon 5th anniversary
   description: Let's celebrate the new year by putting some light on recent new features (folders, data buckets, etc.) and five years of Mockooning

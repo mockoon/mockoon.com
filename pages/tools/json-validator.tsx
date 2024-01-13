@@ -1,12 +1,5 @@
 import { json, jsonParseLinter } from '@codemirror/lang-json';
-import {
-  Diagnostic,
-  diagnosticCount,
-  forEachDiagnostic,
-  lintGutter,
-  linter
-} from '@codemirror/lint';
-import { nordInit } from '@uiw/codemirror-theme-nord';
+import { Diagnostic, forEachDiagnostic, linter } from '@codemirror/lint';
 import CodeMirror, {
   EditorSelection,
   ReactCodeMirrorRef
@@ -15,11 +8,11 @@ import { FunctionComponent, useRef, useState } from 'react';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
+import { defaultCodeEditorConfig } from '../../utils/code-editor';
 
-const linterExtension = linter(jsonParseLinter(), { delay: 10 });
+const linterExtension = linter(jsonParseLinter(), { delay: 100 });
 const JsonValidator: FunctionComponent = function () {
   const [error, setError] = useState<Diagnostic>(null);
-  const [errorCount, setErrorCount] = useState(0);
   const editor = useRef<ReactCodeMirrorRef>();
 
   const scrollDocToView = () => {
@@ -43,51 +36,36 @@ const JsonValidator: FunctionComponent = function () {
         title='JSON validator'
         subtitle='Validate your JSON online and get detailed error messages'
       />
-      <section className='pb-5 pb-lg-10'>
+      <section>
         <div className='container'>
           <div className='row'>
-            <div className='col-12'>
+            <div className='col-12 d-flex flex-column code-editor-container'>
               <CodeMirror
-                theme={nordInit({
-                  settings: {
-                    fontFamily:
-                      '"Fira Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace'
-                  }
-                })}
+                {...defaultCodeEditorConfig([json(), linterExtension])}
                 ref={editor}
-                extensions={[json(), linterExtension, lintGutter()]}
-                height='50vh'
                 value={`{\n  "message": "Paste your JSON here"\n}`}
                 lang='json'
-                basicSetup={{ lintKeymap: false }}
                 onUpdate={(view) => {
                   setError(null);
-                  setErrorCount(diagnosticCount(view.state));
 
                   forEachDiagnostic(view.state, (error) => {
                     setError(error);
                   });
                 }}
               ></CodeMirror>
-
               {error && (
                 <div className='bg-danger-subtle border-start border-danger border-4 p-4 my-4 position-relative d-flex justify-content-between'>
-                  <div>
-                    {error.message}
-                    <span className='badge bg-danger rounded-pill badge-float badge-float-outside'>
-                      {errorCount} error{errorCount > 1 ? 's' : ''}
-                    </span>
-                  </div>
-                  <div>
-                    <button
-                      type='button'
-                      className='btn btn-link p-0'
-                      onClick={() => {
+                  <div>{error.message}</div>
+                  <div className='flex-shrink-0'>
+                    <a
+                      href='#'
+                      onClick={(a) => {
+                        a.preventDefault();
                         scrollDocToView();
                       }}
                     >
                       Go to line
-                    </button>
+                    </a>
                   </div>
                 </div>
               )}
@@ -101,7 +79,7 @@ const JsonValidator: FunctionComponent = function () {
         </div>
       </section>
 
-      <section className='pb-5 pb-lg-10'>
+      <section className='py-5 py-lg-10'>
         <div className='container'>
           <div className='row'>
             <div className='col-12'>

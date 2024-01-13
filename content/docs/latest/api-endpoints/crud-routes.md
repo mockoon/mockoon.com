@@ -38,6 +38,8 @@ After creating a CRUD endpoint, you need to link it to a data bucket:
 
 The CRUD route will work with any content stored in your data bucket: valid JSON in the form of an array of objects, an object, a primitive, etc., or any non-valid JSON. The route behaviors will vary depending on the content stored in the bucket (see table below).
 
+> 🛠️ Use our [JSON validator](/tools/json-validator/) to check if your content is valid JSON.
+
 ### Resetting the data bucket content
 
 The data bucket content is generated when the server starts, and its state persists between calls. However, its state will not be saved in the [data file](docs:mockoon-data-files/data-storage-location), and you can reset it to its initial state by restarting the mock API.

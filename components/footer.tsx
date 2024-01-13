@@ -245,8 +245,8 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/tools/json-validator/' className='text-reset'>
-                  JSON validator
+                <Link href='/tools/' className='text-reset'>
+                  Useful tools
                 </Link>
               </li>
             </ul>

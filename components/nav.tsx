@@ -233,6 +233,14 @@ const Nav: FunctionComponent = function () {
                         >
                           Templates
                         </Link>
+                        <Link
+                          href='/tools/'
+                          className={`dropdown-item ${
+                            router.pathname.includes('/tools') ? 'active' : ''
+                          }`}
+                        >
+                          Useful tools
+                        </Link>
                       </div>
                     </div>
                   </div>

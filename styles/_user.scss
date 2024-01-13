@@ -41,6 +41,16 @@ pre .code {
   }
 }
 
+.code-editor-container {
+  height: 80vh;
+}
+
+@media screen and (min-width: 768px) {
+  .code-editor-container {
+    height: 60vh;
+  }
+}
+
 // disable some style for blocks of code
 pre code {
   background-color: transparent;

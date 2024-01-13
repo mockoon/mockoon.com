@@ -40,6 +40,8 @@ Mockoon will automatically attribute a new **unique ID** to your data bucket. Yo
 Data buckets can contain any type of text content. They also support all of Mockoon's [templating helpers](docs:templating/overview).
 If your data bucket contains valid JSON, Mockoon will parse it to let you access the JS object, array, primitives, etc., using the templating helpers like (`data`, `each`, `if`, etc.).
 
+> 🛠️ Use our [JSON validator](/tools/json-validator/) to check if your content is valid JSON.
+
 ## Data bucket generation time
 
 Mockoon usually generates data buckets when the server starts. Their state will persist until the next restart, so you can always expect the same content to be returned.

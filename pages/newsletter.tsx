@@ -9,7 +9,7 @@ const Newsletter: FunctionComponent = function () {
     <Layout footerBanner='download'>
       <Meta
         title='Subscribe to our newsletter'
-        description='Subscribe to our newsletter to receive news about Mockoon, our latest releases API mocking.'
+        description='Subscribe to our newsletter to receive news about Mockoon, its latest features, releases and tutorials.'
         ogType='article'
       />
 

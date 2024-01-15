@@ -52,7 +52,7 @@ const tasks = {
       pro: false
     },
     {
-      link: '/docs/latest/callbacks/overview',
+      link: '/docs/latest/callbacks/overview/',
       title: 'Trigger requests after a call (callbacks)',
       pro: false
     },
@@ -63,7 +63,7 @@ const tasks = {
       target: '_blank'
     },
     {
-      link: '/releases/5.1.0#new-command-palette',
+      link: '/releases/5.1.0/#new-command-palette',
       title: 'Desktop application command palette',
       pro: false
     },

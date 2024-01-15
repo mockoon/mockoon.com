@@ -31,7 +31,7 @@ Hi, I'm Harry ([@HarryEMartland](https://github.com/HarryEMartland)), I started 
 
 Mockoon is fairly new to me, however, I see massive potential with its serverless support and user-friendly UI. I contributed the [response fallback](/docs/latest/route-responses/multiple-responses/#fallback-mode) functionality which allows you to still use a proxy if no rules for a route match a request.
 
-> 💡 The **fallback mode** is available since [Mockoon v4.1.0](/releases/4.1.0). It also lets you create [global responses and rules](/tutorials/create-global-rules-routes/) for your mock APIs.
+> 💡 The **fallback mode** is available since [Mockoon v4.1.0](/releases/4.1.0/). It also lets you create [global responses and rules](/tutorials/create-global-rules-routes/) for your mock APIs.
 
 ### What inspired you to contribute to a project like Mockoon and open-source in general?
 

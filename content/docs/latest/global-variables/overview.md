@@ -2,7 +2,7 @@
 title: Overview
 meta:
   title: How to use global variables
-  description: Need to share data between your mock API routes? Mockoon can do this with global variables
+  description: Simulate and mock complex API workflows by sharing data between your mock server routes using global variables
 order: 550
 ---
 

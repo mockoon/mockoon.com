@@ -28,11 +28,11 @@ const XmlValidator: FunctionComponent = function () {
   return (
     <Layout footerBanner='download'>
       <Meta
-        title={'XML validator'}
-        description="Mockoon's XML validator tool: validate your XML online and get detailed error messages."
+        title={'Online XML validator'}
+        description="Mockoon's XML validator tool: validate your XML data in an online editor and get detailed error messages."
       />
       <Hero
-        title='XML validator'
+        title='Online XML validator'
         subtitle='Validate your XML online and get detailed error messages'
       />
 

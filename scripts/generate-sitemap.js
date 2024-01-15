@@ -1,6 +1,6 @@
 const fs = require('fs');
 const axios = require('axios');
-const {glob} = require('glob')
+const { glob } = require('glob');
 
 const websiteURL = 'https://mockoon.com';
 const sitemapList = [];
@@ -184,6 +184,7 @@ Promise.all([
     'comparisons',
     '^(content|pages)'
   ),
+  generateSitemap('pages/tools/*.tsx', 'tools', '^pages'),
   generateSitemap(
     'content/old-releases/**/*.md',
     'old-releases',

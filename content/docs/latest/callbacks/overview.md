@@ -2,7 +2,7 @@
 title: Overview
 meta:
   title: Callbacks overview
-  description: Learn how to create callbacks in Mockoon and how to trigger them from your route responses
+  description: Learn how to create callbacks in Mockoon to call webhooks or microservices and how to trigger them from your route responses
 order: 650
 ---
 

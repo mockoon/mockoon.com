@@ -87,7 +87,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
               </a>
               <a
                 className='btn btn-primary-subtle btn-sm d-flex align-items-center'
-                href='https://apps.microsoft.com/store/detail/mockoon/9PK8DMSN00JJ?hl=en-us&gl=us'
+                href='https://apps.microsoft.com/detail/9PK8DMSN00JJ?hl=en-us&gl=us'
                 rel='noopener'
                 target='_blank'
                 onClick={() => postDownload('win')}
@@ -116,7 +116,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
               </a>
               <br />
               <a
-                href='https://apps.microsoft.com/store/detail/mockoon/9PK8DMSN00JJ?hl=en-us&gl=us'
+                href='https://apps.microsoft.com/detail/9PK8DMSN00JJ?hl=en-us&gl=us'
                 className='text-decoration-none'
                 target='_blank'
                 rel='noopener'

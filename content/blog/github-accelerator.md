@@ -28,7 +28,7 @@ In addition to Mockoon, [19 other awesome open-source projects](https://github.b
 | [htmx](https://github.com/bigskysoftware/htmx)                         | Makes AJAX, Web Sockets, etc. available directly in HTML                                |
 | [Code Hike](https://github.com/code-hike/codehike)                     | Tools for building all types of code walkthroughs: blogs, docs, slides, tutorials, etc. |
 | [Dioxus](https://github.com/DioxusLabs/dioxus)                         | Friendly React-like GUI library for desktop, web, mobile, and more, written in Rust.    |
-| [LinkFree](https://github.com/EddieHubCommunity/LinkFree)              | Connecting with your audience with a single link, showcasing your content and projects. |
+| [LinkFree](https://github.com/EddieHubCommunity/BioDrop)               | Connecting with your audience with a single link, showcasing your content and projects. |
 | [Seamly2D](https://github.com/FashionFreedom/Seamly2D)                 | Design CAD to democratize and de-centralize fashion design & production.                |
 | [nbdev](https://github.com/fastai/nbdev)                               | Increase developer productivity by 10x with a new exploratory programming workflow.     |
 | [Formbricks](https://github.com/formbricks/formbricks)                 | Open-source Qualtrics alternative                                                       |
@@ -40,7 +40,7 @@ In addition to Mockoon, [19 other awesome open-source projects](https://github.b
 | [Spyder](https://github.com/spyder-ide/spyder)                         | The scientific Python development environment                                           |
 | [Strawberry GraphQL](https://github.com/strawberry-graphql/strawberry) | A GraphQL library for Python that leverages type annotations 🍓                         |
 | [Termux](https://github.com/termux/termux-app)                         | A terminal emulator for Android that provides 2000+ linux packages to code on phone     |
-| [Poly](https://github.com/TimothyStiles/poly)                          | Poly is a fast, well tested Go package for engineering organisms.                       |
+| [Poly](https://github.com/bebop/poly)                                  | Poly is a fast, well tested Go package for engineering organisms.                       |
 | [tRPC](https://github.com/trpc/trpc)                                   | End-to-end typesafe APIs made easy. Never write another API contract again.             |
 
 Through the mentorship, resources, and support provided by the GitHub Accelerator, we will be able to explore new opportunities to secure the future of the project and find ways to sustain ourselves in the long term. Our commitment to open-source is stronger than ever, and we are thrilled to take Mockoon to the next level with the help of our awesome community.

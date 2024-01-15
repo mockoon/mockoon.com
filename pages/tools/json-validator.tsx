@@ -29,11 +29,11 @@ const JsonValidator: FunctionComponent = function () {
   return (
     <Layout footerBanner='download'>
       <Meta
-        title={'JSON validator'}
-        description="Mockoon's JSON validator tool: validate your JSON online and get detailed error messages."
+        title={'Online JSON validator'}
+        description="Mockoon's JSON validator tool: validate your JSON data in an online editor and get detailed error messages"
       />
       <Hero
-        title='JSON validator'
+        title='Online JSON validator'
         subtitle='Validate your JSON online and get detailed error messages'
       />
       <section>

@@ -1,9 +1,9 @@
 ---
 title: Building our own analytics for fun and profit
-excerpt: TODO
+excerpt: "How we built our analytics system for Mockoon's website and the desktop application, and why we did it."
 date: '2024-01-10'
-image: TODO.png
-imageAlt: TODO
+image: building-custom-analytics-at-mockoon.png
+imageAlt: analytics dashboard elements diagrams
 imageWidth: 1200
 imageHeight: 400
 tags:
@@ -11,73 +11,84 @@ tags:
 author: guillaume
 meta:
   title: Building our own analytics for fun and profit
-  description: TODO
+  description: How we built our analytics system for Mockoon's website and the desktop application, and why we did it.
 ---
 
-Last year we [removed Google Analytics from this website](/blog/september-2023-news/#-ditching-google-analytics-for-the-website), and even earlier, we [removed it from the app](/old-releases/desktop/#1.19.0). We did this for one principal reason: nobody likes being tracked. That being said, knowing if people are using your product is important. So we decided to build our own analytics system. Embark on this journey with us.
+Last year, we [removed Google Analytics from this website](/blog/september-2023-news/#-ditching-google-analytics-for-the-website), and even earlier, we [removed it from the desktop app](/old-releases/desktop/#1.19.0). We did this for one principal reason: nobody likes being tracked.
 
-> 📈 Mockoon crossed **500k downloads** in January 2024. Thank you all for your support! 🙏
+That being said, knowing if people are using your product is important. So, we decided to build our analytics system. Aside from this custom solution, we are proud to have a website and applications free of any other tracking or marketing tool, and third-party cookies.
 
-## What information do we need?
+Embark on this journey with us!
 
-When you are building a product, you need to know if people are using it. Of course, there are many other ways and signals to know if your product is successful: social posts, reviews, word of mouth, etc. But let's be honest, seeing the number of users increasing is always a good feeling.
+> 📈 By the way, Mockoon crossed **500k downloads** in January 2024. Thank you all for your support! 🙏
 
-At the beginning of the project, we were using Google Analytics for both the website and the app. But we quickly realized we weren't interested in 90% of the information. We were mostly looking at the following:
+## What information do we want?
 
-- For the website: number of visitors and page views (global and per page), referral source, entry pages, downloads, and countries.
-- For the app, we wanted to know how many people are using it, for how long (session duration) and which version or OS they are using.
+Many sources and signals exist to know if our product is successful: social posts, direct feedback, tools like Google Search Console, etc. But let's be honest, seeing the number of users increasing on a dashboard is good for the ego and can also keep you motivated.
+So, when building a product, we usually need to know two things: are people using it? And how are they using it? We will see that this is not always as simple as it seems, especially for the "how".
 
-### Measuring features usage
+At the beginning of the project, we were using Google Analytics for both the website and the app. It's the most popular analytics tool, and it's free.
+Despite having decent knowledge of marketing and analytics, we quickly realized we weren't interested in 90% of the information it provided.
 
-We were already not measuring the usage of specific features and weren't willing to use this kind of information. While this can have some benefits, it can also be a double-edged sword.
-We usually decide how to prioritize features based on a number of factors:
+![#sub#The sometimes overwhelming Google Analytics dashboard!](/images/blog/building-own-analytics-fun-and-profit/google-analytics-dashboard.png)
 
-- upvotes and comments on GitHub's issues
-- direct feedback from users (support requests, Twitter, etc.)
-- our own needs (we are also users of Mockoon) or sometimes interest
-- the complexity of the feature
-- the impact on the product
-- the visibility of the feature: is it mandating a new UI or is it a hidden feature, like a new templating helper?
-- the availability of a maintainer to work on it
+We were looking at the following metrics:
 
-Which means that we can have wildly different path for a new feature. Sometimes, some less popular features find their way into the product because they are easy to implement, or because we need them for our own use, or because a maintainer was available. It's often the case with harmless features. The one that are not directly visible in the UI, but will still benefit to some people. If we would track the usage of such features we could be really disappointed by the results and decide to remove them. But we know that they are useful to some people, and that's enough for us.
+- For the **website**: number of visitors and page views (global and per page), referral source, entry pages, downloads, and countries. This, combined with Google search console data (keywords, impressions, clicks, etc.), gives us a good idea of how the website is doing.
+- For the **desktop app**, we wanted to know how many people are using it, for how long (session duration), and which version and OS they are using.
 
-### Vanity metrics
+> 💡 The CLI and serverless packages were always free of any telemetry or analytics system. The only information we have is the number of downloads per version on NPM and the number of Docker image pulls on Docker Hub (more than 2 million!).
 
-We also realized many metrics are just vanity ones. We are also getting a lot of signals from a lot of other places: GitHub release downloads counts, GitHub stars, Docker image pulls, NPM installs, etc. We see that more and more users are using Mockoon, and that's what matters.
+### That's it? And what about feature usage?
 
-And now that we are trying to monetize Mockoon with a [SaaS](/pro/), pageviews, downloads or sessions are nice, but what will count in the end is how many people decide to pay. This will be the only important metric to guarantee the sustainability of the open-source project. No, unfortunately donations are far from paying the bills, which is a recurrent problem for open-source projects. But that's a topic for another blog post. 🙂
+We were always focused on building a good product and providing stellar support, so **we never tracked any feature usage** through events as this would have been a lot of work to set up and analyze. But it was always tempting to understand if feature X was used, if it should be improved, or if it should be removed to simplify the code.
+
+But while this can have **some benefits**, we think it can also be a **double-edged sword**.
+
+Why? We usually decide how to **prioritize** features based on **several factors** that have sometimes nothing to do with usage:
+
+- **Upvotes** and **comments** on GitHub's issues, but also the quality of the feedback: is the issue discussed? Are people chiming in to give their opinion?
+- **Occurrences** of the issue through the support channels (support requests, Twitter, etc.).
+- **Impact on the product**: will it make it better? For whom?
+- Impact on the **user experience**: is it mandating a new UI or is it a hidden feature, like a new templating helper?
+- The **complexity** of the feature vs the benefit it will bring.
+- The **availability of a maintainer/contributor** to work on it.
+- **Our own needs** (we are also users of Mockoon) or sometimes interests (if it's fun, we may do it just for the fun of it).
+
+This means that we can have wildly different paths for a new feature. Sometimes, less popular features find their way into the product because they are easy to implement. Or because we need them for our use or a contributor wanted to work on it. It's often the case with "harmless" features that are not directly visible in the UI, like automatically parsing something from the request or adding a new templating helper. If we would track the usage of such features, we bet we would be disappointed by the results. But we know they are useful to some people, and that's enough for us.
+
+We can also measure the success of some features by analyzing the server logs. It is the case for the recent [API playground](/playground/) we launched. We can see the number of requests in Cloud Run's logs. And it's probably enough.
+
+![#sub#The API playground is a success!](/images/blog/building-own-analytics-fun-and-profit/cloud-run-api-playground-logs.png)
 
 ## Building our own analytics
 
 ### Why not use an existing solution?
 
-Being busy with adding new features to the app, with support requests or writing content, we didn't want to spend too much time on building our own solution. The logical choice would have been to use an existing service, like Fathom or Simple Analytics. But like most privacy-friendly solutions, they are not free. And like all open-source projects, money is a scarce resource. So we decided to build our own solution.
+Being busy adding new features to the app, with support requests or writing content, the logical choice would have been to use an existing service, preferably **privacy-friendly**, like Fathom or Simple Analytics. But these solutions are not free and like all open-source projects, money is a scarce resource. So we decided to build our custom solution. And after all, we are developers, we like to build things. 🙂
 
-We are developers after all, and we like to build things. 🙂
+**Self-hosting** an open-source or community version of one of the tools was also considered. However, the time required to understand the application, set up the infrastructure, and maintain it was probably bigger than rolling out our solution.
 
-Self-hosting an open-source or community version of one of the tool was also considered. But the time required to understand the app, set up the infrastructure, and maintain it was probably bigger than rolling our own dead-simple solution.
+### Our dead-simple solution
 
-### Our own dead-simple solution
+We decided to build a simple analytics system that could **track basic events** on the website and the desktop application.
 
-We decided to build a simple analytics system that would be able to track basic events. Both on the website and the app.
+#### Desktop application sessions
 
-#### Desktop app sessions
+In the desktop application, we decided to track **sessions** containing the following information:
 
-In the **desktop application**, we track sessions containing the following information:
+- An **installation ID**. Unique identifier for each installation of the desktop application. It allows us to know roughly how many **unique "machines"** are using the app.
+- The **session start and end time**, approximately equaling when the application is opened and closed and giving us the **session duration**.
+- A boolean to understand if it is a **first session or not**.
+- The **application version and OS** to know the version distribution and which OS are the most used.
+- The **country code**.
+- The **number of environments** open in the app. This allows us to know how many environments are used on average and to optimize accordingly.
 
-- an "installation id", which is a unique identifier for each installation of the app. This allows us to know how many people are using the app. It's also an information we have no way to cross-check with other sources. So, no possible user identification here.
-- the session start and end time, aka when the app is opened and closed. This allows us to know the session duration.
-- a boolean to know if it is a first session or not. This allows us to know how many people are using the app for the first time.
-- the app version and OS. This allows us to know which version is used and on which OS.
-- the country code. This allows us to know where the app is used. This is not really useful but good for our ego. 😄
-- the number of environments open in the app. This allows us to know how many environments are used on average.
-
-Typical event:
+A preview of a typical **session event**:
 
 ```json
 {
-  "installationId": "31d749d4-d80d-4c0f-bb96-b536b6b13b42",
+  "installationId": "2b241898-dfbd-4c5a-902a-0abfbb097587",
   "startTime": "2024-01-09T21:58:13.876Z",
   "endTime": "2024-01-10T14:09:09.962Z",
   "firstSession": false,
@@ -90,14 +101,16 @@ Typical event:
 
 #### Website page views and downloads
 
-On the **website**, we track events with the following data:
+On the website, we copied a bit of how Google Analytics works and decided to track **events** with the following data:
 
-- the **type** of event: a `pageview` or an `event`.
-- the **event name**. This allows us to know which event is triggered. Currently, we only track `download`.
-- the **event category**. This allows us to know which category the event belongs to. Currently, we only track the operating system for the `download` event: `win`, `mac` or `linux`.
-- the **page path**. This allows us to know which page is visited.
-- the **entry page path**. This allows us to know which page is the first visited, and let us understand part of the user journey.
-- the **referrer URL**. This allows us to know where the user comes from. This is especially useful to reach out to people who are talking about Mockoon on social media or blogs.
+- The **type** of event: a `pageview` or an `event`.
+- The **event name**. Currently, we only track the `download` event.
+- The **event category**, to further qualify the event. Currently, we only track the operating system for the `download` event: `win`, `mac` or `linux`.
+- The **page path** to know which page was visited.
+- The **entry page path** to understand which page was first visited and part of the user journey.
+- The **referrer URL** to know where the user comes from. This is very useful to reach out to people who are talking about Mockoon on social media or blogs.
+
+A preview of a typical **pageview event**:
 
 ```json
 {
@@ -111,29 +124,50 @@ On the **website**, we track events with the following data:
 }
 ```
 
-> 💡 The CLI and serverless packages are free of any telemetry or analytics system.
+### Technical implementation
 
-### Implementation
+#### Desktop application
 
-#### Desktop app
+The desktop application is built with Electron and Angular. The implementation is a bit more complex than the website (below) as many parameters are required to build the event object. The analytics code can be found in the [telemetry.service.ts](https://github.com/mockoon/mockoon/blob/main/packages/desktop/src/renderer/app/services/telemetry.service.ts) file.
 
-The desktop app is built with Electron and Angular. The implementation is a bit more complex than the website as many parameters are required to build the event object. The analytics code can be found in the [telemetry.service.ts](https://github.com/mockoon/mockoon/blob/main/packages/desktop/src/renderer/app/services/telemetry.service.ts).
+The code can be a bit dry, and we are big fans of Observables, for the better or the worse (maybe the worse here!). You can see [here](https://github.com/mockoon/mockoon/blob/main/packages/desktop/src/renderer/app/services/telemetry.service.ts#L64-L129) the complete observable chain that builds the event object and triggers its sending to our API.
+To simplify, we build the session event object with all the required data (country code, session start time, etc.), and we send it with a session ending time after one of the following events occurs:
 
-The code can be a bit dry, and we are big fans of Observables, for the better and the worse. You can see [here](https://github.com/mockoon/mockoon/blob/main/packages/desktop/src/renderer/app/services/telemetry.service.ts#L64-L129) the full observable chain that builds the event object and trigger its sending to our API depending on various factors, like:
+- The application is closed.
+- The application is inactive for more than 1 hour.
+- It's midnight 👻.
 
-- is the telemetry globally enabled? and locally enabled?
-- do we have access to an IP geolocation API?
-- did the session end because of inactivity or because the app was closed?
+A small snippet of the code:
+
+```typescript
+switchMap(() =>
+  // end session and send infos after session duration inactivity or at midnight, or when app closes
+  {
+    const now = new Date();
+    const midnight = endOfDay(now);
+
+    return race(timer(Config.telemetry.sessionDuration), timer(differenceInMilliseconds(midnight, now)), this.closeSession$.pipe(filter((closeSession) => closeSession)));
+  }
+);
+```
+
+> 💡 We chose a 1 hour session time rather than the more traditional 30 minutes, as Mockoon tends to be used for long periods, often in the background.
 
 #### Website
 
-The website implementation is straightforward. It is built with Next.js and the analytics code can be found in the [analytics.ts](https://github.com/mockoon/mockoon.com/blob/main/utils/analytics.ts) file. It's a basic function that builds an event object and sends it to our API with a POST call.
+The website implementation is more straightforward. It is built with Next.js and the analytics code can be found in the [analytics.ts](https://github.com/mockoon/mockoon.com/blob/main/utils/analytics.ts) file. It's a basic function that builds an event object and sends it to our API with a POST call.
+The event object is **sent after each path change** or when the **user clicks a download button**.
 
-#### API: AppEngine + Nest.js
+```typescript
+// send a pageview event on each path change
+useEffect(() => {
+  sendEvent('pageview');
+}, [pathName]);
+```
 
-The API exposes two different endpoints, one for the app telemetry, the other for the website analytics. The code is not public but it's quite simple.
+#### API: Nest.js + App Engine
 
-It's a Nest.js application with a controller:
+The API exposes **two endpoints**, one for the **application telemetry** and the other for the **website analytics**. The code is not public, but it's a very simple Nest.js application with a controller:
 
 ```typescript
 @Controller('events')
@@ -143,17 +177,12 @@ export class EventsController {
   @Post('telemetry')
   @HttpCode(204)
   public telemetry(@Body() telemetryEvent: TelemetryDto) {
-    // we are not waiting for the response
-    this.eventsService.writeTelemetry(telemetryEvent).subscribe();
-
-    return;
+    return this.eventsService.writeTelemetry(telemetryEvent);
   }
 }
 ```
 
-As you can see, we decided to not wait for BigQuery response (we are not returning the Observable). Like this, the API can answer really quickly and the user experience is not impacted. We are also not retrying the request if case of failure. It's not a critical piece of information.
-
-We also make sure to check the telemetry and events objects schemas with a Nest.js DTO:
+We made sure to **check the telemetry and events objects schemas** with a Nest.js DTO:
 
 ```typescript
 export class TelemetryDto {
@@ -168,7 +197,7 @@ export class TelemetryDto {
 }
 ```
 
-Events are then stored in two BigQuery tables. One for the app telemetry, the other for the website analytics. The schema of the tables is the same as the event objects.
+Events are then stored in **two BigQuery tables**. One for the application telemetry and the other for the website analytics. The schema of the tables is the same as the event objects.
 
 ```typescript
 @Injectable()
@@ -191,13 +220,13 @@ export class EventsService {
 }
 ```
 
-The same applies to the website events. The code has been simplified for the sake of clarity.
+The same applies to the website events. The code has been shortened a bit for the sake of clarity.
 
-The API is deployed on Google AppEngine. It's a serverless solution that scales automatically and is really cheap. The whole setup is quite straightforward and it's nearly a set and forget solution.
+The API is **automatically deployed on Google AppEngine** every time we push on the main branch using GitHub Actions. The whole setup is straightforward, and it's nearly a set-and-forget solution. **AppEngine will auto-scale** and provision new instances if needed.
 
 #### Database: BigQuery
 
-We choose BigQuery for its really low cost at our volumes (see below). It's also really easy to use from an API deployed on AppEngine, and it uses SQL with which we are familiar.
+We choose BigQuery to store the data for its **low cost** at our volumes (see below). It's also easy to use from an API deployed on App Engine as it doesn't require any authentication. Everything is handled automatically. It also uses SQL, with which we are familiar.
 
 We created two tables, one for the telemetry and one for the website events. The schema of the tables is the same as the event objects.
 
@@ -205,21 +234,23 @@ We created two tables, one for the telemetry and one for the website events. The
 
 ### Infrastructure and costs
 
-Google Cloud offers very generous free tiers. We benefit from one App Engine free instance per month, and have a bit of extra cost when traffic is higher and upscaling is triggered.
+Google Cloud offers very generous free tiers. We benefit from **one App Engine free instance per month** and have a bit of extra cost when the traffic is higher and upscaling is triggered.
 
-For BigQuery, despite our traffic, we have yet to pay a single cent. The first 10GB of storage and 1TB of data processed for queries per month are free. We are currently using less than a Gigabyte of storage and only a handful of Gigabytes of data processed per month.
+For BigQuery, despite our traffic and **millions of events recorded**, we have yet to pay a single cent. The first 10GB of storage and 1TB of data processed for queries per month are free. We are currently using less than a Gigabyte of storage and only a handful of Gigabytes of data processed per month!
 
-#### Visualization: Data Studio
+#### Visualization: Looker Studio
 
-The last brick of our custom analytics system is the visualization. Because if you can't see the data, it's useless!
+The last brick of our custom analytics system is the **visualization**.
 
-We use Google Looker Studio to build a dashboard with the data from both BigQuery tables. It's a really powerful tool but we must admit we struggled a bit. It was definitely the most time consuming part of this journey.
+We use Google Looker Studio (previously Data Studio) to build a **dashboard** with the data from both BigQuery tables. We also **aggregate the data from the Google search console**. It's a really powerful tool (and free too!), but we must admit we struggled a bit with the concepts and wording. It was the most time-consuming part of this whole process.
 
-Data analysis is not our strongest skill and the wording and concepts used in Looker Studio are not always easy to understand. But we managed to build a dashboard that shows us the data we need:
+We still managed to build a dashboard that shows us the data we need, and we are now very fluent in data analytics, but we still don't know the difference between a metric and a dimension...😁
 
-- page views
-- downloads per OS
-- page views per page/referrer
-- most downloads per referrer
-- app sessions
-- app sessions per version
+You can see a preview of the dashboard below, showing the number of page views and downloads per day, the version distribution, the OS distribution, and the users' countries:
+
+![#sub#Second half of December is always a bit depressing! 😀](/images/blog/building-own-analytics-fun-and-profit/looker-studio-dashboard-preview.png)
+
+---
+
+We hope you enjoyed this blog post and that it will help you build your analytics system or maybe convince you to use something that already exists!
+If you have any questions or feedback, feel free to reach out on [Discord](/discord/).

@@ -171,9 +171,9 @@ const Signup: FunctionComponent = function () {
                       {...registerFormField('newsletter')}
                     />
                     <label className='form-check-label' htmlFor='newsletter'>
-                      I want to receive Mockoon's newsletter (usually once a
-                      month or less). Your email will not be shared or used for
-                      any other purpose.
+                      I want to receive Mockoon's newsletter and product updates
+                      (usually once a month or less). Your email will not be
+                      shared with anyone or used for any other purpose.
                     </label>
                   </div>
                   <FormHoneypot

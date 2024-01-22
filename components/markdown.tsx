@@ -123,12 +123,12 @@ const Markdown: FunctionComponent<{
                 src={src as string}
                 width={width}
                 height={height}
-                className={`img-fluid mx-auto d-block mt-8 ${
-                  hasSub ? 'mb-4' : 'mb-8'
+                className={`img-fluid mx-auto d-block border shadow mt-8 ${
+                  hasSub ? 'mb-2' : 'mb-8'
                 } rounded`}
               />
               {hasSub && (
-                <span className='d-block fs-6 text-center text-gray-700 mb-8'>
+                <span className='d-block text-center text-gray-700 mb-8'>
                   {altCleaned}
                 </span>
               )}

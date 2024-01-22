@@ -1,7 +1,7 @@
 ---
 title: Building our own analytics for fun and profit
 excerpt: "How we built our analytics system for Mockoon's website and the desktop application, and why we did it."
-date: '2024-01-10'
+date: '2024-01-22'
 image: building-custom-analytics-at-mockoon.png
 imageAlt: analytics dashboard elements diagrams
 imageWidth: 1200

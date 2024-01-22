@@ -1,9 +1,44 @@
+import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Layout from '../layout/layout';
 
-const About: FunctionComponent = function () {
+export async function getStaticProps() {
+  let contributors = [];
+
+  try {
+    const res = await fetch(
+      'https://api.github.com/repos/mockoon/mockoon/stats/contributors'
+    );
+    const data = await res.json();
+
+    contributors = data.map((contribution) => {
+      return {
+        username: contribution.author.login,
+        avatarUrl: contribution.author.avatar_url
+      };
+    });
+
+    contributors = contributors.filter(
+      (contributor) =>
+        contributor.username !== '255kb' &&
+        contributor.username !== 'dependabot[bot]'
+    );
+  } catch (error) {
+    console.error(error);
+  }
+
+  return {
+    props: {
+      contributors
+    }
+  };
+}
+
+const About: FunctionComponent<{
+  contributors: { username: string; avatarUrl: string }[];
+}> = function ({ contributors }) {
   return (
     <Layout footerBanner='download'>
       <Meta
@@ -12,92 +47,89 @@ const About: FunctionComponent = function () {
       />
 
       <Hero
-        title='Meet the team'
+        title='Meet the <span class="text-primary">team and contributors</span>'
         subtitle='&#8220;We want to craft the best API tools on the market!&#8221;'
       />
 
       <div className='container'>
-        <div className='row d-flex justify-content-center'>
-          <div className='col-6 col-lg-4'>
-            <div className='row gx-0 d-flex align-items-center justify-content-center flex-column'>
-              <div className='col-12 col-lg-7'>
-                <img
-                  src='/images/about/guillaume.jpg'
-                  alt='Mockoon maintainer'
-                  className='img-fluid rounded-circle mb-3 img-thumbnail shadow'
-                  width={440}
-                  height={440}
-                />
-              </div>
-              <div className='col-12 order-lg-1 d-flex justify-content-center'>
-                <div className='align-items-center pb-0 d-flex flex-column flex-lg-row'>
-                  <h6 className='text-uppercase text-gray-700 me-lg-2 mb-lg-0 mb-1'>
-                    Guillaume
-                  </h6>
-
-                  <a
-                    href='https://github.com/255kb'
-                    target='_blank'
-                    rel='noopener'
-                    className='text-decoration-none'
-                  >
-                    <i className='icon-github fs-3 text-gray-700'></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='col-6 col-lg-4'>
-            <div className='gx-0 d-flex align-items-center justify-content-center flex-column'>
-              <div className='col-12 col-lg-7'>
-                <img
-                  src='/images/about/fabrice.jpg'
-                  alt='Mockoon maintainer'
-                  className='img-fluid rounded-circle mb-3 img-thumbnail shadow'
-                  width={440}
-                  height={440}
-                />
-              </div>
-              <div className='col-12 order-lg-1 d-flex justify-content-center'>
-                <div className='align-items-center pb-0 d-flex flex-column flex-lg-row'>
-                  <h6 className='text-uppercase text-gray-700 me-lg-2 mb-lg-0 mb-1'>
-                    Fabrice
-                  </h6>
-
-                  <a
-                    href='https://github.com/fabhoarau'
-                    target='_blank'
-                    rel='noopener'
-                    className='text-decoration-none'
-                  >
-                    <i className='icon-github fs-3 text-gray-700'></i>
-                  </a>
-                </div>
-              </div>
-            </div>
+        <div className='row d-flex justify-content-center align-items-center flex-column pb-8'>
+          <div className='col-lg-10 col-12'>
+            <p>
+              Mockoon is a free and open-source mock API tool created by{' '}
+              <Link href={'https://github.com/255kb'}>Guillaume</Link> in 2017.
+              Passionate about APIs and great developer tools, he spent a lot of
+              time making Mockoon the easiest-to-use and quickest mock API tool.
+            </p>
           </div>
         </div>
-        <div className='row d-flex justify-content-center align-items-center flex-column pt-4 pb-8 py-lg-8'>
-          <div className='col-lg-10 col-12 text-center text-lg-start'>
+
+        <div className='row d-flex justify-content-center pb-8'>
+          <div className='col-12 col-lg-4 text-center'>
+            <div className='avatar avatar-xl m-1'>
+              <Link href={`https://github.com/255kb`} rel='noopener'>
+                <img
+                  className='avatar-img img-thumbnail rounded-circle'
+                  src='/images/about/guillaume.jpg'
+                  alt='Guillaume, Mockoon founder and main maintainer'
+                  width={64}
+                  height={64}
+                />
+              </Link>
+            </div>
+            <h6 className='text-uppercase text-gray-700'>
+              <strong>Guillaume</strong>
+              <br />
+              Founder and main maintainer
+            </h6>
+          </div>
+        </div>
+
+        <div className='row d-flex justify-content-center align-items-center flex-column pb-8'>
+          <div className='col-lg-10 col-12'>
             <p>
-              Mockoon is a free and open-source mock API tool created by
-              Guillaume in 2017. Passionate about APIs and great developer
-              tools, he spent a lot of time making Mockoon the easiest to use
-              and quickest mock API tool.
+              Helped by <strong>dozens of amazing contributors</strong>, they
+              believe in <strong>simplicity and efficiency</strong> and work
+              hard every day to bring you a tool that is{' '}
+              <strong>easy to set up yet powerful</strong>. The goal is to save
+              you tons of time, not waste it.
             </p>
             <p>
-              Recently joined by Fabrice, a long-time friend and full-stack
-              developer, together they plan to bring Mockoon to the next level
-              and deliver the best developer experience on the market.
+              Mockoon is now used by thousands of developers and companies
+              around the world and has been{' '}
+              <strong>downloaded more than 500k times</strong>.
             </p>
+          </div>
+        </div>
+        <div className='row d-flex justify-content-center align-items-center flex-column pb-8'>
+          <div className='col-lg-10 col-12 text-center'>
+            {contributors.length > 0 &&
+              contributors.map((contributor) => (
+                <div
+                  className='avatar avatar-xl m-1'
+                  key={contributor.username}
+                >
+                  <Link
+                    href={`https://github.com/${contributor.username}`}
+                    rel='noopener'
+                  >
+                    <img
+                      className='avatar-img img-thumbnail rounded-circle mr-4'
+                      src={contributor.avatarUrl}
+                      alt={`Contributor ${contributor.username}`}
+                      title={`Contributor ${contributor.username}`}
+                      width={64}
+                      height={64}
+                    />
+                  </Link>
+                </div>
+              ))}
+          </div>
+        </div>
+        <div className='row d-flex justify-content-center align-items-center flex-column pb-8'>
+          <div className='col-lg-10 col-12'>
             <p>
-              They believe in simplicity and efficiency and work hard every day
-              to bring you a tool that is easy to set up yet powerful. The goal
-              is to save you tons of time, not waste it.
-            </p>
-            <p>
-              If you believe in what we are building, you can sponsor us in this
-              journey and join the dozens of{' '}
+              If you believe in what we are building, you can{' '}
+              <strong>sponsor us</strong> in this journey and join the dozens of{' '}
               <a
                 href='https://github.com/mockoon/mockoon/blob/main/backers.md'
                 target='_blank'
@@ -125,12 +157,12 @@ const About: FunctionComponent = function () {
 
           <hr />
 
-          <div className='col-lg-10 col-12 text-center text-lg-start mt-8'>
+          <div className='col-lg-10 col-12 mt-8'>
             <p>
               You can also support us by subscribing to our{' '}
               <strong>Pro plans</strong> and enjoy a whole new level of
-              capabilities: AI-powered API mocks generation, enterprise-grade
-              support, and more!
+              capabilities: <strong>AI-powered API mocks generation</strong>,
+              enterprise-grade support, and more to come!
             </p>
           </div>
           <div className='text-center my-8'>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import GitHub from '../components/github';
 import Hero from '../components/hero';
@@ -23,30 +24,28 @@ const SponsorUs: FunctionComponent = function () {
         <div className='row d-flex flex-column align-items-center '>
           <div className='col-12 col-lg-10 pt-5'>
             <p>
-              Mockoon is an open-source project created in 2017 by{' '}
+              Mockoon is an <strong>open-source</strong> project created in 2017
+              by{' '}
               <a href='https://github.com/255kb' target='_blank' rel='noopener'>
                 Guillaume
               </a>
-              , a developer passionate about APIs. Recently joined by{' '}
-              <a
-                href='https://github.com/fabhoarau'
-                target='_blank'
-                rel='noopener'
-              >
-                Fabrice
-              </a>
+              , a developer passionate about APIs, helped by{' '}
+              <Link href='/about/'>
+                <strong>dozens of amazing contributors</strong>
+              </Link>
               .
             </p>
             <p>
-              Entirely free, Mockoon saves time for thousands of people around
-              the world every day and recently crossed{' '}
-              <strong>500&nbsp;000 downloads</strong>!
+              Entirely free, Mockoon saves time for{' '}
+              <strong>thousands of people around the world</strong> every day
+              and recently crossed <strong>500k downloads</strong>!
             </p>
             <p>
-              Reaching this level of satisfaction requires a tremendous amount
-              of time from the maintainers. If you like Mockoon and want it to
-              propose always more great features, you can support us and join
-              the dozens of{' '}
+              Reaching this level of satisfaction requires a{' '}
+              <strong>tremendous amount of time from the maintainers</strong>.
+              If you like Mockoon and want it to propose always more great
+              features, you can <strong>support us</strong> and join the dozens
+              of{' '}
               <a
                 href='https://github.com/mockoon/mockoon/blob/main/backers.md'
                 target='_blank'
@@ -57,12 +56,12 @@ const SponsorUs: FunctionComponent = function () {
               .
             </p>
             <p>
-              By sponsoring us, you can show your appreciation for all this hard
-              work and also allow us to dedicate more time to this project in
-              the future. For higher sponsor tiers, this is the opportunity to
-              show your brand in front of many developers interested in APIs and
-              automated testing (~35k views per month, more details on GitHub
-              Sponsors).
+              By sponsoring us, you can show your appreciation for all this{' '}
+              <strong>hard work</strong> and also allow us to{' '}
+              <strong>dedicate more time</strong> to this project in the future.
+              For higher sponsor tiers, this is the opportunity to show your
+              brand in front of many developers interested in APIs and automated
+              testing (~35k views per month, more details on GitHub Sponsors).
             </p>
             <div className='text-center my-8'>
               <p className='mt-4'>
@@ -88,7 +87,7 @@ const SponsorUs: FunctionComponent = function () {
                 You can also support us by subscribing to our{' '}
                 <strong>Pro plans</strong> and enjoy a whole new level of
                 capabilities: AI-powered API mocks generation, enterprise-grade
-                support, and more!
+                support, and more to come!
               </p>
             </div>
             <div className='text-center my-8'>

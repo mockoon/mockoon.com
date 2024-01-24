@@ -9,14 +9,19 @@ export async function getStaticProps() {
 
   try {
     const res = await fetch(
-      'https://api.github.com/repos/mockoon/mockoon/stats/contributors'
+      'https://api.github.com/repos/mockoon/mockoon/contributors?per_page=100',
+      {
+        headers: {
+          Accept: 'application/vnd.github+json'
+        }
+      }
     );
     const data = await res.json();
 
-    contributors = data.map((contribution) => {
+    contributors = data.map((contributor) => {
       return {
-        username: contribution.author.login,
-        avatarUrl: contribution.author.avatar_url
+        username: contributor.login,
+        avatarUrl: contributor.avatar_url
       };
     });
 

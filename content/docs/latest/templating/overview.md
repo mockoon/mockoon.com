@@ -122,9 +122,7 @@ This system is flexible enough to generate a lot of different contents like CSV 
 ```handlebars
 firstname,lastname,countryCode
 {{#repeat 10}}
-  {{faker 'person.firstName'}},{{faker 'person.lastName'}},{{faker
-    'location.countryCode'
-  }}
+  {{faker 'person.firstName'}},{{faker 'person.lastName'}},{{faker 'location.countryCode'}}
 {{/repeat}}
 ```
 
@@ -164,6 +162,8 @@ firstname,lastname,countryCode
 {{/ repeat}}
 {{/ base64}}
 ```
+
+> 🛠️ Use our online [base64 encoder/decoder](/tools/base64-encode-decode/) to get a preview of the encoded content and validate a base64 string.
 
 #### Disable body and file templating
 

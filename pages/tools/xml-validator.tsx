@@ -32,7 +32,7 @@ const XmlValidator: FunctionComponent = function () {
         description="Mockoon's XML validator tool: validate your XML data in an online editor and get detailed error messages."
       />
       <Hero
-        title='Online XML validator'
+        title='Online <span class="text-primary">XML validator</span>'
         subtitle='Validate your XML online and get detailed error messages'
       />
 

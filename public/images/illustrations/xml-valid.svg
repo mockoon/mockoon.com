@@ -13,7 +13,7 @@
                 <g id="code_black_24dp.svg" transform="matrix(83.5,0,0,83.5,25306,61858)">
                     <g transform="matrix(1,0,0,1,-12,-12)">
                         <rect x="0" y="0" width="24" height="24" style="fill:none;fill-rule:nonzero;"/>
-                        <path d="M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6ZM18.197,13.003L19.2,12L14.6,7.4L16,6L22,12L20.469,13.531C19.772,13.215 19.004,13.029 18.197,13.003Z" style="fill:rgb(141,200,227);fill-rule:nonzero;stroke:rgb(141,200,227);stroke-width:1px;"/>
+                        <path d="M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6ZM18.197,13.003L19.2,12L14.6,7.4L16,6L22,12L20.469,13.531C19.772,13.215 19.004,13.029 18.197,13.003Z" style="fill:rgb(51,94,234);fill-rule:nonzero;stroke:rgb(51,94,234);stroke-width:1px;"/>
                         <g transform="matrix(0.7,0,0,0.7,5.6,6.75)">
                             <path d="M15.47,20.5L12,17L13.4,15.59L15.47,17.67L20.6,12.5L22,13.91L15.47,20.5Z" style="fill:rgb(55,184,135);"/>
                         </g>

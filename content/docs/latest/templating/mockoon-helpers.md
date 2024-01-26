@@ -667,6 +667,8 @@ Encode the parameter as base64. This can be used as an inline helper or block he
 {{/base64}}
 ```
 
+> 🛠️ Use our online [base64 encoder/decoder](/tools/base64-encode-decode/) to get a preview of the encoded content and validate a base64 string.
+
 ## base64Decode
 
 Decode a base64 string. This can be used as an inline helper or block helper (see examples below).
@@ -684,6 +686,8 @@ Decode a base64 string. This can be used as an inline helper or block helper (se
   {{body 'base64content'}}
 {{/base64Decode}}
 ```
+
+> 🛠️ Use our online [base64 encoder/decoder](/tools/base64-encode-decode/) to get a preview of the encoded content and validate a base64 string.
 
 ## objectId
 

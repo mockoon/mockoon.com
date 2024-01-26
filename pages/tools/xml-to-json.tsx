@@ -42,7 +42,7 @@ const XmlToJson: FunctionComponent = function () {
         description='Use Mockoon XML to JSON converter to transform your XML data to a JSON object and use it in your API mocks'
       />
       <Hero
-        title='XML to JSON converter'
+        title='XML to JSON <span class="text-primary">converter</span>'
         subtitle='Convert your XML data to a JSON object and verify its validity'
       />
       <section className='pb-5 pb-lg-10'>

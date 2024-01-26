@@ -48,4 +48,4 @@ JSON equivalent (compacted):
 
 > 📘 Please refer to [xml-js documentation](https://www.npmjs.com/package/xml-js) for more detail on how the XML is parsed.
 
-> 🛠️ Use our [XML to JSON converter](/tools/xml-to-json/) to get a preview of how Mockoon will convert your XML to JSON.
+> 🛠️ Use our [XML to JSON converter](/tools/xml-to-json/) to get a preview of how Mockoon will convert your XML to JSON. You can also use our [XML validator](/tools/xml-validator/) to make sure your XML is valid.

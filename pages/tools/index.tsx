@@ -23,6 +23,12 @@ const tools = [
       'Convert your XML data to a JSON object and verify its validity',
     links: [{ src: '/tools/xml-to-json', text: 'Convert' }],
     imageSrc: '/images/illustrations/xml-to-json.svg'
+  },
+  {
+    title: 'Base64 encoder/decoder',
+    description: 'Encode or decode your data to/from the Base64 format',
+    links: [{ src: '/tools/base64-encode-decode', text: 'Encode/decode' }],
+    imageSrc: '/images/illustrations/base64-encode-decode.svg'
   }
 ];
 
@@ -43,7 +49,10 @@ const Tools: FunctionComponent = function () {
         <div className='container'>
           <div className='row justify-content-center'>
             {tools.map((tool, toolIndex) => (
-              <div key={`tool${toolIndex}`} className='col-12 col-lg-4 d-flex'>
+              <div
+                key={`tool${toolIndex}`}
+                className='col-12 col-lg-4 mb-4 d-flex'
+              >
                 <Card
                   data={{
                     ...tool

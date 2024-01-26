@@ -33,7 +33,7 @@ const JsonValidator: FunctionComponent = function () {
         description="Mockoon's JSON validator tool: validate your JSON data in an online editor and get detailed error messages"
       />
       <Hero
-        title='Online JSON validator'
+        title='Online <span class="text-primary">JSON validator</span>'
         subtitle='Validate your JSON online and get detailed error messages'
       />
       <section>

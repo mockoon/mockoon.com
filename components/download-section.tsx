@@ -137,10 +137,13 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
           </div>
 
           <div className='text-gray-700 mb-6 mb-lg-0'>
-            <div className='btn-group'>
+            <div className='btn-group mb-2'>
+              <button className='btn btn-primary-subtle btn-sm' disabled>
+                <span>x86_64:</span>
+              </button>
               <a
                 className='btn btn-primary-subtle btn-sm d-flex align-items-center'
-                href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.deb`}
+                href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.amd64.deb`}
                 rel='noopener'
                 onClick={() => postDownload('linux')}
               >
@@ -152,7 +155,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
 
               <a
                 className='btn btn-primary-subtle btn-sm d-flex align-items-center'
-                href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.rpm`}
+                href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.x86_64.rpm`}
                 rel='noopener'
                 onClick={() => postDownload('linux')}
               >
@@ -164,7 +167,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
 
               <a
                 className='btn btn-primary-subtle btn-sm d-flex align-items-center'
-                href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.AppImage`}
+                href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.x86_64.AppImage`}
                 rel='noopener'
                 onClick={() => postDownload('linux')}
               >
@@ -174,7 +177,35 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 <span>AppImage</span>
               </a>
             </div>
-            <div className='content'>(x86 only)</div>
+            <div className='btn-group'>
+              <button className='btn btn-primary-subtle btn-sm' disabled>
+                <span>arm64:</span>
+              </button>
+              <a
+                className='btn btn-primary-subtle btn-sm d-flex align-items-center'
+                href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.arm64.deb`}
+                rel='noopener'
+                onClick={() => postDownload('linux')}
+              >
+                <span className='icon me-2'>
+                  <i className='icon-download'></i>
+                </span>
+                <span>deb</span>
+              </a>
+
+              <a
+                className='btn btn-primary-subtle btn-sm d-flex align-items-center'
+                href={`https://github.com/mockoon/mockoon/releases/download/v${version}/mockoon-${version}.arm64.AppImage`}
+                rel='noopener'
+                onClick={() => postDownload('linux')}
+              >
+                <span className='icon me-2'>
+                  <i className='icon-download'></i>
+                </span>
+                <span>AppImage</span>
+              </a>
+            </div>
+
             <div className='content p-3'>
               <span className='user-select-none'>or </span>
               <br />

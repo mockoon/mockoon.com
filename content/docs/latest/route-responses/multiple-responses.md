@@ -16,7 +16,7 @@ For each route, multiple responses can be defined (status, body, and headers) an
 
 To **add** a new response to your route, click on the "plus" icon next to the responses list:
 
-![Click on the icon to add a new response{1218x164}](docs-img:add-route-response.png)
+![Click on the icon to add a new response{987x164}](docs-img:add-route-response.png)
 
 You can also **duplicate** an existing route response by clicking on the "copy" icon on the right:
 
@@ -28,7 +28,7 @@ Everything will be copied to the new response: documentation, file/body, headers
 
 Route responses order define the order in which the [rules are interpreted](docs:route-responses/dynamic-rules). You can easily change the default response by reordering the responses menu with a drag and drop:
 
-![Reorder route responses{1199x214}](docs-img:reorder-responses.png)
+![Reorder route responses{968x214}](docs-img:reorder-responses.png)
 
 ## Default route response
 

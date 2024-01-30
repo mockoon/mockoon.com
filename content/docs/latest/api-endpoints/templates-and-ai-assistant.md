@@ -27,7 +27,7 @@ To use a template in your routes, click on the "From template" entry in the rout
 
 Then, select the template you want to use and either copy-paste its content manually or click on one of the two buttons to create a new **GET endpoint** or a **CRUD endpoint with a data bucket**.
 
-![create get route from template{860x759}](docs-img:templates-create-get-route.png)
+![create get route from template{860x801}](docs-img:templates-create-get-route.png)
 
 The "GET route" button will create a new HTTP GET route and copy the template content as the body. The "CRUD + data" button will create a new CRUD endpoint with a linked data bucket and copy the template content as the data bucket content.
 
@@ -39,15 +39,15 @@ You can also use our AI assistant to generate realistic mock data for your vario
 
 To generate a new template, click the "From template" button in the route creation menu (see above), and select the "Generate" tab:
 
-![AI assistant generate tab{860x759}](docs-img:ai-assistant-generate-template-tab.png)
+![AI assistant generate tab{860x801}](docs-img:ai-assistant-generate-template-tab.png)
 
 Then, write a prompt (e.g. "list of users") and click the "Generate" button.
 
-![AI assistant generate button click{860x759}](docs-img:ai-assistant-generate-button.png)
+![AI assistant generate button click{860x801}](docs-img:ai-assistant-generate-button.png)
 
 Finally, you can copy-paste the generated template manually or click on one of the two buttons to create a new **GET endpoint** or a **CRUD endpoint with a data bucket**.
 
-![create get route from template{860x759}](docs-img:templates-generate-get-route.png)
+![create get route from template{860x801}](docs-img:templates-generate-get-route.png)
 
 ### Writing prompts
 
@@ -58,7 +58,7 @@ Several options are available to fine-tune the generated templates:
 - **array**: the generated template root level will be a JSON array (usually used with the **JSON** option).
 - **templating**: the generated template will contain Handlebars [templating helpers](docs:templating/overview) (e.g. `{{faker 'person.firstName'}}`). Please note that disabling this option usually results in longer templates.
 
-![prompt options buttons{860x759}](docs-img:ai-assistant-template-generate-options.png)
+![prompt options buttons{860x801}](docs-img:ai-assistant-template-generate-options.png)
 
 You will obtain best results with shorter prompts: "list of users", "JSON configuration for library X", etc.
 

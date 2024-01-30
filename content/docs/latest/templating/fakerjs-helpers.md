@@ -26,21 +26,37 @@ All Faker.js helpers must be used with the following syntax: `{{faker 'namespace
 ...
 ```
 
-Faker.js methods may use two different ways of passing parameters: ordered arguments or options objects. Wrapped in Handlebars helpers, this may result in two different ways of using them:
+Faker.js methods may use two different ways of passing parameters: **ordered arguments** or **option object** (with eventually a depth > 1). Wrapped in a Handlebars helper, this may result in different syntaxes:
 
-```js
-// named parameters
-{{faker 'number.int' min=0 max=25}}
+- **Ordered arguments**: `{{faker 'namespace.method' arg1 arg2 arg3}}`
 
-// ordered arguments (here count=25)
+```handlebars
+{{faker 'number.int' 100}}
+<!-- 100 is the max -->
 {{faker 'string.alphanumeric' 25}}
 ```
+
+- **Option object** with **named parameters**: `{{faker 'namespace.method' arg1='value1' arg2='value2'}}` will be translated to an option object `{ arg1: 'value1', arg2: 'value2' }`
+
+```handlebars
+{{faker 'number.int' min=10 max=100}}
+{{faker 'string.alphanumeric' casing='mixed' length=50}}
+```
+
+- **Option object** with **named parameters** and **depth > 1**: `{{faker 'namespace.method' '{arg1: "value1", arg2: { prop1: "value2"}}'}}` will be translated to a complex option object `{ arg1: 'value1', arg2: { prop1: 'value2' } }`. Be sure to **escape** the single or double quotes inside your option string accordingly.
+
+```handlebars
+{{faker 'number.int' '{min: 10, max: 100}'}}
+{{faker 'string.alphanumeric' '{casing: "lower", length: { min: 1, max: 3}}'}}
+```
+
+> 📘 Please check Faker.js documentation to know which syntax to use for each helper.
 
 ## Set Faker.js' locale and seed
 
 Faker.js locale and seed can be defined in the application settings:
 
-![fakerjs settings{860x770}](docs-img:settings-faker.png)
+![fakerjs settings{860x812}](docs-img:settings-faker.png)
 
 The locale and seed can also be set when running your mock using the [CLI's flags](https://github.com/mockoon/mockoon/blob/main/packages/cli/README.md#fakerjs-options) or the [serverless package options](https://github.com/mockoon/mockoon/blob/main/packages/serverless/README.md#options).
 

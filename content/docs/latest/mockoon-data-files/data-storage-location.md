@@ -30,7 +30,7 @@ You can move the data files to another folder by right-clicking on an environmen
 
 Mockoon can monitor data files' external changes and automatically reload the interface with the new information. This is particularly useful when you are editing the data files with an external editor or pulling changes from a git repository. You can activate this option in the settings:
 
-![enable file monitoring in the settings{860x770}](docs-img:enable-file-watching.png)
+![enable file monitoring in the settings{860x812}](docs-img:enable-file-watching.png)
 
 ## Old system (pre v1.16.0)
 

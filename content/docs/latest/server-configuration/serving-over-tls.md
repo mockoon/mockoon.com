@@ -3,7 +3,7 @@ title: TLS
 meta:
   title: Serve a mock API over TLS
   description: Need to mock a secured REST API server? Mockoon can also do this by serving over TLS with a self-signed certificate
-order: 110
+order: 120
 ---
 
 # TLS
@@ -32,7 +32,7 @@ Please note that Mockoon is using a self-signed certificate to serve your enviro
 
 You can also provide your certificate in both PKCS12 or PEM formats by filling out the input fields with the path to the file(s).
 
-![add certificate path{1495x612}](docs-img:enable-tls-custom-certificate.png)
+![add certificate path{1264x612}](docs-img:enable-tls-custom-certificate.png)
 
 Mockoon also supports passphrase-protected keys and custom-trusted CA certificates. As Mockoon is using Node.js' `tls`, you can refer to the [`tls.createSecureContext()` documentation](https://nodejs.org/dist/latest-v16.x/docs/api/tls.html#tlscreatesecurecontextoptions) for a full description of the available options.
 

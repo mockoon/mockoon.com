@@ -45,6 +45,7 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 | [`uppercase`](#uppercase) | [`padStart`](#padstart) | [`time`](#time)                   | [`objectId`](#objectid)         |
 | [`split`](#split)         | [`padEnd`](#padend)     | [`dateFormat`](#dateformat)       |                                 |
 | [`stringify`](#stringify) | [`eq`](#eq)             |                                   |                                 |
+| [`jsonParse`](#jsonparse) |                         |                                   |                                 |
 
 | [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                         |
 | --------------------------------------------------- | ----------------------------- | ----------------------- |
@@ -195,14 +196,14 @@ result: item2
 
 ## someOf
 
-Return a random number of items from the array passed in parameters, concatenated as a string. Use it with triple curly braces to get a JSON representation.
+Return an array containing a random number of items from the array passed in parameters, eventually stringified. Use it with triple curly braces to get a non-escaped JSON representation.
 
 | Arguments (ordered) | Type    | Description             |
 | ------------------- | ------- | ----------------------- |
 | 0                   | any[]   | Array of values         |
 | 1                   | number  | Minimum number of items |
 | 2                   | number  | Maximum number of items |
-| [3 = false]         | boolean | Get result as an array  |
+| [3 = false]         | boolean | Stringify the result    |
 
 **Examples**
 
@@ -210,9 +211,9 @@ Return a random number of items from the array passed in parameters, concatenate
 {{someOf (array 'item1' 'item2' 'item3') 1 2}}
 result: item1,item2
 
-<!-- Use triple curly braces to avoid character escaping -->
+<!-- Use triple curly braces to avoid Handlebars' character escaping -->
 {{{someOf (array 'item1' 'item2' 'item3') x y true}}}
-result: item1,item2
+result: ["item1","item2"]
 ```
 
 ## join
@@ -931,6 +932,36 @@ Considering an entering body:
 {
   "data": "test"
 }
+```
+
+## jsonParse
+
+Parse a valid JSON string. The result can be used with other helpers like `each`, `if`, `oneOf`, `lookup`, etc.
+
+| Arguments (ordered) | Type   | Description                |
+| ------------------- | ------ | -------------------------- |
+| 0                   | string | Valid JSON string to parse |
+
+**Examples**
+
+```handlebars
+{{#if (jsonParse 'true')}}
+  value
+{{/if}}
+
+{{#if (eq (jsonParse '25') 25)}}
+  value
+{{/if}}
+
+{{oneOf (jsonParse '[5, 56, 98]')}}
+result: 5 or 56 or 98
+
+{{lookup (jsonParse '{"data":"test"}') 'data'}}
+result: test
+
+<!-- Calling with a query string: ?json={"data":"test"} -->
+{{lookup (jsonParse (queryParam 'json')) 'data'}}
+result: test
 ```
 
 ## concat

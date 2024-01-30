@@ -24,7 +24,7 @@ To create a new data bucket, open the **Data** options by clicking on the tab at
 
 Add a new data bucket by clicking on the "plus" button:
 
-![Add a data bucket{1495x578}](docs-img:add-data-bucket.png)
+![Add a data bucket{1264x578}](docs-img:add-data-bucket.png)
 
 You can change the data bucket title and content on the right part of the screen.
 Mockoon will automatically attribute a new **unique ID** to your data bucket. You can use this ID to reference the data using the [`data` helpers](docs:data-buckets/using-data-buckets#using-data-helpers). To retrieve a bucket's unique ID, look in the footer under the data bucket content or right-click on a bucket name in the list and click on "Copy ID to clipboard".
@@ -48,7 +48,7 @@ You can easily combine your data bucket contents by referencing other data bucke
 }
 ```
 
-> ⚠️ However, data buckets are generated in the order they are defined in the environment. As a consequence, you cannot reference a data bucket that is defined **after** the current one.
+> ⚠️ Data buckets are generated in the order they are defined in the environment. As a consequence, you cannot reference a data bucket that is defined **after** the current one. You can easily reorder your data buckets by dragging and dropping them in the list.
 
 ## Data buckets generation
 

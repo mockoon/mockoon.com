@@ -3,7 +3,7 @@ title: Listening hostname/adapter
 meta:
   title: Listening hostname or adapter
   description: Learn how you can customize the hostname or network adapter your mock API will listen to in the desktop application or the CLI
-order: 130
+order: 140
 ---
 
 # Listening hostname/adapter
@@ -18,8 +18,8 @@ To configure each environment to listen on a specific hostname, open the **Envir
 
 Add a **custom hostname** in the input field:
 
-![field to set a custom hostname{1495x213}](docs-img:custom-hostname-setting.png)
+![field to set a custom hostname{1264x213}](docs-img:custom-hostname-setting.png)
 
-> You may need to restart your environment for the change to take effect.
+> ⚠️ You may need to restart your environment for the change to take effect.
 
-> When using the CLI, you can choose a specific adapter to listen to (e.g. `192.168.1.1`) by using the `--hostname` flag with the [`start` command](https://github.com/mockoon/mockoon/tree/main/packages/cli#mockoon-cli-start).
+> 💡 When using the CLI, you can choose a specific adapter to listen to (e.g. `192.168.1.1`) by using the `--hostname` flag with the [`start` command](https://github.com/mockoon/mockoon/tree/main/packages/cli#mockoon-cli-start).

@@ -30,7 +30,7 @@ So, when building a product, we usually need to know two things: are people usin
 At the beginning of the project, we were using Google Analytics for both the website and the app. It's the most popular analytics tool, and it's free.
 Despite having decent knowledge of marketing and analytics, we quickly realized we weren't interested in 90% of the information it provided.
 
-![#sub#The sometimes overwhelming Google Analytics dashboard!](/images/blog/building-own-analytics-fun-and-profit/google-analytics-dashboard.png)
+![#sub#The sometimes overwhelming Google Analytics dashboard!{1024x727}](/images/blog/building-own-analytics-fun-and-profit/google-analytics-dashboard.png)
 
 We were looking at the following metrics:
 
@@ -59,7 +59,7 @@ This means that we can have wildly different paths for a new feature. Sometimes,
 
 We can also measure the success of some features by analyzing the server logs. It is the case for the recent [API playground](/playground/) we launched. We can see the number of requests in Cloud Run's logs. And it's probably enough.
 
-![#sub#The API playground is a success!](/images/blog/building-own-analytics-fun-and-profit/cloud-run-api-playground-logs.png)
+![#sub#The API playground is a success!{1050x861}](/images/blog/building-own-analytics-fun-and-profit/cloud-run-api-playground-logs.png)
 
 ## Building our own analytics
 
@@ -230,7 +230,7 @@ We choose BigQuery to store the data for its **low cost** at our volumes (see be
 
 We created two tables, one for the telemetry and one for the website events. The schema of the tables is the same as the event objects.
 
-![BigQuery schema](/images/blog/building-own-analytics-fun-and-profit/bigquery-analytics-tables.png)
+![BigQuery schema{1326x633}](/images/blog/building-own-analytics-fun-and-profit/bigquery-analytics-tables.png)
 
 ### Infrastructure and costs
 
@@ -248,7 +248,7 @@ We still managed to build a dashboard that shows us the data we need, and we are
 
 You can see a preview of the dashboard below, showing the number of page views and downloads per day, the version distribution, the OS distribution, and the users' countries:
 
-![#sub#Second half of December is always a bit depressing! 😀](/images/blog/building-own-analytics-fun-and-profit/looker-studio-dashboard-preview.png)
+![#sub#Second half of December is always a bit depressing! 😀{2244x1085}](/images/blog/building-own-analytics-fun-and-profit/looker-studio-dashboard-preview.png)
 
 ---
 

@@ -20,7 +20,7 @@ You can define an unlimited number of rules for each route. At each request, Moc
 
 To add a new rule to a response, go to the route response's **Rules tab**, click on "Add rule" and fill the fields:
 
-![Click on add and fill the fields{1218x304}](docs-img:add-route-response-rule.png)
+![Click on add and fill the fields{987x304}](docs-img:add-route-response-rule.png)
 
 ### Reordering rules
 
@@ -40,7 +40,7 @@ You can temporarily disable the rules and serve the default response only. To ac
 
 Inside a route response, rules are interpreted by default with the OR logical operator. When you have more than one rule in a route response, you can easily switch the operator applied when interpreting the rules, by clicking on the `OR|AND` buttons at the left of the rules:
 
-![Choose the rule operator OR AND{1213x214}](docs-img:route-response-rules-operator.png)
+![Choose the rule operator OR AND{982x214}](docs-img:route-response-rules-operator.png)
 
 Rules have four parts:
 
@@ -52,20 +52,21 @@ Rules have four parts:
 
 ### 1. Target
 
-![Rule target{1238x204}](docs-img:route-response-rules-target.png)
+![Rule target{1007x204}](docs-img:route-response-rules-target.png)
 
 In the dropdown menu you can choose between:
 
 - the **body** value (full raw content or one of its properties if request's `Content-Type` is either `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`).
+- the value of a **query string field**.
 - the value of a **header**.
 - the value of a **cookie**.
 - the value of a **route parameter**.
-- the value of a **query string field**.
+- the value of a **global variable**.
 - the **request number** index starting at 1.
 
 ### 2. Property name or path
 
-![Rule property{1238x204}](docs-img:route-response-rules-property.png)
+![Rule property{1007x204}](docs-img:route-response-rules-property.png)
 
 Depending on the **target**, the way to access properties may be different:
 
@@ -75,10 +76,11 @@ Depending on the **target**, the way to access properties may be different:
     Fetching object properties is compatible with request's bodies of `Content-Type` `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`.  
     _Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:response-configuration/xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties._  
     _Please also note that `multipart/form-data` only supports fields. Uploaded files will be ignored._
+- **query string**: either provide a property name like `filter` or a path if the query string field is an object `filter.primary`.
 - **headers**: a header name like `Accept` or `Content-Type`.
 - **cookies**: the cookie name like `Session-id`.
 - **route param**: a route param name without the colon (":"), `:userId` becoming `userId`.
-- **query string**: either provide a property name like `filter` or a path if the query string field is an object `filter.primary`.
+- **global variable**: a [global variable](docs:global-variables/overview) name like `myVar`. You can use a path to access one of its properties if the variable is storing arrays or objects. Two syntaxes are supported, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`. Examples: `myVar.property.subProperty`, `myVar.property.0.subProperty` or `$.myVar.property`.
 - **request number**: _nothing has to be provided here for the request number_.
 
 For **body** and **query string**, if the property is an array, Mockoon will automatically check in the array if at least one item matches the value.
@@ -87,11 +89,11 @@ For **body** and **query string**, if the property is an array, Mockoon will aut
 
 You can invert the **comparison operator** (**!** equals, **!** regex match, etc.) by toggling on the exclamation mark button:
 
-![Rule comparison operator{1238x204}](docs-img:route-response-rules-invert-operator.png)
+![Rule comparison operator{1007x204}](docs-img:route-response-rules-invert-operator.png)
 
 ### 4. Comparison operator
 
-![Rule comparison operator{1238x204}](docs-img:route-response-rules-comparison-operator.png)
+![Rule comparison operator{1007x204}](docs-img:route-response-rules-comparison-operator.png)
 
 Multiple comparison operators are available in each rule:
 
@@ -102,7 +104,7 @@ Multiple comparison operators are available in each rule:
 
 ### 5. Value
 
-![Rule value{1238x204}](docs-img:route-response-rules-value.png)
+![Rule value{1007x204}](docs-img:route-response-rules-value.png)
 
 Depending on the comparison operator chosen, **equals** or **regex match**, you can either set a simple text value like "expected value" or any kind of regex. To use a regex, you must write it without the leading and trailing slashes.
 

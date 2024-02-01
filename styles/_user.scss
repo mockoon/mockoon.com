@@ -329,3 +329,20 @@ h6:hover .anchor-link i,
 .anchor-link:hover i {
   display: block;
 }
+
+.or {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $gray-700;
+}
+
+.or:after,
+.or:before {
+  content: '';
+  display: block;
+  background: $gray-500;
+  width: 45%;
+  height: 1px;
+  margin: 0 10px;
+}

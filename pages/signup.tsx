@@ -4,6 +4,7 @@ import { FunctionComponent, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import FormHoneypot from '../components/form-honeypot';
 import LoadingPage from '../components/loading-page';
+import LoginProviders from '../components/login-providers';
 import Meta from '../components/meta';
 import Spinner from '../components/spinner';
 import Layout from '../layout/layout';
@@ -27,18 +28,25 @@ const Signup: FunctionComponent = function () {
     user,
     isLoading: isAuthLoading,
     signUp,
-    emailVerification
+    emailVerification,
+    signInGoogle
   } = useAuth();
   const router = useRouter();
   const [error, setError] = useState(null);
   const isInApp = router.query.inapp === 'true';
-
   const {
     register: registerFormField,
     watch,
     handleSubmit,
+    getValues,
     formState: { isSubmitting }
   } = useForm();
+
+  const onGoogleSignIn = async () => {
+    try {
+      await signInGoogle();
+    } catch (error) {}
+  };
 
   const onSubmit = async (data) => {
     setError(null);
@@ -147,6 +155,16 @@ const Signup: FunctionComponent = function () {
                     />
                   </div>
 
+                  {isSubmitting && <Spinner />}
+
+                  <button
+                    className='btn w-100 btn-primary mb-5'
+                    type='submit'
+                    disabled={isSubmitting}
+                  >
+                    Sign up
+                  </button>
+
                   <div className='form-check mb-2'>
                     <input
                       className='form-check-input'
@@ -162,7 +180,7 @@ const Signup: FunctionComponent = function () {
                       <Link href={'/terms/'}>terms of service</Link>.
                     </label>
                   </div>
-                  <div className='form-check mb-5'>
+                  <div className='form-check'>
                     <input
                       className='form-check-input'
                       type='checkbox'
@@ -186,18 +204,23 @@ const Signup: FunctionComponent = function () {
                       </div>
                     </div>
                   )}
-                  {isSubmitting && <Spinner />}
-
-                  <button
-                    className='btn w-100 btn-primary'
-                    type='submit'
-                    disabled={isSubmitting}
-                  >
-                    Sign up
-                  </button>
                 </form>
+                <div className='or my-6'>OR</div>
+                <div className='text-center'>
+                  <LoginProviders
+                    googleCallback={() => {
+                      if (!getValues().terms) {
+                        document
+                          .querySelector<HTMLInputElement>('#terms')
+                          .reportValidity();
+                        return;
+                      }
+                      onGoogleSignIn();
+                    }}
+                  />
+                </div>
 
-                <p className='mb-0 fs-sm text-center text-gray-700'>
+                <p className='my-4 fs-sm text-center text-gray-700'>
                   Already have an account? <Link href={'login/'}>Log in</Link>
                 </p>
               </div>

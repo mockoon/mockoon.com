@@ -16,6 +16,11 @@ const meta = {
     'Manage your Mockoon Cloud account information and subscription details'
 };
 
+const providerNames = {
+  password: 'Email and password',
+  'google.com': 'Google'
+};
+
 const AccountInfo: FunctionComponent = function () {
   const { isAuth, user, isLoading: isAuthLoading } = useAuth();
   const router = useRouter();
@@ -55,15 +60,30 @@ const AccountInfo: FunctionComponent = function () {
                     <div className='card-body'>
                       <div className='list-group list-group-flush'>
                         <div className='list-group-item'>
-                          <div className='row align-items-center'>
+                          <div className='row align-items-center mb-4'>
                             <div className='col'>
-                              <p className='mb-0'>Email address</p>
+                              <p className='mb-0'>Authentication methods</p>
 
                               <small className='text-gray-700'>
                                 {user?.email}
                               </small>
                             </div>
                           </div>
+                          {user &&
+                            user.providerData &&
+                            user.providerData.map((providerData) => (
+                              <div className='d-flex'>
+                                <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                                  <i className='icon-check'></i>
+                                </div>
+
+                                <p>
+                                  <small>
+                                    {providerNames[providerData.providerId]}
+                                  </small>
+                                </p>
+                              </div>
+                            ))}
                         </div>
                         <div className='list-group-item'>
                           <div className='row align-items-center'>

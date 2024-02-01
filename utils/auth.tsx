@@ -1,5 +1,6 @@
 import {
   EmailAuthProvider,
+  GoogleAuthProvider,
   User,
   applyActionCode,
   createUserWithEmailAndPassword,
@@ -7,6 +8,7 @@ import {
   reauthenticateWithCredential,
   sendEmailVerification,
   signInWithEmailAndPassword,
+  signInWithPopup,
   updatePassword
 } from 'firebase/auth';
 import { useEffect, useState } from 'react';
@@ -18,6 +20,8 @@ const useAuth = () => {
   const [isAuth, setIsAuth] = useState(false);
   const auth = getAuth();
   const [isLoading, setIsLoading] = useState(true);
+
+  const googleProvider = new GoogleAuthProvider();
 
   const logout = async () => {
     await auth.signOut();
@@ -35,8 +39,12 @@ const useAuth = () => {
     await auth.currentUser.reload();
   };
 
-  const signIn = async (email, password) => {
+  const signInEmail = async (email, password) => {
     await signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const signInGoogle = async () => {
+    await signInWithPopup(auth, googleProvider);
   };
 
   const signUp = async (email, password) => {
@@ -89,7 +97,8 @@ const useAuth = () => {
     logout,
     getIdToken,
     reload,
-    signIn,
+    signInEmail,
+    signInGoogle,
     signUp,
     emailVerification,
     applyEmailVerificationCode,

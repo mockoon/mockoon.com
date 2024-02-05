@@ -30,6 +30,22 @@ const AccountMenu: FunctionComponent = function () {
                 Security
               </Link>
             </li>
+
+            <li
+              className={`list-item ${
+                router.pathname.includes('account/notifications')
+                  ? 'active'
+                  : ''
+              }`}
+            >
+              <Link
+                href='/account/notifications/'
+                className='list-link text-reset'
+              >
+                Notifications
+              </Link>
+            </li>
+
             <li
               className={`list-item ${
                 router.pathname.includes('account/subscription') ? 'active' : ''
@@ -63,20 +79,6 @@ const AccountMenu: FunctionComponent = function () {
                   </li>
                 </>
               )}
-            <li
-              className={`list-item ${
-                router.pathname.includes('account/notifications')
-                  ? 'active'
-                  : ''
-              }`}
-            >
-              <Link
-                href='/account/notifications/'
-                className='list-link text-reset'
-              >
-                Notifications
-              </Link>
-            </li>
           </ul>
         </div>
       </div>

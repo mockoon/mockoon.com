@@ -25,7 +25,7 @@ const AccountNotifications: FunctionComponent = function () {
     register: registerFormField,
     setValue,
     control,
-    formState: { touchedFields, isDirty }
+    formState: { isDirty }
   } = useForm();
   const data = useWatch({ control });
 
@@ -83,7 +83,6 @@ const AccountNotifications: FunctionComponent = function () {
   });
 
   useEffect(() => {
-    console.log(isDirty);
     if (data && isDirty) {
       updateEmailing(data as EmailingStatuses);
     }

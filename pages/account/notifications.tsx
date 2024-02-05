@@ -21,7 +21,12 @@ const AccountNotifications: FunctionComponent = function () {
   const { isAuth, user, isLoading: isAuthLoading, getIdToken } = useAuth();
   const router = useRouter();
   const { data: emailingData } = useCurrentUserEmailing();
-  const { register: registerFormField, setValue, control } = useForm();
+  const {
+    register: registerFormField,
+    setValue,
+    control,
+    formState: { touchedFields, isDirty }
+  } = useForm();
   const data = useWatch({ control });
 
   useEffect(() => {
@@ -36,9 +41,18 @@ const AccountNotifications: FunctionComponent = function () {
 
   useEffect(() => {
     if (emailingData) {
-      setValue('newsletter', emailingData.newsletter);
-      setValue('productUpdates', emailingData.productUpdates);
-      setValue('coursePreview', emailingData.coursePreview);
+      setValue('newsletter', emailingData.newsletter, {
+        shouldDirty: false,
+        shouldTouch: false
+      });
+      setValue('productUpdates', emailingData.productUpdates, {
+        shouldDirty: false,
+        shouldTouch: false
+      });
+      setValue('coursePreview', emailingData.coursePreview, {
+        shouldDirty: false,
+        shouldTouch: false
+      });
     }
   }, [emailingData]);
 
@@ -69,10 +83,11 @@ const AccountNotifications: FunctionComponent = function () {
   });
 
   useEffect(() => {
-    if (data) {
+    console.log(isDirty);
+    if (data && isDirty) {
       updateEmailing(data as EmailingStatuses);
     }
-  }, [data]);
+  }, [data, isDirty]);
 
   return (
     <Layout footerBanner='contact'>

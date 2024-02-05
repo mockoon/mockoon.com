@@ -50,7 +50,10 @@ const AccountSubscription: FunctionComponent = function () {
       {!isAuthLoading && isAuth && (
         <>
           <PaddleScript />
-          <AccountHeader />
+          <AccountHeader
+            title='My account'
+            subtitle='Manage your subscription'
+          />
 
           <main className='pb-8 pb-md-11 mt-md-n6'>
             <div className='container-md'>
@@ -86,7 +89,7 @@ const AccountSubscription: FunctionComponent = function () {
                                       })`
                                     : ''}
                                   {userData?.plan !== 'FREE' &&
-                                    userData.subscription.pastDue && (
+                                    userData.subscription?.pastDue && (
                                       <span className='badge text-bg-warning ms-2'>
                                         Invoice past due
                                       </span>
@@ -94,14 +97,14 @@ const AccountSubscription: FunctionComponent = function () {
                                 </p>
 
                                 {userData?.plan !== 'FREE' &&
-                                  userData?.subscription.createdOn &&
-                                  userData?.subscription.renewOn &&
+                                  userData?.subscription?.createdOn &&
+                                  userData?.subscription?.renewOn &&
                                   displayPlanInfo && (
                                     <p className='m-0'>
                                       <small className='text-gray-700'>
                                         Subscribed on{' '}
                                         {new Date(
-                                          userData?.subscription.createdOn *
+                                          userData?.subscription?.createdOn *
                                             1000
                                         ).toDateString()}
                                       </small>{' '}
@@ -111,7 +114,7 @@ const AccountSubscription: FunctionComponent = function () {
                                         <small className='text-gray-700'>
                                           Next renewal on{' '}
                                           {new Date(
-                                            userData?.subscription.renewOn *
+                                            userData?.subscription?.renewOn *
                                               1000
                                           ).toDateString()}
                                         </small>
@@ -121,7 +124,7 @@ const AccountSubscription: FunctionComponent = function () {
                                         <small className='text-danger'>
                                           Will be cancelled on{' '}
                                           {new Date(
-                                            userData?.subscription.renewOn *
+                                            userData?.subscription?.renewOn *
                                               1000
                                           ).toDateString()}
                                         </small>

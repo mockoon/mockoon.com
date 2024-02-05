@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
-import { Plans, Team, User } from '../models/user.model';
+import { EmailingContact, Plans, Team, User } from '../models/user.model';
 import { useAuth } from './auth';
 
 const useCurrentUser = () => {
@@ -38,6 +38,43 @@ const useCurrentUser = () => {
           router.push('/login/');
 
           return;
+        }
+
+        throw new Error();
+      });
+    },
+    refetchOnWindowFocus: false
+  });
+
+  return {
+    isLoading,
+    error,
+    data,
+    isFetching
+  };
+};
+
+const useCurrentUserEmailing = () => {
+  const { getIdToken, isAuth } = useAuth();
+
+  const { isLoading, error, data, isFetching } = useQuery<EmailingContact>({
+    queryKey: ['currentUser'],
+    enabled: isAuth,
+    refetchOnMount: false,
+    queryFn: async () => {
+      const token = await getIdToken();
+
+      if (!token) {
+        return null;
+      }
+
+      return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/user/emailing`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }).then((res) => {
+        if (res.ok) {
+          return res.json();
         }
 
         throw new Error();
@@ -106,7 +143,7 @@ const useCurrentSubscriptionLinks = (user: User) => {
       auth.isAuth &&
       !!user &&
       user.plan !== Plans.FREE &&
-      user.subscription.provider !== null,
+      user.subscription?.provider !== null,
     queryFn: async () => {
       const token = await auth.getIdToken();
 
@@ -137,4 +174,9 @@ const useCurrentSubscriptionLinks = (user: User) => {
   };
 };
 
-export { useCurrentSubscriptionLinks, useCurrentTeam, useCurrentUser };
+export {
+  useCurrentSubscriptionLinks,
+  useCurrentTeam,
+  useCurrentUser,
+  useCurrentUserEmailing
+};

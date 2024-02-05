@@ -10,7 +10,7 @@ import Layout from '../../layout/layout';
 import { useAuth } from '../../utils/auth';
 
 const meta = {
-  title: 'My account',
+  title: 'My account - security',
   description:
     'Manage your Mockoon Cloud account information and subscription details'
 };
@@ -63,7 +63,7 @@ const AccountSecurity: FunctionComponent = function () {
 
       {!isAuthLoading && isAuth && (
         <>
-          <AccountHeader />
+          <AccountHeader title='My account' subtitle='Manage your password' />
 
           <main className='pb-8 pb-md-11 mt-md-n6'>
             <div className='container-md'>

@@ -26,7 +26,6 @@ export type User = {
   teamRole: TeamRoles;
   templatesQuota: number;
   templatesQuotaUsed: number;
-  newsletter?: boolean;
   subscription: {
     provider: 'stripe' | 'paddle';
     renewOn: number;
@@ -38,6 +37,15 @@ export type User = {
   };
 };
 
-export type UserProperties = {
-  [T in keyof User]?: User[T];
+export type EmailingContact = {
+  email: string;
+  newsletter: boolean;
+  productUpdates: boolean;
+  coursePreview: boolean;
+};
+
+export type EmailingStatuses = {
+  newsletter: boolean;
+  productUpdates: boolean;
+  coursePreview: boolean;
 };

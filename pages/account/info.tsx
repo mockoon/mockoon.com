@@ -11,7 +11,7 @@ import { useAuth } from '../../utils/auth';
 import { useCurrentUser } from '../../utils/queries';
 
 const meta = {
-  title: 'My account',
+  title: 'My account - Overview',
   description:
     'Manage your Mockoon Cloud account information and subscription details'
 };
@@ -44,7 +44,7 @@ const AccountInfo: FunctionComponent = function () {
 
       {!isAuthLoading && isAuth && (
         <>
-          <AccountHeader />
+          <AccountHeader title='My account' subtitle='General information' />
 
           <main className='pb-8 pb-md-11 mt-md-n6'>
             <div className='container-md'>
@@ -72,7 +72,10 @@ const AccountInfo: FunctionComponent = function () {
                           {user &&
                             user.providerData &&
                             user.providerData.map((providerData) => (
-                              <div className='d-flex'>
+                              <div
+                                key={providerData.providerId}
+                                className='d-flex'
+                              >
                                 <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                                   <i className='icon-check'></i>
                                 </div>

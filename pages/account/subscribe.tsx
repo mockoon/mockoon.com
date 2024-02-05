@@ -8,7 +8,7 @@ import Layout from '../../layout/layout';
 import { useAuth } from '../../utils/auth';
 
 const meta = {
-  title: 'My account',
+  title: 'My account - Subscribe',
   description: 'Subscribe to a new plan'
 };
 
@@ -34,7 +34,7 @@ const AccountSubscribe: FunctionComponent = function () {
 
       {!isAuthLoading && isAuth && (
         <>
-          <AccountHeader />
+          <AccountHeader title='My account' subtitle='Subscribe to a plan' />
           <Plans showFree={false} showTagline={false} />
         </>
       )}

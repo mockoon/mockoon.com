@@ -62,7 +62,21 @@ const AccountMenu: FunctionComponent = function () {
                     </Link>
                   </li>
                 </>
-              )}{' '}
+              )}
+            <li
+              className={`list-item ${
+                router.pathname.includes('account/notifications')
+                  ? 'active'
+                  : ''
+              }`}
+            >
+              <Link
+                href='/account/notifications/'
+                className='list-link text-reset'
+              >
+                Notifications
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

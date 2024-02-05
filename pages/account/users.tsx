@@ -13,7 +13,7 @@ import { useAuth } from '../../utils/auth';
 import { useCurrentTeam, useCurrentUser } from '../../utils/queries';
 
 const meta = {
-  title: 'My account - Users',
+  title: 'My account - Manage team users',
   description: 'Manage your Mockoon Cloud subscription users'
 };
 
@@ -112,7 +112,8 @@ const AccountUsers: FunctionComponent = function () {
 
       {!isAuthLoading && isAuth && (
         <>
-          <AccountHeader />
+          <AccountHeader title='My account' subtitle='Manage your plan users' />
+
           <main className='pb-8 pb-md-11 mt-md-n6'>
             <div className='container-md'>
               <div className='row'>

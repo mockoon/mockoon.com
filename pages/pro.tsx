@@ -20,7 +20,7 @@ const faq: AccordionData = [
       {
         title: 'When will the "coming soon" services be available?',
         content:
-          'We don\'t have a release date yet, but we would like to make the data synchronization for solo developers available later this year (2023). There is no ETA yet for the team synchronization.<br/><br/> <a href="#product-updates-subscribe">Subscribe to the product updates</a> below to be notified of new releases.'
+          'We don\'t have a release date yet, but we would like to make the data synchronization for solo developers available in Q2 of this year. There is no ETA yet for the team synchronization.<br/><br/> <a href="#product-updates-subscribe">Subscribe to the product updates</a> below to be notified of new releases.'
       },
       {
         title: 'Can I give feedback or join a beta test?',

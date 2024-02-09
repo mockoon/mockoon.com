@@ -1,6 +1,6 @@
 ---
 title: 'Contributor spotlight: Harry Martland'
-excerpt: This is the first in a series of interviews with Mockoon's open-source contributors. Today we are talking with Harry Martland, Principal Engineer at Booking.com.
+excerpt: This is the first in a series of interviews with Mockoon's open-source contributors. Today, we are talking with Harry Martland, Principal Engineer at Booking.com.
 date: '2024-01-04'
 image: contributor-spotlight-harry-martland.png
 imageAlt: Article title with picture of Harry Martland
@@ -12,12 +12,12 @@ tags:
 author: guillaume
 meta:
   title: Contributor spotlight with Harry Martland
-  description: This is the first in a series of interviews with Mockoon's open-source contributors. Today we are talking with Harry Martland, Principal Engineer at Booking.com.
+  description: This is the first in a series of interviews with Mockoon's open-source contributors. Today, we are talking with Harry Martland, Principal Engineer at Booking.com.
 ---
 
 In the realm of open-source, the **community** plays a major role in building innovative products. No matter the form the contribution takes, feedback, code contribution, bug reports, or word of mouth, Mockoon wouldn't be what it has become without all of you.
 We started this series of interviews to put some more light on the contributors who spent time crafting features or fixing bugs for the benefit of all.
-Today, we are talking with **Harry Martland**, Principal Engineer at Booking.com, who shares his enthusiasm for contributing and using to Mockoon.
+Today, we are talking with **Harry Martland**, Principal Engineer at Booking.com, who shares his enthusiasm for contributing to and using Mockoon.
 
 ---
 

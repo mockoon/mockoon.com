@@ -1,19 +1,12 @@
-import CodeMirror from '@uiw/react-codemirror';
 import { FunctionComponent, useState } from 'react';
+import Base64Editor, {
+  base64ToBytes,
+  bytesToBase64
+} from '../../components/editors/base64-editor';
+import TextEditor from '../../components/editors/text-editor';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
-import { defaultCodeEditorConfig } from '../../utils/code-editor';
-
-function base64ToBytes(base64) {
-  const binString = atob(base64);
-  return Uint8Array.from(binString, (m) => m.codePointAt(0));
-}
-
-function bytesToBase64(bytes) {
-  const binString = String.fromCodePoint(...bytes);
-  return btoa(binString);
-}
 
 const Base64EncodeDecode: FunctionComponent = function () {
   const [error, setError] = useState<string>(null);
@@ -32,50 +25,28 @@ const Base64EncodeDecode: FunctionComponent = function () {
       />
       <section className='pb-5 pb-lg-10'>
         <div className='container'>
-          <div className='row'>
-            <div className='col-12 col-md-6 d-flex flex-column code-editor-container'>
-              <CodeMirror
-                {...defaultCodeEditorConfig([])}
-                value={text}
-                lang='text'
-                onChange={(value) => {
-                  setError(null);
-                  try {
-                    setBase64(bytesToBase64(new TextEncoder().encode(value)));
-                  } catch (error) {}
-                }}
-              ></CodeMirror>
+          <div className='code-editor-layout-dual'>
+            <TextEditor
+              value={text}
+              onValueChange={(value) => {
+                try {
+                  setBase64(bytesToBase64(new TextEncoder().encode(value)));
+                } catch (error) {}
+              }}
+            />
+
+            <div className='code-editor-sync m-2 fs-1 text-gray-600 align-self-center text-center'>
+              <i className='icon-sync'></i>
             </div>
 
-            <div className='col-12 col-md-6 mt-4 mt-md-0 d-flex flex-column code-editor-container'>
-              <CodeMirror
-                {...defaultCodeEditorConfig()}
-                value={base64}
-                lang='text'
-                onChange={(value) => {
-                  setError(null);
-
-                  try {
-                    setText(new TextDecoder().decode(base64ToBytes(value)));
-                  } catch (error) {
-                    setError(
-                      error.message.replace(
-                        "Failed to execute 'atob' on 'Window': ",
-                        ''
-                      )
-                    );
-                  }
-                }}
-              ></CodeMirror>
-              {error && (
-                <div className='bg-danger-subtle border-start border-danger border-4 p-4 mt-4 position-relative d-flex justify-content-between'>
-                  <div>
-                    {error}
-                    <span className='badge bg-danger rounded-pill badge-float badge-float-outside'></span>
-                  </div>
-                </div>
-              )}
-            </div>
+            <Base64Editor
+              value={base64}
+              onValueChange={(value) => {
+                try {
+                  setText(new TextDecoder().decode(base64ToBytes(value)));
+                } catch (error) {}
+              }}
+            />
           </div>
         </div>
       </section>

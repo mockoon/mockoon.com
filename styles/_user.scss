@@ -40,6 +40,13 @@ pre .code {
     display: block;
   }
 }
+.code-editor-layout-dual {
+  display: block;
+
+  .code-editor-sync {
+    transform: rotateZ(90deg);
+  }
+}
 
 .code-editor-container {
   height: 80vh;
@@ -48,6 +55,15 @@ pre .code {
 @media screen and (min-width: 768px) {
   .code-editor-container {
     height: 60vh;
+  }
+
+  .code-editor-layout-dual {
+    display: grid;
+    grid-template-columns: 1fr min-content 1fr;
+
+    .code-editor-sync {
+      transform: none;
+    }
   }
 }
 

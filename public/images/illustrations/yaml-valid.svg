@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 2000 2000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-35705,-60856)">
+        <g id="Sponsors">
+        </g>
+        <g id="yamlvalid" transform="matrix(0.998004,0,0,0.998004,11449.5,121.469)">
+            <rect x="24304" y="60856" width="2004" height="2004" style="fill:none;"/>
+            <g id="segment_black_24dp.svg" transform="matrix(40.08,0,0,40.08,25306,61858)">
+                <g transform="matrix(1,0,0,1,-12,-12)">
+                    <rect x="0" y="0" width="24" height="24" style="fill:none;fill-rule:nonzero;"/>
+                    <path d="M15.1,16C15.035,16.323 15,16.658 15,17C15,17.342 15.035,17.677 15.1,18L9,18L9,16L15.1,16ZM21,12.1C20.677,12.035 20.342,12 20,12C18.875,12 17.837,12.372 17.001,13L9,13L9,11L21,11L21,12.1ZM3,6L3,8L21,8L21,6L3,6Z" style="fill:rgb(51,94,234);fill-rule:nonzero;"/>
+                    <g transform="matrix(0.7,0,0,0.7,7.6,4.75)">
+                        <path d="M15.47,20.5L12,17L13.4,15.59L15.47,17.67L20.6,12.5L22,13.91L15.47,20.5Z" style="fill:rgb(55,184,135);"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

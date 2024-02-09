@@ -18,9 +18,16 @@ const tools = [
     imageSrc: '/images/illustrations/xml-valid.svg'
   },
   {
+    title: 'YAML validator',
+    description:
+      'Validate your YAML configuration online and get detailed error messages',
+    links: [{ src: '/tools/yaml-validator/', text: 'Validate' }],
+    imageSrc: '/images/illustrations/yaml-valid.svg'
+  },
+  {
     title: 'XML to JSON converter',
     description:
-      'Convert your XML data to a JSON object and verify its validity',
+      'Convert your data from XML to JSON and back and verify their validity',
     links: [{ src: '/tools/xml-to-json', text: 'Convert' }],
     imageSrc: '/images/illustrations/xml-to-json.svg'
   },
@@ -29,6 +36,13 @@ const tools = [
     description: 'Encode or decode your data to/from the Base64 format',
     links: [{ src: '/tools/base64-encode-decode', text: 'Encode/decode' }],
     imageSrc: '/images/illustrations/base64-encode-decode.svg'
+  },
+  {
+    title: 'JSON to YAML converter',
+    description:
+      'Convert your data from JSON to YAML and back and verify their validity',
+    links: [{ src: '/tools/json-to-yaml', text: 'Convert' }],
+    imageSrc: '/images/illustrations/json-to-yaml.svg'
   }
 ];
 

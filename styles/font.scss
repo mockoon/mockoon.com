@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'mockoon';
-  src: url('/fonts/mockoon.woff?dvl4ru') format('woff');
+  src: url('/fonts/mockoon.woff?dqmqhc') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -22,6 +22,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-sync:before {
+  content: '\e915';
+}
 .icon-discord:before {
   content: '\e90b';
   color: #7289da;

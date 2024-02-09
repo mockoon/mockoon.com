@@ -1,30 +1,10 @@
-import { xml } from '@codemirror/lang-xml';
-import { Diagnostic, forEachDiagnostic } from '@codemirror/lint';
-import CodeMirror, {
-  EditorSelection,
-  ReactCodeMirrorRef
-} from '@uiw/react-codemirror';
-import { FunctionComponent, useRef, useState } from 'react';
+import { FunctionComponent } from 'react';
+import XmlEditor from '../../components/editors/xml-editor';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
-import { defaultCodeEditorConfig, xmlLinter } from '../../utils/code-editor';
 
 const XmlValidator: FunctionComponent = function () {
-  const [error, setError] = useState<Diagnostic>(null);
-  const xmlEditor = useRef<ReactCodeMirrorRef>();
-
-  const scrollDocToView = () => {
-    if (!xmlEditor?.current?.state?.doc) {
-      return;
-    }
-
-    xmlEditor.current.view?.dispatch({
-      selection: EditorSelection.single(error.from, error.to),
-      scrollIntoView: true
-    });
-  };
-
   return (
     <Layout footerBanner='download'>
       <Meta
@@ -38,48 +18,10 @@ const XmlValidator: FunctionComponent = function () {
 
       <section className='pb-5 pb-lg-10'>
         <div className='container'>
-          <div className='row'>
-            <div className='col-12 d-flex flex-column code-editor-container'>
-              <CodeMirror
-                {...defaultCodeEditorConfig([xml(), xmlLinter])}
-                ref={xmlEditor}
-                value={`<root>  \n  <!-- XML validator -->\n  <message>Paste your XML here</message>\n</root>`}
-                lang='xml'
-                onUpdate={(view) => {
-                  setError(null);
-
-                  forEachDiagnostic(view.state, (error) => {
-                    setError(error);
-                  });
-                }}
-              ></CodeMirror>
-
-              {error && (
-                <div className='bg-danger-subtle border-start border-danger border-4 p-4 mt-4 position-relative d-flex justify-content-between'>
-                  <div>
-                    {error.message}
-                    <span className='badge bg-danger rounded-pill badge-float badge-float-outside'></span>
-                  </div>
-                  <div className='flex-shrink-0'>
-                    <a
-                      href='#'
-                      onClick={(e) => {
-                        e.preventDefault();
-                        scrollDocToView();
-                      }}
-                    >
-                      Go to line
-                    </a>
-                  </div>
-                </div>
-              )}
-              {!error && (
-                <div className='bg-success-subtle border-start border-success border-4 p-4 mt-4'>
-                  <div>XML is valid!</div>
-                </div>
-              )}
-            </div>
-          </div>
+          <XmlEditor
+            value={`<root>  \n  <!-- XML validator -->\n  <message>Paste your XML here</message>\n</root>`}
+            showValidMsg
+          />
         </div>
       </section>
 

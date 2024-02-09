@@ -1,31 +1,10 @@
-import { json, jsonParseLinter } from '@codemirror/lang-json';
-import { Diagnostic, forEachDiagnostic, linter } from '@codemirror/lint';
-import CodeMirror, {
-  EditorSelection,
-  ReactCodeMirrorRef
-} from '@uiw/react-codemirror';
-import { FunctionComponent, useRef, useState } from 'react';
+import { FunctionComponent } from 'react';
+import JsonEditor from '../../components/editors/json-editor';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
-import { defaultCodeEditorConfig } from '../../utils/code-editor';
 
-const linterExtension = linter(jsonParseLinter(), { delay: 100 });
 const JsonValidator: FunctionComponent = function () {
-  const [error, setError] = useState<Diagnostic>(null);
-  const editor = useRef<ReactCodeMirrorRef>();
-
-  const scrollDocToView = () => {
-    if (!editor?.current?.state?.doc) {
-      return;
-    }
-
-    editor.current.view?.dispatch({
-      selection: EditorSelection.single(error.from, error.to),
-      scrollIntoView: true
-    });
-  };
-
   return (
     <Layout footerBanner='download'>
       <Meta
@@ -38,44 +17,10 @@ const JsonValidator: FunctionComponent = function () {
       />
       <section>
         <div className='container'>
-          <div className='row'>
-            <div className='col-12 d-flex flex-column code-editor-container'>
-              <CodeMirror
-                {...defaultCodeEditorConfig([json(), linterExtension])}
-                ref={editor}
-                value={`{\n  "message": "Paste your JSON here"\n}`}
-                lang='json'
-                onUpdate={(view) => {
-                  setError(null);
-
-                  forEachDiagnostic(view.state, (error) => {
-                    setError(error);
-                  });
-                }}
-              ></CodeMirror>
-              {error && (
-                <div className='bg-danger-subtle border-start border-danger border-4 p-4 my-4 position-relative d-flex justify-content-between'>
-                  <div>{error.message}</div>
-                  <div className='flex-shrink-0'>
-                    <a
-                      href='#'
-                      onClick={(a) => {
-                        a.preventDefault();
-                        scrollDocToView();
-                      }}
-                    >
-                      Go to line
-                    </a>
-                  </div>
-                </div>
-              )}
-              {!error && (
-                <div className='bg-success-subtle border-start border-success border-4 p-4 my-4'>
-                  <div>JSON is valid!</div>
-                </div>
-              )}
-            </div>
-          </div>
+          <JsonEditor
+            value={`{\n  "message": "Paste your JSON here"\n}`}
+            showValidMsg
+          />
         </div>
       </section>
 

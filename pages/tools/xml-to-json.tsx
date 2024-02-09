@@ -1,39 +1,27 @@
-import { xml } from '@codemirror/lang-xml';
-import { Diagnostic, forEachDiagnostic } from '@codemirror/lint';
-import CodeMirror, {
-  EditorSelection,
-  ReactCodeMirrorRef
-} from '@uiw/react-codemirror';
 import Link from 'next/link';
-import { FunctionComponent, useRef, useState } from 'react';
-import { xml2json } from 'xml-js';
+import { FunctionComponent, useState } from 'react';
+import { json2xml, xml2json } from 'xml-js';
+import JsonEditor from '../../components/editors/json-editor';
+import XmlEditor from '../../components/editors/xml-editor';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
-import { defaultCodeEditorConfig, xmlLinter } from '../../utils/code-editor';
 
 const XmlToJson: FunctionComponent = function () {
-  const initialXml =
-    '<root>  \n  <!-- XML to JSON converter -->\n  <message>Paste your XML here</message>\n</root>';
-  const [error, setError] = useState<Diagnostic>(null);
-  const xmlEditor = useRef<ReactCodeMirrorRef>();
-  const [jsonContent, setJsonContent] = useState(
-    xml2json(initialXml, {
-      compact: true,
-      spaces: 2
-    })
-  );
-
-  const scrollDocToView = () => {
-    if (!xmlEditor?.current?.state?.doc) {
-      return;
+  const [jsonContent, setJsonContent] = useState<string>(`{
+  "root": {
+    "_comment": " XML to JSON converter ",
+    "message": {
+      "_text": "Paste your XML here"
     }
-
-    xmlEditor.current.view?.dispatch({
-      selection: EditorSelection.single(error.from, error.to),
-      scrollIntoView: true
-    });
-  };
+  }
+}`);
+  const [xmlContent, setXmlContent] = useState<string>(
+    `<root>
+  <!-- XML to JSON converter -->
+  <message>Paste your XML here</message>
+</root>`
+  );
 
   return (
     <Layout footerBanner='download'>
@@ -47,65 +35,38 @@ const XmlToJson: FunctionComponent = function () {
       />
       <section className='pb-5 pb-lg-10'>
         <div className='container'>
-          <div className='row'>
-            <div className='col-12 col-md-6 d-flex flex-column code-editor-container'>
-              <CodeMirror
-                {...defaultCodeEditorConfig([xml(), xmlLinter])}
-                ref={xmlEditor}
-                value={initialXml}
-                lang='xml'
-                onUpdate={(view) => {
-                  setError(null);
+          <div className='code-editor-layout-dual'>
+            <XmlEditor
+              value={xmlContent}
+              onValueChange={(value) => {
+                try {
+                  setJsonContent(
+                    xml2json(value, {
+                      compact: true,
+                      spaces: 2
+                    })
+                  );
+                } catch (error) {}
+              }}
+            />
 
-                  forEachDiagnostic(view.state, (error) => {
-                    setError(error);
-                  });
-                }}
-                onChange={(value) => {
-                  try {
-                    setJsonContent(
-                      xml2json(value, {
-                        compact: true,
-                        spaces: 2
-                      })
-                    );
-                  } catch (error) {}
-                }}
-              ></CodeMirror>
-
-              {error && (
-                <div className='bg-danger-subtle border-start border-danger border-4 p-4 mt-4 position-relative d-flex justify-content-between'>
-                  <div>
-                    {error.message}
-                    <span className='badge bg-danger rounded-pill badge-float badge-float-outside'></span>
-                  </div>
-                  <div className='flex-shrink-0'>
-                    <a
-                      href='#'
-                      onClick={(e) => {
-                        e.preventDefault();
-                        scrollDocToView();
-                      }}
-                    >
-                      Go to line
-                    </a>
-                  </div>
-                </div>
-              )}
-              {!error && (
-                <div className='bg-success-subtle border-start border-success border-4 p-4 mt-4'>
-                  <div>XML is valid!</div>
-                </div>
-              )}
+            <div className='code-editor-sync m-2 fs-1 text-gray-600 align-self-center text-center'>
+              <i className='icon-sync'></i>
             </div>
 
-            <div className='col-12 col-md-6 mt-4 mt-md-0 d-flex flex-column code-editor-container'>
-              <CodeMirror
-                {...defaultCodeEditorConfig()}
-                value={jsonContent}
-                lang='json'
-              ></CodeMirror>
-            </div>
+            <JsonEditor
+              value={jsonContent}
+              onValueChange={(value) => {
+                try {
+                  setXmlContent(
+                    json2xml(value, {
+                      compact: true,
+                      spaces: 2
+                    })
+                  );
+                } catch (error) {}
+              }}
+            />
           </div>
         </div>
       </section>

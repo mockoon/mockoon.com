@@ -905,7 +905,7 @@ result: This,is,my,string,
 
 ## stringify
 
-Return objects and arrays as a formatted JSON string indented with two spaces.
+Return objects and arrays as a formatted JSON string indented with two spaces. This helper requires to be used with triple curly braces (`{{{stringify ...}}}`) to avoid escaping of the JSON string by Handlebars.
 
 | Arguments (ordered) | Type | Description     |
 | ------------------- | ---- | --------------- |

@@ -184,7 +184,7 @@ jobs:
         with:
           node-version: 18
       - name: Start Mockoon CLI
-        uses: mockoon/cli-action@v1
+        uses: mockoon/cli-action@v2
         with:
           # Mockoon CLI version, default to 'latest'
           version: 'latest'

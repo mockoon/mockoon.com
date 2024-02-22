@@ -5,6 +5,7 @@ export type AccordionData = {
   title?: string;
   items: {
     title: string;
+    subtitle?: string;
     content: string | string[] | ReactElement;
     count?: number;
   }[];

@@ -62,6 +62,8 @@ const resources: AccordionData = [
     items: [
       {
         title: 'Contacts <code>/contacts</code>',
+        subtitle:
+          'Fake contacts JSON data including name, email, phone, complete address, etc.',
         content: (
           <div className='px-4'>
             <CodeBlock
@@ -87,6 +89,8 @@ const resources: AccordionData = [
       },
       {
         title: 'Movies <code>/movies</code>',
+        subtitle:
+          'Fake movies JSON data including title, genre, director, release year, rating, etc.',
         content: (
           <div className='px-4'>
             <CodeBlock
@@ -108,6 +112,7 @@ const resources: AccordionData = [
       },
       {
         title: 'Photos <code>/photos</code>',
+        subtitle: 'Fake photos JSON data including URL, caption, likes, etc.',
         content: (
           <div className='px-4'>
             <CodeBlock
@@ -127,6 +132,8 @@ const resources: AccordionData = [
       },
       {
         title: 'Posts <code>/posts</code>',
+        subtitle:
+          'Fake blog posts JSON data including title, author, date, content, number of views, etc.',
         content: (
           <div className='px-4'>
             <CodeBlock
@@ -148,6 +155,8 @@ const resources: AccordionData = [
       },
       {
         title: 'Todos <code>/todos</code>',
+        subtitle:
+          'Fake todos JSON data including title, completion status, priority, due date, etc.',
         content: (
           <div className='px-4'>
             <CodeBlock
@@ -167,6 +176,8 @@ const resources: AccordionData = [
       },
       {
         title: 'Users <code>/users</code>',
+        subtitle:
+          'Fake users JSON data including name, email, phone, address, birthdate, etc.',
         content: (
           <div className='px-4'>
             <CodeBlock
@@ -255,12 +266,18 @@ const Course: FunctionComponent = function () {
             <div className='col-12 col-lg-5 sticky-top'>
               <div className='card shadow-light-lg mb-6 mb-md-0'>
                 <div className='card-body'>
-                  <h3 className='fw-medium'>Playground base URL</h3>
+                  <h3 className='fw-medium'>Playground API base URL</h3>
                   <p>
                     <code>https://playground.mockoon.com/</code>
                   </p>
-                  <h4 className='my-6 fw-medium'>
-                    Available routes/methods for each resource
+                  <h4 className='my-6'>
+                    Available routes/methods for each resource (replace{' '}
+                    <code>
+                      {'{'}
+                      resources{'}'}
+                    </code>{' '}
+                    with the resource name on the left, e.g.{' '}
+                    <code>/contacts</code>):
                   </h4>
                   <ul className='list-group list-group-flush mb-6'>
                     <li className='list-group-item d-flex justify-content-between align-items-start pb-2'>
@@ -357,14 +374,6 @@ const Course: FunctionComponent = function () {
                         documentation
                       </Link>
                       .
-                      <br />
-                      ⚠️ DELETE, PATCH and PUT are disabled on the{' '}
-                      <code className='p-0'>
-                        /{'{'}
-                        resources
-                        {'}'}
-                      </code>{' '}
-                      route.
                     </p>
                   </div>
                 </div>

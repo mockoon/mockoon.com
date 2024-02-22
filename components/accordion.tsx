@@ -78,6 +78,13 @@ const Accordion: FunctionComponent<{
                 </div>
               </div>
 
+              {dataItem.subtitle && (
+                <div
+                  className='text-gray-800 px-6 pb-3'
+                  dangerouslySetInnerHTML={{ __html: dataItem.subtitle }}
+                ></div>
+              )}
+
               <div
                 className={`accordion-collapse ${
                   accordionItemState ? '' : 'collapse'

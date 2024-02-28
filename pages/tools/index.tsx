@@ -50,13 +50,13 @@ const Tools: FunctionComponent = function () {
   return (
     <Layout footerBanner='download'>
       <Meta
-        title={'Mockoon useful tools'}
-        description='Discover our set of useful tools to help you with your API development and testing: XML to JSON converter, JSON validator, XML validator'
+        title={'Mockoon useful online tools'}
+        description='Discover our set of useful online tools to help you with your API development and testing: XML to JSON converter, JSON validator, XML validator'
       />
 
       <Hero
         title='🛠️ Mockoon <span class="text-primary">useful tools</span>'
-        subtitle='Discover our set of useful tools to help you with your API development and testing'
+        subtitle='Discover our set of useful online tools to help you with your API development and testing'
       />
 
       <section className='py-6 py-md-8'>

@@ -55,11 +55,13 @@ const courseContent: AccordionData = [
         content: [
           'Introduction to Mockoon',
           'Installing Mockoon desktop application',
-          'Create your first mock API'
+          'Create your first mock API',
+          'Configure your server settings',
+          'Create simple endpoints'
         ]
       },
       {
-        title: 'Creating responses',
+        title: 'Customizing responses',
         content: [
           'Adding a JSON body',
           'Serving external files',

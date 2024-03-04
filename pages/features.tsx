@@ -162,6 +162,17 @@ const features: CardData[] = [
     ]
   },
   {
+    title: 'Programmable responses',
+    description:
+      'Local, global and environment variables support in responses.',
+    links: [
+      {
+        src: '/docs/latest/variables/global-variables/',
+        text: 'Documentation →'
+      }
+    ]
+  },
+  {
     title: 'Auto-save',
     description:
       'Real-time auto save as you type. Never worry again about saving!'

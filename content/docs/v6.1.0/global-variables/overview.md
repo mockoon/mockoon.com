@@ -22,7 +22,7 @@ Global variables are **shared** between **all routes** of an environment. Their 
 
 Global variables are available [everywhere templating helpers are supported](docs:templating/overview). However, it makes most sense to use them in the **response body**.
 
-> 💡 While you can use global variables in data buckets, keep in mind that bucket content will be [generated when the server starts](), when global variables are not yet set.
+> 💡 While you can use global variables in data buckets, keep in mind that bucket content will be [generated when the server starts](docs:data-buckets/overview#data-buckets-generation), when global variables are not yet set.
 
 ## Usage
 

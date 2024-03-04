@@ -34,7 +34,7 @@ const pricing = {
     },
     templatesQuota: 200,
     discount: '🏷️ 2 months free',
-    maxSeats: 20
+    maxSeats: 10
   },
   ENTERPRISE: {
     MONTHLY: {
@@ -530,7 +530,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                           <i className='icon-check'></i>
                         </div>
 
-                        <p>Organizations up to 20 seats</p>
+                        <p>Organizations up to 10 seats</p>
                       </div>
                       <div className='py-4 mt-auto'>
                         <span className='badge rounded-pill bg-gray-300 text-gray-800'>

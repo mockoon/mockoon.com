@@ -27,15 +27,15 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 | [`len`](#len)       |                     |
 | [`filter`](#filter) |                     |
 
-| Math                    |                       | Variables                       |
-| ----------------------- | --------------------- | ------------------------------- |
-| [`add`](#add)           | [`eq`](#eq)           | [`setVar`](#setvar)             |
-| [`subtract`](#subtract) | [`gt`](#gt)           | [`getVar`](#getvar)             |
-| [`multiply`](#multiply) | [`gte`](#gte)         | [`setGlobalVar`](#setglobalvar) |
-| [`divide`](#divide)     | [`lt`](#lt)           | [`getGlobalVar`](#getglobalvar) |
-| [`modulo`](#modulo)     | [`lte`](#lte)         |                                 |
-| [`ceil`](#ceil)         | [`toFixed`](#tofixed) |                                 |
-| [`floor`](#floor)       | [`round`](#round)     |                                 |
+| Math                    |                       |
+| ----------------------- | --------------------- |
+| [`add`](#add)           | [`eq`](#eq)           |
+| [`subtract`](#subtract) | [`gt`](#gt)           |
+| [`multiply`](#multiply) | [`gte`](#gte)         |
+| [`divide`](#divide)     | [`lt`](#lt)           |
+| [`modulo`](#modulo)     | [`lte`](#lte)         |
+| [`ceil`](#ceil)         | [`toFixed`](#tofixed) |
+| [`floor`](#floor)       | [`round`](#round)     |
 
 | Strings                   |                         | Dates                             | Misc                            |
 | ------------------------- | ----------------------- | --------------------------------- | ------------------------------- |
@@ -703,115 +703,6 @@ Create a valid ObjectId. It can generates the ObjectId based on the specified ti
 ```handlebars
 {{objectId 1414093117}}
 {{objectId '54495ad94c934721ede76d90'}}
-```
-
-## setVar
-
-Set a variable to be used later in the template. The value can be the result of another helper. To use it elsewhere in the template, refer to the variable with its name prefixed with an `@`: `{{@varname}}`. The variable can also be used as a helper parameter: `{{#repeat @varname}}...{{/repeat}}`.
-Variables declared in a block helper will be scoped to the block and unavailable outside.
-
-| Arguments (ordered) | Type   | Description    |
-| ------------------- | ------ | -------------- |
-| 0                   | string | Variable name  |
-| 1                   | any    | Variable value |
-
-**Examples**
-
-```handlebars
-{{setVar 'varname' 'value'}}
-{{setVar 'varname' (body 'id')}}
-
-usage:
-{{@varname}}
-{{#repeat @varname}}...{{/repeat}}
-
-declare a variable in a block helper:
-{{#repeat 5}}
-  {{setVar 'random' (oneOf (array '1' '2' '3'))}}
-  {{@random}}
-{{/repeat}}
-
-{{setVar 'myArray' (array '1' '2' '3')}}
-{{#each @myArray}}
-  {{setVar 'eachIndex' @index}}
-  {{@eachIndex}}
-{{/repeat}}
-```
-
-## getVar
-
-Dynamically get a variable set with [`setVar`](#setvar).
-
-| Arguments (ordered) | Type   | Description   |
-| ------------------- | ------ | ------------- |
-| 0                   | string | Variable name |
-
-**Examples**
-
-```handlebars
-{{setVar 'varname' 'value'}}
-
-{{getVar 'varname'}}
-{{getVar (concat 'var' 'name')}}
-{{getVar (body 'property')}}
-```
-
-## setGlobalVar
-
-Set a global variable to be used anywhere templating is supported (body, headers, etc.). Global variables are available on all the routes of an environment and they are reset when the environment is restarted.
-
-- The variable name and values can be dynamically created using other helpers.
-- The variable can store any kind of data (arrays, objects, string, etc.).
-- To get the value of a global variable, use the [`{{getGlobalVar 'varName'}}` helper below](#getglobalvar).
-
-| Arguments (ordered) | Type   | Description    |
-| ------------------- | ------ | -------------- |
-| 0                   | string | Variable name  |
-| 1                   | any    | Variable value |
-
-**Examples**
-
-```handlebars
-{{setGlobalVar 'varName' 'value'}}
-{{setGlobalVar 'varName' (bodyRaw 'id')}}
-{{setGlobalVar (queryParam 'param1') (bodyRaw 'id')}}
-```
-
-## getGlobalVar
-
-Get a global variable's value set with [`setGlobalVar`](#setglobalvar). Global variables are available on all the routes of an environment and they are reset when the environment is restarted.
-
-- The variable name and path can be dynamically created using other helpers.
-- The `path` supports two syntaxes, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
-  Please note that a value can be retrieved at the path if the variable contains valid JSON.
-- Primitives and data structures can be retrieved by the helper and reused in other helpers (see example below).
-- The full variable content (array, object, etc.) can be fetched when the `path` is omitted (`{{getGlobalVar 'varname'}}`).
-
-| Arguments (ordered) | Type   | Description                |
-| ------------------- | ------ | -------------------------- |
-| 0                   | string | Variable name              |
-| 1                   | string | Path to the value property |
-
-**Examples**
-
-```handlebars
-{{getGlobalVar 'varname'}}
-{{getGlobalVar (bodyRaw 'property')}}
-{{getGlobalVar (urlParam 'id')}}
-
-<!-- Using object-path syntax -->
-{{getGlobalVar 'varName' 'path.to.property'}}
-{{getGlobalVar 'varName' 'deep.property\.with\.dot'}}
-
-<!-- using JSONPath syntax -->
-{{getGlobalVar 'varName' '$.array.[*].property'}}
-
-{{#repeat (getGlobalVar 'varname')}}...{{/repeat}}
-
-{{#each (getGlobalVar 'varName')}}...{{/each}}
-
-<!-- Stringify the variable content -->
-{{{stringify (getGlobalVar 'varName')}}}
 ```
 
 ## includes

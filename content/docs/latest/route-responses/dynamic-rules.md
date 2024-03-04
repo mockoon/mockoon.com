@@ -80,7 +80,7 @@ Depending on the **target**, the way to access properties may be different:
 - **headers**: a header name like `Accept` or `Content-Type`.
 - **cookies**: the cookie name like `Session-id`.
 - **route param**: a route param name without the colon (":"), `:userId` becoming `userId`.
-- **global variable**: a [global variable](docs:global-variables/overview) name like `myVar`. You can use a path to access one of its properties if the variable is storing arrays or objects. Two syntaxes are supported, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`. Examples: `myVar.property.subProperty`, `myVar.property.0.subProperty` or `$.myVar.property`.
+- **global variable**: a [global variable](docs:variables/global-variables) name like `myVar`. You can use a path to access one of its properties if the variable is storing arrays or objects. Two syntaxes are supported, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`. Examples: `myVar.property.subProperty`, `myVar.property.0.subProperty` or `$.myVar.property`.
 - **request number**: _nothing has to be provided here for the request number_.
 
 For **body** and **query string**, if the property is an array, Mockoon will automatically check in the array if at least one item matches the value.

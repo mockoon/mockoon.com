@@ -37,7 +37,12 @@ const faq: AccordionData = [
 const tasks = {
   released: [
     {
-      link: '/docs/latest/global-variables/overview/',
+      link: '/docs/latest/variables/environment-variables/',
+      title: 'Environment variables support in templating',
+      pro: false
+    },
+    {
+      link: '/docs/latest/variables/global-variables/',
       title: 'Global variables',
       pro: false
     },
@@ -82,23 +87,12 @@ const tasks = {
       title: 'Support for JSON path',
       pro: false,
       target: '_blank'
-    },
-    {
-      link: '/docs/latest/route-responses/multiple-responses/#fallback-mode',
-      title: 'Response fallback mode',
-      pro: false
     }
   ],
   inProgress: [
     {
       link: 'https://github.com/mockoon/mockoon/issues/83',
       title: 'WebSockets support',
-      pro: false,
-      target: '_blank'
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/849',
-      title: 'Environment variables support in templating',
       pro: false,
       target: '_blank'
     },

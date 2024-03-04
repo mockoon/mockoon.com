@@ -27,7 +27,7 @@ We have released three new versions since September:
 
 - **[October's v5.1.0](/releases/5.1.0/)** with a new command palette (see below), Faker.js v8 migration, and support for [Range headers](/docs/latest/response-configuration/file-serving/#serving-a-range-of-bytes-from-a-file).
 - **[November's v6.0.0](/releases/6.0.0/)** with the [callbacks](/docs/latest/callbacks/overview/) feature and new [CLI import/export commands](https://github.com/mockoon/mockoon/tree/main/packages/cli#import-command).
-- **[December's v6.1.0](/releases/6.1.0/)** with [CRUD filtering and searching](/docs/latest/api-endpoints/crud-routes/#filtering-sorting-and-pagination-on-the-main-get-route) and [global variables](/docs/latest/global-variables/overview/).
+- **[December's v6.1.0](/releases/6.1.0/)** with [CRUD filtering and searching](/docs/latest/api-endpoints/crud-routes/#filtering-sorting-and-pagination-on-the-main-get-route) and [global variables](/docs/latest/variables/global-variables/).
 
 ## ☎️ Callbacks
 
@@ -62,7 +62,7 @@ Mockoon now supports **global variables** that can be set and accessed using the
 
 These variables can be used anywhere templating is supported, like the response body or headers. Their values are reset when the environment is stopped or restarted.
 
-📘&nbsp;[Read the documentation](/docs/latest/global-variables/overview/)
+📘&nbsp;[Read the documentation](/docs/latest/variables/global-variables/)
 
 ## 🎨 Command palette
 

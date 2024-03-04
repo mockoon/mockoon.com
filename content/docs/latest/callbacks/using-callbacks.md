@@ -16,7 +16,7 @@ After [creating callbacks](docs:callbacks/overview), you can link them in your r
 
 To link a callback to a route response, choose "Callbacks" in the route response menu:
 
-![click on the callbacks tab in the route response menu{997x153}](docs-img:open-route-response-callbacks.png)
+![click on the callbacks tab in the route response menu{1004x174}](docs-img:open-route-response-callbacks.png)
 
 Then, click on the "plus" button to add a new callback, and select the callback you want to link:
 

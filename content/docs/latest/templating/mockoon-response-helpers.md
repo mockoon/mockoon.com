@@ -1,7 +1,7 @@
 ---
 title: Response helpers
 meta:
-  title: Dynamically customize the response with with templating helpers
+  title: Dynamically customize your response with templating helpers
   description: "Dynamically customize your mock environments response with Mockoon's templating response helpers. All formats are supported: JSON, CSV, HTML, etc."
 order: 503
 ---

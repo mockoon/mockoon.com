@@ -74,7 +74,7 @@ Here is an example of what you can do with this templating system:
 }
 ```
 
-![body editor content{963x558}](docs-img:body-templating.png)
+![body editor content{963x551}](docs-img:body-templating.png)
 
 The above template produces the following body with this request:
 
@@ -171,7 +171,7 @@ Templating can be disabled for the body and file content in each route response 
 
 First, open the **Route response settings**:
 
-![click on route response fourth settings tab{997x153}](docs-img:open-route-response-settings.png)
+![click on route response fourth settings tab{1004x174}](docs-img:open-route-response-settings.png)
 
 Then, disable the templating by checking the box:
 
@@ -195,7 +195,7 @@ If you call this route with `/myroute/1`, `./file1.json` will be sent.
 
 Templating helpers can also be used in the **headers values** both in route headers and environment headers:
 
-![add a templating helper in the header value{997x223}](docs-img:headers-templating.png)
+![add a templating helper in the header value{1004x244}](docs-img:headers-templating.png)
 
 Finally, templating helpers can be used in the response **rule values** to create dynamic rules:
 

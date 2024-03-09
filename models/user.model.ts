@@ -24,6 +24,7 @@ export type User = {
   plan: Plans;
   teamId: string;
   teamRole: TeamRoles;
+  cloudSyncQuota: number;
   templatesQuota: number;
   templatesQuotaUsed: number;
   subscription: {

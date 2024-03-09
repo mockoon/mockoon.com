@@ -16,16 +16,22 @@ const Quotation: FunctionComponent<{ quotation: QuotationData }> = function ({
         {quotation.citation}
       </p>
       <div className='d-flex align-items-center'>
-        <img
-          className='avatar avatar-xl img-thumbnail rounded-circle'
-          src={`/images/${quotation.pictureUrl}`}
-          alt={quotation.authorRole}
-          width={128}
-          height={128}
-        />
+        {quotation.pictureUrl && (
+          <img
+            className='avatar avatar-xl img-thumbnail rounded-circle'
+            src={`/images/${quotation.pictureUrl}`}
+            alt={quotation.authorRole}
+            width={128}
+            height={128}
+          />
+        )}
         <div className='ms-5'>
-          <div className='fw-bold fs-sm'>{quotation.author}</div>
-          <div className='text-gray-700 fs-sm'>{quotation.authorRole}</div>
+          {quotation.author && (
+            <div className='fw-bold fs-sm'>{quotation.author}</div>
+          )}
+          {quotation.authorRole && (
+            <div className='text-gray-700 fs-sm'>{quotation.authorRole}</div>
+          )}
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ title: Auto-mocking and recording
 meta:
   title: Automatic API mock creation
   description: Learn how to automatically mock your API endpoints manually or by recording all the entering requests made to an existing API
-order: 710
+order: 810
 ---
 
 # Automatically create mock routes

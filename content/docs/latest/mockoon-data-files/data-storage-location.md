@@ -3,7 +3,7 @@ title: Data storage location
 meta:
   title: Data storage location
   description: Learn where Mockoon's data storage files and application settings are located and how to move them to other folders
-order: 900
+order: 1000
 ---
 
 # Data storage location

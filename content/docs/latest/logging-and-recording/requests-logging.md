@@ -3,7 +3,7 @@ title: Requests logging
 meta:
   title: Mock API requests logging
   description: Learn how to access requests and responses logs or record your REST API servers calls for easier debugging
-order: 700
+order: 800
 ---
 
 # Requests logging
@@ -87,9 +87,7 @@ When using this option, logs will contain the full transaction (request and resp
     },
     "response": {
       "body": "{}",
-      "headers": [
-        { "key": "content-type", "value": "application/json; charset=utf-8" }
-      ],
+      "headers": [{ "key": "content-type", "value": "application/json; charset=utf-8" }],
       "statusCode": 200,
       "statusMessage": "OK"
     },

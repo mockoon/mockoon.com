@@ -38,7 +38,7 @@ const SponsorUs: FunctionComponent = function () {
             <p>
               Entirely free, Mockoon saves time for{' '}
               <strong>thousands of people around the world</strong> every day
-              and recently crossed <strong>500k downloads</strong>!
+              and recently crossed <strong>600k downloads</strong>!
             </p>
             <p>
               Reaching this level of satisfaction requires a{' '}

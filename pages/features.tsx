@@ -47,7 +47,7 @@ const features: CardData[] = [
       'Use our read-to-use templates and AI assistant to quickly prototype your mock APIs',
     links: [
       {
-        src: '/templates/',
+        src: '/ai-powered-api-mocking/',
         text: 'Learn more →'
       }
     ]
@@ -69,6 +69,18 @@ const features: CardData[] = [
     ]
   },
   {
+    title: 'Cloud synchronization',
+    topTag: 'PRO',
+    topTagClasses: 'text-bg-warning',
+    description: 'Synchronize your mock APIs across all your devices.',
+    links: [
+      {
+        src: '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/',
+        text: 'Documentation →'
+      }
+    ]
+  },
+  {
     title: 'CORS',
     description:
       'Automatically send CORS headers (<code>Access-Control-Allow-Origin</code>, etc.) for OPTIONS requests.',
@@ -85,6 +97,18 @@ const features: CardData[] = [
     links: [
       {
         src: '/docs/latest/server-configuration/serving-over-tls/',
+        text: 'Documentation →'
+      }
+    ]
+  },
+  {
+    title: 'Real-time collaboration',
+    topTag: 'PRO',
+    topTagClasses: 'text-bg-warning',
+    description: 'Collaborate with your team in real-time on your mock APIs.',
+    links: [
+      {
+        src: '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/',
         text: 'Documentation →'
       }
     ]

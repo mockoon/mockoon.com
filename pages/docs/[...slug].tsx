@@ -255,6 +255,11 @@ export default function Docs(props: {
                         key={`category${menuItemIndex}`}
                       >
                         {menuItem.title}
+                        {menuItem.categoryName.includes('mockoon-cloud') && (
+                          <span className='badge text-bg-warning ms-2'>
+                            Pro
+                          </span>
+                        )}
                       </h6>
                     ),
                     itemsHtml

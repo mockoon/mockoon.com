@@ -6,8 +6,8 @@ export const sortByOrder = (firstTopic, secondTopic) =>
   firstTopic.order > secondTopic.order
     ? 1
     : secondTopic.order > firstTopic.order
-    ? -1
-    : 0;
+      ? -1
+      : 0;
 
 export const sortPathBySemver = (a: string, b: string) => {
   const aPathparts = a.split('/');
@@ -25,8 +25,8 @@ export const orderArticles = (articles: ArticleList) => {
     firstArticle.data.order > secondArticle.data.order
       ? 1
       : secondArticle.data.order > firstArticle.data.order
-      ? -1
-      : 0
+        ? -1
+        : 0
   );
 };
 
@@ -37,16 +37,16 @@ export const getDesktopLatestVersion = async () => {
   return data.tag;
 };
 
-export const getFreeTemplates = async () => {
+export const getTemplates = async () => {
   const listResponse = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/templates/free`
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/templates`
   );
   const templatesList: TemplateLight[] = await listResponse.json();
 
   const templatesResponses = await Promise.all(
     templatesList.map((templateEntry) => {
       return fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/templates/free/${templateEntry.id}`
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/templates/${templateEntry.id}`
       );
     })
   );

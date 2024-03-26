@@ -197,6 +197,11 @@
         "type": 301
       },
       {
+        "source": "/docs/latest/api-endpoints/templates-and-ai-assistant/",
+        "destination": "/docs/latest/mockoon-cloud/templates-and-ai-assistant/",
+        "type": 301
+      },
+      {
         "source": "/tutorials/angular-mocking/",
         "destination": "/tutorials/angular-api-call-and-mocking/",
         "type": 301

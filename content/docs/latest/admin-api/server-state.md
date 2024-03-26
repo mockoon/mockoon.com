@@ -3,7 +3,7 @@ title: Server state
 meta:
   title: Server state
   description: Learn how to purge the state of a running environment using the admin API, resetting the request count and regenerating the data buckets
-order: 701
+order: 801
 ---
 
 # Server state endpoint `/mockoon-admin/state`

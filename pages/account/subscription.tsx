@@ -9,6 +9,7 @@ import PaddleScript from '../../components/paddle';
 import Spinner from '../../components/spinner';
 import { frequencyNames, planNames } from '../../constants/plans';
 import Layout from '../../layout/layout';
+import { Plans } from '../../models/user.model';
 import { useAuth } from '../../utils/auth';
 import {
   useCurrentSubscriptionLinks,
@@ -251,34 +252,90 @@ const AccountSubscription: FunctionComponent = function () {
                         <h4 className='mb-0'>Quotas</h4>
                       </div>
                       <div className='card-body'>
-                        <div className='row align-items-center'>
-                          <div className='col-md-8'>
-                            <p className='mb-0'>
-                              AI generated mocks used (
-                              {userData?.templatesQuotaUsed}/
-                              {userData?.templatesQuota})
-                            </p>
+                        <div className='list-group list-group-flush'>
+                          <div className='list-group-item'>
+                            <div className='row align-items-center'>
+                              <div className='col-md-8'>
+                                <p className='mb-0'>
+                                  AI generated mocks used (
+                                  {userData?.templatesQuotaUsed}/
+                                  {userData?.templatesQuota})
+                                </p>
+                                <small className='text-gray-700'>
+                                  Resets monthly - Next reset on{' '}
+                                  {new Date(
+                                    userData?.nextQuotaResetOn * 1000
+                                  ).toDateString()}
+                                </small>
+                              </div>
+                              <div className='col-md-4'>
+                                <div className='progress'>
+                                  <div
+                                    className={`progress-bar ${
+                                      userData?.templatesQuotaUsed >=
+                                      userData?.templatesQuota
+                                        ? 'bg-warning'
+                                        : ''
+                                    }`}
+                                    role='progressbar'
+                                    aria-valuenow={userData?.templatesQuotaUsed}
+                                    aria-valuemin={0}
+                                    aria-valuemax={userData?.templatesQuota}
+                                    style={{
+                                      width:
+                                        (userData?.templatesQuotaUsed * 100) /
+                                          userData?.templatesQuota +
+                                        '%'
+                                    }}
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                          <div className='col-md-4'>
-                            <div className='progress'>
-                              <div
-                                className={`progress-bar ${
-                                  userData?.templatesQuotaUsed >=
-                                  userData?.templatesQuota
-                                    ? 'bg-warning'
-                                    : ''
-                                }`}
-                                role='progressbar'
-                                aria-valuenow={userData?.templatesQuotaUsed}
-                                aria-valuemin={0}
-                                aria-valuemax={userData?.templatesQuota}
-                                style={{
-                                  width:
-                                    (userData?.templatesQuotaUsed * 100) /
-                                      userData?.templatesQuota +
-                                    '%'
-                                }}
-                              ></div>
+                          <div className='list-group-item'>
+                            <div className='row align-items-center'>
+                              <div className='col-md-8'>
+                                <p className='mb-0'>
+                                  Cloud environments (
+                                  {userData?.cloudSyncItemsQuotaUsed}/
+                                  {userData?.cloudSyncItemsQuota})
+                                </p>
+                                <small className='text-gray-700'>
+                                  {(userData?.plan === Plans.TEAM ||
+                                    userData?.plan === Plans.ENTERPRISE) &&
+                                    'Quota shared with your team - '}
+                                  Maximum of{' '}
+                                  {userData?.cloudSyncSizeQuota / 1000000}MB per
+                                  environment
+                                </small>
+                              </div>
+                              <div className='col-md-4'>
+                                <div className='progress'>
+                                  <div
+                                    className={`progress-bar ${
+                                      userData?.cloudSyncItemsQuotaUsed >=
+                                      userData?.cloudSyncItemsQuota
+                                        ? 'bg-warning'
+                                        : ''
+                                    }`}
+                                    role='progressbar'
+                                    aria-valuenow={
+                                      userData?.cloudSyncItemsQuotaUsed
+                                    }
+                                    aria-valuemin={0}
+                                    aria-valuemax={
+                                      userData?.cloudSyncItemsQuota
+                                    }
+                                    style={{
+                                      width:
+                                        (userData?.cloudSyncItemsQuotaUsed *
+                                          100) /
+                                          userData?.cloudSyncItemsQuota +
+                                        '%'
+                                    }}
+                                  ></div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>

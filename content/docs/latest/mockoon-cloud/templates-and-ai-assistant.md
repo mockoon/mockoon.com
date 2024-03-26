@@ -3,11 +3,10 @@ title: Templates and AI assistant
 meta:
   title: Mockoon templates and AI assistant documentation
   description: All you need to know about Mockoon's mock API ready to use JSON templates and AI assistant to generate your own dynamic and realistic templates.
-order: 220
-proBadge: true
+order: 900
 ---
 
-# Templates and AI assistant
+# Templates and AI assistant<span className='badge text-bg-warning fs-4 align-text-top ms-2'>PRO</span>
 
 ---
 
@@ -31,7 +30,7 @@ Then, select the template you want to use and either copy-paste its content manu
 
 The "GET route" button will create a new HTTP GET route and copy the template content as the body. The "CRUD + data" button will create a new CRUD endpoint with a linked data bucket and copy the template content as the data bucket content.
 
-> Some templates are offered for free, while most of them require a subscription to [Mockoon Pro](/pro/). The templates part of the Pro plans are marked with a small yellow corner.
+> Starting with version 8.0.0 all the pre-generated templates are available for **free**.
 
 ## Use the AI assistant to generate realistic data
 
@@ -66,4 +65,4 @@ If you want more freedom when generating templates (using a different data forma
 
 ### AI assistant quota
 
-Each use of the AI assistant will count as one credit towards your monthly quota. You can check your quota in your [account page](https://mockoon.com/account/info/).
+Each use of the AI assistant will count as one credit towards your monthly quota. You can check your quota in your [account page](/account/subscription/).

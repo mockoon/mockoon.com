@@ -3,7 +3,7 @@ title: Requests logging
 meta:
   title: Mock API requests logging
   description: Learn how to access requests and responses logs or record your REST API servers calls for easier debugging
-order: 800
+order: 700
 ---
 
 # Requests logging

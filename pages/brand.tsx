@@ -158,6 +158,7 @@ const Brand: FunctionComponent = function () {
                     <i className='icon-clear'></i>
                   </div>
                   Alter the logos in any way, or combine them with any other
+                  logos, symbols, or icons
                 </li>
               </ul>
             </div>

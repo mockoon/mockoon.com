@@ -14,11 +14,11 @@ By default, Mockoon's mock APIs will listen to all available network adapters on
 
 To configure each environment to listen on a specific hostname, open the **Environment Settings** by clicking on the tab at the top of the window:
 
-![click on the settings tab{1148x160}](docs-img:open-environment-settings.png)
+![click on the settings tab{1198x160}](docs-img:open-environment-settings.png)
 
 Add a **custom hostname** in the input field:
 
-![field to set a custom hostname{1264x213}](docs-img:custom-hostname-setting.png)
+![field to set a custom hostname{1484x213}](docs-img:custom-hostname-setting.png)
 
 > ⚠️ You may need to restart your environment for the change to take effect.
 

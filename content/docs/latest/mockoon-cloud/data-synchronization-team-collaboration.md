@@ -74,9 +74,9 @@ When you modify an environment while being offline and go back online, three sce
 
 If you are disconnected from the cloud, the application will display a warning in the cloud environments list in the form of a orange or red cloud icon. Hovering over the icon will display the reason for the disconnection (e.g. incompatible version, etc.). You can also click on the icon to try to reconnect:
 
-![#sub#Tooltip showing a regular disconnection](/images/docs/static/mockoon-cloud/data-synchronization-team-collaboration/offline-reason-disconnected.png)
+![#sub#Tooltip showing a regular disconnection{287x219}](/images/docs/static/mockoon-cloud/data-synchronization-team-collaboration/offline-reason-disconnected.png)
 
-![#sub#Tooltip showing a disconnection due to an incompatible version](/images/docs/static/mockoon-cloud/data-synchronization-team-collaboration/offline-reason-incompatible-version.png)
+![#sub#Tooltip showing a disconnection due to an incompatible version{288x221}](/images/docs/static/mockoon-cloud/data-synchronization-team-collaboration/offline-reason-incompatible-version.png)
 
 ## Major versions migrations
 

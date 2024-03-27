@@ -20,11 +20,11 @@ Callbacks are fully configurable and are created at the environment level, like 
 
 To create a new callback, open the **Callbacks** options by clicking on the tab at the top of the window:
 
-![click on the callbacks tab at the top{955x160}](docs-img:open-callbacks-view.png)
+![click on the callbacks tab at the top{1005x160}](docs-img:open-callbacks-view.png)
 
 Add a new callback by clicking on the "plus" button:
 
-![Add a new callback by clicking on the plus button{1264x578}](docs-img:add-callback.png)
+![Add a new callback by clicking on the plus button{1484x578}](docs-img:add-callback.png)
 
 ## Configure a callback
 

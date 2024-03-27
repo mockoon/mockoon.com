@@ -14,7 +14,7 @@ order: 1120
 
 To copy a specific environment or route's JSON data to the clipboard, right-click on the environment or route and select **Copy to clipboard (JSON)**:
 
-![Right click on an environment and click on Copy to clipboard (JSON){690x328}](docs-img:export-clipboard-env.png)
+![Right click on an environment and click on Copy to clipboard (JSON){715x365}](docs-img:export-clipboard-env.png)
 
 The resulting JSON can be saved in a file and directly opened in the desktop app or used with the CLI.
 

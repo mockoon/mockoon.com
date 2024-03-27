@@ -14,13 +14,13 @@ Each [route response](docs:route-responses/multiple-responses) can serve a diffe
 
 You can choose each option using the body selector:
 
-![body type toggle buttons{1264x547}](docs-img:body-type-toggle.png)
+![body type toggle buttons{1484x547}](docs-img:body-type-toggle.png)
 
 ## Body editor (inline)
 
 You can use the body editor to directly create your response content. It supports all the [templating helpers](docs:templating/overview).
 
-![inline body editor{1169x800}](docs-img:inline-body-editor.png)
+![inline body editor{1254x800}](docs-img:inline-body-editor.png)
 
 > Mockoon will save the content of the inline body editor directly in your [data file](docs:mockoon-data-files/data-storage-location).  
 > Using an external file could improve the performance for large content.
@@ -29,7 +29,7 @@ You can use the body editor to directly create your response content. It support
 
 You can also choose to serve an external file, using the second option:
 
-![external file linking input{1169x800}](docs-img:body-file-serving.png)
+![external file linking input{1254x800}](docs-img:body-file-serving.png)
 
 Please refer to the [file serving documentation](docs:response-configuration/file-serving) for more information.
 
@@ -37,6 +37,6 @@ Please refer to the [file serving documentation](docs:response-configuration/fil
 
 You can finally choose to serve the content of a data bucket using the third option:
 
-![data bucket linking select menu{1169x800}](docs-img:body-data-bucket.png)
+![data bucket linking select menu{1254x800}](docs-img:body-data-bucket.png)
 
 Please refer to the [data bucket documentation](docs:data-buckets/overview) for more information.

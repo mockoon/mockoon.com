@@ -16,17 +16,17 @@ You can automatically create mock routes from HTTP transactions (request/respons
 
 Mockoon offers the possibility to automatically create mocks for entering requests. Click on the "plus" icon on a record to create a route containing the same information (headers, body, etc.):
 
-![create a route from a log{1214x633}](docs-img:logs-auto-mocking.png)
+![create a route from a log{1384x633}](docs-img:logs-auto-mocking.png)
 
 ## Record your API calls
 
 Mockoon can also automatically create mock API endpoints every time a request is logged. To activate this feature, click on the "Record" button at the top of the logs view:
 
-![click on the record button{1214x633}](docs-img:logs-start-recording.png)
+![click on the record button{1384x633}](docs-img:logs-start-recording.png)
 
 You can record in multiple environments at the same time. A red blinking recording icon will appear next to the environment name to indicate that the recording is active:
 
-![recording icon{964x433}](docs-img:logs-recording-in-progress.png)
+![recording icon{1184x433}](docs-img:logs-recording-in-progress.png)
 
 The recording will only create a route once, based on the path and HTTP method.
 

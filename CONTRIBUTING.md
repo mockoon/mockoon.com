@@ -66,7 +66,7 @@ Documentation links can be directly generated using `docs:section_name/topic_nam
 ### Documentation screenshots
 
 Documentation screenshots can be automatically generated using the [monorepo](https://github.com/mockoon/mockoon).
-Run the following commands: `npm run build:desktop:ci` then `npm run documentation:desktop`.
+Run the following commands: `npm run build:desktop:ci` then `npm run package:desktop:test:win` and `npm run documentation:desktop`. Packaging the desktop app is necessary to be able to run the automated tests and generate the screenshots.
 New screenshots will be created in `./packages/desktop/tmp/docs`. They can be copied in this repository's `/public/images/docs/latest` folder.
 
 Generating the documentation screenshots requires the Firebase emulator and API to run locally and the app to be authenticated with a fake paid account (in order to generate screenshots for Pro features).

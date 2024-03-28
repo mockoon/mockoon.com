@@ -56,12 +56,13 @@ Rules have four parts:
 
 In the dropdown menu you can choose between:
 
-- the **body** value (full raw content or one of its properties if request's `Content-Type` is either `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`).
-- the value of a **query string field**.
-- the value of a **header**.
-- the value of a **cookie**.
-- the value of a **route parameter**.
-- the value of a **global variable**.
+- the **request body** value (full raw content or one of its properties if request's `Content-Type` is either `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`).
+- the value of a **query parameter**.
+- the value of a **request header**.
+- the value of a **request cookie**.
+- the value of a [**route parameter**](docs:api-endpoints/routing#route-parameters).
+- the value of a [**global variable**](docs:variables/global-variables).
+- the value of a [**data bucket content**](docs:data-buckets/overview).
 - the **request number** index starting at 1.
 
 ### 2. Property name or path
@@ -70,17 +71,18 @@ In the dropdown menu you can choose between:
 
 Depending on the **target**, the way to access properties may be different:
 
-- **body**:
+- **request body**:
   - keep empty to match against the full raw body content.
   - use a path to access one of its properties. Two syntaxes are supported, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.
     Fetching object properties is compatible with request's bodies of `Content-Type` `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`.  
     _Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:response-configuration/xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties._  
     _Please also note that `multipart/form-data` only supports fields. Uploaded files will be ignored._
-- **query string**: either provide a property name like `filter` or a path if the query string field is an object `filter.primary`.
+- **query parameter**: either provide a property name like `filter` or a path if the query parameter is an object `filter.primary`.
 - **headers**: a header name like `Accept` or `Content-Type`.
 - **cookies**: the cookie name like `Session-id`.
-- **route param**: a route param name without the colon (":"), `:userId` becoming `userId`.
-- **global variable**: a [global variable](docs:variables/global-variables) name like `myVar`. You can use a path to access one of its properties if the variable is storing arrays or objects. Two syntaxes are supported, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`. Examples: `myVar.property.subProperty`, `myVar.property.0.subProperty` or `$.myVar.property`.
+- **route parameter**: a route parameter name without the colon (":"), `:userId` becoming `userId`.
+- **global variable**: a [global variable](docs:variables/global-variables) name like `myVar`. You can use a path to access one of its properties if the variable is storing arrays or objects. Two syntaxes are supported, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `myVar.key\.with\.dot`. Examples: `myVar.property.subProperty`, `myVar.property.0.subProperty` or `$.myVar.property`.
+- **data bucket content**: a [data bucket](docs:data-buckets/overview) name like `myData`. You can use a path to access one of its properties if the bucket is storing arrays or objects. Two syntaxes are supported, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `myData.key\.with\.dot`. Examples: `myData.property.subProperty`, `myData.property.0.subProperty` or `$.myData.property`.
 - **request number**: _nothing has to be provided here for the request number_.
 
 For **body** and **query string**, if the property is an array, Mockoon will automatically check in the array if at least one item matches the value.
@@ -114,4 +116,4 @@ You can also test for empty values with the following regex: `^$|\s+`.
 
 The **request number** supports simple entries like `1` or `2` but also regexes, allowing you to return a different response for the first 3 calls `^[1-3]$` or failing on odd request indexes `[13579]$`.
 
-> 💡 The response rule values also support templating helpers to create dynamic rules. See the [templating helpers](docs:templating/overview) documentation for more information.
+> 💡 The **response rule values also support templating helpers** to create dynamic rules. See the [templating helpers](docs:templating/overview) documentation for more information.

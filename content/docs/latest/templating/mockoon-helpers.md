@@ -1250,7 +1250,7 @@ Return a random GUID. Alias of `faker 'string.uuid'`.
 
 ## ipv4
 
-Return a random IP v4. Alias of `faker 'internet.ip'`.
+Return a random IP v4. Alias of `faker 'internet.ipv4'`.
 
 **Examples:**
 

@@ -35,7 +35,7 @@ Behind the scenes, our AI assistant leverages OpenAI's Chat GPT. We have fine-tu
 
 ## 💬 Priority support and welcome training
 
-By subscribing to Mockoon Pro's **Team** and **Enterprise** plans, you also benefit from our priority support with a dedicated support channel where we promptly address any questions or concerns you may have. This advanced support ensures that your API development and testing workflows remain uninterrupted.
+By subscribing to Mockoon Pro's **Enterprise** plan, you also benefit from our priority support with a dedicated support channel where we promptly address any questions or concerns you may have. This advanced support ensures that your API development and testing workflows remain uninterrupted.
 
 In addition to priority support, our **Enterprise** plan includes comprehensive welcome training. We understand that transitioning to a new platform can sometimes be daunting. It is why we offer personalized onboarding to help your team quickly get up to speed with Mockoon. This training covers all the ins and outs of our tools, guiding your team through its advanced features and best practices. By providing this training, we want to ensure a smooth and successful integration of Mockoon into your API development processes.
 

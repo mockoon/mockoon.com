@@ -18,11 +18,11 @@ A CRUD endpoint will automatically create a series of routes during runtime, all
 
 To create a CRUD route, click on the "CRUD route" entry in the add route menu:
 
-![Add a new CRUD route{390x304}](docs-img:add-crud-route.png)
+![Add a new CRUD route{440x304}](docs-img:add-crud-route.png)
 
 Then, set its path, usually a [resource name](/articles/api-guide-rest-api-components/#resource-url-request):
 
-![Set the CRUD route path{1264x176}](docs-img:set-crud-route-path.png)
+![Set the CRUD route path{1484x176}](docs-img:set-crud-route-path.png)
 
 > Your path can be more complex, and contains parameters or multiple sections. Remember that this will be the "prefix" of the different endpoints (see below).
 
@@ -30,7 +30,7 @@ Then, set its path, usually a [resource name](/articles/api-guide-rest-api-compo
 
 After creating a CRUD endpoint, you need to link it to a data bucket:
 
-![Link a data bucket to a CRUD route{1264x334}](docs-img:link-data-bucket-crud-route.png)
+![Link a data bucket to a CRUD route{1484x334}](docs-img:link-data-bucket-crud-route.png)
 
 > Head over to our [data buckets](docs:data-buckets/overview) documentation to learn how to create a new data bucket.
 
@@ -80,7 +80,7 @@ Mockoon will automatically translate a CRUD endpoint to multiple routes allowing
 
 By default, CRUD endpoints will use the `id` property to identify objects in an array in all the routes manipulating a single resource (e.g. GET `/resource/:id`). However, you can change this property to anything you want, like `uuid`, `custom_id`, etc:
 
-![Customize the CRUD id property{1264x334}](docs-img:customize-crud-id-property-key.png)
+![Customize the CRUD id property{1484x334}](docs-img:customize-crud-id-property-key.png)
 
 ## Overriding a route
 

@@ -14,7 +14,7 @@ order: 230
 
 You can organize your routes into folders and sub-folders:
 
-![routes organized in folders and sub-folders{799x518}](docs-img:routes-nested-folder.png)
+![routes organized in folders and sub-folders{849x518}](docs-img:routes-nested-folder.png)
 
 This new feature allows you to better organize your routes and make your APIs more readable and easier to navigate, with a clearer hierarchy.
 You can drag and drop to move or reorganize your routes and folders.

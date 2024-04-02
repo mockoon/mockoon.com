@@ -11,7 +11,7 @@ const Privacy: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Privacy policy' subtitle='Last update July 13, 2023' />
+      <Hero title='Privacy policy' subtitle='Last update April 2nd, 2024' />
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
@@ -24,8 +24,8 @@ const Privacy: FunctionComponent = function () {
                 application, and other sites or services we own and operate.
               </p>
               <p>
-                This policy is effective as of 1 July 2021 and was last updated
-                on 1 July 2021.
+                This policy is effective as of July 1st, 2021 and was last
+                updated on April 2nd, 2024.
               </p>
               <h3 className='mt-6 fw-medium'>1. Information We Collect</h3>
               <p>
@@ -37,13 +37,14 @@ const Privacy: FunctionComponent = function () {
               </p>
               <h3 className='mt-6 fw-medium'>2. Log Data</h3>
               <p>
-                When you visit our website or use our application, our servers
+                When you visit our website or use our applications, our servers
                 may automatically log the standard data provided by your web
-                browser. It may include your device's Internet Protocol (IP)
-                address, your browser type and version, the pages you visit, the
-                time and date of your visit, the time spent on each page, other
-                details about your visit, and technical details that occur in
-                conjunction with any errors you may encounter.
+                browser or network devices. It may include your device's
+                Internet Protocol (IP) address, your browser type and version,
+                the pages you visit, the time and date of your visit, the time
+                spent on each page, other details about your visit, and
+                technical details that occur in conjunction with any errors you
+                may encounter.
               </p>
               <p>
                 Please be aware that while this information may not be
@@ -54,8 +55,8 @@ const Privacy: FunctionComponent = function () {
                 3. Collection and Use of Information
               </h3>
               <p>
-                We may collect personal information from you when you do any of
-                the following on our website:
+                We may collect anonymous information when you do any of the
+                following:
               </p>
               <ul>
                 <li>
@@ -66,10 +67,29 @@ const Privacy: FunctionComponent = function () {
                   technology.
                 </li>
                 <li>
+                  Use our desktop application: in addition to the
+                  above-mentioned log data, we collect anonymous usage
+                  statistics. We do not collect any personal information neither
+                  do we use cookies or any other tracking technology.
+                </li>
+              </ul>
+              <p>
+                We may collect personal information from you when you do any of
+                the following on our website:
+              </p>
+              <ul>
+                <li>
+                  When you sign up for an account: profile information,
+                  including your email and password.
+                </li>
+                <li>
+                  When you purchase a service: billing details, payment
+                  information such as name, address and credit card information.
+                </li>
+                <li>
                   Contact us via email, social media, or on any similar
                   technologies.
                 </li>
-                <li>When you mention us on social media.</li>
                 <li>When you subscribe to our newsletter.</li>
               </ul>
               <p>
@@ -191,22 +211,14 @@ const Privacy: FunctionComponent = function () {
                 have the right to contact a regulatory body or data protection
                 authority in relation to your complaint.
               </p>
-              <h3 className='mt-6 fw-medium'>9. Use of Cookies</h3>
-              <p>
-                We use “cookies” to collect information about you and your
-                activity across our site. A cookie is a small piece of data that
-                our website stores on your computer, and accesses each time you
-                visit, so we can understand how you use our site. This helps us
-                serve you content based on preferences you have specified.
-              </p>
-              <h3 className='mt-6 fw-medium'>10 Limits of Our Policy</h3>
+              <h3 className='mt-6 fw-medium'>9. Limits of Our Policy</h3>
               <p>
                 Our website may link to external sites that are not operated by
                 us. Please be aware that we have no control over the content and
                 policies of those sites, and cannot accept responsibility or
                 liability for their respective privacy practices.
               </p>
-              <h3 className='mt-6 fw-medium'>11. Changes to This Policy</h3>
+              <h3 className='mt-6 fw-medium'>10. Changes to This Policy</h3>
               <p>
                 At our discretion, we may change our privacy policy to reflect
                 updates to our business processes, current acceptable practices,
@@ -219,7 +231,7 @@ const Privacy: FunctionComponent = function () {
                 opportunity to opt in to or opt out of, as applicable, any new
                 uses of your personal information.
               </p>
-              <h3 className='mt-6 fw-medium'>12. Contact Us</h3>
+              <h3 className='mt-6 fw-medium'>11. Contact Us</h3>
               <p>
                 For any questions or concerns regarding your privacy, you may
                 contact us using the following details:{' '}

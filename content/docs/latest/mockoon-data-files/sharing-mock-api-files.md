@@ -3,7 +3,7 @@ title: Sharing your mock API files
 meta:
   title: Sharing your mock API files
   description: Learn how to easily share your mock API files with other mockoon users, or use them with the CLI, and setup a git repository
-order: 910
+order: 1110
 ---
 
 # Sharing your mock API files
@@ -16,7 +16,7 @@ order: 910
 
 Each file can be easily shared with other Mockoon's users, "as-is". After [locating your environment file](docs:mockoon-data-files/data-storage-location#locating-the-files), you can share it with your coworkers by using Git for example. You coworkers can then save the file in any folder and open it directly using the "Open environment" button:
 
-![open an environment{449x235}](docs-img:open-environment.png)
+![open an environment{639x299}](docs-img:open-environment.png)
 
 ### Use a Git-tracked folder
 

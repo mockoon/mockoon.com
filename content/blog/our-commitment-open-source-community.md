@@ -26,7 +26,7 @@ I am committed to ensuring that Mockoon remains a **healthy and sustainable open
 
 Every project starts with some code published on a repository. For Mockoon, this was more than six years ago.
 
-![#sub#Mockoon's first commit!](/images/blog/commitment-open-source-community/mockoon-first-commit.png)
+![#sub#Mockoon's first commit!{280x73}](/images/blog/commitment-open-source-community/mockoon-first-commit.png)
 
 Innocent enough, it can soon lead to a long list of feature requests, pull requests, bug reports, and documentation to maintain. It means that people are interested in the project. However, the more the project grows, the more time and effort are required to maintain it. A blessing and a curse at the same time.
 
@@ -89,7 +89,7 @@ The answer is yes. Existing Mockoon applications are not going anywhere, and the
 
 A great example is the cloud synchronization feature that will be visible in the main menu but separated from the local API mocks you can create like before. Nothing will change for you if you don't want to use the cloud.
 
-![#sub#Mockoon's (future) main menu with the cloud environments list](/images/blog/commitment-open-source-community/cloud-sync-menu-preview.png)
+![#sub#Mockoon's (future) main menu with the cloud environments list{200x231}](/images/blog/commitment-open-source-community/cloud-sync-menu-preview.png)
 
 The SaaS and the sale of custom services are already helping finance the project a little. It's not enough to cover the costs, but it's a start. It gives me a lot of hope for the future.
 

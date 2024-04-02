@@ -11,7 +11,7 @@ const Terms: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Terms of service' subtitle='Last update June 8th, 2023' />
+      <Hero title='Terms of service' subtitle='Last update April 2nd, 2024' />
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
@@ -37,6 +37,11 @@ const Terms: FunctionComponent = function () {
                 Account management interface:{' '}
                 <a href='https://mockoon.com/account/info/'>
                   https://mockoon.com/account/info/
+                </a>
+                <br />
+                Cloud services status page:{' '}
+                <a href='https://mockoon.com/status/'>
+                  https://mockoon.com/status/
                 </a>
               </p>
               <p>
@@ -379,19 +384,103 @@ const Terms: FunctionComponent = function () {
                 Service does not relieve you of the obligation to pay any
                 outstanding fees accrued prior to the termination or cessation.
               </p>
-              <h3 className='mt-6 fw-medium'>11. Usage quotas</h3>
+
+              <h3 className='mt-6 fw-medium'>
+                11. Description of the cloud Services
+              </h3>
+              <h4 className='mt-6 fw-medium'>a. AI assistant</h4>
+              <p>
+                The AI assistant is a feature available to all our customers of
+                our Pro plans. Its usage is subject to the quotas specified in
+                the plan details and visible in your account. You can access the
+                AI assistant from the desktop application.
+              </p>
+              <p>
+                We do not guarantee the accuracy, reliability, or completeness
+                of the AI assistant's responses. The AI assistant is not a
+                substitute for professional advice, and you should not rely on
+                it as the sole basis for making decisions. You are solely
+                responsible for verifying the accuracy and relevance of the
+                information provided by the AI assistant.
+              </p>
+              <p>
+                We do not make any representation or warranty regarding the
+                availability, performance, or functionality of the AI assistant.
+                The AI assistant may be subject to downtime, errors, or
+                interruptions, and we do not guarantee that it will be available
+                at all times. We will make commercially reasonable efforts to
+                ensure the availability and performance of the AI assistant, and
+                inform you of any planned maintenance or downtime through our
+                Service status page.
+              </p>
+              <h4 className='mt-6 fw-medium'>
+                b. Data synchronization and real-time collaboration
+              </h4>
+              <p></p>
+              <p>
+                The data synchronization and real-time collaboration feature
+                ("Synchronization Feature") is available to all our customers of
+                our Pro plans. It is subject to the quotas specified in the plan
+                details and visible in your{' '}
+                <a href='/account/subscription/'>
+                  account management interface
+                </a>
+                .
+              </p>
+              <p>
+                We do not make any representation or warranty regarding the
+                availability, performance, or functionality of the
+                Synchronization Feature. The Synchronization Feature may be
+                subject to downtime, errors, or interruptions, and we do not
+                guarantee that it will be available at all times. We will make
+                commercially reasonable efforts to ensure the availability and
+                performance of the Synchronization Feature, and inform you of
+                any planned maintenance or downtime through our Service status
+                page.
+              </p>
+              <p>
+                Aside from the above-mentioned quotas, the Synchronization
+                Feature is subject to some technical limitations and monitoring,
+                including but not limited to the maximum number of devices that
+                can be synchronized from the same IP address, the maximum number
+                of concurrent requests to our servers or the volume of data that
+                can be transmitted over a certain period of time. These
+                limitations are designed to ensure fair usage of our
+                infrastructure and to prevent abuse or excessive load on our
+                systems. We reserve the right to modify or adjust the technical
+                limitations of the Synchronization Feature at any time. We
+                further reserve the right to suspend or terminate your access to
+                the Synchronization Feature if we determine that your usage is
+                unreasonable or causing an undue burden on our infrastructure.
+              </p>
+              <p>
+                While we take reasonable measures to ensure the durability and
+                integrity of the data synchronized through the Synchronization
+                Feature, it is not a backup service. We do not guarantee the
+                retention or availability of your data. You are solely
+                responsible for maintaining backups of your data and ensuring
+                that you have the necessary copies of your data in the event of
+                loss or corruption.
+              </p>
+              <h3 className='mt-6 fw-medium'>
+                12. Usage quotas and limitations
+              </h3>
               <p>
                 Our Service may include certain usage quotas, such as storage,
                 deployments, or AI assistant invocations, depending on the plan
                 you have subscribed to. These usage quotas are provided to
                 ensure fair usage of our services and to maintain the optimal
-                performance of our infrastructure.
+                performance of our infrastructure. They are visible in your{' '}
+                <a href='/account/subscription/'>
+                  account management interface
+                </a>
+                .
               </p>
               <p>
-                The usage quotas allocated to your account will reset at the
-                beginning of each billing cycle. Unused quotas from the previous
-                billing cycle will not be carried over to the next billing
-                cycle.
+                The usage quotas allocated monthly to your account will reset at
+                the beginning of each billing cycle. Unused quotas from the
+                previous billing cycle will not be carried over to the next
+                billing cycle.
               </p>
               <p>
                 The usage quotas assigned to your account are personal and
@@ -401,42 +490,31 @@ const Terms: FunctionComponent = function () {
               </p>
               <p>
                 We reserve the right to modify or adjust the usage quotas at any
-                time, subject to providing you with reasonable advance notice.
-                Such modifications or adjustments may be communicated through
-                written notice, email notifications, or by posting the updated
-                quotas within our Service.
+                time, subject to providing you with reasonable advance notice if
+                such modifications or adjustments are likely to have a material
+                adverse effect on the availability, performance, or
+                functionality of the Service. Such modifications or adjustments
+                may be communicated through written notice, email notifications,
+                or by posting the updated quotas within our Service.
               </p>
-              <h3 className='mt-6 fw-medium'>12. Priority support services</h3>
+              <h3 className='mt-6 fw-medium'>13. Priority support services</h3>
               <p>
                 Support services are available for customers subscribed to the
-                Pro and Enterprise plans of our Service. These plans include
-                access to our support team for assistance with technical issues,
-                inquiries, and general product-related questions.
+                Enterprise plan of our Service. This plan includes access to our
+                support team for assistance with technical issues, inquiries,
+                and general product-related questions.
               </p>
               <p>
                 Support services are provided during regular business hours and
-                working days in Luxembourg, unless otherwise specified in the
-                plan details or separately agreed upon in writing. Our business
-                hours are from{' '}
-                <strong>
-                  9 am to 5 pm, Monday to Friday, Luxembourg time (CET/CEST),
-                  excluding public holidays in Luxembourg
-                </strong>
-                .
+                working days in the CET/CEST timezone, unless otherwise
+                specified in the plan details or separately agreed upon in
+                writing. Our business hours are from{' '}
+                <strong>9 am to 5 pm CET/CEST, Monday to Friday</strong>.
               </p>
               <p>
-                The initial response time for support inquiries is as follows:
+                The initial response time for support inquiries is of{' '}
+                <strong>one business day</strong>.
               </p>
-              <ul>
-                <li>
-                  <strong>One business day</strong> for customers on the
-                  Enterprise plan.
-                </li>
-                <li>
-                  <strong>Two business days</strong> for customers on the Pro
-                  plan.
-                </li>
-              </ul>
               <p>
                 The support services encompass assistance and guidance regarding
                 the functionality, features, and usage of our Service. Our
@@ -484,7 +562,7 @@ const Terms: FunctionComponent = function () {
                 communicated to you through written notice or by posting updated
                 information within our Service.
               </p>
-              <h3 className='mt-6 fw-medium'>13. Welcome training</h3>
+              <h3 className='mt-6 fw-medium'>14. Welcome training</h3>
               <p>
                 As part of our Enterprise plan, we offer a one hour online video
                 call training session per company, per year. This training
@@ -496,7 +574,7 @@ const Terms: FunctionComponent = function () {
                 After subscribing, a representative from our Company will reach
                 out to you to coordinate the training session.
               </p>
-              <h3 className='mt-6 fw-medium'>14. Term and termination</h3>
+              <h3 className='mt-6 fw-medium'>15. Term and termination</h3>
               <p>
                 The term of this Agreement shall begin upon your acceptance of
                 these terms of service and shall automatically renew for the
@@ -534,7 +612,7 @@ const Terms: FunctionComponent = function () {
                 clauses relating to intellectual property rights, limitation of
                 liability, indemnification, and dispute resolution.
               </p>
-              <h3 className='mt-6 fw-medium'>15. Disclaimer</h3>
+              <h3 className='mt-6 fw-medium'>16. Disclaimer</h3>
               <p>
                 THE SERVICES AND SUPPORT SERVICES ARE PROVIDED "AS IS" AND THE
                 COMPANY DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING,
@@ -546,7 +624,7 @@ const Terms: FunctionComponent = function () {
                 DELIVERABLES.
               </p>
               <h3 className='mt-6 fw-medium'>
-                16. Limit of Liability and Waiver of Consequential Damages.
+                17. Limit of Liability and Waiver of Consequential Damages.
               </h3>
               <p>
                 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, EXCEPT FOR
@@ -573,7 +651,7 @@ const Terms: FunctionComponent = function () {
                 THE PARTIES HAVE RELIED ON THESE LIMITATIONS IN DETERMINING
                 WHETHER TO ENTER THIS AGREEMENT.
               </p>
-              <h3 className='mt-6 fw-medium'>17. Miscellaneous</h3>
+              <h3 className='mt-6 fw-medium'>18. Miscellaneous</h3>
               <p>
                 This Agreement, including its terms and conditions, may be
                 updated or modified by us from time to time. Any updates or
@@ -616,7 +694,7 @@ const Terms: FunctionComponent = function () {
                 communications, or understandings, whether written or oral,
                 relating to such subject matter.
               </p>
-              <h3 className='mt-6 fw-medium'>18. Governing law</h3>
+              <h3 className='mt-6 fw-medium'>19. Governing law</h3>
               <p>
                 This Agreement and any dispute arising out of or in connection
                 with this Agreement shall be governed by and construed in
@@ -630,7 +708,7 @@ const Terms: FunctionComponent = function () {
                 venue of such courts and waive any objections to the exercise of
                 personal jurisdiction over you by such courts.
               </p>
-              <h3 className='mt-6 fw-medium'>19. Binding agreement</h3>
+              <h3 className='mt-6 fw-medium'>20. Binding agreement</h3>
               <p>
                 This Agreement constitutes a binding contract between you and
                 us. You may not assign or transfer any rights or obligations

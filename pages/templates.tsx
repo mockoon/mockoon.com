@@ -6,7 +6,7 @@ import Meta from '../components/meta';
 import SidebarBanner from '../components/sidebar-banner';
 import Layout from '../layout/layout';
 import { Template } from '../models/templates.model';
-import { getFreeTemplates } from '../utils/utils';
+import { getTemplates } from '../utils/utils';
 
 const meta = {
   title: "Mockoon's templates",
@@ -15,7 +15,7 @@ const meta = {
 };
 
 export async function getStaticProps() {
-  const templates = await getFreeTemplates();
+  const templates = await getTemplates();
 
   return {
     props: {
@@ -73,9 +73,8 @@ const Templates: FunctionComponent<{
                 </ul>
                 <SidebarBanner
                   pro
-                  title='Unlock more templates and generate your own'
-                  text='With Mockoon Pro, you can unlock more templates and
-                  generate your own using our AI assistant.'
+                  title='Prototype faster than ever!'
+                  text='With Mockoon Pro, you can generate your own templates using our AI assistant and prototype faster than ever.'
                   link='/pro/'
                   ctaText='Discover Mockoon Pro →'
                 />
@@ -119,7 +118,16 @@ const Templates: FunctionComponent<{
                 <Link href={'/docs/latest/api-endpoints/crud-routes/'}>
                   CRUD endpoint
                 </Link>{' '}
-                with a data bucket.
+                with a data bucket. <br />
+                Learn more in our{' '}
+                <Link
+                  href={
+                    '/docs/latest/mockoon-cloud/templates-and-ai-assistant/#use-the-pre-generated-templates'
+                  }
+                >
+                  documentation
+                </Link>
+                .
               </p>
               <p>
                 <img

@@ -37,6 +37,16 @@ const faq: AccordionData = [
 const tasks = {
   released: [
     {
+      link: '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/',
+      title: 'Real-time collaboration for teams',
+      pro: true
+    },
+    {
+      link: '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/',
+      title: 'Data synchronization for solo developers',
+      pro: true
+    },
+    {
       link: '/docs/latest/variables/environment-variables/',
       title: 'Environment variables support in templating',
       pro: false
@@ -97,21 +107,16 @@ const tasks = {
       target: '_blank'
     },
     {
-      link: '/pro/',
-      title: 'Data synchronization for solo developers',
-      pro: true
+      link: '/course/',
+      title: 'Official online course',
+      pro: true,
+      target: null
     }
   ],
   comingSoon: [
     {
       link: '/pro/',
-      title: 'Real-time collaboration for teams',
-      pro: true,
-      target: null
-    },
-    {
-      link: '/course/',
-      title: 'Official online course',
+      title: 'API deployments in the cloud',
       pro: true,
       target: null
     }

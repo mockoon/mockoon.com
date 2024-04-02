@@ -143,7 +143,8 @@ const useCurrentSubscriptionLinks = (user: User) => {
       auth.isAuth &&
       !!user &&
       user.plan !== Plans.FREE &&
-      user.subscription?.provider !== null,
+      user.subscription !== undefined &&
+      user.subscription.provider !== null,
     queryFn: async () => {
       const token = await auth.getIdToken();
 

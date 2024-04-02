@@ -16,10 +16,10 @@ After [creating callbacks](docs:callbacks/overview), you can link them in your r
 
 To link a callback to a route response, choose "Callbacks" in the route response menu:
 
-![click on the callbacks tab in the route response menu{1004x174}](docs-img:open-route-response-callbacks.png)
+![click on the callbacks tab in the route response menu{1174x174}](docs-img:open-route-response-callbacks.png)
 
 Then, click on the "plus" button to add a new callback, and select the callback you want to link:
 
-![click on the plus button to add a new callback{977x234}](docs-img:link-callback-response.png)
+![click on the plus button to add a new callback{1147x234}](docs-img:link-callback-response.png)
 
 > 💡 You can **delay a callback execution** by adding a delay in milliseconds in the "Callback latency" field.

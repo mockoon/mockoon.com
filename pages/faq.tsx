@@ -120,6 +120,9 @@ const Faq: FunctionComponent = function () {
                     <p className='text-gray-700'>
                       No, you don't need an internet connection to use Mockoon.
                       Everything runs locally.
+                      <br />
+                      However, an internet connection is required to use our{' '}
+                      <a href='/pro/'>cloud services</a>.
                     </p>
                   </div>
                 </div>
@@ -271,6 +274,7 @@ const Faq: FunctionComponent = function () {
                     <p className='text-gray-700'>
                       Yes, we have <a href='/pro/'>Pro plans</a> that offers
                       additional features like AI-powered API mocks generation,
+                      data synchronization and real-time collaboration,
                       enterprise-grade support, and more!
                     </p>
                   </div>

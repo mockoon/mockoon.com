@@ -27,9 +27,8 @@ const AIPoweredMocking = function () {
               <aside className='flex-grow-1 sticky-top pt-4'>
                 <SidebarBanner
                   pro
-                  title='Generate your own templates using AI'
-                  text='With Mockoon Pro, you can unlock dozens of templates and
-        generate your own using our AI assistant.'
+                  title='Prototype faster than ever!'
+                  text='With Mockoon Pro, you can generate your own templates using our AI assistant and prototype faster than ever.'
                   link='/pro/'
                   ctaText='Discover Mockoon Pro →'
                 />
@@ -66,7 +65,16 @@ const AIPoweredMocking = function () {
                 <Link href={'/docs/latest/api-endpoints/crud-routes/'}>
                   CRUD endpoint
                 </Link>{' '}
-                with a data bucket.
+                with a data bucket. <br />
+                Learn more in our{' '}
+                <Link
+                  href={
+                    '/docs/latest/mockoon-cloud/templates-and-ai-assistant/#use-the-ai-assistant-to-generate-realistic-data'
+                  }
+                >
+                  documentation
+                </Link>
+                .
               </p>
               <p className='text-center'>
                 <img

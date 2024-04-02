@@ -16,11 +16,11 @@ Mockoon supports serving your mock API over TLS with a self-signed certificate b
 
 You can activate the TLSoption for each environment independently. Open the **Environment Settings** by clicking on the tab at the top of the window:
 
-![click on the settings tab{1148x160}](docs-img:open-environment-settings.png)
+![click on the settings tab{1198x160}](docs-img:open-environment-settings.png)
 
 Enable the **TLS option** by ticking the checkbox. The option was successfully activated if a yellow lock is displayed next to the environment name.
 
-![tick the TLS checkbox{804x343}](docs-img:enable-tls.png)
+![tick the TLS checkbox{854x343}](docs-img:enable-tls.png)
 
 > You may need to restart your environment for the change to take effect.
 
@@ -32,7 +32,7 @@ Please note that Mockoon is using a self-signed certificate to serve your enviro
 
 You can also provide your certificate in both PKCS12 or PEM formats by filling out the input fields with the path to the file(s).
 
-![add certificate path{1264x612}](docs-img:enable-tls-custom-certificate.png)
+![add certificate path{1484x612}](docs-img:enable-tls-custom-certificate.png)
 
 Mockoon also supports passphrase-protected keys and custom-trusted CA certificates. As Mockoon is using Node.js' `tls`, you can refer to the [`tls.createSecureContext()` documentation](https://nodejs.org/dist/latest-v16.x/docs/api/tls.html#tlscreatesecurecontextoptions) for a full description of the available options.
 

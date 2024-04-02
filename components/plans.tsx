@@ -13,14 +13,15 @@ const queryClient = new QueryClient();
 const pricing = {
   SOLO: {
     MONTHLY: {
-      price: 10,
+      price: 15,
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_SOLO_MONTHLY_PRICE_ID
     },
     YEARLY: {
-      price: 100,
+      price: 150,
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_SOLO_YEARLY_PRICE_ID
     },
     templatesQuota: 100,
+    syncQuota: 5,
     discount: '🏷️ 2 months free'
   },
   TEAM: {
@@ -33,8 +34,10 @@ const pricing = {
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_TEAM_YEARLY_PRICE_ID
     },
     templatesQuota: 200,
+    syncQuota: 10,
     discount: '🏷️ 2 months free',
-    maxSeats: 10
+    minSeats: 1,
+    maxSeats: 5
   },
   ENTERPRISE: {
     MONTHLY: {
@@ -46,7 +49,9 @@ const pricing = {
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_ENTERPRISE_YEARLY_PRICE_ID
     },
     templatesQuota: 500,
+    syncQuota: 20,
     discount: null,
+    minSeats: 3,
     maxSeats: 99
   }
 };
@@ -121,7 +126,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
 
       if (planId === 'TEAM' || planId === 'ENTERPRISE') {
         setConfigurePlan(planId);
-        setSeats(1);
+        setSeats(pricing[planId].minSeats);
         return;
       }
 
@@ -243,10 +248,15 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         onChange={(event) => {
                           const newSeats = parseInt(event.target.value);
 
-                          if (isNaN(newSeats) || newSeats < 1) {
-                            setSeats(1);
+                          if (
+                            isNaN(newSeats) ||
+                            newSeats < 1 ||
+                            newSeats < pricing[configurePlan].minSeats
+                          ) {
+                            setSeats(pricing[configurePlan].minSeats);
                             return;
                           }
+
                           if (newSeats > pricing[configurePlan].maxSeats) {
                             setSeats(pricing[configurePlan].maxSeats);
                             return;
@@ -320,16 +330,6 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                             <i className='icon-check'></i>
                           </div>
 
-                          <p>
-                            10 free <Link href={'/templates/'}>templates</Link>
-                          </p>
-                        </div>
-
-                        <div className='d-flex'>
-                          <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                            <i className='icon-check'></i>
-                          </div>
-
                           <p>Community support</p>
                         </div>
                       </div>
@@ -381,24 +381,20 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                           <Link href={'/features/'}>features</Link>
                         </p>
                       </div>
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
 
-                        <p className='mb-0'>
-                          Support our work on the open-source tools
-                        </p>
-                      </div>
                       <hr />
+
                       <div className='d-flex'>
                         <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
                         <p>
-                          📃 Access to dozens of pro{' '}
-                          <Link href={'/templates/'}>templates</Link>
+                          🪄 {pricing.SOLO.templatesQuota}{' '}
+                          <Link href={'/ai-powered-api-mocking/'}>
+                            AI-generated templates
+                          </Link>{' '}
+                          per month
                         </p>
                       </div>
                       <div className='d-flex'>
@@ -407,11 +403,15 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </div>
 
                         <p className='mb-0'>
-                          🪄 {pricing.SOLO.templatesQuota}{' '}
-                          <Link href={'/ai-powered-api-mocking/'}>
-                            AI-generated templates
+                          ☁️{' '}
+                          <Link
+                            href={
+                              '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
+                            }
+                          >
+                            Synchronize {pricing.SOLO.syncQuota} API mocks
                           </Link>{' '}
-                          per month
+                          accross your devices
                         </p>
                       </div>
                       <hr />
@@ -422,17 +422,32 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
 
                         <p>Community support</p>
                       </div>
-                      <div className='py-4 mt-auto'>
-                        <span className='badge rounded-pill bg-gray-300 text-gray-800'>
-                          <span className='h6 text-uppercase'>
-                            <i className='icon-hourglass_empty'></i> Coming soon
+
+                      <div className='mt-auto'>
+                        <hr />
+                        <div className='d-flex'>
+                          <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                            <i className='icon-check'></i>
+                          </div>
+
+                          <p className='mb-0'>
+                            Support our work on the open-source tools
+                          </p>
+                        </div>
+                        <hr />
+                        <div className='py-4'>
+                          <span className='badge rounded-pill bg-gray-300 text-gray-800'>
+                            <span className='h6 text-uppercase'>
+                              <i className='icon-hourglass_empty'></i> Coming
+                              soon
+                            </span>
                           </span>
-                        </span>
-                      </div>
-                      <div className='d-flex'>
-                        <p className='mb-0'>
-                          ☁️ Sync your API mocks accross your devices
-                        </p>
+                        </div>
+                        <div className='d-flex'>
+                          <p className='mb-0'>
+                            ☁️ Deploy your API mocks in the cloud (Q4 2024)
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -481,32 +496,15 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                           <Link href={'/features/'}>features</Link>
                         </p>
                       </div>
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
 
-                        <p className='mb-0'>
-                          Support our work on the open-source tools
-                        </p>
-                      </div>
                       <hr />
+
                       <div className='d-flex'>
                         <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
                         <p>
-                          📃 Access to dozens of pro{' '}
-                          <Link href={'/templates/'}>templates</Link>
-                        </p>
-                      </div>
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
-
-                        <p className='mb-0'>
                           🪄 {pricing.TEAM.templatesQuota}{' '}
                           <Link href={'/ai-powered-api-mocking/'}>
                             AI-generated templates
@@ -514,35 +512,59 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                           per month per seat
                         </p>
                       </div>
-                      <hr />
                       <div className='d-flex'>
                         <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
                         <p className='mb-0'>
-                          Priority support<sup>1</sup>
+                          ☁️{' '}
+                          <Link
+                            href={
+                              '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
+                            }
+                          >
+                            Synchronize {pricing.TEAM.syncQuota} API mocks
+                            accross your team
+                          </Link>{' '}
+                          and collaborate in real-time
                         </p>
                       </div>
                       <hr />
+
                       <div className='d-flex'>
                         <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
-                        <p>Organizations up to 10 seats</p>
+                        <p>Organizations up to {pricing.TEAM.maxSeats} seats</p>
                       </div>
-                      <div className='py-4 mt-auto'>
-                        <span className='badge rounded-pill bg-gray-300 text-gray-800'>
-                          <span className='h6 text-uppercase'>
-                            <i className='icon-hourglass_empty'></i> Coming soon
+
+                      <div className='mt-auto'>
+                        <hr />
+                        <div className='d-flex'>
+                          <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                            <i className='icon-check'></i>
+                          </div>
+
+                          <p className='mb-0'>
+                            Support our work on the open-source tools
+                          </p>
+                        </div>
+                        <hr />
+                        <div className='py-4'>
+                          <span className='badge rounded-pill bg-gray-300 text-gray-800'>
+                            <span className='h6 text-uppercase'>
+                              <i className='icon-hourglass_empty'></i> Coming
+                              soon
+                            </span>
                           </span>
-                        </span>
-                      </div>
-                      <div className='d-flex'>
-                        <p className='mb-0'>
-                          ☁️ Sync your API mocks accross your team
-                        </p>
+                        </div>
+                        <div className='d-flex'>
+                          <p className='mb-0'>
+                            ☁️ Deploy your API mocks in the cloud (Q4 2024)
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -593,24 +615,20 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                           <Link href={'/features/'}>features</Link>
                         </p>
                       </div>
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
 
-                        <p className='mb-0'>
-                          Support our work on the open-source tools
-                        </p>
-                      </div>
                       <hr />
+
                       <div className='d-flex'>
                         <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
                         <p>
-                          📃 Access to dozens of pro{' '}
-                          <Link href={'/templates/'}>templates</Link>
+                          🪄 {pricing.ENTERPRISE.templatesQuota}{' '}
+                          <Link href={'/ai-powered-api-mocking/'}>
+                            AI-generated templates
+                          </Link>{' '}
+                          per month per seat
                         </p>
                       </div>
                       <div className='d-flex'>
@@ -619,11 +637,16 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </div>
 
                         <p className='mb-0'>
-                          🪄 {pricing.ENTERPRISE.templatesQuota}{' '}
-                          <Link href={'/ai-powered-api-mocking/'}>
-                            AI-generated templates
+                          ☁️{' '}
+                          <Link
+                            href={
+                              '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
+                            }
+                          >
+                            Synchronize {pricing.ENTERPRISE.syncQuota} API mocks
+                            accross your team
                           </Link>{' '}
-                          per month per seat
+                          and collaborate in real-time
                         </p>
                       </div>
                       <hr />
@@ -660,20 +683,34 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                           <i className='icon-check'></i>
                         </div>
 
-                        <p>Unlimited seats</p>
+                        <p>Unlimited seats (minimum 3)</p>
                       </div>
 
-                      <div className='py-4 mt-auto'>
-                        <span className='badge rounded-pill bg-gray-300 text-gray-800'>
-                          <span className='h6 text-uppercase'>
-                            <i className='icon-hourglass_empty'></i> Coming soon
+                      <div className='mt-auto'>
+                        <hr />
+                        <div className='d-flex'>
+                          <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                            <i className='icon-check'></i>
+                          </div>
+
+                          <p className='mb-0'>
+                            Support our work on the open-source tools
+                          </p>
+                        </div>
+                        <hr />
+                        <div className='py-4'>
+                          <span className='badge rounded-pill bg-gray-300 text-gray-800'>
+                            <span className='h6 text-uppercase'>
+                              <i className='icon-hourglass_empty'></i> Coming
+                              soon
+                            </span>
                           </span>
-                        </span>
-                      </div>
-                      <div className='d-flex'>
-                        <p className='mb-0'>
-                          ☁️ Sync your API mocks accross your team
-                        </p>
+                        </div>
+                        <div className='d-flex'>
+                          <p className='mb-0'>
+                            ☁️ Deploy your API mocks in the cloud (Q4 2024)
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>

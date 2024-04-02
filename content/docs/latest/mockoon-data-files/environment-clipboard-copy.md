@@ -3,7 +3,7 @@ title: Copy data to the clipboard
 meta:
   title: Copy data to the clipboard
   description: Learn how to easily share your Mockoon's mock API JSON definitions with your team by copying them to the clipboard and importing them in the application
-order: 920
+order: 1120
 ---
 
 # Copy data to the clipboard
@@ -14,7 +14,7 @@ order: 920
 
 To copy a specific environment or route's JSON data to the clipboard, right-click on the environment or route and select **Copy to clipboard (JSON)**:
 
-![Right click on an environment and click on Copy to clipboard (JSON){690x328}](docs-img:export-clipboard-env.png)
+![Right click on an environment and click on Copy to clipboard (JSON){715x365}](docs-img:export-clipboard-env.png)
 
 The resulting JSON can be saved in a file and directly opened in the desktop app or used with the CLI.
 

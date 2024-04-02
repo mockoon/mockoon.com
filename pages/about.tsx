@@ -101,7 +101,7 @@ const About: FunctionComponent<{
             <p>
               Mockoon is now used by thousands of developers and companies
               around the world and has been{' '}
-              <strong>downloaded more than 500k times</strong>.
+              <strong>downloaded more than 600k times</strong>.
             </p>
           </div>
         </div>
@@ -166,7 +166,8 @@ const About: FunctionComponent<{
             <p>
               You can also support us by subscribing to our{' '}
               <strong>Pro plans</strong> and enjoy a whole new level of
-              capabilities: <strong>AI-powered API mocks generation</strong>,
+              capabilities: <strong>AI-powered API mocks generation</strong>,{' '}
+              <strong>data synchronization and real-time collaboration</strong>,
               enterprise-grade support, and more to come!
             </p>
           </div>

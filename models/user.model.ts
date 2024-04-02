@@ -24,9 +24,12 @@ export type User = {
   plan: Plans;
   teamId: string;
   teamRole: TeamRoles;
-  cloudSyncQuota: number;
+  cloudSyncItemsQuota: number;
+  cloudSyncItemsQuotaUsed: number;
+  cloudSyncSizeQuota: number;
   templatesQuota: number;
   templatesQuotaUsed: number;
+  nextQuotaResetOn: number;
   subscription: {
     provider: 'stripe' | 'paddle';
     renewOn: number;

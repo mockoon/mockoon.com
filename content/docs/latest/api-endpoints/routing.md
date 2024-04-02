@@ -16,11 +16,11 @@ In order to prefix all your mock API routes,
 
 Open the **Environment Settings** by clicking on the tab at the top of the window:
 
-![click on the settings tab{871x160}](docs-img:open-environment-settings.png)
+![click on the settings tab{921x160}](docs-img:open-environment-settings.png)
 
 Then, fill the **API prefix** input at the top of the **environment Settings**:
 
-![fill the prefix input{993x298}](docs-img:environment-prefix.png)
+![fill the prefix input{1128x298}](docs-img:environment-prefix.png)
 
 The prefix will appear under your environment name in the environments list. All your environment's routes will now be prefixed and available at the following address `http://localhost:port/myprefix/myroute` instead of `http://localhost:port/myroute`.
 
@@ -45,7 +45,7 @@ Routes support certain patterns and a subset of regular expressions. Here are so
 - `/ab+cd` will match `abcd`, `abbcd`, `abbbcd`, and so on.
 - `/ab(cd)?e` will match `/abe` and `/abcde`.
 
-![route pattern{995x74}](docs-img:route-patterns.png)
+![route pattern{1123x74}](docs-img:route-patterns.png)
 
 For a complete overview of the patterns available, please refer to Express' [route paths documentation](https://expressjs.com/en/guide/routing.html#route-paths).
 
@@ -56,7 +56,7 @@ For a complete overview of the patterns available, please refer to Express' [rou
 
 Route parameters can be defined in routes by using a colon `:`. The name of a parameter can only contains the following characters `A-Za-z0-9_`.
 
-![route parameter{995x74}](docs-img:route-params.png)
+![route parameter{1123x74}](docs-img:route-params.png)
 
 For a complete overview on how to use and declare route parameters, please refer to Express' [route parameters documentation](https://expressjs.com/en/guide/routing.html#route-parameters).
 

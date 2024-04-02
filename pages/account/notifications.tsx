@@ -130,7 +130,6 @@ const AccountNotifications: FunctionComponent = function () {
                                 <input
                                   className='form-check-input'
                                   type='checkbox'
-                                  id='newsletter'
                                   readOnly
                                   checked
                                   disabled

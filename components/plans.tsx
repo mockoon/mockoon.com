@@ -390,7 +390,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </div>
 
                         <p>
-                          🪄 {pricing.SOLO.templatesQuota}{' '}
+                          {pricing.SOLO.templatesQuota}{' '}
                           <Link href={'/ai-powered-api-mocking/'}>
                             AI-generated templates
                           </Link>{' '}
@@ -403,7 +403,6 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </div>
 
                         <p className='mb-0'>
-                          ☁️{' '}
                           <Link
                             href={
                               '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
@@ -505,7 +504,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </div>
 
                         <p>
-                          🪄 {pricing.TEAM.templatesQuota}{' '}
+                          {pricing.TEAM.templatesQuota}{' '}
                           <Link href={'/ai-powered-api-mocking/'}>
                             AI-generated templates
                           </Link>{' '}
@@ -518,7 +517,6 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </div>
 
                         <p className='mb-0'>
-                          ☁️{' '}
                           <Link
                             href={
                               '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
@@ -624,7 +622,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </div>
 
                         <p>
-                          🪄 {pricing.ENTERPRISE.templatesQuota}{' '}
+                          {pricing.ENTERPRISE.templatesQuota}{' '}
                           <Link href={'/ai-powered-api-mocking/'}>
                             AI-generated templates
                           </Link>{' '}
@@ -637,7 +635,6 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </div>
 
                         <p className='mb-0'>
-                          ☁️{' '}
                           <Link
                             href={
                               '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'

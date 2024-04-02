@@ -86,7 +86,8 @@ const SponsorUs: FunctionComponent = function () {
               <p>
                 You can also support us by subscribing to our{' '}
                 <strong>Pro plans</strong> and enjoy a whole new level of
-                capabilities: AI-powered API mocks generation, enterprise-grade
+                capabilities: AI-powered API mocks generation, data
+                synchronization and real-time collaboration, enterprise-grade
                 support, and more to come!
               </p>
             </div>

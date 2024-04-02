@@ -13,14 +13,15 @@ const queryClient = new QueryClient();
 const pricing = {
   SOLO: {
     MONTHLY: {
-      price: 10,
+      price: 15,
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_SOLO_MONTHLY_PRICE_ID
     },
     YEARLY: {
-      price: 100,
+      price: 150,
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_SOLO_YEARLY_PRICE_ID
     },
     templatesQuota: 100,
+    syncQuota: 5,
     discount: '🏷️ 2 months free'
   },
   TEAM: {
@@ -33,7 +34,9 @@ const pricing = {
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_TEAM_YEARLY_PRICE_ID
     },
     templatesQuota: 200,
+    syncQuota: 10,
     discount: '🏷️ 2 months free',
+    minSeats: 1,
     maxSeats: 5
   },
   ENTERPRISE: {
@@ -46,7 +49,9 @@ const pricing = {
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_ENTERPRISE_YEARLY_PRICE_ID
     },
     templatesQuota: 500,
+    syncQuota: 20,
     discount: null,
+    minSeats: 3,
     maxSeats: 99
   }
 };
@@ -121,7 +126,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
 
       if (planId === 'TEAM' || planId === 'ENTERPRISE') {
         setConfigurePlan(planId);
-        setSeats(1);
+        setSeats(pricing[planId].minSeats);
         return;
       }
 
@@ -243,10 +248,15 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         onChange={(event) => {
                           const newSeats = parseInt(event.target.value);
 
-                          if (isNaN(newSeats) || newSeats < 1) {
-                            setSeats(1);
+                          if (
+                            isNaN(newSeats) ||
+                            newSeats < 1 ||
+                            newSeats < pricing[configurePlan].minSeats
+                          ) {
+                            setSeats(pricing[configurePlan].minSeats);
                             return;
                           }
+
                           if (newSeats > pricing[configurePlan].maxSeats) {
                             setSeats(pricing[configurePlan].maxSeats);
                             return;
@@ -399,7 +409,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                               '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
                             }
                           >
-                            Synchronize 2 API mocks
+                            Synchronize {pricing.SOLO.syncQuota} API mocks
                           </Link>{' '}
                           accross your devices
                         </p>
@@ -514,22 +524,14 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                               '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
                             }
                           >
-                            Synchronize 5 API mocks accross your team
+                            Synchronize {pricing.TEAM.syncQuota} API mocks
+                            accross your team
                           </Link>{' '}
                           and collaborate in real-time
                         </p>
                       </div>
                       <hr />
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
 
-                        <p className='mb-0'>
-                          Priority support<sup>1</sup>
-                        </p>
-                      </div>
-                      <hr />
                       <div className='d-flex'>
                         <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
@@ -641,7 +643,8 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                               '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
                             }
                           >
-                            Synchronize 10 API mocks accross your team
+                            Synchronize {pricing.ENTERPRISE.syncQuota} API mocks
+                            accross your team
                           </Link>{' '}
                           and collaborate in real-time
                         </p>
@@ -680,7 +683,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                           <i className='icon-check'></i>
                         </div>
 
-                        <p>Unlimited seats</p>
+                        <p>Unlimited seats (minimum 3)</p>
                       </div>
 
                       <div className='mt-auto'>

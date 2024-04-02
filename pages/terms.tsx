@@ -11,7 +11,7 @@ const Terms: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Terms of service' subtitle='Last update March 31, 2024' />
+      <Hero title='Terms of service' subtitle='Last update April 2nd, 2024' />
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
@@ -413,22 +413,6 @@ const Terms: FunctionComponent = function () {
                 inform you of any planned maintenance or downtime through our
                 Service status page.
               </p>
-              <p>
-                AI assistant quotas:
-                <ul>
-                  <li>
-                    <strong>Solo plan</strong>: 100 invocations per month.
-                  </li>
-                  <li>
-                    <strong>Team plan</strong>: 200 invocations per month per
-                    user.
-                  </li>
-                  <li>
-                    <strong>Enterprise plan</strong>: 500 invocations per month
-                    per user.
-                  </li>
-                </ul>
-              </p>
               <h4 className='mt-6 fw-medium'>
                 b. Data synchronization and real-time collaboration
               </h4>
@@ -516,34 +500,21 @@ const Terms: FunctionComponent = function () {
               <h3 className='mt-6 fw-medium'>13. Priority support services</h3>
               <p>
                 Support services are available for customers subscribed to the
-                Pro and Enterprise plans of our Service. These plans include
-                access to our support team for assistance with technical issues,
-                inquiries, and general product-related questions.
+                Enterprise plan of our Service. This plan includes access to our
+                support team for assistance with technical issues, inquiries,
+                and general product-related questions.
               </p>
               <p>
                 Support services are provided during regular business hours and
-                working days in Luxembourg, unless otherwise specified in the
-                plan details or separately agreed upon in writing. Our business
-                hours are from{' '}
-                <strong>
-                  9 am to 5 pm, Monday to Friday, Luxembourg time (CET/CEST),
-                  excluding public holidays in Luxembourg
-                </strong>
-                .
+                working days in the CET/CEST timezone, unless otherwise
+                specified in the plan details or separately agreed upon in
+                writing. Our business hours are from{' '}
+                <strong>9 am to 5 pm CET/CEST, Monday to Friday</strong>.
               </p>
               <p>
-                The initial response time for support inquiries is as follows:
+                The initial response time for support inquiries is of{' '}
+                <strong>one business day</strong>.
               </p>
-              <ul>
-                <li>
-                  <strong>One business day</strong> for customers on the
-                  Enterprise plan.
-                </li>
-                <li>
-                  <strong>Two business days</strong> for customers on the Pro
-                  plan.
-                </li>
-              </ul>
               <p>
                 The support services encompass assistance and guidance regarding
                 the functionality, features, and usage of our Service. Our

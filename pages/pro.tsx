@@ -38,9 +38,9 @@ const faq: AccordionData = [
           "Community support is the free support channel for Mockoon users. It is available on our <a href='https://github.com/mockoon/mockoon/discussions' target='_blank' rel='noopener'>GitHub repository</a> or <a href='https://discord.gg/FtJjkejKGp' target='_blank' rel='noopener'>Discord server</a>."
       },
       {
-        title: 'What is the "priority support" (Team and Enterprise plan)?',
+        title: 'What is the "priority support" (Enterprise plan)?',
         content:
-          'We will provide a priority support channel for your team by email or through the platform of your choice (Slack, etc.). Our priority support service is provided during regular business hours and working days in Luxembourg (9 am to 5 pm, Monday to Friday, Luxembourg time (CET/CEST), excluding public holidays). Please refer to the <a href="/terms/">terms of service</a> for more information.'
+          'We will provide a priority support channel for your team by email or through the platform of your choice (Slack, etc.). Our priority support service is provided during regular business hours and working days (9 am to 5 pm CET/CEST, Monday to Friday). Please refer to the <a href="/terms/">terms of service</a> for more information.'
       },
       {
         title: 'What is the "welcome online training" (Enterprise plan)?',
@@ -75,7 +75,12 @@ const faq: AccordionData = [
       {
         title: 'Do you offer discounts for schools, bootcamps or students?',
         content:
-          'We offer a discount for education purposes by providing educational institutions with a discount on the Solo plan. Do not hesitate to <a href="/contact-form/">contact us</a> to become a partner.'
+          'We provide educational institutions with free Solo plans for all their students. Do not hesitate to <a href="/contact-form/">contact us</a> to become a partner.'
+      },
+      {
+        title: 'Do you have a discount for startups?',
+        content:
+          'We offer substantial discounts for startups and bootstrapped entrepreneurs who did not raise funds. Do not hesitate to <a href="/contact-form/">contact us</a> to learn about the conditions and benefits of the program.'
       },
       {
         title: 'How can I cancel my subscription?',

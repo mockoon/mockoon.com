@@ -11,7 +11,7 @@ const Privacy: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Privacy policy' subtitle='Last update March 31, 2024' />
+      <Hero title='Privacy policy' subtitle='Last update April 2nd, 2024' />
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
@@ -25,7 +25,7 @@ const Privacy: FunctionComponent = function () {
               </p>
               <p>
                 This policy is effective as of July 1st, 2021 and was last
-                updated on March 31, 2024.
+                updated on April 2nd, 2024.
               </p>
               <h3 className='mt-6 fw-medium'>1. Information We Collect</h3>
               <p>

@@ -21,7 +21,7 @@ Localazy is building a set of tools to manage all the localization and translati
 But building bug-free SaaS or applications is a complex task. It requires prototyping new features using the right scenarios and in-depth testing during and after the development phase. All these steps require having access to the correct test data at the right time, especially when testing edge cases or specific application states.
 Localazy chose to integrate Mockoon in their workflow to mock their APIs for its ease of use and flexibility. They drastically sped up their development and testing processes while keeping their product at a high-quality standard.
 
-> {"type": "##quotation##", "citation": "Mockoon was easy to start with, was fast and lightweight. One clear purpose tool which immediately solved our problem.", "author": "Jan Bílek", "authorRole": "Product Manager @ Localazy", "pictureUrl": "case-studies/localazy/jan-bilek.png"}
+> {"type": "##quotation##", "citation": "Mockoon was easy to start with, was fast and lightweight. One clear purpose tool which immediately solved our problem.", "author": "Jan Bílek", "authorRole": "Product Manager @ Localazy", "pictureUrl": "external/localazy/jan-bilek.png"}
 
 ## How to design, prototype, test and demo applications against realistic data and scenarios?
 
@@ -46,6 +46,6 @@ Mockoon is also multi-purpose. Localazy's front-end team uses the tool during de
 
 Even Localazy's design team uses the tool during prototyping to have easier access to more varied scenarios. Thus, they reduce the back and forth between designers and developers and speed up the product development process even more.
 
-> {"type": "##quotation##", "citation": "When testing or debugging, don't waste your time trying to explore all these edge cases manually. Just try Mockoon and see for yourself!", "author": "Jan Bílek", "authorRole": "Product Manager @ Localazy", "pictureUrl": "case-studies/localazy/jan-bilek.png"}
+> {"type": "##quotation##", "citation": "When testing or debugging, don't waste your time trying to explore all these edge cases manually. Just try Mockoon and see for yourself!", "author": "Jan Bílek", "authorRole": "Product Manager @ Localazy", "pictureUrl": "external/localazy/jan-bilek.png"}
 
 Using an API mocking tool like Mockoon is a net plus for Localazy. It allows them to save time during multiple phases of the product development while keeping the same product quality.

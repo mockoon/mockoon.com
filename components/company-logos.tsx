@@ -17,7 +17,8 @@ const CompanyLogos = function () {
     { src: '/images/logos/ntt-docomo.svg', alt: 'NTT Docomo logo' },
     { src: '/images/logos/jpmchase.svg', alt: 'JP Morgan Chase logo' },
     { src: '/images/logos/cryptocom.svg', alt: 'Crypto.com logo' },
-    { src: '/images/logos/audi.svg', alt: 'Audi logo' }
+    { src: '/images/logos/audi.svg', alt: 'Audi logo' },
+    { src: '/images/logos/appwrite.svg', alt: 'Appwrite logo' }
   ];
   const [logos, setLogos] = useState([]);
 
@@ -28,7 +29,7 @@ const CompanyLogos = function () {
   return (
     <div className='container'>
       <h4 className='text-gray-700 text-center pb-6 fw-bold'>
-        Trusted by awesome teams
+        Trusted by awesome teams at
       </h4>
       <div className='row align-items-center justify-content-center'>
         {logos.slice(0, 6).map((logo, logoIndex) => (

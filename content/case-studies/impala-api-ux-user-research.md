@@ -25,7 +25,7 @@ Impala is creating hotel booking APIs for the travel industry, allowing develope
 
 This approach leads to a win-win situation: happy customers, quick integration times, and fewer support requests.
 
-> {"type": "##quotation##", "citation": "Public APIs require the same, if not more, research and validation than UI design before they are built and released.", "author": "Toby Urff", "authorRole": "CPO & Co-founder @ Impala", "pictureUrl": "case-studies/impala/toby-urff.jpg"}
+> {"type": "##quotation##", "citation": "Public APIs require the same, if not more, research and validation than UI design before they are built and released.", "author": "Toby Urff", "authorRole": "CPO & Co-founder @ Impala", "pictureUrl": "external/impala/toby-urff.jpg"}
 
 Impala understands this fact better than any other company, and their API design process is well-proven. After writing extensive documentation and OpenAPI specifications for each new feature or endpoint, they invite a few outside developers for 45-minute user research sessions. During these sessions, they ask the participants to perform several tasks in the new API. By obtaining this immediate feedback, they ensure that the feature will be easy to understand and integrate.
 
@@ -33,7 +33,7 @@ Impala understands this fact better than any other company, and their API design
 
 Since Impala started conducting these user research sessions during API development, they also mocked their APIs to provide the new endpoints to the participants without too much hassle. However, API mocking presents challenges, especially if you want the experience to be realistic and have limited time to set it up. Creating convincing mocks for short sessions of 45 minutes can be very time-consuming and sometimes a bit overkill. Impala found that available mocking tools on the market provide limited mocking possibilities and don't offer enough features to guarantee the realistic experience required by such focus groups.
 
-> {"type": "##quotation##", "citation": "Mockoon is the answer to just about every mocking need you might have.", "author": "Yasmin Desai", "authorRole": "Senior Product Manager @ Impala", "pictureUrl": "case-studies/impala/yasmin-desai.jpg"}
+> {"type": "##quotation##", "citation": "Mockoon is the answer to just about every mocking need you might have.", "author": "Yasmin Desai", "authorRole": "Senior Product Manager @ Impala", "pictureUrl": "external/impala/yasmin-desai.jpg"}
 
 Mockoon offers a unique set of features, such as templating and rules, that allow users to set up great mocks in no time. Some of these advanced features help create complex scenarios that closely mimic the behavior of APIs. It's the kind of setup you wouldn't want to implement manually, especially when you need to do this every time you plan new focus groups.
 
@@ -53,7 +53,7 @@ Furthermore, Mockoon makes it easy to test new features that are part of larger 
 
 ### Using Mockoon for user research is a no-brainer
 
-> {"type": "##quotation##", "citation": "If you are building a public API as part of your product, try using Mockoon not just to mock an API for internal development, but for UX research. It's a really low-effort way to make sure developers building in your ecosystem have a great time doing so.", "author": "Toby Urff", "authorRole": "CPO & Co-founder @ Impala", "pictureUrl": "case-studies/impala/toby-urff.jpg"}
+> {"type": "##quotation##", "citation": "If you are building a public API as part of your product, try using Mockoon not just to mock an API for internal development, but for UX research. It's a really low-effort way to make sure developers building in your ecosystem have a great time doing so.", "author": "Toby Urff", "authorRole": "CPO & Co-founder @ Impala", "pictureUrl": "external/impala/toby-urff.jpg"}
 
 Impala has found that thanks to Mockoon's complete set of options, minimal learning curve, and easy-to-use interface, they can offer more complex mocking scenarios during user interviews without spending too much time setting up throwaway mocks. The result is thorough UX research by testing and validating more complex scenarios, accelerating feedback, and ensuring a high-quality release.
 

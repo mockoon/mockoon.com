@@ -38,7 +38,7 @@ export default function CaseStudies(props: { articles: ArticleList }) {
                     data={{
                       title: article.data.title,
                       description: article.data.excerpt,
-                      imageSrc: `/images/case-studies/${article.data.image}`,
+                      imageSrc: `/images/external/${article.data.image}`,
                       imageAlt: article.data.imageAlt,
                       links: [
                         {

@@ -23,7 +23,7 @@ Today, we are talking with **Isuru Weerarathna**, who shares his enthusiasm for 
 
 ### Can you introduce yourself and your background in software development, your passions or hobbies?
 
-Hi, my name is [Isuru Weerarathna](https://github.com/isuru89). I am a full-stack developer with 10+ years of experience in the software industry. I love finding software solutions for business problems. I have worked in different dynamic environments, from startups to big corporations.  
+Hi, my name is Isuru Weerarathna ([@isuru89](https://github.com/isuru89)). I am a full-stack developer with 10+ years of experience in the software industry. I love finding software solutions for business problems. I have worked in different dynamic environments, from startups to big corporations.  
 I am passionate about solving problems through design and coding.  
 Outside those brain-exhausting activities, I also cook, play casual computer games, and read novels during my free time.
 

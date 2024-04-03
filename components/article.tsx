@@ -21,7 +21,7 @@ const Article: FunctionComponent<{
             <div className='row d-flex align-items-center'>
               <div className='text-center col-12 col-lg-4'>
                 <img
-                  src={`/images/case-studies/${props.articleData.header.image}`}
+                  src={`/images/external/${props.articleData.header.image}`}
                   alt={`${props.articleData.header.imageAlt}`}
                 />
               </div>

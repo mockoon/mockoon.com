@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import Card from '../components/card';
 import CompanyLogos from '../components/company-logos';
 import Hero from '../components/hero';
@@ -17,7 +17,51 @@ const meta = {
     'Mockoon is the easiest and quickest way to run mock REST API servers. No remote deployment, no account required, free, open source and cross-platform.'
 };
 
+const caseStudies = [
+  {
+    quotation:
+      'Mockoon is an extremely easy and familiar tool to use which makes building up mock servers a breeze.',
+    link: '/blog/contributor-spotlight-bradley-schofield-appwrite/',
+    authorImg: '/images/external/appwrite/bradley-schofield.png',
+    authorImgAlt: 'Full Stack Engineer at Appwrite',
+    authorName: 'Bradley Schofield',
+    authorPosition: 'Full Stack Engineer',
+    companyLogo: '/images/external/appwrite/logo.svg',
+    companyLogoAlt: 'Appwrite logo'
+  },
+  {
+    quotation:
+      'Mockoon is the answer to just about every mocking need you might have.',
+    link: '/case-studies/impala-api-ux-user-research/',
+    authorImg: '/images/external/impala/yasmin-desai.jpg',
+    authorImgAlt: 'Senior Product Manager at Impala',
+    authorName: 'Yasmin Desai',
+    authorPosition: 'Senior Product Manager',
+    companyLogo: '/images/external/impala/logo-dark.svg',
+    companyLogoAlt: 'Impala logo'
+  },
+  {
+    quotation:
+      'Mockoon was easy to start with, was fast and lightweight. One clear purpose tool which immediately solved our problem.',
+    link: '/case-studies/localazy-speed-development-api-mocking/',
+    authorImg: '/images/external/localazy/jan-bilek.png',
+    authorImgAlt: 'Product Manager at Localazy',
+    authorName: 'Jan Bílek',
+    authorPosition: 'Product Manager',
+    companyLogo: '/images/external/localazy/logo-dark.svg',
+    companyLogoAlt: 'Localazy logo'
+  }
+];
+
 const HomePage: FunctionComponent = function () {
+  const [selectedCaseStudies, setSelectedCaseStudies] = useState([]);
+
+  useEffect(() => {
+    setSelectedCaseStudies(
+      caseStudies.sort(() => 0.5 - Math.random()).slice(0, 2)
+    );
+  }, []);
+
   return (
     <Layout footerBanner='newsletter'>
       <Meta title={meta.title} description={meta.description} />
@@ -48,86 +92,49 @@ const HomePage: FunctionComponent = function () {
       <section className='py-5 py-lg-10'>
         <div className='container'>
           <div className='row justify-content-around'>
-            <div className='col-12 col-lg-4'>
-              <blockquote className='blockquote mb-8 mb-lg-0'>
-                <div className='img-fluid mb-5 mb-md-6'>
-                  <img
-                    src='/images/case-studies/impala/logo-dark.svg'
-                    style={{ maxWidth: '40%' }}
-                    alt='Impala logo'
-                  />
-                </div>
-
-                <p className='quotation p-5 lead text-gray-700 mb-0'>
-                  Mockoon is the answer to just about every mocking need you
-                  might have.
-                  <br />
-                  <a
-                    href='/case-studies/impala-api-ux-user-research/'
-                    className='fs-5'
-                  >
-                    Read more
-                  </a>
-                </p>
-                <div className='d-flex align-items-center'>
-                  <div className='avatar avatar-xl'>
-                    <img
-                      className='avatar-img img-thumbnail rounded-circle mr-4'
-                      src='/images/case-studies/impala/yasmin-desai.jpg'
-                      alt='Senior Product Manager @ Impala'
-                      width={128}
-                      height={128}
-                    />
+            {selectedCaseStudies.map((caseStudy, caseStudyIndex) => (
+              <div
+                key={`caseStudy${caseStudyIndex}`}
+                className='col-12 col-lg-4 mb-8 mb-lg-0'
+              >
+                <blockquote className='d-flex flex-column h-100'>
+                  <p className='quotation p-5 lead text-gray-700 mb-0'>
+                    {caseStudy.quotation}
+                    <br />
+                    <a href={caseStudy.link} className='fs-5'>
+                      Read more
+                    </a>
+                  </p>
+                  <div className='d-flex align-items-center mt-auto'>
+                    <div>
+                      <div className='avatar avatar-xl'>
+                        <img
+                          className='avatar-img img-thumbnail rounded-circle mr-4'
+                          src={caseStudy.authorImg}
+                          alt={caseStudy.authorImgAlt}
+                        />
+                      </div>
+                    </div>
+                    <div className='ps-5'>
+                      <p className='fs-sm mb-0'>
+                        <span className='fw-bold'>{caseStudy.authorName} </span>{' '}
+                        -{' '}
+                        <span className='text-gray-700'>
+                          {caseStudy.authorPosition}
+                        </span>
+                      </p>
+                      <div className='img-fluid mt-2'>
+                        <img
+                          src={caseStudy.companyLogo}
+                          alt={caseStudy.companyLogoAlt}
+                          style={{ maxHeight: '1.8rem' }}
+                        />
+                      </div>
+                    </div>
                   </div>
-                  <div className='ps-5'>
-                    <p className='fs-sm fw-bold mb-0'>Yasmin Desai</p>
-                    <p className='fs-sm text-gray-700 mb-0'>
-                      Senior Product Manager @ Impala
-                    </p>
-                  </div>
-                </div>
-              </blockquote>
-            </div>
-            <div className='col-12 col-lg-4'>
-              <blockquote className='mb-8 mb-lg-0'>
-                <div className='img-fluid mb-5 mb-md-6'>
-                  <img
-                    src='/images/case-studies/localazy/logo-dark.svg'
-                    style={{ maxWidth: '40%' }}
-                    alt='Localazy logo'
-                  />
-                </div>
-
-                <p className='quotation p-5 lead text-gray-700 mb-0'>
-                  Mockoon was easy to start with, was fast and lightweight. One
-                  clear purpose tool which immediately solved our problem.
-                  <br />
-                  <a
-                    href='/case-studies/localazy-speed-development-api-mocking/'
-                    className='fs-5'
-                  >
-                    Read more
-                  </a>
-                </p>
-                <div className='d-flex align-items-center'>
-                  <div className='avatar avatar-xl'>
-                    <img
-                      className='avatar-img img-thumbnail rounded-circle mr-4'
-                      src='/images/case-studies/localazy/jan-bilek.png'
-                      alt='Product Manager @ Localazy'
-                      width={128}
-                      height={128}
-                    />
-                  </div>
-                  <div className='ps-5'>
-                    <p className='fs-sm fw-bold mb-0'>Jan Bílek</p>
-                    <p className='fs-sm text-gray-700 mb-0'>
-                      Product Manager @ Localazy
-                    </p>
-                  </div>
-                </div>
-              </blockquote>
-            </div>
+                </blockquote>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -320,7 +327,7 @@ const HomePage: FunctionComponent = function () {
                   <Card
                     data={{
                       title: 'Uses Mockoon to conduct API UX research',
-                      imageSrc: '/images/case-studies/impala/logo-dark.svg',
+                      imageSrc: '/images/external/impala/logo-dark.svg',
                       imageAlt: 'Impala logo',
                       links: [
                         {
@@ -341,7 +348,7 @@ const HomePage: FunctionComponent = function () {
                     data={{
                       title:
                         'Uses API mocking to speed up application development and testing',
-                      imageSrc: '/images/case-studies/localazy/logo-dark.svg',
+                      imageSrc: '/images/external/localazy/logo-dark.svg',
                       imageAlt: 'Localazy logo',
                       links: [
                         {

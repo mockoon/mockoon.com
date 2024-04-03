@@ -56,7 +56,7 @@ const AccountUsers: FunctionComponent = function () {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/team`,
         {
-          body: JSON.stringify({ email }),
+          body: JSON.stringify({ email: email.trim() }),
           method: 'POST',
           headers: {
             Authorization: `Bearer ${await getIdToken()}`,

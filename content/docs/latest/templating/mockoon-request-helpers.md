@@ -36,6 +36,8 @@ Get the value at a given `path` from the request body if the entering `Content-T
 - If no value is present at the requested `path`, the default value will be used.
 - A third parameter (boolean) can be set to true to returns a stringified value even if it's a primitive.
 
+> 🛠️ Use our online [JSONPath and object-path evaluator](/tools/json-object-path-evaluator/) to test your JSONPath or object-path syntaxes and view the results in real-time.
+
 | Arguments (ordered) | Type    | Description                            |
 | ------------------- | ------- | -------------------------------------- |
 | 0                   | string  | Path to the body property              |
@@ -69,6 +71,8 @@ Get the **raw** value at a given `path` from the request body if the entering `C
 - The full request's raw body can also be fetched when the `path` is omitted (`{{bodyRaw}}`) independently from the request's `Content-Type`.
 - If no value is present at the requested `path`, the default value will be used.
 - This helper allows the use of `body` within handlebars' helpers such as `{{#each}}` and `{{#if}}`.
+
+> 🛠️ Use our online [JSONPath and object-path evaluator](/tools/json-object-path-evaluator/) to test your JSONPath or object-path syntaxes and view the results in real-time.
 
 | Arguments (ordered) | Type   | Description                            |
 | ------------------- | ------ | -------------------------------------- |
@@ -108,6 +112,8 @@ Get the value at a given `path` from the request's query string. Complex query s
 - If there is no value at the requested `path`, the default value will be used.
 - A third parameter (boolean) can be set to true to returns a stringified value even if it's a primitive.
 
+> 🛠️ Use our online [JSONPath and object-path evaluator](/tools/json-object-path-evaluator/) to test your JSONPath or object-path syntaxes and view the results in real-time.
+
 | Arguments (ordered) | Type    | Description                            |
 | ------------------- | ------- | -------------------------------------- |
 | 0                   | string  | Path to the query param property       |
@@ -139,6 +145,8 @@ Get the **raw** value at a given `path` from the request's query string. Complex
 - The full query string object can also be fetched when the `path` is omitted (`{{queryParamRaw}}`).
 - If there is no value at the requested `path`, the default value will be used.
 - This helper allows the use of `queryParam` within handlebars' helpers such as `{{#each}}` and `{{#if}}`.
+
+> 🛠️ Use our online [JSONPath and object-path evaluator](/tools/json-object-path-evaluator/) to test your JSONPath or object-path syntaxes and view the results in real-time.
 
 | Arguments (ordered) | Type   | Description                            |
 | ------------------- | ------ | -------------------------------------- |

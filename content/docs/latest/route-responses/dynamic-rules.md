@@ -87,6 +87,8 @@ Depending on the **target**, the way to access properties may be different:
 
 For **body** and **query string**, if the property is an array, Mockoon will automatically check in the array if at least one item matches the value.
 
+> 🛠️ Use our online [JSONPath and object-path evaluator](/tools/json-object-path-evaluator/) to test your JSONPath or object-path syntaxes and view the results in real-time.
+
 ### 3. Invert operator
 
 You can invert the **comparison operator** (**!** equals, **!** regex match, etc.) by toggling on the exclamation mark button:

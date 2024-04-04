@@ -111,6 +111,8 @@ Get the **stringified** value at a given `path` from a [data bucket](docs:data-b
 - Full objects or arrays can be retrieved by the helper and will be stringified.
 - The full data bucket content can be fetched when the `path` is omitted (`{{data 'ID'}}`).
 
+> 🛠️ Use our online [JSONPath and object-path evaluator](/tools/json-object-path-evaluator/) to test your JSONPath or object-path syntaxes and view the results in real-time.
+
 | Arguments (ordered) | Type   | Description                      |
 | ------------------- | ------ | -------------------------------- |
 | 0                   | string | ID or name of the data bucket    |
@@ -137,6 +139,8 @@ Get the **raw** value (array, object, etc.) at a given `path` from a [data bucke
   Please note that a value can be retrieved at the path if the data bucket contains valid JSON.
 - Primitives and data structures can be retrieved by the helper and reused in other helpers (see example below).
 - The full data bucket content (array, object, etc.) can be fetched when the `path` is omitted (`{{dataRaw 'ID'}}`).
+
+> 🛠️ Use our online [JSONPath and object-path evaluator](/tools/json-object-path-evaluator/) to test your JSONPath or object-path syntaxes and view the results in real-time.
 
 | Arguments (ordered) | Type   | Description                      |
 | ------------------- | ------ | -------------------------------- |

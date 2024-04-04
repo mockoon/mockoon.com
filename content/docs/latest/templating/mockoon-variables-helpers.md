@@ -100,6 +100,8 @@ Get a global variable's value set with [`setGlobalVar`](#setglobalvar). Global v
 - Primitives and data structures can be retrieved by the helper and reused in other helpers (see example below).
 - The full variable content (array, object, etc.) can be fetched when the `path` is omitted (`{{getGlobalVar 'varname'}}`).
 
+> 🛠️ Use our online [JSONPath and object-path evaluator](/tools/json-object-path-evaluator/) to test your JSONPath or object-path syntaxes and view the results in real-time.
+
 | Arguments (ordered) | Type   | Description                |
 | ------------------- | ------ | -------------------------- |
 | 0                   | string | Variable name              |

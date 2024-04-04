@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'mockoon';
-  src: url('/fonts/mockoon.woff?dqmqhc') format('woff');
+  src: url('/fonts/mockoon.woff?exgtff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -78,6 +78,9 @@
 }
 .icon-arrow_drop_down:before {
   content: '\e905';
+}
+.icon-arrow_forward:before {
+  content: '\e916';
 }
 .icon-check:before {
   content: '\e902';

@@ -12,7 +12,7 @@ class MyDocument extends Document {
         <Head>
           <link
             rel='preload'
-            href='/fonts/mockoon.woff?dqmqhc'
+            href='/fonts/mockoon.woff?exgtff'
             as='font'
             crossOrigin=''
           />

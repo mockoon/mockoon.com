@@ -43,6 +43,13 @@ const tools = [
       'Convert your data from JSON to YAML and back and verify their validity',
     links: [{ src: '/tools/json-to-yaml', text: 'Convert' }],
     imageSrc: '/images/illustrations/json-to-yaml.svg'
+  },
+  {
+    title: 'JSONPath and object-path online evaluator',
+    description:
+      'Extract values from JSON data using JSONPath or object-path syntaxes',
+    links: [{ src: '/tools/json-object-path-evaluator', text: 'Extract data' }],
+    imageSrc: '/images/illustrations/json-path-evaluator.svg'
   }
 ];
 

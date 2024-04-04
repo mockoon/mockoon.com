@@ -1,5 +1,5 @@
 ---
-title: Custom helpers
+title: Helpers
 meta:
   title: Create dynamic responses with templating helpers
   description: "Create dynamic fake data for your mock server with Mockoon's templating helpers. All formats are supported: JSON, CSV, HTML, etc."

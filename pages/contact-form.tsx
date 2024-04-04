@@ -46,13 +46,12 @@ const ContactForm: FunctionComponent = function () {
     <Layout footerBanner='newsletter'>
       <Meta
         title='Contact us'
-        description='For all non-support inquiries (sponsoring, pro
-          plans, etc.) you can contact us using our contact form. We will get back to you as soon as possible.'
+        description='For all inquiries not related to our applications (your Mockoon Pro subscription, sponsoring, etc.) you can contact us using our contact form. We will get back to you as soon as possible.'
       />
 
       <Hero
         title='Contact us'
-        subtitle='For all non-support inquiries (sponsoring, pro plans, etc.), please contact us using the form below'
+        subtitle='For all inquiries not related to our applications (your Mockoon Pro subscription, sponsoring, etc.), please contact us using the form below'
       />
       <section
         id='form'
@@ -82,7 +81,7 @@ const ContactForm: FunctionComponent = function () {
                 <div className='row'>
                   <div className='form-group mb-5'>
                     <label className='form-label' htmlFor='contactName'>
-                      Full name
+                      Full name*
                     </label>
 
                     <input
@@ -97,7 +96,7 @@ const ContactForm: FunctionComponent = function () {
                   </div>
                   <div className='form-group mb-5'>
                     <label className='form-label' htmlFor='contactEmail'>
-                      Email
+                      Email*
                     </label>
 
                     <input
@@ -125,7 +124,7 @@ const ContactForm: FunctionComponent = function () {
                   </div>
                   <div className='form-group mb-5'>
                     <label className='form-label' htmlFor='contactMessage'>
-                      Message
+                      Message*
                     </label>
 
                     <textarea

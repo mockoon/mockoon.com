@@ -58,6 +58,8 @@ We also decided to save your environment JSON files pretty-printed by default. I
 
 ![Disable storage pretty printing in the settings{817x610}](/images/blog/new-storage/disable-storage-pretty-print.png)
 
+> ☁️ Mockoon Pro users can use the new [data synchronization and team collaboration feature](/blog/data-synchronization-team-collaboration-release/) to share their environments with their team and collaborate in real-time.
+
 ### File path resolving
 
 Some long-awaited changes were made to the body files path resolving. From now on, Mockoon will try to resolve your body files from the environment's file directory. It allows you to store an environment's body files alongside the main file and share them with your coworkers without having relative or absolute path issues.

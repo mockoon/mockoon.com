@@ -24,13 +24,18 @@ You can move the data files to another folder by right-clicking on an environmen
 
 ![click on Move data file to folder in folder in the context menu{515x377}](docs-img:environment-move-to-folder.png)
 
-> Please note that the environment file will be copied to the new folder, and the original file will **not** be deleted. If you want to delete the original file, you will have to do it manually.
+> 💡 Please note that the environment file will be copied to the new folder, and the original file will **not** be deleted. If you want to delete the original file, you will have to do it manually.
 
 ## Enabling data file watching
 
 Mockoon can monitor data files' external changes and automatically reload the interface with the new information. This is particularly useful when you are editing the data files with an external editor or pulling changes from a git repository. You can activate this option in the settings:
 
 ![enable file monitoring in the settings{860x812}](docs-img:enable-file-watching.png)
+
+## Cloud environments
+
+If you are a Mockoon Pro user, you can also create cloud environments that are stored in the cloud and synchronized across all your devices. It also allows you to collaborate in real-time with your team members.
+You can learn more about this feature in the [dedicated documentation](/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/).
 
 ## Old system (pre v1.16.0)
 

@@ -10,7 +10,7 @@ order: 1110
 
 ---
 
-> 🆕 Be among the first to experience our new cloud offering with **data synchronization** capabilities by [signing up for our waiting list](/pro/).
+> ☁️ **Data synchronization and team collaboration** are available as part of our [Mockoon Pro subscription](/pro/). It allows you to share your environments with your team and collaborate in real-time.
 
 ### Sharing a mock API
 

@@ -29,6 +29,9 @@ export const orderArticles = (articles: ArticleList) => {
         : 0
   );
 };
+async function delay(ms: number) {
+  new Promise((resolve) => setTimeout(resolve, ms));
+}
 
 export const getDesktopLatestVersion = async () => {
   const response = await fetch(process.env.DESKTOP_LATEST_RELEASE_URL);
@@ -37,23 +40,20 @@ export const getDesktopLatestVersion = async () => {
   return data.tag;
 };
 
-export const getTemplates = async () => {
+export const getTemplatesList = async () => {
+  await delay(500);
   const listResponse = await fetch(
     `${process.env.NEXT_PUBLIC_BACKEND_URL}/templates`
   );
-  const templatesList: TemplateLight[] = await listResponse.json();
 
-  const templatesResponses = await Promise.all(
-    templatesList.map((templateEntry) => {
-      return fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/templates/${templateEntry.id}`
-      );
-    })
+  return (await listResponse.json()) as TemplateLight[];
+};
+
+export const getTemplate = async (slug: string) => {
+  await delay(500);
+  const templateResponse = await fetch(
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/templates/${slug}`
   );
 
-  const templates: Template[] = await Promise.all(
-    templatesResponses.map((response) => response.json())
-  );
-
-  return templates;
+  return (await templateResponse.json()) as Template[];
 };

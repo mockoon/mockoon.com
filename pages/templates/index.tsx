@@ -4,8 +4,8 @@ import Hero from '../../components/hero';
 import Meta from '../../components/meta';
 import TemplatesMenu from '../../components/templates-menu';
 import Layout from '../../layout/layout';
-import { Template } from '../../models/templates.model';
-import { getTemplates } from '../../utils/utils';
+import { TemplateLight } from '../../models/templates.model';
+import { getTemplatesList } from '../../utils/utils';
 
 const meta = {
   title: "Mockoon's pre-generated JSON templates",
@@ -14,7 +14,7 @@ const meta = {
 };
 
 export async function getStaticProps() {
-  const templates = await getTemplates();
+  const templates = await getTemplatesList();
 
   return {
     props: {
@@ -24,7 +24,7 @@ export async function getStaticProps() {
 }
 
 const Templates: FunctionComponent<{
-  templates: Template[];
+  templates: TemplateLight[];
 }> = function ({ templates }) {
   return (
     <Layout footerBanner='download'>

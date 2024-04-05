@@ -5,8 +5,8 @@ import Meta from '../../components/meta';
 import TemplatesMenu from '../../components/templates-menu';
 import { templatesDesc } from '../../data/templates-desc';
 import Layout from '../../layout/layout';
-import { Template } from '../../models/templates.model';
-import { getTemplates } from '../../utils/utils';
+import { Template, TemplateLight } from '../../models/templates.model';
+import { getTemplate, getTemplatesList } from '../../utils/utils';
 
 const meta = {
   title: "Mockoon's pre-generated JSON templates",
@@ -15,17 +15,18 @@ const meta = {
 };
 
 export async function getStaticProps({ params }) {
-  const templates = await getTemplates();
+  const template = await getTemplate(params.slug);
+  const templates = await getTemplatesList();
 
   return {
     props: {
       templates,
-      template: templates.find((template) => template.slug === params.slug)
+      template
     }
   };
 }
 export async function getStaticPaths() {
-  const templates = await getTemplates();
+  const templates = await getTemplatesList();
 
   return {
     paths: templates.map((template) => {
@@ -38,7 +39,7 @@ export async function getStaticPaths() {
 }
 
 const SingleTemplate: FunctionComponent<{
-  templates: Template[];
+  templates: TemplateLight[];
   template: Template;
 }> = function ({ templates, template }) {
   return (
@@ -53,7 +54,7 @@ const SingleTemplate: FunctionComponent<{
         <div className='container'>
           <div className='row justify-content-center g-10'>
             <div className='col-12 col-lg-3'>
-              <TemplatesMenu templates={templates} activeTemplate={template} />
+              <TemplatesMenu templates={templates} />
             </div>
             <div className='col-12 col-lg-9'>
               <h3 className='fw-medium'>

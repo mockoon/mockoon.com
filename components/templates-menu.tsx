@@ -1,19 +1,19 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent } from 'react';
-import { Template } from '../models/templates.model';
+import { TemplateLight } from '../models/templates.model';
 import SidebarBanner from './sidebar-banner';
 
 const TemplatesMenu: FunctionComponent<{
-  templates: Template[];
-  activeTemplate?: Template;
+  templates: TemplateLight[];
 }> = function ({ templates }) {
   const router = useRouter();
+
   return (
     <aside className='flex-grow-1 sticky-top'>
       <ul className='card-list list mb-6'>
         <h6 className='fw-bold text-uppercase mb-2'>Templates</h6>
-        {templates.map((template, templateIndex) => {
+        {templates?.map((template, templateIndex) => {
           return (
             <li
               key={`template${templateIndex}`}

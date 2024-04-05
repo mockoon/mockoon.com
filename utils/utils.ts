@@ -2,6 +2,8 @@ import { compareBuild as semverCompare } from 'semver';
 import { ArticleList } from '../models/common.model';
 import { Template, TemplateLight } from '../models/templates.model';
 
+const cache = new Map();
+
 export const sortByOrder = (firstTopic, secondTopic) =>
   firstTopic.order > secondTopic.order
     ? 1
@@ -41,16 +43,23 @@ export const getDesktopLatestVersion = async () => {
 };
 
 export const getTemplatesList = async () => {
-  await delay(500);
+  if (cache.has('templates')) {
+    return cache.get('templates');
+  }
+
+  await delay(1000);
   const listResponse = await fetch(
     `${process.env.NEXT_PUBLIC_BACKEND_URL}/templates`
   );
 
-  return (await listResponse.json()) as TemplateLight[];
+  const templates = (await listResponse.json()) as TemplateLight[];
+  cache.set('templates', templates);
+
+  return templates;
 };
 
 export const getTemplate = async (slug: string) => {
-  await delay(500);
+  await delay(1000);
   const templateResponse = await fetch(
     `${process.env.NEXT_PUBLIC_BACKEND_URL}/templates/${slug}`
   );

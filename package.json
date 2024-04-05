@@ -11,7 +11,7 @@
     "dev": "next",
     "dev:all": "concurrently \"npm run dev\" \"npm run api:mock\"",
     "build": "next build",
-    "prebuild": "node ./scripts/generate-sitemap.js && cp -R ./content/old-releases/desktop/ ./public/desktop-changelogs-markdown && cp -R -T ./content/releases/ ./public/desktop-changelogs-markdown/ && sed -i 's./images/sponsors/./images/sponsors/light/.g' ./public/desktop-changelogs-markdown/*",
+    "prebuild": "node --env-file .env.production ./scripts/generate-sitemap.js && cp -R ./content/old-releases/desktop/ ./public/desktop-changelogs-markdown && cp -R -T ./content/releases/ ./public/desktop-changelogs-markdown/ && sed -i 's./images/sponsors/./images/sponsors/light/.g' ./public/desktop-changelogs-markdown/*",
     "start": "next start",
     "deploy": "npm run build && firebase deploy --token \"$FIREBASE_TOKEN\" --only hosting"
   },

@@ -13,6 +13,11 @@ const getAPIList = async () => {
   ).data;
 };
 
+const getTemplates = async () => {
+  return (await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/templates`))
+    .data;
+};
+
 function addPage(frequency, priority) {
   return function (path) {
     const route =
@@ -100,6 +105,20 @@ async function generateMockSamplesCategorySitemap() {
   sitemapList.push('/sitemaps/mock-samples-category-none.xml');
 }
 
+/**
+ * Create sitemaps for each template
+ */
+async function generateTemplatesSitemap() {
+  let templates = await getTemplates();
+
+  fs.writeFileSync(
+    'public/sitemaps/templates.xml',
+    buildSitemap(templates.map((template) => `/templates/${template.slug}`))
+  );
+
+  sitemapList.push('/sitemaps/templates.xml');
+}
+
 if (!fs.existsSync('public/sitemaps/')) {
   fs.mkdirSync('public/sitemaps/');
 }
@@ -149,15 +168,21 @@ if (!fs.existsSync('public/sitemaps/')) {
 }
 
 Promise.all([
-  generateSitemap('pages/!(_|index)*.tsx', 'root-pages', '^pages', null, [
-    'app-auth',
-    'login',
-    'signup',
-    'privacy',
-    'terms',
-    'email-verification',
-    '404'
-  ]),
+  generateSitemap(
+    'pages/!(_|index)*.tsx',
+    'root-pages',
+    '^pages',
+    ['/templates'],
+    [
+      'app-auth',
+      'login',
+      'signup',
+      'privacy',
+      'terms',
+      'email-verification',
+      '404'
+    ]
+  ),
   generateSitemap('pages/integrations/*.tsx', 'integrations', '^pages'),
   generateSitemap(
     '{pages,content}/tutorials/!(\\[)*.{tsx,md}',
@@ -194,7 +219,8 @@ Promise.all([
   generateSitemap('content/docs/latest/**/*.md', 'docs', '^(content|pages)'),
   generateSitemap('content/releases/*.md', 'releases', '^(content|pages)'),
   generateMockSamplesCategoriesSitemap(),
-  generateMockSamplesCategorySitemap()
+  generateMockSamplesCategorySitemap(),
+  generateTemplatesSitemap()
 ]).then(() => {
   // generate sitemap index
   const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>

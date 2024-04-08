@@ -28,28 +28,37 @@ const tools = [
     title: 'XML to JSON converter',
     description:
       'Convert your data from XML to JSON and back and verify their validity',
-    links: [{ src: '/tools/xml-to-json', text: 'Convert' }],
+    links: [{ src: '/tools/xml-to-json/', text: 'Convert' }],
     imageSrc: '/images/illustrations/xml-to-json.svg'
   },
   {
     title: 'Base64 encoder/decoder',
     description: 'Encode or decode your data to/from the Base64 format',
-    links: [{ src: '/tools/base64-encode-decode', text: 'Encode/decode' }],
+    links: [{ src: '/tools/base64-encode-decode/', text: 'Encode/decode' }],
     imageSrc: '/images/illustrations/base64-encode-decode.svg'
   },
   {
     title: 'JSON to YAML converter',
     description:
       'Convert your data from JSON to YAML and back and verify their validity',
-    links: [{ src: '/tools/json-to-yaml', text: 'Convert' }],
+    links: [{ src: '/tools/json-to-yaml/', text: 'Convert' }],
     imageSrc: '/images/illustrations/json-to-yaml.svg'
   },
   {
     title: 'JSONPath and object-path online evaluator',
     description:
       'Extract values from JSON data using JSONPath or object-path syntaxes',
-    links: [{ src: '/tools/json-object-path-evaluator', text: 'Extract data' }],
+    links: [
+      { src: '/tools/json-object-path-evaluator/', text: 'Extract data' }
+    ],
     imageSrc: '/images/illustrations/json-path-evaluator.svg'
+  },
+  {
+    title: 'String length and word counter',
+    description:
+      'Count the number of characters, words, and lines in your text',
+    links: [{ src: '/tools/string-length-word-counter/', text: 'Count' }],
+    imageSrc: '/images/illustrations/string-length-word-counter.svg'
   }
 ];
 

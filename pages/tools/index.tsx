@@ -59,6 +59,19 @@ const tools = [
       'Count the number of characters, words, and lines in your text',
     links: [{ src: '/tools/string-length-word-counter/', text: 'Count' }],
     imageSrc: '/images/illustrations/string-length-word-counter.svg'
+  },
+  {
+    title: 'Date and unix timestamp converter and formatter',
+    description:
+      'Convert and format dates and unix timestamps online using date-fns library',
+    links: [
+      {
+        src: '/tools/date-unix-timestamp-converter-formatter/',
+        text: 'Convert and format'
+      }
+    ],
+    imageSrc:
+      '/images/illustrations/date-unix-timestamp-converter-formatter.svg'
   }
 ];
 

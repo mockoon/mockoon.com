@@ -26,12 +26,6 @@ Each record contains the entering request and the outgoing response information.
 
 ![view the response{1384x633}](docs-img:logs-response.png)
 
-The interface is showing truncated bodies for both the request and the response (the truncation length can be adjusted in the settings). You can still view them in full in a separated editor by clicking on **View full body in editor**:
-
-![click on view full body in editor link{1384x633}](docs-img:logs-view-body.png)
-
-![body content is showed in a modal{860x696}](docs-img:logs-view-body-modal.png)
-
 ## Logs metadata
 
 You can also easily see if a request has been caught by Mockoon (record shows a green tick) or has been passed to another URL if the [proxy mode](docs:server-configuration/proxy-mode) is activated (record shows a shield icon):

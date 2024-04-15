@@ -164,6 +164,17 @@ $ curl http://localhost:3000/users
 ]
 ```
 
+### Sorting, pagination, and filtering
+
+On the main GET `/users` route, you can use **query parameters** to **sort**, **paginate**, and **filter** the list of users. Here are some examples:
+
+- Sort users by name: `GET /users?sort=name&order=asc`.
+- Paginate users (get the second set of 5 users): `GET /users?limit=5&page=2`.
+- Filter users by name: `GET /users?name_like=john`. This will return all users with a name containing "john".
+- Perform a full-text search on any property of the users list: `GET /users?search=john`. This will return all users with a name or email (or any other property) containing "john".
+
+> 📘 Have a look at our complete [filtering documentation](/docs/latest/api-endpoints/crud-routes/#filtering-sorting-and-pagination-on-the-main-get-route).
+
 ## Customizing the "id" property
 
 By default, CRUD endpoints will use the `id` property to identify objects in an array in all the routes manipulating a single resource (e.g. GET `/resource/:id`). However, you can change this property to anything you want, like `uuid`, `custom_id`, etc:

@@ -22,7 +22,7 @@ After months of work, we are thrilled to announce the **availability of the data
 
 After **subscribing to [Mockoon Pro](/pro/)** and [downloading](/download/) the latest version of the desktop application (v8.0.0), you can enable data synchronization by logging in to the application with your Mockoon account. Once you are logged in, you can create a new cloud environment or import an existing one using the new "Cloud" section in the Mockoon desktop application's menu:
 
-![Cloud menu section](/images/blog/data-synchronization-team-collaboration-release/cloud-sync-menu.png)
+![Cloud menu section{200x231}](/images/blog/data-synchronization-team-collaboration-release/cloud-sync-menu.png)
 
 After creation, your mock API data will be automatically **synchronized** in our cloud and automatically **replicated** on all your or your team members' devices. A local copy of your data is also kept on your device to ensure you can continue working even when you are offline.
 
@@ -30,11 +30,11 @@ After creation, your mock API data will be automatically **synchronized** in our
 
 When working in a shared environment with your team, you can see your team members' changes **propagated in real-time**. The application will also handle updates **granularly**, letting you collaborate seamlessly. Eventual conflicts are resolved on a last-write-wins basis.
 
-![animation of the real time collaboration](/images/blog/data-synchronization-team-collaboration-release/real-time-collaboration.gif)
+![animation of the real time collaboration{596x309}](/images/blog/data-synchronization-team-collaboration-release/real-time-collaboration.gif)
 
 You can also see who is currently working on the cloud environments:
 
-![tooltip showing the team users presence](/images/blog/data-synchronization-team-collaboration-release/team-presence.png)
+![tooltip showing the team users presence{282x99}](/images/blog/data-synchronization-team-collaboration-release/team-presence.png)
 
 > 📘 Head over our [dedicated documentation](/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/) to learn more about this new feature.
 

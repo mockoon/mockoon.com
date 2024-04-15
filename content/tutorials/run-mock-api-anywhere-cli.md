@@ -125,6 +125,8 @@ In addition to stdout (console), Mockoon CLI logs all events like requests and e
 
 This file contains all the log entries (all levels) produced by the running mock server. Most of the errors occurring in Mockoon CLI (or the main application) are not critical and therefore considered as normal output. As an example, if the JSON body from an entering request is erroneous, Mockoon will log a JSON parsing error, but it won't block the normal execution of the application.
 
+> 💡 File logging is disabled where running Mockoon CLI using our Docker image.
+
 ### Step 6. Deploy Mockoon CLI using Docker
 
 #### Using the generic Docker image published on Docker Hub

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 2000 2000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-44475,-60816)">
+        <g id="Sponsors">
+        </g>
+        <g id="headers-analyzer" serif:id="headers analyzer" transform="matrix(0.998004,0,0,0.998004,20219.5,81.4691)">
+            <rect x="24304" y="60856" width="2004" height="2004" style="fill:none;"/>
+            <g id="manage_search_black_24dp.svg" transform="matrix(49.599,0,0,49.599,25306,61858)">
+                <g transform="matrix(1,0,0,1,-12,-12)">
+                    <g>
+                        <rect x="0" y="0" width="24" height="24" style="fill:none;fill-rule:nonzero;"/>
+                    </g>
+                    <g>
+                        <path d="M7,9L2,9L2,7L7,7L7,9ZM7,12L2,12L2,14L7,14L7,12ZM2,19L12,19L12,17L2,17L2,19Z" style="fill:rgb(51,94,234);fill-rule:nonzero;"/>
+                    </g>
+                </g>
+            </g>
+            <g id="manage_search_black_24dp.svg1" serif:id="manage_search_black_24dp.svg" transform="matrix(49.599,0,0,49.599,25306,61858)">
+                <g transform="matrix(1,0,0,1,-12,-12)">
+                    <g>
+                        <rect x="0" y="0" width="24" height="24" style="fill:none;fill-rule:nonzero;"/>
+                    </g>
+                    <g>
+                        <path d="M20.59,19L16.76,15.17C15.96,15.69 15.02,16 14,16C11.24,16 9,13.76 9,11C9,8.24 11.24,6 14,6C16.76,6 19,8.24 19,11C19,12.02 18.69,12.96 18.17,13.75L22,17.59L20.59,19ZM17,11C17,9.35 15.65,8 14,8C12.35,8 11,9.35 11,11C11,12.65 12.35,14 14,14C15.65,14 17,12.65 17,11Z" style="fill:rgb(55,184,135);fill-rule:nonzero;"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

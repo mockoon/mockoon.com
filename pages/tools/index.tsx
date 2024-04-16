@@ -72,6 +72,18 @@ const tools = [
     ],
     imageSrc:
       '/images/illustrations/date-unix-timestamp-converter-formatter.svg'
+  },
+  {
+    title: 'Online HTTP headers analyzer',
+    description:
+      'Analyze and extract information from HTTP headers of a request or response',
+    links: [
+      {
+        src: '/tools/http-headers-analyzer/',
+        text: 'Analyze'
+      }
+    ],
+    imageSrc: '/images/illustrations/http-headers-analyzer.svg'
   }
 ];
 

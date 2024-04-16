@@ -199,84 +199,91 @@ const DateConverter: FunctionComponent = function () {
                   {customFormat ? formatDate(currentDate, customFormat) : ''}
                 </h4>
               </div>
-              <table className='table mt-8'>
-                <thead>
-                  <tr>
-                    <th>Format</th>
-                    <th>Result</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <a
-                        href='https://en.wikipedia.org/wiki/ISO_8601'
-                        target='_blank'
-                      >
-                        ISO 8601, RFC 3339
-                      </a>
-                    </td>
-                    <td suppressHydrationWarning>
-                      {formatDate(currentDate, "yyyy-MM-dd'T'HH:mm:ss.SSSxxx")}
-                      <br />
-                      <span className='fs-sm'>
-                        date-fns format:{' '}
-                        <code>
-                          <small>yyyy-MM-dd'T'HH:mm:ss.SSSxxx</small>
-                        </code>
-                      </span>
-                    </td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a
-                        href='https://datatracker.ietf.org/doc/rfc822/'
-                        target='_blank'
-                      >
-                        RFC 822/2822
-                      </a>
-                    </td>
-                    <td suppressHydrationWarning>
-                      {formatDate(currentDate, 'EEE, dd MMM yyyy HH:mm:ss xx')}
-                      <br />
-                      <span className='fs-sm'>
-                        date-fns format:{' '}
-                        <code>
-                          <small>EEE, dd MMM yyyy HH:mm:ss xx</small>
-                        </code>
-                      </span>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>Unix timestamp (s)</td>
-                    <td suppressHydrationWarning>
-                      {Math.floor(currentDate.getTime() / 1000)}
-                      <br />
-                      <span className='fs-sm'>
-                        date-fns format:{' '}
-                        <code>
-                          <small>t</small>
-                        </code>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Unix timestamp (ms)</td>
-                    <td suppressHydrationWarning>
-                      {currentDate.getTime()}
-                      <br />
-                      <span className='fs-sm'>
-                        date-fns format:{' '}
-                        <code>
-                          <small>T</small>
-                        </code>
-                      </span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <div className='table-responsive'>
+                <table className='table mt-8'>
+                  <thead>
+                    <tr>
+                      <th>Format</th>
+                      <th>Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <a
+                          href='https://en.wikipedia.org/wiki/ISO_8601'
+                          target='_blank'
+                        >
+                          ISO 8601, RFC 3339
+                        </a>
+                      </td>
+                      <td suppressHydrationWarning>
+                        {formatDate(
+                          currentDate,
+                          "yyyy-MM-dd'T'HH:mm:ss.SSSxxx"
+                        )}
+                        <br />
+                        <span className='fs-sm'>
+                          date-fns format:{' '}
+                          <code>
+                            <small>yyyy-MM-dd'T'HH:mm:ss.SSSxxx</small>
+                          </code>
+                        </span>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <a
+                          href='https://datatracker.ietf.org/doc/rfc822/'
+                          target='_blank'
+                        >
+                          RFC 822/2822
+                        </a>
+                      </td>
+                      <td suppressHydrationWarning>
+                        {formatDate(
+                          currentDate,
+                          'EEE, dd MMM yyyy HH:mm:ss xx'
+                        )}
+                        <br />
+                        <span className='fs-sm'>
+                          date-fns format:{' '}
+                          <code>
+                            <small>EEE, dd MMM yyyy HH:mm:ss xx</small>
+                          </code>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Unix timestamp (s)</td>
+                      <td suppressHydrationWarning>
+                        {Math.floor(currentDate.getTime() / 1000)}
+                        <br />
+                        <span className='fs-sm'>
+                          date-fns format:{' '}
+                          <code>
+                            <small>t</small>
+                          </code>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Unix timestamp (ms)</td>
+                      <td suppressHydrationWarning>
+                        {currentDate.getTime()}
+                        <br />
+                        <span className='fs-sm'>
+                          date-fns format:{' '}
+                          <code>
+                            <small>T</small>
+                          </code>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

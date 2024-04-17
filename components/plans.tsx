@@ -444,7 +444,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </div>
                         <div className='d-flex'>
                           <p className='mb-0'>
-                            ☁️ Deploy your API mocks in the cloud (Q4 2024)
+                            ☁️ Deploy your API mocks in the cloud (Q2 2024)
                           </p>
                         </div>
                       </div>
@@ -560,7 +560,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </div>
                         <div className='d-flex'>
                           <p className='mb-0'>
-                            ☁️ Deploy your API mocks in the cloud (Q4 2024)
+                            ☁️ Deploy your API mocks in the cloud (Q2 2024)
                           </p>
                         </div>
                       </div>
@@ -705,7 +705,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </div>
                         <div className='d-flex'>
                           <p className='mb-0'>
-                            ☁️ Deploy your API mocks in the cloud (Q4 2024)
+                            ☁️ Deploy your API mocks in the cloud (Q2 2024)
                           </p>
                         </div>
                       </div>

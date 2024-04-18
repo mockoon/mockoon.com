@@ -6,6 +6,7 @@ import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Layout from '../layout/layout';
 import { AccordionData } from '../models/common.model';
+import Quote from '../components/quote';
 
 const meta = {
   title: "Mockoon's Playground API",
@@ -243,16 +244,14 @@ const Course: FunctionComponent = function () {
                   </div>
                 ))}
               </div>
-              <div className='alert quote'>
-                <p>
-                  ➡️ To go further, <Link href={'/download/'}>download</Link>{' '}
-                  Mockoon and follow our{' '}
-                  <Link href={'/tutorials/getting-started/'}>
-                    getting started tutorial
-                  </Link>
-                  .
-                </p>
-              </div>
+              <Quote>
+                ➡️ To go further, <Link href={'/download/'}>download</Link>{' '}
+                Mockoon and follow our{' '}
+                <Link href={'/tutorials/getting-started/'}>
+                  getting started tutorial
+                </Link>
+                .
+              </Quote>
 
               <h3 className='my-6'>Available resources</h3>
 
@@ -361,21 +360,19 @@ const Course: FunctionComponent = function () {
                     </li>
                   </ul>
 
-                  <div className='alert quote mt-4 fst-italic'>
-                    <p>
-                      💡 You can also use the sorting, searching and filtering
-                      query parameters on the main GET route, example:{' '}
-                      <code className='p-0'>
-                        ?property_eq=test&page=2&limit=50
-                      </code>
-                      . You will find more information about the CRUD routes
-                      behavior in our{' '}
-                      <Link href={'/docs/latest/api-endpoints/crud-routes/'}>
-                        documentation
-                      </Link>
-                      .
-                    </p>
-                  </div>
+                  <Quote>
+                    💡 You can also use the sorting, searching and filtering
+                    query parameters on the main GET route, example:{' '}
+                    <code className='p-0'>
+                      ?property_eq=test&page=2&limit=50
+                    </code>
+                    . You will find more information about the CRUD routes
+                    behavior in our{' '}
+                    <Link href={'/docs/latest/api-endpoints/crud-routes/'}>
+                      documentation
+                    </Link>
+                    .
+                  </Quote>
                 </div>
               </div>
             </div>

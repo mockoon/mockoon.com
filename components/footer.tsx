@@ -287,15 +287,8 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link
-                  href='https://mockoon.threadless.com/'
-                  className='text-reset'
-                  target='_blank'
-                  rel='noopener'
-                >
-                  <>
-                    Shop <i className='icon-open' aria-hidden='true'></i>
-                  </>
+                <Link href='/weekly-meetup-event/' className='text-reset'>
+                  Weekly Meetup Q&A
                 </Link>
               </li>
               <li className='mb-2'>
@@ -379,6 +372,19 @@ const Footer: FunctionComponent<{
                 >
                   <i
                     className='icon-linkedin list-social-item'
+                    aria-hidden='true'
+                  ></i>
+                </a>
+              </li>
+              <li className='list-inline-item list-social-item'>
+                <a
+                  href='https://www.reddit.com/r/mockoon/'
+                  target='_blank'
+                  rel='noopener'
+                  className='text-decoration-none text-reset'
+                >
+                  <i
+                    className='icon-reddit list-social-item'
                     aria-hidden='true'
                   ></i>
                 </a>

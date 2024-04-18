@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
+import WeeklyMeetupBanner from '../components/weekly-meetup-banner';
 import Layout from '../layout/layout';
 
 const Contact: FunctionComponent = function () {
@@ -17,6 +18,11 @@ const Contact: FunctionComponent = function () {
       />
       <section className='pb-8'>
         <div className='container'>
+          <div className='row'>
+            <div className='col col-md-8 mx-auto'>
+              <WeeklyMeetupBanner />
+            </div>
+          </div>
           <div className='row justify-content-center'>
             <div className='col-12 col-lg-4 d-flex'>
               <div className='card card-border my-5 shadow-light-lg'>

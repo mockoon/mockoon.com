@@ -4,6 +4,7 @@ import FormHoneypot from '../components/form-honeypot';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Spinner from '../components/spinner';
+import WeeklyMeetupBanner from '../components/weekly-meetup-banner';
 import Layout from '../layout/layout';
 
 const ContactForm: FunctionComponent = function () {
@@ -55,9 +56,14 @@ const ContactForm: FunctionComponent = function () {
       />
       <section
         id='form'
-        className='pt-8 pt-md-11 pb-8 pb-md-14 border-top bg-gradient-light-white'
+        className='pt-4 pb-8 pb-md-14 border-top bg-gradient-light-white'
       >
         <div className='container'>
+          <div className='row'>
+            <div className='col col-md-8 pb-4 mx-auto'>
+              <WeeklyMeetupBanner />
+            </div>
+          </div>
           <div className='row justify-content-center'>
             <div className='col-12 col-md-10 col-lg-8 text-center'>
               <p className='fs-lg text-gray-700 mb-7 mb-md-9'>

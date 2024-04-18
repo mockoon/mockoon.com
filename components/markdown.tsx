@@ -172,7 +172,7 @@ const Markdown: FunctionComponent<{
               ></SponsoringMessage>
             );
           } else {
-            return <Quote content={content.children}></Quote>;
+            return <Quote>{content.children}</Quote>;
           }
         },
         h1: heading,

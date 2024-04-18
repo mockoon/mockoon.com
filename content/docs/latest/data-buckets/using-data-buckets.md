@@ -24,7 +24,7 @@ Both helpers support retrieving the data bucket by its unique ID or name. It als
 {{data 'ID_or_name' 'object.path'}}
 ```
 
-> Retrieving data at a specific object path requires that the data bucket content is a valid JSON.
+> 💡 Retrieving data at a specific object path requires that the data bucket content is a valid JSON.
 
 Head over to the [data helpers' documentation](docs:templating/mockoon-helpers#data) to see more examples.
 

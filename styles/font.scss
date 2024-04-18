@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'mockoon';
-  src: url('/fonts/mockoon.woff?exgtff') format('woff');
+  src: url('/fonts/mockoon.woff?s3qk3s') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -35,6 +35,10 @@
 .icon-linkedin:before {
   content: '\e90f';
   color: #0077b5;
+}
+.icon-reddit:before {
+  content: '\e917';
+  color: #ff4500;
 }
 .icon-x:before {
   content: '\e910';

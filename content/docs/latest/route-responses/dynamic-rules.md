@@ -63,7 +63,7 @@ In the dropdown menu you can choose between:
 - the value of a [**route parameter**](docs:api-endpoints/routing#route-parameters).
 - the value of a [**global variable**](docs:variables/global-variables).
 - the value of a [**data bucket content**](docs:data-buckets/overview).
-- the **request number** index starting at 1.
+- the **request number** index starting at 1 (you can reset the request number by using the [state purge admin API](docs:admin-api/server-state)).
 
 ### 2. Property name or path
 

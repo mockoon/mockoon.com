@@ -68,9 +68,9 @@ const faq: AccordionData = [
           'We accept credit cards (Visa, Mastercard, etc.) through our payment provider Paddle. You can also pay by bank transfer for the Enterprise plan. <a href="/contact-form/">Contact us</a> before purchasing for more information.'
       },
       {
-        title: 'Should I contact you before purchasing the "Enterprise" plan?',
+        title: 'I have specific billing requirements, can you help me?',
         content:
-          'The Enterprise plan can be purchased directly on our website or through a quote (should you need to pay by bank transfer for example). <a href="/contact-form/">Contact us</a> for more information.'
+          'We can provide you with tailored billing solutions. Do not hesitate to <a href="/contact-form/">contact us</a> to discuss your needs.'
       },
       {
         title: 'Do you offer discounts for schools, bootcamps or students?',

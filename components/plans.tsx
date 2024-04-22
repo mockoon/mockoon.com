@@ -673,13 +673,6 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                           <i className='icon-check'></i>
                         </div>
 
-                        <p>Custom payment options</p>
-                      </div>
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
-
                         <p>Unlimited seats (minimum 3)</p>
                       </div>
 
@@ -723,14 +716,23 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                 information.
               </p>
               <div className='text-center'>
-                <h4 className='fw-bold mt-6 mb-4'>Specific needs?</h4>
+                <h4 className='fw-bold mt-6 mb-4'>Special requests?</h4>
 
-                <Link
-                  href={'/contact-form/'}
-                  className='btn btn-outline-secondary btn-sm'
-                >
-                  Contact sales
-                </Link>
+                <div className='btn-group'>
+                  <Link
+                    href={'/contact-form/'}
+                    className='btn btn-outline-secondary btn-sm'
+                  >
+                    Contact sales
+                  </Link>
+                  <a
+                    href={'https://calendar.app.google/fYmLeMTo2N7T5x8R9'}
+                    target='_blank'
+                    className='btn btn-outline-secondary btn-sm'
+                  >
+                    Request a demo
+                  </a>
+                </div>
               </div>
 
               {showTagline && (

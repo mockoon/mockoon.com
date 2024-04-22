@@ -42,17 +42,6 @@ const Sponsors: FunctionComponent<{
               alt='Localazy logo'
             />
           </Link>
-          <Link
-            href='https://www.peakcrypto.com/'
-            className='d-inline-block p-4'
-            target='_blank'
-          >
-            <img
-              src='/images/sponsors/peakcrypto.png'
-              className='img-fluid m-4'
-              alt='Peak Crypto logo'
-            />
-          </Link>
         </div>
       </div>
 

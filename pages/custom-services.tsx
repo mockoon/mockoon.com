@@ -26,7 +26,8 @@ export const services = [
     description:
       'We can provide live training and workshops for your team to help you get started with Mockoon, learn how to make the most of it, or learn about API and API design in general.',
     imgSrc: '/images/custom-services/live-training.svg',
-    imgAlt: 'multiple persons taking a live training session'
+    imgAlt: 'multiple persons taking a live training session',
+    cta: { link: '/training/', text: 'Book online' }
   }
 ];
 
@@ -65,6 +66,16 @@ const Services: FunctionComponent = function () {
 
                   <div className='fs-lg text-gray-700'>
                     {service.description}
+                  </div>
+                  <div>
+                    {service.cta && (
+                      <a
+                        className='btn btn-secondary-subtle btn-xs mt-5'
+                        href={service.cta.link}
+                      >
+                        {service.cta.text}&nbsp;→
+                      </a>
+                    )}
                   </div>
                 </div>
                 <div

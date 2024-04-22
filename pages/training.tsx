@@ -1,0 +1,228 @@
+import { FunctionComponent } from 'react';
+import Accordion from '../components/accordion';
+import CompanyLogos from '../components/company-logos';
+import Hero from '../components/hero';
+import Meta from '../components/meta';
+import Layout from '../layout/layout';
+import { AccordionData } from '../models/common.model';
+
+const meta = {
+  title: "Mockoon's Live Training",
+  description:
+    'Purchase a live training session for you or your team. Get started with Mockoon applications (desktop and CLI), and learn how to make the most of API mocking. Training delivered by the creator of Mockoon!'
+};
+
+const keyPoints = [
+  'Get started with Mockoon applications (desktop and CLI).',
+  'Learn how to use advanced key features.',
+  'Step-by-step progression from beginner to advanced user.',
+  'Training delivered by the creator of Mockoon!'
+];
+
+const faq: AccordionData = [
+  {
+    items: [
+      {
+        title: 'How long does the training last?',
+        content:
+          'The training can last up to 4 hours (see schedule above). Select the quantity of hours you want to book when you purchase the training. We can also accommodate custom training schedules. <a href="/contact-form/">Contact us</a> for more information.'
+      },
+      {
+        title: 'How many participants can attend the training?',
+        content:
+          'The training is for up to 5 participants. If you have a larger team, we can accommodate custom training schedules. <a href="/contact-form/">Contact us</a> for more information.'
+      },
+      {
+        title: 'Do you offer a certificate of completion?',
+        content:
+          'We offer a certificate of completion for the training. If you are interested in receiving a certificate, please let us know when we reach out to schedule your training session.'
+      },
+      {
+        title: 'Do I need to have any prior knowledge to attend the training?',
+        content: 'Basic knowledge of programming and APIs is recommended.'
+      },
+      {
+        title: 'Do you offer discounts?',
+        content:
+          'We offer a discount on the course price for students, teams and non-profit organizations. Do not hesitate to <a href="/contact-form/">contact us</a> to get a discount.'
+      },
+      {
+        title: 'Can I get a refund?',
+        content:
+          'We do not offer refunds for the training. If you are unable to attend the training, we can reschedule your training session for a later date.'
+      }
+    ]
+  }
+];
+
+const courseContent: AccordionData = [
+  {
+    items: [
+      {
+        title: 'Hour 1: Getting started with Mockoon',
+        content: [
+          'Introduction to Mockoon and installation',
+          'Discover the main features of the application',
+          'Create your first mock API',
+          'Configure your server settings',
+          'Further configuration of your mock API (headers, query parameters, etc.)'
+        ]
+      },
+      {
+        title: 'Hour 2: Craft realistic scenarios',
+        content: [
+          'Use templating to create dynamic and realistic responses',
+          'Create multiple responses for a route',
+          'Chaos testing with random and sequential modes',
+          'Add rules to serve the right response at the right time'
+        ]
+      },
+      {
+        title: 'Hour 3: Integrate into your workflow',
+        content: [
+          'Partial mocking with the proxy mode',
+          'Record and replay requests to create mocks',
+          'Import an OpenAPI or Swagger file to create mocks',
+          'Deploy your mocks anywhere with the CLI',
+          'Discover the Docker image and GitHub Actions integration'
+        ]
+      },
+      {
+        title: 'Hour 4: Advanced features',
+        content: [
+          'Create reusable mock data with the data buckets',
+          'Create automated CRUD endpoints',
+          'Trigger callbacks and webhooks',
+          'Create global rules and route guards',
+          'Simulate complex scenarios with variables'
+        ]
+      }
+    ]
+  }
+];
+
+const Training: FunctionComponent = function () {
+  return (
+    <Layout footerBanner='download'>
+      <Meta title={meta.title} description={meta.description} />
+
+      <Hero
+        title='🎓 Mockoon <span class="text-primary">Live Training</span>'
+        subtitle='Schedule a live training session for yourself or your team and learn how to make the most of Mockoon applications'
+      />
+
+      <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
+        <div className='container'>
+          <div className='row justify-content-center g-10'>
+            <div className='col-12 col-lg-7'>
+              <p>
+                This <strong>live training</strong> is crafted to kickstart your
+                journey with Mockoon applications (desktop and CLI), helping you{' '}
+                <strong>harness the full potential of API mocking</strong>. It
+                will guide you through every step of your progression, from
+                novice to advanced user, teaching you to{' '}
+                <strong>create, optimize, and deploy</strong> your first mock
+                API effortlessly.
+              </p>
+
+              <div className='mt-6'>
+                {keyPoints.map((keyPoint, keyPointIndex) => (
+                  <div
+                    key={`taskcomingsoon${keyPointIndex}`}
+                    className='d-flex'
+                  >
+                    <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                      <i className='icon icon-check'></i>
+                    </div>
+                    <p className='text-gray-800'>{keyPoint}</p>
+                  </div>
+                ))}
+              </div>
+
+              <h3 className='my-6 fw-medium'>Training schedule</h3>
+
+              <Accordion
+                data={courseContent}
+                openFirst
+                counterSuffix={{ singular: 'topic', plural: 'topics' }}
+              />
+            </div>
+
+            <div className='col-12 col-lg-5 sticky-top'>
+              <div className='card shadow-light-lg mb-6 mb-md-0'>
+                <div className='card-body'>
+                  <img
+                    src='/images/official-online-course/mockoon-official-online-course.png'
+                    className='img-fluid mx-auto d-block rounded'
+                    alt='select generate from template in the route creation menu to create a AI-generated mock API endpoint'
+                    width='1400'
+                    height='797'
+                  />
+                  <div className='py-4'>
+                    <div className='d-flex align-items-center justify-content-center'>
+                      <div className='avatar avatar-xl'>
+                        <img
+                          className='avatar-img img-thumbnail rounded-circle mr-4'
+                          src='/images/about/guillaume.jpg'
+                          alt='Creator of Mockoon'
+                          width={128}
+                          height={128}
+                        />
+                      </div>
+                      <div className='ps-5'>
+                        <p className='fs-sm fw-bold mb-0'>by Guillaume</p>
+                        <p className='fs-sm text-gray-700 mb-0'>
+                          Creator of Mockoon
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='d-flex justify-content-center mb-6'>
+                    <span className='h2 mb-0 mt-2'>$</span>
+                    <span className='price display-2 mb-0'>100</span>
+                    <span className='h4 text-gray-700 align-self-end mb-2'>
+                      /hour
+                    </span>
+                  </div>
+                  <p className='text-center text-body-secondary mb-5'>
+                    For up to 5 participants, book 1 to 4 hours of training
+                    sessions (select quantity when purchasing).
+                  </p>
+                  <p className='text-center'></p>
+                  <div className='text-center'>
+                    <a
+                      href='https://buy.stripe.com/5kAaGgac54bz35KeUW'
+                      className='btn btn-primary'
+                    >
+                      Book a training session
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className='py-6 py-md-8'>
+        <CompanyLogos />
+      </section>
+
+      <section
+        className='py-6 py-md-8 border-bottom bg-gradient-light-white'
+        id='faq'
+      >
+        <div className='container'>
+          <div className='row justify-content-center'>
+            <div className='col-12 col-lg-8 align-items-center'>
+              <h2 className='fw-bold mb-6 text-center'>Training FAQ</h2>
+              <Accordion data={faq} />
+            </div>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default Training;

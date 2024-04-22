@@ -45,7 +45,7 @@ const faq: AccordionData = [
       {
         title: 'What is the "welcome online training" (Enterprise plan)?',
         content:
-          'We will provide a 1-hour online video call by our founder to help you get started with Mockoon and answer any questions you may have. This training will be scheduled with your team after the purchase of the Enterprise plan. It is limited to 1 session per year and per company. Additional training sessions can be purchased separately. <a href="/contact-form/">Contact us</a> for more information.'
+          'We will provide a 1-hour online video call by our founder to help you get started with Mockoon and answer any questions you may have. This training will be scheduled with your team after the purchase of the Enterprise plan. It is limited to 1 session per year and per company. Additional training sessions can be <a href="/training/">purchased separately</a>.'
       }
     ]
   },

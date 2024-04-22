@@ -8,7 +8,7 @@ import Layout from '../layout/layout';
 import { AccordionData } from '../models/common.model';
 
 const meta = {
-  title: "Mockoon's Official Course",
+  title: "Mockoon's Official Online Course",
   description:
     'We will soon offer an online course to help you get started with Mockoon applications and learn how to make the most of them.'
 };

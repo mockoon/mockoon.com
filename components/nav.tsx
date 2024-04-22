@@ -167,13 +167,21 @@ const Nav: FunctionComponent = function () {
                         <h6 className='dropdown-header'>Learn</h6>
 
                         <Link
+                          href='/training/'
+                          className={`dropdown-item ${
+                            router.pathname === '/training' ? 'active' : ''
+                          }`}
+                        >
+                          Live Training{' '}
+                          <i className='icon-new_releases text-warning'></i>
+                        </Link>
+                        <Link
                           href='/course/'
                           className={`dropdown-item ${
                             router.pathname === '/course' ? 'active' : ''
                           }`}
                         >
-                          Course{' '}
-                          <i className='icon-new_releases text-warning'></i>
+                          Online Course
                         </Link>
                         <Link
                           href='/docs/latest/about/'
@@ -210,8 +218,7 @@ const Nav: FunctionComponent = function () {
                             router.pathname === '/playground' ? 'active' : ''
                           }`}
                         >
-                          API Playground{' '}
-                          <i className='icon-new_releases text-warning'></i>
+                          API Playground
                         </Link>
                         <Link
                           href='/mock-samples/category/all/'

@@ -663,8 +663,8 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </div>
 
                         <p className='mb-0'>
-                          1 hour welcome online training video call for your
-                          team
+                          1 hour live training for your team (
+                          <Link href={'/training/'}>Purchase separately</Link>)
                         </p>
                       </div>
                       <hr />

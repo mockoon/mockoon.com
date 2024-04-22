@@ -152,7 +152,12 @@ const Footer: FunctionComponent<{
               </li>
               <li className='mb-2'>
                 <Link href='/course/' className='text-reset'>
-                  Course
+                  Online Course
+                </Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/training/' className='text-reset'>
+                  Training
                 </Link>
               </li>
               <li className='mb-2'>

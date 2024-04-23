@@ -1,8 +1,14 @@
+import { isbot } from 'isbot';
+
 export const sendEvent = (
   type: 'pageview' | 'event',
   eventName: 'download' = null,
   eventCategory: 'win' | 'mac' | 'linux' = null
 ) => {
+  if (isbot(navigator.userAgent)) {
+    return;
+  }
+
   let referrer = sessionStorage.getItem('referrer');
   if (!referrer) {
     referrer = document.referrer || 'direct';

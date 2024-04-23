@@ -13,6 +13,13 @@ const incidents: {
   status: 'inprogress' | 'resolved';
 }[] = [
   {
+    title: 'Main API - issue with user creation',
+    desc: 'An issue prevented new users from being created. The issue has been identified and a fix deployed. Existing users were not affected. We put in place better monitoring to prevent this issue from happening again.',
+    dateStart: '2024-04-23 14:00:00 UTC',
+    dateEnd: '2024-04-23 21:00:00 UTC',
+    status: 'resolved'
+  },
+  {
     title: 'Main API outage',
     desc: 'Our main API was down for several hours due to an SSL misconfiguration. The issue has been fixed and the configuration documented to avoid future issues.',
     dateStart: '2023-10-18 16:00:00 UTC',

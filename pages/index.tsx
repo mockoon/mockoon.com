@@ -20,6 +20,17 @@ const meta = {
 const caseStudies = [
   {
     quotation:
+      'Mockoon helped me bridge the gap with my fellow front-end developers during development. Being able to quickly mock the new/changed endpoints has made connecting frontend and backend bits a breeze.',
+    link: '/blog/contributor-spotlight-lukas-spiss-onefootball/',
+    authorImg: '/images/external/onefootball/lukas-spiss.jpg',
+    authorImgAlt: 'Back-end Engineer at OneFootball',
+    authorName: 'Lukas Spiss',
+    authorPosition: 'Back-end Engineer',
+    companyLogo: '/images/external/onefootball/logo.svg',
+    companyLogoAlt: 'OneFootball logo'
+  },
+  {
+    quotation:
       'Mockoon is an extremely easy and familiar tool to use which makes building up mock servers a breeze.',
     link: '/blog/contributor-spotlight-bradley-schofield-appwrite/',
     authorImg: '/images/external/appwrite/bradley-schofield.png',

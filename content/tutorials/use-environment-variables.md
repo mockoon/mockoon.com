@@ -34,7 +34,7 @@ To access an environment variable in your templates, use the `getEnvVar` helper.
 
 You can **change the prefix** or **remove it** entirely in the desktop application settings:
 
-![desktop application settings showing the prefix input](/images/tutorials/use-environment-variables/settings-environment-variables-prefix.png)
+![desktop application settings showing the prefix input{860x812}](/images/tutorials/use-environment-variables/settings-environment-variables-prefix.png)
 
 You can also modify the prefix when running your mock with the CLI by using the `--env-vars-prefix` flag:
 
@@ -72,7 +72,7 @@ export MOCKOON_API_TOKEN=abcd1234
 
 In your mock server, we will enable the proxy mode, point to the correct API endpoint (here, the endpoint is a fictive one), and use the `getEnvVar` helper to access the token and add it to an `Authorization` header:
 
-![view of Mockoon proxy settings showing an url and an authorization header](/images/tutorials/use-environment-variables/access-environment-variable-authorization-header.png)
+![view of Mockoon proxy settings showing an url and an authorization header{977x376}](/images/tutorials/use-environment-variables/access-environment-variable-authorization-header.png)
 
 You can see that we are using the `getEnvVar` helper to access the `MOCKOON_API_TOKEN` environment variable and add it to the `Authorization` header:
 
@@ -84,8 +84,8 @@ Now, when you send a request to a non-existing route, for example, `GET http://l
 
 To simulate this, we will point the proxy to another Mockoon instance running on `http://localhost:3001` instead of `https://api.service.com`:
 
-![view of Mockoon proxy settings showing an url and an authorization header](/images/tutorials/use-environment-variables/proxy-mode-local-mock.png)
+![view of Mockoon proxy settings showing an url and an authorization header{982x358}](/images/tutorials/use-environment-variables/proxy-mode-local-mock.png)
 
 After making a call to our original mock server running on `http://localhost:3002`, we can inspect the forwarded request in the other instance and verify that the `Authorization` header is correctly set:
 
-![view of the forwarded request showing the authorization header](/images/tutorials/use-environment-variables/inspect-forwarded-call-authorization-header.png)
+![view of the forwarded request showing the authorization header{1097x473}](/images/tutorials/use-environment-variables/inspect-forwarded-call-authorization-header.png)

@@ -10,7 +10,7 @@ order: 801
 
 ---
 
-The `/mockoon-admin/state` endpoint currently allows you to purge the state of a running environment.
+The `/mockoon-admin/state` endpoint currently allows you to purge the state of a running environment and global variables.
 
 ### Purging the state of a running environment
 

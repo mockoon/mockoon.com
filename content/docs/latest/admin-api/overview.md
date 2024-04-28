@@ -25,3 +25,4 @@ For example, if your mock server is running on `http://localhost:3000`, the admi
 Currently, the admin API allows you to:
 
 - [purge the state of a running environment](docs:admin-api/server-state)
+- [Set and purge global variables](docs:admin-api/set-purge-global-vars)

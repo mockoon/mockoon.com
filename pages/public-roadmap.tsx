@@ -38,6 +38,11 @@ const faq: AccordionData = [
 const tasks = {
   released: [
     {
+      link: '/docs/latest/admin-api/overview/',
+      title: 'Admin API',
+      pro: false
+    },
+    {
       link: '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/',
       title: 'Real-time collaboration for teams',
       pro: true
@@ -92,12 +97,6 @@ const tasks = {
       link: '/docs/latest/response-configuration/file-serving/#serving-a-range-of-bytes-from-a-file',
       title: 'Support for Range header',
       pro: false
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/995',
-      title: 'Support for JSON path',
-      pro: false,
-      target: '_blank'
     }
   ],
   inProgress: [

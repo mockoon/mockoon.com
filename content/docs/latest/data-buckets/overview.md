@@ -52,6 +52,10 @@ You can easily combine your data bucket contents by referencing other data bucke
 
 ## Data buckets generation
 
-Data buckets are generated when the **server starts** in the order they are defined in the environment. Their state persist during all mock API calls. To regenerate a data bucket's content, you can restart the mock server or you can also use the [admin API state purge endpoint](docs:admin-api/server-state).
+Data buckets are generated when the **server starts** in the order they are defined in the environment. Their state persist during all mock API calls and are shared between all routes.
 
 If a data bucket contains [request helpers](docs:templating/mockoon-request-helpers), Mockoon will generate the bucket content only **after the first call** made to a route using this data bucket (by referencing it directly or using a data helper). It allows you to create bucket "configuration" routes that you can call programmatically with the content you want to reuse in your bucket using the request helpers (`body`, `queryParams`, etc.).
+
+## Resetting data buckets
+
+To regenerate a data bucket's content, you can restart the mock server or you can also use the [admin API state purge endpoint](docs:admin-api/server-state) or specific [data buckets endpoint](docs:admin-api/data-buckets).

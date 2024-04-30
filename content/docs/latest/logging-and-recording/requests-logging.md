@@ -12,9 +12,11 @@ order: 700
 
 ## Accessing the logs
 
-For easier debugging, Mockoon records all entering requests and all the corresponding outgoing responses for each of your mock API. To access an environment's log, click on the "Logs" tab at the top of the window:
+For easier debugging, Mockoon **records all entering requests** and all the corresponding **outgoing responses** for each of your mock API. To access an environment's log, click on the "Logs" tab at the top of the window:
 
 ![click the logs tab{963x160}](docs-img:open-logs.png)
+
+> 💡 You can also **retrieve the logs programmatically** using the [admin API](docs:admin-api/transaction-logs) when running your mock with the desktop application, the CLI or the serverless library.
 
 ## Logs content
 

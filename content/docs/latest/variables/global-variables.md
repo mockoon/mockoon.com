@@ -68,3 +68,7 @@ Some examples:
 ```
 
 > 📘 [Helper documentation](docs:templating/mockoon-variables-helpers#getglobalvar).
+
+### Clear the global variables
+
+To clear all the global variables, use the `PURGE /mockoon-admin/global-vars` or `POST /mockoon-admin/global-vars/purge` endpoints from the [admin API](docs:admin-api/global-variables).

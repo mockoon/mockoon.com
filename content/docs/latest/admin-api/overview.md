@@ -20,9 +20,40 @@ For example, if your mock server is running on `http://localhost:3000`, the admi
 
 > 💡 The [API prefix](docs:server-configuration/port-prefix) is not applied to the admin API base endpoint. If your API endpoints are accessible on `http://localhost:3000/myprefix/{endpoint}`, the admin API base endpoint will still be `http://localhost:3000/mockoon-admin`.
 
+## Disable the admin API
+
+The admin API is **enabled by default**.
+
+In the desktop application, the admin API cannot be disabled. However, you can disable it when running your mock with the [CLI](/cli/) or the [serverless library](/serverless/).
+
+### Disable the admin API with the CLI
+
+To **disable** the admin API when running your mock with the CLI, use the `--disable-admin-api` flag:
+
+```bash
+mockoon start --disable-admin-api -d ./mock.json
+```
+
+> 📘 Check the [CLI dedicated documentation](https://github.com/mockoon/mockoon/tree/main/packages/cli#readme)
+
+### Disable the admin API with the serverless library
+
+To **disable** the admin API when running your mock with the serverless library, set the `enableAdminApi` option to `false` when building the `MockoonServerless` instance:
+
+```javascript
+const mockoonServerless = new mockoon.MockoonServerless(mockEnv, {
+  enableAdminApi: false
+});
+```
+
+> 📘 Check the [serverless library dedicated documentation](https://github.com/mockoon/mockoon/tree/main/packages/serverless#readme)
+
 ## Admin API capabilities
 
 Currently, the admin API allows you to:
 
-- [purge the state of a running environment](docs:admin-api/server-state)
-- [Set and purge global variables](docs:admin-api/set-purge-global-vars)
+- [Purge the state of a running environment](docs:admin-api/server-state)
+- [Manage and purge the global variables](docs:admin-api/global-variables)
+- [Manage the environment variables](docs:admin-api/environment-variables)
+- [Fetch and purge the transaction logs](docs:admin-api/transaction-logs)
+- [Reset the data buckets](docs:admin-api/data-buckets)

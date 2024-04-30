@@ -65,7 +65,11 @@ Some examples:
 
 > 📘 Head over to the [global variables documentation](/docs/latest/variables/global-variables/) where you will find more examples.
 
-## 3. An example use case: user authentication
+## 3. Clear the global variables
+
+To clear all the global variables, use the `PURGE /mockoon-admin/global-vars` or `POST /mockoon-admin/global-vars/purge` endpoints from the [admin API](docs:admin-api/global-variables).
+
+## 4. An example use case: user authentication
 
 Let's see how to use global variables to simulate a simple **user authentication workflow**. We will create two routes: one to log in and one to get the user's profile. We will use a global variable to store a boolean value indicating if the user is authenticated.
 

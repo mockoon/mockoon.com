@@ -136,7 +136,7 @@ const Footer: FunctionComponent<{
               </li>
               <li className='mb-2'>
                 {/* Do not use <Link>, as routes with a dot inside get rewritten without trailing slash */}
-                <a href='/releases/8.1.0/' className='text-reset'>
+                <a href='/releases/8.1.1/' className='text-reset'>
                   Releases
                 </a>
               </li>

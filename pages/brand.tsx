@@ -24,7 +24,7 @@ const Brand: FunctionComponent = function () {
             <div className='col-12 col-md-6 col-lg-4'>
               <Card
                 data={{
-                  title: 'Mockoon eyes logo for light or dark backgrounds',
+                  title: 'Mockoon eyes logo for light backgrounds',
                   imageSrc: '/images/logo-eyes.svg',
                   imageAlt: 'Mockoon eyes logo',
                   imagePaddingClasses: 'py-8',
@@ -32,22 +32,12 @@ const Brand: FunctionComponent = function () {
                     {
                       // keep URL absolute to go through Cloudflare rules and trigger download
                       src: 'https://mockoon.com/images/logo-eyes.svg?download=true',
-                      text: 'SVG (light)'
-                    },
-                    {
-                      // keep URL absolute to go through Cloudflare rules and trigger download
-                      src: 'https://mockoon.com/images/logo-eyes-sticker.svg?download=true',
-                      text: 'SVG (dark)'
+                      text: 'SVG'
                     },
                     {
                       // keep URL absolute to go through Cloudflare rules and trigger download
                       src: 'https://mockoon.com/images/logo-eyes.png?download=true',
-                      text: 'PNG (light)'
-                    },
-                    {
-                      // keep URL absolute to go through Cloudflare rules and trigger download
-                      src: 'https://mockoon.com/images/logo-eyes-sticker.png?download=true',
-                      text: 'PNG (dark)'
+                      text: 'PNG'
                     }
                   ]
                 }}
@@ -60,29 +50,19 @@ const Brand: FunctionComponent = function () {
             <div className='col-12 col-md-6 col-lg-4'>
               <Card
                 data={{
-                  title: 'Mockoon full logo for light or dark backgrounds',
+                  title: 'Mockoon full logo for light backgrounds',
                   imageSrc: '/images/logo.svg',
                   imageAlt: 'Mockoon full logo',
                   links: [
                     {
                       // keep URL absolute to go through Cloudflare rules and trigger download
                       src: 'https://mockoon.com/images/logo-text.svg?download=true',
-                      text: 'SVG (light)'
-                    },
-                    {
-                      // keep URL absolute to go through Cloudflare rules and trigger download
-                      src: 'https://mockoon.com/images/logo-text-sticker.svg?download=true',
-                      text: 'SVG (dark)'
+                      text: 'SVG'
                     },
                     {
                       // keep URL absolute to go through Cloudflare rules and trigger download
                       src: 'https://mockoon.com/images/logo-text.png?download=true',
-                      text: 'PNG (light)'
-                    },
-                    {
-                      // keep URL absolute to go through Cloudflare rules and trigger download
-                      src: 'https://mockoon.com/images/logo-text-sticker.png?download=true',
-                      text: 'PNG (dark)'
+                      text: 'PNG'
                     }
                   ]
                 }}
@@ -90,6 +70,63 @@ const Brand: FunctionComponent = function () {
                 cover={false}
                 border={true}
                 borderColor={'var(--bs-body-color)'}
+              />
+            </div>
+          </div>
+          <div className='row justify-content-center mt-8'>
+            <div className='col-12 col-md-6 col-lg-4'>
+              <Card
+                data={{
+                  title: 'Mockoon eyes logo for dark backgrounds',
+                  imageSrc: '/images/logo-eyes-sticker.svg',
+                  imageAlt: 'Mockoon eyes logo',
+                  imagePaddingClasses: 'py-8',
+                  links: [
+                    {
+                      // keep URL absolute to go through Cloudflare rules and trigger download
+                      src: 'https://mockoon.com/images/logo-eyes-sticker.svg?download=true',
+                      text: 'SVG'
+                    },
+                    {
+                      // keep URL absolute to go through Cloudflare rules and trigger download
+                      src: 'https://mockoon.com/images/logo-eyes-sticker.png?download=true',
+                      text: 'PNG'
+                    }
+                  ]
+                }}
+                vertical
+                cover={false}
+                border={true}
+                borderColor='var(--bs-body-color)'
+                backgroundColor='var(--bs-gray-400)'
+                btnLight
+              />
+            </div>
+            <div className='col-12 col-md-6 col-lg-4'>
+              <Card
+                data={{
+                  title: 'Mockoon full logo for dark backgrounds',
+                  imageSrc: '/images/logo-text-sticker.svg',
+                  imageAlt: 'Mockoon full logo',
+                  links: [
+                    {
+                      // keep URL absolute to go through Cloudflare rules and trigger download
+                      src: 'https://mockoon.com/images/logo-text-sticker.svg?download=true',
+                      text: 'SVG'
+                    },
+                    {
+                      // keep URL absolute to go through Cloudflare rules and trigger download
+                      src: 'https://mockoon.com/images/logo-text-sticker.png?download=true',
+                      text: 'PNG'
+                    }
+                  ]
+                }}
+                vertical
+                cover={false}
+                border={true}
+                borderColor='var(--bs-body-color)'
+                backgroundColor='var(--bs-gray-400)'
+                btnLight
               />
             </div>
           </div>

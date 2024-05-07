@@ -84,6 +84,17 @@ const tools = [
       }
     ],
     imageSrc: '/images/illustrations/http-headers-analyzer.svg'
+  },
+  {
+    title: 'Online JSON beautifier and formatter',
+    description: 'Format and beautify your JSON data online',
+    links: [
+      {
+        src: '/tools/json-formatter-beautifier/',
+        text: 'Format JSON'
+      }
+    ],
+    imageSrc: '/images/illustrations/json-formatter-beautifier.svg'
   }
 ];
 

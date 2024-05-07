@@ -9,6 +9,8 @@ const Card: FunctionComponent<{
   cover?: boolean;
   border?: boolean;
   borderColor?: string;
+  backgroundColor?: string;
+  btnLight?: boolean;
   // synchronize colors between border and link
   synchronizedColors?: boolean;
 }> = function (props) {
@@ -26,7 +28,10 @@ const Card: FunctionComponent<{
         className={`card ${border ? 'card-border' : ''} d-flex ${
           props.vertical ? 'flex-column' : 'flex-column flex-lg-row'
         } flex-fill shadow-light-lg text-center h-100`}
-        style={{ borderTopColor: props.borderColor }}
+        style={{
+          borderTopColor: props.borderColor,
+          backgroundColor: props.backgroundColor
+        }}
       >
         {props.data.imageSrc && (
           <div
@@ -83,7 +88,9 @@ const Card: FunctionComponent<{
                   <Link
                     key={`link${linkIndex}`}
                     href={link.src}
-                    className={`btn-xs btn btn-primary-subtle d-flex align-items-center ${
+                    className={`btn-xs btn ${
+                      props.btnLight ? 'btn-light' : 'btn-primary-subtle'
+                    } d-flex align-items-center ${
                       props.data.links?.length > 1 ? '' : 'mt-auto'
                     }`}
                     style={{
@@ -106,7 +113,9 @@ const Card: FunctionComponent<{
                 ) : (
                   <a
                     key={`link${linkIndex}`}
-                    className={`btn-xs btn btn-primary-subtle d-flex align-items-center ${
+                    className={`btn-xs btn ${
+                      props.btnLight ? 'btn-light' : 'btn-primary-subtle'
+                    } d-flex align-items-center ${
                       props.data.links?.length > 1 ? '' : 'mt-auto'
                     }`}
                     href={link.src}

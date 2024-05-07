@@ -13,26 +13,24 @@
   <h1>Mockoon's website repository</h1>
 </div>
 
-This repository is home of Mockoon's documentation, tutorials and blog posts.
+This repository is home to Mockoon's documentation, tutorials, and blog posts.
 
 ---
 
 ## Support/feedback
 
-You can discuss all things related to Mockoon, and ask for help, on the [official community](https://github.com/mockoon/mockoon/discussions). It's also a good place to discuss bugs and feature requests before opening an issue on this repository. For more chat-like discussions, you can also join our [Discord server](https://discord.gg/FtJjkejKGp).
+You can discuss all things related to Mockoon and ask for help on the [official community](https://github.com/mockoon/mockoon/discussions). It's also an excellent place to discuss bugs and feature requests before opening an issue on this repository. For more chat-like discussions, you can also join our [Discord server](https://discord.gg/FtJjkejKGp).
 
 ## Contributing
 
-If you are interested in contributing to Mockoon website and documentation, please take a look at the [contributing guidelines](https://github.com/mockoon/mockoon.com/blob/main/CONTRIBUTING.md).
+If you want to contribute to the Mockoon website and documentation, please review the [contributing guidelines](https://github.com/mockoon/mockoon.com/blob/main/CONTRIBUTING.md).
 
-Please also take a look at our [Code of Conduct](https://github.com/mockoon/mockoon.com/blob/main/CODE_OF_CONDUCT.md).
+Please also look at our [Code of Conduct](https://github.com/mockoon/mockoon.com/blob/main/CODE_OF_CONDUCT.md).
 
 ## Documentation
 
-You will find Mockoon's [documentation](https://mockoon.com/docs/latest/) on the official website. It covers Mockoon's most complex features. Feel free to contribute or ask for new topics to be covered.
+Mockoon's [documentation](https://mockoon.com/docs/latest/) is on the official website. It covers Mockoon's most complex features. Feel free to contribute or ask for new topics to be covered.
 
-## Roadmap
-
-If you want to know what will be coming in the next release you can check the global [Roadmap](https://github.com/orgs/mockoon/projects/9).
+## RoadmYou you can check the global [Roadmap](https://github.com/orgs/mockoon/project to know what will come in the next releases/9).
 
 New releases will be announced on Mockoon's [Twitter account @GetMockoon](https://twitter.com/GetMockoon) and through the newsletter to which you can subscribe [here](https://mockoon.com/newsletter/).

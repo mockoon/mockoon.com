@@ -106,14 +106,21 @@ const tasks = {
       pro: false,
       target: '_blank'
     },
+
     {
-      link: '/course/',
-      title: 'Official online course',
+      link: '/ai-powered-api-mocking/',
+      title: 'AI powered HTTP endpoints mocking',
       pro: true,
       target: null
     }
   ],
   comingSoon: [
+    {
+      link: '/course/',
+      title: 'Official online course',
+      pro: true,
+      target: null
+    },
     {
       link: '/pro/',
       title: 'API deployments in the cloud',

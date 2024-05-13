@@ -7,8 +7,8 @@ const WeeklyMeetupBanner = function () {
       <a href='/discord/' target='_blank'>
         Discord
       </a>{' '}
-      every Wednesday at 4 PM GMT+2 for <strong>Mockoon Meetup</strong>, where
-      you can get your <strong>questions answered</strong>,{' '}
+      every other Wednesday at 4 PM GMT+2 for <strong>Mockoon Meetup</strong>,
+      where you can get your <strong>questions answered</strong>,{' '}
       <strong>share insights</strong>, and <strong>connect</strong> with fellow
       Mockoon enthusiasts!{' '}
       <a href='/weekly-meetup-event/'>

@@ -61,6 +61,17 @@ const caseStudies = [
     authorPosition: 'Product Manager',
     companyLogo: '/images/external/localazy/logo-dark.svg',
     companyLogoAlt: 'Localazy logo'
+  },
+  {
+    quotation:
+      "We're using Mockoon to mock error scenarios and hard-to-reach situations. This allows us to test without a complicated setup and in a deterministic way.",
+    link: '/blog/contributor-spotlight-harry-martland/',
+    authorImg: '/images/external/bookingcom/harry-martland.jpg',
+    authorImgAlt: 'Harry Martland, Principal Engineer at Booking.com',
+    authorName: 'Harry Martland',
+    authorPosition: 'Principal Engineer',
+    companyLogo: '/images/external/bookingcom/logo.svg',
+    companyLogoAlt: 'Booking.com logo'
   }
 ];
 

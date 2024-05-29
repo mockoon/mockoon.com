@@ -16,7 +16,7 @@ kbd {
 pre code,
 code {
   color: $primary;
-  background-color: lighten($primary, 40%);
+  background-color: lighten($primary-desat, 30%);
   padding: 0 0.5rem;
   display: inline-block;
   border-radius: 5px;

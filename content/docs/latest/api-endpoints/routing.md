@@ -49,7 +49,7 @@ Routes support certain patterns and a subset of regular expressions. Here are so
 
 For a complete overview of the patterns available, please refer to Express' [route paths documentation](https://expressjs.com/en/guide/routing.html#route-paths).
 
-> To use parentheses in your path as a normal character, you can escape them by either using a backslashe `\` or square brackets `[]`:
+> 💡 To use parentheses in your path as a normal character, you can escape them by either using a backslashe `\` or square brackets `[]`:
 > `/part1[(]part2[)]` > `/part1\(part2\)`
 
 ### Route parameters
@@ -62,7 +62,7 @@ For a complete overview on how to use and declare route parameters, please refer
 
 You can also retrieve the route parameters by using the `{{urlParam 'paramName'}}` [templating helper](docs:templating/mockoon-request-helpers#urlparam).
 
-> To use a colon `:` in your route path as a normal character, you can escape it by either using double backslashes `\\` or square brackets `[]`:
+> 💡 To use a colon `:` in your route path as a normal character, you can escape it by either using double backslashes `\\` or square brackets `[]`:
 > `/part1[:]part2` > `/part1\\:part2`
 
 ### Query parameters

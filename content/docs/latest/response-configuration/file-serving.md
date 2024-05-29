@@ -18,7 +18,7 @@ To serve a file, you must provide a path in the file input field:
 
 ![fill the file input field{1157x354}](docs-img:file-path.png)
 
-> When a file path is provided, the body editor content will be ignored.
+> 💡 When a file path is provided, the body editor content will be ignored.
 
 ## Absolute or relative paths
 
@@ -26,7 +26,7 @@ You can either provide an absolute path like `/home/username/file.json` or a rel
 
 ![show in folder menu entry{515x315}](docs-img:environment-show-in-folder.png)
 
-> Prior to v1.16.0, relative file paths were resolved from the application executable. This is also supported by the CLI since its version [1.2.0](https://github.com/mockoon/cli/releases/tag/v1.2.0).
+> 💡 Prior to v1.16.0, relative file paths were resolved from the application executable. This is also supported by the CLI since its version [1.2.0](https://github.com/mockoon/cli/releases/tag/v1.2.0).
 
 ## Templating
 

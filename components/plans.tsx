@@ -313,7 +313,6 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                             Download now
                           </Link>
                         </div>
-
                         <div className='d-flex'>
                           <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                             <i className='icon-check'></i>
@@ -324,13 +323,14 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                             <Link href={'/features/'}>features</Link>
                           </p>
                         </div>
+                        <hr />
 
                         <div className='d-flex'>
                           <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                             <i className='icon-check'></i>
                           </div>
 
-                          <p>Community support</p>
+                          <p className='mb-0'>Community support</p>
                         </div>
                       </div>
                     </div>
@@ -376,7 +376,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                           <i className='icon-check'></i>
                         </div>
 
-                        <p>
+                        <p className='mb-0'>
                           All of Mockoon's{' '}
                           <Link href={'/features/'}>features</Link>
                         </p>
@@ -419,7 +419,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                           <i className='icon-check'></i>
                         </div>
 
-                        <p>Community support</p>
+                        <p className='mb-0'>Email support</p>
                       </div>
 
                       <div className='mt-auto'>
@@ -490,7 +490,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                           <i className='icon-check'></i>
                         </div>
 
-                        <p>
+                        <p className='mb-0'>
                           All of Mockoon's{' '}
                           <Link href={'/features/'}>features</Link>
                         </p>
@@ -522,23 +522,31 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                               '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
                             }
                           >
-                            Synchronize {pricing.TEAM.syncQuota} API mocks
-                            accross your team
+                            Collaborate in real-time
                           </Link>{' '}
-                          and collaborate in real-time
+                          with your team on {pricing.TEAM.syncQuota} API mocks
                         </p>
                       </div>
                       <hr />
-
                       <div className='d-flex'>
                         <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                           <i className='icon-check'></i>
                         </div>
 
-                        <p>Organizations up to {pricing.TEAM.maxSeats} seats</p>
+                        <p className='mb-0'>Email support</p>
                       </div>
-
                       <div className='mt-auto'>
+                        <hr />
+                        <div className='d-flex'>
+                          <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                            <i className='icon-check'></i>
+                          </div>
+
+                          <p className='mb-0'>
+                            Organizations up to {pricing.TEAM.maxSeats} seats
+                          </p>
+                        </div>
+
                         <hr />
                         <div className='d-flex'>
                           <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
@@ -608,7 +616,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                           <i className='icon-check'></i>
                         </div>
 
-                        <p>
+                        <p className='mb-0'>
                           All of Mockoon's{' '}
                           <Link href={'/features/'}>features</Link>
                         </p>
@@ -640,10 +648,10 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                               '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
                             }
                           >
-                            Synchronize {pricing.ENTERPRISE.syncQuota} API mocks
-                            accross your team
+                            Collaborate in real-time
                           </Link>{' '}
-                          and collaborate in real-time
+                          with your team on {pricing.ENTERPRISE.syncQuota} API
+                          mocks
                         </p>
                       </div>
                       <hr />
@@ -653,7 +661,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         </div>
 
                         <p className='mb-0'>
-                          Priority support<sup>1</sup>
+                          Enterprise support<sup>1</sup>
                         </p>
                       </div>
                       <hr />
@@ -673,7 +681,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                           <i className='icon-check'></i>
                         </div>
 
-                        <p>Unlimited seats (minimum 3)</p>
+                        <p className='mb-0'>Unlimited seats (minimum 3)</p>
                       </div>
 
                       <div className='mt-auto'>
@@ -711,9 +719,9 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                 proceeding to payment you agree to our{' '}
                 <Link href={'/privacy/'}>privacy policy</Link> and{' '}
                 <Link href={'/terms/'}>terms of service</Link>.<br />
-                <sup>1</sup> Priority support is subject to SLAs, see our{' '}
-                <Link href={'/terms/'}>terms of service</Link> for more
-                information.
+                <sup>1</sup> To learn more about our Enterprise support, see the{' '}
+                <Link href={'/pro/#faq'}>FAQ of our Pro plans</Link> or our{' '}
+                <Link href={'/terms/'}>terms of service</Link>.
               </p>
               <div className='text-center'>
                 <h4 className='fw-bold mt-6 mb-4'>Special requests?</h4>

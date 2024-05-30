@@ -136,7 +136,7 @@ const Pro: FunctionComponent = function () {
         className='py-6 py-md-8 border-top bg-gradient-light-white'
         id='faq'
       >
-        <div className='container'>
+        <div className='container' id='faq'>
           <div className='row justify-content-center'>
             <div className='col-12 col-lg-8 align-items-center'>
               <h2 className='fw-bold mb-6 text-center'>Pro plans FAQ</h2>

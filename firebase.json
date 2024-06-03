@@ -18,7 +18,7 @@
       },
       {
         "source": "/weekly-meetup-event/",
-        "destination": "https://discord.com/events/789493376423952394/1230481297692950588",
+        "destination": "https://discord.com/events/789493376423952394/1242838028158894151",
         "type": 301
       },
       {
@@ -33,7 +33,7 @@
       },
       {
         "source": "/releases{,/}",
-        "destination": "/releases/8.1.1/",
+        "destination": "/releases/8.2.0/",
         "type": 302
       },
       {

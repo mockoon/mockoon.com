@@ -18,7 +18,7 @@ Three parts are required to create a global route:
 
 To create a global route, you first need to create a new HTTP route that will match all the endpoints you want to protect. To do so, create a new route and select "All methods" in the method dropdown:
 
-![wildcard route on all methods{649x318}](docs-img:create-wildcard-route.png)
+![wildcard route on all methods{649x337}](docs-img:create-wildcard-route.png)
 
 In this example, the wildcard route is placed above the `GET /users` route, which is important as it will be [evaluated first](docs:api-endpoints/routing#routes-order) and catch all the requests. You can create it first or move it up in the routes list with a drag and drop.
 

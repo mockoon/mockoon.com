@@ -392,7 +392,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         <p>
                           {pricing.SOLO.templatesQuota}{' '}
                           <Link href={'/ai-powered-api-mocking/'}>
-                            AI-generated templates
+                            AI-generated endpoints
                           </Link>{' '}
                           per month
                         </p>
@@ -506,7 +506,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         <p>
                           {pricing.TEAM.templatesQuota}{' '}
                           <Link href={'/ai-powered-api-mocking/'}>
-                            AI-generated templates
+                            AI-generated endpoints
                           </Link>{' '}
                           per month per seat
                         </p>
@@ -632,7 +632,7 @@ const Plans: FunctionComponent<{ showFree: boolean; showTagline: boolean }> =
                         <p>
                           {pricing.ENTERPRISE.templatesQuota}{' '}
                           <Link href={'/ai-powered-api-mocking/'}>
-                            AI-generated templates
+                            AI-generated endpoints
                           </Link>{' '}
                           per month per seat
                         </p>

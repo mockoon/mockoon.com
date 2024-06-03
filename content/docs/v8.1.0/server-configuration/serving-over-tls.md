@@ -47,7 +47,7 @@ You can disable TLS when running your mock with the [CLI](/cli/) or the [serverl
 To **disable** TLS when running your mock with the CLI, use the `--disable-tls` flag:
 
 ```bash
-mockoon start --disable-tls -d ./mock.json
+mockoon-cli start --disable-tls -d ./mock.json
 ```
 
 > 📘 Check the [CLI dedicated documentation](https://github.com/mockoon/mockoon/tree/main/packages/cli#readme)

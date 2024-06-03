@@ -31,7 +31,7 @@ In the desktop application, the admin API cannot be disabled. However, you can d
 To **disable** the admin API when running your mock with the CLI, use the `--disable-admin-api` flag:
 
 ```bash
-mockoon start --disable-admin-api -d ./mock.json
+mockoon-cli start --disable-admin-api -d ./mock.json
 ```
 
 > 📘 Check the [CLI dedicated documentation](https://github.com/mockoon/mockoon/tree/main/packages/cli#readme)

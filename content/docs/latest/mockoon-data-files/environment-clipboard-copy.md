@@ -14,7 +14,7 @@ order: 1120
 
 To copy a specific environment or route's JSON data to the clipboard, right-click on the environment or route and select **Copy to clipboard (JSON)**:
 
-![Right click on an environment and click on Copy to clipboard (JSON){715x365}](docs-img:export-clipboard-env.png)
+![Right click on an environment and click on Copy to clipboard (JSON){747x368}](docs-img:export-clipboard-env.png)
 
 The resulting JSON can be saved in a file and directly opened in the desktop app or used with the CLI.
 
@@ -30,6 +30,6 @@ You will be prompted to choose a save location for your new environment.
 
 To create a new route from data present in the clipboard, open the **Routes** menu and select **Add route from clipboard**:
 
-![Create new route from clipboard{802x289}](/images/docs/shared/new-environment-from-clipboard.png)
+![Create new route from clipboard{802x289}](/images/docs/shared/new-route-from-clipboard.png)
 
 The new route will be added to your active environment's routes.

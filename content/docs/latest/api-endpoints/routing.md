@@ -78,3 +78,15 @@ To pass arrays and objects in the query string of a request, you must use the fo
 
 - for objects: `?param1=test&obj[prop1]=value`.
 - for arrays: `?param1=test&array[]=value1&array[]=value2` or `?param1=test&array[0]=value1&array[1]=value2` or `?param1=test&array=value1,value2`.
+
+### Temporarily disable a route
+
+You can **disable a route** by clicking on the **Toggle route** entry in the route dropdown menu. The route will be marked with a red border and will not be accessible until you enable it again.
+
+![disable route entry in the route dropdown menu{647x322}](docs-img:route-menu-disable-route.png)
+
+You can also disable all routes in a folder by using the **Toggle direct child routes** entry in the folder dropdown menu.
+
+When running your mock API using the [CLI](/cli/), you can [disable routes using the `--disable-routes` flag](https://github.com/mockoon/mockoon/tree/main/packages/cli#disabling-routes) followed by a route UUID or keyword/name or a folder keyword/name: `mockoon start --disable-routes myroute folder2`.
+
+When using the [serverless package](/serverless/), you can [disable routes using the `disabledRoutes` option](https://github.com/mockoon/mockoon/tree/main/packages/serverless#disabling-routes).

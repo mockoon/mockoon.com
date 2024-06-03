@@ -7,7 +7,7 @@ import Layout from '../layout/layout';
 const meta = {
   title: 'AI-powered API mocking',
   description:
-    'Mockoon AI assistant helps you create realistic mock APIs in seconds for fast prototyping and learning'
+    'Mockoon AI assistants help you create realistic mock APIs endpoints in seconds for fast prototyping and learning'
 };
 
 const AIPoweredMocking = function () {
@@ -17,7 +17,7 @@ const AIPoweredMocking = function () {
 
       <Hero
         title='🪄 <span class="text-primary">AI-powered</span> API mocking <span class="badge text-bg-warning fs-4 align-text-top ms-2">PRO</span>'
-        subtitle='Mockoon AI assistant helps you create realistic mock APIs in seconds for fast prototyping and learning.'
+        subtitle='Mockoon AI assistants help you create realistic mock APIs endpoints in seconds for fast prototyping and learning.'
       />
 
       <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
@@ -28,7 +28,7 @@ const AIPoweredMocking = function () {
                 <SidebarBanner
                   pro
                   title='Prototype faster than ever!'
-                  text='With Mockoon Pro, you can generate your own templates using our AI assistant and prototype faster than ever.'
+                  text='With Mockoon Pro, you can generate your own templates and endpoints using our AI assistants and prototype faster than ever.'
                   link='/pro/'
                   ctaText='Discover Mockoon Pro →'
                 />
@@ -69,7 +69,7 @@ const AIPoweredMocking = function () {
                 Learn more in our{' '}
                 <Link
                   href={
-                    '/docs/latest/mockoon-cloud/templates-and-ai-assistant/#use-the-ai-assistant-to-generate-realistic-data'
+                    '/docs/latest/mockoon-cloud/templates-and-ai-assistant/'
                   }
                 >
                   documentation
@@ -78,11 +78,20 @@ const AIPoweredMocking = function () {
               </p>
               <p className='text-center'>
                 <img
-                  src='/images/ai-powered-api-mocking/ai-generated-mock-api-endpoint.gif'
+                  src='/images/ai-powered-api-mocking/ai-generated-mock-api-body-template.gif'
                   className='img-fluid mx-auto d-block mt-8 rounded'
                   alt='select generate from template in the route creation menu to create a AI-generated mock API endpoint'
                   width='766'
                   height='605'
+                />
+              </p>
+              <p className='text-center'>
+                <img
+                  src='/images/ai-powered-api-mocking/ai-generated-mock-api-http-endpoint.gif'
+                  className='img-fluid mx-auto d-block mt-8 rounded'
+                  alt='select generate from template in the route creation menu to create a AI-generated mock API endpoint'
+                  width='920'
+                  height='540'
                 />
               </p>
             </div>

@@ -24,7 +24,7 @@ To create a new callback, open the **Callbacks** options by clicking on the tab 
 
 Add a new callback by clicking on the "plus" button:
 
-![Add a new callback by clicking on the plus button{1484x578}](docs-img:add-callback.png)
+![Add a new callback by clicking on the plus button{1484x576}](docs-img:add-callback.png)
 
 ## Configure a callback
 

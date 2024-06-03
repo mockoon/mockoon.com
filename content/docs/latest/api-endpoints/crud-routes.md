@@ -18,7 +18,7 @@ A CRUD endpoint will automatically create a series of routes during runtime, all
 
 To create a CRUD route, click on the "CRUD route" entry in the add route menu:
 
-![Add a new CRUD route{440x304}](docs-img:add-crud-route.png)
+![Add a new CRUD route{498x304}](docs-img:add-crud-route.png)
 
 Then, set its path, usually a [resource name](/articles/api-guide-rest-api-components/#resource-url-request):
 

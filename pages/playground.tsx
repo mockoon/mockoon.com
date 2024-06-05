@@ -4,9 +4,9 @@ import Accordion from '../components/accordion';
 import CodeBlock from '../components/code-block';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
+import Quote from '../components/quote';
 import Layout from '../layout/layout';
 import { AccordionData } from '../models/common.model';
-import Quote from '../components/quote';
 
 const meta = {
   title: "Mockoon's Playground API",
@@ -62,6 +62,31 @@ const resources: AccordionData = [
   {
     items: [
       {
+        title: 'Companies <code>/companies</code>',
+        subtitle:
+          'Fake companies JSON data including name, industry, location, number of employees, etc.',
+        content: (
+          <div className='px-4'>
+            <CodeBlock
+              code={`{
+  "id": "c408c0de-c0ba-40f3-8a4f-f1acb561de03",
+  "name": "Botsford Group",
+  "industry": "monetize compelling mindshare",
+  "location": {
+    "city": "South Valley",
+    "country": "American Samoa"
+  },
+  "employees": 23895,
+  "is_public": false
+}`}
+              language='json'
+              lineBreak
+            ></CodeBlock>
+          </div>
+        ),
+        count: 100
+      },
+      {
         title: 'Contacts <code>/contacts</code>',
         subtitle:
           'Fake contacts JSON data including name, email, phone, complete address, etc.',
@@ -80,6 +105,29 @@ const resources: AccordionData = [
     "zip": "72249-8454"
   },
   "age": 56
+}`}
+              language='json'
+              lineBreak
+            ></CodeBlock>
+          </div>
+        ),
+        count: 100
+      },
+      {
+        title: 'Customers <code>/customers</code>',
+        subtitle:
+          'Fake customers JSON data including name, email, phone, address, age, etc.',
+        content: (
+          <div className='px-4'>
+            <CodeBlock
+              code={` {
+  "id": "f724b18e-0165-452f-8256-0803f100f779",
+  "name": "Pierce Schinner",
+  "email": "Alexis85@yahoo.com",
+  "phone": "1-492-539-2953 x1943",
+  "address": "496 Maggio Gardens, Port Bufordville, KS 76070",
+  "age": 50,
+  "isVip": true
 }`}
               language='json'
               lineBreak
@@ -112,6 +160,26 @@ const resources: AccordionData = [
         count: 100
       },
       {
+        title: 'Notifications <code>/notifications</code>',
+        subtitle: 'Fake notifications JSON data including title, message, etc.',
+        content: (
+          <div className='px-4'>
+            <CodeBlock
+              code={`{
+  "id": "23d78578-0c20-4ff0-9e37-a6b6ae83e164",
+  "title": "Sophismata careo statim auditor audentia expedita.",
+  "message": "Adsum bestia ante sortitus balbus cultura sunt vaco voluptates. Paulatim utique rem architecto demulceo thema verecundia. Verto vomito curriculum arbitro sint amita.",
+  "read": false,
+  "timestamp": "Wed Jun 05 2024 04:28:45 GMT+0200 (Central European Summer Time)"
+}`}
+              language='json'
+              lineBreak
+            ></CodeBlock>
+          </div>
+        ),
+        count: 100
+      },
+      {
         title: 'Photos <code>/photos</code>',
         subtitle: 'Fake photos JSON data including URL, caption, likes, etc.',
         content: (
@@ -130,6 +198,40 @@ const resources: AccordionData = [
           </div>
         ),
         count: 100
+      },
+      {
+        title: 'Pokemons <code>/pokemons</code> (read-only)',
+        subtitle:
+          'List of Pokemons with their name, type, base stats, etc. This dataset is read-only, you can only GET the full list or a single Pokemon by its id (<code>GET /pokemons</code> or <code>GET /pokemons/{id}</code>). ',
+        content: (
+          <div className='px-4'>
+            <CodeBlock
+              code={`{
+  "id": 5,
+  "name": {
+    "english": "Charmeleon",
+    "japanese": "リザード",
+    "chinese": "火恐龙",
+    "french": "Reptincel"
+  },
+  "type": [
+    "Fire"
+  ],
+  "base": {
+    "HP": 58,
+    "Attack": 64,
+    "Defense": 58,
+    "Sp. Attack": 80,
+    "Sp. Defense": 65,
+    "Speed": 80
+  }
+}`}
+              language='json'
+              lineBreak
+            ></CodeBlock>
+          </div>
+        ),
+        count: 809
       },
       {
         title: 'Posts <code>/posts</code>',

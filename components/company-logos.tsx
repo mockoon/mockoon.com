@@ -18,7 +18,14 @@ const CompanyLogos = function () {
     { src: '/images/logos/jpmchase.svg', alt: 'JP Morgan Chase logo' },
     { src: '/images/logos/cryptocom.svg', alt: 'Crypto.com logo' },
     { src: '/images/logos/audi.svg', alt: 'Audi logo' },
-    { src: '/images/logos/appwrite.svg', alt: 'Appwrite logo' }
+    { src: '/images/logos/appwrite.svg', alt: 'Appwrite logo' },
+    { src: '/images/logos/sky.svg', alt: 'Sky logo' },
+    { src: '/images/logos/liebherr.svg', alt: 'Liebherr logo' },
+    { src: '/images/logos/tesla.svg', alt: 'Tesla logo' },
+    { src: '/images/logos/bosch.svg', alt: 'Bosch logo' },
+    { src: '/images/logos/nhs.svg', alt: 'NHS logo' },
+    { src: '/images/logos/oracle.svg', alt: 'Oracle logo' },
+    { src: '/images/logos/rakuten.svg', alt: 'Rakuten logo' }
   ];
   const [logos, setLogos] = useState([]);
 

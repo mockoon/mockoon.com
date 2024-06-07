@@ -18,11 +18,10 @@ Environment variables are accessible [everywhere templating helpers are supporte
 
 ## Default prefix
 
-By default, only the environment variables prefixed with `MOCKOON_` are available, for example, `MOCKOON_MY_VARIABLE`. You can access the variable in your templates using the `getEnvVar` helper with or without the prefix:
+By default, only the environment variables prefixed with `MOCKOON_` are available, for example, `MOCKOON_MY_VARIABLE`. You can access the variable in your templates using the `getEnvVar` helper:
 
 ```handlebars
 {{getEnvVar 'MOCKOON_MY_VARIABLE'}}
-{{getEnvVar 'MY_VARIABLE'}}
 ```
 
 > 📘 [Helper documentation](docs:templating/mockoon-variables-helpers#getenvvar).

@@ -143,9 +143,7 @@ By default, only environment variables with the `MOCKOON_` prefix are available.
 **Examples**
 
 ```handlebars
-{{setVar 'varname' 'value'}}
-
-{{getEnvVar 'VARIABLE_NAME' 'default value'}}
-{{getEnvVar 'VARIABLE_NAME'}}
+{{getEnvVar 'MOCKOON_VARIABLE_NAME' 'default value'}}
+{{getEnvVar 'MOCKOON_VARIABLE_NAME'}}
 {{getEnvVar (body 'property')}}
 ```

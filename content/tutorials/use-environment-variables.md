@@ -21,11 +21,10 @@ They are available in all your environments, in the desktop application, or when
 
 ## 1. Access environment variables
 
-To access an environment variable in your templates, use the `getEnvVar` helper. By default, only the environment **variables prefixed with `MOCKOON_`** are available. You can access the variable in your templates using the `getEnvVar` helper with or without the prefix. If you omit the prefix, the helper will automatically add it:
+To access an environment variable in your templates, use the `getEnvVar` helper. By default, only the environment **variables prefixed with `MOCKOON_`** are available. You can access the variable in your templates using the `getEnvVar` helper. If you omit the prefix, the helper will automatically add it:
 
 ```handlebars
 {{getEnvVar 'MOCKOON_MY_VARIABLE'}}
-{{getEnvVar 'MY_VARIABLE'}}
 ```
 
 > 📘 Head over to the [environment variables documentation](/docs/latest/variables/environment-variables/) where you will find more examples.

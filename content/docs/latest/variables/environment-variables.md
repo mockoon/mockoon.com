@@ -25,7 +25,7 @@ By default, only the environment variables prefixed with `MOCKOON_` are availabl
 {{getEnvVar 'MY_VARIABLE'}}
 ```
 
-> 📘 [Helper documentation](docs:templating/mockoon-variables-helpers#getglobalvar).
+> 📘 [Helper documentation](docs:templating/mockoon-variables-helpers#getenvvar).
 
 ## Changing or removing the prefix
 

@@ -95,6 +95,17 @@ const tools = [
       }
     ],
     imageSrc: '/images/illustrations/json-formatter-beautifier.svg'
+  },
+  {
+    title: 'Online CSV parser and JSON converter',
+    description: 'View and parse CSV data online and convert it to JSON',
+    links: [
+      {
+        src: '/tools/csv-parser-json-converter/',
+        text: 'Convert CSV'
+      }
+    ],
+    imageSrc: '/images/illustrations/csv-parser-json-converter.svg'
   }
 ];
 

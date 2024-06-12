@@ -543,9 +543,9 @@ const Terms: FunctionComponent = function () {
               <p>
                 The Support Service will be conducted through written means,
                 which you can choose at your discretion. By default,
-                communication will be made via email to support@mockoon.com.
-                Please note that live audio or video calls are not included in
-                the support service.
+                communication will be made via email, to the address indicated
+                in your account settings. Please note that live audio or video
+                calls are not included in the support service.
               </p>
               <p>
                 Please note that support services do not cover assistance with

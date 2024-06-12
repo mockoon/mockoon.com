@@ -40,7 +40,7 @@ const faq: AccordionData = [
       {
         title: 'What is the "priority support" (Enterprise plan)?',
         content:
-          'We will provide a priority support channel for your team by email or through the platform of your choice (Slack, etc.). Our priority support service is provided during regular business hours and working days (9 am to 5 pm CET/CEST, Monday to Friday). Please refer to the <a href="/terms/">terms of service</a> for more information.'
+          'We will provide a priority support channel for your team by email or through the platform of your choice (Slack, etc.) with a guaranteed response time of one business day. Our priority support service is provided during regular business hours and working days (9 am to 5 pm CET/CEST, Monday to Friday). Please refer to the <a href="/terms/">terms of service</a> for more information.'
       },
       {
         title: 'What is the "welcome online training" (Enterprise plan)?',

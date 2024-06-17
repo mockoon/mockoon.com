@@ -1,6 +1,7 @@
+import { Plans, Team, User } from '@mockoon/cloud';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
-import { EmailingContact, Plans, Team, User } from '../models/user.model';
+import { EmailingContact } from '../models/user.model';
 import { useAuth } from './auth';
 
 const useCurrentUser = () => {

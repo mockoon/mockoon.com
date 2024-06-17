@@ -1,3 +1,4 @@
+import { Plans } from '@mockoon/cloud';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useEffect } from 'react';
@@ -9,7 +10,6 @@ import PaddleScript from '../../components/paddle';
 import Spinner from '../../components/spinner';
 import { frequencyNames, planNames } from '../../constants/plans';
 import Layout from '../../layout/layout';
-import { Plans } from '../../models/user.model';
 import { useAuth } from '../../utils/auth';
 import {
   useCurrentSubscriptionLinks,

@@ -213,7 +213,7 @@ const Course: FunctionComponent = function () {
                     Get informed when the course is available and get a{' '}
                     <strong>25% discount</strong> on the regular course price.
                   </p>
-                  <EmailForm formType='coursepreview' />
+                  <EmailForm formType='coursePreview' />
                 </div>
                 <div className='card-footer'>
                   <p className='mb-0 text-center h6 text-gray-700'>

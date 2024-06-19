@@ -4,6 +4,7 @@ Disallow: /login
 Disallow: /signup
 Disallow: /app-auth
 Disallow: /email-verification
+Disallow: /newsletter-confirm
 Disallow: /account
 Disallow: /terms
 Disallow: /privacy

@@ -1,60 +1,112 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import FormHoneypot from './form-honeypot';
+import Spinner from './spinner';
 
-// mailchimp groups fields names
-const groups = {
-  newsletter: 'group[302881][1]',
-  productpreview: 'group[302881][2]',
-  coursepreview: 'group[302881][4]'
-};
+const EmailForm: FunctionComponent<{
+  formType: 'newsletter' | 'productUpdates' | 'coursePreview';
+}> = function ({ formType }) {
+  const {
+    register: registerFormField,
+    handleSubmit,
+    reset,
+    formState: { isSubmitting }
+  } = useForm();
+  const [apiError, setApiError] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
-const EmailForm: FunctionComponent<{ formType: keyof typeof groups }> =
-  function ({ formType }) {
-    return (
-      <form
-        action='https://mockoon.us17.list-manage.com/subscribe/post?u=a8822ec82cbe40c6dc5564bd4&amp;id=e054c8a3a4'
-        method='post'
-        target='_blank'
-        noValidate
-      >
+  const onSubmit = async (data) => {
+    if (!data['work_address']) {
+      delete data['work_address'];
+
+      if (formType === 'newsletter') {
+        data = {
+          ...data,
+          ...{
+            newsletter: true,
+            productUpdates: true,
+            coursePreview: true
+          }
+        };
+      } else {
+        data = {
+          ...data,
+          ...{
+            [formType]: true
+          }
+        };
+      }
+
+      try {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/newsletter`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          }
+        );
+
+        if (response.status === 204) {
+          setSubmitSuccess(true);
+          reset();
+        } else {
+          setApiError(true);
+        }
+      } catch {
+        setApiError(true);
+      }
+    }
+  };
+
+  return (
+    <form
+      onSubmit={(e) => {
+        setSubmitSuccess(false);
+        setApiError(false);
+        handleSubmit(onSubmit)(e);
+      }}
+    >
+      <div className='d-flex align-items-center'>
         <div className='input-group'>
           <input
             className='form-control'
             type='email'
-            id='newsletter-email'
-            name='EMAIL'
+            id='email'
             placeholder='Email address'
+            required
+            {...registerFormField('email')}
           />
-          <input
-            style={{ display: 'none' }}
-            aria-hidden='true'
-            type='checkbox'
-            name={groups[formType]}
-            value='1'
-            checked
-            readOnly
-            tabIndex={-1}
-          ></input>
-          <button className='btn btn-primary-subtle' type='submit'>
+          <FormHoneypot inputRegister={registerFormField('work_address')} />
+          <button
+            className='btn btn-primary-subtle'
+            type='submit'
+            disabled={isSubmitting}
+          >
             {formType === 'newsletter' ? 'Subscribe' : 'Keep me posted'}
           </button>
         </div>
-
-        <p className='text-gray-700 text-center h6 pt-2'>
-          Your email will not be shared or used for any other purpose.
-        </p>
-
-        <div
-          style={{ position: 'absolute', left: '-5000px' }}
-          aria-hidden='true'
-        >
-          <input
-            type='text'
-            name='b_a8822ec82cbe40c6dc5564bd4_e054c8a3a4'
-            tabIndex={-1}
-          />
+        {isSubmitting && (
+          <div className='ms-2'>
+            <Spinner />
+          </div>
+        )}
+      </div>
+      <p className='text-gray-700 text-center h6 pt-2'>
+        Your email will not be shared or used for any other purpose.
+      </p>
+      {apiError && (
+        <div className='text-danger text-center fw-bold pb-4'>
+          Something went wrong! Please try again later.
         </div>
-      </form>
-    );
-  };
+      )}
+      {submitSuccess && (
+        <div className='text-success text-center fw-bold'>
+          Thank you for subscribing!
+        </div>
+      )}
+    </form>
+  );
+};
 
 export default EmailForm;

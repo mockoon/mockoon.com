@@ -121,8 +121,8 @@ const AccountNotifications: FunctionComponent = function () {
 
                               <small className='text-gray-700'>
                                 Receive account related information and updates
-                                (e.g. billing, account changes, etc.). You
-                                cannot unsubscribe from these emails.
+                                (e.g. welcome email, billing, account changes,
+                                etc.). You cannot unsubscribe from these emails.
                               </small>
                             </div>
                             <div className='col-auto'>

@@ -155,7 +155,7 @@ const Pro: FunctionComponent = function () {
               </h2>
               <div className='row align-items-center text-lg-start text-center'>
                 <div className='col-12 justify-content-end'>
-                  <EmailForm formType='productpreview' />
+                  <EmailForm formType='productUpdates' />
                 </div>
               </div>
             </div>

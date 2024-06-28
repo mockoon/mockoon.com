@@ -1,6 +1,6 @@
 {
   "uuid": "72998fd1-41d2-4e66-9c67-c504b1fc8b54",
-  "lastMigration": 28,
+  "lastMigration": 32,
   "name": "Mockoon api",
   "endpointPrefix": "",
   "latency": 0,
@@ -15,7 +15,7 @@
       "responses": [
         {
           "uuid": "6bd199ae-db7f-42f9-8056-c47490765ce9",
-          "body": "{\n  \"tag\": \"5.1.0\"\n}",
+          "body": "{\n  \"tag\": \"8.2.0\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -29,10 +29,10 @@
           "default": true,
           "databucketID": "",
           "bodyType": "INLINE",
-          "crudKey": "id"
+          "crudKey": "id",
+          "callbacks": []
         }
       ],
-      "enabled": true,
       "responseMode": null,
       "type": "http"
     }
@@ -75,5 +75,6 @@
       "type": "route",
       "uuid": "fd188009-3825-4214-ba85-028e3521c9b2"
     }
-  ]
+  ],
+  "callbacks": []
 }

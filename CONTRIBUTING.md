@@ -17,8 +17,9 @@ The following rules apply to all contributions:
 - Run `npm run dev`.
 
 You will get hot reload on the Next.js application.
-Accessing the documentation requires a mock of Mockoon's API release endpoint. Run `npm run api:mock` to start the mock server.
-You can use the `npm run dev:all` command to start both the Next.js application and the API mock server.
+
+> ⚠️ Accessing the documentation requires a mock of Mockoon's API release endpoint. Run `npm run api:mock` to start the mock server.
+> You can use the `npm run dev:all` command to start both the Next.js application and the API mock server.
 
 ## Work on your feature or bugfix
 

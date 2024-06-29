@@ -3,7 +3,7 @@ import Card from '../components/card';
 import Meta from '../components/meta';
 import Layout from '../layout/layout';
 
-const Custom404: FunctionComponent = function () {
+export default function () {
   return (
     <Layout footerBanner='download'>
       <Meta title={'Page not found'} description='' />
@@ -73,6 +73,4 @@ const Custom404: FunctionComponent = function () {
       </section>
     </Layout>
   );
-};
-
-export default Custom404;
+}

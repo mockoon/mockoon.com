@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === 'development') {
 
 export { firebaseApp };
 
-function MyApp({ Component, pageProps }) {
+export default function ({ Component, pageProps }) {
   const pathName = usePathname();
 
   useEffect(() => {
@@ -43,4 +43,3 @@ function MyApp({ Component, pageProps }) {
     </>
   );
 }
-export default MyApp;

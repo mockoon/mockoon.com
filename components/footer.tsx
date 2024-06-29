@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FunctionComponent } from 'react';
 import { FooterCTA } from '../models/common.model';
 import ContactBanner from './contact-banner';
@@ -8,6 +9,8 @@ import EmailForm from './email-form';
 const Footer: FunctionComponent<{
   banner: FooterCTA;
 }> = function (props) {
+  const router = useRouter();
+
   return (
     <footer className='py-3 bg-gray-200'>
       <div className='container'>
@@ -401,6 +404,13 @@ const Footer: FunctionComponent<{
           <p className='text-gray-500 h6'>
             &copy; Mockoon 2017 - {new Date().getFullYear()}
           </p>
+          {router.route.includes('use-cases') && (
+            <p>
+              <a href='https://storyset.com' className='text-gray-500 h6'>
+                Illustrations by Storyset
+              </a>
+            </p>
+          )}
         </div>
       </div>
     </footer>

@@ -20,8 +20,9 @@ const getTemplates = async () => {
 
 function addPage(frequency, priority) {
   return function (path) {
-    const route =
-      (path.includes('/index') ? path.replace('/index', '') : path) + '/';
+    let route = path.replace(/\\/g, '/');
+    route =
+      (route.includes('/index') ? route.replace('/index', '') : route) + '/';
 
     return `  <url>
     <loc>${`${websiteURL}${route}`}</loc>
@@ -180,7 +181,9 @@ Promise.all([
       'privacy',
       'terms',
       'email-verification',
-      '404'
+      '404',
+      'unsubscribe',
+      'newsletter-confirm'
     ]
   ),
   generateSitemap('pages/integrations/*.tsx', 'integrations', '^pages'),
@@ -202,6 +205,11 @@ Promise.all([
   generateSitemap(
     '{pages,content}/case-studies/!(\\[)*.{tsx,md}',
     'case-studies',
+    '^(content|pages)'
+  ),
+  generateSitemap(
+    '{pages,content}/use-cases/!(\\[)*.{tsx,md}',
+    'use-cases',
     '^(content|pages)'
   ),
   generateSitemap(

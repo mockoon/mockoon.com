@@ -17,15 +17,15 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 | [`repeat`](#repeat) | [`data`](#data)       |
 | [`switch`](#switch) | [`dataRaw`](#dataraw) |
 
-| Arrays              | Objects             |
-| ------------------- | ------------------- |
-| [`array`](#array)   | [`object`](#object) |
-| [`oneOf`](#oneof)   |                     |
-| [`someOf`](#someof) |                     |
-| [`join`](#join)     |                     |
-| [`slice`](#slice)   |                     |
-| [`len`](#len)       |                     |
-| [`filter`](#filter) |                     |
+| Arrays              |                       | Objects             |
+| ------------------- | --------------------- | ------------------- |
+| [`array`](#array)   | [`sort`](#sort)       | [`object`](#object) |
+| [`oneOf`](#oneof)   | [`sortBy`](#sortby)   |                     |
+| [`someOf`](#someof) | [`reverse`](#reverse) |                     |
+| [`join`](#join)     |                       |                     |
+| [`slice`](#slice)   |                       |                     |
+| [`len`](#len)       |                       |                     |
+| [`filter`](#filter) |                       |                     |
 
 | Math                    |                       |
 | ----------------------- | --------------------- |
@@ -363,6 +363,59 @@ result: {type: [1,2,3]}
 
 {{{object type=(filter (array 1 2 3) 1 3)}}}
 result: {type: [1,3]}
+```
+
+## sort
+
+Return a sorted array of strings or numbers. To sort array of objects, use the [sortBy](#sortby) helper.
+
+| Arguments (ordered) | Type   | Description                  |
+| ------------------- | ------ | ---------------------------- |
+| 0                   | []     | Input array                  |
+| [1 = asc]           | string | Sort order ('asc' or 'desc') |
+
+**Examples**
+
+```handlebars
+{{sort (array 'item2' 'item1' 'item3') 'desc'}}
+result: ['item3','item2','item1']
+
+{{sort (array 'item2' 'item1' 'item3')}}
+result: ['item1','item2','item3']
+```
+
+## sortBy
+
+Return an array of objects sorted by a given key. This helper can be used with data buckets, use the [dataRaw](#dataraw) for that.
+
+| Arguments (ordered) | Type     | Description                     |
+| ------------------- | -------- | ------------------------------- |
+| 0                   | object[] | Input array of objects          |
+| 1                   | string   | Object key to sort the array by |
+| [2 = asc]           | string   | Sort order ('asc' or 'desc')    |
+
+**Examples**
+
+```handlebars
+{{sortBy (array (object key1=10 key2=20) (object key1=30 key2=30) (object key1=15 key2=25)) 'key1'}}
+result: [{"key2": 20, "key1": 10}, {"key2": 25, "key1": 15}, {"key2": 30, "key1": 30}]
+
+{{sortBy (dataRaw 'Users') 'name' 'desc'}}
+```
+
+## reverse
+
+Return an array with the elements in reverse order.
+
+| Arguments (ordered) | Type | Description |
+| ------------------- | ---- | ----------- |
+| 0                   | []   | Input array |
+
+**Examples**
+
+```handlebars
+{{reverse (array 'item1' 'item2' 'item3')}}
+result: ['item3','item2','item1']
 ```
 
 ## add

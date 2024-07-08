@@ -40,15 +40,15 @@ const features: CardData[] = [
     ]
   },
   {
-    title: 'Quick prototyping using AI',
+    title: 'Deploy your mock APIs',
     topTag: 'PRO',
     topTagClasses: 'text-bg-warning',
     description:
-      'Use our read-to-use templates and AI assistant to quickly prototype your mock APIs',
+      'Deploy your mock APIs online with Mockoon Cloud and share them with your team',
     links: [
       {
-        src: '/ai-powered-api-mocking/',
-        text: 'Learn more →'
+        src: '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/',
+        text: 'Documentation →'
       }
     ]
   },
@@ -69,14 +69,15 @@ const features: CardData[] = [
     ]
   },
   {
-    title: 'Cloud synchronization',
+    title: 'Quick prototyping using AI',
     topTag: 'PRO',
     topTagClasses: 'text-bg-warning',
-    description: 'Synchronize your mock APIs across all your devices.',
+    description:
+      'Use our read-to-use templates and AI assistant to quickly prototype your mock APIs',
     links: [
       {
-        src: '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/',
-        text: 'Documentation →'
+        src: '/ai-powered-api-mocking/',
+        text: 'Learn more →'
       }
     ]
   },
@@ -102,10 +103,10 @@ const features: CardData[] = [
     ]
   },
   {
-    title: 'Real-time collaboration',
+    title: 'Cloud synchronization',
     topTag: 'PRO',
     topTagClasses: 'text-bg-warning',
-    description: 'Collaborate with your team in real-time on your mock APIs.',
+    description: 'Synchronize your mock APIs across all your devices.',
     links: [
       {
         src: '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/',
@@ -127,6 +128,18 @@ const features: CardData[] = [
   {
     title: 'Simulated latency',
     description: 'Add latency at environment or route level or even both.'
+  },
+  {
+    title: 'Real-time collaboration',
+    topTag: 'PRO',
+    topTagClasses: 'text-bg-warning',
+    description: 'Collaborate with your team in real-time on your mock APIs.',
+    links: [
+      {
+        src: '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/',
+        text: 'Documentation →'
+      }
+    ]
   },
   {
     title: 'Requests and responses logs',

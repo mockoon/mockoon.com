@@ -346,7 +346,7 @@ const Course: FunctionComponent = function () {
                   </div>
                 ))}
               </div>
-              <Quote>
+              <Quote colorScheme='secondary'>
                 ➡️ To go further, <Link href={'/download/'}>download</Link>{' '}
                 Mockoon and follow our{' '}
                 <Link href={'/tutorials/getting-started/'}>
@@ -462,7 +462,7 @@ const Course: FunctionComponent = function () {
                     </li>
                   </ul>
 
-                  <Quote>
+                  <Quote colorScheme='secondary'>
                     💡 You can also use the sorting, searching and filtering
                     query parameters on the main GET route, example:{' '}
                     <code className='p-0'>

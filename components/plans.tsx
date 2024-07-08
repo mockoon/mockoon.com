@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useState } from 'react';
 import { frequencyNames, planNames } from '../constants/plans';
+import { pricing } from '../data/pricing';
 import { useAuth } from '../utils/auth';
 import { useCountdown } from '../utils/countdown';
 import { useCurrentUser } from '../utils/queries';
@@ -11,56 +12,18 @@ import PaddleScript from './paddle';
 
 const queryClient = new QueryClient();
 
-const pricing = {
-  SOLO: {
-    MONTHLY: {
-      price: 15,
-      priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_SOLO_MONTHLY_PRICE_ID
-    },
-    YEARLY: {
-      price: 150,
-      priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_SOLO_YEARLY_PRICE_ID
-    },
-    templatesQuota: 100,
-    syncQuota: 5,
-    discount: '🏷️ 2 months free'
-  },
-  TEAM: {
-    MONTHLY: {
-      price: 25,
-      priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_TEAM_MONTHLY_PRICE_ID
-    },
-    YEARLY: {
-      price: 250,
-      priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_TEAM_YEARLY_PRICE_ID
-    },
-    templatesQuota: 200,
-    syncQuota: 10,
-    discount: '🏷️ 2 months free',
-    minSeats: 1,
-    maxSeats: 5
-  },
-  ENTERPRISE: {
-    MONTHLY: {
-      price: 50,
-      priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_ENTERPRISE_MONTHLY_PRICE_ID
-    },
-    YEARLY: {
-      price: 600,
-      priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_ENTERPRISE_YEARLY_PRICE_ID
-    },
-    templatesQuota: 500,
-    syncQuota: 20,
-    discount: null,
-    minSeats: 3,
-    maxSeats: 99
-  }
-};
-
 const discounts = {
   SOLO: {
     MONTHLY: process.env.NEXT_PUBLIC_PADDLE_PLAN_SOLO_MONTHLY_DISCOUNT,
     YEARLY: process.env.NEXT_PUBLIC_PADDLE_PLAN_SOLO_YEARLY_DISCOUNT
+  },
+  TEAM: {
+    MONTHLY: process.env.NEXT_PUBLIC_PADDLE_PLAN_TEAM_MONTHLY_DISCOUNT,
+    YEARLY: process.env.NEXT_PUBLIC_PADDLE_PLAN_TEAM_YEARLY_DISCOUNT
+  },
+  ENTERPRISE: {
+    MONTHLY: process.env.NEXT_PUBLIC_PADDLE_PLAN_ENTERPRISE_MONTHLY_DISCOUNT,
+    YEARLY: process.env.NEXT_PUBLIC_PADDLE_PLAN_ENTERPRISE_YEARLY_DISCOUNT
   }
 };
 
@@ -70,9 +33,8 @@ const suffixes = {
 };
 
 const PlansView: FunctionComponent<{
-  showFree: boolean;
   showTagline: boolean;
-}> = function ({ showFree, showTagline }) {
+}> = function ({ showTagline }) {
   const auth = useAuth();
   const currentUser = useCurrentUser();
   const router = useRouter();
@@ -148,7 +110,7 @@ const PlansView: FunctionComponent<{
         redirect(plan);
       }}
     >
-      {currentUser.data?.plan === Plans.FREE && 'Subscribe'}
+      {currentUser.data?.plan === Plans.FREE && 'Buy now'}
 
       {currentUser.data?.plan !== Plans.FREE &&
         currentUser.data?.plan === plan &&
@@ -157,6 +119,16 @@ const PlansView: FunctionComponent<{
         currentUser.data?.plan !== plan &&
         '&nbsp;'}
     </button>
+  );
+  const tickBadge = (
+    <div className='badge badge-rounded-circle text-bg-success-subtle'>
+      <i className='icon-check'></i>
+    </div>
+  );
+  const crossBadge = (
+    <div className='badge badge-rounded-circle text-bg-danger-subtle'>
+      <i className='icon-clear'></i>
+    </div>
   );
 
   return (
@@ -167,11 +139,18 @@ const PlansView: FunctionComponent<{
           <div className='container'>
             {discountEnabled && (
               <div className='text-center my-6 col-md-8 mx-auto'>
-                <div className='alert alert-light border-success border-2 shadow'>
-                  🤖 <strong>Cyber Monday!</strong> Get 50% off a new Solo plan
-                  subscription! <br /> (50% off the first year or first 6
-                  months, discount applied at checkout)
-                  <br />
+                <div className='alert alert-light border-info-subtle border-2 shadow'>
+                  <p>
+                    📦 <strong>Cloud deployments are available!</strong>
+                  </p>
+                  <p>
+                    To celebrate the launch of the cloud deployments feature,
+                    we're offering a 50% discount on the first 6 months for
+                    monthly subscriptions or 25% of a yearly subscription.
+                  </p>
+                  <p>
+                    (The discount will be automatically applied at checkout)
+                  </p>
                   Remaining time:{' '}
                   {countdownDays > 0 && (
                     <strong>
@@ -308,61 +287,6 @@ const PlansView: FunctionComponent<{
               </>
             )}
             <div className='row gx-4 gy-4 justify-content-center'>
-              {showFree && (
-                <div className='col-12 col-md-6 col-xl-3'>
-                  <div className='card shadow-lg mb-6 mb-md-0 h-100'>
-                    <div className='card-body h-100 d-flex flex-column'>
-                      <h3 className='d-flex justify-content-center mb-3 fw-medium'>
-                        <span className='text-primary'>Free</span>
-                        <span className='ms-1'>plan</span>
-                      </h3>
-
-                      <div className='d-flex justify-content-center mb-6'>
-                        <span className='h2 mb-0 mt-2'>$</span>
-                        <span
-                          className='price display-2 mb-0'
-                          data-annual='0'
-                          data-monthly='0'
-                        >
-                          0
-                        </span>
-                        <span className='h4 text-gray-700 align-self-end mb-2'>
-                          /{suffixes[planFrequency]}
-                        </span>
-                      </div>
-
-                      <div className='text-center mb-6'>
-                        <Link
-                          href={'/download/'}
-                          className='btn btn-primary-subtle btn-sm'
-                        >
-                          Download now
-                        </Link>
-                      </div>
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
-
-                        <p>
-                          All of Mockoon's{' '}
-                          <Link href={'/features/'}>features</Link>
-                        </p>
-                      </div>
-                      <hr />
-
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
-
-                        <p className='mb-0'>Community support</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
               <div className='col-12 col-md-6 col-xl-3'>
                 <div className='card shadow-lg mb-6 mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
@@ -396,7 +320,7 @@ const PlansView: FunctionComponent<{
 
                       <p className='mb-0'>
                         All of Mockoon's{' '}
-                        <Link href={'/features/'}>features</Link>
+                        <Link href={'/features/'}>open-source features</Link>
                       </p>
                     </div>
 
@@ -420,7 +344,7 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
-                      <p className='mb-0'>
+                      <p className=''>
                         <Link
                           href={
                             '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
@@ -431,6 +355,24 @@ const PlansView: FunctionComponent<{
                         accross your devices
                       </p>
                     </div>
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
+
+                      <p className='mb-0'>
+                        <Link
+                          href={
+                            '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'
+                          }
+                        >
+                          Deploy {pricing.SOLO.deployQuota} API mocks
+                        </Link>{' '}
+                        in the cloud <br /> Includes{' '}
+                        {pricing.SOLO.deployCallsQuota.toLocaleString()} monthly
+                        calls
+                      </p>
+                    </div>
                     <hr />
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
@@ -438,32 +380,6 @@ const PlansView: FunctionComponent<{
                       </div>
 
                       <p className='mb-0'>Email support</p>
-                    </div>
-
-                    <div className='mt-auto'>
-                      <hr />
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
-
-                        <p className='mb-0'>
-                          Support our work on the open-source tools
-                        </p>
-                      </div>
-                      <hr />
-                      <div className='py-4'>
-                        <span className='badge rounded-pill bg-gray-300 text-gray-800'>
-                          <span className='h6 text-uppercase'>
-                            <i className='icon-hourglass_empty'></i> Coming soon
-                          </span>
-                        </span>
-                      </div>
-                      <div className='d-flex'>
-                        <p className='mb-0'>
-                          ☁️ Deploy your API mocks in the cloud (Q2 2024)
-                        </p>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -493,7 +409,6 @@ const PlansView: FunctionComponent<{
                     <div className='text-center mb-6'>
                       {subscribeBtn(Plans.TEAM)}
                     </div>
-
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
@@ -501,12 +416,10 @@ const PlansView: FunctionComponent<{
 
                       <p className='mb-0'>
                         All of Mockoon's{' '}
-                        <Link href={'/features/'}>features</Link>
+                        <Link href={'/features/'}>open-source features</Link>
                       </p>
                     </div>
-
                     <hr />
-
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
@@ -517,7 +430,23 @@ const PlansView: FunctionComponent<{
                         <Link href={'/ai-powered-api-mocking/'}>
                           AI-generated endpoints
                         </Link>{' '}
-                        per month per seat
+                        per month per user
+                      </p>
+                    </div>
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
+
+                      <p>
+                        <Link
+                          href={
+                            '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
+                          }
+                        >
+                          Collaborate in real-time
+                        </Link>{' '}
+                        with your team on {pricing.TEAM.syncQuota} API mocks
                       </p>
                     </div>
                     <div className='d-flex'>
@@ -528,12 +457,14 @@ const PlansView: FunctionComponent<{
                       <p className='mb-0'>
                         <Link
                           href={
-                            '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
+                            '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'
                           }
                         >
-                          Collaborate in real-time
+                          Deploy {pricing.TEAM.deployQuota} API mocks
                         </Link>{' '}
-                        with your team on {pricing.TEAM.syncQuota} API mocks
+                        in the cloud <br /> Includes{' '}
+                        {pricing.TEAM.deployCallsQuota.toLocaleString()} monthly
+                        calls
                       </p>
                     </div>
                     <hr />
@@ -553,30 +484,6 @@ const PlansView: FunctionComponent<{
 
                         <p className='mb-0'>
                           Organizations up to {pricing.TEAM.maxSeats} seats
-                        </p>
-                      </div>
-
-                      <hr />
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
-
-                        <p className='mb-0'>
-                          Support our work on the open-source tools
-                        </p>
-                      </div>
-                      <hr />
-                      <div className='py-4'>
-                        <span className='badge rounded-pill bg-gray-300 text-gray-800'>
-                          <span className='h6 text-uppercase'>
-                            <i className='icon-hourglass_empty'></i> Coming soon
-                          </span>
-                        </span>
-                      </div>
-                      <div className='d-flex'>
-                        <p className='mb-0'>
-                          ☁️ Deploy your API mocks in the cloud (Q2 2024)
                         </p>
                       </div>
                     </div>
@@ -609,17 +516,6 @@ const PlansView: FunctionComponent<{
 
                     <div className='text-center mb-6'>
                       {subscribeBtn(Plans.ENTERPRISE)}
-                      {currentUser.data?.plan === 'FREE' && (
-                        <button
-                          type='button'
-                          className={`btn btn-primary-subtle btn-sm ms-1`}
-                          onClick={() => {
-                            router.push('/contact-form/');
-                          }}
-                        >
-                          Contact sales
-                        </button>
-                      )}
                     </div>
 
                     <div className='d-flex'>
@@ -629,7 +525,7 @@ const PlansView: FunctionComponent<{
 
                       <p className='mb-0'>
                         All of Mockoon's{' '}
-                        <Link href={'/features/'}>features</Link>
+                        <Link href={'/features/'}>open-source features</Link>
                       </p>
                     </div>
 
@@ -645,7 +541,24 @@ const PlansView: FunctionComponent<{
                         <Link href={'/ai-powered-api-mocking/'}>
                           AI-generated endpoints
                         </Link>{' '}
-                        per month per seat
+                        per month per user
+                      </p>
+                    </div>
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
+
+                      <p>
+                        <Link
+                          href={
+                            '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
+                          }
+                        >
+                          Collaborate in real-time
+                        </Link>{' '}
+                        with your team on {pricing.ENTERPRISE.syncQuota} API
+                        mocks
                       </p>
                     </div>
                     <div className='d-flex'>
@@ -656,13 +569,14 @@ const PlansView: FunctionComponent<{
                       <p className='mb-0'>
                         <Link
                           href={
-                            '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
+                            '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'
                           }
                         >
-                          Collaborate in real-time
+                          Deploy {pricing.ENTERPRISE.deployQuota} API mocks
                         </Link>{' '}
-                        with your team on {pricing.ENTERPRISE.syncQuota} API
-                        mocks
+                        in the cloud <br /> Includes{' '}
+                        {pricing.ENTERPRISE.deployCallsQuota.toLocaleString()}{' '}
+                        monthly calls
                       </p>
                     </div>
                     <hr />
@@ -681,9 +595,44 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
+                      <p className='mb-0'>Unlimited seats</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className='col-12 col-md-6 col-xl-3'>
+                <div className='card shadow-lg mb-md-0 h-100'>
+                  <div className='card-body h-100 d-flex flex-column'>
+                    <h3 className='d-flex justify-content-center mb-3 fw-medium'>
+                      <span className='text-primary'>Custom Enterprise</span>
+                      <span className='ms-1'>plan</span>
+                      {planFrequency === 'YEARLY' &&
+                        pricing.ENTERPRISE.discount && (
+                          <span className='badge text-bg-success-subtle ms-3 fs-sm align-self-center'>
+                            {pricing.ENTERPRISE.discount}
+                          </span>
+                        )}
+                    </h3>
+                    <div className='text-center mt-4 mb-6'>
+                      <button
+                        type='button'
+                        className={`btn btn-primary-subtle btn-sm ms-1`}
+                        onClick={() => {
+                          router.push('/contact-form/');
+                        }}
+                      >
+                        Contact sales
+                      </button>
+                    </div>
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
+
                       <p className='mb-0'>
-                        1 hour live training for your team (
-                        <Link href={'/training/'}>Purchase separately</Link>)
+                        All of <span className='text-primary'>Enterprise</span>{' '}
+                        plan features
                       </p>
                     </div>
                     <hr />
@@ -692,33 +641,33 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
-                      <p className='mb-0'>Unlimited seats (minimum 3)</p>
+                      <p className='mb-0'>Dedicated instances</p>
                     </div>
+                    <hr />
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
 
-                    <div className='mt-auto'>
-                      <hr />
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
+                      <p className='mb-0'>Personalized quotas and limits</p>
+                    </div>
+                    <hr />
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
 
-                        <p className='mb-0'>
-                          Support our work on the open-source tools
-                        </p>
+                      <p className='mb-0'>
+                        Onboarding and deployment assistance
+                      </p>
+                    </div>
+                    <hr />
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
                       </div>
-                      <hr />
-                      <div className='py-4'>
-                        <span className='badge rounded-pill bg-gray-300 text-gray-800'>
-                          <span className='h6 text-uppercase'>
-                            <i className='icon-hourglass_empty'></i> Coming soon
-                          </span>
-                        </span>
-                      </div>
-                      <div className='d-flex'>
-                        <p className='mb-0'>
-                          ☁️ Deploy your API mocks in the cloud (Q2 2024)
-                        </p>
-                      </div>
+
+                      <p className='mb-0'>Custom payment options</p>
                     </div>
                   </div>
                 </div>
@@ -733,6 +682,206 @@ const PlansView: FunctionComponent<{
               <Link href={'/pro/#faq'}>FAQ of our Pro plans</Link> or our{' '}
               <Link href={'/terms/'}>terms of service</Link>.
             </p>
+
+            <section className='py-6 py-md-8'>
+              <div className='container' id='faq'>
+                <div className='row justify-content-center'>
+                  <div className='col-12 align-items-center'>
+                    <h2 className='fw-bold mb-6 text-center'>Compare plans</h2>
+                    <div className='table-responsive'>
+                      <table className='table'>
+                        <thead>
+                          <tr>
+                            <th className='bg-gray-100'></th>
+                            <th className='text-center bg-gray-100'>
+                              <span className='text-primary'>Solo</span> plan
+                            </th>
+                            <th className='text-center bg-gray-100'>
+                              <span className='text-primary'>Team</span> plan
+                            </th>
+                            <th className='text-center bg-gray-100'>
+                              <span className='text-primary'>Enterprise</span>{' '}
+                              plan
+                            </th>
+                            <th className='text-center bg-gray-100'>
+                              <span className='text-primary'>
+                                Custom Enterprise
+                              </span>{' '}
+                              plan
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td
+                              colSpan={5}
+                              className='text-start fw-bold bg-gray-100'
+                            >
+                              AI assistants
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Number of generated templates</td>
+                            <td className='text-center'>
+                              {pricing.SOLO.templatesQuota}/month
+                            </td>
+                            <td className='text-center'>
+                              {pricing.TEAM.templatesQuota}/month/user
+                            </td>
+                            <td className='text-center'>
+                              {pricing.ENTERPRISE.templatesQuota}/month/user
+                            </td>
+                            <td className='text-center'>Custom</td>
+                          </tr>
+                          <tr>
+                            <td
+                              colSpan={5}
+                              className='text-start fw-bold bg-gray-100'
+                            >
+                              Cloud synchronization
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Number of synchronized API mocks</td>
+                            <td className='text-center'>
+                              {pricing.SOLO.syncQuota}
+                            </td>
+                            <td className='text-center'>
+                              {pricing.TEAM.syncQuota}
+                            </td>
+                            <td className='text-center'>
+                              {pricing.ENTERPRISE.syncQuota}
+                            </td>
+                            <td className='text-center'>Custom</td>
+                          </tr>
+                          <tr>
+                            <td>Data synchronization accross your devices</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td>Real-time collaboration</td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td>Instance</td>
+                            <td className='text-center'>Shared</td>
+                            <td className='text-center'>Shared</td>
+                            <td className='text-center'>Shared</td>
+                            <td className='text-center'>Dedicated</td>
+                          </tr>
+                          <tr>
+                            <td
+                              colSpan={5}
+                              className='text-start fw-bold bg-gray-100'
+                            >
+                              Cloud deployment
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Number of deployed API mocks</td>
+                            <td className='text-center'>
+                              {pricing.SOLO.deployQuota}
+                            </td>
+                            <td className='text-center'>
+                              {pricing.TEAM.deployQuota}
+                            </td>
+                            <td className='text-center'>
+                              {pricing.ENTERPRISE.deployQuota}
+                            </td>
+                            <td className='text-center'>Custom</td>
+                          </tr>
+                          <tr>
+                            <td>Number of monthly calls</td>
+                            <td className='text-center'>
+                              {pricing.SOLO.deployCallsQuota.toLocaleString()}
+                            </td>
+                            <td className='text-center'>
+                              {pricing.TEAM.deployCallsQuota.toLocaleString()}
+                            </td>
+                            <td className='text-center'>
+                              {pricing.ENTERPRISE.deployCallsQuota.toLocaleString()}
+                            </td>
+                            <td className='text-center'>Custom</td>
+                          </tr>
+                          <tr>
+                            <td>Request rate limit</td>
+                            <td className='text-center'>
+                              {pricing.SOLO.deployReqSQuota}/sec
+                            </td>
+                            <td className='text-center'>
+                              {pricing.TEAM.deployReqSQuota}/sec
+                            </td>
+                            <td className='text-center'>
+                              {pricing.ENTERPRISE.deployReqSQuota}/sec
+                            </td>
+                            <td className='text-center'>Custom</td>
+                          </tr>
+                          <tr>
+                            <td>Private or public mocks</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td>Instance</td>
+                            <td className='text-center'>Shared</td>
+                            <td className='text-center'>Shared</td>
+                            <td className='text-center'>Shared</td>
+                            <td className='text-center'>Dedicated</td>
+                          </tr>
+                          <tr>
+                            <td
+                              colSpan={5}
+                              className='text-start fw-bold bg-gray-100'
+                            >
+                              Support
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Support level</td>
+                            <td className='text-center'>Email</td>
+                            <td className='text-center'>Email</td>
+                            <td className='text-center'>Enterprise</td>
+                            <td className='text-center'>Enterprise</td>
+                          </tr>
+                          <tr>
+                            <td>Onboarding and deployment assistance</td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td
+                              colSpan={5}
+                              className='text-start fw-bold bg-gray-100'
+                            >
+                              Payment
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Payment options</td>
+                            <td className='text-center'>Credit card</td>
+                            <td className='text-center'>Credit card</td>
+                            <td className='text-center'>Credit card</td>
+                            <td className='text-center'>
+                              Custom payment options
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
 
             {showTagline && (
               <div className='py-8'>

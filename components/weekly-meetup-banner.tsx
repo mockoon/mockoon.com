@@ -2,7 +2,7 @@ import Quote from './quote';
 
 const WeeklyMeetupBanner = function () {
   return (
-    <Quote>
+    <Quote colorScheme='secondary'>
       💡 Join us on{' '}
       <a href='/discord/' target='_blank'>
         Discord

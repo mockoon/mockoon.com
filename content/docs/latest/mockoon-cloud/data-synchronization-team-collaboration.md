@@ -106,13 +106,18 @@ The data synchronization feature is available in the Solo and Team/Enterprise pl
 
 For all users (Solo, Team, and Enterprise), the environments can be synchronized across an unlimited number of devices with a limit of 2 simultaneous devices per user.
 
-These quotas and limits are subject to change. Please refer to this documentation for the latest information.
+These quotas and limits are subject to change. Please refer to your [account settings](/account/subscription/) for the latest information.
 
-## Current limitations
+## Future improvements
 
-The data synchronization feature is still in its early stages and has some **limitations**:
+The data synchronization feature is still in its early stages. Here are some improvements we are working on:
 
-- The "presence" indicator is not yet implemented. You will be able to see how many users are currently connected to the cloud space, but you won't be able to see who is editing the environment and what they are editing.
+- Better presence indicators to show who is currently editing which environment.
+
+## Limitations
+
+Here is a list of limitations of the current version of the data synchronization feature:
+
 - External files linked to the environment are not synchronized (e.g. environment's certificates or files used in the "File" response body type).
 - The CLI and serverless package do not support access to cloud environments yet.
 - Team and Enterprise plans are currently not offering a personal cloud space for each user. All environments are shared across the team.

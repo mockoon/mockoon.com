@@ -3,6 +3,7 @@ import Card from '../components/card';
 import CompanyLogos from '../components/company-logos';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
+import Quote from '../components/quote';
 import Sponsors from '../components/sponsors';
 import Testimonial from '../components/testimonial';
 import Typed from '../components/typed';
@@ -106,6 +107,22 @@ const HomePage: FunctionComponent = function () {
         mainPictureWidth={1200}
         mainPictureHeight={783}
       />
+      <section>
+        <div className='container'>
+          <Quote colorScheme='warning'>
+            <h4 className='my-4 d-flex align-items-center'>
+              <div>
+                📢 <strong>Cloud deployments</strong> are now generally
+                available in <strong>Mockoon Pro</strong>. Supercharge your API
+                development now!
+              </div>
+              <div className='ms-auto'>
+                <a href='/pro/'>Learn more</a>
+              </div>
+            </h4>
+          </Quote>
+        </div>
+      </section>
 
       <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
         <CompanyLogos />

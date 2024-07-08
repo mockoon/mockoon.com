@@ -18,9 +18,9 @@ const faq: AccordionData = [
     title: 'Features availability',
     items: [
       {
-        title: 'When will the "coming soon" services be available?',
+        title: 'How can I stay informed about new features?',
         content:
-          'We can only provide an approximate availability period. You can <a href="#product-updates-subscribe">subscribe to the product updates</a> below to be notified of new releases.'
+          'You can <a href="#product-updates-subscribe">subscribe to the product updates</a> below to be notified of new releases.'
       },
       {
         title: 'Can I give feedback or join a beta test?',
@@ -38,14 +38,15 @@ const faq: AccordionData = [
           "Community support is the free support channel for Mockoon users. It is available on our <a href='https://github.com/mockoon/mockoon/discussions' target='_blank' rel='noopener'>GitHub repository</a> or <a href='https://discord.gg/FtJjkejKGp' target='_blank' rel='noopener'>Discord server</a>."
       },
       {
-        title: 'What is the "priority support" (Enterprise plan)?',
+        title: 'What is the "Enterprise support" (Enterprise plan)?',
         content:
           'We will provide a priority support channel for your team by email or through the platform of your choice (Slack, etc.) with a guaranteed response time of one business day. Our priority support service is provided during regular business hours and working days (9 am to 5 pm CET/CEST, Monday to Friday). Please refer to the <a href="/terms/">terms of service</a> for more information.'
       },
       {
-        title: 'What is the "welcome online training" (Enterprise plan)?',
+        title:
+          'What is the "Onboarding and deployment assistance" (Custom Enterprise plan)?',
         content:
-          'We will provide a 1-hour online video call by our founder to help you get started with Mockoon and answer any questions you may have. This training will be scheduled with your team after the purchase of the Enterprise plan. It is limited to 1 session per year and per company. Additional training sessions can be <a href="/training/">purchased separately</a>.'
+          'We will provide you with a dedicated account manager who will help you deploy Mockoon tools in your organization. We will also provide you with advanced support during the deployment phase. For other plans, live training sessions can be <a href="/training/">purchased separately</a>'
       }
     ]
   },
@@ -122,15 +123,15 @@ const Pro: FunctionComponent = function () {
       <Meta title={meta.title} description={meta.description} />
 
       <Hero
-        title="Mockoon <span class='text-primary'>Pro</span>"
-        subtitle='With advanced features for solo developers and teams, Mockoon Pro supercharges your API development. Upgrade today and take your API development to the next level.'
+        title='Supercharge your API development with <span class="text-primary">Mockoon Pro</span> plans'
+        subtitle='Never let API integration slow you down again. Collaborate with your team, keep your data in sync, and deploy your mock APIs to the cloud easily.'
         mainPicture='/images/pro-hero.png'
         mainPictureAlt='Mockoon logo in the cloud interconnected with other services'
         mainPictureWidth={1200}
         mainPictureHeight={783}
       />
 
-      <Plans showFree={true} showTagline={true} />
+      <Plans showTagline={true} />
 
       <section
         className='py-6 py-md-8 border-top bg-gradient-light-white'

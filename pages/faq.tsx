@@ -274,8 +274,8 @@ const Faq: FunctionComponent = function () {
                     <p className='text-gray-700'>
                       Yes, we have <a href='/pro/'>Pro plans</a> that offers
                       additional features like AI-powered API mocks generation,
-                      data synchronization and real-time collaboration,
-                      enterprise-grade support, and more!
+                      data synchronization and real-time collaboration, cloud
+                      deployments, enterprise-grade support, and more!
                     </p>
                   </div>
                 </div>
@@ -297,6 +297,25 @@ const Faq: FunctionComponent = function () {
                       Yes, you can get enterprise-grade support with our{' '}
                       <a href='/pro/'>Pro plans</a>.
                     </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='accordion-item'>
+                <div className='accordion-button '>
+                  <h3 id='where-are-my-data-stored' className='me-4 fw-medium'>
+                    Do you use my data or content for AI training?
+                  </h3>
+                </div>
+
+                <div className='accordion-collapse '>
+                  <div className='accordion-body'>
+                    <div className='text-gray-700'>
+                      <p>
+                        No. We do not use your mock API data or content for AI
+                        training.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

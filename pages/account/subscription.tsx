@@ -1,4 +1,3 @@
-import { Plans } from '@mockoon/cloud';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useEffect } from 'react';
@@ -9,6 +8,7 @@ import Meta from '../../components/meta';
 import PaddleScript from '../../components/paddle';
 import Spinner from '../../components/spinner';
 import { frequencyNames, planNames } from '../../constants/plans';
+import { pricing } from '../../data/pricing';
 import Layout from '../../layout/layout';
 import { useAuth } from '../../utils/auth';
 import {
@@ -41,6 +41,96 @@ const AccountSubscription: FunctionComponent = function () {
     userData?.plan === 'SOLO' ||
     ((userData?.plan === 'TEAM' || userData?.plan === 'ENTERPRISE') &&
       userData?.teamRole === 'owner');
+
+  const sharedQuotas = (
+    <>
+      <div className='list-group-item'>
+        <div className='row align-items-center'>
+          <div className='col-md-8'>
+            <p className='mb-0'>
+              <Link
+                href={
+                  '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
+                }
+              >
+                Synchronized cloud environments
+              </Link>{' '}
+              ({userData?.cloudSyncItemsQuotaUsed}/
+              {userData?.cloudSyncItemsQuota})
+            </p>
+            <small className='text-gray-700'>
+              Maximum of {userData?.cloudSyncSizeQuota / 1000000}MB per
+              environment
+            </small>
+          </div>
+          <div className='col-md-4'>
+            <div className='progress'>
+              <div
+                className={`progress-bar ${
+                  userData?.cloudSyncItemsQuotaUsed >=
+                  userData?.cloudSyncItemsQuota
+                    ? 'bg-warning'
+                    : ''
+                }`}
+                role='progressbar'
+                aria-valuenow={userData?.cloudSyncItemsQuotaUsed}
+                aria-valuemin={0}
+                aria-valuemax={userData?.cloudSyncItemsQuota}
+                style={{
+                  width:
+                    (userData?.cloudSyncItemsQuotaUsed * 100) /
+                      userData?.cloudSyncItemsQuota +
+                    '%'
+                }}
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='list-group-item'>
+        <div className='row align-items-center'>
+          <div className='col-md-8'>
+            <p className='mb-0'>
+              <Link
+                href={'/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'}
+              >
+                Cloud deployments
+              </Link>{' '}
+              ({userData?.deployInstancesQuotaUsed}/
+              {userData?.deployInstancesQuota})
+            </p>
+            <small className='text-gray-700'>
+              Maximum of{' '}
+              {pricing[userData?.plan]?.deployCallsQuota.toLocaleString()}{' '}
+              request per month
+            </small>
+          </div>
+          <div className='col-md-4'>
+            <div className='progress'>
+              <div
+                className={`progress-bar ${
+                  userData?.deployInstancesQuotaUsed >=
+                  userData?.deployInstancesQuota
+                    ? 'bg-warning'
+                    : ''
+                }`}
+                role='progressbar'
+                aria-valuenow={userData?.deployInstancesQuotaUsed}
+                aria-valuemin={0}
+                aria-valuemax={userData?.deployInstancesQuota}
+                style={{
+                  width:
+                    (userData?.deployInstancesQuotaUsed * 100) /
+                      userData?.deployInstancesQuota +
+                    '%'
+                }}
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 
   return (
     <Layout footerBanner='download'>
@@ -98,6 +188,7 @@ const AccountSubscription: FunctionComponent = function () {
                                 </p>
 
                                 {userData?.plan !== 'FREE' &&
+                                  userData?.subscription?.provider !== 'free' &&
                                   userData?.subscription?.createdOn &&
                                   userData?.subscription?.renewOn &&
                                   displayPlanInfo && (
@@ -130,6 +221,15 @@ const AccountSubscription: FunctionComponent = function () {
                                           ).toDateString()}
                                         </small>
                                       )}
+                                    </p>
+                                  )}
+                                {userData?.plan !== 'FREE' &&
+                                  userData?.subscription?.provider === 'free' &&
+                                  displayPlanInfo && (
+                                    <p className='m-0'>
+                                      <small className='text-gray-700'>
+                                        You are on a free plan
+                                      </small>
                                     </p>
                                   )}
                                 {userData?.plan !== 'FREE' &&
@@ -247,100 +347,77 @@ const AccountSubscription: FunctionComponent = function () {
                   </div>
 
                   {!isUserLoading && userData?.plan !== 'FREE' && (
-                    <div className='card card-bleed shadow-light-lg mb-6'>
-                      <div className='card-header'>
-                        <h4 className='mb-0'>Quotas</h4>
-                      </div>
-                      <div className='card-body'>
-                        <div className='list-group list-group-flush'>
-                          <div className='list-group-item'>
-                            <div className='row align-items-center'>
-                              <div className='col-md-8'>
-                                <p className='mb-0'>
-                                  AI generated mocks used (
-                                  {userData?.templatesQuotaUsed}/
-                                  {userData?.templatesQuota})
-                                </p>
-                                <small className='text-gray-700'>
-                                  Resets monthly - Next reset on{' '}
-                                  {new Date(
-                                    userData?.nextQuotaResetOn * 1000
-                                  ).toDateString()}
-                                </small>
-                              </div>
-                              <div className='col-md-4'>
-                                <div className='progress'>
-                                  <div
-                                    className={`progress-bar ${
-                                      userData?.templatesQuotaUsed >=
-                                      userData?.templatesQuota
-                                        ? 'bg-warning'
-                                        : ''
-                                    }`}
-                                    role='progressbar'
-                                    aria-valuenow={userData?.templatesQuotaUsed}
-                                    aria-valuemin={0}
-                                    aria-valuemax={userData?.templatesQuota}
-                                    style={{
-                                      width:
-                                        (userData?.templatesQuotaUsed * 100) /
-                                          userData?.templatesQuota +
-                                        '%'
-                                    }}
-                                  ></div>
+                    <>
+                      <div className='card card-bleed shadow-light-lg mb-6'>
+                        <div className='card-header'>
+                          <h4 className='mb-0'>
+                            {userData.plan === 'SOLO'
+                              ? 'Quotas'
+                              : 'Personal quotas'}
+                          </h4>
+                        </div>
+                        <div className='card-body'>
+                          <div className='list-group list-group-flush'>
+                            <div className='list-group-item'>
+                              <div className='row align-items-center'>
+                                <div className='col-md-8'>
+                                  <p className='mb-0'>
+                                    <Link href='/docs/latest/mockoon-cloud/templates-and-ai-assistant/'>
+                                      AI generated mocks
+                                    </Link>{' '}
+                                    used ({userData?.templatesQuotaUsed}/
+                                    {userData?.templatesQuota})
+                                  </p>
+                                  <small className='text-gray-700'>
+                                    Resets monthly - Next reset on{' '}
+                                    {new Date(
+                                      userData?.nextQuotaResetOn * 1000
+                                    ).toDateString()}
+                                  </small>
+                                </div>
+                                <div className='col-md-4'>
+                                  <div className='progress'>
+                                    <div
+                                      className={`progress-bar ${
+                                        userData?.templatesQuotaUsed >=
+                                        userData?.templatesQuota
+                                          ? 'bg-warning'
+                                          : ''
+                                      }`}
+                                      role='progressbar'
+                                      aria-valuenow={
+                                        userData?.templatesQuotaUsed
+                                      }
+                                      aria-valuemin={0}
+                                      aria-valuemax={userData?.templatesQuota}
+                                      style={{
+                                        width:
+                                          (userData?.templatesQuotaUsed * 100) /
+                                            userData?.templatesQuota +
+                                          '%'
+                                      }}
+                                    ></div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <div className='list-group-item'>
-                            <div className='row align-items-center'>
-                              <div className='col-md-8'>
-                                <p className='mb-0'>
-                                  Cloud environments (
-                                  {userData?.cloudSyncItemsQuotaUsed}/
-                                  {userData?.cloudSyncItemsQuota})
-                                </p>
-                                <small className='text-gray-700'>
-                                  {(userData?.plan === Plans.TEAM ||
-                                    userData?.plan === Plans.ENTERPRISE) &&
-                                    'Quota shared with your team - '}
-                                  Maximum of{' '}
-                                  {userData?.cloudSyncSizeQuota / 1000000}MB per
-                                  environment
-                                </small>
-                              </div>
-                              <div className='col-md-4'>
-                                <div className='progress'>
-                                  <div
-                                    className={`progress-bar ${
-                                      userData?.cloudSyncItemsQuotaUsed >=
-                                      userData?.cloudSyncItemsQuota
-                                        ? 'bg-warning'
-                                        : ''
-                                    }`}
-                                    role='progressbar'
-                                    aria-valuenow={
-                                      userData?.cloudSyncItemsQuotaUsed
-                                    }
-                                    aria-valuemin={0}
-                                    aria-valuemax={
-                                      userData?.cloudSyncItemsQuota
-                                    }
-                                    style={{
-                                      width:
-                                        (userData?.cloudSyncItemsQuotaUsed *
-                                          100) /
-                                          userData?.cloudSyncItemsQuota +
-                                        '%'
-                                    }}
-                                  ></div>
-                                </div>
-                              </div>
-                            </div>
+                            {userData.plan === 'SOLO' && sharedQuotas}
                           </div>
                         </div>
                       </div>
-                    </div>
+                      {userData.plan !== 'SOLO' && (
+                        <div className='card card-bleed shadow-light-lg mb-6'>
+                          <div className='card-header'>
+                            <h4 className='mb-0'>Team quotas</h4>
+                          </div>
+                          <div className='card-body'>
+                            <div className='list-group list-group-flush'>
+                              {sharedQuotas}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </>
                   )}
 
                   {!isUserLoading &&

@@ -37,7 +37,7 @@ The next step is to add a **second response** returning a **401 status code** wh
 
 To add a new response, click on the blue "plus" button next to the response list:
 
-![Add a response by clicking on the plus button{1035x275}](/images/tutorials/route-responses-rules/add-new-response.png)
+![Add a response by clicking on the plus button{1580x309}](/images/tutorials/route-responses-rules/add-new-response.png)
 
 You can also **duplicate** a response or **delete** it by clicking the buttons on the right.
 
@@ -96,7 +96,7 @@ Keep-Alive: timeout=5
 
 Three modes are also available next to the responses list: **random**, **sequential**, and **rules disabled**:
 
-![Three buttons allows for random or sequential responses, or rules disabling{872x218}](/images/tutorials/route-responses-rules/route-responses-modes.png)
+![Three buttons allows for random or sequential responses, or rules disabling{1254x309}](/images/tutorials/route-responses-rules/route-responses-modes.png)
 
 Using these buttons, you can control how responses are served. The three modes are disabling the rules and changing the way responses are served:
 

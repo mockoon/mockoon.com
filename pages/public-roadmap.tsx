@@ -38,6 +38,18 @@ const faq: AccordionData = [
 const tasks = {
   released: [
     {
+      link: '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/',
+      title: 'API deployments in the cloud',
+      pro: true,
+      target: null
+    },
+    {
+      link: '/ai-powered-api-mocking/',
+      title: 'AI powered HTTP endpoints mocking',
+      pro: true,
+      target: null
+    },
+    {
       link: '/docs/latest/admin-api/overview/',
       title: 'Admin API',
       pro: false
@@ -71,32 +83,6 @@ const tasks = {
       link: '/playground/',
       title: 'API playground',
       pro: false
-    },
-    {
-      link: '/docs/latest/callbacks/overview/',
-      title: 'Trigger requests after a call (callbacks)',
-      pro: false
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/blob/main/packages/cli/README.md#import-command',
-      title: 'OpenAPI import/export in CLI',
-      pro: false,
-      target: '_blank'
-    },
-    {
-      link: '/releases/5.1.0/#new-command-palette',
-      title: 'Desktop application command palette',
-      pro: false
-    },
-    {
-      link: '/docs/latest/templating/fakerjs-helpers/',
-      title: 'Faker.js v8 support',
-      pro: false
-    },
-    {
-      link: '/docs/latest/response-configuration/file-serving/#serving-a-range-of-bytes-from-a-file',
-      title: 'Support for Range header',
-      pro: false
     }
   ],
   inProgress: [
@@ -106,24 +92,27 @@ const tasks = {
       pro: false,
       target: '_blank'
     },
-
     {
-      link: '/ai-powered-api-mocking/',
-      title: 'AI powered HTTP endpoints mocking',
-      pro: true,
-      target: null
+      link: 'https://github.com/mockoon/mockoon/issues/568',
+      title: 'Randomized lantency',
+      pro: false,
+      target: '_blank'
     }
   ],
   comingSoon: [
     {
-      link: '/course/',
-      title: 'Official online course',
+      title: 'Real-time collaboration improved presence',
       pro: true,
       target: null
     },
     {
-      link: '/pro/',
-      title: 'API deployments in the cloud',
+      title: 'Cloud deployment environment variables support',
+      pro: true,
+      target: null
+    },
+    {
+      link: '/course/',
+      title: 'Official online course',
       pro: true,
       target: null
     }
@@ -183,12 +172,15 @@ const Roadmap: FunctionComponent = function () {
                     </div>
 
                     <p className='text-gray-800'>
-                      <Link
-                        href={task.link}
-                        target={task.target ? task.target : undefined}
-                      >
-                        {task.title}
-                      </Link>
+                      {task.link && (
+                        <Link
+                          href={task.link}
+                          target={task.target ? task.target : undefined}
+                        >
+                          {task.title}
+                        </Link>
+                      )}
+                      {!task.link && task.title}
                       {task.pro && (
                         <span className='badge text-bg-warning ms-2'>Pro</span>
                       )}
@@ -211,12 +203,15 @@ const Roadmap: FunctionComponent = function () {
                     </div>
 
                     <p className='text-gray-800'>
-                      <Link
-                        href={task.link}
-                        target={task.target ? task.target : undefined}
-                      >
-                        {task.title}
-                      </Link>
+                      {task.link && (
+                        <Link
+                          href={task.link}
+                          target={task.target ? task.target : undefined}
+                        >
+                          {task.title}
+                        </Link>
+                      )}
+                      {!task.link && task.title}
                       {task.pro && (
                         <span className='badge text-bg-warning ms-2'>Pro</span>
                       )}
@@ -240,12 +235,15 @@ const Roadmap: FunctionComponent = function () {
                     </div>
 
                     <p className='text-gray-800'>
-                      <Link
-                        href={task.link}
-                        target={task.target ? task.target : undefined}
-                      >
-                        {task.title}
-                      </Link>
+                      {task.link && (
+                        <Link
+                          href={task.link}
+                          target={task.target ? task.target : undefined}
+                        >
+                          {task.title}
+                        </Link>
+                      )}
+                      {!task.link && task.title}
                       {task.pro && (
                         <span className='badge text-bg-warning ms-2'>Pro</span>
                       )}

@@ -172,7 +172,7 @@ const Markdown: FunctionComponent<{
               ></SponsoringMessage>
             );
           } else {
-            return <Quote>{content.children}</Quote>;
+            return <Quote colorScheme='secondary'>{content.children}</Quote>;
           }
         },
         h1: heading,

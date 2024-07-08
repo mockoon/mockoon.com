@@ -3,6 +3,7 @@ import Card from '../components/card';
 import CodeBlock from '../components/code-block';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
+import Quote from '../components/quote';
 import Layout from '../layout/layout';
 import { CardData } from '../models/common.model';
 
@@ -62,6 +63,23 @@ const CLI: FunctionComponent = function () {
         mainPictureWidth={1200}
         mainPictureHeight={430}
       />
+      <section>
+        <div className='container'>
+          <Quote colorScheme='warning'>
+            <h4 className='my-4 d-flex align-items-center'>
+              <div>
+                📢 <strong>Cloud deployments</strong> are now generally
+                available in <strong>Mockoon Pro</strong>. Supercharge your API
+                development now!
+              </div>
+              <div className='ms-auto'>
+                <a href='/pro/'>Learn more</a>
+              </div>
+            </h4>
+          </Quote>
+        </div>
+      </section>
+
       <section className='py-8 py-lg-10'>
         <div className='container'>
           <div className='row py-5'>

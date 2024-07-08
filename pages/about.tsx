@@ -167,8 +167,9 @@ const About: FunctionComponent<{
               You can also support us by subscribing to our{' '}
               <strong>Pro plans</strong> and enjoy a whole new level of
               capabilities: <strong>AI-powered API mocks generation</strong>,{' '}
-              <strong>data synchronization and real-time collaboration</strong>,
-              enterprise-grade support, and more to come!
+              <strong>data synchronization and real-time collaboration</strong>,{' '}
+              <strong>cloud deployments</strong>, enterprise-grade support, and
+              more to come!
             </p>
           </div>
           <div className='text-center my-8'>

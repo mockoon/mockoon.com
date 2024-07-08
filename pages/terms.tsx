@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
+import Quote from '../components/quote';
 import Layout from '../layout/layout';
 
 const Terms: FunctionComponent = function () {
@@ -11,11 +12,21 @@ const Terms: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Terms of service' subtitle='Last update April 2nd, 2024' />
+      <Hero title='Terms of service' subtitle='Last update July 8th, 2024' />
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
+              <Quote colorScheme='secondary'>
+                💡 <strong>Summary of changes (July 8th, 2024)</strong>:
+                <ul className='mb-0'>
+                  <li>
+                    section 14 ("Welcome training") was removed as the offer was
+                    discontinued and the rest of the sections were renumbered.
+                  </li>
+                  <li>a new section 11c ("Cloud deployments") was added.</li>
+                </ul>
+              </Quote>
               <p>
                 These terms of service ("Agreement") govern your use of
                 Mockoon's cloud products and services ("Service") provided by
@@ -416,7 +427,6 @@ const Terms: FunctionComponent = function () {
               <h4 className='mt-6 fw-medium'>
                 b. Data synchronization and real-time collaboration
               </h4>
-              <p></p>
               <p>
                 The data synchronization and real-time collaboration feature
                 ("Synchronization Feature") is available to all our customers of
@@ -461,6 +471,43 @@ const Terms: FunctionComponent = function () {
                 responsible for maintaining backups of your data and ensuring
                 that you have the necessary copies of your data in the event of
                 loss or corruption.
+              </p>
+              <h4 className='mt-6 fw-medium'>c. Cloud deployments</h4>
+              <p>
+                The cloud deployments feature ("Cloud Deployment Feature") is
+                available to all our customers of our Pro plans. It is subject
+                to the quotas and limits specified in the plan details and
+                visible in your{' '}
+                <a href='/account/subscription/'>
+                  account management interface
+                </a>
+                .
+              </p>
+              <p>
+                We do not make any representation or warranty regarding the
+                availability, performance, or functionality of the Cloud
+                Deployment Feature. The Cloud Deployment Feature may be subject
+                to downtime, errors, or interruptions, and we do not guarantee
+                that it will be available at all times. We will make
+                commercially reasonable efforts to ensure the availability and
+                performance of the Cloud Deployment Feature, and inform you of
+                any planned maintenance or downtime through our Service status
+                page.
+              </p>
+              <p>
+                Aside from the above-mentioned quotas, the Cloud Deployment
+                Feature is subject to some technical limitations and monitoring,
+                including but not limited to the maximum number of requests
+                allowed per deployment or per IP address, the maximum number of
+                concurrent requests to our servers or the volume of data that
+                can be transmitted over a certain period of time. These
+                limitations are designed to ensure fair usage of our
+                infrastructure and to prevent abuse or excessive load on our
+                systems. We reserve the right to modify or adjust the technical
+                limitations of the Cloud Deployment Feature at any time. We
+                further reserve the right to suspend or terminate your access to
+                the Cloud Deployment Feature if we determine that your usage is
+                unreasonable or causing an undue burden on our infrastructure.
               </p>
               <h3 className='mt-6 fw-medium'>
                 12. Usage quotas and limitations
@@ -562,19 +609,7 @@ const Terms: FunctionComponent = function () {
                 communicated to you through written notice or by posting updated
                 information within our Service.
               </p>
-              <h3 className='mt-6 fw-medium'>14. Welcome training</h3>
-              <p>
-                As part of our Enterprise plan, we offer a one hour online video
-                call training session per company, per year. This training
-                session is designed to help your company get started with our
-                Service and provides a comprehensive overview of its features,
-                functionalities, and best practices.
-              </p>
-              <p>
-                After subscribing, a representative from our Company will reach
-                out to you to coordinate the training session.
-              </p>
-              <h3 className='mt-6 fw-medium'>15. Term and termination</h3>
+              <h3 className='mt-6 fw-medium'>14. Term and termination</h3>
               <p>
                 The term of this Agreement shall begin upon your acceptance of
                 these terms of service and shall automatically renew for the
@@ -612,7 +647,7 @@ const Terms: FunctionComponent = function () {
                 clauses relating to intellectual property rights, limitation of
                 liability, indemnification, and dispute resolution.
               </p>
-              <h3 className='mt-6 fw-medium'>16. Disclaimer</h3>
+              <h3 className='mt-6 fw-medium'>15. Disclaimer</h3>
               <p>
                 THE SERVICES AND SUPPORT SERVICES ARE PROVIDED "AS IS" AND THE
                 COMPANY DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING,
@@ -624,7 +659,7 @@ const Terms: FunctionComponent = function () {
                 DELIVERABLES.
               </p>
               <h3 className='mt-6 fw-medium'>
-                17. Limit of Liability and Waiver of Consequential Damages.
+                16. Limit of Liability and Waiver of Consequential Damages.
               </h3>
               <p>
                 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, EXCEPT FOR
@@ -651,7 +686,7 @@ const Terms: FunctionComponent = function () {
                 THE PARTIES HAVE RELIED ON THESE LIMITATIONS IN DETERMINING
                 WHETHER TO ENTER THIS AGREEMENT.
               </p>
-              <h3 className='mt-6 fw-medium'>18. Miscellaneous</h3>
+              <h3 className='mt-6 fw-medium'>17. Miscellaneous</h3>
               <p>
                 This Agreement, including its terms and conditions, may be
                 updated or modified by us from time to time. Any updates or
@@ -694,7 +729,7 @@ const Terms: FunctionComponent = function () {
                 communications, or understandings, whether written or oral,
                 relating to such subject matter.
               </p>
-              <h3 className='mt-6 fw-medium'>19. Governing law</h3>
+              <h3 className='mt-6 fw-medium'>18. Governing law</h3>
               <p>
                 This Agreement and any dispute arising out of or in connection
                 with this Agreement shall be governed by and construed in
@@ -708,7 +743,7 @@ const Terms: FunctionComponent = function () {
                 venue of such courts and waive any objections to the exercise of
                 personal jurisdiction over you by such courts.
               </p>
-              <h3 className='mt-6 fw-medium'>20. Binding agreement</h3>
+              <h3 className='mt-6 fw-medium'>19. Binding agreement</h3>
               <p>
                 This Agreement constitutes a binding contract between you and
                 us. You may not assign or transfer any rights or obligations

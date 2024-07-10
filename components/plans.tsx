@@ -622,7 +622,7 @@ const PlansView: FunctionComponent<{
                           router.push('/contact-form/');
                         }}
                       >
-                        Contact sales
+                        Contact us
                       </button>
                     </div>
                     <div className='d-flex'>

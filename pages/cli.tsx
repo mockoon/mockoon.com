@@ -68,9 +68,9 @@ const CLI: FunctionComponent = function () {
           <Quote colorScheme='warning'>
             <h4 className='my-4 d-flex align-items-center'>
               <div>
-                📢 <strong>Cloud deployments</strong> are now generally
-                available in <strong>Mockoon Pro</strong>. Supercharge your API
-                development now!
+                📢 <strong>Cloud deployments</strong> are now available in{' '}
+                <strong>Mockoon Pro</strong>. Supercharge your API development
+                now!
               </div>
               <div className='ms-auto'>
                 <a href='/pro/'>Learn more</a>

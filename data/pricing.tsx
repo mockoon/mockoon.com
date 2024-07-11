@@ -8,6 +8,7 @@ export const pricing = {
       price: 150,
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_SOLO_YEARLY_PRICE_ID
     },
+    trialDays: 7,
     templatesQuota: 100,
     syncQuota: 5,
     deployQuota: 1,
@@ -24,6 +25,7 @@ export const pricing = {
       price: 250,
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_TEAM_YEARLY_PRICE_ID
     },
+    trialDays: 7,
     templatesQuota: 200,
     syncQuota: 10,
     deployQuota: 3,
@@ -42,6 +44,7 @@ export const pricing = {
       price: 600,
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_ENTERPRISE_YEARLY_PRICE_ID
     },
+    trialDays: 7,
     templatesQuota: 500,
     syncQuota: 20,
     deployQuota: 5,

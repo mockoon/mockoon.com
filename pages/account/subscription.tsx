@@ -185,6 +185,12 @@ const AccountSubscription: FunctionComponent = function () {
                                         Invoice past due
                                       </span>
                                     )}
+                                  {userData?.plan !== 'FREE' &&
+                                    userData.subscription?.trial && (
+                                      <span className='badge text-bg-primary-subtle ms-2'>
+                                        Trial period active
+                                      </span>
+                                    )}
                                 </p>
 
                                 {userData?.plan !== 'FREE' &&
@@ -316,29 +322,34 @@ const AccountSubscription: FunctionComponent = function () {
                                     </div>
                                   </div>
                                 </div>
-                                <div className='list-group-item'>
-                                  <div className='row align-items-center'>
-                                    <div className='col'>
-                                      <p className='mb-0'>
-                                        Cancel subscription
-                                      </p>
-                                      <p className='m-0'>
-                                        <small className='text-gray-700'>
-                                          Will be cancelled at the end of the
-                                          current billing period
-                                        </small>
-                                      </p>
-                                    </div>
-                                    <div className='col-auto'>
-                                      <Link
-                                        href={subscriptionLinksData?.cancel}
-                                        className='btn btn-xs btn-danger'
-                                      >
-                                        Cancel
-                                      </Link>
+                                {!userData?.subscription
+                                  ?.cancellationScheduled && (
+                                  <div className='list-group-item'>
+                                    <div className='row align-items-center'>
+                                      <div className='col'>
+                                        <p className='mb-0'>
+                                          Cancel subscription
+                                        </p>
+                                        <p className='m-0'>
+                                          <small className='text-gray-700'>
+                                            Will be cancelled at the end of the{' '}
+                                            {userData?.subscription?.trial
+                                              ? 'trial period'
+                                              : 'current billing period'}
+                                          </small>
+                                        </p>
+                                      </div>
+                                      <div className='col-auto'>
+                                        <Link
+                                          href={subscriptionLinksData?.cancel}
+                                          className='btn btn-xs btn-danger'
+                                        >
+                                          Cancel
+                                        </Link>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
+                                )}
                               </>
                             )}
                         </div>

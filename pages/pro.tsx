@@ -4,6 +4,7 @@ import EmailForm from '../components/email-form';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Plans from '../components/plans';
+import { pricing } from '../data/pricing';
 import Layout from '../layout/layout';
 import { AccordionData } from '../models/common.model';
 
@@ -53,6 +54,10 @@ const faq: AccordionData = [
   {
     title: 'Billing',
     items: [
+      {
+        title: 'Do you offer a free trial?',
+        content: `We offer a ${pricing.SOLO.trialDays}-day free trial for all plans. You can cancel your subscription at any time during the trial period and you will not be charged.`
+      },
       {
         title: 'How does per-seat billing work?',
         content:

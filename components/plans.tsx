@@ -311,6 +311,9 @@ const PlansView: FunctionComponent<{
 
                     <div className='text-center mb-6'>
                       {subscribeBtn(Plans.SOLO)}
+                      <div className='fs-6 text-muted mt-1'>
+                        {pricing.SOLO.trialDays} days free trial included
+                      </div>
                     </div>
 
                     <div className='d-flex'>
@@ -408,6 +411,9 @@ const PlansView: FunctionComponent<{
                     </div>
                     <div className='text-center mb-6'>
                       {subscribeBtn(Plans.TEAM)}
+                      <div className='fs-6 text-muted mt-1'>
+                        {pricing.SOLO.trialDays} days free trial included
+                      </div>
                     </div>
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
@@ -516,6 +522,9 @@ const PlansView: FunctionComponent<{
 
                     <div className='text-center mb-6'>
                       {subscribeBtn(Plans.ENTERPRISE)}
+                      <div className='fs-6 text-muted mt-1'>
+                        {pricing.SOLO.trialDays} days free trial included
+                      </div>
                     </div>
 
                     <div className='d-flex'>
@@ -677,7 +686,10 @@ const PlansView: FunctionComponent<{
               Prices are in USD and exclude VAT where applicable. By proceeding
               to payment you agree to our{' '}
               <Link href={'/privacy/'}>privacy policy</Link> and{' '}
-              <Link href={'/terms/'}>terms of service</Link>.<br />
+              <Link href={'/terms/'}>terms of service</Link>.<br /> The free
+              trial is available once per user and requires a valid payment
+              method.
+              <br />
               <sup>1</sup> To learn more about our Enterprise support, see the{' '}
               <Link href={'/pro/#faq'}>FAQ of our Pro plans</Link> or our{' '}
               <Link href={'/terms/'}>terms of service</Link>.

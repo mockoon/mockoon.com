@@ -133,7 +133,7 @@ const useCurrentTeam = (teamId, teamRole) => {
 
 const useCurrentSubscriptionLinks = (user: User) => {
   const auth = useAuth();
-
+  console.log(user);
   const { isLoading, error, data, isFetching } = useQuery<{
     update_payment_method: string;
     cancel: string;
@@ -145,7 +145,6 @@ const useCurrentSubscriptionLinks = (user: User) => {
       !!user &&
       user.plan !== Plans.FREE &&
       user.subscription !== undefined &&
-      user.subscription.subscriptionId != null &&
       user.subscription.provider != null &&
       user.subscription.provider === 'paddle',
     queryFn: async () => {

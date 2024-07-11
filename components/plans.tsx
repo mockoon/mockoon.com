@@ -99,26 +99,31 @@ const PlansView: FunctionComponent<{
   };
 
   const subscribeBtn = (plan: Plans) => (
-    <button
-      type='button'
-      className={`btn btn-primary btn-sm ${
-        currentUser.data?.plan !== 'FREE' && currentUser.data?.plan !== plan
-          ? 'invisible'
-          : ''
-      }`}
-      onClick={() => {
-        redirect(plan);
-      }}
-    >
-      {currentUser.data?.plan === Plans.FREE && 'Buy now'}
+    <>
+      <button
+        type='button'
+        className={`btn btn-primary btn-sm ${
+          currentUser.data?.plan !== 'FREE' && currentUser.data?.plan !== plan
+            ? 'invisible'
+            : ''
+        }`}
+        onClick={() => {
+          redirect(plan);
+        }}
+      >
+        {currentUser.data?.plan === Plans.FREE && 'Buy now'}
 
-      {currentUser.data?.plan !== Plans.FREE &&
-        currentUser.data?.plan === plan &&
-        'Current plan'}
-      {currentUser.data?.plan !== Plans.FREE &&
-        currentUser.data?.plan !== plan &&
-        '&nbsp;'}
-    </button>
+        {currentUser.data?.plan !== Plans.FREE &&
+          currentUser.data?.plan === plan &&
+          'Current plan'}
+        {currentUser.data?.plan !== Plans.FREE &&
+          currentUser.data?.plan !== plan &&
+          '&nbsp;'}
+      </button>
+      <div className='fs-6 text-muted mt-1'>
+        {pricing[plan].trialDays} days free trial included
+      </div>
+    </>
   );
   const tickBadge = (
     <div className='badge badge-rounded-circle text-bg-success-subtle'>
@@ -311,9 +316,6 @@ const PlansView: FunctionComponent<{
 
                     <div className='text-center mb-6'>
                       {subscribeBtn(Plans.SOLO)}
-                      <div className='fs-6 text-muted mt-1'>
-                        {pricing.SOLO.trialDays} days free trial included
-                      </div>
                     </div>
 
                     <div className='d-flex'>
@@ -411,9 +413,6 @@ const PlansView: FunctionComponent<{
                     </div>
                     <div className='text-center mb-6'>
                       {subscribeBtn(Plans.TEAM)}
-                      <div className='fs-6 text-muted mt-1'>
-                        {pricing.SOLO.trialDays} days free trial included
-                      </div>
                     </div>
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
@@ -522,9 +521,6 @@ const PlansView: FunctionComponent<{
 
                     <div className='text-center mb-6'>
                       {subscribeBtn(Plans.ENTERPRISE)}
-                      <div className='fs-6 text-muted mt-1'>
-                        {pricing.SOLO.trialDays} days free trial included
-                      </div>
                     </div>
 
                     <div className='d-flex'>

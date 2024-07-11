@@ -1,3 +1,4 @@
+import { Plans } from '@mockoon/cloud';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useEffect } from 'react';
@@ -155,7 +156,18 @@ const AccountSubscription: FunctionComponent = function () {
                 <div className='col-12 col-md-9'>
                   <div className='card card-bleed shadow-light-lg mb-6'>
                     <div className='card-header'>
-                      <h4 className='mb-0'>Current plan</h4>
+                      <div className='row align-items-center'>
+                        <div className='col'>
+                          <h4 className='mb-0'>Current plan</h4>
+                        </div>
+                        {userData?.plan !== Plans.FREE && (
+                          <div className='col-auto'>
+                            <Link href='/account/subscribe/getting-started/'>
+                              Getting started guide
+                            </Link>
+                          </div>
+                        )}
+                      </div>
                     </div>
                     <div className='card-body'>
                       {isUserLoading ? (

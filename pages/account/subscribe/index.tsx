@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router';
 import { FunctionComponent, useEffect } from 'react';
-import AccountHeader from '../../components/account-header';
-import LoadingPage from '../../components/loading-page';
-import Meta from '../../components/meta';
-import Plans from '../../components/plans';
-import Layout from '../../layout/layout';
-import { useAuth } from '../../utils/auth';
+import AccountHeader from '../../../components/account-header';
+import LoadingPage from '../../../components/loading-page';
+import Meta from '../../../components/meta';
+import Plans from '../../../components/plans';
+import Layout from '../../../layout/layout';
+import { useAuth } from '../../../utils/auth';
 
 const meta = {
   title: 'My account - Subscribe',

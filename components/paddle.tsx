@@ -15,13 +15,14 @@ const PaddleScript: FunctionComponent = function () {
         }
 
         // @ts-ignore
-        Paddle.Setup({
-          seller: parseInt(process.env.NEXT_PUBLIC_PADDLE_SELLER_ID),
-          pwAuth: process.env.NEXT_PUBLIC_PADDLE_RETAIN_AUTH,
+        Paddle.Initialize({
+          token: process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN,
           eventCallback: function (data) {
             if (data.name === 'checkout.completed') {
               setTimeout(() => {
-                router.push('/account/subscription/');
+                router.push('/account/subscribe/getting-started/');
+                // @ts-ignore
+                Paddle.Checkout.close();
               }, 3000);
             }
           }

@@ -133,7 +133,7 @@ const useCurrentTeam = (teamId, teamRole) => {
 
 const useCurrentSubscriptionLinks = (user: User) => {
   const auth = useAuth();
-  console.log(user);
+
   const { isLoading, error, data, isFetching } = useQuery<{
     update_payment_method: string;
     cancel: string;

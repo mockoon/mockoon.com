@@ -24,17 +24,17 @@ Cloud deployments are a great way to **make your mock APIs accessible** to your 
 
 After **subscribing to [Mockoon Pro](/pro/)** and [downloading](/download/) the latest version of the desktop application (v8.3.0), you can enable cloud deployments by logging in to the application with your Mockoon account. Once you are logged in, you can deploy an environment to the cloud using the context menu in the local or cloud environments list and selecting **"Deploy to the cloud"**:
 
-![deploy a mock menu entry](/images/blog/cloud-deployments-release/deploy-environment-menu.png)
+![deploy a mock menu entry{513x507}](/images/blog/cloud-deployments-release/deploy-environment-menu.png)
 
 You can further **configure** your deployment by selecting the **visibility** of your mock API (public or private):
 
-![deployment dialog with instance configuration](/images/blog/cloud-deployments-release/deploy-environment-dialog.png)
+![deployment dialog with instance configuration{800x225}](/images/blog/cloud-deployments-release/deploy-environment-dialog.png)
 
 Deploying only takes a few seconds, and you will receive a **deployment URL** in the form of `https://mock-{uniqueId}.{serverId}.mockoon.app` that you can share with others.
 
 Private instances are only accessible to you and your team members, using an API key, while public instances can be accessed by anyone with the link. You can also **update** or **delete** your deployment at any time:
 
-![deployment management dialog](/images/blog/cloud-deployments-release/deploy-environment-management-dialog.png)
+![deployment management dialog{799x205}](/images/blog/cloud-deployments-release/deploy-environment-management-dialog.png)
 
 ## Accessing your mock API in the cloud
 

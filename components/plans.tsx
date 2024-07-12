@@ -120,9 +120,11 @@ const PlansView: FunctionComponent<{
           currentUser.data?.plan !== plan &&
           '&nbsp;'}
       </button>
-      <div className='fs-6 text-muted mt-1'>
-        {pricing[plan].trialDays} days free trial included
-      </div>
+      {currentUser.data?.plan === 'FREE' && (
+        <div className='fs-6 text-muted mt-1'>
+          {pricing[plan].trialDays} days free trial included
+        </div>
+      )}
     </>
   );
   const tickBadge = (

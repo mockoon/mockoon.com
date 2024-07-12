@@ -346,13 +346,13 @@ const Course: FunctionComponent = function () {
                   </div>
                 ))}
               </div>
-              <Quote colorScheme='secondary'>
-                ➡️ To go further, <Link href={'/download/'}>download</Link>{' '}
-                Mockoon and follow our{' '}
-                <Link href={'/tutorials/getting-started/'}>
-                  getting started tutorial
-                </Link>
-                .
+              <Quote colorScheme='warning'>
+                ☁️ <strong>Deploy</strong> your own mock APIs in the cloud and{' '}
+                <strong>share</strong> them with your team with Mockoon Pro{' '}
+                <br />
+                <div className='mt-4'>
+                  <a href='/pro/'>Learn more</a>
+                </div>
               </Quote>
 
               <h3 className='my-6'>Available resources</h3>

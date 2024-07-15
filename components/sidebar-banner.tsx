@@ -12,7 +12,7 @@ const SidebarBanner: FunctionComponent<{
       <div className='card-body'>
         {pro && (
           <span className='badge text-bg-warning badge-float badge-float-outside'>
-            PRO
+            Cloud
           </span>
         )}
 

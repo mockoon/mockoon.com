@@ -55,7 +55,7 @@ const AccountMenu: FunctionComponent = function () {
                 href='/account/subscription/'
                 className='list-link text-reset'
               >
-                Mockoon Pro Subscription
+                Mockoon Cloud Subscription
               </Link>
             </li>
             {!isLoading &&

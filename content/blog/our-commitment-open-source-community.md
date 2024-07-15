@@ -81,7 +81,7 @@ During my years working on Mockoon, I have been learning a lot about our users a
 
 Bootstrapping a company around Mockoon is probably the best way to ensure it remains a healthy and sustainable open-source project. That being said, it must be done in a way that respects the project and its community. That's the initial goal of this blog post: to reiterate my commitment to the open-source community.
 
-While the SaaS is already [generally available](/pro/) with an AI assistant, it is still in its very early stage. Soon, I will add the first major feature: data synchronization for solo users and real-time collaboration for teams. Another feature will be added later this year and offer the possibility to deploy your mocks on the cloud to share them with your team.
+While the SaaS is already [generally available](/cloud/) with an AI assistant, it is still in its very early stage. Soon, I will add the first major feature: data synchronization for solo users and real-time collaboration for teams. Another feature will be added later this year and offer the possibility to deploy your mocks on the cloud to share them with your team.
 
 Naturally, this raises some questions I was asked in the past months: What will happen to the applications? Will they remain free and open-source? Will they still be maintained?
 

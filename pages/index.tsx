@@ -113,11 +113,11 @@ const HomePage: FunctionComponent = function () {
             <h4 className='my-4 d-flex align-items-center'>
               <div>
                 📢 <strong>Cloud deployments</strong> are now available in{' '}
-                <strong>Mockoon Pro</strong>. Supercharge your API development
+                <strong>Mockoon Cloud</strong>. Supercharge your API development
                 now!
               </div>
               <div className='ms-auto'>
-                <a href='/pro/'>Learn more</a>
+                <a href='/cloud/'>Learn more</a>
               </div>
             </h4>
           </Quote>

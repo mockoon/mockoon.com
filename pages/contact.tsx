@@ -62,12 +62,12 @@ const Contact: FunctionComponent = function () {
               </div>
             </div>
 
-            {userData?.plan === 'FREE' && (
+            {(!userData || userData.plan === 'FREE') && (
               <div className='col-12 col-lg-4 d-flex'>
                 <div className='card card-border my-5 shadow-light-lg'>
                   <div className='card-body d-flex flex-column h-100'>
                     <span className='badge text-bg-warning badge-float badge-float-outside'>
-                      PRO
+                      Cloud
                     </span>
                     <img
                       src='/images/illustrations/visio.svg'
@@ -83,7 +83,7 @@ const Contact: FunctionComponent = function () {
                       may have with the product.
                     </p>
                     <div className='mt-auto text-center'>
-                      <a href='/pro/'>Get enterprise support</a>
+                      <a href='/cloud/'>Get enterprise support</a>
                     </div>
                   </div>
                 </div>

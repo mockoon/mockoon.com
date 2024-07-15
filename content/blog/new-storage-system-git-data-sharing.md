@@ -58,7 +58,7 @@ We also decided to save your environment JSON files pretty-printed by default. I
 
 ![Disable storage pretty printing in the settings{817x610}](/images/blog/new-storage/disable-storage-pretty-print.png)
 
-> ☁️ Mockoon Pro users can use the new [data synchronization and team collaboration feature](/blog/data-synchronization-team-collaboration-release/) to share their environments with their team and collaborate in real-time.
+> ☁️ Mockoon Cloud users can use the new [data synchronization and team collaboration feature](/blog/data-synchronization-team-collaboration-release/) to share their environments with their team and collaborate in real-time.
 
 ### File path resolving
 

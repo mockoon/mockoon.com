@@ -39,7 +39,7 @@ To create a new mock API, click on the "New environment" button. You will be pro
 
 ![Recording of creating a new environment{1468x886}](/images/tutorials/getting-started/create-first-mock-api.gif)
 
-> 💡 You can synchronize your setup in our cloud and collaborate with your coworkers by subscribing to [Mockoon Pro](/pro/)
+> 💡 You can synchronize your setup in our cloud and collaborate with your coworkers by subscribing to [Mockoon Cloud](/cloud/)
 
 ## Step 3. Create your first API endpoint
 

@@ -9,9 +9,9 @@ import Layout from '../layout/layout';
 import { AccordionData } from '../models/common.model';
 
 const meta = {
-  title: "Mockoon's Pro plans",
+  title: "Mockoon's Cloud plans",
   description:
-    'Discover Mockoon Pro plans with our cloud platform: data synchronization, team collaboration and online mock API deployments'
+    'Discover Mockoon Cloud plans with our cloud platform: data synchronization, team collaboration and online mock API deployments'
 };
 
 const faq: AccordionData = [
@@ -122,13 +122,13 @@ const faq: AccordionData = [
   }
 ];
 
-const Pro: FunctionComponent = function () {
+const Cloud: FunctionComponent = function () {
   return (
     <Layout footerBanner='contact'>
       <Meta title={meta.title} description={meta.description} />
 
       <Hero
-        title='Supercharge your API development with <span class="text-primary">Mockoon Pro</span> plans'
+        title='Supercharge your API development with <span class="text-primary">Mockoon Cloud</span> plans'
         subtitle='Never let API integration slow you down again. Collaborate with your team, keep your data in sync, and deploy your mock APIs to the cloud easily.'
         mainPicture='/images/pro-hero.png'
         mainPictureAlt='Mockoon logo in the cloud interconnected with other services'
@@ -145,7 +145,7 @@ const Pro: FunctionComponent = function () {
         <div className='container' id='faq'>
           <div className='row justify-content-center'>
             <div className='col-12 col-lg-8 align-items-center'>
-              <h2 className='fw-bold mb-6 text-center'>Pro plans FAQ</h2>
+              <h2 className='fw-bold mb-6 text-center'>Cloud plans FAQ</h2>
               <Accordion data={faq} />
             </div>
           </div>
@@ -157,7 +157,7 @@ const Pro: FunctionComponent = function () {
           <div className='row justify-content-center'>
             <div className='col-12 col-lg-8 align-items-center'>
               <h2 className='fw-bold text-center mb-6'>
-                Stay up-to-date with Mockoon Pro feature releases
+                Stay up-to-date with Mockoon Cloud feature releases
               </h2>
               <div className='row align-items-center text-lg-start text-center'>
                 <div className='col-12 justify-content-end'>
@@ -172,4 +172,4 @@ const Pro: FunctionComponent = function () {
   );
 };
 
-export default Pro;
+export default Cloud;

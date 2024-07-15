@@ -6,7 +6,7 @@ meta:
 order: 900
 ---
 
-# Templates and AI assistant<span className='badge text-bg-warning fs-4 align-text-top ms-2'>PRO</span>
+# Templates and AI assistant<span className='badge text-bg-warning fs-4 align-text-top ms-2'>Cloud</span>
 
 ---
 
@@ -34,7 +34,7 @@ The "GET route" button will create a new HTTP GET route and copy the template co
 
 ## Use the AI assistant to generate realistic data
 
-You can also use our AI assistant to generate realistic mock data for your various endpoints by providing a custom prompt. This feature is available in the desktop application and is part of the [Mockoon Pro](/pro/) plans.
+You can also use our AI assistant to generate realistic mock data for your various endpoints by providing a custom prompt. This feature is available in the desktop application and is part of the [Mockoon Cloud](/cloud/) plans.
 
 To generate a new template, click the "From template" button in the route creation menu (see above), and select the "Generate" tab:
 

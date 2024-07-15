@@ -65,4 +65,4 @@ If you like our application, please consider sponsoring us too and join all the 
 
 ## New enterprise services
 
-As part of this search for sustainability, you may have noticed that we are now offering [enterprise services](/pro/): live support, applications deployment, bug prioritization, custom development, etc. Do not hesitate to reach out if your company needs such services.
+As part of this search for sustainability, you may have noticed that we are now offering [enterprise services](/cloud/): live support, applications deployment, bug prioritization, custom development, etc. Do not hesitate to reach out if your company needs such services.

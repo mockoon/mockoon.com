@@ -32,9 +32,9 @@ const TemplatesMenu: FunctionComponent<{
       <SidebarBanner
         pro
         title='Prototype faster than ever!'
-        text='With Mockoon Pro, you can generate your own templates using our AI assistant and prototype faster than ever.'
-        link='/pro/'
-        ctaText='Discover Mockoon Pro →'
+        text='With Mockoon Cloud, you can generate your own templates using our AI assistant and prototype faster than ever.'
+        link='/cloud/'
+        ctaText='Discover Mockoon Cloud →'
       />
     </aside>
   );

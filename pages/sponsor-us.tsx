@@ -11,13 +11,13 @@ const SponsorUs: FunctionComponent = function () {
     <Layout footerBanner='newsletter'>
       <Meta
         title='Support our work on Mockoon'
-        description='Mockoon is an open-source project. You can help the maintainers by sponsoring the project through GitHub Sponsors or by subscribing to our Pro plans.'
+        description='Mockoon is an open-source project. You can help the maintainers by sponsoring the project through GitHub Sponsors or by subscribing to our Cloud plans.'
         ogType='article'
       />
 
       <Hero
         title='<span class="text-primary">Support our work</span> on Mockoon'
-        subtitle='Mockoon is an open-source project. You can support our work by sponsoring the project or by subscribing to our Pro plans.'
+        subtitle='Mockoon is an open-source project. You can support our work by sponsoring the project or by subscribing to our Cloud plans.'
       />
 
       <div className='container pb-8'>
@@ -85,17 +85,17 @@ const SponsorUs: FunctionComponent = function () {
             <div className='col-lg-10 col-12 text-center text-lg-start mt-8'>
               <p>
                 You can also support us by subscribing to our{' '}
-                <strong>Pro plans</strong> and enjoy a whole new level of
+                <strong>Cloud</strong> and enjoy a whole new level of
                 capabilities: AI-powered API mocks generation, data
                 synchronization and real-time collaboration, enterprise-grade
                 support, and more to come!
               </p>
             </div>
             <div className='text-center my-8'>
-              <a href='/pro/'>
+              <a href='/cloud/'>
                 <img
-                  src='/images/pro-btn-250.png'
-                  alt='discover mockoon pro button'
+                  src='/images/cloud-btn-250.png'
+                  alt='discover mockoon cloud button'
                   width={250}
                   height={71}
                 />
@@ -106,7 +106,7 @@ const SponsorUs: FunctionComponent = function () {
 
             <div className='text-center mt-8'>
               <p>
-                If subscribing to the <strong>Pro plans</strong> or{' '}
+                If subscribing to the <strong>Cloud plans</strong> or{' '}
                 <strong>donating</strong> is not an option, you can still help
                 us <strong>spread the word</strong> by starring the project on
                 GitHub or sharing it with your peers!

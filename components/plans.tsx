@@ -689,7 +689,7 @@ const PlansView: FunctionComponent<{
               method.
               <br />
               <sup>1</sup> To learn more about our Enterprise support, see the{' '}
-              <Link href={'/pro/#faq'}>FAQ of our Pro plans</Link> or our{' '}
+              <Link href={'/cloud/#faq'}>FAQ of our Cloud plans</Link> or our{' '}
               <Link href={'/terms/'}>terms of service</Link>.
             </p>
 

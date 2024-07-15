@@ -129,12 +129,12 @@ const Nav: FunctionComponent = function () {
 
             <li className='nav-item'>
               <Link
-                href='/pro/'
+                href='/cloud/'
                 className={`nav-link ${
-                  router.pathname === '/pro' ? 'active' : ''
+                  router.pathname === '/cloud' ? 'active' : ''
                 }`}
               >
-                Pro
+                Cloud
               </Link>
             </li>
 

@@ -1,6 +1,6 @@
 ---
-title: Cloud depoyments are available in Mockoon Pro
-excerpt: The cloud deployments feature is now available for Mockoon Pro subscribers. Deploy your mock APIs in the cloud and share them with your team.
+title: Cloud depoyments are available in Mockoon Cloud
+excerpt: The cloud deployments feature is now available for Mockoon Cloud subscribers. Deploy your mock APIs in the cloud and share them with your team.
 date: '2024-07-10'
 image: cloud-deployments-release.png
 imageAlt: mockoon logo and cloud icon
@@ -12,17 +12,17 @@ tags:
   - releases
 author: guillaume
 meta:
-  title: Cloud depoyments are available in Mockoon Pro
-  description: The cloud deployments feature is now available for Mockoon Pro subscribers. Deploy your mock APIs in the cloud and share them with your team.
+  title: Cloud depoyments are available in Mockoon Cloud
+  description: The cloud deployments feature is now available for Mockoon Cloud subscribers. Deploy your mock APIs in the cloud and share them with your team.
 ---
 
-We are excited to announce the **availability of the cloud deployments** feature for Mockoon Pro subscribers. This feature, part of the [2024 June release](/releases/8.3.0/) and available in the **desktop application**, allows you to easily **deploy your mock APIs in the cloud and share them with your team**.
+We are excited to announce the **availability of the cloud deployments** feature for Mockoon Cloud subscribers. This feature, part of the [2024 June release](/releases/8.3.0/) and available in the **desktop application**, allows you to easily **deploy your mock APIs in the cloud and share them with your team**.
 
 Cloud deployments are a great way to **make your mock APIs accessible** to your team members, clients, or anyone else who needs to access them. They are also useful for testing and development purposes, as they allow you to **quickly share** your mock APIs with others without having to set up a server or manage infrastructure.
 
 ## How to get started
 
-After **subscribing to [Mockoon Pro](/pro/)** and [downloading](/download/) the latest version of the desktop application (v8.3.0), you can enable cloud deployments by logging in to the application with your Mockoon account. Once you are logged in, you can deploy an environment to the cloud using the context menu in the local or cloud environments list and selecting **"Deploy to the cloud"**:
+After **subscribing to [Mockoon Cloud](/cloud/)** and [downloading](/download/) the latest version of the desktop application (v8.3.0), you can enable cloud deployments by logging in to the application with your Mockoon account. Once you are logged in, you can deploy an environment to the cloud using the context menu in the local or cloud environments list and selecting **"Deploy to the cloud"**:
 
 ![deploy a mock menu entry{513x507}](/images/blog/cloud-deployments-release/deploy-environment-menu.png)
 
@@ -44,7 +44,7 @@ Most of the features available in the desktop application are also available in 
 
 ## Quotas and limitations
 
-This feature is available to all Mockoon Pro subscribers, with a quota of 1, 3, or 5 instances, and 50,000, 100,000, or 250,000 monthly requests depending on your subscription plan. You can learn more about the available plans on the [Mockoon Pro pricing page](/pro/). You can also check your quota and usage in your account settings on the [Mockoon website](/account/subscription/).
+This feature is available to all Mockoon Cloud subscribers, with a quota of 1, 3, or 5 instances, and 50,000, 100,000, or 250,000 monthly requests depending on your subscription plan. You can learn more about the available plans on the [Mockoon Cloud pricing page](/cloud/). You can also check your quota and usage in your account settings on the [Mockoon website](/account/subscription/).
 
 ## Custom deployments
 

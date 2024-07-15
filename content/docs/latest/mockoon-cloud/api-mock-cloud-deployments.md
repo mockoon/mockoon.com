@@ -2,15 +2,15 @@
 title: Cloud API mock deployments
 meta:
   title: Cloud API mock deployments
-  description: Learn how to deploy your mock APIs in the cloud and share them with your team or the world using Mockoon Pro
+  description: Learn how to deploy your mock APIs in the cloud and share them with your team or the world using Mockoon Cloud
 order: 902
 ---
 
-# Cloud API mock deployments<span className='badge text-bg-warning fs-4 align-text-top ms-2'>PRO</span>
+# Cloud API mock deployments<span className='badge text-bg-warning fs-4 align-text-top ms-2'>Cloud</span>
 
 ---
 
-[Mockoon Pro](/pro/) allows you to **deploy your mock APIs in the cloud** and share them with your team or the world. This feature is available in the desktop application and is part of the Mockoon Pro paid plans. Read on to learn how to use it and the different features it offers.
+[Mockoon Cloud](/cloud/) allows you to **deploy your mock APIs in the cloud** and share them with your team or the world. This feature is available in the desktop application and is part of the Mockoon Cloud paid plans. Read on to learn how to use it and the different features it offers.
 
 ## Managing your cloud deployments
 

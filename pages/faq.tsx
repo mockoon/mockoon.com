@@ -122,7 +122,7 @@ const Faq: FunctionComponent = function () {
                       Everything runs locally.
                       <br />
                       However, an internet connection is required to use our{' '}
-                      <a href='/pro/'>cloud services</a>.
+                      <a href='/cloud/'>cloud services</a>.
                     </p>
                   </div>
                 </div>
@@ -252,7 +252,7 @@ const Faq: FunctionComponent = function () {
                       >
                         MIT license
                       </a>
-                      ). We also have a Pro version that offers additional
+                      ). We also have a Cloud version that offers additional
                       features (see below).
                     </p>
                   </div>
@@ -265,14 +265,14 @@ const Faq: FunctionComponent = function () {
                     id='is-mockoon-free-and-or-open-source'
                     className='me-4 fw-medium'
                   >
-                    Do you offer a Pro version?
+                    Do you offer a Cloud version?
                   </h3>
                 </div>
 
                 <div className='accordion-collapse '>
                   <div className='accordion-body'>
                     <p className='text-gray-700'>
-                      Yes, we have <a href='/pro/'>Pro plans</a> that offers
+                      Yes, we have <a href='/cloud/'>Cloud plans</a> that offers
                       additional features like AI-powered API mocks generation,
                       data synchronization and real-time collaboration, cloud
                       deployments, enterprise-grade support, and more!
@@ -295,7 +295,7 @@ const Faq: FunctionComponent = function () {
                   <div className='accordion-body'>
                     <p className='text-gray-700'>
                       Yes, you can get enterprise-grade support with our{' '}
-                      <a href='/pro/'>Pro plans</a>.
+                      <a href='/cloud/'>Cloud plans</a>.
                     </p>
                   </div>
                 </div>

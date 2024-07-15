@@ -10,7 +10,7 @@ order: 910
 
 ---
 
-> 🆕 Be among the first to experience our new cloud offering with **data synchronization** capabilities by [signing up for our waiting list](/pro/).
+> 🆕 Be among the first to experience our new cloud offering with **data synchronization** capabilities by [signing up for our waiting list](/cloud/).
 
 ### Sharing a mock API
 

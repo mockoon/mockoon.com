@@ -109,7 +109,7 @@ export async function getStaticProps({ params }) {
         title: topic.data.title,
         order: topic.data.order || 1000,
         slug: `/docs/${topic.slug}`,
-        proBadge: topic.data.proBadge || false
+        cloudBadge: topic.data.cloudBadge || false
       };
 
       if (topic.categoryName) {
@@ -238,9 +238,9 @@ export default function Docs(props: {
                       <Link href={`${item.slug}/`} className='list-link'>
                         <>
                           {item.title}
-                          {item.proBadge && (
+                          {item.cloudBadge && (
                             <span className='badge text-bg-warning ms-2'>
-                              Pro
+                              Cloud
                             </span>
                           )}
                         </>
@@ -257,7 +257,7 @@ export default function Docs(props: {
                         {menuItem.title}
                         {menuItem.categoryName.includes('mockoon-cloud') && (
                           <span className='badge text-bg-warning ms-2'>
-                            Pro
+                            Cloud
                           </span>
                         )}
                       </h6>

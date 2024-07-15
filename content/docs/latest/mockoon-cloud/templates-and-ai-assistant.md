@@ -6,7 +6,7 @@ meta:
 order: 900
 ---
 
-# Templates and AI assistants<span className='badge text-bg-warning fs-4 align-text-top ms-2'>PRO</span>
+# Templates and AI assistants<span className='badge text-bg-warning fs-4 align-text-top ms-2'>Cloud</span>
 
 ---
 
@@ -34,7 +34,7 @@ The "GET route" button will create a new HTTP GET route and copy the template co
 
 ### Use the AI assistant to generate realistic templates
 
-You can also use our AI assistant to generate realistic mock data for your various endpoints by providing a custom prompt. This feature is available in the desktop application and is part of the [Mockoon Pro](/pro/) plans.
+You can also use our AI assistant to generate realistic mock data for your various endpoints by providing a custom prompt. This feature is available in the desktop application and is part of the [Mockoon Cloud](/cloud/) plans.
 
 To generate a new template, click the **"Assistants and templates"** button in the route creation menu (see above), and select the "Generate JSON templates" tab:
 
@@ -50,7 +50,7 @@ Finally, you can copy-paste the generated template manually or click on one of t
 
 ### HTTP endpoints assistant
 
-A second AI assistant is available in the [Mockoon Pro](/pro/) plans to generate **realistic HTTP endpoints**. This feature works similarly to the JSON templates assistant but generates a full HTTP route with a **response body**, a **path**, a **method** and a **documentation**, based on your prompt.
+A second AI assistant is available in the [Mockoon Cloud](/cloud/) plans to generate **realistic HTTP endpoints**. This feature works similarly to the JSON templates assistant but generates a full HTTP route with a **response body**, a **path**, a **method** and a **documentation**, based on your prompt.
 
 To generate a new HTTP endpoint, click the **"Assistants and templates"** button in the route creation menu (see above), and select the "Generate HTTP endpoints" tab:
 

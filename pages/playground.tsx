@@ -348,10 +348,10 @@ const Course: FunctionComponent = function () {
               </div>
               <Quote colorScheme='warning'>
                 ☁️ <strong>Deploy</strong> your own mock APIs in the cloud and{' '}
-                <strong>share</strong> them with your team with Mockoon Pro{' '}
+                <strong>share</strong> them with your team with Mockoon Cloud{' '}
                 <br />
                 <div className='mt-4'>
-                  <a href='/pro/'>Learn more</a>
+                  <a href='/cloud/'>Learn more</a>
                 </div>
               </Quote>
 

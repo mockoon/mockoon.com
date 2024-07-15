@@ -11,7 +11,7 @@ import { useCurrentUser } from '../../../utils/queries';
 
 const meta = {
   title: 'My account - Thank you for your purchase!',
-  description: 'Discover your Mockoon Pro plan'
+  description: 'Discover your Mockoon Cloud plan'
 };
 
 const SubscribeThankYou: FunctionComponent = function () {
@@ -36,7 +36,7 @@ const SubscribeThankYou: FunctionComponent = function () {
       <PaddleScript />
       <AccountHeader
         title='My account'
-        subtitle='Getting started with Mockoon Pro'
+        subtitle='Getting started with Mockoon Cloud'
       />
 
       <main className='pb-8 pb-md-11 mt-md-n6'>
@@ -81,7 +81,7 @@ const SubscribeThankYou: FunctionComponent = function () {
                         the desktop application
                       </h3>
                       <p className='mb-0'>
-                        To fully benefit from your Mockoon Pro plan, make sure
+                        To fully benefit from your Mockoon Cloud plan, make sure
                         you have the latest version of the desktop application
                         installed.
                       </p>
@@ -111,7 +111,7 @@ const SubscribeThankYou: FunctionComponent = function () {
                         account in the desktop application
                       </h3>
                       <p className='mb-0'>
-                        To enable your Mockoon Pro features, you need to{' '}
+                        To enable your Mockoon Cloud features, you need to{' '}
                         <strong>log in</strong> to your account in the desktop
                         application in the upper right corner.
                       </p>

@@ -164,11 +164,11 @@ const AccountNotifications: FunctionComponent = function () {
                         <div className='list-group-item'>
                           <div className='row align-items-center'>
                             <div className='col'>
-                              <p className='mb-0'>Mockoon Pro updates</p>
+                              <p className='mb-0'>Mockoon Cloud updates</p>
 
                               <small className='text-gray-700'>
                                 Be notified when new{' '}
-                                <Link href={'/pro/'}>Pro</Link> features are
+                                <Link href={'/cloud/'}>Cloud</Link> features are
                                 released
                               </small>
                             </div>

@@ -165,7 +165,7 @@ const About: FunctionComponent<{
           <div className='col-lg-10 col-12 mt-8'>
             <p>
               You can also support us by subscribing to our{' '}
-              <strong>Pro plans</strong> and enjoy a whole new level of
+              <strong>Cloud</strong> and enjoy a whole new level of
               capabilities: <strong>AI-powered API mocks generation</strong>,{' '}
               <strong>data synchronization and real-time collaboration</strong>,{' '}
               <strong>cloud deployments</strong>, enterprise-grade support, and
@@ -173,10 +173,10 @@ const About: FunctionComponent<{
             </p>
           </div>
           <div className='text-center my-8'>
-            <a href='/pro/'>
+            <a href='/cloud/'>
               <img
-                src='/images/pro-btn-250.png'
-                alt='discover mockoon pro button'
+                src='/images/cloud-btn-250.png'
+                alt='discover mockoon cloud button'
                 width={250}
                 height={71}
               />

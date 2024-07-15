@@ -47,9 +47,9 @@ We have officially launched a [GitHub Action](https://github.com/marketplace/act
 
 No complex setup is required. Simply add the action to your workflow and provide a path to a local data file, or a URL, and you're good to go.
 
-## 👷 Mockoon Pro data synchronization
+## 👷 Mockoon Cloud data synchronization
 
-The development of Mockoon's Pro data synchronization feature for solo developers is progressing smoothly. We anticipate releasing this feature as part of the Pro Solo plan by the end of this year. Concurrently, we have also begun working on the team collaboration feature, which shares similarities with the solo data synchronization. You can look forward to this feature being available in the Team and Enterprise plans in the first quarter of next year.
+The development of Mockoon's Cloud data synchronization feature for solo developers is progressing smoothly. We anticipate releasing this feature as part of the Cloud Solo plan by the end of this year. Concurrently, we have also begun working on the team collaboration feature, which shares similarities with the solo data synchronization. You can look forward to this feature being available in the Team and Enterprise plans in the first quarter of next year.
 
 ## 📊 Ditching Google Analytics for the website
 

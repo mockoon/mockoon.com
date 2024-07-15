@@ -46,7 +46,7 @@ If you like our application, please consider sponsoring us too and join all the 
 
 [![sponsor button{300x86}](/images/sponsor-btn.png)](https://github.com/sponsors/mockoon)
 
-As part of this search for sustainability, we now have [Pro plans](/pro/) including, AI-powered API mocks generation, enterprise-grade support, and more!
+As part of this search for sustainability, we now have [Cloud plans](/cloud/) including, AI-powered API mocks generation, enterprise-grade support, and more!
 
 ---
 

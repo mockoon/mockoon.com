@@ -4,7 +4,7 @@ meta:
   title: Mockoon templates and AI assistant documentation
   description: All you need to know about Mockoon's mock API ready to use JSON templates and AI assistant to generate your own dynamic and realistic templates.
 order: 220
-proBadge: true
+cloudBadge: true
 ---
 
 # Templates and AI assistant
@@ -31,11 +31,11 @@ Then, select the template you want to use and either copy-paste its content manu
 
 The "GET route" button will create a new HTTP GET route and copy the template content as the body. The "CRUD + data" button will create a new CRUD endpoint with a linked data bucket and copy the template content as the data bucket content.
 
-> Some templates are offered for free, while most of them require a subscription to [Mockoon Pro](/pro/). The templates part of the Pro plans are marked with a small yellow corner.
+> Some templates are offered for free, while most of them require a subscription to [Mockoon Cloud](/cloud/). The templates part of the Cloud plans are marked with a small yellow corner.
 
 ## Use the AI assistant to generate realistic data
 
-You can also use our AI assistant to generate realistic mock data for your various endpoints by providing a custom prompt. This feature is available in the desktop application and is part of the [Mockoon Pro](/pro/) plans.
+You can also use our AI assistant to generate realistic mock data for your various endpoints by providing a custom prompt. This feature is available in the desktop application and is part of the [Mockoon Cloud](/cloud/) plans.
 
 To generate a new template, click the "From template" button in the route creation menu (see above), and select the "Generate" tab:
 

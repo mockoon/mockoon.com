@@ -185,8 +185,8 @@ const Footer: FunctionComponent<{
 
             <ul className='list-unstyled text-gray-700'>
               <li className='mb-2'>
-                <Link href='/pro/' className='text-reset'>
-                  Pro plans
+                <Link href='/cloud/' className='text-reset'>
+                  Cloud
                 </Link>
               </li>
               <li className='mb-2'>

@@ -1,6 +1,6 @@
 ---
 title: Data synchronization and team collaboration
-excerpt: We are thrilled to announce the availability of data synchronization and real-time collaboration for Mockoon Pro users
+excerpt: We are thrilled to announce the availability of data synchronization and real-time collaboration for Mockoon Cloud users
 date: '2024-04-02'
 image: data-synchronization-team-collaboration-release.png
 imageAlt: mockoon logo and cloud icon
@@ -13,14 +13,14 @@ tags:
 author: guillaume
 meta:
   title: Data synchronization and team collaboration general availability
-  description: We are thrilled to announce the availability of data synchronization and real-time collaboration for Mockoon Pro users in the 2024 March release
+  description: We are thrilled to announce the availability of data synchronization and real-time collaboration for Mockoon Cloud users in the 2024 March release
 ---
 
-After months of work, we are thrilled to announce the **availability of the data synchronization and real-time collaboration** feature for Mockoon Pro subscribers. This feature, part of the [2024 March release](/releases/8.0.0/) and available in the **desktop application**, allows you to seamlessly **synchronize your environments' data across multiple devices or within your team**. This way, you can **collaborate in real-time** and ensure that everyone is working with the latest version of your mock API.
+After months of work, we are thrilled to announce the **availability of the data synchronization and real-time collaboration** feature for Mockoon Cloud subscribers. This feature, part of the [2024 March release](/releases/8.0.0/) and available in the **desktop application**, allows you to seamlessly **synchronize your environments' data across multiple devices or within your team**. This way, you can **collaborate in real-time** and ensure that everyone is working with the latest version of your mock API.
 
 ## How to get started
 
-After **subscribing to [Mockoon Pro](/pro/)** and [downloading](/download/) the latest version of the desktop application (v8.0.0), you can enable data synchronization by logging in to the application with your Mockoon account. Once you are logged in, you can create a new cloud environment or import an existing one using the new "Cloud" section in the Mockoon desktop application's menu:
+After **subscribing to [Mockoon Cloud](/cloud/)** and [downloading](/download/) the latest version of the desktop application (v8.0.0), you can enable data synchronization by logging in to the application with your Mockoon account. Once you are logged in, you can create a new cloud environment or import an existing one using the new "Cloud" section in the Mockoon desktop application's menu:
 
 ![Cloud menu section{200x231}](/images/blog/data-synchronization-team-collaboration-release/cloud-sync-menu.png)
 
@@ -52,4 +52,4 @@ As always, Mockoon remains **free and open-source**. The data synchronization an
 
 ## What's next?
 
-We are already working on the next Pro feature, which will be **cloud deployments**. This feature will allow you to deploy your mock APIs to the cloud and share them with your team or the world. Stay tuned for more information!
+We are already working on the next Cloud feature, which will be **cloud deployments**. This feature will allow you to deploy your mock APIs to the cloud and share them with your team or the world. Stay tuned for more information!

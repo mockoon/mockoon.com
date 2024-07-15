@@ -182,7 +182,9 @@ const Roadmap: FunctionComponent = function () {
                       )}
                       {!task.link && task.title}
                       {task.pro && (
-                        <span className='badge text-bg-warning ms-2'>Pro</span>
+                        <span className='badge text-bg-warning ms-2'>
+                          Cloud
+                        </span>
                       )}
                     </p>
                   </div>
@@ -213,7 +215,9 @@ const Roadmap: FunctionComponent = function () {
                       )}
                       {!task.link && task.title}
                       {task.pro && (
-                        <span className='badge text-bg-warning ms-2'>Pro</span>
+                        <span className='badge text-bg-warning ms-2'>
+                          Cloud
+                        </span>
                       )}
                     </p>
                   </div>
@@ -245,7 +249,9 @@ const Roadmap: FunctionComponent = function () {
                       )}
                       {!task.link && task.title}
                       {task.pro && (
-                        <span className='badge text-bg-warning ms-2'>Pro</span>
+                        <span className='badge text-bg-warning ms-2'>
+                          Cloud
+                        </span>
                       )}
                     </p>
                   </div>
@@ -280,8 +286,8 @@ const Roadmap: FunctionComponent = function () {
           <div className='row'>
             <div className='text-center'>
               <p className='has-text-centered pt-4'>
-                <a className='btn btn-primary-subtle' href='/pro/'>
-                  Get enterprise support with Mockoon Pro
+                <a className='btn btn-primary-subtle' href='/cloud/'>
+                  Get enterprise support with Mockoon Cloud
                 </a>
               </p>
             </div>

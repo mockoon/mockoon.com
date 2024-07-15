@@ -49,13 +49,13 @@ We are excited to see what the future holds, and we would like to thank GitHub f
 
 ---
 
-## 💁‍♂️ Sponsoring and pro plans
+## 💁‍♂️ Sponsoring and Cloud plans
 
 Because developing open-source softwares is not free, we (still) need your help to guarantee a bright future for our favorite raccoon.
 If you like our work, you can support us in multiple ways:
 
 - Spread the word! The more, the merrier 🙂.
 - [Sponsor us](https://github.com/sponsors/mockoon) and join all the [Sponsors and Backers](https://github.com/mockoon/mockoon/blob/main/backers.md) who helped this project over time. It's a great way to support us and show your brand in front of thousands of developers interested in APIs.
-- Subscribe to our new [Pro plans](/pro/): AI-powered API mocks generation, enterprise-grade support, and more!
+- Subscribe to our new [Cloud plans](/cloud/): AI-powered API mocks generation, enterprise-grade support, and more!
 
-We are also working on a [Pro plan](/pro/) available later this year. It will offer exciting features such as data synchronization and AI-powered API mocks generation. Stay tuned!
+We are also working on a [Cloud plan](/cloud/) available later this year. It will offer exciting features such as data synchronization and AI-powered API mocks generation. Stay tuned!

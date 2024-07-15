@@ -10,7 +10,7 @@ order: 1110
 
 ---
 
-> ☁️ **Data synchronization and team collaboration** are available as part of our [Mockoon Pro subscription](/pro/). It allows you to share your environments with your team and collaborate in real-time.
+> ☁️ **Data synchronization and team collaboration** are available as part of our [Mockoon Cloud subscription](/cloud/). It allows you to share your environments with your team and collaborate in real-time.
 
 ### Sharing a mock API
 

@@ -402,7 +402,7 @@ const Terms: FunctionComponent = function () {
               <h4 className='mt-6 fw-medium'>a. AI assistant</h4>
               <p>
                 The AI assistant is a feature available to all our customers of
-                our Pro plans. Its usage is subject to the quotas specified in
+                our Cloud plans. Its usage is subject to the quotas specified in
                 the plan details and visible in your account. You can access the
                 AI assistant from the desktop application.
               </p>
@@ -430,8 +430,8 @@ const Terms: FunctionComponent = function () {
               <p>
                 The data synchronization and real-time collaboration feature
                 ("Synchronization Feature") is available to all our customers of
-                our Pro plans. It is subject to the quotas specified in the plan
-                details and visible in your{' '}
+                our Cloud plans. It is subject to the quotas specified in the
+                plan details and visible in your{' '}
                 <a href='/account/subscription/'>
                   account management interface
                 </a>
@@ -475,7 +475,7 @@ const Terms: FunctionComponent = function () {
               <h4 className='mt-6 fw-medium'>c. Cloud deployments</h4>
               <p>
                 The cloud deployments feature ("Cloud Deployment Feature") is
-                available to all our customers of our Pro plans. It is subject
+                available to all our customers of our Cloud plans. It is subject
                 to the quotas and limits specified in the plan details and
                 visible in your{' '}
                 <a href='/account/subscription/'>

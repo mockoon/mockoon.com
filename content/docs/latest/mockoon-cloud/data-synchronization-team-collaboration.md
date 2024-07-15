@@ -2,15 +2,15 @@
 title: Data synchronization and team collaboration
 meta:
   title: Data synchronization and team collaboration
-  description: Learn how to use Mockoon Pro to synchronize your data across your team and collaborate on your mock API projects
+  description: Learn how to use Mockoon Cloud to synchronize your data across your team and collaborate on your mock API projects
 order: 901
 ---
 
-# Data synchronization and team collaboration<span className='badge text-bg-warning fs-4 align-text-top ms-2'>PRO</span>
+# Data synchronization and team collaboration<span className='badge text-bg-warning fs-4 align-text-top ms-2'>CLOUD</span>
 
 ---
 
-[Mockoon Pro](/pro/) allows you to **synchronize your mock APIs in the cloud**, share them with your team, and **collaborate in real time**. This feature is available in the desktop application and is part of the Mockoon Pro paid plans. Read on to learn how to use it and the different features it offers.
+[Mockoon Cloud](/cloud/) allows you to **synchronize your mock APIs in the cloud**, share them with your team, and **collaborate in real time**. This feature is available in the desktop application and is part of the Mockoon Cloud paid plans. Read on to learn how to use it and the different features it offers.
 
 ## Cloud vs local environments
 

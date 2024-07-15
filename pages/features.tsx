@@ -41,7 +41,7 @@ const features: CardData[] = [
   },
   {
     title: 'Deploy your mock APIs',
-    topTag: 'PRO',
+    topTag: 'Cloud',
     topTagClasses: 'text-bg-warning',
     description:
       'Deploy your mock APIs online with Mockoon Cloud and share them with your team',
@@ -70,7 +70,7 @@ const features: CardData[] = [
   },
   {
     title: 'Quick prototyping using AI',
-    topTag: 'PRO',
+    topTag: 'Cloud',
     topTagClasses: 'text-bg-warning',
     description:
       'Use our read-to-use templates and AI assistant to quickly prototype your mock APIs',
@@ -104,7 +104,7 @@ const features: CardData[] = [
   },
   {
     title: 'Cloud synchronization',
-    topTag: 'PRO',
+    topTag: 'Cloud',
     topTagClasses: 'text-bg-warning',
     description: 'Synchronize your mock APIs across all your devices.',
     links: [
@@ -131,7 +131,7 @@ const features: CardData[] = [
   },
   {
     title: 'Real-time collaboration',
-    topTag: 'PRO',
+    topTag: 'Cloud',
     topTagClasses: 'text-bg-warning',
     description: 'Collaborate with your team in real-time on your mock APIs.',
     links: [

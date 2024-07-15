@@ -16,7 +16,7 @@ const AIPoweredMocking = function () {
       <Meta title={meta.title} description={meta.description} />
 
       <Hero
-        title='🪄 <span class="text-primary">AI-powered</span> API mocking <span class="badge text-bg-warning fs-4 align-text-top ms-2">PRO</span>'
+        title='🪄 <span class="text-primary">AI-powered</span> API mocking <span class="badge text-bg-warning fs-4 align-text-top ms-2">Cloud</span>'
         subtitle='Mockoon AI assistants help you create realistic mock APIs endpoints in seconds for fast prototyping and learning.'
       />
 
@@ -28,15 +28,15 @@ const AIPoweredMocking = function () {
                 <SidebarBanner
                   pro
                   title='Prototype faster than ever!'
-                  text='With Mockoon Pro, you can generate your own templates and endpoints using our AI assistants and prototype faster than ever.'
-                  link='/pro/'
-                  ctaText='Discover Mockoon Pro →'
+                  text='With Mockoon Cloud, you can generate your own templates and endpoints using our AI assistants and prototype faster than ever.'
+                  link='/cloud/'
+                  ctaText='Discover Mockoon Cloud →'
                 />
               </aside>
             </div>
             <div className='col-12 col-lg-9'>
               <p>
-                Mockoon Pro offers an <strong>AI assistant</strong> that can
+                Mockoon Cloud offers an <strong>AI assistant</strong> that can
                 generate realistic mock APIs in seconds. It's a great way to
                 quickly prototype an API or learn API development.
               </p>

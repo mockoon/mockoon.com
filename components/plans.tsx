@@ -293,6 +293,7 @@ const PlansView: FunctionComponent<{
                 </div>
               </>
             )}
+
             <div className='row gx-4 gy-4 justify-content-center'>
               <div className='col-12 col-md-6 col-xl-3'>
                 <div className='card shadow-lg mb-6 mb-md-0 h-100'>

@@ -15,7 +15,7 @@ order: 1
 
 Postman is an online platform and desktop tool that enables developers to design and test APIs. Among its many features, Postman includes API mocking capabilities integrated into the application. Although not primarily an API mocking tool, it allows users to run cloud mock endpoints based on a collection of responses received during API testing.
 
-![#sub#Screenshot of Postman's interface](/images/compare/api-mocking-comparison-postman-screenshot.png)
+![#sub#Screenshot of Postman's interface{2558x1253}](/images/compare/api-mocking-comparison-postman-screenshot.png)
 
 ## What is Mockoon?
 
@@ -27,7 +27,7 @@ Mockoon Cloud is also available for teams and organizations looking for a **clou
 
 > 💡 Get started with Mockoon: [Download Mockoon](/download/) or [Discover Mockoon Cloud](/cloud/)
 
-![#sub#Screenshot of Mockoon's interface](/images/compare/api-mocking-comparison-mockoon-screenshot.png)
+![#sub#Screenshot of Mockoon's interface{1400x670}](/images/compare/api-mocking-comparison-mockoon-screenshot.png)
 
 ## Offer comparison
 
@@ -35,7 +35,7 @@ Below is a comparison of the main characteristics of Postman and Mockoon respect
 
 |                                                        | Postman                                                                                                                                 | Mockoon                                                                                                                                                                                                                                     |
 | ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <span class="text-gray-700">Offline/Cloud based</span> | **Cloud only**<br/>API mock is deployed on a _postman.com_ subdomain                                                                    | **Offline** and [**Cloud** ](/cloud/)                                                                                                                                                                                                       |
+| <span class="text-gray-700">Offline/Cloud based</span> | **Cloud only**                                                                                                                          | **Offline** and [**Cloud** ](/cloud/)                                                                                                                                                                                                       |
 | <span class="text-gray-700">Tools provided</span>      | **Online interface** and **desktop application**                                                                                        | [Desktop application](/download/) to design your mock<br/> [CLI](/cli/), [Docker image](https://hub.docker.com/r/mockoon/cli) and [GitHub Action](https://github.com/marketplace/actions/mockoon-cli) to deploy anywhere                    |
 | <span class="text-gray-700">Free/paid</span>           | **Freemium**                                                                                                                            | **Free** for the open-source tools, **paid** for the Cloud                                                                                                                                                                                  |
 | <span class="text-gray-700">Billing</span>             | Billed **per seat**                                                                                                                     | Billed **per seat**                                                                                                                                                                                                                         |
@@ -45,9 +45,9 @@ Below is a comparison of the main characteristics of Postman and Mockoon respect
 
 ## Features comparison
 
-While Beeceptor and Mockoon offer similar API mocking capabilities, they have different approaches. Below is a comparison of the main features of Beeceptor and Mockoon:
+While Postman and Mockoon offer similar API mocking capabilities, they have different approaches. Below is a comparison of the main features of Postman and Mockoon:
 
-| API mocking Features                                              | Beeceptor                                                                                                                             | Mockoon                                                                                                                                                                                                                                                                      |
+| API mocking Features                                              | Postman                                                                                                                               | Mockoon                                                                                                                                                                                                                                                                      |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <span class="text-gray-700">CLI</span>                            | <span class="text-danger fw-bold fs-3 me-2"><i class="icon-clear"></i></span>                                                         | <span class="text-success fw-bold fs-3 me-2"><i class="icon-check"></i></span> A [CLI](/cli/), [Docker image](https://hub.docker.com/r/mockoon/cli) and [GitHub Action](https://github.com/marketplace/actions/mockoon-cli) are available to deploy in headless environments |
 | <span class="text-gray-700">Proxy mode</span>                     | <span class="text-danger fw-bold fs-3 me-2"><i class="icon-clear"></i></span>                                                         | <span class="text-success fw-bold fs-3 me-2"><i class="icon-check"></i></span> [Documentation](/tutorials/partial-mocking-proxy/)                                                                                                                                            |

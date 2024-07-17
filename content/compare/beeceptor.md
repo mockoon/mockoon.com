@@ -17,7 +17,7 @@ Beeceptor is an online service enabling developers to mock APIs. It offers an ea
 
 Beeceptor is a paid service, but it offers a free tier with up to 50 requests per endpoint per day. The endpoints are public and accessible via a _beeceptor.com_ subdomain.
 
-![#sub#Screenshot of Beeceptor's interface](/images/compare/api-mocking-comparison-beeceptor-screenshot.png)
+![#sub#Screenshot of Beeceptor's interface{1400x760}](/images/compare/api-mocking-comparison-beeceptor-screenshot.png)
 
 ## What is Mockoon?
 
@@ -29,7 +29,7 @@ Mockoon Cloud is also available for teams and organizations looking for a **clou
 
 > 💡 Get started with Mockoon: [Download Mockoon](/download/) or [Discover Mockoon Cloud](/cloud/)
 
-![#sub#Screenshot of Mockoon's interface](/images/compare/api-mocking-comparison-mockoon-screenshot.png)
+![#sub#Screenshot of Mockoon's interface{1400x670}](/images/compare/api-mocking-comparison-mockoon-screenshot.png)
 
 ## Offer comparison
 
@@ -37,7 +37,7 @@ Below is a comparison of the main characteristics of Beeceptor and Mockoon respe
 
 |                                                        | Beeceptor                                                                      | Mockoon                                                                                                                                                                                                                                     |
 | ------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <span class="text-gray-700">Offline/Cloud based</span> | **Cloud only**<br/>API mock is deployed on a _beeceptor.com_ subdomain         | **Offline** and [**Cloud** ](/cloud/)                                                                                                                                                                                                       |
+| <span class="text-gray-700">Offline/Cloud based</span> | **Cloud only**                                                                 | **Offline** and [**Cloud** ](/cloud/)                                                                                                                                                                                                       |
 | <span class="text-gray-700">Tools provided</span>      | **Online interface**                                                           | [Desktop application](/download/) to design your mock<br/> [CLI](/cli/), [Docker image](https://hub.docker.com/r/mockoon/cli) and [GitHub Action](https://github.com/marketplace/actions/mockoon-cli) to deploy anywhere                    |
 | <span class="text-gray-700">Free/paid</span>           | **Freemium** with free tier                                                    | **Free** for the open-source tools, **paid** for the Cloud                                                                                                                                                                                  |
 | <span class="text-gray-700">Billing</span>             | Billed on a **per request** basis                                              | Billed **per seat**                                                                                                                                                                                                                         |

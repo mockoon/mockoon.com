@@ -1,3 +1,4 @@
+import { useQueryClient } from '@tanstack/react-query';
 import {
   EmailAuthProvider,
   GoogleAuthProvider,
@@ -14,6 +15,7 @@ import {
 import { useEffect, useState } from 'react';
 
 const useAuth = () => {
+  const queryClient = useQueryClient();
   // user is set when user is authenticated but email is not necessarily verified
   const [user, setUser] = useState<User>(null);
   // is auth set when user is authenticated and email is verified
@@ -25,6 +27,7 @@ const useAuth = () => {
 
   const logout = async () => {
     await auth.signOut();
+    queryClient.invalidateQueries({ queryKey: ['currentUser'] });
   };
 
   const getIdToken = async (force = false) => {

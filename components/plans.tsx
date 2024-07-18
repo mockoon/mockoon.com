@@ -100,31 +100,46 @@ const PlansView: FunctionComponent<{
 
   const subscribeBtn = (plan: Plans) => (
     <>
-      <button
-        type='button'
-        className={`btn btn-primary btn-sm ${
-          currentUser.data?.plan !== 'FREE' && currentUser.data?.plan !== plan
-            ? 'invisible'
-            : ''
-        }`}
-        onClick={() => {
-          redirect(plan);
-        }}
-      >
-        {currentUser.data?.plan === Plans.FREE && 'Buy now'}
-
-        {currentUser.data?.plan !== Plans.FREE &&
-          currentUser.data?.plan === plan &&
-          'Current plan'}
-        {currentUser.data?.plan !== Plans.FREE &&
-          currentUser.data?.plan !== plan &&
-          '&nbsp;'}
-      </button>
-      {currentUser.data?.plan === 'FREE' && (
-        <div className='fs-6 text-muted mt-1'>
-          {pricing[plan].trialDays} days free trial included
-        </div>
-      )}
+      <div>
+        <button
+          type='button'
+          className={`btn btn-primary btn-sm ${
+            currentUser.isLoading ||
+            (currentUser.data &&
+              currentUser.data?.plan !== Plans.FREE &&
+              currentUser.data?.plan !== plan)
+              ? 'invisible'
+              : ''
+          }`}
+          onClick={() => {
+            redirect(plan);
+          }}
+        >
+          {/* if not logged in or on a free plan -> buy now */}
+          {((!currentUser.isLoading && !currentUser.data) ||
+            currentUser.data?.plan === Plans.FREE) &&
+            'Buy now'}
+          {/* if logged in and on a paid plan -> current plan*/}
+          {!currentUser.isLoading &&
+            currentUser.data &&
+            currentUser.data?.plan !== Plans.FREE &&
+            currentUser.data?.plan === plan &&
+            'Current plan'}
+          {/* if logged in and on a paid plan, hide, for other plans*/}
+          {currentUser.data &&
+            currentUser.data?.plan !== Plans.FREE &&
+            currentUser.data?.plan !== plan &&
+            '&nbsp;'}
+        </button>
+      </div>
+      <>
+        {/* Hide trial if already subscribed */}
+        {(!currentUser.data || currentUser.data?.plan === 'FREE') && (
+          <div className='mt-2 badge text-bg-success-subtle'>
+            {pricing[plan].trialDays} days free trial included
+          </div>
+        )}
+      </>
     </>
   );
   const tickBadge = (

@@ -260,28 +260,43 @@ const AccountSubscription: FunctionComponent = function () {
                                   )}
                               </div>
                               <div className='col-auto'>
-                                {userData?.plan === 'FREE' && (
-                                  <Link
-                                    href={'/account/subscribe/'}
-                                    className='btn btn-xs btn-primary'
-                                  >
-                                    Upgrade plan
-                                  </Link>
-                                )}
-                                {userData?.plan !== 'FREE' &&
-                                  displayPlanInfo &&
-                                  userData?.subscription?.provider ===
-                                    'stripe' && (
+                                <div>
+                                  {userData?.plan === 'FREE' && (
                                     <Link
-                                      href={
-                                        process.env
-                                          .NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL
-                                      }
+                                      href={'/account/subscribe/'}
                                       className='btn btn-xs btn-primary'
                                     >
-                                      Manage subscription
+                                      Upgrade plan
                                     </Link>
                                   )}
+                                  {userData?.plan !== 'FREE' &&
+                                    displayPlanInfo &&
+                                    userData?.subscription?.provider ===
+                                      'stripe' && (
+                                      <Link
+                                        href={
+                                          process.env
+                                            .NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL
+                                        }
+                                        className='btn btn-xs btn-primary'
+                                      >
+                                        Manage subscription
+                                      </Link>
+                                    )}
+                                </div>
+                                {(userData?.plan === 'SOLO' ||
+                                  (userData?.plan === 'TEAM' &&
+                                    userData?.teamRole === 'owner')) && (
+                                  <div>
+                                    <small className='text-gray-700 ms-auto'>
+                                      Contact us at{' '}
+                                      <a href='mailto:support@mockoon.com'>
+                                        support@mockoon.com
+                                      </a>{' '}
+                                      to upgrade your plan.
+                                    </small>
+                                  </div>
+                                )}
                               </div>
                             </div>
                             {userData?.plan === 'FREE' &&

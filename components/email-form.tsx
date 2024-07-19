@@ -102,7 +102,7 @@ const EmailForm: FunctionComponent<{
       )}
       {submitSuccess && (
         <div className='text-success text-center fw-bold'>
-          Thank you for subscribing! Please check your email to confirm your
+          Thank you for subscribing! Please check your inbox to confirm your
           subscription.
         </div>
       )}

@@ -15,7 +15,7 @@ order: 4
 
 ReadyAPI (formerly SoapUI) is a comprehensive API testing tool that facilitates the creation, testing, and monitoring of APIs. While secondary, it offers API mocking capabilities, allowing developers to simulate REST, SOAP, and other web services. Its feature set includes request and response validation, scripting, and automated test generation.
 
-![#sub#Screenshot of ReadyAPI's interface{2558x1253}](/images/compare/api-mocking-comparison-readyapi-screenshot.png)
+![#sub#Screenshot of ReadyAPI's interface{1849x880}](/images/compare/api-mocking-comparison-readyapi-screenshot.png)
 
 ## What is Mockoon?
 

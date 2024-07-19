@@ -1,23 +1,31 @@
 import matter from 'gray-matter';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Fragment } from 'react';
 import Article from '../../components/article';
 import Breadcrumb from '../../components/breadcrumb';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
 import { ArticleData } from '../../models/common.model';
-import { buildSlugStaticPaths } from '../../utils/static-builders';
+import {
+  buildIndexStaticProps,
+  buildSlugStaticPaths
+} from '../../utils/static-builders';
 
 export async function getStaticProps({ params }) {
   const fileContent = await require(`../../content/compare/${params.slug}.md`);
   const parsedContent = matter(fileContent.default);
+  const {
+    props: { articles }
+  } = buildIndexStaticProps(
+    require.context('../../content/compare/', false, /\.\/.+\.md$/)
+  );
 
   return {
     props: {
       slug: `compare/${params.slug}`,
       articleData: parsedContent.data,
-      articleBody: parsedContent.content
+      articleBody: parsedContent.content,
+      articles
     }
   };
 }
@@ -28,6 +36,7 @@ export default function ComparisonGuide(props: {
   slug: string;
   articleData: ArticleData;
   articleBody: string;
+  articles: any;
 }) {
   return (
     <Layout footerBanner='download'>
@@ -56,54 +65,30 @@ export default function ComparisonGuide(props: {
         articleBody={props.articleBody}
         articleData={props.articleData}
       />
-      <div className='container'>
-        <section className='row pt-3 pb-8'>
-          <div
-            className={`col d-flex ${
-              props.articleData.nextLink && props.articleData.previousLink
-                ? 'justify-content-between'
-                : 'justify-content-center'
-            }`}
-          >
-            {!props.articleData.nextLink && !props.articleData.previousLink && (
-              <Link
-                href='/compare/'
-                className='btn btn-sm btn-secondary-subtle'
-              >
-                ⬅ Back to the list of comparison guides
-              </Link>
-            )}
-            {(props.articleData.previousLink || props.articleData.nextLink) && (
-              <Fragment>
-                {props.articleData.previousLink && (
-                  <Link
-                    href={`/compare/${
-                      props.articleData.previousLink
-                        ? props.articleData.previousLink + '/'
-                        : ''
-                    }`}
-                    className='btn btn-sm btn-secondary-subtle'
-                  >
-                    ⬅{props.articleData.previousText}
-                  </Link>
-                )}
-                {props.articleData.nextLink && (
-                  <Link
-                    href={`/compare/${
-                      props.articleData.nextLink
-                        ? props.articleData.nextLink + '/'
-                        : ''
-                    }`}
-                    className='btn btn-sm btn-secondary-subtle'
-                  >
-                    {props.articleData.nextText}➡
-                  </Link>
-                )}
-              </Fragment>
-            )}
-          </div>
-        </section>
-      </div>
+      {props.articles.length > 0 && (
+        <div className='container'>
+          <section className='row pt-3 pb-8'>
+            <div className='col text-center fs-4'>
+              <p>
+                For more comparisons between Mockoon and other tools, check out
+                our other articles:
+              </p>
+              {props.articles.map((article, articleIndex) => {
+                if (!props.slug.includes(article.slug)) {
+                  return (
+                    <span key={article.slug}>
+                      <Link href={`/compare/${article.slug}`}>
+                        {article.data.shortTitle}
+                      </Link>
+                      {articleIndex !== props.articles.length - 1 && ', '}
+                    </span>
+                  );
+                }
+              })}
+            </div>
+          </section>
+        </div>
+      )}
     </Layout>
   );
 }

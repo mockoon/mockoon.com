@@ -60,6 +60,8 @@ export type FooterCTA = 'newsletter' | 'contact' | 'download';
 
 export type ArticleData = {
   title?: string;
+  // short title used sometimes to build shorter more catchy links
+  shortTitle?: string;
   excerpt?: string;
   date?: string;
   meta?: MetaData;

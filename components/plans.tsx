@@ -115,10 +115,10 @@ const PlansView: FunctionComponent<{
             redirect(plan);
           }}
         >
-          {/* if not logged in or on a free plan -> buy now */}
+          {/* if not logged in or on a free plan -> buy btn */}
           {((!currentUser.isLoading && !currentUser.data) ||
             currentUser.data?.plan === Plans.FREE) &&
-            'Buy now'}
+            'Try for free'}
           {/* if logged in and on a paid plan -> current plan*/}
           {!currentUser.isLoading &&
             currentUser.data &&

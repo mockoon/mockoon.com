@@ -50,6 +50,7 @@ const EmailVerification: FunctionComponent = function () {
 
       setTimeout(() => {
         const redirect = localStorage.getItem('redirect');
+
         if (redirect) {
           localStorage.removeItem('redirect');
           router.push(redirect);

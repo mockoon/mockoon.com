@@ -73,7 +73,9 @@ const CLI: FunctionComponent = function () {
                 now!
               </div>
               <div className='ms-auto'>
-                <a href='/cloud/'>Learn more</a>
+                <a href='/blog/mock-api-cloud-deployments-release/'>
+                  Learn more
+                </a>
               </div>
             </h4>
           </Quote>

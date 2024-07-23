@@ -25,6 +25,7 @@ const Login: FunctionComponent = function () {
   } = useAuth();
   const router = useRouter();
   const isInApp = router.query.inapp === 'true';
+  const authCallback = router.query.authCallback as string;
   const [error, setError] = useState(false);
 
   const {
@@ -54,8 +55,12 @@ const Login: FunctionComponent = function () {
   };
 
   useEffect(() => {
-    if (isInApp) {
+    if (isInApp || authCallback) {
       localStorage.setItem('redirect', '/app-auth/');
+    }
+
+    if (authCallback) {
+      localStorage.setItem('authCallback', authCallback);
     }
 
     if (!isSubmitting && !isAuthLoading && user && isAuth) {
@@ -68,10 +73,10 @@ const Login: FunctionComponent = function () {
         router.push('/account/info/');
       }
     }
-  }, [isAuthLoading, user, isAuth, isInApp]);
+  }, [isAuthLoading, user, isAuth, isInApp, authCallback]);
 
   return (
-    <Layout footerBanner='download'>
+    <Layout footerBanner='contact'>
       <Meta title={meta.title} description={meta.description} />
 
       {isAuthLoading && <LoadingPage />}

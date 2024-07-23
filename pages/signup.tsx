@@ -34,6 +34,7 @@ const Signup: FunctionComponent = function () {
   const router = useRouter();
   const [error, setError] = useState(null);
   const isInApp = router.query.inapp === 'true';
+  const authCallback = router.query.authCallback as string;
   const {
     register: registerFormField,
     watch,
@@ -78,9 +79,14 @@ const Signup: FunctionComponent = function () {
   };
 
   useEffect(() => {
-    if (isInApp) {
+    if (isInApp || authCallback) {
       localStorage.setItem('redirect', '/app-auth/');
     }
+
+    if (authCallback) {
+      localStorage.setItem('authCallback', authCallback);
+    }
+
     if (!isSubmitting && !isAuthLoading && user && isAuth) {
       const redirect = localStorage.getItem('redirect');
 
@@ -91,10 +97,10 @@ const Signup: FunctionComponent = function () {
         router.push('/account/info/');
       }
     }
-  }, [isSubmitting, isAuthLoading, user, isAuth, isInApp]);
+  }, [isSubmitting, isAuthLoading, user, isAuth, isInApp, authCallback]);
 
   return (
-    <Layout footerBanner='newsletter'>
+    <Layout footerBanner='contact'>
       <Meta title={meta.title} description={meta.description} />
 
       {isAuthLoading && <LoadingPage />}

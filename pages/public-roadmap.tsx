@@ -40,80 +40,80 @@ const tasks = {
     {
       link: '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/',
       title: 'API deployments in the cloud',
-      pro: true,
+      cloud: true,
       target: null
     },
     {
       link: '/ai-powered-api-mocking/',
       title: 'AI powered HTTP endpoints mocking',
-      pro: true,
+      cloud: true,
       target: null
     },
     {
       link: '/docs/latest/admin-api/overview/',
       title: 'Admin API',
-      pro: false
+      cloud: false
     },
     {
       link: '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/',
       title: 'Real-time collaboration for teams',
-      pro: true
+      cloud: true
     },
     {
       link: '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/',
       title: 'Data synchronization for solo developers',
-      pro: true
+      cloud: true
     },
     {
       link: '/docs/latest/variables/environment-variables/',
       title: 'Environment variables support in templating',
-      pro: false
+      cloud: false
     },
     {
       link: '/docs/latest/variables/global-variables/',
       title: 'Global variables',
-      pro: false
+      cloud: false
     },
     {
       link: '/docs/latest/api-endpoints/crud-routes/#filtering-sorting-and-pagination-on-the-main-get-route',
       title: 'CRUD routes filtering',
-      pro: false
+      cloud: false
     },
     {
       link: '/playground/',
       title: 'API playground',
-      pro: false
+      cloud: false
     }
   ],
   inProgress: [
     {
       link: 'https://github.com/mockoon/mockoon/issues/83',
       title: 'WebSockets support',
-      pro: false,
+      cloud: false,
       target: '_blank'
     },
     {
       link: 'https://github.com/mockoon/mockoon/issues/568',
       title: 'Randomized lantency',
-      pro: false,
+      cloud: false,
       target: '_blank'
     }
   ],
   comingSoon: [
     {
       title: 'Real-time collaboration improved presence',
-      pro: true,
+      cloud: true,
       target: null
     },
     {
-      title: 'Cloud deployment environment variables support',
-      pro: true,
+      title: 'Environment variables support in cloud deployments',
+      cloud: true,
       target: null
     },
     {
       link: '/course/',
       title: 'Official online course',
-      pro: true,
+      cloud: false,
       target: null
     }
   ]
@@ -172,6 +172,11 @@ const Roadmap: FunctionComponent = function () {
                     </div>
 
                     <p className='text-gray-800'>
+                      {task.cloud && (
+                        <span className='badge text-bg-warning me-2'>
+                          Cloud
+                        </span>
+                      )}
                       {task.link && (
                         <Link
                           href={task.link}
@@ -181,11 +186,6 @@ const Roadmap: FunctionComponent = function () {
                         </Link>
                       )}
                       {!task.link && task.title}
-                      {task.pro && (
-                        <span className='badge text-bg-warning ms-2'>
-                          Cloud
-                        </span>
-                      )}
                     </p>
                   </div>
                 ))}
@@ -205,6 +205,11 @@ const Roadmap: FunctionComponent = function () {
                     </div>
 
                     <p className='text-gray-800'>
+                      {task.cloud && (
+                        <span className='badge text-bg-warning me-2'>
+                          Cloud
+                        </span>
+                      )}
                       {task.link && (
                         <Link
                           href={task.link}
@@ -214,11 +219,6 @@ const Roadmap: FunctionComponent = function () {
                         </Link>
                       )}
                       {!task.link && task.title}
-                      {task.pro && (
-                        <span className='badge text-bg-warning ms-2'>
-                          Cloud
-                        </span>
-                      )}
                     </p>
                   </div>
                 ))}
@@ -239,6 +239,11 @@ const Roadmap: FunctionComponent = function () {
                     </div>
 
                     <p className='text-gray-800'>
+                      {task.cloud && (
+                        <span className='badge text-bg-warning me-2'>
+                          Cloud
+                        </span>
+                      )}
                       {task.link && (
                         <Link
                           href={task.link}
@@ -248,11 +253,6 @@ const Roadmap: FunctionComponent = function () {
                         </Link>
                       )}
                       {!task.link && task.title}
-                      {task.pro && (
-                        <span className='badge text-bg-warning ms-2'>
-                          Cloud
-                        </span>
-                      )}
                     </p>
                   </div>
                 ))}

@@ -13,7 +13,7 @@ export const pricing = {
     syncQuota: 5,
     deployQuota: 1,
     deployCallsQuota: 50_000,
-    deployReqSQuota: 2,
+    deployReqSQuota: 3,
     discount: '🏷️ 2 months free'
   },
   TEAM: {
@@ -30,7 +30,7 @@ export const pricing = {
     syncQuota: 10,
     deployQuota: 3,
     deployCallsQuota: 100_000,
-    deployReqSQuota: 3,
+    deployReqSQuota: 5,
     discount: '🏷️ 2 months free',
     minSeats: 1,
     maxSeats: 5
@@ -49,7 +49,7 @@ export const pricing = {
     syncQuota: 20,
     deployQuota: 5,
     deployCallsQuota: 250_000,
-    deployReqSQuota: 5,
+    deployReqSQuota: 10,
     discount: null,
     minSeats: 1,
     maxSeats: 99

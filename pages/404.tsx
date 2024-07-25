@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react';
 import Card from '../components/card';
 import Meta from '../components/meta';
 import Layout from '../layout/layout';
@@ -45,7 +44,12 @@ export default function () {
                   title: '🚢 Run your mocks anywhere',
                   description:
                     'Deploy your mock servers in your CI environment with a simple and easy to use NPM package and Docker image.',
-                  links: [{ src: '/cli/', text: 'Discover the CLI' }]
+                  links: [
+                    {
+                      src: '/tutorials/run-mock-api-anywhere-cli/',
+                      text: 'Discover the CLI'
+                    }
+                  ]
                 }}
                 cover={false}
                 border
@@ -55,14 +59,12 @@ export default function () {
             <div className='col-12 col-lg-4 d-flex'>
               <Card
                 data={{
-                  topTag: 'pro',
+                  topTag: 'cloud',
                   topTagClasses: 'text-bg-warning',
-                  title: '🤖 Use our templates and AI assistant',
+                  title: '☁️ Achieve more with our Cloud',
                   description:
-                    'Mockoon AI assistant helps you create realistic mock APIs in seconds for fast prototyping and learning.',
-                  links: [
-                    { src: '/ai-powered-api-mocking/', text: 'Learn more' }
-                  ]
+                    'Mockoon Cloud is a powerful API mocking platform that allows you to collaborate and share your mock APIs easily.',
+                  links: [{ src: '/cloud/', text: 'Learn more' }]
                 }}
                 cover={false}
                 border

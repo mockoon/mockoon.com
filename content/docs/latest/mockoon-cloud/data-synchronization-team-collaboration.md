@@ -3,7 +3,7 @@ title: Data synchronization and team collaboration
 meta:
   title: Data synchronization and team collaboration
   description: Learn how to use Mockoon Cloud to synchronize your data across your team and collaborate on your mock API projects
-order: 901
+order: 902
 ---
 
 # Data synchronization and team collaboration<span className='badge text-bg-warning fs-4 align-text-top ms-2'>CLOUD</span>

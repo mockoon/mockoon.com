@@ -162,7 +162,7 @@ const AccountSubscription: FunctionComponent = function () {
                         </div>
                         {userData?.plan !== Plans.FREE && (
                           <div className='col-auto'>
-                            <Link href='/account/subscribe/getting-started/'>
+                            <Link href='/tutorials/getting-started-with-mockoon-cloud/'>
                               Getting started guide
                             </Link>
                           </div>

@@ -20,7 +20,7 @@ const PaddleScript: FunctionComponent = function () {
           eventCallback: function (data) {
             if (data.name === 'checkout.completed') {
               setTimeout(() => {
-                router.push('/account/subscribe/getting-started/');
+                router.push('/account/subscribe/thank-you/');
                 // @ts-ignore
                 Paddle.Checkout.close();
               }, 3000);

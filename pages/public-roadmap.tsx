@@ -38,6 +38,12 @@ const faq: AccordionData = [
 const tasks = {
   released: [
     {
+      link: '/releases/8.4.0#random-latencies',
+      title: 'Randomized lantency',
+      cloud: false,
+      target: null
+    },
+    {
       link: '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/',
       title: 'API deployments in the cloud',
       cloud: true,
@@ -78,11 +84,6 @@ const tasks = {
       link: '/docs/latest/api-endpoints/crud-routes/#filtering-sorting-and-pagination-on-the-main-get-route',
       title: 'CRUD routes filtering',
       cloud: false
-    },
-    {
-      link: '/playground/',
-      title: 'API playground',
-      cloud: false
     }
   ],
   inProgress: [
@@ -93,8 +94,20 @@ const tasks = {
       target: '_blank'
     },
     {
-      link: 'https://github.com/mockoon/mockoon/issues/568',
-      title: 'Randomized lantency',
+      link: 'https://github.com/mockoon/mockoon/issues/1444',
+      title: 'New array includes rule',
+      cloud: false,
+      target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1045',
+      title: 'Export logs as HAR',
+      cloud: false,
+      target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1458',
+      title: 'Copy logs as cURL',
       cloud: false,
       target: '_blank'
     }
@@ -107,6 +120,11 @@ const tasks = {
     },
     {
       title: 'Environment variables support in cloud deployments',
+      cloud: true,
+      target: null
+    },
+    {
+      title: 'More cloud deployment regions',
       cloud: true,
       target: null
     },

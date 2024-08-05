@@ -24,7 +24,7 @@ To serve a file, you must provide a path in the file input field:
 
 You can either provide an absolute path like `/home/username/file.json` or a relative path. Starting with [v1.16.0](https://github.com/mockoon/mockoon/releases/tag/v1.16.0), relative paths are resolved from the environment's file location. You can check the environment's file location by right-clicking on an environment en select "Show in folder" in the contextual menu:
 
-![show in folder menu entry{547x349}](docs-img:environment-show-in-folder.png)
+![show in folder menu entry{551x380}](docs-img:environment-show-in-folder.png)
 
 > 💡 Prior to v1.16.0, relative file paths were resolved from the application executable. This is also supported by the CLI since its version [1.2.0](https://github.com/mockoon/cli/releases/tag/v1.2.0).
 

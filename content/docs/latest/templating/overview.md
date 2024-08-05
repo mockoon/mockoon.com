@@ -10,7 +10,7 @@ order: 500
 
 ---
 
-Mockoon implements [Handlebars](https://handlebarsjs.com/), [Faker.js v8.1.0](https://fakerjs.dev/), and a set of custom helpers to create dynamic responses. This templating system is supported in the [**data buckets**](#content-of-a-data-bucket), [**response's body**](#body-and-file-content-templating), [**header values**](#headers-and-rule-values), [**file content**](#body-and-file-content-templating), [**file path**](#file-input-templating) and [**rule values**](#headers-and-rule-values). You will find below a global overview of how and where you can use helpers. You can also check the [available helpers](#available-helpers) on specific documentation pages.
+Mockoon implements [Handlebars](https://handlebarsjs.com/), [Faker.js v8.1.0](https://fakerjs.dev/), and a set of custom helpers to create dynamic responses. This templating system is supported in the [**data buckets**](#content-of-a-data-bucket), [**response's body**](#body-and-file-content-templating), [**header**](#headers-and-rule), [**file content**](#body-and-file-content-templating), [**file path**](#file-input-templating) and [**rule**](#headers-and-rule). You will find below a global overview of how and where you can use helpers. You can also check the [available helpers](#available-helpers) on specific documentation pages.
 
 ## Helpers
 
@@ -191,7 +191,7 @@ If you call this route with `/myroute/1`, `./file1.json` will be sent.
 
 > For more information about absolute and relative file paths, please refer to our [file serving](docs:response-configuration/file-serving#absolute-or-relative-paths) documentation.
 
-### Headers and rule values
+### Headers and rule
 
 Templating helpers can also be used in the **headers values** both in route headers and environment headers:
 
@@ -199,4 +199,4 @@ Templating helpers can also be used in the **headers values** both in route head
 
 Finally, templating helpers can be used in the response **rule values** to create dynamic rules:
 
-![screenshot showing a response rule with a template helper in the value field{1167x164}](docs-img:template-helper-response-rule-value.png)
+![screenshot showing a response rule with a template helper in the value field{1167x154}](docs-img:template-helper-response-rule-value.png)

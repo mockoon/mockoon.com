@@ -69,7 +69,7 @@ In the dropdown menu you can choose between:
 
 ![Rule property{1177x204}](docs-img:route-response-rules-property.png)
 
-Depending on the **target**, the way to access properties may be different:
+This field supports [templating helpers](docs:templating/overview) to dynamically target a specific body property, header name, etc. Depending on the **target**, the way to access properties may be different:
 
 - **request body**:
   - keep empty to match against the full raw body content.
@@ -88,6 +88,8 @@ Depending on the **target**, the way to access properties may be different:
 For **body** and **query string**, if the property is an array, Mockoon will automatically check in the array if at least one item matches the value.
 
 > 🛠️ Use our online [JSONPath and object-path evaluator](/tools/json-object-path-evaluator/) to test your JSONPath or object-path syntaxes and view the results in real-time.
+
+> 💡 The **response rule values also support templating helpers** to create dynamic rules. See the [templating helpers](docs:templating/overview) documentation for more information.
 
 ### 3. Invert operator
 

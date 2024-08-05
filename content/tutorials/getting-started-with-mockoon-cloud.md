@@ -21,7 +21,7 @@ Before starting this tutorial, make sure you signed up and subscribed to a Mocko
 
 After signing up for Mockoon Cloud, you will be able to access all the premium features in the **desktop application**. To fully benefit from your Mockoon Cloud plan, make sure you have the **latest version** of the desktop application installed.
 
-![screenshot of the Mockoon desktop application download page](/images/tutorials/getting-started-with-mockoon-cloud/desktop-application-download-screenshot.png)
+![screenshot of the Mockoon desktop application download page{1373x374}](/images/tutorials/getting-started-with-mockoon-cloud/desktop-application-download-screenshot.png)
 
 Head to the [download page](/download/) to get the latest version of the desktop application.
 
@@ -29,11 +29,11 @@ Head to the [download page](/download/) to get the latest version of the desktop
 
 To enable Mockoon Cloud features, you need to **log in** to your account in the desktop application using the user menu in the top right corner of the application.
 
-![view of the Mockoon desktop application account menu](/images/tutorials/getting-started-with-mockoon-cloud/desktop-application-login.png)
+![view of the Mockoon desktop application account menu{1087x220}](/images/tutorials/getting-started-with-mockoon-cloud/desktop-application-login.png)
 
 If you are already logged in, you can also click on **"Refresh account information"** in the account menu.
 
-![view of the Mockoon desktop application account menu with refresh button](/images/tutorials/getting-started-with-mockoon-cloud/desktop-application-refresh.png)
+![view of the Mockoon desktop application account menu with refresh button{1087x220}](/images/tutorials/getting-started-with-mockoon-cloud/desktop-application-refresh.png)
 
 Once you are logged in, you should see your account information in the account menu.
 
@@ -43,11 +43,11 @@ After [creating your first mock APIs](/tutorials/getting-started/), you are now 
 
 To deploy an environment, click on the **"Deploy to the cloud"** menu entry in the environment menu.
 
-![View of the Mockoon desktop application environment menu with the deploy entry highlighted](/images/tutorials/getting-started-with-mockoon-cloud/deploy-environment-menu.png)
+![View of the Mockoon desktop application environment menu with the deploy entry highlighted{595x357}](/images/tutorials/getting-started-with-mockoon-cloud/deploy-environment-menu.png)
 
 You can then **configure** your instance and deploy your mock API by clicking on the **"Deploy"** button.
 
-![view of the deployment dialog](/images/tutorials/getting-started-with-mockoon-cloud/deploy-environment-dialog.png)
+![view of the deployment dialog{800x225}](/images/tutorials/getting-started-with-mockoon-cloud/deploy-environment-dialog.png)
 
 Currently, you can configure the instance **visibility**. More options will be available in the future.
 
@@ -60,7 +60,7 @@ Your mock API will be available in the cloud on a **unique URL** in the form of 
 
 You can view and manage your deployments at any time by clicking on the **"x instances deployed"** button at the bottom of the application.
 
-![view of the deployment management dialog](/images/tutorials/getting-started-with-mockoon-cloud/deploy-environment-management-dialog.png)
+![view of the deployment management dialog{799x205}](/images/tutorials/getting-started-with-mockoon-cloud/deploy-environment-management-dialog.png)
 
 From the management dialog, you can **re-deploy** or **delete** the instance.
 
@@ -71,11 +71,11 @@ To learn more about cloud deployments, the supported features and limitations pl
 As soon as you are logged in, you will be able to **create cloud mocks** and **synchronize** them between your devices or **collaborate** in real time with
 your team.
 
-![environment menu with create cloud environment entry highlighted](/images/tutorials/getting-started-with-mockoon-cloud/create-cloud-environment.png)
+![environment menu with create cloud environment entry highlighted{557x154}](/images/tutorials/getting-started-with-mockoon-cloud/create-cloud-environment.png)
 
 Cloud environments are **automatically synchronized** with the cloud and between your devices as soon as they are created or updated.
 
-![animation of two interfaces side by side being synchronized](/images/tutorials/getting-started-with-mockoon-cloud/real-time-collaboration.gif)
+![animation of two interfaces side by side being synchronized{596x309}](/images/tutorials/getting-started-with-mockoon-cloud/real-time-collaboration.gif)
 
 You can always use local environments for your personal projects as they are not synchronized with the cloud.
 
@@ -89,7 +89,7 @@ Finally, you can generate **JSON templates** and **HTTP endpoints** using our **
 
 Our AI assistants are available in the **"Add endpoint"** menu.
 
-![view of the ai assistant dialog generating an HTTP endpoint to update an object representing a flight](/images/tutorials/getting-started-with-mockoon-cloud/generate-http-endpoints.png)
+![view of the ai assistant dialog generating an HTTP endpoint to update an object representing a flight{957x598}](/images/tutorials/getting-started-with-mockoon-cloud/generate-http-endpoints.png)
 
 You can read more about the AI assistants and JSON templates in our [documentation](/docs/latest/mockoon-cloud/templates-and-ai-assistant/)
 
@@ -99,4 +99,4 @@ If you are on a team or enterprise plan, you can invite your team members to col
 
 To invite team members, head to the [users management page](/account/users/) and click on the **"Add user"** button and fill in the email address of the user you want to invite.
 
-![view of the ai assistant dialog generating an HTTP endpoint to update an object representing a flight](/images/tutorials/getting-started-with-mockoon-cloud/add-team-members.png)
+![view of the ai assistant dialog generating an HTTP endpoint to update an object representing a flight{1001x354}](/images/tutorials/getting-started-with-mockoon-cloud/add-team-members.png)

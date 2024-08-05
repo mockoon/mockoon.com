@@ -83,7 +83,7 @@ To pass arrays and objects in the query string of a request, you must use the fo
 
 You can **disable a route** by clicking on the **Toggle route** entry in the route dropdown menu. The route will be marked with a red border and will not be accessible until you enable it again.
 
-![disable route entry in the route dropdown menu{647x322}](docs-img:route-menu-disable-route.png)
+![disable route entry in the route dropdown menu{651x322}](docs-img:route-menu-disable-route.png)
 
 You can also disable all routes in a folder by using the **Toggle direct child routes** entry in the folder dropdown menu.
 

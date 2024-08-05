@@ -78,7 +78,7 @@ Mockoon will automatically translate a CRUD endpoint to multiple routes allowing
 
 ## Customizing the "id" property
 
-By default, CRUD endpoints will use the `id` property to identify objects in an array in all the routes manipulating a single resource (e.g. GET `/resource/:id`). However, you can change this property to anything you want, like `uuid`, `custom_id`, etc:
+By default, CRUD endpoints will use the `id` property to identify objects in an array in all the routes manipulating a single resource (e.g. GET `/resource/:id`). However, you can change this property to anything you want, like `uuid`, `custom_id`, etc. The crud key also supports the dot notation, allowing you to perform CRUD operations based on nested properties (e.g. `data.id`).
 
 ![Customize the CRUD id property{1484x334}](docs-img:customize-crud-id-property-key.png)
 

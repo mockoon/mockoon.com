@@ -3,7 +3,7 @@ title: Variables helpers
 meta:
   title: Dynamically customize your responses with variables templating helpers
   description: "Dynamically customize your mock environments response with Mockoon's templating variables helpers. All formats are supported: JSON, CSV, HTML, etc."
-order: 503
+order: 505
 ---
 
 # Templating variables helpers

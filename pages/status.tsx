@@ -13,6 +13,13 @@ const incidents: {
   status: 'inprogress' | 'resolved';
 }[] = [
   {
+    title: 'Cloud deployments - Schedule downtime v8.4.0 release',
+    desc: 'Cloud deployments servers were restarted to apply the v8.4.0 release. The downtime is expected to last 5 to 10 minutes. We apologize for the inconvenience.',
+    dateStart: '2024-08-06 14:40:00 UTC',
+    dateEnd: '2024-08-06 15:48:00 UTC',
+    status: 'resolved'
+  },
+  {
     title: 'Cloud deployments - bugfix release',
     desc: 'Cloud deployments servers were restarted to apply a fix affecting requests containing specific bodies. The issue has been resolved and deployments are back to normal.',
     dateStart: '2024-07-24 14:49:00 UTC',

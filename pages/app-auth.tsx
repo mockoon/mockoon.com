@@ -43,6 +43,10 @@ const AppAuth = function () {
     },
     onSuccess: async () => {
       localStorage.removeItem('authCallback');
+    },
+    onError: async (error, token) => {
+      // revert to custom protocol if fails
+      window.location.assign(`mockoon://auth?token=${token}`);
     }
   });
 
@@ -127,13 +131,18 @@ const AppAuth = function () {
                 )}
                 {isGetTokenSuccess && (
                   <>
-                    {!callbackWorkflow && (
+                    {/* old workflow, and new workflow when the callback fails */}
+                    {(!callbackWorkflow ||
+                      (callbackWorkflow &&
+                        isAppCallbackError &&
+                        !isAppCallbackPending)) && (
                       <div className='alert alert-success mt-6 fs-5'>
                         <i className='icon-check me-2'></i>
                         <span className='fw-bold'>Success! </span> You should
                         now be redirected to the app.
                       </div>
                     )}
+                    {/* new callback workflow */}
                     {callbackWorkflow &&
                       isAppCallbackSuccess &&
                       !isAppCallbackPending && (
@@ -142,15 +151,6 @@ const AppAuth = function () {
                           <span className='fw-bold'>Success! </span> You should
                           now be automatically logged in to the desktop
                           application.
-                        </div>
-                      )}
-                    {callbackWorkflow &&
-                      isAppCallbackError &&
-                      !isAppCallbackPending && (
-                        <div className='alert alert-warning mt-6 fs-5'>
-                          An error occured while trying to log you in to the
-                          desktop application. Please copy the token below and
-                          enter it manually in the application.
                         </div>
                       )}
                     <p className='mt-6'>

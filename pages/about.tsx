@@ -101,7 +101,7 @@ const About: FunctionComponent<{
             <p>
               Mockoon is now used by thousands of developers and companies
               around the world and has been{' '}
-              <strong>downloaded more than 600k times</strong>.
+              <strong>downloaded more than 700k times</strong>.
             </p>
           </div>
         </div>

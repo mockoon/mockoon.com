@@ -54,6 +54,11 @@ const Footer: FunctionComponent<{
 
             <ul className='list-unstyled text-gray-700'>
               <li className='mb-2'>
+                <Link href='/what-is-mockoon/' className='text-reset'>
+                  What is Mockoon?
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/tutorials/getting-started/' className='text-reset'>
                   Getting started with Mockoon 🚀
                 </Link>
@@ -181,22 +186,41 @@ const Footer: FunctionComponent<{
             </ul>
           </div>
           <div className='col-12 col-md-6 col-lg-2 text-lg-start text-center'>
-            <h6 className='fw-bold text-uppercase'>Services</h6>
+            <h6 className='fw-bold text-uppercase'>Cloud</h6>
 
             <ul className='list-unstyled text-gray-700'>
               <li className='mb-2'>
                 <Link href='/cloud/' className='text-reset'>
-                  Cloud
+                  Overview
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/custom-services/' className='text-reset'>
-                  Custom services
+                <Link href='/pricing/' className='text-reset'>
+                  Pricing
+                </Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/ai-powered-api-mocking/' className='text-reset'>
+                  AI-powered API mocking
                 </Link>
               </li>
               <li className='mb-2'>
                 <Link href='/status/' className='text-reset'>
                   Services status
+                </Link>
+              </li>
+            </ul>
+            <h6 className='fw-bold text-uppercase'>Services</h6>
+
+            <ul className='list-unstyled text-gray-700'>
+              <li className='mb-2'>
+                <Link href='/training/' className='text-reset'>
+                  Training
+                </Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/custom-services/' className='text-reset'>
+                  Custom services
                 </Link>
               </li>
             </ul>
@@ -220,6 +244,7 @@ const Footer: FunctionComponent<{
               </li>
             </ul>
           </div>
+
           <div className='col-12 col-md-6 col-lg-2 offset-lg-0 text-lg-start text-center'>
             {' '}
             <h6 className='fw-bold text-uppercase'>Tools</h6>
@@ -239,11 +264,7 @@ const Footer: FunctionComponent<{
                   Templates
                 </Link>
               </li>
-              <li className='mb-2'>
-                <Link href='/ai-powered-api-mocking/' className='text-reset'>
-                  AI-powered API mocking
-                </Link>
-              </li>
+
               <li className='mb-2'>
                 <Link
                   href='/integrations/embedded-button/'

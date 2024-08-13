@@ -42,7 +42,7 @@ In addition to priority support, our **Enterprise** plan includes comprehensive 
 ## 🛣️ Future roadmap
 
 At Mockoon, we strive to innovate and constantly bring new features to our users. The future roadmap for Mockoon Cloud is full of exciting possibilities that will further enrich your API prototyping experience.  
-We provide a [public roadmap](/public-roadmap/) page where you can get a glimpse of the developments on the horizon. You can also subscribe to our newsletter below, or on the [Cloud page product updates](/cloud/#product-updates-subscribe) to get informed of any new features and updates.
+We provide a [public roadmap](/public-roadmap/) page where you can get a glimpse of the developments on the horizon. You can also subscribe to our newsletter below, or on the [Cloud page product updates](/pricing/#product-updates-subscribe) to get informed of any new features and updates.
 
 ---
 

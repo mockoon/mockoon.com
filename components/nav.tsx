@@ -6,7 +6,7 @@ import { useAuth } from '../utils/auth';
 
 enum Dropdowns {
   NONE = 'NONE',
-  APPS = 'APPS',
+  PRODUCT = 'PRODUCT',
   ACCOUNT = 'ACCOUNT',
   RESOURCES = 'RESOURCES'
 }
@@ -88,7 +88,7 @@ const Nav: FunctionComponent = function () {
             <li
               className='nav-item dropdown text-center'
               onMouseEnter={() => {
-                !show && setDropdownOpen(Dropdowns.APPS);
+                !show && setDropdownOpen(Dropdowns.PRODUCT);
               }}
               onMouseLeave={() => {
                 !show && setDropdownOpen(Dropdowns.NONE);
@@ -98,44 +98,97 @@ const Nav: FunctionComponent = function () {
                 className={`nav-link dropdown-toggle`}
                 href='#'
                 aria-haspopup='true'
-                aria-expanded={dropdownOpen === Dropdowns.APPS}
+                aria-expanded={dropdownOpen === Dropdowns.PRODUCT}
               >
-                Apps {!show && <i className='icon-arrow_drop_down'></i>}
+                Product {!show && <i className='icon-arrow_drop_down'></i>}
               </a>
-              <ul
-                className={`dropdown-menu ${show ? 'text-center' : ''} ${
-                  dropdownOpen === Dropdowns.APPS ? 'show' : ''
-                }`}
+              <div
+                className={`dropdown-menu dropdown-menu-lg ${
+                  show ? 'text-center' : ''
+                } ${dropdownOpen === Dropdowns.PRODUCT ? 'show' : ''}`}
               >
-                <h6 className='dropdown-header'>Main application</h6>
-                <li className='dropdown-item mb-5'>
-                  <Link href='/download/' className='dropdown-link'>
-                    Mockoon Desktop
-                  </Link>
-                </li>
-                <h6 className='dropdown-header'>Libs</h6>
-                <li className='dropdown-item'>
-                  <Link href='/cli/' className='dropdown-link'>
-                    CLI
-                  </Link>
-                </li>
-                <li className='dropdown-item'>
-                  <Link href='/serverless/' className='dropdown-link'>
-                    Serverless package
-                  </Link>
-                </li>
-              </ul>
-            </li>
+                <div className='row gx-0 gx-md-6'>
+                  <div className='col-md-6 mb-4 mb-md-0'>
+                    <div className='row gx-0'>
+                      <div className='col-12 col-lg-6'>
+                        <h6 className='dropdown-header'>Product</h6>
 
-            <li className='nav-item'>
-              <Link
-                href='/cloud/'
-                className={`nav-link ${
-                  router.pathname === '/cloud' ? 'active' : ''
-                }`}
-              >
-                Cloud
-              </Link>
+                        <Link
+                          href='/what-is-mockoon/'
+                          className={`dropdown-item ${
+                            router.pathname === '/what-is-mockoon'
+                              ? 'active'
+                              : ''
+                          }`}
+                        >
+                          What is Mockoon?
+                        </Link>
+
+                        <Link
+                          href='/cloud/'
+                          className={`dropdown-item ${
+                            router.pathname === '/cloud' ? 'active' : ''
+                          }`}
+                        >
+                          Mockoon Cloud
+                        </Link>
+
+                        <Link
+                          href='/use-cases/'
+                          className={`dropdown-item ${
+                            router.pathname === '/use-cases' ? 'active' : ''
+                          }`}
+                        >
+                          Use cases
+                        </Link>
+
+                        <Link
+                          href='/pricing/'
+                          className={`dropdown-item ${
+                            router.pathname === '/pricing' ? 'active' : ''
+                          }`}
+                        >
+                          Pricing
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='col-md-6 mb-4 mb-md-0'>
+                    <div className='row gx-0'>
+                      <div className='col-12 col-lg-6'>
+                        <h6 className='dropdown-header'>Applications</h6>
+
+                        <Link
+                          href='/download/'
+                          className={`dropdown-item ${
+                            router.pathname === '/download' ? 'active' : ''
+                          }`}
+                        >
+                          Mockoon Desktop
+                        </Link>
+
+                        <Link
+                          href='/cli/'
+                          className={`dropdown-item ${
+                            router.pathname === '/cli' ? 'active' : ''
+                          }`}
+                        >
+                          CLI
+                        </Link>
+
+                        <Link
+                          href='/serverless/'
+                          className={`dropdown-item ${
+                            router.pathname === '/serverless' ? 'active' : ''
+                          }`}
+                        >
+                          Serverless package
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
 
             <li
@@ -156,11 +209,11 @@ const Nav: FunctionComponent = function () {
                 Resources {!show && <i className='icon-arrow_drop_down'></i>}
               </a>
               <div
-                className={`dropdown-menu dropdown-menu-lg ${
+                className={`dropdown-menu dropdown-menu-xl ${
                   show ? 'text-center' : ''
                 } ${dropdownOpen === Dropdowns.RESOURCES ? 'show' : ''}`}
               >
-                <div className='row gx-0 gx-md-4'>
+                <div className='row gx-0 gx-md-6'>
                   <div className='col-md-4 mb-4 mb-md-0'>
                     <div className='row gx-0'>
                       <div className='col-12 col-lg-6'>
@@ -309,6 +362,28 @@ const Nav: FunctionComponent = function () {
                   </div>
                 </div>
               </div>
+            </li>
+
+            <li className='nav-item'>
+              <Link
+                href='/pricing/'
+                className={`nav-link ${
+                  router.pathname === '/pricing' ? 'active' : ''
+                }`}
+              >
+                Pricing
+              </Link>
+            </li>
+
+            <li className='nav-item'>
+              <Link
+                href='/request-demo/'
+                className={`nav-link text-info ${
+                  router.pathname === '/request-demo' ? 'active' : ''
+                }`}
+              >
+                Demo
+              </Link>
             </li>
 
             <li

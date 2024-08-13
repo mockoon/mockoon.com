@@ -44,7 +44,7 @@ const Download: FunctionComponent<{ version: string }> = function ({
 
       <Hero
         title='<span class="text-primary">Design your mock API</span> with Mockoon desktop'
-        subtitle='  Stop waiting for APIs to be ready and start working immediately with realistic mock APIs. Design your API in seconds with Mockoon and start testing your app right away.'
+        subtitle="Don't let API dependencies slow you down. Design the perfect API mock with Mockoon Desktop and accelerate your development lifecycle"
         mainPicture='/images/desktop-stylized.png'
       />
 

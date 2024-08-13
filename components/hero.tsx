@@ -9,43 +9,56 @@ const Hero: FunctionComponent<{
   mainPictureAlt?: string;
   mainPictureWidth?: number;
   mainPictureHeight?: number;
-}> = function (props) {
+  mainPictureSkewed?: boolean;
+}> = function ({
+  title,
+  subtitle,
+  cta,
+  ctaContent,
+  mainPicture,
+  mainPictureAlt,
+  mainPictureWidth,
+  mainPictureHeight,
+  mainPictureSkewed
+}) {
+  mainPictureSkewed = mainPictureSkewed ?? true;
+
   return (
     <section
       className={`position-relative ${
-        props.mainPicture ? 'py-lg-10 py-5 mb-4' : 'pt-8 pb-4'
+        mainPicture ? 'py-lg-10 py-5 mb-4' : 'pt-8 pb-4'
       }`}
     >
       <div className='container'>
         <div className='row align-items-center'>
           <div
             className={`col-12 ${
-              props.mainPicture ? 'col-lg-6' : 'col-lg-8 mx-auto text-center'
+              mainPicture ? 'col-lg-6' : 'col-lg-8 mx-auto text-center'
             }`}
           >
-            {props.title && (
+            {title && (
               <h1
-                dangerouslySetInnerHTML={{ __html: props.title }}
+                dangerouslySetInnerHTML={{ __html: title }}
                 className={`display-4 text-center fw-medium ${
-                  props.mainPicture ? 'text-lg-start' : ''
+                  mainPicture ? 'text-lg-start' : ''
                 } `}
               ></h1>
             )}
-            {props.subtitle && (
+            {subtitle && (
               <p
                 className={`lead ${
-                  props.mainPicture ? 'text-lg-start' : ''
+                  mainPicture ? 'text-lg-start' : ''
                 }  text-center text-gray-700 mb-6 mb-lg-8`}
-                dangerouslySetInnerHTML={{ __html: props.subtitle }}
+                dangerouslySetInnerHTML={{ __html: subtitle }}
               ></p>
             )}
-            {props.cta && (
+            {cta && (
               <div
                 className={`hero-cta ${
-                  props.mainPicture ? 'text-lg-start' : ''
+                  mainPicture ? 'text-lg-start' : ''
                 } text-center`}
               >
-                {props.cta.map((cta, index) => {
+                {cta.map((cta, index) => {
                   return (
                     <Fragment key={index}>
                       <a
@@ -76,18 +89,22 @@ const Hero: FunctionComponent<{
                 })}
               </div>
             )}
-            {props.ctaContent}
+            {ctaContent}
           </div>
-          {props.mainPicture && (
+          {mainPicture && (
             <div className='col-12 col-lg-6 mt-10 mt-lg-0'>
-              <div className='skewed-screenshot mb-8 mb-lg-0'>
+              <div
+                className={`${
+                  mainPictureSkewed ? 'skewed-screenshot' : ''
+                } mb-8 mb-lg-0`}
+              >
                 <img
-                  src={props.mainPicture}
-                  alt={props.mainPictureAlt}
+                  src={mainPicture}
+                  alt={mainPictureAlt}
                   loading='lazy'
                   className=' img-fluid '
-                  width={props.mainPictureWidth}
-                  height={props.mainPictureHeight}
+                  width={mainPictureWidth}
+                  height={mainPictureHeight}
                 />
               </div>
             </div>

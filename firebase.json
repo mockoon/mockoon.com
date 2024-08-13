@@ -37,6 +37,11 @@
         "type": 301
       },
       {
+        "source": "/cloud/",
+        "destination": "/pricing/",
+        "type": 301
+      },
+      {
         "source": "/account",
         "destination": "/account/info/",
         "type": 301

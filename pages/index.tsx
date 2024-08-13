@@ -7,10 +7,82 @@ import Quote from '../components/quote';
 import Sponsors from '../components/sponsors';
 import Testimonial from '../components/testimonial';
 import Typed from '../components/typed';
-import { hpFeatures } from '../data/hp-features';
 import { hpHighlights } from '../data/hp-highlights';
 import { testimonials } from '../data/testimonials';
 import Layout from '../layout/layout';
+
+const hpFeatures = [
+  {
+    label: 'Customizable',
+    title: 'Complete control',
+    description:
+      'Mockoon offers you complete flexibility when creating your mocks: custom statuses, route and global headers, file serving or body editor, HTTPS, etc.',
+    imgSrc: '/images/home/customize-mock-apis.png',
+    imgAlt:
+      'Mockoon customizable interface screenshot with multiple features displayed',
+    cta: 'Full list of features',
+    ctaLink: '/features/'
+  },
+  {
+    label: 'Powerful',
+    title: 'Create realistic scenarios',
+    description:
+      'Simulate real-life scenarios with dynamic templating and the response rules system. Test your app resilience with sequential and random responses.',
+    imgSrc: '/images/home/api-mocks-with-realistic-scenarios.png',
+    imgAlt:
+      'Mockoon main interface screenshot with response rules and templating system',
+    cta: 'Learn more',
+    ctaLink: '/docs/latest/route-responses/multiple-responses/'
+  },
+  {
+    label: 'Integrable',
+    title: 'Powerful forwarding and debugging',
+    description:
+      'Easily integrate Mockoon with existing backends and APIs by intercepting selected endpoints and forwarding the rest. Debug intricated situation with the built-in session recording.',
+    imgSrc: '/images/home/forward-debug-requests.png',
+    imgAlt: 'Mockoon requests recording screenshot',
+    cta: 'Learn more',
+    ctaLink: '/tutorials/partial-mocking-proxy/'
+  },
+  {
+    label: 'Cloud',
+    title: 'Collaborate with your team in real-time',
+    description:
+      'Supercharge your team productivity with Mockoon Cloud. Collaborate on your mock APIs in real-time, deploy them to the cloud, and share them with the world.',
+    imgSrc: '/images/home/mockoon-cloud.png',
+    imgAlt: 'mockoon cloud feature linked together',
+    cta: 'Discover our Cloud',
+    ctaLink: '/cloud/'
+  },
+  {
+    label: 'Containers',
+    title: 'Run your mock servers anywhere',
+    description:
+      'Use the CLI and the Docker image to run your mock REST APIs on servers and headless environments: GitHub Actions, CircleCI, TravisCI, etc.',
+    imgSrc: '/images/home/api-mock-self-host-cli.png',
+    imgAlt: 'Mockoon CLI start and list commands screenshot',
+    cta: 'Discover the CLI',
+    ctaLink: '/cli/'
+  },
+  {
+    label: 'Cloud',
+    title: 'Serverless compatible',
+    description:
+      'Deploy your mock REST APIs in cloud functions compatible with any provider: AWS Lambda, GCP Functions, Firebase Functions, etc.',
+    imgSrc: '/images/home/api-mock-serverless-hosting.png',
+    imgAlt: 'Mockoon CLI start and list commands screenshot',
+    cta: 'Discover the serverless package',
+    ctaLink: '/serverless/'
+  },
+  {
+    label: 'Privacy',
+    title: 'Privacy friendly and offline first',
+    description:
+      'Our tools are offline first and require no account creation. They are privacy-friendly, making them the best choice for highly regulated or high-security environments.',
+    imgSrc: '/images/home/api-mocking-privacy-friendly-offline.png',
+    imgAlt: 'Mockoon interface with a security lock'
+  }
+];
 
 const meta = {
   title: 'Create mock APIs in seconds with Mockoon',
@@ -95,11 +167,11 @@ const HomePage: FunctionComponent = function () {
         cta={[
           {
             text: 'Download',
-            link: '/download/#download-section'
+            link: '/download/'
           },
           {
-            text: 'Documentation',
-            link: '/docs/latest/about/'
+            text: 'What is Mockoon?',
+            link: '/what-is-mockoon/'
           }
         ]}
         mainPicture='/images/hp-hero.png'
@@ -226,7 +298,7 @@ const HomePage: FunctionComponent = function () {
                 key={`feature${featureIndex}`}
               >
                 <div
-                  className={`col-12 col-lg-4 pb-sm-10 pb-lg-0 ${
+                  className={`col-12 col-lg-6 pb-sm-10 pb-lg-0 ${
                     featureIndex % 2 === 0 ? 'order-lg-2' : 'order-lg-1'
                   }`}
                 >
@@ -249,7 +321,7 @@ const HomePage: FunctionComponent = function () {
                   </div>
                 </div>
                 <div
-                  className={`col-12 col-lg-8 ${
+                  className={`col-12 col-lg-6 ${
                     featureIndex % 2 === 0 ? 'order-lg-1' : 'order-lg-2'
                   }`}
                 >

@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'mockoon';
-  src: url('/fonts/mockoon.woff?s3qk3s') format('woff');
+  src: url('/fonts/mockoon.woff?ma3vvn') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -68,6 +68,9 @@
 .icon-email:before {
   content: '\e90d';
 }
+.icon-add:before {
+  content: '\e919';
+}
 .icon-clear:before {
   content: '\e90a';
 }
@@ -103,6 +106,9 @@
 }
 .icon-hourglass_empty:before {
   content: '\e906';
+}
+.icon-info_outline:before {
+  content: '\e918';
 }
 .icon-open:before {
   content: '\e901';

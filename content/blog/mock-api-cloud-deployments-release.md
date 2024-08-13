@@ -44,7 +44,7 @@ Most of the features available in the desktop application are also available in 
 
 ## Quotas and limitations
 
-This feature is available to all Mockoon Cloud subscribers, with a quota of 1, 3, or 5 instances, and 50,000, 100,000, or 250,000 monthly requests depending on your subscription plan. You can learn more about the available plans on the [Mockoon Cloud pricing page](/cloud/). You can also check your quota and usage in your account settings on the [Mockoon website](/account/subscription/).
+This feature is available to all Mockoon Cloud subscribers, with a quota of 1, 3, or 5 instances, and 50,000, 100,000, or 250,000 monthly requests depending on your subscription plan. You can learn more about the available plans on the [Mockoon Cloud pricing page](/pricing/). You can also check your quota and usage in your account settings on the [Mockoon website](/account/subscription/).
 
 ## Custom deployments
 

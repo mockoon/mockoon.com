@@ -12,7 +12,7 @@ const features: CardData[] = [
       'Create an unlimited number of mock API with unlimited number of routes and run them in parallel'
   },
   {
-    title: 'Run your mock anywhere',
+    title: 'Self-hosted',
     description:
       'Use the CLI to run your mock APIs in any headless or automated environment: CI, GitHub Actions, Docker containers, etc',
     links: [{ src: '/cli/', text: 'Discover the CLI →' }]
@@ -29,7 +29,7 @@ const features: CardData[] = [
     ]
   },
   {
-    title: 'Import / export',
+    title: 'OpenAPI Import / export',
     description: 'Mock API import / export with Swagger/OpenAPI format support',
     links: [
       {
@@ -39,7 +39,7 @@ const features: CardData[] = [
     ]
   },
   {
-    title: 'Deploy your mock APIs',
+    title: 'Deploy in the cloud',
     topTag: 'Cloud',
     topTagClasses: 'text-bg-warning',
     description:
@@ -68,15 +68,14 @@ const features: CardData[] = [
     ]
   },
   {
-    title: 'Quick prototyping using AI',
+    title: 'Real-time collaboration',
     topTag: 'Cloud',
     topTagClasses: 'text-bg-warning',
-    description:
-      'Use our read-to-use templates and AI assistant to quickly prototype your mock APIs',
+    description: 'Collaborate with your team in real-time on your mock APIs',
     links: [
       {
-        src: '/ai-powered-api-mocking/',
-        text: 'Learn more →'
+        src: '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/',
+        text: 'Documentation →'
       }
     ]
   },
@@ -129,23 +128,34 @@ const features: CardData[] = [
     description: 'Add latency at environment or route level or even both'
   },
   {
-    title: 'Real-time collaboration',
+    title: 'Quick prototyping using AI',
     topTag: 'Cloud',
     topTagClasses: 'text-bg-warning',
-    description: 'Collaborate with your team in real-time on your mock APIs',
+    description:
+      'Use our read-to-use templates and AI assistant to quickly prototype your mock APIs',
     links: [
       {
-        src: '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/',
+        src: '/ai-powered-api-mocking/',
+        text: 'Learn more →'
+      }
+    ]
+  },
+  {
+    title: 'Stateful CRUD operations',
+    description: 'Perform RESTful CRUD operations on fake JSON databases',
+    links: [
+      {
+        src: '/docs/latest/api-endpoints/crud-routes/',
         text: 'Documentation →'
       }
     ]
   },
   {
-    title: 'Automated CRUD operations',
-    description: 'Perform RESTful CRUD operations on fake JSON databases',
+    title: 'Callbacks/webhooks support',
+    description: 'Simulate complex API behaviors with callbacks/webhooks',
     links: [
       {
-        src: '/docs/latest/api-endpoints/crud-routes/',
+        src: '/docs/latest/callbacks/overview/',
         text: 'Documentation →'
       }
     ]

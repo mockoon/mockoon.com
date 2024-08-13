@@ -131,6 +131,19 @@ export default function () {
           })}
         </div>
       </section>
+
+      <section className='pb-6 pb-md-8'>
+        <div className='container'>
+          <div className='row justify-content-center'>
+            <div className='col-md-6 text-center'>
+              <a href='/download/' className='btn btn-primary mb-6 lift'>
+                Download Mockoon for free{' '}
+                <i className='icon-arrow_forward ms-2'></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }

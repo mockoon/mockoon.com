@@ -12,19 +12,19 @@ const Terms: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Terms of service' subtitle='Last update July 8th, 2024' />
+      <Hero title='Terms of service' subtitle='Last update August 13rd, 2024' />
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
               <Quote colorScheme='secondary'>
-                💡 <strong>Summary of changes (July 8th, 2024)</strong>:
+                💡 <strong>Summary of changes (August 13rd, 2024)</strong>:
                 <ul className='mb-0'>
                   <li>
-                    section 14 ("Welcome training") was removed as the offer was
-                    discontinued and the rest of the sections were renumbered.
+                    Section 13 ("Support Services") was revamped to better
+                    reflect the level of support provided to our customers. No
+                    change was made to the level of support provided.
                   </li>
-                  <li>a new section 11c ("Cloud deployments") was added.</li>
                 </ul>
               </Quote>
               <p>
@@ -544,26 +544,11 @@ const Terms: FunctionComponent = function () {
                 may be communicated through written notice, email notifications,
                 or by posting the updated quotas within our Service.
               </p>
-              <h3 className='mt-6 fw-medium'>13. Priority support services</h3>
+
+              <h3 className='mt-6 fw-medium'>13. Support services</h3>
+
               <p>
-                Support services are available for customers subscribed to the
-                Enterprise plan of our Service. This plan includes access to our
-                support team for assistance with technical issues, inquiries,
-                and general product-related questions.
-              </p>
-              <p>
-                Support services are provided during regular business hours and
-                working days in the CET/CEST timezone, unless otherwise
-                specified in the plan details or separately agreed upon in
-                writing. Our business hours are from{' '}
-                <strong>9 am to 5 pm CET/CEST, Monday to Friday</strong>.
-              </p>
-              <p>
-                The initial response time for support inquiries is of{' '}
-                <strong>one business day</strong>.
-              </p>
-              <p>
-                The support services encompass assistance and guidance regarding
+                The Support Services encompass assistance and guidance regarding
                 the functionality, features, and usage of our Service. Our
                 support team will make commercially reasonable efforts to
                 respond to your inquiries and provide prompt and accurate
@@ -577,37 +562,56 @@ const Terms: FunctionComponent = function () {
                 alternative solution while the bug is being addressed and fixed.
               </p>
               <p>
-                While we strive to provide high-quality support services, we do
+                While we strive to provide high-quality Support Services, we do
                 not guarantee the resolution of every issue or the availability
                 of immediate solutions. The timeframe for issue resolution may
                 vary depending on the complexity and severity of the reported
                 problem.
               </p>
               <p>
-                The support service does not cover issues resulting from a
+                The Support Service does not cover issues resulting from a
                 hardware failure, customer error, neglect or negligence.
               </p>
               <p>
-                The Support Service will be conducted through written means,
-                which you can choose at your discretion. By default,
-                communication will be made via email, to the address indicated
-                in your account settings. Please note that live audio or video
-                calls are not included in the support service.
+                The Support Service will be conducted through written means via
+                the email addresses indicated in your account settings. Please
+                note that live audio or video calls are not included in the
+                Support Service.
               </p>
               <p>
-                Please note that support services do not cover assistance with
-                custom development, integration, or consulting services unless
+                Support Services do not cover assistance with custom
+                development, integration, or consulting services unless
                 expressly specified in the plan details or agreed upon
                 separately in writing. Additional charges may apply for such
                 services, and they will be subject to separate terms and
                 conditions.
               </p>
               <p>
-                We may update or modify the support services, including the
+                We may update or modify the Support Services, including the
                 channels of communication, availability, and response times, at
-                our discretion. Any changes to the support services will be
+                our discretion. Any changes to the Support Services will be
                 communicated to you through written notice or by posting updated
                 information within our Service.
+              </p>
+              <h5 className='mt-6 fw-medium'>13a. Email Support</h5>
+              <p>
+                Email Support is a standard Support Service included in all our
+                Cloud plans. It offers no guaranteed response time, but we will
+                make commercially reasonable efforts to respond to your
+                inquiries within a reasonable timeframe.
+              </p>
+              <h5 className='mt-6 fw-medium'>13b. Enterprise Support</h5>
+              <p>
+                Enterprise Support is a priority Support service available in
+                some of our Cloud plans. It offers a guaranteed response time.
+                Unless otherwise specified in the plan details or separately
+                agreed upon in writing, the Enterprise Support service is
+                provided during regular business hours and working days in the
+                CET/CEST timezone from{' '}
+                <strong>9 am to 5 pm CET/CEST, Monday to Friday</strong>.
+                <br />
+                The initial response time for Enterprise support inquiries is of{' '}
+                <strong>one business day</strong>.
               </p>
               <h3 className='mt-6 fw-medium'>14. Term and termination</h3>
               <p>

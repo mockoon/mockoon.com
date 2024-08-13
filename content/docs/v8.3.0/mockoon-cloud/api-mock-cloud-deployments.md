@@ -2,7 +2,7 @@
 title: Cloud API mock deployments
 meta:
   title: Cloud API mock deployments
-  description: Learn how to deploy your mock APIs in the cloud and share them with your team or the world using Mockoon Cloud
+  description: Learn how to deploy your mock APIs in the cloud and share them with your team, clients, or class, using Mockoon Cloud
 order: 903
 ---
 
@@ -10,7 +10,7 @@ order: 903
 
 ---
 
-[Mockoon Cloud](/cloud/) allows you to **deploy your mock APIs in the cloud** and share them with your team or the world. This feature is available in the desktop application and is part of the Mockoon Cloud paid plans. Read on to learn how to use it and the different features it offers.
+[Mockoon Cloud](/cloud/) allows you to **deploy your mock APIs in the cloud** and share them with your team, clients, or class. This feature is available in the desktop application and is part of the Mockoon Cloud paid plans. Read on to learn how to use it and the different features it offers.
 
 ## Managing your cloud deployments
 
@@ -39,7 +39,7 @@ In the management dialog, you can **re-deploy** the environment or **delete** th
 
 ## Instance URL and visibility
 
-The instance will be deployed on a shared cloud infrastructure and will be accessible using a unique URL in the form of `https://mock-abcd1234.serverid.mockoon.app`. The URL will be displayed in the management dialog and can be shared with your team or the world.
+The instance will be deployed on a shared cloud infrastructure and will be accessible using a unique URL in the form of `https://mock-abcd1234.serverid.mockoon.app`. The URL will be displayed in the management dialog and can be shared with your team, clients, or class.
 
 The visibility of the environment can be set to **public** or **private**. Here are the differences between the two:
 

@@ -16,7 +16,7 @@ Mockoon Cloud features are available in the [desktop application](/download/) an
 
 ## Features
 
-- **[API mock deployments](docs:mockoon-cloud/api-mock-cloud-deployments)**: Deploy your mock APIs in the cloud and share them with your team or the world.
+- **[API mock deployments](docs:mockoon-cloud/api-mock-cloud-deployments)**: Deploy your mock APIs in the cloud and share them with your team, clients, or class.
 - **[Data synchronization and team collaboration](docs:mockoon-cloud/data-synchronization-team-collaboration)**: Synchronize your mock APIs in the cloud, share them with your team, and collaborate in real time.
 - **[AI assistants](docs:mockoon-cloud/templates-and-ai-assistant)**: Use our AI assistants to generate realistic mock data and HTTP endpoints.
 

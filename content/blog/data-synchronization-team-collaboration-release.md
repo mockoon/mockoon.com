@@ -52,4 +52,4 @@ As always, Mockoon remains **free and open-source**. The data synchronization an
 
 ## What's next?
 
-We are already working on the next Cloud feature, which will be **cloud deployments**. This feature will allow you to deploy your mock APIs to the cloud and share them with your team or the world. Stay tuned for more information!
+We are already working on the next Cloud feature, which will be **cloud deployments**. This feature will allow you to deploy your mock APIs to the cloud and share them with your team, clients, or class. Stay tuned for more information!

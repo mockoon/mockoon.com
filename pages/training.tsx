@@ -125,20 +125,6 @@ const Training: FunctionComponent = function () {
                 API effortlessly.
               </p>
 
-              <div className='mt-6'>
-                {keyPoints.map((keyPoint, keyPointIndex) => (
-                  <div
-                    key={`taskcomingsoon${keyPointIndex}`}
-                    className='d-flex'
-                  >
-                    <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                      <i className='icon icon-check'></i>
-                    </div>
-                    <p className='text-gray-800'>{keyPoint}</p>
-                  </div>
-                ))}
-              </div>
-
               <h3 className='my-6 fw-medium'>Training schedule</h3>
 
               <Accordion
@@ -154,7 +140,7 @@ const Training: FunctionComponent = function () {
                   <img
                     src='/images/official-online-course/mockoon-official-online-course.png'
                     className='img-fluid mx-auto d-block rounded'
-                    alt='select generate from template in the route creation menu to create a AI-generated mock API endpoint'
+                    alt='screenshot of Mockoon desktop application'
                     width='1400'
                     height='797'
                   />
@@ -177,24 +163,27 @@ const Training: FunctionComponent = function () {
                       </div>
                     </div>
                   </div>
-                  <div className='d-flex justify-content-center mb-6'>
-                    <span className='h2 mb-0 mt-2'>$</span>
-                    <span className='price display-2 mb-0'>100</span>
-                    <span className='h4 text-gray-700 align-self-end mb-2'>
-                      /hour
-                    </span>
+                  <div className='my-6'>
+                    {keyPoints.map((keyPoint, keyPointIndex) => (
+                      <div
+                        key={`taskcomingsoon${keyPointIndex}`}
+                        className='d-flex'
+                      >
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                          <i className='icon icon-check'></i>
+                        </div>
+                        <p className='text-gray-800'>{keyPoint}</p>
+                      </div>
+                    ))}
                   </div>
-                  <p className='text-center text-body-secondary mb-5'>
-                    For up to 5 participants, book 1 to 4 hours of training
-                    sessions (select quantity when purchasing).
+
+                  <p className='text-center text-gray-700 mb-4'>
+                    Contact us to get a quote and schedule your training session
                   </p>
-                  <p className='text-center'></p>
+
                   <div className='text-center'>
-                    <a
-                      href='https://buy.stripe.com/5kAaGgac54bz35KeUW'
-                      className='btn btn-primary'
-                    >
-                      Book a training session
+                    <a href='/contact-form/' className='btn btn-primary'>
+                      Contact us
                     </a>
                   </div>
                 </div>

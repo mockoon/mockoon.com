@@ -1,5 +1,4 @@
 import { useMutation } from '@tanstack/react-query';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useEffect } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
@@ -45,23 +44,11 @@ const AccountNotifications: FunctionComponent = function () {
         shouldDirty: false,
         shouldTouch: false
       });
-      setValue('productUpdates', emailingData.productUpdates, {
-        shouldDirty: false,
-        shouldTouch: false
-      });
-      setValue('coursePreview', emailingData.coursePreview, {
-        shouldDirty: false,
-        shouldTouch: false
-      });
     }
   }, [emailingData]);
 
   const { mutate: updateEmailing } = useMutation({
-    mutationFn: async (data: {
-      newsletter: boolean;
-      productUpdates: boolean;
-      coursePreview: boolean;
-    }) => {
+    mutationFn: async (data: { newsletter: boolean }) => {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/user/emailing`,
         {
@@ -155,53 +142,6 @@ const AccountNotifications: FunctionComponent = function () {
                                   type='checkbox'
                                   id='newsletter'
                                   {...registerFormField('newsletter')}
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className='list-group-item'>
-                          <div className='row align-items-center'>
-                            <div className='col'>
-                              <p className='mb-0'>Mockoon Cloud updates</p>
-
-                              <small className='text-gray-700'>
-                                Be notified when new{' '}
-                                <Link href={'/cloud/'}>Cloud</Link> features are
-                                released
-                              </small>
-                            </div>
-                            <div className='col-auto'>
-                              <div className='form-check form-switch'>
-                                <input
-                                  className='form-check-input'
-                                  type='checkbox'
-                                  id='productUpdates'
-                                  {...registerFormField('productUpdates')}
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className='list-group-item'>
-                          <div className='row align-items-center'>
-                            <div className='col'>
-                              <p className='mb-0'>Online course release</p>
-
-                              <small className='text-gray-700'>
-                                Be notified when the{' '}
-                                <Link href={'/course/'}>online course</Link> is
-                                available or updated
-                              </small>
-                            </div>
-                            <div className='col-auto'>
-                              <div className='form-check form-switch'>
-                                <input
-                                  className='form-check-input'
-                                  type='checkbox'
-                                  id='coursePreview'
-                                  {...registerFormField('coursePreview')}
                                 />
                               </div>
                             </div>

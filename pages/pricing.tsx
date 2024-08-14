@@ -36,7 +36,7 @@ const Cloud: FunctionComponent = function () {
               </h2>
               <div className='row align-items-center text-lg-start text-center'>
                 <div className='col-12 justify-content-end'>
-                  <EmailForm formType='productUpdates' />
+                  <EmailForm type='update' />
                 </div>
               </div>
             </div>

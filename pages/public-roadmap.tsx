@@ -35,7 +35,14 @@ const faq: AccordionData = [
   }
 ];
 
-const tasks = {
+const tasks: {
+  [key in 'released' | 'inProgress' | 'comingSoon']: {
+    link?: string;
+    title: string;
+    cloud: boolean;
+    target?: string;
+  }[];
+} = {
   released: [
     {
       link: '/releases/8.4.0#random-latencies',
@@ -126,12 +133,6 @@ const tasks = {
     {
       title: 'More cloud deployment regions',
       cloud: true,
-      target: null
-    },
-    {
-      link: '/course/',
-      title: 'Official online course',
-      cloud: false,
       target: null
     }
   ]

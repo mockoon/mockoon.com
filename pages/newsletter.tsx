@@ -22,7 +22,7 @@ const Newsletter: FunctionComponent = function () {
         <div className='container'>
           <div className='row justify-content-center'>
             <div className='col-12 col-lg-8 align-items-center'>
-              <EmailForm formType='newsletter' />
+              <EmailForm type='newsletter' />
             </div>
           </div>
         </div>

@@ -28,7 +28,7 @@ const Footer: FunctionComponent<{
                   </p>
                 </div>
                 <div className='col-lg-5 justify-content-end'>
-                  <EmailForm formType='newsletter' />
+                  <EmailForm type='newsletter' />
                 </div>
               </div>
             )) ||
@@ -157,11 +157,6 @@ const Footer: FunctionComponent<{
               <li className='mb-2'>
                 <Link href='/video-tutorials/' className='text-reset'>
                   Video tutorials
-                </Link>
-              </li>
-              <li className='mb-2'>
-                <Link href='/course/' className='text-reset'>
-                  Online Course
                 </Link>
               </li>
               <li className='mb-2'>

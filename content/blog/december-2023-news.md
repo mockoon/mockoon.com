@@ -85,11 +85,6 @@ The API playground is available at `https://playground.mockoon.com` and was buil
 
 ![screenshot of the API playground in mockoon desktop{1175x632}](/images/blog/december-2023-news/creating-crud-endpoints-mockoon-desktop.png)
 
-## 🧑‍🏫 Official course
-
-We started working on an **official course** to help you get started with Mockoon. It should be available in the first quarter of 2024.
-You can already [subscribe to the waiting list](/course/) to be notified when it's ready and get a special discount.
-
 ## 🔎 Website search
 
 We added a **search feature** to the website covering all the pages, tutorials, documentation, or mock samples. No more being lost in the documentation!

@@ -4,8 +4,8 @@ import FormHoneypot from './form-honeypot';
 import Spinner from './spinner';
 
 const EmailForm: FunctionComponent<{
-  formType: 'newsletter' | 'productUpdates' | 'coursePreview';
-}> = function ({ formType }) {
+  type: 'newsletter' | 'update';
+}> = function ({ type }) {
   const {
     register: registerFormField,
     handleSubmit,
@@ -19,23 +19,10 @@ const EmailForm: FunctionComponent<{
     if (!data['work_address']) {
       delete data['work_address'];
 
-      if (formType === 'newsletter') {
-        data = {
-          ...data,
-          ...{
-            newsletter: true,
-            productUpdates: true,
-            coursePreview: true
-          }
-        };
-      } else {
-        data = {
-          ...data,
-          ...{
-            [formType]: true
-          }
-        };
-      }
+      data = {
+        ...data,
+        newsletter: true
+      };
 
       try {
         const response = await fetch(
@@ -83,7 +70,7 @@ const EmailForm: FunctionComponent<{
             type='submit'
             disabled={isSubmitting}
           >
-            {formType === 'newsletter' ? 'Subscribe' : 'Keep me posted'}
+            {type === 'newsletter' ? 'Subscribe' : 'Keep me posted'}
           </button>
         </div>
         {isSubmitting && (

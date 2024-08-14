@@ -229,14 +229,6 @@ const Nav: FunctionComponent = function () {
                           <i className='icon-new_releases text-warning'></i>
                         </Link>
                         <Link
-                          href='/course/'
-                          className={`dropdown-item ${
-                            router.pathname === '/course' ? 'active' : ''
-                          }`}
-                        >
-                          Online Course
-                        </Link>
-                        <Link
                           href='/docs/latest/about/'
                           className={`dropdown-item ${
                             router.pathname === '/docs/[...slug]'

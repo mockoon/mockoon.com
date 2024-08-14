@@ -5,7 +5,6 @@ import { ChangeEvent, useState } from 'react';
 import { rsort as semverSort } from 'semver';
 import Markdown from '../../components/markdown';
 import Meta from '../../components/meta';
-import SidebarBanner from '../../components/sidebar-banner';
 import Layout from '../../layout/layout';
 import {
   DocsNavCategory,
@@ -266,15 +265,6 @@ export default function Docs(props: {
                   ];
                 })}
               </ul>
-              <div className='mt-8'>
-                <SidebarBanner
-                  title="Mockoon's official online course"
-                  text='Discover our official online course designed to help you get
-                  started with API mocking and API design. Coming soon!'
-                  link='/course/'
-                  ctaText='Discover our course →'
-                />
-              </div>
             </aside>
           </div>
           <div className='col-12 col-lg-7 ps-lg-5 pb-8'>

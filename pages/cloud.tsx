@@ -1,3 +1,4 @@
+import AlternatedFeatures from '../components/alternated-features';
 import CompanyLogos from '../components/company-logos';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
@@ -6,8 +7,8 @@ import { useAuth } from '../utils/auth';
 
 const cloudFeatures = [
   {
-    label: 'Collaborate',
-    title: 'Collaborate with your team in real time',
+    title:
+      '<span class="text-primary">Collaborate</span> with your team in real time',
     description:
       'Invite your team members to collaborate on your mock APIs in real time. Avoid conflicts and keep your team in sync. ',
     imgSrc: '/images/mockoon-cloud/mockoon-cloud-real-time-collaboration.png',
@@ -17,8 +18,8 @@ const cloudFeatures = [
       '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
   },
   {
-    label: 'Publish',
-    title: 'Instantly share your mock APIs with your team',
+    title:
+      'Instantly <span class="text-primary">share</span> your mock APIs with your team',
     description:
       'Deploy your mock APIs to the cloud with a single click and share them with your team, clients, or class. Say goodbye to complex deployment configurations.',
     imgSrc: '/images/mockoon-cloud/mockoon-cloud-api-mock-deployment.png',
@@ -27,8 +28,7 @@ const cloudFeatures = [
     ctaLink: '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'
   },
   {
-    label: 'Synchronize',
-    title: 'Keep your setup in sync',
+    title: 'Keep your setup in <span class="text-primary">sync</span>',
     description:
       'Always have the latest version of your mock APIs available on all your devices. Enjoy a frictionless experience with automatic data synchronization.',
     imgSrc:
@@ -39,8 +39,8 @@ const cloudFeatures = [
       '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
   },
   {
-    label: 'Prototype',
-    title: 'Prototype your APIs faster with our assistants',
+    title:
+      '<span class="text-primary">Prototype</span> your APIs faster with our assistants',
     description:
       'Accelerate your API design and prototyping with our assistants. Generate realistic data, endpoints, and responses in seconds.',
     imgSrc: '/images/mockoon-cloud/mockoon-cloud-ai-assisted-mock-design.png',
@@ -49,8 +49,7 @@ const cloudFeatures = [
     ctaLink: '/ai-powered-api-mocking/'
   },
   {
-    label: 'Support',
-    title: 'Get help when you need it',
+    title: 'Get <span class="text-primary">help</span> when you need it',
     description:
       'Enjoy priority support from our team of experts. Get help with your setup, your integrations, or any other questions you may have.',
     imgSrc:
@@ -187,58 +186,7 @@ export default function () {
 
       <section className='py-5 py-lg-10'>
         <div className='container text-lg-start text-center'>
-          {cloudFeatures.map((feature, featureIndex) => {
-            return (
-              <div
-                className='row py-5 py-lg-8 align-items-center justify-content-between'
-                key={`feature${featureIndex}`}
-              >
-                <div
-                  className={`col-12 col-lg-6 pb-sm-10 pb-lg-0 ${
-                    featureIndex % 2 === 0 ? 'order-lg-2' : 'order-lg-1'
-                  }`}
-                >
-                  <span className='badge rounded-pill text-bg-primary-subtle mb-3'>
-                    <span className='h6 text-uppercase'>{feature.label}</span>
-                  </span>
-
-                  <h3 className='h2 fw-bold'>{feature.title}</h3>
-
-                  <p className='fs-lg text-gray-700'>{feature.description}</p>
-                  <div>
-                    {feature.cta && (
-                      <a
-                        className='btn btn-secondary-subtle btn-xs mt-5'
-                        href={feature.ctaLink}
-                      >
-                        {feature.cta}
-                        <i className='icon-arrow_forward ms-2'></i>
-                      </a>
-                    )}
-                  </div>
-                </div>
-                <div
-                  className={`col-12 col-lg-6 ${
-                    featureIndex % 2 === 0 ? 'order-lg-1' : 'order-lg-2'
-                  }`}
-                >
-                  <div
-                    className={`mb-6 mb-lg-0 ${
-                      featureIndex % 2 === 0 ? 'text-start' : 'text-end'
-                    }`}
-                  >
-                    <img
-                      src={feature.imgSrc}
-                      alt={feature.imgAlt}
-                      className='img-fluid p-2'
-                      width={800}
-                      height={454}
-                    />
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          <AlternatedFeatures features={cloudFeatures} imgSize={[800, 454]} />
         </div>
       </section>
 

@@ -9,15 +9,16 @@ import { CardData } from '../models/common.model';
 
 const features: CardData[] = [
   {
-    title: "Supports all Mockoon's features",
+    title: 'Supports all Mockoon\'s <span class="text-primary">features</span>',
     description:
       "The CLI supports all of Mockoon's features: dynamic templating, response rules, proxy mode, OpenAPI compatibility, etc.",
     links: [{ src: '/features/', text: 'View all features' }]
   },
   {
-    title: 'Lightweight and fast',
+    title:
+      '<span class="text-primary">Lightweight</span> and <span class="text-primary">fast</span>',
     description:
-      'Deploy lighting fast mock servers in your CI environment with a simple and easy to use NPM package.',
+      'Deploy lighting fast mock servers in your CI environment with a simple and easy to use NPM package or Docker image.',
     links: [
       {
         src: 'https://github.com/mockoon/mockoon/tree/main/packages/cli#installation',
@@ -27,7 +28,7 @@ const features: CardData[] = [
     ]
   },
   {
-    title: 'Run your mocks everywhere',
+    title: 'Run your mocks <span class="text-primary">anywhere</span>',
     description:
       'Also available as a Docker image and a GitHub Action, run your mock APIs in your favorite CI platform!',
     links: [
@@ -43,13 +44,13 @@ const CLI: FunctionComponent = function () {
   return (
     <Layout footerBanner='download'>
       <Meta
-        title='Take Mockoon to the command line'
-        description='Mockoon CLI takes Mockoon where it has never been before: servers, CI environments, etc. Lightweight and fast.'
+        title='Self-host your mocks with Mockoon CLI'
+        description='Run your mock APIs in your CI/CD pipeline, on your servers or in your cloud environments with Mockoon CLI'
         image='cli-hero.png'
       />
       <Hero
-        title="Take Mockoon to the <span class='text-primary'>command line</span>"
-        subtitle='Mockoon CLI takes Mockoon where it has never been before. Lightweight and fast.'
+        title='<span class="text-primary">Self-host</span> your mocks with Mockoon CLI'
+        subtitle='Run your mock APIs in your CI/CD pipeline, on your servers or in your cloud environments with Mockoon CLI'
         cta={[
           {
             text: 'Installation instructions →',

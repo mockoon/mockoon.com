@@ -118,7 +118,8 @@ const Footer: FunctionComponent<{
               </li>
               <li className='mb-2'>
                 <Link href='/tutorials/' className='text-reset'>
-                  View all tutorials →
+                  View all tutorials
+                  <i className='icon-arrow_forward ms-2'></i>
                 </Link>
               </li>
             </ul>

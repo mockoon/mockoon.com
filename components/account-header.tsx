@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import { FunctionComponent } from 'react';
 import { useAuth } from '../utils/auth';
 
@@ -8,7 +7,6 @@ const AccountHeader: FunctionComponent<{
   showLogout?: boolean;
 }> = function ({ title, subtitle, showLogout }) {
   const auth = useAuth();
-  const router = useRouter();
   showLogout = showLogout ?? true;
 
   const logout = async () => {

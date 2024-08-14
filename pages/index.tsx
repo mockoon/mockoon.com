@@ -1,4 +1,5 @@
 import { FunctionComponent, useEffect, useState } from 'react';
+import AlternatedFeatures from '../components/alternated-features';
 import Card from '../components/card';
 import CompanyLogos from '../components/company-logos';
 import Hero from '../components/hero';
@@ -13,50 +14,49 @@ import Layout from '../layout/layout';
 
 const hpFeatures = [
   {
-    label: 'Customizable',
-    title: 'Complete control',
+    title:
+      'Highly <span class="text-primary">customizable and powerful</span> mock APIs',
     description:
-      'Mockoon offers you complete flexibility when creating your mocks: custom statuses, route and global headers, file serving or body editor, HTTPS, etc.',
+      'Mockoon offers a wide range of features to create the most realistic mock APIs: dynamic templating, rules matching, JSON databases, proxy mode, webhooks, TLS support, and more.',
     imgSrc: '/images/home/customize-mock-apis.png',
     imgAlt:
       'Mockoon customizable interface screenshot with multiple features displayed',
-    cta: 'Full list of features',
+    cta: 'View the full list of features',
     ctaLink: '/features/'
   },
   {
-    label: 'Powerful',
-    title: 'Create realistic scenarios',
+    title:
+      'Create <span class="text-primary">realistic scenarios</span> and test edge cases',
     description:
-      'Simulate real-life scenarios with dynamic templating and the response rules system. Test your app resilience with sequential and random responses.',
+      'Simulate real-life scenarios and improve integration testing with dynamic templating and rules-matching systems. Test your app resilience with chaos engineering features.',
     imgSrc: '/images/home/api-mocks-with-realistic-scenarios.png',
     imgAlt:
       'Mockoon main interface screenshot with response rules and templating system',
-    cta: 'Learn more',
-    ctaLink: '/docs/latest/route-responses/multiple-responses/'
+    cta: 'Discover the rules system',
+    ctaLink: '/tutorials/responses-and-rules/'
   },
   {
-    label: 'Integrable',
-    title: 'Powerful forwarding and debugging',
+    title:
+      '<span class="text-primary">Integrate</span> with your existing APIs and workflows',
     description:
-      'Easily integrate Mockoon with existing backends and APIs by intercepting selected endpoints and forwarding the rest. Debug intricated situation with the built-in session recording.',
+      'Forward requests to your real APIs, record and replay them. Ensure your app performs flawlessly with real-world data and responses.',
     imgSrc: '/images/home/forward-debug-requests.png',
     imgAlt: 'Mockoon requests recording screenshot',
-    cta: 'Learn more',
-    ctaLink: '/tutorials/partial-mocking-proxy/'
+    cta: 'Discover the requests recording',
+    ctaLink: '/tutorials/requests-recording-auto-mocking/'
   },
   {
-    label: 'Cloud',
-    title: 'Collaborate with your team in real-time',
+    title:
+      '<span class="text-primary">Collaborate</span> with your team in real-time',
     description:
-      'Supercharge your team productivity with Mockoon Cloud. Collaborate on your mock APIs in real-time, deploy them to the cloud, and share them with the world.',
+      'Supercharge your team productivity with Mockoon Cloud. Collaborate on your mock APIs in real-time, deploy them to the cloud, and share them with your team.',
     imgSrc: '/images/home/mockoon-cloud.png',
     imgAlt: 'mockoon cloud feature linked together',
     cta: 'Discover our Cloud',
     ctaLink: '/cloud/'
   },
   {
-    label: 'Containers',
-    title: 'Run your mock servers anywhere',
+    title: '<span class="text-primary">Self-host</span> your mock APIs',
     description:
       'Use the CLI and the Docker image to run your mock REST APIs on servers and headless environments: GitHub Actions, CircleCI, TravisCI, etc.',
     imgSrc: '/images/home/api-mock-self-host-cli.png',
@@ -65,18 +65,18 @@ const hpFeatures = [
     ctaLink: '/cli/'
   },
   {
-    label: 'Cloud',
-    title: 'Serverless compatible',
+    title:
+      '<span class="text-primary">Deploy</span> your mock APIs in cloud functions',
     description:
-      'Deploy your mock REST APIs in cloud functions compatible with any provider: AWS Lambda, GCP Functions, Firebase Functions, etc.',
+      'Deploy your mock REST APIs in cloud functions, compatible with most providers: AWS Lambda, GCP Functions, Firebase Functions, etc.',
     imgSrc: '/images/home/api-mock-serverless-hosting.png',
     imgAlt: 'Mockoon CLI start and list commands screenshot',
     cta: 'Discover the serverless package',
     ctaLink: '/serverless/'
   },
   {
-    label: 'Privacy',
-    title: 'Privacy friendly and offline first',
+    title:
+      '<span class="text-primary">Privacy</span> friendly and <span class="text-primary">offline</span> first',
     description:
       'Our tools are offline first and require no account creation. They are privacy-friendly, making them the best choice for highly regulated or high-security environments.',
     imgSrc: '/images/home/api-mocking-privacy-friendly-offline.png',
@@ -291,57 +291,20 @@ const HomePage: FunctionComponent = function () {
 
       <section id='features' className='py-5 py-lg-10'>
         <div className='container text-lg-start text-center'>
-          {hpFeatures.map((feature, featureIndex) => {
-            return (
-              <div
-                className='row py-5 py-lg-8 align-items-center justify-content-between'
-                key={`feature${featureIndex}`}
-              >
-                <div
-                  className={`col-12 col-lg-6 pb-sm-10 pb-lg-0 ${
-                    featureIndex % 2 === 0 ? 'order-lg-2' : 'order-lg-1'
-                  }`}
-                >
-                  <span className='badge rounded-pill text-bg-primary-subtle mb-3'>
-                    <span className='h6 text-uppercase'>{feature.label}</span>
-                  </span>
+          <AlternatedFeatures features={hpFeatures} imgSize={[1200, 783]} />
+        </div>
+      </section>
 
-                  <h3 className='h2 fw-bold'>{feature.title}</h3>
-
-                  <p className='fs-lg text-gray-700'>{feature.description}</p>
-                  <div>
-                    {feature.cta && (
-                      <a
-                        className='btn btn-secondary-subtle btn-xs mt-5'
-                        href={feature.ctaLink}
-                      >
-                        {feature.cta}&nbsp;→
-                      </a>
-                    )}
-                  </div>
-                </div>
-                <div
-                  className={`col-12 col-lg-6 ${
-                    featureIndex % 2 === 0 ? 'order-lg-1' : 'order-lg-2'
-                  }`}
-                >
-                  <div
-                    className={`mb-6 mb-lg-0 ${
-                      featureIndex % 2 === 0 ? 'text-start' : 'text-end'
-                    }`}
-                  >
-                    <img
-                      src={feature.imgSrc}
-                      alt={feature.imgAlt}
-                      className='img-fluid p-2'
-                      width={1200}
-                      height={783}
-                    />
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+      <section className='pb-6 pb-md-8'>
+        <div className='container'>
+          <div className='row justify-content-center'>
+            <div className='col-md-6 text-center'>
+              <a href='/download/' className='btn btn-primary mb-6 lift'>
+                Download Mockoon for free{' '}
+                <i className='icon-arrow_forward ms-2'></i>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 

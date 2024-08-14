@@ -68,7 +68,8 @@ const MockSampleCards: FunctionComponent<{
                     href={`/mock-samples/${mockAPI.slug}/`}
                     className='btn-xs btn btn-primary-subtle '
                   >
-                    Use API →
+                    Use API
+                    <i className='icon-arrow_forward ms-2'></i>
                   </Link>
                 </div>
               </div>

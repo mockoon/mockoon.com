@@ -9,13 +9,14 @@ import { CardData } from '../models/common.model';
 
 const features: CardData[] = [
   {
-    title: "Supports all Mockoon's features",
+    title: 'Supports all Mockoon\'s <span class="text-primary">features</span>',
     description:
       "Our Serverless library supports all of Mockoon's features: dynamic templating, response rules, proxy mode, etc.",
     links: [{ src: '/features/', text: 'View all features' }]
   },
   {
-    title: 'Lightweight and fast',
+    title:
+      '<span class="text-primary">Lightweight</span> and <span class="text-primary">fast</span>',
     description:
       'Deploy lighting fast mock servers in your serverless environment with a simple and easy-to-use NPM package.',
     links: [
@@ -27,7 +28,7 @@ const features: CardData[] = [
     ]
   },
   {
-    title: 'Compatible with all providers',
+    title: '<span class="text-primary">Compatible</span> with most providers',
     description:
       'Deploy a cloud function compatible with any provider: AWS Lambda, GCP Functions, Firebase Functions, etc.',
     links: [

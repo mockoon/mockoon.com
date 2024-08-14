@@ -13,17 +13,17 @@
     "trailingSlash": true,
     "redirects": [
       {
-        "source": "/discord/",
+        "source": "/discord{,/}",
         "destination": "https://discord.gg/FtJjkejKGp",
         "type": 301
       },
       {
-        "source": "/discussions/",
+        "source": "/discussions{,/}",
         "destination": "https://github.com/mockoon/mockoon/discussions",
         "type": 301
       },
       {
-        "source": "/weekly-meetup-event/",
+        "source": "/weekly-meetup-event{,/}",
         "destination": "https://discord.com/events/789493376423952394/1242838028158894151",
         "type": 301
       },

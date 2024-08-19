@@ -7,13 +7,13 @@ const RequestDemo: FunctionComponent = function () {
   return (
     <Layout footerBanner='contact'>
       <Meta
-        title='Request a demo'
-        description='Book a demo with our team to see how Mockoon can help you with your API development workflow.'
+        title='Request a Mockoon Cloud demo'
+        description='Book a demo with our team to see how Mockoon and our Cloud can help you streamline your API development workflows'
       />
 
       <Hero
         title='Request a <span class="text-primary">demo</span>'
-        subtitle='Book a demo with our team to see how Mockoon can help you with your API development workflow.'
+        subtitle='Book a demo with our team to see how Mockoon and our Cloud can help you streamline your API development workflows'
       />
       <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
         <div className='container'>

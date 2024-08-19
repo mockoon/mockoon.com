@@ -9,7 +9,7 @@ const Brand: FunctionComponent = function () {
     <Layout footerBanner='newsletter'>
       <Meta
         title='Mockoon logo and usage'
-        description='We have created a set of logos and guidelines to help you use Mockoon brand in your projects.'
+        description='We have created a set of logos and guidelines to help you refer to the Mockoon brand in your projects and websites'
         ogType='article'
       />
 

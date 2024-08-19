@@ -46,6 +46,7 @@ const Download: FunctionComponent<{ version: string }> = function ({
         title='<span class="text-primary">Design your mock API</span> with Mockoon desktop'
         subtitle="Don't let API dependencies slow you down. Design the perfect API mock with Mockoon Desktop and accelerate your development lifecycle"
         mainPicture='/images/desktop-stylized.png'
+        mainPictureAlt='Mockoon desktop application screenshot'
       />
 
       <section className='py-5'>

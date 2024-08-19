@@ -7,7 +7,8 @@ import Layout from '../layout/layout';
 
 const meta = {
   title: "Mockoon's Cloud plans pricing",
-  description: ''
+  description:
+    'Collaborate with your team, keep your data in sync, and deploy your mock APIs with Mockoon Cloud plans'
 };
 
 const Cloud: FunctionComponent = function () {

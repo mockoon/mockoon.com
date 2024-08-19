@@ -1,7 +1,7 @@
 ---
 title: Body
 meta:
-  title: Response body
+  title: Configuring response body
   description: Learn how to serve different type of bodies with Mockoon, how to use files or databucket to serve realistic dynamic responses
 order: 400
 ---

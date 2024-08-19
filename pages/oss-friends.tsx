@@ -24,12 +24,12 @@ const OssFriends: FunctionComponent<{
     <Layout footerBanner='download'>
       <Meta
         title='Our OSS friends'
-        description='Discover other open-source projects that we love and support.'
+        description='Discover other open-source software projects that we love and support.'
         ogType='article'
       />
       <Hero
         title='Our <span class="text-primary">OSS friends</span>'
-        subtitle='Discover other open-source projects that we love and support.'
+        subtitle='Discover other open-source software projects that we love and support.'
       />
 
       <section className='py-5 py-lg-10'>

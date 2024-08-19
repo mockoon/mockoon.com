@@ -9,7 +9,6 @@ import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
 
 const Base64EncodeDecode: FunctionComponent = function () {
-  const [error, setError] = useState<string>(null);
   const [base64, setBase64] = useState<string>('SGVsbG8gd29ybGQh');
   const [text, setText] = useState<string>('Hello world!');
 
@@ -17,7 +16,7 @@ const Base64EncodeDecode: FunctionComponent = function () {
     <Layout footerBanner='download'>
       <Meta
         title={'Base64 online encoder/decoder'}
-        description='Encode and decode your data to/from the Base64 format using this free online tool.'
+        description='Encode and decode your data or text, to and from the Base64 format using this free online tool.'
       />
       <Hero
         title='Online <span class="text-primary">Base64 encoder/decoder</span>'

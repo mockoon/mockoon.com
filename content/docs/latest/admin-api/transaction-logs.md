@@ -2,7 +2,7 @@
 title: Logs
 meta:
   title: 'Admin API: fetch and purge transaction logs'
-  description: 'Learn how to fetch and purge transaction logs using the admin API'
+  description: 'Learn how to fetch and purge your mock API transaction logs using the Mockoon admin API endpoints'
 order: 803
 ---
 

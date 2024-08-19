@@ -2,7 +2,7 @@
 title: Port and prefix
 meta:
   title: Change port and API prefix
-  description: Learn how you can customize the localhost port and API prefix of your mock server.
+  description: Learn how you can customize the localhost port and API prefix of your running mock server.
 order: 100
 ---
 

@@ -91,7 +91,7 @@ Alice,35,Chicago,Data Scientist,Amazon,Seattle,345-678-9012`;
     <Layout footerBanner='download'>
       <Meta
         title={'Online CSV parser and JSON converter'}
-        description='View and parse your comma separated values (CSV) data online and convert them to formatted JSON'
+        description='View and parse your comma separated values (CSV) data with this online tool and convert them to formatted JSON'
       />
       <Hero
         title='Online <span class="text-primary">CSV parser</span> and <span class="text-primary">JSON converter</span>'

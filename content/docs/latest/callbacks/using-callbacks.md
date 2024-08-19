@@ -2,7 +2,7 @@
 title: Using callbacks
 meta:
   title: Using callbacks
-  description: Learn how to use Mockoon's callbacks, link them to your route responses and delay their execution
+  description: Learn how to use Mockoon's callbacks or webhooks, link them to your route responses and delay their execution
 order: 651
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Overview
 meta:
-  title: Mockoon Cloud
+  title: Discover Mockoon Cloud
   description: Deploy your mock APIs in the cloud, synchronize your data across your team, and collaborate on your mock API projects using Mockoon Cloud
 order: 900
 ---

@@ -74,7 +74,7 @@ export default function () {
                   <img
                     src='/images/illustrations/use-cases/api-integration.svg'
                     className='img-fluid'
-                    alt=''
+                    alt='one person connecting to multiple applications'
                   />
                 </div>
               </div>
@@ -96,7 +96,7 @@ export default function () {
                   <img
                     src='/images/illustrations/use-cases/integration-testing.svg'
                     className='img-fluid'
-                    alt=''
+                    alt='visual representation of software testing'
                   />
                 </div>
               </div>
@@ -117,7 +117,7 @@ export default function () {
                   <img
                     src='/images/illustrations/use-cases/onboarding.svg'
                     className='img-fluid'
-                    alt=''
+                    alt='Two people coding'
                   />
                 </div>
               </div>
@@ -227,7 +227,7 @@ export default function () {
                 <img
                   src='/images/what-is-mockoon/desktop-cli-screenshot.png'
                   className='img-fluid w-md-50'
-                  alt=''
+                  alt='Screenshot of the Mockoon desktop application and CLI'
                 />
               </div>
             </div>

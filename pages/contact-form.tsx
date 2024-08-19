@@ -46,7 +46,7 @@ const ContactForm: FunctionComponent = function () {
   return (
     <Layout footerBanner='newsletter'>
       <Meta
-        title='Contact us'
+        title="Contact Mockoon's team"
         description='For all inquiries not related to our applications (your Mockoon Cloud subscription, sponsoring, etc.) you can contact us using our contact form. We will get back to you as soon as possible.'
       />
 

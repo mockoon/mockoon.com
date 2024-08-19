@@ -43,11 +43,6 @@
         "type": 301
       },
       {
-        "source": "/cloud/",
-        "destination": "/pricing/",
-        "type": 301
-      },
-      {
         "source": "/course/",
         "destination": "/training/",
         "type": 301

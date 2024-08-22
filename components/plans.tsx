@@ -33,6 +33,12 @@ const faq: AccordionData = [
           'What is the difference between "Email support" and "Enterprise support"?',
         content:
           "Email support is a standard support service provided to all users. You can contact us at any time by email and we will help you with your questions without a guaranteed response time. Enterprise support is a premium support service provided to Enterprise plan users with a guaranteed response time. For more information, please refer to the <a href='/terms/'>terms of service</a>."
+      },
+      {
+        title:
+          'We are using the open-source version, but we are interested in getting priority support. Can I purchase it separately?',
+        content:
+          'Yes, we offer <a href="/custom-services/">custom services</a> that can include priority support. Do not hesitate to <a href="/contact-form/">contact us</a> to discuss your needs.'
       }
     ]
   },
@@ -66,17 +72,12 @@ const faq: AccordionData = [
       {
         title: 'Do you offer discounts for schools, bootcamps or students?',
         content:
-          'We provide educational institutions with free Solo plans for all their students. Do not hesitate to <a href="/contact-form/">contact us</a> to become a partner.'
-      },
-      {
-        title: 'Do you have a discount for startups?',
-        content:
-          'We offer substantial discounts for startups and bootstrapped entrepreneurs who did not raise funds. Do not hesitate to <a href="/contact-form/">contact us</a> to learn about the conditions and benefits of the program.'
+          'We provide educational institutions with substantial discounts. Do not hesitate to <a href="/contact-form/">contact us</a> to become a partner.'
       },
       {
         title: 'How can I cancel my subscription?',
         content:
-          'You can manage your subscription using the links in the emails you received from Paddle.com. You can also <a href="/contact-form/">contact us</a> and we will help you cancel your subscription.'
+          'You can manage your subscription using the links in the emails you received from Paddle.com or in your <a href="/account/subscription/">account management page</a>. You can also <a href="/contact-form/">contact us</a> and we will help you cancel your subscription.'
       },
       {
         title: 'Can I get a refund?',

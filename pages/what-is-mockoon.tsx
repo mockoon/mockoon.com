@@ -72,7 +72,7 @@ export default function () {
               <div className='row'>
                 <div className='col-12 col-md-8 m-auto'>
                   <img
-                    src='/images/illustrations/use-cases/api-integration.svg'
+                    src='/images/what-is-mockoon/api-integration.svg'
                     className='img-fluid'
                     alt='one person connecting to multiple applications'
                   />
@@ -94,7 +94,7 @@ export default function () {
               <div className='row'>
                 <div className='col-12 col-md-8 m-auto'>
                   <img
-                    src='/images/illustrations/use-cases/integration-testing.svg'
+                    src='/images/what-is-mockoon/integration-testing.svg'
                     className='img-fluid'
                     alt='visual representation of software testing'
                   />
@@ -115,7 +115,7 @@ export default function () {
               <div className='row'>
                 <div className='col-12 col-md-8 m-auto'>
                   <img
-                    src='/images/illustrations/use-cases/onboarding.svg'
+                    src='/images/what-is-mockoon/onboarding.svg'
                     className='img-fluid'
                     alt='Two people coding'
                   />

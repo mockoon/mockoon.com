@@ -78,7 +78,7 @@ export default function () {
         subtitle='Discover how mocking APIs with Mockoon can accelerate and streamline your applications development, integration, testing, and demos'
       />
 
-      <section className='py-5 py-lg-10'>
+      <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
         <div className='container text-lg-start text-center'>
           <AlternatedFeatures features={useCases} imgClassName='w-lg-50' />
         </div>

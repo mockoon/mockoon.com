@@ -295,7 +295,10 @@ const Faq: FunctionComponent = function () {
                   <div className='accordion-body'>
                     <p className='text-gray-700'>
                       Yes, you can get enterprise-grade support with our{' '}
-                      <a href='/cloud/'>Cloud plans</a>.
+                      <a href='/cloud/'>Cloud plans</a>. We can also provide
+                      priority support separately.{' '}
+                      <a href='contact-form'>Contact us</a> for more
+                      information.
                     </p>
                   </div>
                 </div>

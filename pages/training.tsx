@@ -25,12 +25,12 @@ const faq: AccordionData = [
       {
         title: 'How long does the training last?',
         content:
-          'The training can last up to 4 hours (see schedule above). Select the quantity of hours you want to book when you purchase the training. We can also accommodate custom training schedules. <a href="/contact-form/">Contact us</a> for more information.'
+          'The training can last up to 4 hours (see schedule above). We can also accommodate custom training schedules. <a href="/contact-form/">Contact us</a> for more information.'
       },
       {
         title: 'How many participants can attend the training?',
         content:
-          'The training is for up to 5 participants. If you have a larger team, we can accommodate custom training schedules. <a href="/contact-form/">Contact us</a> for more information.'
+          'Ideal group size is below 10 participants. If you have a larger team, we can accommodate custom training schedules. <a href="/contact-form/">Contact us</a> for more information.'
       },
       {
         title: 'Do you offer a certificate of completion?',
@@ -44,12 +44,7 @@ const faq: AccordionData = [
       {
         title: 'Do you offer discounts?',
         content:
-          'We offer a discount on the course price for students, teams and non-profit organizations. Do not hesitate to <a href="/contact-form/">contact us</a> to get a discount.'
-      },
-      {
-        title: 'Can I get a refund?',
-        content:
-          'We do not offer refunds for the training. If you are unable to attend the training, we can reschedule your training session for a later date.'
+          'We offer a discount on the course price for students and non-profit organizations. Do not hesitate to <a href="/contact-form/">contact us</a> to get a discount.'
       }
     ]
   }

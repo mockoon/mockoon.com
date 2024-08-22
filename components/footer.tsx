@@ -421,7 +421,8 @@ const Footer: FunctionComponent<{
           <p className='text-gray-500 h6'>
             &copy; Mockoon 2017 - {new Date().getFullYear()}
           </p>
-          {router.route.includes('use-cases') && (
+          {(router.route.includes('use-cases') ||
+            router.route.includes('custom-services')) && (
             <p>
               <a href='https://storyset.com' className='text-gray-500 h6'>
                 Illustrations by Storyset

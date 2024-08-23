@@ -3,7 +3,7 @@ title: CRUD routes
 meta:
   title: Mockoon CRUD routes documentation
   description: All you need to know about Mockoon's mock API CRUD routes creation, behavior, data bucket operations and data manipulation.
-order: 210
+order: 220
 ---
 
 # CRUD routes
@@ -12,7 +12,7 @@ order: 210
 
 ## Overview
 
-Where Mockoon routes are independent and stateless, CRUD routes can generate multiple endpoints to perform CRUD operations (Create, Read, Update, Delete) on [data buckets](docs:data-buckets/overview). Data buckets are generated when the server start, their state persisting between calls. It makes them the perfect tool to simulate small databases.
+Where Mockoon routes are [independent and stateless](docs:api-endpoints/http-routes), CRUD routes can generate multiple endpoints to perform CRUD operations (Create, Read, Update, Delete) on [data buckets](docs:data-buckets/overview). Data buckets are generated when the server start, their state persisting between calls. It makes them the perfect tool to simulate small databases.
 
 A CRUD endpoint will automatically create a series of routes during runtime, allowing you to perform actions on your data bucket. A typical example is an array of resources (users, invoices, etc.) you can update through a PUT request and see the result in a subsequent GET request.
 
@@ -24,7 +24,7 @@ Then, set its path, usually a [resource name](/articles/api-guide-rest-api-compo
 
 ![Set the CRUD route path{1484x176}](docs-img:set-crud-route-path.png)
 
-> Your path can be more complex, and contains parameters or multiple sections. Remember that this will be the "prefix" of the different endpoints (see below).
+> 💡 Your path can be more complex, and contains parameters or multiple sections. Remember that this will be the "prefix" of the different endpoints (see below).
 
 ## Data bucket link
 

@@ -16,7 +16,7 @@ order: 8
 
 Mock Service Worker (MSW) is a **JavaScript library** that enables developers to **intercept** and **mock** network requests at the browser or Node.js level. It works by creating a service worker that captures outgoing HTTP requests, allowing developers to define custom responses for testing and debugging purposes. MSW is commonly used to simulate API responses during the development process, enabling testing without relying on actual backend services. It supports REST, GraphQL, and other request formats, making it versatile for various use cases in front-end and back-end development. MSW operates as an alternative to other API mocking tools like Mockoon.
 
-![#sub#Screenshot of Mock Service Worker's code](/images/compare/api-mocking-comparison-mock-service-worker-screenshot.png)
+![#sub#Screenshot of Mock Service Worker's code{1755x774}](/images/compare/api-mocking-comparison-mock-service-worker-screenshot.png)
 
 ## What is Mockoon?
 

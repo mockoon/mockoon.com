@@ -220,15 +220,6 @@ const Nav: FunctionComponent = function () {
                         <h6 className='dropdown-header'>Learn</h6>
 
                         <Link
-                          href='/training/'
-                          className={`dropdown-item ${
-                            router.pathname === '/training' ? 'active' : ''
-                          }`}
-                        >
-                          Live Training{' '}
-                          <i className='icon-new_releases text-warning'></i>
-                        </Link>
-                        <Link
                           href='/docs/latest/about/'
                           className={`dropdown-item ${
                             router.pathname === '/docs/[...slug]'
@@ -238,6 +229,7 @@ const Nav: FunctionComponent = function () {
                         >
                           Docs
                         </Link>
+
                         <Link
                           href='/tutorials/'
                           className={`dropdown-item ${
@@ -248,6 +240,16 @@ const Nav: FunctionComponent = function () {
                           }`}
                         >
                           Tutorials
+                        </Link>
+
+                        <Link
+                          href='/training/'
+                          className={`dropdown-item ${
+                            router.pathname === '/training' ? 'active' : ''
+                          }`}
+                        >
+                          Live Training{' '}
+                          <i className='icon-new_releases text-warning'></i>
                         </Link>
                       </div>
                     </div>

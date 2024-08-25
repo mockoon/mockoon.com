@@ -52,9 +52,16 @@ pre .code {
   height: 80vh;
 }
 
+.code-editor-container-half {
+  height: 40vh;
+}
+
 @media screen and (min-width: 768px) {
   .code-editor-container {
     height: 60vh;
+  }
+  .code-editor-container-half {
+    height: 30vh;
   }
 
   .code-editor-layout-dual {

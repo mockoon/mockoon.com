@@ -20,6 +20,7 @@ const BaseEditor: FunctionComponent<{
   value: string;
   lang: string;
   showValidMsg?: boolean;
+  showErrors?: boolean;
   hideGoToLine?: boolean;
   editorExtensions: Extension[];
   onErrorChange?: (value: string, view?: ViewUpdate) => parseError;
@@ -28,6 +29,7 @@ const BaseEditor: FunctionComponent<{
   value,
   lang,
   showValidMsg,
+  showErrors,
   editorExtensions,
   hideGoToLine,
   onErrorChange,
@@ -35,6 +37,7 @@ const BaseEditor: FunctionComponent<{
 }) {
   const [error, setError] = useState<parseError>(null);
   const editor = useRef<ReactCodeMirrorRef>();
+  showErrors = showErrors ?? true;
 
   const scrollDocToView = (error: parseError) => {
     if (!editor?.current?.state?.doc) {
@@ -53,7 +56,7 @@ const BaseEditor: FunctionComponent<{
   };
 
   return (
-    <div className='d-flex flex-column code-editor-container'>
+    <div className='d-flex flex-column h-100'>
       <CodeMirror
         theme={nordInit({
           settings: {
@@ -83,7 +86,7 @@ const BaseEditor: FunctionComponent<{
           }
         }}
       ></CodeMirror>
-      {error && (
+      {error && showErrors && (
         <div className='bg-danger-subtle border-start border-danger border-4 p-4 mt-4 position-relative d-flex justify-content-between'>
           <div
             style={{

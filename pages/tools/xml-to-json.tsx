@@ -36,37 +36,41 @@ const XmlToJson: FunctionComponent = function () {
       <section className='pb-5 pb-lg-10'>
         <div className='container'>
           <div className='code-editor-layout-dual'>
-            <XmlEditor
-              value={xmlContent}
-              onValueChange={(value) => {
-                try {
-                  setJsonContent(
-                    xml2json(value, {
-                      compact: true,
-                      spaces: 2
-                    })
-                  );
-                } catch (error) {}
-              }}
-            />
+            <div className='code-editor-container'>
+              <XmlEditor
+                value={xmlContent}
+                onValueChange={(value) => {
+                  try {
+                    setJsonContent(
+                      xml2json(value, {
+                        compact: true,
+                        spaces: 2
+                      })
+                    );
+                  } catch (error) {}
+                }}
+              />
+            </div>
 
             <div className='code-editor-sync m-2 fs-1 text-gray-600 align-self-center text-center'>
               <i className='icon-sync'></i>
             </div>
 
-            <JsonEditor
-              value={jsonContent}
-              onValueChange={(value) => {
-                try {
-                  setXmlContent(
-                    json2xml(value, {
-                      compact: true,
-                      spaces: 2
-                    })
-                  );
-                } catch (error) {}
-              }}
-            />
+            <div className='code-editor-container'>
+              <JsonEditor
+                value={jsonContent}
+                onValueChange={(value) => {
+                  try {
+                    setXmlContent(
+                      json2xml(value, {
+                        compact: true,
+                        spaces: 2
+                      })
+                    );
+                  } catch (error) {}
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>

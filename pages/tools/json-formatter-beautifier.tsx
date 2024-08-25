@@ -83,22 +83,26 @@ const JsonFormatterBeautifier: FunctionComponent = function () {
       <section className='pb-5 pb-lg-10'>
         <div className='container'>
           <div className='code-editor-layout-dual'>
-            <JsonEditor
-              value={originalJsonContent}
-              onValueChange={(value) => {
-                try {
-                  setFormattedJsonContent(
-                    format(value, spacesOrTabs, numberOfSpaces)
-                  );
-                } catch (error) {}
-              }}
-            />
+            <div className='code-editor-container'>
+              <JsonEditor
+                value={originalJsonContent}
+                onValueChange={(value) => {
+                  try {
+                    setFormattedJsonContent(
+                      format(value, spacesOrTabs, numberOfSpaces)
+                    );
+                  } catch (error) {}
+                }}
+              />
+            </div>
 
             <div className='code-editor-sync m-2 fs-1 text-gray-600 align-self-center text-center'>
               <i className='icon-sync'></i>
             </div>
 
-            <JsonEditor value={formattedJsonContent} />
+            <div className='code-editor-container'>
+              <JsonEditor value={formattedJsonContent} />
+            </div>
           </div>
           <div className='d-flex mt-4 align-items-center'>
             <div
@@ -122,7 +126,7 @@ const JsonFormatterBeautifier: FunctionComponent = function () {
                   } catch (error) {}
                 }}
               />
-              <label className='btn btn-outline-dark' htmlFor='spaces'>
+              <label className='btn btn-outline-dark me-2' htmlFor='spaces'>
                 Spaces
               </label>
               <input

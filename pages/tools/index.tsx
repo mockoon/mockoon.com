@@ -106,6 +106,18 @@ const tools = [
       }
     ],
     imageSrc: '/images/illustrations/csv-parser-json-converter.svg'
+  },
+  {
+    title: 'Online JWT decoder',
+    description:
+      'Decode your JWT tokens online and extract the header and payload data',
+    links: [
+      {
+        src: '/tools/jwt-decode',
+        text: 'Decode'
+      }
+    ],
+    imageSrc: '/images/illustrations/jwt-decode.svg'
   }
 ];
 

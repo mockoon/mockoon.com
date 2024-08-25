@@ -67,28 +67,32 @@ const JsonToYaml: FunctionComponent = function () {
       <section className='pb-5 pb-lg-10'>
         <div className='container'>
           <div className='code-editor-layout-dual'>
-            <JsonEditor
-              value={jsonContent}
-              onValueChange={(value) => {
-                try {
-                  const obj = JSON.parse(value);
-                  setYamlContent(jsyaml.dump(obj));
-                } catch (error) {}
-              }}
-            />
+            <div className='code-editor-container'>
+              <JsonEditor
+                value={jsonContent}
+                onValueChange={(value) => {
+                  try {
+                    const obj = JSON.parse(value);
+                    setYamlContent(jsyaml.dump(obj));
+                  } catch (error) {}
+                }}
+              />
+            </div>
 
             <div className='code-editor-sync m-2 fs-1 text-gray-600 align-self-center text-center'>
               <i className='icon-sync'></i>
             </div>
 
-            <YamlEditor
-              value={yamlContent}
-              onValueChange={(value: string) => {
-                try {
-                  setJsonContent(JSON.stringify(jsyaml.load(value), null, 2));
-                } catch (error) {}
-              }}
-            />
+            <div className='code-editor-container'>
+              <YamlEditor
+                value={yamlContent}
+                onValueChange={(value: string) => {
+                  try {
+                    setJsonContent(JSON.stringify(jsyaml.load(value), null, 2));
+                  } catch (error) {}
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -18,8 +18,9 @@ const YamlValidator: FunctionComponent = function () {
 
       <section className='pb-5 pb-lg-10'>
         <div className='container'>
-          <YamlEditor
-            value={`property:
+          <div className='code-editor-container'>
+            <YamlEditor
+              value={`property:
   value: example_value
 
   list_of_properties:
@@ -35,8 +36,9 @@ const YamlValidator: FunctionComponent = function () {
     - value_1
     - value_2
     - value_3`}
-            showValidMsg
-          />
+              showValidMsg
+            />
+          </div>
         </div>
       </section>
 

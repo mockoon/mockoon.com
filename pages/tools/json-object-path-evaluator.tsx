@@ -96,7 +96,7 @@ const JsonPathPlayground: FunctionComponent = function () {
         </div>
         <div className='container'>
           <div className='code-editor-layout-dual'>
-            <div>
+            <div className='code-editor-container'>
               <JsonEditor
                 value={jsonContent}
                 onValueChange={(value) => {
@@ -123,7 +123,9 @@ const JsonPathPlayground: FunctionComponent = function () {
               <i className='icon-arrow_forward'></i>
             </div>
 
-            <JsonEditor value={extractedContent} />
+            <div className='code-editor-container'>
+              <JsonEditor value={extractedContent} />
+            </div>
           </div>
         </div>
       </section>

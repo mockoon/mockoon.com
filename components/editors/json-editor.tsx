@@ -26,6 +26,7 @@ function getErrorPosition(
 const JsonEditor: FunctionComponent<{
   value: string;
   showValidMsg?: boolean;
+  showErrors?: boolean;
   onValueChange?: (value: string) => void;
 }> = function (props) {
   return (

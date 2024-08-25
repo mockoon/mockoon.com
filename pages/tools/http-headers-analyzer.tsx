@@ -593,25 +593,27 @@ Accept-Language: en-US`;
       />
       <section className='pb-5 pb-lg-10'>
         <div className='container'>
-          <TextEditor
-            value={initialValue}
-            onValueChange={(value) => {
-              setHeaders(
-                value
-                  .split('\n')
-                  .map((header) => {
-                    if (!header) {
-                      return null;
-                    }
+          <div className='code-editor-container'>
+            <TextEditor
+              value={initialValue}
+              onValueChange={(value) => {
+                setHeaders(
+                  value
+                    .split('\n')
+                    .map((header) => {
+                      if (!header) {
+                        return null;
+                      }
 
-                    const [name] = header.split(':');
+                      const [name] = header.split(':');
 
-                    return name.trim();
-                  })
-                  .filter(Boolean)
-              );
-            }}
-          />
+                      return name.trim();
+                    })
+                    .filter(Boolean)
+                );
+              }}
+            />
+          </div>
           <div className='table-responsive'>
             <table className='table table-striped'>
               <thead>

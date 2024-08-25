@@ -39,16 +39,18 @@ const StringLengthCounter: FunctionComponent = function () {
               <h3 className='mb-0'>{stats.lines}</h3>
             </div>
           </div>
-          <TextEditor
-            value={'Example string'}
-            onValueChange={(value) => {
-              setStats({
-                length: value.length,
-                words: value.trim().split(/\s+/).length,
-                lines: value.split(/\n|\r\n/).length
-              });
-            }}
-          />
+          <div className='code-editor-container'>
+            <TextEditor
+              value={'Example string'}
+              onValueChange={(value) => {
+                setStats({
+                  length: value.length,
+                  words: value.trim().split(/\s+/).length,
+                  lines: value.split(/\n|\r\n/).length
+                });
+              }}
+            />
+          </div>
         </div>
       </section>
 

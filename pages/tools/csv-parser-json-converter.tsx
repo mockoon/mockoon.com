@@ -100,54 +100,56 @@ Alice,35,Chicago,Data Scientist,Amazon,Seattle,345-678-9012`;
       <section className='pb-5 pb-lg-10'>
         <div className='container'>
           <div className='code-editor-layout-dual'>
-            <TextEditor
-              value={initialValue}
-              onValueChange={(csv) => {
-                let lines = [];
-                let headers = [];
+            <div className='code-editor-container'>
+              <TextEditor
+                value={initialValue}
+                onValueChange={(csv) => {
+                  let lines = [];
+                  let headers = [];
 
-                csv.split('\n').forEach((line, index) => {
-                  if (!line.trim()) {
-                    return;
-                  }
+                  csv.split('\n').forEach((line, index) => {
+                    if (!line.trim()) {
+                      return;
+                    }
 
-                  if (index === 0) {
-                    headers = line.split(',');
+                    if (index === 0) {
+                      headers = line.split(',');
 
-                    return;
-                  } else {
-                    const items = line.split(',');
+                      return;
+                    } else {
+                      const items = line.split(',');
 
-                    lines.push(items);
-                  }
-                });
-
-                setParsedHeaders(headers);
-                setParsedLines(lines);
-
-                // Convert to JSON
-                const json = [];
-                lines.forEach((line) => {
-                  const obj = {};
-
-                  headers.forEach((header, index) => {
-                    obj[header] = line[index];
+                      lines.push(items);
+                    }
                   });
 
-                  json.push(obj);
-                });
+                  setParsedHeaders(headers);
+                  setParsedLines(lines);
 
-                console.log(json);
+                  // Convert to JSON
+                  const json = [];
+                  lines.forEach((line) => {
+                    const obj = {};
 
-                setJsonContent(JSON.stringify(json, null, 2));
-              }}
-            />
+                    headers.forEach((header, index) => {
+                      obj[header] = line[index];
+                    });
+
+                    json.push(obj);
+                  });
+
+                  setJsonContent(JSON.stringify(json, null, 2));
+                }}
+              />
+            </div>
 
             <div className='code-editor-sync m-2 fs-1 text-gray-600 align-self-center text-center'>
               <i className='icon-sync'></i>
             </div>
 
-            <JsonEditor value={jsonContent} />
+            <div className='code-editor-container'>
+              <JsonEditor value={jsonContent} />
+            </div>
           </div>
 
           <div className='table-responsive mt-8'>

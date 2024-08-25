@@ -25,27 +25,31 @@ const Base64EncodeDecode: FunctionComponent = function () {
       <section className='pb-5 pb-lg-10'>
         <div className='container'>
           <div className='code-editor-layout-dual'>
-            <TextEditor
-              value={text}
-              onValueChange={(value) => {
-                try {
-                  setBase64(bytesToBase64(new TextEncoder().encode(value)));
-                } catch (error) {}
-              }}
-            />
+            <div className='code-editor-container'>
+              <TextEditor
+                value={text}
+                onValueChange={(value) => {
+                  try {
+                    setBase64(bytesToBase64(new TextEncoder().encode(value)));
+                  } catch (error) {}
+                }}
+              />
+            </div>
 
             <div className='code-editor-sync m-2 fs-1 text-gray-600 align-self-center text-center'>
               <i className='icon-sync'></i>
             </div>
 
-            <Base64Editor
-              value={base64}
-              onValueChange={(value) => {
-                try {
-                  setText(new TextDecoder().decode(base64ToBytes(value)));
-                } catch (error) {}
-              }}
-            />
+            <div className='code-editor-container'>
+              <Base64Editor
+                value={base64}
+                onValueChange={(value) => {
+                  try {
+                    setText(new TextDecoder().decode(base64ToBytes(value)));
+                  } catch (error) {}
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>

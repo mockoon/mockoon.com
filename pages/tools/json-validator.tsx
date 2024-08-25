@@ -17,10 +17,12 @@ const JsonValidator: FunctionComponent = function () {
       />
       <section>
         <div className='container'>
-          <JsonEditor
-            value={`{\n  "message": "Paste your JSON here"\n}`}
-            showValidMsg
-          />
+          <div className='code-editor-container'>
+            <JsonEditor
+              value={`{\n  "message": "Paste your JSON here"\n}`}
+              showValidMsg
+            />
+          </div>
         </div>
       </section>
 

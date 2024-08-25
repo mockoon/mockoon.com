@@ -18,10 +18,12 @@ const XmlValidator: FunctionComponent = function () {
 
       <section className='pb-5 pb-lg-10'>
         <div className='container'>
-          <XmlEditor
-            value={`<root>  \n  <!-- XML validator -->\n  <message>Paste your XML here</message>\n</root>`}
-            showValidMsg
-          />
+          <div className='code-editor-container'>
+            <XmlEditor
+              value={`<root>  \n  <!-- XML validator -->\n  <message>Paste your XML here</message>\n</root>`}
+              showValidMsg
+            />
+          </div>
         </div>
       </section>
 

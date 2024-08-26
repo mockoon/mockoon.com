@@ -73,8 +73,8 @@ export default function () {
   return (
     <Layout footerBanner='download'>
       <Meta
-        title={'Mockoon Cloud'}
-        description='Discover Mockoon Cloud features: Collaborate with your team, keep your data in sync, and deploy your mock APIs with Mockoon Cloud'
+        title={'Mockoon Cloud platform'}
+        description='Discover Mockoon Cloud platform features: Collaborate with your team, keep your data in sync, and deploy your mock APIs with Mockoon Cloud'
       />
 
       <Hero

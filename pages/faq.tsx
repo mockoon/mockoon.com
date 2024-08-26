@@ -297,7 +297,7 @@ const Faq: FunctionComponent = function () {
                       Yes, you can get enterprise-grade support with our{' '}
                       <a href='/cloud/'>Cloud plans</a>. We can also provide
                       priority support separately.{' '}
-                      <a href='contact-form'>Contact us</a> for more
+                      <a href='/contact-form/'>Contact us</a> for more
                       information.
                     </p>
                   </div>

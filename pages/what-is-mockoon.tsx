@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
+import OssCloudComparison from '../components/oss-cloud-comparison';
 import Layout from '../layout/layout';
 
 export default function () {
@@ -290,6 +291,11 @@ export default function () {
                   alt='illustration showing mockoon logo with the features written around it'
                 />
               </div>
+            </div>
+          </div>
+          <div className='row justify-content-center'>
+            <div className='col-lg-8'>
+              <OssCloudComparison />
             </div>
           </div>
           <div className='row justify-content-center mt-6'>

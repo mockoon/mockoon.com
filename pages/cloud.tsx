@@ -2,6 +2,7 @@ import AlternatedFeatures from '../components/alternated-features';
 import CompanyLogos from '../components/company-logos';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
+import OssCloudComparison from '../components/oss-cloud-comparison';
 import Layout from '../layout/layout';
 import { useAuth } from '../utils/auth';
 
@@ -69,6 +70,28 @@ export default function () {
       window.location.href = `/signup/`;
     }
   };
+
+  const ctaContent = (
+    <section className='pb-6 pb-md-8'>
+      <div className='container'>
+        <div className='row justify-content-center'>
+          <div className='col-md-6 text-center'>
+            <a
+              href=''
+              className='btn btn-primary mb-6 lift'
+              onClick={(event) => {
+                event.preventDefault();
+                cta();
+              }}
+            >
+              Try Mockoon Cloud for free{' '}
+              <i className='icon-arrow_forward ms-2'></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 
   return (
     <Layout footerBanner='download'>
@@ -190,25 +213,15 @@ export default function () {
         </div>
       </section>
 
-      <section className='pb-6 pb-md-8'>
-        <div className='container'>
-          <div className='row justify-content-center'>
-            <div className='col-md-6 text-center'>
-              <a
-                href=''
-                className='btn btn-primary mb-6 lift'
-                onClick={(event) => {
-                  event.preventDefault();
-                  cta();
-                }}
-              >
-                Try Mockoon Cloud for free{' '}
-                <i className='icon-arrow_forward ms-2'></i>
-              </a>
-            </div>
-          </div>
+      {ctaContent}
+
+      <section className='py-5 py-lg-10'>
+        <div className='container text-lg-start text-center'>
+          <OssCloudComparison />
         </div>
       </section>
+
+      {ctaContent}
     </Layout>
   );
 }

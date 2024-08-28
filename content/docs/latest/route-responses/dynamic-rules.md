@@ -42,7 +42,7 @@ Inside a route response, rules are interpreted by default with the OR logical op
 
 ![Choose the rule operator OR AND{1152x214}](docs-img:route-response-rules-operator.png)
 
-Rules have four parts:
+Rules have five parts:
 
 - a **target**
 - a **property name or path**
@@ -107,6 +107,7 @@ Multiple comparison operators are available in each rule:
 - **regex match**: asserts that the targeted property matches the regex **value**.
 - **null**: asserts that the targeted property is null or absent (for **headers** or **cookies**).
 - **empty array**: asserts that the targeted property is an empty array.
+- **array includes**: asserts that the given **value** is present in the targeted property (array). 
 
 ### 5. Value
 

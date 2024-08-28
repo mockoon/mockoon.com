@@ -26,11 +26,15 @@ There are several communication patterns that could be implemented within a WebS
 
       Unlike the conversational style, here one party (typically the server) sends messages at intervals after the connection establishment, causing a continuous flow of messages. In this mode, server discards messages from clients and operates independently. There are several notable streaming modes worth mentioning.
 
-      1. One-to-One streaming
+      1. One-to-One streaming (Unicast)
 
          In this mode, each client receives a set of streaming messages independent of each other. That means, messages are not shared among other connected clients. For example, subscription-based streaming services deliver content based on individual user requests.
 
-      2. Broadcasting
+      2. One-to-Many streaming (Multicast)
+         
+         In multicast mode, the server typically transmits messages to specific subsets of connected clients. As an example, online gaming or chat rooms, where only participants within the room should receive relevant messages.
+
+      3. Broadcasting
 
          In this mode, all clients receive the same messages in the same order at the same intervals. This is very much like fan-out. Events will be published regardless of whether a client is connected. For example, global live streams where anyone can subscribe and consume.
 
@@ -77,6 +81,8 @@ Similary, select the option with label of 'Broadcast streaming' to implement a b
 ![Broadcast Streaming option{136x77}](docs-img:ws-broadcast-streaming.png)
 
 When none of them are selected, it endpoint will respond for every client message recieved.
+
+> **Multicasting:** Mockoon currently supports multicasting by configuring multiple distinct endpoints. Each should be an endpoint which is a type of broadcast, and clients must connect to the appropriate endpoint to receive messages intended for that particular group. All clients connected to that given endpoint will receive the same set of messages.
 
 #### Specifying the message interval
 

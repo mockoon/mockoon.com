@@ -31,7 +31,7 @@ There are several communication patterns that could be implemented within a WebS
          In this mode, each client receives a set of streaming messages independent of each other. That means, messages are not shared among other connected clients. For example, subscription-based streaming services deliver content based on individual user requests.
 
       2. One-to-Many streaming (Multicast)
-         
+
          In multicast mode, the server typically transmits messages to specific subsets of connected clients. As an example, online gaming or chat rooms, where only participants within the room should receive relevant messages.
 
       3. Broadcasting

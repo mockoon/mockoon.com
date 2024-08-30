@@ -80,6 +80,8 @@ Similary, select the option with label of 'Broadcast streaming' to implement a b
 
 ![Broadcast Streaming option{136x77}](docs-img:ws-broadcast-streaming.png)
 
+> 💡 In Mockoon, broadcasting is endpoint-specific. All clients connected to a particular endpoint will receive identical messages, regardless of their accompanying parameters. In other words, response rules will be disabled and have no effect on response contents.
+
 When none of them are selected, it endpoint will respond for every client message recieved.
 
 > **Multicasting:** Mockoon currently supports multicasting by configuring multiple distinct endpoints. Each should be an endpoint which is a type of broadcast, and clients must connect to the appropriate endpoint to receive messages intended for that particular group. All clients connected to that given endpoint will receive the same set of messages.

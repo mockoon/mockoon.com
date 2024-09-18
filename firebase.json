@@ -23,11 +23,6 @@
         "type": 301
       },
       {
-        "source": "/weekly-meetup-event{,/}",
-        "destination": "https://discord.com/events/789493376423952394/1242838028158894151",
-        "type": 301
-      },
-      {
         "source": "/enterprise/",
         "destination": "/pro/",
         "type": 301

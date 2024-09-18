@@ -3,7 +3,6 @@ import { FunctionComponent } from 'react';
 import Accordion from '../components/accordion';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
-import WeeklyMeetupBanner from '../components/weekly-meetup-banner';
 import Layout from '../layout/layout';
 import { AccordionData } from '../models/common.model';
 
@@ -170,9 +169,6 @@ const Roadmap: FunctionComponent = function () {
                 This is a summary of the current state of the roadmap with the
                 most important features, including the non-open-source ones.
               </p>
-            </div>
-            <div className='col col-md-8 mx-auto'>
-              <WeeklyMeetupBanner />
             </div>
           </div>
 

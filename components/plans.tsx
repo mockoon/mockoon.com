@@ -343,7 +343,7 @@ const PlansView: FunctionComponent<{
             )}
 
             <div className='row gx-4 gy-4 justify-content-center'>
-              <div className='col-12 col-md-6 col-xl-3'>
+              <div className='col-12 col-xl-4'>
                 <div className='card shadow-lg mb-6 mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
                     <h3 className='d-flex justify-content-center mb-3 fw-medium'>
@@ -443,7 +443,7 @@ const PlansView: FunctionComponent<{
                 </div>
               </div>
 
-              <div className='col-12 col-md-6 col-xl-3'>
+              <div className='col-12 col-xl-4'>
                 <div className='card shadow-lg mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
                     <h3 className='d-flex justify-content-center mb-3 fw-medium'>
@@ -552,7 +552,7 @@ const PlansView: FunctionComponent<{
                 </div>
               </div>
 
-              <div className='col-12 col-md-6 col-xl-3'>
+              <div className='col-12 col-xl-4'>
                 <div className='card shadow-lg mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
                     <h3 className='d-flex justify-content-center mb-3 fw-medium'>
@@ -565,83 +565,52 @@ const PlansView: FunctionComponent<{
                           </span>
                         )}
                     </h3>
-                    <div className='d-flex justify-content-center mb-6'>
-                      <span className='h2 mb-0 mt-2'>$</span>
-                      <span className='price display-2 mb-0'>
-                        {pricing.ENTERPRISE[planFrequency].price}
-                      </span>
-                      <span className='h4 text-gray-700 align-self-end mb-2'>
-                        /{suffixes[planFrequency]}/seat
-                      </span>
+                    <div className='text-center mt-4 mb-6'>
+                      <div className='btn-group'>
+                        <button
+                          type='button'
+                          className={`btn btn-primary-subtle btn-sm`}
+                          onClick={() => {
+                            router.push('/contact-form/');
+                          }}
+                        >
+                          Contact us
+                        </button>
+                        <button
+                          type='button'
+                          className={`btn btn-primary-subtle btn-sm`}
+                          onClick={() => {
+                            router.push('/request-demo/');
+                          }}
+                        >
+                          Request a demo
+                        </button>
+                      </div>
                     </div>
-
-                    <div className='text-center mb-6'>
-                      {subscribeBtn(Plans.ENTERPRISE)}
-                    </div>
-
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
                       </div>
 
                       <p className='mb-0'>
-                        All of Mockoon's{' '}
-                        <Link href={'/features/'}>open-source features</Link>
+                        All of <span className='text-primary'>Team</span> plan
+                        features
                       </p>
                     </div>
-
                     <hr />
-
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
                       </div>
 
-                      <p>
-                        <Link
-                          href={
-                            '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'
-                          }
-                        >
-                          Deploy {pricing.ENTERPRISE.deployQuota} API mocks
-                        </Link>
-                        <sup>1</sup> in the cloud
-                        <br /> Includes{' '}
-                        {pricing.ENTERPRISE.deployCallsQuota.toLocaleString()}{' '}
-                        monthly calls
-                      </p>
+                      <p>Custom quotas and limits</p>
                     </div>
-
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
                       </div>
 
-                      <p>
-                        <Link
-                          href={
-                            '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
-                          }
-                        >
-                          Collaborate in real-time
-                        </Link>{' '}
-                        with your team on {pricing.ENTERPRISE.syncQuota} API
-                        mocks<sup>1</sup>
-                      </p>
-                    </div>
-
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
-                      </div>
-
-                      <p className='mb-0'>
-                        {pricing.ENTERPRISE.templatesQuota}{' '}
-                        <Link href={'/ai-powered-api-mocking/'}>
-                          AI-generated endpoints
-                        </Link>{' '}
-                        per month per user
-                      </p>
+                      <p className='mb-0'>Dedicated instances</p>
                     </div>
                     <hr />
                     <div className='d-flex'>
@@ -659,79 +628,25 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
-                      <p className='mb-0'>Unlimited seats</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className='col-12 col-md-6 col-xl-3'>
-                <div className='card shadow-lg mb-md-0 h-100'>
-                  <div className='card-body h-100 d-flex flex-column'>
-                    <h3 className='d-flex justify-content-center mb-3 fw-medium'>
-                      <span className='text-primary'>Custom Enterprise</span>
-                      <span className='ms-1'>plan</span>
-                      {planFrequency === 'YEARLY' &&
-                        pricing.ENTERPRISE.discount && (
-                          <span className='badge text-bg-success-subtle ms-3 fs-sm align-self-center'>
-                            {pricing.ENTERPRISE.discount}
-                          </span>
-                        )}
-                    </h3>
-                    <div className='text-center mt-4 mb-6'>
-                      <button
-                        type='button'
-                        className={`btn btn-primary-subtle btn-sm ms-1`}
-                        onClick={() => {
-                          router.push('/contact-form/');
-                        }}
-                      >
-                        Contact us
-                      </button>
-                    </div>
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
-                      </div>
-
-                      <p className='mb-0'>
-                        All of <span className='text-primary'>Enterprise</span>{' '}
-                        plan features
-                      </p>
-                    </div>
-                    <hr />
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
-                      </div>
-
-                      <p className='mb-0'>Dedicated instances</p>
-                    </div>
-                    <hr />
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
-                      </div>
-
-                      <p className='mb-0'>Personalized quotas and limits</p>
-                    </div>
-                    <hr />
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
-                      </div>
-
                       <p className='mb-0'>
                         Onboarding and deployment assistance
                       </p>
                     </div>
+
                     <hr />
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
                       </div>
 
-                      <p className='mb-0'>Custom payment options</p>
+                      <p>Custom payment options</p>
+                    </div>
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
+
+                      <p className='mb-0'>Unlimited seats</p>
                     </div>
                   </div>
                 </div>
@@ -774,12 +689,6 @@ const PlansView: FunctionComponent<{
                               <span className='text-primary'>Enterprise</span>{' '}
                               plan
                             </th>
-                            <th className='text-center'>
-                              <span className='text-primary'>
-                                Custom Enterprise
-                              </span>{' '}
-                              plan
-                            </th>
                           </tr>
                         </thead>
                         <tbody>
@@ -802,9 +711,6 @@ const PlansView: FunctionComponent<{
                             <td className='text-center'>
                               {pricing.TEAM.deployQuota}
                             </td>
-                            <td className='text-center'>
-                              {pricing.ENTERPRISE.deployQuota}
-                            </td>
                             <td className='text-center'>Custom</td>
                           </tr>
                           <tr>
@@ -814,9 +720,6 @@ const PlansView: FunctionComponent<{
                             </td>
                             <td className='text-center'>
                               {pricing.TEAM.deployCallsQuota.toLocaleString()}
-                            </td>
-                            <td className='text-center'>
-                              {pricing.ENTERPRISE.deployCallsQuota.toLocaleString()}
                             </td>
                             <td className='text-center'>Custom</td>
                           </tr>
@@ -828,9 +731,6 @@ const PlansView: FunctionComponent<{
                             <td className='text-center'>
                               {pricing.TEAM.deployReqSQuota}/sec
                             </td>
-                            <td className='text-center'>
-                              {pricing.ENTERPRISE.deployReqSQuota}/sec
-                            </td>
                             <td className='text-center'>Custom</td>
                           </tr>
                           <tr>
@@ -838,11 +738,9 @@ const PlansView: FunctionComponent<{
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
                           </tr>
                           <tr>
                             <td>Hosting</td>
-                            <td className='text-center'>Shared</td>
                             <td className='text-center'>Shared</td>
                             <td className='text-center'>Shared</td>
                             <td className='text-center'>Dedicated</td>
@@ -866,14 +764,10 @@ const PlansView: FunctionComponent<{
                             <td className='text-center'>
                               {pricing.TEAM.syncQuota}
                             </td>
-                            <td className='text-center'>
-                              {pricing.ENTERPRISE.syncQuota}
-                            </td>
                             <td className='text-center'>Custom</td>
                           </tr>
                           <tr>
                             <td>Data synchronization accross your devices</td>
-                            <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
@@ -883,11 +777,9 @@ const PlansView: FunctionComponent<{
                             <td className='text-center'>{crossBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
                           </tr>
                           <tr>
                             <td>Hosting</td>
-                            <td className='text-center'>Shared</td>
                             <td className='text-center'>Shared</td>
                             <td className='text-center'>Shared</td>
                             <td className='text-center'>Dedicated</td>
@@ -896,7 +788,6 @@ const PlansView: FunctionComponent<{
                             <td>API mock max size</td>
                             <td className='text-center'>5MB</td>
                             <td className='text-center'>10MB</td>
-                            <td className='text-center'>15MB</td>
                             <td className='text-center'>Custom</td>
                           </tr>
                           <tr>
@@ -912,11 +803,9 @@ const PlansView: FunctionComponent<{
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
                           </tr>
                           <tr>
                             <td>Generate HTTP endpoints</td>
-                            <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
@@ -928,9 +817,6 @@ const PlansView: FunctionComponent<{
                             </td>
                             <td className='text-center'>
                               {pricing.TEAM.templatesQuota}/month/user
-                            </td>
-                            <td className='text-center'>
-                              {pricing.ENTERPRISE.templatesQuota}/month/user
                             </td>
                             <td className='text-center'>Custom</td>
                           </tr>
@@ -948,11 +834,9 @@ const PlansView: FunctionComponent<{
                             <td className='text-center'>Email</td>
                             <td className='text-center'>Email</td>
                             <td className='text-center'>Enterprise</td>
-                            <td className='text-center'>Enterprise</td>
                           </tr>
                           <tr>
                             <td>Onboarding and deployment assistance</td>
-                            <td className='text-center'>{crossBadge}</td>
                             <td className='text-center'>{crossBadge}</td>
                             <td className='text-center'>{crossBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
@@ -967,7 +851,6 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>Payment options</td>
-                            <td className='text-center'>Credit card</td>
                             <td className='text-center'>Credit card</td>
                             <td className='text-center'>Credit card</td>
                             <td className='text-center'>

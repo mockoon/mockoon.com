@@ -100,9 +100,6 @@ The data synchronization feature is available in the Solo and Team/Enterprise pl
 - **Team plan**:
   - 10 environments synchronized.
   - 10MB per environment.
-- **Enterprise plan**:
-  - 20 environments synchronized.
-  - 15MB per environment.
 
 For all users (Solo, Team, and Enterprise), the environments can be synchronized across an unlimited number of devices with a limit of 2 simultaneous devices per user.
 

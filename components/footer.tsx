@@ -312,11 +312,6 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/weekly-meetup-event/' className='text-reset'>
-                  Weekly Meetup Q&A
-                </Link>
-              </li>
-              <li className='mb-2'>
                 <Link href='/oss-friends/' className='text-reset'>
                   OSS friends
                 </Link>

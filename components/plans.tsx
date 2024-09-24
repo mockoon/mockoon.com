@@ -318,7 +318,7 @@ const PlansView: FunctionComponent<{
             )}
 
             <div className='row gx-4 gy-4 justify-content-center'>
-              <div className='col-12 col-xl-4'>
+              <div className='col-12 col-xl-3'>
                 <div className='card shadow-lg mb-6 mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
                     <h3 className='d-flex justify-content-center mb-3 fw-medium'>
@@ -422,7 +422,7 @@ const PlansView: FunctionComponent<{
                 </div>
               </div>
 
-              <div className='col-12 col-xl-4'>
+              <div className='col-12 col-xl-3'>
                 <div className='card shadow-lg mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
                     <h3 className='d-flex justify-content-center mb-3 fw-medium'>
@@ -537,7 +537,7 @@ const PlansView: FunctionComponent<{
                 </div>
               </div>
 
-              <div className='col-12 col-xl-4'>
+              <div className='col-12 col-xl-3'>
                 <div className='card shadow-lg mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
                     <h3 className='d-flex justify-content-center mb-3 fw-medium'>

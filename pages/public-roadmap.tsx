@@ -94,6 +94,11 @@ const tasks: {
   ],
   inProgress: [
     {
+      title: 'Real-time collaboration improved presence',
+      cloud: true,
+      target: null
+    },
+    {
       link: 'https://github.com/mockoon/mockoon/issues/83',
       title: 'WebSockets support',
       cloud: false,
@@ -119,11 +124,6 @@ const tasks: {
     }
   ],
   comingSoon: [
-    {
-      title: 'Real-time collaboration improved presence',
-      cloud: true,
-      target: null
-    },
     {
       title: 'Environment variables support in cloud deployments',
       cloud: true,

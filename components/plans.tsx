@@ -176,43 +176,18 @@ const PlansView: FunctionComponent<{
       <div>
         <button
           type='button'
-          className={`btn btn-primary btn-sm ${
-            currentUser.isLoading ||
-            (currentUser.data &&
-              currentUser.data?.plan !== Plans.FREE &&
-              currentUser.data?.plan !== plan)
-              ? 'invisible'
-              : ''
-          }`}
+          className='btn btn-primary btn-sm '
           onClick={() => {
             redirect(plan);
           }}
         >
-          {/* if not logged in or on a free plan -> buy btn */}
-          {((!currentUser.isLoading && !currentUser.data) ||
-            currentUser.data?.plan === Plans.FREE) &&
-            'Try for free'}
-          {/* if logged in and on a paid plan -> current plan*/}
-          {!currentUser.isLoading &&
-            currentUser.data &&
-            currentUser.data?.plan !== Plans.FREE &&
-            currentUser.data?.plan === plan &&
-            'Current plan'}
-          {/* if logged in and on a paid plan, hide, for other plans*/}
-          {currentUser.data &&
-            currentUser.data?.plan !== Plans.FREE &&
-            currentUser.data?.plan !== plan &&
-            '&nbsp;'}
+          Try for free
         </button>
       </div>
-      <>
-        {/* Hide trial if already subscribed */}
-        {(!currentUser.data || currentUser.data?.plan === 'FREE') && (
-          <div className='mt-2 badge text-bg-success-subtle'>
-            {pricing[plan].trialDays} days free trial included
-          </div>
-        )}
-      </>
+
+      <div className='mt-2 badge text-bg-success-subtle'>
+        {pricing[plan].trialDays} days free trial included
+      </div>
     </>
   );
   const tickBadge = (
@@ -343,7 +318,7 @@ const PlansView: FunctionComponent<{
             )}
 
             <div className='row gx-4 gy-4 justify-content-center'>
-              <div className='col-12 col-xl-4'>
+              <div className='col-12 col-xl-3'>
                 <div className='card shadow-lg mb-6 mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
                     <h3 className='d-flex justify-content-center mb-3 fw-medium'>
@@ -365,9 +340,13 @@ const PlansView: FunctionComponent<{
                       </span>
                     </div>
 
-                    <div className='text-center mb-6'>
-                      {subscribeBtn(Plans.SOLO)}
-                    </div>
+                    {/* show only if not connected or not already subscribed */}
+                    {(!currentUser.data ||
+                      currentUser.data?.plan === 'FREE') && (
+                      <div className='text-center mb-6'>
+                        {subscribeBtn(Plans.SOLO)}
+                      </div>
+                    )}
 
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
@@ -443,7 +422,7 @@ const PlansView: FunctionComponent<{
                 </div>
               </div>
 
-              <div className='col-12 col-xl-4'>
+              <div className='col-12 col-xl-3'>
                 <div className='card shadow-lg mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
                     <h3 className='d-flex justify-content-center mb-3 fw-medium'>
@@ -464,9 +443,15 @@ const PlansView: FunctionComponent<{
                         /{suffixes[planFrequency]}/seat
                       </span>
                     </div>
-                    <div className='text-center mb-6'>
-                      {subscribeBtn(Plans.TEAM)}
-                    </div>
+
+                    {/* show only if not connected or not already subscribed */}
+                    {(!currentUser.data ||
+                      currentUser.data?.plan === 'FREE') && (
+                      <div className='text-center mb-6'>
+                        {subscribeBtn(Plans.TEAM)}
+                      </div>
+                    )}
+
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
@@ -552,7 +537,7 @@ const PlansView: FunctionComponent<{
                 </div>
               </div>
 
-              <div className='col-12 col-xl-4'>
+              <div className='col-12 col-xl-3'>
                 <div className='card shadow-lg mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
                     <h3 className='d-flex justify-content-center mb-3 fw-medium'>

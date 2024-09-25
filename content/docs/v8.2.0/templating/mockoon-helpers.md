@@ -937,7 +937,7 @@ result: 50000
 
 ## now
 
-Display the current time in the chosen format. Format syntax is based on [date-fns v2 package format function](https://date-fns.org/v2.30.0/docs/format) and is optional (default to ISO string).
+Display the current time in the chosen format. Format syntax is based on [date-fns v3 `format` function](https://date-fns.org/v3.6.0/docs/format) and is optional (default to ISO string).
 
 | Arguments (ordered) | Type   | Description |
 | ------------------- | ------ | ----------- |
@@ -951,7 +951,7 @@ Display the current time in the chosen format. Format syntax is based on [date-f
 
 ## dateTimeShift
 
-Shift a date by adding the number of `years`, `months`, etc. passed as parameters. The `date` and `format` parameters are optional. The helper will return the current date and time as an ISO string if omitted (`yyyy-MM-ddTHH:mm:ss.SSSxxx`). The formatting uses [date-fns v2 package format function](https://date-fns.org/v2.30.0/docs/format).
+Shift a date by adding the number of `years`, `months`, etc. passed as parameters. The `date` and `format` parameters are optional. The helper will return the current date and time as an ISO string if omitted (`yyyy-MM-ddTHH:mm:ss.SSSxxx`). The formatting uses [date-fns v3 `format` function](https://date-fns.org/v3.6.0/docs/format).
 
 | Parameters (named)                      | Type   | Description                |
 | --------------------------------------- | ------ | -------------------------- |
@@ -972,7 +972,7 @@ Shift a date by adding the number of `years`, `months`, etc. passed as parameter
 
 ## date
 
-Return a random formatted date (using [date-fns v2 package format function](https://date-fns.org/v2.30.0/docs/format)) between a minimum and a maximum. Uses `faker 'date.between'` to generate the random date.
+Return a random formatted date (using [date-fns v3 `format` function](https://date-fns.org/v3.6.0/docs/format)) between a minimum and a maximum. Uses `faker 'date.between'` to generate the random date.
 
 | Arguments (ordered) | Type   | Description   |
 | ------------------- | ------ | ------------- |
@@ -988,7 +988,7 @@ Return a random formatted date (using [date-fns v2 package format function](http
 
 ## time
 
-Return a random formatted time (using [date-fns v2 package format function](https://date-fns.org/v2.30.0/docs/format)) between a minimum and a maximum. Uses `faker 'date.between'` to generate the random time.
+Return a random formatted time (using [date-fns v3 `format` function](https://date-fns.org/v3.6.0/docs/format)) between a minimum and a maximum. Uses `faker 'date.between'` to generate the random time.
 
 | Arguments (ordered) | Type   | Description   |
 | ------------------- | ------ | ------------- |
@@ -1004,7 +1004,7 @@ Return a random formatted time (using [date-fns v2 package format function](http
 
 ## dateFormat
 
-Return a formatted date (using [date-fns v2 package format function](https://date-fns.org/v2.30.0/docs/format)).
+Return a formatted date (using [date-fns v3 `format` function](https://date-fns.org/v3.6.0/docs/format)).
 
 | Arguments (ordered) | Type           | Description    |
 | ------------------- | -------------- | -------------- |

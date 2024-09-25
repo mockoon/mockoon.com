@@ -52,6 +52,10 @@ However, some parts of the environment definition cannot be edited simultaneousl
 - The route response's rules or callbacks list.
 - The various editors content (inline body, data bucket, callback, etc.).
 
+**Presence indicators** are displayed in the application to show who is currently **connected** and **editing** an environment. They are visible in the cloud environments list, indicating if a user is editing an environment (left side of the image). Additionally, presence indicators are shown at the top of the application, displaying the users currently connected to the cloud space (right side of the image).
+
+![Presence indicators{668x157}](/images/docs/static/mockoon-cloud/data-synchronization-team-collaboration/presence-indicators.png)
+
 ## Offline editing
 
 Mockoon's synchronization and collaboration features are primarily designed to work while being **online**. Offline editing works to some extent, but it is **not recommended to simultaneously edit** the same environment while being offline.
@@ -104,12 +108,6 @@ The data synchronization feature is available in the Solo and Team/Enterprise pl
 For all users (Solo, Team, and Enterprise), the environments can be synchronized across an unlimited number of devices with a limit of 2 simultaneous devices per user.
 
 These quotas and limits are subject to change. Please refer to your [account settings](/account/subscription/) for the latest information.
-
-## Future improvements
-
-The data synchronization feature is still in its early stages. Here are some improvements we are working on:
-
-- Better presence indicators to show who is currently editing which environment.
 
 ## Limitations
 

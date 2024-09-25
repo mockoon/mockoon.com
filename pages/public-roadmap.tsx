@@ -96,7 +96,8 @@ const tasks: {
     {
       title: 'Real-time collaboration improved presence',
       cloud: true,
-      target: null
+      link: 'https://github.com/mockoon/mockoon/issues/1512',
+      target: '_blank'
     },
     {
       link: 'https://github.com/mockoon/mockoon/issues/83',

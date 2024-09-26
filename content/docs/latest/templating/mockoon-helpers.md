@@ -44,7 +44,7 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 | [`lowercase`](#lowercase) | [`parseInt`](#parseint) | [`date`](#date)                   | [`base64Decode`](#base64decode) |
 | [`uppercase`](#uppercase) | [`padStart`](#padstart) | [`time`](#time)                   | [`objectId`](#objectid)         |
 | [`split`](#split)         | [`padEnd`](#padend)     | [`dateFormat`](#dateformat)       |                                 |
-| [`stringify`](#stringify) | [`eq`](#eq)             |                                   |                                 |
+| [`stringify`](#stringify) | [`eq`](#eq)             | [`isValidDate`](#isvaliddate)     |                                 |
 | [`jsonParse`](#jsonparse) |                         |                                   |                                 |
 
 | [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                         |
@@ -1069,6 +1069,29 @@ Return a formatted date (using [date-fns v3 `format` function](https://date-fns.
 ```handlebars
 {{dateFormat '2021-01-01' 'yyyy'}}
 {{dateFormat (faker 'date.recent') 'yyyy'}}
+```
+
+## isValidDate
+
+Validate a date using a combination of date-fns v3 [`toDate`](https://date-fns.org/v3.6.0/docs/toDate) and [`isValid`](https://date-fns.org/v3.6.0/docs/isValid) functions. Supports various syntaxes for the date parameter (string, number, Date object): "2024-01-01", "2021-01-01T00:00:00.000Z", 1727272454000, etc.
+
+| Arguments (ordered) | Type                     | Description      |
+| ------------------- | ------------------------ | ---------------- |
+| 0                   | string \| number \| Date | Date to validate |
+
+**Examples**
+
+```handlebars
+<!-- Valid -->
+{{isValidDate '2022-01-01'}}
+<!-- Valid -->
+{{isValidDate '2022-01-01T00:00:00.000Z'}}
+<!-- Invalid -->
+{{isValidDate '2022-01-50'}}
+<!-- Valid (unix time ms) -->
+{{isValidDate 1727272454000}}
+<!-- Validate a date coming from another helper -->
+{{isValidDate (queryParam 'date')}}
 ```
 
 ## int

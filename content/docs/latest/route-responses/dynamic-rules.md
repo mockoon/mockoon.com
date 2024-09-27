@@ -57,13 +57,15 @@ Rules have five parts:
 In the dropdown menu you can choose between:
 
 - the **request body** value (full raw content or one of its properties if request's `Content-Type` is either `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`).
-- the value of a **query parameter**.
+- the value of a **request's query parameter**.
 - the value of a **request header**.
 - the value of a **request cookie**.
 - the value of a [**route parameter**](docs:api-endpoints/routing#route-parameters).
+- the value of the **request path**, always starting with a `/` (e.g. /path/section).
+- the value of the **request method** in lowercase (e.g. get, post, put, delete, patch, head, options).
+- the **request number** index starting at 1 (you can reset the request number by using the [state purge admin API](docs:admin-api/server-state)).
 - the value of a [**global variable**](docs:variables/global-variables).
 - the value of a [**data bucket content**](docs:data-buckets/overview).
-- the **request number** index starting at 1 (you can reset the request number by using the [state purge admin API](docs:admin-api/server-state)).
 
 ### 2. Property name or path
 
@@ -81,9 +83,11 @@ This field supports [templating helpers](docs:templating/overview) to dynamicall
 - **headers**: a header name like `Accept` or `Content-Type`.
 - **cookies**: the cookie name like `Session-id`.
 - **route parameter**: a route parameter name without the colon (":"), `:userId` becoming `userId`.
+- **request path**: _no property or path can be provided here_.
+- **request method**: _no property or path can be provided here_.
+- **request number**: _no property or path can be provided here_.
 - **global variable**: a [global variable](docs:variables/global-variables) name like `myVar`. You can use a path to access one of its properties if the variable is storing arrays or objects. Two syntaxes are supported, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `myVar.key\.with\.dot`. Examples: `myVar.property.subProperty`, `myVar.property.0.subProperty` or `$.myVar.property`.
 - **data bucket content**: a [data bucket](docs:data-buckets/overview) name like `myData`. You can use a path to access one of its properties if the bucket is storing arrays or objects. Two syntaxes are supported, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `myData.key\.with\.dot`. Examples: `myData.property.subProperty`, `myData.property.0.subProperty` or `$.myData.property`.
-- **request number**: _nothing has to be provided here for the request number_.
 
 For **body** and **query string**, if the property is an array, Mockoon will automatically check in the array if at least one item matches the value.
 
@@ -107,7 +111,7 @@ Multiple comparison operators are available in each rule:
 - **regex match**: asserts that the targeted property matches the regex **value**.
 - **null**: asserts that the targeted property is null or absent (for **headers** or **cookies**).
 - **empty array**: asserts that the targeted property is an empty array.
-- **array includes**: asserts that the given **value** is present in the targeted property (array). 
+- **array includes**: asserts that the given **value** is present in the targeted property (array).
 
 ### 5. Value
 

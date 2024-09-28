@@ -132,7 +132,7 @@ Alice,35,Chicago,Data Scientist,Amazon,Seattle,345-678-9012`;
                     const obj = {};
 
                     headers.forEach((header, index) => {
-                      obj[header] = line[index];
+                      obj[header] = line[index].trim();
                     });
 
                     json.push(obj);

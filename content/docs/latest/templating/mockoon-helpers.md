@@ -47,18 +47,18 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 | [`stringify`](#stringify) | [`eq`](#eq)             | [`isValidDate`](#isvaliddate)     |                                 |
 | [`jsonParse`](#jsonparse) |                         |                                   |                                 |
 
-| [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                         |
-| --------------------------------------------------- | ----------------------------- | ----------------------- |
-| [`int`](#int)                                       | [`street`](#street)           | [`hexColor`](#hexcolor) |
-| [`float`](#float)                                   | [`city`](#city)               | [`guid`](#guid)         |
-| [`boolean`](#boolean)                               | [`country`](#country)         | [`ipv4`](#ipv4)         |
-| [`title`](#title)                                   | [`countryCode`](#countrycode) | [`ipv6`](#ipv6)         |
-| [`firstName`](#firstname)                           | [`zipcode`](#zipcode)         | [`lorem`](#lorem)       |
-| [`lastName`](#lastname)                             | [`postcode`](#postcode)       |                         |
-| [`company`](#company)                               | [`lat`](#lat)                 |                         |
-| [`domain`](#domain)                                 | [`long`](#long)               |                         |
-| [`tld`](#tld)                                       | [`phone`](#phone)             |                         |
-| [`email`](#email)                                   | [`color`](#color)             |                         |
+| [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                          |
+| --------------------------------------------------- | ----------------------------- | ------------------------ |
+| [`int`](#int)                                       | [`street`](#street)           | [`hexColor`](#hexcolor)  |
+| [`float`](#float)                                   | [`city`](#city)               | [`guid/uuid`](#uuidguid) |
+| [`boolean`](#boolean)                               | [`country`](#country)         | [`ipv4`](#ipv4)          |
+| [`title`](#title)                                   | [`countryCode`](#countrycode) | [`ipv6`](#ipv6)          |
+| [`firstName`](#firstname)                           | [`zipcode`](#zipcode)         | [`lorem`](#lorem)        |
+| [`lastName`](#lastname)                             | [`postcode`](#postcode)       |                          |
+| [`company`](#company)                               | [`lat`](#lat)                 |                          |
+| [`domain`](#domain)                                 | [`long`](#long)               |                          |
+| [`tld`](#tld)                                       | [`phone`](#phone)             |                          |
+| [`email`](#email)                                   | [`color`](#color)             |                          |
 
 ## repeat
 
@@ -1318,13 +1318,14 @@ Return a random hexadecimal color code.
 {{hexColor}}
 ```
 
-## guid
+## uuid/guid
 
-Return a random GUID. Alias of `faker 'string.uuid'`.
+Return a random UUID. Alias of `faker 'string.uuid'`.
 
 **Examples:**
 
 ```handlebars
+{{uuid}}
 {{guid}}
 ```
 

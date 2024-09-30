@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useState } from 'react';
 import { useAuth } from '../utils/auth';
+import GitHub from './github';
 
 enum Dropdowns {
   NONE = 'NONE',
@@ -378,6 +379,10 @@ const Nav: FunctionComponent = function () {
               >
                 Demo
               </Link>
+            </li>
+
+            <li className='nav-item'>
+              <GitHub />
             </li>
 
             <li

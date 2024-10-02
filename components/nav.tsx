@@ -79,6 +79,10 @@ const Nav: FunctionComponent = function () {
             )}
 
             <li className='nav-item'>
+              <GitHub />
+            </li>
+
+            <li className='nav-item'>
               <DocSearch
                 appId='HV1IDAB8IU'
                 indexName='mockoon'
@@ -379,10 +383,6 @@ const Nav: FunctionComponent = function () {
               >
                 Demo
               </Link>
-            </li>
-
-            <li className='nav-item'>
-              <GitHub />
             </li>
 
             <li

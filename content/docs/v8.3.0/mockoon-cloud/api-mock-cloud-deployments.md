@@ -68,11 +68,11 @@ Some **quotas and limits apply** to the cloud deployment feature. Here are the m
 - **Solo plan**:
   - 1 cloud deployment.
   - 50&nbsp;000 requests per month.
-  - 3 requests per second.
+  - 3 requests per second (1 request per second during trial).
 - **Team plan**:
   - 3 cloud deployments.
   - 100&nbsp;000 requests per month.
-  - 5 requests per second.
+  - 5 requests per second (1 request per second during trial).
 
 These quotas and limits are subject to change. Please refer to your [account settings](/account/subscription/) for the latest information.
 

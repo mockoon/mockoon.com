@@ -642,8 +642,8 @@ const PlansView: FunctionComponent<{
               to payment you agree to our{' '}
               <Link href={'/privacy/'}>privacy policy</Link> and{' '}
               <Link href={'/terms/'}>terms of service</Link>.<br /> The free
-              trial is available once per user and requires a valid payment
-              method.
+              trial is available once per user, has a lower request rate limit
+              (see below) and requires a valid payment method.
               <br />
               <sup>1</sup> See the{' '}
               <Link href={'/pricing/#faq'}>FAQ of our Cloud plans</Link> for
@@ -709,7 +709,10 @@ const PlansView: FunctionComponent<{
                             <td className='text-center'>Custom</td>
                           </tr>
                           <tr>
-                            <td>Request rate limit</td>
+                            <td>
+                              Request rate limit{' '}
+                              <InfoTooltip text='During trial, the request rate limit is 1 request per second.'></InfoTooltip>
+                            </td>
                             <td className='text-center'>
                               {pricing.SOLO.deployReqSQuota}/sec
                             </td>

@@ -10,7 +10,7 @@ order: 501
 
 ---
 
-In addition to Handlebars' built-in helpers, Mockoon offers the following helpers:
+In addition to Handlebars' built-in helpers (`if`, `each`, etc., for more information, please have a look at [Handlebars' documentation](https://handlebarsjs.com/guide/builtin-helpers.html#if)), Mockoon offers the following helpers:
 
 | Block helpers       | Data buckets          |
 | ------------------- | --------------------- |

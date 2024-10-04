@@ -12,10 +12,11 @@ order: 501
 
 In addition to Handlebars' built-in helpers (`if`, `each`, etc., for more information, please have a look at [Handlebars' documentation](https://handlebarsjs.com/guide/builtin-helpers.html#if)), Mockoon offers the following helpers:
 
-| Block helpers       | Data buckets          |
-| ------------------- | --------------------- |
-| [`repeat`](#repeat) | [`data`](#data)       |
-| [`switch`](#switch) | [`dataRaw`](#dataraw) |
+| Block helpers       | [Data buckets](docs:data-buckets/overview) manipulation |
+| ------------------- | ------------------------------------------------------- |
+| [`repeat`](#repeat) | [`data`](#data)                                         |
+| [`switch`](#switch) | [`dataRaw`](#dataraw)                                   |
+|                     | [`setData`](#setdata)                                   |
 
 | Arrays              |                       | Objects             |
 | ------------------- | --------------------- | ------------------- |
@@ -166,6 +167,39 @@ Get the **raw** value (array, object, etc.) at a given `path` from a [data bucke
 {{#if (dataRaw 'bucketNameOrId' 'path.to.boolean.property')}}
   value
 {{/if}}
+```
+
+## setData
+
+Set or modify the value at a given path in a [data bucket](docs:data-buckets/overview) selected by ID or name. This helper can perform various operations such as setting, pushing, deleting, incrementing, decrementing, and inverting values.
+
+- The `path` supports the [object-path](https://www.npmjs.com/package/object-path) syntax. When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
+  Please note that a value can be set at the path if the data bucket contains valid JSON.
+- The full data bucket content (array, object, etc.) can be modified when the `path` is omitted (`{{setData 'operation' 'ID' '' 'value'}}`).
+- Available operations are `set`, `push`, `del`, `inc`, `dec`, and `invert`:
+  - `set`: Set a new value at the root level (path omitted) or at the specified path. Requires a new value.
+  - `push`: Push a new value to an array at the root level (path omitted) or at the specified path. Requires a new value and the target to be an array.
+  - `del`: Delete a value at the root level (path omitted) or at the specified path. No new value required.
+  - `inc`: Increment a number at the root level (path omitted) or at the specified path. Requires a number to increment by. If the value is omitted, the increment will be by 1.
+  - `dec`: Decrement a number at the root level (path omitted) or at the specified path. Requires a number to decrement by. If the value is omitted, the decrement will be by 1.
+  - `invert`: Invert a boolean at the root level (path omitted) or at the specified path. No new value required.
+
+| Arguments (ordered) | Type   | Description                                                         |
+| ------------------- | ------ | ------------------------------------------------------------------- |
+| 0                   | string | Operation to perform (`set`, `push`, `del`, `inc`, `dec`, `invert`) |
+| 1                   | string | ID or name of the data bucket                                       |
+| 2                   | string | Path to the data bucket property (optional)                         |
+| 3                   | any    | New value (optional for `invert`, `inc`, `dec` and `del`)           |
+
+**Examples**
+
+```handlebars
+{{setData 'set' 'bucketNameOrId' 'path.to.property' 'newValue'}}
+{{setData 'push' 'bucketNameOrId' 'path.to.array' 'newValue'}}
+{{setData 'del' 'bucketNameOrId' 'path.to.property'}}
+{{setData 'inc' 'bucketNameOrId' 'path.to.property' 2}}
+{{setData 'dec' 'bucketNameOrId' 'path.to.property' 2}}
+{{setData 'invert' 'bucketNameOrId' 'path.to.property'}}
 ```
 
 ## array

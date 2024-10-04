@@ -84,6 +84,14 @@ Linking a data bucket to a route response will serve the content of the bucket "
 
 > The `Content-Type` of the response will still be the one you defined in the header.
 
+## Link a bucket to a CRUD route
+
+When creating a [**CRUD route**](/docs/latest/api-endpoints/crud-routes/) you must link a data bucket. This feature allows you to **serve** and **manipulate** the **data bucket content** depending on the **CRUD operations**. The CRUD routes follow usual REST conventions: `GET /resources`, `POST /resources`, `PUT /resources/:id`, `DELETE /resources/:id`, etc.
+
+![Using data bucket in a CRUD route](/images/tutorials/use-data-buckets/link-data-bucket-crud-route.png)
+
+> 💡Have a look at our dedicated tutorial to learn [how CRUD routes interact with the data buckets](/tutorials/create-full-rest-api-crud-routes/).
+
 ## Retrieve a data bucket's content with the templating helpers
 
 Aside from linking data buckets directly to your route responses, you can also use their contents with the two dedicated helpers: [`data`](docs:templating/mockoon-helpers#data) and [`dataRaw`](docs:templating/mockoon-helpers#dataraw). Head over to their respective documentation to understand how they work.
@@ -119,6 +127,19 @@ You could also use the `dataRaw` helper to access the underlying JS object parse
   }
   {{/each}}
 ]
+```
+
+## Retrieve data buckets content programmatically
+
+You can also **manipulate data buckets programmatically** using the [`setData`](docs:templating/mockoon-helpers#setdata) templating helper. This helper allows you to **update** the content of a data bucket, **push** a new value to an array, **delete** a property, **increment** or **decrement** a number, or **invert** a boolean. It can be used anywhere templating helpers are supported and is a good complement to CRUD routes to create complex scenarios.
+
+```handlebars
+{{setData 'set' 'bucketNameOrId' 'path.to.property' 'newValue'}}
+{{setData 'push' 'bucketNameOrId' 'path.to.array' 'newValue'}}
+{{setData 'del' 'bucketNameOrId' 'path.to.property'}}
+{{setData 'inc' 'bucketNameOrId' 'path.to.property' 2}}
+{{setData 'dec' 'bucketNameOrId' 'path.to.property' 2}}
+{{setData 'invert' 'bucketNameOrId' 'path.to.property'}}
 ```
 
 ## Create a data bucket configuration route

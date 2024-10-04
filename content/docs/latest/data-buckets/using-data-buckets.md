@@ -10,9 +10,11 @@ order: 610
 
 ---
 
-After [creating data buckets](docs:data-buckets/overview), you can use them through the `data` templating helpers or by directly referencing them in a route response.
+After [creating data buckets](docs:data-buckets/overview), you can use them through the `data` templating helpers or by directly referencing them in a route response or CRUD route.
 
 ## Using data helpers
+
+### Retrieving data
 
 Two helpers are available: [`data`](docs:templating/mockoon-helpers#data) and [`dataRaw`](docs:templating/mockoon-helpers#dataraw). They work in a similar way to the [`body`](docs:templating/mockoon-request-helpers#body) and [`bodyRaw`](docs:templating/mockoon-request-helpers#bodyraw) helpers.
 
@@ -24,13 +26,38 @@ Both helpers support retrieving the data bucket by its unique ID or name. It als
 {{data 'ID_or_name' 'object.path'}}
 ```
 
-> 💡 Retrieving data at a specific object path requires that the data bucket content is a valid JSON.
+> 💡 To retrieve data at a specific path, the content of the data bucket must be valid JSON.
 
 Head over to the [data helpers' documentation](docs:templating/mockoon-helpers#data) to see more examples.
 
-## Referencing in a route response
+### Setting data programmatically
 
-A data bucket can also be directly linked to a route response. Linking a data bucket will serve the generated data bucket content "as-is".
+A [`setData`](docs:templating/mockoon-helpers#setdata) helper is available to set the content of a data bucket programmatically. It can be used [anywhere templating helpers are supported](docs:templating/overview).
+
+This helper is useful when you want to update the content of a data bucket, push a new value to an array, delete a property, increment or decrement a number, or invert a boolean:
+
+```handlebars
+{{setData 'set' 'bucketNameOrId' 'path.to.property' 'newValue'}}
+{{setData 'push' 'bucketNameOrId' 'path.to.array' 'newValue'}}
+{{setData 'del' 'bucketNameOrId' 'path.to.property'}}
+{{setData 'inc' 'bucketNameOrId' 'path.to.property' 2}}
+{{setData 'dec' 'bucketNameOrId' 'path.to.property' 2}}
+{{setData 'invert' 'bucketNameOrId' 'path.to.property'}}
+```
+
+> 💡 To set data at a specific path, the content of the data bucket must be valid JSON.
+
+Head over to the [`setData` helper documentation](docs:templating/mockoon-helpers#setdata) to see more examples.
+
+## Link a bucket to a CRUD route
+
+When creating a **CRUD route** you must link a data bucket. This feature allows you to **serve** and **manipulate** the **data bucket content** depending on the **CRUD operations**. The CRUD routes follow usual REST conventions: `GET /resources`, `POST /resources`, `PUT /resources/:id`, `DELETE /resources/:id`, etc.
+
+Head over to the dedicated [CRUD routes documentation](docs:api-endpoints/crud-routes) to learn more about this feature.
+
+## Referencing a bucket in a route response
+
+A data bucket can also be directly **linked** to a route response. Linking a data bucket will serve the generated data bucket content "as-is".
 
 To link a data bucket to a route response, choose "Data" in the body selector and select your data bucket.
 

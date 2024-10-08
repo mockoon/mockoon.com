@@ -66,8 +66,9 @@ In the dropdown menu you can choose between:
 - the **request number** index starting at 1 (you can reset the request number by using the [state purge admin API](docs:admin-api/server-state)).
 - the value of a [**global variable**](docs:variables/global-variables).
 - the value of a [**data bucket content**](docs:data-buckets/overview).
+- **custom templating** (see the [templating helpers](docs:templating/overview) documentation).
 
-### 2. Property name or path
+### 2. Target's name or path, or template
 
 ![Rule property{1177x204}](docs-img:route-response-rules-property.png)
 
@@ -88,6 +89,7 @@ This field supports [templating helpers](docs:templating/overview) to dynamicall
 - **request number**: _no property or path can be provided here_.
 - **global variable**: a [global variable](docs:variables/global-variables) name like `myVar`. You can use a path to access one of its properties if the variable is storing arrays or objects. Two syntaxes are supported, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `myVar.key\.with\.dot`. Examples: `myVar.property.subProperty`, `myVar.property.0.subProperty` or `$.myVar.property`.
 - **data bucket content**: a [data bucket](docs:data-buckets/overview) name like `myData`. You can use a path to access one of its properties if the bucket is storing arrays or objects. Two syntaxes are supported, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `myData.key\.with\.dot`. Examples: `myData.property.subProperty`, `myData.property.0.subProperty` or `$.myData.property`.
+- **custom templating**: custom templating helpers like `{{urlParam 'param'}}`, `{{header 'x-custom-header'}}`, `{{body 'property'}}`, `{{jwtPayload (header 'Authorization') 'sub'}}`, etc. The result of the templating helper will be a **string** that will be compared to the rule value.
 
 For **body** and **query string**, if the property is an array, Mockoon will automatically check in the array if at least one item matches the value.
 
@@ -112,6 +114,8 @@ Multiple comparison operators are available in each rule:
 - **null**: asserts that the targeted property is null or absent (for **headers** or **cookies**).
 - **empty array**: asserts that the targeted property is an empty array.
 - **array includes**: asserts that the given **value** is present in the targeted property (array).
+
+> 💡 Some comparison operators are not available for all **targets**. For example, the **array includes** operator is not available for **request number** or **request method**. Also, array operators are not available for the "Custom templating" rule type as it always returns a string value.
 
 ### 5. Value
 

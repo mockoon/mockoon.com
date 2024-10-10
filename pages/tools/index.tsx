@@ -113,11 +113,23 @@ const tools = [
       'Decode your JWT tokens online and extract the header and payload data',
     links: [
       {
-        src: '/tools/jwt-decode',
+        src: '/tools/jwt-decode/',
         text: 'Decode'
       }
     ],
     imageSrc: '/images/illustrations/jwt-decode.svg'
+  },
+  {
+    title: 'Markdown to HTML converter',
+    description:
+      'Parse your Markdown content and convert it to HTML using marked library',
+    links: [
+      {
+        src: '/tools/markdown-to-html/',
+        text: 'Convert'
+      }
+    ],
+    imageSrc: '/images/illustrations/markdown-to-html.svg'
   }
 ];
 

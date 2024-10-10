@@ -2,6 +2,7 @@ import { FunctionComponent } from 'react';
 import YamlEditor from '../../components/editors/yaml-editor';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
+import ToolsCta from '../../components/tools-cta';
 import Layout from '../../layout/layout';
 
 const YamlValidator: FunctionComponent = function () {
@@ -39,6 +40,12 @@ const YamlValidator: FunctionComponent = function () {
               showValidMsg
             />
           </div>
+        </div>
+      </section>
+
+      <section className='pb-5 pb-lg-10'>
+        <div className='container'>
+          <ToolsCta />
         </div>
       </section>
 

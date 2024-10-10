@@ -2,6 +2,7 @@ import { FunctionComponent } from 'react';
 import JsonEditor from '../../components/editors/json-editor';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
+import ToolsCta from '../../components/tools-cta';
 import Layout from '../../layout/layout';
 
 const JsonValidator: FunctionComponent = function () {
@@ -15,7 +16,7 @@ const JsonValidator: FunctionComponent = function () {
         title='Online <span class="text-primary">JSON validator</span>'
         subtitle='Validate your JSON online and get detailed error messages'
       />
-      <section>
+      <section className='py-5 py-lg-10'>
         <div className='container'>
           <div className='code-editor-container'>
             <JsonEditor
@@ -23,6 +24,12 @@ const JsonValidator: FunctionComponent = function () {
               showValidMsg
             />
           </div>
+        </div>
+      </section>
+
+      <section className='pb-5 pb-lg-10'>
+        <div className='container'>
+          <ToolsCta />
         </div>
       </section>
 

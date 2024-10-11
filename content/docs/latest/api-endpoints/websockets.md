@@ -12,104 +12,79 @@ order: 230
 
 ## Overview
 
-While HTTP Routes operate on a request-response paradigm, WebSockets offer a different approach. They enable real-time, two-way communication between a client and server, allowing for more dynamic and interactive applications such as chats, live event updates, etc.
+While HTTP routes operate on a request-response paradigm, WebSockets offer a different approach. They enable **real-time**, **two-way communication** between a client and server, allowing for more dynamic and interactive applications, such as chats and live event updates.
 
-Upon a client’s connection request to a WebSocket endpoint, the server establishes a persistent connection. This connection remains active until either the client or server terminates it. While connected, both the client and server can exchange messages freely.
+When a client sends a connection request to a WebSocket endpoint, the server establishes a persistent connection that remains active until either the client or server terminates it. While connected, both the client and server can freely exchange messages.
 
-There are several communication patterns that could be implemented within a WebSocket connection as shown below.
+There are several communication patterns that can be implemented within a WebSocket route in Mockoon, as shown below:
 
- 1. Conversational style
+### 1. Conversational mode
 
-      This communication style similar to the HTTP request-response model but operates in a continuous manner. The server responds to each message sent by the client, and vice-versa. Either the client or server can initiate communication once the connection is established, but generally it is the client who initiate the conversation.
+This communication style is similar to the HTTP request-response model but operates continuously. The server responds to each message sent by the client, and vice-versa.
 
- 2. Server Streaming Mode
+### 2. Server Streaming Mode
 
-      Unlike the conversational style, here one party (typically the server) sends messages at intervals after the connection establishment, causing a continuous flow of messages. In this mode, server discards messages from clients and operates independently. There are several notable streaming modes worth mentioning.
+Unlike the conversational style, one party (typically the server) sends messages at regular intervals after the connection is established. In this mode, the server ignores messages from clients and operates independently. Several streaming modes are available:
 
-      1. One-to-One streaming (Unicast)
+- **One-to-One streaming (Unicast)**: In this mode, each client receives a set of streaming messages independent of others. This means messages are not shared with other connected clients. For example, subscription-based streaming services deliver content based on individual user requests.
 
-         In this mode, each client receives a set of streaming messages independent of each other. That means, messages are not shared among other connected clients. For example, subscription-based streaming services deliver content based on individual user requests.
+- **One-to-Many streaming (Multicast)**: In multicast mode, the server sends messages to specific subsets of connected clients. An example is online gaming or chat rooms, where only participants in the room receive the relevant messages.
 
-      2. One-to-Many streaming (Multicast)
+- **Broadcasting**: In this mode, all clients receive the same messages in the same order at the same intervals. Events are published regardless of whether a client is connected. For example, global live streams, where anyone can subscribe and consume content.
 
-         In multicast mode, the server typically transmits messages to specific subsets of connected clients. As an example, online gaming or chat rooms, where only participants within the room should receive relevant messages.
+> ⚠️ _A note about Socket.IO_: Mockoon does **not** implement Socket.IO's protocol. It supports native WebSockets using the standard WebSocket protocol (`ws://` or `wss://`). As a result, Socket.IO clients will not be able to connect to WebSocket routes served by Mockoon.
 
-      3. Broadcasting
+Mockoon introduced support for WebSockets in [v9.0.0](/releases/9.0.0/), offering all of these communication styles.
 
-         In this mode, all clients receive the same messages in the same order at the same intervals. This is very much like fan-out. Events will be published regardless of whether a client is connected. For example, global live streams where anyone can subscribe and consume.
+## Add a WebSockets route
 
-## WebSockets in Mockoon
+To create a **new WebSocket route**, click on the **"WebSocket"** entry in the add route menu:
 
-Mockoon introduced WebSocket protocol support starting from version X.X.X. Mockoon provides all of these three types of communication styles via WebSockets.
+![Add a new WebSocket route{498x335}](docs-img:add-ws-route.png)
 
-> ⚠️ _A note about Socket.IO_: Mockoon does **not** implement Socket.IO. It implements the standard native socket support via WebSocket protocol (`ws:// or wss://`). According to their official documentation [Socket.IO is not a WebSocket implementation](https://socket.io/docs/v4/#what-socketio-is-not). Therefore, Socket.IO clients will not be able to connect to the WebSocket routes served by Mockoon.
+You can then configure the route's **path** as you would for an HTTP route. The path is the URL that clients will use to connect to the WebSocket endpoint. The path can be any valid URL path, such as `/ws`, `/chat`, or `/messages`. This lets you create multiple WebSocket endpoints within the same API mock instance.
 
+![view of a new WebSocket route{1484x176}](docs-img:set-ws-route-path.png)
 
-In Mockoon, a response message is guaranteed for every message sent by a client, unless the client terminates the connection immediately after sending the message.
+By default, a newly created WebSocket endpoint operates in **conversational mode**, where the **server responds to each client message** with an empty message by default, which you can customize. A response is guaranteed for every message sent by the client, unless the client terminates the connection immediately after sending the message.
 
+> 💡 If you have setup **TLS** on your mock server, WebSocket routes will automatically be served via secure endpoints. Instead of `ws://`, use its secure alternative `wss://` when connecting.
 
-To create a WebSocket route, click on the "WebSocket" entry in the add route menu:
+## Creating a WebSocket streaming endpoint
 
-![Add a new WebSocket route{325x306}](docs-img:add-ws-route.png)
+Mockoon offers two streaming modes: **One-to-One streaming** and **Broadcast streaming**. These modes allow you to send messages at regular intervals to connected clients. If neither mode is selected (the default), the endpoint operates in **conversational mode**, where the server responds to each client message.
 
-By default, a newly created WebSocket operates in conversational mode, with the server sending an empty success message `{}` in response to each client message.
+### Choosing a streaming mode
 
-![view of a new WebSocket route{1518x481}](docs-img:new-ws-route.png)
+To implement **One-to-One streaming mode**, select the option labeled "One-to-One Streaming" in the route configuration as shown below:
 
+![One-to-One Streaming option{884x237}](docs-img:toggle-ws-unicast-streaming.png)
 
-> 💡 If you have setup TLS on the mock server, WebSocket routes will also be automatically served via secure endpoints as same as for HTTP routes. So, instead `ws://`, use its secure alterantive `wss://` when connecting.
+Similarly, select the option labeled "Broadcast Streaming" to implement a **broadcasting endpoint**:
 
+![Broadcast Streaming option{884x237}](docs-img:toggle-ws-broadcast-streaming.png)
 
-## Customizing a WebSocket Route
+In broadcasting mode, all clients connected to a particular endpoint will receive identical messages, regardless of their accompanying parameters. Practically, **response rules will be disabled** and have no effect on the response contents. In contrast, in One-to-One streaming mode, response rules will be applied to each client message.
 
-Like HTTP routes, users can specify endpoint path and its related documentation. However, as WebSockets do not operate on the HTTP protocol, there is no option for HTTP method type.
+> 💡 **Multicasting:** You can currently achieve multicasting by configuring multiple distinct endpoints. Each endpoint should be of the broadcast type, and clients must connect to the appropriate endpoint to receive messages intended for that particular group. All clients connected to a given endpoint will receive the same set of messages.
 
-### Creating a streaming endpoint
+#### Specifying the message interval in streaming mode
 
-WebSockets introduce two new configurations for a particular endpoint: streaming mode selection and message push interval.
+When either "One-to-One" or "Broadcasting" mode is in effect, the **message interval field** becomes enabled. This allows you to specify the interval between streaming messages in milliseconds.
 
-Under streaming mode selection, only one of these options can be chosen for a given endpoint, or neither. If neither option is selected (the default), the endpoint operates in conversational mode, where the server responds to each client message.
+Currently, the minimum interval allowed between two streaming messages is 10 milliseconds. This restriction prevents the server from being overwhelmed by the need to produce a large number of messages within a short timeframe.
 
-#### Type of Streaming Mode
+## Customizing your WebSocket route
 
-To implement one-to-one streaming mode, select the option labeled 'One-to-one streaming' as shown below.
+WebSocket endpoints support most of the same customization options as HTTP endpoints. You can use features like [templating](docs:templating/overview), [global variables](docs:variables/global-variables), and [data buckets](docs:data-buckets/overview) to generate dynamic message content. For detailed information, please refer to the respective documentation.
 
-![One-to-One Streaming option{152x77}](docs-img:ws-1to1-streaming.png)
+> 💡 Mockoon will honor the `Content-Type` header to access message content sent by the client while processing rules and responses. Depending on the WebSocket client library being used, users may be able to set the headers when connecting to a WebSocket endpoint. If the headers cannot be set during the connection, the server will treat incoming messages as raw strings.
 
-Similary, select the option with label of 'Broadcast streaming' to implement a broadcasting endpoint.
-
-![Broadcast Streaming option{136x77}](docs-img:ws-broadcast-streaming.png)
-
-> 💡 In Mockoon, broadcasting is endpoint-specific. All clients connected to a particular endpoint will receive identical messages, regardless of their accompanying parameters. In other words, response rules will be disabled and have no effect on response contents.
-
-When none of them are selected, it endpoint will respond for every client message recieved.
-
-> **Multicasting:** Mockoon currently supports multicasting by configuring multiple distinct endpoints. Each should be an endpoint which is a type of broadcast, and clients must connect to the appropriate endpoint to receive messages intended for that particular group. All clients connected to that given endpoint will receive the same set of messages.
-
-#### Specifying the message interval
-
-When either ‘One-to-one’ or ‘Broadcasting’ mode is in-effect, the message interval textbox becomes enabled. This allows you to specify the interval between two streaming messages in milliseconds.
-
-Currently, the minimum interval allowed between two streaming messages is 10 milliseconds. This deliberate restriction prevents the server from being overwhelmed by the need to produce lot of messages within a short timeframe.
-
-
-#### Customizing Messages
-
-Users can modify response messages in a way similar to HTTP routes. WebSockets also offer the ability to customize messages based on headers, query parameters, message bodies, and other available parameters.
-
-> ⚠️ _Note:_ Currently, WebSocket endpoint paths do not support path parameters like those found in HTTP routes. Therefore, response messages cannot be customized based on path variables, and the corresponding rule is hidden. Query parameters can be used instead.
-
-
-Users can still use existing features like [templating](docs:templating/overview), [global variables](docs:variables/global-variables), [data buckets](docs:data-buckets/overview) to manipulate a message content. For detailed information, please refer to the respective documentation.
-
-
-> ⚠️ _Note 2:_ Mockoon still honours the `Content-Type` header to access message content sent by the client while processing rules. Depending on the WebSocket client library being used, a user might be able to set headers when connecting to a WebSocket endpoint. Therefore, if headers cannot be set when connecting to the server, it will treat it as a raw string.
-
-The Headers, Callbacks, and Settings tabs are hidden for a WebSocket endpoint due to their irrelevance in the context of WebSockets.
+Some response menu tabs are hidden for WebSocket endpoints, as they are not relevant in this context. These include the **Headers**, **Callbacks**, and **Settings** tabs.
 
 ## Limitations
 
-There are several limitations with this new WebSocket implementation in Mockoon, but it is expected that those will be addressed one by one in future.
+Some limitations apply to WebSocket endpoints in Mockoon:
 
-  1. Proxying will not be supported for WebSocket endpoints. Therefore, fallback response mode will be unavailable for those endpoints.
-  2. The Logs tab offers limited recording capabilities for WebSocket requests. WebSocket requests sent to unknown routes will not be recorded. Additionally, Mockoon currently does not record subsequent request messages or responses for existing routes.
+- The [**fallback mode**](docs:route-responses/multiple-responses#fallback-mode) (sending the request to the next endpoint or proxied server when no rules match) is not supported for WebSocket endpoints.
+- The [**logs tab**](docs:logging-and-recording/requests-logging) offers limited recording capabilities for WebSocket requests. Requests sent to unknown routes will not be recorded. Additionally, Mockoon currently does not record subsequent request messages or responses for existing routes. This may change in future releases.

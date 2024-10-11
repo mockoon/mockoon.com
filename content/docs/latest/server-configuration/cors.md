@@ -22,7 +22,7 @@ Open the **Environment Settings** by clicking on the tab at the top of the windo
 
 Enable the **Automatically handle OPTIONS pre-flight requests ** by ticking the checkbox:
 
-![tick the CORS checkbox{1098x509}](docs-img:enable-cors.png)
+![tick the CORS checkbox{1098x507}](docs-img:enable-cors.png)
 
 You need to restart the environment for the change to take effect.
 
@@ -46,8 +46,8 @@ Open the **Environment Headers** by clicking on the tab at the top of the window
 
 Then, click on the **Add CORS headers** link:
 
-![Click on the add CORS headers link{1484x137}](docs-img:add-cors-headers.png)
+![Click on the add CORS headers link{1484x136}](docs-img:add-cors-headers.png)
 
 The above headers will be automatically added to your list of headers:
 
-![view cors headers in the list{1484x237}](docs-img:view-cors-headers.png)
+![view cors headers in the list{1484x236}](docs-img:view-cors-headers.png)

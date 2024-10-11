@@ -20,7 +20,7 @@ You can activate the TLS option for each environment independently. Open the **E
 
 Enable the **TLS option** by ticking the checkbox. The option was successfully activated if a yellow lock is displayed next to the environment name.
 
-![tick the TLS checkbox{854x343}](docs-img:enable-tls.png)
+![tick the TLS checkbox{854x342}](docs-img:enable-tls.png)
 
 > 💡 You may need to restart your environment for the change to take effect.
 

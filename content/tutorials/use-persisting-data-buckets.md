@@ -88,7 +88,7 @@ Linking a data bucket to a route response will serve the content of the bucket "
 
 When creating a [**CRUD route**](/docs/latest/api-endpoints/crud-routes/) you must link a data bucket. This feature allows you to **serve** and **manipulate** the **data bucket content** depending on the **CRUD operations**. The CRUD routes follow usual REST conventions: `GET /resources`, `POST /resources`, `PUT /resources/:id`, `DELETE /resources/:id`, etc.
 
-![Using data bucket in a CRUD route](/images/tutorials/use-data-buckets/link-data-bucket-crud-route.png)
+![Using data bucket in a CRUD route{1484x334}](/images/tutorials/use-data-buckets/link-data-bucket-crud-route.png)
 
 > 💡Have a look at our dedicated tutorial to learn [how CRUD routes interact with the data buckets](/tutorials/create-full-rest-api-crud-routes/).
 

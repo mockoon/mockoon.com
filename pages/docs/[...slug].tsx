@@ -107,8 +107,7 @@ export async function getStaticProps({ params }) {
         type: 'topic',
         title: topic.data.title,
         order: topic.data.order || 1000,
-        slug: `/docs/${topic.slug}`,
-        cloudBadge: topic.data.cloudBadge || false
+        slug: `/docs/${topic.slug}`
       };
 
       if (topic.categoryName) {
@@ -235,14 +234,7 @@ export default function Docs(props: {
                       } ${router.asPath.includes(item.slug) ? 'active' : ''}`}
                     >
                       <Link href={`${item.slug}/`} className='list-link'>
-                        <>
-                          {item.title}
-                          {item.cloudBadge && (
-                            <span className='badge text-bg-warning ms-2'>
-                              Cloud
-                            </span>
-                          )}
-                        </>
+                        <>{item.title}</>
                       </Link>
                     </li>
                   ));
@@ -254,11 +246,6 @@ export default function Docs(props: {
                         key={`category${menuItemIndex}`}
                       >
                         {menuItem.title}
-                        {menuItem.categoryName.includes('mockoon-cloud') && (
-                          <span className='badge text-bg-warning ms-2'>
-                            Cloud
-                          </span>
-                        )}
                       </h6>
                     ),
                     itemsHtml

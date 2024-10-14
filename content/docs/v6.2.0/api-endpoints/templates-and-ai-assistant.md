@@ -4,7 +4,6 @@ meta:
   title: Mockoon templates and AI assistant documentation
   description: All you need to know about Mockoon's mock API ready to use JSON templates and AI assistant to generate your own dynamic and realistic templates.
 order: 220
-cloudBadge: true
 ---
 
 # Templates and AI assistant

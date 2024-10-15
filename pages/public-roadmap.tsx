@@ -107,7 +107,43 @@ const tasks: {
     },
     {
       link: 'https://github.com/mockoon/mockoon/issues/1444',
-      title: 'New array includes rule',
+      title: 'New array includes rule operator',
+      cloud: false,
+      target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1452',
+      title: 'New JSON schema validation rule operator',
+      cloud: false,
+      target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1467',
+      title: "New request's method rule",
+      cloud: false,
+      target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1468',
+      title: "New request's path rule",
+      cloud: false,
+      target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1098',
+      title: 'New setData templating helper',
+      cloud: false,
+      target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1445',
+      title: 'File upload metadata support',
+      cloud: false,
+      target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1542',
+      title: 'CRUD ids auto-increment',
       cloud: false,
       target: '_blank'
     },

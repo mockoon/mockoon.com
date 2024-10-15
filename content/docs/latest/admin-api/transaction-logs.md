@@ -24,7 +24,7 @@ To retrieve the transaction logs, call the following endpoint:
   - `page` (optional): the page number to retrieve. Default is 1.
   - `limit` (optional): the number of logs to retrieve per page. Default is 10.
 
-**Examples:**
+**Example request:**
 
 ```http
 GET /mockoon-admin/logs
@@ -32,7 +32,7 @@ GET /mockoon-admin/logs?page=2
 GET /mockoon-admin/logs?page=2&limit=20
 ```
 
-**Example of response ([data model](https://github.com/mockoon/mockoon/blob/main/packages/commons/src/models/server.model.ts#L27-L47)):**
+**Example response ([data model](https://github.com/mockoon/mockoon/blob/main/packages/commons/src/models/server.model.ts#L27-L47)):**
 
 ```json
 [

@@ -14,6 +14,28 @@ order: 802
 
 This endpoint allows you to manage the [environment variables](docs:variables/environment-variables), without restarting the mock server or the application.
 
+## Get an environment variable value
+
+To get the value of an environment variable, call the `/mockoon-admin/env-vars` endpoint with the following parameters:
+
+- **Method:** `GET`
+- **URL:** `/mockoon-admin/env-vars/:key`, where `:key` is the name of the variable, including or not the `MOCKOON_` prefix, or the [custom prefix](docs:variables/environment-variables#changing-or-removing-the-prefix) defined in the application settings.
+
+**Example request:**
+
+```http
+GET /mockoon-admin/env-vars/MOCKOON_ENV_VAR
+```
+
+**Example response:**
+
+```json
+{
+  "key": "MOCKOON_ENV_VAR",
+  "value": "variableValue"
+}
+```
+
 ## Set or update an environment variable
 
 To set or update an environment variable, call the `/mockoon-admin/env-vars` endpoint with the following parameters:
@@ -24,7 +46,7 @@ To set or update an environment variable, call the `/mockoon-admin/env-vars` end
   - `key`: the name of the variable, including the `MOCKOON_` prefix, or the [custom prefix](docs:variables/environment-variables#changing-or-removing-the-prefix) defined in the application settings.
   - `value`: the value of the variable.
 
-**Example:**
+**Example request:**
 
 ```http
 POST /mockoon-admin/env-vars

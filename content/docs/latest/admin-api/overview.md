@@ -52,8 +52,8 @@ const mockoonServerless = new mockoon.MockoonServerless(mockEnv, {
 
 Currently, the admin API allows you to:
 
-- [Purge the state of a running environment](docs:admin-api/server-state)
-- [Manage and purge the global variables](docs:admin-api/global-variables)
+- [Reset the state of a running environment](docs:admin-api/server-state)
+- [Manage the global variables](docs:admin-api/global-variables)
 - [Manage the environment variables](docs:admin-api/environment-variables)
-- [Fetch and purge the transaction logs](docs:admin-api/transaction-logs)
-- [Reset the data buckets](docs:admin-api/data-buckets)
+- [Manage the transaction logs](docs:admin-api/transaction-logs)
+- [Manage the data buckets](docs:admin-api/data-buckets)

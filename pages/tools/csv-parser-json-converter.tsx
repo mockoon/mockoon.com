@@ -3,6 +3,7 @@ import JsonEditor from '../../components/editors/json-editor';
 import TextEditor from '../../components/editors/text-editor';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
+import ToolsCta from '../../components/tools-cta';
 import Layout from '../../layout/layout';
 
 const CsvParserJsonConverter: FunctionComponent = function () {
@@ -144,7 +145,7 @@ Alice,35,Chicago,Data Scientist,Amazon,Seattle,345-678-9012`;
             </div>
 
             <div className='code-editor-sync m-2 fs-1 text-gray-600 align-self-center text-center'>
-              <i className='icon-sync'></i>
+              <i className='icon-arrow_forward'></i>
             </div>
 
             <div className='code-editor-container'>
@@ -177,6 +178,12 @@ Alice,35,Chicago,Data Scientist,Amazon,Seattle,345-678-9012`;
               </tbody>
             </table>
           </div>
+        </div>
+      </section>
+
+      <section className='pb-5 pb-lg-10'>
+        <div className='container'>
+          <ToolsCta />
         </div>
       </section>
 

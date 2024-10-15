@@ -3,6 +3,7 @@ import CodeBlock from '../../components/code-block';
 import JsonEditor from '../../components/editors/json-editor';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
+import ToolsCta from '../../components/tools-cta';
 import Layout from '../../layout/layout';
 import { getValueFromPath } from '../../utils/tools';
 
@@ -127,6 +128,12 @@ const JsonPathPlayground: FunctionComponent = function () {
               <JsonEditor value={extractedContent} />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className='pb-5 pb-lg-10'>
+        <div className='container'>
+          <ToolsCta />
         </div>
       </section>
 

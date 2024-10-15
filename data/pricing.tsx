@@ -33,7 +33,7 @@ export const pricing = {
     deployReqSQuota: 5,
     discount: '🏷️ 2 months free',
     minSeats: 1,
-    maxSeats: 5
+    maxSeats: 10
   },
   ENTERPRISE: {
     MONTHLY: {

@@ -107,21 +107,28 @@ You can invert the **comparison operator** (**!** equals, **!** regex match, etc
 
 ![Rule comparison operator{1177x204}](docs-img:route-response-rules-comparison-operator.png)
 
-Multiple comparison operators are available in each rule:
+Multiple **comparison operators** are available in each rule:
 
 - **equals**: asserts that the targeted property is equal to the **value**.
 - **regex match**: asserts that the targeted property matches the regex **value**.
 - **null**: asserts that the targeted property is null or absent (for **headers** or **cookies**).
 - **empty array**: asserts that the targeted property is an empty array.
 - **array includes**: asserts that the given **value** is present in the targeted property (array).
+- **valid JSON schema**: asserts that the targeted property is a valid JSON schema. The **value** must point to a [data bucket](docs:data-buckets/overview) containing a valid JSON schema (see below).
 
 > 💡 Some comparison operators are not available for all **targets**. For example, the **array includes** operator is not available for **request number** or **request method**. Also, array operators are not available for the "Custom templating" rule type as it always returns a string value.
 
 ### 5. Value
 
+The **value** field is the expected value to compare against the targeted property, it can be a simple text value, a regex, or a JSON schema.
+
+It also **support templating helpers** to create dynamic rules. See the [templating helpers](docs:templating/overview) documentation for more information.
+
 ![Rule value{1177x204}](docs-img:route-response-rules-value.png)
 
-Depending on the comparison operator chosen, **equals** or **regex match**, you can either set a simple text value like "expected value" or any kind of regex. To use a regex, you must write it without the leading and trailing slashes.
+#### Strings and regexes
+
+Depending on the comparison operator chosen, **equals**, **regex match** or **array includes**, you can either set a simple text value like "expected value" or any kind of regex. To use a regex, you must write it without the leading and trailing slashes.
 
 Regex examples:
 `primary|secondary`, `^user1-9`, `UTF-.*`.  
@@ -129,4 +136,6 @@ You can also test for empty values with the following regex: `^$|\s+`.
 
 The **request number** supports simple entries like `1` or `2` but also regexes, allowing you to return a different response for the first 3 calls `^[1-3]$` or failing on odd request indexes `[13579]$`.
 
-> 💡 The **response rule values also support templating helpers** to create dynamic rules. See the [templating helpers](docs:templating/overview) documentation for more information.
+#### JSON schemas
+
+The only exception is the **valid JSON schema** comparison operator. In this case, the **value** must point to a data bucket containing a valid JSON schema. The schema will be used to validate the targeted property using [ajv](https://www.npmjs.com/package/ajv). In this case, the **value** field supports the [object-path](https://www.npmjs.com/package/object-path) syntax to access the schema stored in a data bucket. Examples: `bucketNameOrId`, `bucketNameOrId.propertyName`, etc. The [data bucket documentation](docs:data-buckets/using-data-buckets#storing-json-schemas) provides more information on how to create and use JSON schemas.

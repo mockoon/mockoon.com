@@ -62,3 +62,22 @@ A data bucket can also be directly **linked** to a route response. Linking a dat
 To link a data bucket to a route response, choose "Data" in the body selector and select your data bucket.
 
 ![Using data bucket in a route response{1172x464}](docs-img:link-data-bucket-response.png)
+
+## Storing JSON schemas
+
+A data bucket can also store a **JSON schema**. This schema can be used in the [rules system](docs:route-responses/dynamic-rules#5-value), using the **"valid JSON schema"** operator to validate the targeted property using [ajv](https://www.npmjs.com/package/ajv).
+
+To store a JSON schema in a data bucket, create a new data bucket and paste your JSON schema in the content editor. The schema must be a valid JSON object:
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "age": { "type": "number" }
+  },
+  "required": ["name", "age"]
+}
+```
+
+You will then be able to reference this full schema in a rule's value field (e.g. `dataBucketNameOrId`), or a specific schema's property using the [object-path](https://www.npmjs.com/package/object-path) syntax (e.g. `dataBucketNameOrId.name`).

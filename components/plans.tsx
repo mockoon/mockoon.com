@@ -854,30 +854,37 @@ const PlansView: FunctionComponent<{
             </section>
 
             {showTagline && (
-              <div className='py-8'>
-                <p className='quotation p-5 lead text-gray-700 text-center mb-0'>
-                  Your subscription goes directly towards the development and
-                  maintenance of Mockoon and allows us to keep our tools
-                  independent and open-source.
-                </p>
-                <div className='d-flex align-items-center justify-content-center'>
-                  <div className='avatar avatar-xl'>
-                    <img
-                      className='avatar-img img-thumbnail rounded-circle mr-4'
-                      src='/images/about/guillaume.jpg'
-                      alt='Founder @ Mockoon'
-                      width={128}
-                      height={128}
-                    />
-                  </div>
-                  <div className='ps-5'>
-                    <p className='fs-sm fw-bold mb-0'>Guillaume</p>
-                    <p className='fs-sm text-gray-700 mb-0'>
-                      Founder @ Mockoon
-                    </p>
+              <>
+                <div className='text-center'>
+                  <Link href='/cloud/' className='btn btn-primary-subtle'>
+                    Discover Mockoon Cloud
+                  </Link>
+                </div>
+                <div className='py-8'>
+                  <p className='quotation p-5 lead text-gray-700 text-center mb-0'>
+                    Your subscription goes directly towards the development and
+                    maintenance of Mockoon and allows us to keep our tools
+                    independent and open-source.
+                  </p>
+                  <div className='d-flex align-items-center justify-content-center'>
+                    <div className='avatar avatar-xl'>
+                      <img
+                        className='avatar-img img-thumbnail rounded-circle mr-4'
+                        src='/images/about/guillaume.jpg'
+                        alt='Founder @ Mockoon'
+                        width={128}
+                        height={128}
+                      />
+                    </div>
+                    <div className='ps-5'>
+                      <p className='fs-sm fw-bold mb-0'>Guillaume</p>
+                      <p className='fs-sm text-gray-700 mb-0'>
+                        Founder @ Mockoon
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </>
             )}
           </div>
         </section>

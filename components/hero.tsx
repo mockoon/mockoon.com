@@ -10,6 +10,7 @@ const Hero: FunctionComponent<{
   mainPictureWidth?: number;
   mainPictureHeight?: number;
   mainPictureSkewed?: boolean;
+  children?: React.ReactNode;
 }> = function ({
   title,
   subtitle,
@@ -19,7 +20,8 @@ const Hero: FunctionComponent<{
   mainPictureAlt,
   mainPictureWidth,
   mainPictureHeight,
-  mainPictureSkewed
+  mainPictureSkewed,
+  children
 }) {
   mainPictureSkewed = mainPictureSkewed ?? true;
 
@@ -90,6 +92,7 @@ const Hero: FunctionComponent<{
               </div>
             )}
             {ctaContent}
+            <div className='mt-8'>{children}</div>
           </div>
           {mainPicture && (
             <div className='col-12 col-lg-6 mt-10 mt-lg-0'>

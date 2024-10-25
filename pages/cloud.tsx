@@ -1,5 +1,6 @@
 import AlternatedFeatures from '../components/alternated-features';
 import CompanyLogos from '../components/company-logos';
+import DirectoryRatings from '../components/directory-ratings';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import OssCloudComparison from '../components/oss-cloud-comparison';
@@ -107,7 +108,9 @@ export default function () {
         mainPicture='/images/cloud-hero.svg'
         mainPictureAlt='Mockoon logo in the cloud interconnected with other services'
         mainPictureSkewed={false}
-      />
+      >
+        <DirectoryRatings />
+      </Hero>
 
       <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
         <CompanyLogos />

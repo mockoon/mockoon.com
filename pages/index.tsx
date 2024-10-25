@@ -2,6 +2,7 @@ import { FunctionComponent, useEffect, useState } from 'react';
 import AlternatedFeatures from '../components/alternated-features';
 import Card from '../components/card';
 import CompanyLogos from '../components/company-logos';
+import DirectoryRatings from '../components/directory-ratings';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Quote from '../components/quote';
@@ -178,7 +179,9 @@ const HomePage: FunctionComponent = function () {
         mainPictureAlt='Mockoon screenshot with people working'
         mainPictureWidth={1200}
         mainPictureHeight={783}
-      />
+      >
+        <DirectoryRatings />
+      </Hero>
       <section>
         <div className='container'>
           <Quote colorScheme='warning'>

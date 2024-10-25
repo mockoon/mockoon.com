@@ -32,4 +32,4 @@ Open the **Environment Headers** by clicking on the tab at the top of the window
 
 And add one or more headers by clicking on the "Add header" button at the bottom of the list:
 
-![Add environment header{1347x137}](docs-img:add-environment-header.png)
+![Add environment header{1347x136}](docs-img:add-environment-header.png)

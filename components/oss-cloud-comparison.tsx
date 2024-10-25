@@ -113,7 +113,7 @@ const OssCloudComparison = function () {
                   <i className='icon-clear'></i>
                 </span>
                 <br />
-                Manual file sharing (git, etc.)
+                <small>Manual file sharing (git, etc.)</small>
               </td>
               <td>
                 <span className='text-success fw-bold fs-3 me-2'>
@@ -128,14 +128,14 @@ const OssCloudComparison = function () {
                   <i className='icon-clear'></i>
                 </span>
                 <br />
-                Self-hosting with the CLI and Docker image
+                <small>Self-hosting with the CLI and Docker image</small>
               </td>
               <td>
                 <span className='text-success fw-bold fs-3 me-2'>
                   <i className='icon-check'></i>
                 </span>
                 <br />
-                Online cloud deployments
+                <small>Online cloud deployments</small>
               </td>
             </tr>
             <tr>

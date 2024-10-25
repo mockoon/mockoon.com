@@ -42,7 +42,7 @@ Inside a route response, rules are interpreted by default with the OR logical op
 
 ![Choose the rule operator OR AND{1152x214}](docs-img:route-response-rules-operator.png)
 
-Rules have four parts:
+Rules have five parts:
 
 - a **target**
 - a **property name or path**
@@ -57,15 +57,18 @@ Rules have four parts:
 In the dropdown menu you can choose between:
 
 - the **request body** value (full raw content or one of its properties if request's `Content-Type` is either `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`).
-- the value of a **query parameter**.
+- the value of a **request's query parameter**.
 - the value of a **request header**.
 - the value of a **request cookie**.
 - the value of a [**route parameter**](docs:api-endpoints/routing#route-parameters).
+- the value of the **request path**, always starting with a `/` (e.g. /path/section).
+- the value of the **request method** in lowercase (e.g. get, post, put, delete, patch, head, options).
+- the **request number** index starting at 1 (you can reset the request number by using the [state purge admin API](docs:admin-api/server-state)).
 - the value of a [**global variable**](docs:variables/global-variables).
 - the value of a [**data bucket content**](docs:data-buckets/overview).
-- the **request number** index starting at 1 (you can reset the request number by using the [state purge admin API](docs:admin-api/server-state)).
+- **custom templating** (see the [templating helpers](docs:templating/overview) documentation).
 
-### 2. Property name or path
+### 2. Target's name or path, or template
 
 ![Rule property{1177x204}](docs-img:route-response-rules-property.png)
 
@@ -81,9 +84,12 @@ This field supports [templating helpers](docs:templating/overview) to dynamicall
 - **headers**: a header name like `Accept` or `Content-Type`.
 - **cookies**: the cookie name like `Session-id`.
 - **route parameter**: a route parameter name without the colon (":"), `:userId` becoming `userId`.
+- **request path**: _no property or path can be provided here_.
+- **request method**: _no property or path can be provided here_.
+- **request number**: _no property or path can be provided here_.
 - **global variable**: a [global variable](docs:variables/global-variables) name like `myVar`. You can use a path to access one of its properties if the variable is storing arrays or objects. Two syntaxes are supported, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `myVar.key\.with\.dot`. Examples: `myVar.property.subProperty`, `myVar.property.0.subProperty` or `$.myVar.property`.
 - **data bucket content**: a [data bucket](docs:data-buckets/overview) name like `myData`. You can use a path to access one of its properties if the bucket is storing arrays or objects. Two syntaxes are supported, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `myData.key\.with\.dot`. Examples: `myData.property.subProperty`, `myData.property.0.subProperty` or `$.myData.property`.
-- **request number**: _nothing has to be provided here for the request number_.
+- **custom templating**: custom templating helpers like `{{urlParam 'param'}}`, `{{header 'x-custom-header'}}`, `{{body 'property'}}`, `{{jwtPayload (header 'Authorization') 'sub'}}`, etc. The result of the templating helper will be a **string** that will be compared to the rule value.
 
 For **body** and **query string**, if the property is an array, Mockoon will automatically check in the array if at least one item matches the value.
 
@@ -101,18 +107,28 @@ You can invert the **comparison operator** (**!** equals, **!** regex match, etc
 
 ![Rule comparison operator{1177x204}](docs-img:route-response-rules-comparison-operator.png)
 
-Multiple comparison operators are available in each rule:
+Multiple **comparison operators** are available in each rule:
 
 - **equals**: asserts that the targeted property is equal to the **value**.
 - **regex match**: asserts that the targeted property matches the regex **value**.
 - **null**: asserts that the targeted property is null or absent (for **headers** or **cookies**).
 - **empty array**: asserts that the targeted property is an empty array.
+- **array includes**: asserts that the given **value** is present in the targeted property (array).
+- **valid JSON schema**: asserts that the targeted property is a valid JSON schema. The **value** must point to a [data bucket](docs:data-buckets/overview) containing a valid JSON schema (see below).
+
+> 💡 Some comparison operators are not available for all **targets**. For example, the **array includes** operator is not available for **request number** or **request method**. Also, array operators are not available for the "Custom templating" rule type as it always returns a string value.
 
 ### 5. Value
 
+The **value** field is the expected value to compare against the targeted property, it can be a simple text value, a regex, or a JSON schema.
+
+It also **support templating helpers** to create dynamic rules. See the [templating helpers](docs:templating/overview) documentation for more information.
+
 ![Rule value{1177x204}](docs-img:route-response-rules-value.png)
 
-Depending on the comparison operator chosen, **equals** or **regex match**, you can either set a simple text value like "expected value" or any kind of regex. To use a regex, you must write it without the leading and trailing slashes.
+#### Strings and regexes
+
+Depending on the comparison operator chosen, **equals**, **regex match** or **array includes**, you can either set a simple text value like "expected value" or any kind of regex. To use a regex, you must write it without the leading and trailing slashes.
 
 Regex examples:
 `primary|secondary`, `^user1-9`, `UTF-.*`.  
@@ -120,4 +136,6 @@ You can also test for empty values with the following regex: `^$|\s+`.
 
 The **request number** supports simple entries like `1` or `2` but also regexes, allowing you to return a different response for the first 3 calls `^[1-3]$` or failing on odd request indexes `[13579]$`.
 
-> 💡 The **response rule values also support templating helpers** to create dynamic rules. See the [templating helpers](docs:templating/overview) documentation for more information.
+#### JSON schemas
+
+The only exception is the **valid JSON schema** comparison operator. In this case, the **value** must point to a data bucket containing a valid JSON schema. The schema will be used to validate the targeted property using [ajv](https://www.npmjs.com/package/ajv). In this case, the **value** field supports the [object-path](https://www.npmjs.com/package/object-path) syntax to access the schema stored in a data bucket. Examples: `bucketNameOrId`, `bucketNameOrId.propertyName`, etc. The [data bucket documentation](docs:data-buckets/using-data-buckets#storing-json-schemas) provides more information on how to create and use JSON schemas.

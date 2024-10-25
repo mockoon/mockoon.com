@@ -10,12 +10,13 @@ order: 501
 
 ---
 
-In addition to Handlebars' built-in helpers, Mockoon offers the following helpers:
+In addition to Handlebars' built-in helpers (`if`, `each`, etc., for more information, please have a look at [Handlebars' documentation](https://handlebarsjs.com/guide/builtin-helpers.html#if)), Mockoon offers the following helpers:
 
-| Block helpers       | Data buckets          |
-| ------------------- | --------------------- |
-| [`repeat`](#repeat) | [`data`](#data)       |
-| [`switch`](#switch) | [`dataRaw`](#dataraw) |
+| Block helpers       | [Data buckets](docs:data-buckets/overview) manipulation |
+| ------------------- | ------------------------------------------------------- |
+| [`repeat`](#repeat) | [`data`](#data)                                         |
+| [`switch`](#switch) | [`dataRaw`](#dataraw)                                   |
+|                     | [`setData`](#setdata)                                   |
 
 | Arrays              |                       | Objects             |
 | ------------------- | --------------------- | ------------------- |
@@ -44,21 +45,21 @@ In addition to Handlebars' built-in helpers, Mockoon offers the following helper
 | [`lowercase`](#lowercase) | [`parseInt`](#parseint) | [`date`](#date)                   | [`base64Decode`](#base64decode) |
 | [`uppercase`](#uppercase) | [`padStart`](#padstart) | [`time`](#time)                   | [`objectId`](#objectid)         |
 | [`split`](#split)         | [`padEnd`](#padend)     | [`dateFormat`](#dateformat)       |                                 |
-| [`stringify`](#stringify) | [`eq`](#eq)             |                                   |                                 |
+| [`stringify`](#stringify) | [`eq`](#eq)             | [`isValidDate`](#isvaliddate)     |                                 |
 | [`jsonParse`](#jsonparse) |                         |                                   |                                 |
 
-| [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                         |
-| --------------------------------------------------- | ----------------------------- | ----------------------- |
-| [`int`](#int)                                       | [`street`](#street)           | [`hexColor`](#hexcolor) |
-| [`float`](#float)                                   | [`city`](#city)               | [`guid`](#guid)         |
-| [`boolean`](#boolean)                               | [`country`](#country)         | [`ipv4`](#ipv4)         |
-| [`title`](#title)                                   | [`countryCode`](#countrycode) | [`ipv6`](#ipv6)         |
-| [`firstName`](#firstname)                           | [`zipcode`](#zipcode)         | [`lorem`](#lorem)       |
-| [`lastName`](#lastname)                             | [`postcode`](#postcode)       |                         |
-| [`company`](#company)                               | [`lat`](#lat)                 |                         |
-| [`domain`](#domain)                                 | [`long`](#long)               |                         |
-| [`tld`](#tld)                                       | [`phone`](#phone)             |                         |
-| [`email`](#email)                                   | [`color`](#color)             |                         |
+| [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                          |
+| --------------------------------------------------- | ----------------------------- | ------------------------ |
+| [`int`](#int)                                       | [`street`](#street)           | [`hexColor`](#hexcolor)  |
+| [`float`](#float)                                   | [`city`](#city)               | [`guid/uuid`](#uuidguid) |
+| [`boolean`](#boolean)                               | [`country`](#country)         | [`ipv4`](#ipv4)          |
+| [`title`](#title)                                   | [`countryCode`](#countrycode) | [`ipv6`](#ipv6)          |
+| [`firstName`](#firstname)                           | [`zipcode`](#zipcode)         | [`lorem`](#lorem)        |
+| [`lastName`](#lastname)                             | [`postcode`](#postcode)       |                          |
+| [`company`](#company)                               | [`lat`](#lat)                 |                          |
+| [`domain`](#domain)                                 | [`long`](#long)               |                          |
+| [`tld`](#tld)                                       | [`phone`](#phone)             |                          |
+| [`email`](#email)                                   | [`color`](#color)             |                          |
 
 ## repeat
 
@@ -166,6 +167,39 @@ Get the **raw** value (array, object, etc.) at a given `path` from a [data bucke
 {{#if (dataRaw 'bucketNameOrId' 'path.to.boolean.property')}}
   value
 {{/if}}
+```
+
+## setData
+
+Set or modify the value at a given path in a [data bucket](docs:data-buckets/overview) selected by ID or name. This helper can perform various operations such as setting, pushing, deleting, incrementing, decrementing, and inverting values.
+
+- The `path` supports the [object-path](https://www.npmjs.com/package/object-path) syntax. When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
+  Please note that a value can be set at the path if the data bucket contains valid JSON.
+- The full data bucket content (array, object, etc.) can be modified when the `path` is omitted (`{{setData 'operation' 'ID' '' 'value'}}`).
+- Available operations are `set`, `push`, `del`, `inc`, `dec`, and `invert`:
+  - `set`: Set a new value at the root level (path omitted) or at the specified path. Requires a new value.
+  - `push`: Push a new value to an array at the root level (path omitted) or at the specified path. Requires a new value and the target to be an array.
+  - `del`: Delete a value at the root level (path omitted) or at the specified path. No new value required.
+  - `inc`: Increment a number at the root level (path omitted) or at the specified path. Requires a number to increment by. If the value is omitted, the increment will be by 1.
+  - `dec`: Decrement a number at the root level (path omitted) or at the specified path. Requires a number to decrement by. If the value is omitted, the decrement will be by 1.
+  - `invert`: Invert a boolean at the root level (path omitted) or at the specified path. No new value required.
+
+| Arguments (ordered) | Type   | Description                                                         |
+| ------------------- | ------ | ------------------------------------------------------------------- |
+| 0                   | string | Operation to perform (`set`, `push`, `del`, `inc`, `dec`, `invert`) |
+| 1                   | string | ID or name of the data bucket                                       |
+| 2                   | string | Path to the data bucket property (optional)                         |
+| 3                   | any    | New value (optional for `invert`, `inc`, `dec` and `del`)           |
+
+**Examples**
+
+```handlebars
+{{setData 'set' 'bucketNameOrId' 'path.to.property' 'newValue'}}
+{{setData 'push' 'bucketNameOrId' 'path.to.array' 'newValue'}}
+{{setData 'del' 'bucketNameOrId' 'path.to.property'}}
+{{setData 'inc' 'bucketNameOrId' 'path.to.property' 2}}
+{{setData 'dec' 'bucketNameOrId' 'path.to.property' 2}}
+{{setData 'invert' 'bucketNameOrId' 'path.to.property'}}
 ```
 
 ## array
@@ -294,6 +328,10 @@ Return a filtered array. This helper can be used with data buckets, use the [dat
 **Structure**
 
 ```handlebars
+<!-- Filter on object keys -->
+{{ filter (array (object key='value1') (object key='value2')) (object key='value1') }}
+<!-- Filter on nested object keys -->
+{{ filter (array (object key=(object prop='value1')) (object key=(object prop='value2'))) (object key=(object prop='value1')) }}
 <!-- filter query base OR structure -->
 {{ filter (array 1 2 3 ... ) c1 c2 c3 ... }}
 result: c1 OR c2 OR c3
@@ -1071,6 +1109,29 @@ Return a formatted date (using [date-fns v3 `format` function](https://date-fns.
 {{dateFormat (faker 'date.recent') 'yyyy'}}
 ```
 
+## isValidDate
+
+Validate a date using a combination of date-fns v3 [`toDate`](https://date-fns.org/v3.6.0/docs/toDate) and [`isValid`](https://date-fns.org/v3.6.0/docs/isValid) functions. Supports various syntaxes for the date parameter (string, number, Date object): "2024-01-01", "2021-01-01T00:00:00.000Z", 1727272454000, etc.
+
+| Arguments (ordered) | Type                     | Description      |
+| ------------------- | ------------------------ | ---------------- |
+| 0                   | string \| number \| Date | Date to validate |
+
+**Examples**
+
+```handlebars
+<!-- Valid -->
+{{isValidDate '2022-01-01'}}
+<!-- Valid -->
+{{isValidDate '2022-01-01T00:00:00.000Z'}}
+<!-- Invalid -->
+{{isValidDate '2022-01-50'}}
+<!-- Valid (unix time ms) -->
+{{isValidDate 1727272454000}}
+<!-- Validate a date coming from another helper -->
+{{isValidDate (queryParam 'date')}}
+```
+
 ## int
 
 Return a random integer. Alias of `faker 'number.int`.
@@ -1295,13 +1356,14 @@ Return a random hexadecimal color code.
 {{hexColor}}
 ```
 
-## guid
+## uuid/guid
 
-Return a random GUID. Alias of `faker 'string.uuid'`.
+Return a random UUID. Alias of `faker 'string.uuid'`.
 
 **Examples:**
 
 ```handlebars
+{{uuid}}
 {{guid}}
 ```
 

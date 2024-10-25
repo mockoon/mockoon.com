@@ -13,7 +13,8 @@ const cloudFeatures = [
       '<span class="text-primary">Collaborate</span> with your team in real time',
     description:
       'Invite your team members to collaborate on your mock APIs in real time. Avoid conflicts and keep your team in sync. ',
-    imgSrc: '/images/mockoon-cloud/mockoon-cloud-real-time-collaboration.png',
+    imgSrc:
+      '/images/mockoon-cloud/mockoon-cloud-real-time-collaboration-presence.png',
     imgAlt: 'mockoon application screenshot showing users collaborating',
     cta: 'Read the documentation',
     ctaLink:

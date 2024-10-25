@@ -26,13 +26,25 @@ Mockoon offers the following helpers which can return information relative to th
 
 ## body
 
-Get the value at a given `path` from the request body if the entering `Content-Type` is set to `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`. This helper is designed to retrieve data to be served in a response. To reuse the retrieved data with other helpers (`each`, `if`, etc.), use the [`bodyRaw` helper](#bodyraw) below.
+Get the value at a given `path` from the request's body if the `Content-Type` is set to `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`. This helper is designed to retrieve data, **stringify** it, it order to use it directly in a response. To reuse the retrieved data (strings, booleans, arrays, etc.) with other helpers (`each`, `if`, etc.), use the [`bodyRaw` helper](#bodyraw) below.
 
-- The `path` supports two syntaxes, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
-  Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:response-configuration/xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties.  
-  Please also note that `multipart/form-data` only supports fields. Uploaded files will be ignored.
+- The `path` supports two syntaxes, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.
+- XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Please refer to this [page](docs:response-configuration/xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties.
+- `multipart/form-data` supports fields and files. Uploaded files will not be stored, but their metadata (`filename`, `mimetype`, `size`) will be available in the request body:
+
+  ```json
+  {
+    "field1": "value1",
+    "file1": {
+      "filename": "file1.txt",
+      "mimetype": "text/plain",
+      "size": 1234
+    }
+  }
+  ```
+
 - Full objects or arrays can be retrieved by the helper.
-- The full request's raw body can also be fetched when the `path` is omitted (`{{body}}`) independently from the request's `Content-Type`.
+- The full request's body can also be fetched when the `path` is omitted (`{{body}}`) independently from the request's `Content-Type`.
 - If no value is present at the requested `path`, the default value will be used.
 - A third parameter (boolean) can be set to true to returns a stringified value even if it's a primitive.
 
@@ -62,11 +74,23 @@ Get the value at a given `path` from the request body if the entering `Content-T
 
 ## bodyRaw
 
-Get the **raw** value at a given `path` from the request body if the entering `Content-Type` is set to `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`. This "raw" helper is designed to work with other helpers (`each`, `if`, etc.). To directly use the retrieved data in the response, use the [`body` helper](#body) above.
+Get the **raw** value (string, boolean, array, etc.) at a given `path` from the request's body if the `Content-Type` is set to `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`. This "raw" helper is designed to give you access to the values to use them with other helpers (`each`, `if`, etc.). To directly use the stringified data in the response, use the [`body` helper](#body) above.
 
-- The `path` supports two syntaxes, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.  
-  Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:response-configuration/xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties.  
-  Please also note that `multipart/form-data` only supports fields. Uploaded files will be ignored.
+- The `path` supports two syntaxes, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.
+- XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. PLease refer to this [page](docs:response-configuration/xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties.
+- `multipart/form-data` only supports fields and files. Uploaded files will not be stored, but their metadata (`filename`, `mimetype`, `size`) will be available in the request body:
+
+  ```json
+  {
+    "field1": "value1",
+    "file1": {
+      "filename": "file1.txt",
+      "mimetype": "text/plain",
+      "size": 1234
+    }
+  }
+  ```
+
 - Full objects or arrays can be retrieved by the helper.
 - The full request's raw body can also be fetched when the `path` is omitted (`{{bodyRaw}}`) independently from the request's `Content-Type`.
 - If no value is present at the requested `path`, the default value will be used.

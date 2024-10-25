@@ -22,7 +22,7 @@ The pre-generated templates can be found in the desktop application.
 
 To use a template in your routes, click on the **"Assistants and templates"** entry in the route creation menu to open the templates dialog:
 
-![modal with templates list{498x304}](docs-img:pre-generated-templates-modal.png)
+![modal with templates list{498x335}](docs-img:pre-generated-templates-modal.png)
 
 Then, select the template you want to use and either copy-paste its content manually or click on one of the two buttons to create a new **GET endpoint** or a **CRUD endpoint with a data bucket**.
 

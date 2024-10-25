@@ -186,3 +186,16 @@ By default, CRUD endpoints will use the `id` property to identify objects in an 
 As you can see, the data bucket content is generated once when the server starts, and its state persists between calls. You can reset the bucket to its initial state by restarting your mock API.
 
 > ⚠️ The data bucket generated content is not persisted on disk to make testing multiple scenarios easier.
+
+## Manipulating data buckets content programmatically
+
+You can also **manipulate data buckets programmatically** using the [`setData`](docs:templating/mockoon-helpers#setdata) templating helper. This helper allows you to **update** the content of a data bucket, **push** a new value to an array, **delete** a property, **increment** or **decrement** a number, or **invert** a boolean. It can be used anywhere templating helpers are supported and is a good complement to CRUD routes to create complex scenarios.
+
+```handlebars
+{{setData 'set' 'bucketNameOrId' 'path.to.property' 'newValue'}}
+{{setData 'push' 'bucketNameOrId' 'path.to.array' 'newValue'}}
+{{setData 'del' 'bucketNameOrId' 'path.to.property'}}
+{{setData 'inc' 'bucketNameOrId' 'path.to.property' 2}}
+{{setData 'dec' 'bucketNameOrId' 'path.to.property' 2}}
+{{setData 'invert' 'bucketNameOrId' 'path.to.property'}}
+```

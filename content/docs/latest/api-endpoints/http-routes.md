@@ -16,7 +16,7 @@ order: 210
 
 To create a new HTTP route, click on the "HTTP route" entry in the add route menu:
 
-![Add a new HTTP route{498x304}](docs-img:add-http-route.png)
+![Add a new HTTP route{498x335}](docs-img:add-http-route.png)
 
 A new route will be created with a default 200 status code and an empty body. You can then customize it to fit your needs.
 

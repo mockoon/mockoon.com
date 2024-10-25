@@ -328,6 +328,10 @@ Return a filtered array. This helper can be used with data buckets, use the [dat
 **Structure**
 
 ```handlebars
+<!-- Filter on object keys -->
+{{ filter (array (object key='value1') (object key='value2')) (object key='value1') }}
+<!-- Filter on nested object keys -->
+{{ filter (array (object key=(object prop='value1')) (object key=(object prop='value2'))) (object key=(object prop='value1')) }}
 <!-- filter query base OR structure -->
 {{ filter (array 1 2 3 ... ) c1 c2 c3 ... }}
 result: c1 OR c2 OR c3

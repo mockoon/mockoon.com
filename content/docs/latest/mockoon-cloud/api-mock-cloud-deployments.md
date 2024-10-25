@@ -54,6 +54,7 @@ The cloud deployment feature does not support the following features:
 - External files linked to the environment are not uploaded and served (e.g. environment's certificates or files used in the "File" response body type). File serving is generally not supported in the cloud environment.
 - The proxy mode will be disabled if it points to a local address or IP (e.g. `localhost` or `127.0.0.1`).
 - Callbacks pointing to a local address or IP (e.g. `localhost` or `127.0.0.1`) will be disabled.
+- WebSockets are currently not supported but will be added in a future version.
 
 ## Major versions migrations
 

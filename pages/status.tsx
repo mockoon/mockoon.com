@@ -13,6 +13,13 @@ const incidents: {
   status: 'inprogress' | 'resolved';
 }[] = [
   {
+    title: 'All services - Schedule downtime, v9.0.0 release',
+    desc: 'All services will be restarted to apply the v9.0.0 release. The downtime is expected to last less than 5 minutes. We apologize for the inconvenience.',
+    dateStart: '2024-10-25 15:08:00 UTC',
+    dateEnd: '2024-10-25 15:11:00 UTC',
+    status: 'resolved'
+  },
+  {
     title: 'Cloud deployments - Schedule downtime, security fix',
     desc: 'Cloud deployments servers were restarted to apply a security fix. The downtime is expected to last 5 to 10 minutes. We apologize for the inconvenience.',
     dateStart: '2024-09-17 13:30:00 UTC',

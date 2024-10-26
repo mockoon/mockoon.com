@@ -69,15 +69,9 @@ You can also retrieve the route parameters by using the `{{urlParam 'paramName'}
 
 Routes **must** be declared without query parameters as they are not part of the route path. They can only be added to the request when calling an endpoint.
 
-Query parameters can be retrieved by using the `{{queryParam 'paramName'}}` [templating helper](docs:templating/mockoon-request-helpers#queryparam).
+Query parameters can be retrieved with the **[`queryParam`](docs:/docs/latest/templating/mockoon-request-helpers/#queryparam) and [`queryParamRaw`](docs:/docs/latest/templating/mockoon-request-helpers/#queryparamraw) helpers** and are available in the **[response rules](docs:route-responses/dynamic-rules)** to check their content and serve different responses based on them.
 
-#### Query parameters arrays and objects
-
-Mockoon is using [qs](https://www.npmjs.com/package/qs) to parse the query string in a object usable in our templating or rules systems. It supports both arrays and objects.
-To pass arrays and objects in the query string of a request, you must use the following syntax:
-
-- for objects: `?param1=test&obj[prop1]=value`.
-- for arrays: `?param1=test&array[]=value1&array[]=value2` or `?param1=test&array[0]=value1&array[1]=value2` or `?param1=test&array=value1,value2`.
+**Arrays and objects are supported** in the query string. For more information, please refer to the [query parameters documentation](docs:requests/query-parameters).
 
 ### Temporarily disable a route
 

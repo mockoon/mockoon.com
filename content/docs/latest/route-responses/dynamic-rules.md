@@ -78,9 +78,11 @@ This field supports [templating helpers](docs:templating/overview) to dynamicall
   - keep empty to match against the full raw body content.
   - use a path to access one of its properties. Two syntaxes are supported, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.
     Fetching object properties is compatible with request's bodies of `Content-Type` `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`.  
-    _Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:response-configuration/xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties._  
+    _Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:requests/supported-body-formats#xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties._  
     _Please also note that `multipart/form-data` only supports fields. Uploaded files will be ignored._
+    > 📘 Check the [supported requests body formats](docs:requests/supported-body-formats) documentation for more information on how the request body is parsed.
 - **query parameter**: either provide a property name like `filter` or a path if the query parameter is an object `filter.primary`.
+  > 📘 Check the [query parameters](docs:requests/query-parameters) documentation for more information on how they are parsed.
 - **headers**: a header name like `Accept` or `Content-Type`.
 - **cookies**: the cookie name like `Session-id`.
 - **route parameter**: a route parameter name without the colon (":"), `:userId` becoming `userId`.

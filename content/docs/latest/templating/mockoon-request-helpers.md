@@ -29,7 +29,7 @@ Mockoon offers the following helpers which can return information relative to th
 Get the value at a given `path` from the request's body if the `Content-Type` is set to `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`. This helper is designed to retrieve data, **stringify** it, it order to use it directly in a response. To reuse the retrieved data (strings, booleans, arrays, etc.) with other helpers (`each`, `if`, etc.), use the [`bodyRaw` helper](#bodyraw) below.
 
 - The `path` supports two syntaxes, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.
-- XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Please refer to this [page](docs:response-configuration/xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties.
+- XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Please refer to this [page](docs:requests/supported-body-formats#xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties.
 - `multipart/form-data` supports fields and files. Uploaded files will not be stored, but their metadata (`filename`, `mimetype`, `size`) will be available in the request body:
 
   ```json
@@ -47,6 +47,8 @@ Get the value at a given `path` from the request's body if the `Content-Type` is
 - The full request's body can also be fetched when the `path` is omitted (`{{body}}`) independently from the request's `Content-Type`.
 - If no value is present at the requested `path`, the default value will be used.
 - A third parameter (boolean) can be set to true to returns a stringified value even if it's a primitive.
+
+> 📘 Check the [supported requests body formats](docs:requests/supported-body-formats) documentation for more information on how the request body is parsed.
 
 > 🛠️ Use our online [JSONPath and object-path evaluator](/tools/json-object-path-evaluator/) to test your JSONPath or object-path syntaxes and view the results in real-time.
 
@@ -77,7 +79,7 @@ Get the value at a given `path` from the request's body if the `Content-Type` is
 Get the **raw** value (string, boolean, array, etc.) at a given `path` from the request's body if the `Content-Type` is set to `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`. This "raw" helper is designed to give you access to the values to use them with other helpers (`each`, `if`, etc.). To directly use the stringified data in the response, use the [`body` helper](#body) above.
 
 - The `path` supports two syntaxes, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.
-- XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. PLease refer to this [page](docs:response-configuration/xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties.
+- XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. PLease refer to this [page](docs:requests/supported-body-formats#xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties.
 - `multipart/form-data` only supports fields and files. Uploaded files will not be stored, but their metadata (`filename`, `mimetype`, `size`) will be available in the request body:
 
   ```json
@@ -95,6 +97,8 @@ Get the **raw** value (string, boolean, array, etc.) at a given `path` from the 
 - The full request's raw body can also be fetched when the `path` is omitted (`{{bodyRaw}}`) independently from the request's `Content-Type`.
 - If no value is present at the requested `path`, the default value will be used.
 - This helper allows the use of `body` within handlebars' helpers such as `{{#each}}` and `{{#if}}`.
+
+> 📘 Check the [supported requests body formats](docs:requests/supported-body-formats) documentation for more information on how the request body is parsed.
 
 > 🛠️ Use our online [JSONPath and object-path evaluator](/tools/json-object-path-evaluator/) to test your JSONPath or object-path syntaxes and view the results in real-time.
 

@@ -91,4 +91,4 @@ Starting with this version, you can load them directly in Mockoon by clicking on
 
 ## XML support
 
-Last but not least, we added [support for the XML format](docs:response-configuration/xml-support). It means that you can now reuse part of the entering XML bodies with various [templating helpers](docs:templating/overview) (`body`, etc.) and [define rules](docs:route-responses/dynamic-rules) to serve different responses depending on the XML content.
+Last but not least, we added [support for the XML format](docs:requests/supported-body-formats#xml-support). It means that you can now reuse part of the entering XML bodies with various [templating helpers](docs:templating/overview) (`body`, etc.) and [define rules](docs:route-responses/dynamic-rules) to serve different responses depending on the XML content.

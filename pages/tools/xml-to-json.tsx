@@ -95,7 +95,11 @@ const XmlToJson: FunctionComponent = function () {
               </p>
               <p>
                 Mockoon supports JSON in all its systems but is also capable of{' '}
-                <Link href={'/docs/latest/response-configuration/xml-support/'}>
+                <Link
+                  href={
+                    '/docs/latest/requests/supported-body-formats/#xml-support'
+                  }
+                >
                   parsing the XML content
                 </Link>{' '}
                 from entering requests. Mockoon uses the{' '}

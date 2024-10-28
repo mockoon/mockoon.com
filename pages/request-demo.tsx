@@ -22,33 +22,31 @@ const RequestDemo: FunctionComponent = function () {
               <p>
                 <strong>Book a Free 30-Minute Demo with Our Founder</strong>
               </p>
-              <p>
-                Join our founder for a personalized session to:
-                <ul>
-                  <li>
-                    <strong>Identify your API development challenges</strong>{' '}
-                    and explore how Mockoon Cloud can solve them.
-                  </li>
-                  <li>
-                    <strong>
-                      Get a hands-on demo of Mockoon Cloud's features
-                    </strong>
-                    , including real-time team collaboration and cloud
-                    deployments.
-                  </li>
-                  <li>
-                    <strong>
-                      Understand best practices for using Mockoon Cloud
-                    </strong>{' '}
-                    with your team and scaling your projects.
-                  </li>
-                  <li>
-                    <strong>Ask any questions you have about features</strong>,
-                    integrations, and how Mockoon Cloud can support your
-                    specific needs.
-                  </li>
-                </ul>
-              </p>
+              <p>Join our founder for a personalized session to: </p>
+              <ul>
+                <li>
+                  <strong>Identify your API development challenges</strong> and
+                  explore how Mockoon Cloud can solve them.
+                </li>
+                <li>
+                  <strong>
+                    Get a hands-on demo of Mockoon Cloud's features
+                  </strong>
+                  , including real-time team collaboration and cloud
+                  deployments.
+                </li>
+                <li>
+                  <strong>
+                    Understand best practices for using Mockoon Cloud
+                  </strong>{' '}
+                  with your team and scaling your projects.
+                </li>
+                <li>
+                  <strong>Ask any questions you have about features</strong>,
+                  integrations, and how Mockoon Cloud can support your specific
+                  needs.
+                </li>
+              </ul>
             </div>
           </div>
           <iframe

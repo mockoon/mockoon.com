@@ -94,6 +94,8 @@ export type ArticleData = {
   nextText?: string;
   // hide article from the list of tutorials
   hidden?: boolean;
+  // will automatically add a paragraph with buttons to download the demo environment
+  mockApiFile?: string;
 };
 
 export type ArticleList = {
@@ -113,10 +115,4 @@ export type QuotationData = {
   author: string;
   authorRole: string;
   pictureUrl: string;
-};
-
-export type SponsoringMessageData = {
-  type: '##sponsoring##';
-  text: string;
-  link: string;
 };

@@ -8,7 +8,7 @@ image: tutorial-getting-started-mockoon-cloud.png
 imageAlt: Mockoon logo in a rocket
 imageWidth: 1200
 imageHeight: 400
-order: 60
+order: 62
 ---
 
 In this tutorial, we will learn how to **get started with [Mockoon Cloud](/cloud/)**, a cloud-based service that allows you to **collaborate on your mock APIs with your team**, **deploy your mock APIs to the cloud**, and **generate HTTP endpoints with our AI assistant**.

@@ -176,7 +176,10 @@ const AccountInfo: FunctionComponent = function () {
                           <h4 className='mb-0'>Profile</h4>
                           <small className='text-gray-700'>
                             The display name will be used in the desktop
-                            application when using team collaboration
+                            application when using{' '}
+                            <Link href='/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/#team-collaboration-and-conflict-handling'>
+                              team collaboration
+                            </Link>
                           </small>
                         </div>
                       </div>

@@ -56,6 +56,8 @@ However, some parts of the environment definition cannot be edited simultaneousl
 
 ![Presence indicators{668x157}](/images/docs/static/mockoon-cloud/data-synchronization-team-collaboration/presence-indicators.png)
 
+> 💡 You can customize your display name in the [application settings](/account/info/) to make it easier for your team members to identify you.
+
 ## Offline editing
 
 Mockoon's synchronization and collaboration features are primarily designed to work while being **online**. Offline editing works to some extent, but it is **not recommended to simultaneously edit** the same environment while being offline.

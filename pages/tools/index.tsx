@@ -130,6 +130,18 @@ const tools = [
       }
     ],
     imageSrc: '/images/illustrations/markdown-to-html.svg'
+  },
+  {
+    title: 'Passwords and random strings generator',
+    description:
+      'Generate cryptographically secure random passwords and strings',
+    links: [
+      {
+        src: '/tools/password-generator/',
+        text: 'Generate'
+      }
+    ],
+    imageSrc: '/images/illustrations/password-string-generator.svg'
   }
 ];
 

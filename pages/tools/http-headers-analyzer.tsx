@@ -674,25 +674,25 @@ Accept-Language: en-US`;
                 automatically extract the header names and display their
                 descriptions and examples.
               </p>
+              <h3 className='mt-6 fw-medium'>HTTP headers</h3>
+              <p>
+                HTTP headers are the core part of HTTP requests and responses.
+                They carry information about the client, server, request, and
+                response. They are key-value pairs that are separated by a
+                colon. The header name is case-insensitive, while the header
+                value is case-sensitive. Headers are used to pass additional
+                information between the client and server. They can be divided
+                into two categories: request headers and response headers.
+              </p>
+              <p>
+                Request headers are sent by the client to the server, while
+                response headers are sent by the server to the client. Some
+                headers are common to both requests and responses, while others
+                are specific to either requests or responses. Headers can be
+                used to control caching, authentication, security, and other
+                aspects of the HTTP protocol.
+              </p>
             </div>
-            <h3 className='mt-6 fw-medium'>HTTP headers</h3>
-            <p>
-              HTTP headers are the core part of HTTP requests and responses.
-              They carry information about the client, server, request, and
-              response. They are key-value pairs that are separated by a colon.
-              The header name is case-insensitive, while the header value is
-              case-sensitive. Headers are used to pass additional information
-              between the client and server. They can be divided into two
-              categories: request headers and response headers.
-            </p>
-            <p>
-              Request headers are sent by the client to the server, while
-              response headers are sent by the server to the client. Some
-              headers are common to both requests and responses, while others
-              are specific to either requests or responses. Headers can be used
-              to control caching, authentication, security, and other aspects of
-              the HTTP protocol.
-            </p>
           </div>
         </div>
       </section>

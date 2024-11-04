@@ -19,9 +19,9 @@ const ToolsCta: FunctionComponent = function () {
         Its intuitive interface lets you quickly set up mock servers, customize
         responses, and simulate different scenarios, all in real-time. By
         integrating Mockoon into your workflow, you can{' '}
-        <strong>enhance collaboration</strong>
-        among team members, <strong>reduce development time</strong>, and ensure
-        a smoother, <strong>more efficient testing phase</strong>.
+        <strong>enhance collaboration</strong> among team members,{' '}
+        <strong>reduce development time</strong>, and ensure a smoother,{' '}
+        <strong>more efficient testing phase</strong>.
       </p>
       <div className='mt-4'>
         <a href='/download/' className='btn btn-primary-subtle btn-xs'>

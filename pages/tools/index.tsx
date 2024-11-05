@@ -142,6 +142,18 @@ const tools = [
       }
     ],
     imageSrc: '/images/illustrations/password-string-generator.svg'
+  },
+  {
+    title: 'Online SLA downtime and uptime calculator',
+    description:
+      'Calculate the downtime and uptime of your services with this online SLA calculator',
+    links: [
+      {
+        src: '/tools/sla-downtime-calculator/',
+        text: 'Calculate'
+      }
+    ],
+    imageSrc: '/images/illustrations/sla-downtime-calculator.svg'
   }
 ];
 

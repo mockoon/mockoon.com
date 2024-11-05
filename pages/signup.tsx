@@ -42,6 +42,7 @@ const Signup: FunctionComponent = function () {
     getValues,
     formState: { isSubmitting }
   } = useForm();
+  const [passwordStrength, setPasswordStrength] = useState(0);
 
   const onGoogleSignIn = async () => {
     try {
@@ -158,7 +159,47 @@ const Signup: FunctionComponent = function () {
                       placeholder='Enter your password'
                       required
                       {...registerFormField('password')}
+                      onChange={(e) => {
+                        // set password strength by calculating points, length should be the primary factor, 14 being a minimum, and upper lower symbols etc adding to the score
+                        const password = e.target.value;
+                        let points = 0;
+                        points += password.length / 2;
+                        points += password.length >= 8 ? 3 : 0;
+                        points += password.length >= 14 ? 6 : 0;
+                        points += /[a-z]/.test(password) ? 2 : 0;
+                        points += /[A-Z]/.test(password) ? 2 : 0;
+                        points += /\d/.test(password) ? 2 : 0;
+                        points += /[^a-zA-Z0-9]/.test(password) ? 4 : 0;
+
+                        setPasswordStrength((points / 25) * 100);
+                      }}
                     />
+                    <div className='ms-4 d-flex align-items-center'>
+                      <label className='text-gray-700'>
+                        <small>Strength</small>
+                      </label>
+                      <div
+                        className='progress flex-grow-1 ms-4'
+                        role='progressbar'
+                        aria-label='password strength'
+                        aria-valuenow={passwordStrength}
+                        aria-valuemin={0}
+                        aria-valuemax={100}
+                        style={{
+                          height: '2px'
+                        }}
+                      >
+                        <div
+                          className='progress-bar'
+                          style={{
+                            width:
+                              (passwordStrength > 100
+                                ? 100
+                                : passwordStrength) + '%'
+                          }}
+                        ></div>
+                      </div>
+                    </div>
                   </div>
 
                   {isSubmitting && <Spinner />}

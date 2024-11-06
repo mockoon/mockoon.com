@@ -50,7 +50,7 @@ const AccountInfo: FunctionComponent = function () {
 
   useEffect(() => {
     if (userData) {
-      reset({ displayName: userData?.['displayName'] });
+      reset({ displayName: userData?.displayName });
     }
   }, [userData]);
 

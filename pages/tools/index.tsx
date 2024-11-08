@@ -154,6 +154,17 @@ const tools = [
       }
     ],
     imageSrc: '/images/illustrations/sla-downtime-calculator.svg'
+  },
+  {
+    title: 'Domain DNS lookup',
+    description: 'Lookup DNS records of a domain name online',
+    links: [
+      {
+        src: '/tools/domain-dns-lookup/',
+        text: 'Lookup'
+      }
+    ],
+    imageSrc: '/images/illustrations/domain-dns-lookup.svg'
   }
 ];
 

@@ -10,7 +10,10 @@ const SlaDowntimeCalculator: FunctionComponent = function () {
 
   return (
     <Layout footerBanner='download'>
-      <Meta title={''} description='' />
+      <Meta
+        title={'SLA downtime and uptime calculator'}
+        description='Calculate the downtime and uptime of your services based on the SLA level (Service Level Agreement) using this online tool.'
+      />
       <Hero
         title='<span class="text-primary">SLA downtime and uptime</span> calculator'
         subtitle='Calculate the downtime and uptime of your services based on the SLA level'

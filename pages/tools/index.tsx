@@ -161,10 +161,21 @@ const tools = [
     links: [
       {
         src: '/tools/domain-dns-lookup/',
-        text: 'Lookup'
+        text: 'DNS Lookup'
       }
     ],
     imageSrc: '/images/illustrations/domain-dns-lookup.svg'
+  },
+  {
+    title: 'MX lookup',
+    description: 'Lookup MX records of a domain name online',
+    links: [
+      {
+        src: '/tools/mx-lookup/',
+        text: 'MX Lookup'
+      }
+    ],
+    imageSrc: '/images/illustrations/mx-lookup.svg'
   }
 ];
 

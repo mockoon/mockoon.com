@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 2000 2000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-43983.8,-63147)">
+        <g id="Sponsors">
+        </g>
+        <g id="mx-lookup" serif:id="mx lookup" transform="matrix(1.05024,0,0,1,130.822,-0.0676931)">
+            <rect x="41755.4" y="63147.1" width="1904.33" height="2000" style="fill:none;"/>
+            <g id="email_24dp_E8EAED.svg" transform="matrix(45.7199,0,0,48.0167,42707.5,64147.1)">
+                <g transform="matrix(1,0,0,1,-12,-12)">
+                    <clipPath id="_clip1">
+                        <rect x="0" y="0" width="24" height="24"/>
+                    </clipPath>
+                    <g clip-path="url(#_clip1)">
+                        <rect x="0" y="0" width="24" height="24" style="fill:none;fill-rule:nonzero;"/>
+                        <path d="M14.129,20L4,20C2.9,20 2,19.1 2,18L2.01,6C2.01,4.9 2.9,4 4,4L20,4C21.1,4 22,4.9 22,6L22,15.025C21.168,14.401 20.135,14.032 19.016,14.032C16.265,14.032 14.032,16.265 14.032,19.016C14.032,19.353 14.065,19.682 14.129,20ZM20,8L20,6L12,11L4,6L4,8L12,13L20,8Z" style="fill:rgb(51,94,234);"/>
+                        <g id="search_24dp_E8EAED.svg" transform="matrix(0.375661,0,0,0.375661,19.4921,19.4921)">
+                            <g transform="matrix(1,0,0,1,-12,-12)">
+                                <rect x="0" y="0" width="24" height="24" style="fill:none;fill-rule:nonzero;"/>
+                                <path d="M15.5,14L14.71,14L14.43,13.73C15.41,12.59 16,11.11 16,9.5C16,5.91 13.09,3 9.5,3C5.91,3 3,5.91 3,9.5C3,13.09 5.91,16 9.5,16C11.11,16 12.59,15.41 13.73,14.43L14,14.71L14,15.5L19,20.49L20.49,19L15.5,14ZM9.5,14C7.01,14 5,11.99 5,9.5C5,7.01 7.01,5 9.5,5C11.99,5 14,7.01 14,9.5C14,11.99 11.99,14 9.5,14Z" style="fill:rgb(55,184,135);fill-rule:nonzero;"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

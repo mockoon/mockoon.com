@@ -2,11 +2,33 @@ import matter from 'gray-matter';
 import Head from 'next/head';
 import Article from '../../components/article';
 import Breadcrumb from '../../components/breadcrumb';
+import Card from '../../components/card';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
-import { ArticleData } from '../../models/common.model';
-import { buildSlugStaticPaths } from '../../utils/static-builders';
+import { ArticleData, CardData } from '../../models/common.model';
+import {
+  buildIndexStaticProps,
+  buildSlugStaticPaths
+} from '../../utils/static-builders';
+
 export async function getStaticProps({ params }) {
+  const blogList = buildIndexStaticProps(
+    require.context('../../content/blog/', false, /\.\/.+\.md$/)
+  );
+  const suggestedArticles = blogList.props.articles
+    .sort(
+      (firstArticle, secondArticle) =>
+        new Date(secondArticle.data.date).getTime() -
+        new Date(firstArticle.data.date).getTime()
+    )
+    .slice(0, 3)
+    .map((article) => ({
+      title: article.data.title,
+      description: article.data.excerpt,
+      imageSrc: `/images/blog/${article.data.image}`,
+      links: [{ src: `/blog/${article.slug}`, text: 'Read more' }]
+    }));
+
   const fileContent = await require(`../../content/blog/${params.slug}.md`);
   const parsedContent = matter(fileContent.default);
 
@@ -26,7 +48,8 @@ export async function getStaticProps({ params }) {
     props: {
       slug: `blog/${params.slug}`,
       articleData: parsedContent.data,
-      articleBody: parsedContent.content
+      articleBody: parsedContent.content,
+      suggestedArticles
     }
   };
 }
@@ -37,6 +60,7 @@ export default function BlogArticle(props: {
   slug: string;
   articleData: ArticleData;
   articleBody: string;
+  suggestedArticles: CardData[];
 }) {
   return (
     <Layout footerBanner='newsletter'>
@@ -68,9 +92,21 @@ export default function BlogArticle(props: {
       />
       <section>
         <div className='container text-center pt-3 pb-8'>
-          <a className='btn btn-sm btn-secondary-subtle' href='/blog/'>
-            ⬅ Back to the blog posts
-          </a>
+          <h3 className='fw-medium position-relative my-4'>
+            You might also be interested in these articles
+          </h3>
+          <div className='row'>
+            {props.suggestedArticles.map((article, articleIndex) => {
+              return (
+                <div
+                  key={`suggestedArticle${articleIndex}`}
+                  className='col-12 col-lg-4 mb-4 mb-lg-0'
+                >
+                  <Card data={article} cover border vertical />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
     </Layout>

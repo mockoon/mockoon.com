@@ -308,7 +308,7 @@ const Footer: FunctionComponent<{
               </li>
               <li className='mb-2'>
                 <Link href='/brand/' className='text-reset'>
-                  Assets
+                  Brand assets
                 </Link>
               </li>
               <li className='mb-2'>

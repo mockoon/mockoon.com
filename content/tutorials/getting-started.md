@@ -62,7 +62,7 @@ We will customize the endpoint by adding a **response body** that will return a 
       "name": "{{faker 'person.firstName'}} {{faker 'person.lastName'}}",
       "email": "{{faker 'internet.email'}}",
       "phone": "{{faker 'phone.number'}}",
-      "address": "{{faker 'location.streetAddress'}}, {{faker 'location.city'}}, {{faker 'location.stateAbbr'}} {{faker 'location.zipCode'}}",
+      "address": "{{faker 'location.streetAddress'}}, {{faker 'location.city'}}, {{faker 'location.state' abbreviated=true}} {{faker 'location.zipCode'}}",
       "birthdate": "{{faker 'date.past'}}",
       "isActive": {{faker 'datatype.boolean'}}
     }

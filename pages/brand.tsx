@@ -202,6 +202,21 @@ const Brand: FunctionComponent = function () {
           </div>
         </div>
       </section>
+
+      <section className='py-5 py-lg-10'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col'>
+              <p className='text-center text-gray-700'>
+                Mockoon is a registered EU trademark under the number 018918009.
+                If you have any questions about the usage of the Mockoon brand
+                or logos, please contact us at{' '}
+                <a href='mailto:team@mockoon.com'>team@mockoon.com</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };

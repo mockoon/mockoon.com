@@ -98,7 +98,7 @@ const tasks: {
       target: null
     },
     {
-      link: '/releases/8.4.0#random-latencies',
+      link: '/releases/8.4.0/#random-latencies',
       title: 'Randomized lantency',
       cloud: false,
       target: null

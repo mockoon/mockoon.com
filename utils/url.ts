@@ -19,7 +19,7 @@ export const urlTransform = (docsVersion?: string) => (uri: string) => {
 
     return `/${schemeSplit[0]}${docsSuffix}/${pathSplit[0]}/${
       pathSplit[1] ? '#' + pathSplit[1] : ''
-    }`;
+    }`.replace(/\/{2,}/g, '/');
   }
 
   return uri;

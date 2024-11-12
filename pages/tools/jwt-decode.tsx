@@ -39,7 +39,7 @@ const JwtEncodeDecode: FunctionComponent = function () {
     <Layout footerBanner='download'>
       <Meta
         title={'Online JWT decoder'}
-        description='Use this tool to decode your JSON Web Tokens online and extract the header and payload data'
+        description='Use this tool to decode your JSON Web Tokens online and extract the header and payload data: issuer, subject, audience, expiration time, and more.'
       />
       <Hero
         title='Online <span class="text-primary">JWT decoder</span>'

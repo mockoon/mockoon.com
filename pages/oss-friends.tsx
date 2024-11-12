@@ -24,7 +24,7 @@ const OssFriends: FunctionComponent<{
     <Layout footerBanner='download'>
       <Meta
         title='Our OSS friends'
-        description='Discover other open-source software projects that we love and support.'
+        description='Discover other open-source software projects that we love and support. Mockoon is proud to be part of the open-source community.'
         ogType='article'
       />
       <Hero

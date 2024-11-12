@@ -12,7 +12,7 @@ tags:
 author: guillaume
 meta:
   title: September 2023 news
-  description: 'Mockoon quarterly news for September 2023: new releases, global rules, GitHub Action, and more.'
+  description: 'Mockoon quarterly news for September 2023: new releases, global rules, GitHub Action, Mockoon Cloud progress, and more.'
 ---
 
 Welcome to our first blog quarterly news! Usually sent in the form of a newsletter, we decided to publish it on our blog too.

@@ -37,7 +37,7 @@ _Note: This converter supports GitHub Flavored Markdown (GFM) and tables._
     <Layout footerBanner='download'>
       <Meta
         title={'Markdown to HTML converter'}
-        description='Use Mockoon Markdown to HTML converter to parse your markdown content and convert it to HTML'
+        description='Use Mockoon Markdown to HTML converter to parse your markdown syntax and convert it to a structured HTML page'
       />
       <Hero
         title='Markdown to HTML <span class="text-primary">converter</span>'

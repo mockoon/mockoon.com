@@ -22,7 +22,7 @@ And we promise next time we won't wait two years to write a retrospective articl
 
 ## 🎂 7 years old!
 
-Mockoon's [first release](https://github.com/mockoon/mockoon/releases/tag/v0.1.0) was a bit more than 7 years ago, in August 2017. It's been a long journey since then, and we are proud of what we have achieved so far. We have come a long way from a simple mock server to a powerful tool that allows you to create complex mock APIs with rules, templates, fake data, proxy, recording, JSON databases, guards, webhooks, and much more.
+Mockoon's [first release](https://github.com/mockoon/mockoon/releases/tag/v0.1.0) was a bit more than **7 years ago**, in August 2017. It's been a long journey since then, and we are proud of what we have achieved so far. We have come a long way from a simple mock server to a **powerful tool** that allows you to create complex mock APIs with rules, templates, fake data, proxy, recording, JSON databases, guards, webhooks, and much more.
 
 ![#sub#Mockoon's v0.1 interface{1286x893}](/images/blog/seven-years-2024-retrospective/v1-interface.jpg)
 
@@ -30,23 +30,23 @@ In an industry where novelty and hype drive all the attention (half joking), you
 
 We like to imagine that numbers and facts speak for themselves. 🙂
 
-So, first numbers:
+So, first, numbers:
 
-- Mockoon has been downloaded 800k times, which is 500k more since the [last retrospective article](/blog/five-years-2022-retrospective/) one year and a half ago.
-- Our [GitHub stars count](https://github.com/mockoon/mockoon/stargazers) is now above 6500, which is also a significant increase from the ~4000 we had in early 2023.
-- Our [Docker image](https://hub.docker.com/r/mockoon/cli) has been pulled more than 3 million times.
-- Our number of daily and monthly active users is growing steadily.
-- We published 8 releases in 2024 including 3 major versions (see below for an [overview of the latest features](#an-overview-of-the-latest-features)).
+- Mockoon has been **downloaded 800k times**, which is **500k more** since the [last retrospective article](/blog/five-years-2022-retrospective/) one year and a half ago.
+- Our [GitHub stars count](https://github.com/mockoon/mockoon/stargazers) is now **above 6500**, which is also a significant increase from the ~4000 we had in early 2023.
+- Our [Docker image](https://hub.docker.com/r/mockoon/cli) has been pulled more than **3 million times**.
+- Our number of daily and monthly **active users** is **growing steadily**.
+- We **published 8 releases** in 2024 including 3 major versions (see below for an [overview of the latest features](#an-overview-of-the-latest-features)).
 
 We agree these numbers are but vanity metrics. Maybe more importantly, every day we talk with new users, individuals, and companies, who tell us how Mockoon is helping them in their daily work. Nearly all support requests or GitHub issues start with a thank you note, which is more than we could have hoped for.
 
-We could continue to talk about the project's success forever but I will just say that we are grateful for the support we have received from the community over the years. And we hope to continue to build a great product for many years to come.
+We could continue to talk about the project's success forever but I will just say that we are grateful for the support we have received from the community over the years. And we hope to continue to build a great product for **many years to come**.
 
 ![#sub#Our users thank you notes!](/images/blog/seven-years-2024-retrospective/thank-you-cloud.png)
 
 ## An overview of the latest features
 
-Many of the recent features were introduced with one goal in mind: making Mockoon more powerful while avoiding UI clutter and keeping the user experience as simple as possible. We must admit that it's not always easy to find the right balance between power and simplicity. We are constantly trying to improve the application, and we are always looking for feedback from our users to help us make the right decisions.
+Many of the recent features were introduced with one goal in mind: making Mockoon **more powerful** while avoiding UI clutter and keeping the user experience **as simple as possible**. We must admit that it's not always easy to find the right balance between power and simplicity. We are constantly trying to improve the application, and we are always looking for feedback from our users to help us make the right decisions.
 
 Among the most important features added in the past year, we can mention:
 
@@ -62,19 +62,19 @@ These are just a few examples of the many features that have been recently added
 
 ## Mockoon Cloud and the path to sustainability
 
-What kept us exceptionally busy in 2023 and 2024 was the development of Mockoon Cloud.
+What kept us exceptionally busy in 2023 and 2024 was the **development of Mockoon Cloud**.
 
 When [Mockoon was selected for the GitHub Accelerator program in 2023](/blog/github-accelerator/), we had the opportunity to work with the GitHub team and learn a lot about building a sustainable open-source project. Long story short, it's really hard!
 
-We explored this a bit in a [previous blog post](/blog/our-commitment-open-source-community/) which was the occasion to reflect on the sustainability of the project and reiterate our commitment to the open-source community.
+We explored this a bit in a [previous blog post](/blog/our-commitment-open-source-community/) which was the occasion to reflect on the **sustainability of the project** and reiterate our commitment to the open-source community.
 
-Based on the users' feedback, our own experience, and observations of other open-source projects, we decided to build a SaaS to complement the open-source project. The goal was to provide advanced features for teams and companies that need more than what the open-source project can offer while keeping the open-source project free and open to everyone.
+Based on the users' feedback, our own experience, and observations of other open-source projects, we decided to **build a SaaS to complement the open-source project**. The goal was to provide advanced features for teams and companies that need more than what the open-source project can offer while keeping the open-source project free and open to everyone.
 
-At the end of 2023, the first major feature was released: the ability to [collaborate in real-time with your team](/blog/data-synchronization-team-collaboration-release/) in the desktop application.
+At the end of 2023, the first major feature was released: the ability to [**collaborate** in real-time with your team](/blog/data-synchronization-team-collaboration-release/) in the desktop application.
 
 ![#sub#Mockoon Cloud team collaboration](/images/blog/seven-years-2024-retrospective/team-collaboration.png)
 
-And after months of work, we released earlier this summer, the [first version of our cloud deployment feature](/blog/mock-api-cloud-deployments-release/). It allows you to deploy your mock APIs to the cloud and share them with your team with a simple link.
+And after months of work, we released earlier this summer, the [first version of our **cloud deployment** feature](/blog/mock-api-cloud-deployments-release/). It allows you to **deploy** your mock APIs to the cloud and **share** them with your team with a simple link.
 
 ![#sub#Mockoon Cloud deployments](/images/blog/seven-years-2024-retrospective/deploy-environment-management-dialog.png)
 
@@ -84,7 +84,7 @@ Last but not least, we are generating revenue which these services which is very
 
 ## Contributors interviews
 
-During the last year, we had the opportunity to interview some of our recent contributors. We wanted to know more about them, their motivations, and their experience with Mockoon. It was also a way to put a spotlight on the people who help us make Mockoon better every day. All these people are volunteers and we are humbled by their dedication to the project. We would like to thank them once again for their hard work.
+During the last year, we had the opportunity to **interview some of our recent contributors**. We wanted to know more about them, their motivations, and their experience with Mockoon. It was also a way to put a spotlight on the people who help us make Mockoon better every day. All these people are volunteers and we are humbled by their dedication to the project. We would like to thank them once again for their hard work.
 
 We published these interviews on our blog, and we invite you to read them if you haven't already.
 
@@ -94,7 +94,7 @@ Some examples: [Lukas, from OneFootball](/blog/contributor-spotlight-lukas-spiss
 
 ## New tutorials and tools
 
-We are not planning to make an exhaustive list of all the new content we created in the last year, but we think it's worth mentioning that we published new tutorials and tools to help you get the most out of Mockoon.
+We are not planning to make an exhaustive list of all the new content we created in the last year, but we think it's worth mentioning that we published **new tutorials and tools** to help you get the most out of Mockoon.
 
 These tutorials cover features recently added to Mockoon:
 

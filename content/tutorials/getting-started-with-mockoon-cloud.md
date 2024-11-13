@@ -8,6 +8,8 @@ image: tutorial-getting-started-mockoon-cloud.png
 imageAlt: Mockoon logo in a rocket
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - mockoon
 order: 62
 ---
 

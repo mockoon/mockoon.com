@@ -49,20 +49,20 @@ const AccountSubscription: FunctionComponent = function () {
         <div className='row align-items-center'>
           <div className='col-md-8'>
             <p className='mb-0'>
-              <Link
-                href={
-                  '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
-                }
-              >
-                Synchronized cloud environments
-              </Link>{' '}
-              ({userData?.cloudSyncItemsQuotaUsed}/
+              Synchronized cloud environments (
+              {userData?.cloudSyncItemsQuotaUsed}/
               {userData?.cloudSyncItemsQuota})
             </p>
-            <small className='text-gray-700'>
-              Maximum of {userData?.cloudSyncSizeQuota / 1000000}MB per
-              environment
-            </small>
+            <p className='mb-0'>
+              <small className='text-gray-700'>
+                Maximum of {userData?.cloudSyncSizeQuota / 1000000}MB per
+                environment
+                <br />
+                <Link href='/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'>
+                  Documentation
+                </Link>
+              </small>
+            </p>
           </div>
           <div className='col-md-4'>
             <div className='progress'>
@@ -92,40 +92,53 @@ const AccountSubscription: FunctionComponent = function () {
         <div className='row align-items-center'>
           <div className='col-md-8'>
             <p className='mb-0'>
-              <Link
-                href={'/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'}
-              >
-                Cloud deployments
-              </Link>{' '}
-              ({userData?.deployInstancesQuotaUsed}/
+              Cloud deployments ({userData?.deployInstancesQuotaUsed}/
               {userData?.deployInstancesQuota})
             </p>
-            <small className='text-gray-700'>
-              Maximum of{' '}
-              {pricing[userData?.plan]?.deployCallsQuota.toLocaleString()}{' '}
-              request per month
-            </small>
+            <p className='mb-0'>
+              <small className='text-gray-700'>
+                Maximum of{' '}
+                {pricing[userData?.plan]?.deployCallsQuota.toLocaleString()}{' '}
+                request per month
+                <br />
+                <Link href='/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'>
+                  Documentation
+                </Link>
+              </small>
+            </p>
           </div>
           <div className='col-md-4'>
-            <div className='progress'>
-              <div
-                className={`progress-bar ${
-                  userData?.deployInstancesQuotaUsed >=
-                  userData?.deployInstancesQuota
-                    ? 'bg-warning'
-                    : ''
-                }`}
-                role='progressbar'
-                aria-valuenow={userData?.deployInstancesQuotaUsed}
-                aria-valuemin={0}
-                aria-valuemax={userData?.deployInstancesQuota}
-                style={{
-                  width:
-                    (userData?.deployInstancesQuotaUsed * 100) /
-                      userData?.deployInstancesQuota +
-                    '%'
-                }}
-              ></div>
+            <div className='d-flex align-items-center'>
+              <div className='flex-grow-1 me-4'>
+                <div className='progress'>
+                  <div
+                    className={`progress-bar ${
+                      userData?.deployInstancesQuotaUsed >=
+                      userData?.deployInstancesQuota
+                        ? 'bg-warning'
+                        : ''
+                    }`}
+                    role='progressbar'
+                    aria-valuenow={userData?.deployInstancesQuotaUsed}
+                    aria-valuemin={0}
+                    aria-valuemax={userData?.deployInstancesQuota}
+                    style={{
+                      width:
+                        (userData?.deployInstancesQuotaUsed * 100) /
+                          userData?.deployInstancesQuota +
+                        '%'
+                    }}
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <Link
+                  href={'/account/instances/'}
+                  className='btn btn-xs btn-primary-subtle'
+                >
+                  View
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -400,18 +413,22 @@ const AccountSubscription: FunctionComponent = function () {
                               <div className='row align-items-center'>
                                 <div className='col-md-8'>
                                   <p className='mb-0'>
-                                    <Link href='/docs/latest/mockoon-cloud/templates-and-ai-assistant/'>
-                                      AI generated mocks
-                                    </Link>{' '}
-                                    used ({userData?.templatesQuotaUsed}/
+                                    AI generated mocks used (
+                                    {userData?.templatesQuotaUsed}/
                                     {userData?.templatesQuota})
                                   </p>
-                                  <small className='text-gray-700'>
-                                    Resets monthly - Next reset on{' '}
-                                    {new Date(
-                                      userData?.nextQuotaResetOn * 1000
-                                    ).toDateString()}
-                                  </small>
+                                  <p className='mb-0'>
+                                    <small className='text-gray-700'>
+                                      Resets monthly - Next reset on{' '}
+                                      {new Date(
+                                        userData?.nextQuotaResetOn * 1000
+                                      ).toDateString()}
+                                      <br />
+                                      <Link href='/docs/latest/mockoon-cloud/templates-and-ai-assistant/'>
+                                        Documentation
+                                      </Link>
+                                    </small>
+                                  </p>
                                 </div>
                                 <div className='col-md-4'>
                                   <div className='progress'>

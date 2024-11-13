@@ -10,7 +10,7 @@ import { useAuth } from '../utils/auth';
 import { useCurrentUser } from '../utils/queries';
 import Accordion from './accordion';
 import PaddleScript from './paddle';
-import InfoTooltip from './tooltip';
+import Tooltip from './tooltip';
 
 const queryClient = new QueryClient();
 
@@ -688,7 +688,7 @@ const PlansView: FunctionComponent<{
                           <tr>
                             <td>
                               Number of deployed API mocks{' '}
-                              <InfoTooltip text='Each API mock is a collection of endpoints and rules deployed on a separated subdomain: https://mock-abcd.mockoon.app. See the FAQ below for a definition of an API mock.'></InfoTooltip>
+                              <Tooltip text='Each API mock is a collection of endpoints and rules deployed on a separated subdomain: https://mock-abcd.mockoon.app. See the FAQ below for a definition of an API mock.'></Tooltip>
                             </td>
                             <td className='text-center'>
                               {pricing.SOLO.deployQuota}
@@ -711,7 +711,7 @@ const PlansView: FunctionComponent<{
                           <tr>
                             <td>
                               Request rate limit{' '}
-                              <InfoTooltip text='During trial, the request rate limit is 1 request per second.'></InfoTooltip>
+                              <Tooltip text='During trial, the request rate limit is 1 request per second.'></Tooltip>
                             </td>
                             <td className='text-center'>
                               {pricing.SOLO.deployReqSQuota}/sec
@@ -744,7 +744,7 @@ const PlansView: FunctionComponent<{
                           <tr>
                             <td>
                               Number of synchronized API mocks{' '}
-                              <InfoTooltip text='Each API mock is a collection of endpoints and rules synchronized accross your devices and team members in real-time. See the FAQ below for a definition of an API mock.'></InfoTooltip>
+                              <Tooltip text='Each API mock is a collection of endpoints and rules synchronized accross your devices and team members in real-time. See the FAQ below for a definition of an API mock.'></Tooltip>
                             </td>
                             <td className='text-center'>
                               {pricing.SOLO.syncQuota}

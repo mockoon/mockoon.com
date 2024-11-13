@@ -8,6 +8,8 @@ image: tutorial-environment-variables.png
 imageAlt: article title with env variable linked to HTTP verbs
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - mockoon
 order: 58
 ---
 

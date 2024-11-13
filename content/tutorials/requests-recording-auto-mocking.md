@@ -8,6 +8,8 @@ image: tutorial-requests-recording.png
 imageAlt: Mockoon logo next to a computer and a history list
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - mockoon
 order: 40
 ---
 

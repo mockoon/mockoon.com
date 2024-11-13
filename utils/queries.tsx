@@ -1,4 +1,4 @@
-import { Plans, Team, User } from '@mockoon/cloud';
+import { DeployInstance, Plans, Team, User } from '@mockoon/cloud';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 import { EmailingContact } from '../models/user.model';
@@ -59,7 +59,7 @@ const useCurrentUserEmailing = () => {
   const { getIdToken, isAuth } = useAuth();
 
   const { isLoading, error, data, isFetching } = useQuery<EmailingContact>({
-    queryKey: ['currentUser'],
+    queryKey: ['currentUserEmailing'],
     enabled: isAuth,
     refetchOnMount: false,
     queryFn: async () => {
@@ -131,6 +131,48 @@ const useCurrentTeam = (teamId, teamRole) => {
   };
 };
 
+const useCurrentDeployments = () => {
+  const auth = useAuth();
+  const { getIdToken, isAuth } = useAuth();
+
+  const { isLoading, error, data, isFetching, refetch } = useQuery<
+    DeployInstance[]
+  >({
+    queryKey: ['currentUserDeployments'],
+    refetchOnMount: false,
+    retry: false,
+    enabled: isAuth,
+    queryFn: async () => {
+      const token = await getIdToken();
+
+      if (!token) {
+        return null;
+      }
+
+      return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/deployments`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }).then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+
+        throw new Error();
+      });
+    },
+    refetchOnWindowFocus: false
+  });
+
+  return {
+    isLoading,
+    error,
+    data,
+    isFetching,
+    refetch
+  };
+};
+
 const useCurrentSubscriptionLinks = (user: User) => {
   const auth = useAuth();
 
@@ -178,6 +220,7 @@ const useCurrentSubscriptionLinks = (user: User) => {
 };
 
 export {
+  useCurrentDeployments,
   useCurrentSubscriptionLinks,
   useCurrentTeam,
   useCurrentUser,

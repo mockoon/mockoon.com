@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'mockoon';
-  src: url('/fonts/mockoon.woff?ma3vvn') format('woff');
+  src: url('/fonts/mockoon.woff?dvskpl') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -95,6 +95,9 @@
 .icon-refresh:before {
   content: '\e909';
 }
+.icon-public:before {
+  content: '\e91b';
+}
 .icon-star:before {
   content: '\e90e';
 }
@@ -106,6 +109,9 @@
 }
 .icon-hourglass_empty:before {
   content: '\e906';
+}
+.icon-https:before {
+  content: '\e91a';
 }
 .icon-info_outline:before {
   content: '\e918';

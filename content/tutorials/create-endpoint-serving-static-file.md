@@ -8,6 +8,8 @@ image: tutorial-serve-static-files.png
 imageAlt: mockoon logo next to multiple images symbolizing static files
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - mockoon
 order: 59
 ---
 

@@ -8,6 +8,8 @@ image: generate-mock-json-data.png
 imageAlt: Mockoon logo side by side with code
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - mockoon
 order: 50
 ---
 

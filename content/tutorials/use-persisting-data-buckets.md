@@ -8,6 +8,8 @@ image: use-data-buckets.png
 imageAlt: Mockoon logo inside a database cylinder communicating with a document
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - mockoon
 order: 55
 ---
 

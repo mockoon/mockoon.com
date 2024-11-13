@@ -8,6 +8,8 @@ image: tutorial-global-variables-state.png
 imageAlt: HTTP verbs linked to a variable
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - mockoon
 order: 57
 ---
 

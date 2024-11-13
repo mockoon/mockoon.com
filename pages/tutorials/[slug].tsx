@@ -4,21 +4,41 @@ import Link from 'next/link';
 import { Fragment } from 'react';
 import Article from '../../components/article';
 import Breadcrumb from '../../components/breadcrumb';
+import Card from '../../components/card';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
-import { ArticleData } from '../../models/common.model';
-import { buildSlugStaticPaths } from '../../utils/static-builders';
+import { ArticleData, CardData } from '../../models/common.model';
+import {
+  buildIndexStaticProps,
+  buildSlugStaticPaths
+} from '../../utils/static-builders';
 
 export async function getStaticProps({ params }) {
-  const fileContent =
-    await require(`../../content/tutorials/${params.slug}.md`);
+  const tutorialsList = buildIndexStaticProps(
+    require.context('../../content/tutorials/', false, /\.\/.+\.md$/)
+  );
+  // randomize
+  const suggestedArticles = tutorialsList.props.articles
+    .filter((article) => article.data.tags?.includes('mockoon'))
+    .map((article) => ({
+      title: article.data.title,
+      description: article.data.excerpt,
+      imageSrc: `/images/tutorials/${article.data.image}`,
+      links: [{ src: `/tutorials/${article.slug}`, text: 'Read more' }]
+    }))
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 3);
+  const fileContent = await require(
+    `../../content/tutorials/${params.slug}.md`
+  );
   const parsedContent = matter(fileContent.default);
 
   return {
     props: {
       slug: `tutorials/${params.slug}`,
       articleData: parsedContent.data,
-      articleBody: parsedContent.content
+      articleBody: parsedContent.content,
+      suggestedArticles
     }
   };
 }
@@ -29,6 +49,7 @@ export default function Tutorial(props: {
   slug: string;
   articleData: ArticleData;
   articleBody: string;
+  suggestedArticles: CardData[];
 }) {
   return (
     <Layout footerBanner='download'>
@@ -67,14 +88,6 @@ export default function Tutorial(props: {
                 : 'justify-content-center'
             }`}
           >
-            {!props.articleData.nextLink && !props.articleData.previousLink && (
-              <Link
-                href='/tutorials/'
-                className='btn btn-sm btn-secondary-subtle'
-              >
-                ⬅ Back to the list of tutorials
-              </Link>
-            )}
             {(props.articleData.previousLink || props.articleData.nextLink) && (
               <Fragment>
                 {props.articleData.previousLink && (
@@ -106,6 +119,25 @@ export default function Tutorial(props: {
           </div>
         </section>
       </div>
+      <section>
+        <div className='container text-center pt-3 pb-8'>
+          <h3 className='fw-medium position-relative my-4'>
+            You might also be interested in these tutorials
+          </h3>
+          <div className='row'>
+            {props.suggestedArticles.map((article, articleIndex) => {
+              return (
+                <div
+                  key={`suggestedArticle${articleIndex}`}
+                  className='col-12 col-lg-4 mb-4 mb-lg-0'
+                >
+                  <Card data={article} cover border vertical />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }

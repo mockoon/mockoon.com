@@ -8,6 +8,8 @@ image: tutorial-webhooks-and-callbacks.png
 imageAlt: mockoon logo next to the webhook logo
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - mockoon
 order: 60
 mockApiFile: https://raw.githubusercontent.com/mockoon/mock-samples/refs/heads/main/tutorials/simulate-webhooks-and-callbacks.json
 ---

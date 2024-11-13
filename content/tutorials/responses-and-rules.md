@@ -8,6 +8,8 @@ image: tutorial-route-responses-dynamic-rules.png
 imageAlt: Mockoon logo and computer icon linked with lines representing routes
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - mockoon
 order: 11
 ---
 

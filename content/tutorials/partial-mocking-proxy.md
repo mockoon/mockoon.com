@@ -8,6 +8,8 @@ image: tutorial-partial-mocking-proxy.png
 imageAlt: Mockoon logo between a computer and a server icons
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - mockoon
 order: 30
 ---
 

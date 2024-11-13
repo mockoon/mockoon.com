@@ -1,13 +1,18 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, ReactElement } from 'react';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
-const InfoTooltip: FunctionComponent<{ text: string; className?: string }> =
-  function ({ text, className }) {
-    return (
-      <OverlayTrigger placement='top' overlay={<Tooltip>{text}</Tooltip>}>
+const CustomTooltip: FunctionComponent<{
+  text: string;
+  className?: string;
+  children?: ReactElement;
+}> = function ({ text, className, children }) {
+  return (
+    <OverlayTrigger placement='top' overlay={<Tooltip>{text}</Tooltip>}>
+      {children || (
         <i className={`icon-info_outline text-gray-700 ${className}`}></i>
-      </OverlayTrigger>
-    );
-  };
+      )}
+    </OverlayTrigger>
+  );
+};
 
-export default InfoTooltip;
+export default CustomTooltip;

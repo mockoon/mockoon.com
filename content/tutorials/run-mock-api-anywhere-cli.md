@@ -8,6 +8,8 @@ image: tutorial-getting-started-cli.png
 imageAlt: a terminal
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - mockoon
 order: 20
 ---
 

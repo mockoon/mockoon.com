@@ -8,6 +8,8 @@ image: create-full-rest-api-crud-routes.png
 imageAlt: API endpoints connecting to mockoon logo
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - mockoon
 order: 56
 ---
 

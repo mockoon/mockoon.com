@@ -45,7 +45,7 @@ const AccountMenu: FunctionComponent = function () {
                 Notifications
               </Link>
             </li>
-
+            <h6 className='fw-bold text-uppercase mt-4 mb-3'>Mockoon Cloud</h6>
             <li
               className={`list-item ${
                 router.pathname.includes('account/subscription') ? 'active' : ''
@@ -53,32 +53,48 @@ const AccountMenu: FunctionComponent = function () {
             >
               <Link
                 href='/account/subscription/'
-                className='list-link text-reset'
+                className='list-link text-reset ps-4'
               >
-                Mockoon Cloud Subscription
+                Subscription and usage
               </Link>
             </li>
-            {!isLoading &&
-              (userData?.plan === 'TEAM' || userData?.plan === 'ENTERPRISE') &&
-              userData?.teamRole === 'owner' && (
-                <>
-                  <h6 className='fw-bold text-uppercase mt-4 mb-3'>
-                    Manage plan
-                  </h6>
-                  <li
-                    className={`list-item ${
-                      router.pathname.includes('account/users') ? 'active' : ''
-                    }`}
+            {!isLoading && userData?.plan !== 'FREE' && (
+              <>
+                <li
+                  className={`list-item ${
+                    router.pathname.includes('account/instances')
+                      ? 'active'
+                      : ''
+                  }`}
+                >
+                  <Link
+                    href='/account/instances/'
+                    className='list-link text-reset ps-4'
                   >
-                    <Link
-                      href='/account/users/'
-                      className='list-link text-reset'
+                    Instances
+                  </Link>
+                </li>
+
+                {(userData?.plan === 'TEAM' ||
+                  userData?.plan === 'ENTERPRISE') &&
+                  userData?.teamRole === 'owner' && (
+                    <li
+                      className={`list-item ${
+                        router.pathname.includes('account/users')
+                          ? 'active'
+                          : ''
+                      }`}
                     >
-                      Users
-                    </Link>
-                  </li>
-                </>
-              )}
+                      <Link
+                        href='/account/users/'
+                        className='list-link text-reset ps-4'
+                      >
+                        Users
+                      </Link>
+                    </li>
+                  )}
+              </>
+            )}
           </ul>
         </div>
       </div>

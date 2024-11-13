@@ -8,6 +8,8 @@ image: tutorial-global-rules-routes.png
 imageAlt: schema of rules being checked before calling a route
 imageWidth: 1200
 imageHeight: 400
+tags:
+  - mockoon
 order: 57
 ---
 

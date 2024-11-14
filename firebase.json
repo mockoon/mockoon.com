@@ -108,6 +108,11 @@
         "type": 301
       },
       {
+        "source": "/tutorials/run-mock-api-anywhere-cli{,/}",
+        "destination": "/tutorials/self-host-mock-api-server-cli/",
+        "type": 301
+      },
+      {
         "source": "/mock-samples{,/}",
         "destination": "/mock-samples/category/all/",
         "type": 301

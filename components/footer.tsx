@@ -65,10 +65,10 @@ const Footer: FunctionComponent<{
               </li>
               <li className='mb-2'>
                 <Link
-                  href='/tutorials/run-mock-api-anywhere-cli/'
+                  href='/tutorials/self-host-mock-api-server-cli/'
                   className='text-reset'
                 >
-                  Run your mock APIs anywhere with the CLI
+                  Self-host a mock API with Mockoon CLI
                 </Link>
               </li>
               <li className='mb-2'>

@@ -46,7 +46,7 @@ export default function () {
                     'Deploy your mock servers in your CI environment with a simple and easy to use NPM package and Docker image.',
                   links: [
                     {
-                      src: '/tutorials/run-mock-api-anywhere-cli/',
+                      src: '/tutorials/self-host-mock-api-server-cli/',
                       text: 'Discover the CLI'
                     }
                   ]

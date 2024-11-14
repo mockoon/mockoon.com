@@ -30,8 +30,8 @@ const HelpModal: FunctionComponent<{
           <div className='ps-4'>
             Download them manually before opening them with the desktop
             application or{' '}
-            <a href='/tutorials/run-mock-api-anywhere-cli/'>run them</a> with
-            the CLI.
+            <a href='/tutorials/self-host-mock-api-server-cli/'>run them</a>{' '}
+            with the CLI.
           </div>
         </div>
         <div className='pb-6'>

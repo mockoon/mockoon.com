@@ -33,7 +33,7 @@ const features: CardData[] = [
       'Also available as a Docker image and a GitHub Action, run your mock APIs in your favorite CI platform!',
     links: [
       {
-        src: '/tutorials/run-mock-api-anywhere-cli/',
+        src: '/tutorials/self-host-mock-api-server-cli/',
         text: 'Getting started tutorial'
       }
     ]
@@ -197,7 +197,7 @@ $ mockoon-cli start --data ./data-file.json`}
               <div className='alert alert-dark' role='alert'>
                 🚀 Learn how to use Mockoon CLI in 5 minutes with our{' '}
                 <a
-                  href='/tutorials/run-mock-api-anywhere-cli/'
+                  href='/tutorials/self-host-mock-api-server-cli/'
                   className='text-gray-500'
                 >
                   getting started tutorial

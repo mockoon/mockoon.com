@@ -17,7 +17,7 @@ Importing an OpenAPI specification file in Mockoon can be a good starting point 
 - when importing an OpenAPI specification file, not all properties have equivalents in Mockoon, or some may not be implemented yet. See below for the list of imported information.
 
 Importing from or exporting to an OpenAPI specification file is a good starting point but not a way to share your mock APIs created with Mockoon. For sharing, we recommend that you directly [share Mockoon's data files](docs:mockoon-data-files/sharing-mock-api-files).  
-Also, if you want to run your mock API with the [CLI](/cli/), you must use [Mockoon's data files directly](/tutorials/run-mock-api-anywhere-cli/), or you may lose part of your mock's behavior.
+Also, if you want to run your mock API with the [CLI](/cli/), you must use [Mockoon's data files directly](/tutorials/self-host-mock-api-server-cli/), or you may lose part of your mock's behavior.
 
 ### Supported information
 

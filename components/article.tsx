@@ -181,7 +181,7 @@ const Article: FunctionComponent<{
                           <strong>Download the JSON</strong>: Download the JSON
                           file manually and open it with the desktop application
                           or{' '}
-                          <a href='/tutorials/run-mock-api-anywhere-cli/'>
+                          <a href='/tutorials/self-host-mock-api-server-cli/'>
                             run it
                           </a>{' '}
                           with the CLI.

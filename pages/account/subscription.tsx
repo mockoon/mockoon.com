@@ -13,7 +13,7 @@ import { pricing } from '../../data/pricing';
 import Layout from '../../layout/layout';
 import { useAuth } from '../../utils/auth';
 import {
-  useCurrentSubscriptionLinks,
+  useCurrentSubscriptionPortalLink,
   useCurrentUser
 } from '../../utils/queries';
 
@@ -26,7 +26,8 @@ const AccountSubscription: FunctionComponent = function () {
   const { isAuth, user, isLoading: isAuthLoading } = useAuth();
   const router = useRouter();
   const { isLoading: isUserLoading, data: userData } = useCurrentUser();
-  const { data: subscriptionLinksData } = useCurrentSubscriptionLinks(userData);
+  const { data: subscriptionPortalLink } =
+    useCurrentSubscriptionPortalLink(userData);
 
   useEffect(() => {
     if (!isAuthLoading) {
@@ -298,7 +299,8 @@ const AccountSubscription: FunctionComponent = function () {
                                     )}
                                 </div>
                                 {(userData?.plan === 'SOLO' ||
-                                  (userData?.plan === 'TEAM' &&
+                                  ((userData?.plan === 'TEAM' ||
+                                    userData?.plan === 'ENTERPRISE') &&
                                     userData?.teamRole === 'owner')) && (
                                   <div>
                                     <small className='text-gray-700 ms-auto'>
@@ -330,66 +332,53 @@ const AccountSubscription: FunctionComponent = function () {
                               )}
                           </div>
 
-                          {userData?.plan !== 'FREE' &&
-                            subscriptionLinksData && (
+                          {(userData?.plan !== 'FREE' ||
+                            userData?.subscription?.portalEnabled) &&
+                            subscriptionPortalLink && (
                               <>
                                 <div className='list-group-item'>
                                   <div className='row align-items-center'>
                                     <div className='col'>
                                       <p className='mb-0'>
-                                        Update payment method
+                                        Manage your{' '}
+                                        {userData?.subscription?.portalEnabled
+                                          ? 'past'
+                                          : ''}{' '}
+                                        subscription
                                       </p>
-                                      {userData?.subscription?.pastDue && (
+
+                                      {!userData?.subscription
+                                        ?.portalEnabled && (
                                         <p className='m-0'>
                                           <small className='text-gray-700'>
-                                            Update your payment method and pay
-                                            the past due invoice
+                                            Update your payment method, cancel
+                                            or view past invoices. You will be
+                                            redirected to our payment provider's
+                                            website.
+                                          </small>
+                                        </p>
+                                      )}
+                                      {userData?.subscription
+                                        ?.portalEnabled && (
+                                        <p className='m-0'>
+                                          <small className='text-gray-700'>
+                                            View past subscriptions and
+                                            invoices. You will be redirected to
+                                            our payment provider's website.
                                           </small>
                                         </p>
                                       )}
                                     </div>
                                     <div className='col-auto'>
                                       <Link
-                                        href={
-                                          subscriptionLinksData?.update_payment_method
-                                        }
-                                        className='btn btn-xs btn-secondary'
+                                        href={subscriptionPortalLink?.portalUrl}
+                                        className='btn btn-xs btn-primary-subtle'
                                       >
-                                        Update
-                                        {userData?.subscription?.pastDue &&
-                                          ' and pay'}
+                                        Manage
                                       </Link>
                                     </div>
                                   </div>
                                 </div>
-                                {!userData?.subscription
-                                  ?.cancellationScheduled && (
-                                  <div className='list-group-item'>
-                                    <div className='row align-items-center'>
-                                      <div className='col'>
-                                        <p className='mb-0'>
-                                          Cancel subscription
-                                        </p>
-                                        <p className='m-0'>
-                                          <small className='text-gray-700'>
-                                            Will be cancelled at the end of the{' '}
-                                            {userData?.subscription?.trial
-                                              ? 'trial period'
-                                              : 'current billing period'}
-                                          </small>
-                                        </p>
-                                      </div>
-                                      <div className='col-auto'>
-                                        <Link
-                                          href={subscriptionLinksData?.cancel}
-                                          className='btn btn-xs btn-danger'
-                                        >
-                                          Cancel
-                                        </Link>
-                                      </div>
-                                    </div>
-                                  </div>
-                                )}
                               </>
                             )}
                         </div>

@@ -173,22 +173,21 @@ const useCurrentDeployments = () => {
   };
 };
 
-const useCurrentSubscriptionLinks = (user: User) => {
+const useCurrentSubscriptionPortalLink = (user: User) => {
   const auth = useAuth();
 
   const { isLoading, error, data, isFetching } = useQuery<{
-    update_payment_method: string;
-    cancel: string;
+    portalUrl: string;
   }>({
-    queryKey: ['currentSubscriptionLinks'],
+    queryKey: ['currentSubscriptionPortalLink'],
     refetchOnMount: false,
     enabled:
       auth.isAuth &&
       !!user &&
-      user.plan !== Plans.FREE &&
       user.subscription !== undefined &&
       user.subscription.provider != null &&
-      user.subscription.provider === 'paddle',
+      user.subscription.provider === 'paddle' &&
+      (user.plan !== Plans.FREE || user.subscription.portalEnabled),
     queryFn: async () => {
       const token = await auth.getIdToken();
 
@@ -196,11 +195,14 @@ const useCurrentSubscriptionLinks = (user: User) => {
         return null;
       }
 
-      return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/subscription`, {
-        headers: {
-          Authorization: `Bearer ${token}`
+      return fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/subscription/portalurl`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
         }
-      }).then((res) => {
+      ).then((res) => {
         if (res.ok) {
           return res.json();
         }
@@ -221,7 +223,7 @@ const useCurrentSubscriptionLinks = (user: User) => {
 
 export {
   useCurrentDeployments,
-  useCurrentSubscriptionLinks,
+  useCurrentSubscriptionPortalLink,
   useCurrentTeam,
   useCurrentUser,
   useCurrentUserEmailing

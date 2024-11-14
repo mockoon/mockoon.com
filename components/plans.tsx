@@ -127,6 +127,7 @@ const PlansView: FunctionComponent<{
     // @ts-ignore
     Paddle.Checkout.open({
       settings: {
+        variant: 'one-page',
         theme: 'light',
         locale: 'en'
       },

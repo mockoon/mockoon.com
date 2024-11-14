@@ -278,6 +278,35 @@ const resources: AccordionData = [
         count: 100
       },
       {
+        title: 'Sales <code>/sales</code>',
+        subtitle:
+          'Fake sales JSON data including country, item type, unit cost, number of units, etc.',
+        content: (
+          <div className='px-4'>
+            <CodeBlock
+              code={`{
+  "id": "485d91e9-1042-458c-a977-47e48ae2d83e",
+  "country": "Guernsey",
+  "itemType": "Ball",
+  "salesChannel": "Movies",
+  "group": "Recycled",
+  "orderData": "Mon Oct 07 2024 04:05:36 GMT+0200 (Central European Summer Time)",
+  "shippingDate": "Fri Nov 15 2024 06:49:01 GMT+0100 (Central European Standard Time)",
+  "units": 16,
+  "unitPrice": "138.69",
+  "unitCost": "186.09",
+  "totalRevenue": "2219.04",
+  "totalCost": "2977.44",
+  "totalProfit": "-758.4000000000001"
+}`}
+              language='json'
+              lineBreak
+            ></CodeBlock>
+          </div>
+        ),
+        count: 100
+      },
+      {
         title: 'Users <code>/users</code>',
         subtitle:
           'Fake users JSON data including name, email, phone, address, birthdate, etc.',

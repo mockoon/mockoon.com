@@ -114,11 +114,15 @@ Alice,35,Chicago,Data Scientist,Amazon,Seattle,345-678-9012`;
                     }
 
                     if (index === 0) {
-                      headers = line.split(',');
+                      headers = line
+                        .split(',')
+                        .map((item) => item.trim().replace(/^"(.*)"$/, '$1'));
 
                       return;
                     } else {
-                      const items = line.split(',');
+                      const items = line
+                        .split(',')
+                        .map((item) => item.trim().replace(/^"(.*)"$/, '$1'));
 
                       lines.push(items);
                     }

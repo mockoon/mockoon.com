@@ -77,7 +77,7 @@ Another option is to directly pass an **OpenAPI specification file**. It's parti
 
 As above, you can provide a path to a local OpenAPI specification file or directly the file's URL.
 
-> ⚠️ There is currently no equivalent between some of the Mockoon's features and the OpenAPI specifications ([more info](docs:openapi/openapi-specification-compatibility)). If you want to run your mock API created in Mockoon in the CLI with all its features (rules, etc.), you must use Mockoon's data file ([see above](#provide-a-mockoons-environment-file)) and not the [OpenAPI export feature](/docs/latest/openapi/import-export-openapi-format/).
+> ⚠️ There is currently no equivalent between some of the Mockoon's features and the OpenAPI specifications ([more info](/docs/latest/openapi/openapi-specification-compatibility/)). If you want to run your mock API created in Mockoon in the CLI with all its features (rules, etc.), you must use Mockoon's data file ([see above](#provide-a-mockoons-environment-file)) and not the [OpenAPI export feature](/docs/latest/openapi/import-export-openapi-format/).
 
 ### Step 4. Start you mock API
 
@@ -130,7 +130,7 @@ This file contains all the log entries (all levels) produced by the running mock
 
 > 💡 File logging is disabled where running Mockoon CLI using our Docker image. You can also disable it with the `--disable-log-to-file` flag.
 
-In addition, the **logs can be available through the [Admin API](docs/latest/admin-api/transaction-logs/)**, which is enabled by default and exposed in each running mock on the `/mockoon-admin` path. You can make a GET request to `http://localhost:3000/mockoon-admin/logs` to retrieve the logs. The information available through the Admin API is the same as the one available in the Desktop application's "Logs" tab.
+In addition, the **logs can be available through the [Admin API](/docs/latest/admin-api/transaction-logs/)**, which is enabled by default and exposed in each running mock on the `/mockoon-admin` path. You can make a GET request to `http://localhost:3000/mockoon-admin/logs` to retrieve the logs. The information available through the Admin API is the same as the one available in the Desktop application's "Logs" tab.
 
 ### Step 6. Deploy Mockoon CLI using Docker
 

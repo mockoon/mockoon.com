@@ -28,11 +28,11 @@ Let's create a simple example with an **order creation in an e-commerce applicat
 
 The first step is to **create a new [data bucket](/docs/latest/data-buckets/overview/)** to store the orders. A data bucket is like a **simple JSON database** that can be used to store and share data between endpoints.
 
-Go to the "Data" view, click on the "Add new data bucket" button, and name it "orders":
+Go to the "Data" view, click on the "Add data" button, and name it "orders":
 
 ![new data bucket named orders{1077x190}](/images/tutorials/simulate-webhooks-and-callbacks/new-orders-data-bucket.png)
 
-You can keep the default content of the data bucket (an ampty array `[]`).
+You can keep the default content of the data bucket (an empty array `[]`).
 
 ## 2. Create a new "order" endpoint
 

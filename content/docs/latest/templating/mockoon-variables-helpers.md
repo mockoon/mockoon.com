@@ -106,6 +106,7 @@ Get a global variable's value set with [`setGlobalVar`](#setglobalvar). Global v
 | ------------------- | ------ | -------------------------- |
 | 0                   | string | Variable name              |
 | 1                   | string | Path to the value property |
+| 2                   | string | Default value              |
 
 **Examples**
 
@@ -127,6 +128,12 @@ Get a global variable's value set with [`setGlobalVar`](#setglobalvar). Global v
 
 <!-- Stringify the variable content -->
 {{{stringify (getGlobalVar 'varName')}}}
+
+<!-- Get the variable content at the path or the default value -->
+{{getGlobalVar 'varName' 'path.to.property' 'default value'}}
+
+<!-- Get the variable content (without path)) or the default value -->
+{{getGlobalVar 'varName' null 'default value'}}
 ```
 
 ## getEnvVar

@@ -1,18 +1,22 @@
 ---
-title: Data storage location
+title: Data files
 meta:
-  title: Data storage location
+  title: Data files
   description: Learn where Mockoon's data storage files and application settings are located and how to move them to other folders
 order: 1100
 ---
 
-# Data storage location
+# Data files
 
 ---
 
-## Locating the files
+Mockoon desktop stores each mock API's data in a separate file. These files contain all the information about the environment, routes, and responses. They are stored in a JSON format and can be easily [shared](docs:mockoon-data-files/sharing-mock-api-files) with other Mockoon users, [used with the CLI](https://github.com/mockoon/mockoon/blob/main/packages/cli/README.md#use-your-mockoon-environment-file), or stored in a git repository.
 
-Since [v1.16.0](https://github.com/mockoon/mockoon/releases/tag/v1.16.0), Mockoon is storing each mock API's data in a separate file.
+## Data files schema
+
+Each environment file contains information about the environment, routes, and responses. They are stored in a JSON format following a schema and are validated every time you open an environment. This schema is available in the [repository](https://github.com/mockoon/mockoon/blob/main/packages/commons/src/constants/environment-schema.constants.ts).
+
+## Locating the mock API files
 
 You can locate the folder in which the API data are stored by right-clicking on each environment and selecting **"Show data file in explorer/finder"**:
 
@@ -36,17 +40,3 @@ Mockoon can monitor data files' external changes and automatically reload the in
 
 If you are a Mockoon Cloud user, you can also create cloud environments that are stored in the cloud and synchronized across all your devices. It also allows you to collaborate in real-time with your team members.
 You can learn more about this feature in the [dedicated documentation](/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/).
-
-## Old system (pre v1.16.0)
-
-Before version 1.16.0, all of your environments were stored in the same `environments.json` file in the **application data folder**. The file was located in your operating system's user folder:
-
-- Windows: `c:/Users/xxx/AppData/Roaming/mockoon/storage`
-- Linux: `~/.config/mockoon/storage`
-- macOS: `~/Library/Application Support/mockoon/storage`
-
-When updating to version 1.16.0, Mockoon automatically migrated the old `environments.json` file (see below) and split it into as many files as you had environments. These files were created in the same `storage` folder with incremental names: `environment-0.json`, `environment-1.json`, etc.
-
-![one file vs multiple files after the migration{600x252}](/images/docs/shared/storage-migration.png)
-
-> ⚠️ The automatic migration was dropped in [version 5.0.0](/releases/5.0.0/). If you are updating from v1.15.0, please first update to any version between v1.16.0 and v4.1.0, then to v5.0.0.

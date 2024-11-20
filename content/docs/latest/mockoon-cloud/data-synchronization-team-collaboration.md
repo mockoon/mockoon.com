@@ -14,7 +14,7 @@ order: 902
 
 ## Cloud vs local environments
 
-The **local environment** is the default environment in Mockoon. It is [stored on your local machine](docs:mockoon-data-files/data-storage-location) and not synchronized with the cloud.
+The **local environment** is the default environment in Mockoon. It is [stored on your local machine](docs:mockoon-data-files/data-files-location) and not synchronized with the cloud.
 
 **Cloud environments** are stored on our servers, and a local copy is kept on each client's machine. You can easily **create a cloud copy** of your local environment or **convert an existing cloud environment** back to a local environment.
 

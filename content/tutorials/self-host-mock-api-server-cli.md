@@ -23,7 +23,7 @@ Mockoon CLI is an [NPM package](https://www.npmjs.com/package/@mockoon/cli) that
 
 ## How to use the CLI?
 
-After **designing your mock API in the main application**, the CLI will be able to **consume the [data file](/docs/latest/mockoon-data-files/data-storage-location/) and run the mock API** on your server.
+After **designing your mock API in the main application**, the CLI will be able to **consume the [data file](/docs/latest/mockoon-data-files/data-files-location/) and run the mock API** on your server.
 
 ### Step 1. Create a mock API using Mockoon desktop
 

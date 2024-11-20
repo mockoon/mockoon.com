@@ -98,6 +98,16 @@
         "type": 301
       },
       {
+        "source": "/docs/latest/mockoon-data-files/sharing-mock-api-files{,/}",
+        "destination": "/docs/latest/mockoon-data-files/data-files-location/",
+        "type": 301
+      },
+      {
+        "source": "/docs/latest/mockoon-data-files/environment-clipboard-copy{,/}",
+        "destination": "/docs/latest/mockoon-data-files/sharing-mock-api-files/",
+        "type": 301
+      },
+      {
         "source": "/tutorials/angular-mocking{,/}",
         "destination": "/tutorials/angular-api-call-and-mocking/",
         "type": 301

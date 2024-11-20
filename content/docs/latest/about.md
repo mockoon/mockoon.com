@@ -32,7 +32,7 @@ This allows you to migrate from one version to another without worrying about co
 
 ### Major versions
 
-While the desktop application can easily **migrate from one version to another** (including major versions), this is not the case for the CLI or serverless package. When you are using one of your [data files](docs:mockoon-data-files/data-storage-location) with the CLI or serverless package, or sharing it with your team, you need to make sure that the data file schema is compatible with the version you or your team is using.
+While the desktop application can easily **migrate from one version to another** (including major versions), this is not the case for the CLI or serverless package. When you are using one of your [data files](docs:mockoon-data-files/data-files-location) with the CLI or serverless package, or sharing it with your team, you need to make sure that the data file schema is compatible with the version you or your team is using.
 
 Every time we introduce a **breaking change** in the data file schema (e.g. new feature) we release a **new major version**. We recommend that you always migrate simultaneously to the same major version for all the desktop applications and packages you are using.
 
@@ -44,7 +44,7 @@ When building libraries, the definition of a **breaking change** is usually stra
 
 Also, as we have **multiple components** (desktop application, CLI, serverless package), we have to consider the impact of a change on all these components while avoiding a too-strict definition of a breaking change that would mandate a new major version for every release.
 
-Our definition of a breaking change is a change impacting the [**data schema**](docs:mockoon-data-files/data-storage-location) and creating a **compatibility issue** between the applications and packages.
+Our definition of a breaking change is a change impacting the [**data schema**](docs:mockoon-data-files/data-files-location) and creating a **compatibility issue** between the applications and packages.
 
 Examples of **schema changes** that would require a **new major version**:
 

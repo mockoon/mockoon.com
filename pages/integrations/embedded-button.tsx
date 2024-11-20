@@ -69,7 +69,7 @@ const EmbeddedButton: FunctionComponent = function () {
                 <div className='card-body'>
                   <label className='form-label text-gray-700' htmlFor='dataURL'>
                     Mockoon{' '}
-                    <Link href='/docs/latest/mockoon-data-files/data-storage-location/'>
+                    <Link href='/docs/latest/mockoon-data-files/data-files-location/'>
                       data file
                     </Link>{' '}
                     URL

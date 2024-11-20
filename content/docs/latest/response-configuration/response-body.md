@@ -22,7 +22,7 @@ You can use the body editor to directly create your response content. It support
 
 ![inline body editor{1254x800}](docs-img:inline-body-editor.png)
 
-> Mockoon will save the content of the inline body editor directly in your [data file](docs:mockoon-data-files/data-storage-location).  
+> Mockoon will save the content of the inline body editor directly in your [data file](docs:mockoon-data-files/data-files-location).  
 > Using an external file could improve the performance for large content.
 
 ## External file

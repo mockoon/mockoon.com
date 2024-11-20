@@ -25,5 +25,5 @@ The server will create the endpoints in the same order they appear in the list, 
 
 ## Repairing the data file
 
-If Mockoon's [data file](docs:mockoon-data-files/data-storage-location) has broken references due to improper manipulation of the JSON, such as missing routes or nonexistent folders, it will automatically be repaired upon loading.
+If Mockoon's [data file](docs:mockoon-data-files/data-files-location) has broken references due to improper manipulation of the JSON, such as missing routes or nonexistent folders, it will automatically be repaired upon loading.
 If a route or folder does not exist, it will be automatically removed. On the other hand, unlisted routes and folders will be added back to the root level.

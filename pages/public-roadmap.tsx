@@ -123,6 +123,12 @@ const tasks: {
   ],
   inProgress: [
     {
+      link: 'https://github.com/mockoon/mockoon/issues/1581',
+      title: 'Improved data buckets state reporting',
+      cloud: false,
+      target: '_blank'
+    },
+    {
       link: 'https://github.com/mockoon/mockoon/issues/1045',
       title: 'Export logs as HAR',
       cloud: false,
@@ -136,6 +142,11 @@ const tasks: {
     }
   ],
   comingSoon: [
+    {
+      title: 'Custom sub domains in cloud deployments',
+      cloud: true,
+      target: null
+    },
     {
       title: 'Environment variables support in cloud deployments',
       cloud: true,

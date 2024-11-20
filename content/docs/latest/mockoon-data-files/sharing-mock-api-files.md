@@ -27,4 +27,4 @@ You can disable pretty printing in the settings:
 
 ### Use a mock API with the CLI
 
-The CLI is directly [compatible with environment files](https://github.com/mockoon/cli#use-your-mocks-in-the-cli). After locating your environment file, you run them with the CLI using the following command: `mockoon-cli start -d ./path-to-file/environment-data-file.json`.
+The CLI is directly [compatible with environment files](https://github.com/mockoon/mockoon/blob/main/packages/cli/README.md#use-your-mockoon-environment-file). After locating your environment file, you run them with the CLI using the following command: `mockoon-cli start -d ./path-to-file/environment-data-file.json`.

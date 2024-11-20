@@ -176,6 +176,17 @@ const tools = [
       }
     ],
     imageSrc: '/images/illustrations/mx-lookup.svg'
+  },
+  {
+    title: 'UUID generator',
+    description: 'Generate unique UUIDs online',
+    links: [
+      {
+        src: '/tools/uuid-generator/',
+        text: 'Generate'
+      }
+    ],
+    imageSrc: '/images/illustrations/uuid-generator.svg'
   }
 ];
 

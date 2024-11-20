@@ -14,10 +14,10 @@ const Hero: FunctionComponent<{
 }> = function ({
   title,
   subtitle,
-  cta,
+  cta = null,
   ctaContent,
-  mainPicture,
-  mainPictureAlt,
+  mainPicture = null,
+  mainPictureAlt = null,
   mainPictureWidth,
   mainPictureHeight,
   mainPictureSkewed,
@@ -117,7 +117,5 @@ const Hero: FunctionComponent<{
     </section>
   );
 };
-
-Hero.defaultProps = { cta: null, mainPicture: null, mainPictureAlt: null };
 
 export default Hero;

@@ -1,7 +1,7 @@
 ---
 title: Responses rules
 meta:
-  title: Server different responses based on rules
+  title: Serve different responses based on rules
   description: Learn how to define multiple route responses for each route and triggered them with rules based on the entering request parameters.
 order: 310
 ---

@@ -187,6 +187,17 @@ const tools = [
       }
     ],
     imageSrc: '/images/illustrations/uuid-generator.svg'
+  },
+  {
+    title: 'JSON schema validator',
+    description: 'Validate your JSON data against a JSON schema online',
+    links: [
+      {
+        src: '/tools/json-schema-validator/',
+        text: 'Generate'
+      }
+    ],
+    imageSrc: '/images/illustrations/json-schema-validator.svg'
   }
 ];
 

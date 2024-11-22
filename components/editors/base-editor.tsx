@@ -113,7 +113,7 @@ const BaseEditor: FunctionComponent<{
         </div>
       )}
       {!error && showValidMsg && (
-        <div className='bg-success-subtle border-start border-success border-4 p-4 my-4'>
+        <div className='bg-success-subtle border-start border-success border-4 p-4 mt-4'>
           <div>{lang.toUpperCase()} is valid!</div>
         </div>
       )}

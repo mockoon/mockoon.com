@@ -96,3 +96,5 @@ A data bucket can also **store multiple schemas** on various properties:
 ```
 
 To access a specific schema stored in a property, you can use the following syntax (using the [object-path](https://www.npmjs.com/package/object-path) syntax) in the rule's value field: `dataBucketNameOrId.propertyName`. Example: `mySchemasBucket.name` or `mySchemasBucket.age`.
+
+> 🛠️ We created an online tool to help you [**validate your JSON Schema**](/tools/json-schema-validator/) before using it in Mockoon.

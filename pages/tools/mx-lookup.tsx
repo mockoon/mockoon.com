@@ -11,11 +11,6 @@ const MaxLookup: FunctionComponent = function () {
   const [domain, setDomain] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<dnsRecord[]>(null);
-  const genericRequestBuilder = async (type: string, index: number) => {
-    await new Promise((resolve) => setTimeout(resolve, 500 * index));
-
-    return;
-  };
 
   const fetchData = async () => {
     setLoading(true);
@@ -29,6 +24,7 @@ const MaxLookup: FunctionComponent = function () {
           }
         )
       ).json();
+      console.log(data);
       const allRecords = [];
       if (data.Status === 0 && data.Answer) {
         allRecords.push(

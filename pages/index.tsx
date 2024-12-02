@@ -2,10 +2,10 @@ import { FunctionComponent, useEffect, useState } from 'react';
 import AlternatedFeatures from '../components/alternated-features';
 import Card from '../components/card';
 import CompanyLogos from '../components/company-logos';
-import DirectoryRatings from '../components/directory-ratings';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Quote from '../components/quote';
+import SocialProof from '../components/social-proof';
 import Sponsors from '../components/sponsors';
 import Testimonial from '../components/testimonial';
 import Typed from '../components/typed';
@@ -180,7 +180,7 @@ const HomePage: FunctionComponent = function () {
         mainPictureWidth={1200}
         mainPictureHeight={783}
       >
-        <DirectoryRatings />
+        <SocialProof />
       </Hero>
       <section>
         <div className='container'>

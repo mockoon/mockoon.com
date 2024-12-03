@@ -18,15 +18,15 @@ In addition to Handlebars' built-in helpers (`if`, `each`, etc., for more inform
 | [`switch`](#switch) | [`dataRaw`](#dataraw)                                   |
 |                     | [`setData`](#setdata)                                   |
 
-| Arrays              |                       | Objects             |
-| ------------------- | --------------------- | ------------------- |
-| [`array`](#array)   | [`sort`](#sort)       | [`object`](#object) |
-| [`oneOf`](#oneof)   | [`sortBy`](#sortby)   |                     |
-| [`someOf`](#someof) | [`reverse`](#reverse) |                     |
-| [`join`](#join)     |                       |                     |
-| [`slice`](#slice)   |                       |                     |
-| [`len`](#len)       |                       |                     |
-| [`filter`](#filter) |                       |                     |
+| Arrays              |                       | Objects                       |
+| ------------------- | --------------------- | ----------------------------- |
+| [`array`](#array)   | [`sort`](#sort)       | [`object`](#object)           |
+| [`oneOf`](#oneof)   | [`sortBy`](#sortby)   | [`objectMerge`](#objectmerge) |
+| [`someOf`](#someof) | [`reverse`](#reverse) |                               |
+| [`join`](#join)     | [`concat`](#concat)   |                               |
+| [`slice`](#slice)   |                       |                               |
+| [`len`](#len)       |                       |                               |
+| [`filter`](#filter) |                       |                               |
 
 | Math                    |                       |
 | ----------------------- | --------------------- |
@@ -178,23 +178,28 @@ Set or modify the value at a given path in a [data bucket](docs:data-buckets/ove
 - The full data bucket content (array, object, etc.) can be modified when the `path` is omitted (`{{setData 'operation' 'ID' '' 'value'}}`).
 - Available operations are `set`, `push`, `del`, `inc`, `dec`, and `invert`:
   - `set`: Set a new value at the root level (path omitted) or at the specified path. Requires a new value.
+  - `merge`: If the value at the specified path is an object, merge the new value with the existing one. Requires a new value of type object.
   - `push`: Push a new value to an array at the root level (path omitted) or at the specified path. Requires a new value and the target to be an array.
   - `del`: Delete a value at the root level (path omitted) or at the specified path. No new value required.
   - `inc`: Increment a number at the root level (path omitted) or at the specified path. Requires a number to increment by. If the value is omitted, the increment will be by 1.
   - `dec`: Decrement a number at the root level (path omitted) or at the specified path. Requires a number to decrement by. If the value is omitted, the decrement will be by 1.
   - `invert`: Invert a boolean at the root level (path omitted) or at the specified path. No new value required.
 
-| Arguments (ordered) | Type   | Description                                                         |
-| ------------------- | ------ | ------------------------------------------------------------------- |
-| 0                   | string | Operation to perform (`set`, `push`, `del`, `inc`, `dec`, `invert`) |
-| 1                   | string | ID or name of the data bucket                                       |
-| 2                   | string | Path to the data bucket property (optional)                         |
-| 3                   | any    | New value (optional for `invert`, `inc`, `dec` and `del`)           |
+| Arguments (ordered) | Type   | Description                                                                  |
+| ------------------- | ------ | ---------------------------------------------------------------------------- |
+| 0                   | string | Operation to perform (`set`, `merge`, `push`, `del`, `inc`, `dec`, `invert`) |
+| 1                   | string | ID or name of the data bucket                                                |
+| 2                   | string | Path to the data bucket property (optional)                                  |
+| 3                   | any    | New value (optional for `invert`, `inc`, `dec` and `del`)                    |
 
 **Examples**
 
 ```handlebars
 {{setData 'set' 'bucketNameOrId' 'path.to.property' 'newValue'}}
+<!-- Add a property to the target object -->
+{{setData 'merge' 'bucketNameOrId' 'path.to.property' (object key='value')}}
+<!-- Merge the target object with the request's body -->
+{{setData 'merge' 'bucketNameOrId' 'path.to.property' (bodyRaw)}}
 {{setData 'push' 'bucketNameOrId' 'path.to.array' 'newValue'}}
 {{setData 'del' 'bucketNameOrId' 'path.to.property'}}
 {{setData 'inc' 'bucketNameOrId' 'path.to.property' 2}}
@@ -401,6 +406,24 @@ result: {type: [1,2,3]}
 
 {{{object type=(filter (array 1 2 3) 1 3)}}}
 result: {type: [1,3]}
+```
+
+## objectMerge
+
+Merge two objects. The second object's properties will overwrite the first object's properties if they have the same key.
+
+| Arguments (ordered) | Type     | Description      |
+| ------------------- | -------- | ---------------- |
+| 0..n                | object[] | Objects to merge |
+
+**Examples**
+
+```handlebars
+{{objectMerge (object key1='value1') (object key2='value2')}}
+<!-- result: {key1: 'value1', key2: 'value2'} -->
+
+<!-- Adding an id to the request's body -->
+{{objectMerge (object id=uuid) (bodyRaw)}}
 ```
 
 ## sort
@@ -952,11 +975,12 @@ result: test
 
 ## concat
 
-Concatenate multiple strings/numbers together. This helper can concatenate results from other helpers, or be used as a parameter of another helper (see examples below).
+Concatenate multiple primitive values into a single string, or multiple arrays into a single array.
+This helper can concatenate results from other helpers, or be used as a parameter of another helper (see examples below).
 
-| Arguments (ordered) | Type | Description           |
-| ------------------- | ---- | --------------------- |
-| 0..n                | any  | Values to concatenate |
+| Arguments (ordered) | Type | Description                     |
+| ------------------- | ---- | ------------------------------- |
+| 0..n                | any  | Values or arrays to concatenate |
 
 **Examples**
 
@@ -964,6 +988,8 @@ Concatenate multiple strings/numbers together. This helper can concatenate resul
 {{concat 'value1' 2 'value3'}}
 {{concat @index (body 'id') 'value3'}}
 {{#repeat (concat 1 2 3)}}...{{/repeat}}
+{{concat (array 1 2) (bodyRaw 'list')}}
+{{#each (concat (array 1 2) (array 3 4))}}...{{/each}}
 ```
 
 ## indexOf

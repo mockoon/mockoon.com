@@ -81,6 +81,6 @@ You can **disable a route** by clicking on the **Toggle route** entry in the rou
 
 You can also disable all routes in a folder by using the **Toggle direct child routes** entry in the folder dropdown menu.
 
-When running your mock API using the [CLI](/cli/), you can [disable routes using the `--disable-routes` flag](https://github.com/mockoon/mockoon/tree/main/packages/cli#disabling-routes) followed by a route UUID or keyword/name or a folder keyword/name: `mockoon start --disable-routes myroute folder2`.
+When running your mock API using the [CLI](/cli/), you can [disable routes using the `--disable-routes` flag](https://github.com/mockoon/mockoon/tree/main/packages/cli#disabling-routes) followed by a route UUID or keyword/name or a folder keyword/name: `mockoon start -d ./data.json --disable-routes myroute folder2`. You can also disable all routes by using a wildcard: `mockoon start -d ./data.json --disable-routes "*"`.
 
 When using the [serverless package](/serverless/), you can [disable routes using the `disabledRoutes` option](https://github.com/mockoon/mockoon/tree/main/packages/serverless#disabling-routes).

@@ -81,7 +81,6 @@ Some screenshots still need to be created manually:
 Some screenshots are not changing between versions:
 
 - `/docs/latest/route-responses/dynamic-rules/`: the rules order schema
-- `/docs/latest/mockoon-data-files/data-storage-location/`: the "old system" screenshot
 
 > Both are located in the `images/docs/shared` folder.
 

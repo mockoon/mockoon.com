@@ -122,7 +122,7 @@ const Markdown: FunctionComponent<{
                 src={src as string}
                 width={width}
                 height={height}
-                className={`img-fluid mx-auto d-block img-shadow mt-8 ${
+                className={`img-fluid mx-auto d-block img-shadow mt-6 ${
                   hasSub ? 'mb-2' : 'mb-8'
                 } rounded`}
               />

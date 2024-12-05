@@ -10,7 +10,7 @@ order: 1130
 
 ---
 
-Depending on your operating system, Mockoon's settings and log files are located in different folders.
+Depending on your operating system, Mockoon's desktop application settings and log files are located in different folders.
 
 ## Application settings
 

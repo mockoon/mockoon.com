@@ -18,7 +18,7 @@ The **local environment** is the default environment in Mockoon. It is [stored o
 
 **Cloud environments** are stored on our servers, and a local copy is kept on each client's machine. You can easily **create a cloud copy** of your local environment or **convert an existing cloud environment** back to a local environment.
 
-![Cloud and local environments menus{200x231}](/images/docs/static/mockoon-cloud/data-synchronization-team-collaboration/cloud-sync-menu.png)
+![Cloud and local environments menus{200x231}](docs-img:cloud-sync-menu.png)
 
 ## Managing your cloud environments
 
@@ -26,7 +26,7 @@ The **local environment** is the default environment in Mockoon. It is [stored o
 
 There are multiple ways to **create a cloud environment**. You can use the context menu in the local environments list to create a cloud environment from a local one using "Duplicate to the cloud" or create a new cloud environment from scratch using "New cloud environment" from the cloud environments menu.
 
-![context menus to create cloud environments{569x492}](/images/docs/static/mockoon-cloud/data-synchronization-team-collaboration/create-cloud-environment.png)
+![context menus to create cloud environments{569x492}](docs-img:create-cloud-environment.png)
 
 The new cloud environment will be created and synchronized with the cloud, together with a local copy. It will be available on all your devices (solo plan) and for all your team members (team/enterprise plans) once they connect to the cloud.
 
@@ -34,7 +34,7 @@ The new cloud environment will be created and synchronized with the cloud, toget
 
 You can **remove an environment** from the cloud using the context menu in the cloud environments list and selecting "Convert to local" or "Delete from cloud":
 
-![context menu to convert a cloud environment to local{533x277}](/images/docs/static/mockoon-cloud/data-synchronization-team-collaboration/convert-cloud-to-local.png)
+![context menu to convert a cloud environment to local{533x277}](docs-img:convert-cloud-to-local.png)
 
 After converting an environment to local, it will be **permanently removed from the cloud** and **converted to a local environment** on all your devices (solo plan) and for all your team members (team/enterprise plans).
 
@@ -58,7 +58,7 @@ Mockoon's synchronization and collaboration features are primarily designed to w
 
 When you are offline, a warning is shown in the cloud environments list:
 
-![#sub#Warning shown when the application is offline{391x209}](/images/docs/static/mockoon-cloud/data-synchronization-team-collaboration/offline-editing-warning.png)
+![#sub#Warning shown when the application is offline{391x209}](docs-img:offline-editing-warning.png)
 
 When you modify an environment while being offline and go back online, three scenarios can happen:
 
@@ -66,7 +66,7 @@ When you modify an environment while being offline and go back online, three sce
 - **You did not make local changes**, but **the cloud version was modified**: the cloud version will be pulled automatically to your local environment.
 - **You made local changes**, and **the cloud version was modified**: you will be prompted to **choose** between **keeping** your local changes or **discarding** them.
 
-![#sub#Dialog shown when the application detected a conflict{504x241}](/images/docs/static/mockoon-cloud/data-synchronization-team-collaboration/offline-conflict-warning.png)
+![#sub#Dialog shown when the application detected a conflict{504x241}](docs-img:offline-conflict-warning.png)
 
 > ⚠️ If multiple users edit the same environment while offline, **only one version of the environment will be kept** and the others will be discarded.
 
@@ -74,9 +74,9 @@ When you modify an environment while being offline and go back online, three sce
 
 If you are disconnected from the cloud, the application will display a warning in the cloud environments list in the form of a orange or red cloud icon. Hovering over the icon will display the reason for the disconnection (e.g. incompatible version, etc.). You can also click on the icon to try to reconnect:
 
-![#sub#Tooltip showing a regular disconnection{287x219}](/images/docs/static/mockoon-cloud/data-synchronization-team-collaboration/offline-reason-disconnected.png)
+![#sub#Tooltip showing a regular disconnection{287x219}](docs-img:offline-reason-disconnected.png)
 
-![#sub#Tooltip showing a disconnection due to an incompatible version{288x221}](/images/docs/static/mockoon-cloud/data-synchronization-team-collaboration/offline-reason-incompatible-version.png)
+![#sub#Tooltip showing a disconnection due to an incompatible version{288x221}](docs-img:offline-reason-incompatible-version.png)
 
 ## Major versions migrations
 

@@ -137,6 +137,10 @@ You can also **manipulate data buckets programmatically** using the [`setData`](
 
 ```handlebars
 {{setData 'set' 'bucketNameOrId' 'path.to.property' 'newValue'}}
+<!-- Add a property to the target object -->
+{{setData 'merge' 'bucketNameOrId' 'path.to.property' (object key='value')}}
+<!-- Merge the target object with the request's body -->
+{{setData 'merge' 'bucketNameOrId' 'path.to.property' (bodyRaw)}}
 {{setData 'push' 'bucketNameOrId' 'path.to.array' 'newValue'}}
 {{setData 'del' 'bucketNameOrId' 'path.to.property'}}
 {{setData 'inc' 'bucketNameOrId' 'path.to.property' 2}}

@@ -42,7 +42,7 @@ The CRUD route will work with any content stored in your data bucket: valid JSON
 
 ### Resetting the data bucket content
 
-The data bucket content is generated when the server starts, and its state persists between calls. However, its state will not be saved in the [data file](docs:mockoon-data-files/data-storage-location), and you can reset it to its initial state by restarting the mock API.
+The data bucket content is generated when the server starts, and its state persists between calls. However, its state will not be saved in the [data file](docs:mockoon-data-files/data-files-location), and you can reset it to its initial state by restarting the mock API.
 
 ## CRUD route differences
 

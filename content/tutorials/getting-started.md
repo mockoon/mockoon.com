@@ -37,7 +37,7 @@ At the first launch, you will have a default setup, the **demo API**, also calle
 
 You can keep this demo environment and build from here or create a new empty one, which we will do in this tutorial.
 
-To create a new mock API, click on the "New environment" button. You will be prompted to save the [environment's data file](docs:mockoon-data-files/data-storage-location) on your computer:
+To create a new mock API, click on the "New environment" button. You will be prompted to save the [environment's data file](docs:mockoon-data-files/data-files-location) on your computer:
 
 ![Recording of creating a new environment{1468x886}](/images/tutorials/getting-started/create-first-mock-api.gif)
 

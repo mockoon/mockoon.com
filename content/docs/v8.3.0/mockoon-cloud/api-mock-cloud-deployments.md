@@ -18,24 +18,24 @@ order: 903
 
 You can **deploy an environment** to the cloud using the context menu in the local or cloud environments list and selecting **"Deploy to the cloud"**:
 
-![context menus to deploy cloud environments{513x507}](/images/docs/static/mockoon-cloud/api-mock-cloud-deployments/deploy-environment-menu.png)
+![context menus to deploy cloud environments{513x507}](docs-img:deploy-environment-menu.png)
 
 In the deployment dialog, you can further customize the deployment by selecting the **visibility** of the environment:
 
 - **Public**: The environment will be accessible to anyone with the URL.
 - **Private**: The environment will be accessible only to users with the URL and the **API key**.
 
-![deployment dialog{800x225}](/images/docs/static/mockoon-cloud/api-mock-cloud-deployments/deploy-environment-dialog.png)
+![deployment dialog{800x225}](docs-img:deploy-environment-dialog.png)
 
 After clicking the **"Deploy"** button, the environment will be uploaded to the cloud and will be accessible using the provided URL. In the management dialog, you can find the URL and the API key to access the environment. You can also re-deploy the environment or delete the instance:
 
-![deployment management dialog{799x205}](/images/docs/static/mockoon-cloud/api-mock-cloud-deployments/deploy-environment-management-dialog.png)
+![deployment management dialog{799x205}](docs-img:deploy-environment-management-dialog.png)
 
 ### Re-deploy or delete a cloud instance
 
 In the management dialog, you can **re-deploy** the environment or **delete** the instance using the menu:
 
-![deployment management dialog re-deploy or delete the instance menu{902x235}](/images/docs/static/mockoon-cloud/api-mock-cloud-deployments/deploy-environment-management-menu.png)
+![deployment management dialog re-deploy or delete the instance menu{902x235}](docs-img:deploy-environment-management-menu.png)
 
 ## Instance URL and visibility
 

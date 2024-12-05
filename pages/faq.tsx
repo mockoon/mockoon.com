@@ -362,27 +362,19 @@ const Faq: FunctionComponent = function () {
                         files necessary to run the application.
                       </p>
                       <p>
-                        Mockoon's <code>storage</code> folder contains mainly
-                        two files: a <code>settings.json</code> file with your
-                        application settings and preferences and an{' '}
-                        <code>environments.json</code> file containing all your
-                        API mocks data. Starting with{' '}
-                        <a
-                          href='https://github.com/mockoon/mockoon/releases/tag/v1.16.0'
-                          target='_blank'
-                          rel='noopener'
-                        >
-                          v1.16.0
-                        </a>
-                        , your mock APIs are stored in separated files and can
-                        reside anywhere on your hard drive. After the migration
-                        to v1.16.0, the <code>storage</code> folder will contain
-                        as many <code>environment-x.json</code> files as you had
-                        mock APIs created in Mockoon. You can then move them
-                        elsewhere.
+                        Mockoon's <code>storage</code> folder contains a{' '}
+                        <code>settings.json</code> file with your{' '}
+                        <Link href='/docs/latest/mockoon-data-files/settings-and-logs/'>
+                          application settings and preferences
+                        </Link>{' '}
+                        and multiple{' '}
+                        <Link href='/docs/latest/mockoon-data-files/data-files-location/'>
+                          environment files
+                        </Link>{' '}
+                        containing your API mocks data.
                       </p>
                       <p>
-                        <Link href='/docs/latest/mockoon-data-files/data-storage-location/'>
+                        <Link href='/docs/latest/mockoon-data-files/data-files-location/'>
                           Learn more about Mockoon's data storage
                         </Link>
                       </p>
@@ -404,19 +396,22 @@ const Faq: FunctionComponent = function () {
                 <div className='accordion-collapse '>
                   <div className='accordion-body'>
                     <p className='text-gray-700'>
-                      Yes. Since version 1.15.0, the desktop application uses a
-                      custom telemetry system collecting anonymous and basic
-                      usage data like session duration, country, operating
-                      system, application version, and number of environments.
-                      You can opt out of this telemetry system in the
-                      application settings. Starting with version 1.19.0, the
-                      desktop application is not using Google Analytics anymore.
+                      Yes. The desktop application uses a custom telemetry
+                      system collecting anonymous and basic usage data like
+                      session duration, country, operating system, application
+                      version, and number of environments. You can opt out of
+                      this telemetry system in the application settings.
                     </p>
                     <p className='text-gray-700'>
                       None of your mock API data like route names, headers,
                       bodies are collected.
                     </p>
-                    <p className='text-gray-700'></p>
+                    <p className='text-gray-700'>
+                      When using our Cloud services, your data is stored in our
+                      secure cloud infrastructure. None of your data is shared
+                      with third parties nor used for any purpose other than
+                      providing the service.
+                    </p>
                     <p className='text-gray-700'>
                       No data or telemetry is collected when using the{' '}
                       <a href='/cli/'>CLI</a>.

@@ -80,4 +80,21 @@ To store a JSON schema in a data bucket, create a new data bucket and paste your
 }
 ```
 
-You will then be able to reference this full schema in a rule's value field (e.g. `dataBucketNameOrId`), or a specific schema's property using the [object-path](https://www.npmjs.com/package/object-path) syntax (e.g. `dataBucketNameOrId.name`).
+You will then be able to reference this schema in a **rule's value field** by using the data bucket's name or ID: `mySchemaBucket`.
+
+A data bucket can also **store multiple schemas** on various properties:
+
+```json
+{
+  "name": {
+    "type": "string"
+  },
+  "age": {
+    "type": "number"
+  }
+}
+```
+
+To access a specific schema stored in a property, you can use the following syntax (using the [object-path](https://www.npmjs.com/package/object-path) syntax) in the rule's value field: `dataBucketNameOrId.propertyName`. Example: `mySchemasBucket.name` or `mySchemasBucket.age`.
+
+> 🛠️ We created an online tool to help you [**validate your JSON Schema**](/tools/json-schema-validator/) before using it in Mockoon.

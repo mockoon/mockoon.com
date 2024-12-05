@@ -56,8 +56,8 @@ Rules have five parts:
 
 In the dropdown menu you can choose between:
 
-- the **request body** value (full raw content or one of its properties if request's `Content-Type` is either `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`).
-- the value of a **request's query parameter**.
+- the **request body** parsed content if the request's `Content-Type` is one of the supported formats (see the [supported requests body formats](docs:requests/supported-body-formats) documentation for more information), or the body as a strnig otherwise.
+- the value of the **request's query parameters** object (see the [query parameters](docs:requests/query-parameters) documentation for more information on how query parameters are parsed).
 - the value of a **request header**.
 - the value of a **request cookie**.
 - the value of a [**route parameter**](docs:api-endpoints/routing#route-parameters).
@@ -75,13 +75,13 @@ In the dropdown menu you can choose between:
 This field supports [templating helpers](docs:templating/overview) to dynamically target a specific body property, header name, etc. Depending on the **target**, the way to access properties may be different:
 
 - **request body**:
-  - keep empty to match against the full raw body content.
+  - keep empty to match against the full parsed body if the request's `Content-Type` is one of the supported formats (see the [supported requests body formats](docs:requests/supported-body-formats) documentation for more information), or the body as a string otherwise.
   - use a path to access one of its properties. Two syntaxes are supported, [object-path](https://www.npmjs.com/package/object-path) or [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus). When using object-path, properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.
     Fetching object properties is compatible with request's bodies of `Content-Type` `application/json`, `application/x-www-form-urlencoded`, `multipart/form-data`, `application/xml`, `application/soap+xml` or `text/xml`.  
     _Please note that XML bodies are parsed using [xml-js](https://www.npmjs.com/package/xml-js) package. Refer to this [page](docs:requests/supported-body-formats#xml-support) or the package documentation for more information on how the XML is parsed and how to fetch specific properties._  
     _Please also note that `multipart/form-data` only supports fields. Uploaded files will be ignored._
     > 📘 Check the [supported requests body formats](docs:requests/supported-body-formats) documentation for more information on how the request body is parsed.
-- **query parameter**: either provide a property name like `filter` or a path if the query parameter is an object `filter.primary`.
+- **query parameter**: keep empty for comparisons against the full query parameters object, or provide a property name like `filter` or a path if the query parameter is an object `filter.primary`.
   > 📘 Check the [query parameters](docs:requests/query-parameters) documentation for more information on how they are parsed.
 - **headers**: a header name like `Accept` or `Content-Type`.
 - **cookies**: the cookie name like `Session-id`.
@@ -140,4 +140,6 @@ The **request number** supports simple entries like `1` or `2` but also regexes,
 
 #### JSON schemas
 
-The only exception is the **valid JSON schema** comparison operator. In this case, the **value** must point to a data bucket containing a valid JSON schema. The schema will be used to validate the targeted property using [ajv](https://www.npmjs.com/package/ajv). In this case, the **value** field supports the [object-path](https://www.npmjs.com/package/object-path) syntax to access the schema stored in a data bucket. Examples: `bucketNameOrId`, `bucketNameOrId.propertyName`, etc. The [data bucket documentation](docs:data-buckets/using-data-buckets#storing-json-schemas) provides more information on how to create and use JSON schemas.
+The only exception is the **valid JSON schema** comparison operator. In this case, the **value** must point to a data bucket containing a valid JSON schema. The schema will be used to validate the targeted property using [ajv](https://www.npmjs.com/package/ajv). In this case, the **value** field supports the [object-path](https://www.npmjs.com/package/object-path) syntax to access the schema stored in a data bucket or one of its properties. Examples: `bucketNameOrId`, `bucketNameOrId.schema`, etc. The [data bucket documentation](docs:data-buckets/using-data-buckets#storing-json-schemas) provides more information on how to create and use JSON schemas.
+
+> 🛠️ We created an online tool to help you [**validate your JSON Schema**](/tools/json-schema-validator/) before using it in Mockoon.

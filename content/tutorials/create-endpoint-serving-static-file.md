@@ -35,7 +35,7 @@ The `:path?` part of the route path is a **route parameter** that will capture t
 
 ### Configure the body response
 
-To serve a file we will use the **"File" response body type**. This response body type allows you to return a file from your local file system as the response body. This field supports [templating helpers](docs:templating/overview) like `{{ urlParam }}` to **dynamically serve the requested file** based on the route parameter. It also supports [absolute or relative paths](docs:response-configuration/file-serving#absolute-or-relative-paths). When a relative path is used, it is resolved relatively to the [environment data file location](docs:mockoon-data-files/data-storage-location#locating-the-files).
+To serve a file we will use the **"File" response body type**. This response body type allows you to return a file from your local file system as the response body. This field supports [templating helpers](docs:templating/overview) like `{{ urlParam }}` to **dynamically serve the requested file** based on the route parameter. It also supports [absolute or relative paths](docs:response-configuration/file-serving#absolute-or-relative-paths). When a relative path is used, it is resolved relatively to the [environment data file location](docs:mockoon-data-files/data-files-location#locating-the-files).
 
 ![body type selector with file input showing a templating helper {977x145}](/images/tutorials/create-endpoint-serving-static-file/configure-response-body-to-serve-file.png)
 

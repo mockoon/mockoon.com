@@ -44,6 +44,18 @@ const tasks: {
 } = {
   released: [
     {
+      link: '/releases/9.1.0/#cloud-deployments',
+      title: 'Custom sub domains in cloud deployments',
+      cloud: true,
+      target: null
+    },
+    {
+      link: '/releases/9.1.0/#improved-data-buckets-state-reporting',
+      title: 'Improved data buckets state reporting',
+      cloud: false,
+      target: null
+    },
+    {
       title: 'Real-time collaboration improved presence',
       cloud: true,
       link: '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/#team-collaboration-and-conflict-handling',
@@ -108,32 +120,9 @@ const tasks: {
       title: 'API deployments in the cloud',
       cloud: true,
       target: null
-    },
-    {
-      link: '/ai-powered-api-mocking/',
-      title: 'AI powered HTTP endpoints mocking',
-      cloud: true,
-      target: null
-    },
-    {
-      link: '/docs/latest/admin-api/overview/',
-      title: 'Admin API',
-      cloud: false
     }
   ],
   inProgress: [
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/1614',
-      title: 'Custom sub domains in cloud deployments',
-      cloud: true,
-      target: '_blank'
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/1581',
-      title: 'Improved data buckets state reporting',
-      cloud: false,
-      target: '_blank'
-    },
     {
       link: 'https://github.com/mockoon/mockoon/issues/1045',
       title: 'Export logs as HAR',

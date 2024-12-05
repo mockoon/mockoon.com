@@ -1,9 +1,9 @@
 import AlternatedFeatures from '../components/alternated-features';
 import CompanyLogos from '../components/company-logos';
-import DirectoryRatings from '../components/directory-ratings';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import OssCloudComparison from '../components/oss-cloud-comparison';
+import SocialProof from '../components/social-proof';
 import Layout from '../layout/layout';
 import { useAuth } from '../utils/auth';
 
@@ -109,7 +109,7 @@ export default function () {
         mainPictureAlt='Mockoon logo in the cloud interconnected with other services'
         mainPictureSkewed={false}
       >
-        <DirectoryRatings />
+        <SocialProof />
       </Hero>
 
       <section className='py-6 py-md-8 border-top bg-gradient-light-white'>

@@ -47,7 +47,13 @@ const faq: AccordionData = [
     items: [
       {
         title: 'Do you offer a free trial?',
-        content: `We offer a ${pricing.SOLO.trialDays}-day free trial for all plans. You can cancel your subscription at any time during the trial period and you will not be charged.`
+        content: `We offer a ${pricing.SOLO.trialDays}-day free trial for all plans. You can cancel your subscription at any time during the trial period and you will not be charged. Please note that the free trial is available once per user and requires a valid payment method.`
+      },
+      {
+        title:
+          'Our team/company is interested in the Team or Enterprise plan. Can we try it first withour providing a payment method?',
+        content:
+          'We can provide you with a free trial without a payment method. Do not hesitate to <a href="/contact-form/">contact us</a> to discuss your needs.'
       },
       {
         title: 'How does per-seat billing work?',

@@ -37,8 +37,9 @@ export async function getStaticProps({
   const files = require.context('../../content/releases/', true, /\.\/.+\.md$/);
   const releasePaths = files.keys().sort(sortPathBySemver);
 
-  const fileContent =
-    await require(`../../content/releases/${params.version}.md`);
+  const fileContent = await require(
+    `../../content/releases/${params.version}.md`
+  );
   const release = matter(fileContent.default);
 
   let releases = releasePaths.map((releasePath, releasePathIndex) => {
@@ -84,9 +85,7 @@ export default function Release(props: {
             <div className='col-12 col-lg-4 mb-8 pe-lg-8'>
               <aside className='flex-grow-1 sticky-top pt-4'>
                 <ul className='card-list list mb-6'>
-                  <h6 className='fw-bold text-uppercase mb-2'>
-                    Applications releases
-                  </h6>
+                  <h6 className='fw-bold text-uppercase mb-2'>Versions</h6>
                   {props.releases.map((release, releaseIndex) => {
                     return (
                       <li

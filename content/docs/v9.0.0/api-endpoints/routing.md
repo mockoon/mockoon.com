@@ -69,7 +69,7 @@ You can also retrieve the route parameters by using the `{{urlParam 'paramName'}
 
 Routes **must** be declared without query parameters as they are not part of the route path. They can only be added to the request when calling an endpoint.
 
-Query parameters can be retrieved with the **[`queryParam`](docs:/docs/latest/templating/mockoon-request-helpers/#queryparam) and [`queryParamRaw`](docs:/docs/latest/templating/mockoon-request-helpers/#queryparamraw) helpers** and are available in the **[response rules](docs:route-responses/dynamic-rules)** to check their content and serve different responses based on them.
+Query parameters can be retrieved with the **[`queryParam`](docs:templating/mockoon-request-helpers/#queryparam) and [`queryParamRaw`](docs:templating/mockoon-request-helpers/#queryparamraw) helpers** and are available in the **[response rules](docs:route-responses/dynamic-rules)** to check their content and serve different responses based on them.
 
 **Arrays and objects are supported** in the query string. For more information, please refer to the [query parameters documentation](docs:requests/query-parameters).
 

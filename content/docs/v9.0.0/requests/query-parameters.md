@@ -42,7 +42,7 @@ Parsed query parameters:
 
 ## Where can I access the query parameters?
 
-The parsed query parameters will be available **everywhere [templating helpers](docs:templating/overview) are supported**: response body, headers, rules, data buckets, callbacks, etc. You will be able to use the [`queryParam`](docs:templating/mockoon-request-helpers#queryparam) and [`queryParamRaw`](docs:/docs/latest/templating/mockoon-request-helpers/#queryparamraw) to access the parsed parameters and create dynamic responses based on it.
+The parsed query parameters will be available **everywhere [templating helpers](docs:templating/overview) are supported**: response body, headers, rules, data buckets, callbacks, etc. You will be able to use the [`queryParam`](docs:templating/mockoon-request-helpers#queryparam) and [`queryParamRaw`](docs:templating/mockoon-request-helpers/#queryparamraw) to access the parsed parameters and create dynamic responses based on it.
 
 The parameters will also be **available in the [response rules](docs:route-responses/dynamic-rules)** to check their content and serve different responses based on them.
 

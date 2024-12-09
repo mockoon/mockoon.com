@@ -23,7 +23,7 @@ Invalid bodies will be parsed as strings.
 
 ## What can I do with the parsed body?
 
-The parsed body will be available **everywhere [templating helpers](docs:templating/overview) are supported**: response body, headers, rules, data buckets, callbacks, etc. You will be able to use helpers like [`body`](docs:/docs/latest/templating/mockoon-request-helpers/#body) and [`bodyRaw`](docs:/docs/latest/templating/mockoon-request-helpers/#bodyraw) to access the parsed body content and create dynamic responses based on it.
+The parsed body will be available **everywhere [templating helpers](docs:templating/overview) are supported**: response body, headers, rules, data buckets, callbacks, etc. You will be able to use helpers like [`body`](docs:templating/mockoon-request-helpers/#body) and [`bodyRaw`](docs:templating/mockoon-request-helpers/#bodyraw) to access the parsed body content and create dynamic responses based on it.
 
 The body will also be **available in the [response rules](docs:route-responses/dynamic-rules)** to check its content and serve different responses based on it.
 

@@ -62,6 +62,16 @@
         "channels": ["company-bank", "github-sponsors"]
       },
       {
+        "guid": "developer-fulltime",
+        "status": "active",
+        "name": "Developer full-time compensation",
+        "description": "This will cover the cost of one developer working full-time on the projects.",
+        "amount": 3000,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": ["company-bank", "github-sponsors"]
+      },
+      {
         "guid": "angel-plan",
         "status": "active",
         "name": "Goodwill plan",

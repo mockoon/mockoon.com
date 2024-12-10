@@ -24,7 +24,7 @@ Since the last blog post, we've released several major updates and new features 
 
 ☁️ We also released a new [serverless package](/serverless/), allowing users to use their mock APIs in serverless environments (Firebase Functions, AWS Lambda, etc.).
 
-🪣 Finally, we introduced [data buckets](http://localhost:3000/tutorials/use-persisting-data-buckets/), a powerful key-value store available in each environment. Data buckets are persistent and generated when the server starts. This feature will make the development of CRUD and GraphQL routes easier in the future.
+🪣 Finally, we introduced [data buckets](/tutorials/use-persisting-data-buckets/), a powerful key-value store available in each environment. Data buckets are persistent and generated when the server starts. This feature will make the development of CRUD and GraphQL routes easier in the future.
 
 ### 🆕 And after?
 

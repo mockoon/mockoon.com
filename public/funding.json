@@ -1,0 +1,76 @@
+{
+  "version": "v1.0.0",
+  "entity": {
+    "type": "organisation",
+    "role": "owner",
+    "name": "Mockoon",
+    "email": "team@mockoon.com",
+    "description": "We are building Mockoon, a set of open-source API mocking tools for developers. Created in 2017 by Guillaume Monnet, it has since grown to be used by thousands of developers worldwide. Mockoon is a free and open-source project, and we rely on donations to keep it running and improving. We are also providing consulting and cloud services to help sustain the project.",
+    "webpageUrl": {
+      "url": "https://mockoon.com"
+    }
+  },
+  "projects": [
+    {
+      "guid": "mockoon",
+      "name": "Mockoon",
+      "description": "Mockoon is a set of open-source API mocking tools for developers, including a desktop app and various libraries. It is available for Windows, macOS, and Linux. ",
+      "webpageUrl": {
+        "url": "https://mockoon.com"
+      },
+      "repositoryUrl": {
+        "url": "https://github.com/mockoon/mockoon",
+        "wellKnown": "https://github.com/mockoon/mockoon/blob/main/.well-known/funding-manifest-urls"
+      },
+      "licenses": ["spdx:MIT"],
+      "tags": ["api", "api-mocking", "developer-tools", "data"]
+    }
+  ],
+  "funding": {
+    "channels": [
+      {
+        "guid": "company-bank",
+        "type": "bank",
+        "description": "Will accept bank transfers. Please e-mail us for details."
+      },
+      {
+        "guid": "github-sponsors",
+        "type": "payment-provider",
+        "address": "https://github.com/sponsors/mockoon",
+        "description": "We accept donations via GitHub Sponsors."
+      }
+    ],
+    "plans": [
+      {
+        "guid": "platinum-sponsor",
+        "status": "active",
+        "name": "Platinum Sponsor",
+        "description": "This contribution helps us cover the cost of running the project.",
+        "amount": 250,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": ["company-bank", "github-sponsors"]
+      },
+      {
+        "guid": "developer-time",
+        "status": "active",
+        "name": "Developer compensation",
+        "description": "This will cover the cost of one developer working part-time on the projects.",
+        "amount": 1000,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": ["company-bank", "github-sponsors"]
+      },
+      {
+        "guid": "angel-plan",
+        "status": "active",
+        "name": "Goodwill plan",
+        "description": "Pay anything you wish to show your goodwill for the project.",
+        "amount": 0,
+        "currency": "USD",
+        "frequency": "one-time",
+        "channels": ["company-bank", "github-sponsors"]
+      }
+    ]
+  }
+}

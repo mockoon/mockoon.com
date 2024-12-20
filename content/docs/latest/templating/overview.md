@@ -27,6 +27,37 @@ All Handlebars helpers are available (`if`, `each`, etc.). For more information,
 
 Handlebars will escape special characters (& < > " ' \` =) by default. If you want to avoid this behavior, you can use the triple curly braces syntax:`{{{helperName}}}`.
 
+### JSONPath Plus support
+
+Various helpers accept [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus) expressions as a parameter. For example, `{{body '$.path.to.property'}}`.
+The helpers that support JSONPath Plus expressions are:
+
+- [`body`](docs:templating/mockoon-request-helpers#body)
+- [`bodyRaw`](docs:templating/mockoon-request-helpers#bodyraw)
+- [`queryParam`](docs:templating/mockoon-request-helpers#queryparam)
+- [`queryParamRaw`](docs:templating/mockoon-request-helpers#queryparamraw)
+- [`data`](docs:templating/mockoon-helpers#data)
+- [`dataRaw`](docs:templating/mockoon-helpers#dataraw)
+- [`getGlobalVar`](docs:templating/mockoon-variables-helpers#getglobalvar)
+
+Due to the potential complexity and security implications of JSONPath Plus filters (e.g. `$..*[?((@property === 'price') && (@ !== 8.95))]`, a filter is the part between the square brackets `[...]`), their support is limited. Here are some examples of supported filters:
+
+- `$.store.book[*].author`
+- `$..book[?(@.isbn)]`
+- `$.store.book[?(@.price>10)]"`
+- `$.[?(@["Account Name"] === "Firefly")]`
+- `$..book[0][category,author]`
+- `$.store.book[(@.length-1)].title`
+- `$..book.*[?(@property.match(/bn$/i))]^`
+- `$..book[?(@property !== 0)]`
+- `$..*[?(@property === 'price' && @ !== 8.95)]`
+- `$..*[?((@property === 'price') && (@ !== 8.95))]`
+- `$.store.book[?(@path !== "$['store']['book'][0]")]`
+- `$[?(@.status==='enabled' && (@.id===1 || @.id===2))]`
+- `$[?(@.name.match(/lex/))]`
+
+> 💡 We tried to support as many filters as possible, but some might not work as expected. If you find an unsupported syntax, please [open an issue](https://github.com/mockoon/mockoon/issues/new/choose).
+
 ### Available helpers
 
 Besides Handlebars built-in helpers, Mockoon offers many of them:

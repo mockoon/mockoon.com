@@ -257,6 +257,37 @@ const resources: AccordionData = [
         count: 100
       },
       {
+        title: 'Current time <code>/time</code>',
+        subtitle:
+          'Fake time JSON data including UTC date time, Unix time, milliseconds, day of week, day of month, etc.',
+        content: (
+          <div className='px-4'>
+            <CodeBlock
+              code={`{
+  "utcDateTime": "2024-12-23T00:19:26.876+01:00",
+  "unixTimeS": 1734909566,
+  "unixTimeMS": 1734909566876,
+  "milliseconds": 876,
+  "seconds": 26,
+  "minutes": 19,
+  "hours": 0,
+  "dayOfWeekNumber": 1,
+  "dayOfWeekName": "Monday",
+  "dayOfMonth": 23,
+  "dayOfYear": 358,
+  "monthNumber": 12,
+  "monthName": "December",
+  "quarter": 4,
+  "year": 2024,
+  "weekOfYear": 52
+}`}
+              language='json'
+              lineBreak
+            ></CodeBlock>
+          </div>
+        )
+      },
+      {
         title: 'Todos <code>/todos</code>',
         subtitle:
           'Fake todos JSON data including title, completion status, priority, due date, etc.',

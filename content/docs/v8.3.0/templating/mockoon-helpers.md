@@ -999,7 +999,7 @@ Display the current time in the chosen format. Format syntax is based on [date-f
 **Examples**
 
 ```handlebars
-{{now 'YYYY-MM-DD'}}
+{{now 'yyyy-MM-DD'}}
 ```
 
 ## dateTimeShift

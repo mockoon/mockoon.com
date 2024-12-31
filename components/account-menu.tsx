@@ -93,6 +93,19 @@ const AccountMenu: FunctionComponent = function () {
                       </Link>
                     </li>
                   )}
+
+                <li
+                  className={`list-item ${
+                    router.pathname.includes('account/support') ? 'active' : ''
+                  }`}
+                >
+                  <Link
+                    href='/account/support/'
+                    className='list-link text-reset ps-4'
+                  >
+                    Support
+                  </Link>
+                </li>
               </>
             )}
           </ul>

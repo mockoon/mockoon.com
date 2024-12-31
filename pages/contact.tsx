@@ -32,8 +32,7 @@ const Contact: FunctionComponent = function () {
                   <h3 className='text-center fw-medium'>Community support</h3>
                   <p className='px-2 text-center text-gray-700'>
                     You can ask for help or discuss ideas and improvements on
-                    our GitHub Discussion forum. You are also welcome on our
-                    Discord server.
+                    our GitHub Discussion forum.
                   </p>
                   <div className='mt-auto text-center'>
                     <a
@@ -41,15 +40,7 @@ const Contact: FunctionComponent = function () {
                       target='_blank'
                       rel='noopener'
                     >
-                      GitHub
-                    </a>
-                    &nbsp;|&nbsp;
-                    <a
-                      href='https://discord.gg/FtJjkejKGp'
-                      target='_blank'
-                      rel='noopener'
-                    >
-                      Discord
+                      Go to the forum
                     </a>
                   </div>
                 </div>
@@ -102,7 +93,7 @@ const Contact: FunctionComponent = function () {
                       help you with any issue you may have with the product.
                     </p>
                     <div className='mt-auto text-center'>
-                      <a href='/account/subscription/'>Get email support</a>
+                      <a href='/account/support/'>Get email support</a>
                     </div>
                   </div>
                 </div>
@@ -128,7 +119,7 @@ const Contact: FunctionComponent = function () {
                       may have with the product.
                     </p>
                     <div className='mt-auto text-center'>
-                      <a href='/account/subscription/'>Get priority support</a>
+                      <a href='/account/support/'>Get priority support</a>
                     </div>
                   </div>
                 </div>

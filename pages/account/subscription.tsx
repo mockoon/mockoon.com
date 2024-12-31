@@ -463,55 +463,6 @@ const AccountSubscription: FunctionComponent = function () {
                       )}
                     </>
                   )}
-
-                  {!isUserLoading &&
-                    (userData?.plan === 'SOLO' ||
-                      userData?.plan === 'TEAM') && (
-                      <div className='card card-bleed shadow-light-lg mb-6'>
-                        <div className='card-header'>
-                          <h4 className='mb-0'>Email support</h4>
-                        </div>
-                        <div className='card-body'>
-                          <div className='list-group list-group-flush'>
-                            <div className='list-group-item'>
-                              <p className='mb-0'>
-                                Contact us at{' '}
-                                <a href='mailto:email-support@mockoon.com'>
-                                  email-support@mockoon.com
-                                </a>
-                              </p>
-                              <small className='text-gray-700'>
-                                Usual response time is between 24 and 48 hours
-                              </small>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                  {!isUserLoading && userData?.plan === 'ENTERPRISE' && (
-                    <div className='card card-bleed shadow-light-lg mb-6'>
-                      <div className='card-header'>
-                        <h4 className='mb-0'>Priority support</h4>
-                      </div>
-                      <div className='card-body'>
-                        <div className='list-group list-group-flush'>
-                          <div className='list-group-item'>
-                            <p className='mb-0'>
-                              Contact us at{' '}
-                              <a href='mailto:priority-support@mockoon.com'>
-                                priority-support@mockoon.com
-                              </a>
-                            </p>
-                            <small className='text-gray-700'>
-                              Guaranteed response time of one business day (9 am
-                              to 5 pm CET/CEST, Monday to Friday).
-                            </small>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </div>
               </div>
             </div>

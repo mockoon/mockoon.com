@@ -13,6 +13,13 @@ const incidents: {
   status: 'inprogress' | 'resolved';
 }[] = [
   {
+    title: 'All services - Schedule downtime, maintenance',
+    desc: 'All services will be restarted for maintenance. The downtime is expected to last less than 5 minutes. We apologize for the inconvenience.',
+    dateStart: '2025-01-11 15:30:00 UTC',
+    dateEnd: '2025-01-11 15:35:00 UTC',
+    status: 'resolved'
+  },
+  {
     title: 'All services - Schedule downtime, v9.1.0 release',
     desc: 'All services will be restarted to apply the v9.1.0 release. The downtime is expected to last less than 15 minutes. We apologize for the inconvenience.',
     dateStart: '2024-10-25 17:00:00 UTC',

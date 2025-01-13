@@ -22,7 +22,7 @@ You can **deploy an environment** to the cloud using the context menu in the loc
 
 In the deployment dialog, you can further customize your instance:
 
-- **Subdomain**: The default subdomain is generated automatically, but you can customize it to a unique value. The subdomain will be part of the instance URL (e.g. `https://{subdomain}.serverid.mockoon.app`).
+- **Subdomain**: The default subdomain is generated automatically, but you can customize it to a unique value. The subdomain will be part of the instance URL (e.g. `https://{subdomain}.mockoon.app`).
 - **Visibility**:
   - **Public**: The environment will be accessible to anyone with the URL.
   - **Private**: The environment will be accessible only to users with the URL and the **API key** (see [Instance URL and visibility](#instance-url-and-visibility) below).
@@ -42,7 +42,7 @@ In the management dialog, you can **re-deploy** the environment or **delete** th
 
 ## Instance URL and visibility
 
-The instance will be deployed on a shared cloud infrastructure and will be accessible using a unique URL in the form of `https://mock-abcd1234.serverid.mockoon.app`. The URL will be displayed in the management dialog and can be shared with your team, clients, or class. You can also customize the subdomain part of the URL when deploying the environment.
+The instance will be deployed on a shared cloud infrastructure and will be accessible using a unique URL in the form of `https://mock-abcd1234.mockoon.app`. The URL will be displayed in the management dialog and can be shared with your team, clients, or class. You can also customize the subdomain part of the URL when deploying the environment.
 
 The visibility of the environment can be set to **public** or **private**. Here are the differences between the two:
 
@@ -72,11 +72,11 @@ Some **quotas and limits apply** to the cloud deployment feature. Here are the m
 - **Solo plan**:
   - 1 cloud deployment.
   - 50&nbsp;000 requests per month.
-  - 3 requests per second (1 request per second during trial).
+  - 3 requests per second (2 request per second during trial).
 - **Team plan**:
   - 3 cloud deployments.
   - 100&nbsp;000 requests per month.
-  - 5 requests per second (1 request per second during trial).
+  - 5 requests per second (2 request per second during trial).
 
 These quotas and limits are subject to change. Please refer to your [account settings](/account/subscription/) for the latest information.
 
@@ -86,5 +86,5 @@ The cloud deployment feature is still in its early stages. Here are some improve
 
 - Support for [**environment variables**](docs:admin-api/environment-variables).
 - Offer more instance locations and the ability to choose the closest one.
-- Possibility to customize the instance URL or link a custom domain to the instance.
+- Possibility to link a custom domain to the instance.
 - Possibility to renew the API key.

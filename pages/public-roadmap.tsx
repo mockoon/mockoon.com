@@ -44,6 +44,12 @@ const tasks: {
 } = {
   released: [
     {
+      link: '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/#deploy-an-environment-to-the-cloud',
+      title: 'Simplified cloud deployments URLs',
+      cloud: true,
+      target: null
+    },
+    {
       link: '/releases/9.1.0/#cloud-deployments',
       title: 'Custom sub domains in cloud deployments',
       cloud: true,
@@ -113,12 +119,6 @@ const tasks: {
       link: '/releases/8.4.0/#random-latencies',
       title: 'Randomized lantency',
       cloud: false,
-      target: null
-    },
-    {
-      link: '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/',
-      title: 'API deployments in the cloud',
-      cloud: true,
       target: null
     }
   ],

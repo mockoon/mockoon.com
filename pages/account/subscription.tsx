@@ -264,6 +264,7 @@ const AccountSubscription: FunctionComponent = function () {
                                       </small>
                                     </p>
                                   )}
+
                                 {userData?.plan !== 'FREE' &&
                                   !displayPlanInfo && (
                                     <p className='m-0'>
@@ -283,20 +284,6 @@ const AccountSubscription: FunctionComponent = function () {
                                       Upgrade plan
                                     </Link>
                                   )}
-                                  {userData?.plan !== 'FREE' &&
-                                    displayPlanInfo &&
-                                    userData?.subscription?.provider ===
-                                      'stripe' && (
-                                      <Link
-                                        href={
-                                          process.env
-                                            .NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL
-                                        }
-                                        className='btn btn-xs btn-primary'
-                                      >
-                                        Manage subscription
-                                      </Link>
-                                    )}
                                 </div>
                                 {(userData?.plan === 'SOLO' ||
                                   ((userData?.plan === 'TEAM' ||
@@ -314,22 +301,6 @@ const AccountSubscription: FunctionComponent = function () {
                                 )}
                               </div>
                             </div>
-                            {userData?.plan === 'FREE' &&
-                              userData?.subscription?.portalEnabled &&
-                              userData?.subscription?.provider === 'stripe' && (
-                                <div className='row pt-2'>
-                                  <div className='col text-end'>
-                                    <Link
-                                      href={
-                                        process.env
-                                          .NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL
-                                      }
-                                    >
-                                      <small>Manage past subscriptions</small>
-                                    </Link>
-                                  </div>
-                                </div>
-                              )}
                           </div>
 
                           {(userData?.plan !== 'FREE' ||

@@ -48,6 +48,8 @@ Templating can be disabled both for the body editor and the file content. Please
 
 Templating is also supported directly in the **file input field**. It allows to dynamically generate the file path using helpers. Please refer to the [templating documentation](docs:templating/overview#file-input-templating) for more information.
 
+> ⚠️ **A note on security**: When using templating helpers in the file input field, Mockoon will prevent path traversal attacks by disallowing escaping the current folder by passing `../` through the templating engine. The current folder is either the environment's file location for relative paths or the part of the path before the first template variable, e.g. in `/home/username/{{queryParam 'filename'}}`, the current folder is `/home/username/` and passing `../` in the `filename` won't be allowed.
+
 ## 404 fallback
 
 By default, Mockoon will return an error in the body when a file is not found. It will still keep the status code you set up on your route response. You can instead choose to automatically return a 404 by activating an option in the route response settings:

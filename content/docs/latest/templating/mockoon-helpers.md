@@ -20,11 +20,11 @@ In addition to Handlebars' built-in helpers (`if`, `each`, etc., for more inform
 
 | Arrays              |                       | Objects                       |
 | ------------------- | --------------------- | ----------------------------- |
-| [`array`](#array)   | [`sort`](#sort)       | [`object`](#object)           |
-| [`oneOf`](#oneof)   | [`sortBy`](#sortby)   | [`objectMerge`](#objectmerge) |
-| [`someOf`](#someof) | [`reverse`](#reverse) |                               |
-| [`join`](#join)     | [`concat`](#concat)   |                               |
-| [`slice`](#slice)   |                       |                               |
+| [`array`](#array)   | [`find`](#find)       | [`object`](#object)           |
+| [`oneOf`](#oneof)   | [`sort`](#sort)       | [`objectMerge`](#objectmerge) |
+| [`someOf`](#someof) | [`sortBy`](#sortby)   |                               |
+| [`join`](#join)     | [`reverse`](#reverse) |                               |
+| [`slice`](#slice)   | [`concat`](#concat)   |                               |
 | [`len`](#len)       |                       |                               |
 | [`filter`](#filter) |                       |                               |
 
@@ -312,7 +312,7 @@ result: 5
 
 ## filter
 
-Return a filtered array. This helper can be used with data buckets, use the [dataRaw](#dataraw) for that.
+Return a filtered array.
 
 | Arguments (ordered) | Type                         | Description         |
 | ------------------- | ---------------------------- | ------------------- |
@@ -323,12 +323,13 @@ Return a filtered array. This helper can be used with data buckets, use the [dat
 - Each argument starting from index 1 is a condition `filter (array 1 2 3) 1 3 5 6 ....`.
   - Condition can be primitives (string, number), [objects](#object) or [arrays](#array) with sub-conditions.
   - When the condition is an object, then all keys and values work as an `AND`.
-  - Conditions support infinite nesting of conditions using arrays.
-  - The first level of filer arguments works as OR conditions `filter (array 1 2 3) 1 3` equals fo `[1,2,3].filter(x => x === 3 || x === 1)`.
+  - Conditions support nesting of conditions using arrays.
+  - The first level of filter arguments works as OR conditions `filter (array 1 2 3) 1 3`, equals to `[1,2,3].filter(x => x === 3 || x === 1)`.
   - The second level of conditions works as `AND` sub-conditions list.
   - The third level of conditions works as `OR` sub-conditions list.
   - Nesting of conditions matches the rule `OR` (the first level of the arguments) -> `AND` -> `OR` -> `AND` -> ...
   - For a better understanding of how to build `AND` queries with objects please check the [object helper](#object) documentation.
+- This helper can be used with other helpers like [`dataRaw`](#dataraw) to filter data buckets, [`bodyRaw`](docs:templating/mockoon-request-helpers#bodyraw) to filter request bodies, etc.
 
 **Structure**
 
@@ -337,21 +338,18 @@ Return a filtered array. This helper can be used with data buckets, use the [dat
 {{ filter (array (object key='value1') (object key='value2')) (object key='value1') }}
 <!-- Filter on nested object keys -->
 {{ filter (array (object key=(object prop='value1')) (object key=(object prop='value2'))) (object key=(object prop='value1')) }}
-<!-- filter query base OR structure -->
-{{ filter (array 1 2 3 ... ) c1 c2 c3 ... }}
-result: c1 OR c2 OR c3
 
-<!-- filter query base AND structure (the AND conditions described as sub-conditions) -->
-{{ filter (array x y z) (array c1 c2 c3) }}
-result: items that fit to c1 AND c2 AND c3
+<!-- OR matching structure -->
+{{ filter (array 1 2 3 ... ) condition1 condition2 ... }}
+result: filter items matching condition1 OR condition2
 
-<!-- filter query a few OR from several AND conditions -->
+<!-- AND matching structure -->
+{{ filter (array x y z) (array condition1 condition2) }}
+result: filter items matching condition1 AND condition2
+
+<!-- OR and AND conditions -->
 {{ filter (array x y z) (array a1 a2 a3) (array b1 b2 b3) (array c1 c2 c3) }}
-result: (a1 AND a2 AND a3) OR (b1 AND b2 AND b3) OR (c1 AND c2 AND c3)
-
-<!-- filter with complex nested structure -->
-{{ filter (array 1 2 3) (array a1 a2 (array x1 x2) ) (array b1 b2 b3) }}
-results: items that fit to (a1 AND a2 AND (x1 OR x2) ) OR (b1 AND b2 AND b3)
+result: filter items matching (a1 AND a2 AND a3) OR (b1 AND b2 AND b3) OR (c1 AND c2 AND c3)
 ```
 
 **Examples**
@@ -379,6 +377,75 @@ result: item1,item2,item3,item3
 
 <!-- Mixed data filter -->
 {{filter (array 'item1' 'item2' (object type='type1') (object type='type2')) 'item1' (object type='type2')}}
+```
+
+## find
+
+Find an item in an array.
+
+| Arguments (ordered) | Type                         | Description         |
+| ------------------- | ---------------------------- | ------------------- |
+| 0                   | any[]                        | Input array         |
+| 1..n                | primitive or object or array | OR conditions level |
+
+- The first argument is the array where to find an item.
+- Each argument starting from index 1 is a condition `find (array 1 2 3) 1 3 5 6 ....`.
+  - Condition can be primitives (string, number), [objects](#object) or [arrays](#array) with sub-conditions.
+  - When the condition is an object, then all keys and values work as an `AND`.
+  - Conditions support nesting of conditions using arrays.
+  - The first level of filter arguments works as OR conditions `find (array 1 2 3) 1 3`, equals to `[1,2,3].find(x => x === 3 || x === 1)`.
+  - The second level of conditions works as `AND` sub-conditions list.
+  - The third level of conditions works as `OR` sub-conditions list.
+  - Nesting of conditions matches the rule `OR` (the first level of the arguments) -> `AND` -> `OR` -> `AND` -> ...
+  - For a better understanding of how to build `AND` queries with objects please check the [object helper](#object) documentation.
+- This helper can be used with other helpers like [`dataRaw`](#dataraw) to filter data buckets, [`bodyRaw`](docs:templating/mockoon-request-helpers#bodyraw) to filter request bodies, etc.
+
+**Structure**
+
+```handlebars
+<!-- find by object keys -->
+{{ find (array (object key='value1') (object key='value2')) (object key='value1') }}
+<!-- find by nested object keys -->
+{{ find (array (object key=(object prop='value1')) (object key=(object prop='value2'))) (object key=(object prop='value1')) }}
+
+<!-- OR matching structure -->
+{{ find (array 1 2 3 ... ) condition1 condition2 ... }}
+result: find item matching condition1 OR condition2
+
+<!-- AND matching structure -->
+{{ find (array x y z) (array condition1 condition2) }}
+result: find item matching condition1 AND condition2
+
+<!-- OR and AND conditions -->
+{{ find (array x y z) (array a1 a2 a3) (array b1 b2 b3) (array c1 c2 c3) }}
+result: find item matching (a1 AND a2 AND a3) OR (b1 AND b2 AND b3) OR (c1 AND c2 AND c3)
+```
+
+**Examples**
+
+```handlebars
+<!-- Simple OR find -->
+{{find (array 1 2 3) 1 3}}
+result: 1
+
+<!-- Simple OR find -->
+{{find (array 'item1' 'item2' 'item3' 'item4' 'item3') 'item1' 'item2' 'item3'}}
+result: item1
+
+<!-- Data bucket get first user with type='item1' -->
+{{find (dataRaw 'Users') (object type='item1')}}
+
+<!-- Data bucket get first user with type='item1' OR type='item2' OR type='item3' -->
+{{find (dataRaw 'Users') (object type='item1') (object type='item2') (object type='item3')}}
+
+<!-- Data bucket get first user with type='item1' AND category='some-category' -->
+{{find (dataRaw 'Users') (object type='item1' category='some-category')}}
+
+<!-- Data bucket get first user with type='item1' OR category='some-category' -->
+{{find (dataRaw 'Users') (array (object type='item1') (object category='some-category'))}}
+
+<!-- Mixed data find -->
+{{find (array 'item1' 'item2' (object type='type1') (object type='type2')) 'item1' (object type='type2')}}
 ```
 
 ## object

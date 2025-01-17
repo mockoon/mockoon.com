@@ -16,7 +16,7 @@ order: 9
 
 Requestly is a tool designed for **modifying** and **testing** network requests directly within the browser, often used by developers to **intercept, edit, and redirect HTTP requests** and responses. With a browser extension and cloud capabilities, Requestly allows users to configure custom rules to modify headers, rewrite URLs, and redirect API requests, making it useful for debugging and testing purposes. It includes collaboration features and integrations that enable teams to share and synchronize rule settings. Requestly operates across platforms, with a focus on front-end testing and debugging in web applications.
 
-![#sub#Screenshot of Requestly's interface](/images/compare/api-mocking-comparison-requestly-screenshot.png)
+![#sub#Screenshot of Requestly's interface{1024x401}](/images/compare/api-mocking-comparison-requestly-screenshot.png)
 
 ## What is Mockoon?
 
@@ -28,7 +28,7 @@ Mockoon Cloud is also available for teams and organizations looking for a **clou
 
 > 💡 Get started with Mockoon: [Download Mockoon](/download/) or [Discover Mockoon Cloud](/cloud/)
 
-![#sub#Screenshot of Mockoon's interface{1400x670}](/images/compare/api-mocking-comparison-mockoon-screenshot.png)
+![#sub#Screenshot of Mockoon's interface{1140x472}](/images/compare/api-mocking-comparison-mockoon-screenshot.png)
 
 ## Offer comparison
 

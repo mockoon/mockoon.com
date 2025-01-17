@@ -26,19 +26,18 @@ In the deployment dialog, you can further customize your instance:
 - **Visibility**:
   - **Public**: The environment will be accessible to anyone with the URL.
   - **Private**: The environment will be accessible only to users with the URL and the **API key** (see [Instance URL and visibility](#instance-url-and-visibility) below).
-- **Enable/disable the admin API**: Enable/disable the [admin API](docs:admin-api/overview) available on a running mock on the `/mockoon-admin` endpoint.
 
-![deployment dialog{799x267}](docs-img:deploy-environment-dialog.png)
+![deployment dialog{797x286}](docs-img:deploy-environment-dialog.png)
 
 After clicking the **"Deploy"** button, the environment will be uploaded to the cloud and will be accessible using the provided URL. In the management dialog, you can find the URL and the API key to access the environment. You can also re-deploy the environment or delete the instance:
 
-![deployment management dialog{799x205}](docs-img:deploy-environment-management-dialog.png)
+![deployment management dialog{794x203}](docs-img:deploy-environment-management-dialog.png)
 
 ### Re-deploy or delete a cloud instance
 
 In the management dialog, you can **re-deploy** the environment or **delete** the instance using the menu:
 
-![deployment management dialog re-deploy or delete the instance menu{902x235}](docs-img:deploy-environment-management-menu.png)
+![deployment management dialog re-deploy or delete the instance menu{886x210}](docs-img:deploy-environment-management-menu.png)
 
 ## Instance URL and visibility
 
@@ -46,7 +45,7 @@ The instance will be deployed on a shared cloud infrastructure and will be acces
 
 The visibility of the environment can be set to **public** or **private**. Here are the differences between the two:
 
-- **Public**: The environment is accessible to anyone with the URL.
+- **Public**: The environment is accessible to anyone with the URL. The API key is displayed in the management dialog and must be included in the request `Authorization` header to access the environment's [admin API](docs:admin-api/overview).
 - **Private**: The environment is accessible only to users with the URL and the API key. The API key is displayed in the management dialog and must be included in the request `Authorization` header to access the environment.
 
 ## Unsupported features

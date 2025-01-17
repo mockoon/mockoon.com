@@ -14,6 +14,40 @@ order: 801
 
 This endpoint allows you to manage the [data buckets](docs:data-buckets/overview) without restarting the server.
 
+## Get the data buckets status
+
+To get the status of all data buckets (without their values), call the `/mockoon-admin/data-buckets` endpoint with the following parameters:
+
+- **Method:** `GET`
+- **URL:** `/mockoon-admin/data-buckets`.
+
+**Example request:**
+
+```http
+GET /mockoon-admin/data-buckets
+```
+
+**Example response:**
+
+```json
+[
+  {
+    "id": "jb18",
+    "name": "data 1",
+    "parsed": true,
+    "validJson": true
+  },
+  {
+    "id": "fhcj",
+    "name": "data 2",
+    "parsed": true,
+    "validJson": false
+  }
+]
+```
+
+> 💡 These information are also available in the [`/mockoon-admin/events` endpoint](docs:admin-api/events#data-buckets-processed-event).
+
 ## Get a data bucket value
 
 To get the value of a data bucket, call the `/mockoon-admin/data-buckets` endpoint with the following parameters:

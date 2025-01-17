@@ -57,3 +57,4 @@ Currently, the admin API allows you to:
 - [Manage the environment variables](docs:admin-api/environment-variables)
 - [Manage the transaction logs](docs:admin-api/transaction-logs)
 - [Manage the data buckets](docs:admin-api/data-buckets)
+- [Subscribe to server-sent events](docs:admin-api/events)

@@ -65,7 +65,7 @@ However, the CLI is not able to run a data file from a more recent version. You 
 
 You can run your mock in one single step by providing the actual location of your Mockoon environment file. To locate your environment file from the main application, click the three dots next to the environment name and select "Show data file in explorer/finder" in the dropdown menu:
 
-![show in folder menu entry{481x228}](/images/tutorials/getting-started-cli/environment-show-in-folder.png)
+![show in folder menu entry{551x380}](/images/tutorials/getting-started-cli/environment-show-in-folder.png)
 
 For the rest of this tutorial, we will pretend that your data file is named `data.json` and resides in the current directory.
 

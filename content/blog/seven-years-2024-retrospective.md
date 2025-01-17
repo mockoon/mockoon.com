@@ -42,7 +42,7 @@ We agree these numbers are but vanity metrics. Maybe more importantly, every day
 
 We could continue to talk about the project's success forever but I will just say that we are grateful for the support we have received from the community over the years. And we hope to continue to build a great product for **many years to come**.
 
-![#sub#Our users thank you notes!](/images/blog/seven-years-2024-retrospective/thank-you-cloud.png)
+![#sub#Our users thank you notes!{1200x342}](/images/blog/seven-years-2024-retrospective/thank-you-cloud.png)
 
 ## An overview of the latest features
 
@@ -72,11 +72,11 @@ Based on the users' feedback, our own experience, and observations of other open
 
 At the end of 2023, the first major feature was released: the ability to [**collaborate** in real-time with your team](/blog/data-synchronization-team-collaboration-release/) in the desktop application.
 
-![#sub#Mockoon Cloud team collaboration](/images/blog/seven-years-2024-retrospective/team-collaboration.png)
+![#sub#Mockoon Cloud team collaboration{668x157}](/images/blog/seven-years-2024-retrospective/team-collaboration.png)
 
 And after months of work, we released earlier this summer, the [first version of our **cloud deployment** feature](/blog/mock-api-cloud-deployments-release/). It allows you to **deploy** your mock APIs to the cloud and **share** them with your team with a simple link.
 
-![#sub#Mockoon Cloud deployments](/images/blog/seven-years-2024-retrospective/deploy-environment-management-dialog.png)
+![#sub#Mockoon Cloud deployments{799x205}](/images/blog/seven-years-2024-retrospective/deploy-environment-management-dialog.png)
 
 We are excited about the future of Mockoon Cloud and we are working hard to add more features to it. We were also careful to keep the open-source project and the cloud services separate. If you were a user before the cloud, absolutely nothing has changed for you. And if you need these advanced features for your team, just [give Mockoon Cloud a try](/pricing/).
 
@@ -90,7 +90,7 @@ We published these interviews on our blog, and we invite you to read them if you
 
 Some examples: [Lukas, from OneFootball](/blog/contributor-spotlight-lukas-spiss-onefootball/) or [Bradley, from AppWrite](/blog/contributor-spotlight-bradley-schofield-appwrite/)
 
-![#sub#Our interviewees!](/images/blog/seven-years-2024-retrospective/contributors-map.png)
+![#sub#Our interviewees!{1200x166}](/images/blog/seven-years-2024-retrospective/contributors-map.png)
 
 ## New tutorials and tools
 

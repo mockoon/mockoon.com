@@ -30,7 +30,7 @@ Mockoon Cloud is also available for teams and organizations looking for a **clou
 
 > 💡 Get started with Mockoon: [Download Mockoon](/download/) or [Discover Mockoon Cloud](/cloud/)
 
-![#sub#Screenshot of Mockoon's interface{1400x670}](/images/compare/api-mocking-comparison-mockoon-screenshot.png)
+![#sub#Screenshot of Mockoon's interface{1140x472}](/images/compare/api-mocking-comparison-mockoon-screenshot.png)
 
 ## Offer comparison
 

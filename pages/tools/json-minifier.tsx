@@ -5,30 +5,9 @@ import Meta from '../../components/meta';
 import ToolsCta from '../../components/tools-cta';
 import Layout from '../../layout/layout';
 
-const JsonFormatterBeautifier: FunctionComponent = function () {
+const JsonMinifier: FunctionComponent = function () {
   const [originalJsonContent] = useState<string>(
-    `{  "property": {    "value": "example_value",    "list_of_properties": [
-      {
-
-
-        "property_1": "value_1"      },
-      {        "property_2": "value_2"
-},
-      {
-        "property_3": "value_3"      }
-    ],
-    "nested_properties": {
-"nested_property": {
-        "nested_value": "nested_example_value"
-      }
-    },
-
-    "multiple_values_for_property": [
-      "value_1",      "value_2",      "value_3"    ]
-  }
-}`
-  );
-  const [formattedJsonContent, setFormattedJsonContent] = useState<string>(`{
+    `{
   "property": {
     "value": "example_value",
     "list_of_properties": [
@@ -53,33 +32,21 @@ const JsonFormatterBeautifier: FunctionComponent = function () {
       "value_3"
     ]
   }
-}`);
-  const [spacesOrTabs, setSpacesOrTabs] = useState<'spaces' | 'tabs'>('spaces');
-  const [numberOfSpaces, setNumberOfSpaces] = useState<number>(2);
-
-  const format = (
-    json: string,
-    spOrT: 'spaces' | 'tabs',
-    nbSpaces?: number
-  ) => {
-    try {
-      return JSON.stringify(
-        JSON.parse(json),
-        null,
-        spOrT === 'spaces' ? nbSpaces : '\t'
-      );
-    } catch (error) {}
-  };
+}`
+  );
+  const [formattedJsonContent, setFormattedJsonContent] = useState<string>(
+    `{"property":{"value":"example_value","list_of_properties":[{"property_1":"value_1"},{"property_2":"value_2"},{"property_3":"value_3"}],"nested_properties":{"nested_property":{"nested_value":"nested_example_value"}},"multiple_values_for_property":["value_1","value_2","value_3"]}}`
+  );
 
   return (
     <Layout footerBanner='download'>
       <Meta
-        title={'Online JSON beautifier and formatter'}
-        description='Format and beautify your JSON data online with this free tool. Beautify JSON data by adding spaces or tabs and line returns to make it more readable.'
+        title={'Online JSON minifier'}
+        description='Minify your JSON data online and make it more compact and lightweight by removing unnecessary spaces, characters and line returns.'
       />
       <Hero
-        title='Online <span class="text-primary">JSON beautifier and formatter</span>'
-        subtitle='Format and beautify your JSON data online with this free tool. Beautify JSON data by adding spaces or tabs and line returns to make it more readable.'
+        title='Online <span class="text-primary">JSON minifier</span>'
+        subtitle='Minify your JSON data online and make it more compact and lightweight by removing unnecessary characters'
       />
       <section className='pb-5 pb-lg-10'>
         <div className='container'>
@@ -89,9 +56,7 @@ const JsonFormatterBeautifier: FunctionComponent = function () {
                 value={originalJsonContent}
                 onValueChange={(value) => {
                   try {
-                    setFormattedJsonContent(
-                      format(value, spacesOrTabs, numberOfSpaces)
-                    );
+                    setFormattedJsonContent(JSON.stringify(JSON.parse(value)));
                   } catch (error) {}
                 }}
               />
@@ -104,80 +69,6 @@ const JsonFormatterBeautifier: FunctionComponent = function () {
             <div className='code-editor-container'>
               <JsonEditor value={formattedJsonContent} />
             </div>
-          </div>
-          <div className='d-flex mt-4 align-items-center'>
-            <div
-              className='btn-group-sm'
-              role='group'
-              aria-label='radio toggle button group for spaces or tabs'
-            >
-              <input
-                type='radio'
-                className='btn-check'
-                name='spaces-or-tabs'
-                id='spaces'
-                value='spaces'
-                checked={spacesOrTabs === 'spaces'}
-                onChange={(event) => {
-                  try {
-                    setSpacesOrTabs('spaces');
-                    setFormattedJsonContent(
-                      format(originalJsonContent, 'spaces', numberOfSpaces)
-                    );
-                  } catch (error) {}
-                }}
-              />
-              <label className='btn btn-outline-dark me-2' htmlFor='spaces'>
-                Spaces
-              </label>
-              <input
-                type='radio'
-                className='btn-check'
-                name='spaces-or-tabs'
-                id='tabs'
-                value='tabs'
-                checked={spacesOrTabs === 'tabs'}
-                onChange={(event) => {
-                  try {
-                    setSpacesOrTabs('tabs');
-                    setFormattedJsonContent(
-                      format(originalJsonContent, 'tabs', numberOfSpaces)
-                    );
-                  } catch (error) {}
-                }}
-              />
-              <label className='btn btn-outline-dark' htmlFor='tabs'>
-                Tabs
-              </label>
-            </div>
-            {spacesOrTabs === 'spaces' && (
-              <div className='d-flex ms-4 align-items-center'>
-                <label htmlFor='dateYear'>Number of spaces</label>
-                <input
-                  type='number'
-                  id='numberOfSpaces'
-                  className='form-control form-control-sm border-secondary'
-                  value={numberOfSpaces}
-                  onChange={(event) => {
-                    try {
-                      const newNumberOfSpaces = !Number.isNaN(
-                        parseInt(event.target.value, 10)
-                      )
-                        ? parseInt(event.target.value, 10)
-                        : 0;
-                      setNumberOfSpaces(newNumberOfSpaces);
-                      setFormattedJsonContent(
-                        format(
-                          originalJsonContent,
-                          spacesOrTabs,
-                          newNumberOfSpaces
-                        )
-                      );
-                    } catch (error) {}
-                  }}
-                />
-              </div>
-            )}
           </div>
         </div>
       </section>
@@ -296,24 +187,26 @@ const JsonFormatterBeautifier: FunctionComponent = function () {
                   </ul>
                 </li>
               </ul>
-              <h3 className='mt-6 fw-medium'>Most common JSON formatting </h3>
+              <h3 className='mt-6 fw-medium'>Effects of JSON minification</h3>
               <p>
-                Formatting JSON data is a common task when working with JSON. It
-                makes the JSON data more readable and easier to understand. Here
-                are some common formatting rules:
+                Minification is the process of removing unnecessary characters
+                from the source code without changing its functionality. JSON
+                minification removes:
               </p>
               <ul>
                 <li>
-                  <strong>Indentation</strong>: Indentation is usually done
-                  using spaces or tabs. The most common indentation is 2 spaces
-                  or 4 spaces, or a tab. There is no strict rule for the
-                  indentation as JSON is a serialization format not a
-                  presentation format.
+                  <strong>Spaces</strong>: all spaces are removed from the JSON
+                  data including spaces preceding the colon and following the
+                  comma. This makes the JSON data more compact by removing all
+                  the indentation.
                 </li>
                 <li>
-                  <strong>Line breaks</strong>: Line breaks are used to separate
-                  different objects or arrays. Extra line breaks are usually not
-                  used as they add unnecessary space to the JSON data.
+                  <strong>Line breaks</strong>: all line breaks are removed from
+                  the JSON data which is transformed into a single line.
+                </li>
+                <li>
+                  <strong>Tabs</strong>: all tabs are removed from the JSON
+                  data.
                 </li>
               </ul>
             </div>
@@ -324,4 +217,4 @@ const JsonFormatterBeautifier: FunctionComponent = function () {
   );
 };
 
-export default JsonFormatterBeautifier;
+export default JsonMinifier;

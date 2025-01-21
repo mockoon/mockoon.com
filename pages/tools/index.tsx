@@ -198,6 +198,17 @@ const tools = [
       }
     ],
     imageSrc: '/images/illustrations/json-schema-validator.svg'
+  },
+  {
+    title: 'JSON minifier',
+    description: 'Minify your JSON data online',
+    links: [
+      {
+        src: '/tools/json-minifier/',
+        text: 'Minify'
+      }
+    ],
+    imageSrc: '/images/illustrations/json-minifier.svg'
   }
 ];
 

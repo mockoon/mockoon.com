@@ -716,10 +716,7 @@ const PlansView: FunctionComponent<{
                             <td className='text-center'>Custom</td>
                           </tr>
                           <tr>
-                            <td>
-                              Request rate limit{' '}
-                              <Tooltip text='During trial, the request rate limit is 1 request per second.'></Tooltip>
-                            </td>
+                            <td>Request rate limit</td>
                             <td className='text-center'>
                               {pricing.SOLO.deployReqSQuota}/sec
                             </td>

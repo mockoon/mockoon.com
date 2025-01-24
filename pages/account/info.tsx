@@ -160,7 +160,7 @@ const AccountInfo: FunctionComponent = function () {
                                 href={'/account/subscription/'}
                                 className='btn btn-xs btn-primary-subtle'
                               >
-                                Manage
+                                View
                               </Link>
                             </div>
                           </div>

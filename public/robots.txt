@@ -9,6 +9,7 @@ Disallow: /account
 Disallow: /terms
 Disallow: /privacy
 Disallow: /404
+Disallow: /cancellation-survey
 
 # Host
 Host: https://mockoon.com

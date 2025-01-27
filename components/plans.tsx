@@ -128,6 +128,7 @@ const PlansView: FunctionComponent<{
   const [planFrequency, setPlanFrequency] = useState('MONTHLY');
   const [seats, setSeats] = useState(1);
   const [configurePlan, setConfigurePlan] = useState(null);
+  const discountCode = router.query.discountCode;
 
   const openCheckout = (planId: string) => {
     // @ts-ignore
@@ -148,7 +149,8 @@ const PlansView: FunctionComponent<{
       },
       customData: {
         userId: auth.user.uid
-      }
+      },
+      discountCode
     });
   };
 

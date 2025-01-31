@@ -135,25 +135,10 @@ const Markdown: FunctionComponent<{
           );
         },
         table: ({ children }) => {
-          // check if 'NOSTYLE' is present in the header first cell
-          let noStyle = false;
-
-          let firstCell =
-            children[0]?.props?.children?.props?.children?.[0]?.props?.children;
-          if (firstCell && firstCell.includes('NOSTYLE')) {
-            noStyle = true;
-          }
-
           return (
-            <div
-              className={`card p-4 my-6 ${
-                noStyle ? 'bg-transparent' : 'border shadow-lg'
-              }`}
-            >
+            <div className='card p-4 my-6 border shadow-lg'>
               <div className='table-responsive'>
-                <table className={`table ${noStyle ? 'table-borderless' : ''}`}>
-                  {noStyle ? children[1] : children}
-                </table>
+                <table className='table'>{children}</table>
               </div>
             </div>
           );

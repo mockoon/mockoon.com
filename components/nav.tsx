@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { FunctionComponent, useState } from 'react';
 import { useAuth } from '../utils/auth';
 import GitHub from './github';
+import CustomTooltip from './tooltip';
 
 enum Dropdowns {
   NONE = 'NONE',
@@ -173,6 +174,17 @@ const Nav: FunctionComponent = function () {
                         </Link>
 
                         <Link
+                          href={`${process.env.NEXT_PUBLIC_WEBAPP_URL}`}
+                          className='dropdown-item'
+                        >
+                          Mockoon Web
+                          <CustomTooltip
+                            className='icon-lab ms-2 text-info'
+                            text='Early access'
+                          ></CustomTooltip>
+                        </Link>
+
+                        <Link
                           href='/cli/'
                           className={`dropdown-item ${
                             router.pathname === '/cli' ? 'active' : ''
@@ -253,8 +265,7 @@ const Nav: FunctionComponent = function () {
                             router.pathname === '/training' ? 'active' : ''
                           }`}
                         >
-                          Live Training{' '}
-                          <i className='icon-new_releases text-warning'></i>
+                          Live Training
                         </Link>
                       </div>
                     </div>

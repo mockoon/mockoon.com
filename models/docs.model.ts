@@ -4,6 +4,7 @@ export type DocsTopicData = {
   title: string;
   meta: MetaData;
   order: number;
+  badges: string[];
 };
 
 export type DocsTopicsList = { data: DocsTopicData; slug: string }[];

@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { FunctionComponent, useState } from 'react';
 import { useAuth } from '../utils/auth';
 import GitHub from './github';
+import CustomTooltip from './tooltip';
 
 enum Dropdowns {
   NONE = 'NONE',
@@ -169,7 +170,22 @@ const Nav: FunctionComponent = function () {
                             router.pathname === '/download' ? 'active' : ''
                           }`}
                         >
-                          Mockoon Desktop
+                          Desktop application
+                        </Link>
+
+                        <Link
+                          href={`${process.env.NEXT_PUBLIC_WEBAPP_URL}`}
+                          className='dropdown-item'
+                        >
+                          Web application
+                          <CustomTooltip
+                            className='icon-cloud ms-2 text-warning'
+                            text='Cloud customers only'
+                          ></CustomTooltip>
+                          <CustomTooltip
+                            className='icon-lab ms-2 text-info'
+                            text='Early access'
+                          ></CustomTooltip>
                         </Link>
 
                         <Link
@@ -253,8 +269,7 @@ const Nav: FunctionComponent = function () {
                             router.pathname === '/training' ? 'active' : ''
                           }`}
                         >
-                          Live Training{' '}
-                          <i className='icon-new_releases text-warning'></i>
+                          Live Training
                         </Link>
                       </div>
                     </div>
@@ -430,6 +445,16 @@ const Nav: FunctionComponent = function () {
                 )}
                 {auth.isAuth && (
                   <>
+                    <li className='dropdown-item'>
+                      <Link
+                        href={`${process.env.NEXT_PUBLIC_WEBAPP_URL}`}
+                        className='dropdown-link'
+                        target='_blank'
+                      >
+                        Open web app
+                        <i className='icon-open ps-2' aria-hidden='true'></i>
+                      </Link>
+                    </li>
                     <li className='dropdown-item'>
                       <Link href='/account/info/' className='dropdown-link'>
                         My account

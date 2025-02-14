@@ -12,22 +12,25 @@ const features: CardData[] = [
       'Create an unlimited number of mock API with unlimited number of routes and run them in parallel'
   },
   {
-    title: 'Self-hosted',
+    title: 'Web application',
+    topTag: 'Cloud',
+    topTagClasses: 'text-bg-warning',
+    description:
+      'Collaborate on mock APIs directly in your browser with our web application, no desktop installation required.',
+    links: [
+      {
+        src: '/docs/latest/mockoon-cloud/web-application/',
+        text: 'Documentation →'
+      }
+    ]
+  },
+  {
+    title: 'Self-host',
     description:
       'Use the CLI to run your mock APIs in any headless or automated environment: CI, GitHub Actions, Docker containers, etc',
     links: [{ src: '/cli/', text: 'Discover the CLI →' }]
   },
-  {
-    title: 'Serverless compatibility',
-    description:
-      'Run your mock APIs in serverless environments: AWS Lambda, GCP/Firebase Functions, etc',
-    links: [
-      {
-        src: '/serverless/',
-        text: 'Serverless library →'
-      }
-    ]
-  },
+
   {
     title: 'OpenAPI Import / export',
     description: 'Mock API import / export with Swagger/OpenAPI format support',
@@ -157,6 +160,17 @@ const features: CardData[] = [
       {
         src: '/docs/latest/callbacks/overview/',
         text: 'Documentation →'
+      }
+    ]
+  },
+  {
+    title: 'Serverless compatibility',
+    description:
+      'Run your mock APIs in serverless environments: AWS Lambda, GCP/Firebase Functions, etc',
+    links: [
+      {
+        src: '/serverless/',
+        text: 'Serverless library →'
       }
     ]
   },

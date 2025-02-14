@@ -4,9 +4,11 @@ meta:
   title: Cloud API mock deployments
   description: Learn how to deploy your mock APIs in the cloud and share them with your team, clients, or class, using Mockoon Cloud
 order: 903
+badges:
+  - cloud
 ---
 
-# Cloud API mock deployments<span className='badge text-bg-warning fs-4 align-text-top ms-2'>Cloud</span>
+# Cloud API mock deployments
 
 ---
 

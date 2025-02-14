@@ -66,9 +66,8 @@ const resources: AccordionData = [
         subtitle:
           'Fake companies JSON data including name, industry, location, number of employees, etc.',
         content: (
-          <div className='px-4'>
-            <CodeBlock
-              code={`{
+          <CodeBlock
+            code={`{
   "id": "c408c0de-c0ba-40f3-8a4f-f1acb561de03",
   "name": "Botsford Group",
   "industry": "monetize compelling mindshare",
@@ -79,10 +78,9 @@ const resources: AccordionData = [
   "employees": 23895,
   "is_public": false
 }`}
-              language='json'
-              lineBreak
-            ></CodeBlock>
-          </div>
+            language='json'
+            lineBreak
+          ></CodeBlock>
         ),
         count: 100
       },
@@ -91,9 +89,8 @@ const resources: AccordionData = [
         subtitle:
           'Fake contacts JSON data including name, email, phone, complete address, etc.',
         content: (
-          <div className='px-4'>
-            <CodeBlock
-              code={`{
+          <CodeBlock
+            code={`{
   "id": "d421a174-8a96-4f42-addb-dccf00872970",
   "name": "Devyn Stamm",
   "email": "Raleigh_Ankunding77@gmail.com",
@@ -106,10 +103,9 @@ const resources: AccordionData = [
   },
   "age": 56
 }`}
-              language='json'
-              lineBreak
-            ></CodeBlock>
-          </div>
+            language='json'
+            lineBreak
+          ></CodeBlock>
         ),
         count: 100
       },
@@ -118,9 +114,8 @@ const resources: AccordionData = [
         subtitle:
           'Fake customers JSON data including name, email, phone, address, age, etc.',
         content: (
-          <div className='px-4'>
-            <CodeBlock
-              code={` {
+          <CodeBlock
+            code={` {
   "id": "f724b18e-0165-452f-8256-0803f100f779",
   "name": "Pierce Schinner",
   "email": "Alexis85@yahoo.com",
@@ -129,10 +124,9 @@ const resources: AccordionData = [
   "age": 50,
   "isVip": true
 }`}
-              language='json'
-              lineBreak
-            ></CodeBlock>
-          </div>
+            language='json'
+            lineBreak
+          ></CodeBlock>
         ),
         count: 100
       },
@@ -141,9 +135,8 @@ const resources: AccordionData = [
         subtitle:
           'Fake movies JSON data including title, genre, director, release year, rating, etc.',
         content: (
-          <div className='px-4'>
-            <CodeBlock
-              code={`{
+          <CodeBlock
+            code={`{
   "id": "c476c2ce-f138-459d-9b7f-00781e550460",
   "title": "necessitatibus brevis vicissitudo",
   "genre": "vulgus",
@@ -152,10 +145,9 @@ const resources: AccordionData = [
   "rating": 7,
   "isPopular": false
 }`}
-              language='json'
-              lineBreak
-            ></CodeBlock>
-          </div>
+            language='json'
+            lineBreak
+          ></CodeBlock>
         ),
         count: 100
       },
@@ -163,19 +155,17 @@ const resources: AccordionData = [
         title: 'Notifications <code>/notifications</code>',
         subtitle: 'Fake notifications JSON data including title, message, etc.',
         content: (
-          <div className='px-4'>
-            <CodeBlock
-              code={`{
+          <CodeBlock
+            code={`{
   "id": "23d78578-0c20-4ff0-9e37-a6b6ae83e164",
   "title": "Sophismata careo statim auditor audentia expedita.",
   "message": "Adsum bestia ante sortitus balbus cultura sunt vaco voluptates. Paulatim utique rem architecto demulceo thema verecundia. Verto vomito curriculum arbitro sint amita.",
   "read": false,
   "timestamp": "Wed Jun 05 2024 04:28:45 GMT+0200 (Central European Summer Time)"
 }`}
-              language='json'
-              lineBreak
-            ></CodeBlock>
-          </div>
+            language='json'
+            lineBreak
+          ></CodeBlock>
         ),
         count: 100
       },
@@ -183,19 +173,17 @@ const resources: AccordionData = [
         title: 'Photos <code>/photos</code>',
         subtitle: 'Fake photos JSON data including URL, caption, likes, etc.',
         content: (
-          <div className='px-4'>
-            <CodeBlock
-              code={`{
+          <CodeBlock
+            code={`{
   "id": "f50bf6e1-fbb2-4096-aff1-dad2a3dda30f",
   "url": "https://loremflickr.com/1024/768",
   "caption": "Adsidue amplexus quam pecco armarium [...]",
   "likes": 12,
   "isFeatured": true
 }`}
-              language='json'
-              lineBreak
-            ></CodeBlock>
-          </div>
+            language='json'
+            lineBreak
+          ></CodeBlock>
         ),
         count: 100
       },
@@ -204,9 +192,8 @@ const resources: AccordionData = [
         subtitle:
           'List of Pokemons with their name, type, base stats, etc. This dataset is read-only, you can only GET the full list or a single Pokemon by its id (<code>GET /pokemons</code> or <code>GET /pokemons/{id}</code>). ',
         content: (
-          <div className='px-4'>
-            <CodeBlock
-              code={`{
+          <CodeBlock
+            code={`{
   "id": 5,
   "name": {
     "english": "Charmeleon",
@@ -226,10 +213,9 @@ const resources: AccordionData = [
     "Speed": 80
   }
 }`}
-              language='json'
-              lineBreak
-            ></CodeBlock>
-          </div>
+            language='json'
+            lineBreak
+          ></CodeBlock>
         ),
         count: 809
       },
@@ -238,9 +224,8 @@ const resources: AccordionData = [
         subtitle:
           'Fake blog posts JSON data including title, author, date, content, number of views, etc.',
         content: (
-          <div className='px-4'>
-            <CodeBlock
-              code={`{
+          <CodeBlock
+            code={`{
   "id": "0fd57703-4755-40a1-bbf7-2bee858c3a67",
   "title": "Sumptus appono tametsi [...]",
   "author": "Jermaine Daniel",
@@ -249,10 +234,9 @@ const resources: AccordionData = [
   "views": 1289,
   "isPublished": true
 }`}
-              language='json'
-              lineBreak
-            ></CodeBlock>
-          </div>
+            language='json'
+            lineBreak
+          ></CodeBlock>
         ),
         count: 100
       },
@@ -261,9 +245,8 @@ const resources: AccordionData = [
         subtitle:
           'Fake time JSON data including UTC date time, Unix time, milliseconds, day of week, day of month, etc.',
         content: (
-          <div className='px-4'>
-            <CodeBlock
-              code={`{
+          <CodeBlock
+            code={`{
   "utcDateTime": "2024-12-23T00:19:26.876+01:00",
   "unixTimeS": 1734909566,
   "unixTimeMS": 1734909566876,
@@ -281,10 +264,9 @@ const resources: AccordionData = [
   "year": 2024,
   "weekOfYear": 52
 }`}
-              language='json'
-              lineBreak
-            ></CodeBlock>
-          </div>
+            language='json'
+            lineBreak
+          ></CodeBlock>
         )
       },
       {
@@ -292,19 +274,17 @@ const resources: AccordionData = [
         subtitle:
           'Fake todos JSON data including title, completion status, priority, due date, etc.',
         content: (
-          <div className='px-4'>
-            <CodeBlock
-              code={`{
+          <CodeBlock
+            code={`{
   "id": "c7266f89-b777-45aa-83ad-01d4bad47eb7",
   "title": "optimize real-time architectures",
   "completed": true,
   "priority": 0,
   "dueDate": "2024-09-24T10:13:39.649Z"
 }`}
-              language='json'
-              lineBreak
-            ></CodeBlock>
-          </div>
+            language='json'
+            lineBreak
+          ></CodeBlock>
         ),
         count: 100
       },
@@ -313,9 +293,8 @@ const resources: AccordionData = [
         subtitle:
           'Fake sales JSON data including country, item type, unit cost, number of units, etc.',
         content: (
-          <div className='px-4'>
-            <CodeBlock
-              code={`{
+          <CodeBlock
+            code={`{
   "id": "485d91e9-1042-458c-a977-47e48ae2d83e",
   "country": "Guernsey",
   "itemType": "Ball",
@@ -330,10 +309,9 @@ const resources: AccordionData = [
   "totalCost": "2977.44",
   "totalProfit": "-758.4000000000001"
 }`}
-              language='json'
-              lineBreak
-            ></CodeBlock>
-          </div>
+            language='json'
+            lineBreak
+          ></CodeBlock>
         ),
         count: 100
       },
@@ -342,9 +320,8 @@ const resources: AccordionData = [
         subtitle:
           'Fake users JSON data including name, email, phone, address, birthdate, etc.',
         content: (
-          <div className='px-4'>
-            <CodeBlock
-              code={`{
+          <CodeBlock
+            code={`{
   "id": "dabf8912-0eb2-4648-98df-7d113a15bbfc",
   "name": "Sean Kris",
   "email": "Carlotta66@gmail.com",
@@ -353,10 +330,9 @@ const resources: AccordionData = [
   "birthdate": "2005-07-26",
   "isActive": true
 }`}
-              language='json'
-              lineBreak
-            ></CodeBlock>
-          </div>
+            language='json'
+            lineBreak
+          ></CodeBlock>
         ),
         count: 100
       }

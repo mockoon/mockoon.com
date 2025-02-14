@@ -1,18 +1,9 @@
 import { FunctionComponent } from 'react';
-import { useAuth } from '../utils/auth';
 
 const AccountHeader: FunctionComponent<{
   title: string;
   subtitle: string;
-  showLogout?: boolean;
-}> = function ({ title, subtitle, showLogout }) {
-  const auth = useAuth();
-  showLogout = showLogout ?? true;
-
-  const logout = async () => {
-    await auth.logout();
-  };
-
+}> = function ({ title, subtitle }) {
   return (
     <header className='bg-dark pt-9 pb-11 d-md-block'>
       <div className='container-md'>
@@ -21,16 +12,16 @@ const AccountHeader: FunctionComponent<{
             <h1 className='fw-bold text-white mb-2'>{title}</h1>
             <p className='fs-lg text-white text-opacity-75 mb-0'>{subtitle}</p>
           </div>
-          {showLogout && (
-            <div className='col-auto'>
-              <button
-                className='btn btn-sm bg-gray-300 bg-opacity-20 bg-opacity-25-hover text-white'
-                onClick={async () => logout()}
-              >
-                Log Out
-              </button>
-            </div>
-          )}
+
+          <div className='col-auto'>
+            <a
+              className='btn btn-sm bg-gray-300 bg-opacity-20 bg-opacity-25-hover text-white me-2'
+              href={`${process.env.NEXT_PUBLIC_WEBAPP_URL}`}
+              target='_blank'
+            >
+              Open web app <i className='icon-open ps-2' aria-hidden='true'></i>
+            </a>
+          </div>
         </div>
       </div>
     </header>

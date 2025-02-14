@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'mockoon';
-  src: url('/fonts/mockoon.woff?dvskpl') format('woff');
+  src: url('/fonts/mockoon.woff?9kbgkr') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -22,12 +22,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-lab:before {
+  content: '\e90b';
+}
 .icon-sync:before {
   content: '\e915';
-}
-.icon-discord:before {
-  content: '\e90b';
-  color: #7289da;
 }
 .icon-github:before {
   content: '\e911';
@@ -39,9 +38,6 @@
 .icon-reddit:before {
   content: '\e917';
   color: #ff4500;
-}
-.icon-x:before {
-  content: '\e910';
 }
 .icon-youtube:before {
   content: '\e912';
@@ -82,6 +78,9 @@
 }
 .icon-remove:before {
   content: '\e903';
+}
+.icon-cloud:before {
+  content: '\e910';
 }
 .icon-arrow_drop_down:before {
   content: '\e905';

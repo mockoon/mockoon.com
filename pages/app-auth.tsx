@@ -126,7 +126,7 @@ const AppAuth = function () {
   );
 
   return (
-    <Layout footerBanner='download'>
+    <Layout footerBanner='download' minimal={isWebApp}>
       <Meta title={meta.title} description={meta.description} />
 
       {isAuthLoading && <LoadingPage />}

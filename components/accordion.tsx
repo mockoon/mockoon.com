@@ -113,8 +113,11 @@ const Accordion: FunctionComponent<{
                     ></div>
                   )}
                 {!Array.isArray(dataItem.content) &&
-                  typeof dataItem.content !== 'string' &&
-                  dataItem.content}
+                  typeof dataItem.content !== 'string' && (
+                    <div className='accordion-body text-gray-700'>
+                      {dataItem.content}
+                    </div>
+                  )}
               </div>
             </div>
           );

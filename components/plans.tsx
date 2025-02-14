@@ -10,11 +10,11 @@ import { useAuth } from '../utils/auth';
 import { useCurrentUser } from '../utils/queries';
 import Accordion from './accordion';
 import PaddleScript from './paddle';
-import Tooltip from './tooltip';
+import CustomTooltip from './tooltip';
 
 const queryClient = new QueryClient();
 
-const faq: AccordionData = [
+const cloudFaq: AccordionData = [
   {
     title: 'Features',
     items: [
@@ -27,6 +27,10 @@ const faq: AccordionData = [
         title: 'Which features are supported in the cloud?',
         content:
           'Nearly all features available in the desktop application are supported in the cloud, namely in cloud deployments. Some features are not available due to technical limitations or security reasons. For more information, please refer to the <a href="/docs/latest/mockoon-cloud/overview/">cloud documentation</a>.'
+      },
+      {
+        title: 'Do you offer a web application?',
+        content: `Yes, we offer a web application that allows you to manage your API mocks in the cloud. You can access it <a href="${process.env.NEXT_PUBLIC_WEBAPP_URL}">here</a>. Please note that the web application is only available for paid plans.`
       },
       {
         title:
@@ -376,6 +380,21 @@ const PlansView: FunctionComponent<{
                       </div>
 
                       <p>
+                        Access to the{' '}
+                        <Link
+                          href={'/docs/latest/mockoon-cloud/web-application/'}
+                        >
+                          Web UI
+                        </Link>
+                      </p>
+                    </div>
+
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
+
+                      <p>
                         <Link
                           href={
                             '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'
@@ -472,6 +491,22 @@ const PlansView: FunctionComponent<{
                       </p>
                     </div>
                     <hr />
+
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
+
+                      <p>
+                        Access to the{' '}
+                        <Link
+                          href={'/docs/latest/mockoon-cloud/web-application/'}
+                        >
+                          Web UI
+                        </Link>
+                      </p>
+                    </div>
+
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
@@ -684,13 +719,36 @@ const PlansView: FunctionComponent<{
                               colSpan={5}
                               className='text-start fw-bold bg-gray-100'
                             >
+                              Applications
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Access to the{' '}
+                              <Link
+                                href={
+                                  '/docs/latest/mockoon-cloud/web-application/'
+                                }
+                              >
+                                Web app
+                              </Link>
+                            </td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td
+                              colSpan={5}
+                              className='text-start fw-bold bg-gray-100'
+                            >
                               Cloud deployment
                             </td>
                           </tr>
                           <tr>
                             <td>
                               Number of deployed API mocks{' '}
-                              <Tooltip text='Each API mock is a collection of endpoints and rules deployed on a separated subdomain: https://mock-abcd.mockoon.app. See the FAQ below for a definition of an API mock.'></Tooltip>
+                              <CustomTooltip text='Each API mock is a collection of endpoints and rules deployed on a separated subdomain: https://mock-abcd.mockoon.app. See the FAQ below for a definition of an API mock.'></CustomTooltip>
                             </td>
                             <td className='text-center'>
                               {pricing.SOLO.deployQuota}
@@ -743,7 +801,7 @@ const PlansView: FunctionComponent<{
                           <tr>
                             <td>
                               Number of synchronized API mocks{' '}
-                              <Tooltip text='Each API mock is a collection of endpoints and rules synchronized accross your devices and team members in real-time. See the FAQ below for a definition of an API mock.'></Tooltip>
+                              <CustomTooltip text='Each API mock is a collection of endpoints and rules synchronized accross your devices and team members in real-time. See the FAQ below for a definition of an API mock.'></CustomTooltip>
                             </td>
                             <td className='text-center'>
                               {pricing.SOLO.syncQuota}
@@ -807,7 +865,6 @@ const PlansView: FunctionComponent<{
                             </td>
                             <td className='text-center'>Custom</td>
                           </tr>
-
                           <tr>
                             <td
                               colSpan={5}
@@ -896,7 +953,7 @@ const PlansView: FunctionComponent<{
             <div className='row justify-content-center'>
               <div className='col-12 col-lg-8 align-items-center'>
                 <h2 className='fw-bold mb-6 text-center'>Cloud plans FAQ</h2>
-                <Accordion data={faq} />
+                <Accordion data={cloudFaq} />
               </div>
             </div>
           </div>

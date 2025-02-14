@@ -255,7 +255,24 @@ export default function Docs(props: {
             </aside>
           </div>
           <div className='col-12 col-lg-7 ps-lg-5 pb-8'>
-            <section className='pt-lg-10'>
+            <section className='mt-lg-10 position-relative'>
+              {props.topicData.badges?.length > 0 && (
+                <div className='position-absolute top-0 end-0'>
+                  {props.topicData.badges.includes('cloud') && (
+                    <span className='badge text-bg-warning ms-2'>
+                      <span className='d-none d-md-inline'>
+                        <i className='icon-cloud'></i> Cloud
+                      </span>
+                    </span>
+                  )}
+                  {props.topicData.badges.includes('early-access') && (
+                    <span className='badge text-bg-info ms-2'>
+                      <i className='icon-lab'></i>{' '}
+                      <span className='d-none d-md-inline'>Early access</span>
+                    </span>
+                  )}
+                </div>
+              )}
               <Markdown
                 body={props.topicBody}
                 version={currentVersion}

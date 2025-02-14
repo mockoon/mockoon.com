@@ -44,6 +44,12 @@ const tasks: {
 } = {
   released: [
     {
+      link: '/docs/latest/mockoon-cloud/web-application/',
+      title: 'Mockoon Cloud Web app',
+      cloud: true,
+      target: null
+    },
+    {
       link: '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/#deploy-an-environment-to-the-cloud',
       title: 'Simplified cloud deployments URLs',
       cloud: true,
@@ -117,18 +123,12 @@ const tasks: {
     },
     {
       link: '/releases/8.4.0/#random-latencies',
-      title: 'Randomized lantency',
+      title: 'Randomized latency',
       cloud: false,
       target: null
     }
   ],
   inProgress: [
-    {
-      link: null,
-      title: 'Mockoon Cloud Web app',
-      cloud: true,
-      target: '_blank'
-    },
     {
       link: 'https://github.com/mockoon/mockoon/issues/1045',
       title: 'Export logs as HAR',

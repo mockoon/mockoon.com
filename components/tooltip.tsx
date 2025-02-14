@@ -9,7 +9,7 @@ const CustomTooltip: FunctionComponent<{
   return (
     <OverlayTrigger placement='top' overlay={<Tooltip>{text}</Tooltip>}>
       {children || (
-        <i className={`icon-info_outline text-gray-700 ${className}`}></i>
+        <i className={`${className || 'icon-info_outline text-gray-700'}`}></i>
       )}
     </OverlayTrigger>
   );

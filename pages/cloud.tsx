@@ -21,14 +21,33 @@ const cloudFeatures = [
       '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
   },
   {
-    title:
-      'Instantly <span class="text-primary">share</span> your mock APIs with your team',
+    title: 'Instantly <span class="text-primary">deploy</span> your mock APIs',
     description:
       'Deploy your mock APIs to the cloud with a single click and share them with your team, clients, or class. Say goodbye to complex deployment configurations.',
     imgSrc: '/images/mockoon-cloud/mockoon-cloud-api-mock-deployment.png',
     imgAlt: 'mockoon application screenshot showing list of deployed APIs',
     cta: 'Read the documentation',
     ctaLink: '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'
+  },
+  {
+    title:
+      '<span class="text-primary">Prototype</span> your APIs faster with our assistants',
+    description:
+      'Accelerate your API design and prototyping with our assistants. Generate realistic data, endpoints, and responses in seconds.',
+    imgSrc: '/images/mockoon-cloud/mockoon-cloud-ai-assisted-mock-design.png',
+    imgAlt: 'mockoon application screenshot showing AI assistant in action',
+    cta: 'Discover our assistant',
+    ctaLink: '/ai-powered-api-mocking/'
+  },
+  {
+    title:
+      'Create mock APIs using the <span class="text-primary">web app</span>',
+    description:
+      "Design, deploy, and collaborate on mock APIs directly in your browser with Mockoon's new web application, no desktop installation required.",
+    imgSrc: '/images/mockoon-cloud/mockoon-cloud-web-application.png',
+    imgAlt: 'mockoon web application screenshot showing list of APIs endpoints',
+    cta: 'Read the documentation',
+    ctaLink: '/docs/latest/mockoon-cloud/web-application/'
   },
   {
     title: 'Keep your setup in <span class="text-primary">sync</span>',
@@ -40,16 +59,6 @@ const cloudFeatures = [
     cta: 'Read the documentation',
     ctaLink:
       '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
-  },
-  {
-    title:
-      '<span class="text-primary">Prototype</span> your APIs faster with our assistants',
-    description:
-      'Accelerate your API design and prototyping with our assistants. Generate realistic data, endpoints, and responses in seconds.',
-    imgSrc: '/images/mockoon-cloud/mockoon-cloud-ai-assisted-mock-design.png',
-    imgAlt: 'mockoon application screenshot showing AI assistant in action',
-    cta: 'Discover our assistant',
-    ctaLink: '/ai-powered-api-mocking/'
   },
   {
     title: 'Get <span class="text-primary">help</span> when you need it',

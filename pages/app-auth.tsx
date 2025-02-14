@@ -22,6 +22,7 @@ const AppAuth = function () {
     logout
   } = useAuth();
   const router = useRouter();
+  const isWebApp = router.query.webapp === 'true';
   const [callbackWorkflow, setCallbackWorkflow] = useState(false);
 
   const {
@@ -49,6 +50,15 @@ const AppAuth = function () {
       window.location.assign(`mockoon://auth?token=${token}`);
     }
   });
+
+  const webAppRedirect = (token: string) => {
+    localStorage.removeItem('webAppRedirect');
+
+    window.parent.postMessage(
+      `token=${token}`,
+      `${process.env.NEXT_PUBLIC_WEBAPP_URL}`
+    );
+  };
 
   const {
     mutate: getToken,
@@ -79,7 +89,9 @@ const AppAuth = function () {
       });
     },
     onSuccess: async (data) => {
-      if (localStorage.getItem('authCallback')) {
+      if (localStorage.getItem('webAppRedirect')) {
+        webAppRedirect(data.token);
+      } else if (localStorage.getItem('authCallback')) {
         // new workflow >= 9.0.0, using localhost callback
         setCallbackWorkflow(true);
         appCallback(data.token);
@@ -91,14 +103,18 @@ const AppAuth = function () {
   });
 
   useEffect(() => {
+    if (isWebApp) {
+      localStorage.setItem('webAppRedirect', '1');
+    }
+
     if (!isAuthLoading) {
       if (!user) {
-        router.push('/login/');
+        router.push(`/login/${isWebApp ? '?webapp=true' : ''}`);
       } else if (user && !isAuth) {
         router.push('/email-verification/');
       }
     }
-  }, [isAuthLoading, user, isAuth]);
+  }, [isAuthLoading, user, isAuth, isWebApp]);
 
   useEffect(
     function () {

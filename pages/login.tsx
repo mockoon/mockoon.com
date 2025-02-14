@@ -25,6 +25,7 @@ const Login: FunctionComponent = function () {
   } = useAuth();
   const router = useRouter();
   const isInApp = router.query.inapp === 'true';
+  const isWebApp = router.query.webapp === 'true';
   const authCallback = router.query.authCallback as string;
   const [error, setError] = useState(false);
 
@@ -55,8 +56,12 @@ const Login: FunctionComponent = function () {
   };
 
   useEffect(() => {
-    if (isInApp || authCallback) {
+    if (isInApp || isWebApp || authCallback) {
       localStorage.setItem('redirect', '/app-auth/');
+    }
+
+    if (isWebApp) {
+      localStorage.setItem('webAppRedirect', '1');
     }
 
     if (authCallback) {
@@ -73,7 +78,7 @@ const Login: FunctionComponent = function () {
         router.push('/account/info/');
       }
     }
-  }, [isAuthLoading, user, isAuth, isInApp, authCallback]);
+  }, [isAuthLoading, user, isAuth, isInApp, isWebApp, authCallback]);
 
   return (
     <Layout footerBanner='contact'>

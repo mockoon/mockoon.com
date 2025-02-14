@@ -50,6 +50,13 @@ const AppAuth = function () {
     }
   });
 
+  const webAppRedirect = (token: string) => {
+    // TODO change URL
+    localStorage.removeItem('webAppRedirect');
+
+    window.location.assign(`http://localhost:3001/?token=${token}`);
+  };
+
   const {
     mutate: getToken,
     isPending: isGetTokenPending,
@@ -79,7 +86,9 @@ const AppAuth = function () {
       });
     },
     onSuccess: async (data) => {
-      if (localStorage.getItem('authCallback')) {
+      if (localStorage.getItem('webAppRedirect')) {
+        webAppRedirect(data.token);
+      } else if (localStorage.getItem('authCallback')) {
         // new workflow >= 9.0.0, using localhost callback
         setCallbackWorkflow(true);
         appCallback(data.token);

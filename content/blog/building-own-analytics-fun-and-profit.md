@@ -48,7 +48,7 @@ But while this can have **some benefits**, we think it can also be a **double-ed
 Why? We usually decide how to **prioritize** features based on **several factors** that have sometimes nothing to do with usage:
 
 - **Upvotes** and **comments** on GitHub's issues, but also the quality of the feedback: is the issue discussed? Are people chiming in to give their opinion?
-- **Occurrences** of the issue through the support channels (support requests, Twitter, etc.).
+- **Occurrences** of the issue through the support channels (support requests, etc.).
 - **Impact on the product**: will it make it better? For whom?
 - Impact on the **user experience**: is it mandating a new UI or is it a hidden feature, like a new templating helper?
 - The **complexity** of the feature vs the benefit it will bring.

@@ -362,16 +362,6 @@ const Footer: FunctionComponent<{
               </li>
               <li className='list-inline-item list-social-item'>
                 <a
-                  href='https://twitter.com/intent/follow?screen_name=GetMockoon'
-                  target='_blank'
-                  rel='noopener'
-                  className='text-decoration-none text-reset'
-                >
-                  <i className='icon-x list-social-item' aria-hidden='true'></i>
-                </a>
-              </li>
-              <li className='list-inline-item list-social-item'>
-                <a
                   href='https://www.youtube.com/channel/UCzkVOmqzbh2CdSU4yHa54wg'
                   target='_blank'
                   rel='noopener'

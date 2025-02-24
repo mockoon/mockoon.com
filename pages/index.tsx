@@ -354,7 +354,6 @@ const HomePage: FunctionComponent = function () {
               key='testimonial0'
             >
               <Testimonial
-                link={testimonials[0].link}
                 imgSrc={testimonials[0].imgSrc}
                 name={testimonials[0].name}
               >
@@ -371,7 +370,6 @@ const HomePage: FunctionComponent = function () {
                     key={`testimonial${testimonialIndex}`}
                   >
                     <Testimonial
-                      link={testimonial.link}
                       imgSrc={testimonial.imgSrc}
                       name={testimonial.name}
                       small

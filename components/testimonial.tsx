@@ -7,7 +7,6 @@ import React, { Fragment, FunctionComponent } from 'react';
  * @returns
  */
 const Testimonial: FunctionComponent<{
-  link: string;
   imgSrc: string;
   name: string;
   small?: boolean;
@@ -19,27 +18,19 @@ const Testimonial: FunctionComponent<{
         className='card card-border shadow-light-lg my-3'
         style={{ borderTopColor: '#1DA1F2' }}
       >
-        <a
-          className={`card-body ${props.small ? 'p-3' : ''} my-auto`}
-          href={props.link}
-          rel='noopener'
-          target='_blank'
-        >
+        <div className={`card-body ${props.small ? 'p-3' : ''} my-auto`}>
           <p
             className={`mb-0 text-gray-700 text-left ${
               props.small ? 'fs-5' : ''
             }`}
             dangerouslySetInnerHTML={{ __html: props.children.toString() }}
           ></p>
-        </a>
+        </div>
 
-        <a
+        <div
           className={`card-meta justify-content-center ${
             props.small ? 'pb-3 px-3' : ''
           }`}
-          href={props.link}
-          rel='noopener'
-          target='_blank'
         >
           <hr
             className={`card-meta-divider ${props.small ? 'mb-3 px-3' : ''}`}
@@ -57,7 +48,7 @@ const Testimonial: FunctionComponent<{
           </div>
 
           <p className='h6 text-uppercase text-gray-700 mb-0'>{props.name}</p>
-        </a>
+        </div>
       </div>
     </Fragment>
   );

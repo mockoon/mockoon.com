@@ -72,4 +72,4 @@ Check out my [GitHub](https://www.github.com/ajatkj) for Scriptable repo among a
 
 We thank Ankit for sharing his journey with us. We are grateful he chose to dedicate his time and talent to improving projects like Mockoon, making it an indispensable tool for developers worldwide.
 
-More interviews are in the pipeline. Be sure not to miss any by [subscribing to our newsletter](/newsletter/) or joining our [Discord server](/discord/). Happy mocking!
+More interviews are in the pipeline. Be sure not to miss any by [subscribing to our newsletter](/newsletter/). Happy mocking!

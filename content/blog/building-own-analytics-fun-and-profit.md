@@ -253,4 +253,3 @@ You can see a preview of the dashboard below, showing the number of page views a
 ---
 
 We hope you enjoyed this blog post and that it will help you build your analytics system or maybe convince you to use something that already exists!
-If you have any questions or feedback, feel free to reach out on [Discord](/discord/).

@@ -73,4 +73,4 @@ As I mentioned, I’m passionate about knowledge sharing, and so is my employer,
 
 We thank Maurice for sharing his journey with us. We are grateful he chose to dedicate his time and talent to improving projects like Mockoon, making it an indispensable tool for developers worldwide.
 
-More interviews are in the pipeline. Be sure not to miss any by [subscribing to our newsletter](/newsletter/) or joining our [Discord server](/discord/). Happy mocking!
+More interviews are in the pipeline. Be sure not to miss any by [subscribing to our newsletter](/newsletter/). Happy mocking!

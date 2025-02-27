@@ -52,7 +52,7 @@ const faq: AccordionData = [
         title:
           'I found a bug/have a suggestion for the playground API, what should I do?',
         content:
-          'You can ask for help or discuss ideas and improvements on our <a href="https://github.com/mockoon/mockoon/discussions">GitHub Discussion forum</a>. You are also welcome on our <a href="https://discord.gg/FtJjkejKGp">Discord server</a>. If you found an issue with the playground, you can open an issue on the <a href="https://github.com/mockoon/playground">playground repository</a>.'
+          'You can ask for help or discuss ideas and improvements on our <a href="https://github.com/mockoon/mockoon/discussions">GitHub Discussion forum</a>. If you found an issue with the playground, you can open an issue on the <a href="https://github.com/mockoon/playground">playground repository</a>.'
       }
     ]
   }

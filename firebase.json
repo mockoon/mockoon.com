@@ -32,11 +32,6 @@
     ],
     "redirects": [
       {
-        "source": "/discord{,/}",
-        "destination": "https://discord.gg/FtJjkejKGp",
-        "type": 301
-      },
-      {
         "source": "/discussions{,/}",
         "destination": "https://github.com/mockoon/mockoon/discussions",
         "type": 301

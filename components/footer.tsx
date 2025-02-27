@@ -347,19 +347,6 @@ const Footer: FunctionComponent<{
                   ></i>
                 </a>
               </li>
-              <li className='list-inline-item list-social-item me-2'>
-                <a
-                  href='https://discord.gg/FtJjkejKGp'
-                  target='_blank'
-                  rel='noopener'
-                  className='text-decoration-none text-reset'
-                >
-                  <i
-                    className='icon-discord list-social-icon'
-                    aria-hidden='true'
-                  ></i>
-                </a>
-              </li>
               <li className='list-inline-item list-social-item'>
                 <a
                   href='https://www.youtube.com/channel/UCzkVOmqzbh2CdSU4yHa54wg'

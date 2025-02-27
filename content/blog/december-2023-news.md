@@ -68,7 +68,7 @@ These variables can be used anywhere templating is supported, like the response 
 
 We added a new **command palette** in the desktop application to quickly access all the application's features. You can open it by pressing `Ctrl+P` (Windows/Linux) or `Cmd+P` (MacOS). You can also access it by clicking on the icon in the header.
 
-It currently supports most common actions like creating new environments, starting/stopping them, opening the settings, etc. You can also search for any environment, route, or data bucket by typing their name or path. We will add more actions in the future. Let us know what you think, and do not hesitate to suggest new actions on our [Discord server](https://discord.gg/FtJjkejKGp) or [GitHub discussions](https://github.com/mockoon/mockoon/discussions).
+It currently supports most common actions like creating new environments, starting/stopping them, opening the settings, etc. You can also search for any environment, route, or data bucket by typing their name or path. We will add more actions in the future. Let us know what you think, and do not hesitate to suggest new actions on our [GitHub discussions](https://github.com/mockoon/mockoon/discussions) forum.
 
 ![screenshot of the desktop application with the command palette opened{1410x568}](/images/blog/december-2023-news/command-palette.png)
 

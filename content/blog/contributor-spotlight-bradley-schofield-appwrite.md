@@ -81,4 +81,4 @@ I know it’s cliche but please do check out Appwrite if you have the time. Quit
 
 We thank Bradley for sharing his journey with us. We are grateful he chose to dedicate his time and talent to improving projects like Mockoon, making it an indispensable tool for developers worldwide.
 
-More interviews are in the pipeline. Be sure not to miss any by [subscribing to our newsletter](/newsletter/) or joining our [Discord server](/discord/). Happy mocking!
+More interviews are in the pipeline. Be sure not to miss any by [subscribing to our newsletter](/newsletter/). Happy mocking!

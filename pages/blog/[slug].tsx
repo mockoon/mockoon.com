@@ -21,13 +21,15 @@ export async function getStaticProps({ params }) {
         new Date(secondArticle.data.date).getTime() -
         new Date(firstArticle.data.date).getTime()
     )
-    .slice(0, 3)
     .map((article) => ({
+      slug: article.slug,
       title: article.data.title,
       description: article.data.excerpt,
       imageSrc: `/images/blog/${article.data.image}`,
       links: [{ src: `/blog/${article.slug}`, text: 'Read more' }]
-    }));
+    }))
+    .filter((article) => article.slug !== params.slug)
+    .slice(0, 3);
 
   const fileContent = await require(`../../content/blog/${params.slug}.md`);
   const parsedContent = matter(fileContent.default);

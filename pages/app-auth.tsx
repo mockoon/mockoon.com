@@ -22,6 +22,7 @@ const AppAuth = function () {
     logout
   } = useAuth();
   const router = useRouter();
+  const isWebApp = router.query.webapp === 'true';
   const [callbackWorkflow, setCallbackWorkflow] = useState(false);
 
   const {
@@ -100,6 +101,10 @@ const AppAuth = function () {
   });
 
   useEffect(() => {
+    if (isWebApp) {
+      localStorage.setItem('webAppRedirect', '1');
+    }
+
     if (!isAuthLoading) {
       if (!user) {
         router.push('/login/');
@@ -107,7 +112,7 @@ const AppAuth = function () {
         router.push('/email-verification/');
       }
     }
-  }, [isAuthLoading, user, isAuth]);
+  }, [isAuthLoading, user, isAuth, isWebApp]);
 
   useEffect(
     function () {

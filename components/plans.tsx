@@ -635,13 +635,6 @@ const PlansView: FunctionComponent<{
 
                       <p>Custom payment options</p>
                     </div>
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
-                      </div>
-
-                      <p className='mb-0'>Unlimited seats</p>
-                    </div>
                   </div>
                 </div>
               </div>

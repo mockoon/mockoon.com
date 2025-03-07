@@ -52,10 +52,11 @@ const AppAuth = function () {
   });
 
   const webAppRedirect = (token: string) => {
-    // TODO change URL
     localStorage.removeItem('webAppRedirect');
 
-    window.location.assign(`http://localhost:3001/?token=${token}`);
+    window.location.assign(
+      `${process.env.NEXT_PUBLIC_WEBAPP_URL}/auth?token=${token}`
+    );
   };
 
   const {

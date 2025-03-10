@@ -7,8 +7,12 @@
       "hosting": {
         "website": [
           "mockoon-ba3e2"
+        ],
+        "webapp": [
+          "mockoon-webapp"
         ]
       }
     }
-  }
+  },
+  "etags": {}
 }

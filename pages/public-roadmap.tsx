@@ -124,6 +124,12 @@ const tasks: {
   ],
   inProgress: [
     {
+      link: null,
+      title: 'Mockoon Cloud Web app',
+      cloud: true,
+      target: '_blank'
+    },
+    {
       link: 'https://github.com/mockoon/mockoon/issues/1045',
       title: 'Export logs as HAR',
       cloud: false,

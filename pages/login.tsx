@@ -106,8 +106,8 @@ const Login: FunctionComponent = function () {
                         type='email'
                         className='form-control'
                         id='email'
-                        autoComplete='username'
-                        placeholder='name@address.com'
+                        autoComplete='email'
+                        placeholder='name@example.com'
                         required
                         {...registerFormField('email')}
                       />

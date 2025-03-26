@@ -7,7 +7,8 @@ import { FooterCTA } from '../models/common.model';
 const Layout: FunctionComponent<{
   footerBanner: FooterCTA;
   children: React.ReactNode;
-}> = function ({ footerBanner, children }) {
+  minimal?: boolean;
+}> = function ({ footerBanner, children, minimal }) {
   return (
     <Fragment>
       <Head>
@@ -35,9 +36,10 @@ const Layout: FunctionComponent<{
         <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#252830' />
         <meta name='theme-color' content='#ffffff' />
       </Head>
-      <Nav />
+      {!minimal && <Nav />}
+
       {children}
-      <Footer banner={footerBanner} />
+      {!minimal && <Footer banner={footerBanner} />}
     </Fragment>
   );
 };

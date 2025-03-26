@@ -25,6 +25,7 @@ const Login: FunctionComponent = function () {
   } = useAuth();
   const router = useRouter();
   const isInApp = router.query.inapp === 'true';
+  const isWebApp = router.query.webapp === 'true';
   const authCallback = router.query.authCallback as string;
   const [error, setError] = useState(false);
 
@@ -55,8 +56,16 @@ const Login: FunctionComponent = function () {
   };
 
   useEffect(() => {
-    if (isInApp || authCallback) {
+    if (isInApp || isWebApp || authCallback) {
       localStorage.setItem('redirect', '/app-auth/');
+    }
+
+    if (isWebApp) {
+      window.parent.postMessage(
+        `loaded`,
+        `${process.env.NEXT_PUBLIC_WEBAPP_URL}`
+      );
+      localStorage.setItem('webAppRedirect', '1');
     }
 
     if (authCallback) {
@@ -73,10 +82,10 @@ const Login: FunctionComponent = function () {
         router.push('/account/info/');
       }
     }
-  }, [isAuthLoading, user, isAuth, isInApp, authCallback]);
+  }, [isAuthLoading, user, isAuth, isInApp, isWebApp, authCallback]);
 
   return (
-    <Layout footerBanner='contact'>
+    <Layout footerBanner='contact' minimal={isWebApp}>
       <Meta title={meta.title} description={meta.description} />
 
       {isAuthLoading && <LoadingPage />}
@@ -86,7 +95,9 @@ const Login: FunctionComponent = function () {
           <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
             <div className='container'>
               <div className='row align-items-center justify-content-center gx-0'>
-                <div className='col-12 col-md-5 col-lg-4 py-8 py-md-11'>
+                <div
+                  className={`col-12 col-md-5 col-lg-4 ${isWebApp ? '' : 'py-8 py-md-11'}`}
+                >
                   <h1 className='mb-0 fw-bold text-center'>Log in</h1>
                   <p className='mb-6 text-center text-gray-700'>
                     Access your Mockoon Cloud account.
@@ -157,7 +168,12 @@ const Login: FunctionComponent = function () {
                   </div>
                   <p className='my-4 fs-sm text-center text-gray-700'>
                     Don't have an account yet?{' '}
-                    <Link href={'signup/'}>Sign up</Link>
+                    <Link
+                      href={'signup/'}
+                      target={`${isWebApp ? '_blank' : ''}`}
+                    >
+                      Sign up
+                    </Link>
                   </p>
                 </div>
               </div>

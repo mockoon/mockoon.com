@@ -2,7 +2,7 @@
 title: Data Buckets
 meta:
   title: 'Admin API: Data buckets management'
-  description: 'Learn how to manage the data buckets of a running environment using the admin API: retrieve their values and reset them to their initial state'
+  description: 'Learn how to manage the data buckets of a running environment using the Admin API: retrieve their values and reset them to their initial state'
 order: 801
 ---
 
@@ -46,7 +46,7 @@ GET /mockoon-admin/data-buckets
 ]
 ```
 
-> 💡 These information are also available in the [`/mockoon-admin/events` endpoint](docs:admin-api/events#data-buckets-processed-event).
+> 💡 This information is also available in the [`/mockoon-admin/events` endpoint](docs:admin-api/events#data-buckets-processed-event).
 
 ## Get a data bucket value
 
@@ -75,7 +75,7 @@ The value of the data bucket is returned as a JSON object in the `value` propert
 
 ## Reset the data buckets
 
-To **reset** the data buckets to their **initial state**, call one of the following endpoints without payload:
+To **reset** the data buckets to their **initial state**, call one of the following endpoints without a payload:
 
 - `POST /mockoon-admin/data-buckets/purge`.
 - `PURGE /mockoon-admin/data-buckets`.

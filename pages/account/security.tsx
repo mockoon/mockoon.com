@@ -113,6 +113,7 @@ const AccountSecurity: FunctionComponent = function () {
                             className='form-control'
                             id='currentPassword'
                             type='password'
+                            autoComplete='current-password'
                             required
                             {...registerFormField('currentPassword')}
                           />
@@ -126,6 +127,7 @@ const AccountSecurity: FunctionComponent = function () {
                             className='form-control'
                             id='newPassword'
                             type='password'
+                            autoComplete='new-password'
                             required
                             {...registerFormField('newPassword')}
                           />
@@ -142,6 +144,7 @@ const AccountSecurity: FunctionComponent = function () {
                             className='form-control'
                             id='confirmNewPassword'
                             type='password'
+                            autoComplete='new-password'
                             required
                             {...registerFormField('confirmNewPassword')}
                           />

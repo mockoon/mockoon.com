@@ -3,9 +3,9 @@ import { FunctionComponent } from 'react';
 const AccountHeader: FunctionComponent<{
   title: string;
   subtitle: string;
-  showWebappLink: boolean;
+  showWebappLink?: boolean;
 }> = function ({ title, subtitle, showWebappLink }) {
-  showWebappLink = showWebappLink !== undefined ? showWebappLink : true;
+  showWebappLink = showWebappLink ?? true;
 
   return (
     <header className='bg-dark pt-9 pb-11 d-md-block'>

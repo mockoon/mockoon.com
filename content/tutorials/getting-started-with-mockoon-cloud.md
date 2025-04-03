@@ -19,13 +19,19 @@ In this tutorial, we will learn how to **get started with [Mockoon Cloud](/cloud
 
 Before starting this tutorial, make sure you signed up and subscribed to a Mockoon Cloud plan. If you haven't done it yet, you can [sign up here](/cloud/). Our plans are available for individual developers and teams. You can also try Mockoon Cloud for free with our 7-day trial.
 
-## 1. Install or update the desktop application
+## 1. Install the desktop application or use the web app
 
-After signing up for Mockoon Cloud, you will be able to access all the premium features in the **desktop application**. To fully benefit from your Mockoon Cloud plan, make sure you have the **latest version** of the desktop application installed.
+After signing up for Mockoon Cloud, you will be able to access all the Cloud features in the **desktop application**. To fully benefit from your Mockoon Cloud plan, make sure you have the **latest version** of the desktop application installed.
 
 ![screenshot of the Mockoon desktop application download page{1373x374}](/images/tutorials/getting-started-with-mockoon-cloud/desktop-application-download-screenshot.png)
 
 Head to the [download page](/download/) to get the latest version of the desktop application.
+
+As an alternative, you can also use the **[Mockoon Cloud web app](docs:mockoon-cloud/web-application)**. This web application is designed for users who prefer a browser-based experience or cannot install the desktop application due to restrictions in their environment.
+
+![Mockoon Cloud web app screenshot](/images/tutorials/getting-started-with-mockoon-cloud/mockoon-cloud-web-application.png)
+
+The web app is available to all users with a paid Mockoon Cloud plan. You can log in using your Mockoon account credentials. Once logged in, you will have access to your synchronized and deployed environments and can manage them directly from the web interface.
 
 ## 2. Log in to your account in the desktop application
 

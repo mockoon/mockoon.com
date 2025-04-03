@@ -34,7 +34,7 @@ const SubscribeThankYou: FunctionComponent = function () {
       <Meta title={meta.title} description={meta.description} />
 
       <PaddleScript />
-      <AccountHeader title='' subtitle='' showLogout={false} />
+      <AccountHeader title='' subtitle='' showWebappLink={false} />
 
       <main className='pb-8 pb-md-11 mt-md-n6'>
         <div className='container-md'>
@@ -103,9 +103,51 @@ const SubscribeThankYou: FunctionComponent = function () {
                   <img
                     src='/images/tutorials/tutorial-getting-started-mockoon-cloud.png'
                     alt=''
-                    className='img-fluid shadow'
+                    className='img-fluid img-shadow'
                   />
                 </Link>
+              </div>
+            </div>
+          </div>
+          <div className='card card-bleed shadow-light-lg mb-6'>
+            <div className='card-header border-0'>
+              <div className='row align-items-center'>
+                <div className='col'>
+                  <h3>
+                    3. Use Mockoon Cloud's{' '}
+                    <span className='text-primary'>web application</span>
+                  </h3>
+                </div>
+                <div className='col-auto'>
+                  <Link
+                    href={process.env.NEXT_PUBLIC_WEBAPP_URL}
+                    className='btn btn-xs btn-primary-subtle mt-4'
+                    target='_blank'
+                  >
+                    Open the web application <i className='icon-open ms-2'></i>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className='card-body'>
+              <p>
+                A new web application is now available in early access to manage
+                your mock APIs and collaborate with your team. The web
+                application is available for all Mockoon Cloud users. Read our{' '}
+                <a
+                  href='https://mockoon.com/blog/introducing-mockoon-cloud-web-app/'
+                  target='_blank'
+                >
+                  announcement
+                </a>{' '}
+                for more information.
+              </p>
+              <div className='col-md-6 py-4 m-auto'>
+                <img
+                  src='/images/mockoon-cloud/mockoon-cloud-web-application.png'
+                  alt=''
+                  className='img-fluid img-shadow'
+                />
               </div>
             </div>
           </div>
@@ -115,7 +157,7 @@ const SubscribeThankYou: FunctionComponent = function () {
               <div className='row align-items-center'>
                 <div className='col'>
                   <h3>
-                    2. Mockoon Cloud's{' '}
+                    2. Read Mockoon Cloud's{' '}
                     <span className='text-primary'>documentation</span>
                   </h3>
                 </div>
@@ -151,6 +193,12 @@ const SubscribeThankYou: FunctionComponent = function () {
                   your team, and collaborate in real-time.
                 </li>
                 <li>
+                  <Link href='/docs/latest/mockoon-cloud/web-application/'>
+                    Web application
+                  </Link>
+                  : Use our new web application to manage your mock APIs.
+                </li>
+                <li>
                   <Link href='/docs/latest/mockoon-cloud/templates-and-ai-assistant/'>
                     AI assistants
                   </Link>
@@ -160,13 +208,14 @@ const SubscribeThankYou: FunctionComponent = function () {
               </ul>
             </div>
           </div>
+
           {userData?.plan !== Plans.FREE && userData?.plan !== Plans.SOLO && (
             <div className='card card-bleed shadow-light-lg mb-6'>
               <div className='card-header border-0'>
                 <div className='row align-items-center'>
                   <div className='col'>
                     <h3>
-                      3. <span className='text-primary'>Invite</span> your team
+                      4. <span className='text-primary'>Invite</span> your team
                       members
                     </h3>
                   </div>
@@ -181,20 +230,20 @@ const SubscribeThankYou: FunctionComponent = function () {
                 </div>
               </div>
               <div className='card-body'>
-                <p className='mb-0'>
+                <p>
                   Do not forget to invite your team members to collaborate on
                   your mock APIs. You can manage your team members on your{' '}
                   <Link href='/account/users/'>team management page</Link>.
-                  <div className='col-md-6 my-4 m-auto'>
-                    <Link href='/account/users/'>
-                      <img
-                        src='/images/account/subscribe-thank-you/add-team-members.png'
-                        alt=''
-                        className='img-fluid shadow'
-                      />
-                    </Link>
-                  </div>
                 </p>
+                <div className='col-md-6 py-4 m-auto'>
+                  <Link href='/account/users/'>
+                    <img
+                      src='/images/account/subscribe-thank-you/add-team-members.png'
+                      alt=''
+                      className='img-fluid img-shadow'
+                    />
+                  </Link>
+                </div>
               </div>
             </div>
           )}

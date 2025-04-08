@@ -4,17 +4,14 @@ import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Layout from '../layout/layout';
 
-const ContactFormPage: FunctionComponent = function () {
+const OpenSourceContactFormPage: FunctionComponent = function () {
   return (
     <Layout footerBanner='newsletter'>
-      <Meta
-        title="Contact Mockoon's team"
-        description='For all non-support inquiries (your Mockoon Cloud subscription, sponsoring, etc.) you can contact us using our contact form. We will get back to you shortly'
-      />
+      <Meta title="Contact Mockoon's team for Open Source" description='' />
 
       <Hero
-        title='Contact us'
-        subtitle='For all non-support inquiries (your Mockoon Cloud subscription, sponsoring, etc.), please contact us using the form below'
+        title='Mockoon Cloud for Open Source'
+        subtitle='We offer free Mockoon Cloud accounts for open source projects. If you are interested, please fill the form below.'
       />
       <section
         id='form'
@@ -28,13 +25,13 @@ const ContactFormPage: FunctionComponent = function () {
                 <a href='mailto:team@mockoon.com' className='h4'>
                   team@mockoon.com
                 </a>{' '}
-                or fill the form below. We will be glad to help you.
+                or fill the form below.
               </p>
             </div>
           </div>
           <div className='row justify-content-center'>
             <div className='col-12 col-lg-6'>
-              <ContactForm />
+              <ContactForm displayProject />
             </div>
           </div>
         </div>
@@ -43,4 +40,4 @@ const ContactFormPage: FunctionComponent = function () {
   );
 };
 
-export default ContactFormPage;
+export default OpenSourceContactFormPage;

@@ -108,6 +108,7 @@ const ContactForm: FunctionComponent<{ displayProject?: boolean }> = function ({
               id='project'
               placeholder='e.g. @github_handle, https://example.org'
               type='text'
+              required
               {...registerFormField('project')}
             />
           </div>

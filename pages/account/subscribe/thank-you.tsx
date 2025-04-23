@@ -114,7 +114,7 @@ const SubscribeThankYou: FunctionComponent = function () {
               <div className='row align-items-center'>
                 <div className='col'>
                   <h3>
-                    3. Use Mockoon Cloud's{' '}
+                    2. Use Mockoon Cloud's{' '}
                     <span className='text-primary'>web application</span>
                   </h3>
                 </div>
@@ -157,7 +157,7 @@ const SubscribeThankYou: FunctionComponent = function () {
               <div className='row align-items-center'>
                 <div className='col'>
                   <h3>
-                    2. Read Mockoon Cloud's{' '}
+                    3. Read Mockoon Cloud's{' '}
                     <span className='text-primary'>documentation</span>
                   </h3>
                 </div>

@@ -28,7 +28,7 @@ The web version of Mockoon is ideal for teams and individuals who need to **coll
 
 Another advantage of the web app is that it will always be updated with the latest features and improvements, receiving new functionality faster than the desktop application. This ensures you can focus on your work without needing to manage software updates.
 
-> 🔑 You can access the web app at [mockoon.app](https://mockoon.app) and log in with your Mockoon account credentials. Once logged in, you can manage your synchronized and deployed environments directly from the web interface. The web application currently requires a paid Mockoon Cloud plan, but we are considering introducing a free tier in the future to allow more users to try it before committing to a plan.
+> 🔑 You can access the web app at [app.mockoon.com](https://app.mockoon.com) and log in with your Mockoon account credentials. Once logged in, you can manage your synchronized and deployed environments directly from the web interface. The web application currently requires a paid Mockoon Cloud plan, but we are considering introducing a free tier in the future to allow more users to try it before committing to a plan.
 
 ## Challenges of building a web app
 

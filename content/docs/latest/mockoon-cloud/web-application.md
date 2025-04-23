@@ -17,7 +17,7 @@ badges:
 
 ## Accessing the web application
 
-The web application is **accessible on [mockoon.app](https://mockoon.app)** and is available to all users with a paid Mockoon coud plan. You can log in using your Mockoon account credentials. Once logged in, you will have access to your synchronized and deployed environments and can manage them directly from the web interface.
+The web application is **accessible on [app.mockoon.com](https://app.mockoon.com)** and is available to all users with a paid Mockoon coud plan. You can log in using your Mockoon account credentials. Once logged in, you will have access to your synchronized and deployed environments and can manage them directly from the web interface.
 
 ![mockoon cloud web app screenshot](docs-img:mockoon-cloud-web-application.png)
 

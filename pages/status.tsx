@@ -14,10 +14,10 @@ const incidents: {
 }[] = [
   {
     title: 'Cloud web app - Possible disruption',
-    desc: 'We are currently transitioning from hosting the web app on https://mockoon.app to https://app.mockoon.com. Some users may experience issues accessing the web app during this transition. No action should be required from your side but if you experience issues, please clear your browser cache and cookies (for mockoon.com and mockoon.app domains).',
+    desc: 'We are currently transitioning from hosting the web app on https://mockoon.app to https://app.mockoon.com. Some users may experience issues accessing the web app during this transition. No action should be required from your side but if you experience issues, please clear your browser cache and cookies (for the mockoon.com domain).',
     dateStart: '2025-04-23 09:30:00 UTC',
     dateEnd: '2025-04-23 13:00:00 UTC',
-    status: 'inprogress'
+    status: 'resolved'
   },
   {
     title: 'All services - Schedule downtime, v9.2.0 release',

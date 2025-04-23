@@ -311,34 +311,17 @@ const AccountSubscription: FunctionComponent = function () {
                                   <div className='row align-items-center'>
                                     <div className='col'>
                                       <p className='mb-0'>
-                                        Manage your{' '}
-                                        {userData?.subscription?.portalEnabled
-                                          ? 'past'
-                                          : ''}{' '}
-                                        subscription
+                                        Manage your subscription
                                       </p>
 
-                                      {!userData?.subscription
-                                        ?.portalEnabled && (
-                                        <p className='m-0'>
-                                          <small className='text-gray-700'>
-                                            Update your payment method, cancel
-                                            or view past invoices. You will be
-                                            redirected to our payment provider's
-                                            website.
-                                          </small>
-                                        </p>
-                                      )}
-                                      {userData?.subscription
-                                        ?.portalEnabled && (
-                                        <p className='m-0'>
-                                          <small className='text-gray-700'>
-                                            View past subscriptions and
-                                            invoices. You will be redirected to
-                                            our payment provider's website.
-                                          </small>
-                                        </p>
-                                      )}
+                                      <p className='m-0'>
+                                        <small className='text-gray-700'>
+                                          Update your payment method, cancel or
+                                          view past invoices. You will be
+                                          redirected to our payment provider's
+                                          website.
+                                        </small>
+                                      </p>
                                     </div>
                                     <div className='col-auto'>
                                       <Link

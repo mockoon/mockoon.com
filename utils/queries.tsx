@@ -8,7 +8,7 @@ const useCurrentUser = () => {
   const { getIdToken, isAuth, logout } = useAuth();
   const router = useRouter();
 
-  const { isLoading, error, data, isFetching } = useQuery<User>({
+  const { isLoading, error, data, isFetching, refetch } = useQuery<User>({
     queryKey: ['currentUser'],
     enabled: isAuth,
     refetchOnMount: false,
@@ -51,7 +51,8 @@ const useCurrentUser = () => {
     isLoading,
     error,
     data,
-    isFetching
+    isFetching,
+    refetch
   };
 };
 

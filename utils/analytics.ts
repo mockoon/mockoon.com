@@ -1,11 +1,26 @@
 import { isbot } from 'isbot';
 
+const excludePaths = [
+  '/login',
+  '/app-auth',
+  '/login',
+  '/privacy',
+  '/signup',
+  '/terms',
+  '/unsubscribe',
+  '/account'
+];
+
 export const sendEvent = (
   type: 'pageview' | 'event',
   eventName: 'download' = null,
   eventCategory: 'win' | 'mac' | 'linux' = null
 ) => {
   if (isbot(navigator.userAgent)) {
+    return;
+  }
+
+  if (excludePaths.some((path) => window.location.pathname.startsWith(path))) {
     return;
   }
 

@@ -273,13 +273,13 @@ const AccountSubscription: FunctionComponent = function () {
                                       })`
                                     : ''}
                                   {userData?.plan !== 'FREE' &&
-                                    userData.subscription?.pastDue && (
+                                    userData?.subscription?.pastDue && (
                                       <span className='badge text-bg-warning ms-2'>
                                         Invoice past due
                                       </span>
                                     )}
                                   {userData?.plan !== 'FREE' &&
-                                    userData.subscription?.trial && (
+                                    userData?.subscription?.trial && (
                                       <span className='badge text-bg-primary-subtle ms-2'>
                                         Trial period active
                                       </span>
@@ -300,7 +300,7 @@ const AccountSubscription: FunctionComponent = function () {
                                         ).toDateString()}
                                       </small>{' '}
                                       -{' '}
-                                      {!userData.subscription
+                                      {!userData?.subscription
                                         .cancellationScheduled && (
                                         <small className='text-gray-700'>
                                           Next renewal on{' '}
@@ -310,7 +310,7 @@ const AccountSubscription: FunctionComponent = function () {
                                           ).toDateString()}
                                         </small>
                                       )}
-                                      {userData.subscription
+                                      {userData?.subscription
                                         .cancellationScheduled && (
                                         <small className='text-danger'>
                                           Will be cancelled on{' '}
@@ -490,13 +490,13 @@ const AccountSubscription: FunctionComponent = function () {
                                         (Inc. tax)
                                         <br />
                                         <small className='text-gray-700'>
-                                          {userData.subscription.trial && (
+                                          {userData?.subscription.trial && (
                                             <>
                                               Trial period active - Next payment
                                               will be charged on{' '}
                                             </>
                                           )}
-                                          {!userData.subscription.trial && (
+                                          {!userData?.subscription.trial && (
                                             <>
                                               Next payment will be charged on{' '}
                                             </>
@@ -566,7 +566,7 @@ const AccountSubscription: FunctionComponent = function () {
                                 <div>
                                   <p className='m-0 mt-2'>
                                     <small className='text-gray-700'>
-                                      {userData.subscription.trial && (
+                                      {userData?.subscription.trial && (
                                         <>
                                           ⚠️ Once confirmed, your plan will be
                                           upgraded to a Team plan and you will
@@ -574,7 +574,7 @@ const AccountSubscription: FunctionComponent = function () {
                                           when your trial ends.
                                         </>
                                       )}
-                                      {!userData.subscription.trial && (
+                                      {!userData?.subscription.trial && (
                                         <>
                                           ⚠️ Once confirmed, your plan will be
                                           upgraded to a Team plan and you will
@@ -632,7 +632,7 @@ const AccountSubscription: FunctionComponent = function () {
                       <div className='card card-bleed shadow-light-lg mb-6'>
                         <div className='card-header'>
                           <h4 className='mb-0'>
-                            {userData.plan === 'SOLO'
+                            {userData?.plan === 'SOLO'
                               ? 'Quotas'
                               : 'Personal quotas'}
                           </h4>
@@ -686,11 +686,11 @@ const AccountSubscription: FunctionComponent = function () {
                                 </div>
                               </div>
                             </div>
-                            {userData.plan === 'SOLO' && sharedQuotas}
+                            {userData?.plan === 'SOLO' && sharedQuotas}
                           </div>
                         </div>
                       </div>
-                      {userData.plan !== 'SOLO' && (
+                      {userData?.plan !== 'SOLO' && (
                         <div className='card card-bleed shadow-light-lg mb-6'>
                           <div className='card-header'>
                             <h4 className='mb-0'>Team quotas</h4>

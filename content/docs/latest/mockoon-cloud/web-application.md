@@ -21,13 +21,13 @@ The web application is **accessible on [app.mockoon.com](https://app.mockoon.com
 
 ![mockoon cloud web app screenshot](docs-img:mockoon-cloud-web-application.png)
 
-## UI differences
+## UI and feature differences
 
 The interface is the same as the desktop application, with a few differences due to the nature of the web application:
 
 - [Cloud deployments unsupported features](docs:mockoon-cloud/api-mock-cloud-deployments#unsupported-features) (file serving, custom TLS, etc.) are hidden to avoid confusion.
-- Desktop and local specific options and features are disabled or hidden (managing local environments, etc.).
-- Some interface elements were modified to fit the web application (e.g. the server start button deploys in the cloud instead of starting a local server).
+- Desktop/local specific options and features are disabled or hidden (managing local environments, etc.).
+- Some interface elements were modified to fit the web application (e.g. the server start button deploys to the cloud instead of starting a local server).
 
 As this application is still in early access, we are working on improving the interface and adding new features. We welcome your feedback and suggestions to help us make it better.
 
@@ -40,4 +40,4 @@ Also, some features are not yet available in the web application but will be add
 
 The web application is always running the latest version of Mockoon. You don't need to worry about updating it, as it will always be up to date with the latest features and improvements.
 
-Similarly to the desktop application, the web application will automatically migrate your data to the latest version when you log in. You don't need to worry about data migration or compatibility issues, as everything is handled seamlessly in the background.
+Similarly to the desktop application, the web application will automatically migrate your data to the latest version when you log in. You don't need to worry about data migration or compatibility issues, unless you are using both the desktop application and the web application. In this case, we recommend checking the [migration guide](docs:mockoon-cloud/data-synchronization-team-collaboration#major-versions-migrations) for more information on how to handle potential issues.

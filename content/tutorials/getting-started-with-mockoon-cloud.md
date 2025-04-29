@@ -64,7 +64,7 @@ The visibility of the environment can be set to **public** or **private**. Here 
 - **Public**: The environment is accessible to anyone with the URL.
 - **Private**: The environment is accessible only to users with the URL and the API key. The API key is displayed in the management dialog and must be included in the request `Authorization` header to access the environment.
 
-Your mock API will be available in the cloud on a **unique URL** in the form of `https://mock-abcd1234.serverid.mockoon.app`. You can share it with your team and use it in your applications.
+Your mock API will be available in the cloud on a **unique URL** in the form of `https://mock-abcd1234.{serverId}.mockoon.app`. You can share it with your team and use it in your applications.
 
 You can view and manage your deployments at any time by clicking on the **"x instances deployed"** button at the bottom of the application.
 

@@ -24,6 +24,10 @@ You will find the [CLI documentation](https://github.com/mockoon/mockoon/blob/ma
 
 You will find the [serverless package documentation](https://github.com/mockoon/mockoon/blob/main/packages/serverless/README.md) in its dedicated readme file on the repository. It covers the package usage instructions and specific features.
 
+## Web application
+
+The [web application](docs:mockoon-cloud/web-application) is a web version of the desktop application available for Mockoon Cloud customers. While based on the same codebase, it is not a direct replacement for the desktop application and does not support all the features. Please refer to the [web application documentation](docs:mockoon-cloud/web-application#ui-differences) for more information about the differences.
+
 ## Versioning
 
 Even if Mockoon is primarily a desktop application, we are following [semantic versioning](https://semver.org/). All the applications and packages **share the same version number** for each release.

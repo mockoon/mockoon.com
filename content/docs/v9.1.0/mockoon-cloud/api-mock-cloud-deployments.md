@@ -24,7 +24,7 @@ You can **deploy an environment** to the cloud using the context menu in the loc
 
 In the deployment dialog, you can further customize your instance:
 
-- **Subdomain**: The default subdomain is generated automatically, but you can customize it to a unique value. The subdomain will be part of the instance URL (e.g. `https://{subdomain}.mockoon.app`).
+- **Subdomain**: The default subdomain is generated automatically, but you can customize it to a unique value. The subdomain will be part of the instance URL (e.g. `https://{subdomain}.{serverId}.mockoon.app`).
 - **Visibility**:
   - **Public**: The environment will be accessible to anyone with the URL.
   - **Private**: The environment will be accessible only to users with the URL and the **API key** (see [Instance URL and visibility](#instance-url-and-visibility) below).
@@ -44,7 +44,7 @@ In the management dialog, you can **re-deploy** the environment or **delete** th
 
 ## Instance URL and visibility
 
-The instance will be deployed on a shared cloud infrastructure and will be accessible using a unique URL in the form of `https://mock-abcd1234.mockoon.app`. The URL will be displayed in the management dialog and can be shared with your team, clients, or class. You can also customize the subdomain part of the URL when deploying the environment.
+The instance will be deployed on a shared cloud infrastructure and will be accessible using a unique URL in the form of `https://mock-abcd1234.{serverId}.mockoon.app`. The URL will be displayed in the management dialog and can be shared with your team, clients, or class. You can also customize the subdomain part of the URL when deploying the environment.
 
 The visibility of the environment can be set to **public** or **private**. Here are the differences between the two:
 

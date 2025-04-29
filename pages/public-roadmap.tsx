@@ -50,12 +50,6 @@ const tasks: {
       target: null
     },
     {
-      link: '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/#deploy-an-environment-to-the-cloud',
-      title: 'Simplified cloud deployments URLs',
-      cloud: true,
-      target: null
-    },
-    {
       link: '/releases/9.1.0/#cloud-deployments',
       title: 'Custom sub domains in cloud deployments',
       cloud: true,

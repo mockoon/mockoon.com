@@ -21,11 +21,14 @@ const OpenSourceContactFormPage: FunctionComponent = function () {
           <div className='row justify-content-center'>
             <div className='col-12 col-md-10 col-lg-8 text-center'>
               <p className='fs-lg text-gray-700 mb-7 mb-md-9'>
-                Send us an email to{' '}
-                <a href='mailto:team@mockoon.com' className='h4'>
-                  team@mockoon.com
-                </a>{' '}
-                or fill the form below.
+                To be eligible, your project must be{' '}
+                <strong>open source</strong>,{' '}
+                <strong>have a public repository</strong> and{' '}
+                <strong>not be backed by a company</strong>. We reserve the
+                right to refuse any request that does not meet these criteria or
+                that we deem inappropriate or not aligned with our values. We
+                will review your request and get back to you as soon as
+                possible.
               </p>
             </div>
           </div>

@@ -752,7 +752,7 @@ const PlansView: FunctionComponent<{
                               colSpan={5}
                               className='text-start fw-bold bg-gray-100'
                             >
-                              Cloud deployment
+                              Cloud deployments
                             </td>
                           </tr>
                           <tr>
@@ -769,7 +769,10 @@ const PlansView: FunctionComponent<{
                             <td className='text-center'>Custom</td>
                           </tr>
                           <tr>
-                            <td>Number of monthly calls</td>
+                            <td>
+                              Number of monthly calls{' '}
+                              <CustomTooltip text='Number of monthly API requests accross your deployed API mocks for your team.                              '></CustomTooltip>
+                            </td>
                             <td className='text-center'>
                               {pricing.SOLO.deployCallsQuota.toLocaleString()}
                             </td>

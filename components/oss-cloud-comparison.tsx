@@ -94,6 +94,19 @@ const OssCloudComparison = function () {
               </td>
             </tr>
             <tr>
+              <td>Web application</td>
+              <td>
+                <span className='text-danger fw-bold fs-3 me-2'>
+                  <i className='icon-clear'></i>
+                </span>
+              </td>
+              <td>
+                <span className='text-success fw-bold fs-3 me-2'>
+                  <i className='icon-check'></i>
+                </span>
+              </td>
+            </tr>
+            <tr>
               <td>Real-time collaboration</td>
               <td>
                 <span className='text-danger fw-bold fs-3 me-2'>
@@ -135,7 +148,7 @@ const OssCloudComparison = function () {
                   <i className='icon-check'></i>
                 </span>
                 <br />
-                <small>Online cloud deployments</small>
+                <small>Cloud instances</small>
               </td>
             </tr>
             <tr>

@@ -33,3 +33,11 @@ Open the **Environment Headers** by clicking on the tab at the top of the window
 And add one or more headers by clicking on the "Add header" button at the bottom of the list:
 
 ![Add environment header{1347x136}](docs-img:add-environment-header.png)
+
+## Specific headers
+
+### Connection/Upgrade headers
+
+By default, the **`Connection` and `Upgrade` request headers** containing something else than **`websocket`** are ignored by Mockoon and will have no effect on the response.
+
+However, when your mock contains a [WebSocket route](docs:api-endpoints/websockets), Mockoon will use these headers to upgrade the connection to a WebSocket connection. In this case, passing an **`Upgrade`** header without the value **`websocket`** will result in a **400 Bad Request** response.

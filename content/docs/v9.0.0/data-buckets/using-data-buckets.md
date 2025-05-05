@@ -65,7 +65,7 @@ To link a data bucket to a route response, choose "Data" in the body selector an
 
 ## Storing JSON schemas
 
-A data bucket can also store a **JSON schema**. This schema can be used in the [rules system](docs:route-responses/dynamic-rules#5-value), using the **"valid JSON schema"** operator to validate the targeted property using [ajv](https://www.npmjs.com/package/ajv).
+A data bucket can also store a **JSON schema**. This schema can be used in the [rules system](docs:route-responses/dynamic-rules#5-value), using the **"valid JSON schema"** operator to validate the targeted property using [ajv](https://ajv.js.org/).
 
 To store a JSON schema in a data bucket, create a new data bucket and paste your JSON schema in the content editor. The schema must be a valid JSON object:
 

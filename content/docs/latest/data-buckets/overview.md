@@ -33,7 +33,9 @@ Mockoon will automatically attribute a new **unique ID** to your data bucket. Yo
 
 Data buckets can contain any text content. They also support all of Mockoon's [templating helpers](docs:templating/overview) including the [`data` and `dataRaw` helpers](docs:data-buckets/using-data-buckets#using-data-helpers).
 
-Mockoon will always try to parse the data bucket's content from JSON to allow you to reference only part of it using the `data` helpers and an object path.
+Mockoon will always try to parse the data bucket's JSON content to allow you to use the various [templating helpers](docs:templating/overview) to manipulate the data (e.g. `{{ data ... }}`, `{{ setData ... }}`).
+
+A data bucket can also [**contain a JSON schema**](docs:data-buckets/using-data-buckets#storing-json-schemas) to be use in combination with a [response rule](docs:route-responses/dynamic-rules#5-value) to validate some data (request's body, query parameters, etc.).
 
 ## Combining data buckets
 

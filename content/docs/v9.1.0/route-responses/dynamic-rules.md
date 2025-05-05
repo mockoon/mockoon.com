@@ -140,6 +140,6 @@ The **request number** supports simple entries like `1` or `2` but also regexes,
 
 #### JSON schemas
 
-The only exception is the **valid JSON schema** comparison operator. In this case, the **value** must point to a data bucket containing a valid JSON schema. The schema will be used to validate the targeted property using [ajv](https://www.npmjs.com/package/ajv). In this case, the **value** field supports the [object-path](https://www.npmjs.com/package/object-path) syntax to access the schema stored in a data bucket or one of its properties. Examples: `bucketNameOrId`, `bucketNameOrId.schema`, etc. The [data bucket documentation](docs:data-buckets/using-data-buckets#storing-json-schemas) provides more information on how to create and use JSON schemas.
+The only exception is the **valid JSON schema** comparison operator. In this case, the **value** must point to a data bucket containing a valid JSON schema. The schema will be used to validate the targeted property using [ajv](https://ajv.js.org/). In this case, the **value** field supports the [object-path](https://www.npmjs.com/package/object-path) syntax to access the schema stored in a data bucket or one of its properties. Examples: `bucketNameOrId`, `bucketNameOrId.schema`, etc. The [data bucket documentation](docs:data-buckets/using-data-buckets#storing-json-schemas) provides more information on how to create and use JSON schemas.
 
 > 🛠️ We created an online tool to help you [**validate your JSON Schema**](/tools/json-schema-validator/) before using it in Mockoon.

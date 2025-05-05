@@ -112,6 +112,8 @@ We need to **compare the request payload** (body) with the **JSON Schema stored 
 
 ![rule to validate the request payload with the JSON Schema{1197x250}](/images/tutorials/validate-requests-payload-json-schema/validate-payload-rule.png)
 
+> 💡 Mockoon will use the **[ajv](https://ajv.js.org/) library** to validate the data against the JSON Schema.
+
 ## 4. Test your endpoint
 
 To **test your new workflow**, **start your mock API server** (using the "Play" arrow at the top). Then, using your favorite HTTP client (like [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/), or [curl](https://curl.se/)), **send a `POST` request** to the `/signup` endpoint with a Content-Type header set to `application/json` and a JSON payload like this:

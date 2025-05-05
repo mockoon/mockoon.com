@@ -18,11 +18,11 @@ export const pricing = {
   },
   TEAM: {
     MONTHLY: {
-      price: 25,
+      price: 29,
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_TEAM_MONTHLY_PRICE_ID
     },
     YEARLY: {
-      price: 250,
+      price: 290,
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_TEAM_YEARLY_PRICE_ID
     },
     trialDays: 7,

@@ -343,13 +343,18 @@ const PlansView: FunctionComponent<{
                         </span>
                       )}
                     </h3>
-                    <div className='d-flex justify-content-center mb-6 position-relative'>
+                    <div className='d-flex justify-content-center position-relative'>
                       <span className='h2 mb-0 mt-2'>$</span>
                       <span className='price display-2 mb-0'>
                         {pricing.SOLO[planFrequency].price}
                       </span>
-                      <span className='h4 text-gray-700 align-self-end mb-2'>
+                      <span className='h4 text-gray-700 align-self-end'>
                         /{suffixes[planFrequency]}
+                      </span>
+                    </div>
+                    <div className='d-flex justify-content-center mb-6'>
+                      <span className='h6 text-gray-700 align-self-end'>
+                        (Tax excl.)
                       </span>
                     </div>
 
@@ -462,13 +467,18 @@ const PlansView: FunctionComponent<{
                         </span>
                       )}
                     </h3>
-                    <div className='d-flex justify-content-center mb-6'>
+                    <div className='d-flex justify-content-center'>
                       <span className='h2 mb-0 mt-2'>$</span>
                       <span className='price display-2 mb-0'>
                         {pricing.TEAM[planFrequency].price}
                       </span>
-                      <span className='h4 text-gray-700 align-self-end mb-2'>
+                      <span className='h4 text-gray-700 align-self-end'>
                         /{suffixes[planFrequency]}/seat
+                      </span>
+                    </div>
+                    <div className='d-flex justify-content-center mb-6'>
+                      <span className='h6 text-gray-700 align-self-end'>
+                        (Tax excl.)
                       </span>
                     </div>
 
@@ -675,8 +685,8 @@ const PlansView: FunctionComponent<{
               </div>
             </div>
             <p className='fs-sm text-gray-700 text-center mt-1'>
-              Prices are in USD and exclude VAT where applicable. By proceeding
-              to payment you agree to our{' '}
+              Prices are in USD and exclude taxes (e.g. VAT, sales tax, etc.)
+              where applicable. By proceeding to payment you agree to our{' '}
               <Link href={'/privacy/'}>privacy policy</Link> and{' '}
               <Link href={'/terms/'}>terms of service</Link>.<br /> The free
               trial is available once per user, has a lower request rate limit

@@ -2,10 +2,15 @@ import { useQueryClient } from '@tanstack/react-query';
 import {
   EmailAuthProvider,
   GoogleAuthProvider,
+  MultiFactorError,
+  TotpMultiFactorGenerator,
+  TotpSecret,
   User,
   applyActionCode,
   createUserWithEmailAndPassword,
   getAuth,
+  getMultiFactorResolver,
+  multiFactor,
   reauthenticateWithCredential,
   sendEmailVerification,
   signInWithEmailAndPassword,
@@ -13,6 +18,11 @@ import {
   updatePassword
 } from 'firebase/auth';
 import { useEffect, useState } from 'react';
+
+export const authProviderNames = {
+  password: 'Email and password',
+  'google.com': 'Google'
+};
 
 const useAuth = () => {
   const queryClient = useQueryClient();
@@ -58,19 +68,50 @@ const useAuth = () => {
     return await sendEmailVerification(auth.currentUser);
   };
 
-  const applyEmailVerificationCode = async (code: string) => {
+  const applyEmailLinkActionCode = async (code: string) => {
     await applyActionCode(auth, code);
   };
 
-  const changePassword = async (params: {
-    currentPassword: string;
-    newPassword: string;
-  }) => {
+  const reAuthenticate = async (password: string) => {
     await reauthenticateWithCredential(
-      user,
-      EmailAuthProvider.credential(user.email, params.currentPassword)
+      auth.currentUser,
+      EmailAuthProvider.credential(user.email, password)
     );
-    await updatePassword(auth.currentUser, params.newPassword);
+  };
+
+  const changePassword = async (newPassword: string) => {
+    await updatePassword(auth.currentUser, newPassword);
+  };
+
+  const getTfaSecret = async () => {
+    const mfaSession = await multiFactor(auth.currentUser).getSession();
+    return await TotpMultiFactorGenerator.generateSecret(mfaSession);
+  };
+
+  const finalizeTfaEnrollment = async (
+    totpSecret: TotpSecret,
+    code: string
+  ) => {
+    const multiFactorAssertion =
+      TotpMultiFactorGenerator.assertionForEnrollment(totpSecret, code);
+    await multiFactor(auth.currentUser).enroll(
+      multiFactorAssertion,
+      'TOTP application'
+    );
+  };
+
+  const unenrollTfa = async (id: string) => {
+    await multiFactor(auth.currentUser).unenroll(id);
+  };
+
+  const verifyTfaCode = async (error: MultiFactorError, code: string) => {
+    const mfaResolver = getMultiFactorResolver(auth, error);
+    const multiFactorAssertion = TotpMultiFactorGenerator.assertionForSignIn(
+      mfaResolver?.hints?.[0]?.uid,
+      code
+    );
+
+    await mfaResolver.resolveSignIn(multiFactorAssertion);
   };
 
   useEffect(() => {
@@ -104,8 +145,13 @@ const useAuth = () => {
     signInGoogle,
     signUp,
     emailVerification,
-    applyEmailVerificationCode,
-    changePassword
+    applyEmailLinkActionCode,
+    changePassword,
+    getTfaSecret,
+    finalizeTfaEnrollment,
+    reAuthenticate,
+    unenrollTfa,
+    verifyTfaCode
   };
 };
 

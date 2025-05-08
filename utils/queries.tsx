@@ -8,7 +8,9 @@ const useCurrentUser = () => {
   const { getIdToken, isAuth, logout } = useAuth();
   const router = useRouter();
 
-  const { isLoading, error, data, isFetching, refetch } = useQuery<User>({
+  const { isLoading, error, data, isFetching, refetch } = useQuery<
+    User & { mfa: { enabled: boolean; uid: string } }
+  >({
     queryKey: ['currentUser'],
     enabled: isAuth,
     refetchOnMount: false,

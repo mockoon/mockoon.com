@@ -1,8 +1,7 @@
 import { DeployInstanceVisibility } from '@mockoon/cloud';
-import { useMutation } from '@tanstack/react-query';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FunctionComponent, useEffect, useState } from 'react';
+import { FunctionComponent, useEffect } from 'react';
 import AccountHeader from '../../components/account-header';
 import AccountMenu from '../../components/account-menu';
 import LoadingPage from '../../components/loading-page';
@@ -20,12 +19,9 @@ const meta = {
 
 const AccountInstances: FunctionComponent = function () {
   const router = useRouter();
-  const { getIdToken, isLoading: isAuthLoading, user, isAuth } = useAuth();
+  const { isLoading: isAuthLoading, user, isAuth } = useAuth();
   const { isLoading: isUserLoading, data: userData } = useCurrentUser();
-  const [showAddModal, setShowAddModal] = useState(false);
-  const [newUserEmail, setNewUserEmail] = useState('');
-  const { data: instancesData, refetch: instancesRefetch } =
-    useCurrentDeployments();
+  const { data: instancesData } = useCurrentDeployments();
 
   useEffect(() => {
     if (!isAuthLoading) {
@@ -43,64 +39,6 @@ const AccountInstances: FunctionComponent = function () {
       }
     }
   }, [isAuthLoading, user, isAuth, isUserLoading, userData?.plan]);
-
-  const {
-    mutate: addUser,
-    isError: isAddUserError,
-    error: addUserError,
-    isPending: isAddingUser
-  } = useMutation({
-    mutationFn: async (email: string) => {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/deployments`,
-        {
-          body: JSON.stringify({ email: email.trim() }),
-          method: 'GET',
-          headers: {
-            Authorization: `Bearer ${await getIdToken()}`,
-            'Content-Type': 'application/json'
-          }
-        }
-      );
-
-      if (response.status !== 204) {
-        const data = await response.json();
-
-        throw new Error(data.message);
-      }
-    },
-    onError: (error) => {},
-    onSuccess: (data) => {
-      //teamRefetch();
-      setShowAddModal(false);
-    }
-  });
-
-  const { mutate: removeUser, isPending: isRemovingUser } = useMutation({
-    mutationFn: async (email: string) => {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/team`,
-        {
-          body: JSON.stringify({ email }),
-          method: 'DELETE',
-          headers: {
-            Authorization: `Bearer ${await getIdToken()}`,
-            'Content-Type': 'application/json'
-          }
-        }
-      );
-
-      if (response.status !== 204) {
-        const data = await response.json();
-
-        throw new Error(data.message);
-      }
-    },
-    onError: (error) => {},
-    onSuccess: (data) => {
-      //teamRefetch();
-    }
-  });
 
   return (
     <Layout footerBanner='download'>

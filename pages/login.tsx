@@ -1,3 +1,4 @@
+import { MultiFactorError } from 'firebase/auth';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useEffect, useState } from 'react';
@@ -21,31 +22,52 @@ const Login: FunctionComponent = function () {
     user,
     isLoading: isAuthLoading,
     signInEmail,
-    signInGoogle
+    signInGoogle,
+    verifyTfaCode
   } = useAuth();
   const router = useRouter();
   const isInApp = router.query.inapp === 'true';
   const isWebApp = router.query.webapp === 'true';
   const authCallback = router.query.authCallback as string;
-  const [error, setError] = useState(false);
+  const [tfaStep, setTfaStep] = useState<MultiFactorError>(null);
+  const credentialsForm = useForm();
+  const totpForm = useForm();
 
-  const {
-    register: registerFormField,
-    handleSubmit,
-    formState: { isSubmitting }
-  } = useForm();
-
-  const onSubmit = async (data) => {
-    setError(false);
+  const onCredentialsSubmit = async (data) => {
+    credentialsForm.clearErrors();
 
     if (!data['work_address']) {
       delete data['work_address'];
 
       try {
         await signInEmail(data.email, data.password);
+        credentialsForm.reset();
       } catch (error) {
-        setError(true);
+        // handle mfa
+        if (error.code === 'auth/multi-factor-auth-required') {
+          setTfaStep(error);
+          return;
+        }
+
+        credentialsForm.setError('root.wrongCredentials', {
+          type: 'manual',
+          message: 'Wrong credentials'
+        });
       }
+    }
+  };
+
+  const onTotpSubmit = async (data) => {
+    totpForm.clearErrors();
+
+    try {
+      await verifyTfaCode(tfaStep, data.tfaCode);
+      totpForm.reset();
+    } catch (error) {
+      totpForm.setError('root.verifyTfaCode', {
+        type: 'manual',
+        message: 'Wrong TOTP code'
+      });
     }
   };
 
@@ -72,7 +94,12 @@ const Login: FunctionComponent = function () {
       localStorage.setItem('authCallback', authCallback);
     }
 
-    if (!isSubmitting && !isAuthLoading && user && isAuth) {
+    if (
+      !credentialsForm.formState.isSubmitting &&
+      !isAuthLoading &&
+      user &&
+      isAuth
+    ) {
       const redirect = localStorage.getItem('redirect');
 
       if (redirect) {
@@ -102,79 +129,132 @@ const Login: FunctionComponent = function () {
                   <p className='mb-6 text-center text-gray-700'>
                     Access your Mockoon Cloud account.
                   </p>
-
-                  <form
-                    className='mb-6'
-                    onSubmit={(e) => {
-                      handleSubmit(onSubmit)(e);
-                    }}
-                  >
-                    <div className='form-group'>
-                      <label className='form-label' htmlFor='email'>
-                        Email Address
-                      </label>
-                      <input
-                        type='email'
-                        className='form-control'
-                        id='email'
-                        autoComplete='email'
-                        placeholder='name@example.com'
-                        required
-                        {...registerFormField('email')}
-                      />
-                    </div>
-
-                    <div className='form-group mb-5'>
-                      <label className='form-label' htmlFor='current-password'>
-                        Password
-                      </label>
-                      <input
-                        type='password'
-                        className='form-control'
-                        id='current-password'
-                        autoComplete='current-password'
-                        placeholder='Enter your password'
-                        required
-                        {...registerFormField('password')}
-                      />
-                    </div>
-
-                    <FormHoneypot
-                      inputRegister={registerFormField('work_address')}
-                    />
-                    {error && (
-                      <div className='row justify-content-center'>
-                        <div className='col-auto text-danger text-center fw-bold pb-4'>
-                          Wrong credentials
-                        </div>
-                      </div>
-                    )}
-                    {isSubmitting && <Spinner />}
-
-                    {!isSubmitting && (
-                      <button className='btn w-100 btn-primary' type='submit'>
-                        Log in
-                      </button>
-                    )}
-                  </form>
-
-                  <div className='or my-6'>OR</div>
-                  <div className='text-center'>
-                    <LoginProviders
-                      googleCallback={() => {
-                        onGoogleSignIn();
+                  {tfaStep && (
+                    <form
+                      className='mb-6'
+                      onSubmit={(e) => {
+                        totpForm.handleSubmit(onTotpSubmit)(e);
                       }}
-                    />
-                  </div>
-                  <p className='my-4 fs-sm text-center text-gray-700'>
-                    Don't have an account yet?{' '}
-                    <Link
-                      href={'signup/'}
-                      target={`${isWebApp ? '_blank' : ''}`}
                     >
-                      Sign up
-                    </Link>
-                  </p>
+                      <div className='form-group'>
+                        <label className='form-label' htmlFor='email'>
+                          Authentication (TOTP) code
+                        </label>
+                        <input
+                          className='form-control mb-5'
+                          placeholder='XXXXXX'
+                          maxLength={6}
+                          id='tfaCode'
+                          type='text'
+                          autoComplete='off'
+                          required
+                          {...totpForm.register('tfaCode')}
+                        />
+                      </div>
+                      {totpForm.formState.errors.root?.verifyTfaCode && (
+                        <div className='row justify-content-center'>
+                          <div className='col-auto text-danger text-center fw-bold pb-4'>
+                            Wrong TOTP code
+                          </div>
+                        </div>
+                      )}
+                      {totpForm.formState.isSubmitting && <Spinner />}
+                      <button
+                        className='btn w-100 btn-primary'
+                        type='submit'
+                        disabled={totpForm.formState.isSubmitting}
+                      >
+                        Verify
+                      </button>
+                    </form>
+                  )}
+
+                  {!tfaStep && (
+                    <>
+                      <form
+                        className='mb-6'
+                        onSubmit={(e) => {
+                          credentialsForm.handleSubmit(onCredentialsSubmit)(e);
+                        }}
+                      >
+                        <div className='form-group'>
+                          <label className='form-label' htmlFor='email'>
+                            Email Address
+                          </label>
+                          <input
+                            type='email'
+                            className='form-control'
+                            id='email'
+                            autoComplete='email'
+                            placeholder='name@example.com'
+                            required
+                            {...credentialsForm.register('email')}
+                          />
+                        </div>
+
+                        <div className='form-group mb-5'>
+                          <label
+                            className='form-label'
+                            htmlFor='current-password'
+                          >
+                            Password
+                          </label>
+                          <input
+                            type='password'
+                            className='form-control'
+                            id='current-password'
+                            autoComplete='current-password'
+                            placeholder='Enter your password'
+                            required
+                            {...credentialsForm.register('password')}
+                          />
+                        </div>
+
+                        <FormHoneypot
+                          inputRegister={credentialsForm.register(
+                            'work_address'
+                          )}
+                        />
+
+                        {credentialsForm.formState.errors.root
+                          ?.wrongCredentials && (
+                          <div className='row justify-content-center'>
+                            <div className='col-auto text-danger text-center fw-bold pb-4'>
+                              Wrong credentials
+                            </div>
+                          </div>
+                        )}
+                        {credentialsForm.formState.isSubmitting && <Spinner />}
+
+                        {!credentialsForm.formState.isSubmitting && (
+                          <button
+                            className='btn w-100 btn-primary'
+                            type='submit'
+                          >
+                            Log in
+                          </button>
+                        )}
+                      </form>
+
+                      <div className='or my-6'>OR</div>
+                      <div className='text-center'>
+                        <LoginProviders
+                          googleCallback={() => {
+                            onGoogleSignIn();
+                          }}
+                        />
+                      </div>
+                      <p className='my-4 fs-sm text-center text-gray-700'>
+                        Don't have an account yet?{' '}
+                        <Link
+                          href={'signup/'}
+                          target={`${isWebApp ? '_blank' : ''}`}
+                        >
+                          Sign up
+                        </Link>
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
             </div>

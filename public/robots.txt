@@ -10,6 +10,8 @@ Disallow: /terms
 Disallow: /privacy
 Disallow: /404
 Disallow: /cancellation-survey
+Disallow: /email-link-action
+Disallow: /unenroll-tfa
 
 # Host
 Host: https://mockoon.com

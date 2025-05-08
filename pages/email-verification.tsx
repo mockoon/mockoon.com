@@ -12,7 +12,7 @@ const meta = {
 
 const EmailVerification: FunctionComponent = function () {
   const {
-    applyEmailVerificationCode,
+    applyEmailLinkActionCode,
     emailVerification,
     reload,
     getIdToken,
@@ -24,8 +24,7 @@ const EmailVerification: FunctionComponent = function () {
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [isVerifying, setIsVerifying] = useState(false);
   const [error, setError] = useState(null);
-  let oobCode = router.query.oobCode?.toString();
-  let mode = router.query.mode?.toString();
+  let code = router.query.code?.toString();
 
   const resendEmail = async () => {
     setError(null);
@@ -43,7 +42,7 @@ const EmailVerification: FunctionComponent = function () {
     setIsVerifying(true);
 
     try {
-      await applyEmailVerificationCode(code);
+      await applyEmailLinkActionCode(code);
       await reload();
       await getIdToken(true);
       setIsConfirmed(true);
@@ -65,10 +64,10 @@ const EmailVerification: FunctionComponent = function () {
   };
 
   useEffect(() => {
-    if (user && mode === 'verifyEmail' && oobCode && !isConfirmed) {
-      verify(oobCode);
+    if (user && code && !isConfirmed) {
+      verify(code);
     }
-  }, [mode, oobCode, isConfirmed, user]);
+  }, [code, isConfirmed, user]);
 
   useEffect(() => {
     if (!isAuthLoading && !isConfirmed && !isVerifying) {

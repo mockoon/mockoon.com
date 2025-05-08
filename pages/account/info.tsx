@@ -10,18 +10,13 @@ import Meta from '../../components/meta';
 import Spinner from '../../components/spinner';
 import { planNames } from '../../constants/plans';
 import Layout from '../../layout/layout';
-import { useAuth } from '../../utils/auth';
+import { authProviderNames, useAuth } from '../../utils/auth';
 import { useCurrentUser } from '../../utils/queries';
 
 const meta = {
   title: 'My account - Overview',
   description:
     'Manage your Mockoon Cloud account information and subscription details'
-};
-
-const providerNames = {
-  password: 'Email and password',
-  'google.com': 'Google'
 };
 
 const AccountInfo: FunctionComponent = function () {
@@ -117,11 +112,18 @@ const AccountInfo: FunctionComponent = function () {
                         <div className='list-group-item'>
                           <div className='row align-items-center mb-4'>
                             <div className='col'>
-                              <p className='mb-0'>Authentication methods</p>
+                              <p className='mb-0'>Email address</p>
 
                               <small className='text-gray-700'>
                                 {user?.email}
                               </small>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='list-group-item'>
+                          <div className='row align-items-center mb-4'>
+                            <div className='col'>
+                              <p className='mb-0'>Authentication methods</p>
                             </div>
                           </div>
                           {user &&
@@ -137,7 +139,7 @@ const AccountInfo: FunctionComponent = function () {
 
                                 <p>
                                   <small>
-                                    {providerNames[providerData.providerId]}
+                                    {authProviderNames[providerData.providerId]}
                                   </small>
                                 </p>
                               </div>

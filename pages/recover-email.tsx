@@ -22,11 +22,11 @@ const RecoverEmail: FunctionComponent = function () {
 
     try {
       await applyEmailLinkActionCode(code);
-      await reload();
-      await getIdToken(true);
+      // user will be logged out
       setIsConfirmed(true);
+
       setTimeout(() => {
-        router.push('/account/info/');
+        router.push('/login');
       }, 3000);
     } catch (e) {
     } finally {
@@ -63,7 +63,7 @@ const RecoverEmail: FunctionComponent = function () {
                       <span className='fw-bold'>Success! </span> You have
                       successfully recovered your email address.
                     </div>
-                    {isConfirmed && <p>Redirecting to your account...</p>}
+                    {isConfirmed && <p>Redirecting to the login page...</p>}
                   </>
                 )}
               </div>

@@ -43,20 +43,11 @@ const EmailVerification: FunctionComponent = function () {
 
     try {
       await applyEmailLinkActionCode(code);
-      await reload();
-      await getIdToken(true);
+      // user may be logged out if the email is changed (confirm before trying to reload)
       setIsConfirmed(true);
 
-      setTimeout(() => {
-        const redirect = localStorage.getItem('redirect');
-
-        if (redirect) {
-          localStorage.removeItem('redirect');
-          router.push(redirect);
-        } else {
-          router.push('/account/info/');
-        }
-      }, 3000);
+      await reload();
+      await getIdToken(true);
     } catch (e) {
     } finally {
       setIsVerifying(false);
@@ -64,20 +55,29 @@ const EmailVerification: FunctionComponent = function () {
   };
 
   useEffect(() => {
-    if (user && code && !isConfirmed) {
+    if (code && !isConfirmed) {
       verify(code);
     }
-  }, [code, isConfirmed, user]);
+  }, [code, isConfirmed]);
 
   useEffect(() => {
-    if (!isAuthLoading && !isConfirmed && !isVerifying) {
+    if (!isAuthLoading && !isVerifying) {
       if (user && isAuth) {
-        router.push('/account/info/');
+        setTimeout(() => {
+          const redirect = localStorage.getItem('redirect');
+
+          if (redirect) {
+            localStorage.removeItem('redirect');
+            router.push(redirect);
+          } else {
+            router.push('/account/info/');
+          }
+        }, 3000);
       } else if (!user) {
         router.push('/login/');
       }
     }
-  }, [isAuthLoading, user, isAuth, isConfirmed]);
+  }, [isAuthLoading, isVerifying, user, isAuth]);
 
   return (
     <Layout footerBanner='download'>
@@ -100,7 +100,7 @@ const EmailVerification: FunctionComponent = function () {
                       <span className='fw-bold'>Success! </span> Your email
                       address is verified.
                     </div>
-                    {isConfirmed && <p>Redirecting to your account...</p>}
+                    <p>Redirecting to your account...</p>
                   </>
                 )}
                 {!isAuth && !user?.emailVerified && (

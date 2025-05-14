@@ -11,7 +11,7 @@ const EmailLinkAction: FunctionComponent = function () {
 
   useEffect(() => {
     if (oobCode) {
-      if (mode === 'verifyEmail') {
+      if (mode === 'verifyEmail' || mode === 'verifyAndChangeEmail') {
         router.push(`/email-verification/?code=${oobCode}`);
       } else if (mode === 'revertSecondFactorAddition') {
         router.push(`/unenroll-tfa/?code=${oobCode}`);

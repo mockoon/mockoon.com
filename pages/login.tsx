@@ -192,7 +192,7 @@ const Login: FunctionComponent = function () {
                             type='email'
                             className='form-control'
                             id='email'
-                            autoComplete='email'
+                            autoComplete='username'
                             placeholder='name@example.com'
                             required
                             {...credentialsForm.register('email')}

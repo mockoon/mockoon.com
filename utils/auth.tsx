@@ -15,8 +15,8 @@ import {
   sendEmailVerification,
   signInWithEmailAndPassword,
   signInWithPopup,
-  updateEmail,
-  updatePassword
+  updatePassword,
+  verifyBeforeUpdateEmail
 } from 'firebase/auth';
 import { useEffect, useState } from 'react';
 
@@ -116,8 +116,7 @@ const useAuth = () => {
   };
 
   const updateEmailAddress = async (newEmail: string) => {
-    await updateEmail(auth.currentUser, newEmail);
-    await emailVerification();
+    await verifyBeforeUpdateEmail(auth.currentUser, newEmail);
   };
 
   useEffect(() => {

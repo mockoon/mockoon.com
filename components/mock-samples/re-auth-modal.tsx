@@ -19,7 +19,7 @@ const ReAuthModal: FunctionComponent<{
   };
   setShow: React.Dispatch<React.SetStateAction<ReAuthModalProps>>;
 }> = function ({ options, setShow }) {
-  const { reAuthenticate, verifyTfaCode } = useAuth();
+  const { reAuthenticate, verifyTfaCode, user } = useAuth();
   const passwordForm = useForm();
   const totpForm = useForm();
   const [tfaStep, setTfaStep] = useState<MultiFactorError>(null);
@@ -135,6 +135,11 @@ const ReAuthModal: FunctionComponent<{
               <label className='form-label' htmlFor='currentPassword'>
                 Password
               </label>
+              <input
+                type='hidden'
+                autoComplete='username'
+                value={user?.email}
+              />
               <input
                 className='form-control'
                 id='currentPassword'

@@ -333,7 +333,7 @@ const AccountSecurity: FunctionComponent = function () {
                                 className='form-control'
                                 id='newEmail'
                                 type='email'
-                                autoComplete='email'
+                                autoComplete='username'
                                 required
                                 onInput={() => {
                                   changeEmailForm.clearErrors();
@@ -375,8 +375,8 @@ const AccountSecurity: FunctionComponent = function () {
                                   {changeEmailForm.formState
                                     .isSubmitSuccessful && (
                                     <span className='text-success ms-2'>
-                                      Email address changed. Please check your
-                                      inbox for a verification email.
+                                      Please check your new email's inbox for a
+                                      verification email.
                                     </span>
                                   )}
                                 </div>
@@ -404,6 +404,11 @@ const AccountSecurity: FunctionComponent = function () {
                               );
                             }}
                           >
+                            <input
+                              type='hidden'
+                              autoComplete='username'
+                              value={user?.email}
+                            />
                             <div className='form-group'>
                               <label
                                 className='form-label'
@@ -420,7 +425,6 @@ const AccountSecurity: FunctionComponent = function () {
                                 {...newPasswordForm.register('currentPassword')}
                               />
                             </div>
-
                             <div className='form-group'>
                               <label
                                 className='form-label'
@@ -437,7 +441,6 @@ const AccountSecurity: FunctionComponent = function () {
                                 {...newPasswordForm.register('newPassword')}
                               />
                             </div>
-
                             <div className='form-group'>
                               <label
                                 className='form-label'
@@ -456,7 +459,6 @@ const AccountSecurity: FunctionComponent = function () {
                                 )}
                               />
                             </div>
-
                             <div className='row'>
                               <div className='col-12 col-md-auto'>
                                 <div className='d-flex align-items-center'>

@@ -30,12 +30,14 @@ const AccountSecurity: FunctionComponent = function () {
     changePassword,
     getTfaSecret,
     finalizeTfaEnrollment,
-    unenrollTfa
+    unenrollTfa,
+    updateEmailAddress
   } = useAuth();
   const { data: userData, refetch: refetchUserData } = useCurrentUser();
   const router = useRouter();
   const newPasswordForm = useForm();
   const totpForm = useForm();
+  const changeEmailForm = useForm();
   const [tfaUri, setTfaUri] = useState('');
   const [tfaSecret, setTfaSecret] = useState<TotpSecret>(null);
   const [reAuthModalProps, setReAuthModalProps] =
@@ -85,6 +87,43 @@ const AccountSecurity: FunctionComponent = function () {
       }
 
       newPasswordForm.setError('root.wrongCredentials', {
+        message: 'Wrong credentials',
+        type: 'custom'
+      });
+    }
+  };
+
+  const onNewEmailSubmit = async () => {
+    changeEmailForm.clearErrors();
+
+    if (user.email === changeEmailForm.getValues().newEmail) {
+      changeEmailForm.setError('root.sameEmail', {
+        message: 'New email address is the same as the current one',
+        type: 'custom'
+      });
+      return;
+    }
+
+    try {
+      await updateEmailAddress(changeEmailForm.getValues().newEmail);
+
+      changeEmailForm.reset();
+    } catch (error) {
+      if (error.code === 'auth/requires-recent-login') {
+        setReAuthModalProps({
+          show: true,
+          onSuccess: () => {
+            changeEmailForm.clearErrors();
+            onNewEmailSubmit();
+          }
+        });
+        changeEmailForm.setError('root.needsReauth', {
+          type: 'custom'
+        });
+        return;
+      }
+
+      changeEmailForm.setError('root.wrongCredentials', {
         message: 'Wrong credentials',
         type: 'custom'
       });
@@ -257,109 +296,203 @@ const AccountSecurity: FunctionComponent = function () {
                   {user?.providerData.find(
                     (providerData) => providerData.providerId === 'password'
                   ) !== undefined && (
-                    <div className='card card-bleed shadow-light-lg mb-6'>
-                      <div className='card-header'>
-                        <div className='row align-items-center'>
-                          <div className='col'>
-                            <h4 className='mb-0'>Change password</h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='card-body'>
-                        <form
-                          className='mb-6'
-                          onSubmit={(e) => {
-                            newPasswordForm.clearErrors();
-                            newPasswordForm.handleSubmit(onNewPasswordSubmit)(
-                              e
-                            );
-                          }}
-                        >
-                          <div className='form-group'>
-                            <label
-                              className='form-label'
-                              htmlFor='currentPassword'
-                            >
-                              Current password
-                            </label>
-                            <input
-                              className='form-control'
-                              id='currentPassword'
-                              type='password'
-                              autoComplete='current-password'
-                              required
-                              {...newPasswordForm.register('currentPassword')}
-                            />
-                          </div>
-
-                          <div className='form-group'>
-                            <label className='form-label' htmlFor='newPassword'>
-                              New password
-                            </label>
-                            <input
-                              className='form-control'
-                              id='newPassword'
-                              type='password'
-                              autoComplete='new-password'
-                              required
-                              {...newPasswordForm.register('newPassword')}
-                            />
-                          </div>
-
-                          <div className='form-group'>
-                            <label
-                              className='form-label'
-                              htmlFor='confirmNewPassword'
-                            >
-                              Confirm new password
-                            </label>
-                            <input
-                              className='form-control'
-                              id='confirmNewPassword'
-                              type='password'
-                              autoComplete='new-password'
-                              required
-                              {...newPasswordForm.register(
-                                'confirmNewPassword'
-                              )}
-                            />
-                          </div>
-
-                          <div className='row'>
-                            <div className='col-12 col-md-auto'>
-                              <div className='d-flex align-items-center'>
-                                <button
-                                  className='btn btn-xs btn-primary-subtle'
-                                  type='submit'
-                                  disabled={
-                                    newPasswordForm.formState.isSubmitting
-                                  }
-                                >
-                                  Update Password
-                                </button>
-                                {newPasswordForm.formState.isSubmitting && (
-                                  <div className='ms-2'>
-                                    <Spinner small />
-                                  </div>
-                                )}
-                                {newPasswordForm.formState.errors.root
-                                  ?.wrongCredentials && (
-                                  <span className='text-danger ms-2'>
-                                    Wrong credentials
-                                  </span>
-                                )}
-                                {newPasswordForm.formState
-                                  .isSubmitSuccessful && (
-                                  <span className='text-success ms-2'>
-                                    Password changed
-                                  </span>
-                                )}
-                              </div>
+                    <>
+                      <div className='card card-bleed shadow-light-lg mb-6'>
+                        <div className='card-header'>
+                          <div className='row align-items-center'>
+                            <div className='col'>
+                              <h4 className='mb-0'>
+                                Change your email address
+                              </h4>
                             </div>
                           </div>
-                        </form>
+                        </div>
+                        <div className='card-body'>
+                          <form
+                            className='mb-6'
+                            onSubmit={(event) => {
+                              event.preventDefault();
+
+                              // email change always requires re-authentication, otherwise the user will be logged out
+                              setReAuthModalProps({
+                                show: true,
+                                onSuccess: () => {
+                                  changeEmailForm.clearErrors();
+                                  changeEmailForm.handleSubmit(
+                                    onNewEmailSubmit
+                                  )(event);
+                                }
+                              });
+                            }}
+                          >
+                            <div className='form-group'>
+                              <label className='form-label' htmlFor='newEmail'>
+                                New email address
+                              </label>
+                              <input
+                                className='form-control'
+                                id='newEmail'
+                                type='email'
+                                autoComplete='email'
+                                required
+                                onInput={() => {
+                                  changeEmailForm.clearErrors();
+                                }}
+                                {...changeEmailForm.register('newEmail')}
+                              />
+                            </div>
+
+                            <div className='row'>
+                              <div className='col-12 col-md-auto'>
+                                <div className='d-flex align-items-center'>
+                                  <button
+                                    className='btn btn-xs btn-primary-subtle'
+                                    type='submit'
+                                    disabled={
+                                      changeEmailForm.formState.isSubmitting
+                                    }
+                                  >
+                                    Update email address
+                                  </button>
+                                  {changeEmailForm.formState.isSubmitting && (
+                                    <div className='ms-2'>
+                                      <Spinner small />
+                                    </div>
+                                  )}
+                                  {changeEmailForm.formState.errors.root
+                                    ?.wrongCredentials && (
+                                    <span className='text-danger ms-2'>
+                                      Wrong credentials
+                                    </span>
+                                  )}
+                                  {changeEmailForm.formState.errors.root
+                                    ?.sameEmail && (
+                                    <span className='text-danger ms-2'>
+                                      The new email address is the same as the
+                                      current one
+                                    </span>
+                                  )}
+                                  {changeEmailForm.formState
+                                    .isSubmitSuccessful && (
+                                    <span className='text-success ms-2'>
+                                      Email address changed. Please check your
+                                      inbox for a verification email.
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
                       </div>
-                    </div>
+
+                      <div className='card card-bleed shadow-light-lg mb-6'>
+                        <div className='card-header'>
+                          <div className='row align-items-center'>
+                            <div className='col'>
+                              <h4 className='mb-0'>Change your password</h4>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='card-body'>
+                          <form
+                            className='mb-6'
+                            onSubmit={(e) => {
+                              newPasswordForm.clearErrors();
+                              newPasswordForm.handleSubmit(onNewPasswordSubmit)(
+                                e
+                              );
+                            }}
+                          >
+                            <div className='form-group'>
+                              <label
+                                className='form-label'
+                                htmlFor='currentPassword'
+                              >
+                                Current password
+                              </label>
+                              <input
+                                className='form-control'
+                                id='currentPassword'
+                                type='password'
+                                autoComplete='current-password'
+                                required
+                                {...newPasswordForm.register('currentPassword')}
+                              />
+                            </div>
+
+                            <div className='form-group'>
+                              <label
+                                className='form-label'
+                                htmlFor='newPassword'
+                              >
+                                New password
+                              </label>
+                              <input
+                                className='form-control'
+                                id='newPassword'
+                                type='password'
+                                autoComplete='new-password'
+                                required
+                                {...newPasswordForm.register('newPassword')}
+                              />
+                            </div>
+
+                            <div className='form-group'>
+                              <label
+                                className='form-label'
+                                htmlFor='confirmNewPassword'
+                              >
+                                Confirm new password
+                              </label>
+                              <input
+                                className='form-control'
+                                id='confirmNewPassword'
+                                type='password'
+                                autoComplete='new-password'
+                                required
+                                {...newPasswordForm.register(
+                                  'confirmNewPassword'
+                                )}
+                              />
+                            </div>
+
+                            <div className='row'>
+                              <div className='col-12 col-md-auto'>
+                                <div className='d-flex align-items-center'>
+                                  <button
+                                    className='btn btn-xs btn-primary-subtle'
+                                    type='submit'
+                                    disabled={
+                                      newPasswordForm.formState.isSubmitting
+                                    }
+                                  >
+                                    Update Password
+                                  </button>
+                                  {newPasswordForm.formState.isSubmitting && (
+                                    <div className='ms-2'>
+                                      <Spinner small />
+                                    </div>
+                                  )}
+                                  {newPasswordForm.formState.errors.root
+                                    ?.wrongCredentials && (
+                                    <span className='text-danger ms-2'>
+                                      Wrong credentials
+                                    </span>
+                                  )}
+                                  {newPasswordForm.formState
+                                    .isSubmitSuccessful && (
+                                    <span className='text-success ms-2'>
+                                      Password changed
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </>
                   )}
 
                   {user?.providerData.find(

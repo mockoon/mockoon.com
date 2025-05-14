@@ -15,6 +15,7 @@ import {
   sendEmailVerification,
   signInWithEmailAndPassword,
   signInWithPopup,
+  updateEmail,
   updatePassword
 } from 'firebase/auth';
 import { useEffect, useState } from 'react';
@@ -114,6 +115,11 @@ const useAuth = () => {
     await mfaResolver.resolveSignIn(multiFactorAssertion);
   };
 
+  const updateEmailAddress = async (newEmail: string) => {
+    await updateEmail(auth.currentUser, newEmail);
+    await emailVerification();
+  };
+
   useEffect(() => {
     const unsubscribe = auth.onIdTokenChanged((user) => {
       if (user) {
@@ -151,7 +157,8 @@ const useAuth = () => {
     finalizeTfaEnrollment,
     reAuthenticate,
     unenrollTfa,
-    verifyTfaCode
+    verifyTfaCode,
+    updateEmailAddress
   };
 };
 

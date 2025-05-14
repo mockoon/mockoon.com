@@ -239,7 +239,7 @@ const AccountSubscription: FunctionComponent = function () {
                     <div className='card-header'>
                       <div className='row align-items-center'>
                         <div className='col'>
-                          <h4 className='mb-0'>Current plan</h4>
+                          <h4 className='mb-0'>Current Mockoon Cloud plan</h4>
                         </div>
                         {userData?.plan !== Plans.FREE && (
                           <div className='col-auto'>
@@ -259,10 +259,17 @@ const AccountSubscription: FunctionComponent = function () {
                             <div className='row align-items-center'>
                               <div className='col'>
                                 <p className='mb-0'>
-                                  <span className='text-primary'>
-                                    {planNames[userData?.plan]}
-                                  </span>{' '}
-                                  plan
+                                  {userData?.plan === 'FREE' &&
+                                    'No subscription plan'}
+                                  {userData?.plan !== 'FREE' && (
+                                    <>
+                                      <span className='text-primary'>
+                                        {planNames[userData?.plan]}
+                                      </span>{' '}
+                                      plan
+                                    </>
+                                  )}
+
                                   {userData?.subscription?.frequency &&
                                   userData?.plan !== 'FREE' &&
                                   displayPlanInfo
@@ -498,7 +505,8 @@ const AccountSubscription: FunctionComponent = function () {
                                           )}
                                           {!userData?.subscription.trial && (
                                             <>
-                                              Next payment will be charged on{' '}
+                                              Next payment will be charged
+                                              on{' '}
                                             </>
                                           )}
                                           {format(

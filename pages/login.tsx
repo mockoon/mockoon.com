@@ -108,6 +108,13 @@ const Login: FunctionComponent = function () {
       } else {
         router.push('/account/info/');
       }
+    } else if (
+      !credentialsForm.formState.isSubmitting &&
+      !isAuthLoading &&
+      user &&
+      !isAuth
+    ) {
+      router.push('/email-verification/');
     }
   }, [isAuthLoading, user, isAuth, isInApp, isWebApp, authCallback]);
 

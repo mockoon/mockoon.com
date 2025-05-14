@@ -118,6 +118,19 @@ const AccountInfo: FunctionComponent = function () {
                                 {user?.email}
                               </small>
                             </div>
+                            {user?.providerData.find(
+                              (providerData) =>
+                                providerData.providerId === 'password'
+                            ) !== undefined && (
+                              <div className='col-auto'>
+                                <Link
+                                  href={'/account/security/'}
+                                  className='btn btn-xs btn-primary-subtle'
+                                >
+                                  Change email
+                                </Link>
+                              </div>
+                            )}
                           </div>
                         </div>
                         <div className='list-group-item'>
@@ -144,28 +157,6 @@ const AccountInfo: FunctionComponent = function () {
                                 </p>
                               </div>
                             ))}
-                        </div>
-                        <div className='list-group-item'>
-                          <div className='row align-items-center'>
-                            <div className='col'>
-                              <p className='mb-0'>Mockoon Cloud Subscription</p>
-
-                              <small className='text-gray-700'>
-                                <span className='text-primary'>
-                                  {planNames[userData?.plan]}
-                                </span>{' '}
-                                plan
-                              </small>
-                            </div>
-                            <div className='col-auto'>
-                              <Link
-                                href={'/account/subscription/'}
-                                className='btn btn-xs btn-primary-subtle'
-                              >
-                                View
-                              </Link>
-                            </div>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -230,6 +221,42 @@ const AccountInfo: FunctionComponent = function () {
                             )}
                         </div>
                       </form>
+                    </div>
+                  </div>
+
+                  <div className='card card-bleed shadow-light-lg mb-6'>
+                    <div className='card-header'>
+                      <h4 className='mb-0'>Mockoon Cloud</h4>
+                    </div>
+                    <div className='card-body'>
+                      <div className='list-group list-group-flush'>
+                        <div className='list-group-item'>
+                          <div className='row align-items-center'>
+                            <div className='col'>
+                              <p className='mb-0'>
+                                {userData?.plan === 'FREE' &&
+                                  'No subscription plan'}
+                                {userData?.plan !== 'FREE' && (
+                                  <>
+                                    <span className='text-primary'>
+                                      {planNames[userData?.plan]}
+                                    </span>{' '}
+                                    plan
+                                  </>
+                                )}
+                              </p>
+                            </div>
+                            <div className='col-auto'>
+                              <Link
+                                href={'/account/subscription/'}
+                                className='btn btn-xs btn-primary-subtle'
+                              >
+                                View
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 

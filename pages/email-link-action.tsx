@@ -15,6 +15,8 @@ const EmailLinkAction: FunctionComponent = function () {
         router.push(`/email-verification/?code=${oobCode}`);
       } else if (mode === 'revertSecondFactorAddition') {
         router.push(`/unenroll-tfa/?code=${oobCode}`);
+      } else if (mode === 'recoverEmail') {
+        router.push(`/recover-email/?code=${oobCode}`);
       } else {
         router.push('/');
       }

@@ -15,7 +15,7 @@ const useCurrentUser = () => {
     enabled: isAuth,
     refetchOnMount: false,
     queryFn: async () => {
-      const token = await getIdToken();
+      const token = await getIdToken(true);
       let query = '';
 
       if (!token) {
@@ -40,7 +40,7 @@ const useCurrentUser = () => {
           logout();
           router.push('/login/');
 
-          return;
+          return null;
         }
 
         throw new Error();

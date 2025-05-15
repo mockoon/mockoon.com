@@ -21,7 +21,7 @@ const cloudFaq: AccordionData = [
       {
         title: 'What is an "API mock"?',
         content:
-          'An API mock is a collection of endpoints created in the <a href="/download/">desktop application</a> to simulate a real API. Each mock can include an unlimited number of endpoints, rules, stateful routes, and more. For more information, please refer to the <a href="/docs/latest/about/">documentation</a>.'
+          'An API mock is a collection of endpoints created in the <a href="/download/">desktop</a> or <a href="/docs/latest/mockoon-cloud/web-application/">web</a> applications to simulate a real API. Each mock can include an unlimited number of endpoints, rules, stateful routes, and more. For more information, please refer to the <a href="/docs/latest/about/">documentation</a>.'
       },
       {
         title: 'Which features are supported in the cloud?',
@@ -400,16 +400,23 @@ const PlansView: FunctionComponent<{
                       </div>
 
                       <p>
+                        {pricing.SOLO.syncQuota} API mock<sup>1</sup>{' '}
                         <Link
                           href={
                             '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'
                           }
                         >
-                          Deploy {pricing.SOLO.deployQuota} API mock
-                        </Link>
-                        <sup>1</sup> in the cloud <br /> Includes{' '}
-                        {pricing.SOLO.deployCallsQuota.toLocaleString()} monthly
-                        calls
+                          deployed
+                        </Link>{' '}
+                        in the cloud and{' '}
+                        <Link
+                          href={
+                            '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
+                          }
+                        >
+                          synchronized
+                        </Link>{' '}
+                        across your devices
                       </p>
                     </div>
 
@@ -419,14 +426,8 @@ const PlansView: FunctionComponent<{
                       </div>
 
                       <p>
-                        <Link
-                          href={
-                            '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
-                          }
-                        >
-                          Synchronize {pricing.SOLO.syncQuota} API mocks
-                        </Link>
-                        <sup>1</sup> accross your devices
+                        {pricing.SOLO.deployCallsQuota.toLocaleString()} monthly
+                        calls included
                       </p>
                     </div>
 
@@ -523,16 +524,23 @@ const PlansView: FunctionComponent<{
                       </div>
 
                       <p>
+                        {pricing.TEAM.deployQuota} API mocks{' '}
                         <Link
                           href={
                             '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'
                           }
                         >
-                          Deploy {pricing.TEAM.deployQuota} API mocks
+                          deployed
+                        </Link>{' '}
+                        in the cloud with{' '}
+                        <Link
+                          href={
+                            '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
+                          }
+                        >
+                          real-time collaboration
                         </Link>
-                        <sup>1</sup> in the cloud <br /> Includes{' '}
-                        {pricing.TEAM.deployCallsQuota.toLocaleString()} monthly
-                        calls
+                        <sup>1</sup>
                       </p>
                     </div>
 
@@ -542,17 +550,11 @@ const PlansView: FunctionComponent<{
                       </div>
 
                       <p>
-                        <Link
-                          href={
-                            '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
-                          }
-                        >
-                          Collaborate in real-time
-                        </Link>{' '}
-                        with your team on {pricing.TEAM.syncQuota} API mocks
-                        <sup>1</sup>
+                        {pricing.TEAM.deployCallsQuota.toLocaleString()} monthly
+                        calls included
                       </p>
                     </div>
+
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
@@ -771,7 +773,7 @@ const PlansView: FunctionComponent<{
                           <tr>
                             <td>
                               Number of monthly calls{' '}
-                              <CustomTooltip text='Number of monthly API requests accross your deployed API mocks for your team.                              '></CustomTooltip>
+                              <CustomTooltip text='Number of monthly API requests accross your deployed API mocks for your team.'></CustomTooltip>
                             </td>
                             <td className='text-center'>
                               {pricing.SOLO.deployCallsQuota.toLocaleString()}
@@ -784,10 +786,10 @@ const PlansView: FunctionComponent<{
                           <tr>
                             <td>Request rate limit</td>
                             <td className='text-center'>
-                              {pricing.SOLO.deployReqSQuota}/sec
+                              {pricing.SOLO.deployReqSQuota} req/sec
                             </td>
                             <td className='text-center'>
-                              {pricing.TEAM.deployReqSQuota}/sec
+                              {pricing.TEAM.deployReqSQuota} req/sec
                             </td>
                             <td className='text-center'>Custom</td>
                           </tr>
@@ -888,9 +890,9 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>Support level</td>
-                            <td className='text-center'>Email</td>
-                            <td className='text-center'>Email</td>
-                            <td className='text-center'>Enterprise</td>
+                            <td className='text-center'>Email support</td>
+                            <td className='text-center'>Email support</td>
+                            <td className='text-center'>Enterprise support</td>
                           </tr>
                           <tr>
                             <td>Onboarding and deployment assistance</td>

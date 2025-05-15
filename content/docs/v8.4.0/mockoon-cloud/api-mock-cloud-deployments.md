@@ -65,18 +65,7 @@ Future major versions of Mockoon may introduce **breaking changes to the data mo
 
 ## Plans quotas and limits
 
-Some **quotas and limits apply** to the cloud deployment feature. Here are the main ones:
-
-- **Solo plan**:
-  - 1 cloud deployment.
-  - 50&nbsp;000 requests per month.
-  - 5 requests per second.
-- **Team plan**:
-  - 3 cloud deployments.
-  - 100&nbsp;000 requests per month.
-  - 10 requests per second.
-
-These quotas and limits are subject to change. Please refer to your [account settings](/account/subscription/) for the latest information.
+Some **quotas and limits apply** to the cloud deployment feature depending on your plan. As these quotas and limits are subject to change over time, please refer to your [account settings](/account/subscription/) for the information specific to your account.
 
 ## Future improvements
 

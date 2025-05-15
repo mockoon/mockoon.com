@@ -9,7 +9,10 @@ const useCurrentUser = () => {
   const router = useRouter();
 
   const { isLoading, error, data, isFetching, refetch } = useQuery<
-    User & { mfa: { enabled: boolean; uid: string } }
+    User & {
+      mfa: { enabled: boolean; uid: string };
+      deployInstancesMonthlyRequestsQuota: number;
+    }
   >({
     queryKey: ['currentUser'],
     enabled: isAuth,

@@ -165,10 +165,6 @@ const AccountSubscription: FunctionComponent = function () {
             </p>
             <p className='mb-0'>
               <small className='text-gray-700'>
-                Maximum of{' '}
-                {pricing[userData?.plan]?.deployCallsQuota.toLocaleString()}{' '}
-                request per month
-                <br />
                 <Link href='/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'>
                   Documentation
                 </Link>
@@ -176,38 +172,54 @@ const AccountSubscription: FunctionComponent = function () {
             </p>
           </div>
           <div className='col-md-4'>
-            <div className='d-flex align-items-center'>
-              <div className='flex-grow-1 me-4'>
-                <div className='progress'>
-                  <div
-                    className={`progress-bar ${
-                      userData?.deployInstancesQuotaUsed >=
-                      userData?.deployInstancesQuota
-                        ? 'bg-warning'
-                        : ''
-                    }`}
-                    role='progressbar'
-                    aria-valuenow={userData?.deployInstancesQuotaUsed}
-                    aria-valuemin={0}
-                    aria-valuemax={userData?.deployInstancesQuota}
-                    style={{
-                      width:
-                        (userData?.deployInstancesQuotaUsed * 100) /
-                          userData?.deployInstancesQuota +
-                        '%'
-                    }}
-                  ></div>
-                </div>
+            <div className='d-flex flex-column'>
+              <div className='progress'>
+                <div
+                  className={`progress-bar ${
+                    userData?.deployInstancesQuotaUsed >=
+                    userData?.deployInstancesQuota
+                      ? 'bg-warning'
+                      : ''
+                  }`}
+                  role='progressbar'
+                  aria-valuenow={userData?.deployInstancesQuotaUsed}
+                  aria-valuemin={0}
+                  aria-valuemax={userData?.deployInstancesQuota}
+                  style={{
+                    width:
+                      (userData?.deployInstancesQuotaUsed * 100) /
+                        userData?.deployInstancesQuota +
+                      '%'
+                  }}
+                ></div>
               </div>
-              <div>
+              <div className='align-self-end mt-2'>
                 <Link
                   href={'/account/instances/'}
                   className='btn btn-xs btn-primary-subtle'
                 >
-                  View
+                  View instances
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className='list-group-item'>
+        <div className='row align-items-center'>
+          <div className='col-md-8'>
+            <p className='mb-0'>
+              Monthly requests (
+              {userData?.deployInstancesMonthlyRequestsQuota.toLocaleString()})
+            </p>
+            <p className='mb-0'>
+              <small className='text-gray-700'>
+                We currently don't enforce a strict limit, but if your usage
+                regularly exceeds the quota, we'll get in touch to discuss your
+                needs.
+              </small>
+            </p>
           </div>
         </div>
       </div>
@@ -657,10 +669,17 @@ const AccountSubscription: FunctionComponent = function () {
                                   </p>
                                   <p className='mb-0'>
                                     <small className='text-gray-700'>
-                                      Resets monthly - Next reset on{' '}
-                                      {new Date(
-                                        userData?.nextQuotaResetOn * 1000
-                                      ).toDateString()}
+                                      Resets monthly
+                                      {(userData?.plan === 'SOLO' ||
+                                        userData?.teamRole === 'owner') && (
+                                        <>
+                                          {' '}
+                                          - Next reset on{' '}
+                                          {new Date(
+                                            userData?.nextQuotaResetOn * 1000
+                                          ).toDateString()}
+                                        </>
+                                      )}
                                       <br />
                                       <Link href='/docs/latest/mockoon-cloud/templates-and-ai-assistant/'>
                                         Documentation

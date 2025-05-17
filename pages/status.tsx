@@ -18,7 +18,7 @@ const incidents: {
     desc: 'All cloud deployments servers and customer instances will be restarted to apply a maintenance release, and upgrade the hardware. The downtime is expected to last less than an hour. We apologize for the inconvenience.',
     dateStart: '2025-05-17T07:00:00Z',
     dateEnd: '2025-05-17T08:00:00Z',
-    status: 'planned'
+    status: 'inprogress'
   },
   {
     title: 'Cloud web app - Possible disruption',

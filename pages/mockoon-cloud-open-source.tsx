@@ -22,8 +22,11 @@ const OpenSourceContactFormPage: FunctionComponent = function () {
             <div className='col-12 col-md-10 col-lg-8 text-center'>
               <p className='fs-lg text-gray-700 mb-7 mb-md-9'>
                 To be eligible, your project must be{' '}
-                <strong>open source</strong>,{' '}
-                <strong>have a public repository</strong> and{' '}
+                <strong>open-source</strong> (
+                <a href='http://opensource.org/licenses' target='_blank'>
+                  OSI approved License
+                </a>
+                ), <strong>have a public repository</strong> and{' '}
                 <strong>not be backed by a company</strong>. We reserve the
                 right to refuse any request that does not meet these criteria or
                 that we deem inappropriate or not aligned with our values. We

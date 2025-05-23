@@ -3,7 +3,7 @@ title: Celebrating Maintainer Month by supporting open source projects
 excerpt: We are proud to announce our partnership with GitHub for the Maintainer Month initiative, which aims to support open source maintainers and their projects.
 date: '2025-05-01'
 image: partner-github-maintainer-month.png
-imageAlt: Mockoon logo with github logo
+imageAlt: Mockoon logo with connected computers
 imageWidth: 1200
 imageHeight: 400
 tags:
@@ -15,32 +15,37 @@ meta:
   description: We are proud to announce our partnership with GitHub for the Maintainer Month initiative, which aims to support open source maintainers and their projects.
 ---
 
-Open-source maintainers are the unsung heroes of the software world, dedicating their time and effort to building and maintaining the tools we all rely on. We are excited to announce our partnership with GitHub for the **Maintainer Month** initiative, which aims to support them and their projects. This month-long celebration is dedicated to recognizing the hard work of maintainers and providing them with the resources they need to thrive.
+Open-source maintainers are the **unsung heroes of the software world**, dedicating their time and effort to building and maintaining the tools we all rely on. We are excited to announce our partnership with GitHub for the **Maintainer Month** initiative, which aims to support them and their projects.
 
 ## What is Maintainer Month?
 
-Maintainer Month is an initiative by GitHub to celebrate and support the incredible work of open-source maintainers worldwide. Open-source projects are the backbone of the software industry, and maintainers play a crucial role in ensuring their success. This month-long event is dedicated to recognizing their efforts and providing resources to help them thrive.
+**Maintainer Month** is an initiative by GitHub to **celebrate** and **support** the incredible work of open-source maintainers worldwide. Open-source projects are the **backbone of the software industry**, and **maintainers play a crucial role** in ensuring their success. This month-long event is dedicated to recognizing their efforts and providing resources to help them thrive.
+This year, for the fourth edition of Maintainer Month, the theme is **Securing Open Source**. Raising awareness about the importance of security and ongoing maintenance in open-source projects is crucial to ensuring their **longevity** and **reliability**.
 
-## GitHub and the Maintainer Month Accelerator
+The month is paved with events, discussions, and resources to help maintainers improve their projects and connect with the community. Have a look at the [Maintainer Month website](https://maintainermonth.github.com/) for more information on the events and resources available.
 
-GitHub, the world's leading platform for software development and collaboration, has launched the Maintainer Month Accelerator to provide maintainers with tools, resources, and partnerships to support their projects. This program is designed to empower maintainers and ensure the sustainability of their open-source contributions. Read more about the [GitHub Accelerator program](/blog/github-accelerator/).
+![Maintainer Month](/images/blog/partner-github-maintainer-month/maintainer-month-meetings.png)
 
-## Mockoon: Open-Source and Independent
+## Mockoon and open-source <3
 
-Mockoon is proud to be an open-source and independent API mocking platform. Our mission has always been to support developers and the open-source community by providing reliable and easy-to-use tools. We believe in the power of open-source to drive innovation and collaboration, and we are committed to giving back to the community that has supported us. Learn more about [our commitment to the open-source community](/blog/our-commitment-open-source-community/).
+Mockoon is proud to be an **open-source and independent API mocking platform** since 2017 (damn we are old!). Our mission has always been to **support developers** and the open-source community by providing reliable and easy-to-use tools. We believe in the power of open-source to drive innovation and collaboration.
 
-## Our Partnership with GitHub
+While maintaining an open-source tool is a **challenging task**, both technically and financially, we are committed to [keeping Mockoon open-source and free](/blog/our-commitment-open-source-community/) while finding [**sustainable ways to continue our work**](/blog/seven-years-2024-retrospective/#mockoon-cloud-and-the-path-to-sustainability).
 
-As part of the Maintainer Month initiative, we are thrilled to partner with GitHub to offer free Mockoon Cloud accounts to open-source project maintainers. This is an ideal solution for maintainers who need reliable API mocks and collaboration tools to streamline their workflows. By providing free access to Mockoon Cloud, we aim to empower maintainers with the tools they need to build, test, and collaborate more effectively.
+Now that we are starting to see some great results with [Mockoon Cloud](/cloud/), we want to start **giving back** to the community. That's why we are excited to participate in Maintainer Month and support open-source maintainers.
 
-## Why This Matters
+![Mockoon Cloud](/images/blog/partner-github-maintainer-month/maintainer-month-tools.png)
 
-Supporting open-source projects is essential for fostering innovation and collaboration in the tech community. Maintainers often work tirelessly to keep their projects alive, and they deserve all the support they can get. By participating in Maintainer Month, we hope to contribute to the sustainability and growth of open-source projects.
+## Maintainer Month Partner Pack
 
-## How to Claim Your Free Mockoon Cloud Account
+As part of the Maintainer Month initiative, we are thrilled **to partner with GitHub** to offer **free Mockoon Cloud accounts to open-source project maintainers**. This is an ideal solution for maintainers who need reliable API mocks and collaboration tools to streamline their workflows. By providing free access to Mockoon Cloud, we aim to empower maintainers with the tools they need to build, test, and collaborate more effectively.
 
-If you are an open-source maintainer, take advantage of this opportunity to get a free Mockoon Cloud account. Visit the [Maintainer Month Partner Pack](https://maintainermonth.github.com/partner-pack) to learn more and claim your free account.
+To request your free Mockoon Cloud account, simply fill out [this form](/mockoon-cloud-open-source/) and provide the necessary information about your open-source project. Once your request is approved, you will receive a free Mockoon Cloud account to help you manage your API mocks and collaborate with your team.
 
-## Join Us in Celebrating Maintainer Month
+![Mockoon Cloud](/images/blog/partner-github-maintainer-month/maintainer-month-partner-pack.png)
 
-Let's celebrate Maintainer Month together and continue to support the open-source ecosystem! Whether you're a maintainer or a contributor, your work matters, and we are here to support you.
+Visit the [Maintainer Month Partner Pack](https://maintainermonth.github.com/partner-pack) to learn more about the other offers available from the Maintainer Month partners.
+
+Supporting open-source projects is essential to building a **sustainable software ecosystem**. Maintainers often work tirelessly to keep their projects alive, and they deserve all the support they can get.
+
+Join us in celebrating the incredible work of open-source maintainers and help us **spread the word** about Maintainer Month!

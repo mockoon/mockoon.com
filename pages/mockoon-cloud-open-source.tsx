@@ -26,12 +26,13 @@ const OpenSourceContactFormPage: FunctionComponent = function () {
                 <a href='http://opensource.org/licenses' target='_blank'>
                   OSI approved License
                 </a>
-                ), <strong>have a public repository</strong> and{' '}
-                <strong>not be backed by a company</strong>. We reserve the
-                right to refuse any request that does not meet these criteria or
-                that we deem inappropriate or not aligned with our values. We
-                will review your request and get back to you as soon as
-                possible.
+                ), <strong>have a public repository</strong>, and{' '}
+                <strong>not be backed by a company</strong>. It must also be an
+                active project, not a portfolio, tutorial, or demo. We reserve
+                the right to refuse any request that does not meet these
+                criteria or that we deem inappropriate or misaligned with our
+                values. We will review your request and get back to you as soon
+                as possible.
               </p>
             </div>
           </div>

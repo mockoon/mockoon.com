@@ -18,7 +18,7 @@ const incidents: {
     desc: 'All cloud deployments servers and customer instances will be restarted to apply a maintenance release, and upgrade the hardware.',
     dateStart: '2025-05-29T06:20:00Z',
     dateEnd: '2025-05-29T06:35:00Z',
-    status: 'inprogress'
+    status: 'resolved'
   },
   {
     title: 'All cloud services - Scheduled downtime, maintainance',

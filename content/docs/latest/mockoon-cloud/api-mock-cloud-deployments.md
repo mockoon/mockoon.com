@@ -50,6 +50,8 @@ The visibility of the environment can be set to **public** or **private**. Here 
 - **Public**: The environment is accessible to anyone with the URL. The API key is displayed in the management dialog and must be included in the request `Authorization` header to access the environment's [admin API](docs:admin-api/overview).
 - **Private**: The environment is accessible only to users with the URL and the API key. The API key is displayed in the management dialog and must be included in the request `Authorization` header to access the environment.
 
+> ⚠️ When you stop a running instance and start it again later, there is no guarantee that it will be assigned to the same server. As a result, the instance URL may change (different server ID).
+
 ## Unsupported features
 
 The cloud deployment feature does not support the following features:

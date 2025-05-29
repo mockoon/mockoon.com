@@ -14,6 +14,13 @@ const incidents: {
   status: 'planned' | 'inprogress' | 'resolved';
 }[] = [
   {
+    title: 'Cloud deployments - Scheduled downtime, maintainance and fix',
+    desc: 'All cloud deployments servers and customer instances will be restarted to apply a maintenance release, and upgrade the hardware.',
+    dateStart: '2025-05-29T06:20:00Z',
+    dateEnd: '2025-05-29T06:35:00Z',
+    status: 'inprogress'
+  },
+  {
     title: 'All cloud services - Scheduled downtime, maintainance',
     desc: 'All cloud deployments servers and customer instances will be restarted to apply a maintenance release, and upgrade the hardware. The downtime is expected to last less than an hour. We apologize for the inconvenience.',
     dateStart: '2025-05-17T08:00:00Z',

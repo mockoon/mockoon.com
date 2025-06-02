@@ -38,7 +38,7 @@ const SponsorUs: FunctionComponent = function () {
             <p>
               Entirely free, Mockoon saves time for{' '}
               <strong>thousands of people around the world</strong> every day
-              and recently crossed <strong>700k downloads</strong>!
+              and recently crossed <strong>800k downloads</strong>!
             </p>
             <p>
               Reaching this level of satisfaction requires a{' '}
@@ -61,7 +61,7 @@ const SponsorUs: FunctionComponent = function () {
               <strong>dedicate more time</strong> to this project in the future.
               For higher sponsor tiers, this is the opportunity to show your
               brand in front of many developers interested in APIs and automated
-              testing (~35k views per month, more details on GitHub Sponsors).
+              testing.
             </p>
             <div className='text-center my-8'>
               <p className='mt-4'>

@@ -4,7 +4,7 @@ excerpt: Learn more about REST(ful) APIs, their constraints and what requests an
 meta:
   title: "Mockoon's API guide part 2: REST(ful) APIs"
   description: Learn more about REST(ful) APIs, their constraints and what requests and responses between a client and a server contains
-image: api-guide.png
+image: api-guide-part-2.png
 imageAlt: API illustration
 imageWidth: 1200
 imageHeight: 400
@@ -17,18 +17,18 @@ nextText: 'API guide part 3: Rest API components'
 
 ## Definition of a REST (or RESTful) API
 
-As we saw in the [previous part of this guide](/articles/api-guide-what-are-api/), there are many types of web APIs. What interests us most is one of the most popular implementations, the [REST, or RESTful, API](https://en.wikipedia.org/wiki/Representational_state_transfer).
+As we saw in the [previous part of this guide](/articles/api-guide-what-are-api/), there are many types of web APIs. What interests us most is one of the most popular implementations, the **[REST, or RESTful, API](https://en.wikipedia.org/wiki/Representational_state_transfer)**.
 REST stands for **RE**presentational **S**tate **T**ransfer. It's a software architectural style that defines a set of **constraints** used to create standardized APIs. Web APIs adhering to the REST architectural constraints are called **RESTful APIs**.
 
 RESTful APIs must follow six constraints: **client-server architecture**, **statelessness**, **cacheability**, **layered system**, **code on demand**, and **uniform interface**. We will see four of them, perhaps the most important.
 
 ### Client-server architecture
 
-REST APIs are designed with a client-server architecture in mind, thus enforcing the principle of separation of concerns: separating the user interface from the data storage. It has various benefits, but one of the most prominent is the portability of both the UI and the server. Many UI can be implemented for one server (or consume one API), and the server can scale and evolve independently from the UI.
+REST APIs are designed with a **client-server architecture** in mind, thus enforcing the principle of separation of concerns: separating the user interface from the data storage. It has various benefits, but one of the most prominent is the portability of both the UI and the server. Many UI can be implemented for one server (or consume one API), and the server can scale and evolve independently from the UI.
 
 ### Uniform interface
 
-The uniform interface constraint aims at simplifying and decoupling the architecture to enable each part to evolve independently. This concept includes four principles:
+The uniform interface constraint aims at simplifying and **decoupling the architecture to enable each part to evolve independently**. This concept includes four principles:
 
 - _Resource identification in requests_: The request should identify each resource. For RESTful web services, URIs are usually responsible for identifying resources.
 - _Resource manipulation through representations_: The client should have enough information regarding the resource to be able to modify or delete it.
@@ -37,11 +37,11 @@ The uniform interface constraint aims at simplifying and decoupling the architec
 
 ### Statelessness
 
-Statelessness means that the server or the API should retain no session information. Each transaction between the client and the server will contain the necessary data to be understood in isolation without the context from previous communications. The best example is the necessity to be authenticated to perform any change in the API or the data storage: each communication will contain the necessary credentials to authenticate the consumer.
+Statelessness means that **the server or the API should retain no session information**. Each transaction between the client and the server will contain the necessary data to be understood in isolation without the context from previous communications. The best example is the necessity to be authenticated to perform any change in the API or the data storage: each communication will contain the necessary credentials to authenticate the consumer.
 
 ### Cacheability
 
-To improve the API server scalability and performance, it must inform the client if the resource or data is cacheable or not. It prevents the client from using stale data, but it also allows it to reuse existing data again if it is still up-to-date, thus reducing the volume transferred.
+To improve the API server scalability and performance, it **must inform the client if the resource or data is cacheable or not**. It prevents the client from using stale data, but it also allows it to reuse existing data again if it is still up-to-date, thus reducing the volume transferred.
 
 ## Overview of a REST API call
 
@@ -57,12 +57,12 @@ REST APIs communicate over HTTP/HTTPS the same as web browsers do. API calls loo
 
 ### The request
 
-An API request contains the following components:
+An **API request** contains the following components:
 
-- a base URL, or resource path
-- an HTTP method or verb (GET, POST, etc.)
-- \[headers\]
-- \[a payload or body\]
+- a **base URL**, or **resource path**
+- an **HTTP method** or verb (GET, POST, etc.)
+- **\[headers\]**
+- **\[a payload or body\]**
 
 An [HTTP API request or message](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages) is formatted like this:
 
@@ -86,16 +86,16 @@ BLANK_LINE
 BODY
 ```
 
-As we will see in the [third part of this guide](/articles/api-guide-rest-api-components/), the method and URL are always present and mandatory. They identify the target endpoint requested by the client on the API server.
-On the contrary, the headers and body are optional. However, it's rare to have a request (or a response) without headers.
+As we will see in the [third part of this guide](/articles/api-guide-rest-api-components/), the **method and URL are always present and mandatory**. They identify the target endpoint requested by the client on the API server.
+On the contrary, the **headers and body are optional**. However, it's rare to have a request (or a response) without headers.
 
 ### The response
 
-After processing the request, the API server will send back a response to the client. It will contain the following information:
+After processing the request, the **API server will send back a response to the client**. It will contain the following information:
 
-- a status code
-- \[headers\]
-- \[a payload or body\]
+- a **status code**
+- **\[headers\]**
+- **\[a payload or body\]**
 
 ```http
 HTTP/1.1 201 Created
@@ -115,7 +115,7 @@ BLANK_LINE
 BODY
 ```
 
-The only mandatory part is the status code. As for the request, a response may or may not contain headers and a body. Again, you probably won't see a response without headers anytime soon.
+The **only mandatory part is the status code**. As for the request, a **response may or may not contain headers and a body**. Again, you probably won't see a response without headers anytime soon.
 
 You probably already noticed some differences between requests and responses. Some components are present in both, like the headers and the body.
 In the last part of our guide, we will detail all these components: the request's **method** and **URL**, the response's **status code**, the **headers**, and the **body**, present in both the request and the response.

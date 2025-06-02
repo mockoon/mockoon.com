@@ -14,6 +14,8 @@ order: 10
 ## Table of content
 
 [API (Application Programming Interface)](#api-application-programming-interface)  
+[Authentication](#authentication)  
+[Authorization](#authorization)  
 [Body](#body)  
 [Cache](#cache)  
 [Client](#client)  
@@ -21,14 +23,25 @@ order: 10
 [CRUD (Create Read Update Delete)](#crud-create-read-update-delete)  
 [Endpoint](#endpoint)  
 [External API](#external-api)  
+[API Gateway](#api-gateway)
 [Header](#header)  
+[HTTP/HTTPS](#http-https)  
 [Internal API](#internal-api)  
 [JSON](#json)  
 [API Key](#api-key)  
+[Latency](#latency)  
+[Load balancing](#load-balancing)
 [Methods (HTTP methods)](#methods-http-methods)  
+[Middleware](#middleware)  
+[Mime type](#mime-type)  
 [API Mocking](#api-mocking)  
+[OpenAPI/Swagger](#openapi-swagger)
+[Pagination](#pagination)  
 [Path Parameters](#path-parameters)  
+[Payload](#payload)  
+[Polling](#polling)  
 [Query Parameters](#query-parameters)  
+[Rate limiting](#rate-limiting)  
 [Request](#request)  
 [Response](#response)  
 [Resource](#resource)  
@@ -37,22 +50,38 @@ order: 10
 [Server](#server)  
 [Status code (HTTP)](#status-code-http)  
 [URL (Uniform Resource Locator)](#url-uniform-resource-locator)  
-[Web API](#web-api)
+[Versioning](#versioning)  
+[Web API](#web-api)  
+[Webhooks](#webhooks)  
+[WebSocket](#websocket)
 
 ## A
 
 ### API (Application Programming Interface)
 
-API is the acronym for Application Programming Interface. In contrast to a User Interface (UI) that connects a person to a computer, it's a software-to-software interface, or intermediary, enabling two applications to talk to each other.  
-[→ Learn more in our API guide](/articles/api-guide-what-are-api/)
+API is the acronym for Application Programming Interface. In contrast to a User Interface (UI) that connects a person to a computer, it's a software-to-software interface, or intermediary, enabling two applications to talk to each other.
+
+> 📘 Learn more in our [API guide](/articles/api-guide-what-are-api/)
 
 See also: [Web API](#web-api), [REST API](#rest-api)
+
+### Authentication
+
+Authentication is the process of **verifying the identity of a user or system**. In the context of APIs, it often involves the use of [API keys](#api-key), tokens, or other credentials to ensure that only authorized clients can access the API. An API may require authentication to protect sensitive data or resources and to ensure that only legitimate users can perform actions on the API.
+It is usually done by sending credentials in the [request](#request) headers, like the `Authorization` header, or in the [body](#body) of the request. An invalid or missing authentication will usually result in a `401 Unauthorized` [status code](#status-code-http).
+
+### Authorization
+
+Authorization is the process of **determining whether a user or system has permission to perform a specific action or access certain resources**. In APIs, this often follows authentication and involves checking the user's permissions against the requested resource or action. For example, an API may allow a user to read data but not modify it, or it may restrict access to certain endpoints based on the user's role or permissions. Authorization is typically enforced by the API server and can be implemented using various methods, such as role-based access control (RBAC) or attribute-based access control (ABAC).
+Missing access rights on a [resource](#resource) will usually result in a `403 Forbidden` [status code](#status-code-http).
 
 ## B
 
 ### Body
 
 The body refers to the data transmitted in an API transaction in the [request](#request) or the [response](#response). Requests and responses do not always contain a body. [JSON](#json) is one of the most popular data formats to transfer data in the body
+
+See also: [Payload](#payload)
 
 ## C
 
@@ -93,6 +122,10 @@ An external API usually exposes a company's internal resources outside of the or
 
 See also: [Internal API](#internal-api)
 
+### API Gateway
+
+An API Gateway is a server that acts as an **intermediary** between clients and backend services. It is responsible for routing requests from clients to the appropriate services, handling tasks such as [authentication](#authentication), [rate limiting](#rate-limiting), and [caching](#cache). API Gateways can simplify the client-side experience by providing a single entry point for multiple services and can also enhance security by hiding the internal architecture of the API.
+
 ## H
 
 ### Header
@@ -110,7 +143,11 @@ Some widely used response headers:
 - `Cache-Control: max-age=604800`: to indicate the duration after which the response should be refreshed.
 - `Last-Modified: Fri, 24 June 2022 08:00:00 GMT`: indicate the data when the resource was last modified.
 
-[→ Learn how to setup headers with Mockoon](/docs/latest/response-configuration/response-headers/)
+> 💡 Learn how to [setup headers with Mockoon](/docs/latest/response-configuration/response-headers/)
+
+### HTTP/HTTPS
+
+HTTP (Hypertext Transfer Protocol) is the foundation of data communication on the web. It is an **application layer protocol** used for transmitting hypermedia documents, such as HTML. HTTPS (HTTP Secure) is the secure version of HTTP, which uses encryption (SSL/TLS) to protect the data exchanged between clients and servers.
 
 ## I
 
@@ -134,7 +171,7 @@ A JSON example:
 }
 ```
 
-[→ Learn how to generate fake JSON with Mockoon](/tutorials/generate-mock-json-data/)
+> 💡 Learn how to [generate fake JSON with Mockoon](/tutorials/generate-mock-json-data/)
 
 ## K
 
@@ -142,6 +179,16 @@ A JSON example:
 
 An API key is a unique identifier used to authenticate and identify a user or an application accessing an [API](#api-application-programming-interface). Most APIs require their consumers (companies, developers, etc.) to register and request an API key as they are often paid products subjected to restrictions: consumer identification, volume billing, etc.
 API keys are frequently sent by the client along with the [request](#request) in an `Authorization` [header](#header).
+
+## L
+
+### Latency
+
+Latency is the **time** it takes for a [request](#request) to **travel from the client to the server and back**, including the time taken by the server to process the request and generate a [response](#response). It is usually measured in milliseconds (ms) and can be affected by various factors, such as network speed, server load, and the complexity of the request.
+
+### Load balancing
+
+Load balancing is the process of **distributing incoming API requests across multiple servers or instances** to ensure that no single server becomes overwhelmed with traffic. It helps improve the performance, reliability, and scalability of an API by preventing bottlenecks and ensuring that resources are used efficiently. Load balancers can be implemented at various levels, including hardware, software, or cloud-based solutions.
 
 ## M
 
@@ -156,18 +203,41 @@ The most used ones are the following and embody specific meanings in [REST APIs]
 - `PUT`: update an existing resource
 - `DELETE`: remove an existing resource
 
-[→ Learn more in our REST API guide](/articles/api-guide-rest-api-components/#method-request)
+> 📘 Learn more in our [REST API guide](/articles/api-guide-rest-api-components/#method-request)
 
 See also: [CRUD](#crud-create-read-update-delete)
+
+### Middleware
+
+Middleware refers to software components that sit between the client and server in an API architecture. They can **intercept and process requests and responses**, allowing for tasks such as logging, authentication, and data transformation. Middleware can be used to add additional functionality to an API without modifying the core logic of the application.
+
+### Mime type
+
+A MIME type (Multipurpose Internet Mail Extensions type) is a standard way to **indicate the nature and format of a document**, file, or byte stream. In the context of APIs, MIME types are used to specify the format of the data being sent in requests and responses, and is usually included in the `Content-Type` [header](#header) of the [request](#request) or [response](#response). It helps the client and server understand how to interpret the data being exchanged. Common MIME types include:
+
+- `application/json`: JSON format
+- `application/xml`: XML format
+- `text/html`: HTML format
+- `text/plain`: Plain text format
 
 ### API Mocking
 
 API mocking is the action of simulating or imitating actual [APIs](#api-application-programming-interface) by answering fake realistic [responses](#response) to [requests](#request). It replaces APIs you cannot currently use because they are unavailable, down, or still under development. APIs could also be unavailable due to the context: like a restricted testing environment.
 It is a fast and easy way to test your applications with the APIs you are integrating, without the hassles.
 
-[→ Learn more in our API mocking guide](/articles/what-is-api-mocking/)
+> 📘 Learn more in our [API mocking guide](/articles/what-is-api-mocking/)
+
+## O
+
+### OpenAPI/Swagger
+
+OpenAPI (formerly known as Swagger) is a **specification for building APIs**. It provides a standard way to describe the structure and behavior of an API using a JSON or YAML document. This document serves as a contract between the API provider and the consumers, allowing for better collaboration, documentation, and automation.
 
 ## P
+
+### Pagination
+
+Pagination is a technique used in APIs to **divide large sets of data into smaller, manageable chunks** or pages. It allows clients to retrieve data in smaller portions rather than fetching all the data at once, which can improve performance and reduce the load on the server. Pagination is often implemented using [query parameters](#query-parameters), such as `page` and `limit`, to specify which page of data to retrieve and how many items per page.
 
 ### Path Parameters
 
@@ -175,6 +245,16 @@ A path parameter is a non-optional section of the [route's](#route) path used as
 For example, in `/users/{id}` or `/users/:id`, `id` is a path parameter indicating that the action targets a user with a specific id: `/users/123`. It is up to the API [server](#server) to define which query parameters are available and needed.
 
 See also: [Query parameters](#query-parameters)
+
+### Payload
+
+The payload is the **data sent by the client in a [request](#request) or returned by the server in a [response](#response)**. In the context of APIs, the payload typically contains the information needed to create, update, or retrieve a resource. The format of the payload can vary depending on the API and the specific endpoint being used. Common formats include JSON, XML, and form data.
+
+See also: [Body](#body)
+
+### Polling
+
+Polling is a technique used in APIs to **retrieve data from the server at regular intervals**. Instead of waiting for the server to push updates to the client (as with [webhooks](#webhooks)), the client repeatedly sends requests to the server to check for new data. This can be useful in scenarios where real-time updates are not critical, but it can also lead to increased server load and [latency](#latency).
 
 ## Q
 
@@ -185,6 +265,10 @@ A query parameter is an optional parameter added by a [client](#client), placed 
 See also: [Path parameters](#path-parameters)
 
 ## R
+
+### Rate limiting
+
+Rate limiting is a technique used in APIs to **control the amount of incoming requests from clients within a specific time frame**, for example, allowing a maximum of 100 requests per minute per client. It helps prevent abuse, ensures fair usage, and protects the server from being overwhelmed by too many requests. When a client exceeds the allowed request limit, the server typically responds with a `429 Too Many Requests` [status code](#status-code-http).
 
 ### Request
 
@@ -208,7 +292,7 @@ See also: [CRUD](#crud-create-read-update-delete)
 
 REST stands for **RE**presentational **S**tate **T**ransfer. It's a software architectural style that defines a set of constraints used to create standardized [APIs](#api-application-programming-interface). [Web APIs](#web-api) adhering to the REST architectural constraints are called RESTful APIs. RESTful APIs must follow six constraints: client-server architecture, statelessness, cacheability, layered system, code on demand, and uniform interface.
 
-[→ Learn more in our REST API guide](/articles/api-guide-what-are-rest-api/)
+> 📘 Learn more in our [REST API guide](/articles/api-guide-what-are-rest-api/)
 
 ### Route
 
@@ -229,7 +313,7 @@ See also: [Client](#client)
 
 An HTTP status code is added to the [response](#response) by the [server](#server) to indicate to the [client](#client) the status of its request without having to further analyze the other response's components (headers, body, etc.). The status code varies depending on the success of the action but also on its nature. More concretely, it's a number with three digits (between 100 and 599) associated with a name: `200 Success`, `404 Not Found`, etc. There are many status codes grouped into five main categories: informational responses (1xx), successes (2xx), redirections (3xx), client errors (4xx), and server errors (5xx).
 
-[→ Learn more in our API guide](/articles/api-guide-rest-api-components/#status-code-response)
+> 📘 Learn more in our [API guide](/articles/api-guide-rest-api-components/#status-code-response)
 
 ## U
 
@@ -241,12 +325,30 @@ A URL is a reference to a web [resource](#resource) specifying its location on a
 - The hostname: `company.com`.
 - A path to the resource: `/api/users`.
 
+## V
+
+### Versioning
+
+Versioning is the process of assigning unique version numbers to different iterations of an API. It allows developers to make changes, add features, or fix bugs without disrupting existing clients that rely on a specific version of the API. Common versioning strategies include:
+
+- **URI Versioning**: Including the version number in the API endpoint URL (e.g., `/api/v1/users`).
+- **Header Versioning**: Specifying the version in the request headers (e.g., `Accept: application/vnd.company.v1+json`).
+- **Query Parameter Versioning**: Including the version as a query parameter (e.g., `/api/users?version=1`).
+
 ## W
 
 ### Web API
 
 Web APIs are a specific type of [APIs](#api-application-programming-interface) that can be accessed over the web, frequently using the HTTP protocol. They usually involve a [client](#client) (your browser) and a server exposing [resources](#resource) publicly.
 
-[→ Learn more in our API guide](/articles/api-guide-what-are-api/#web-apis)
+> 📘 Learn more in our [API guide](/articles/api-guide-what-are-api/#web-apis)
 
 See also: [REST API](#rest-api)
+
+### Webhooks
+
+Webhooks are a way for an API to **send real-time notifications or data to a client** when certain events occur. Instead of the client polling the API for updates, the API sends a [request](#request) to a predefined [URL](#url-uniform-resource-locator) (the webhook endpoint) when an event happens. This allows for more efficient communication and reduces the need for constant polling.
+
+### WebSocket
+
+WebSocket is a protocol that enables **full-duplex communication channels** over a single TCP connection. It allows for **real-time data exchange between a client and a server**, making it suitable for applications that require low latency and high interactivity, such as chat applications, online gaming, and live data feeds. WebSockets are often used in conjunction with APIs to provide real-time updates and notifications.

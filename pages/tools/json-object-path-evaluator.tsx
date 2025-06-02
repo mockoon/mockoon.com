@@ -438,13 +438,13 @@ const JsonPathPlayground: FunctionComponent = function () {
                   </tr>
                   <tr>
                     <td>
-                      <code>store.book[0].author</code>
+                      <code>store.book.0.author</code>
                     </td>
                     <td>the author of the first book</td>
                   </tr>
                   <tr>
                     <td>
-                      <code>store.book[1].title</code>
+                      <code>store.book.1.title</code>
                     </td>
                     <td>the title of the second book</td>
                   </tr>

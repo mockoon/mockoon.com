@@ -209,6 +209,17 @@ const tools = [
       }
     ],
     imageSrc: '/images/illustrations/json-minifier.svg'
+  },
+  {
+    title: 'Slug generator',
+    description: 'Generate slugs from your text online',
+    links: [
+      {
+        src: '/tools/slug-generator/',
+        text: 'Generate'
+      }
+    ],
+    imageSrc: '/images/illustrations/slug-generator.svg'
   }
 ];
 

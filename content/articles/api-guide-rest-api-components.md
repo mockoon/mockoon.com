@@ -4,7 +4,7 @@ excerpt: 'Discover what composes RESTful API request and response: HTTP methods,
 meta:
   title: "Mockoon's API guide part 3: REST APIs components"
   description: 'Discover what composes RESTful API request and response: HTTP methods, resource URL, HTTP headers, payload or body'
-image: api-guide.png
+image: api-guide-part-3.png
 imageAlt: API illustration
 imageWidth: 1200
 imageHeight: 400
@@ -21,9 +21,9 @@ After seeing [how an API call works](/articles/api-guide-what-are-rest-api/), wi
 
 ### Resource URL (request)
 
-The request will be made to a specific URL, endpoint, or resource path, using a specific method. While the URL identifies the **resource** you want to interact with (users, invoices, posts, etc.), the method will indicate to the server which type of **action** you want to perform on it.
+The request will be made to a **specific URL, endpoint, or resource path**, using a specific **method**. While the URL identifies the **resource** you want to interact with (users, invoices, posts, etc.), the method will indicate to the server which type of **action** you want to perform on it.
 
-You will find different approaches to defining resource URLs. The most common will probably be to use a self-descriptive name in its plural form, prefixed with one or more path sections (the "api" keyword, the API version, etc.) and followed by optional URL parameters to interact with a specific resource (a user, a post, etc.):
+You will find **different approaches** to defining resource URLs. The most common will probably be to use a **self-descriptive name in its plural form**, prefixed with one or more path sections (the "api" keyword, the API version, etc.) and followed by optional URL parameters to interact with a specific resource (a user, a post, etc.):
 
 - `http://company.com/api/v2/users`: all the users
 - `http://company.com/api/v2/users/:id`: one user with a specific `id`
@@ -31,9 +31,9 @@ You will find different approaches to defining resource URLs. The most common wi
 - `http://company.com/api/v2/posts`: all the posts
 - ...
 
-A best practice is to avoid verbs or actions like "get" or "list" in the URL. It is better to let the HTTP method describe what you want to do. So instead of `http://company.com/api/v2/getUsers`, prefer `http://company.com/api/v2/users` using the GET method.
+A best practice is to **avoid verbs or actions** like "get" or "list" in the URL. It is better to let the HTTP method describe what you want to do. So instead of `http://company.com/api/v2/getUsers`, prefer `http://company.com/api/v2/users` using the **GET method**.
 
-You will also often find nested resources. They help fetch related resources like a user's posts or a post's comments. These types of URL endpoints usually look like this:
+You will also often find **nested resources**. They help fetch related resources like a user's posts or a post's comments. These types of URL endpoints usually look like this:
 
 - `http://company.com/api/v2/users/:id/posts`: all the posts from the user with a specific `id`
 - `http://company.com/api/v2/posts/:id/comments`: all the comments for a post with a specific `id`
@@ -49,7 +49,7 @@ The most used one are the following:
 - _PUT_: update existing resource(s)
 - _DELETE_: remove existing resource(s)
 
-They map to the corresponding CRUD operations: Create, Read, Update, Delete.
+They map to the corresponding CRUD operations: **Create**, **Read**, **Update**, **Delete**.
 Each method used in combination with a specific URL will result in a different action performed on the data. Let's see some examples:
 
 - `GET http://company.com/api/v2/users`: retrieve all the users' data
@@ -75,12 +75,12 @@ Let's see some API call scenarios with the corresponding ideal status code:
 - `POST /users`:
   - _new user was successfuly created_: **201 Created**
 
-Have you noticed the difference between a successful GET (200 OK) and a successful POST (201 Created)? 200 and 201 belong to the same status codes category, "successes", but they also inform on the nature of the action.
-With this variety of statuses, applications can give more precise feedback to their users instead of relying on generic success or error messages.
+Have you noticed the difference between a successful GET (200 OK) and a successful POST (201 Created)? 200 and 201 belong to the same status codes category, "successes", but they also inform on the **nature of the action**.
+With this variety of statuses, applications can give **more precise feedback** to their users instead of relying on generic success or error messages.
 
 ### Header(s)
 
-Both the request and response can contain one or more headers. You can see headers as labels, or metadata, giving the recipient (client or server) more information about the request or response.
+Both the request and response can contain one or more headers. You can see headers as **labels**, or **metadata**, giving the recipient (client or server) more information about the request or response.
 
 They are usually different between request and response, and some headers don't make sense in a request and vice-versa.
 Among the most well-known, we can enumerate `Content-Type`, `Authorization`, `Accept`, `Content-Length`, `Cache-Control`, etc.
@@ -128,8 +128,10 @@ HTTP headers is a vast topic, and there are [many headers that you can explore](
 
 ### Body or payload
 
-As you may have noticed in the previous examples, requests and responses may or may not include a payload or body. The body is the actual piece of information you want to fetch or store and use or display in your application. It will have a different meaning depending on the context. It could be a list of users returned by the server after a **GET request**. It may also be a new user sent to the server in the request during a **POST request**.
-You understand now, both request and response can contain a body, but it doesn't make sense in some cases. Sometimes it is even highly discouraged and not part of the HTTP specification. It is the case for a GET request which should not contain a body. However, you will find implementations contradicting this.
+As you may have noticed in the previous examples, requests and responses **may or may not include a payload or body**. The body is the actual piece of information you want to fetch or store and use or display in your application. It will have a different meaning depending on the context. It could be a list of users returned by the server after a **GET request**. It may also be a new user sent to the server in the request during a **POST request**.
+
+You understand now, both request and response can contain a body, but it doesn't make sense in some cases. Sometimes it is even highly discouraged and not part of the HTTP specification. It is the case for a GET request which should not contain a body as you only want to retrieve data from the server, not send it.
+However, you will find implementations contradicting this.
 
 Nowadays, the most widely used format for sending payloads is the [JSON format](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON). You will also find a lot of APIs making data available in XML.
 
@@ -154,7 +156,7 @@ Content-Length: 105
 
 ## How to test API calls?
 
-Many options exist to make API calls. Among the most famous you will find cURL, a command-line tool, or Postman, a desktop application.
+Many options exist to **make API calls**. Among the most famous you will find cURL, a command-line tool, or Postman, a desktop application.
 
 You will also frequently find APIs described or documented using the OpenAPI specification, which often leads to a publication of the API documentation using Swagger UI. A famous one is their demo API, the [Pet store](https://petstore.swagger.io/). Swagger UI allows you to discover API endpoints and their parameters but also directly make test calls.
 
@@ -164,8 +166,9 @@ When designing an API, it is a good practice to use the OpenAPI specification an
 
 During development, you may encounter blockers that will slow you down. For example, you may want to start connecting your front-end application with an API that your back-end team is currently working on.
 Or you would like to work with a third-party API (authentication, payment, weather or financial data, etc.) without too much hassle like creating an account or provision authentication tokens.
-API mocking is a technique that will allow you to work with an API by faking it. It helps you integrate an API without registering with the provider, provisioning a token, or waiting for another team to develop it. Thus vastly improving your developer experience and reducing development time.
+
+API mocking is a technique that will allow you to **work with an API by faking it**. It helps you integrate an API without registering with the provider, provisioning a token, or waiting for another team to develop it. Thus vastly improving your developer experience and reducing development time.
 
 Mockoon is here to help you start integrating APIs in no time by quickly mocking them locally. Head over to our [getting started tutorial](/tutorials/getting-started/) to learn how to mock your first API.
 
-> To learn more about API mocking in general, you can read our [API mocking guide](/articles/what-is-api-mocking/).
+> 📘 To learn more about API mocking in general, you can read our [API mocking guide](/articles/what-is-api-mocking/).

@@ -60,6 +60,8 @@ Each method used in combination with a specific URL will result in a different a
 
 As you can imagine, depending on the amount of resources, APIs can expose many endpoints.
 
+> 📃 Check out complete list of [HTTP methods](/articles/list-http-request-methods/).
+
 ### Status code (response)
 
 The response will contain an important piece of information: the **status code**. It informs the consumer (the client) if the action was performed correctly or not on the requested resource. It varies not only depending on the success of the action, but also depending on its nature. More concretely, it's a number with three digits (between 100 and 599) with a name, like `200 Success`, or `404 Not Found`. There are many [status codes grouped into five main categories](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes): **informational responses** (1xx), **successes** (2xx), **redirections** (3xx), **client errors** (4xx), and **server errors** (5xx).

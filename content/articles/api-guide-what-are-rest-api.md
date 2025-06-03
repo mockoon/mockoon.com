@@ -89,6 +89,8 @@ BODY
 As we will see in the [third part of this guide](/articles/api-guide-rest-api-components/), the **method and URL are always present and mandatory**. They identify the target endpoint requested by the client on the API server.
 On the contrary, the **headers and body are optional**. However, it's rare to have a request (or a response) without headers.
 
+> 📃 Check out complete list of [HTTP methods](/articles/list-http-request-methods/).
+
 ### The response
 
 After processing the request, the **API server will send back a response to the client**. It will contain the following information:

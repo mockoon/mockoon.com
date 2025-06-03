@@ -205,6 +205,8 @@ The most used ones are the following and embody specific meanings in [REST APIs]
 
 > 📘 Learn more in our [REST API guide](/articles/api-guide-rest-api-components/#method-request)
 
+> 📃 Check out complete list of [HTTP methods](/articles/list-http-request-methods/).
+
 See also: [CRUD](#crud-create-read-update-delete)
 
 ### Middleware

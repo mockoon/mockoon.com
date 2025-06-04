@@ -17,81 +17,81 @@ const SponsorUs: FunctionComponent = function () {
 
       <Hero
         title='<span class="text-primary">Support our work</span> on Mockoon'
-        subtitle='Mockoon is an open-source project. You can support our work by sponsoring the project or by subscribing to our Cloud plans.'
+        subtitle='Mockoon is an independent open-source project. You can support our work by sponsoring the project or by subscribing to our Cloud plans.'
       />
 
       <div className='container pb-8'>
         <div className='row d-flex flex-column align-items-center '>
           <div className='col-12 col-lg-10 pt-5'>
             <p>
-              Mockoon is an <strong>open-source</strong> project created in 2017
-              by{' '}
+              Mockoon is an <strong>open-source project</strong> launched in
+              2017 by{' '}
               <a href='https://github.com/255kb' target='_blank' rel='noopener'>
                 Guillaume
               </a>
-              , a developer passionate about APIs, helped by{' '}
+              , a developer passionate about APIs, with the help of{' '}
               <Link href='/about/'>
                 <strong>dozens of amazing contributors</strong>
               </Link>
               .
             </p>
             <p>
-              Entirely free, Mockoon saves time for{' '}
-              <strong>thousands of people around the world</strong> every day
-              and recently crossed <strong>800k downloads</strong>!
+              Completely <strong>free</strong> to use, Mockoon saves time for
+              thousands of developers around the world every day, and has been{' '}
+              <strong>downloaded over 800,000 times</strong>.
             </p>
             <p>
-              Reaching this level of satisfaction requires a{' '}
-              <strong>tremendous amount of time from the maintainers</strong>.
-              If you like Mockoon and want it to propose always more great
-              features, you can <strong>support us</strong> and join the dozens
-              of{' '}
+              {' '}
+              Maintaining and improving a tool at this scale takes a lot of time
+              and effort. If you find Mockoon useful and want to see it continue
+              to grow, you can <strong>
+                support us by becoming a sponsor
+              </strong>{' '}
+              and joining the many{' '}
               <a
                 href='https://github.com/mockoon/mockoon/blob/main/backers.md'
                 target='_blank'
                 rel='noopener'
               >
-                backers and supporters
-              </a>
-              .
+                backers
+              </a>{' '}
+              who help make this possible.{' '}
             </p>
             <p>
-              By sponsoring us, you can show your appreciation for all this{' '}
-              <strong>hard work</strong> and also allow us to{' '}
-              <strong>dedicate more time</strong> to this project in the future.
-              For higher sponsor tiers, this is the opportunity to show your
-              brand in front of many developers interested in APIs and automated
-              testing.
+              By sponsoring us, you're not only showing appreciation, you're
+              enabling us to <strong>dedicate more time to development</strong>,{' '}
+              <strong>new features</strong>, and{' '}
+              <strong>long-term maintenance</strong>. For higher sponsorship
+              tiers, it's also a great way to get your brand in front of a
+              developer audience that cares about APIs, testing, and
+              productivity.
             </p>
-            <div className='text-center my-8'>
-              <p className='mt-4'>
-                <a
-                  href='https://github.com/sponsors/mockoon'
-                  target='_blank'
-                  rel='noopener'
-                >
-                  <img
-                    src='/images/sponsor-btn-250.png'
-                    alt='sponsor button'
-                    width={250}
-                    height={71}
-                  />
-                </a>
-              </p>
-            </div>
-
-            <hr />
-
-            <div className='col-lg-10 col-12 text-center text-lg-start mt-8'>
-              <p>
-                You can also support us by subscribing to our{' '}
-                <strong>Cloud</strong> and enjoy a whole new level of
-                capabilities: real-time collaboration, cloud deployments,
-                AI-powered API mocks generation, enterprise-grade support, and
-                more to come!
-              </p>
-            </div>
-            <div className='text-center my-8'>
+            <p className='text-center m-8'>
+              <a
+                href='https://github.com/sponsors/mockoon'
+                target='_blank'
+                rel='noopener'
+              >
+                <img
+                  src='/images/sponsor-btn-250.png'
+                  alt='sponsor button'
+                  width={250}
+                  height={71}
+                />
+              </a>
+            </p>
+            <p>
+              You can also{' '}
+              <strong>
+                support Mockoon by subscribing to our Cloud offering
+              </strong>
+              , a powerful, hosted version of the tool that includes:{' '}
+              <strong>real-time team collaboration</strong>,
+              <strong> cloud deployments</strong>,{' '}
+              <strong>AI-powered mock generation</strong>,
+              <strong>enterprise-grade support</strong> ... and more to come!
+            </p>
+            <p className='text-center m-8'>
               <a href='/cloud/'>
                 <img
                   src='/images/cloud-btn-250.png'
@@ -100,20 +100,16 @@ const SponsorUs: FunctionComponent = function () {
                   height={71}
                 />
               </a>
-            </div>
-
-            <hr />
-
-            <div className='text-center mt-8'>
-              <p>
-                If subscribing to the <strong>Cloud plans</strong> or{' '}
-                <strong>donating</strong> is not an option, you can still help
-                us <strong>spread the word</strong> by starring the project on
-                GitHub or sharing it with your peers!
-              </p>
-              <div className='m-4'>
-                <GitHub />
-              </div>
+            </p>
+            <p>
+              Not in a position to sponsor or subscribe? You can still help!
+              <strong>Star us on GitHub</strong>,{' '}
+              <strong>share Mockoon with your peers</strong>, or{' '}
+              <strong>talk about us</strong>
+              in your company, every bit helps!
+            </p>
+            <div className='text-center m-8'>
+              <GitHub />
             </div>
           </div>
         </div>

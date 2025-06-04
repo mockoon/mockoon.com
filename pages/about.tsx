@@ -59,11 +59,16 @@ const About: FunctionComponent<{
       <div className='container'>
         <div className='row d-flex justify-content-center align-items-center flex-column pb-8'>
           <div className='col-lg-10 col-12'>
+            <h2>Who are we?</h2>
             <p>
-              Mockoon is a free and open-source mock API tool created by{' '}
-              <Link href={'https://github.com/255kb'}>Guillaume</Link> in 2017.
-              Passionate about APIs and great developer tools, he spent a lot of
-              time making Mockoon the easiest-to-use and quickest mock API tool.
+              Mockoon is a <strong>free and open-source</strong> API mocking
+              tool created in 2017 by{' '}
+              <Link href={'https://github.com/255kb'}>Guillaume</Link>, a
+              developer passionate about APIs and building great tools for other
+              developers. Since day one, the goal has been clear: make API
+              mocking <strong>simple</strong>, <strong>fast</strong>, and{' '}
+              <strong>accessible</strong> to everyone. Mockoon is a{' '}
+              <strong>free and open-source API tool</strong> created by in 2017.
             </p>
           </div>
         </div>
@@ -92,16 +97,15 @@ const About: FunctionComponent<{
         <div className='row d-flex justify-content-center align-items-center flex-column pb-8'>
           <div className='col-lg-10 col-12'>
             <p>
-              Helped by <strong>dozens of amazing contributors</strong>, they
-              believe in <strong>simplicity and efficiency</strong> and work
-              hard every day to bring you a tool that is{' '}
-              <strong>easy to set up yet powerful</strong>. The goal is to save
-              you tons of time, not waste it.
-            </p>
-            <p>
-              Mockoon is now used by thousands of developers and companies
-              around the world and has been{' '}
-              <strong>downloaded more than 700k times</strong>.
+              Helped by <strong>dozens of amazing contributors</strong>,
+              Guillaume continues to maintain and grow the project with a strong
+              focus on simplicity, efficiency, and developer experience. Mockoon
+              is designed to save you time — not waste it — by being{' '}
+              <strong>easy to set up yet powerful</strong>
+              enough for complex use cases. Today, Mockoon is used by{' '}
+              <strong>thousands of developers and teams worldwide</strong>, from
+              solo devs to large companies, and has been downloaded over{' '}
+              <strong>800,000 times</strong>.
             </p>
           </div>
         </div>
@@ -132,17 +136,33 @@ const About: FunctionComponent<{
         </div>
         <div className='row d-flex justify-content-center align-items-center flex-column pb-8'>
           <div className='col-lg-10 col-12'>
+            <h2>How do we finance Mockoon?</h2>
             <p>
-              If you believe in what we are building, you can{' '}
-              <strong>sponsor us</strong> in this journey and join the dozens of{' '}
+              We are proud to be an{' '}
+              <strong>independent open-source project</strong>, maintained
+              without external funding or venture capital. Mockoon is sustained
+              through a mix of <strong>community support</strong> and our{' '}
+              <strong>commercial offering</strong>,{' '}
+              <a href='/cloud/'>Mockoon Cloud</a>.
+            </p>
+            <p>
+              If you believe in what we're building, you can{' '}
+              <strong>sponsor us</strong> and join the growing community of{' '}
               <a
                 href='https://github.com/mockoon/mockoon/blob/main/backers.md'
                 target='_blank'
                 rel='noopener'
               >
-                backers and supporters
-              </a>
-              .
+                backers
+              </a>{' '}
+              helping keep the project alive and evolving.{' '}
+              <strong>Subscribing to Mockoon Cloud</strong> is another great way
+              to support us — and it comes with powerful features like
+              <strong>AI-powered API mock generation</strong>,{' '}
+              <strong>real-time team collaboration</strong>,
+              <strong>cloud deployments</strong>, and more. Your support helps
+              us remain sustainable while keeping the core project free and open
+              for everyone.
             </p>
           </div>
           <div className='text-center my-8'>
@@ -158,22 +178,7 @@ const About: FunctionComponent<{
                 height={71}
               />
             </a>
-          </div>
-
-          <hr />
-
-          <div className='col-lg-10 col-12 mt-8'>
-            <p>
-              You can also support us by subscribing to our{' '}
-              <strong>Cloud</strong> and enjoy a whole new level of
-              capabilities: <strong>AI-powered API mocks generation</strong>,{' '}
-              <strong>data synchronization and real-time collaboration</strong>,{' '}
-              <strong>cloud deployments</strong>, enterprise-grade support, and
-              more to come!
-            </p>
-          </div>
-          <div className='text-center my-8'>
-            <a href='/cloud/'>
+            <a href='/cloud/' className='ms-4'>
               <img
                 src='/images/cloud-btn-250.png'
                 alt='discover mockoon cloud button'

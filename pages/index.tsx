@@ -311,7 +311,10 @@ const HomePage: FunctionComponent = function () {
         </div>
       </section>
 
-      <section className='py-5 py-lg-10 border-top bg-gradient-light-white'>
+      <section
+        className='py-5 py-lg-10 border-top bg-gradient-light-white'
+        id='sponsors'
+      >
         <Sponsors showLink={true} showHonorary={false} />
       </section>
 

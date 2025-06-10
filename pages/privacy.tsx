@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
+import Quote from '../components/quote';
 import Layout from '../layout/layout';
 
 const Privacy: FunctionComponent = function () {
@@ -11,11 +12,23 @@ const Privacy: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Privacy policy' subtitle='Last update April 2nd, 2024' />
+      <Hero title='Privacy policy' subtitle='Last update June 10, 2025' />
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
+              <Quote colorScheme='secondary'>
+                💡 <strong>Summary of changes (June 10, 2025)</strong>:
+                <ul className='mb-0'>
+                  <li>
+                    Section 3 ("Collection and use of information") was
+                    completed to include more examples about the types of
+                    information we collect and how we use it. A new section was
+                    added to detail the information collected by our payment
+                    processor (Paddle).
+                  </li>
+                </ul>
+              </Quote>
               <p>
                 Your privacy is important to us. It is our policy to respect
                 your privacy and comply with any applicable law and regulation
@@ -25,7 +38,7 @@ const Privacy: FunctionComponent = function () {
               </p>
               <p>
                 This policy is effective as of July 1st, 2021 and was last
-                updated on April 2nd, 2024.
+                updated on June 10, 2025.
               </p>
               <h3 className='mt-6 fw-medium'>1. Information We Collect</h3>
               <p>
@@ -88,9 +101,12 @@ const Privacy: FunctionComponent = function () {
                 </li>
                 <li>
                   Contact us via email, social media, or on any similar
-                  technologies.
+                  technologies: your email, name and other details you provide
+                  us with.
                 </li>
-                <li>When you subscribe to our newsletter.</li>
+                <li>
+                  When you subscribe to our newsletter: your email address.
+                </li>
               </ul>
               <p>
                 We may collect, hold and use these information for the following
@@ -107,6 +123,34 @@ const Privacy: FunctionComponent = function () {
                   collected.
                 </li>
               </ul>
+              <p>
+                Our payment processor (Paddle) may collect the following
+                information when you do any of the following:
+              </p>
+              <ul>
+                <li>
+                  Purchase a service: billing details, payment information such
+                  as name, address and credit card information.
+                </li>
+                <li>
+                  Contact them via email, social media, or on any similar
+                  technologies: your email, name and other details you provide
+                  them with.
+                </li>
+              </ul>
+              <p>
+                Our payment processor (Paddle) may collect, hold and use these
+                information for the following purposes, and personal information
+                will not be further processed in a manner that is incompatible
+                with these purposes:
+              </p>
+              <ul>
+                <li>
+                  Deliver the service requested by you (service purchase,
+                  support request, etc.).
+                </li>
+              </ul>
+
               <h3 className='mt-6 fw-medium'>
                 4. Security of Your Personal Information
               </h3>

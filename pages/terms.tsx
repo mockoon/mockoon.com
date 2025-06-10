@@ -12,18 +12,23 @@ const Terms: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Terms of service' subtitle='Last update August 13rd, 2024' />
+      <Hero title='Terms of service' subtitle='Last update June 10, 2025' />
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
               <Quote colorScheme='secondary'>
-                💡 <strong>Summary of changes (August 13rd, 2024)</strong>:
+                💡 <strong>Summary of changes (June 10, 2025)</strong>:
                 <ul className='mb-0'>
                   <li>
-                    Section 13 ("Support Services") was revamped to better
-                    reflect the level of support provided to our customers. No
-                    change was made to the level of support provided.
+                    A clause was added to Section 4 ("Your content and data") to
+                    explicitly prohibit the storage of personal data and clarify
+                    user responsibility.
+                  </li>
+                  <li>
+                    Section 11a ("AI assistant") was updated to include
+                    information about the use of third-party vendors for
+                    providing the service.
                   </li>
                 </ul>
               </Quote>
@@ -162,6 +167,18 @@ const Terms: FunctionComponent = function () {
                 prior notice, if we believe it violates this Agreement,
                 infringes upon any third-party rights, or is otherwise
                 objectionable.
+              </p>
+              <p>
+                You are strictly prohibited from uploading, storing, or
+                processing any "Personal Data" or "Personally Identifiable
+                Information" (PII) within the Service. This includes, but is not
+                limited to, names, email addresses, phone numbers, financial
+                information, health information, or any data that could be used
+                to identify an individual. You acknowledge that the Service is
+                not intended for the management of personal data, and you bear
+                sole responsibility for the content you create. You agree to
+                indemnify and hold us harmless from any claims arising from your
+                violation of this clause.
               </p>
               <p>
                 We may use your feedback, suggestions, or ideas regarding our
@@ -395,7 +412,6 @@ const Terms: FunctionComponent = function () {
                 Service does not relieve you of the obligation to pay any
                 outstanding fees accrued prior to the termination or cessation.
               </p>
-
               <h3 className='mt-6 fw-medium'>
                 11. Description of the cloud Services
               </h3>
@@ -405,6 +421,31 @@ const Terms: FunctionComponent = function () {
                 our Cloud plans. Its usage is subject to the quotas specified in
                 the plan details and visible in your account. You can access the
                 AI assistant from the desktop application.
+              </p>
+              <p>
+                To provide the AI assistant feature, we utilize services from
+                our third-party vendor, OpenAI. By using the AI assistant, you
+                acknowledge that the content and data you provide as input
+                ("Prompts") will be transmitted to OpenAI for processing. You
+                agree not to submit any Personal Data or sensitive confidential
+                information through the AI assistant. Your use of this feature
+                is also subject to OpenAI's own{' '}
+                <a
+                  href='https://openai.com/policies/terms-of-use'
+                  target='_blank'
+                  rel='noopener'
+                >
+                  Terms of Use
+                </a>{' '}
+                and{' '}
+                <a
+                  href='https://openai.com/policies/privacy-policy'
+                  target='_blank'
+                  rel='noopener'
+                >
+                  Privacy Policy
+                </a>
+                .
               </p>
               <p>
                 We do not guarantee the accuracy, reliability, or completeness
@@ -544,9 +585,7 @@ const Terms: FunctionComponent = function () {
                 may be communicated through written notice, email notifications,
                 or by posting the updated quotas within our Service.
               </p>
-
               <h3 className='mt-6 fw-medium'>13. Support services</h3>
-
               <p>
                 The Support Services encompass assistance and guidance regarding
                 the functionality, features, and usage of our Service. Our

@@ -14,6 +14,13 @@ const incidents: {
   status: 'planned' | 'inprogress' | 'resolved';
 }[] = [
   {
+    title: 'Google Cloud outage - Impact on Mockoon Cloud',
+    desc: 'Google Cloud is currently experiencing a global outage that is impacting all Mockoon Cloud services. We are monitoring the situation and will provide updates as soon as we have more information.<br>Google Cloud status page: https://status.cloud.google.com/incidents/ow5i3PPK96RduMcb1SsW',
+    dateStart: '2025-06-12T18:10:00Z',
+    dateEnd: '2025-06-12T18:40:00Z',
+    status: 'inprogress'
+  },
+  {
     title: 'Cloud deployments - Scheduled downtime, maintainance and fix',
     desc: 'All cloud deployments servers and customer instances will be restarted to apply a maintenance release, and upgrade the hardware.',
     dateStart: '2025-05-29T06:20:00Z',
@@ -216,7 +223,7 @@ const Status: FunctionComponent = function () {
                         >
                           <div className='row align-items-center'>
                             <div className='col'>
-                              <p className='mb-0'>{incident.title}</p>
+                              <p className='mb-0 fw-bold'>{incident.title}</p>
                               <small className='text-gray-700'>
                                 Starts at{' '}
                                 {format(
@@ -229,9 +236,12 @@ const Status: FunctionComponent = function () {
                                   'yyyy-MM-dd HH:mm OOOO'
                                 )}
                               </small>
-                              <p className='mb-0 mt-2'>
-                                <small>{incident.desc}</small>
-                              </p>
+                              <p
+                                className='mb-0 mt-2'
+                                dangerouslySetInnerHTML={{
+                                  __html: incident.desc
+                                }}
+                              ></p>
                             </div>
                             <div className='col-auto'>
                               <span className='badge badge-lg badge-rounded-circle text-bg-primary-subtle'>
@@ -262,7 +272,7 @@ const Status: FunctionComponent = function () {
                         >
                           <div className='row align-items-center'>
                             <div className='col'>
-                              <p className='mb-0'>{incident.title}</p>
+                              <p className='mb-0 fw-bold'>{incident.title}</p>
                               <small className='text-gray-700'>
                                 Started at{' '}
                                 {format(
@@ -270,9 +280,12 @@ const Status: FunctionComponent = function () {
                                   'yyyy-MM-dd HH:mm OOOO'
                                 )}
                               </small>
-                              <p className='mb-0 mt-2'>
-                                <small>{incident.desc}</small>
-                              </p>
+                              <p
+                                className='mb-0 mt-2'
+                                dangerouslySetInnerHTML={{
+                                  __html: incident.desc
+                                }}
+                              ></p>
                             </div>
                             <div className='col-auto'>
                               <span className='badge badge-lg badge-rounded-circle text-bg-warning'>
@@ -303,7 +316,7 @@ const Status: FunctionComponent = function () {
                         >
                           <div className='row align-items-center'>
                             <div className='col'>
-                              <p className='mb-0'>{incident.title}</p>
+                              <p className='mb-0 fw-bold'>{incident.title}</p>
 
                               <small className='text-gray-700'>
                                 {format(
@@ -316,9 +329,12 @@ const Status: FunctionComponent = function () {
                                   'yyyy-MM-dd HH:mm OOOO'
                                 )}
                               </small>
-                              <p className='mb-0 mt-2'>
-                                <small>{incident.desc}</small>
-                              </p>
+                              <p
+                                className='mb-0 mt-2'
+                                dangerouslySetInnerHTML={{
+                                  __html: incident.desc
+                                }}
+                              ></p>
                             </div>
                             <div className='col-auto'>
                               <span className='badge badge-lg badge-rounded-circle text-bg-success'>

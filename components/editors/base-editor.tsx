@@ -36,7 +36,7 @@ const BaseEditor: FunctionComponent<{
   onValueChange
 }) {
   const [error, setError] = useState<parseError>(null);
-  const editor = useRef<ReactCodeMirrorRef>();
+  const editor = useRef<ReactCodeMirrorRef>(null);
   showErrors = showErrors ?? true;
 
   const scrollDocToView = (error: parseError) => {

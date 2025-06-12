@@ -15,7 +15,7 @@ const incidents: {
 }[] = [
   {
     title: 'Google Cloud outage - Impact on Mockoon Cloud',
-    desc: 'Google Cloud is currently experiencing a global outage that is impacting all Mockoon Cloud services. We are monitoring the situation and will provide updates as soon as we have more information.<br>Google Cloud status page: https://status.cloud.google.com/incidents/ow5i3PPK96RduMcb1SsW',
+    desc: 'Google Cloud is currently experiencing a global outage that is impacting all Mockoon Cloud services. We are monitoring the situation and will provide updates as soon as we have more information.<br>Google Cloud status page: https://status.cloud.google.com/incidents/ow5i3PPK96RduMcb1SsW<br>The situation is progressively improving and we are seeing services being restored. However, some issues may still occur, especially with the authentication service.',
     dateStart: '2025-06-12T18:10:00Z',
     dateEnd: '2025-06-12T18:40:00Z',
     status: 'inprogress'

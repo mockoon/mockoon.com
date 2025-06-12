@@ -1,4 +1,4 @@
-import * as marked from 'marked';
+import { marked } from 'marked';
 import { FunctionComponent, useState } from 'react';
 import HtmlEditor from '../../components/editors/html-editor';
 import MarkdownEditor from '../../components/editors/markdown-editor';
@@ -51,13 +51,8 @@ _Note: This converter supports GitHub Flavored Markdown (GFM) and tables._
                 value={markdownContent}
                 onValueChange={(value) => {
                   try {
-                    console.log(value, marked.parse(value));
-                    setHtmlContent(
-                      marked.parse(value, { gfm: true, tables: true })
-                    );
-                  } catch (error) {
-                    console.error(error);
-                  }
+                    setHtmlContent(marked(value, { gfm: true }) as string);
+                  } catch (error) {}
                 }}
               />
             </div>

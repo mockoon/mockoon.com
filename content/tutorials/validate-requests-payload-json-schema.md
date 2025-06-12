@@ -110,7 +110,7 @@ Then, click the "Rules" tab and **add a new rule** to validate the request paylo
 
 We need to **compare the request payload** (body) with the **JSON Schema stored in the data bucket**. Select the "Body" source and the "Valid JSON Schema" operator. Then, enter "sign_up" in the rule value to reference the data bucket containing the JSON Schema:
 
-![rule to validate the request payload with the JSON Schema{1197x250}](/images/tutorials/validate-requests-payload-json-schema/validate-payload-rule.png)
+![rule to validate the request payload with the JSON Schema{1114x225}](/images/tutorials/validate-requests-payload-json-schema/validate-payload-rule.png)
 
 > 💡 Mockoon will use the **[ajv](https://ajv.js.org/) library** to validate the data against the JSON Schema.
 

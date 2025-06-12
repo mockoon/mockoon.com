@@ -1,5 +1,5 @@
 import { slug } from 'github-slugger';
-import { Children, FunctionComponent } from 'react';
+import { Children, FunctionComponent, JSX } from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
@@ -111,8 +111,8 @@ const Markdown: FunctionComponent<{
           const altCleaned = alt.replace(match, '').replace('#sub#', '');
 
           // rewrite docs src
-          if (src.startsWith('docs-img:')) {
-            src = `/images/${props.slug}/${src.replace('docs-img:', '')}`;
+          if ((src as string).startsWith('docs-img:')) {
+            src = `/images/${props.slug}/${(src as string).replace('docs-img:', '')}`;
           }
 
           return (

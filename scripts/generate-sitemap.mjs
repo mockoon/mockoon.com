@@ -1,21 +1,21 @@
-const fs = require('fs');
-const axios = require('axios');
-const { glob } = require('glob');
+import { glob } from 'glob';
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 
 const websiteURL = 'https://mockoon.com';
 const sitemapList = [];
 
 const getAPIList = async () => {
   return (
-    await axios.get(
+    await fetch(
       'https://raw.githubusercontent.com/mockoon/mock-samples/main/mock-apis/list.json'
     )
-  ).data;
+  ).json();
 };
 
 const getTemplates = async () => {
-  return (await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/templates`))
-    .data;
+  return (
+    await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/templates`)
+  ).json();
 };
 
 function addPage(frequency, priority) {
@@ -57,7 +57,7 @@ async function generateMockSamplesCategoriesSitemap() {
 
   console.log(categoryPaths);
 
-  fs.writeFileSync(
+  writeFileSync(
     'public/sitemaps/mock-samples-categories.xml',
     buildSitemap(categoryPaths)
   );
@@ -84,7 +84,7 @@ async function generateMockSamplesCategorySitemap() {
       .map((item) => `/mock-samples/${item.slug}`);
 
     if (filteredItemsPaths.length) {
-      fs.writeFileSync(
+      writeFileSync(
         `public/sitemaps/mock-samples-category-${category}.xml`,
         buildSitemap(filteredItemsPaths)
       );
@@ -98,7 +98,7 @@ async function generateMockSamplesCategorySitemap() {
     .filter((item) => item.categories.length === 0)
     .map((item) => `/mock-samples/${item.slug}`);
 
-  fs.writeFileSync(
+  writeFileSync(
     'public/sitemaps/mock-samples-category-none.xml',
     buildSitemap(uncategorizedItemsPaths)
   );
@@ -112,7 +112,7 @@ async function generateMockSamplesCategorySitemap() {
 async function generateTemplatesSitemap() {
   let templates = await getTemplates();
 
-  fs.writeFileSync(
+  writeFileSync(
     'public/sitemaps/templates.xml',
     buildSitemap(templates.map((template) => `/templates/${template.slug}`))
   );
@@ -120,8 +120,8 @@ async function generateTemplatesSitemap() {
   sitemapList.push('/sitemaps/templates.xml');
 }
 
-if (!fs.existsSync('public/sitemaps/')) {
-  fs.mkdirSync('public/sitemaps/');
+if (!existsSync('public/sitemaps/')) {
+  mkdirSync('public/sitemaps/');
 }
 
 /**
@@ -160,12 +160,12 @@ async function generateSitemap(
 
   console.log(files);
 
-  fs.writeFileSync(`public/sitemaps/${filename}.xml`, buildSitemap(files));
+  writeFileSync(`public/sitemaps/${filename}.xml`, buildSitemap(files));
   sitemapList.push(`/sitemaps/${filename}.xml`);
 }
 
-if (!fs.existsSync('public/sitemaps/')) {
-  fs.mkdirSync('public/sitemaps/');
+if (!existsSync('public/sitemaps/')) {
+  mkdirSync('public/sitemaps/');
 }
 
 Promise.all([
@@ -242,5 +242,5 @@ ${sitemapList
   .join('\n')}
   </sitemapindex>`;
 
-  fs.writeFileSync(`public/sitemap.xml`, sitemapIndex);
+  writeFileSync(`public/sitemap.xml`, sitemapIndex);
 });

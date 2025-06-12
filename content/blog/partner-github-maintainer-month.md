@@ -24,7 +24,7 @@ This year, for the fourth edition of Maintainer Month, the theme is **Securing O
 
 The month is paved with events, discussions, and resources to help maintainers improve their projects and connect with the community. Have a look at the [Maintainer Month website](https://maintainermonth.github.com/) for more information on the events and resources available.
 
-![Maintainer Month](/images/blog/partner-github-maintainer-month/maintainer-month-meetings.png)
+![Maintainer Month{512x512}](/images/blog/partner-github-maintainer-month/maintainer-month-meetings.png)
 
 ## Mockoon and open-source <3
 
@@ -32,9 +32,9 @@ Mockoon is proud to be an **open-source and independent API mocking platform** s
 
 While maintaining an open-source tool is a **challenging task**, both technically and financially, we are committed to [keeping Mockoon open-source and free](/blog/our-commitment-open-source-community/) while finding [**sustainable ways to continue our work**](/blog/seven-years-2024-retrospective/#mockoon-cloud-and-the-path-to-sustainability).
 
-Now that we are starting to see some great results with [Mockoon Cloud](/cloud/), we want to start **giving back** to the community. That's why we are excited to participate in Maintainer Month and support open-source maintainers.
+Now that we are starting to see some great results with [Mockoon Cloud{512x512}](/cloud/), we want to start **giving back** to the community. That's why we are excited to participate in Maintainer Month and support open-source maintainers.
 
-![Mockoon Cloud](/images/blog/partner-github-maintainer-month/maintainer-month-tools.png)
+![Mockoon Cloud{512x512}](/images/blog/partner-github-maintainer-month/maintainer-month-tools.png)
 
 ## Maintainer Month Partner Pack
 
@@ -42,7 +42,7 @@ As part of the Maintainer Month initiative, we are thrilled **to partner with Gi
 
 To request your free Mockoon Cloud account, simply fill out [this form](/mockoon-cloud-open-source/) and provide the necessary information about your open-source project. Once your request is approved, you will receive a free Mockoon Cloud account to help you manage your API mocks and collaborate with your team.
 
-![Mockoon Cloud](/images/blog/partner-github-maintainer-month/maintainer-month-partner-pack.png)
+![Mockoon Cloud{1024x531}](/images/blog/partner-github-maintainer-month/maintainer-month-partner-pack.png)
 
 Visit the [Maintainer Month Partner Pack](https://maintainermonth.github.com/partner-pack) to learn more about the other offers available from the Maintainer Month partners.
 

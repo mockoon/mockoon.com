@@ -2,15 +2,17 @@
  * 1. Get the current desktop app version from the API
  * 2. Copy the latest documentation in a folder with the current app version name v{x.x.x}
  */
-const axios = require('axios');
-const fs = require('fs');
 
-axios
-  .get('https://api.mockoon.com/releases/desktop/stable.json')
+import { cp } from 'node:fs';
+
+fetch('https://api.mockoon.com/releases/desktop/stable.json')
   .then((response) => {
-    fs.cp(
+    return response.json();
+  })
+  .then((data) => {
+    cp(
       './content/docs/latest',
-      './content/docs/v' + response.data.tag,
+      './content/docs/v' + data.tag,
       {
         recursive: true
       },
@@ -18,9 +20,9 @@ axios
         console.log(error);
       }
     );
-    fs.cp(
+    cp(
       './public/images/docs/latest',
-      './public/images/docs/v' + response.data.tag,
+      './public/images/docs/v' + data.tag,
       {
         recursive: true
       },

@@ -4,9 +4,9 @@
  * --> ![alt text{5000x5000}](/images/x/y/z.png)
  */
 
-const imageSize = require('image-size');
-const { readFileSync, writeFileSync } = require('fs');
-const { glob } = require('glob');
+import { readFileSync, writeFileSync } from 'fs';
+import { glob } from 'glob';
+import { imageSize } from 'image-size';
 
 function insert(str, index, value) {
   return str.substr(0, index) + value + str.substr(index);
@@ -24,14 +24,17 @@ glob('./content/**/*.md').then((files) => {
     for (const match of matches) {
       let size;
       if (match[2].startsWith('docs-img:')) {
-        size = imageSize(
+        const buffer = readFileSync(
           `./public/images/${filePath
             .replace('./content/', '')
             .replace('content/', '')
             .replace('.md', '')}/${match[2].replace('docs-img:', '')}`
         );
+
+        size = imageSize(buffer);
       } else {
-        size = imageSize('./public' + match[2]);
+        const buffer = readFileSync('./public' + match[2]);
+        size = imageSize(buffer);
       }
 
       console.log(match[1], match[2], size);

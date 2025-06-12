@@ -24,7 +24,7 @@ We've listened to your feedback and are excited to announce the release of a new
 
 The web version of Mockoon is ideal for teams and individuals who need to **collaborate** on their mock APIs **without installing desktop software** or for those working in environments with installation restrictions.
 
-![mockoon web app screenshot](/images/blog/introducing-mockoon-cloud-web-app/mockoon-cloud-web-application.png)
+![mockoon web app screenshot{1920x1200}](/images/blog/introducing-mockoon-cloud-web-app/mockoon-cloud-web-application.png)
 
 Another advantage of the web app is that it will always be updated with the latest features and improvements, receiving new functionality faster than the desktop application. This ensures you can focus on your work without needing to manage software updates.
 

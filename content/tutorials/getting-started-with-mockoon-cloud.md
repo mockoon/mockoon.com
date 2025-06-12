@@ -29,7 +29,7 @@ Head to the [download page](/download/) to get the latest version of the desktop
 
 As an alternative, you can also use the **[Mockoon Cloud web app](docs:mockoon-cloud/web-application)**. This web application is designed for users who prefer a browser-based experience or cannot install the desktop application due to restrictions in their environment.
 
-![Mockoon Cloud web app screenshot](/images/tutorials/getting-started-with-mockoon-cloud/mockoon-cloud-web-application.png)
+![Mockoon Cloud web app screenshot{1920x1200}](/images/tutorials/getting-started-with-mockoon-cloud/mockoon-cloud-web-application.png)
 
 The web app is available to all users with a paid Mockoon Cloud plan. You can log in using your Mockoon account credentials. Once logged in, you will have access to your synchronized and deployed environments and can manage them directly from the web interface.
 

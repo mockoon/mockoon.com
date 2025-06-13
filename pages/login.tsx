@@ -74,7 +74,13 @@ const Login: FunctionComponent = function () {
   const onGoogleSignIn = async () => {
     try {
       await signInGoogle();
-    } catch (error) {}
+    } catch (error) {
+      // handle mfa
+      if (error.code === 'auth/multi-factor-auth-required') {
+        setTfaStep(error);
+        return;
+      }
+    }
   };
 
   useEffect(() => {

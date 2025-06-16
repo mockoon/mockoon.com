@@ -188,32 +188,32 @@ Promise.all([
   ),
   generateSitemap('pages/integrations/*.tsx', 'integrations', '^pages'),
   generateSitemap(
-    '{pages,content}/tutorials/!(\\[)*.{tsx,md}',
+    '{pages,content}/tutorials/!([[])*.{tsx,md}',
     'tutorials',
     '^(content|pages)'
   ),
   generateSitemap(
-    '{pages,content}/articles/!(\\[)*.{tsx,md}',
+    '{pages,content}/articles/!([[])*.{tsx,md}',
     'articles',
     '^(content|pages)'
   ),
   generateSitemap(
-    '{pages,content}/blog/!(\\[)*.{tsx,md}',
+    '{pages,content}/blog/!([[])*.{tsx,md}',
     'blog',
     '^(content|pages)'
   ),
   generateSitemap(
-    '{pages,content}/case-studies/!(\\[)*.{tsx,md}',
+    '{pages,content}/case-studies/!([[])*.{tsx,md}',
     'case-studies',
     '^(content|pages)'
   ),
   generateSitemap(
-    '{pages,content}/use-cases/!(\\[)*.{tsx,md}',
+    '{pages,content}/use-cases/!([[])*.{tsx,md}',
     'use-cases',
     '^(content|pages)'
   ),
   generateSitemap(
-    '{pages,content}/compare/!(\\[)*.{tsx,md}',
+    '{pages,content}/compare/!([[])*.{tsx,md}',
     'comparisons',
     '^(content|pages)'
   ),

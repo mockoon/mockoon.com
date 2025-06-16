@@ -33,7 +33,7 @@ Everything I know about coding I learned self-taught (mainly on YouTube). I enjo
 I became aware of Mockoon a couple of years ago, thanks to [a video by CoderOne](https://www.youtube.com/watch?v=tJRN5WBF5Wc), but I started using it only a year ago. And I found it extremely useful. I love how easily you can customize the response with templates and the Faker.js integration.  
 I recently contributed to Mockoon via a [pull request](https://github.com/mockoon/mockoon/pull/1212) to add a [search and filter functionality to CRUD routes](/docs/latest/api-endpoints/crud-routes/#filtering-sorting-and-pagination-on-the-main-get-route).
 
-> 💡 Luca added support for CRUD routes searching and filtering in [release v6.1.0](/releases/6.1.0#crud-filtering-and-searching)
+> 💡 Luca added support for CRUD routes searching and filtering in [release v6.1.0](/releases/6.1.0/#crud-filtering-and-searching)
 
 ### What inspired you to contribute to a project like Mockoon and open-source in general?
 

@@ -32,7 +32,7 @@ Outside of work, I'm a huge fan of Iron Maiden, Metallica, and other metal bands
 
 I've been using Mockoon for about one year now, initially for a client project but later integrating it into my personal projects. One aspect I'm particularly proud of is my contributions to the faker request helpers. Collaborating on these pull requests with Guillaume (editor's note: our founder) has been a rewarding experience, and I've enjoyed enhancing the functionality of Mockoon through these contributions.
 
-> 💡 Ankit notably added support for JSON path in [release v5.0.0](/releases/5.0.0#jsonpath-support) and helped us migrate to Faker.js v8 in [release v5.1.0](/releases/5.1.0#fakerjs-v8-migration-%EF%B8%8F-potentially-breaking)
+> 💡 Ankit notably added support for JSON path in [release v5.0.0](/releases/5.0.0/#jsonpath-support) and helped us migrate to Faker.js v8 in [release v5.1.0](/releases/5.1.0/#fakerjs-v8-migration-%EF%B8%8F-potentially-breaking)
 
 ### What inspired you to contribute to a project like Mockoon and open-source in general?
 

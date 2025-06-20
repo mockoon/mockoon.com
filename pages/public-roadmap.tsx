@@ -133,16 +133,17 @@ const tasks: {
       title: 'Copy logs as cURL',
       cloud: false,
       target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/665',
+      title: 'CLI local files watch mode',
+      cloud: false,
+      target: '_blank'
     }
   ],
   comingSoon: [
     {
       title: 'Team-level environment variables support for cloud deployments',
-      cloud: true,
-      target: null
-    },
-    {
-      title: 'Environment variables support in cloud deployments',
       cloud: true,
       target: null
     },

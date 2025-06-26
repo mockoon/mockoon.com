@@ -42,7 +42,7 @@ const Footer: FunctionComponent<{
         <div className='row'>
           <div className='col-12 col-lg-1 d-flex flex-column align-items-start opacity-75'>
             <img
-              src='/images/logo-eyes.svg'
+              src='/images/logo-eyes-sticker.svg'
               alt='Mockoon eyes logo'
               width='100'
               className='align-self-center'

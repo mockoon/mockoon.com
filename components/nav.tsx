@@ -43,7 +43,7 @@ const Nav: FunctionComponent = function () {
     <nav className='navbar navbar-expand-lg navbar-light bg-white'>
       <div className='container-fluid'>
         <a
-          className='navbar-brand'
+          className='navbar-brand w-100'
           href='/'
           onContextMenu={(e) => {
             e.preventDefault();
@@ -54,7 +54,11 @@ const Nav: FunctionComponent = function () {
             router.push('/');
           }}
         >
-          <img src='/images/logo.svg' className='navbar-brand-img' alt='Logo' />
+          <img
+            src='/images/logo-text-sticker.svg'
+            className='navbar-brand-img'
+            alt='Logo'
+          />
         </a>
 
         {toggler}

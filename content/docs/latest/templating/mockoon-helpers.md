@@ -20,11 +20,11 @@ In addition to Handlebars' built-in helpers (`if`, `each`, etc., for more inform
 
 | Arrays              |                       | Objects                       |
 | ------------------- | --------------------- | ----------------------------- |
-| [`array`](#array)   | [`find`](#find)       | [`object`](#object)           |
-| [`oneOf`](#oneof)   | [`sort`](#sort)       | [`objectMerge`](#objectmerge) |
-| [`someOf`](#someof) | [`sortBy`](#sortby)   |                               |
-| [`join`](#join)     | [`reverse`](#reverse) |                               |
-| [`slice`](#slice)   | [`concat`](#concat)   |                               |
+| [`array`](#array)   | [`find`](#find)       | [`objectPath`](#objectpath)   |
+| [`oneOf`](#oneof)   | [`sort`](#sort)       | [`jsonPath`](#jsonpath)       |
+| [`someOf`](#someof) | [`sortBy`](#sortby)   | [`jmesPath`](#jmespath)       |
+| [`join`](#join)     | [`reverse`](#reverse) | [`object`](#object)           |
+| [`slice`](#slice)   | [`concat`](#concat)   | [`objectMerge`](#objectmerge) |
 | [`len`](#len)       |                       |                               |
 | [`filter`](#filter) |                       |                               |
 
@@ -446,6 +446,66 @@ result: item1
 
 <!-- Mixed data find -->
 {{find (array 'item1' 'item2' (object type='type1') (object type='type2')) 'item1' (object type='type2')}}
+```
+
+## objectPath
+
+Return the value at a given path in an object. This helper can be used to retrieve values from objects, including nested objects, using the [object-path](https://www.npmjs.com/package/object-path) syntax. Properties containing dots are supported by escaping the dots: `key.key\.with\.dot`.
+
+| Arguments (ordered) | Type     | Description                                      |
+| ------------------- | -------- | ------------------------------------------------ |
+| 0                   | any      | the object/array in which to find the value      |
+| 1                   | string   | the path to the value (using object-path syntax) |
+| 2                   | [string] | default value to return if the path is not found |
+
+**Examples**
+
+```handlebars
+{{objectPath (object key1='value1' key2='value2') 'key1'}}
+
+{{objectPath (bodyRaw) 'key2'}}
+
+{{objectPath (dataRaw 'Users') '0.name' 'defaultName'}}
+```
+
+## jsonPath
+
+Return the value at a given path in a JSON object. This helper can be used to retrieve values from JSON objects, including nested objects, using the [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus) syntax.
+
+| Arguments (ordered) | Type     | Description                                        |
+| ------------------- | -------- | -------------------------------------------------- |
+| 0                   | any      | the object/array in which to find the value        |
+| 1                   | string   | the path to the value (using JSONPath Plus syntax) |
+| 2                   | [string] | default value to return if the path is not found   |
+
+**Examples**
+
+```handlebars
+{{jsonPath (object key1='value1' key2='value2') '$.key1'}}
+
+{{jsonPath (bodyRaw) '$.key2'}}
+
+{{jsonPath (dataRaw 'Users') '$[0].name' 'defaultName'}}
+```
+
+## jmesPath
+
+Return the value at a given path in a JSON object. This helper can be used to retrieve values from JSON objects, including nested objects, using the [JMESPath community](https://www.npmjs.com/package/@jmespath-community/jmespath) syntax.
+
+| Arguments (ordered) | Type     | Description                                      |
+| ------------------- | -------- | ------------------------------------------------ |
+| 0                   | any      | the object/array in which to find the value      |
+| 1                   | string   | the path to the value (using JMESPath syntax)    |
+| 2                   | [string] | default value to return if the path is not found |
+
+**Examples**
+
+```handlebars
+{{jmesPath (object key1='value1' key2='value2') 'key1'}}
+
+{{jmesPath (bodyRaw) 'key2'}}
+
+{{jmesPath (dataRaw 'Users') '[0].name' 'defaultName'}}
 ```
 
 ## object

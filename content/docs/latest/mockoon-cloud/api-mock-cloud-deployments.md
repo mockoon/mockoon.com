@@ -28,6 +28,7 @@ In the deployment dialog, you can further customize your instance:
 - **Visibility**:
   - **Public**: The environment will be accessible to anyone with the URL.
   - **Private**: The environment will be accessible only to users with the URL and the **API key** (see [Instance URL and visibility](#instance-url-and-visibility) below).
+- **Region**: The region where the instance will be deployed. You can choose from the available regions in the dropdown list. The default region is `US` (Iowa).
 
 ![deployment dialog{797x286}](docs-img:deploy-environment-dialog.png)
 
@@ -51,6 +52,10 @@ The visibility of the environment can be set to **public** or **private**. Here 
 - **Private**: The environment is accessible only to users with the URL and the API key. The API key is displayed in the management dialog and must be included in the request `Authorization` header to access the environment.
 
 > ⚠️ When you stop a running instance and start it again later, there is no guarantee that it will be assigned to the same server. As a result, the instance URL may change (different server ID).
+
+## Switching regions
+
+It is not possible to switch the region of an already deployed instance. If you want to deploy the same environment in a different region, you will need to stop the current instance and deploy it again in the desired region. The new instance will have a different URL and API key.
 
 ## Unsupported features
 

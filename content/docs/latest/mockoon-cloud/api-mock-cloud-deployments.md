@@ -30,7 +30,7 @@ In the deployment dialog, you can further customize your instance:
   - **Private**: The environment will be accessible only to users with the URL and the **API key** (see [Instance URL and visibility](#instance-url-and-visibility) below).
 - **Region**: The region where the instance will be deployed. You can choose from the available regions in the dropdown list. The default region is `US` (Iowa).
 
-![deployment dialog{797x286}](docs-img:deploy-environment-dialog.png)
+![deployment dialog{993x399}](docs-img:deploy-environment-dialog.png)
 
 After clicking the **"Deploy"** button, the environment will be uploaded to the cloud and will be accessible using the provided URL. In the management dialog, you can find the URL and the API key to access the environment. You can also re-deploy the environment or delete the instance:
 
@@ -82,6 +82,5 @@ Some **quotas and limits apply** to the cloud deployment feature depending on yo
 The cloud deployment feature is still in its early stages. Here are some improvements we are working on:
 
 - Support for [**environment variables**](docs:admin-api/environment-variables).
-- Offer more instance locations and the ability to choose the closest one.
 - Possibility to link a custom domain to the instance.
 - Possibility to renew the API key.

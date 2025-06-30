@@ -57,7 +57,8 @@ Content-Type: application/json
 What will be updated:
 
 - Some environment properties (headers, proxy headers, latency, etc.).
-- Some route properties (response mode, body, responses list, etc.).
+- Some route properties (response mode).
+- Adding and removing callbacks.
 - Route responses (headers, latency, status code, callbacks calls, rules, etc.).
 
 What cannot be updated:
@@ -66,4 +67,3 @@ What cannot be updated:
 - Adding or removing routes.
 - Environment port, hostname, proxy and TLS options.
 - Adding or removing data buckets.
-- Adding or removing callbacks.

@@ -17,7 +17,7 @@ const incidents: {
     title: 'All services - Schedule downtime, v9.3.0 release',
     desc: 'All services will be restarted to apply the v9.3.0 release. The downtime is expected to last less than 5 minutes for each service. We apologize for the inconvenience.',
     dateStart: '2025-07-01T08:10:00Z',
-    dateEnd: '2025-07-01T10:15:00Z',
+    dateEnd: '2025-07-01T09:15:00Z',
     status: 'resolved'
   },
   {

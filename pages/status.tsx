@@ -14,6 +14,13 @@ const incidents: {
   status: 'planned' | 'inprogress' | 'resolved';
 }[] = [
   {
+    title: 'All services - Schedule downtime, v9.3.0 release',
+    desc: 'All services will be restarted to apply the v9.3.0 release. The downtime is expected to last less than 5 minutes for each service. We apologize for the inconvenience.',
+    dateStart: '2025-07-01T08:10:00Z',
+    dateEnd: '2025-07-01T10:00:00Z',
+    status: 'inprogress'
+  },
+  {
     title: 'Google Cloud outage - Impact on Mockoon Cloud',
     desc: 'Google Cloud is currently experiencing a global outage that is impacting all Mockoon Cloud services. We are monitoring the situation and will provide updates as soon as we have more information.<br>Google Cloud status page: <a href="https://status.cloud.google.com/incidents/ow5i3PPK96RduMcb1SsW">https://status.cloud.google.com/incidents/ow5i3PPK96RduMcb1SsW</a><br>Update (21:00 UTC): The situation is progressively improving and we are seeing services being restored. However, some issues may still occur, especially with the authentication service.<br>Update (21:35 UTC): The situation is now stable and all services are operational. We will continue to monitor the situation closely. We apologize for the inconvenience.',
     dateStart: '2025-06-12T18:10:00Z',

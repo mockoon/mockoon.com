@@ -159,7 +159,21 @@ const HomePage: FunctionComponent = function () {
   }, []);
 
   return (
-    <Layout footerBanner='newsletter'>
+    <Layout
+      footerBanner='newsletter'
+      topBanner={{
+        topBannerTimeEnd: new Date('2025-07-11T18:00:00Z'),
+        content: (
+          <>
+            Meet us at{' '}
+            <a href='/blog/mockoon-wearedevelopers-world-congress-berlin-2025/'>
+              WeAreDevelopers World Congress
+            </a>{' '}
+            in Berlin on July 9-11! 🎉
+          </>
+        )
+      }}
+    >
       <Meta title={meta.title} description={meta.description} />
 
       <Hero

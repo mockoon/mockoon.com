@@ -64,10 +64,20 @@ const Login: FunctionComponent = function () {
       await verifyTfaCode(tfaStep, data.tfaCode);
       totpForm.reset();
     } catch (error) {
-      totpForm.setError('root.verifyTfaCode', {
-        type: 'manual',
-        message: 'Wrong TOTP code'
-      });
+      if (error.code === 'auth/invalid-verification-code') {
+        totpForm.setError('root.verifyTfaCode', {
+          type: 'manual',
+          message: 'Wrong TOTP code'
+        });
+      } else if (error.code === 'auth/totp-challenge-timeout') {
+        setTfaStep(null);
+        totpForm.reset();
+      } else {
+        totpForm.setError('root.verifyTfaCode', {
+          type: 'manual',
+          message: 'An error occurred while verifying the TOTP code'
+        });
+      }
     }
   };
 
@@ -167,7 +177,10 @@ const Login: FunctionComponent = function () {
                       {totpForm.formState.errors.root?.verifyTfaCode && (
                         <div className='row justify-content-center'>
                           <div className='col-auto text-danger text-center fw-bold pb-4'>
-                            Wrong TOTP code
+                            {
+                              totpForm.formState.errors.root?.verifyTfaCode
+                                .message
+                            }
                           </div>
                         </div>
                       )}

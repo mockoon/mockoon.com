@@ -1,5 +1,6 @@
 import {
   format,
+  parseISO,
   setDate,
   setHours,
   setMinutes,
@@ -19,11 +20,15 @@ const DateConverter: FunctionComponent = function () {
 
   const formatDate = (date: Date, pattern: string) => {
     try {
-      return format(date, pattern, {
-        useAdditionalDayOfYearTokens: true,
-        useAdditionalWeekYearTokens: true
-      });
-    } catch (error) {}
+      return (
+        format(date, pattern, {
+          useAdditionalDayOfYearTokens: true,
+          useAdditionalWeekYearTokens: true
+        }) ?? ''
+      );
+    } catch (error) {
+      return '';
+    }
   };
 
   return (
@@ -67,7 +72,10 @@ const DateConverter: FunctionComponent = function () {
                     onChange={(event) => {
                       try {
                         setCurrentDate(
-                          setMonth(currentDate, parseInt(event.target.value))
+                          setMonth(
+                            currentDate,
+                            parseInt(event.target.value) - 1
+                          )
                         );
                       } catch (error) {}
                     }}
@@ -138,6 +146,27 @@ const DateConverter: FunctionComponent = function () {
                   />
                 </div>
               </div>
+              <div className='mt-6'>
+                <label htmlFor='iso'>ISO 8601</label>
+                <input
+                  id='iso'
+                  className='form-control border-secondary'
+                  placeholder=''
+                  value={formatDate(
+                    currentDate,
+                    "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                  )}
+                  onChange={(event) => {
+                    try {
+                      console.log(
+                        formatDate(currentDate, "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+                      );
+                      setCurrentDate(parseISO(event.target.value));
+                    } catch (error) {}
+                  }}
+                />
+              </div>
+
               <div className='mt-6'>
                 <label htmlFor='unixS'>Unix timestamp (s)</label>
                 <input

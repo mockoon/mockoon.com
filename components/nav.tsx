@@ -280,6 +280,16 @@ const Nav: FunctionComponent<{
                           >
                             Docs
                           </Link>
+                          <Link
+                            href='/cloud/docs/about/'
+                            className={`dropdown-item ${
+                              router.pathname === '/cloud/docs/[...slug]'
+                                ? 'active'
+                                : ''
+                            }`}
+                          >
+                            Cloud Docs
+                          </Link>
 
                           <Link
                             href='/tutorials/'

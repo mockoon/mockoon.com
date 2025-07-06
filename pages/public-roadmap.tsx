@@ -50,7 +50,7 @@ const tasks: {
       target: null
     },
     {
-      link: '/docs/latest/mockoon-cloud/web-application/',
+      link: '/cloud/docs/web-application/',
       title: 'Mockoon Cloud Web app',
       cloud: true,
       target: null
@@ -70,7 +70,7 @@ const tasks: {
     {
       title: 'Real-time collaboration improved presence',
       cloud: true,
-      link: '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/#team-collaboration-and-conflict-handling',
+      link: '/cloud/docs/data-synchronization-team-collaboration/#team-collaboration-and-conflict-handling',
       target: null
     },
     {

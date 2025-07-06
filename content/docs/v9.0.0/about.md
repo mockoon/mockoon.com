@@ -36,4 +36,4 @@ While the desktop application can easily **migrate from one version to another**
 
 Every time we introduce a **breaking change** in the data file schema (e.g. new feature) we release a **new major version**. We recommend that you always migrate simultaneously to the same major version for all the desktop applications and packages you are using.
 
-> 📝 Note to our Cloud users: the same recommendation applies when you are using our **Cloud features**. Please have a look at the [team collaboration](docs:mockoon-cloud/data-synchronization-team-collaboration#major-versions-migrations) and [cloud deployments](docs:mockoon-cloud/api-mock-cloud-deployments#major-versions-migrations) documentations for more information.
+> 📝 Note to our Cloud users: the same recommendation applies when you are using our **Cloud features**. Please have a look at the [team collaboration](cloud-docs:data-synchronization-team-collaboration#major-versions-migrations) and [cloud deployments](cloud-docs:api-mock-cloud-deployments#major-versions-migrations) documentations for more information.

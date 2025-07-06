@@ -1,23 +1,21 @@
 import matter from 'gray-matter';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { ChangeEvent, useState } from 'react';
-import { rsort as semverSort } from 'semver';
-import Markdown from '../../components/markdown';
-import Meta from '../../components/meta';
-import Layout from '../../layout/layout';
+import Markdown from '../../../components/markdown';
+import Meta from '../../../components/meta';
+import Layout from '../../../layout/layout';
 import {
   DocsNavCategory,
   DocsNavData,
   DocsNavItem,
   DocsTopicData
-} from '../../models/docs.model';
-import { getDesktopLatestVersion, sortByOrder } from '../../utils/utils';
+} from '../../../models/docs.model';
+import { sortByOrder } from '../../../utils/utils';
 
 /**
- * Browse the ./content/docs/... folder and list all the topics.
+ * Browse the ./content/cluod-docs/... folder and list all the topics.
  * Content files name must follow this pattern:
- * {version}/{category}/{topic}.md
+ * {category}/{topic}.md
  *
  * Category depth cannot be higher than 1.
  *
@@ -31,7 +29,7 @@ export async function getStaticPaths() {
       return {
         params: {
           slug: [
-            // create slug from the path parts (version / path / file name (-ext))
+            // create slug from the path parts (path / file name (-ext))
             ...pathParts.slice(1).map((part, partIndex, parts) => {
               if (partIndex === parts.length - 1) {
                 return part.split('.')[0];
@@ -42,7 +40,7 @@ export async function getStaticPaths() {
         }
       };
     });
-  })(require.context('../../content/docs/', true, /\.\/.+\.md$/));
+  })(require.context('../../../content/cloud-docs/', true, /\.\/.+\.md$/));
 
   return {
     paths,
@@ -51,53 +49,46 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const slugVersion = params.slug[0];
-
   // get all documentation file list
   const docsData = ((files) => {
     const filePaths = files.keys();
     const fileContents: any[] = filePaths.map(files);
-    const versions = new Set<string>();
     const topicList: {
       slug: string;
       data: DocsTopicData;
       categoryName: string;
     }[] = [];
 
-    filePaths.forEach((topicPath, index) => {
-      const pathParts = topicPath.split('/');
-      const version = pathParts[1];
+    filePaths.forEach((filePath, index) => {
+      const pathParts = filePath.split('/');
+      console.log(pathParts);
 
-      versions.add(version);
+      // we remove both /docs and version from the current slug
+      const topicPath = pathParts.slice(1).map((part, partIndex, parts) => {
+        if (partIndex === parts.length - 1) {
+          return part.split('.')[0];
+        }
+        return part;
+      });
 
-      // only push topic from the current slug version in the list
-      if (topicPath.includes(slugVersion)) {
-        // we remove both /docs and version from the current slug
-        const topicPath = pathParts.slice(2).map((part, partIndex, parts) => {
-          if (partIndex === parts.length - 1) {
-            return part.split('.')[0];
-          }
-          return part;
-        });
-
-        const fileContent = fileContents[index];
-        const parsedContent = matter(fileContent.default);
-        topicList.push({
-          slug: `${slugVersion}/${topicPath.join('/')}`,
-          data: parsedContent.data as DocsTopicData,
-          categoryName: topicPath.length === 2 ? topicPath[0] : null
-        });
-      }
+      const fileContent = fileContents[index];
+      const parsedContent = matter(fileContent.default);
+      topicList.push({
+        slug: `${topicPath.join('/')}`,
+        data: parsedContent.data as DocsTopicData,
+        categoryName: topicPath.length === 2 ? topicPath[0] : null
+      });
     });
 
+    console.log(topicList);
+
     return {
-      versions: Array.from(versions),
       list: topicList
     };
-  })(require.context('../../content/docs', true, /\.\/.+\.md$/));
+  })(require.context('../../../content/cloud-docs', true, /\.\/.+\.md$/));
 
   const fileContent = await require(
-    `../../content/docs/${params.slug.join('/')}.md`
+    `../../../content/cloud-docs/${params.slug.join('/')}.md`
   );
   const parsedContent = matter(fileContent.default);
 
@@ -107,7 +98,7 @@ export async function getStaticProps({ params }) {
         type: 'topic',
         title: topic.data.title,
         order: topic.data.order || 1000,
-        slug: `/docs/${topic.slug}`
+        slug: `/cloud/docs/${topic.slug}`
       };
 
       if (topic.categoryName) {
@@ -143,49 +134,21 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      latestVersion: await getDesktopLatestVersion(),
       slug: `docs/${params.slug.join('/')}`,
       navItems,
-      versions: docsData.versions,
       topicData: parsedContent.data,
       topicBody: parsedContent.content
     }
   };
 }
 
-export default function Docs(props: {
-  latestVersion: string;
+export default function CloudDocs(props: {
   slug: string;
   navItems: DocsNavData;
   topicData: DocsTopicData;
   topicBody: string;
-  versions: string[];
 }) {
   const router = useRouter();
-  let currentVersion = router.asPath.split('/')[2];
-  const [selectedVersion, setSelectedVersion] = useState(currentVersion);
-
-  const sortedVersions = semverSort(
-    props.versions.filter((version) => version !== 'latest')
-  );
-  sortedVersions.unshift('latest');
-  const versionsMenu = sortedVersions.map((version: string) => {
-    let label = version;
-    if (version === 'latest') {
-      label = `v${props.latestVersion} (${version})`;
-    }
-
-    if (version === 'v1.7.0') {
-      label = `${version} (and older)`;
-    }
-
-    return { value: version, label };
-  });
-
-  const switchVersion = (event: ChangeEvent<HTMLSelectElement>) => {
-    setSelectedVersion(event.target.value);
-    router.push(`/docs/${event.target.value}/about/`);
-  };
 
   return (
     <Layout footerBanner='contact'>
@@ -200,25 +163,7 @@ export default function Docs(props: {
           <div className='col-12 col-lg-2 me-lg-5'>
             <aside className='flex-grow-1 py-8 py-lg-10'>
               <div className='content mb-5'>
-                <h3>Mockoon's documentation</h3>
-                <div className='select'>
-                  <select
-                    className='form-select form-select-xs'
-                    aria-label='Versions menu'
-                    value={selectedVersion}
-                    onChange={switchVersion}
-                  >
-                    {versionsMenu.map((version, versionIndex) => (
-                      <option
-                        aria-label={`Version ${version.label}`}
-                        key={`version${versionIndex}`}
-                        value={version.value}
-                      >
-                        {version.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+                <h3>Mockoon Cloud's documentation</h3>
               </div>
               <hr />
               <ul className='card-list list'>
@@ -273,11 +218,7 @@ export default function Docs(props: {
                   )}
                 </div>
               )}
-              <Markdown
-                body={props.topicBody}
-                version={currentVersion}
-                slug={props.slug}
-              />
+              <Markdown body={props.topicBody} slug={props.slug} />
             </section>
           </div>
         </div>

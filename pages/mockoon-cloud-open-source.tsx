@@ -10,8 +10,8 @@ const OpenSourceContactFormPage: FunctionComponent = function () {
       <Meta title="Contact Mockoon's team for Open Source" description='' />
 
       <Hero
-        title='Mockoon Cloud for Open Source'
-        subtitle='We offer free Mockoon Cloud accounts for open source projects. If you are interested, please fill the form below.'
+        title='Mockoon Cloud for <span class="text-primary">Open Source</span>'
+        subtitle='We offer free Mockoon Cloud accounts to eligible open-source projects. If you are interested, please fill the form below'
       />
       <section
         id='form'

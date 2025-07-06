@@ -135,6 +135,11 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
+                <Link href='/cloud/docs/about/' className='text-reset'>
+                  Cloud Docs
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/faq/' className='text-reset'>
                   FAQ
                 </Link>
@@ -203,7 +208,13 @@ const Footer: FunctionComponent<{
               </li>
               <li className='mb-2'>
                 <Link href='/status/' className='text-reset'>
-                  Services status
+                  Services status{' '}
+                  <span className='text-success ps-2'>&#11044;</span>
+                </Link>
+              </li>
+              <li className='mb-2'>
+                <Link href='/mockoon-cloud-open-source/' className='text-reset'>
+                  We <span className='text-danger'>❤</span> open-source
                 </Link>
               </li>
             </ul>

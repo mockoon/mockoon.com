@@ -163,7 +163,7 @@ const SubscribeThankYou: FunctionComponent = function () {
                 </div>
                 <div className='col-auto'>
                   <Link
-                    href={'/docs/latest/mockoon-cloud/overview/'}
+                    href={'/cloud/docs/about/'}
                     className='btn btn-xs btn-primary-subtle mt-4'
                   >
                     Check the documentation
@@ -179,27 +179,27 @@ const SubscribeThankYou: FunctionComponent = function () {
               </p>
               <ul>
                 <li>
-                  <Link href='/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'>
+                  <Link href='/cloud/docs/api-mock-cloud-deployments/'>
                     API mock deployments
                   </Link>
                   : Deploy your mock APIs in the cloud and share them with your
                   team or the world.
                 </li>
                 <li>
-                  <Link href='/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'>
+                  <Link href='/cloud/docs/data-synchronization-team-collaboration/'>
                     Data synchronization and team collaboration
                   </Link>
                   : Synchronize your mock APIs in the cloud, share them with
                   your team, and collaborate in real-time.
                 </li>
                 <li>
-                  <Link href='/docs/latest/mockoon-cloud/web-application/'>
+                  <Link href='/cloud/docs/web-application/'>
                     Web application
                   </Link>
                   : Use our new web application to manage your mock APIs.
                 </li>
                 <li>
-                  <Link href='/docs/latest/mockoon-cloud/templates-and-ai-assistant/'>
+                  <Link href='/cloud/docs/templates-and-ai-assistant/'>
                     AI assistants
                   </Link>
                   : Use our AI assistants to generate realistic mock data and

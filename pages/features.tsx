@@ -19,7 +19,7 @@ const features: CardData[] = [
       'Collaborate on mock APIs directly in your browser with our web application, no desktop installation required.',
     links: [
       {
-        src: '/docs/latest/mockoon-cloud/web-application/',
+        src: '/cloud/docs/web-application/',
         text: 'Documentation →'
       }
     ]
@@ -49,7 +49,7 @@ const features: CardData[] = [
       'Deploy your mock APIs online with Mockoon Cloud and share them with your team',
     links: [
       {
-        src: '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/',
+        src: '/cloud/docs/api-mock-cloud-deployments/',
         text: 'Documentation →'
       }
     ]
@@ -77,7 +77,7 @@ const features: CardData[] = [
     description: 'Collaborate with your team in real-time on your mock APIs',
     links: [
       {
-        src: '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/',
+        src: '/cloud/docs/data-synchronization-team-collaboration/',
         text: 'Documentation →'
       }
     ]
@@ -110,7 +110,7 @@ const features: CardData[] = [
     description: 'Synchronize your mock APIs across all your devices',
     links: [
       {
-        src: '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/',
+        src: '/cloud/docs/data-synchronization-team-collaboration/',
         text: 'Documentation →'
       }
     ]

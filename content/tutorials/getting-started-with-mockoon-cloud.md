@@ -27,7 +27,7 @@ After signing up for Mockoon Cloud, you will be able to access all the Cloud fea
 
 Head to the [download page](/download/) to get the latest version of the desktop application.
 
-As an alternative, you can also use the **[Mockoon Cloud web app](docs:mockoon-cloud/web-application)**. This web application is designed for users who prefer a browser-based experience or cannot install the desktop application due to restrictions in their environment.
+As an alternative, you can also use the **[Mockoon Cloud web app](cloud-docs:web-application)**. This web application is designed for users who prefer a browser-based experience or cannot install the desktop application due to restrictions in their environment.
 
 ![Mockoon Cloud web app screenshot{1920x1200}](/images/tutorials/getting-started-with-mockoon-cloud/mockoon-cloud-web-application.png)
 
@@ -72,7 +72,7 @@ You can view and manage your deployments at any time by clicking on the **"x ins
 
 From the management dialog, you can **re-deploy** or **delete** the instance.
 
-To learn more about cloud deployments, the supported features and limitations please [read the documentation](/docs/latest/mockoon-cloud/api-mock-cloud-deployments/).
+To learn more about cloud deployments, the supported features and limitations please [read the documentation](/cloud/docs/api-mock-cloud-deployments/).
 
 ## 4. Synchronize your mocks or collaborate in real-time with your team
 
@@ -89,7 +89,7 @@ You can always use local environments for your personal projects as they are not
 
 Do not forget to [invite your team members](#6-invite-team-members-to-collaborate) to collaborate on your mocks.
 
-For more details on data synchronization and team collaboration features, head over to the [dedicated documentation](/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/)
+For more details on data synchronization and team collaboration features, head over to the [dedicated documentation](/cloud/docs/data-synchronization-team-collaboration/)
 
 ## 5. Generate HTTP endpoints with our AI assistant
 
@@ -99,7 +99,7 @@ Our AI assistants are available in the **"Add endpoint"** menu.
 
 ![view of the ai assistant dialog generating an HTTP endpoint to update an object representing a flight{957x598}](/images/tutorials/getting-started-with-mockoon-cloud/generate-http-endpoints.png)
 
-You can read more about the AI assistants and JSON templates in our [documentation](/docs/latest/mockoon-cloud/templates-and-ai-assistant/)
+You can read more about the AI assistants and JSON templates in our [documentation](/cloud/docs/templates-and-ai-assistant/)
 
 ## 6. Invite team members to collaborate
 

@@ -110,9 +110,12 @@ const Markdown: FunctionComponent<{
           const hasSub = alt.includes('#sub#');
           const altCleaned = alt.replace(match, '').replace('#sub#', '');
 
-          // rewrite docs src
-          if ((src as string).startsWith('docs-img:')) {
-            src = `/images/${props.slug}/${(src as string).replace('docs-img:', '')}`;
+          // rewrite docs img src
+          const isCloudDocs = (src as string).startsWith('cloud-docs-img:');
+          const isDocs = (src as string).startsWith('docs-img:');
+
+          if (isDocs || isCloudDocs) {
+            src = `/images/${isCloudDocs ? props.slug.replace(/^docs\//, 'docs/cloud/') : props.slug}/${(src as string).replace('cloud-docs-img:', '').replace('docs-img:', '')}`;
           }
 
           return (

@@ -36,7 +36,7 @@ You can also see who is currently working on the cloud environments:
 
 ![tooltip showing the team users presence{282x99}](/images/blog/data-synchronization-team-collaboration-release/team-presence.png)
 
-> 📘 Head over our [dedicated documentation](/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/) to learn more about this new feature.
+> 📘 Head over our [dedicated documentation](/cloud/docs/data-synchronization-team-collaboration/) to learn more about this new feature.
 
 ## Future improvements
 

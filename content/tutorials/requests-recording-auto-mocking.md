@@ -29,7 +29,7 @@ Let's have a look on how this feature works.
 
 The first step is to create a new API in Mockoon or use one you already have and run it by clicking on the green "play" button.
 
-> To learn more about how to set up your first mock API with Mockoon, head over to the [Getting started tutorial](tutorials:getting-started).
+> To learn more about how to set up your first mock API with Mockoon, head over to the [Getting started tutorial](/tutorials/getting-started/).
 
 As soon as you have your mock API running, open the requests logging page by clicking on "Logs" tab at the top of the window. The page you are seeing may be empty, which is normal. You are now ready to make your first calls.
 

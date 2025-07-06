@@ -19,7 +19,7 @@ If you already have an existing API that you want to use, you can skip the first
 
 You may already have access to the internal or third-party API you want to call, but this is not always the case. The API may be under development or require account creation, and you may want to start working with it as soon as possible. For this, the easiest way is to create a mock API using a tool like Mockoon. (Read more about the [benefits of API mocking](/use-cases/)).
 
-> To learn more about how to set up your first mock API with Mockoon, head over to the [Getting started tutorial](tutorials:getting-started).
+> To learn more about how to set up your first mock API with Mockoon, head over to the [Getting started tutorial](/tutorials/getting-started/).
 
 For the rest of the tutorial, we will simulate a call to the GitHub API by creating a fake [GET /users/:username endpoint](https://docs.github.com/en/rest/users#get-a-user).
 
@@ -129,4 +129,4 @@ It is also possible with Mockoon by enabling the [proxy mode](docs:server-config
 
 ![enable proxy mode{1052x358}](/images/tutorials/nodejs-api-call/enable-proxy-mode.gif)
 
-> To learn more about the proxy mode and how to use it, head over to the tutorial on [Partial API mocking](tutorials:partial-mocking-proxy).
+> To learn more about the proxy mode and how to use it, head over to the tutorial on [Partial API mocking](/tutorials/partial-mocking-proxy/).

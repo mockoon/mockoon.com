@@ -170,7 +170,7 @@ const AccountInfo: FunctionComponent = function () {
                           <small className='text-gray-700'>
                             The display name will be used in the desktop
                             application when using{' '}
-                            <Link href='/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/#team-collaboration-and-conflict-handling'>
+                            <Link href='/cloud/docs/data-synchronization-team-collaboration/#team-collaboration-and-conflict-handling'>
                               team collaboration
                             </Link>
                           </small>

@@ -17,7 +17,7 @@ In this guide, we will learn how to call a REST API from an Angular application.
 
 During the development of your Angular application, you may need to mock an API that is not ready yet, or only partially available (see [partial mocking with the proxy mode](docs:server-configuration/proxy-mode)). For this, the easiest way is to create a mock API using a tool like Mockoon. (Read more about the [benefits of API mocking](/use-cases/)).
 
-> To learn more about how to set up your first mock API with Mockoon, head over to the [Getting started tutorial](tutorials:getting-started).
+> To learn more about how to set up your first mock API with Mockoon, head over to the [Getting started tutorial](/tutorials/getting-started/).
 
 For the rest of the tutorial, we will use an array of fake blog posts. In Mockoon, create a `GET /posts` API endpoint that returns an array of blog posts:
 

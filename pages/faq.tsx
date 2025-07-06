@@ -128,10 +128,7 @@ const faq: AccordionData = [
             <br />
             However, an internet connection is required to use our{' '}
             <a href='/cloud/'>cloud services</a> and{' '}
-            <Link href='/docs/latest/mockoon-cloud/web-application/'>
-              web application
-            </Link>
-            .
+            <Link href='/cloud/docs/web-application/'>web application</Link>.
           </>
         )
       }

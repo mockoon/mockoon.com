@@ -23,12 +23,18 @@ glob('./content/**/*.md').then((files) => {
 
     for (const match of matches) {
       let size;
-      if (match[2].startsWith('docs-img:')) {
+      if (
+        match[2].startsWith('docs-img:') ||
+        match[2].startsWith('cloud-docs-img:')
+      ) {
         const buffer = readFileSync(
           `./public/images/${filePath
             .replace('./content/', '')
             .replace('content/', '')
-            .replace('.md', '')}/${match[2].replace('docs-img:', '')}`
+            .replace(
+              '.md',
+              ''
+            )}/${match[2].replace('docs-img:', '').replace('cloud-docs-img:', '')}`
         );
 
         size = imageSize(buffer);

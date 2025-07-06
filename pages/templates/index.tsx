@@ -75,7 +75,7 @@ const Templates: FunctionComponent<{
                 Learn more in our{' '}
                 <Link
                   href={
-                    '/docs/latest/mockoon-cloud/templates-and-ai-assistant/#use-the-pre-generated-templates'
+                    '/cloud/docs/templates-and-ai-assistant/#use-the-pre-generated-templates'
                   }
                 >
                   documentation

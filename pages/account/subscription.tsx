@@ -126,7 +126,7 @@ const AccountSubscription: FunctionComponent = function () {
                 Maximum of {userData?.cloudSyncSizeQuota / 1000000}MB per
                 environment
                 <br />
-                <Link href='/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'>
+                <Link href='/cloud/docs/data-synchronization-team-collaboration/'>
                   Documentation
                 </Link>
               </small>
@@ -165,7 +165,7 @@ const AccountSubscription: FunctionComponent = function () {
             </p>
             <p className='mb-0'>
               <small className='text-gray-700'>
-                <Link href='/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'>
+                <Link href='/cloud/docs/api-mock-cloud-deployments/'>
                   Documentation
                 </Link>
               </small>
@@ -681,7 +681,7 @@ const AccountSubscription: FunctionComponent = function () {
                                         </>
                                       )}
                                       <br />
-                                      <Link href='/docs/latest/mockoon-cloud/templates-and-ai-assistant/'>
+                                      <Link href='/cloud/docs/templates-and-ai-assistant/'>
                                         Documentation
                                       </Link>
                                     </small>

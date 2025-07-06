@@ -21,12 +21,12 @@ const cloudFaq: AccordionData = [
       {
         title: 'What is an "API mock"?',
         content:
-          'An API mock is a collection of endpoints created in the <a href="/download/">desktop</a> or <a href="/docs/latest/mockoon-cloud/web-application/">web</a> applications to simulate a real API. Each mock can include an unlimited number of endpoints, rules, stateful routes, and more. For more information, please refer to the <a href="/docs/latest/about/">documentation</a>.'
+          'An API mock is a collection of endpoints created in the <a href="/download/">desktop</a> or <a href="/cloud/docs/web-application/">web</a> applications to simulate a real API. Each mock can include an unlimited number of endpoints, rules, stateful routes, and more. For more information, please refer to the <a href="/docs/latest/about/">documentation</a>.'
       },
       {
         title: 'Which features are supported in the cloud?',
         content:
-          'Nearly all features available in the desktop application are supported in the cloud, namely in cloud deployments. Some features are not available due to technical limitations or security reasons. For more information, please refer to the <a href="/docs/latest/mockoon-cloud/overview/">cloud documentation</a>.'
+          'Nearly all features available in the desktop application are supported in the cloud, namely in cloud deployments. Some features are not available due to technical limitations or security reasons. For more information, please refer to the <a href="/cloud/docs/about/">cloud documentation</a>.'
       },
       {
         title: 'Do you offer a web application?',
@@ -57,7 +57,7 @@ const cloudFaq: AccordionData = [
         title:
           'Our team/company is interested in the Team or Enterprise plan. Can we try it first withour providing a payment method?',
         content:
-          'We can provide you with a free trial without a payment method. Do not hesitate to <a href="/contact-form/">contact us</a> to discuss your needs.'
+          'We can provide you with a trial without a payment method. Do not hesitate to <a href="/contact-form/">contact us</a> to discuss your needs.'
       },
       {
         title: 'How does per-seat billing work?',
@@ -83,6 +83,11 @@ const cloudFaq: AccordionData = [
         title: 'Do you offer discounts for schools, bootcamps or students?',
         content:
           'We provide educational institutions with substantial discounts. Do not hesitate to <a href="/contact-form/">contact us</a> to become a partner.'
+      },
+      {
+        title: 'Do you offer discounts for open-source projects?',
+        content:
+          'We provide free licenses for eligible open-source projects. Do not hesitate to <a href="/mockoon-cloud-open-source/">contact us</a> to discuss your needs.'
       },
       {
         title: 'How can I cancel my subscription?',
@@ -386,9 +391,7 @@ const PlansView: FunctionComponent<{
 
                       <p>
                         Access to the{' '}
-                        <Link
-                          href={'/docs/latest/mockoon-cloud/web-application/'}
-                        >
+                        <Link href={'/cloud/docs/web-application/'}>
                           Web UI
                         </Link>
                       </p>
@@ -401,17 +404,13 @@ const PlansView: FunctionComponent<{
 
                       <p>
                         {pricing.SOLO.syncQuota} API mock<sup>1</sup>{' '}
-                        <Link
-                          href={
-                            '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'
-                          }
-                        >
+                        <Link href={'/cloud/docs/api-mock-cloud-deployments/'}>
                           deployed
                         </Link>{' '}
                         in the cloud and{' '}
                         <Link
                           href={
-                            '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
+                            '/cloud/docs/data-synchronization-team-collaboration/'
                           }
                         >
                           synchronized
@@ -510,9 +509,7 @@ const PlansView: FunctionComponent<{
 
                       <p>
                         Access to the{' '}
-                        <Link
-                          href={'/docs/latest/mockoon-cloud/web-application/'}
-                        >
+                        <Link href={'/cloud/docs/web-application/'}>
                           Web UI
                         </Link>
                       </p>
@@ -525,17 +522,13 @@ const PlansView: FunctionComponent<{
 
                       <p>
                         {pricing.TEAM.deployQuota} API mocks{' '}
-                        <Link
-                          href={
-                            '/docs/latest/mockoon-cloud/api-mock-cloud-deployments/'
-                          }
-                        >
+                        <Link href={'/cloud/docs/api-mock-cloud-deployments/'}>
                           deployed
                         </Link>{' '}
                         in the cloud with{' '}
                         <Link
                           href={
-                            '/docs/latest/mockoon-cloud/data-synchronization-team-collaboration/'
+                            '/cloud/docs/data-synchronization-team-collaboration/'
                           }
                         >
                           real-time collaboration
@@ -737,11 +730,7 @@ const PlansView: FunctionComponent<{
                           <tr>
                             <td>
                               Access to the{' '}
-                              <Link
-                                href={
-                                  '/docs/latest/mockoon-cloud/web-application/'
-                                }
-                              >
+                              <Link href={'/cloud/docs/web-application/'}>
                                 Web app
                               </Link>
                             </td>

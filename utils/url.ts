@@ -4,20 +4,25 @@
  * @param docsVersion
  */
 export const urlTransform = (docsVersion?: string) => (uri: string) => {
-  if (uri.includes('docs:') || uri.includes('tutorials:')) {
+  if (uri.startsWith('docs:')) {
     const schemeSplit = uri.split(':');
     const pathSplit = schemeSplit[1].split('#');
     let docsSuffix = '';
 
-    if (schemeSplit[0] === 'docs') {
-      if (docsVersion) {
-        docsSuffix = `/${docsVersion}`;
-      } else {
-        docsSuffix = '/latest';
-      }
+    if (docsVersion) {
+      docsSuffix = `/${docsVersion}`;
+    } else {
+      docsSuffix = '/latest';
     }
 
-    return `/${schemeSplit[0]}${docsSuffix}/${pathSplit[0]}/${
+    return `/docs${docsSuffix}/${pathSplit[0]}/${
+      pathSplit[1] ? '#' + pathSplit[1] : ''
+    }`.replace(/\/{2,}/g, '/');
+  } else if (uri.startsWith('cloud-docs:')) {
+    const schemeSplit = uri.split(':');
+    const pathSplit = schemeSplit[1].split('#');
+
+    return `/cloud/docs/${pathSplit[0]}/${
       pathSplit[1] ? '#' + pathSplit[1] : ''
     }`.replace(/\/{2,}/g, '/');
   }

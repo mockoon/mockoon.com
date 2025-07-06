@@ -40,7 +40,7 @@ Private instances are only accessible to you and your team members, using an API
 
 Once your mock API is deployed in the cloud, you can access it using the **instance URL** provided in the deployment dialog. Private instances require an **API key** to access them, which you can find in the deployment dialog as well. Public instances can be accessed by anyone with the link.
 
-Most of the features available in the desktop application are also available in the cloud, including [CRUD routes](/docs/latest/api-endpoints/crud-routes/), [proxy mode](/docs/latest/server-configuration/proxy-mode/), and [logging through the admin API](/docs/latest/admin-api/transaction-logs/). However, some features are not available due to technical limitations or for security reasons. You can find more information in the [documentation](/docs/latest/mockoon-cloud/api-mock-cloud-deployments/).
+Most of the features available in the desktop application are also available in the cloud, including [CRUD routes](/docs/latest/api-endpoints/crud-routes/), [proxy mode](/docs/latest/server-configuration/proxy-mode/), and [logging through the admin API](/docs/latest/admin-api/transaction-logs/). However, some features are not available due to technical limitations or for security reasons. You can find more information in the [documentation](/cloud/docs/api-mock-cloud-deployments/).
 
 ## Quotas and limitations
 

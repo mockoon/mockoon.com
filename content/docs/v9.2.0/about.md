@@ -26,7 +26,7 @@ You will find the [serverless package documentation](https://github.com/mockoon/
 
 ## Web application
 
-The [web application](docs:mockoon-cloud/web-application) is a web version of the desktop application available for Mockoon Cloud customers. While based on the same codebase, it is not a direct replacement for the desktop application and does not support all the features. Please refer to the [web application documentation](docs:mockoon-cloud/web-application#ui-differences) for more information about the differences.
+The [web application](cloud-docs:web-application) is a web version of the desktop application available for Mockoon Cloud customers. While based on the same codebase, it is not a direct replacement for the desktop application and does not support all the features. Please refer to the [web application documentation](cloud-docs:web-application#ui-differences) for more information about the differences.
 
 ## Versioning
 
@@ -40,7 +40,7 @@ While the desktop application can easily **migrate from one version to another**
 
 Every time we introduce a **breaking change** in the data file schema (e.g. new feature) we release a **new major version**. We recommend that you always migrate simultaneously to the same major version for all the desktop applications and packages you are using.
 
-> 📝 Note to our Cloud users: the same recommendation applies when you are using our **Cloud features**. Please have a look at the [team collaboration](docs:mockoon-cloud/data-synchronization-team-collaboration#major-versions-migrations) and [cloud deployments](docs:mockoon-cloud/api-mock-cloud-deployments#major-versions-migrations) documentations for more information.
+> 📝 Note to our Cloud users: the same recommendation applies when you are using our **Cloud features**. Please have a look at the [team collaboration](cloud-docs:data-synchronization-team-collaboration#major-versions-migrations) and [cloud deployments](cloud-docs:api-mock-cloud-deployments#major-versions-migrations) documentations for more information.
 
 ### Breaking changes
 

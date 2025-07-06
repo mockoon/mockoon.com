@@ -67,11 +67,7 @@ const AIPoweredMocking = function () {
                 </Link>{' '}
                 with a data bucket. <br />
                 Learn more in our{' '}
-                <Link
-                  href={
-                    '/docs/latest/mockoon-cloud/templates-and-ai-assistant/'
-                  }
-                >
+                <Link href={'/cloud/docs/templates-and-ai-assistant/'}>
                   documentation
                 </Link>
                 .

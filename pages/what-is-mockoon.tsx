@@ -55,7 +55,7 @@ export default function () {
                 <strong>used by thousands of developers and companies</strong>{' '}
                 around the world to speed up their development process and
                 reduce dependencies on external services. It has been{' '}
-                <strong>downloaded more than 700k times</strong> and has a
+                <strong>downloaded more than 800k times</strong> and has a
                 vibrant community of contributors and users.
               </p>
             </div>

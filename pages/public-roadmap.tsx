@@ -44,6 +44,18 @@ const tasks: {
 } = {
   released: [
     {
+      link: 'https://github.com/mockoon/mockoon/blob/main/packages/cli/README.md#start-command',
+      title: 'CLI local files watch mode',
+      cloud: false,
+      target: null
+    },
+    {
+      link: '/docs/latest/templating/mockoon-helpers/#jmespath',
+      title: 'JMESPath support',
+      cloud: false,
+      target: null
+    },
+    {
       link: null,
       title: 'Enable 2FA for Mockoon Cloud accounts',
       cloud: true,
@@ -96,18 +108,6 @@ const tasks: {
       title: "New request's method rule",
       cloud: false,
       target: null
-    },
-    {
-      link: '/docs/latest/route-responses/dynamic-rules/#2-targets-name-or-path-or-template',
-      title: "New request's path rule",
-      cloud: false,
-      target: null
-    },
-    {
-      link: '/docs/latest/templating/mockoon-helpers/#setdata',
-      title: 'New setData templating helper',
-      cloud: false,
-      target: null
     }
   ],
   inProgress: [
@@ -115,12 +115,6 @@ const tasks: {
       title: 'EU cloud deployment regions',
       cloud: true,
       target: null
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/1731',
-      title: 'JMESPath support',
-      cloud: false,
-      target: '_blank'
     },
     {
       link: 'https://github.com/mockoon/mockoon/issues/1045',
@@ -133,12 +127,6 @@ const tasks: {
       title: 'Copy logs as cURL',
       cloud: false,
       target: '_blank'
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/665',
-      title: 'CLI local files watch mode',
-      cloud: false,
-      target: '_blank'
     }
   ],
   comingSoon: [
@@ -149,6 +137,11 @@ const tasks: {
     },
     {
       title: 'Websocket support in cloud deployments',
+      cloud: true,
+      target: null
+    },
+    {
+      title: 'Billing roles in Mockoon Cloud',
       cloud: true,
       target: null
     },

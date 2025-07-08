@@ -239,6 +239,17 @@ aside {
   }
 }
 
+.fade-out {
+  animation: fadeout 1s;
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .card-img-start-lg {
   border-radius: $border-radius $border-radius 0 0;
 

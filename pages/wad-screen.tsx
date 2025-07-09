@@ -50,7 +50,7 @@ const WadScreen: FunctionComponent = function () {
               fontFamily: 'Open Sans, sans-serif'
             }}
           >
-            July 10, 09:30 - 18:00<br></br>July 11, 09:00 - 17:00
+            July 10, 08:00 - 18:00<br></br>July 11, 08:00 - 17:00
           </p>
         </div>
         <div

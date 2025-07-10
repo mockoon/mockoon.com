@@ -52,6 +52,18 @@ const WadScreen: FunctionComponent = function () {
           >
             July 10, 08:00 - 18:00<br></br>July 11, 08:00 - 17:00
           </p>
+          <p
+            style={{
+              marginTop: '4vw',
+              marginLeft: '4vw',
+              fontSize: '2.5vw',
+              color: '#DDEEF8',
+              fontWeight: '700',
+              fontFamily: 'Open Sans, sans-serif'
+            }}
+          >
+            mockoon.com
+          </p>
         </div>
         <div
           style={{
@@ -62,34 +74,6 @@ const WadScreen: FunctionComponent = function () {
             width: '100%'
           }}
         >
-          <div
-            style={{
-              marginRight: '4vw',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              alignSelf: 'start'
-            }}
-          >
-            <img
-              src='/images/wad-conf/wad-book-a-slot.png'
-              style={{
-                width: '20vw',
-                borderRadius: '0.8vw'
-              }}
-            />
-            <p
-              style={{
-                marginBottom: '1vh',
-                fontSize: '2.5vw',
-                color: '#DDEEF8',
-                fontWeight: '700',
-                fontFamily: 'Open Sans, sans-serif'
-              }}
-            >
-              Book a slot
-            </p>
-          </div>
           <div
             style={{
               marginRight: '4vw',

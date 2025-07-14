@@ -25,7 +25,7 @@ Mockoon has been invited to join the **GitHub booth (2_59, Level 2)** as part of
 
 Our founder, Guillaume, we'll be there on **July 10 and 11**, showcasing how **Mockoon makes API mocking easier, faster, and more powerful** for developers and QA teams alike. He will be available for live demos, discussions, and to answer any questions you have about Mockoon and how it can fit into your development workflows.
 
-You can directly book a meeting with Guillaume at the GitHub booth using this link: [Book a meeting](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1dEKjdAkFViSBD1wavEua7OiTNS__KIPcxSZtLHV-rGvDqwrNGmxUlXWriCKgaLMx354FWqDeA).
+You can directly book a meeting with Guillaume at the GitHub booth using this link: ~~Book a meeting~~. The event is over! [Read the highlights](/blog/mockoon-wearedevelopers-world-congress-2025-highlights/).
 
 ## Come Say Hi!
 

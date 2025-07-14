@@ -220,6 +220,17 @@ const tools = [
       }
     ],
     imageSrc: '/images/illustrations/slug-generator.svg'
+  },
+  {
+    title: 'QR Code generator',
+    description: 'Generate QR codes online',
+    links: [
+      {
+        src: '/tools/qr-code-generator/',
+        text: 'Generate'
+      }
+    ],
+    imageSrc: '/images/illustrations/qr-code-generator.svg'
   }
 ];
 

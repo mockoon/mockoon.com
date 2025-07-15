@@ -54,6 +54,12 @@ const tools = [
     imageSrc: '/images/illustrations/json-path-evaluator.svg'
   },
   {
+    title: 'JMESPath online evaluator',
+    description: 'Extract and transform JSON data using JMESPath expressions',
+    links: [{ src: '/tools/jmes-path-evaluator/', text: 'Extract data' }],
+    imageSrc: '/images/illustrations/jmes-path-evaluator.svg'
+  },
+  {
     title: 'String length and word counter',
     description:
       'Count the number of characters, words, and lines in your text',

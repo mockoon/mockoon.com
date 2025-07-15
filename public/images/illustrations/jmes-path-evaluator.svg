@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 2000 2000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-54408,-60838)">
+        <g id="Sponsors">
+        </g>
+        <g id="jmespath" transform="matrix(0.998004,0,0,0.998004,30152.5,103.469)">
+            <rect x="24304" y="60856" width="2004" height="2004" style="fill:none;"/>
+            <g transform="matrix(41.6331,0,0,41.6331,24639.6,61358.4)">
+                <path d="M4,7L4,9C4,9.55 3.55,10 3,10L2,10L2,14L3,14C3.55,14 4,14.45 4,15L4,17C4,18.65 5.35,20 7,20L10,20L10,18L7,18C6.45,18 6,17.55 6,17L6,15C6,13.7 5.16,12.58 4,12.17L4,11.83C5.16,11.42 6,10.3 6,9L6,7C6,6.45 6.45,6 7,6L10,6L10,4L7,4C5.35,4 4,5.35 4,7Z" style="fill:rgb(51,94,234);fill-rule:nonzero;"/>
+                <g transform="matrix(1,0,0,1,8.01444,8.18545e-12)">
+                    <path d="M21,10C20.45,10 20,9.55 20,9L20,7C20,5.35 18.65,4 17,4L14,4L14,6L17,6C17.55,6 18,6.45 18,7L18,9C18,10.3 18.84,11.42 20,11.83L20,12.17C18.84,12.58 18,13.69 18,15L18,17C18,17.55 17.55,18 17,18L14,18L14,20L17,20C18.65,20 20,18.65 20,17L20,15C20,14.45 20.45,14 21,14L22,14L22,10L21,10Z" style="fill:rgb(51,94,234);fill-rule:nonzero;"/>
+                </g>
+            </g>
+            <g transform="matrix(0.700301,0,0,0.700301,18878.8,53605.9)">
+                <g transform="matrix(809.989,0,0,809.989,9398.45,12067.4)">
+                </g>
+                <text x="8957.07px" y="12067.4px" style="font-family:'OpenSans-Bold', 'Open Sans', sans-serif;font-weight:700;font-size:809.989px;fill:rgb(55,184,135);">*</text>
+            </g>
+        </g>
+    </g>
+</svg>

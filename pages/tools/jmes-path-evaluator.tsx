@@ -145,6 +145,14 @@ const JMESPathPlayground: FunctionComponent = function () {
                 expressions. The extracted content is updated in real time as
                 you type your expression.
               </p>
+              <p>
+                This playground uses the same logic as the Mockoon features that
+                support JMESPath syntaxes like the{' '}
+                <a href='/docs/latest/templating/mockoon-helpers/#jmespath'>
+                  <code>jmesPath</code>
+                </a>{' '}
+                helper.
+              </p>
 
               <h3 className='mt-6 fw-medium'>About JMESPath</h3>
               <p>

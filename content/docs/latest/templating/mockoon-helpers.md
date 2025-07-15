@@ -468,6 +468,8 @@ Return the value at a given path in an object. This helper can be used to retrie
 {{objectPath (dataRaw 'Users') '0.name' 'defaultName'}}
 ```
 
+> 🛠️ Use our online [JSONPath and object-path evaluator](/tools/json-object-path-evaluator/) to test your JSONPath or object-path syntaxes and view the results in real-time.
+
 ## jsonPath
 
 Return the value at a given path in a JSON object. This helper can be used to retrieve values from JSON objects, including nested objects, using the [JSONPath Plus](https://www.npmjs.com/package/jsonpath-plus) syntax.
@@ -488,6 +490,8 @@ Return the value at a given path in a JSON object. This helper can be used to re
 {{jsonPath (dataRaw 'Users') '$[0].name' 'defaultName'}}
 ```
 
+> 🛠️ Use our online [JSONPath and object-path evaluator](/tools/json-object-path-evaluator/) to test your JSONPath or object-path syntaxes and view the results in real-time.
+
 ## jmesPath
 
 Return the value at a given path in a JSON object. This helper can be used to retrieve values from JSON objects, including nested objects, using the [JMESPath community](https://www.npmjs.com/package/@jmespath-community/jmespath) syntax.
@@ -507,6 +511,8 @@ Return the value at a given path in a JSON object. This helper can be used to re
 
 {{jmesPath (dataRaw 'Users') '[0].name' 'defaultName'}}
 ```
+
+> 🛠️ Use our online [JMESPath evaluator](/tools/jmes-path-evaluator/) to test your JMESPath syntaxes and view the results in real-time.
 
 ## object
 

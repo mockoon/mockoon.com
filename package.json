@@ -79,7 +79,7 @@
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
-    "@mockoon/cli": "^9.2.0",
+    "@mockoon/cli": "^9.3.0",
     "@types/glob": "^8.1.0",
     "@types/node": "^24.0.1",
     "@types/react": "^19.1.8",

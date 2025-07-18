@@ -109,19 +109,21 @@ Alice,35,Chicago,Data Scientist,Amazon,Seattle,345-678-9012`;
                   let headers = [];
 
                   csv.split('\n').forEach((line, index) => {
+                    const separator = line.includes('\t') ? '\t' : ',';
+
                     if (!line.trim()) {
                       return;
                     }
 
                     if (index === 0) {
                       headers = line
-                        .split(',')
+                        .split(separator)
                         .map((item) => item.trim().replace(/^"(.*)"$/, '$1'));
 
                       return;
                     } else {
                       const items = line
-                        .split(',')
+                        .split(separator)
                         .map((item) => item.trim().replace(/^"(.*)"$/, '$1'));
 
                       lines.push(items);

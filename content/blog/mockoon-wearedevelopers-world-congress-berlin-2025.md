@@ -21,7 +21,7 @@ We're excited to announce that [Mockoon will be at **WeAreDevelopers World Congr
 
 Mockoon has been invited to join the **GitHub booth (2_59, Level 2)** as part of their **Open Source Spotlight**.
 
-![3d view of GitHub booth](/images/blog/mockoon-wearedevelopers-world-congress-berlin-2025/github-booth.png)
+![3d view of GitHub booth{1097x570}](/images/blog/mockoon-wearedevelopers-world-congress-berlin-2025/github-booth.png)
 
 Our founder, Guillaume, we'll be there on **July 10 and 11**, showcasing how **Mockoon makes API mocking easier, faster, and more powerful** for developers and QA teams alike. He will be available for live demos, discussions, and to answer any questions you have about Mockoon and how it can fit into your development workflows.
 

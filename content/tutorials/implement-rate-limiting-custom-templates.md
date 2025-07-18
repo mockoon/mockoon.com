@@ -32,7 +32,7 @@ The simplest form of rate limiting is to **limit requests based on time interval
 
 First, let's create a new HTTP `GET` route with the path `/rate-limited`:
 
-![new HTTP GET route showing the path /rate-limited{1465x318}](/images/tutorials/implement-rate-limiting-custom-templates/create-rate-limited-endpoint.png)
+![new HTTP GET route showing the path /rate-limited{1074x193}](/images/tutorials/implement-rate-limiting-custom-templates/create-rate-limited-endpoint.png)
 
 ### Add the rate limiting template
 
@@ -58,7 +58,7 @@ This template uses our [templating engine](/docs/latest/templating/overview/) an
 - **Updates the timestamp** for the next request using the [`setGlobalVar`](/docs/latest/templating/mockoon-variables-helpers/#setglobalvar) helper.
 - **Provides helpful information** about the rate limit in the JSON response.
 
-![template-based rate limiting response{1231x525}](/images/tutorials/implement-rate-limiting-custom-templates/simple-template-response.png)
+![template-based rate limiting response{1296x671}](/images/tutorials/implement-rate-limiting-custom-templates/simple-template-response.png)
 
 ## 2. Rule-based rate limiting with multiple responses and a rule
 
@@ -68,7 +68,7 @@ For more complex scenarios, you can use [**response rules**](/docs/latest/route-
 
 Create a new HTTP `GET` route with the path `/rate-limited-rules`:
 
-![new HTTP POST route showing the path /protected{1465x318}](/images/tutorials/implement-rate-limiting-custom-templates/create-rate-limited-rules-endpoint.png)
+![new HTTP POST route showing the path /protected{1144x279}](/images/tutorials/implement-rate-limiting-custom-templates/create-rate-limited-rules-endpoint.png)
 
 ### Add the default rate-limited response
 
@@ -84,7 +84,7 @@ The [**default response**](/docs/latest/route-responses/multiple-responses/#defa
 
 Set the status code to **429** for this response:
 
-![view of the response returning a 429 error](/images/tutorials/implement-rate-limiting-custom-templates/default-429-response.png)
+![view of the response returning a 429 error{1281x550}](/images/tutorials/implement-rate-limiting-custom-templates/default-429-response.png)
 
 ### Add a successful response with rate limiting rule
 
@@ -112,7 +112,7 @@ Similarly to the previous template, this rule does the following:
 - **Updates the timestamp** when the condition is met using the [`setGlobalVar`](/docs/latest/templating/mockoon-variables-helpers/#setglobalvar) helper.
 - **Only serves the 200 response** when the template evaluates to `true`.
 
-![view of the rule interface](/images/tutorials/implement-rate-limiting-custom-templates/rate-limit-rule.png)
+![view of the rule interface{1277x247}](/images/tutorials/implement-rate-limiting-custom-templates/rate-limit-rule.png)
 
 ## 3. Testing your rate limiting implementations
 
@@ -149,7 +149,7 @@ Go to the "Data" view, click "Add data", name it "rate_config" and add the follo
 }
 ```
 
-![view of the new data bucket showing the above JSON template](/images/tutorials/implement-rate-limiting-custom-templates/rate-config-data-bucket.png)
+![view of the new data bucket showing the above JSON template{1259x327}](/images/tutorials/implement-rate-limiting-custom-templates/rate-config-data-bucket.png)
 
 This configuration allows **2 requests per second** and will be used to track the timestamps of the last requests in the `last_request_timestamps` array.
 
@@ -186,7 +186,7 @@ This template does the following:
 - **Returns a 429 status** (Too Many Requests) if the limit is exceeded, providing a detailed error message.
 - **Pushes the last request timestamps** in the `rate_config` array using the [`setData`](/docs/latest/templating/mockoon-helpers/#setdata) helper.
 
-![view of the above template in the user interface](/images/tutorials/implement-rate-limiting-custom-templates/quota-template-response.png)
+![view of the above template in the user interface{1563x623}](/images/tutorials/implement-rate-limiting-custom-templates/quota-template-response.png)
 
 ### Testing the quota-based limit
 

@@ -17,7 +17,7 @@ meta:
 
 What an incredible experience at **WeAreDevelopers World Congress 2025** in Berlin! After two amazing days at the GitHub booth, we're back with countless new connections, inspiring conversations, and a renewed passion for the developer community.
 
-![view of Mockoon at the GitHub booth](/images/blog/mockoon-wearedevelopers-world-congress-2025-highlights/mockoon-github-booth.jpg)
+![view of Mockoon at the GitHub booth{1200x675}](/images/blog/mockoon-wearedevelopers-world-congress-2025-highlights/mockoon-github-booth.jpg)
 
 ## By the Numbers
 
@@ -30,7 +30,7 @@ Over the course of July 10-11, we:
 - **Met some die-hard Mockoon fans** who shared their experiences and use cases. 🙏
 - **Distributed tons of stickers and sweets to attendees**. 🍬
 
-![view of mockoon demo computer and stickers](/images/blog/mockoon-wearedevelopers-world-congress-2025-highlights/demo-screen-and-stickers.jpg)
+![view of mockoon demo computer and stickers{1200x675}](/images/blog/mockoon-wearedevelopers-world-congress-2025-highlights/demo-screen-and-stickers.jpg)
 
 Seeing the excitement and interest in Mockoon was truly rewarding. Many developers were surprised by how easy it is to create realistic mock APIs with our tool, and we received valuable feedback on features they would like to see in future releases.
 
@@ -50,7 +50,7 @@ Throughout our time at the conference, we had interesting discussions about:
 
 Despite nearly losing my voice from conducting dozens of demos over two days, we were thrilled to participate in [GitHub's **Open Source Friday** livestream with Andrea Griffiths](https://www.youtube.com/watch?v=J2FQVBmBttY). The interview was a fantastic opportunity to share Mockoon's story with a broader audience and discuss the importance of developer tooling in the open source ecosystem.
 
-![screenshot of the youtube livestream video](/images/blog/mockoon-wearedevelopers-world-congress-2025-highlights/github-open-source-friday.jpg)
+![screenshot of the youtube livestream video{1280x720}](/images/blog/mockoon-wearedevelopers-world-congress-2025-highlights/github-open-source-friday.jpg)
 
 ## GitHub Open Source Spotlight
 
@@ -64,7 +64,7 @@ Being part of GitHub's **Open Source Spotlight** was truly special. We shared th
 
 It was interesting to see the diversity of open source projects represented at the booth, each showcasing unique solutions and the power of community collaboration.
 
-![view of the various open source booths](/images/blog/mockoon-wearedevelopers-world-congress-2025-highlights/oss-projects-booth.jpg)
+![view of the various open source booths{1175x661}](/images/blog/mockoon-wearedevelopers-world-congress-2025-highlights/oss-projects-booth.jpg)
 
 ## Thank You!
 
@@ -79,4 +79,4 @@ If you met us at the conference (or not!) and want to continue the conversation,
 
 Looking forward to the next opportunity to connect with the amazing developer community!
 
-![guillaume, mockoon founder in front of the github booth](/images/blog/mockoon-wearedevelopers-world-congress-2025-highlights/guillaume-github-booth.jpg)
+![guillaume, mockoon founder in front of the github booth{1365x768}](/images/blog/mockoon-wearedevelopers-world-congress-2025-highlights/guillaume-github-booth.jpg)

@@ -32,6 +32,11 @@ const AccountSubscription: FunctionComponent = function () {
   const { data: subscriptionData } = useCurrentSubscription(userData);
   const [seats, setSeats] = useState(1);
   const [upgradeInProgress, setUpgradeInProgress] = useState(false);
+  const isTeamPlan =
+    userData?.plan === 'TEAM' || userData?.plan === 'ENTERPRISE';
+  const isSupportRole =
+    isTeamPlan &&
+    (userData?.teamRole === 'team_admin' || userData?.teamRole === 'billing');
 
   useEffect(() => {
     if (!isAuthLoading) {
@@ -104,8 +109,7 @@ const AccountSubscription: FunctionComponent = function () {
 
   const displayPlanInfo =
     userData?.plan === 'SOLO' ||
-    ((userData?.plan === 'TEAM' || userData?.plan === 'ENTERPRISE') &&
-      userData?.teamRole === 'owner');
+    (isTeamPlan && (userData?.teamRole === 'owner' || isSupportRole));
 
   const sharedQuotas = (
     <>
@@ -382,9 +386,9 @@ const AccountSubscription: FunctionComponent = function () {
 
                                 {((userData?.plan === 'SOLO' &&
                                   !userData?.teamId) ||
-                                  ((userData?.plan === 'TEAM' ||
-                                    userData?.plan === 'ENTERPRISE') &&
-                                    userData?.teamRole === 'owner')) && (
+                                  (isTeamPlan &&
+                                    userData?.teamRole === 'owner') ||
+                                  isSupportRole) && (
                                   <div>
                                     <small className='text-gray-700 ms-auto'>
                                       Contact us at{' '}
@@ -646,74 +650,78 @@ const AccountSubscription: FunctionComponent = function () {
 
                   {!isUserLoading && userData?.plan !== 'FREE' && (
                     <>
-                      <div className='card card-bleed shadow-light-lg mb-6'>
-                        <div className='card-header'>
-                          <h4 className='mb-0'>
-                            {userData?.plan === 'SOLO'
-                              ? 'Quotas'
-                              : 'Personal quotas'}
-                          </h4>
-                        </div>
-                        <div className='card-body'>
-                          <div className='list-group list-group-flush'>
-                            <div className='list-group-item'>
-                              <div className='row align-items-center'>
-                                <div className='col-md-8'>
-                                  <p className='mb-0'>
-                                    AI generated mocks used (
-                                    {userData?.templatesQuotaUsed}/
-                                    {userData?.templatesQuota})
-                                  </p>
-                                  <p className='mb-0'>
-                                    <small className='text-gray-700'>
-                                      Resets monthly
-                                      {(userData?.plan === 'SOLO' ||
-                                        userData?.teamRole === 'owner') && (
-                                        <>
-                                          {' '}
-                                          - Next reset on{' '}
-                                          {new Date(
-                                            userData?.nextQuotaResetOn * 1000
-                                          ).toDateString()}
-                                        </>
-                                      )}
-                                      <br />
-                                      <Link href='/cloud/docs/templates-and-ai-assistant/'>
-                                        Documentation
-                                      </Link>
-                                    </small>
-                                  </p>
-                                </div>
-                                <div className='col-md-4'>
-                                  <div className='progress'>
-                                    <div
-                                      className={`progress-bar ${
-                                        userData?.templatesQuotaUsed >=
-                                        userData?.templatesQuota
-                                          ? 'bg-warning'
-                                          : ''
-                                      }`}
-                                      role='progressbar'
-                                      aria-valuenow={
-                                        userData?.templatesQuotaUsed
-                                      }
-                                      aria-valuemin={0}
-                                      aria-valuemax={userData?.templatesQuota}
-                                      style={{
-                                        width:
-                                          (userData?.templatesQuotaUsed * 100) /
-                                            userData?.templatesQuota +
-                                          '%'
-                                      }}
-                                    ></div>
+                      {!isSupportRole && (
+                        <div className='card card-bleed shadow-light-lg mb-6'>
+                          <div className='card-header'>
+                            <h4 className='mb-0'>
+                              {userData?.plan === 'SOLO'
+                                ? 'Quotas'
+                                : 'Personal quotas'}
+                            </h4>
+                          </div>
+                          <div className='card-body'>
+                            <div className='list-group list-group-flush'>
+                              <div className='list-group-item'>
+                                <div className='row align-items-center'>
+                                  <div className='col-md-8'>
+                                    <p className='mb-0'>
+                                      AI generated mocks used (
+                                      {userData?.templatesQuotaUsed}/
+                                      {userData?.templatesQuota})
+                                    </p>
+                                    <p className='mb-0'>
+                                      <small className='text-gray-700'>
+                                        Resets monthly
+                                        {(userData?.plan === 'SOLO' ||
+                                          userData?.teamRole === 'owner') && (
+                                          <>
+                                            {' '}
+                                            - Next reset on{' '}
+                                            {new Date(
+                                              userData?.nextQuotaResetOn * 1000
+                                            ).toDateString()}
+                                          </>
+                                        )}
+                                        <br />
+                                        <Link href='/cloud/docs/templates-and-ai-assistant/'>
+                                          Documentation
+                                        </Link>
+                                      </small>
+                                    </p>
+                                  </div>
+                                  <div className='col-md-4'>
+                                    <div className='progress'>
+                                      <div
+                                        className={`progress-bar ${
+                                          userData?.templatesQuotaUsed >=
+                                          userData?.templatesQuota
+                                            ? 'bg-warning'
+                                            : ''
+                                        }`}
+                                        role='progressbar'
+                                        aria-valuenow={
+                                          userData?.templatesQuotaUsed
+                                        }
+                                        aria-valuemin={0}
+                                        aria-valuemax={userData?.templatesQuota}
+                                        style={{
+                                          width:
+                                            (userData?.templatesQuotaUsed *
+                                              100) /
+                                              userData?.templatesQuota +
+                                            '%'
+                                        }}
+                                      ></div>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
+                              {userData?.plan === 'SOLO' && sharedQuotas}
                             </div>
-                            {userData?.plan === 'SOLO' && sharedQuotas}
                           </div>
                         </div>
-                      </div>
+                      )}
+
                       {userData?.plan !== 'SOLO' && (
                         <div className='card card-bleed shadow-light-lg mb-6'>
                           <div className='card-header'>

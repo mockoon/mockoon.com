@@ -1,4 +1,4 @@
-import { DeployInstance, Team, User } from '@mockoon/cloud';
+import { DeployInstance, Team, TeamRoles, User } from '@mockoon/cloud';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 import { EmailingContact, Subscription } from '../models/user.model';
@@ -98,14 +98,19 @@ const useCurrentUserEmailing = () => {
   };
 };
 
-const useCurrentTeam = (teamId, teamRole) => {
+const useCurrentTeam = (teamId: string, teamRole: TeamRoles) => {
   const auth = useAuth();
 
   const { isLoading, error, data, isFetching, refetch } = useQuery<Team>({
     queryKey: ['currentTeam'],
     refetchOnMount: false,
     retry: false,
-    enabled: teamId !== null && teamRole !== null && teamRole === 'owner',
+    enabled:
+      teamId !== null &&
+      teamRole !== null &&
+      (teamRole === 'owner' ||
+        teamRole === 'team_admin' ||
+        teamRole === 'billing'),
     queryFn: async () => {
       const token = await auth.getIdToken();
 
@@ -138,7 +143,6 @@ const useCurrentTeam = (teamId, teamRole) => {
 };
 
 const useCurrentDeployments = () => {
-  const auth = useAuth();
   const { getIdToken, isAuth } = useAuth();
 
   const { isLoading, error, data, isFetching, refetch } = useQuery<

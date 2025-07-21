@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useState } from 'react';
 import { useAuth } from '../utils/auth';
+import { useCurrentUser } from '../utils/queries';
 import GitHub from './github';
 import CustomTooltip from './tooltip';
 
@@ -22,6 +23,11 @@ const Nav: FunctionComponent<{
   const [showBanner, setShowBanner] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(Dropdowns.NONE);
   const auth = useAuth();
+  const { data: userData } = useCurrentUser();
+  const canOpenWebapp =
+    userData?.plan !== 'FREE' &&
+    userData?.teamRole !== 'billing' &&
+    userData?.teamRole !== 'team_admin';
 
   const toggler = (
     <button
@@ -486,14 +492,19 @@ const Nav: FunctionComponent<{
                   {auth.isAuth && (
                     <>
                       <li className='dropdown-item'>
-                        <Link
-                          href={`${process.env.NEXT_PUBLIC_WEBAPP_URL}`}
-                          className='dropdown-link'
-                          target='_blank'
-                        >
-                          Open web app
-                          <i className='icon-open ps-2' aria-hidden='true'></i>
-                        </Link>
+                        {canOpenWebapp && (
+                          <Link
+                            href={`${process.env.NEXT_PUBLIC_WEBAPP_URL}`}
+                            className='dropdown-link'
+                            target='_blank'
+                          >
+                            Open web app
+                            <i
+                              className='icon-open ps-2'
+                              aria-hidden='true'
+                            ></i>
+                          </Link>
+                        )}
                       </li>
                       <li className='dropdown-item'>
                         <Link href='/account/info/' className='dropdown-link'>

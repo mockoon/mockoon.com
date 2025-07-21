@@ -32,6 +32,8 @@ const AccountInfo: FunctionComponent = function () {
     clearErrors,
     formState: { isSubmitting, isSubmitSuccessful, errors }
   } = useForm();
+  const canSeeWebApp =
+    userData?.teamRole !== 'team_admin' && userData?.teamRole !== 'billing';
 
   useEffect(() => {
     if (!isAuthLoading) {

@@ -6,6 +6,11 @@ import { useCurrentUser } from '../utils/queries';
 const AccountMenu: FunctionComponent = function () {
   const router = useRouter();
   const { isLoading, data: userData } = useCurrentUser();
+  const isTeamPlan =
+    userData?.plan === 'TEAM' || userData?.plan === 'ENTERPRISE';
+  const isSupportRole =
+    isTeamPlan &&
+    (userData?.teamRole === 'team_admin' || userData?.teamRole === 'billing');
 
   return (
     <div className='card card-bleed border-bottom shadow-light-lg mb-6'>
@@ -60,24 +65,25 @@ const AccountMenu: FunctionComponent = function () {
             </li>
             {!isLoading && userData?.plan !== 'FREE' && (
               <>
-                <li
-                  className={`list-item ${
-                    router.pathname.includes('account/instances')
-                      ? 'active'
-                      : ''
-                  }`}
-                >
-                  <Link
-                    href='/account/instances/'
-                    className='list-link text-reset ps-4'
+                {!isSupportRole && (
+                  <li
+                    className={`list-item ${
+                      router.pathname.includes('account/instances')
+                        ? 'active'
+                        : ''
+                    }`}
                   >
-                    Instances
-                  </Link>
-                </li>
+                    <Link
+                      href='/account/instances/'
+                      className='list-link text-reset ps-4'
+                    >
+                      Instances
+                    </Link>
+                  </li>
+                )}
 
-                {(userData?.plan === 'TEAM' ||
-                  userData?.plan === 'ENTERPRISE') &&
-                  userData?.teamRole === 'owner' && (
+                {isTeamPlan &&
+                  (userData?.teamRole === 'owner' || isSupportRole) && (
                     <li
                       className={`list-item ${
                         router.pathname.includes('account/users')

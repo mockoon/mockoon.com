@@ -568,7 +568,19 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
-                      <p className='mb-0'>Email support</p>
+                      <p className='mb-0'>
+                        <Link href={'/cloud/docs/roles-permissions/'}>
+                          Team level role-based access control
+                        </Link>
+                      </p>
+                    </div>
+                    <hr />
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
+
+                      <p className='mb-0'>Priority email support</p>
                     </div>
                     <div className='mt-auto'>
                       <hr />
@@ -653,7 +665,8 @@ const PlansView: FunctionComponent<{
                       </div>
 
                       <p className='mb-0'>
-                        Enterprise support<sup>2</sup>
+                        Enterprise support{' '}
+                        <CustomTooltip text='Get dedicated assistance for enterprise-level needs. To learn more about our Enterprise support, see the FAQ of our Cloud plans or our terms of service.'></CustomTooltip>
                       </p>
                     </div>
                     <hr />
@@ -663,7 +676,8 @@ const PlansView: FunctionComponent<{
                       </div>
 
                       <p className='mb-0'>
-                        Onboarding and deployment assistance
+                        Customer success{' '}
+                        <CustomTooltip text='Get dedicated assistance during onboarding and setup'></CustomTooltip>
                       </p>
                     </div>
 
@@ -690,10 +704,6 @@ const PlansView: FunctionComponent<{
               <sup>1</sup> See the{' '}
               <Link href={'/pricing/#faq'}>FAQ of our Cloud plans</Link> for
               more information about API mocks.
-              <br />
-              <sup>2</sup> To learn more about our Enterprise support, see the{' '}
-              <Link href={'/pricing/#faq'}>FAQ of our Cloud plans</Link> or our{' '}
-              <Link href={'/terms/'}>terms of service</Link>.
             </p>
 
             <section className='py-6 py-md-8'>
@@ -874,17 +884,77 @@ const PlansView: FunctionComponent<{
                               colSpan={5}
                               className='text-start fw-bold bg-gray-100'
                             >
+                              Roles & Permissions
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              colSpan={5}
+                              className='text-start fw-bold bg-gray-100'
+                            >
+                              Team-level roles{' '}
+                              <Link
+                                href='/cloud/docs/roles-permissions/'
+                                className='fw-normal ms-2'
+                              >
+                                <small>Learn more</small>
+                              </Link>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Owner{' '}
+                              <CustomTooltip text='The owner has full access to all resources and can manage team settings'></CustomTooltip>
+                            </td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Users{' '}
+                              <CustomTooltip text='Users can access and manage the resources but cannot modify team settings'></CustomTooltip>
+                            </td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Team admin{' '}
+                              <CustomTooltip text='Team admins can manage team settings and billing information'></CustomTooltip>
+                            </td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Billing{' '}
+                              <CustomTooltip text='Billing users can manage billing information'></CustomTooltip>
+                            </td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td
+                              colSpan={5}
+                              className='text-start fw-bold bg-gray-100'
+                            >
                               Support
                             </td>
                           </tr>
                           <tr>
                             <td>Support level</td>
                             <td className='text-center'>Email support</td>
-                            <td className='text-center'>Email support</td>
+                            <td className='text-center'>
+                              Priority email support
+                            </td>
                             <td className='text-center'>Enterprise support</td>
                           </tr>
                           <tr>
-                            <td>Onboarding and deployment assistance</td>
+                            <td>Customer success manager</td>
                             <td className='text-center'>{crossBadge}</td>
                             <td className='text-center'>{crossBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
@@ -899,11 +969,9 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>Payment options</td>
-                            <td className='text-center'>Credit card</td>
-                            <td className='text-center'>Credit card</td>
-                            <td className='text-center'>
-                              Custom payment options
-                            </td>
+                            <td className='text-center'>Credit card only</td>
+                            <td className='text-center'>Credit card only</td>
+                            <td className='text-center'>PO and invoicing</td>
                           </tr>
                         </tbody>
                       </table>

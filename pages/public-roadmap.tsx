@@ -44,6 +44,12 @@ const tasks: {
 } = {
   released: [
     {
+      link: '/cloud/docs/roles-permissions/',
+      title: 'Support roles (team admin, billing)',
+      cloud: true,
+      target: null
+    },
+    {
       link: 'https://github.com/mockoon/mockoon/blob/main/packages/cli/README.md#start-command',
       title: 'CLI local files watch mode',
       cloud: false,
@@ -102,12 +108,6 @@ const tasks: {
       title: 'New JSON schema validation rule operator',
       cloud: false,
       target: null
-    },
-    {
-      link: '/docs/latest/route-responses/dynamic-rules/#2-targets-name-or-path-or-template',
-      title: "New request's method rule",
-      cloud: false,
-      target: null
     }
   ],
   inProgress: [
@@ -116,11 +116,7 @@ const tasks: {
       cloud: true,
       target: null
     },
-    {
-      title: 'Support roles (team admin, billing)',
-      cloud: true,
-      target: null
-    },
+
     {
       link: 'https://github.com/mockoon/mockoon/issues/1045',
       title: 'Export logs as HAR',

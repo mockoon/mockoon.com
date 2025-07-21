@@ -7,16 +7,19 @@ import {
   TotpSecret,
   User,
   applyActionCode,
+  confirmPasswordReset,
   createUserWithEmailAndPassword,
   getAuth,
   getMultiFactorResolver,
   multiFactor,
   reauthenticateWithCredential,
   sendEmailVerification,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   updatePassword,
-  verifyBeforeUpdateEmail
+  verifyBeforeUpdateEmail,
+  verifyPasswordResetCode
 } from 'firebase/auth';
 import { useEffect, useState } from 'react';
 
@@ -119,6 +122,10 @@ const useAuth = () => {
     await verifyBeforeUpdateEmail(auth.currentUser, newEmail);
   };
 
+  const initiatePasswordReset = async (email: string) => {
+    await sendPasswordResetEmail(auth, email);
+  };
+
   useEffect(() => {
     const unsubscribe = auth.onIdTokenChanged((user) => {
       if (user) {
@@ -157,7 +164,14 @@ const useAuth = () => {
     reAuthenticate,
     unenrollTfa,
     verifyTfaCode,
-    updateEmailAddress
+    updateEmailAddress,
+    initiatePasswordReset,
+    verifyPasswordResetCode: async (code: string) => {
+      return await verifyPasswordResetCode(auth, code);
+    },
+    confirmPasswordReset: async (code: string, newPassword: string) => {
+      return await confirmPasswordReset(auth, code, newPassword);
+    }
   };
 };
 

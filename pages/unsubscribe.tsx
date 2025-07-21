@@ -73,24 +73,20 @@ const EmailVerification: FunctionComponent = function () {
               {queryParams.get('unsubToken') &&
                 !isUnsubscribing &&
                 isUnsubscribedSuccess && (
-                  <>
-                    <div className='alert alert-success mt-6 fs-5'>
-                      <i className='icon-check me-2'></i>
-                      You have been successfully unsubscribed from all our
-                      marketing emails.
-                    </div>
-                  </>
+                  <div className='alert alert-success mt-6 fs-5'>
+                    <i className='icon-check me-2'></i>
+                    You have been successfully unsubscribed from all our
+                    marketing emails.
+                  </div>
                 )}
               {queryParams.get('unsubToken') &&
                 !isUnsubscribing &&
                 isUnsubscribeError && (
-                  <>
-                    <div className='alert alert-warning mt-6 fs-5'>
-                      An error occurred while trying to unsubscribe you from our
-                      marketing emails. Please{' '}
-                      <a href='/contact-form/'>contact us</a> for assistance.
-                    </div>
-                  </>
+                  <div className='alert alert-warning mt-6 fs-5'>
+                    An error occurred while trying to unsubscribe you from our
+                    marketing emails. Please{' '}
+                    <a href='/contact-form/'>contact us</a> for assistance.
+                  </div>
                 )}
             </div>
           </div>

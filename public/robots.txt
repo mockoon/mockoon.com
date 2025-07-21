@@ -13,6 +13,9 @@ Disallow: /cancellation-survey
 Disallow: /email-link-action
 Disallow: /unenroll-tfa
 Disallow: /recover-email
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /unsubscribe
 
 # Host
 Host: https://mockoon.com

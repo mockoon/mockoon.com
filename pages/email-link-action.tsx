@@ -17,6 +17,8 @@ const EmailLinkAction: FunctionComponent = function () {
         router.push(`/unenroll-tfa/?code=${oobCode}`);
       } else if (mode === 'recoverEmail') {
         router.push(`/recover-email/?code=${oobCode}`);
+      } else if (mode === 'resetPassword') {
+        router.push(`/reset-password/?code=${oobCode}`);
       } else {
         router.push('/');
       }

@@ -218,7 +218,7 @@ const Login: FunctionComponent = function () {
                           />
                         </div>
 
-                        <div className='form-group mb-5'>
+                        <div className='form-group mb-2'>
                           <label
                             className='form-label'
                             htmlFor='current-password'
@@ -235,6 +235,15 @@ const Login: FunctionComponent = function () {
                             {...credentialsForm.register('password')}
                           />
                         </div>
+
+                        <p className='text-end fs-sm'>
+                          <Link
+                            href='/forgot-password/'
+                            target={`${isWebApp ? '_blank' : ''}`}
+                          >
+                            Forgot password?
+                          </Link>
+                        </p>
 
                         <FormHoneypot
                           inputRegister={credentialsForm.register(

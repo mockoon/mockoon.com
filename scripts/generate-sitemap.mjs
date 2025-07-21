@@ -175,15 +175,22 @@ Promise.all([
     '^pages',
     ['/templates'],
     [
-      'app-auth',
       'login',
       'signup',
-      'privacy',
-      'terms',
+      'app-auth',
       'email-verification',
+      'newsletter-confirm',
+      'account',
+      'terms',
+      'privacy',
       '404',
-      'unsubscribe',
-      'newsletter-confirm'
+      'cancellation-survey',
+      'email-link-action',
+      'unenroll-tfa',
+      'recover-email',
+      'forgot-password',
+      'reset-password',
+      'unsubscribe'
     ]
   ),
   generateSitemap('pages/integrations/*.tsx', 'integrations', '^pages'),

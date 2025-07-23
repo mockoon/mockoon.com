@@ -117,6 +117,11 @@ const tasks: {
       target: null
     },
     {
+      title: 'Support roles (team admin, billing)',
+      cloud: true,
+      target: null
+    },
+    {
       link: 'https://github.com/mockoon/mockoon/issues/1045',
       title: 'Export logs as HAR',
       cloud: false,
@@ -140,8 +145,9 @@ const tasks: {
       cloud: true,
       target: null
     },
+
     {
-      title: 'Billing roles in Mockoon Cloud',
+      title: 'Account audit logs',
       cloud: true,
       target: null
     },

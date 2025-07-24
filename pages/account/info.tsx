@@ -235,7 +235,7 @@ const AccountInfo: FunctionComponent = function () {
                             <div className='col'>
                               <p className='mb-0'>
                                 {userData?.plan === 'FREE' &&
-                                  'No subscription plan'}
+                                  'No active subscription'}
                                 {userData?.plan !== 'FREE' && (
                                   <>
                                     <span className='text-primary'>

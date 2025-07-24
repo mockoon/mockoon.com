@@ -1,7 +1,7 @@
-import { DeployInstance, Plans, Team, User } from '@mockoon/cloud';
+import { DeployInstance, Team, User } from '@mockoon/cloud';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
-import { EmailingContact } from '../models/user.model';
+import { EmailingContact, Subscription } from '../models/user.model';
 import { useAuth } from './auth';
 
 const useCurrentUser = () => {
@@ -179,21 +179,17 @@ const useCurrentDeployments = () => {
   };
 };
 
-const useCurrentSubscriptionPortalLink = (user: User) => {
+const useCurrentSubscription = (user: User) => {
   const auth = useAuth();
 
-  const { isLoading, error, data, isFetching } = useQuery<{
-    portalUrl: string;
-  }>({
-    queryKey: ['currentSubscriptionPortalLink'],
+  const { isLoading, error, data, isFetching } = useQuery<
+    Subscription & {
+      portalUrl: string;
+    }
+  >({
+    queryKey: ['currentSubscription'],
     refetchOnMount: false,
-    enabled:
-      auth.isAuth &&
-      !!user &&
-      user.subscription !== undefined &&
-      user.subscription.provider != null &&
-      user.subscription.provider === 'paddle' &&
-      (user.plan !== Plans.FREE || user.subscription.portalEnabled),
+    enabled: auth.isAuth && !!user,
     queryFn: async () => {
       const token = await auth.getIdToken();
 
@@ -201,14 +197,11 @@ const useCurrentSubscriptionPortalLink = (user: User) => {
         return null;
       }
 
-      return fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/subscription/portalurl`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
+      return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/subscription`, {
+        headers: {
+          Authorization: `Bearer ${token}`
         }
-      ).then((res) => {
+      }).then((res) => {
         if (res.ok) {
           return res.json();
         }
@@ -229,7 +222,7 @@ const useCurrentSubscriptionPortalLink = (user: User) => {
 
 export {
   useCurrentDeployments,
-  useCurrentSubscriptionPortalLink,
+  useCurrentSubscription,
   useCurrentTeam,
   useCurrentUser,
   useCurrentUserEmailing

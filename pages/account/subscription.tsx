@@ -14,10 +14,7 @@ import { frequencyNames, planNames } from '../../constants/plans';
 import { pricing } from '../../data/pricing';
 import Layout from '../../layout/layout';
 import { useAuth } from '../../utils/auth';
-import {
-  useCurrentSubscriptionPortalLink,
-  useCurrentUser
-} from '../../utils/queries';
+import { useCurrentSubscription, useCurrentUser } from '../../utils/queries';
 
 const meta = {
   title: 'My account - Subscription',
@@ -32,8 +29,7 @@ const AccountSubscription: FunctionComponent = function () {
     data: userData,
     refetch: refetchUserData
   } = useCurrentUser();
-  const { data: subscriptionPortalLink } =
-    useCurrentSubscriptionPortalLink(userData);
+  const { data: subscriptionData } = useCurrentSubscription(userData);
   const [seats, setSeats] = useState(1);
   const [upgradeInProgress, setUpgradeInProgress] = useState(false);
 
@@ -272,7 +268,7 @@ const AccountSubscription: FunctionComponent = function () {
                               <div className='col'>
                                 <p className='mb-0'>
                                   {userData?.plan === 'FREE' &&
-                                    'No subscription plan'}
+                                    'No active subscription'}
                                   {userData?.plan !== 'FREE' && (
                                     <>
                                       <span className='text-primary'>
@@ -282,23 +278,23 @@ const AccountSubscription: FunctionComponent = function () {
                                     </>
                                   )}
 
-                                  {userData?.subscription?.frequency &&
+                                  {subscriptionData?.frequency &&
                                   userData?.plan !== 'FREE' &&
                                   displayPlanInfo
                                     ? ` (${
                                         frequencyNames[
-                                          userData?.subscription?.frequency
+                                          subscriptionData?.frequency
                                         ]
                                       })`
                                     : ''}
                                   {userData?.plan !== 'FREE' &&
-                                    userData?.subscription?.pastDue && (
+                                    subscriptionData?.status === 'past_due' && (
                                       <span className='badge text-bg-warning ms-2'>
                                         Invoice past due
                                       </span>
                                     )}
                                   {userData?.plan !== 'FREE' &&
-                                    userData?.subscription?.trial && (
+                                    subscriptionData?.status === 'trialing' && (
                                       <span className='badge text-bg-primary-subtle ms-2'>
                                         Trial period active
                                       </span>
@@ -306,43 +302,38 @@ const AccountSubscription: FunctionComponent = function () {
                                 </p>
 
                                 {userData?.plan !== 'FREE' &&
-                                  userData?.subscription?.provider !== 'free' &&
-                                  userData?.subscription?.createdOn &&
-                                  userData?.subscription?.renewOn &&
+                                  subscriptionData?.provider !== 'free' &&
+                                  subscriptionData?.createdOn &&
+                                  subscriptionData?.renewOn &&
                                   displayPlanInfo && (
                                     <p className='m-0'>
                                       <small className='text-gray-700'>
                                         Subscribed on{' '}
                                         {new Date(
-                                          userData?.subscription?.createdOn *
-                                            1000
+                                          subscriptionData?.createdOn * 1000
                                         ).toDateString()}
                                       </small>{' '}
                                       -{' '}
-                                      {!userData?.subscription
-                                        .cancellationScheduled && (
+                                      {!subscriptionData.cancellationScheduled && (
                                         <small className='text-gray-700'>
                                           Next renewal on{' '}
                                           {new Date(
-                                            userData?.subscription?.renewOn *
-                                              1000
+                                            subscriptionData?.renewOn * 1000
                                           ).toDateString()}
                                         </small>
                                       )}
-                                      {userData?.subscription
-                                        .cancellationScheduled && (
+                                      {subscriptionData.cancellationScheduled && (
                                         <small className='text-danger'>
                                           Will be cancelled on{' '}
                                           {new Date(
-                                            userData?.subscription?.renewOn *
-                                              1000
+                                            subscriptionData?.renewOn * 1000
                                           ).toDateString()}
                                         </small>
                                       )}
                                     </p>
                                   )}
                                 {userData?.plan !== 'FREE' &&
-                                  userData?.subscription?.provider === 'free' &&
+                                  subscriptionData?.provider === 'free' &&
                                   displayPlanInfo && (
                                     <p className='m-0'>
                                       <small className='text-gray-700'>
@@ -373,7 +364,8 @@ const AccountSubscription: FunctionComponent = function () {
                                 </div>
                                 {!upgradeInProgress &&
                                   userData?.plan === 'SOLO' &&
-                                  !!userData?.teamId && (
+                                  !!userData?.teamId &&
+                                  !subscriptionData?.cancellationScheduled && (
                                     <div>
                                       <button
                                         className='btn btn-xs btn-primary'
@@ -509,13 +501,15 @@ const AccountSubscription: FunctionComponent = function () {
                                         (Inc. tax)
                                         <br />
                                         <small className='text-gray-700'>
-                                          {userData?.subscription.trial && (
+                                          {subscriptionData.status ===
+                                            'trialing' && (
                                             <>
                                               Trial period active - Next payment
                                               will be charged on{' '}
                                             </>
                                           )}
-                                          {!userData?.subscription.trial && (
+                                          {subscriptionData.status !==
+                                            'trialing' && (
                                             <>
                                               Next payment will be charged
                                               on{' '}
@@ -586,7 +580,8 @@ const AccountSubscription: FunctionComponent = function () {
                                 <div>
                                   <p className='m-0 mt-2'>
                                     <small className='text-gray-700'>
-                                      {userData?.subscription.trial && (
+                                      {subscriptionData.status ===
+                                        'trialing' && (
                                         <>
                                           ⚠️ Once confirmed, your plan will be
                                           upgraded to a Team plan and you will
@@ -594,7 +589,8 @@ const AccountSubscription: FunctionComponent = function () {
                                           when your trial ends.
                                         </>
                                       )}
-                                      {!userData?.subscription.trial && (
+                                      {subscriptionData.status !==
+                                        'trialing' && (
                                         <>
                                           ⚠️ Once confirmed, your plan will be
                                           upgraded to a Team plan and you will
@@ -609,9 +605,8 @@ const AccountSubscription: FunctionComponent = function () {
                             </div>
                           )}
 
-                          {(userData?.plan !== 'FREE' ||
-                            userData?.subscription?.portalEnabled) &&
-                            subscriptionPortalLink && (
+                          {subscriptionData?.customerId &&
+                            subscriptionData?.portalUrl && (
                               <>
                                 <div className='list-group-item'>
                                   <div className='row align-items-center'>
@@ -631,8 +626,9 @@ const AccountSubscription: FunctionComponent = function () {
                                     </div>
                                     <div className='col-auto'>
                                       <Link
-                                        href={subscriptionPortalLink?.portalUrl}
+                                        href={subscriptionData?.portalUrl}
                                         className='btn btn-xs btn-primary-subtle'
+                                        target='_blank'
                                       >
                                         Manage{' '}
                                         <i className='icon-open ms-2'></i>

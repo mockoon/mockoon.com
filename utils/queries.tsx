@@ -189,6 +189,7 @@ const useCurrentSubscription = (user: User) => {
   >({
     queryKey: ['currentSubscription'],
     refetchOnMount: false,
+    retry: false,
     enabled: auth.isAuth && !!user,
     queryFn: async () => {
       const token = await auth.getIdToken();
@@ -204,6 +205,8 @@ const useCurrentSubscription = (user: User) => {
       }).then((res) => {
         if (res.ok) {
           return res.json();
+        } else if (res.status === 404) {
+          return null;
         }
 
         throw new Error();

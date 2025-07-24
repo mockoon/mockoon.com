@@ -314,7 +314,7 @@ const AccountSubscription: FunctionComponent = function () {
                                         ).toDateString()}
                                       </small>{' '}
                                       -{' '}
-                                      {!subscriptionData.cancellationScheduled && (
+                                      {!subscriptionData?.cancellationScheduled && (
                                         <small className='text-gray-700'>
                                           Next renewal on{' '}
                                           {new Date(
@@ -322,7 +322,7 @@ const AccountSubscription: FunctionComponent = function () {
                                           ).toDateString()}
                                         </small>
                                       )}
-                                      {subscriptionData.cancellationScheduled && (
+                                      {subscriptionData?.cancellationScheduled && (
                                         <small className='text-danger'>
                                           Will be cancelled on{' '}
                                           {new Date(
@@ -363,8 +363,9 @@ const AccountSubscription: FunctionComponent = function () {
                                   )}
                                 </div>
                                 {!upgradeInProgress &&
+                                  subscriptionData &&
                                   userData?.plan === 'SOLO' &&
-                                  !!userData?.teamId &&
+                                  userData?.teamId &&
                                   !subscriptionData?.cancellationScheduled && (
                                     <div>
                                       <button
@@ -501,14 +502,14 @@ const AccountSubscription: FunctionComponent = function () {
                                         (Inc. tax)
                                         <br />
                                         <small className='text-gray-700'>
-                                          {subscriptionData.status ===
+                                          {subscriptionData?.status ===
                                             'trialing' && (
                                             <>
                                               Trial period active - Next payment
                                               will be charged on{' '}
                                             </>
                                           )}
-                                          {subscriptionData.status !==
+                                          {subscriptionData?.status !==
                                             'trialing' && (
                                             <>
                                               Next payment will be charged
@@ -580,7 +581,7 @@ const AccountSubscription: FunctionComponent = function () {
                                 <div>
                                   <p className='m-0 mt-2'>
                                     <small className='text-gray-700'>
-                                      {subscriptionData.status ===
+                                      {subscriptionData?.status ===
                                         'trialing' && (
                                         <>
                                           ⚠️ Once confirmed, your plan will be
@@ -589,7 +590,7 @@ const AccountSubscription: FunctionComponent = function () {
                                           when your trial ends.
                                         </>
                                       )}
-                                      {subscriptionData.status !==
+                                      {subscriptionData?.status !==
                                         'trialing' && (
                                         <>
                                           ⚠️ Once confirmed, your plan will be

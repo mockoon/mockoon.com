@@ -217,6 +217,18 @@ const tools = [
     imageSrc: '/images/illustrations/json-minifier.svg'
   },
   {
+    title: 'Crypto hasher',
+    description:
+      'Generate cryptographic hashes using SHA-1, SHA-256, SHA-384, or SHA-512 algorithms',
+    links: [
+      {
+        src: '/tools/crypto-hasher/',
+        text: 'Generate hash'
+      }
+    ],
+    imageSrc: '/images/illustrations/crypto-hasher.svg'
+  },
+  {
     title: 'Slug generator',
     description: 'Generate slugs from your text online',
     links: [

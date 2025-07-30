@@ -5,7 +5,7 @@ import Layout from '../layout/layout';
 import { useCurrentUser } from '../utils/queries';
 
 const Contact: FunctionComponent = function () {
-  const { data: userData } = useCurrentUser();
+  const { isLoading, data: userData } = useCurrentUser();
 
   return (
     <Layout footerBanner='newsletter'>
@@ -47,7 +47,7 @@ const Contact: FunctionComponent = function () {
               </div>
             </div>
 
-            {(!userData || userData.plan === 'FREE') && (
+            {!isLoading && (!userData || userData.plan === 'FREE') && (
               <div className='col-12 col-lg-4 d-flex'>
                 <div className='card card-border my-5 shadow-light-lg'>
                   <div className='card-body d-flex flex-column h-100'>
@@ -75,7 +75,7 @@ const Contact: FunctionComponent = function () {
               </div>
             )}
 
-            {(userData?.plan === 'SOLO' || userData?.plan === 'TEAM') && (
+            {!isLoading && userData?.plan === 'SOLO' && (
               <div className='col-12 col-lg-4 d-flex'>
                 <div className='card card-border my-5 shadow-light-lg'>
                   <div className='card-body d-flex flex-column h-100'>
@@ -89,8 +89,8 @@ const Contact: FunctionComponent = function () {
                     />
                     <h3 className='text-center fw-medium'>Email support</h3>
                     <p className='px-2 text-center text-gray-700'>
-                      Get dedicated email support from the Mockoon team. We will
-                      help you with any issue you may have with the product.
+                      Get email support from the Mockoon team. We will help you
+                      with any issue you may have with the product.
                     </p>
                     <div className='mt-auto text-center'>
                       <a href='/account/support/'>Get email support</a>
@@ -100,7 +100,7 @@ const Contact: FunctionComponent = function () {
               </div>
             )}
 
-            {userData?.plan === 'ENTERPRISE' && (
+            {!isLoading && userData?.plan === 'TEAM' && (
               <div className='col-12 col-lg-4 d-flex'>
                 <div className='card card-border my-5 shadow-light-lg'>
                   <div className='card-body d-flex flex-column h-100'>
@@ -112,14 +112,43 @@ const Contact: FunctionComponent = function () {
                       alt='dedicated support'
                       className='w-25 mb-6 align-self-center'
                     />
-                    <h3 className='text-center fw-medium'>Priority support</h3>
+                    <h3 className='text-center fw-medium'>
+                      Priority email support
+                    </h3>
+                    <p className='px-2 text-center text-gray-700'>
+                      Get priority email support from the Mockoon team. We will
+                      help you with any issue you may have with the product.
+                    </p>
+                    <div className='mt-auto text-center'>
+                      <a href='/account/support/'>Get priority email support</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {!isLoading && userData?.plan === 'ENTERPRISE' && (
+              <div className='col-12 col-lg-4 d-flex'>
+                <div className='card card-border my-5 shadow-light-lg'>
+                  <div className='card-body d-flex flex-column h-100'>
+                    <span className='badge text-bg-warning badge-float badge-float-outside'>
+                      Your plan
+                    </span>
+                    <img
+                      src='/images/illustrations/visio.svg'
+                      alt='dedicated support'
+                      className='w-25 mb-6 align-self-center'
+                    />
+                    <h3 className='text-center fw-medium'>
+                      Enterprise support
+                    </h3>
                     <p className='px-2 text-center text-gray-700'>
                       Get enterprise-grade support with guaranteed response time
                       from the Mockoon team. We will help you with any issue you
                       may have with the product.
                     </p>
                     <div className='mt-auto text-center'>
-                      <a href='/account/support/'>Get priority support</a>
+                      <a href='/account/support/'>Get enterprise support</a>
                     </div>
                   </div>
                 </div>

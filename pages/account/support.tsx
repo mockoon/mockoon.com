@@ -47,34 +47,57 @@ const AccountSubscription: FunctionComponent = function () {
                   <AccountMenu />
                 </div>
                 <div className='col-12 col-md-9'>
-                  {!isUserLoading &&
-                    (userData?.plan === 'SOLO' ||
-                      userData?.plan === 'TEAM') && (
-                      <div className='card card-bleed shadow-light-lg mb-6'>
-                        <div className='card-header'>
-                          <h4 className='mb-0'>Email support</h4>
-                          <small className='text-gray-700'>
-                            You benefit from priority email support with your
-                            plan
-                          </small>
-                        </div>
-                        <div className='card-body'>
-                          <div className='list-group list-group-flush'>
-                            <div className='list-group-item'>
-                              <p className='mb-0'>
-                                Contact us at{' '}
-                                <a href='mailto:email-support@mockoon.com'>
-                                  email-support@mockoon.com
-                                </a>
-                              </p>
-                              <small className='text-gray-700'>
-                                Usual response time: one business day
-                              </small>
-                            </div>
+                  {!isUserLoading && userData?.plan === 'SOLO' && (
+                    <div className='card card-bleed shadow-light-lg mb-6'>
+                      <div className='card-header'>
+                        <h4 className='mb-0'>Email support</h4>
+                        <small className='text-gray-700'>
+                          You benefit from basic email support with your plan
+                        </small>
+                      </div>
+                      <div className='card-body'>
+                        <div className='list-group list-group-flush'>
+                          <div className='list-group-item'>
+                            <p className='mb-0'>
+                              Contact us at{' '}
+                              <a href='mailto:email-support@mockoon.com'>
+                                email-support@mockoon.com
+                              </a>
+                            </p>
+                            <small className='text-gray-700'>
+                              Usual response time: one business day
+                            </small>
                           </div>
                         </div>
                       </div>
-                    )}
+                    </div>
+                  )}
+                  {!isUserLoading && userData?.plan === 'TEAM' && (
+                    <div className='card card-bleed shadow-light-lg mb-6'>
+                      <div className='card-header'>
+                        <h4 className='mb-0'>Email support</h4>
+                        <small className='text-gray-700'>
+                          You benefit from priority email support with your plan
+                        </small>
+                      </div>
+                      <div className='card-body'>
+                        <div className='list-group list-group-flush'>
+                          <div className='list-group-item'>
+                            <p className='mb-0'>
+                              Contact us at{' '}
+                              <a href='mailto:priority-support@mockoon.com'>
+                                priority-support@mockoon.com
+                              </a>
+                            </p>
+                            <small className='text-gray-700'>
+                              Usual response time: one business day, handled in
+                              priority
+                            </small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
                   {!isUserLoading && userData?.plan === 'ENTERPRISE' && (
                     <div className='card card-bleed shadow-light-lg mb-6'>
@@ -90,8 +113,8 @@ const AccountSubscription: FunctionComponent = function () {
                           <div className='list-group-item'>
                             <p className='mb-0'>
                               Contact us at{' '}
-                              <a href='mailto:priority-support@mockoon.com'>
-                                priority-support@mockoon.com
+                              <a href='mailto:enterprise-support@mockoon.com'>
+                                enterprise-support@mockoon.com
                               </a>
                             </p>
                             <small className='text-gray-700'>

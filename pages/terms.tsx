@@ -12,24 +12,20 @@ const Terms: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Terms of service' subtitle='Last update June 10, 2025' />
+      <Hero title='Terms of service' subtitle='Last update July 30, 2025' />
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
               <Quote colorScheme='secondary'>
-                💡 <strong>Summary of changes (June 10, 2025)</strong>:
+                💡 <strong>Summary of changes (July 30, 2025)</strong>:
                 <ul className='mb-0'>
                   <li>
-                    A clause was added to Section 4 ("Your content and data") to
-                    explicitly prohibit the storage of personal data and clarify
-                    user responsibility.
+                    Added a description for the{' '}
+                    <strong>Priority email Support</strong> service added to the
+                    Team plan.
                   </li>
-                  <li>
-                    Section 11a ("AI assistant") was updated to include
-                    information about the use of third-party vendors for
-                    providing the service.
-                  </li>
+                  <li>13b renumbered to 13c.</li>
                 </ul>
               </Quote>
               <p>
@@ -634,12 +630,20 @@ const Terms: FunctionComponent = function () {
               </p>
               <h5 className='mt-6 fw-medium'>13a. Email Support</h5>
               <p>
-                Email Support is a standard Support Service included in all our
-                Cloud plans. It offers no guaranteed response time, but we will
+                Email Support is a standard Support Service included in our Solo
+                Cloud plan. It offers no guaranteed response time, but we will
                 make commercially reasonable efforts to respond to your
                 inquiries within a reasonable timeframe.
               </p>
-              <h5 className='mt-6 fw-medium'>13b. Enterprise Support</h5>
+              <h5 className='mt-6 fw-medium'>13b. Priority Email Support</h5>
+              <p>
+                Priority Email Support is a standard Support Service included in
+                our Team Cloud plan. Your inquiries will be prioritized over
+                those of standard Email Support users. It offers no guaranteed
+                response time, but we will make commercially reasonable efforts
+                to respond to your inquiries within a reasonable timeframe.
+              </p>
+              <h5 className='mt-6 fw-medium'>13c. Enterprise Support</h5>
               <p>
                 Enterprise Support is a priority Support service available in
                 some of our Cloud plans. It offers a guaranteed response time.

@@ -34,9 +34,9 @@ const cloudFaq: AccordionData = [
       },
       {
         title:
-          'What is the difference between "Email support" and "Enterprise support"?',
+          'What is the difference between "Email support", "Priority email support", and "Enterprise support"?',
         content:
-          "Email support is a standard support service provided to all our paid customers. You can contact us at any time by email and we will help you with your questions without a guaranteed response time. The usual response time is of one business day. Enterprise support is a premium support service provided to Enterprise plan users with a guaranteed response time. Specific SLA can be negotiated. For more information, please refer to the <a href='/terms/'>terms of service</a>."
+          "Email support is a standard support service provided to our Solo plan customers. You can contact us at any time by email and we will help you with your questions without a guaranteed response time. The usual response time is between one and two business days. Team plan customers benefit from priority email support, which means that your inquiries will be prioritized over those of standard email support users. For Enterprise support, a response time is guaranteed and specific SLA can be negotiated. For more information, please refer to the <a href='/terms/'>terms of service</a>."
       },
       {
         title:

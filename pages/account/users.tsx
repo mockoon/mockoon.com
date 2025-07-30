@@ -308,11 +308,11 @@ const AccountUsers: FunctionComponent = function () {
                                 className='list-group-item'
                               >
                                 <div className='row align-items-center'>
-                                  <div className='col-6'>
+                                  <div className='col'>
                                     <p className='mb-0'>
                                       {member.email}{' '}
                                       {member.uid === user?.uid && (
-                                        <span className='badge rounded-pill ms-4'>
+                                        <span className='badge rounded-pill text-bg-success-subtle ms-4'>
                                           <span className='h6 text-uppercase fw-bold'>
                                             <i className='icon-account_circle me-2'></i>
                                             you
@@ -395,7 +395,7 @@ const AccountUsers: FunctionComponent = function () {
                                 className='list-group-item'
                               >
                                 <div className='row align-items-center'>
-                                  <div className='col-6'>
+                                  <div className='col'>
                                     <p className='mb-0'>
                                       {member.email}{' '}
                                       {member.uid === user?.uid && (

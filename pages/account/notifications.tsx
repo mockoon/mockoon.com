@@ -132,7 +132,8 @@ const AccountNotifications: FunctionComponent = function () {
                               <p className='mb-0'>Newsletter</p>
 
                               <small className='text-gray-700'>
-                                Receive our newsletter (once a month or less)
+                                Receive our newsletter (usually once a month or
+                                less)
                               </small>
                             </div>
                             <div className='col-auto'>
@@ -142,6 +143,29 @@ const AccountNotifications: FunctionComponent = function () {
                                   type='checkbox'
                                   id='newsletter'
                                   {...registerFormField('newsletter')}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className='list-group-item'>
+                          <div className='row align-items-center'>
+                            <div className='col'>
+                              <p className='mb-0'>Product updates</p>
+
+                              <small className='text-gray-700'>
+                                Receive Mockoon Cloud product updates (usually
+                                once a month or less)
+                              </small>
+                            </div>
+                            <div className='col-auto'>
+                              <div className='form-check form-switch'>
+                                <input
+                                  className='form-check-input'
+                                  type='checkbox'
+                                  id='productUpdates'
+                                  {...registerFormField('productUpdates')}
                                 />
                               </div>
                             </div>

@@ -30,10 +30,8 @@ const AccountInfo: FunctionComponent = function () {
     reset,
     setError,
     clearErrors,
-    formState: { isSubmitting, isSubmitSuccessful, errors }
+    formState: { isValid, isSubmitting, isSubmitSuccessful, errors }
   } = useForm();
-  const canSeeWebApp =
-    userData?.teamRole !== 'team_admin' && userData?.teamRole !== 'billing';
 
   useEffect(() => {
     if (!isAuthLoading) {
@@ -57,6 +55,10 @@ const AccountInfo: FunctionComponent = function () {
     isPending: isUpdatingProfile
   } = useMutation({
     mutationFn: async () => {
+      if (!isValid) {
+        return;
+      }
+
       clearErrors();
 
       const response = await fetch(
@@ -196,28 +198,39 @@ const AccountInfo: FunctionComponent = function () {
                             className='form-control'
                             id='displayName'
                             type='text'
-                            {...registerFormField('displayName')}
+                            {...registerFormField('displayName', {
+                              pattern: /^[ 'A-Za-zÀ-ÖØ-öø-ÿ0-9_\-+]*$/i
+                            })}
                           />
                         </div>
 
                         <div className='d-flex align-items-center'>
-                          <button
-                            className='btn btn-xs btn-primary-subtle me-4'
-                            type='submit'
-                            disabled={isSubmitting}
-                          >
-                            Save
-                          </button>
+                          <div>
+                            <button
+                              className='btn btn-xs btn-primary-subtle me-4'
+                              type='submit'
+                              disabled={isSubmitting}
+                            >
+                              Save
+                            </button>
+                          </div>
                           {isSubmitting && <Spinner />}
+                          {!isUpdatingProfile && errors.displayName && (
+                            <div className='col text-danger fw-bold'>
+                              The display name can only contain letters
+                              (including accented letters), numbers, spaces, and
+                              the following characters: <code>_ - + '</code>
+                            </div>
+                          )}
                           {!isUpdatingProfile && errors.root?.error && (
-                            <div className='col-auto text-danger text-center fw-bold'>
+                            <div className='col text-danger fw-bold'>
                               Something went wrong, please try again later
                             </div>
                           )}
                           {!isUpdatingProfile &&
                             isSubmitSuccessful &&
                             !isUpdateProfileError && (
-                              <div className='col-auto text-success text-center fw-bold'>
+                              <div className='col text-success fw-bold'>
                                 Profile updated
                               </div>
                             )}

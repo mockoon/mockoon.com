@@ -421,6 +421,7 @@ const AccountSecurity: FunctionComponent = function () {
                                 id='currentPassword'
                                 type='password'
                                 autoComplete='current-password'
+                                maxLength={1024}
                                 required
                                 {...newPasswordForm.register('currentPassword')}
                               />
@@ -437,6 +438,7 @@ const AccountSecurity: FunctionComponent = function () {
                                 id='newPassword'
                                 type='password'
                                 autoComplete='new-password'
+                                maxLength={1024}
                                 required
                                 {...newPasswordForm.register('newPassword')}
                               />
@@ -453,6 +455,7 @@ const AccountSecurity: FunctionComponent = function () {
                                 id='confirmNewPassword'
                                 type='password'
                                 autoComplete='new-password'
+                                maxLength={1024}
                                 required
                                 {...newPasswordForm.register(
                                   'confirmNewPassword'

@@ -201,6 +201,7 @@ const ResetPassword: FunctionComponent = function () {
                           id='newPassword'
                           type='password'
                           autoComplete='new-password'
+                          maxLength={1024}
                           required
                           {...newPasswordForm.register('newPassword')}
                         />
@@ -217,6 +218,7 @@ const ResetPassword: FunctionComponent = function () {
                           id='confirmNewPassword'
                           type='password'
                           autoComplete='new-password'
+                          maxLength={1024}
                           required
                           {...newPasswordForm.register('confirmNewPassword')}
                         />

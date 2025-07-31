@@ -145,6 +145,7 @@ const ReAuthModal: FunctionComponent<{
                 id='currentPassword'
                 type='password'
                 autoComplete='current-password'
+                maxLength={1024}
                 required
                 {...passwordForm.register('password')}
               />

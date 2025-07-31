@@ -171,6 +171,7 @@ const Signup: FunctionComponent = function () {
                       autoComplete='new-password'
                       placeholder='Enter your password'
                       minLength={10}
+                      maxLength={1024}
                       required
                       {...registerFormField('password')}
                       onChange={(e) => {

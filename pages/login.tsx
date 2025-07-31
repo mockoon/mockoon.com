@@ -231,6 +231,7 @@ const Login: FunctionComponent = function () {
                             id='current-password'
                             autoComplete='current-password'
                             placeholder='Enter your password'
+                            maxLength={1024}
                             required
                             {...credentialsForm.register('password')}
                           />

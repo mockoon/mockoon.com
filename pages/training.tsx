@@ -9,7 +9,7 @@ import { AccordionData } from '../models/common.model';
 const meta = {
   title: "Mockoon's Live Training",
   description:
-    'Purchase a live training session for you or your team. Get started with Mockoon applications (desktop and CLI), and learn how to make the most of API mocking. Training delivered by the creator of Mockoon!'
+    'Get started with Mockoon applications (desktop and CLI), and learn how to make the most of API mocking. Training delivered by the creator of Mockoon!'
 };
 
 const keyPoints = [

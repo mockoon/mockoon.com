@@ -1,9 +1,9 @@
 ---
 title: Better API design and UX research with API mocking
-excerpt: API mocking can help improve API design and user experience (UX) research by providing a controlled and predictable environment for testing and gathering feedback on API concepts.
+excerpt: API mocking can help improve API design and UX research by providing a controlled environment for testing and gathering feedback on API concepts.
 meta:
   title: Better API design and UX research with API mocking
-  description: API mocking can help improve API design and user experience (UX) research by providing a controlled and predictable environment for testing and gathering feedback on API concepts.
+  description: API mocking can help improve API design and UX research by providing a controlled environment for testing and gathering feedback on API concepts.
 image: api-mocking-better-api-design-ux-research.png
 imageAlt: Persons discussing in front of a white board
 imageWidth: 1200

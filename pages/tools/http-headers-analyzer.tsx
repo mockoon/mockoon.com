@@ -629,7 +629,7 @@ Accept-Language: en-US`;
                   <tr key={`header${headerIndex}`}>
                     <td>
                       <a
-                        href={`https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/${header}`}
+                        href={`https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/${header}`}
                         target='_blank'
                       >
                         {header}
@@ -646,7 +646,7 @@ Accept-Language: en-US`;
             <div>
               Source:{' '}
               <a
-                href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers'
+                href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers'
                 target='_blank'
               >
                 MDN Web Docs

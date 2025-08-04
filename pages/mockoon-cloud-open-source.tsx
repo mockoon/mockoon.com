@@ -23,7 +23,7 @@ const OpenSourceContactFormPage: FunctionComponent = function () {
               <p className='fs-lg text-gray-700 mb-7 mb-md-9'>
                 To be eligible, your project must be{' '}
                 <strong>open-source</strong> (
-                <a href='http://opensource.org/licenses' target='_blank'>
+                <a href='https://opensource.org/licenses' target='_blank'>
                   OSI approved License
                 </a>
                 ), <strong>have a public repository</strong>, and{' '}

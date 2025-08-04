@@ -106,7 +106,7 @@ export class PostsComponent implements OnInit {
 
 ## Use Angular's environment files
 
-To avoid changing the server URL directly in the Angular service, you can put this URL in Angular's [environment files](https://angular.io/guide/build).
+To avoid changing the server URL directly in the Angular service, you can put this URL in Angular's [environment files](https://angular.dev/tools/cli/environments).
 You would only need to change your `environment.dev.ts` and keep your other environment files and service clean.
 
 ```typescript
@@ -136,7 +136,7 @@ export class PostsService {
 
 ## Using Angular's proxy
 
-If you are using Angular CLI's [proxy feature](https://angular.io/guide/build#proxying-to-a-backend-server), you can also edit the `proxy.conf.json` file and set the `target` to point to your Mockoon's API:
+If you are using Angular CLI's [proxy feature](https://angular.dev/tools/cli/serve#proxying-to-a-backend-server), you can also edit the `proxy.conf.json` file and set the `target` to point to your Mockoon's API:
 
 ```json
 {

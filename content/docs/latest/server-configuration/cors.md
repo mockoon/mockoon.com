@@ -12,7 +12,7 @@ order: 130
 
 ## Automatic handling of CORS preflight requests
 
-When creating mock APIs, chances are the front-end application and the mocked API won’t be on the **same domain**, thus triggering browsers OPTIONS [preflight requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
+When creating mock APIs, chances are the front-end application and the mocked API won’t be on the **same domain**, thus triggering browsers OPTIONS [preflight requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS).
 
 For your application to work, you can make Mockoon automatically answer to these OPTIONS requests:
 

@@ -20,7 +20,9 @@ const getTemplates = async () => {
 
 function addPage(frequency, priority) {
   return function (path) {
-    let route = path.replace(/\\/g, '/');
+    let route = path
+      .replace(/\\/g, '/')
+      .replace('/cloud-docs/', '/cloud/docs/');
     route =
       (route.includes('/index') ? route.replace('/index', '') : route) + '/';
 
@@ -170,7 +172,7 @@ if (!existsSync('public/sitemaps/')) {
 
 Promise.all([
   generateSitemap(
-    'pages/!(_|index)*.tsx',
+    'pages/!(_)*.tsx',
     'root-pages',
     '^pages',
     ['/templates'],
@@ -232,6 +234,11 @@ Promise.all([
     ['/old-releases/cli', '/old-releases/desktop', '/old-releases/serverless']
   ),
   generateSitemap('content/docs/latest/**/*.md', 'docs', '^(content|pages)'),
+  generateSitemap(
+    'content/cloud-docs/**/*.md',
+    'cloud-docs',
+    '^(content|pages)'
+  ),
   generateSitemap('content/releases/*.md', 'releases', '^(content|pages)'),
   generateMockSamplesCategoriesSitemap(),
   generateMockSamplesCategorySitemap(),

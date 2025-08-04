@@ -56,5 +56,3 @@ Furthermore, Mockoon makes it easy to test new features that are part of larger 
 > {"type": "##quotation##", "citation": "If you are building a public API as part of your product, try using Mockoon not just to mock an API for internal development, but for UX research. It's a really low-effort way to make sure developers building in your ecosystem have a great time doing so.", "author": "Toby Urff", "authorRole": "CPO & Co-founder @ Impala", "pictureUrl": "external/impala/toby-urff.jpg"}
 
 Impala has found that thanks to Mockoon's complete set of options, minimal learning curve, and easy-to-use interface, they can offer more complex mocking scenarios during user interviews without spending too much time setting up throwaway mocks. The result is thorough UX research by testing and validating more complex scenarios, accelerating feedback, and ensuring a high-quality release.
-
-If you want to learn more about how Impala implemented their API user research workflow, you can read their [detailed article](https://impala.travel/en/blog/using-ux-research-to-build-apis-that-developers-love).

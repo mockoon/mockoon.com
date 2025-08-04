@@ -20,6 +20,6 @@ export type Subscription = {
   customerId: string;
   subscriptionId: string;
 
-  // userId for old solo plan, or teamId
+  // teamId
   principalUid: string;
 };

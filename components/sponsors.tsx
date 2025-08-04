@@ -21,7 +21,7 @@ const Sponsors: FunctionComponent<{
       <div className='row align-items-center justify-content-center'>
         <div className='col col-md-10 text-center'>
           <Link
-            href='https://github.blog/2023-04-12-github-accelerator-our-first-cohort-and-whats-next/'
+            href='https://github.blog/news-insights/company-news/github-accelerator-our-first-cohort-and-whats-next/'
             className='d-inline-block p-4'
             target='_blank'
           >

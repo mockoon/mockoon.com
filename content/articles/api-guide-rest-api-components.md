@@ -40,7 +40,7 @@ You will also often find **nested resources**. They help fetch related resources
 
 ### Method (request)
 
-To indicate to the server what action to perform on a specific resource, this resource URL will always be coupled to an [HTTP verb or method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods). There are many methods: **GET**, **HEAD**, **POST**, **PUT**, **DELETE**, **CONNECT**, **OPTIONS**, **TRACE**, **PATCH**.
+To indicate to the server what action to perform on a specific resource, this resource URL will always be coupled to an [HTTP verb or method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods). There are many methods: **GET**, **HEAD**, **POST**, **PUT**, **DELETE**, **CONNECT**, **OPTIONS**, **TRACE**, **PATCH**.
 
 The most used one are the following:
 
@@ -126,7 +126,7 @@ Again, two headers are present here, but they are different and only make sense 
 - `Content-Type`: indicate to the client in which format the payload (or body) has been sent. Here, in JSON format.
 - `Content-Length`: Indicate the length of the response body.
 
-HTTP headers is a vast topic, and there are [many headers that you can explore](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers).
+HTTP headers is a vast topic, and there are [many headers that you can explore](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers).
 
 ### Body or payload
 
@@ -135,7 +135,7 @@ As you may have noticed in the previous examples, requests and responses **may o
 You understand now, both request and response can contain a body, but it doesn't make sense in some cases. Sometimes it is even highly discouraged and not part of the HTTP specification. It is the case for a GET request which should not contain a body as you only want to retrieve data from the server, not send it.
 However, you will find implementations contradicting this.
 
-Nowadays, the most widely used format for sending payloads is the [JSON format](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON). You will also find a lot of APIs making data available in XML.
+Nowadays, the most widely used format for sending payloads is the [JSON format](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON). You will also find a lot of APIs making data available in XML.
 
 As we saw previously, the body follows a blank line and is sent as plain text:
 

@@ -17,9 +17,9 @@ meta:
 
 ## 🚀 Mockoon joins GitHub Accelerator
 
-We are excited to announce that we have been [accepted to the first GitHub Accelerator cohort](https://github.blog/2023-04-12-github-accelerator-our-first-cohort-and-whats-next/). This is a major milestone for our project and we are honored to be a part of such an amazing community of developers.
+We are excited to announce that we have been [accepted to the first GitHub Accelerator cohort](https://github.blog/news-insights/company-news/github-accelerator-our-first-cohort-and-whats-next/). This is a major milestone for our project and we are honored to be a part of such an amazing community of developers.
 
-In addition to Mockoon, [19 other awesome open-source projects](https://github.blog/2023-04-12-github-accelerator-our-first-cohort-and-whats-next/#meet-the-20-projects-in-github-accelerator) have been selected. We look forward to collaborating with them throughout the program.
+In addition to Mockoon, [19 other awesome open-source projects](https://github.blog/news-insights/company-news/github-accelerator-our-first-cohort-and-whats-next/#meet-the-20-projects-in-github-accelerator) have been selected. We look forward to collaborating with them throughout the program.
 
 | Project                                                                | Purpose                                                                                 |
 | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |

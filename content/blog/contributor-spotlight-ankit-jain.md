@@ -66,7 +66,7 @@ Outside of Mockoon, Vim editor holds a special place in my toolkit. Its versatil
 
 ### Is there anything else you'd like to share with the Mockoon community, a personal project or an interesting read?
 
-Check out my [GitHub](https://www.github.com/ajatkj) for Scriptable repo among a few others.
+Check out my [GitHub](https://github.com/ajatkj) for Scriptable repo among a few others.
 
 ---
 

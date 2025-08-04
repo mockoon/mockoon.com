@@ -2,7 +2,7 @@
 title: Events
 meta:
   title: 'Admin API: subscribe to API events'
-  description: 'Learn how to subscribe to real-time events from your mock admin API'
+  description: 'Learn how to subscribe to real-time events from your mock admin API: transaction completion, data bucket processing, and more.'
 order: 805
 ---
 

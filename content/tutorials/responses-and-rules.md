@@ -15,7 +15,7 @@ order: 11
 
 Mockoon allows you to create **multiple responses** for each mock API endpoint and serve them using **dynamic rules**. This tutorial will show you how to create a typical setup: one response returning a **200 status code** and another one returning a **401 status code** when the "Authorization" header is not present in the request.
 
-[![View the video version button{250x71}](/images/view-video-btn-250.png)](https://youtu.be/HDGeslYAEAc)
+[![View the video version button{250x71}](/images/view-video-btn-250.png)](https://www.youtube.com/watch?v=HDGeslYAEAc)
 
 > 💡 To learn more about APIs and API mocking in general, head over to our [API guide](/articles/api-guide-what-are-api/) or [API mocking guide](/articles/what-is-api-mocking/)
 

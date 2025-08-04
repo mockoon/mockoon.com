@@ -11,7 +11,7 @@ const SocialProof: FunctionComponent = function () {
           >
             <img
               src='/images/github-accelerator.png'
-              alt=''
+              alt='github accelerator logo'
               width='250'
               className='img-fluid'
             />
@@ -20,7 +20,10 @@ const SocialProof: FunctionComponent = function () {
       </div>
       <div className='d-flex flex-wrap justify-content-between'>
         <div>
-          <a href='https://www.g2.com/products/mockoon-mockoon' target='_blank'>
+          <a
+            href='https://www.g2.com/products/mockoon-mockoon/reviews'
+            target='_blank'
+          >
             <img
               src='/images/directories/g2.png'
               alt='G2 rating 4.5'

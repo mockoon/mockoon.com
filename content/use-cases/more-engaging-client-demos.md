@@ -1,9 +1,9 @@
 ---
 title: More engaging client demos with API mocking
-excerpt: Creating engaging client demos can be challenging when relying on live systems that are prone to failure or interruptions. Mock APIs allow you to simulate realistic scenarios, ensuring a smooth and uninterrupted presentation.
+excerpt: Create engaging client demos with API mocking by simulating realistic scenarios, customized responses, and interactive experiences without relying on live systems
 meta:
   title: More engaging client demos with API mocking
-  description: Creating engaging client demos can be challenging when relying on live systems that are prone to failure or interruptions. Mock APIs allow you to simulate realistic scenarios, ensuring a smooth and uninterrupted presentation.
+  description: Create engaging client demos with API mocking by simulating realistic scenarios, customized responses, and interactive experiences without relying on live systems
 image: api-mocking-creates-more-engaging-client-demo.png
 imageAlt: Person demoing an application
 imageWidth: 1200

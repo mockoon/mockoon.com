@@ -116,5 +116,4 @@ These quotas and limits are subject to change. Please refer to your [account set
 Here is a list of limitations of the current version of the data synchronization feature:
 
 - External files linked to the environment are not synchronized (e.g. environment's certificates or files used in the "File" response body type).
-- The CLI and serverless package do not support access to cloud environments yet.
-- Team and Enterprise plans are currently not offering a personal cloud space for each user. All environments are shared across the team.
+- The CLI package cannot deploy cloud environments yet ([but it's on our roadmap](https://github.com/mockoon/mockoon/issues/1736)).

@@ -27,7 +27,7 @@ For a long time, we believed that **every issue deserved a chance to stay open**
 
 We've designed a detailed labeling system that makes it **immediately clear where every issue stands**.
 
-![screenshot of the new labels design](/images/blog/introducing-new-issue-label-system-enhanced-transparency/new-labels-preview.png)
+![screenshot of the new labels design{617x232}](/images/blog/introducing-new-issue-label-system-enhanced-transparency/new-labels-preview.png)
 
 Our new labels are organized into several categories:
 

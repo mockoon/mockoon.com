@@ -20,11 +20,13 @@ To subscribe to the events, call the following endpoint:
 
 - **Method:** `GET`
 - **URL:** `/mockoon-admin/events`
+- **Parameters:**
+  - `maxlogs` (optional): The maximum number of logs to retrieve upon connection. If not specified, all logs will be sent, limited by the server's configuration.
 
 **Example request:**
 
 ```http
-GET /mockoon-admin/events
+GET /mockoon-admin/events?maxlogs=100
 ```
 
 ## Events
@@ -76,6 +78,8 @@ Example of a log event:
 ```
 
 The data in the `transaction` property is following the [Transaction model](https://github.com/mockoon/mockoon/blob/main/packages/commons/src/models/server.model.ts#L61-L86) similar to the one used in the [`/mockoon-admin/logs` endpoint](docs:admin-api/transaction-logs).
+
+Upon connection, the server will send the last `maxlogs` transactions (if specified) and then continue to send new transactions as they are completed.
 
 ### Data buckets processed event
 

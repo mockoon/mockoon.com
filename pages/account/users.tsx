@@ -261,27 +261,35 @@ const AccountUsers: FunctionComponent = function () {
                             {planNames[teamData?.plan]} plan users
                           </h4>
                           <small className='text-gray-700 ms-auto'>
-                            Need more seats? Contact us at{' '}
-                            <a href='mailto:support@mockoon.com'>
-                              support@mockoon.com
-                            </a>
+                            {isUserLoading ? (
+                              <Spinner small />
+                            ) : (
+                              <small
+                                className={`me-2 ${
+                                  members?.length >= teamData?.seats
+                                    ? 'text-danger'
+                                    : 'text-gray-700'
+                                }`}
+                              >
+                                {members?.length}/{teamData?.seats} seats
+                              </small>
+                            )}
+                            {userData?.plan === 'TEAM' && (
+                              <Link href='/account/subscription/'>
+                                Upgrade seats
+                              </Link>
+                            )}
+                            {userData?.plan === 'ENTERPRISE' && (
+                              <>
+                                Need more seats? Contact us at{' '}
+                                <a href='mailto:support@mockoon.com'>
+                                  support@mockoon.com
+                                </a>
+                              </>
+                            )}
                           </small>
                         </div>
-                        <div className='col-auto'>
-                          {isUserLoading ? (
-                            <Spinner />
-                          ) : (
-                            <small
-                              className={
-                                members?.length >= teamData?.seats
-                                  ? 'text-danger'
-                                  : 'text-gray-700'
-                              }
-                            >
-                              {members?.length}/{teamData?.seats} seats
-                            </small>
-                          )}
-                        </div>
+                        <div className='col-auto'></div>
                         {canManageUsers && (
                           <div className='col-auto'>
                             <button

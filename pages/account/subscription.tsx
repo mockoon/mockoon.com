@@ -14,12 +14,18 @@ import { frequencyNames, planNames } from '../../constants/plans';
 import { pricing } from '../../data/pricing';
 import Layout from '../../layout/layout';
 import { useAuth } from '../../utils/auth';
-import { useCurrentSubscription, useCurrentUser } from '../../utils/queries';
+import {
+  useCurrentSubscription,
+  useCurrentTeam,
+  useCurrentUser
+} from '../../utils/queries';
 
 const meta = {
   title: 'My account - Subscription',
   description: 'Manage your Mockoon Cloud subscription'
 };
+
+let seatUpgradeTimeout: NodeJS.Timeout;
 
 const AccountSubscription: FunctionComponent = function () {
   const { isAuth, user, isLoading: isAuthLoading, getIdToken } = useAuth();
@@ -29,14 +35,19 @@ const AccountSubscription: FunctionComponent = function () {
     data: userData,
     refetch: refetchUserData
   } = useCurrentUser();
+  const { data: teamData, refetch: refetchTeamData } = useCurrentTeam(
+    userData?.teamId,
+    userData?.teamRole
+  );
   const { data: subscriptionData } = useCurrentSubscription(userData);
   const [seats, setSeats] = useState(1);
+  const [minSeats, setMinSeats] = useState(1);
   const [upgradeInProgress, setUpgradeInProgress] = useState(false);
   const isTeamPlan =
     userData?.plan === 'TEAM' || userData?.plan === 'ENTERPRISE';
   const isSupportRole =
-    isTeamPlan &&
-    (userData?.teamRole === 'team_admin' || userData?.teamRole === 'billing');
+    userData?.teamRole === 'team_admin' || userData?.teamRole === 'billing';
+  const canManageSubscription = isSupportRole || userData?.teamRole === 'owner';
 
   useEffect(() => {
     if (!isAuthLoading) {
@@ -48,11 +59,29 @@ const AccountSubscription: FunctionComponent = function () {
     }
   }, [isAuthLoading, user, isAuth]);
 
+  useEffect(() => {
+    if (teamData) {
+      setSeats(teamData.seats);
+    }
+  }, [teamData]);
+
+  useEffect(() => {
+    if (upgradeInProgress) {
+      console.log(seats);
+      clearTimeout(seatUpgradeTimeout);
+
+      seatUpgradeTimeout = setTimeout(() => {
+        upgradePreview(seats);
+      }, 500);
+    }
+  }, [seats, upgradeInProgress]);
+
   const {
     mutate: upgradePreview,
     data: upgradePreviewData,
     status: upgradePreviewStatus,
     isError: isUpgradePreviewError,
+    isPending,
     reset: resetUpgradePreview
   } = useMutation({
     mutationFn: async (seats: number) => {
@@ -100,6 +129,7 @@ const AccountSubscription: FunctionComponent = function () {
           resetUpgrade();
           setUpgradeInProgress(false);
           refetchUserData();
+          refetchTeamData();
         }, 10_000);
       } else {
         throw new Error();
@@ -108,8 +138,7 @@ const AccountSubscription: FunctionComponent = function () {
   });
 
   const displayPlanInfo =
-    userData?.plan === 'SOLO' ||
-    (isTeamPlan && (userData?.teamRole === 'owner' || isSupportRole));
+    userData?.plan === 'SOLO' || (isTeamPlan && canManageSubscription);
 
   const sharedQuotas = (
     <>
@@ -278,18 +307,21 @@ const AccountSubscription: FunctionComponent = function () {
                                       <span className='text-primary'>
                                         {planNames[userData?.plan]}
                                       </span>{' '}
-                                      plan
+                                      plan{' '}
+                                      {teamData?.plan !== 'SOLO' && (
+                                        <>- {teamData?.seats} seats</>
+                                      )}
                                     </>
                                   )}
 
                                   {subscriptionData?.frequency &&
                                   userData?.plan !== 'FREE' &&
                                   displayPlanInfo
-                                    ? ` (${
+                                    ? ` - ${
                                         frequencyNames[
                                           subscriptionData?.frequency
                                         ]
-                                      })`
+                                      }`
                                     : ''}
                                   {userData?.plan !== 'FREE' &&
                                     subscriptionData?.status === 'past_due' && (
@@ -356,39 +388,45 @@ const AccountSubscription: FunctionComponent = function () {
                                   )}
                               </div>
                               <div className='col-auto'>
-                                <div>
-                                  {userData?.plan === 'FREE' && (
+                                {userData?.plan === 'FREE' ? (
+                                  <div>
                                     <Link
                                       href={'/account/subscribe/'}
                                       className='btn btn-xs btn-primary'
                                     >
                                       Subscribe to a plan
                                     </Link>
-                                  )}
-                                </div>
-                                {!upgradeInProgress &&
+                                  </div>
+                                ) : !upgradeInProgress &&
                                   subscriptionData &&
-                                  userData?.plan === 'SOLO' &&
-                                  userData?.teamId &&
-                                  !subscriptionData?.cancellationScheduled && (
-                                    <div>
-                                      <button
-                                        className='btn btn-xs btn-primary'
-                                        onClick={() => {
-                                          setUpgradeInProgress(true);
-                                          upgradePreview(seats);
-                                        }}
-                                      >
-                                        Upgrade to a Team plan
-                                      </button>
-                                    </div>
-                                  )}
-
-                                {((userData?.plan === 'SOLO' &&
-                                  !userData?.teamId) ||
-                                  (isTeamPlan &&
-                                    userData?.teamRole === 'owner') ||
-                                  isSupportRole) && (
+                                  (userData?.plan === 'SOLO' ||
+                                    (userData?.plan === 'TEAM' &&
+                                      canManageSubscription)) &&
+                                  !subscriptionData?.cancellationScheduled &&
+                                  subscriptionData?.provider !== 'free' &&
+                                  subscriptionData?.provider !== 'manual' &&
+                                  teamData?.seats < pricing.TEAM.maxSeats ? (
+                                  <div>
+                                    <button
+                                      className='btn btn-xs btn-primary'
+                                      onClick={() => {
+                                        const newSeats =
+                                          teamData?.plan === 'SOLO'
+                                            ? 1
+                                            : teamData?.seats + 1;
+                                        setUpgradeInProgress(true);
+                                        setSeats(newSeats);
+                                        setMinSeats(newSeats);
+                                        upgradePreview(newSeats);
+                                      }}
+                                    >
+                                      {userData?.plan === 'SOLO' &&
+                                        'Upgrade to a Team plan'}
+                                      {userData?.plan === 'TEAM' &&
+                                        'Upgrade seats'}
+                                    </button>
+                                  </div>
+                                ) : (
                                   <div>
                                     <small className='text-gray-700 ms-auto'>
                                       Contact us at{' '}
@@ -408,7 +446,10 @@ const AccountSubscription: FunctionComponent = function () {
                               <div className='row mb-4'>
                                 <div className='col'>
                                   <p className='m-0 fw-bold'>
-                                    Team plan upgrade payment preview
+                                    {userData?.plan === 'SOLO' &&
+                                      'Team plan upgrade payment preview'}
+                                    {userData?.plan === 'TEAM' &&
+                                      'Seats upgrade payment preview'}
                                   </p>
                                 </div>
                                 <div className='col-auto'>
@@ -428,30 +469,29 @@ const AccountSubscription: FunctionComponent = function () {
                                         className='form-control form-control-xs'
                                         placeholder='Number of seats'
                                         value={seats}
+                                        disabled={isPending}
+                                        min={minSeats}
+                                        max={pricing.TEAM.maxSeats}
+                                        step={1}
                                         onChange={(event) => {
-                                          const newSeats = parseInt(
+                                          let newSeats = parseInt(
                                             event.target.value
                                           );
 
                                           if (
                                             isNaN(newSeats) ||
                                             newSeats < 1 ||
-                                            newSeats < pricing.TEAM.minSeats
+                                            newSeats < minSeats
                                           ) {
-                                            setSeats(pricing.TEAM.minSeats);
-                                            return;
-                                          }
-
-                                          if (
+                                            newSeats = minSeats;
+                                          } else if (
                                             newSeats > pricing.TEAM.maxSeats
                                           ) {
-                                            setSeats(pricing.TEAM.maxSeats);
-                                            return;
+                                            newSeats = pricing.TEAM.maxSeats;
                                           }
 
                                           setSeats(newSeats);
-
-                                          upgradePreview(newSeats);
+                                          console.log(newSeats);
                                         }}
                                       />
                                     </div>
@@ -589,18 +629,17 @@ const AccountSubscription: FunctionComponent = function () {
                                         'trialing' && (
                                         <>
                                           ⚠️ Once confirmed, your plan will be
-                                          upgraded to a Team plan and you will
-                                          be charged the next payment amount
-                                          when your trial ends.
+                                          upgraded and you will be charged the
+                                          next payment amount when your trial
+                                          ends.
                                         </>
                                       )}
                                       {subscriptionData?.status !==
                                         'trialing' && (
                                         <>
                                           ⚠️ Once confirmed, your plan will be
-                                          upgraded to a Team plan and you will
-                                          be charged the immediate payment
-                                          amount.
+                                          upgraded and you will be charged the
+                                          immediate payment amount.
                                         </>
                                       )}
                                     </small>

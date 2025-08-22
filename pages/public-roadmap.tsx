@@ -128,6 +128,18 @@ const tasks: {
       title: 'Copy logs as cURL',
       cloud: false,
       target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1807',
+      title: 'Cloud logs replay',
+      cloud: true,
+      target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1808',
+      title: 'Display cloud logs in the desktop app',
+      cloud: true,
+      target: '_blank'
     }
   ],
   comingSoon: [

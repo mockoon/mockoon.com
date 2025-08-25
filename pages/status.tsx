@@ -15,10 +15,10 @@ const incidents: {
 }[] = [
   {
     title: 'All services - Schedule downtime',
-    desc: 'All services will be restarted to apply updates. The downtime is expected to last less than 5 minutes for each service. We apologize for the inconvenience.',
-    dateStart: '2025-08-25T07:10:00Z',
-    dateEnd: '2025-08-25T07:20:00Z',
-    status: 'inprogress'
+    desc: 'All services will be restarted for a routine maintenance. The downtime is expected to last less than 5 minutes for each service. We apologize for the inconvenience.',
+    dateStart: '2025-08-25T07:20:00Z',
+    dateEnd: '2025-08-25T08:30:00Z',
+    status: 'resolved'
   },
   {
     title: 'All services - Schedule downtime, v9.3.0 release',

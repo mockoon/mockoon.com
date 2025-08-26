@@ -403,6 +403,7 @@ const AccountSubscription: FunctionComponent = function () {
                                     (userData?.plan === 'TEAM' &&
                                       canManageSubscription)) &&
                                   !subscriptionData?.cancellationScheduled &&
+                                  subscriptionData.status !== 'past_due' &&
                                   subscriptionData?.provider !== 'free' &&
                                   subscriptionData?.provider !== 'manual' &&
                                   teamData?.seats < pricing.TEAM.maxSeats ? (

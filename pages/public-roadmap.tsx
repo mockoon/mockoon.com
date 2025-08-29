@@ -140,6 +140,12 @@ const tasks: {
       title: 'Display cloud logs in the desktop app',
       cloud: true,
       target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1821',
+      title: 'OpenAPI import in web app',
+      cloud: true,
+      target: '_blank'
     }
   ],
   comingSoon: [

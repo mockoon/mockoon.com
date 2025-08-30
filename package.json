@@ -60,7 +60,7 @@
     "js-yaml": "^4.1.0",
     "jsonpath-plus": "^10.3.0",
     "marked": "^15.0.12",
-    "next": "^15.3.3",
+    "next": "^15.4.7",
     "object-path": "^0.11.8",
     "qrcode.react": "^4.2.0",
     "raw-loader": "^4.0.2",

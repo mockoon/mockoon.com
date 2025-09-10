@@ -47,7 +47,7 @@ The eight UN Open Source Principles aren't just aspirational for us, they're pri
 
 **Sustain and scale**: Our hybrid model, free open-source tool plus [Mockoon Cloud](/cloud/), ensures we can continue developing and supporting Mockoon for years to come.
 
-![Mockoon open source contributors avatars screenshot](/images/blog/united-nations-open-source-principles-endorsment/open-source-contributors.png)
+![Mockoon open source contributors avatars screenshot{1124x338}](/images/blog/united-nations-open-source-principles-endorsment/open-source-contributors.png)
 
 This endorsement strengthens our resolve to continue on the path we've always been on. As we grow [Mockoon Cloud](/cloud/), **our open-source foundation remains non-negotiable**. We're committed to **keeping Mockoon's desktop application completely free and open-source** and **maintaining transparent development** where our community can see, contribute to, and influence our roadmap.
 

@@ -16,9 +16,12 @@ Mockoon offers the following helpers which can return information relative to th
 - [`bodyRaw`](#bodyraw)
 - [`queryParam`](#queryparam)
 - [`queryParamRaw`](#queryparamraw)
+- [`queryParams`](#queryparams)
 - [`urlParam`](#urlparam)
+- [`urlParams`](#urlparams)
 - [`cookie`](#cookie)
 - [`header`](#header)
+- [`headers`](#headers)
 - [`hostname`](#hostname)
 - [`ip`](#ip)
 - [`method`](#method)
@@ -204,6 +207,28 @@ Get the **raw** value at a given `path` from the request's query string. Complex
 {{/if}}
 ```
 
+## queryParams
+
+Returns an object containing all query parameters from the request URL. This helper is useful for iterating over all query parameters.
+
+**Examples**
+
+```handlebars
+<!-- Iterate over all query parameters -->
+{{#each (queryParams)}}
+  {{@key}}:{{this}}
+{{/each}}
+
+<!-- Get all query parameters as JSON -->
+{{{stringify (queryParams)}}}
+
+<!-- Check if a specific query parameter exists -->
+{{#if (lookup (queryParams) 'page')}}
+  Page parameter provided:
+  {{lookup (queryParams) 'page'}}
+{{/if}}
+```
+
 ## urlParam
 
 Get a named parameter from the route `/:paramName1/:paramName2`.
@@ -216,6 +241,28 @@ Get a named parameter from the route `/:paramName1/:paramName2`.
 
 ```handlebars
 {{urlParam 'paramName1'}}
+```
+
+## urlParams
+
+Returns an object containing all URL parameters from the route. This helper is useful for iterating over all URL parameters.
+
+**Examples**
+
+```handlebars
+<!-- Iterate over all URL parameters -->
+{{#each (urlParams)}}
+  {{@key}}:{{this}}
+{{/each}}
+
+<!-- Get all URL parameters as JSON -->
+{{{stringify (urlParams)}}}
+
+<!-- Check if a specific URL parameter exists -->
+{{#if (lookup (urlParams) 'userId')}}
+  User ID provided:
+  {{lookup (urlParams) 'userId'}}
+{{/if}}
 ```
 
 ## cookie
@@ -246,6 +293,27 @@ Get content from any request header or returns a default value if header is not 
 
 ```handlebars
 {{header 'Header-Name' 'default value'}}
+```
+
+## headers
+
+Returns an object containing all request headers. This helper is useful for iterating over all headers.
+
+**Examples**
+
+```handlebars
+<!-- Iterate over all headers -->
+{{#each (headers)}}
+  {{@key}}:{{this}}
+{{/each}}
+
+<!-- Get all headers as JSON -->
+{{{stringify (headers)}}}
+
+<!-- Check if a specific header exists -->
+{{#if (lookup (headers) 'authorization')}}
+  Authorization header provided
+{{/if}}
 ```
 
 ## hostname

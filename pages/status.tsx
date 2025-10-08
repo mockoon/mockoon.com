@@ -18,7 +18,7 @@ const incidents: {
     desc: 'Cloud instances will be restarted for a routine maintenance. The downtime is expected to last less than 5 minutes for each instance. We apologize for the inconvenience.',
     dateStart: '2025-10-08T06:00:00Z',
     dateEnd: '2025-10-08T06:30:00Z',
-    status: 'inprogress'
+    status: 'resolved'
   },
   {
     title: 'All services - Scheduled downtime',

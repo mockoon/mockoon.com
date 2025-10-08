@@ -14,21 +14,28 @@ const incidents: {
   status: 'planned' | 'inprogress' | 'resolved';
 }[] = [
   {
-    title: 'All services - Schedule downtime',
+    title: 'Cloud instances - Scheduled downtime',
+    desc: 'Cloud instances will be restarted for a routine maintenance. The downtime is expected to last less than 5 minutes for each instance. We apologize for the inconvenience.',
+    dateStart: '2025-10-08T06:00:00Z',
+    dateEnd: '2025-10-08T06:30:00Z',
+    status: 'inprogress'
+  },
+  {
+    title: 'All services - Scheduled downtime',
     desc: 'All services will be restarted for a routine maintenance. The downtime is expected to last less than 5 minutes for each service. We apologize for the inconvenience.',
     dateStart: '2025-09-20T06:30:00Z',
     dateEnd: '2025-09-20T07:00:00Z',
     status: 'resolved'
   },
   {
-    title: 'All services - Schedule downtime',
+    title: 'All services - Scheduled downtime',
     desc: 'All services will be restarted for a routine maintenance. The downtime is expected to last less than 5 minutes for each service. We apologize for the inconvenience.',
     dateStart: '2025-08-25T07:20:00Z',
     dateEnd: '2025-08-25T08:30:00Z',
     status: 'resolved'
   },
   {
-    title: 'All services - Schedule downtime, v9.3.0 release',
+    title: 'All services - Scheduled downtime, v9.3.0 release',
     desc: 'All services will be restarted to apply the v9.3.0 release. The downtime is expected to last less than 5 minutes for each service. We apologize for the inconvenience.',
     dateStart: '2025-07-01T08:10:00Z',
     dateEnd: '2025-07-01T09:15:00Z',
@@ -63,42 +70,42 @@ const incidents: {
     status: 'resolved'
   },
   {
-    title: 'All services - Schedule downtime, v9.2.0 release',
+    title: 'All services - Scheduled downtime, v9.2.0 release',
     desc: 'All services will be restarted to apply the v9.2.0 release. The downtime is expected to last less than 15 minutes. We apologize for the inconvenience.',
     dateStart: '2025-03-12T13:05:00Z',
     dateEnd: '2025-03-12T13:20:00Z',
     status: 'resolved'
   },
   {
-    title: 'All services - Schedule downtime, maintenance',
+    title: 'All services - Scheduled downtime, maintenance',
     desc: 'All services will be restarted for maintenance. The downtime is expected to last less than 5 minutes. We apologize for the inconvenience.',
     dateStart: '2025-01-11T15:30:00Z',
     dateEnd: '2025-01-11T15:35:00Z',
     status: 'resolved'
   },
   {
-    title: 'All services - Schedule downtime, v9.1.0 release',
+    title: 'All services - Scheduled downtime, v9.1.0 release',
     desc: 'All services will be restarted to apply the v9.1.0 release. The downtime is expected to last less than 15 minutes. We apologize for the inconvenience.',
     dateStart: '2024-10-25T17:00:00Z',
     dateEnd: '2024-10-25T17:15:00Z',
     status: 'resolved'
   },
   {
-    title: 'All services - Schedule downtime, v9.0.0 release',
+    title: 'All services - Scheduled downtime, v9.0.0 release',
     desc: 'All services will be restarted to apply the v9.0.0 release. The downtime is expected to last less than 5 minutes. We apologize for the inconvenience.',
     dateStart: '2024-10-25T15:08:00Z',
     dateEnd: '2024-10-25T15:11:00Z',
     status: 'resolved'
   },
   {
-    title: 'Cloud deployments - Schedule downtime, security fix',
+    title: 'Cloud deployments - Scheduled downtime, security fix',
     desc: 'Cloud deployments servers were restarted to apply a security fix. The downtime is expected to last 5 to 10 minutes. We apologize for the inconvenience.',
     dateStart: '2024-09-17T13:30:00Z',
     dateEnd: '2024-09-17T13:35:00Z',
     status: 'resolved'
   },
   {
-    title: 'Cloud deployments - Schedule downtime v8.4.0 release',
+    title: 'Cloud deployments - Scheduled downtime v8.4.0 release',
     desc: 'Cloud deployments servers were restarted to apply the v8.4.0 release. The downtime is expected to last 5 to 10 minutes. We apologize for the inconvenience.',
     dateStart: '2024-08-06T14:40:00Z',
     dateEnd: '2024-08-06T15:48:00Z',

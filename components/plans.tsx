@@ -800,9 +800,9 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>Hosting</td>
-                            <td className='text-center'>Shared</td>
-                            <td className='text-center'>Shared</td>
-                            <td className='text-center'>Dedicated</td>
+                            <td className='text-center'>Multi-tenant</td>
+                            <td className='text-center'>Multi-tenant</td>
+                            <td className='text-center'>Single-tenant</td>
                           </tr>
                           <tr>
                             <td

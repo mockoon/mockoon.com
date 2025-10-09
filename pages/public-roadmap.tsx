@@ -13,7 +13,7 @@ const faq: AccordionData = [
       {
         title: 'Where is the roadmap?',
         content:
-          'Our <a href="https://github.com/orgs/mockoon/projects/9" target="_blank">public roadmap</a> for our open-source projects is hosted on GitHub. Above is a summary of the current state of the roadmap with the most important features, including the non-open-source ones.'
+          'Our <a href="https://github.com/orgs/mockoon/projects/9" target="_blank">public roadmap</a> for our open-source projects is hosted on GitHub. Above is a summary of the current state of the open-source roadmap with the most important features, including Mockoon Cloud\'s features.'
       },
       {
         title: 'Where are the features listed? How can I contribute?',
@@ -23,12 +23,12 @@ const faq: AccordionData = [
       {
         title: 'What are the different steps of the public roadmap?',
         content:
-          '<ul><li><span class="fw-bold">Backlog:</span> contains features that are potential candidates due to their number of upvotes. Number of upvotes is only one indicator, and we may add features with less upvotes if they are more relevant to the project. We avoid adding too many features to the backlog as they may never get implemented.</li><li><span class="fw-bold">Analysis/POC:</span> contains the features that we are currently analyzing. They may be transferred to "To do" or be rejected if we realize they are not a good fit.</li><li><span class="fw-bold">To do:</span> planned features and tasks.</li><li><span class="fw-bold">In progress:</span> features currently being worked on by the maintainers or external contributors.</li><li><span class="fw-bold">Done:</span> contains the features and bug fixes merged to the main branch. As Mockoon is mainly a desktop application, releases happen less often than for web applications. The repository\'s main branch is stable but may contain features not yet released.</li></ul>'
+          '<ul><li><span class="fw-bold">Planned:</span> planned features and tasks.</li><li><span class="fw-bold">Analysis/POC:</span> contains the features that we are currently analyzing. They may be transferred to "In progress" or be rejected if we realize they are not a good fit.</li><li><span class="fw-bold">In progress:</span> features currently being worked on by the maintainers or external contributors.</li><li><span class="fw-bold">Done:</span> contains the features and bug fixes merged to the main branch. As Mockoon is mainly a desktop application, releases happen less often than for web applications. The repository\'s main branch is stable but may contain features not yet released.</li></ul>'
       },
       {
         title: 'Is everything on the public roadmap?',
         content:
-          'No. Some work may not be listed on the roadmap. It is the case for chores like dependencies updates or work happening on non-open-source products (backend, cloud offering, etc.).'
+          'No. Some work may not be listed on the roadmap. It is the case for chores like dependencies updates or work happening on non-open-source products and tools (backend, cloud offering, etc.).'
       }
     ]
   }

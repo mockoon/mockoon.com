@@ -146,6 +146,11 @@ const tasks: {
       title: 'OpenAPI import in web app',
       cloud: true,
       target: '_blank'
+    },
+    {
+      title: 'Account activity audit logs',
+      cloud: true,
+      target: null
     }
   ],
   comingSoon: [
@@ -159,17 +164,16 @@ const tasks: {
       cloud: true,
       target: null
     },
-
-    {
-      title: 'Account audit logs',
-      cloud: true,
-      target: null
-    },
     {
       title: 'CLI: deploy from a cloud mock',
       link: 'https://github.com/mockoon/mockoon/issues/1736',
       cloud: true,
       target: '_blank'
+    },
+    {
+      title: 'Resources activity audit logs',
+      cloud: true,
+      target: null
     }
   ]
 };

@@ -66,3 +66,22 @@ export const getTemplate = async (slug: string) => {
 
   return (await templateResponse.json()) as Template[];
 };
+
+/**
+ * Trigger a browser download
+ *
+ * @param filename
+ * @param data
+ */
+export const triggerBrowserDownload = (filename: string, data: string) => {
+  const blobUrl = URL.createObjectURL(new Blob([data], { type: 'text/plain' }));
+
+  const link = document.createElement('a');
+  link.href = blobUrl;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  URL.revokeObjectURL(blobUrl);
+};

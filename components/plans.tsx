@@ -942,9 +942,42 @@ const PlansView: FunctionComponent<{
                               colSpan={5}
                               className='text-start fw-bold bg-gray-100'
                             >
+                              Audit trail{' '}
+                              <Link
+                                href='/cloud/docs/audit-trail/'
+                                className='fw-normal ms-2'
+                              >
+                                <small>Learn more</small>
+                              </Link>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Team activities audit trail</td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td>Resource activities audit trail</td>
+                            <td colSpan={4} className='text-center fst-italic'>
+                              Coming soon
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Retention</td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>30 days</td>
+                            <td className='text-center'>1 year</td>
+                          </tr>
+                          <tr>
+                            <td
+                              colSpan={5}
+                              className='text-start fw-bold bg-gray-100'
+                            >
                               Support
                             </td>
                           </tr>
+
                           <tr>
                             <td>Support level</td>
                             <td className='text-center'>Email support</td>

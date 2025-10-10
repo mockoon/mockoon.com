@@ -112,6 +112,23 @@ const AccountMenu: FunctionComponent = function () {
                     Support
                   </Link>
                 </li>
+
+                {isTeamPlan && (
+                  <li
+                    className={`list-item ${
+                      router.pathname.includes('account/audit-trail')
+                        ? 'active'
+                        : ''
+                    }`}
+                  >
+                    <Link
+                      href='/account/audit-trail/'
+                      className='list-link text-reset ps-4'
+                    >
+                      Audit trail
+                    </Link>
+                  </li>
+                )}
               </>
             )}
           </ul>

@@ -44,6 +44,12 @@ const tasks: {
 } = {
   released: [
     {
+      title: 'Account activity audit trail',
+      link: '/cloud/docs/audit-trail/',
+      cloud: true,
+      target: null
+    },
+    {
       link: '/cloud/docs/roles-permissions/',
       title: 'Support roles (team admin, billing)',
       cloud: true,
@@ -146,11 +152,6 @@ const tasks: {
       title: 'OpenAPI import in web app',
       cloud: true,
       target: '_blank'
-    },
-    {
-      title: 'Account activity audit logs',
-      cloud: true,
-      target: null
     }
   ],
   comingSoon: [
@@ -171,7 +172,7 @@ const tasks: {
       target: '_blank'
     },
     {
-      title: 'Resources activity audit logs',
+      title: 'Resources activity audit trail',
       cloud: true,
       target: null
     }

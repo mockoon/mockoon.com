@@ -37,3 +37,9 @@ Proxy specific headers can also be added, both to the forwarded request and the 
 ![add proxy headers by filling the keys and values{1484x375}](docs-img:proxy-headers.png)
 
 > **Proxy request headers** will be automatically added to the request sent to the proxied server, while **proxy response headers** are added to the response received from the proxied server.
+
+## Decompression of proxied response bodies
+
+If the response body is compressed (e.g., with gzip, deflate, brotli or Zstandard) and the `Content-Encoding` header is set accordingly, Mockoon will automatically decompress the body before returning it to the client. The response body will be shown uncompressed in the Mockoon [Logs view](docs:logging-and-recording/requests-logging) and in the [Admin API `/logs` endpoint](docs:admin-api/transaction-logs).
+
+> ⚠️ Zstandard decompression support is available in the desktop application and cloud, but the availability in the CLI and libraries depends on the Node.js version used by your system and requires Node.js v22 or later.

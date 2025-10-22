@@ -40,6 +40,29 @@ In the management dialog, you can **re-deploy** the environment or **delete** th
 
 ![deployment management dialog re-deploy or delete the instance menu{886x210}](cloud-docs-img:deploy-environment-management-menu.png)
 
+### Desktop/web apps and re-deployments
+
+Currently, the behavior of re-deployments is different depending on whether you are using the desktop application or the web application:
+
+- **Desktop application**: For historical reasons, the desktop application is still biased towards local development. Therefore, all changes made to cloud environments will only be applied to the cloud instances when you re-deploy them manually. This allows you to make changes to your environment without affecting the running instance until you are ready to update it.
+- **Web application**: In the web application, many changes are pushed to the cloud instance automatically without requiring a manual re-deployment. This is because the web application is designed to be more collaborative and real-time, allowing you to see the changes reflected in the running instance immediately. However, some changes may still require a manual re-deployment, depending on their nature.
+
+  The following changes are **applied automatically**:
+
+  - Some environment properties (headers, proxy headers, latency, etc.).
+  - Some route properties (response mode).
+  - Adding and removing callbacks.
+  - Route responses (headers, latency, status code, callbacks calls, rules, etc.).
+
+  The following changes still **require a manual re-deployment**:
+
+  - Route paths and methods.
+  - Adding or removing routes.
+  - Environment port, hostname, proxy and TLS options.
+  - Adding or removing data buckets.
+
+We plan to unify this behavior in future versions of Mockoon to provide a consistent experience across both applications.
+
 ## Instance URL and visibility
 
 The instance will be deployed on a shared cloud infrastructure and will be accessible using a unique URL in the form of `https://mock-abcd1234.{serverId}.mockoon.app`. The URL will be displayed in the management dialog and can be shared with your team, clients, or class. You can also customize the subdomain part of the URL when deploying the environment.

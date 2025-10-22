@@ -27,13 +27,9 @@ The interface is the same as the desktop application, with a few differences due
 - [Cloud deployments unsupported features](cloud-docs:api-mock-cloud-deployments#unsupported-features) (file serving, custom TLS, etc.) are hidden to avoid confusion.
 - Desktop/local specific options and features are disabled or hidden (managing local environments, etc.).
 - Some interface elements were modified to fit the web application (e.g. the server start button deploys to the cloud instead of starting a local server).
+- The web application handles re-deployments differently than the desktop application (see [Desktop/web apps and re-deployments](cloud-docs:api-mock-cloud-deployments#desktopweb-apps-and-re-deployments) for more information).
 
 As this application is still in early access, we are working on improving the interface and adding new features. We welcome your feedback and suggestions to help us make it better.
-
-Also, some features are not yet available in the web application but will be added in future versions:
-
-- OpenAPI import/export.
-- JSON import/export.
 
 ## Web app version and migration
 

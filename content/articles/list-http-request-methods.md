@@ -39,7 +39,7 @@ The most commonly used HTTP request methods are: [**GET**](#get), [**POST**](#po
 [LABEL](#label)  
 [LINK](#link)  
 [LOCK](#lock)  
-[M-SEARCH](#m)  
+[M-SEARCH](#m-search)  
 [MERGE](#merge)  
 [MKACTIVITY](#mkactivity)  
 [MKCALENDAR](#mkcalendar)  

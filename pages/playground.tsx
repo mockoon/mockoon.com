@@ -58,7 +58,7 @@ const faq: AccordionData = [
   }
 ];
 
-const resources: AccordionData = [
+const crudResources: AccordionData = [
   {
     items: [
       {
@@ -241,7 +241,83 @@ const resources: AccordionData = [
         count: 100
       },
       {
-        title: 'Current time <code>/time</code>',
+        title: 'Sales <code>/sales</code>',
+        subtitle:
+          'Fake sales JSON data including country, item type, unit cost, number of units, etc.',
+        content: (
+          <CodeBlock
+            code={`{
+  "id": "485d91e9-1042-458c-a977-47e48ae2d83e",
+  "country": "Guernsey",
+  "itemType": "Ball",
+  "salesChannel": "Movies",
+  "group": "Recycled",
+  "orderData": "Mon Oct 07 2024 04:05:36 GMT+0200 (Central European Summer Time)",
+  "shippingDate": "Fri Nov 15 2024 06:49:01 GMT+0100 (Central European Standard Time)",
+  "units": 16,
+  "unitPrice": "138.69",
+  "unitCost": "186.09",
+  "totalRevenue": "2219.04",
+  "totalCost": "2977.44",
+  "totalProfit": "-758.4000000000001"
+}`}
+            language='json'
+            lineBreak
+          ></CodeBlock>
+        ),
+        count: 100
+      },
+      {
+        title: 'Todos <code>/todos</code>',
+        subtitle:
+          'Fake todos JSON data including title, completion status, priority, due date, etc.',
+        content: (
+          <CodeBlock
+            code={`{
+  "id": "c7266f89-b777-45aa-83ad-01d4bad47eb7",
+  "title": "optimize real-time architectures",
+  "completed": true,
+  "priority": 0,
+  "dueDate": "2024-09-24T10:13:39.649Z"
+}`}
+            language='json'
+            lineBreak
+          ></CodeBlock>
+        ),
+        count: 100
+      },
+
+      {
+        title: 'Users <code>/users</code>',
+        subtitle:
+          'Fake users JSON data including name, email, phone, address, birthdate, etc.',
+        content: (
+          <CodeBlock
+            code={`{
+  "id": "dabf8912-0eb2-4648-98df-7d113a15bbfc",
+  "name": "Sean Kris",
+  "email": "Carlotta66@gmail.com",
+  "phone": "271-410-4874 x85762",
+  "address": "623 Jailyn Village, Pasadena, IA 54138",
+  "birthdate": "2005-07-26",
+  "isActive": true
+}`}
+            language='json'
+            lineBreak
+          ></CodeBlock>
+        ),
+        count: 100
+      }
+    ]
+  }
+];
+
+const utilities: AccordionData = [
+  {
+    items: [
+      {
+        title:
+          "Current time <span class='badge text-bg-primary mx-2'>GET</span><code>/time</code>",
         subtitle:
           'Fake time JSON data including UTC date time, Unix time, milliseconds, day of week, day of month, etc.',
         content: (
@@ -270,71 +346,55 @@ const resources: AccordionData = [
         )
       },
       {
-        title: 'Todos <code>/todos</code>',
+        title:
+          "Echo <span class='badge text-bg-gray-700 mx-2'>All methods</span><code>/echo</code> or <code>/parrot</code>",
         subtitle:
-          'Fake todos JSON data including title, completion status, priority, due date, etc.',
+          'Returns the same request data in the response (headers, query parameters, body, etc.).',
         content: (
           <CodeBlock
             code={`{
-  "id": "c7266f89-b777-45aa-83ad-01d4bad47eb7",
-  "title": "optimize real-time architectures",
-  "completed": true,
-  "priority": 0,
-  "dueDate": "2024-09-24T10:13:39.649Z"
+  "ip": "::1",
+  "hostname": "localhost",
+  "baseUrl": "http://localhost:3000",
+  "method": "POST",
+  "body": {
+    "response": "success"
+  }
 }`}
             language='json'
             lineBreak
           ></CodeBlock>
-        ),
-        count: 100
+        )
       },
       {
-        title: 'Sales <code>/sales</code>',
+        title:
+          "Error code <span class='badge text-bg-gray-700 mx-2'>All methods</span><code>/error?code=418</code>",
         subtitle:
-          'Fake sales JSON data including country, item type, unit cost, number of units, etc.',
+          'Returns a response with the status code specified in the <code>code</code> query parameter (default is 200).',
         content: (
           <CodeBlock
             code={`{
-  "id": "485d91e9-1042-458c-a977-47e48ae2d83e",
-  "country": "Guernsey",
-  "itemType": "Ball",
-  "salesChannel": "Movies",
-  "group": "Recycled",
-  "orderData": "Mon Oct 07 2024 04:05:36 GMT+0200 (Central European Summer Time)",
-  "shippingDate": "Fri Nov 15 2024 06:49:01 GMT+0100 (Central European Standard Time)",
-  "units": 16,
-  "unitPrice": "138.69",
-  "unitCost": "186.09",
-  "totalRevenue": "2219.04",
-  "totalCost": "2977.44",
-  "totalProfit": "-758.4000000000001"
+  "code": 418
 }`}
             language='json'
             lineBreak
           ></CodeBlock>
-        ),
-        count: 100
+        )
       },
       {
-        title: 'Users <code>/users</code>',
+        title:
+          "Lorem text <span class='badge text-bg-primary mx-2'>GET</span><code>/lorem?length=100</code>",
         subtitle:
-          'Fake users JSON data including name, email, phone, address, birthdate, etc.',
+          'Fake JSON data including a paragraph of lorem ipsum text. Use the <code>length</code> query parameter to specify the desired number of words (default and maximum is 100).',
         content: (
           <CodeBlock
             code={`{
-  "id": "dabf8912-0eb2-4648-98df-7d113a15bbfc",
-  "name": "Sean Kris",
-  "email": "Carlotta66@gmail.com",
-  "phone": "271-410-4874 x85762",
-  "address": "623 Jailyn Village, Pasadena, IA 54138",
-  "birthdate": "2005-07-26",
-  "isActive": true
+  "content": "Rem voluptatem aequitas audacia officia. Cubicularis depromo vere bibo. Similique paulatim aspernatur teneo speculum tergiversatio canis suffoco corroboro. Sint succedo absum derelinquo aiunt coaegresco tenax ara una subito. Quos totam alias adipisci. Aggero clam crudelis doloribus autem subiungo tribuo. Avaritia absque bellicus casus amor. Cohors strenuus adulatio sollers vestrum victoria alveus voluptatum causa deripio. Compello culpo creator tener conor non aedificium. Carus patrocinor uberrime audio adipisci summisse claustrum stabilis attonbitus tenus. Sodalitas aperio amissio vigor universe turbo appello aestas vita denego. Vesica cubicularis paulatim suus adaugeo via angelus armarium. Accusator ceno cubitum xiphias deduco aeneus cunabula. Succedo allatus conspergo adfectus vomer."
 }`}
             language='json'
             lineBreak
           ></CodeBlock>
-        ),
-        count: 100
+        )
       }
     ]
   }
@@ -391,13 +451,13 @@ const Course: FunctionComponent = function () {
                 </div>
               </Quote>
 
-              <h3 className='my-6'>Available resources</h3>
+              <h3 className='my-6'>Available CRUD resources</h3>
 
-              <Accordion
-                data={resources}
-                openFirst
-                counterSuffix={{ singular: 'item', plural: 'items' }}
-              />
+              <Accordion data={crudResources} openFirst />
+
+              <h3 className='my-6'>Available utilities</h3>
+
+              <Accordion data={utilities} openFirst />
             </div>
 
             <div className='col-12 col-lg-5 sticky-top'>

@@ -119,7 +119,7 @@ const Nav: FunctionComponent<{
                 <GitHub />
               </li>
 
-              <li className='nav-item'>
+              <li className='nav-item px-4'>
                 <DocSearch
                   appId='HV1IDAB8IU'
                   indexName='mockoon'

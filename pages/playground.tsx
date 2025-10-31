@@ -359,6 +359,15 @@ const utilities: AccordionData = [
   "method": "POST",
   "body": {
     "response": "success"
+  },
+  "headers": {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "Content-Length": "38"
+  },
+  "query": {
+    "param1": "value1",
+    "param2": "value2"
   }
 }`}
             language='json'
@@ -468,7 +477,8 @@ const Course: FunctionComponent = function () {
                     <code>https://playground.mockoon.com/</code>
                   </p>
                   <h4 className='my-6'>
-                    Available routes/methods for each resource (replace{' '}
+                    Available routes/methods for each resource (except the
+                    utilities at the bottom of the list, replace{' '}
                     <code>
                       {'{'}
                       resources{'}'}

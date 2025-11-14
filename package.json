@@ -57,7 +57,7 @@
     "glob": "^11.0.2",
     "gray-matter": "^4.0.3",
     "isbot": "^5.1.27",
-    "js-yaml": "^4.1.0",
+    "js-yaml": "^4.1.1",
     "jsonpath-plus": "^10.3.0",
     "marked": "^16.4.1",
     "next": "^16.0.1",

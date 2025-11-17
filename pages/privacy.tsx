@@ -12,20 +12,23 @@ const Privacy: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Privacy policy' subtitle='Last update June 10, 2025' />
+      <Hero title='Privacy policy' subtitle='Last update November 17, 2025' />
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
               <Quote colorScheme='secondary'>
-                💡 <strong>Summary of changes (June 10, 2025)</strong>:
+                💡 <strong>Summary of changes (November 17, 2025)</strong>:
                 <ul className='mb-0'>
                   <li>
-                    Section 3 ("Collection and use of information") was
-                    completed to include more examples about the types of
-                    information we collect and how we use it. A new section was
-                    added to detail the information collected by our payment
-                    processor (Paddle).
+                    Sections 10 (Changes to this Policy) and 11 (Contact Us)
+                    were renumbered to 14 and 15 respectively.
+                  </li>
+                  <li>
+                    New sections 10 (California Privacy Notice), 11 (Data
+                    Retention Details), 12 (Backup and Restore Practices), and
+                    13 (Sub-processors) were added to provide more detailed
+                    information on these topics.
                   </li>
                 </ul>
               </Quote>
@@ -38,7 +41,7 @@ const Privacy: FunctionComponent = function () {
               </p>
               <p>
                 This policy is effective as of July 1st, 2021 and was last
-                updated on June 10, 2025.
+                updated on November 17, 2025.
               </p>
               <h3 className='mt-6 fw-medium'>1. Information We Collect</h3>
               <p>
@@ -150,7 +153,6 @@ const Privacy: FunctionComponent = function () {
                   support request, etc.).
                 </li>
               </ul>
-
               <h3 className='mt-6 fw-medium'>
                 4. Security of Your Personal Information
               </h3>
@@ -262,7 +264,53 @@ const Privacy: FunctionComponent = function () {
                 policies of those sites, and cannot accept responsibility or
                 liability for their respective privacy practices.
               </p>
-              <h3 className='mt-6 fw-medium'>10. Changes to This Policy</h3>
+              <h3 className='mt-6 fw-medium'>10. California Privacy Notice</h3>
+              <p>
+                (CCPA/CPRA) We do not sell or share personal information as
+                defined by CPRA, and we do not use or disclose sensitive
+                personal information beyond purposes permitted by law.
+                California residents have the right to know, delete, correct,
+                and limit use of their information, and the right to
+                non-discrimination. Submit requests to support@mockoon.com; we
+                will verify and respond within 45 days. Categories collected:
+                identifiers (email), commercial information (purchases),
+                internet activity (log data), and billing information processed
+                by Paddle. Sources: you and our service logs. Purposes: provide,
+                secure, and support the service; process transactions.
+                Disclosures to service providers: hosting (Google Cloud
+                Platform), payments (Paddle), optional AI provider (OpenAI) for
+                user-initiated features.
+              </p>
+              <h3 className='mt-6 fw-medium'>11. Data Retention Details</h3>
+              <p>
+                Account data persists while your account is active. Upon account
+                deletion requested by you, we delete active records within 30
+                days and purge related data from backups on their normal cycle
+                (up to 90 days). Operational logs are retained up to 90 days and
+                then deleted or anonymized. Billing records may be retained up
+                to 10 years for tax and accounting. Support correspondence may
+                be retained up to 24 months. AI prompts and outputs are not
+                stored by Mockoon and subject to OpenAI's data usage policies.
+              </p>
+              <h3 className='mt-6 fw-medium'>
+                12. Backup and Restore Practices
+              </h3>
+              <p>
+                We host services in Google Cloud Platform. We perform daily
+                backups with up to 90-day retention. Backups are encrypted and
+                used only for continuity and disaster recovery.
+              </p>
+              <h3 className='mt-6 fw-medium'>13. Sub-processors</h3>
+              <p>
+                We use Google Cloud Platform (hosting), Paddle (payments and
+                billing), Cloudflare (CDN and security) and OpenAI (optional AI
+                features; prompts may be sent when you use the feature; we do
+                not send production data and do not retain prompts). Each acts
+                as a processor under appropriate agreements; international
+                transfers rely on safeguards such as Standard Contractual
+                Clauses and Data Processing Agreements where applicable.
+              </p>
+              <h3 className='mt-6 fw-medium'>14. Changes to This Policy</h3>
               <p>
                 At our discretion, we may change our privacy policy to reflect
                 updates to our business processes, current acceptable practices,
@@ -275,7 +323,7 @@ const Privacy: FunctionComponent = function () {
                 opportunity to opt in to or opt out of, as applicable, any new
                 uses of your personal information.
               </p>
-              <h3 className='mt-6 fw-medium'>11. Contact Us</h3>
+              <h3 className='mt-6 fw-medium'>15. Contact Us</h3>
               <p>
                 For any questions or concerns regarding your privacy, you may
                 contact us using the following details:{' '}

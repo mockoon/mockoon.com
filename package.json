@@ -54,7 +54,7 @@
     "fast-xml-parser": "^5.2.5",
     "firebase": "^12.4.0",
     "github-slugger": "^2.0.0",
-    "glob": "^11.0.2",
+    "glob": "^11.1.0",
     "gray-matter": "^4.0.3",
     "isbot": "^5.1.27",
     "js-yaml": "^4.1.1",

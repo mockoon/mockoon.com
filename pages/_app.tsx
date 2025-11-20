@@ -1,6 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { initializeApp } from 'firebase/app';
-import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
 import { connectAuthEmulator, getAuth } from 'firebase/auth';
 import { usePathname } from 'next/navigation';
 import Script from 'next/script';
@@ -24,19 +23,6 @@ if (process.env.NODE_ENV === 'development') {
     getAuth(),
     process.env.NEXT_PUBLIC_FIREBASE_AUTH_EMULATOR_HOST
   );
-}
-
-if (typeof window !== 'undefined') {
-  if (process.env.NODE_ENV === 'development') {
-    window['FIREBASE_APPCHECK_DEBUG_TOKEN'] = true;
-  }
-
-  initializeAppCheck(firebaseApp, {
-    provider: new ReCaptchaV3Provider(
-      process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
-    ),
-    isTokenAutoRefreshEnabled: true
-  });
 }
 
 export default function ({ Component, pageProps }) {

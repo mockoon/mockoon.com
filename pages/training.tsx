@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import { FunctionComponent } from 'react';
 import Accordion from '../components/accordion';
 import CompanyLogos from '../components/company-logos';
@@ -25,17 +26,17 @@ const faq: AccordionData = [
       {
         title: 'How long does the training last?',
         content:
-          'The training can last up to 4 hours (see schedule above). We can also accommodate custom training schedules. <a href="/contact-form/">Contact us</a> for more information.'
+          'The training lasts 4 hours (see schedule above). We can also accommodate custom training schedules. <a href="/contact-form/">Contact us</a> for more information.'
       },
       {
-        title: 'How many participants can attend the training?',
+        title: 'How many participants will attend the training?',
         content:
           'Ideal group size is below 10 participants. If you have a larger team, we can accommodate custom training schedules. <a href="/contact-form/">Contact us</a> for more information.'
       },
       {
-        title: 'Do you offer a certificate of completion?',
+        title: 'Do you provide a certificate of completion?',
         content:
-          'We offer a certificate of completion for the training. If you are interested in receiving a certificate, please let us know when we reach out to schedule your training session.'
+          'Yes, we will provide you with a certificate of completion for the training.'
       },
       {
         title: 'Do I need to have any prior knowledge to attend the training?',
@@ -119,7 +120,14 @@ const Training: FunctionComponent = function () {
                 <strong>create, optimize, and deploy</strong> your first mock
                 API effortlessly.
               </p>
-
+              {keyPoints.map((keyPoint, keyPointIndex) => (
+                <div key={`taskcomingsoon${keyPointIndex}`} className='d-flex'>
+                  <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                    <i className='icon icon-check'></i>
+                  </div>
+                  <p className='text-gray-800'>{keyPoint}</p>
+                </div>
+              ))}
               <h3 className='my-6 fw-medium'>Training schedule</h3>
 
               <Accordion
@@ -158,29 +166,32 @@ const Training: FunctionComponent = function () {
                       </div>
                     </div>
                   </div>
-                  <div className='my-6'>
-                    {keyPoints.map((keyPoint, keyPointIndex) => (
-                      <div
-                        key={`taskcomingsoon${keyPointIndex}`}
-                        className='d-flex'
-                      >
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon icon-check'></i>
-                        </div>
-                        <p className='text-gray-800'>{keyPoint}</p>
-                      </div>
-                    ))}
-                  </div>
 
                   <p className='text-center text-gray-700 mb-4'>
-                    Contact us to get a quote and schedule your training session
+                    Next available session:
+                  </p>
+                  <p className='text-center text-gray-700 mb-0'>
+                    <strong>Wednesday, January 21, 2026</strong>
+                  </p>
+                  <p className='text-center text-gray-700 mb-4'>
+                    <strong>
+                      {format('2026-01-21T13:00:00Z', "'from' HH:mm")}{' '}
+                      {format('2026-01-21T17:00:00Z', "'to' HH:mm OOOO")}
+                    </strong>
                   </p>
 
                   <div className='text-center'>
-                    <a href='/contact-form/' className='btn btn-primary'>
-                      Contact us
+                    <a
+                      href='https://book.stripe.com/14A28r5ji5qF0Rf3WD7g403'
+                      className='btn btn-primary'
+                    >
+                      Book
                     </a>
                   </div>
+                  <p className='text-center text-gray-700 mt-4 mb-0 fs-sm'>
+                    Price: 99 USD (excluding taxes) per participant (virtual
+                    class)
+                  </p>
                 </div>
               </div>
             </div>

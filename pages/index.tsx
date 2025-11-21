@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FunctionComponent, useEffect, useState } from 'react';
 import AlternatedFeatures from '../components/alternated-features';
 import Card from '../components/card';
@@ -162,14 +163,12 @@ const HomePage: FunctionComponent = function () {
     <Layout
       footerBanner='newsletter'
       topBanner={{
-        topBannerTimeEnd: new Date('2025-07-11T18:00:00Z'),
+        topBannerTimeEnd: new Date('2026-01-15T00:00:00Z'),
         content: (
           <>
-            Meet us at{' '}
-            <a href='/blog/mockoon-wearedevelopers-world-congress-berlin-2025/'>
-              WeAreDevelopers World Congress
-            </a>{' '}
-            in Berlin on July 9-11! 🎉
+            Join our <Link href={'/training/'}>live training session</Link> on{' '}
+            <strong>Wednesday, January 21, 2026</strong> to master Mockoon and
+            elevate your API mocking skills!{' '}
           </>
         )
       }}

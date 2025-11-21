@@ -316,6 +316,9 @@ const Nav: FunctionComponent<{
                             }`}
                           >
                             Live Training
+                            <CustomTooltip text='Next session on Jan 21, 2026'>
+                              <span className='ms-2'>📅</span>
+                            </CustomTooltip>
                           </Link>
                         </div>
                       </div>

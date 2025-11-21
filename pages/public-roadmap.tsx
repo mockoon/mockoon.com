@@ -44,6 +44,32 @@ const tasks: {
 } = {
   released: [
     {
+      title: 'Resources activity audit trail',
+      link: '/cloud/docs/audit-trail/',
+      cloud: true,
+      target: null
+    },
+    {
+      link: '/releases/9.4.0/#openapi-import-and-export-in-the-web-application',
+      title: 'OpenAPI import in web app',
+      cloud: true
+    },
+    {
+      link: '/releases/9.4.0/#cloud-logs-in-the-desktop-application-and-logs-replay',
+      title: 'Cloud logs replay',
+      cloud: true
+    },
+    {
+      link: '/releases/9.4.0/#cloud-logs-in-the-desktop-application-and-logs-replay',
+      title: 'Display cloud logs in the desktop app',
+      cloud: true
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1458',
+      title: 'Copy logs as cURL',
+      cloud: false
+    },
+    {
       title: 'Account activity audit trail',
       link: '/cloud/docs/audit-trail/',
       cloud: true,
@@ -90,30 +116,6 @@ const tasks: {
       title: 'Improved data buckets state reporting',
       cloud: false,
       target: null
-    },
-    {
-      title: 'Real-time collaboration improved presence',
-      cloud: true,
-      link: '/cloud/docs/data-synchronization-team-collaboration/#team-collaboration-and-conflict-handling',
-      target: null
-    },
-    {
-      link: '/docs/latest/api-endpoints/websockets/',
-      title: 'WebSockets support',
-      cloud: false,
-      target: null
-    },
-    {
-      link: '/docs/latest/route-responses/dynamic-rules/#4-comparison-operator',
-      title: 'New array includes rule operator',
-      cloud: false,
-      target: null
-    },
-    {
-      link: '/docs/latest/route-responses/dynamic-rules/#4-comparison-operator',
-      title: 'New JSON schema validation rule operator',
-      cloud: false,
-      target: null
     }
   ],
   inProgress: [
@@ -127,30 +129,6 @@ const tasks: {
       link: 'https://github.com/mockoon/mockoon/issues/1045',
       title: 'Export logs as HAR',
       cloud: false,
-      target: '_blank'
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/1458',
-      title: 'Copy logs as cURL',
-      cloud: false,
-      target: '_blank'
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/1807',
-      title: 'Cloud logs replay',
-      cloud: true,
-      target: '_blank'
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/1808',
-      title: 'Display cloud logs in the desktop app',
-      cloud: true,
-      target: '_blank'
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/1821',
-      title: 'OpenAPI import in web app',
-      cloud: true,
       target: '_blank'
     }
   ],
@@ -170,11 +148,6 @@ const tasks: {
       link: 'https://github.com/mockoon/mockoon/issues/1736',
       cloud: true,
       target: '_blank'
-    },
-    {
-      title: 'Resources activity audit trail',
-      cloud: true,
-      target: null
     }
   ]
 };

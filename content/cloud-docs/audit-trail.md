@@ -16,13 +16,21 @@ The **audit trail** is a record of **all the actions performed** by users within
 
 Currently the following events are logged in the audit trail:
 
-- **Team activities**:
+- **User events**:
+  - Desktop/web application login
+- **Team management**:
   - Team/account creation
   - Team member added
   - Team member removed
   - Subscription self-upgrades (plan upgrade, seats increase)
 - **Resource activities**:
-  - _Coming soon: mock APIs and deployments creation, update, deletion_
+  - **Cloud environments**:
+    - Environment created
+    - Environment deleted
+  - **Cloud instances**:
+    - Instance started
+    - Instance restarted
+    - Instance stopped
 
 ## Retention period and permissions
 

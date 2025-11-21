@@ -959,9 +959,9 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>Resource activities audit trail</td>
-                            <td colSpan={4} className='text-center fst-italic'>
-                              Coming soon
-                            </td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
                           </tr>
                           <tr>
                             <td>Retention</td>

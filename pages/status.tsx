@@ -14,6 +14,13 @@ const incidents: {
   status: 'planned' | 'inprogress' | 'resolved';
 }[] = [
   {
+    title: 'All services - Scheduled downtime',
+    desc: 'All services will be restarted for a routine maintenance. The downtime is expected to last less than 5 minutes for each service. We apologize for the inconvenience.',
+    dateStart: '2025-11-21T09:00:00Z',
+    dateEnd: '2025-11-21T10:00:00Z',
+    status: 'inprogress'
+  },
+  {
     title: 'All services - Cloudflare Outage',
     desc: 'All services suffered a major outage due to an issue with our DNS/CDN provider, Cloudflare (<a href="https://www.cloudflarestatus.com/incidents/8gmgl950y3h7">Incident</a>).<br>Update (12:20 UTC): The services are intermittently working. We are monitoring the situation closely.<br>Update (14:50 UTC): Services are back to normal.<br>We apologize for the inconvenience.',
     dateStart: '2025-11-18T11:37:00Z',

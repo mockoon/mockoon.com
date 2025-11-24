@@ -17,8 +17,8 @@ const incidents: {
     title: 'All services - Scheduled downtime',
     desc: 'All services will be restarted for a routine maintenance. The downtime is expected to last less than 5 minutes for each service. We apologize for the inconvenience.',
     dateStart: '2025-11-24T09:15:00Z',
-    dateEnd: '2025-11-24T10:00:00Z',
-    status: 'inprogress'
+    dateEnd: '2025-11-24T09:30:00Z',
+    status: 'resolved'
   },
   {
     title: 'All services - Scheduled downtime',

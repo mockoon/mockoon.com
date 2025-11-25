@@ -8,6 +8,7 @@ import Meta from '../components/meta';
 import Spinner from '../components/spinner';
 import Layout from '../layout/layout';
 import { useAuth } from '../utils/auth';
+import { honeypotFieldName } from '../utils/utils';
 
 const meta = {
   title: "Mockoon's cloud password reset",
@@ -44,8 +45,8 @@ const ResetPassword: FunctionComponent = function () {
     newPasswordForm.clearErrors();
     const userEmail = localStorage.getItem('resetPasswordEmail');
 
-    if (!data['work_address']) {
-      delete data['work_address'];
+    if (!data[honeypotFieldName]) {
+      delete data[honeypotFieldName];
 
       try {
         await confirmPasswordReset(code, data.newPassword);
@@ -225,7 +226,9 @@ const ResetPassword: FunctionComponent = function () {
                       </div>
 
                       <FormHoneypot
-                        inputRegister={newPasswordForm.register('work_address')}
+                        inputRegister={newPasswordForm.register(
+                          honeypotFieldName
+                        )}
                       />
 
                       {newPasswordForm.formState.errors.root

@@ -6,6 +6,7 @@ import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Spinner from '../components/spinner';
 import Layout from '../layout/layout';
+import { honeypotFieldName } from '../utils/utils';
 
 const CancellationSurvey: FunctionComponent = function () {
   const {
@@ -32,8 +33,8 @@ const CancellationSurvey: FunctionComponent = function () {
   setValue('formName', 'cancellation_survey');
 
   const onSubmit = async (data) => {
-    if (!data['work_address'] && isValid && getValues().userId) {
-      delete data['work_address'];
+    if (!data[honeypotFieldName] && isValid && getValues().userId) {
+      delete data[honeypotFieldName];
 
       try {
         const response = await fetch(
@@ -201,7 +202,7 @@ const CancellationSurvey: FunctionComponent = function () {
                   </div>
                 </div>
                 <FormHoneypot
-                  inputRegister={registerFormField('work_address')}
+                  inputRegister={registerFormField(honeypotFieldName)}
                 />
                 {apiError && (
                   <div className='row justify-content-center'>

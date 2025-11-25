@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
+import { honeypotFieldName } from '../utils/utils';
 
 const FormHoneypot: FunctionComponent<{
   inputRegister: UseFormRegisterReturn;
@@ -16,8 +17,11 @@ const FormHoneypot: FunctionComponent<{
           width: 0,
           zIndex: -1
         }}
-        htmlFor='work_address'
-      ></label>
+        htmlFor={honeypotFieldName}
+        aria-hidden='true'
+      >
+        Provide information:
+      </label>
       <input
         style={{
           opacity: 0,
@@ -28,11 +32,12 @@ const FormHoneypot: FunctionComponent<{
           width: 0,
           zIndex: -1
         }}
+        aria-hidden='true'
+        tabIndex={-1}
         autoComplete='off'
         type='text'
-        id='work_address'
-        name='work_address'
-        placeholder='Your address here'
+        id={honeypotFieldName}
+        name={honeypotFieldName}
         {...inputRegister}
       ></input>
     </>

@@ -9,6 +9,7 @@ import Meta from '../components/meta';
 import Spinner from '../components/spinner';
 import Layout from '../layout/layout';
 import { useAuth } from '../utils/auth';
+import { honeypotFieldName } from '../utils/utils';
 
 const meta = {
   title: "Mockoon's cloud signup",
@@ -54,8 +55,8 @@ const Signup: FunctionComponent = function () {
   const onSubmit = async (data) => {
     setError(null);
 
-    if (!data['work_address']) {
-      delete data['work_address'];
+    if (!data[honeypotFieldName]) {
+      delete data[honeypotFieldName];
 
       if (data['newsletter']) {
         localStorage.setItem('newsletter', 'true');
@@ -257,7 +258,7 @@ const Signup: FunctionComponent = function () {
                     </label>
                   </div>
                   <FormHoneypot
-                    inputRegister={registerFormField('work_address')}
+                    inputRegister={registerFormField(honeypotFieldName)}
                   />
                   {error && (
                     <div className='row justify-content-center'>

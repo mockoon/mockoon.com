@@ -10,6 +10,7 @@ import Meta from '../components/meta';
 import Spinner from '../components/spinner';
 import Layout from '../layout/layout';
 import { useAuth } from '../utils/auth';
+import { honeypotFieldName } from '../utils/utils';
 
 const meta = {
   title: "Mockoon's cloud login",
@@ -36,8 +37,8 @@ const Login: FunctionComponent = function () {
   const onCredentialsSubmit = async (data) => {
     credentialsForm.clearErrors();
 
-    if (!data['work_address']) {
-      delete data['work_address'];
+    if (!data[honeypotFieldName]) {
+      delete data[honeypotFieldName];
 
       try {
         await signInEmail(data.email, data.password);
@@ -248,7 +249,7 @@ const Login: FunctionComponent = function () {
 
                         <FormHoneypot
                           inputRegister={credentialsForm.register(
-                            'work_address'
+                            honeypotFieldName
                           )}
                         />
 

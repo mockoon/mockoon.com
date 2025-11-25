@@ -1,5 +1,6 @@
 import { FunctionComponent, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { honeypotFieldName } from '../utils/utils';
 import FormHoneypot from './form-honeypot';
 import Spinner from './spinner';
 
@@ -16,33 +17,29 @@ const EmailForm: FunctionComponent<{
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const onSubmit = async (data) => {
-    if (!data['work_address']) {
-      delete data['work_address'];
+    data = {
+      ...data,
+      newsletter: true
+    };
 
-      data = {
-        ...data,
-        newsletter: true
-      };
-
-      try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/newsletter`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-          }
-        );
-
-        if (response.status === 204) {
-          setSubmitSuccess(true);
-          reset();
-        } else {
-          setApiError(true);
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/newsletter`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
         }
-      } catch {
+      );
+
+      if (response.status === 204) {
+        setSubmitSuccess(true);
+        reset();
+      } else {
         setApiError(true);
       }
+    } catch {
+      setApiError(true);
     }
   };
 
@@ -64,7 +61,7 @@ const EmailForm: FunctionComponent<{
             required
             {...registerFormField('email')}
           />
-          <FormHoneypot inputRegister={registerFormField('work_address')} />
+          <FormHoneypot inputRegister={registerFormField(honeypotFieldName)} />
           <button
             className='btn btn-primary-subtle'
             type='submit'

@@ -1,5 +1,6 @@
 import { FunctionComponent, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { honeypotFieldName } from '../utils/utils';
 import FormHoneypot from './form-honeypot';
 import Spinner from './spinner';
 
@@ -16,8 +17,8 @@ const ContactForm: FunctionComponent<{ displayProject?: boolean }> = function ({
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const onSubmit = async (data) => {
-    if (!data['work_address']) {
-      delete data['work_address'];
+    if (!data[honeypotFieldName]) {
+      delete data[honeypotFieldName];
 
       try {
         const response = await fetch(
@@ -133,7 +134,7 @@ const ContactForm: FunctionComponent<{ displayProject?: boolean }> = function ({
           ></textarea>
         </div>
       </div>
-      <FormHoneypot inputRegister={registerFormField('work_address')} />
+      <FormHoneypot inputRegister={registerFormField(honeypotFieldName)} />
       {apiError && (
         <div className='row justify-content-center'>
           <div className='col-auto text-danger text-center fw-bold pb-4'>

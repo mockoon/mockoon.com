@@ -14,6 +14,13 @@ const incidents: {
   status: 'planned' | 'inprogress' | 'resolved';
 }[] = [
   {
+    title: 'Incident with some Cloud instances not reachable',
+    desc: 'Some Cloud instances are currently unreachable. The issue seem to be related to a recent update we did on our infrastructure. We are actively investigating and will provide updates as soon as possible. We apologize for the inconvenience.',
+    dateStart: '2025-11-27T20:30:00Z',
+    dateEnd: '2025-11-27T09:30:00Z',
+    status: 'inprogress'
+  },
+  {
     title: 'All services - Scheduled downtime',
     desc: 'All services will be restarted for a routine maintenance. The downtime is expected to last less than 5 minutes for each service. We apologize for the inconvenience.',
     dateStart: '2025-11-24T09:15:00Z',

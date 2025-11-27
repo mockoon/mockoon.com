@@ -5,7 +5,6 @@ import { FooterCTA } from '../models/common.model';
 import ContactBanner from './contact-banner';
 import DownloadCTA from './download-cta';
 import EmailForm from './email-form';
-import CustomTooltip from './tooltip';
 
 const Footer: FunctionComponent<{
   banner: FooterCTA;
@@ -245,15 +244,9 @@ const Footer: FunctionComponent<{
                   href={`${process.env.NEXT_PUBLIC_WEBAPP_URL}`}
                   className='text-reset'
                 >
-                  Web application
-                  <CustomTooltip
-                    className='icon-cloud ms-2 text-warning'
-                    text='Cloud customers only'
-                  ></CustomTooltip>
-                  <CustomTooltip
-                    className='icon-lab ms-2 text-info'
-                    text='Early access'
-                  ></CustomTooltip>
+                  Web app
+                  <span className='badge text-bg-warning ms-1'>Cloud</span>
+                  <span className='badge text-bg-info ms-1'>Early access</span>
                 </Link>
               </li>
               <li className='mb-2'>

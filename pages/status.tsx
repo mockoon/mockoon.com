@@ -14,11 +14,11 @@ const incidents: {
   status: 'planned' | 'inprogress' | 'resolved';
 }[] = [
   {
-    title: 'Incident with some Cloud instances not reachable',
-    desc: 'Some Cloud instances are currently unreachable. The issue seem to be related to a recent update we did on our infrastructure. We are actively investigating and will provide updates as soon as possible. We apologize for the inconvenience.',
-    dateStart: '2025-11-27T20:30:00Z',
-    dateEnd: '2025-11-27T09:30:00Z',
-    status: 'inprogress'
+    title: 'Incident - Unreachable Cloud instances',
+    desc: "Some Cloud instances are currently unreachable. The issue seems to be related to a recent update we did on our infrastructure on 2025-11-24.<br>Update (21:00 UTC): The issue has been identified and a fix is being deployed. Some instances are back online but some may still be unreachable.<br>Update (22:15 UTC): All instances are back online.<br>Post-mortem: The issue was caused by a configuration which wasn't correctly applied to some of the runners during our infrastructure update on 2025-11-24. The runners were initially working and only stopped responding after a subsequent restart. We have put in place additional checks to prevent this from happening again. We are also currently working on an improved deployment system that will reduce the risk of such issues in the future and to include instances statuses to our Cloud customers account pages and internal monitoring.<br>We apologize for the inconvenience.",
+    dateStart: '2025-11-27T20:00:00Z',
+    dateEnd: '2025-11-27T22:30:00Z',
+    status: 'resolved'
   },
   {
     title: 'All services - Scheduled downtime',

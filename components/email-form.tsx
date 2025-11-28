@@ -1,6 +1,6 @@
 import { FunctionComponent, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { honeypotFieldName } from '../utils/utils';
+import { useHoneypotFieldName } from '../utils/form-hooks';
 import FormHoneypot from './form-honeypot';
 import Spinner from './spinner';
 
@@ -15,6 +15,7 @@ const EmailForm: FunctionComponent<{
   } = useForm();
   const [apiError, setApiError] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const { honeypotFieldName } = useHoneypotFieldName();
 
   const onSubmit = async (data) => {
     data = {

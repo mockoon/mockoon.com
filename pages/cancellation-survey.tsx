@@ -6,7 +6,7 @@ import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Spinner from '../components/spinner';
 import Layout from '../layout/layout';
-import { honeypotFieldName } from '../utils/utils';
+import { useHoneypotFieldName } from '../utils/form-hooks';
 
 const CancellationSurvey: FunctionComponent = function () {
   const {
@@ -20,6 +20,7 @@ const CancellationSurvey: FunctionComponent = function () {
   const router = useRouter();
   const [apiError, setApiError] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const { honeypotFieldName } = useHoneypotFieldName();
 
   // get query param to fill userId
   let userId = router.query.userId?.toString();

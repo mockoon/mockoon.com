@@ -8,7 +8,7 @@ import Meta from '../components/meta';
 import Spinner from '../components/spinner';
 import Layout from '../layout/layout';
 import { useAuth } from '../utils/auth';
-import { honeypotFieldName } from '../utils/utils';
+import { useHoneypotFieldName } from '../utils/form-hooks';
 
 const meta = {
   title: "Mockoon's cloud password reset",
@@ -31,6 +31,7 @@ const ResetPassword: FunctionComponent = function () {
   const totpForm = useForm();
   let code = router.query.code?.toString();
   const [isVerifyingCode, setIsVerifyingCode] = useState(false);
+  const { honeypotFieldName } = useHoneypotFieldName();
 
   const finalize = () => {
     localStorage.removeItem('resetPasswordEmail');

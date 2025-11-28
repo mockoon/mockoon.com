@@ -10,7 +10,7 @@ import Meta from '../components/meta';
 import Spinner from '../components/spinner';
 import Layout from '../layout/layout';
 import { useAuth } from '../utils/auth';
-import { honeypotFieldName } from '../utils/utils';
+import { useHoneypotFieldName } from '../utils/form-hooks';
 
 const meta = {
   title: "Mockoon's cloud login",
@@ -33,6 +33,7 @@ const Login: FunctionComponent = function () {
   const [tfaStep, setTfaStep] = useState<MultiFactorError>(null);
   const credentialsForm = useForm();
   const totpForm = useForm();
+  const { honeypotFieldName } = useHoneypotFieldName();
 
   const onCredentialsSubmit = async (data) => {
     credentialsForm.clearErrors();

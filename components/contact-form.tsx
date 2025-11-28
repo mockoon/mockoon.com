@@ -1,6 +1,6 @@
 import { FunctionComponent, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { honeypotFieldName } from '../utils/utils';
+import { useHoneypotFieldName } from '../utils/form-hooks';
 import FormHoneypot from './form-honeypot';
 import Spinner from './spinner';
 
@@ -15,6 +15,7 @@ const ContactForm: FunctionComponent<{ displayProject?: boolean }> = function ({
   } = useForm();
   const [apiError, setApiError] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const { honeypotFieldName } = useHoneypotFieldName();
 
   const onSubmit = async (data) => {
     if (!data[honeypotFieldName]) {
@@ -55,7 +56,6 @@ const ContactForm: FunctionComponent<{ displayProject?: boolean }> = function ({
           <label className='form-label' htmlFor='name'>
             Full name*
           </label>
-
           <input
             className='form-control'
             name='name'

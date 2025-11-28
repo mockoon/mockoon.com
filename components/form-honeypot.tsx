@@ -1,10 +1,16 @@
 import { FunctionComponent } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
-import { honeypotFieldName } from '../utils/utils';
+import { useHoneypotFieldName } from '../utils/form-hooks';
 
 const FormHoneypot: FunctionComponent<{
   inputRegister: UseFormRegisterReturn;
 }> = function ({ inputRegister }) {
+  const { honeypotFieldName, mounted } = useHoneypotFieldName();
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <>
       <label

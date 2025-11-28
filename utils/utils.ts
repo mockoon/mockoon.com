@@ -1,22 +1,10 @@
+'use client';
 import { compareBuild as semverCompare } from 'semver';
 import { ArticleList } from '../models/common.model';
 import { Template, TemplateLight } from '../models/templates.model';
 
 const cache = new Map();
 
-export const honeypotFieldName = [
-  'work_address',
-  'work_phone',
-  'work_email',
-  'work_fax',
-  'work_details',
-  'business_address',
-  'business_phone',
-  'business_email',
-  'business_contact',
-  'business_info',
-  'business_details'
-][Math.floor(Math.random() * 11)];
 export const sortByOrder = (firstTopic, secondTopic) =>
   firstTopic.order > secondTopic.order
     ? 1

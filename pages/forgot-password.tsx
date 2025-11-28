@@ -6,7 +6,7 @@ import Meta from '../components/meta';
 import Spinner from '../components/spinner';
 import Layout from '../layout/layout';
 import { useAuth } from '../utils/auth';
-import { honeypotFieldName } from '../utils/utils';
+import { useHoneypotFieldName } from '../utils/form-hooks';
 
 const meta = {
   title: "Mockoon's cloud password reset",
@@ -16,6 +16,7 @@ const meta = {
 const ForgotPassword: FunctionComponent = function () {
   const { isLoading: isAuthLoading, initiatePasswordReset } = useAuth();
   const emailForm = useForm();
+  const { honeypotFieldName } = useHoneypotFieldName();
 
   const onEmailSubmit = async (data) => {
     emailForm.clearErrors();

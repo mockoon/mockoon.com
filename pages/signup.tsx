@@ -9,7 +9,7 @@ import Meta from '../components/meta';
 import Spinner from '../components/spinner';
 import Layout from '../layout/layout';
 import { useAuth } from '../utils/auth';
-import { honeypotFieldName } from '../utils/utils';
+import { useHoneypotFieldName } from '../utils/form-hooks';
 
 const meta = {
   title: "Mockoon's cloud signup",
@@ -45,6 +45,7 @@ const Signup: FunctionComponent = function () {
     formState: { isSubmitting }
   } = useForm();
   const [passwordStrength, setPasswordStrength] = useState(0);
+  const { honeypotFieldName } = useHoneypotFieldName();
 
   const onGoogleSignIn = async () => {
     try {

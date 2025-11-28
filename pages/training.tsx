@@ -182,14 +182,14 @@ const Training: FunctionComponent = function () {
 
                   <div className='text-center'>
                     <a
-                      href='https://book.stripe.com/14A28r5ji5qF0Rf3WD7g403'
+                      href='https://book.stripe.com/28E9AT7rqaKZeI59gX7g404'
                       className='btn btn-primary'
                     >
                       Book
                     </a>
                   </div>
                   <p className='text-center text-gray-700 mt-4 mb-0 fs-sm'>
-                    Price: 99 USD (excluding taxes) per participant (virtual
+                    Price: 199 USD (excluding taxes) per participant (virtual
                     class)
                   </p>
                 </div>

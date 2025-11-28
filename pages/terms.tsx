@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
@@ -12,20 +13,18 @@ const Terms: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Terms of service' subtitle='Last update July 30, 2025' />
+      <Hero title='Terms of service' subtitle='Last update November 28, 2025' />
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
               <Quote colorScheme='secondary'>
-                💡 <strong>Summary of changes (July 30, 2025)</strong>:
+                💡 <strong>Summary of changes (November 28, 2025)</strong>:
                 <ul className='mb-0'>
                   <li>
-                    Added a description for the{' '}
-                    <strong>Priority email Support</strong> service added to the
-                    Team plan.
+                    Added an <strong>Availability (SLA)</strong> subsection
+                    under Cloud Services.
                   </li>
-                  <li>13b renumbered to 13c.</li>
                 </ul>
               </Quote>
               <p>
@@ -545,6 +544,71 @@ const Terms: FunctionComponent = function () {
                 further reserve the right to suspend or terminate your access to
                 the Cloud Deployment Feature if we determine that your usage is
                 unreasonable or causing an undue burden on our infrastructure.
+              </p>
+              <h4 className='mt-6 fw-medium'>d. Availability (SLA)</h4>
+              <p>
+                The following availability terms apply to the Cloud Services.
+                For customers on an Enterprise plan with a mutually executed
+                order or agreement, this Service Level is contractual. For all
+                other plans, the Service Level represents a target only and does
+                not create contractual remedies.
+              </p>
+              <p>
+                <strong>Uptime commitment (99.9%).</strong> The Services are
+                designed to be operational and available 24 x 7 x 365 with a
+                monthly uptime commitment of <strong>99.9%</strong> per calendar
+                month.
+              </p>
+              <p>
+                <strong>Scheduled maintenance.</strong> Downtime resulting from
+                scheduled maintenance is excluded from uptime calculations.
+                "Scheduled maintenance" means routine, planned maintenance for
+                which we provide notice via our status page at{' '}
+                <Link href='https://mockoon.com/status/'>
+                  https://mockoon.com/status/
+                </Link>
+                .
+              </p>
+              <p>
+                <strong>Measurement and reporting.</strong> We monitor the
+                Services and report non-scheduled or emergency maintenance and
+                other service incidents (including material performance
+                degradation) via our status page at{' '}
+                <a href='https://mockoon.com/status/'>
+                  https://mockoon.com/status/
+                </a>
+                .
+              </p>
+              <p>
+                <strong>Remedies for chronic failure (Enterprise only).</strong>{' '}
+                If the Services fail to meet the uptime commitment, you may
+                escalate through{' '}
+                <a href='mailto:support@mockoon.com'>support@mockoon.com</a>. If
+                we fail to meet the uptime commitment (by any amount) for three
+                (3) consecutive months or four (4) months in any rolling twelve
+                (12) month period, then within thirty (30) days after the
+                conclusion of the third consecutive month, you may terminate the
+                applicable order(s) by giving thirty (30) days prior written
+                notice. Upon such termination, you are entitled to a refund of
+                any unearned, prepaid fees, pro-rated from the effective date of
+                termination through the end of the applicable prepaid period.
+              </p>
+              <p>
+                <strong>Cumulative remedies.</strong> The remedies stated in
+                this subsection are your sole and exclusive remedies for any
+                failure to meet the uptime commitment.
+              </p>
+              <p>
+                <strong>Exclusions.</strong> In addition to scheduled
+                maintenance, uptime calculations exclude downtime to the extent
+                caused by: (a) use of the Services by you in a manner not
+                authorized under this Agreement; or (b) general Internet
+                problems, force majeure events, or other factors outside our
+                reasonable control. Nothing in this paragraph limits our
+                obligations with respect to force majeure, disaster recovery, or
+                business continuity elsewhere in this Agreement; any excused
+                performance applies only during the period in which we use best
+                efforts to meet those obligations.
               </p>
               <h3 className='mt-6 fw-medium'>
                 12. Usage quotas and limitations

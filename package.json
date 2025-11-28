@@ -59,6 +59,7 @@
     "isbot": "^5.1.27",
     "js-yaml": "^4.1.1",
     "jsonpath-plus": "^10.3.0",
+    "leaflet": "^1.9.4",
     "marked": "^16.4.1",
     "next": "^16.0.1",
     "object-path": "^0.11.8",
@@ -81,6 +82,7 @@
   "devDependencies": {
     "@mockoon/cli": "^9.2.0",
     "@types/glob": "^9.0.0",
+    "@types/leaflet": "^1.9.21",
     "@types/node": "^24.0.1",
     "@types/react": "^19.1.8",
     "@types/react-syntax-highlighter": "^15.5.13",

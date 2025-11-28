@@ -1,8 +1,9 @@
 import { Plans } from '@mockoon/cloud';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import 'leaflet/dist/leaflet.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import { frequencyNames, planNames } from '../constants/plans';
 import { pricing } from '../data/pricing';
 import { AccordionData } from '../models/common.model';
@@ -37,6 +38,11 @@ const cloudFaq: AccordionData = [
           'What is the difference between "Email support", "Priority email support", and "Enterprise support"?',
         content:
           "Email support is a standard support service provided to our Solo plan customers. You can contact us at any time by email and we will help you with your questions without a guaranteed response time. The usual response time is between one and two business days. Team plan customers benefit from priority email support, which means that your inquiries will be prioritized over those of standard email support users. For Enterprise support, a response time is guaranteed and specific SLA can be negotiated. For more information, please refer to the <a href='/terms/'>terms of service</a>."
+      },
+      {
+        title: 'Do you offer an availability SLA?',
+        content:
+          "Yes. We target <strong>99.9%</strong> monthly uptime across our Services. For Enterprise plans, this SLA is <strong>contractual</strong>. Scheduled maintenance and factors outside of our reasonable control are excluded. Incidents and maintenance are reported on our <a href='/status/'>status page</a>. See our <a href='/terms/'>terms of service</a> for details and remedies."
       },
       {
         title:
@@ -130,7 +136,8 @@ const suffixes = {
 
 const PlansView: FunctionComponent<{
   showTagline: boolean;
-}> = function ({ showTagline }) {
+  showRegions: boolean;
+}> = function ({ showTagline, showRegions }) {
   const auth = useAuth();
   const currentUser = useCurrentUser();
   const router = useRouter();
@@ -138,6 +145,68 @@ const PlansView: FunctionComponent<{
   const [seats, setSeats] = useState(1);
   const [configurePlan, setConfigurePlan] = useState(null);
   const discountCode = router.query.discountCode;
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    let map = null;
+
+    import('leaflet').then((L) => {
+      const container = document.getElementById('regions-map');
+      if (!container) return;
+
+      if (container.querySelector('.leaflet-container')) {
+        return;
+      }
+
+      map = L.map('regions-map', {
+        scrollWheelZoom: false,
+        minZoom: 2,
+        maxZoom: 2,
+        zoomControl: false,
+        dragging: false
+      }).setView([20, 0], 2);
+
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      const regions = [
+        {
+          name: 'US Central (Iowa)',
+          lat: 41.878113,
+          lng: -93.097702
+        },
+        {
+          name: '<div class="text-center">Europe West (Belgium)<br/> <span class="badge badge text-bg-info">Coming soon</span></div>',
+          lat: 50.503887,
+          lng: 4.469936
+        }
+      ];
+
+      regions.forEach((region) => {
+        L.marker([region.lat, region.lng], {
+          icon: L.icon({
+            iconUrl:
+              'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0cHgiIGZpbGw9IiMzMzVFRUEiPjxyZWN0IGZpbGw9Im5vbmUiIGhlaWdodD0iMjQiIHdpZHRoPSIyNCIvPjxwYXRoIGQ9Ik0xMiwyTDEyLDJDOC4xMywyLDUsNS4xMyw1LDljMCwxLjc0LDAuNSwzLjM3LDEuNDEsNC44NGMwLjk1LDEuNTQsMi4yLDIuODYsMy4xNiw0LjRjMC40NywwLjc1LDAuODEsMS40NSwxLjE3LDIuMjYgQzExLDIxLjA1LDExLjIxLDIyLDEyLDIyaDBjMC43OSwwLDEtMC45NSwxLjI1LTEuNWMwLjM3LTAuODEsMC43LTEuNTEsMS4xNy0yLjI2YzAuOTYtMS41MywyLjIxLTIuODUsMy4xNi00LjQgQzE4LjUsMTIuMzcsMTksMTAuNzQsMTksOUMxOSw1LjEzLDE1Ljg3LDIsMTIsMnogTTEyLDExLjc1Yy0xLjM4LDAtMi41LTEuMTItMi41LTIuNXMxLjEyLTIuNSwyLjUtMi41czIuNSwxLjEyLDIuNSwyLjUgUzEzLjM4LDExLjc1LDEyLDExLjc1eiIvPjwvc3ZnPg==',
+            iconSize: [36, 36],
+            iconAnchor: [18, 36],
+            popupAnchor: [0, -36]
+          })
+        })
+          .addTo(map)
+          .bindPopup(region.name);
+      });
+    });
+
+    // Cleanup on unmount
+    return () => {
+      if (map) {
+        map.remove();
+      }
+    };
+  }, []);
 
   const openCheckout = (planId: string) => {
     // @ts-ignore
@@ -799,10 +868,36 @@ const PlansView: FunctionComponent<{
                             <td className='text-center'>{tickBadge}</td>
                           </tr>
                           <tr>
-                            <td>Hosting</td>
+                            <td>
+                              Hosting{' '}
+                              <CustomTooltip text='Each deployment runs in a dedicated container (per-deployment isolation).'></CustomTooltip>
+                            </td>
                             <td className='text-center'>Multi-tenant</td>
                             <td className='text-center'>Multi-tenant</td>
-                            <td className='text-center'>Single-tenant</td>
+                            <td className='text-center'>
+                              Multi-tenant or single-tenant
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Regions{' '}
+                              <CustomTooltip text='Choose a region close to your users. Enterprise can be provisioned in a custom Google Cloud region.'></CustomTooltip>
+                            </td>
+                            <td className='text-center'>
+                              Choice of{' '}
+                              <Link href='#available-regions'>
+                                available regions
+                              </Link>
+                            </td>
+                            <td className='text-center'>
+                              Choice of{' '}
+                              <Link href='#available-regions'>
+                                available regions
+                              </Link>
+                            </td>
+                            <td className='text-center'>
+                              Custom Google Cloud region
+                            </td>
                           </tr>
                           <tr>
                             <td
@@ -839,9 +934,11 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>Hosting</td>
-                            <td className='text-center'>Shared</td>
-                            <td className='text-center'>Shared</td>
-                            <td className='text-center'>Dedicated</td>
+                            <td className='text-center'>Multi-tenant</td>
+                            <td className='text-center'>Multi-tenant</td>
+                            <td className='text-center'>
+                              Multi-tenant or single-tenant
+                            </td>
                           </tr>
                           <tr>
                             <td>API mock max size</td>
@@ -987,6 +1084,15 @@ const PlansView: FunctionComponent<{
                             <td className='text-center'>Enterprise support</td>
                           </tr>
                           <tr>
+                            <td>
+                              Availability SLA{' '}
+                              <CustomTooltip text='Monthly uptime commitment. Contractual for Enterprise plans. Excludes scheduled maintenance and factors outside our reasonable control. See status page and terms.'></CustomTooltip>
+                            </td>
+                            <td className='text-center'>99.9% (target)</td>
+                            <td className='text-center'>99.9% (target)</td>
+                            <td className='text-center'>99.9% (contractual)</td>
+                          </tr>
+                          <tr>
                             <td>Customer success manager</td>
                             <td className='text-center'>{crossBadge}</td>
                             <td className='text-center'>{crossBadge}</td>
@@ -1046,6 +1152,58 @@ const PlansView: FunctionComponent<{
                   </div>
                 </div>
               </>
+            )}
+
+            {showRegions && (
+              <section
+                id='available-regions'
+                className='py-6 py-md-8 border-top'
+              >
+                <div className='container'>
+                  <div className='row justify-content-center'>
+                    <div className='col-12 col-lg-10 align-items-center'>
+                      <h2 className='fw-bold mb-4 text-center'>
+                        Available regions
+                      </h2>
+                      <p className='text-center mb-6'>
+                        Choose the region closest to your users for optimal
+                        performance. Enterprise customers can deploy to any{' '}
+                        <a
+                          href='https://cloud.google.com/about/locations'
+                          target='_blank'
+                          rel='noopener'
+                        >
+                          Google Cloud region
+                        </a>
+                        .
+                      </p>
+                      <div className='card shadow-light-lg mb-6'>
+                        <div className='card-body'>
+                          <div
+                            id='regions-map'
+                            style={{ height: '35vh' }}
+                          ></div>
+                        </div>
+                      </div>
+                      <div className='row text-center mb-4'>
+                        <div className='col'>
+                          <h5 className='fw-bold'>North America</h5>
+                          <p className='mb-0'>US Central (Iowa)</p>
+                        </div>
+                        <div className='col'>
+                          <h5 className='fw-bold'>Europe</h5>
+                          <p className='mb-0'>
+                            EU West (Belgium){' '}
+                            <span className='badge badge text-bg-info'>
+                              Coming soon
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
             )}
           </div>
         </section>

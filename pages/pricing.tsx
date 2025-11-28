@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react';
 import EmailForm from '../components/email-form';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
-import Plans from '../components/plans';
+import PlansView from '../components/plans';
 import Layout from '../layout/layout';
 
 const meta = {
@@ -26,7 +26,7 @@ const Cloud: FunctionComponent = function () {
         mainPictureSkewed={false}
       />
 
-      <Plans showTagline={true} />
+      <PlansView showTagline={true} showRegions={true} />
 
       <section className='py-6 py-md-8' id='product-updates-subscribe'>
         <div className='container'>

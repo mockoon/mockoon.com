@@ -3,7 +3,7 @@ import { FunctionComponent, useEffect } from 'react';
 import AccountHeader from '../../../components/account-header';
 import LoadingPage from '../../../components/loading-page';
 import Meta from '../../../components/meta';
-import Plans from '../../../components/plans';
+import PlansView from '../../../components/plans';
 import Layout from '../../../layout/layout';
 import { useAuth } from '../../../utils/auth';
 
@@ -35,7 +35,7 @@ const AccountSubscribe: FunctionComponent = function () {
       {!isAuthLoading && isAuth && (
         <>
           <AccountHeader title='My account' subtitle='Subscribe to a plan' />
-          <Plans showTagline={false} />
+          <PlansView showTagline={false} showRegions={false} />
         </>
       )}
     </Layout>

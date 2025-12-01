@@ -26,7 +26,7 @@ In the deployment dialog, you can further customize your instance:
 - **Visibility**:
   - **Public**: The environment will be accessible to anyone with the URL.
   - **Private**: The environment will be accessible only to users with the URL and the **API key** (see [Instance URL and visibility](#instance-url-and-visibility) below).
-- **Region**: The region where the instance will be deployed. You can choose from the available regions in the dropdown list. The default region is `US` (Iowa).
+- **Region**: The region where the instance will be deployed. You can choose from the available regions in the dropdown list. The default region is `US` (Central, Iowa) (See [available regions](/pricing/#available-regions)).
 
 ![deployment dialog{993x399}](cloud-docs-img:deploy-environment-dialog.png)
 
@@ -48,14 +48,12 @@ Currently, the behavior of re-deployments is different depending on whether you 
 - **Web application**: In the web application, many changes are pushed to the cloud instance automatically without requiring a manual re-deployment. This is because the web application is designed to be more collaborative and real-time, allowing you to see the changes reflected in the running instance immediately. However, some changes may still require a manual re-deployment, depending on their nature.
 
   The following changes are **applied automatically**:
-
   - Some environment properties (headers, proxy headers, latency, etc.).
   - Some route properties (response mode).
   - Adding and removing callbacks.
   - Route responses (headers, latency, status code, callbacks calls, rules, etc.).
 
   The following changes still **require a manual re-deployment**:
-
   - Route paths and methods.
   - Adding or removing routes.
   - Environment port, hostname, proxy and TLS options.

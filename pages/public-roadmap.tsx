@@ -44,6 +44,12 @@ const tasks: {
 } = {
   released: [
     {
+      title: 'EU cloud deployment regions',
+      link: '/pricing/#available-regions',
+      cloud: true,
+      target: null
+    },
+    {
       title: 'Resources activity audit trail',
       link: '/cloud/docs/audit-trail/',
       cloud: true,
@@ -110,21 +116,9 @@ const tasks: {
       title: 'Custom sub domains in cloud deployments',
       cloud: true,
       target: null
-    },
-    {
-      link: '/releases/9.1.0/#improved-data-buckets-state-reporting',
-      title: 'Improved data buckets state reporting',
-      cloud: false,
-      target: null
     }
   ],
   inProgress: [
-    {
-      title: 'EU cloud deployment regions',
-      cloud: true,
-      target: null
-    },
-
     {
       link: 'https://github.com/mockoon/mockoon/issues/1045',
       title: 'Export logs as HAR',

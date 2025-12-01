@@ -174,12 +174,12 @@ const PlansView: FunctionComponent<{
 
       const regions = [
         {
-          name: 'US Central (Iowa)',
+          name: 'US (Central, Iowa)',
           lat: 41.878113,
           lng: -93.097702
         },
         {
-          name: '<div class="text-center">Europe West (Belgium)<br/> <span class="badge badge text-bg-info">Coming soon</span></div>',
+          name: 'EU (West, Belgium)',
           lat: 50.503887,
           lng: 4.469936
         }
@@ -1166,7 +1166,7 @@ const PlansView: FunctionComponent<{
                         Available regions
                       </h2>
                       <p className='text-center mb-6'>
-                        Choose the region closest to your users for optimal
+                        Choose the region closest to your team for optimal
                         performance. Enterprise customers can deploy to any{' '}
                         <a
                           href='https://cloud.google.com/about/locations'
@@ -1187,16 +1187,13 @@ const PlansView: FunctionComponent<{
                       </div>
                       <div className='row text-center mb-4'>
                         <div className='col'>
-                          <h5 className='fw-bold'>North America</h5>
-                          <p className='mb-0'>US Central (Iowa)</p>
+                          <p className='mb-0'>
+                            <strong>US</strong> (Central, Iowa)
+                          </p>
                         </div>
                         <div className='col'>
-                          <h5 className='fw-bold'>Europe</h5>
                           <p className='mb-0'>
-                            EU West (Belgium){' '}
-                            <span className='badge badge text-bg-info'>
-                              Coming soon
-                            </span>
+                            <strong>EU</strong> (West, Belgium)
                           </p>
                         </div>
                       </div>

@@ -30,7 +30,8 @@ Add a new callback by clicking on the "plus" button:
 
 The callback configuration interface is very similar to the route response interface. You can configure the callback's **name**, **description**, **method**, **URL**, **body**, and **headers**:
 
-- **URL**: the URL to call. Supports [templating helpers](docs:templating/overview).
+- **URL**: the URL to call, either absolute (e.g., `https://myapi.com/webhook`) or relative (e.g., `/webhook`). In the latter case, the base URL will be the hostname and port on which the API is running. When deploying with the CLI or Docker image, you can customize the base URL using the [`--public-base-url` flag](https://github.com/mockoon/mockoon/tree/main/packages/cli#start-command).
+  This field supports [templating helpers](docs:templating/overview).
 - **Method**: the HTTP method to use for the call. Only some methods support a body (`POST`, `PUT`, and `PATCH`).
 - **Body**: the body to send with the call. You can serve an inline body, a file, or the content of a [data bucket](docs:data-buckets/overview). They support templating too. Please refer to the [response body](docs:response-configuration/response-body) documentation for more details.
 - **Headers**: the headers to send with the call. They support our [templating helpers](docs:templating/overview).

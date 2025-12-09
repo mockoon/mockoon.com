@@ -14,8 +14,8 @@ const incidents: {
   status: 'planned' | 'inprogress' | 'resolved';
 }[] = [
   {
-    title: 'Cloud Deployments - Scheduled migration',
-    desc: 'Cloud deployments will be migrated to new servers to improve performance, reliability and security. During this time, customers instances will be temporarily unavailable. The migration is expected to last approximately 2 hours for all servers but individual instances downtime should not exceed 30 minutes. We apologize for the inconvenience.',
+    title: 'Cloud Deployments - US servers - Scheduled migration',
+    desc: 'Cloud deployments US servers will be migrated to a new infrastructure to improve performance, reliability and security. During this time, US customers instances will be temporarily unavailable. The migration is expected to last approximately 2 hours for all servers but individual instances downtime should not exceed 30 minutes. We apologize for the inconvenience.<br>Update (07:45 UTC): The migration of server "d1" has started.<br>Update (08:10 UTC): The migration of server "d1" is complete and instances are back online.<br>Update (08:20 UTC): The migration of server "us2" has started.',
     dateStart: '2025-12-09T07:00:00Z',
     dateEnd: '2025-12-09T09:00:00Z',
     status: 'inprogress'

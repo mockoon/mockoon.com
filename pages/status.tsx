@@ -18,7 +18,7 @@ const incidents: {
     desc: 'Cloud deployments will be migrated to new servers to improve performance, reliability and security. During this time, customers instances will be temporarily unavailable. The migration is expected to last approximately 2 hours for all servers but individual instances downtime should not exceed 30 minutes. We apologize for the inconvenience.',
     dateStart: '2025-12-09T07:00:00Z',
     dateEnd: '2025-12-09T09:00:00Z',
-    status: 'planned'
+    status: 'inprogress'
   },
   {
     title: 'Incident - Unreachable Cloud instances',

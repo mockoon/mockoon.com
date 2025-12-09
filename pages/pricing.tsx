@@ -3,6 +3,7 @@ import EmailForm from '../components/email-form';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import PlansView from '../components/plans';
+import SocialProof from '../components/social-proof';
 import Layout from '../layout/layout';
 
 const meta = {
@@ -17,14 +18,16 @@ const Cloud: FunctionComponent = function () {
       <Meta title={meta.title} description={meta.description} />
 
       <Hero
-        title='Supercharge your <span class="text-primary">API development</span>'
+        title='Mockoon Cloud <span class="text-primary">pricing</span>'
         subtitle='Collaborate with your team, keep your data in sync, and deploy your mock APIs with Mockoon Cloud'
         mainPicture='/images/cloud-hero.svg'
         mainPictureAlt='Mockoon logo in the cloud interconnected with other services'
         mainPictureWidth={1200}
         mainPictureHeight={783}
         mainPictureSkewed={false}
-      />
+      >
+        <SocialProof />
+      </Hero>
 
       <PlansView showTagline={true} showRegions={true} />
 

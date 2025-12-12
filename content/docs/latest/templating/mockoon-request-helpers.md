@@ -348,7 +348,8 @@ Returns the request method (GET, PUT, POST, etc.).
 
 ## baseUrl
 
-Returns the base URL of the request: protocol, host, port and API prefix.
+Returns the base URL of the request: protocol, host, port and API prefix. It will be constructed using the environment available information and will result in a URL such as `http://localhost:3000/api/v1`.
+This can be overridden at runtime when using the CLI or Docker image by setting the `--public-base-url` flag (e.g. `--public-base-url "https://myapi.com"`).
 
 **Examples**
 

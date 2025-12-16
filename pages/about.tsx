@@ -105,7 +105,7 @@ const About: FunctionComponent<{
               enough for complex use cases. Today, Mockoon is used by{' '}
               <strong>thousands of developers and teams worldwide</strong>, from
               solo devs to large companies, and has been downloaded over{' '}
-              <strong>800,000 times</strong>.
+              <strong>900,000 times</strong>.
             </p>
           </div>
         </div>

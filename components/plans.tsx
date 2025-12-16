@@ -258,25 +258,6 @@ const PlansView: FunctionComponent<{
     openCheckout(planId);
   };
 
-  const subscribeBtn = (plan: Plans) => (
-    <>
-      <div>
-        <button
-          type='button'
-          className='btn btn-primary btn-sm '
-          onClick={() => {
-            redirect(plan);
-          }}
-        >
-          Try for free
-        </button>
-      </div>
-
-      <div className='mt-2 badge text-bg-success-subtle'>
-        {pricing[plan].trialDays} days free trial included
-      </div>
-    </>
-  );
   const tickBadge = (
     <div className='badge badge-rounded-circle text-bg-success-subtle'>
       <i className='icon-check'></i>
@@ -408,15 +389,20 @@ const PlansView: FunctionComponent<{
               <div className='col-12 col-xl-3'>
                 <div className='card shadow-lg mb-6 mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
-                    <h3 className='d-flex justify-content-center mb-3 fw-medium'>
+                    {planFrequency === 'YEARLY' && (
+                      <span
+                        className={`badge text-bg-success-subtle ms-3 fs-sm align-self-center badge badge-float badge-float-outside`}
+                      >
+                        {pricing.SOLO.discount}
+                      </span>
+                    )}
+                    <h2 className='d-flex justify-content-center mb-2 fw-medium'>
                       <span className='text-primary'>Solo</span>
                       <span className='ms-1'>plan</span>
-                      {planFrequency === 'YEARLY' && (
-                        <span className='badge text-bg-success-subtle ms-3 fs-sm align-self-center'>
-                          {pricing.SOLO.discount}
-                        </span>
-                      )}
-                    </h3>
+                    </h2>
+                    <p className='text-center text-gray-700'>
+                      For individual developers and hobby projects
+                    </p>
                     <div className='d-flex justify-content-center position-relative'>
                       <span className='h2 mb-0 mt-2'>$</span>
                       <span className='price display-2 mb-0'>
@@ -432,14 +418,6 @@ const PlansView: FunctionComponent<{
                       </span>
                     </div>
 
-                    {/* show only if not connected or not already subscribed */}
-                    {(!currentUser.data ||
-                      currentUser.data?.plan === 'FREE') && (
-                      <div className='text-center mb-6'>
-                        {subscribeBtn(Plans.SOLO)}
-                      </div>
-                    )}
-
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
@@ -450,8 +428,6 @@ const PlansView: FunctionComponent<{
                         <Link href={'/features/'}>open-source features</Link>
                       </p>
                     </div>
-
-                    <hr />
 
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
@@ -504,7 +480,7 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
-                      <p className='mb-0'>
+                      <p>
                         {pricing.SOLO.templatesQuota}{' '}
                         <Link href={'/ai-powered-api-mocking/'}>
                           AI-generated endpoints
@@ -512,13 +488,37 @@ const PlansView: FunctionComponent<{
                         per month
                       </p>
                     </div>
-                    <hr />
+
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
                       </div>
 
-                      <p className='mb-0'>Email support</p>
+                      <p>Email support</p>
+                    </div>
+                    <div className='mt-auto'>
+                      {/* show only if not connected or not already subscribed */}
+                      {(!currentUser.data ||
+                        currentUser.data?.plan === 'FREE') && (
+                        <div className='text-center'>
+                          <div>
+                            <button
+                              type='button'
+                              className='btn btn-primary btn-xs'
+                              onClick={() => {
+                                redirect(Plans.SOLO);
+                              }}
+                            >
+                              Start trial
+                            </button>
+                          </div>
+
+                          <div className='mt-2 text-gray-700 small'>
+                            You won't have to pay before the end of the{' '}
+                            {pricing[Plans.SOLO].trialDays} days trial
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -527,15 +527,20 @@ const PlansView: FunctionComponent<{
               <div className='col-12 col-xl-3'>
                 <div className='card shadow-lg mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
-                    <h3 className='d-flex justify-content-center mb-3 fw-medium'>
+                    {planFrequency === 'YEARLY' && (
+                      <span
+                        className={`badge text-bg-success-subtle ms-3 fs-sm align-self-center badge badge-float badge-float-outside`}
+                      >
+                        {pricing.TEAM.discount}
+                      </span>
+                    )}
+                    <h2 className='d-flex justify-content-center mb-3 fw-medium'>
                       <span className='text-primary'>Team</span>
                       <span className='ms-1'>plan</span>
-                      {planFrequency === 'YEARLY' && (
-                        <span className='badge text-bg-success-subtle ms-3 fs-sm align-self-center'>
-                          {pricing.TEAM.discount}
-                        </span>
-                      )}
-                    </h3>
+                    </h2>
+                    <p className='text-center text-gray-700'>
+                      For teams needing collaboration and more cloud resources
+                    </p>
                     <div className='d-flex justify-content-center'>
                       <span className='h2 mb-0 mt-2'>$</span>
                       <span className='price display-2 mb-0'>
@@ -550,14 +555,6 @@ const PlansView: FunctionComponent<{
                         (Tax excl.)
                       </span>
                     </div>
-
-                    {/* show only if not connected or not already subscribed */}
-                    {(!currentUser.data ||
-                      currentUser.data?.plan === 'FREE') && (
-                      <div className='text-center mb-6'>
-                        {subscribeBtn(Plans.TEAM)}
-                      </div>
-                    )}
 
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
@@ -622,7 +619,7 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
-                      <p className='mb-0'>
+                      <p>
                         {pricing.TEAM.templatesQuota}{' '}
                         <Link href={'/ai-powered-api-mocking/'}>
                           AI-generated endpoints
@@ -631,37 +628,63 @@ const PlansView: FunctionComponent<{
                       </p>
                     </div>
 
-                    <hr />
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
                       </div>
 
-                      <p className='mb-0'>
+                      <p>
                         <Link href={'/cloud/docs/roles-permissions/'}>
                           Team level role-based access control
                         </Link>
                       </p>
                     </div>
-                    <hr />
+
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
                       </div>
 
-                      <p className='mb-0'>Priority email support</p>
+                      <p>Priority email support</p>
                     </div>
-                    <div className='mt-auto'>
-                      <hr />
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
 
-                        <p className='mb-0'>
-                          Organizations up to {pricing.TEAM.maxSeats} seats
-                        </p>
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
                       </div>
+
+                      <p>Organizations up to {pricing.TEAM.maxSeats} seats</p>
+                    </div>
+
+                    <div className='mt-4'>
+                      {/* show only if not connected or not already subscribed */}
+                      {(!currentUser.data ||
+                        currentUser.data?.plan === 'FREE') && (
+                        <div className='text-center'>
+                          <div className='btn-group'>
+                            <button
+                              type='button'
+                              className='btn btn-primary btn-xs'
+                              onClick={() => {
+                                redirect(Plans.TEAM);
+                              }}
+                            >
+                              Start trial
+                            </button>
+                            <Link
+                              href={'/cloud-request-trial/'}
+                              className={`btn btn-primary-subtle btn-xs`}
+                            >
+                              Request a no-card trial
+                            </Link>
+                          </div>
+
+                          <div className='mt-2 text-gray-700 small'>
+                            You won't have to pay before the end of the{' '}
+                            {pricing[Plans.TEAM].trialDays} days trial
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -670,38 +693,14 @@ const PlansView: FunctionComponent<{
               <div className='col-12 col-xl-3'>
                 <div className='card shadow-lg mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
-                    <h3 className='d-flex justify-content-center mb-3 fw-medium'>
+                    <h2 className='d-flex justify-content-center mb-3 fw-medium'>
                       <span className='text-primary'>Enterprise</span>
                       <span className='ms-1'>plan</span>
-                      {planFrequency === 'YEARLY' &&
-                        pricing.ENTERPRISE.discount && (
-                          <span className='badge text-bg-success-subtle ms-3 fs-sm align-self-center'>
-                            {pricing.ENTERPRISE.discount}
-                          </span>
-                        )}
-                    </h3>
-                    <div className='text-center mt-4 mb-6'>
-                      <div className='btn-group'>
-                        <button
-                          type='button'
-                          className={`btn btn-primary-subtle btn-sm`}
-                          onClick={() => {
-                            router.push('/contact-form/');
-                          }}
-                        >
-                          Contact us
-                        </button>
-                        <button
-                          type='button'
-                          className={`btn btn-primary-subtle btn-sm`}
-                          onClick={() => {
-                            router.push('/request-demo/');
-                          }}
-                        >
-                          Request a demo
-                        </button>
-                      </div>
-                    </div>
+                    </h2>
+                    <p className='text-center text-gray-700'>
+                      For large teams and organizations with advanced needs
+                    </p>
+
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
@@ -725,38 +724,62 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
-                      <p className='mb-0'>Dedicated instances</p>
+                      <p>Optional dedicated instances</p>
                     </div>
-                    <hr />
+
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
                       </div>
 
-                      <p className='mb-0'>
+                      <p>
                         Enterprise support{' '}
                         <CustomTooltip text='Get dedicated assistance for enterprise-level needs. To learn more about our Enterprise support, see the FAQ of our Cloud plans or our terms of service.'></CustomTooltip>
                       </p>
                     </div>
-                    <hr />
+
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
                       </div>
 
-                      <p className='mb-0'>
+                      <p>
                         Customer success{' '}
                         <CustomTooltip text='Get dedicated assistance during onboarding and setup'></CustomTooltip>
                       </p>
                     </div>
 
-                    <hr />
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
                       </div>
 
                       <p>Custom payment options</p>
+                    </div>
+                    <div className='text-center mt-auto'>
+                      <div className='btn-group'>
+                        <button
+                          type='button'
+                          className={`btn btn-primary-subtle btn-xs`}
+                          onClick={() => {
+                            router.push('/contact-form/');
+                          }}
+                        >
+                          Contact us
+                        </button>
+                        <button
+                          type='button'
+                          className={`btn btn-primary-subtle btn-xs`}
+                          onClick={() => {
+                            router.push('/request-demo/');
+                          }}
+                        >
+                          Request a demo
+                        </button>
+                      </div>
+                      <p className='mt-2 small text-gray-700 mb-0'>
+                        Request a demo or contact us for a custom quote
+                      </p>
                     </div>
                   </div>
                 </div>

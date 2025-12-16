@@ -4,9 +4,11 @@ import { useHoneypotFieldName } from '../utils/form-hooks';
 import FormHoneypot from './form-honeypot';
 import Spinner from './spinner';
 
-const ContactForm: FunctionComponent<{ displayProject?: boolean }> = function ({
-  displayProject
-}) {
+const ContactForm: FunctionComponent<{
+  displayProject?: boolean;
+  isCompanyRequired?: boolean;
+  submitButtonLabel?: string;
+}> = function ({ displayProject, isCompanyRequired, submitButtonLabel }) {
   const {
     register: registerFormField,
     handleSubmit,
@@ -84,7 +86,7 @@ const ContactForm: FunctionComponent<{ displayProject?: boolean }> = function ({
         {!displayProject && (
           <div className='form-group mb-5'>
             <label className='form-label' htmlFor='company'>
-              Company name
+              Company{isCompanyRequired ? '*' : ''}
             </label>
 
             <input
@@ -93,6 +95,7 @@ const ContactForm: FunctionComponent<{ displayProject?: boolean }> = function ({
               id='company'
               placeholder='Dunder Mifflin, Inc.'
               type='text'
+              required={isCompanyRequired}
               {...registerFormField('company')}
             />
           </div>
@@ -160,7 +163,7 @@ const ContactForm: FunctionComponent<{ displayProject?: boolean }> = function ({
             className='btn btn-primary-subtle lift'
             disabled={isSubmitting}
           >
-            Send message
+            {submitButtonLabel ? submitButtonLabel : 'Send message'}
           </button>
         </div>
       </div>

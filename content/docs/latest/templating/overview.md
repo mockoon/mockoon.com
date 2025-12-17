@@ -10,7 +10,7 @@ order: 500
 
 ---
 
-Mockoon implements [Handlebars](https://handlebarsjs.com/), [Faker.js v8.1.0](https://fakerjs.dev/), and a set of custom helpers to create dynamic responses. This templating system is supported in the [**data buckets**](#content-of-a-data-bucket), [**response's body**](#body-and-file-content-templating), [**header**](#headers-and-rule), [**file content**](#body-and-file-content-templating), [**file path**](#file-input-templating) and [**rule**](#headers-and-rule). You will find below a global overview of how and where you can use helpers. You can also check the [available helpers](#available-helpers) on specific documentation pages.
+Mockoon implements [Handlebars](https://handlebarsjs.com/), [Faker.js v9.9.0](https://fakerjs.dev/), and a set of custom helpers to create dynamic responses. This templating system is supported in the [**data buckets**](#content-of-a-data-bucket), [**response's body**](#body-and-file-content-templating), [**header**](#headers-and-rule), [**file content**](#body-and-file-content-templating), [**file path**](#file-input-templating) and [**rule**](#headers-and-rule). You will find below a global overview of how and where you can use helpers. You can also check the [available helpers](#available-helpers) on specific documentation pages.
 
 ## Helpers
 

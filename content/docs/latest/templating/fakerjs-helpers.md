@@ -10,7 +10,7 @@ order: 506
 
 ---
 
-Mockoon implements [Faker.js v8.1.0](https://fakerjs.dev/) library by wrapping most of the available helpers.
+Mockoon implements [Faker.js v9.9.0](https://fakerjs.dev/) library by wrapping most of the available helpers.
 Faker.js offers lots of helpers: `location.zipCode`, `location.city`, `location.count`, `person.firstName`, `person.lastName`, `number.int`, `number.float`, `internet.avatar`, `internet.email`, etc. Please have a look at [Faker.js documentation](https://fakerjs.dev/) to learn how to use them.
 
 ## Usage

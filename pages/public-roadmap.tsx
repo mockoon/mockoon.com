@@ -124,6 +124,18 @@ const tasks: {
       title: 'Export logs as HAR',
       cloud: false,
       target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1730',
+      title: 'Support callbacks relative paths',
+      cloud: false,
+      target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1736',
+      title: 'CLI: deploy from a cloud mock',
+      cloud: true,
+      target: '_blank'
     }
   ],
   comingSoon: [
@@ -136,12 +148,6 @@ const tasks: {
       title: 'Websocket support in cloud deployments',
       cloud: true,
       target: null
-    },
-    {
-      title: 'CLI: deploy from a cloud mock',
-      link: 'https://github.com/mockoon/mockoon/issues/1736',
-      cloud: true,
-      target: '_blank'
     }
   ]
 };

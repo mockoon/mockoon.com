@@ -71,10 +71,13 @@ const Signup: FunctionComponent = function () {
           router.push('/email-verification/');
         }
       } catch (error) {
+        console.error(error);
         if (error.message.indexOf('unauthorized email') > -1) {
           setError(
             'Email provider not allowed. Please use another email address.'
           );
+        } else if (error.message.indexOf('auth/email-already-in-use') > -1) {
+          setError('This email is already in use. Please log in instead.');
         } else {
           setError('An error occurred. Please try again.');
         }

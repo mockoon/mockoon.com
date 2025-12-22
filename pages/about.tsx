@@ -101,8 +101,8 @@ const About: FunctionComponent<{
               Guillaume continues to maintain and grow the project with a strong
               focus on simplicity, efficiency, and developer experience. Mockoon
               is designed to save you time — not waste it — by being{' '}
-              <strong>easy to set up yet powerful</strong>
-              enough for complex use cases. Today, Mockoon is used by{' '}
+              <strong>easy to set up yet powerful</strong> enough for complex
+              use cases. Today, Mockoon is used by{' '}
               <strong>thousands of developers and teams worldwide</strong>, from
               solo devs to large companies, and has been downloaded over{' '}
               <strong>900,000 times</strong>.
@@ -157,9 +157,9 @@ const About: FunctionComponent<{
               </a>{' '}
               helping keep the project alive and evolving.{' '}
               <strong>Subscribing to Mockoon Cloud</strong> is another great way
-              to support us — and it comes with powerful features like
+              to support us — and it comes with powerful features like{' '}
               <strong>AI-powered API mock generation</strong>,{' '}
-              <strong>real-time team collaboration</strong>,
+              <strong>real-time team collaboration</strong>,{' '}
               <strong>cloud deployments</strong>, and more. Your support helps
               us remain sustainable while keeping the core project free and open
               for everyone.

@@ -86,9 +86,9 @@ const SponsorUs: FunctionComponent = function () {
                 support Mockoon by subscribing to our Cloud offering
               </strong>
               , a powerful, hosted version of the tool that includes:{' '}
-              <strong>real-time team collaboration</strong>,
-              <strong> cloud deployments</strong>,{' '}
-              <strong>AI-powered mock generation</strong>,
+              <strong>real-time team collaboration</strong>,{' '}
+              <strong>cloud deployments</strong>,{' '}
+              <strong>AI-powered mock generation</strong>,{' '}
               <strong>enterprise-grade support</strong> ... and more to come!
             </p>
             <p className='text-center m-8'>
@@ -102,7 +102,7 @@ const SponsorUs: FunctionComponent = function () {
               </a>
             </p>
             <p>
-              Not in a position to sponsor or subscribe? You can still help!
+              Not in a position to sponsor or subscribe? You can still help!{' '}
               <strong>Star us on GitHub</strong>,{' '}
               <strong>share Mockoon with your peers</strong>, or{' '}
               <strong>talk about us</strong>

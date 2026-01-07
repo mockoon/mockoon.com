@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ChangeEvent, useState } from 'react';
 import { rsort as semverSort } from 'semver';
+import CourseBanner from '../../components/course-banner';
 import Markdown from '../../components/markdown';
 import Meta from '../../components/meta';
 import Layout from '../../layout/layout';
@@ -221,6 +222,9 @@ export default function Docs(props: {
                 </div>
               </div>
               <hr />
+              <div className='my-4'>
+                <CourseBanner textAlign='left' />
+              </div>
               <ul className='card-list list'>
                 {props.navItems.map((menuItem, menuItemIndex) => {
                   const itemsToBuild =

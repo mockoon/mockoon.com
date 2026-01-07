@@ -1,9 +1,11 @@
-import { format } from 'date-fns';
+import { addHours, format, isFuture } from 'date-fns';
+import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import Accordion from '../components/accordion';
 import CompanyLogos from '../components/company-logos';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
+import { courseDates } from '../constants/courses';
 import Layout from '../layout/layout';
 import { AccordionData } from '../models/common.model';
 
@@ -98,6 +100,8 @@ const courseContent: AccordionData = [
 ];
 
 const Training: FunctionComponent = function () {
+  const dates = courseDates.filter((date) => isFuture(date));
+
   return (
     <Layout footerBanner='download'>
       <Meta title={meta.title} description={meta.description} />
@@ -168,16 +172,19 @@ const Training: FunctionComponent = function () {
                   </div>
 
                   <p className='text-center text-gray-700 mb-4'>
-                    Next available session:
+                    Next available sessions:
                   </p>
-                  <p className='text-center text-gray-700 mb-0'>
-                    <strong>Wednesday, January 21, 2026</strong>
-                  </p>
+
                   <p className='text-center text-gray-700 mb-4'>
-                    <strong>
-                      {format('2026-01-21T13:00:00Z', "'from' HH:mm")}{' '}
-                      {format('2026-01-21T17:00:00Z', "'to' HH:mm OOOO")}
-                    </strong>
+                    {courseDates.map((date) => (
+                      <>
+                        <strong key={date.toISOString()}>
+                          {format(date, 'PPP')} - from {format(date, 'HH:mm')}{' '}
+                          to {format(addHours(date, 4), 'HH:mm OOOO')}
+                        </strong>
+                        <br />
+                      </>
+                    ))}
                   </p>
 
                   <div className='text-center'>
@@ -191,6 +198,14 @@ const Training: FunctionComponent = function () {
                   <p className='text-center text-gray-700 mt-4 mb-0 fs-sm'>
                     Price: 199 USD (excluding taxes) per participant (virtual
                     class)
+                    <br />
+                    Be sure to enter a valid email address as we will get in
+                    touch with you after your booking to invite you to the
+                    training session.
+                    <br />
+                    <br />
+                    <Link href='/contact-form/'>Contact us</Link> for group
+                    bookings or custom training.
                   </p>
                 </div>
               </div>

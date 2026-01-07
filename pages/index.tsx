@@ -163,7 +163,7 @@ const HomePage: FunctionComponent = function () {
     <Layout
       footerBanner='newsletter'
       topBanner={{
-        topBannerTimeEnd: new Date('2026-01-15T00:00:00Z'),
+        topBannerTimeEnd: new Date('2026-01-21T00:00:00Z'),
         content: (
           <>
             Join our <Link href={'/training/'}>live training session</Link> on{' '}

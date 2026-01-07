@@ -1,10 +1,12 @@
 import { DocSearch } from '@docsearch/react';
-import { isBefore } from 'date-fns';
+import { format, isBefore, isFuture, min } from 'date-fns';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useState } from 'react';
+import { courseDates } from '../constants/courses';
 import { useAuth } from '../utils/auth';
 import { useCurrentUser } from '../utils/queries';
+import CourseBanner from './course-banner';
 import GitHub from './github';
 import CustomTooltip from './tooltip';
 
@@ -28,7 +30,8 @@ const Nav: FunctionComponent<{
     userData?.plan !== 'FREE' &&
     userData?.teamRole !== 'billing' &&
     userData?.teamRole !== 'team_admin';
-
+  const dates = courseDates.filter((date) => isFuture(date));
+  const nextCourse = min(dates);
   const toggler = (
     <button
       className='navbar-toggler'
@@ -58,17 +61,7 @@ const Nav: FunctionComponent<{
       {topBanner &&
         showBanner &&
         isBefore(new Date(), topBanner.topBannerTimeEnd) && (
-          <div className='bg-info-subtle text-info text-center rounded-0 d-flex align-items-center mb-0 py-2 px-3 fw-bold'>
-            <p className='mb-0 flex-grow-1'>{topBanner.content}</p>
-            <button
-              type='button'
-              className='btn-close'
-              aria-label='Close'
-              onClick={() => {
-                closeBanner();
-              }}
-            ></button>
-          </div>
+          <CourseBanner closeBanner={closeBanner} textAlign='center' />
         )}
       <nav className='navbar navbar-expand-lg navbar-light bg-white'>
         <div className='container-fluid'>
@@ -314,7 +307,12 @@ const Nav: FunctionComponent<{
                             }`}
                           >
                             Live Training
-                            <CustomTooltip text='Next session on Jan 21, 2026'>
+                            <CustomTooltip
+                              text={`Next session on ${format(
+                                nextCourse,
+                                'PPPP'
+                              )}`}
+                            >
                               <span className='ms-2'>📅</span>
                             </CustomTooltip>
                           </Link>

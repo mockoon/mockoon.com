@@ -29,7 +29,7 @@ Follow our [getting started guide](/tutorials/getting-started-with-mockoon-cloud
 
 ## Desktop application release table
 
-While the **web application is always up-to-date**, we recommend using the latest version of the desktop application to ensure compatibility with Mockoon Cloud features. We usually support the two latest major versions of the desktop application, but some features may require a more recent version. You will be informed inside the application if you need to update it to connect to the Cloud.
+While the **web application is always up-to-date**, we recommend using the latest version of the desktop application to ensure compatibility with Mockoon Cloud features.
 
 Below is a table listing the versions in which each Mockoon Cloud feature was introduced in the desktop application:
 
@@ -38,6 +38,7 @@ Below is a table listing the versions in which each Mockoon Cloud feature was in
 | Cloud deployments                                   | [≥ v8.3.0](/releases/8.3.0/)                     |
 | - Custom subdomains                                 | [≥ v9.1.0](/releases/9.1.0/)                     |
 | - Region choice                                     | [≥ v9.3.0](/releases/9.3.0/)                     |
+| - [Self-host with CLI](cloud-docs:api-mock-cloud-deployments#self-host-with-the-cli)                                | [≥ v9.5.0](/releases/9.5.0/)                     |
 | Data synchronization / Real-time team collaboration | [≥ v8.0.0](/releases/8.0.0/)                     |
 | AI assistants                                       |                                                  |
 | - Templates                                         | [≥ v3.1.0](/releases/3.1.0/) (free since v8.0.0) |

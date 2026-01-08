@@ -111,9 +111,8 @@ For all users (Solo, Team, and Enterprise), the environments can be synchronized
 
 These quotas and limits are subject to change. Please refer to your [account settings](/account/subscription/) for the latest information.
 
-## Limitations
+## Unsupported features
 
-Here is a list of limitations of the current version of the data synchronization feature:
+The data synchronization does not support the following features:
 
-- External files linked to the environment are not synchronized (e.g. environment's certificates or files used in the "File" response body type).
-- The CLI package cannot deploy cloud environments yet ([but it's on our roadmap](https://github.com/mockoon/mockoon/issues/1736)).
+- External files linked to the environment are not uploaded and served (e.g. environment's certificates or files used in the "File" response body type). File serving is generally not supported in cloud environments and linking files is disabled.

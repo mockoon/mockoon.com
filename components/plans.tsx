@@ -903,6 +903,17 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>
+                              Self-hosting with the CLI{' '}
+                              <CustomTooltip text='Self-host cloud mocks from your own server using Mockoon CLI.'></CustomTooltip>
+                            </td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>
+                              {(1000).toLocaleString()} monthly pulls
+                            </td>
+                            <td className='text-center'>Custom quota</td>
+                          </tr>
+                          <tr>
+                            <td>
                               Regions{' '}
                               <CustomTooltip text='Choose a region close to your users. Enterprise can be provisioned in a custom Google Cloud region.'></CustomTooltip>
                             </td>

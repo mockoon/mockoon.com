@@ -148,7 +148,7 @@ const useCurrentDeployments = () => {
   const { isLoading, error, data, isFetching, refetch } = useQuery<
     DeployInstance[]
   >({
-    queryKey: ['currentUserDeployments'],
+    queryKey: ['teamInstances'],
     refetchOnMount: false,
     retry: false,
     enabled: isAuth,

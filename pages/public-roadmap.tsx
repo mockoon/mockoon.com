@@ -44,6 +44,11 @@ const tasks: {
 } = {
   released: [
     {
+      link: '/cloud/docs/api-mock-cloud-deployments/#self-host-with-the-cli',
+      title: 'CLI: deploy from a cloud mock',
+      cloud: true
+    },
+    {
       title: 'EU cloud deployment regions',
       link: '/pricing/#available-regions',
       cloud: true,
@@ -129,12 +134,6 @@ const tasks: {
       link: 'https://github.com/mockoon/mockoon/issues/1730',
       title: 'Support callbacks relative paths',
       cloud: false,
-      target: '_blank'
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/1736',
-      title: 'CLI: deploy from a cloud mock',
-      cloud: true,
       target: '_blank'
     }
   ],

@@ -76,12 +76,29 @@ The visibility of the environment can be set to **public** or **private**. Here 
 
 It is not possible to switch the region of an already deployed instance. If you want to deploy the same environment in a different region, you will need to stop the current instance and deploy it again in the desired region. The new instance will have a different URL and API key.
 
+## Self-host with the CLI
+
+Starting with Mockoon v9.5.0, you can use [Mockoon CLI]() to **deploy your cloud mocks to your own infrastructure** instead of using Mockoon's cloud servers.
+
+> 💡 Running a cloud mock with the CLI is currently a feature requiring a Team or higher plan.
+
+The application will provide you with the necessary **commands and instructions** to set up and run the mock on your own servers:
+
+![cloud deployment with CLI](cloud-docs-img:cli-pull-instructions.png)
+
+The necessary steps are:
+
+- **Create an access token** with the `environment:read` permission (see [Access tokens](cloud-docs:access-tokens#managing-your-access-tokens)).
+- Use the provided `mockoon-cli start --data cloud://... --token <your-token>` **command** to run the cloud environment on your server.
+
+You can also refer to the CLI documentation on [how to pull and run a cloud mock](https://github.com/mockoon/mockoon/blob/main/packages/cli/README.md#run-a-cloud-hosted-mockoon-environment).
+
 ## Unsupported features
 
 The cloud deployment feature does not support the following features:
 
 - Custom TLS and hostnames are not supported and will be disabled in the cloud environment.
-- External files linked to the environment are not uploaded and served (e.g. environment's certificates or files used in the "File" response body type). File serving is generally not supported in the cloud environment.
+- External files linked to the environment are not uploaded and served (e.g. environment's certificates or files used in the "File" response body type). File serving is generally not supported in cloud environments and linking files is disabled.
 - The proxy mode will be disabled if it points to a local address or IP (e.g. `localhost` or `127.0.0.1`).
 - Callbacks pointing to a local address or IP (e.g. `localhost` or `127.0.0.1`) will be disabled.
 - WebSockets are currently not supported but will be added in a future version.
@@ -95,11 +112,3 @@ Future major versions of Mockoon may introduce **breaking changes to the data mo
 ## Plans quotas and limits
 
 Some **quotas and limits apply** to the cloud deployment feature depending on your plan. As these quotas and limits are subject to change over time, please refer to your [account settings](/account/subscription/) for the information specific to your account.
-
-## Future improvements
-
-The cloud deployment feature is still in its early stages. Here are some improvements we are working on:
-
-- Support for [**environment variables**](docs:admin-api/environment-variables).
-- Possibility to link a custom domain to the instance.
-- Possibility to renew the API key.

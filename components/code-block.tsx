@@ -40,7 +40,7 @@ const CodeBlock: FunctionComponent<{
         wrapLongLines
         language={language}
         PreTag='div'
-        className='code'
+        className='code m-0'
         customStyle={{ maxHeight }}
         {...optionalProps}
       >

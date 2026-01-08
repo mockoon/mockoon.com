@@ -66,22 +66,40 @@ const AccountMenu: FunctionComponent = function () {
             {!isLoading && userData?.plan !== 'FREE' && (
               <>
                 {!isSupportRole && (
-                  <li
-                    className={`list-item ${
-                      router.pathname.includes('account/instances')
-                        ? 'active'
-                        : ''
-                    }`}
-                  >
-                    <Link
-                      href='/account/instances/'
-                      className='list-link text-reset ps-4'
+                  <>
+                    <li
+                      className={`list-item ${
+                        router.pathname.includes('account/instances')
+                          ? 'active'
+                          : ''
+                      }`}
                     >
-                      Instances
-                    </Link>
-                  </li>
-                )}
+                      <Link
+                        href='/account/instances/'
+                        className='list-link text-reset ps-4'
+                      >
+                        Instances
+                      </Link>
+                    </li>
 
+                    {isTeamPlan && (
+                      <li
+                        className={`list-item ${
+                          router.pathname.includes('account/access-tokens')
+                            ? 'active'
+                            : ''
+                        }`}
+                      >
+                        <Link
+                          href='/account/access-tokens/'
+                          className='list-link text-reset ps-4'
+                        >
+                          Access tokens
+                        </Link>
+                      </li>
+                    )}
+                  </>
+                )}
                 {isTeamPlan &&
                   (userData?.teamRole === 'owner' || isSupportRole) && (
                     <li

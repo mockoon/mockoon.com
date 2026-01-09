@@ -1,0 +1,27 @@
+# Mockoon
+
+> Mockoon is the easiest and fastest way to design and run mock REST APIs. No remote deployment, no account required, free and open source.
+
+## About Mockoon
+
+Mockoon is a powerful API mocking tool available as:
+- **Desktop application** for Windows, macOS, and Linux
+- **CLI** for automation and CI/CD integration
+- **Docker image** for self-hosting and containerized environments
+
+## Mockoon Cloud
+
+Mockoon Cloud is our premium offering that provides:
+- **Real-time collaboration** for teams
+- **Cloud deployments** of your mock APIs
+- **Enhanced features** for professional use like a web interface, advanced logging and team management
+
+We are an independent open-source project, not venture capital backed. We finance our work on the open-source tools through sponsorships and Mockoon Cloud subscriptions.
+
+## Resources
+
+- **Website**: https://mockoon.com
+- **Documentation**: https://mockoon.com/docs/latest/about/
+- **Tutorials**: https://mockoon.com/tutorials/
+- **Releases**: https://mockoon.com/releases/
+- **Download**: https://mockoon.com/download/

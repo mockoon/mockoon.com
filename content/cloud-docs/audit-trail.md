@@ -25,12 +25,16 @@ Currently the following events are logged in the audit trail:
   - Subscription self-upgrades (plan upgrade, seats increase)
 - **Resource activities**:
   - **Cloud environments**:
+    - Environment read (occurs when an environment is [pulled with the CLI](cloud-docs:api-mock-cloud-deployments#self-host-with-the-cli)).
     - Environment created
     - Environment deleted
   - **Cloud instances**:
     - Instance started
     - Instance restarted
     - Instance stopped
+  - **Access tokens**:
+    - Access token created
+    - Access token revoked
 
 ## Retention period and permissions
 

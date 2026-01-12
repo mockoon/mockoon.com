@@ -78,7 +78,7 @@ It is not possible to switch the region of an already deployed instance. If you 
 
 ## Self-host with the CLI
 
-Starting with Mockoon v9.5.0, you can use [Mockoon CLI]() to **deploy your cloud mocks to your own infrastructure** instead of using Mockoon's cloud servers.
+Starting with Mockoon v9.5.0, you can use [Mockoon CLI](/cli/) to **deploy your cloud mocks to your own infrastructure** instead of using Mockoon's cloud servers.
 
 > 💡 Running a cloud mock with the CLI is currently a feature requiring a Team or higher plan.
 

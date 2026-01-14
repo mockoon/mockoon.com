@@ -16,9 +16,9 @@ const incidents: {
   {
     title: 'All services - Scheduled downtime',
     desc: 'All services will be restarted for the deployment of v9.5.0. The downtime is expected to last less than 15 minutes for each service. We apologize for the inconvenience.',
-    dateStart: '2026-01-14T07:00:00Z',
-    dateEnd: '2026-01-14T08:00:00Z',
-    status: 'planned'
+    dateStart: '2026-01-14T07:20:00Z',
+    dateEnd: '2026-01-14T09:20:00Z',
+    status: 'inprogress'
   },
   {
     title: 'Cloud Deployments - US servers - Scheduled migration',

@@ -21,15 +21,15 @@ Today, December 10, 2025, Mockoon is proud to announce that we have been awarded
 
 This recognition celebrates the work we and our community have done to make open source **sustainable** and **resilient**. Our sincere thanks go to [CNLL](https://cnll.fr/) and [APELL](https://apell.info/) for this honor, and all the jury members for selecting Mockoon for this award.
 
-![CNLL prize logo](/images/blog/mockoon-wins-cnll-apell-european-price-award/cnll-apell-european-price-award.png)
+![CNLL prize logo{572x400}](/images/blog/mockoon-wins-cnll-apell-european-price-award/cnll-apell-european-price-award.png)
 
 This award is a recognition of the efforts from our **contributors**, **maintainers**, **community members**, and **users** who have helped Mockoon grow into a reliable, widely-used open source API mocking solution.
 
 This is another important step toward building a guaranteed future for the Mockoon open source project. We remain committed to investing in the project's long-term **sustainability**, supporting contributors, improving documentation, maintaining high-quality releases, and exploring **responsible funding models** that keep the core project free and open.
 
-![#sub#Mockoon founder, Guillaume, receiving the award](/images/blog/mockoon-wins-cnll-apell-european-price-award/guillaume-receiving-cnll-apell-european-price-award.jpg)
+![#sub#Mockoon founder, Guillaume, receiving the award{720x480}](/images/blog/mockoon-wins-cnll-apell-european-price-award/guillaume-receiving-cnll-apell-european-price-award.jpg)
 
-![#sub#Group photo of all the winning projects](/images/blog/mockoon-wins-cnll-apell-european-price-award/cnll-apell-european-price-award-winners.jpg)
+![#sub#Group photo of all the winning projects{720x480}](/images/blog/mockoon-wins-cnll-apell-european-price-award/cnll-apell-european-price-award-winners.jpg)
 
 Read more on the [CNLL's website](https://cnll.fr/news/laur%C3%A9ats-du-concours-2025-des-acteurs-du-libre/) (in french).
 

@@ -29,7 +29,7 @@ Our community continues to grow and the numbers for 2025 are a testament to that
 - [We **published 4 releases** in 2025 (and soon a fifth)](/releases/9.4.0/), each bringing significant improvements and new capabilities to our tools.
 
 Beyond the numbers, what truly drives us is the **feedback** we receive. Whether it's a feature request on GitHub or a message of support, knowing that Mockoon makes your daily development life easier is our greatest reward.
-![stars history graph showing a continuous growth](/images/blog/eight-years-2025-retrospective/star-history-20251219.png)
+![stars history graph showing a continuous growth{664x480}](/images/blog/eight-years-2025-retrospective/star-history-20251219.png)
 
 ## Some of our favorite 2025 features
 
@@ -62,7 +62,7 @@ Among the major cloud milestones this year:
 - **EU Region**: To better serve our European users, we've added a [new deployment region in Europe](/pricing/#available-regions). This also means lower latency for our users in the region. We plan to add more regions in 2026, possibly Australia and Canada.
 - **Better performance and scalability**: We've re-architected several parts of our cloud infrastructure to handle increased load and provide a more secure environment for our users.
 - **Enhanced Team Management**: We've added new features to help teams collaborate more effectively, including role-based access control and activity logs.
-  ![Cloud instance management dialog screenshot](/images/blog/eight-years-2025-retrospective/deploy-environment-management-dialog.png)
+  ![Cloud instance management dialog screenshot{794x203}](/images/blog/eight-years-2025-retrospective/deploy-environment-management-dialog.png)
 
 The challenge for 2026 will be to keep up this momentum and continue delivering value to our users while maintaining the open-source spirit that defines Mockoon.
 We also know where our cloud offering falls short compared to our competitors, and we have plans to address these gaps in the coming year. You don't add a Cloud platform on top of an offline-first tool overnight, but we're committed to making Mockoon Cloud a top-tier solution for API mocking and testing.
@@ -76,7 +76,7 @@ This year saw several other exciting developments in the Mockoon ecosystem:
 - We [**partnered with OpenPledge**](/blog/support-mockoon-development-with-open-pledge/) to allow you to support Mockoon by pledging money on specific issues. We are excited about this new way to involve the community in our development process.
 - We [**won the French "Acteurs du Libre 2025" award**](/blog/mockoon-wins-cnll-apell-european-price-award/) in the "European" category during the Open Source Experience conference in Paris! This recognition from the open-source community is a huge honor for us and validates our efforts to build a sustainable open-source project.
 
-![#sub#Guillaume (founder) receiving the award](/images/blog/eight-years-2025-retrospective/guillaume-receiving-cnll-apell-european-price-award.jpg)
+![#sub#Guillaume (founder) receiving the award{720x480}](/images/blog/eight-years-2025-retrospective/guillaume-receiving-cnll-apell-european-price-award.jpg)
 
 We will have more exciting announcements for January 2026, so stay tuned!
 

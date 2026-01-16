@@ -41,6 +41,7 @@ const AccountSubscription: FunctionComponent = function () {
   );
   const { data: subscriptionData } = useCurrentSubscription(userData);
   const [seats, setSeats] = useState(1);
+  const [previousSeats, setPreviousSeats] = useState(1);
   const [minSeats, setMinSeats] = useState(1);
   const [upgradeInProgress, setUpgradeInProgress] = useState(false);
   const isTeamPlan =
@@ -62,16 +63,17 @@ const AccountSubscription: FunctionComponent = function () {
   useEffect(() => {
     if (teamData) {
       setSeats(teamData.seats);
+      setPreviousSeats(teamData.seats);
     }
   }, [teamData]);
 
   useEffect(() => {
-    if (upgradeInProgress) {
+    if (upgradeInProgress && seats !== previousSeats) {
       console.log(seats);
       clearTimeout(seatUpgradeTimeout);
 
       seatUpgradeTimeout = setTimeout(() => {
-        upgradePreview(seats);
+        upgradePreview();
       }, 500);
     }
   }, [seats, upgradeInProgress]);
@@ -84,7 +86,7 @@ const AccountSubscription: FunctionComponent = function () {
     isPending,
     reset: resetUpgradePreview
   } = useMutation({
-    mutationFn: async (seats: number) => {
+    mutationFn: async () => {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/subscription/upgrade?seats=${seats}`,
         {
@@ -97,6 +99,7 @@ const AccountSubscription: FunctionComponent = function () {
       );
 
       if (response.status === 200) {
+        setPreviousSeats(seats);
         return await response.json();
       } else {
         throw new Error();
@@ -111,7 +114,7 @@ const AccountSubscription: FunctionComponent = function () {
     isSuccess: isUpgradeSuccess,
     reset: resetUpgrade
   } = useMutation({
-    mutationFn: async (seats: number) => {
+    mutationFn: async () => {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/subscription/upgrade?seats=${seats}`,
         {
@@ -416,9 +419,11 @@ const AccountSubscription: FunctionComponent = function () {
                                             ? 1
                                             : teamData?.seats + 1;
                                         setUpgradeInProgress(true);
+
                                         setSeats(newSeats);
+                                        setPreviousSeats(newSeats);
                                         setMinSeats(newSeats);
-                                        upgradePreview(newSeats);
+                                        upgradePreview();
                                       }}
                                     >
                                       {userData?.plan === 'SOLO' &&
@@ -492,8 +497,15 @@ const AccountSubscription: FunctionComponent = function () {
                                           }
 
                                           setSeats(newSeats);
-                                          console.log(newSeats);
                                         }}
+                                        /* onBlur={() => {
+                                          upgradePreview();
+                                        }}
+                                        onKeyUp={(event) => {
+                                          if (event.key === 'Enter') {
+                                            upgradePreview();
+                                          }
+                                        }} */
                                       />
                                     </div>
                                   </div>
@@ -516,7 +528,10 @@ const AccountSubscription: FunctionComponent = function () {
                                             {upgradePreviewData.immediatePayment
                                               .price / 100}
                                           </span>{' '}
-                                          (Inc. tax)
+                                          (Inc. tax: $
+                                          {upgradePreviewData.immediatePayment
+                                            .tax / 100}
+                                          )
                                           <br />
                                           <small className='text-gray-700'>
                                             Prorata payment for the remaining{' '}
@@ -544,7 +559,10 @@ const AccountSubscription: FunctionComponent = function () {
                                           {upgradePreviewData.nextPayment
                                             .price / 100}
                                         </span>{' '}
-                                        (Inc. tax)
+                                        (Inc. tax: $
+                                        {upgradePreviewData.nextPayment.tax /
+                                          100}
+                                        )
                                         <br />
                                         <small className='text-gray-700'>
                                           {subscriptionData?.status ===
@@ -580,6 +598,7 @@ const AccountSubscription: FunctionComponent = function () {
                                       resetUpgradePreview();
                                       resetUpgrade();
                                       setUpgradeInProgress(false);
+                                      setSeats(previousSeats);
                                     }}
                                     disabled={isUpgradeSuccess}
                                   >
@@ -588,14 +607,15 @@ const AccountSubscription: FunctionComponent = function () {
                                   <button
                                     className='btn btn-xs btn-primary ms-2'
                                     onClick={() => {
-                                      upgrade(seats);
+                                      upgrade();
                                     }}
                                     disabled={
                                       upgradeStatus === 'pending' ||
                                       upgradePreviewStatus === 'pending' ||
                                       isUpgradePreviewError ||
                                       isUpgradeError ||
-                                      isUpgradeSuccess
+                                      isUpgradeSuccess ||
+                                      seats !== previousSeats
                                     }
                                   >
                                     Confirm payment

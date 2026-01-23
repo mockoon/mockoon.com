@@ -44,6 +44,11 @@ const tasks: {
 } = {
   released: [
     {
+      link: '/docs/latest/callbacks/overview/#configure-a-callback',
+      title: 'Support callbacks relative paths',
+      cloud: false
+    },
+    {
       link: '/cloud/docs/api-mock-cloud-deployments/#self-host-with-the-cli',
       title: 'CLI: deploy from a cloud mock',
       cloud: true
@@ -115,12 +120,6 @@ const tasks: {
       title: 'Mockoon Cloud Web app',
       cloud: true,
       target: null
-    },
-    {
-      link: '/releases/9.1.0/#cloud-deployments',
-      title: 'Custom sub domains in cloud deployments',
-      cloud: true,
-      target: null
     }
   ],
   inProgress: [
@@ -129,15 +128,15 @@ const tasks: {
       title: 'Export logs as HAR',
       cloud: false,
       target: '_blank'
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/1730',
-      title: 'Support callbacks relative paths',
-      cloud: false,
-      target: '_blank'
     }
   ],
   comingSoon: [
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/765',
+      title: 'OpenAPI specification re-import',
+      cloud: false,
+      target: '_blank'
+    },
     {
       title: 'Team-level environment variables support for cloud deployments',
       cloud: true,

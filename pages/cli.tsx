@@ -174,7 +174,7 @@ $ mockoon-cli start --data ./data-file.json`}
               <pre>
                 <CodeBlock
                   code={`- name: Run Mockoon CLI
-  uses: mockoon/cli-action@v2
+  uses: mockoon/cli-action@v3
   with:
     # Mockoon CLI version, default to 'latest'
     version: "latest"

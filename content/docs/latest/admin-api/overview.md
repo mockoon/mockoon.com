@@ -28,7 +28,7 @@ The admin API is **always protected by bearer token authentication**. Every requ
 
 In the desktop application, a secure random token is generated on each application launch and is available from each mock API Settings tab:
 
-![Admin API token in the desktop application](docs-img:admin-api-token.png)
+![Admin API token in the desktop application{1226x343}](docs-img:admin-api-token.png)
 
 The token can be overridden by setting the `MOCKOON_ADMIN_API_TOKEN` environment variable before launching the application. This token will apply to all mock's admin APIs running in the desktop application.
 

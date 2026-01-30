@@ -103,11 +103,11 @@ This single route performs several mutations in sequence:
 
 After calling the route with `curl -X POST http://localhost:3000/admin/api-key/rotate`, you can check the live state of the bucket by clicking on the "Click to view current value" button below the data bucket editor:
 
-![View the live bucket state](/images/tutorials/advanced-data-bucket-manipulation/live-bucket-state-button.png)
+![View the live bucket state{1171x257}](/images/tutorials/advanced-data-bucket-manipulation/live-bucket-state-button.png)
 
 You should see the updated data:
 
-![Live bucket state showing the new API key and audit log](/images/tutorials/advanced-data-bucket-manipulation/live-bucket-state.png)
+![Live bucket state showing the new API key and audit log{1270x984}](/images/tutorials/advanced-data-bucket-manipulation/live-bucket-state.png)
 
 ### Count each authorized request
 

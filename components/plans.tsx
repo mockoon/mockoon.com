@@ -4,7 +4,8 @@ import 'leaflet/dist/leaflet.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useEffect, useState } from 'react';
-import { frequencyNames, planNames } from '../constants/plans';
+import { Modal } from 'react-bootstrap';
+import { frequencyNames } from '../constants/plans';
 import { pricing } from '../data/pricing';
 import { AccordionData } from '../models/common.model';
 import { useAuth } from '../utils/auth';
@@ -108,7 +109,7 @@ const cloudFaq: AccordionData = [
       {
         title: 'VAT',
         content:
-          'Prices are in USD and exclude VAT. VAT may or may not be charged during checkout depending on various criteria like your location and quality (individual or business).'
+          'Prices are in USD and exclude taxes (VAT, etc.). Taxes may or may not be charged during checkout depending on various criteria like your location and quality (individual or business).'
       }
     ]
   },
@@ -130,8 +131,8 @@ const cloudFaq: AccordionData = [
 ];
 
 const suffixes = {
-  MONTHLY: 'mo',
-  YEARLY: 'yr'
+  SOLO: { MONTHLY: '/month', YEARLY: '/month<br/>billed annually' },
+  TEAM: { MONTHLY: '/user/month', YEARLY: '/user/month<br/>billed annually' }
 };
 
 const PlansView: FunctionComponent<{
@@ -141,7 +142,7 @@ const PlansView: FunctionComponent<{
   const auth = useAuth();
   const currentUser = useCurrentUser();
   const router = useRouter();
-  const [planFrequency, setPlanFrequency] = useState('MONTHLY');
+  const [planFrequency, setPlanFrequency] = useState('YEARLY');
   const [seats, setSeats] = useState(1);
   const [configurePlan, setConfigurePlan] = useState(null);
   const discountCode = router.query.discountCode;
@@ -249,7 +250,7 @@ const PlansView: FunctionComponent<{
       setSeats(1);
     }
 
-    if (planId === 'TEAM' || planId === 'ENTERPRISE') {
+    if (planId === 'TEAM') {
       setConfigurePlan(planId);
       setSeats(pricing[planId].minSeats);
       return;
@@ -301,7 +302,7 @@ const PlansView: FunctionComponent<{
                   }`}
                   htmlFor='MONTHLY'
                 >
-                  Monthly
+                  Pay monthly
                 </label>
 
                 <input
@@ -324,78 +325,83 @@ const PlansView: FunctionComponent<{
                   }`}
                   htmlFor='YEARLY'
                 >
-                  Yearly
+                  Pay annually{' '}
+                  <span className='text-success'>(two months free)</span>
                 </label>
               </div>
             </div>
-            {configurePlan && (
-              <>
-                <div className='row g-3 justify-content-center align-items-center mb-4'>
-                  <div className='col-auto'>
-                    <label htmlFor='planConfigure' className='col-form-label'>
-                      Number of seats for the{' '}
-                      <strong>{frequencyNames[planFrequency]}</strong>{' '}
-                      <span className='text-primary'>
-                        {planNames[configurePlan]}{' '}
-                      </span>
-                      plan:
-                    </label>
-                  </div>
-                  <div className='col-auto col-md-1'>
-                    <input
-                      type='number'
-                      id='planConfigure'
-                      className='form-control form-control-xs'
-                      placeholder='Number of seats'
-                      value={seats}
-                      onChange={(event) => {
-                        const newSeats = parseInt(event.target.value);
 
-                        if (
-                          isNaN(newSeats) ||
-                          newSeats < 1 ||
-                          newSeats < pricing[configurePlan].minSeats
-                        ) {
-                          setSeats(pricing[configurePlan].minSeats);
-                          return;
-                        }
+            <Modal
+              show={configurePlan != null}
+              onHide={() => setConfigurePlan(null)}
+              centered
+              scrollable={false}
+            >
+              <Modal.Header closeButton className='p-4'>
+                <Modal.Title>Team plan configuration</Modal.Title>
+              </Modal.Header>
+              <Modal.Body className='p-4'>
+                <div className='form-group'>
+                  <label htmlFor='planConfigure' className='form-label'>
+                    Number of users for the{' '}
+                    <strong>{frequencyNames[planFrequency]}</strong>{' '}
+                    <span className='text-primary'>Team</span> plan:
+                  </label>
+                  <input
+                    type='number'
+                    id='planConfigure'
+                    className='form-control'
+                    placeholder='Number of seats'
+                    value={seats}
+                    onChange={(event) => {
+                      const newSeats = parseInt(event.target.value);
 
-                        if (newSeats > pricing[configurePlan].maxSeats) {
-                          setSeats(pricing[configurePlan].maxSeats);
-                          return;
-                        }
+                      if (
+                        isNaN(newSeats) ||
+                        newSeats < 1 ||
+                        newSeats < pricing[configurePlan].minSeats
+                      ) {
+                        setSeats(pricing[configurePlan].minSeats);
+                        return;
+                      }
 
-                        setSeats(newSeats);
-                      }}
-                    />
-                  </div>
-                  <div className='col-auto'>
-                    <button
-                      className='btn btn-xs btn-primary'
-                      type='button'
-                      onClick={() => {
-                        //checkoutRedirect(configurePlan);
-                        openCheckout(configurePlan);
-                      }}
-                    >
-                      Confirm
-                    </button>
-                  </div>
+                      if (newSeats > pricing[configurePlan].maxSeats) {
+                        setSeats(pricing[configurePlan].maxSeats);
+                        return;
+                      }
+
+                      setSeats(newSeats);
+                    }}
+                  />
+                  <small className='d-block mt-2 text-gray-700'>
+                    Minimum: {pricing[configurePlan]?.minSeats} users
+                  </small>
                 </div>
-              </>
-            )}
+              </Modal.Body>
+              <Modal.Footer className='p-4'>
+                <button
+                  className='btn btn-xs btn-secondary'
+                  type='button'
+                  onClick={() => setConfigurePlan(null)}
+                >
+                  Cancel
+                </button>
+                <button
+                  className='btn btn-xs btn-primary'
+                  type='button'
+                  onClick={() => {
+                    openCheckout(configurePlan);
+                  }}
+                >
+                  Confirm and proceed to checkout
+                </button>
+              </Modal.Footer>
+            </Modal>
 
             <div className='row gx-4 gy-4 justify-content-center'>
-              <div className='col-12 col-xl-3'>
+              <div className='col-12 col-lg-4'>
                 <div className='card shadow-lg mb-6 mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
-                    {planFrequency === 'YEARLY' && (
-                      <span
-                        className={`badge text-bg-success-subtle ms-3 fs-sm align-self-center badge badge-float badge-float-outside`}
-                      >
-                        {pricing.SOLO.discount}
-                      </span>
-                    )}
                     <h2 className='d-flex justify-content-center mb-2 fw-medium'>
                       <span className='text-primary'>Solo</span>
                       <span className='ms-1'>plan</span>
@@ -408,15 +414,16 @@ const PlansView: FunctionComponent<{
                       <span className='price display-2 mb-0'>
                         {pricing.SOLO[planFrequency].price}
                       </span>
-                      <span className='h4 text-gray-700 align-self-end'>
-                        /{suffixes[planFrequency]}
-                      </span>
+                      <span
+                        className='h5 text-gray-700 align-self-end ms-2'
+                        dangerouslySetInnerHTML={{
+                          __html: suffixes.SOLO[planFrequency]
+                        }}
+                      ></span>
                     </div>
-                    <div className='d-flex justify-content-center mb-6'>
-                      <span className='h6 text-gray-700 align-self-end'>
-                        (Tax excl.)
-                      </span>
-                    </div>
+                    <p className='h5 text-gray-700 text-center mb-6'>
+                      (Tax excl.)
+                    </p>
 
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
@@ -428,6 +435,7 @@ const PlansView: FunctionComponent<{
                         <Link href={'/features/'}>open-source features</Link>
                       </p>
                     </div>
+                    <hr />
 
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
@@ -524,16 +532,9 @@ const PlansView: FunctionComponent<{
                 </div>
               </div>
 
-              <div className='col-12 col-xl-3'>
-                <div className='card shadow-lg mb-md-0 h-100'>
+              <div className='col-12 col-lg-4'>
+                <div className='card shadow-lg border-1 border-primary mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
-                    {planFrequency === 'YEARLY' && (
-                      <span
-                        className={`badge text-bg-success-subtle ms-3 fs-sm align-self-center badge badge-float badge-float-outside`}
-                      >
-                        {pricing.TEAM.discount}
-                      </span>
-                    )}
                     <h2 className='d-flex justify-content-center mb-3 fw-medium'>
                       <span className='text-primary'>Team</span>
                       <span className='ms-1'>plan</span>
@@ -546,15 +547,16 @@ const PlansView: FunctionComponent<{
                       <span className='price display-2 mb-0'>
                         {pricing.TEAM[planFrequency].price}
                       </span>
-                      <span className='h4 text-gray-700 align-self-end'>
-                        /{suffixes[planFrequency]}/seat
-                      </span>
+                      <span
+                        className='h5 text-gray-700 align-self-end ms-2'
+                        dangerouslySetInnerHTML={{
+                          __html: suffixes.TEAM[planFrequency]
+                        }}
+                      ></span>
                     </div>
-                    <div className='d-flex justify-content-center mb-6'>
-                      <span className='h6 text-gray-700 align-self-end'>
-                        (Tax excl.)
-                      </span>
-                    </div>
+                    <p className='h5 text-gray-700 text-center mb-6'>
+                      Minimum 2 users (Tax excl.)
+                    </p>
 
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
@@ -647,15 +649,21 @@ const PlansView: FunctionComponent<{
 
                       <p>Priority email support</p>
                     </div>
+                    {false && (
+                      <>
+                        <hr />
+                        <div className='d-flex'>
+                          <p>Add-ons:</p>
+                        </div>
+                        <div className='d-flex'>
+                          <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                            <i className='icon-check'></i>
+                          </div>
 
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
-                      </div>
-
-                      <p>Organizations up to {pricing.TEAM.maxSeats} seats</p>
-                    </div>
-
+                          <p>1 extra API and 50k requests - 10$/monthly</p>
+                        </div>
+                      </>
+                    )}
                     <div className='mt-4'>
                       {/* show only if not connected or not already subscribed */}
                       {(!currentUser.data ||
@@ -690,7 +698,7 @@ const PlansView: FunctionComponent<{
                 </div>
               </div>
 
-              <div className='col-12 col-xl-3'>
+              <div className='col-12 col-lg-4'>
                 <div className='card shadow-lg mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
                     <h2 className='d-flex justify-content-center mb-3 fw-medium'>
@@ -845,26 +853,38 @@ const PlansView: FunctionComponent<{
                               colSpan={5}
                               className='text-start fw-bold bg-gray-100'
                             >
-                              Cloud deployments
+                              Cloud APIs
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              Number of deployed API mocks{' '}
-                              <CustomTooltip text='Each API mock is a collection of endpoints and rules deployed on a separated subdomain: https://mock-abcd.mockoon.app. See the FAQ below for a definition of an API mock.'></CustomTooltip>
+                              Number of API mocks{' '}
+                              <CustomTooltip text='Single quota governing your API mocks. You can synchronize across devices and collaborators, and deploy up to the same number. Each mock is an unlimited collection of endpoints and rules.'></CustomTooltip>
                             </td>
                             <td className='text-center'>
-                              {pricing.SOLO.deployQuota}
+                              {pricing.SOLO.syncQuota}
                             </td>
                             <td className='text-center'>
-                              {pricing.TEAM.deployQuota}
+                              {pricing.TEAM.syncQuota}
                             </td>
                             <td className='text-center'>Custom</td>
                           </tr>
                           <tr>
+                            <td>Data synchronization across your devices</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td>Real-time collaboration</td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
                             <td>
-                              Number of monthly calls{' '}
-                              <CustomTooltip text='Number of monthly API requests accross your deployed API mocks for your team.'></CustomTooltip>
+                              Monthly calls included{' '}
+                              <CustomTooltip text='Total monthly API requests across your deployed mocks.'></CustomTooltip>
                             </td>
                             <td className='text-center'>
                               {pricing.SOLO.deployCallsQuota.toLocaleString()}
@@ -893,7 +913,7 @@ const PlansView: FunctionComponent<{
                           <tr>
                             <td>
                               Hosting{' '}
-                              <CustomTooltip text='Each deployment runs in a dedicated container (per-deployment isolation).'></CustomTooltip>
+                              <CustomTooltip text='Each API mock runs in a dedicated container (per-API isolation).'></CustomTooltip>
                             </td>
                             <td className='text-center'>Multi-tenant</td>
                             <td className='text-center'>Multi-tenant</td>
@@ -904,7 +924,7 @@ const PlansView: FunctionComponent<{
                           <tr>
                             <td>
                               Self-hosting with the CLI{' '}
-                              <CustomTooltip text='Self-host cloud mocks from your own server using Mockoon CLI.'></CustomTooltip>
+                              <CustomTooltip text='Self-host cloud APIs from your own server using Mockoon CLI.'></CustomTooltip>
                             </td>
                             <td className='text-center'>{crossBadge}</td>
                             <td className='text-center'>
@@ -931,47 +951,6 @@ const PlansView: FunctionComponent<{
                             </td>
                             <td className='text-center'>
                               Custom Google Cloud region
-                            </td>
-                          </tr>
-                          <tr>
-                            <td
-                              colSpan={5}
-                              className='text-start fw-bold bg-gray-100'
-                            >
-                              Cloud synchronization
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              Number of synchronized API mocks{' '}
-                              <CustomTooltip text='Each API mock is a collection of endpoints and rules synchronized accross your devices and team members in real-time. See the FAQ below for a definition of an API mock.'></CustomTooltip>
-                            </td>
-                            <td className='text-center'>
-                              {pricing.SOLO.syncQuota}
-                            </td>
-                            <td className='text-center'>
-                              {pricing.TEAM.syncQuota}
-                            </td>
-                            <td className='text-center'>Custom</td>
-                          </tr>
-                          <tr>
-                            <td>Data synchronization accross your devices</td>
-                            <td className='text-center'>{tickBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
-                          </tr>
-                          <tr>
-                            <td>Real-time collaboration</td>
-                            <td className='text-center'>{crossBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
-                          </tr>
-                          <tr>
-                            <td>Hosting</td>
-                            <td className='text-center'>Multi-tenant</td>
-                            <td className='text-center'>Multi-tenant</td>
-                            <td className='text-center'>
-                              Multi-tenant or single-tenant
                             </td>
                           </tr>
                           <tr>

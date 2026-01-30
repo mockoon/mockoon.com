@@ -130,8 +130,8 @@ const cloudFaq: AccordionData = [
 ];
 
 const suffixes = {
-  MONTHLY: 'mo',
-  YEARLY: 'yr'
+  SOLO: { MONTHLY: '/month', YEARLY: '/month<br/>billed annually' },
+  TEAM: { MONTHLY: '/user/month', YEARLY: '/user/month<br/>billed annually' }
 };
 
 const PlansView: FunctionComponent<{
@@ -141,7 +141,7 @@ const PlansView: FunctionComponent<{
   const auth = useAuth();
   const currentUser = useCurrentUser();
   const router = useRouter();
-  const [planFrequency, setPlanFrequency] = useState('MONTHLY');
+  const [planFrequency, setPlanFrequency] = useState('YEARLY');
   const [seats, setSeats] = useState(1);
   const [configurePlan, setConfigurePlan] = useState(null);
   const discountCode = router.query.discountCode;
@@ -249,7 +249,7 @@ const PlansView: FunctionComponent<{
       setSeats(1);
     }
 
-    if (planId === 'TEAM' || planId === 'ENTERPRISE') {
+    if (planId === 'TEAM') {
       setConfigurePlan(planId);
       setSeats(pricing[planId].minSeats);
       return;
@@ -301,7 +301,7 @@ const PlansView: FunctionComponent<{
                   }`}
                   htmlFor='MONTHLY'
                 >
-                  Monthly
+                  Pay monthly
                 </label>
 
                 <input
@@ -324,7 +324,8 @@ const PlansView: FunctionComponent<{
                   }`}
                   htmlFor='YEARLY'
                 >
-                  Yearly
+                  Pay annually{' '}
+                  <span className='text-success'>(two months free)</span>
                 </label>
               </div>
             </div>
@@ -389,13 +390,6 @@ const PlansView: FunctionComponent<{
               <div className='col-12 col-xl-3'>
                 <div className='card shadow-lg mb-6 mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
-                    {planFrequency === 'YEARLY' && (
-                      <span
-                        className={`badge text-bg-success-subtle ms-3 fs-sm align-self-center badge badge-float badge-float-outside`}
-                      >
-                        {pricing.SOLO.discount}
-                      </span>
-                    )}
                     <h2 className='d-flex justify-content-center mb-2 fw-medium'>
                       <span className='text-primary'>Solo</span>
                       <span className='ms-1'>plan</span>
@@ -408,15 +402,16 @@ const PlansView: FunctionComponent<{
                       <span className='price display-2 mb-0'>
                         {pricing.SOLO[planFrequency].price}
                       </span>
-                      <span className='h4 text-gray-700 align-self-end'>
-                        /{suffixes[planFrequency]}
-                      </span>
+                      <span
+                        className='h6 text-gray-700 align-self-end'
+                        dangerouslySetInnerHTML={{
+                          __html: suffixes.SOLO[planFrequency]
+                        }}
+                      ></span>
                     </div>
-                    <div className='d-flex justify-content-center mb-6'>
-                      <span className='h6 text-gray-700 align-self-end'>
-                        (Tax excl.)
-                      </span>
-                    </div>
+                    <p className='h6 text-gray-700 text-center mb-6'>
+                      (Tax excl.)
+                    </p>
 
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
@@ -428,6 +423,7 @@ const PlansView: FunctionComponent<{
                         <Link href={'/features/'}>open-source features</Link>
                       </p>
                     </div>
+                    <hr />
 
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
@@ -527,13 +523,6 @@ const PlansView: FunctionComponent<{
               <div className='col-12 col-xl-3'>
                 <div className='card shadow-lg mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
-                    {planFrequency === 'YEARLY' && (
-                      <span
-                        className={`badge text-bg-success-subtle ms-3 fs-sm align-self-center badge badge-float badge-float-outside`}
-                      >
-                        {pricing.TEAM.discount}
-                      </span>
-                    )}
                     <h2 className='d-flex justify-content-center mb-3 fw-medium'>
                       <span className='text-primary'>Team</span>
                       <span className='ms-1'>plan</span>
@@ -546,15 +535,16 @@ const PlansView: FunctionComponent<{
                       <span className='price display-2 mb-0'>
                         {pricing.TEAM[planFrequency].price}
                       </span>
-                      <span className='h4 text-gray-700 align-self-end'>
-                        /{suffixes[planFrequency]}/seat
-                      </span>
+                      <span
+                        className='h6 text-gray-700 align-self-end'
+                        dangerouslySetInnerHTML={{
+                          __html: suffixes.TEAM[planFrequency]
+                        }}
+                      ></span>
                     </div>
-                    <div className='d-flex justify-content-center mb-6'>
-                      <span className='h6 text-gray-700 align-self-end'>
-                        (Tax excl.)
-                      </span>
-                    </div>
+                    <p className='h6 text-gray-700 text-center mb-6'>
+                      Minimum 2 users (Tax excl.)
+                    </p>
 
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
@@ -647,15 +637,17 @@ const PlansView: FunctionComponent<{
 
                       <p>Priority email support</p>
                     </div>
-
+                    <hr />
+                    <div className='d-flex'>
+                      <p>Add-ons:</p>
+                    </div>
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
                       </div>
 
-                      <p>Organizations up to {pricing.TEAM.maxSeats} seats</p>
+                      <p>1 extra API and 50k requests - 10$/monthly</p>
                     </div>
-
                     <div className='mt-4'>
                       {/* show only if not connected or not already subscribed */}
                       {(!currentUser.data ||

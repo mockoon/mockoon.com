@@ -14,6 +14,13 @@ const incidents: {
   status: 'planned' | 'inprogress' | 'resolved';
 }[] = [
   {
+    title: 'Deployment - EU instances - Emergency fix',
+    desc: 'An emergency fix is being deployed to address an issue affecting some EU Cloud instances. During this time, affected instances may be temporarily unavailable. We apologize for the inconvenience and are working to resolve the issue as quickly as possible.<br>Update (09:00 UTC): The fix has been successfully deployed and all affected instances are back online. We are monitoring the situation closely to ensure everything is working as expected. We apologize for any inconvenience caused during this deployment.',
+    dateStart: '2026-01-31T08:50:00Z',
+    dateEnd: '2026-01-31T09:00:00Z',
+    status: 'resolved'
+  },
+  {
     title: 'All services - Scheduled downtime',
     desc: 'All services will be restarted for the deployment of v9.5.0. The downtime is expected to last less than 15 minutes for each service. We apologize for the inconvenience.',
     dateStart: '2026-01-14T07:20:00Z',

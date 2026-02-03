@@ -14,6 +14,13 @@ const incidents: {
   status: 'planned' | 'inprogress' | 'resolved';
 }[] = [
   {
+    title: 'Deployment - US instances - Routine update',
+    desc: 'We are deploying a routine update to all US Cloud instances. During this time, affected instances may be temporarily unavailable. The update is expected to last less than 5 minutes per instance. We apologize for the inconvenience.<br>Update (09:15 UTC): The deployment is in progress.',
+    dateStart: '2026-02-03T09:15:00Z',
+    dateEnd: '2026-02-03T09:15:00Z',
+    status: 'inprogress'
+  },
+  {
     title: 'Deployment - EU instances - Emergency fix',
     desc: 'An emergency fix is being deployed to address an issue affecting some EU Cloud instances. During this time, affected instances may be temporarily unavailable. We apologize for the inconvenience and are working to resolve the issue as quickly as possible.<br>Update (09:00 UTC): The fix has been successfully deployed and all affected instances are back online. We are monitoring the situation closely to ensure everything is working as expected. We apologize for any inconvenience caused during this deployment.',
     dateStart: '2026-01-31T08:50:00Z',

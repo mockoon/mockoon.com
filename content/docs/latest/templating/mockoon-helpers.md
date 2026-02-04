@@ -38,15 +38,15 @@ In addition to Handlebars' built-in helpers (`if`, `each`, etc., for more inform
 | [`ceil`](#ceil)         | [`toFixed`](#tofixed) |
 | [`floor`](#floor)       | [`round`](#round)     |
 
-| Strings                   |                         | Dates                             | Misc                            |
-| ------------------------- | ----------------------- | --------------------------------- | ------------------------------- |
-| [`includes`](#includes)   | [`concat`](#concat)     | [`now`](#now)                     | [`newline`](#newline)           |
-| [`substr`](#substr)       | [`indexOf`](#indexof)   | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)             |
-| [`lowercase`](#lowercase) | [`parseInt`](#parseint) | [`date`](#date)                   | [`base64Decode`](#base64decode) |
-| [`uppercase`](#uppercase) | [`padStart`](#padstart) | [`time`](#time)                   | [`objectId`](#objectid)         |
-| [`split`](#split)         | [`padEnd`](#padend)     | [`dateFormat`](#dateformat)       |                                 |
-| [`stringify`](#stringify) | [`eq`](#eq)             | [`isValidDate`](#isvaliddate)     |                                 |
-| [`jsonParse`](#jsonparse) |                         |                                   |                                 |
+| Strings                   |                         | Dates                             | Misc                                  |
+| ------------------------- | ----------------------- | --------------------------------- | ------------------------------------- |
+| [`includes`](#includes)   | [`concat`](#concat)     | [`now`](#now)                     | [`newline`](#newline)                 |
+| [`substr`](#substr)       | [`indexOf`](#indexof)   | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)                   |
+| [`lowercase`](#lowercase) | [`parseInt`](#parseint) | [`date`](#date)                   | [`base64Decode`](#base64decode)       |
+| [`uppercase`](#uppercase) | [`padStart`](#padstart) | [`time`](#time)                   | [`base64url`](#base64url)             |
+| [`split`](#split)         | [`padEnd`](#padend)     | [`dateFormat`](#dateformat)       | [`base64urlDecode`](#base64urldecode) |
+| [`stringify`](#stringify) | [`eq`](#eq)             | [`isValidDate`](#isvaliddate)     | [`objectId`](#objectid)               |
+| [`jsonParse`](#jsonparse) |                         |                                   |                                       |
 
 | [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                          |
 | --------------------------------------------------- | ----------------------------- | ------------------------ |
@@ -940,6 +940,49 @@ Decode a base64 string. This can be used as an inline helper or block helper (se
 ```
 
 > 🛠️ Use our online [base64 encoder/decoder](/tools/base64-encode-decode/) to get a preview of the encoded content and validate a base64 string.
+
+## base64url
+
+Encode the parameter as base64url. This can be used as an inline helper or block helper (see examples below).
+
+| Arguments (ordered) | Type | Description                                            |
+| ------------------- | ---- | ------------------------------------------------------ |
+| [0]                 | any  | Value to encode (optional when used as a block helper) |
+
+**Examples**
+
+```handlebars
+{{base64url 'test'}}
+
+{{#base64url}}
+  firstname,lastname,countryCode
+  {{#repeat 10}}
+    {{faker 'person.firstName'}},{{faker 'person.lastName'}},{{faker 'address.countryCode'}}
+  {{/repeat}}
+{{/base64url}}
+```
+
+> 🛠️ Use our online [base64url encoder/decoder](/tools/base64-encode-decode/) to get a preview of the encoded content and validate a base64 string.
+
+## base64urlDecode
+
+Decode a base64url string. This can be used as an inline helper or block helper (see examples below).
+
+| Arguments (ordered) | Type   | Description                                                       |
+| ------------------- | ------ | ----------------------------------------------------------------- |
+| [0]                 | string | Base64url string to decode (optional when used as a block helper) |
+
+**Examples**
+
+```handlebars
+{{base64urlDecode 'YWJjZA'}}
+
+{{#base64urlDecode}}
+  {{body 'base64urlcontent'}}
+{{/base64urlDecode}}
+```
+
+> 🛠️ Use our online [base64url encoder/decoder](/tools/base64-encode-decode/) to get a preview of the encoded content and validate a base64 string.
 
 ## objectId
 

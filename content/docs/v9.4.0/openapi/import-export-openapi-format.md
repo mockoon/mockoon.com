@@ -16,17 +16,17 @@ Mockoon supports imports in both OpenAPI v2 (Swagger) and v3 formats. Environmen
 
 To import an environment from a file, open the **Environment creation** menu, and select **New local environment from OpenAPI/Swagger**:
 
-![Click on Import Swagger v2/OpenAPI v3 (JSON or YAML)](/images/docs/shared/import-open-api-main-menu.png)
+![Click on Import Swagger v2/OpenAPI v3 (JSON or YAML){989x209}](/images/docs/shared/import-open-api-main-menu.png)
 
 A dialog will open where you can either provide a **file path**, **URL** or **paste the content** of your OpenAPI/Swagger file in JSON or YAML format:
 
-![OpenAPI import dialog](/images/docs/shared/import-openapi-dialog.png)
+![OpenAPI import dialog{995x665}](/images/docs/shared/import-openapi-dialog.png)
 
 ### Export an environment to an OpenAPI v3 JSON file
 
 To export an environment to a JSON file, use the **Export Current Environment to OpenAPI** commands from the command palette:
 
-![Command palette showing export to OpenAPI commands](/images/docs/shared/export-openapi-command-palette.png)
+![Command palette showing export to OpenAPI commands{1026x185}](/images/docs/shared/export-openapi-command-palette.png)
 
 ### Compatibility
 

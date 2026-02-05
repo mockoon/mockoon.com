@@ -176,15 +176,19 @@ const Training: FunctionComponent = function () {
                   </p>
 
                   <p className='text-center text-gray-700 mb-4'>
-                    {courseDates.map((date) => (
-                      <>
-                        <strong key={date.toISOString()}>
-                          {format(date, 'PPP')} - from {format(date, 'HH:mm')}{' '}
-                          to {format(addHours(date, 4), 'HH:mm OOOO')}
-                        </strong>
-                        <br />
-                      </>
-                    ))}
+                    {courseDates.map(
+                      (date) =>
+                        isFuture(date) && (
+                          <>
+                            <strong key={date.toISOString()}>
+                              {format(date, 'PPP')} - from{' '}
+                              {format(date, 'HH:mm')} to{' '}
+                              {format(addHours(date, 4), 'HH:mm OOOO')}
+                            </strong>
+                            <br />
+                          </>
+                        )
+                    )}
                   </p>
 
                   <div className='text-center'>

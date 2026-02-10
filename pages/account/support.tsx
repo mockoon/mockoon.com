@@ -50,32 +50,7 @@ const AccountSubscription: FunctionComponent = function () {
                   {!isUserLoading && userData?.plan === 'SOLO' && (
                     <div className='card card-bleed shadow-light-lg mb-6'>
                       <div className='card-header'>
-                        <h4 className='mb-0'>Email support</h4>
-                        <small className='text-gray-700'>
-                          You benefit from basic email support with your plan
-                        </small>
-                      </div>
-                      <div className='card-body'>
-                        <div className='list-group list-group-flush'>
-                          <div className='list-group-item'>
-                            <p className='mb-0'>
-                              Contact us at{' '}
-                              <a href='mailto:email-support@mockoon.com'>
-                                email-support@mockoon.com
-                              </a>
-                            </p>
-                            <small className='text-gray-700'>
-                              Usual response time: one business day
-                            </small>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                  {!isUserLoading && userData?.plan === 'TEAM' && (
-                    <div className='card card-bleed shadow-light-lg mb-6'>
-                      <div className='card-header'>
-                        <h4 className='mb-0'>Email support</h4>
+                        <h4 className='mb-0'>Priority Email support</h4>
                         <small className='text-gray-700'>
                           You benefit from priority email support with your plan
                         </small>
@@ -90,8 +65,36 @@ const AccountSubscription: FunctionComponent = function () {
                               </a>
                             </p>
                             <small className='text-gray-700'>
-                              Usual response time: one business day, handled in
-                              priority
+                              Usual response time: one to two business days
+                              (Monday to Friday, 9 am to 5 pm CET/CEST,
+                              non-contractual)
+                            </small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  {!isUserLoading && userData?.plan === 'TEAM' && (
+                    <div className='card card-bleed shadow-light-lg mb-6'>
+                      <div className='card-header'>
+                        <h4 className='mb-0'>Next business day support</h4>
+                        <small className='text-gray-700'>
+                          You benefit from next business day support with your
+                          plan
+                        </small>
+                      </div>
+                      <div className='card-body'>
+                        <div className='list-group list-group-flush'>
+                          <div className='list-group-item'>
+                            <p className='mb-0'>
+                              Contact us at{' '}
+                              <a href='mailto:priority-support-team@mockoon.com'>
+                                priority-support-team@mockoon.com
+                              </a>
+                            </p>
+                            <small className='text-gray-700'>
+                              Contractual response time: next business day (9 am
+                              to 5 pm CET/CEST, Monday to Friday) priority
                             </small>
                           </div>
                         </div>
@@ -102,7 +105,7 @@ const AccountSubscription: FunctionComponent = function () {
                   {!isUserLoading && userData?.plan === 'ENTERPRISE' && (
                     <div className='card card-bleed shadow-light-lg mb-6'>
                       <div className='card-header'>
-                        <h4 className='mb-0'>Priority support</h4>
+                        <h4 className='mb-0'>Enterprise support</h4>
                         <small className='text-gray-700'>
                           You benefit from priority enterprise support with your
                           plan
@@ -118,7 +121,7 @@ const AccountSubscription: FunctionComponent = function () {
                               </a>
                             </p>
                             <small className='text-gray-700'>
-                              Guaranteed response time of one business day (9 am
+                              Contractual response time: one business day (9 am
                               to 5 pm CET/CEST, Monday to Friday).
                             </small>
                           </div>

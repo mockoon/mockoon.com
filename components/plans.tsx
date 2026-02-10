@@ -36,9 +36,9 @@ const cloudFaq: AccordionData = [
       },
       {
         title:
-          'What is the difference between "Email support", "Priority email support", and "Enterprise support"?',
+          'What is the difference between "Priority email support", "Next business day support", and "Enterprise support"?',
         content:
-          "Email support is a standard support service provided to our Solo plan customers. You can contact us at any time by email and we will help you with your questions without a guaranteed response time. The usual response time is between one and two business days. Team plan customers benefit from priority email support, which means that your inquiries will be prioritized over those of standard email support users. For Enterprise support, a response time is guaranteed and specific SLA can be negotiated. For more information, please refer to the <a href='/terms/'>terms of service</a>."
+          "Priority email support is a standard support service provided to our Solo plan customers. You can contact us at any time by email and we will help you with your questions without a guaranteed response time. The usual response time is between two and three business days. Team plan customers benefit from next business day support, guaranteeing a response on the next business day. For Enterprise support, a response time of one business day is guaranteed and specific SLA can be negotiated. For more information, please refer to the <a href='/terms/'>terms of service</a>."
       },
       {
         title: 'Do you offer an availability SLA?',
@@ -502,7 +502,7 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
-                      <p>Email support</p>
+                      <p>Priority email support</p>
                     </div>
                     <div className='mt-auto'>
                       {/* show only if not connected or not already subscribed */}
@@ -647,7 +647,7 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
-                      <p>Priority email support</p>
+                      <p>Next business day support</p>
                     </div>
                     {false && (
                       <>
@@ -1090,11 +1090,11 @@ const PlansView: FunctionComponent<{
 
                           <tr>
                             <td>Support level</td>
-                            <td className='text-center'>Email support</td>
                             <td className='text-center'>
                               Priority email support
                             </td>
-                            <td className='text-center'>Enterprise support</td>
+                            <td className='text-center'>Next business day</td>
+                            <td className='text-center'>Custom SLA</td>
                           </tr>
                           <tr>
                             <td>

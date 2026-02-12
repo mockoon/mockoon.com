@@ -14,6 +14,13 @@ const incidents: {
   status: 'planned' | 'inprogress' | 'resolved';
 }[] = [
   {
+    title: 'All services - Scheduled downtime',
+    desc: 'All services will be restarted for a routine maintenance. The downtime is expected to last less than 5 minutes for each service. We apologize for the inconvenience.',
+    dateStart: '2026-02-13T08:00:00Z',
+    dateEnd: '2026-02-13T09:00:00Z',
+    status: 'planned'
+  },
+  {
     title: 'Deployment - US instances - Routine update',
     desc: 'We are deploying a routine update to all US Cloud instances. During this time, affected instances may be temporarily unavailable. The update is expected to last less than 5 minutes per instance. We apologize for the inconvenience.<br>Update (09:15 UTC): The deployment is in progress.<br>Update (09:40 UTC): The deployment is complete and all instances are back online. We apologize for any inconvenience caused during this deployment.',
     dateStart: '2026-02-03T09:15:00Z',

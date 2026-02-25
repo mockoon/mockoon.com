@@ -100,7 +100,7 @@ const Markdown: FunctionComponent<{
           );
         },
         hr: () => <hr className='my-8' />,
-        img: ({ alt, src }) => {
+        img: ({ alt, src, width: originalWidth }) => {
           alt = alt || '';
 
           // find optional subtitle and size info
@@ -123,7 +123,7 @@ const Markdown: FunctionComponent<{
               <img
                 alt={altCleaned}
                 src={src as string}
-                width={width}
+                width={width ?? originalWidth}
                 height={height}
                 className={`img-fluid mx-auto d-block img-shadow mt-6 ${
                   hasSub ? 'mb-2' : 'mb-8'
@@ -137,7 +137,12 @@ const Markdown: FunctionComponent<{
             </>
           );
         },
-        table: ({ children }) => {
+        table: ({ children, node }) => {
+          // if table contains class no-style, don't wrap it in a card
+          if ((node.properties?.className as string[])?.includes('no-style')) {
+            return <table className='table table-borderless'>{children}</table>;
+          }
+
           return (
             <div className='card p-4 my-6 border shadow-lg'>
               <div className='table-responsive'>

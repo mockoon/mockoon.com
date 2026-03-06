@@ -24,8 +24,6 @@ Then, fill the **API prefix** input at the top of the **environment Settings**:
 
 The prefix will appear under your environment name in the environments list. All your environment's routes will now be prefixed and available at the following address `http://localhost:port/myprefix/myroute` instead of `http://localhost:port/myroute`.
 
-You need to restart the environment for the change to take effect.
-
 ## API routes
 
 Mockoon uses Express to run the mock servers. In general, most of the Express' documentation applies. Please refer to the [routing documentation](https://expressjs.com/en/guide/routing.html) for more information and examples on the following topics.

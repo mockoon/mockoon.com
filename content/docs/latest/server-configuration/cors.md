@@ -24,8 +24,6 @@ Enable the **Automatically handle OPTIONS pre-flight requests ** by ticking the 
 
 ![tick the CORS checkbox{1098x507}](docs-img:enable-cors.png)
 
-You need to restart the environment for the change to take effect.
-
 Mockoon will now automatically answer with a 200 HTTP status code to all preflight OPTIONS requests. The following headers will also be added to the response:
 
 ```http

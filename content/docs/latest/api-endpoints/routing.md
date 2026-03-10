@@ -26,42 +26,39 @@ The prefix will appear under your environment name in the environments list. All
 
 ## API routes
 
-Mockoon uses Express to run the mock servers. In general, most of the Express' documentation applies. Please refer to the [routing documentation](https://expressjs.com/en/guide/routing.html) for more information and examples on the following topics.
+Mockoon uses Express to run the mock servers and path-to-regexp for route matching. In general, most of the Express/ path-to-regexp documentation apply. Please refer to the [routing documentation](https://expressjs.com/en/guide/routing.html) for more information and examples on the following topics.
 
 ### Routes order
 
-Routes are declared in the server in the order displayed in the application (inside folders or not). This means that the first ones take precedence over the following ones.
+Routes are registered in the same order as displayed in the application (inside folders or not). The first matching route takes precedence.
 
-One consequence is that a route parameter will capture any value at the specific URL segment. For example, `/users/:id` or `/users/*` will intercept `/users/search`. The more specific "search" route should be declared first. You can always reorder routes by dragging and dropping them.
+A route parameter captures any value for its URL segment. For example, `/users/:id` or `/users/*` can match `/users/search`. Put more specific routes (like `/users/search`) before generic routes. You can always reorder routes by dragging and dropping them.
 
-### Route patterns and regexes
+### Route patterns and parameters
 
-Routes support certain patterns and a subset of regular expressions. Here are some examples of the available ones:
-
-- `/path/*` will match `/path/anything`.
-- `/ab?cd` will match `/acd` and `/abcd`.
-- `/ab+cd` will match `abcd`, `abbcd`, `abbbcd`, and so on.
-- `/ab(cd)?e` will match `/abe` and `/abcde`.
-
-![route pattern{1123x74}](docs-img:route-patterns.png)
-
-For a complete overview of the patterns available, please refer to Express' [route paths documentation](https://expressjs.com/en/guide/routing.html#route-paths).
-
-> 💡 To use parentheses in your path as a normal character, you can escape them by either using a backslash `\` or square brackets `[]`:
-> `/part1[(]part2[)]` > `/part1\(part2\)`
-
-### Route parameters
-
-Route parameters can be defined in routes by using a colon `:`. The name of a parameter can only contains the following characters `A-Za-z0-9_`.
+Starting with v9.6.0, Mockoon is compatible with Express 5 route patterns while still supporting most of Express 4 syntaxes. A conversion is automatically applied to Express 4 patterns.
 
 ![route parameter{1123x74}](docs-img:route-params.png)
 
-For a complete overview on how to use and declare route parameters, please refer to Express' [route parameters documentation](https://expressjs.com/en/guide/routing.html#route-parameters).
+Among the supported syntaxes for route patterns or parameters, the following ones are available (includes both Express 4 and 5 syntaxes):
 
-You can also retrieve the route parameters by using the `{{urlParam 'paramName'}}` [templating helper](docs:templating/mockoon-request-helpers#urlparam).
+- **Wildcards**:
+  - **Unnamed wildcard** (Express 4): `/*/*` (automatically converted to named ones with a `wildcard` prefix and an incremental number suffix to avoid name conflicts. For example: `/path/*` becomes `/path/*wildcard0` and `/path/*/nested/*` becomes `/path/*wildcard0/nested/*wildcard1`).
+  - **Named wildcard** (Express 5): `/*wildcard0/nested/*wildcard1`.
+- **Route parameters**:
+  - **Regular route parameters**: `/:param1/:param2`.
+  - **Optional route parameters**: `/users/:id?` (Express 4) or `/users{/:id}` (Express 5). Another example: `/file/:name.:ext?` (Express 4) or `/file/:name{.:ext}` (Express 5)
 
-> 💡 To use a colon `:` in your route path as a normal character, you can escape it by either using double backslashes `\\` or square brackets `[]`:
-> `/part1[:]part2` > `/part1\\:part2`
+> 💡 You can retrieve the route parameters by using the `{{urlParam 'paramName'}}` [templating helper](docs:templating/mockoon-request-helpers#urlparam).
+
+- **Optional groups**: you can make a part of the route optional by wrapping it in parentheses, with or without an `?` after it (Express 4), or by wrapping it in curly braces (Express 5). For example, where `cd` is an optional part of the route: `/ab(cd)?e`, `/ab(cd)e`, or `/ab{cd}e`.
+- **Optional characters**: you can make a character optional by adding a `?` after it (Express 4) or by wrapping it in curly braces (Express 5). For example, where `b` is an optional character: `/ab?c`, or `/a{b}c`.
+
+To use **special characters** such as `(`, `)`, `[`, `]`, `?`, `+`, `*`, or `:`, you can escape them with a backslash. For example:
+
+- `/path/\(literal\)`
+- `/path/file\?`
+- `/path/file\+`
 
 ### Query parameters
 

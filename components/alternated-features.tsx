@@ -54,7 +54,7 @@ const AlternatedFeatures: FunctionComponent<{
                 <img
                   src={feature.imgSrc}
                   alt={feature.imgAlt}
-                  className={`img-fluid p-2 ${imgClassName}`}
+                  className={`img-fluid p-2 ${imgClassName ?? ''}`}
                   width={imgSize?.[0]}
                   height={imgSize?.[1]}
                 />

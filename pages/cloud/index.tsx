@@ -112,7 +112,7 @@ export default function () {
       <Hero
         title='Never let <span class="text-primary">API integration</span> slow you down again'
         subtitle='Collaborate with your team, keep your data in sync, and deploy your mock APIs with Mockoon Cloud'
-        mainPicture='/images/cloud-hero.png'
+        mainPicture='/images/cloud-hero.svg'
         mainPictureAlt='Mockoon logo in the cloud interconnected with other services'
         mainPictureSkewed={false}
       >

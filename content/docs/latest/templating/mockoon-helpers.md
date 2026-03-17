@@ -223,7 +223,9 @@ Create an array from the given items. This helper is mostly used with the follow
 
 ## oneOf
 
-Select a random item in the array passed in parameters. `oneOf` will return the actual value in the array. Set the `stringify` parameter to `true` (default to `false`) to get a JSON stringified result.
+Select a random item in the first parameter array or in the parameters list if the first parameter is not an array. `oneOf` will return the actual value in the array. Set the `stringify` parameter to `true` (default to `false`) to get a JSON stringified result.
+
+Parameters can be passed in two ways. An **array** can be passed as the **first parameter**:
 
 | Arguments (ordered) | Type    | Description          |
 | ------------------- | ------- | -------------------- |
@@ -234,7 +236,25 @@ Select a random item in the array passed in parameters. `oneOf` will return the 
 
 ```handlebars
 {{oneOf (array 'item1' 'item2' 'item3')}}
-result: item2
+{{oneOf (array 'item1' 'item2' 'item3') true}}
+{{oneOf (array 1 2 3) true}}
+{{oneOf (array (object key='value1') (bodyRaw 'prop1')) true}}
+```
+
+Or, **parameters** can be passed as a **list** of values:
+
+| Arguments (ordered) | Type | Description    |
+| ------------------- | ---- | -------------- |
+| 0..n                | any  | List of values |
+
+In this case, the stringify option is not available, and the helper will return one of the provided items as is. Use the [`stringify` helper](#stringify) if you want to get a JSON stringified result.
+
+**Examples**
+
+```handlebars
+{{oneOf 'item1' 'item2' 'item3'}}
+{{oneOf 1 2 3}}
+{{oneOf (object key='value1') (bodyRaw 'prop1')}}
 ```
 
 ## someOf

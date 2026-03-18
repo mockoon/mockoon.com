@@ -291,12 +291,12 @@ const Features: FunctionComponent = function () {
     <Layout footerBanner='download'>
       <Meta
         title='Mockoon complete list of features'
-        description='List of all features offered by Mockoon, the mock API creation tool compatible with Windows, Mac and Linux.'
+        description='List of all features offered by Mockoon, the API sandboxing and mock API creation tool compatible with Windows, Mac and Linux.'
         ogType='article'
       />
       <Hero
         title='Why Mockoon?'
-        subtitle='Mockoon offers tons of features that makes API mocking a breeze.'
+        subtitle='Mockoon offers tons of features that make API sandboxing and virtualization a breeze.'
       />
 
       <section className='py-5 py-lg-10'>

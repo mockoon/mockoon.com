@@ -117,6 +117,16 @@ export default function () {
         mainPictureSkewed={false}
       >
         <SocialProof />
+        <p className='text-gray-600 mb-0 mt-6'>
+          <img
+            src='/images/eu-flag.svg'
+            alt='EU'
+            width={30}
+            className='me-2 align-middle'
+          />
+          Proudly built and operated in Europe, with privacy and transparency at
+          the core.
+        </p>
       </Hero>
 
       <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
@@ -221,6 +231,28 @@ export default function () {
       <section className='py-5 py-lg-10'>
         <div className='container text-lg-start text-center'>
           <AlternatedFeatures features={cloudFeatures} imgSize={[800, 454]} />
+        </div>
+      </section>
+
+      <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
+        <div className='container'>
+          <div className='row justify-content-center'>
+            <div className='col-12 col-lg-7 text-center'>
+              <img
+                src='/images/eu-flag.svg'
+                alt='European Union flag'
+                width={60}
+                height={40}
+                className='mb-4'
+              />
+              <h2 className='fw-bold'>Built in Europe, for everyone</h2>
+              <p className='lead text-gray-700'>
+                Mockoon Cloud is operated by an independent European company.
+                Privacy-first, openly developed, and committed to a public
+                roadmap.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

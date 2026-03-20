@@ -10,7 +10,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - mockoon
-order: 11
+date: '2023-02-07'
 ---
 
 Mockoon allows you to create **multiple responses** for each mock API endpoint and serve them using **dynamic rules**. This tutorial will show you how to create a typical setup: one response returning a **200 status code** and another one returning a **401 status code** when the "Authorization" header is not present in the request.

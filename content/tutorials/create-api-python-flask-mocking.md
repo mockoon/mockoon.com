@@ -8,7 +8,7 @@ image: tutorial-python-flask-api-mocking.png
 imageAlt: Python Flask logo side by side with Mockoon
 imageWidth: 1200
 imageHeight: 400
-order: 210
+date: '2022-04-20'
 ---
 
 In this guide, you will learn how to create a basic REST API using [Flask microframework](https://flask.palletsprojects.com/en/2.2.x/) for Python. Flask is one of the most popular and easy-to-use Python libraries for API creation.

@@ -8,7 +8,7 @@ image: tutorial-express-api-mocking.png
 imageAlt: ExpressJS logo side by side with Mockoon
 imageWidth: 1200
 imageHeight: 400
-order: 200
+date: '2022-04-07'
 ---
 
 In this tutorial, you will learn how to create a small REST API using the [Express library](https://expressjs.com/) for Node.js. Express is one of the most popular libraries for API creation. It is also available in some major Cloud functions providers like Firebase.

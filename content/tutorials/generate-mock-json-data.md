@@ -10,7 +10,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - mockoon
-order: 50
+date: '2020-11-23'
 ---
 
 Mocking an API can save you time. By faking the backend responses early, you don't have to worry about whether an endpoint is ready or not. You are up and running in no time and can start implementing your application.

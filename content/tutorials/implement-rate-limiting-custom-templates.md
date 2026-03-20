@@ -8,7 +8,7 @@ image: tutorial-implement-rate-limiting-custom-templates.png
 imageAlt: mockoon logo next to a clock and shield icon
 imageWidth: 1200
 imageHeight: 400
-order: 62
+date: '2025-07-15'
 mockApiFile: https://raw.githubusercontent.com/mockoon/mock-samples/refs/heads/main/tutorials/rate-limiting-examples.json
 ---
 

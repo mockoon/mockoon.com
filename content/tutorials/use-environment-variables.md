@@ -10,7 +10,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - mockoon
-order: 58
+date: '2024-04-25'
 ---
 
 In this tutorial, we will learn how to access **environment variables** in your mock server routes using the `getEnvVar` templating helper. It allows you to **avoid exposing your API keys** and other sensitive parameters in your mock server configuration and to easily manage your configuration across different environments.

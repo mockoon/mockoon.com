@@ -8,7 +8,7 @@ image: tutorial-react-api-call.png
 imageAlt: Mockoon and React logos side by side
 imageWidth: 1200
 imageHeight: 400
-order: 93
+date: '2022-01-04'
 ---
 
 This guide will teach you how to call any REST API from a React application created with the [Create React App](https://react.dev/learn/creating-a-react-app) package. If you already have an existing API that you want to call from your application, you can skip the first step, in which we will create a fake REST API using Mockoon.

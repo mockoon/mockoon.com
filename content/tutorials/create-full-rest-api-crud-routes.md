@@ -10,7 +10,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - mockoon
-order: 56
+date: '2023-06-30'
 ---
 
 Where Mockoon routes are independent and stateless, CRUD routes can generate multiple endpoints to perform CRUD operations (Create, Read, Update, Delete) on [data buckets](docs:data-buckets/overview).

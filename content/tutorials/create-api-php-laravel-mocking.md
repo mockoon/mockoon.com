@@ -8,7 +8,7 @@ image: tutorial-php-laravel-api-mocking.png
 imageAlt: PHP Laravel logo side by side with Mockoon
 imageWidth: 1200
 imageHeight: 400
-order: 230
+date: '2022-08-09'
 ---
 
 In this tutorial, you will learn how to create a basic REST API using PHP's [Laravel](https://laravel.com/) framework. Laravel is one of the most popular PHP frameworks for web application development and REST API creation.

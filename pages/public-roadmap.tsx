@@ -124,6 +124,18 @@ const tasks: {
   ],
   inProgress: [
     {
+      link: 'https://github.com/mockoon/mockoon/issues/765',
+      title: 'OpenAPI specification re-import',
+      cloud: false,
+      target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/2078',
+      title: 'Enable mocks live update',
+      cloud: false,
+      target: '_blank'
+    },
+    {
       link: 'https://github.com/mockoon/mockoon/issues/1045',
       title: 'Export logs as HAR',
       cloud: false,
@@ -131,12 +143,6 @@ const tasks: {
     }
   ],
   comingSoon: [
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/765',
-      title: 'OpenAPI specification re-import',
-      cloud: false,
-      target: '_blank'
-    },
     {
       title: 'Team-level environment variables support for cloud deployments',
       cloud: true,

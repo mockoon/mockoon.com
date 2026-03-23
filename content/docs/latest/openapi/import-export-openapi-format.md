@@ -22,6 +22,23 @@ A dialog will open where you can either provide a **file path**, **URL** or **pa
 
 ![OpenAPI import dialog](/images/docs/shared/import-openapi-dialog.png)
 
+### Update/reimport an environment from an OpenAPI v2 or v3 JSON/YAML file
+
+Starting with [v9.6.0](/releases/9.6.0/), you can also update an existing environment with an OpenAPI specification file. To do so, open the **Environment context menu**, and select **Reimport from OpenAPI/Swagger**:
+
+![Click on Reimport Swagger v2/OpenAPI v3 (JSON or YAML)](docs-img:reimport-openapi-context-menu.png)
+
+After selecting the file, or copying the content, a import summary will be displayed showing the planned changes to the environment. You can then choose to apply or discard the changes:
+
+![OpenAPI reimport summary dialog](docs-img:reimport-openapi-summary.png)
+
+The following operations are supported when reimporting an OpenAPI specification file:
+
+- **Add new routes to the environment**: if the OpenAPI file contains routes (by method and path) that are not already in the environment, they will be added.
+- **Add new responses to existing routes**: if the OpenAPI file contains responses (by status code) for existing routes that are not already in the environment, they will be added.
+
+No existing routes or responses will be modified or deleted when reimporting an OpenAPI specification file.
+
 ### Export an environment to an OpenAPI v3 JSON file
 
 To export an environment to a JSON file, use the **Export Current Environment to OpenAPI** commands from the command palette:

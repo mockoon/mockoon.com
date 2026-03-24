@@ -27,8 +27,9 @@ In the deployment dialog, you can further customize your instance:
   - **Public**: The environment will be accessible to anyone with the URL.
   - **Private**: The environment will be accessible only to users with the URL and the **API key** (see [Instance URL and visibility](#instance-url-and-visibility) below).
 - **Region**: The region where the instance will be deployed. You can choose from the available regions in the dropdown list. The default region is `US` (Central, Iowa) (See [available regions](/pricing/#available-regions)).
+- **Live updates**: If enabled, changes made to the environment will be pushed to the cloud instance automatically without requiring a manual re-deployment. If disabled, changes will only be applied to the cloud instance when you manually re-deploy it (see [Live updates and re-deployments](#live-updates-and-re-deployments) for more information).
 
-![deployment dialog{993x399}](cloud-docs-img:deploy-environment-dialog.png)
+![deployment dialog{958x451}](cloud-docs-img:deploy-environment-dialog.png)
 
 After clicking the **"Deploy"** button, the environment will be uploaded to the cloud and will be accessible using the provided URL. In the management dialog, you can find the URL and the API key to access the environment. You can also re-deploy the environment or delete the instance:
 
@@ -40,26 +41,11 @@ In the management dialog, you can **re-deploy** the environment or **delete** th
 
 ![deployment management dialog re-deploy or delete the instance menu{886x210}](cloud-docs-img:deploy-environment-management-menu.png)
 
-### Desktop/web apps and re-deployments
+### Live updates and re-deployments
 
-Currently, the behavior of re-deployments is different depending on whether you are using the desktop application or the web application:
+If you enabled the **Live updates** option when deploying the environment, changes made to the environment will be pushed to the cloud instance automatically without requiring a manual re-deployment. This allows you to see the changes reflected in the running instance nearly in real-time. Behind the scenes, the application pushed the necessary changes to the cloud instance using the [Admin API](docs:admin-api/overview) within a short delay.
 
-- **Desktop application**: For historical reasons, the desktop application is still biased towards local development. Therefore, all changes made to cloud environments will only be applied to the cloud instances when you re-deploy them manually. This allows you to make changes to your environment without affecting the running instance until you are ready to update it.
-- **Web application**: In the web application, many changes are pushed to the cloud instance automatically without requiring a manual re-deployment. This is because the web application is designed to be more collaborative and real-time, allowing you to see the changes reflected in the running instance immediately. However, some changes may still require a manual re-deployment, depending on their nature.
-
-  The following changes are **applied automatically**:
-  - Some environment properties (headers, proxy headers, latency, etc.).
-  - Some route properties (response mode).
-  - Adding and removing callbacks.
-  - Route responses (headers, latency, status code, callbacks calls, rules, etc.).
-
-  The following changes still **require a manual re-deployment**:
-  - Route paths and methods.
-  - Adding or removing routes.
-  - Environment port, hostname, proxy and TLS options.
-  - Adding or removing data buckets.
-
-We plan to unify this behavior in future versions of Mockoon to provide a consistent experience across both applications.
+Note: Prior to v9.6.0, the live updates feature only applied to some properties of the environment and routes and was only available in the web application. Starting with v9.6.0, live updates are now available for all properties and are enabled by default in both the desktop and web applications.
 
 ## Instance URL and visibility
 
@@ -84,7 +70,7 @@ Starting with Mockoon v9.5.0, you can use [Mockoon CLI](/cli/) to **deploy your 
 
 The application will provide you with the necessary **commands and instructions** to set up and run the mock on your own servers:
 
-![cloud deployment with CLI](cloud-docs-img:cli-pull-instructions.png)
+![cloud deployment with CLI{1200x479}](cloud-docs-img:cli-pull-instructions.png)
 
 The necessary steps are:
 

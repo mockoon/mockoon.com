@@ -16,21 +16,21 @@ Mockoon supports imports in both OpenAPI v2 (Swagger) and v3 formats. Environmen
 
 To import an environment from a file, open the **Environment creation** menu, and select **New local environment from OpenAPI/Swagger**:
 
-![Click on Import Swagger v2/OpenAPI v3 (JSON or YAML)](/images/docs/shared/import-open-api-main-menu.png)
+![Click on Import Swagger v2/OpenAPI v3 (JSON or YAML){989x209}](/images/docs/shared/import-open-api-main-menu.png)
 
 A dialog will open where you can either provide a **file path**, **URL** or **paste the content** of your OpenAPI/Swagger file in JSON or YAML format:
 
-![OpenAPI import dialog](/images/docs/shared/import-openapi-dialog.png)
+![OpenAPI import dialog{995x665}](/images/docs/shared/import-openapi-dialog.png)
 
 ### Update/reimport an environment from an OpenAPI v2 or v3 JSON/YAML file
 
 Starting with [v9.6.0](/releases/9.6.0/), you can also update an existing environment with an OpenAPI specification file. To do so, open the **Environment context menu**, and select **Reimport from OpenAPI/Swagger**:
 
-![Click on Reimport Swagger v2/OpenAPI v3 (JSON or YAML)](docs-img:reimport-openapi-context-menu.png)
+![Click on Reimport Swagger v2/OpenAPI v3 (JSON or YAML){729x311}](docs-img:reimport-openapi-context-menu.png)
 
 After selecting the file, or copying the content, a import summary will be displayed showing the planned changes to the environment. You can then choose to apply or discard the changes:
 
-![OpenAPI reimport summary dialog](docs-img:reimport-openapi-summary.png)
+![OpenAPI reimport summary dialog{955x637}](docs-img:reimport-openapi-summary.png)
 
 The following operations are supported when reimporting an OpenAPI specification file:
 
@@ -43,7 +43,7 @@ No existing routes or responses will be modified or deleted when reimporting an 
 
 To export an environment to a JSON file, use the **Export Current Environment to OpenAPI** commands from the command palette:
 
-![Command palette showing export to OpenAPI commands](/images/docs/shared/export-openapi-command-palette.png)
+![Command palette showing export to OpenAPI commands{1026x185}](/images/docs/shared/export-openapi-command-palette.png)
 
 ### Compatibility
 

@@ -35,7 +35,7 @@ const faq: AccordionData = [
 ];
 
 const tasks: {
-  [key in 'released' | 'inProgress' | 'comingSoon']: {
+  [key in 'released' | 'inProgress' | 'planned']: {
     link?: string;
     title: string;
     cloud: boolean;
@@ -142,7 +142,12 @@ const tasks: {
       target: '_blank'
     }
   ],
-  comingSoon: [
+  planned: [
+    {
+      title: 'Resource level permissions (edit, view, etc.)',
+      cloud: true,
+      target: null
+    },
     {
       title: 'Team-level environment variables support for cloud deployments',
       cloud: true,
@@ -261,13 +266,13 @@ const Roadmap: FunctionComponent = function () {
             <div className='col-12 col-md-4 p-0'>
               <div className='mb-6'>
                 <div className='badge badge-lg badge-arrow text-bg-secondary-subtle d-block fs-5'>
-                  Coming soon
+                  Planned
                 </div>
               </div>
 
               <div className='px-4'>
-                {tasks.comingSoon.map((task, taskIndex) => (
-                  <div key={`taskcomingsoon${taskIndex}`} className='d-flex'>
+                {tasks.planned.map((task, taskIndex) => (
+                  <div key={`taskplanned${taskIndex}`} className='d-flex'>
                     <div className='badge badge-rounded-circle text-bg-secondary-subtle mt-1 me-4'>
                       <i className='icon icon-hourglass_empty'></i>
                     </div>

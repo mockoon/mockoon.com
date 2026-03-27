@@ -316,8 +316,10 @@ const AccountSubscription: FunctionComponent = function () {
                                     </>
                                   )}
 
+                                  {/* Only display the frequency for non self trials */}
                                   {subscriptionData?.frequency &&
                                   userData?.plan !== 'FREE' &&
+                                  subscriptionData?.provider !== 'manual' &&
                                   displayPlanInfo
                                     ? ` - ${
                                         frequencyNames[
@@ -346,7 +348,10 @@ const AccountSubscription: FunctionComponent = function () {
                                   displayPlanInfo && (
                                     <p className='m-0'>
                                       <small className='text-gray-700'>
-                                        Subscribed on{' '}
+                                        {subscriptionData?.provider === 'manual'
+                                          ? 'Created'
+                                          : 'Subscribed'}{' '}
+                                        on{' '}
                                         {new Date(
                                           subscriptionData?.createdOn * 1000
                                         ).toDateString()}
@@ -360,14 +365,26 @@ const AccountSubscription: FunctionComponent = function () {
                                           ).toDateString()}
                                         </small>
                                       )}
-                                      {subscriptionData?.cancellationScheduled && (
-                                        <small className='text-danger'>
-                                          Will be cancelled on{' '}
-                                          {new Date(
-                                            subscriptionData?.renewOn * 1000
-                                          ).toDateString()}
-                                        </small>
-                                      )}
+                                      {subscriptionData?.cancellationScheduled &&
+                                        subscriptionData?.provider !==
+                                          'manual' && (
+                                          <small className='text-danger'>
+                                            Will be cancelled on{' '}
+                                            {new Date(
+                                              subscriptionData?.renewOn * 1000
+                                            ).toDateString()}
+                                          </small>
+                                        )}
+                                      {subscriptionData?.cancellationScheduled &&
+                                        subscriptionData?.provider ===
+                                          'manual' && (
+                                          <small className='text-gray-700'>
+                                            You free trial will end on{' '}
+                                            {new Date(
+                                              subscriptionData?.renewOn * 1000
+                                            ).toDateString()}
+                                          </small>
+                                        )}
                                     </p>
                                   )}
                                 {userData?.plan !== 'FREE' &&
@@ -438,7 +455,11 @@ const AccountSubscription: FunctionComponent = function () {
                                       <a href='mailto:support@mockoon.com'>
                                         support@mockoon.com
                                       </a>{' '}
-                                      to modify your plan.
+                                      to{' '}
+                                      {subscriptionData?.provider === 'manual'
+                                        ? 'upgrade'
+                                        : 'modify'}{' '}
+                                      your plan.
                                     </small>
                                   </div>
                                 )}

@@ -1,5 +1,5 @@
-import { DeployInstance, Team, TeamRoles, User } from '@mockoon/cloud';
-import { useQuery } from '@tanstack/react-query';
+import { DeployInstance, Plans, Team, TeamRoles, User } from '@mockoon/cloud';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 import { EmailingContact, Subscription } from '../models/user.model';
 import { useAuth } from './auth';
@@ -209,7 +209,7 @@ const useCurrentSubscription = (user: User) => {
       }).then((res) => {
         if (res.ok) {
           return res.json();
-        } else if (res.status === 404) {
+        } else if (res.status === 404 || res.status === 403) {
           return null;
         }
 
@@ -227,10 +227,61 @@ const useCurrentSubscription = (user: User) => {
   };
 };
 
+const useTrialOnboardingEligibility = () => {
+  const { getIdToken } = useAuth();
+
+  const trialOnboardingMutation = useMutation<
+    boolean,
+    Error,
+    { seats: number; plan: Plans }
+  >({
+    mutationFn: async (payload): Promise<boolean> => {
+      const token = await getIdToken();
+
+      if (!token) {
+        throw new Error('Missing authentication token');
+      }
+
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/user/onboarding/trial`,
+        {
+          method: 'POST',
+          body: JSON.stringify(payload),
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`
+          }
+        }
+      );
+      if (response.ok) {
+        const data: { isEligible: boolean } = await response.json();
+        return data.isEligible;
+      }
+
+      return false;
+    }
+  });
+
+  const refetch = async (payload: { seats: number; plan: Plans }) => {
+    return {
+      data: await trialOnboardingMutation.mutateAsync(payload)
+    };
+  };
+
+  return {
+    isLoading: trialOnboardingMutation.isPending,
+    error: trialOnboardingMutation.error,
+    data: trialOnboardingMutation.data,
+    isFetching: trialOnboardingMutation.isPending,
+    refetch
+  };
+};
+
 export {
   useCurrentDeployments,
   useCurrentSubscription,
   useCurrentTeam,
   useCurrentUser,
-  useCurrentUserEmailing
+  useCurrentUserEmailing,
+  useTrialOnboardingEligibility
 };

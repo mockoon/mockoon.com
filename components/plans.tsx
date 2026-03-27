@@ -9,9 +9,13 @@ import { frequencyNames } from '../constants/plans';
 import { pricing } from '../data/pricing';
 import { AccordionData } from '../models/common.model';
 import { useAuth } from '../utils/auth';
-import { useCurrentUser } from '../utils/queries';
+import {
+  useCurrentUser,
+  useTrialOnboardingEligibility
+} from '../utils/queries';
 import Accordion from './accordion';
 import PaddleScript from './paddle';
+import Spinner from './spinner';
 import CustomTooltip from './tooltip';
 
 const queryClient = new QueryClient();
@@ -144,8 +148,12 @@ const PlansView: FunctionComponent<{
   const router = useRouter();
   const [planFrequency, setPlanFrequency] = useState('YEARLY');
   const [seats, setSeats] = useState(1);
-  const [configurePlan, setConfigurePlan] = useState(null);
+  const [configurePlan, setConfigurePlan] = useState<Plans | null>(null);
+  const [showTrialOnboardingConfirmation, setShowTrialOnboardingConfirmation] =
+    useState(false);
   const discountCode = router.query.discountCode;
+  const { refetch: trialEligibilityCheck, isLoading: isCheckingEligibility } =
+    useTrialOnboardingEligibility();
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -209,7 +217,11 @@ const PlansView: FunctionComponent<{
     };
   }, []);
 
-  const openCheckout = (planId: string) => {
+  const openWebApp = () => {
+    window.location.assign(process.env.NEXT_PUBLIC_WEBAPP_URL);
+  };
+
+  const openCheckout = (planId: Plans) => {
     // @ts-ignore
     Paddle.Checkout.open({
       settings: {
@@ -233,10 +245,33 @@ const PlansView: FunctionComponent<{
     });
   };
 
-  const redirect = (planId: string) => {
+  const checkOnboardingEligibility = async (planId: Plans) => {
+    try {
+      const eligibilityResult = await trialEligibilityCheck({
+        plan: planId,
+        seats: planId === Plans.TEAM ? seats : 1
+      });
+
+      setConfigurePlan(null);
+
+      if (eligibilityResult.data) {
+        setShowTrialOnboardingConfirmation(true);
+
+        setTimeout(() => {
+          openWebApp();
+        }, 3000);
+      } else {
+        openCheckout(planId);
+      }
+    } catch {
+      openCheckout(planId);
+    }
+  };
+
+  const startTrial = async (planId: Plans) => {
     if (!auth.isAuth) {
       localStorage.setItem('redirect', '/account/subscribe/');
-      window.location.href = `/signup/`;
+      router.push('/signup/');
       return;
     }
 
@@ -256,7 +291,7 @@ const PlansView: FunctionComponent<{
       return;
     }
 
-    openCheckout(planId);
+    await checkOnboardingEligibility(planId);
   };
 
   const tickBadge = (
@@ -389,11 +424,41 @@ const PlansView: FunctionComponent<{
                 <button
                   className='btn btn-xs btn-primary'
                   type='button'
-                  onClick={() => {
-                    openCheckout(configurePlan);
+                  disabled={isCheckingEligibility}
+                  onClick={async () => {
+                    await checkOnboardingEligibility(configurePlan);
                   }}
                 >
                   Confirm and proceed to checkout
+                </button>
+                {isCheckingEligibility && <Spinner small />}
+              </Modal.Footer>
+            </Modal>
+
+            {/* Trial onboarding confirmation modal */}
+            <Modal
+              show={showTrialOnboardingConfirmation}
+              onHide={() => setShowTrialOnboardingConfirmation(false)}
+              centered
+              scrollable={false}
+            >
+              <Modal.Header closeButton className='p-4'>
+                <Modal.Title>{tickBadge} Trial activated!</Modal.Title>
+              </Modal.Header>
+              <Modal.Body className='p-4'>
+                Your free trial has been activated. You will be redirected to
+                the web application in a few seconds. If you are not redirected,
+                please click the button below.
+              </Modal.Body>
+              <Modal.Footer className='p-4'>
+                <button
+                  className='btn btn-xs btn-primary'
+                  type='button'
+                  onClick={() => {
+                    openWebApp();
+                  }}
+                >
+                  <i className='icon-open'></i> Open web app
                 </button>
               </Modal.Footer>
             </Modal>
@@ -510,20 +575,41 @@ const PlansView: FunctionComponent<{
                         currentUser.data?.plan === 'FREE') && (
                         <div className='text-center'>
                           <div>
+                            {!isCheckingEligibility && (
+                              <button
+                                type='button'
+                                className='btn btn-primary btn-xs'
+                                disabled={isCheckingEligibility}
+                                onClick={async () => {
+                                  await startTrial(Plans.SOLO);
+                                }}
+                              >
+                                Start free trial
+                              </button>
+                            )}
+                            {isCheckingEligibility && <Spinner small />}
+                          </div>
+                        </div>
+                      )}
+                      {currentUser.data && currentUser.data.plan !== 'FREE' && (
+                        <div className='text-center'>
+                          <div className='btn-group'>
                             <button
                               type='button'
                               className='btn btn-primary btn-xs'
+                              disabled={isCheckingEligibility}
                               onClick={() => {
-                                redirect(Plans.SOLO);
+                                openWebApp();
                               }}
                             >
-                              Start trial
+                              <i className='icon-open me-1'></i> Open web app
                             </button>
-                          </div>
-
-                          <div className='mt-2 text-gray-700 small'>
-                            You won't have to pay before the end of the{' '}
-                            {pricing[Plans.SOLO].trialDays} days trial
+                            <Link
+                              href={'/download/'}
+                              className='btn btn-primary-subtle btn-xs'
+                            >
+                              Download
+                            </Link>
                           </div>
                         </div>
                       )}
@@ -669,27 +755,40 @@ const PlansView: FunctionComponent<{
                       {(!currentUser.data ||
                         currentUser.data?.plan === 'FREE') && (
                         <div className='text-center'>
+                          {!isCheckingEligibility && (
+                            <button
+                              type='button'
+                              className='btn btn-primary btn-xs'
+                              disabled={isCheckingEligibility}
+                              onClick={async () => {
+                                await startTrial(Plans.TEAM);
+                              }}
+                            >
+                              Start free trial
+                            </button>
+                          )}
+                          {isCheckingEligibility && <Spinner small />}
+                        </div>
+                      )}
+                      {currentUser.data && currentUser.data.plan !== 'FREE' && (
+                        <div className='text-center'>
                           <div className='btn-group'>
                             <button
                               type='button'
                               className='btn btn-primary btn-xs'
+                              disabled={isCheckingEligibility}
                               onClick={() => {
-                                redirect(Plans.TEAM);
+                                openWebApp();
                               }}
                             >
-                              Start trial
+                              <i className='icon-open me-1'></i> Open web app
                             </button>
                             <Link
-                              href={'/cloud-request-trial/'}
-                              className={`btn btn-primary-subtle btn-xs`}
+                              href={'/download/'}
+                              className='btn btn-primary-subtle btn-xs'
                             >
-                              Request a no-card trial
+                              Download
                             </Link>
-                          </div>
-
-                          <div className='mt-2 text-gray-700 small'>
-                            You won't have to pay before the end of the{' '}
-                            {pricing[Plans.TEAM].trialDays} days trial
                           </div>
                         </div>
                       )}
@@ -798,8 +897,7 @@ const PlansView: FunctionComponent<{
               where applicable. By proceeding to payment you agree to our{' '}
               <Link href={'/privacy/'}>privacy policy</Link> and{' '}
               <Link href={'/terms/'}>terms of service</Link>.<br /> The free
-              trial is available once per user, has a lower request rate limit
-              (see below) and requires a valid payment method.
+              trial may require a valid payment method.
               <br />
               <sup>1</sup> See the{' '}
               <Link href={'/pricing/#faq'}>FAQ of our Cloud plans</Link> for

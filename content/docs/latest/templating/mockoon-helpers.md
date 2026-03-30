@@ -38,15 +38,16 @@ In addition to Handlebars' built-in helpers (`if`, `each`, etc., for more inform
 | [`ceil`](#ceil)         | [`toFixed`](#tofixed) |
 | [`floor`](#floor)       | [`round`](#round)     |
 
-| Strings                   |                         | Dates                             | Misc                                  |
-| ------------------------- | ----------------------- | --------------------------------- | ------------------------------------- |
-| [`includes`](#includes)   | [`concat`](#concat)     | [`now`](#now)                     | [`newline`](#newline)                 |
-| [`substr`](#substr)       | [`indexOf`](#indexof)   | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)                   |
-| [`lowercase`](#lowercase) | [`parseInt`](#parseint) | [`date`](#date)                   | [`base64Decode`](#base64decode)       |
-| [`uppercase`](#uppercase) | [`padStart`](#padstart) | [`time`](#time)                   | [`base64url`](#base64url)             |
-| [`split`](#split)         | [`padEnd`](#padend)     | [`dateFormat`](#dateformat)       | [`base64urlDecode`](#base64urldecode) |
-| [`stringify`](#stringify) | [`eq`](#eq)             | [`isValidDate`](#isvaliddate)     | [`objectId`](#objectid)               |
-| [`jsonParse`](#jsonparse) |                         |                                   |                                       |
+| Strings                     |                           | Dates                             | Misc                                  |
+| --------------------------- | ------------------------- | --------------------------------- | ------------------------------------- |
+| [`includes`](#includes)     | [`jsonParse`](#jsonparse) | [`now`](#now)                     | [`newline`](#newline)                 |
+| [`substr`](#substr)         | [`concat`](#concat)       | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)                   |
+| [`replace`](#replace)       | [`indexOf`](#indexof)     | [`date`](#date)                   | [`base64Decode`](#base64decode)       |
+| [`replaceAll`](#replaceall) | [`parseInt`](#parseint)   | [`time`](#time)                   | [`base64url`](#base64url)             |
+| [`lowercase`](#lowercase)   | [`padStart`](#padstart)   | [`dateFormat`](#dateformat)       | [`base64urlDecode`](#base64urldecode) |
+| [`uppercase`](#uppercase)   | [`padEnd`](#padend)       | [`isValidDate`](#isvaliddate)     | [`objectId`](#objectid)               |
+| [`split`](#split)           | [`eq`](#eq)               |                                   |                                       |
+| [`stringify`](#stringify)   |                           |                                   |                                       |
 
 | [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                          |
 | --------------------------------------------------- | ----------------------------- | ------------------------ |
@@ -1051,6 +1052,46 @@ Return a portion of a string starting at the specified index and extending for a
 {{substr 'Some data' 5 4}}
 
 result: 'data'
+```
+
+## replace
+
+Replace the first occurrence of a string with another string.
+
+| Arguments (ordered) | Type   | Description        |
+| ------------------- | ------ | ------------------ |
+| 0                   | string | Input string       |
+| 1                   | string | String to search   |
+| 2                   | string | Replacement string |
+
+Returns an empty string if fewer than three arguments are provided, or if one of the arguments is not a string. If the search string is empty, the original input is returned.
+
+**Examples**
+
+```handlebars
+{{replace 'hello world world' 'world' 'Mockoon'}}
+
+result: hello Mockoon world
+```
+
+## replaceAll
+
+Replace all occurrences of a string with another string.
+
+| Arguments (ordered) | Type   | Description        |
+| ------------------- | ------ | ------------------ |
+| 0                   | string | Input string       |
+| 1                   | string | String to search   |
+| 2                   | string | Replacement string |
+
+Returns an empty string if fewer than three arguments are provided, or if one of the arguments is not a string. If the search string is empty, the original input is returned.
+
+**Examples**
+
+```handlebars
+{{replaceAll 'hello world world' 'world' 'Mockoon'}}
+
+result: hello Mockoon Mockoon
 ```
 
 ## lowercase

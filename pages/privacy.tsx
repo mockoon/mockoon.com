@@ -13,6 +13,78 @@ const Privacy: FunctionComponent = function () {
       />
 
       <Hero title='Privacy policy' subtitle='Last update November 17, 2025' />
+
+      <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
+        <div className='container'>
+          <div className='row justify-content-center g-4'>
+            <div className='col-12 col-md-6 col-lg-3'>
+              <div className='card card-border h-100 shadow-light-lg text-center p-4'>
+                <div className='card-body d-flex flex-column align-items-center'>
+                  <div className='badge badge-rounded-circle text-bg-success-subtle mb-3'>
+                    <i className='icon-check'></i>
+                  </div>
+                  <h3 className='h5 fw-semibold mb-2'>
+                    Minimal data collection
+                  </h3>
+                  <p className='text-gray-700 mb-0'>
+                    We only collect the data strictly necessary to provide our
+                    services. Nothing more.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='col-12 col-md-6 col-lg-3'>
+              <div className='card card-border h-100 shadow-light-lg text-center p-4'>
+                <div className='card-body d-flex flex-column align-items-center'>
+                  <div className='badge badge-rounded-circle text-bg-success-subtle mb-3'>
+                    <i className='icon-check'></i>
+                  </div>
+                  <h3 className='h5 fw-semibold mb-2'>
+                    Anonymous analytics only
+                  </h3>
+                  <p className='text-gray-700 mb-0'>
+                    We use minimal, privacy-friendly analytics with no personal
+                    information, no cookies, and no tracking.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='col-12 col-md-6 col-lg-3'>
+              <div className='card card-border h-100 shadow-light-lg text-center p-4'>
+                <div className='card-body d-flex flex-column align-items-center'>
+                  <div className='badge badge-rounded-circle text-bg-success-subtle mb-3'>
+                    <i className='icon-check'></i>
+                  </div>
+                  <h3 className='h5 fw-semibold mb-2'>
+                    We never sell your data
+                  </h3>
+                  <p className='text-gray-700 mb-0'>
+                    Your data is never sold, rented, or shared with third
+                    parties for commercial purposes.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='col-12 col-md-6 col-lg-3'>
+              <div className='card card-border h-100 shadow-light-lg text-center p-4'>
+                <div className='card-body d-flex flex-column align-items-center'>
+                  <div className='badge badge-rounded-circle text-bg-success-subtle mb-3'>
+                    <i className='icon-check'></i>
+                  </div>
+                  <h3 className='h5 fw-semibold mb-2'>
+                    No AI training on your data
+                  </h3>
+                  <p className='text-gray-700 mb-0'>
+                    We do not use your data to train AI models, and we do not
+                    retain your AI prompts or outputs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
@@ -99,8 +171,9 @@ const Privacy: FunctionComponent = function () {
                   including your email and password.
                 </li>
                 <li>
-                  When you purchase a service: billing details, payment
-                  information such as name, address and credit card information.
+                  When you purchase a service (managed by our payment processor,
+                  Paddle): billing details, payment information such as name,
+                  address and credit card information.
                 </li>
                 <li>
                   Contact us via email, social media, or on any similar

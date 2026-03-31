@@ -194,6 +194,16 @@ const HomePage: FunctionComponent = function () {
         mainPictureHeight={783}
       >
         <SocialProof />
+        <p className='text-gray-600 mb-0 mt-6'>
+          <img
+            src='/images/eu-flag.svg'
+            alt='EU'
+            width={30}
+            className='me-2 align-middle'
+          />
+          Proudly built and operated in Europe, with privacy and transparency at
+          the core.
+        </p>
       </Hero>
       <section>
         <div className='container'>

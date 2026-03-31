@@ -10,7 +10,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - mockoon
-order: 57
+date: '2023-10-25'
 ---
 
 When creating an API mock, you often need to apply the same rules to all your endpoints. It also makes your mock more consistent and easier to maintain. For example, you may want to check that all your requests contain an `Authorization` header or that they all contain a specific property in their body. In mockoon, you can easily create routes that will apply rules to all your endpoints and server specific responses, like a `401 Unauthorized`. This tutorial will show you how to do it through an example.

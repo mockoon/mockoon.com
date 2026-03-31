@@ -10,7 +10,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - mockoon
-order: 30
+date: '2020-10-12'
 ---
 
 During the development of an application, you may use an API that is still under development. Rather than waiting for new API endpoints to be added and rely on your memory or documentation to continue your application development, you could use Mockoon to create a partial fake API. The idea is simple. Mockoon would serve the API endpoints you define while forwarding anything else to the URL of your choice. Let's dive through this with a simple example.

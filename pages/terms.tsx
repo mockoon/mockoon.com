@@ -13,17 +13,18 @@ const Terms: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Terms of service' subtitle='Last update November 28, 2025' />
+      <Hero title='Terms of service' subtitle='Last update February 10, 2026' />
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
               <Quote colorScheme='secondary'>
-                💡 <strong>Summary of changes (November 28, 2025)</strong>:
+                💡 <strong>Summary of changes (February 10, 2026)</strong>:
                 <ul className='mb-0'>
                   <li>
-                    Added an <strong>Availability (SLA)</strong> subsection
-                    under Cloud Services.
+                    Clarified support levels: "Email support", "Priority email
+                    support", "Next business day support", and "Enterprise
+                    support".
                   </li>
                 </ul>
               </Quote>
@@ -692,33 +693,41 @@ const Terms: FunctionComponent = function () {
                 communicated to you through written notice or by posting updated
                 information within our Service.
               </p>
+              <p>
+                The level of Support Services provided depends on the plan you
+                have subscribed to. You can find your current support level in
+                your{' '}
+                <a href='/account/support/'>account management interface</a>.
+              </p>
               <h5 className='mt-6 fw-medium'>13a. Email Support</h5>
               <p>
-                Email Support is a standard Support Service included in our Solo
-                Cloud plan. It offers no guaranteed response time, but we will
+                Email Support offers no guaranteed response time, but we will
                 make commercially reasonable efforts to respond to your
                 inquiries within a reasonable timeframe.
               </p>
               <h5 className='mt-6 fw-medium'>13b. Priority Email Support</h5>
               <p>
-                Priority Email Support is a standard Support Service included in
-                our Team Cloud plan. Your inquiries will be prioritized over
-                those of standard Email Support users. It offers no guaranteed
-                response time, but we will make commercially reasonable efforts
-                to respond to your inquiries within a reasonable timeframe.
+                Priority Email Support offers no guaranteed response time, but
+                we will make commercially reasonable efforts to respond to your
+                inquiries within a reasonable timeframe. We prioritize inquiries
+                from customers subscribed to plans that include Priority Email
+                Support over those with standard Email Support.
               </p>
-              <h5 className='mt-6 fw-medium'>13c. Enterprise Support</h5>
+              <h5 className='mt-6 fw-medium'>13c. Next Business Day Support</h5>
               <p>
-                Enterprise Support is a priority Support service available in
-                some of our Cloud plans. It offers a guaranteed response time.
-                Unless otherwise specified in the plan details or separately
-                agreed upon in writing, the Enterprise Support service is
-                provided during regular business hours and working days in the
-                CET/CEST timezone from{' '}
-                <strong>9 am to 5 pm CET/CEST, Monday to Friday</strong>.
-                <br />
-                The initial response time for Enterprise support inquiries is of{' '}
-                <strong>one business day</strong>.
+                Next Business Day Support offers a guaranteed response on the
+                next business day following the receipt of your support inquiry.
+                Business days are defined as{' '}
+                <strong>Monday to Friday, 9 am to 5 pm CET/CEST</strong>,
+                excluding Luxembourgish public holidays.
+              </p>
+              <h5 className='mt-6 fw-medium'>13d. Enterprise Support</h5>
+              <p>
+                Enterprise Support offers a guaranteed response time of one
+                business day, unless otherwise specified in the plan details or
+                separately agreed upon in writing. Business days are defined as{' '}
+                <strong>Monday to Friday, 9 am to 5 pm CET/CEST</strong>,
+                excluding Luxembourgish public holidays.
               </p>
               <h3 className='mt-6 fw-medium'>14. Term and termination</h3>
               <p>

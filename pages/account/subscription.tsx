@@ -69,7 +69,6 @@ const AccountSubscription: FunctionComponent = function () {
 
   useEffect(() => {
     if (upgradeInProgress && seats !== previousSeats) {
-      console.log(seats);
       clearTimeout(seatUpgradeTimeout);
 
       seatUpgradeTimeout = setTimeout(() => {
@@ -416,7 +415,7 @@ const AccountSubscription: FunctionComponent = function () {
                                       onClick={() => {
                                         const newSeats =
                                           teamData?.plan === 'SOLO'
-                                            ? 1
+                                            ? pricing.TEAM.minSeats
                                             : teamData?.seats + 1;
                                         setUpgradeInProgress(true);
 

@@ -42,6 +42,17 @@ const Sponsors: FunctionComponent<{
               alt='Localazy logo'
             />
           </Link>
+          <Link
+            href='https://serpapi.com/?utm_source=mockoon'
+            className='d-inline-block p-4'
+            target='_blank'
+          >
+            <img
+              src='/images/sponsors/serpapi.png'
+              className='img-fluid m-4'
+              alt='SerpApi logo'
+            />
+          </Link>
         </div>
       </div>
 

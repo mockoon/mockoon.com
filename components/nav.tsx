@@ -13,6 +13,7 @@ import CustomTooltip from './tooltip';
 enum Dropdowns {
   NONE = 'NONE',
   PRODUCT = 'PRODUCT',
+  SOLUTIONS = 'SOLUTIONS',
   ACCOUNT = 'ACCOUNT',
   RESOURCES = 'RESOURCES'
 }
@@ -135,7 +136,7 @@ const Nav: FunctionComponent<{
                   aria-haspopup='true'
                   aria-expanded={dropdownOpen === Dropdowns.PRODUCT}
                 >
-                  Product {!show && <i className='icon-arrow_drop_down'></i>}
+                  Platform {!show && <i className='icon-arrow_drop_down'></i>}
                 </a>
                 <div
                   className={`dropdown-menu dropdown-menu-lg ${
@@ -146,8 +147,7 @@ const Nav: FunctionComponent<{
                     <div className='col-md-6 mb-4 mb-md-0'>
                       <div className='row gx-0'>
                         <div className='col-12 col-lg-6'>
-                          <h6 className='dropdown-header'>Product</h6>
-
+                          <h6 className='dropdown-header'>Open Source</h6>
                           <Link
                             href='/what-is-mockoon/'
                             className={`dropdown-item ${
@@ -160,40 +160,6 @@ const Nav: FunctionComponent<{
                           </Link>
 
                           <Link
-                            href='/cloud/'
-                            className={`dropdown-item ${
-                              router.pathname === '/cloud' ? 'active' : ''
-                            }`}
-                          >
-                            Mockoon Cloud
-                          </Link>
-
-                          <Link
-                            href='/use-cases/'
-                            className={`dropdown-item ${
-                              router.pathname === '/use-cases' ? 'active' : ''
-                            }`}
-                          >
-                            Use cases
-                          </Link>
-
-                          <Link
-                            href='/pricing/'
-                            className={`dropdown-item ${
-                              router.pathname === '/pricing' ? 'active' : ''
-                            }`}
-                          >
-                            Pricing
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='col-md-6 mb-4 mb-md-0'>
-                      <div className='row gx-0'>
-                        <div className='col-12 col-lg-6'>
-                          <h6 className='dropdown-header'>Applications</h6>
-
-                          <Link
                             href='/download/'
                             className={`dropdown-item ${
                               router.pathname === '/download' ? 'active' : ''
@@ -202,6 +168,38 @@ const Nav: FunctionComponent<{
                             Desktop application
                           </Link>
 
+                          <Link
+                            href='/cli/'
+                            className={`dropdown-item ${
+                              router.pathname === '/cli' ? 'active' : ''
+                            }`}
+                          >
+                            CLI
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                    <div className='col-md-6 mb-4 mb-md-0'>
+                      <div className='row gx-0'>
+                        <div className='col-12 col-lg-6'>
+                          {' '}
+                          <h6 className='dropdown-header'>Cloud</h6>
+                          <Link
+                            href='/cloud/'
+                            className={`dropdown-item ${
+                              router.pathname === '/cloud' ? 'active' : ''
+                            }`}
+                          >
+                            Mockoon Cloud
+                          </Link>
+                          <Link
+                            href='/pricing/'
+                            className={`dropdown-item ${
+                              router.pathname === '/pricing' ? 'active' : ''
+                            }`}
+                          >
+                            Pricing
+                          </Link>
                           <Link
                             href={`${process.env.NEXT_PUBLIC_WEBAPP_URL}`}
                             className='dropdown-item'
@@ -214,27 +212,234 @@ const Nav: FunctionComponent<{
                               Early access
                             </span>
                           </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li className='nav-item'>
+                <Link
+                  href='/pricing/'
+                  className={`nav-link ${
+                    router.pathname === '/pricing' ? 'active' : ''
+                  }`}
+                >
+                  Pricing
+                </Link>
+              </li>
+
+              <li
+                className='nav-item dropdown text-center'
+                onMouseEnter={() => {
+                  !show && setDropdownOpen(Dropdowns.SOLUTIONS);
+                }}
+                onMouseLeave={() => {
+                  !show && setDropdownOpen(Dropdowns.NONE);
+                }}
+              >
+                <a
+                  className={`nav-link dropdown-toggle`}
+                  href='#'
+                  aria-haspopup='true'
+                  aria-expanded={dropdownOpen === Dropdowns.SOLUTIONS}
+                >
+                  Solutions {!show && <i className='icon-arrow_drop_down'></i>}
+                </a>
+                <div
+                  className={`dropdown-menu ${
+                    show ? 'text-center' : ''
+                  } ${dropdownOpen === Dropdowns.SOLUTIONS ? 'show' : ''}`}
+                >
+                  <div className='row gx-0 gx-md-6'>
+                    <div className='col-md-4 mb-4 mb-md-0'>
+                      <div className='row gx-0'>
+                        <div className='col-12 col-lg-6'>
+                          <h6 className='dropdown-header'>Capabilities</h6>
 
                           <Link
-                            href='/cli/'
+                            href='/use-cases/api-mocking/'
                             className={`dropdown-item ${
-                              router.pathname === '/cli' ? 'active' : ''
+                              router.pathname === '/use-cases/api-mocking'
+                                ? 'active'
+                                : ''
                             }`}
                           >
-                            CLI
+                            API Mocking
                           </Link>
 
                           <Link
-                            href='/serverless/'
+                            href='/use-cases/api-virtualization/'
                             className={`dropdown-item ${
-                              router.pathname === '/serverless' ? 'active' : ''
+                              router.pathname ===
+                              '/use-cases/api-virtualization'
+                                ? 'active'
+                                : ''
                             }`}
                           >
-                            Serverless package
+                            API Virtualization
+                          </Link>
+
+                          <Link
+                            href='/use-cases/api-sandboxing/'
+                            className={`dropdown-item ${
+                              router.pathname === '/use-cases/api-sandboxing'
+                                ? 'active'
+                                : ''
+                            }`}
+                          >
+                            API Sandboxing
                           </Link>
                         </div>
                       </div>
                     </div>
+                    {/* <div className='col-md-4 mb-4 mb-md-0'>
+                      <div className='row gx-0'>
+                        <div className='col-12 col-lg-6'>
+                          <h6 className='dropdown-header'>By Roles</h6>
+
+                          <Link
+                            href='/use-cases/frontend-developers/'
+                            className={`dropdown-item ${
+                              router.pathname ===
+                              '/use-cases/frontend-developers'
+                                ? 'active'
+                                : ''
+                            }`}
+                          >
+                            Frontend Developers
+                          </Link>
+
+                          <Link
+                            href='/use-cases/backend-developers/'
+                            className={`dropdown-item ${
+                              router.pathname ===
+                              '/use-cases/backend-developers'
+                                ? 'active'
+                                : ''
+                            }`}
+                          >
+                            Backend Developers
+                          </Link>
+
+                          <Link
+                            href='/use-cases/qa-engineers/'
+                            className={`dropdown-item ${
+                              router.pathname === '/use-cases/qa-engineers'
+                                ? 'active'
+                                : ''
+                            }`}
+                          >
+                            QA Engineers
+                          </Link>
+
+                          <Link
+                            href='/use-cases/devops-engineers/'
+                            className={`dropdown-item ${
+                              router.pathname === '/use-cases/devops-engineers'
+                                ? 'active'
+                                : ''
+                            }`}
+                          >
+                            DevOps Engineers
+                          </Link>
+
+                          <Link
+                            href='/use-cases/product-managers/'
+                            className={`dropdown-item ${
+                              router.pathname === '/use-cases/product-managers'
+                                ? 'active'
+                                : ''
+                            }`}
+                          >
+                            Product Managers
+                          </Link>
+
+                          <Link
+                            href='/use-cases/api-architects/'
+                            className={`dropdown-item ${
+                              router.pathname === '/use-cases/api-architects'
+                                ? 'active'
+                                : ''
+                            }`}
+                          >
+                            API Architects
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                    <div className='col-md-4 mb-4 mb-md-0'>
+                      <div className='row gx-0'>
+                        <div className='col-12 col-lg-6'>
+                          <h6 className='dropdown-header'>By Industries</h6>
+
+                          <Link
+                            href='/use-cases/fintech/'
+                            className={`dropdown-item ${
+                              router.pathname === '/use-cases/fintech'
+                                ? 'active'
+                                : ''
+                            }`}
+                          >
+                            Fintech & Banking
+                          </Link>
+
+                          <Link
+                            href='/use-cases/ecommerce/'
+                            className={`dropdown-item ${
+                              router.pathname === '/use-cases/ecommerce'
+                                ? 'active'
+                                : ''
+                            }`}
+                          >
+                            E-commerce & Retail
+                          </Link>
+
+                          <Link
+                            href='/use-cases/healthcare/'
+                            className={`dropdown-item ${
+                              router.pathname === '/use-cases/healthcare'
+                                ? 'active'
+                                : ''
+                            }`}
+                          >
+                            Healthcare & MedTech
+                          </Link>
+
+                          <Link
+                            href='/use-cases/saas/'
+                            className={`dropdown-item ${
+                              router.pathname === '/use-cases/saas'
+                                ? 'active'
+                                : ''
+                            }`}
+                          >
+                            SaaS & Technology
+                          </Link>
+
+                          <Link
+                            href='/use-cases/gaming/'
+                            className={`dropdown-item ${
+                              router.pathname === '/use-cases/gaming'
+                                ? 'active'
+                                : ''
+                            }`}
+                          >
+                            Gaming & Entertainment
+                          </Link>
+
+                          <Link
+                            href='/use-cases/'
+                            className={`dropdown-item ${
+                              router.pathname === '/solutions' ? 'active' : ''
+                            }`}
+                          >
+                            All Industries
+                          </Link>
+                        </div>
+                      </div>
+                    </div> */}
                   </div>
                 </div>
               </li>
@@ -421,17 +626,6 @@ const Nav: FunctionComponent<{
                     </div>
                   </div>
                 </div>
-              </li>
-
-              <li className='nav-item'>
-                <Link
-                  href='/pricing/'
-                  className={`nav-link ${
-                    router.pathname === '/pricing' ? 'active' : ''
-                  }`}
-                >
-                  Pricing
-                </Link>
               </li>
 
               <li className='nav-item'>

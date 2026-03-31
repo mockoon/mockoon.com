@@ -10,7 +10,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - mockoon
-order: 57
+date: '2024-04-15'
 ---
 
 In this tutorial, we will learn how to use the global variables to save the state between requests in Mockoon. Global variables are a powerful feature that allows you to store and reuse data across multiple requests, contrarily to [local variables](/docs/latest/variables/local-variables/), scoped to a template. It can be useful when you simulate complex workflows like user authentication, shopping carts, or any other scenario where you save data between requests.

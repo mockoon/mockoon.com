@@ -10,7 +10,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - mockoon
-order: 40
+date: '2020-10-22'
 ---
 
 When working on an application, you may want to use a mock API to speed up the development. But we all want to avoid the hassle of creating most of the endpoints manually.

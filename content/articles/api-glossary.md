@@ -35,6 +35,7 @@ order: 10
 [Middleware](#middleware)  
 [Mime type](#mime-type)  
 [API Mocking](#api-mocking)  
+[API Sandboxing](#api-sandboxing)
 [OpenAPI/Swagger](#openapi-swagger)
 [Pagination](#pagination)  
 [Path Parameters](#path-parameters)  
@@ -50,6 +51,7 @@ order: 10
 [Server](#server)  
 [Status code (HTTP)](#status-code-http)  
 [URL (Uniform Resource Locator)](#url-uniform-resource-locator)  
+[API Virtualization](#api-virtualization)
 [Versioning](#versioning)  
 [Web API](#web-api)  
 [Webhooks](#webhooks)  
@@ -227,7 +229,23 @@ A MIME type (Multipurpose Internet Mail Extensions type) is a standard way to **
 API mocking is the action of simulating or imitating actual [APIs](#api-application-programming-interface) by answering fake realistic [responses](#response) to [requests](#request). It replaces APIs you cannot currently use because they are unavailable, down, or still under development. APIs could also be unavailable due to the context: like a restricted testing environment.
 It is a fast and easy way to test your applications with the APIs you are integrating, without the hassles.
 
+API mocking is often part of a broader [API sandboxing](#api-sandboxing) or [API virtualization](#api-virtualization) strategy, depending on whether you need a safe test environment or a more complete simulation of dependent systems.
+
 > 📘 Learn more in our [API mocking guide](/articles/what-is-api-mocking/)
+
+> 🚀 Explore our [API mocking solution](/use-cases/api-mocking/)
+
+See also: [API Sandboxing](#api-sandboxing), [API Virtualization](#api-virtualization)
+
+### API Sandboxing
+
+API sandboxing is the practice of running APIs in a safe, isolated environment where developers and testers can experiment without impacting production systems or real users. A sandbox usually includes mock or test endpoints, controlled data, and repeatable scenarios.
+
+It is commonly used for onboarding, integration testing, and pre-sales demos because it lets teams validate behavior quickly while keeping credentials and sensitive systems protected.
+
+> 🚀 Explore our [API sandboxing solution](/use-cases/api-sandboxing/)
+
+See also: [API Mocking](#api-mocking), [API Virtualization](#api-virtualization)
 
 ## O
 
@@ -328,6 +346,16 @@ A URL is a reference to a web [resource](#resource) specifying its location on a
 - A path to the resource: `/api/users`.
 
 ## V
+
+### API Virtualization
+
+API virtualization is the simulation of API behavior for systems that are unavailable, costly to access, rate-limited, or difficult to reproduce on demand. It can include realistic data, latency, faults, and conditional behavior to emulate production-like conditions.
+
+Compared to basic [API mocking](#api-mocking), virtualization often focuses on reproducing more complete end-to-end system behavior for integration and performance-related testing.
+
+> 🚀 Explore our [API virtualization solution](/use-cases/api-virtualization/)
+
+See also: [API Mocking](#api-mocking), [API Sandboxing](#api-sandboxing)
 
 ### Versioning
 

@@ -10,7 +10,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - mockoon
-order: 59
+date: '2024-05-29'
 ---
 
 In this tutorial, we will learn how to **create an endpoint to serve static files** in your mock API server. This feature is useful when you need to serve images, CSS, or JavaScript files, or simply simulate a basic static file server.

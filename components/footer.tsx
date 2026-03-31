@@ -122,6 +122,17 @@ const Footer: FunctionComponent<{
                   <i className='icon-arrow_forward ms-2'></i>
                 </Link>
               </li>
+              <li>
+                <p className='text-gray-600 mt-4'>
+                  <img
+                    src='/images/eu-flag.svg'
+                    alt='EU'
+                    width={30}
+                    className='me-1 align-middle'
+                  />
+                  Proudly built and operated in Europe.
+                </p>
+              </li>
             </ul>
           </div>
           <div className='col-12 col-md-6 col-lg-2 text-lg-start text-center'>
@@ -414,6 +425,7 @@ const Footer: FunctionComponent<{
           <p className='text-gray-500 h6'>
             &copy; Mockoon 2017 - {new Date().getFullYear()}
           </p>
+
           {(router.route.includes('use-cases') ||
             router.route.includes('custom-services')) && (
             <p>

@@ -10,7 +10,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - mockoon
-order: 62
+date: '2024-07-30'
 ---
 
 In this tutorial, we will learn how to **get started with [Mockoon Cloud](/cloud/)**, a cloud-based service that allows you to **collaborate on your mock APIs with your team**, **deploy your mock APIs to the cloud**, and **generate HTTP endpoints with our AI assistant**.

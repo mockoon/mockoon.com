@@ -10,7 +10,7 @@ imageWidth: 1200
 imageHeight: 400
 tags:
   - mockoon
-order: 55
+date: '2022-11-18'
 ---
 
 Data buckets were introduced in Mockoon's [v1.21.0](/old-releases/desktop/1.21.0/). They are persisting key-value stores that allow you to reuse data across your routes and body responses.

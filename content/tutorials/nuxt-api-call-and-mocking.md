@@ -8,7 +8,7 @@ image: tutorial-nuxt-api-call.png
 imageAlt: Mockoon and Nuxt logos side by side
 imageWidth: 1200
 imageHeight: 400
-order: 94
+date: '2022-10-25'
 ---
 
 This tutorial will detail step by step how to call a REST API from a Nuxt project created with the [create-nuxt-app](https://github.com/nuxt/create-nuxt-app) scaffolding tool. If you already have an existing API that you want to call from your application, you can skip the first step, in which we will create a fake REST API using Mockoon to speed up the development.

@@ -8,7 +8,7 @@ image: tutorial-vuejs-api-call.png
 imageAlt: Mockoon and Vue.js logos side by side
 imageWidth: 1200
 imageHeight: 400
-order: 95
+date: '2022-10-07'
 ---
 
 This tutorial will show you how to call a REST API from a simple Vue.js application created with the [create-vue](https://github.com/vuejs/create-vue) scaffolding tool. If you already have an existing API that you want to call from your application, you can skip the first step, in which we will create a fake REST API using Mockoon.

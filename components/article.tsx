@@ -17,52 +17,56 @@ const Article: FunctionComponent<{
   articleBody: string;
   tags?: string[];
   author?: keyof typeof authors;
-}> = function (props) {
+  displayDate?: boolean;
+}> = function ({
+  articleData,
+  path,
+  author,
+  tags,
+  articleBody,
+  displayDate = true
+}) {
   const [showHelp, setShowHelp] = useState<boolean>(false);
 
   return (
     <Fragment>
-      {props.articleData.header && (
+      {articleData.header && (
         <section className='article-header text-gray-300 pt-7 py-5'>
           <div className='container'>
             <div className='row d-flex align-items-center'>
               <div className='text-center col-12 col-lg-4'>
                 <img
-                  src={`/images/external/${props.articleData.header.image}`}
-                  alt={`${props.articleData.header.imageAlt}`}
+                  src={`/images/external/${articleData.header.image}`}
+                  alt={`${articleData.header.imageAlt}`}
                 />
               </div>
               <div className='col-12 col-lg-8 text-center'>
                 <div className='row pt-5 pt-lg-0'>
                   <p className='col-12 mb-0 d-flex flex-column'>
                     <span className='text-uppercase text-white'>About</span>
-                    <span className='mt-n1'>
-                      {props.articleData.header.overview}
-                    </span>
+                    <span className='mt-n1'>{articleData.header.overview}</span>
                   </p>
                 </div>
                 <div className='d-flex flex-row my-6'>
                   <p className='col-4 mb-0 d-flex flex-column'>
                     <span className='text-uppercase text-white'>Industry</span>
-                    <span className='mt-n1'>
-                      {props.articleData.header.industry}
-                    </span>
+                    <span className='mt-n1'>{articleData.header.industry}</span>
                   </p>
                   <p className='col-4 mb-0 d-flex flex-column'>
                     <span className='text-uppercase text-white'>Employees</span>
                     <span className='mt-n1'>
-                      {props.articleData.header.employees}
+                      {articleData.header.employees}
                     </span>
                   </p>
                   <p className='col-4 mb-0 d-flex flex-column'>
                     <span className='text-uppercase text-white'>Website</span>
                     <span className='mt-n1'>
                       <a
-                        href={props.articleData.header.link}
+                        href={articleData.header.link}
                         rel='noopener'
                         target='_blank'
                       >
-                        {props.articleData.header.linkAnchor}
+                        {articleData.header.linkAnchor}
                       </a>
                     </span>
                   </p>
@@ -73,16 +77,16 @@ const Article: FunctionComponent<{
         </section>
       )}
       <div className='container'>
-        {props.articleData.image && !props.articleData.header && (
+        {articleData.image && !articleData.header && (
           <div className='pt-5 pb-2 col-12 d-flex justify-content-center'>
             <div className='mb-8 mb-lg-0'>
               <img
-                src={`/images/${props.path}/${props.articleData.image}`}
-                alt={props.articleData.imageAlt}
+                src={`/images/${path}/${articleData.image}`}
+                alt={articleData.imageAlt}
                 loading='lazy'
                 className='screenshot img-fluid'
-                width={props.articleData.imageWidth}
-                height={props.articleData.imageHeight}
+                width={articleData.imageWidth}
+                height={articleData.imageHeight}
               />
             </div>
           </div>
@@ -91,17 +95,15 @@ const Article: FunctionComponent<{
         <section className='pt-8'>
           <div className='row justify-content-center'>
             <div className='col-12 col-lg-10 col-lg-10 col-xl-10 border-bottom pb-4'>
-              <h1 className='display-4 text-center'>
-                {props.articleData.title}
-              </h1>
+              <h1 className='display-4 text-center'>{articleData.title}</h1>
 
               <p className='lead mb-4 text-center text-gray-700'>
-                {props.articleData.excerpt}
+                {articleData.excerpt}
               </p>
 
               <div className='d-flex align-items-center justify-content-center'>
-                {props.author && <Author author={props.author} />}
-                {props.articleData.date && (
+                {author && <Author author={author} />}
+                {articleData.date && displayDate && (
                   <div
                     className={
                       'd-flex justify-content-center align-items-center'
@@ -111,17 +113,17 @@ const Article: FunctionComponent<{
                       <span className='px-4 fw-bold'>|</span>{' '}
                       <time
                         className='fs-sm text-gray-700'
-                        dateTime={props.articleData.date}
+                        dateTime={articleData.date}
                       >
-                        Published on {props.articleData.date}
+                        Published on {articleData.date}
                       </time>
                     </div>
                   </div>
                 )}
               </div>
-              {props.tags?.length > 0 && (
+              {tags?.length > 0 && (
                 <div className='text-center mt-2'>
-                  <Tags tags={props.tags} />
+                  <Tags tags={tags} />
                 </div>
               )}
             </div>
@@ -131,10 +133,10 @@ const Article: FunctionComponent<{
         <section className='pt-6 pt-lg-8 pb-8'>
           <div className='row justify-content-center'>
             <div className='col-12 col-lg-10 col-xl-10'>
-              <Markdown body={props.articleBody} />
+              <Markdown body={articleBody} />
             </div>
           </div>
-          {props.articleData.mockApiFile && (
+          {articleData.mockApiFile && (
             <div className='row justify-content-center'>
               <div className='col-12 col-lg-10 col-xl-10'>
                 <div className='mt-8 p-6 border-top border-bottom bg-gray-100'>
@@ -152,15 +154,15 @@ const Article: FunctionComponent<{
                   <div>
                     <MockSamplesOpenButton
                       className='me-2'
-                      href={`mockoon://load-environment?url=${props.articleData.mockApiFile}`}
+                      href={`mockoon://load-environment?url=${articleData.mockApiFile}`}
                     />
                     <MockSamplesCLIButton
                       className='me-2'
-                      href={`clipboardcopy://mockoon-cli start --data ${props.articleData.mockApiFile}`}
+                      href={`clipboardcopy://mockoon-cli start --data ${articleData.mockApiFile}`}
                     />
                     <MockSamplesDownloadButton
                       className='me-2'
-                      href={props.articleData.mockApiFile}
+                      href={articleData.mockApiFile}
                     />
                   </div>
                   <div className='mt-4'>

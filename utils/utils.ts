@@ -23,14 +23,26 @@ export const sortPathBySemver = (a: string, b: string) => {
   );
 };
 
+/**
+ * Order by `date` if exists, or by `order` if not
+ * @param articles
+ * @returns
+ */
 export const orderArticles = (articles: ArticleList) => {
-  return articles.sort((firstArticle, secondArticle) =>
-    firstArticle.data.order > secondArticle.data.order
+  return articles.sort((firstArticle, secondArticle) => {
+    if (firstArticle.data.date && secondArticle.data.date) {
+      return (
+        new Date(secondArticle.data.date).getTime() -
+        new Date(firstArticle.data.date).getTime()
+      );
+    }
+
+    return firstArticle.data.order > secondArticle.data.order
       ? 1
       : secondArticle.data.order > firstArticle.data.order
         ? -1
-        : 0
-  );
+        : 0;
+  });
 };
 async function delay(ms: number) {
   new Promise((resolve) => setTimeout(resolve, ms));

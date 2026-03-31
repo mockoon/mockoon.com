@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react';
 const SocialProof: FunctionComponent = function () {
   return (
     <>
-      <div className='text-center text-lg-start text mb-8'>
+      <div className='text-center text-lg-start text mb-6'>
         <div>
           <a
             href='https://github.blog/news-insights/company-news/github-accelerator-our-first-cohort-and-whats-next/'
@@ -12,13 +12,13 @@ const SocialProof: FunctionComponent = function () {
             <img
               src='/images/github-accelerator.png'
               alt='github accelerator logo'
-              width='250'
+              width='200'
               className='img-fluid'
             />
           </a>
         </div>
       </div>
-      <div className='d-flex flex-wrap justify-content-between'>
+      <div className='d-flex flex-wrap align-items-start gap-4'>
         <div>
           <a
             href='https://www.g2.com/products/mockoon-mockoon/reviews'
@@ -27,7 +27,7 @@ const SocialProof: FunctionComponent = function () {
             <img
               src='/images/directories/g2.png'
               alt='G2 rating 4.5'
-              width='150'
+              width='120'
               className='img-fluid'
             />
           </a>
@@ -37,7 +37,7 @@ const SocialProof: FunctionComponent = function () {
             <img
               src='/images/directories/capterra.png'
               alt='Capterra rating 4.5'
-              width='150'
+              width='120'
               className='img-fluid'
             />
           </a>
@@ -50,7 +50,7 @@ const SocialProof: FunctionComponent = function () {
             <img
               src='/images/directories/producthunt.png'
               alt='Producthunt rating 5'
-              width='150'
+              width='120'
               className='img-fluid'
             />
           </a>

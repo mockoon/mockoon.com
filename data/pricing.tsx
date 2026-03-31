@@ -5,7 +5,7 @@ export const pricing = {
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_SOLO_MONTHLY_PRICE_ID
     },
     YEARLY: {
-      price: 150,
+      price: 10, // we will display as a monthly price but charge yearly
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_SOLO_YEARLY_PRICE_ID
     },
     trialDays: 7,
@@ -13,8 +13,7 @@ export const pricing = {
     syncQuota: 1,
     deployQuota: 1,
     deployCallsQuota: 10_000,
-    deployReqSQuota: 5,
-    discount: '🏷️ 2 months free'
+    deployReqSQuota: 5
   },
   TEAM: {
     MONTHLY: {
@@ -22,7 +21,7 @@ export const pricing = {
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_TEAM_MONTHLY_PRICE_ID
     },
     YEARLY: {
-      price: 290,
+      price: 24, // we will display as a monthly price but charge yearly
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_TEAM_YEARLY_PRICE_ID
     },
     trialDays: 7,
@@ -31,27 +30,7 @@ export const pricing = {
     deployQuota: 3,
     deployCallsQuota: 100_000,
     deployReqSQuota: 10,
-    discount: '🏷️ 2 months free',
-    minSeats: 1,
-    maxSeats: 10
-  },
-  ENTERPRISE: {
-    MONTHLY: {
-      price: 50,
-      priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_ENTERPRISE_MONTHLY_PRICE_ID
-    },
-    YEARLY: {
-      price: 600,
-      priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_ENTERPRISE_YEARLY_PRICE_ID
-    },
-    trialDays: 7,
-    templatesQuota: 500,
-    syncQuota: 20,
-    deployQuota: 5,
-    deployCallsQuota: 250_000,
-    deployReqSQuota: 20,
-    discount: null,
-    minSeats: 1,
+    minSeats: 2,
     maxSeats: 99
   }
 };

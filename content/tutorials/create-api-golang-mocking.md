@@ -8,7 +8,7 @@ image: tutorial-golang-api-mocking.png
 imageAlt: Golang logo side by side with Mockoon
 imageWidth: 1200
 imageHeight: 400
-order: 240
+date: '2022-08-11'
 ---
 
 In this tutorial, you will learn how to create a basic REST API using the [Go](https://go.dev/) language and its HTTP web framework, [Gin](https://gin-gonic.com/). Golang is an open-source language supported by Google. Its simplicity and versatility make it very popular. As in any other language, you can create any application, like REST APIs.

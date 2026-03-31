@@ -78,6 +78,7 @@ export default function Tutorial(props: {
         path='tutorials'
         articleBody={props.articleBody}
         articleData={props.articleData}
+        displayDate={false}
       />
       <div className='container'>
         <section className='row pt-3 pb-8'>

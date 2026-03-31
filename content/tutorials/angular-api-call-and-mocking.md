@@ -8,7 +8,7 @@ image: tutorial-angular-api-call.png
 imageAlt: Mockoon and Angular logos side by side
 imageWidth: 1200
 imageHeight: 400
-order: 91
+date: '2020-10-05'
 ---
 
 In this guide, we will learn how to call a REST API from an Angular application. If you already have an existing API that you want to use, you can skip the first step, in which we create a fake REST API using Mockoon.

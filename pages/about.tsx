@@ -48,7 +48,7 @@ const About: FunctionComponent<{
     <Layout footerBanner='download'>
       <Meta
         title="About Mockoon's team"
-        description='Mockoon is the fastest and easiest way to create mock API servers. It is a free and open-source project built by a team of passionate developers.'
+        description='Mockoon is the fastest and easiest way to create API sandboxes and mock API servers. It is a free and open-source project built by a team of passionate developers.'
       />
 
       <Hero
@@ -61,13 +61,14 @@ const About: FunctionComponent<{
           <div className='col-lg-10 col-12'>
             <h2>Who are we?</h2>
             <p>
-              Mockoon is a <strong>free and open-source</strong> API mocking
+              Mockoon is a <strong>free and open-source</strong> API sandboxing
               tool created in 2017 by{' '}
               <Link href={'https://github.com/255kb'}>Guillaume</Link>, a
               developer passionate about APIs and building great tools for other
               developers. Since day one, the goal has been clear: make API
-              mocking <strong>simple</strong>, <strong>fast</strong>, and{' '}
-              <strong>accessible</strong> to everyone. Mockoon is a{' '}
+              sandboxing and virtualization <strong>simple</strong>,{' '}
+              <strong>fast</strong>, and <strong>accessible</strong> to
+              everyone. Mockoon is a{' '}
               <strong>free and open-source API tool</strong> created by in 2017.
             </p>
           </div>

@@ -55,6 +55,19 @@ const features: CardData[] = [
     ]
   },
   {
+    title: 'CLI Cloud self-deploy',
+    topTag: 'Cloud',
+    topTagClasses: 'text-bg-warning',
+    description:
+      'Self-host your Mockoon Cloud environments on your own infrastructure with the CLI.',
+    links: [
+      {
+        src: '/cloud/docs/api-mock-cloud-deployments/#self-host-with-the-cli',
+        text: 'Documentation →'
+      }
+    ]
+  },
+  {
     title: 'Route regex',
     description:
       'Route regex supported (/.*, /[a-z]{3}, ...), based on ExpressJS syntax'
@@ -268,23 +281,47 @@ const features: CardData[] = [
   }
 ];
 
+const nonCloudFeatures = features.filter(
+  (feature) => feature.topTag !== 'Cloud'
+);
+const cloudFeatures = features.filter((feature) => feature.topTag === 'Cloud');
+
 const Features: FunctionComponent = function () {
   return (
     <Layout footerBanner='download'>
       <Meta
         title='Mockoon complete list of features'
-        description='List of all features offered by Mockoon, the mock API creation tool compatible with Windows, Mac and Linux.'
+        description='List of all features offered by Mockoon, the API sandboxing and mock API creation tool compatible with Windows, Mac and Linux.'
         ogType='article'
       />
       <Hero
         title='Why Mockoon?'
-        subtitle='Mockoon offers tons of features that makes API mocking a breeze.'
+        subtitle='Mockoon offers tons of features that make API sandboxing and virtualization a breeze.'
       />
 
       <section className='py-5 py-lg-10'>
         <div className='container'>
           <div className='row'>
-            {features.map((feature) => {
+            <div className='col-12'>
+              <h2>Cloud features</h2>
+            </div>
+            {cloudFeatures.map((feature) => {
+              return (
+                <div
+                  key={feature.title}
+                  className='mx-auto my-4 col-12 col-lg-4 d-flex'
+                >
+                  <Card data={feature} cover={false} border />
+                </div>
+              );
+            })}
+          </div>
+
+          <div className='row mt-5 mt-lg-8'>
+            <div className='col-12'>
+              <h2>Open source features</h2>
+            </div>
+            {nonCloudFeatures.map((feature) => {
               return (
                 <div
                   key={feature.title}

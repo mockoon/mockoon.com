@@ -188,11 +188,6 @@ const faq: AccordionData = [
     title: 'Privacy',
     items: [
       {
-        title: 'Do you use my data or content for AI training?',
-        content:
-          'No. We do not use your mock API data or content for AI training.'
-      },
-      {
         title: 'Where are my data stored?',
         content: (
           <>
@@ -236,8 +231,19 @@ const faq: AccordionData = [
                 Learn more about Mockoon's data storage
               </Link>
             </p>
+            <p className='text-gray-700'>
+              When using our <Link href={'/cloud/'}>Cloud services</Link>, your
+              data is stored in our secure cloud infrastructure. None of your
+              data is shared with third parties nor used for any purpose other
+              than providing the service.
+            </p>
           </>
         )
+      },
+      {
+        title: 'Do you use my data or content for AI training?',
+        content:
+          "No. We do not use your mock API data or content for AI training and won't ever use it for that purpose. We have a strict privacy policy and we are committed to protecting your data and content. When using our Cloud AI features, only your prompts and the generated content will be kept for a limited time in case an issue occurs and we need to investigate."
       },
       {
         title: 'Is the application collecting usage data?',
@@ -255,13 +261,12 @@ const faq: AccordionData = [
               collected.
             </p>
             <p className='text-gray-700'>
-              When using our Cloud services, your data is stored in our secure
-              cloud infrastructure. None of your data is shared with third
-              parties nor used for any purpose other than providing the service.
-            </p>
-            <p className='text-gray-700'>
               No data or telemetry is collected when self-hosting using the{' '}
-              <a href='/cli/'>CLI</a>.
+              <a href='/cli/'>CLI</a> or{' '}
+              <a href='https://hub.docker.com/r/mockoon/cli' rel='noopener'>
+                Docker image
+              </a>
+              .
             </p>
           </>
         )

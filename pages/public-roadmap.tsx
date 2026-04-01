@@ -44,6 +44,16 @@ const tasks: {
 } = {
   released: [
     {
+      link: '/releases/9.6.0#openapi-re-import',
+      title: 'OpenAPI specification re-import',
+      cloud: false
+    },
+    {
+      link: '/releases/9.6.0#goodbye-server-restarts',
+      title: 'Enable mocks live update',
+      cloud: false
+    },
+    {
       link: '/docs/latest/callbacks/overview/#configure-a-callback',
       title: 'Support callbacks relative paths',
       cloud: false
@@ -108,30 +118,12 @@ const tasks: {
       title: 'JMESPath support',
       cloud: false,
       target: null
-    },
-    {
-      link: null,
-      title: 'Enable 2FA for Mockoon Cloud accounts',
-      cloud: true,
-      target: null
-    },
-    {
-      link: '/cloud/docs/web-application/',
-      title: 'Mockoon Cloud Web app',
-      cloud: true,
-      target: null
     }
   ],
   inProgress: [
     {
-      link: 'https://github.com/mockoon/mockoon/issues/765',
-      title: 'OpenAPI specification re-import',
-      cloud: false,
-      target: '_blank'
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/2078',
-      title: 'Enable mocks live update',
+      link: 'https://github.com/mockoon/mockoon/issues/2150',
+      title: 'CLI MCP',
       cloud: false,
       target: '_blank'
     },

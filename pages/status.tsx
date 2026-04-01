@@ -16,9 +16,9 @@ const incidents: {
   {
     title: 'All services - Scheduled downtime',
     desc: 'All services will be restarted for the deployment of v9.6.0. The downtime is expected to last less than 15 minutes for each service. We apologize for the inconvenience.',
-    dateStart: '2026-04-01T06:30:00Z',
-    dateEnd: '2026-04-01T07:30:00Z',
-    status: 'planned'
+    dateStart: '2026-04-01T07:30:00Z',
+    dateEnd: '2026-04-01T08:30:00Z',
+    status: 'inprogress'
   },
   {
     title: 'All services - Scheduled downtime',

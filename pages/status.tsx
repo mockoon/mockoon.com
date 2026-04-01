@@ -15,10 +15,10 @@ const incidents: {
 }[] = [
   {
     title: 'Deployment instances - post v9.6.0 fix',
-    desc: 'All deployments instances are being restarted to apply a fix related to the v9.6.0 release. The downtime is expected to last less than 5 minutes for each instance.',
+    desc: 'All deployments instances are being restarted to apply a fix related to the v9.6.0 release. No downtime is expected.',
     dateStart: '2026-04-01T08:42:00Z',
-    dateEnd: '2026-04-01T08:50:00Z',
-    status: 'inprogress'
+    dateEnd: '2026-04-01T08:45:00Z',
+    status: 'resolved'
   },
   {
     title: 'All services - Scheduled downtime',

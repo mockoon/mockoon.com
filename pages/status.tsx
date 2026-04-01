@@ -14,6 +14,13 @@ const incidents: {
   status: 'planned' | 'inprogress' | 'resolved';
 }[] = [
   {
+    title: 'Deployment instances - post v9.6.0 fix',
+    desc: 'All deployments instances are being restarted to apply a fix related to the v9.6.0 release. The downtime is expected to last less than 5 minutes for each instance.',
+    dateStart: '2026-04-01T08:42:00Z',
+    dateEnd: '2026-04-01T08:50:00Z',
+    status: 'inprogress'
+  },
+  {
     title: 'All services - Scheduled downtime',
     desc: 'All services will be restarted for the deployment of v9.6.0. The downtime is expected to last less than 15 minutes for each service.<br>Update (07:45 UTC): Update of the sync server has started.<br>Update (07:48 UTC): Update of the sync server is finished.<br>Update (08:05 UTC): Update of the eu-1 instance has started.<br>Update (08:07 UTC): Update of the eu-1 instance is finished.<br>Update (08:11 UTC): Update of the us-1 instance has started.<br>Update (08:13 UTC): Update of the us-1 instance is finished.<br>Update (08:18 UTC): Update of the us-2 instance has started.<br>Update (08:21 UTC): Update of the us-2 instance is finished.<br>All services have been successfully updated to v9.6.0. We apologize for any inconvenience caused during this deployment.',
     dateStart: '2026-04-01T07:30:00Z',

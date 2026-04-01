@@ -58,6 +58,8 @@ Data buckets are generated when the **server starts** in the order they are defi
 
 If a data bucket contains [request helpers](docs:templating/mockoon-request-helpers), Mockoon will generate the bucket content only **after the first call** made to a route using this data bucket (by referencing it directly or using a data helper). It allows you to create bucket "configuration" routes that you can call programmatically with the content you want to reuse in your bucket using the request helpers (`body`, `queryParams`, etc.).
 
+> 💡 Data buckets can be added, modified or deleted when the server is running. They will be (re)generated immediately and their content will be available for the next incoming request. However, if a data bucket contained references to other buckets, you need to restart the server for the changes to take effect.
+
 ## Resetting data buckets
 
 To regenerate a data bucket's content, you can restart the mock server or you can also use the [admin API state purge endpoint](docs:admin-api/server-state) or specific [data buckets endpoint](docs:admin-api/data-buckets).

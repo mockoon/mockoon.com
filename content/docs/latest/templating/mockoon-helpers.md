@@ -38,15 +38,16 @@ In addition to Handlebars' built-in helpers (`if`, `each`, etc., for more inform
 | [`ceil`](#ceil)         | [`toFixed`](#tofixed) |
 | [`floor`](#floor)       | [`round`](#round)     |
 
-| Strings                   |                         | Dates                             | Misc                            |
-| ------------------------- | ----------------------- | --------------------------------- | ------------------------------- |
-| [`includes`](#includes)   | [`concat`](#concat)     | [`now`](#now)                     | [`newline`](#newline)           |
-| [`substr`](#substr)       | [`indexOf`](#indexof)   | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)             |
-| [`lowercase`](#lowercase) | [`parseInt`](#parseint) | [`date`](#date)                   | [`base64Decode`](#base64decode) |
-| [`uppercase`](#uppercase) | [`padStart`](#padstart) | [`time`](#time)                   | [`objectId`](#objectid)         |
-| [`split`](#split)         | [`padEnd`](#padend)     | [`dateFormat`](#dateformat)       |                                 |
-| [`stringify`](#stringify) | [`eq`](#eq)             | [`isValidDate`](#isvaliddate)     |                                 |
-| [`jsonParse`](#jsonparse) |                         |                                   |                                 |
+| Strings                     |                           | Dates                             | Misc                                  |
+| --------------------------- | ------------------------- | --------------------------------- | ------------------------------------- |
+| [`includes`](#includes)     | [`jsonParse`](#jsonparse) | [`now`](#now)                     | [`newline`](#newline)                 |
+| [`substr`](#substr)         | [`concat`](#concat)       | [`dateTimeShift`](#datetimeshift) | [`base64`](#base64)                   |
+| [`replace`](#replace)       | [`indexOf`](#indexof)     | [`date`](#date)                   | [`base64Decode`](#base64decode)       |
+| [`replaceAll`](#replaceall) | [`parseInt`](#parseint)   | [`time`](#time)                   | [`base64url`](#base64url)             |
+| [`lowercase`](#lowercase)   | [`padStart`](#padstart)   | [`dateFormat`](#dateformat)       | [`base64urlDecode`](#base64urldecode) |
+| [`uppercase`](#uppercase)   | [`padEnd`](#padend)       | [`isValidDate`](#isvaliddate)     | [`objectId`](#objectid)               |
+| [`split`](#split)           | [`eq`](#eq)               |                                   |                                       |
+| [`stringify`](#stringify)   |                           |                                   |                                       |
 
 | [Faker.js](docs:templating/fakerjs-helpers) aliases |                               |                          |
 | --------------------------------------------------- | ----------------------------- | ------------------------ |
@@ -223,7 +224,9 @@ Create an array from the given items. This helper is mostly used with the follow
 
 ## oneOf
 
-Select a random item in the array passed in parameters. `oneOf` will return the actual value in the array. Set the `stringify` parameter to `true` (default to `false`) to get a JSON stringified result.
+Select a random item in the first parameter array or in the parameters list if the first parameter is not an array. `oneOf` will return the actual value in the array. Set the `stringify` parameter to `true` (default to `false`) to get a JSON stringified result.
+
+Parameters can be passed in two ways. An **array** can be passed as the **first parameter**:
 
 | Arguments (ordered) | Type    | Description          |
 | ------------------- | ------- | -------------------- |
@@ -234,7 +237,25 @@ Select a random item in the array passed in parameters. `oneOf` will return the 
 
 ```handlebars
 {{oneOf (array 'item1' 'item2' 'item3')}}
-result: item2
+{{oneOf (array 'item1' 'item2' 'item3') true}}
+{{oneOf (array 1 2 3) true}}
+{{oneOf (array (object key='value1') (bodyRaw 'prop1')) true}}
+```
+
+Or, **parameters** can be passed as a **list** of values:
+
+| Arguments (ordered) | Type | Description    |
+| ------------------- | ---- | -------------- |
+| 0..n                | any  | List of values |
+
+In this case, the stringify option is not available, and the helper will return one of the provided items as is. Use the [`stringify` helper](#stringify) if you want to get a JSON stringified result.
+
+**Examples**
+
+```handlebars
+{{oneOf 'item1' 'item2' 'item3'}}
+{{oneOf 1 2 3}}
+{{oneOf (object key='value1') (bodyRaw 'prop1')}}
 ```
 
 ## someOf
@@ -941,6 +962,49 @@ Decode a base64 string. This can be used as an inline helper or block helper (se
 
 > 🛠️ Use our online [base64 encoder/decoder](/tools/base64-encode-decode/) to get a preview of the encoded content and validate a base64 string.
 
+## base64url
+
+Encode the parameter as base64url. This can be used as an inline helper or block helper (see examples below).
+
+| Arguments (ordered) | Type | Description                                            |
+| ------------------- | ---- | ------------------------------------------------------ |
+| [0]                 | any  | Value to encode (optional when used as a block helper) |
+
+**Examples**
+
+```handlebars
+{{base64url 'test'}}
+
+{{#base64url}}
+  firstname,lastname,countryCode
+  {{#repeat 10}}
+    {{faker 'person.firstName'}},{{faker 'person.lastName'}},{{faker 'address.countryCode'}}
+  {{/repeat}}
+{{/base64url}}
+```
+
+> 🛠️ Use our online [base64url encoder/decoder](/tools/base64-encode-decode/) to get a preview of the encoded content and validate a base64 string.
+
+## base64urlDecode
+
+Decode a base64url string. This can be used as an inline helper or block helper (see examples below).
+
+| Arguments (ordered) | Type   | Description                                                       |
+| ------------------- | ------ | ----------------------------------------------------------------- |
+| [0]                 | string | Base64url string to decode (optional when used as a block helper) |
+
+**Examples**
+
+```handlebars
+{{base64urlDecode 'YWJjZA'}}
+
+{{#base64urlDecode}}
+  {{body 'base64urlcontent'}}
+{{/base64urlDecode}}
+```
+
+> 🛠️ Use our online [base64url encoder/decoder](/tools/base64-encode-decode/) to get a preview of the encoded content and validate a base64 string.
+
 ## objectId
 
 Create a valid ObjectId. It can generates the ObjectId based on the specified time (in seconds) or from a 12 byte string that will act as a seed. Syntax is based on [bson-objectid package](https://www.npmjs.com/package/bson-objectid).
@@ -988,6 +1052,46 @@ Return a portion of a string starting at the specified index and extending for a
 {{substr 'Some data' 5 4}}
 
 result: 'data'
+```
+
+## replace
+
+Replace the first occurrence of a string with another string.
+
+| Arguments (ordered) | Type   | Description        |
+| ------------------- | ------ | ------------------ |
+| 0                   | string | Input string       |
+| 1                   | string | String to search   |
+| 2                   | string | Replacement string |
+
+Returns an empty string if fewer than three arguments are provided, or if one of the arguments is not a string. If the search string is empty, the original input is returned.
+
+**Examples**
+
+```handlebars
+{{replace 'hello world world' 'world' 'Mockoon'}}
+
+result: hello Mockoon world
+```
+
+## replaceAll
+
+Replace all occurrences of a string with another string.
+
+| Arguments (ordered) | Type   | Description        |
+| ------------------- | ------ | ------------------ |
+| 0                   | string | Input string       |
+| 1                   | string | String to search   |
+| 2                   | string | Replacement string |
+
+Returns an empty string if fewer than three arguments are provided, or if one of the arguments is not a string. If the search string is empty, the original input is returned.
+
+**Examples**
+
+```handlebars
+{{replaceAll 'hello world world' 'world' 'Mockoon'}}
+
+result: hello Mockoon Mockoon
 ```
 
 ## lowercase

@@ -35,7 +35,7 @@ The events are sent in the JSON format:
 data: {"event":"{EVENT_NAME}","{DATA_PROPERTY}":...}
 ```
 
-The event names and poperties are following the same structure as the [MockoonServer events](https://github.com/mockoon/mockoon/blob/main/packages/commons/src/models/events.model.ts). Currently, the following events are sent:
+The event names and properties are following the same structure as the [MockoonServer events](https://github.com/mockoon/mockoon/blob/main/packages/commons/src/models/events.model.ts). Currently, the following events are sent:
 
 - `transaction-complete`: sent when a transaction is completed. Contains the transaction data in a `transaction` property.
 - `data-bucket-processed`: sent when the data buckets are processed when launching the server. Contains the data buckets statuses in a `dataBuckets` property.

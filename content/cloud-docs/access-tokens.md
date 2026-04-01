@@ -22,7 +22,7 @@ Currently, the following features support access tokens:
 
 You can **create and revoke your access tokens** from the [access tokens](/account/access-tokens/) page in your Mockoon Cloud account settings.
 
-![access tokens management interface](cloud-docs-img:create-manage-access-tokens-tokens.png)
+![access tokens management interface{1414x597}](cloud-docs-img:create-manage-access-tokens-tokens.png)
 
 The following parameters are customizable when creating a new access token:
 

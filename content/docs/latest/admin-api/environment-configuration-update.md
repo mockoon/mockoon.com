@@ -14,7 +14,7 @@ order: 806
 
 This endpoint allows you to **partially update** the environment definition, such as updating the responses or adding headers without restarting the mock server or the application.
 
-> ⚠️ **Note:** several configuration options cannot be updated during runtime (see below).
+> ⚠️ **Note:** some server configuration options cannot be updated during runtime (see below).
 
 ## Update the environment configuration
 
@@ -52,18 +52,6 @@ Content-Type: application/json
 }
 ```
 
-⚠️ This endpoint only allows you to **partially update** the environment configuration without restarting the mock.
+Since version 9.6.0, most of the environment configuration can be updated during runtime, without restarting the mock server. The updated endpoints, WebSocket servers and proxy options will be applied immediately, and the new routes will be available for incoming requests.
 
-What will be updated:
-
-- Some environment properties (headers, proxy headers, latency, etc.).
-- Some route properties (response mode).
-- Adding and removing callbacks.
-- Route responses (headers, latency, status code, callbacks calls, rules, etc.).
-
-What cannot be updated:
-
-- Route paths and methods.
-- Adding or removing routes.
-- Environment port, hostname, proxy and TLS options.
-- Adding or removing data buckets.
+However, the **server port, hostname and TLS options** cannot be updated during runtime and require a server restart to take effect.

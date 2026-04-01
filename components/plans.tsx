@@ -955,8 +955,8 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>API mock max size</td>
-                            <td className='text-center'>5MB</td>
                             <td className='text-center'>10MB</td>
+                            <td className='text-center'>30MB</td>
                             <td className='text-center'>Custom</td>
                           </tr>
                           <tr>

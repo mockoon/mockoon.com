@@ -18,7 +18,7 @@ glob('./content/**/*.md').then((files) => {
     console.log('\n', filePath);
     let fileContent = readFileSync(filePath).toString();
     const regex =
-      /\!(\[.*\])\(((?:\/images|docs\-img\:)[0-9A-Za-z\_\-\.\/]{0,})\)/g;
+      /\!(\[.*\])\(((?:\/images|docs\-img\:|cloud\-docs\-img\:)[0-9A-Za-z\_\-\.\/]{0,})\)/g;
     let matches = fileContent.matchAll(regex);
 
     for (const match of matches) {
@@ -31,10 +31,11 @@ glob('./content/**/*.md').then((files) => {
           `./public/images/${filePath
             .replace('./content/', '')
             .replace('content/', '')
+            .replace('cloud-docs', 'docs/cloud')
             .replace(
               '.md',
               ''
-            )}/${match[2].replace('docs-img:', '').replace('cloud-docs-img:', '')}`
+            )}/${match[2].replace('cloud-docs-img:', '').replace('docs-img:', '')}`
         );
 
         size = imageSize(buffer);

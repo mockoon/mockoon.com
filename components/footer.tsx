@@ -405,19 +405,6 @@ const Footer: FunctionComponent<{
                   ></i>
                 </a>
               </li>
-              <li className='list-inline-item list-social-item'>
-                <a
-                  href='https://www.reddit.com/r/mockoon/'
-                  target='_blank'
-                  rel='noopener'
-                  className='text-decoration-none text-reset'
-                >
-                  <i
-                    className='icon-reddit list-social-item'
-                    aria-hidden='true'
-                  ></i>
-                </a>
-              </li>
             </ul>
           </div>
         </div>

@@ -14,6 +14,13 @@ const incidents: {
   status: 'planned' | 'inprogress' | 'resolved';
 }[] = [
   {
+    title: 'Deployment - All instances - Routine update',
+    desc: 'We are deploying a routine update to all our deploy instances. During this time, affected instances may be temporarily unavailable. The update is expected to last less than 5 minutes per instance. We apologize for the inconvenience.',
+    dateStart: '2026-04-14T20:07:00Z',
+    dateEnd: '2026-04-14T20:40:00Z',
+    status: 'inprogress'
+  },
+  {
     title: 'Deployment instances - post v9.6.0 fix',
     desc: 'All deployments instances are being restarted to apply a fix related to the v9.6.0 release. No downtime is expected.',
     dateStart: '2026-04-01T08:42:00Z',

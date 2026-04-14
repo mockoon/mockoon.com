@@ -17,8 +17,8 @@ const incidents: {
     title: 'Deployment - All instances - Routine update',
     desc: 'We are deploying a routine update to all our deploy instances. During this time, affected instances may be temporarily unavailable. The update is expected to last less than 5 minutes per instance. We apologize for the inconvenience.',
     dateStart: '2026-04-14T20:07:00Z',
-    dateEnd: '2026-04-14T20:40:00Z',
-    status: 'inprogress'
+    dateEnd: '2026-04-14T20:35:00Z',
+    status: 'resolved'
   },
   {
     title: 'Deployment instances - post v9.6.0 fix',

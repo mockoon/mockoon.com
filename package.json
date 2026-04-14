@@ -61,7 +61,7 @@
     "jsonpath-plus": "10.4.0",
     "leaflet": "1.9.4",
     "marked": "17.0.4",
-    "next": "16.1.7",
+    "next": "16.2.3",
     "object-path": "0.11.8",
     "qrcode.react": "4.2.0",
     "raw-loader": "4.0.2",

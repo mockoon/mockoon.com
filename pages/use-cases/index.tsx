@@ -70,12 +70,12 @@ export default function () {
     <Layout footerBanner='download'>
       <Meta
         title='API sandboxing and virtualization use cases'
-        description='Discover how API sandboxing, virtualization, and mocking with Mockoon can accelerate and streamline your application development, integration, testing, and demos'
+        description='Discover how API sandboxing, virtualization, and mocking can accelerate your application development, integration, testing, and demos'
         ogType='article'
       />
       <Hero
         title='API sandboxing and <span class="text-primary">virtualization</span> use cases'
-        subtitle='Discover how API sandboxing, virtualization, and mocking with Mockoon can accelerate and streamline your application development, integration, testing, and demos'
+        subtitle='Discover how API sandboxing, virtualization, and mocking can accelerate your application development, integration, testing, and demos'
       />
 
       <section className='py-6 py-md-8 border-top bg-gradient-light-white'>

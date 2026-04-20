@@ -89,7 +89,7 @@ function HomePage({ posts }) {
 
 ## Use Next.js's environment variables
 
-To avoid modifying the server URL directly in the Next.js page's code, you can put this URL in Next.js's [environment variables](https://nextjs.org/docs/pages/building-your-application/configuring/environment-variables).
+To avoid modifying the server URL directly in the Next.js page's code, you can put this URL in Next.js's [environment variables](https://nextjs.org/docs/pages/guides/environment-variables).
 To do so, create an environment variable in your `.env.local` or `.env.development` file:
 
 ```text

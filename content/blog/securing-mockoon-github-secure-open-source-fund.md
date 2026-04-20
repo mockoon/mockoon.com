@@ -22,7 +22,7 @@ This is a huge milestone for us, and a recognition of Mockoon's importance in th
 
 [Read GitHub's announcement](https://github.blog/open-source/maintainers/securing-the-ai-software-supply-chain-security-results-across-67-open-source-projects/).
 
-![](/images/blog/securing-mockoon-github-secure-open-source-fund/github-secure-open-source-fund.webp)
+![github secure open source fund banner](/images/blog/securing-mockoon-github-secure-open-source-fund/github-secure-open-source-fund.webp)
 
 ## What is the GitHub Secure Open Source Fund?
 

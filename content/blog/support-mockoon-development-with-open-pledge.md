@@ -25,7 +25,7 @@ But **passion projects need to become sustainable projects** if they're going to
 
 ## Why OpenPledge?
 
-**OpenPledge represents something unique**. Instead of generic donations, supporters can [**pledge on specific issues**](https://openpledge.io/) that matter to their business. This creates a direct connection between user needs and development priorities, with full transparency on where money goes.
+**OpenPledge represents something unique**. Instead of generic donations, supporters can [**pledge on specific issues**](https://www.openpledge.io/) that matter to their business. This creates a direct connection between user needs and development priorities, with full transparency on where money goes.
 
 It also makes it easier for companies to **justify supporting open-source projects** like Mockoon, as they can see the direct impact of their contributions.
 

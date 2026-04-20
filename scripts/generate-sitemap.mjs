@@ -237,7 +237,8 @@ Promise.all([
   generateSitemap(
     'content/cloud-docs/**/*.md',
     'cloud-docs',
-    '^(content|pages)'
+    '^(content|pages)',
+    ['/cloud']
   ),
   generateSitemap('content/releases/*.md', 'releases', '^(content|pages)'),
   generateMockSamplesCategoriesSitemap(),

@@ -23,7 +23,7 @@ Today, we are talking with **Lukas Spiss**, who shares his enthusiasm for contri
 
 ### Can you introduce yourself and your background in software development, your passions or hobbies?
 
-Heya, I’m Lukas ([@spissable](https://github.com/spissable)), a German-speaking Italian living in Portugal. I earn my bread and butter as a backend engineer at [OneFootball](https://onefootball.com/), which, luckily is also one of my biggest passions. Aside from that, I love the beach, football (Juventus FC), music, and a good home-cooked meal.
+Heya, I’m Lukas ([@spissable](https://github.com/spissable)), a German-speaking Italian living in Portugal. I earn my bread and butter as a backend engineer at [OneFootball](https://onefootball.com/en/home), which, luckily is also one of my biggest passions. Aside from that, I love the beach, football (Juventus FC), music, and a good home-cooked meal.
 
 > {"type": "##quotation##", "citation": "When I contribute, it’s important for me to be committed to it and to push it all the way through, e.g. by being responsive if there is feedback.", "author": "Lukas Spiss", "authorRole": "Contributor & Back-end Engineer @ OneFootball", "pictureUrl": "contributors/lukas-spiss.jpg"}
 

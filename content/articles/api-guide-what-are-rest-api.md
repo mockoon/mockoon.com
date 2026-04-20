@@ -64,7 +64,7 @@ An **API request** contains the following components:
 - **\[headers\]**
 - **\[a payload or body\]**
 
-An [HTTP API request or message](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages) is formatted like this:
+An [HTTP API request or message](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Messages) is formatted like this:
 
 ```http
 POST /api/v2/users HTTP/1.1

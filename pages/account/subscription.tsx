@@ -425,14 +425,15 @@ const AccountSubscription: FunctionComponent = function () {
                                   subscriptionData.status !== 'past_due' &&
                                   subscriptionData?.provider !== 'free' &&
                                   subscriptionData?.provider !== 'manual' &&
-                                  teamData?.seats < pricing.TEAM.maxSeats ? (
+                                  teamData?.seats <
+                                    pricing.TEAM.includedSeats ? (
                                   <div>
                                     <button
                                       className='btn btn-xs btn-primary'
                                       onClick={() => {
                                         const newSeats =
                                           teamData?.plan === 'SOLO'
-                                            ? pricing.TEAM.minSeats
+                                            ? 2
                                             : teamData?.seats + 1;
                                         setUpgradeInProgress(true);
 
@@ -497,7 +498,7 @@ const AccountSubscription: FunctionComponent = function () {
                                         value={seats}
                                         disabled={isPending}
                                         min={minSeats}
-                                        max={pricing.TEAM.maxSeats}
+                                        max={99}
                                         step={1}
                                         onChange={(event) => {
                                           let newSeats = parseInt(
@@ -510,10 +511,8 @@ const AccountSubscription: FunctionComponent = function () {
                                             newSeats < minSeats
                                           ) {
                                             newSeats = minSeats;
-                                          } else if (
-                                            newSeats > pricing.TEAM.maxSeats
-                                          ) {
-                                            newSeats = pricing.TEAM.maxSeats;
+                                          } else if (newSeats > 99) {
+                                            newSeats = 99;
                                           }
 
                                           setSeats(newSeats);

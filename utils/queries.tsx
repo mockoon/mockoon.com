@@ -230,11 +230,7 @@ const useCurrentSubscription = (user: User) => {
 const useTrialOnboardingEligibility = () => {
   const { getIdToken } = useAuth();
 
-  const trialOnboardingMutation = useMutation<
-    boolean,
-    Error,
-    { seats: number; plan: Plans }
-  >({
+  const trialOnboardingMutation = useMutation<boolean, Error, { plan: Plans }>({
     mutationFn: async (payload): Promise<boolean> => {
       const token = await getIdToken();
 
@@ -262,7 +258,7 @@ const useTrialOnboardingEligibility = () => {
     }
   });
 
-  const refetch = async (payload: { seats: number; plan: Plans }) => {
+  const refetch = async (payload: { plan: Plans }) => {
     return {
       data: await trialOnboardingMutation.mutateAsync(payload)
     };

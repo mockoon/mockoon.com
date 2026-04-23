@@ -1,11 +1,10 @@
-import { Plans } from '@mockoon/cloud';
+import { Frequency, Plans } from '@mockoon/cloud';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import 'leaflet/dist/leaflet.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
-import { frequencyNames } from '../constants/plans';
 import { pricing } from '../data/pricing';
 import { AccordionData } from '../models/common.model';
 import { useAuth } from '../utils/auth';
@@ -62,7 +61,7 @@ const cloudFaq: AccordionData = [
     items: [
       {
         title: 'Do you offer a free trial?',
-        content: `We offer a ${pricing.SOLO.trialDays}-day free trial for all plans. You can cancel your subscription at any time during the trial period and you will not be charged. Please note that the free trial is available once per user and requires a valid payment method.`
+        content: `Yes, we offer a 14-day free trial without a credit card requirement for users with a valid work email. <br/>A 7-day free trial with a credit card requirement is also available for other users. In this case, you can cancel at any time during the trial period to avoid being charged.`
       },
       {
         title:
@@ -71,9 +70,9 @@ const cloudFaq: AccordionData = [
           'We can provide you with a trial without a payment method. Do not hesitate to <a href="/contact-form/">contact us</a> to discuss your needs.'
       },
       {
-        title: 'How does per-seat billing work?',
+        title: 'How many users can I have?',
         content:
-          'For Team and Enterprise plans, you can choose the number of seats you need. Each seat is billed monthly. You can <a href="/contact-form/">contact us</a> to add or remove seats at any time.'
+          'The Team plan includes 5 seats. You can <a href="/contact-form/">contact us</a> to add or remove seats at any time.'
       },
       {
         title: 'I received emails from Paddle.com, what is it?',
@@ -135,8 +134,8 @@ const cloudFaq: AccordionData = [
 ];
 
 const suffixes = {
-  SOLO: { MONTHLY: '/month', YEARLY: '/month<br/>billed annually' },
-  TEAM: { MONTHLY: '/user/month', YEARLY: '/user/month<br/>billed annually' }
+  SOLO: { MONTHLY: '/month', YEARLY: '/month (Tax excl.)<br/>billed annually' },
+  TEAM: { MONTHLY: '/month', YEARLY: '/month (Tax excl.)<br/>billed annually' }
 };
 
 const PlansView: FunctionComponent<{
@@ -147,8 +146,6 @@ const PlansView: FunctionComponent<{
   const currentUser = useCurrentUser();
   const router = useRouter();
   const [planFrequency, setPlanFrequency] = useState('YEARLY');
-  const [seats, setSeats] = useState(1);
-  const [configurePlan, setConfigurePlan] = useState<Plans | null>(null);
   const [showTrialOnboardingConfirmation, setShowTrialOnboardingConfirmation] =
     useState(false);
   const discountCode = router.query.discountCode;
@@ -232,7 +229,7 @@ const PlansView: FunctionComponent<{
       items: [
         {
           priceId: pricing[planId][planFrequency].priceId,
-          quantity: planId === 'SOLO' ? 1 : seats
+          quantity: 1
         }
       ],
       customer: {
@@ -248,11 +245,8 @@ const PlansView: FunctionComponent<{
   const checkOnboardingEligibility = async (planId: Plans) => {
     try {
       const eligibilityResult = await trialEligibilityCheck({
-        plan: planId,
-        seats: planId === Plans.TEAM ? seats : 1
+        plan: planId
       });
-
-      setConfigurePlan(null);
 
       if (eligibilityResult.data) {
         setShowTrialOnboardingConfirmation(true);
@@ -277,17 +271,6 @@ const PlansView: FunctionComponent<{
 
     if (auth.isAuth && currentUser.data?.plan !== 'FREE') {
       router.push('/account/subscription/');
-      return;
-    }
-
-    if (planId === 'SOLO') {
-      setConfigurePlan(null);
-      setSeats(1);
-    }
-
-    if (planId === 'TEAM') {
-      setConfigurePlan(planId);
-      setSeats(pricing[planId].minSeats);
       return;
     }
 
@@ -360,80 +343,10 @@ const PlansView: FunctionComponent<{
                   }`}
                   htmlFor='YEARLY'
                 >
-                  Pay annually{' '}
-                  <span className='text-success'>(two months free)</span>
+                  Pay annually
                 </label>
               </div>
             </div>
-
-            <Modal
-              show={configurePlan != null}
-              onHide={() => setConfigurePlan(null)}
-              centered
-              scrollable={false}
-            >
-              <Modal.Header closeButton className='p-4'>
-                <Modal.Title>Team plan configuration</Modal.Title>
-              </Modal.Header>
-              <Modal.Body className='p-4'>
-                <div className='form-group'>
-                  <label htmlFor='planConfigure' className='form-label'>
-                    Number of users for the{' '}
-                    <strong>{frequencyNames[planFrequency]}</strong>{' '}
-                    <span className='text-primary'>Team</span> plan:
-                  </label>
-                  <input
-                    type='number'
-                    id='planConfigure'
-                    className='form-control'
-                    placeholder='Number of seats'
-                    value={seats}
-                    onChange={(event) => {
-                      const newSeats = parseInt(event.target.value);
-
-                      if (
-                        isNaN(newSeats) ||
-                        newSeats < 1 ||
-                        newSeats < pricing[configurePlan].minSeats
-                      ) {
-                        setSeats(pricing[configurePlan].minSeats);
-                        return;
-                      }
-
-                      if (newSeats > pricing[configurePlan].maxSeats) {
-                        setSeats(pricing[configurePlan].maxSeats);
-                        return;
-                      }
-
-                      setSeats(newSeats);
-                    }}
-                  />
-                  <small className='d-block mt-2 text-gray-700'>
-                    Minimum: {pricing[configurePlan]?.minSeats} users
-                  </small>
-                </div>
-              </Modal.Body>
-              <Modal.Footer className='p-4'>
-                <button
-                  className='btn btn-xs btn-secondary'
-                  type='button'
-                  onClick={() => setConfigurePlan(null)}
-                >
-                  Cancel
-                </button>
-                <button
-                  className='btn btn-xs btn-primary'
-                  type='button'
-                  disabled={isCheckingEligibility}
-                  onClick={async () => {
-                    await checkOnboardingEligibility(configurePlan);
-                  }}
-                >
-                  Confirm and proceed to checkout
-                </button>
-                {isCheckingEligibility && <Spinner small />}
-              </Modal.Footer>
-            </Modal>
 
             {/* Trial onboarding confirmation modal */}
             <Modal
@@ -486,10 +399,13 @@ const PlansView: FunctionComponent<{
                         }}
                       ></span>
                     </div>
-                    <p className='h5 text-gray-700 text-center mb-6'>
-                      (Tax excl.)
-                    </p>
-
+                    {planFrequency === Frequency.YEARLY && (
+                      <div className='mx-auto mb-6'>
+                        <span className='badge text-bg-success-subtle rounded-pill'>
+                          Save up to 30% with annual billing
+                        </span>
+                      </div>
+                    )}
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
@@ -501,19 +417,6 @@ const PlansView: FunctionComponent<{
                       </p>
                     </div>
                     <hr />
-
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
-                      </div>
-
-                      <p>
-                        Access to the{' '}
-                        <Link href={'/cloud/docs/web-application/'}>
-                          Web UI
-                        </Link>
-                      </p>
-                    </div>
 
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
@@ -567,6 +470,19 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
+                      <p>
+                        Access to the{' '}
+                        <Link href={'/cloud/docs/web-application/'}>
+                          Web UI
+                        </Link>
+                      </p>
+                    </div>
+
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
+
                       <p>Priority email support</p>
                     </div>
                     <div className='mt-auto'>
@@ -574,7 +490,7 @@ const PlansView: FunctionComponent<{
                       {(!currentUser.data ||
                         currentUser.data?.plan === 'FREE') && (
                         <div className='text-center'>
-                          <div>
+                          <div className='mb-2'>
                             {!isCheckingEligibility && (
                               <button
                                 type='button'
@@ -589,6 +505,12 @@ const PlansView: FunctionComponent<{
                             )}
                             {isCheckingEligibility && <Spinner small />}
                           </div>
+                          <p className='text-gray-700 mb-0'>
+                            <small>
+                              14-day free trial. No credit card required.
+                              <sup>2</sup>
+                            </small>
+                          </p>
                         </div>
                       )}
                       {currentUser.data && currentUser.data.plan !== 'FREE' && (
@@ -626,7 +548,7 @@ const PlansView: FunctionComponent<{
                       <span className='ms-1'>plan</span>
                     </h2>
                     <p className='text-center text-gray-700'>
-                      For teams needing collaboration and more cloud resources
+                      For small teams and companies
                     </p>
                     <div className='d-flex justify-content-center'>
                       <span className='h2 mb-0 mt-2'>$</span>
@@ -640,9 +562,13 @@ const PlansView: FunctionComponent<{
                         }}
                       ></span>
                     </div>
-                    <p className='h5 text-gray-700 text-center mb-6'>
-                      Minimum 2 users (Tax excl.)
-                    </p>
+                    {planFrequency === Frequency.YEARLY && (
+                      <div className='mx-auto mb-6'>
+                        <span className='badge text-bg-success-subtle rounded-pill'>
+                          Save up to 30% with annual billing
+                        </span>
+                      </div>
+                    )}
 
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
@@ -661,12 +587,7 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
-                      <p>
-                        Access to the{' '}
-                        <Link href={'/cloud/docs/web-application/'}>
-                          Web UI
-                        </Link>
-                      </p>
+                      <p>{pricing.TEAM.includedSeats} team members</p>
                     </div>
 
                     <div className='d-flex'>
@@ -733,6 +654,19 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
+                      <p>
+                        Access to the{' '}
+                        <Link href={'/cloud/docs/web-application/'}>
+                          Web UI
+                        </Link>
+                      </p>
+                    </div>
+
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
+
                       <p>Next business day support</p>
                     </div>
                     {false && (
@@ -755,19 +689,27 @@ const PlansView: FunctionComponent<{
                       {(!currentUser.data ||
                         currentUser.data?.plan === 'FREE') && (
                         <div className='text-center'>
-                          {!isCheckingEligibility && (
-                            <button
-                              type='button'
-                              className='btn btn-primary btn-xs'
-                              disabled={isCheckingEligibility}
-                              onClick={async () => {
-                                await startTrial(Plans.TEAM);
-                              }}
-                            >
-                              Start free trial
-                            </button>
-                          )}
-                          {isCheckingEligibility && <Spinner small />}
+                          <div className='mb-2'>
+                            {!isCheckingEligibility && (
+                              <button
+                                type='button'
+                                className='btn btn-primary btn-xs'
+                                disabled={isCheckingEligibility}
+                                onClick={async () => {
+                                  await startTrial(Plans.TEAM);
+                                }}
+                              >
+                                Start free trial
+                              </button>
+                            )}
+                            {isCheckingEligibility && <Spinner small />}
+                          </div>
+                          <p className='text-gray-700 mb-0'>
+                            <small>
+                              14-day free trial. No credit card required.
+                              <sup>2</sup>
+                            </small>
+                          </p>
                         </div>
                       )}
                       {currentUser.data && currentUser.data.plan !== 'FREE' && (
@@ -864,7 +806,7 @@ const PlansView: FunctionComponent<{
                       <p>Custom payment options</p>
                     </div>
                     <div className='text-center mt-auto'>
-                      <div className='btn-group'>
+                      <div className='btn-group mb-2'>
                         <button
                           type='button'
                           className={`btn btn-primary-subtle btn-xs`}
@@ -884,8 +826,10 @@ const PlansView: FunctionComponent<{
                           Request a demo
                         </button>
                       </div>
-                      <p className='mt-2 small text-gray-700 mb-0'>
-                        Request a demo or contact us for a custom quote
+                      <p className='text-gray-700 mb-0'>
+                        <small>
+                          Request a demo or contact us for a custom quote
+                        </small>
                       </p>
                     </div>
                   </div>
@@ -896,12 +840,15 @@ const PlansView: FunctionComponent<{
               Prices are in USD and exclude taxes (e.g. VAT, sales tax, etc.)
               where applicable. By proceeding to payment you agree to our{' '}
               <Link href={'/privacy/'}>privacy policy</Link> and{' '}
-              <Link href={'/terms/'}>terms of service</Link>.<br /> The free
-              trial may require a valid payment method.
+              <Link href={'/terms/'}>terms of service</Link>.
               <br />
               <sup>1</sup> See the{' '}
               <Link href={'/pricing/#faq'}>FAQ of our Cloud plans</Link> for
               more information about API mocks.
+              <br />
+              <sup>2</sup> The 14-day free trial is available for users with a
+              valid work email only. A 7-day trial requiring a credit card will
+              be available for other users.
             </p>
 
             <section className='py-6 py-md-8'>
@@ -953,6 +900,16 @@ const PlansView: FunctionComponent<{
                             >
                               Cloud APIs
                             </td>
+                          </tr>
+                          <tr>
+                            <td>Number of team members</td>
+                            <td className='text-center'>
+                              {pricing.SOLO.includedSeats}
+                            </td>
+                            <td className='text-center'>
+                              {pricing.TEAM.includedSeats}
+                            </td>
+                            <td className='text-center'>Custom</td>
                           </tr>
                           <tr>
                             <td>

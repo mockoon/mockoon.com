@@ -8,6 +8,7 @@ export const pricing = {
       price: 10, // we will display as a monthly price but charge yearly
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_SOLO_YEARLY_PRICE_ID
     },
+    includedSeats: 1,
     trialDays: 7,
     templatesQuota: 100,
     syncQuota: 1,
@@ -17,20 +18,19 @@ export const pricing = {
   },
   TEAM: {
     MONTHLY: {
-      price: 29,
+      price: 145,
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_TEAM_MONTHLY_PRICE_ID
     },
     YEARLY: {
-      price: 24, // we will display as a monthly price but charge yearly
+      price: 100, // we will display as a monthly price but charge yearly
       priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_TEAM_YEARLY_PRICE_ID
     },
+    includedSeats: 5,
     trialDays: 7,
     templatesQuota: 200,
     syncQuota: 3,
     deployQuota: 3,
     deployCallsQuota: 100_000,
-    deployReqSQuota: 10,
-    minSeats: 2,
-    maxSeats: 99
+    deployReqSQuota: 10
   }
 };

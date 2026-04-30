@@ -1,4 +1,11 @@
-import { DeployInstance, Plans, Team, TeamRoles, User } from '@mockoon/cloud';
+import {
+  DeployInstance,
+  Frequency,
+  Plans,
+  Team,
+  TeamRoles,
+  User
+} from '@mockoon/cloud';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 import { EmailingContact, Subscription } from '../models/user.model';
@@ -227,10 +234,14 @@ const useCurrentSubscription = (user: User) => {
   };
 };
 
-const useTrialOnboardingEligibility = () => {
+const useTrialOnboarding = () => {
   const { getIdToken } = useAuth();
 
-  const trialOnboardingMutation = useMutation<boolean, Error, { plan: Plans }>({
+  const trialOnboardingMutation = useMutation<
+    boolean,
+    Error,
+    { plan: Plans; frequency: Frequency }
+  >({
     mutationFn: async (payload): Promise<boolean> => {
       const token = await getIdToken();
 
@@ -250,15 +261,15 @@ const useTrialOnboardingEligibility = () => {
         }
       );
       if (response.ok) {
-        const data: { isEligible: boolean } = await response.json();
-        return data.isEligible;
+        const data: boolean = await response.json();
+        return data;
       }
 
       return false;
     }
   });
 
-  const refetch = async (payload: { plan: Plans }) => {
+  const refetch = async (payload: { plan: Plans; frequency: Frequency }) => {
     return {
       data: await trialOnboardingMutation.mutateAsync(payload)
     };
@@ -273,11 +284,59 @@ const useTrialOnboardingEligibility = () => {
   };
 };
 
+const useTrialOnboardingEligibility = () => {
+  const { getIdToken, isAuth } = useAuth();
+
+  const { isLoading, error, data, isFetching } = useQuery<{
+    self: boolean;
+    trial: boolean;
+  } | null>({
+    queryKey: ['trialOnboardingEligibility'],
+    enabled: isAuth,
+    staleTime: 1000 * 60 * 5,
+    refetchOnMount: false,
+    queryFn: async () => {
+      const token = await getIdToken();
+
+      if (!token) {
+        return null;
+      }
+
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/user/onboarding/trial`,
+        {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      );
+
+      if (response.ok) {
+        const payload: { self: boolean; trial: boolean } =
+          await response.json();
+        return payload;
+      }
+
+      return null;
+    },
+    refetchOnWindowFocus: false
+  });
+
+  return {
+    isLoading,
+    error,
+    data,
+    isFetching
+  };
+};
+
 export {
   useCurrentDeployments,
   useCurrentSubscription,
   useCurrentTeam,
   useCurrentUser,
   useCurrentUserEmailing,
+  useTrialOnboarding,
   useTrialOnboardingEligibility
 };

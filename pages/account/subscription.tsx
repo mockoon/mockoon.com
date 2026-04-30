@@ -25,8 +25,6 @@ const meta = {
   description: 'Manage your Mockoon Cloud subscription'
 };
 
-let seatUpgradeTimeout: NodeJS.Timeout;
-
 const AccountSubscription: FunctionComponent = function () {
   const { isAuth, user, isLoading: isAuthLoading, getIdToken } = useAuth();
   const router = useRouter();
@@ -40,10 +38,8 @@ const AccountSubscription: FunctionComponent = function () {
     userData?.teamRole
   );
   const { data: subscriptionData } = useCurrentSubscription(userData);
-  const [seats, setSeats] = useState(1);
-  const [previousSeats, setPreviousSeats] = useState(1);
-  const [minSeats, setMinSeats] = useState(1);
   const [upgradeInProgress, setUpgradeInProgress] = useState(false);
+  const [transactionInProgress, setTransactionInProgress] = useState(false);
   const isTeamPlan =
     userData?.plan === 'TEAM' || userData?.plan === 'ENTERPRISE';
   const isSupportRole =
@@ -60,34 +56,16 @@ const AccountSubscription: FunctionComponent = function () {
     }
   }, [isAuthLoading, user, isAuth]);
 
-  useEffect(() => {
-    if (teamData) {
-      setSeats(teamData.seats);
-      setPreviousSeats(teamData.seats);
-    }
-  }, [teamData]);
-
-  useEffect(() => {
-    if (upgradeInProgress && seats !== previousSeats) {
-      clearTimeout(seatUpgradeTimeout);
-
-      seatUpgradeTimeout = setTimeout(() => {
-        upgradePreview();
-      }, 500);
-    }
-  }, [seats, upgradeInProgress]);
-
   const {
     mutate: upgradePreview,
     data: upgradePreviewData,
     status: upgradePreviewStatus,
     isError: isUpgradePreviewError,
-    isPending,
     reset: resetUpgradePreview
   } = useMutation({
     mutationFn: async () => {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/subscription/upgrade?seats=${seats}`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/subscription/upgrade`,
         {
           method: 'GET',
           headers: {
@@ -98,7 +76,6 @@ const AccountSubscription: FunctionComponent = function () {
       );
 
       if (response.status === 200) {
-        setPreviousSeats(seats);
         return await response.json();
       } else {
         throw new Error();
@@ -115,7 +92,7 @@ const AccountSubscription: FunctionComponent = function () {
   } = useMutation({
     mutationFn: async () => {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/subscription/upgrade?seats=${seats}`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/subscription/upgrade`,
         {
           method: 'PATCH',
           headers: {
@@ -138,6 +115,57 @@ const AccountSubscription: FunctionComponent = function () {
       }
     }
   });
+
+  const openCheckout = async () => {
+    setTransactionInProgress(true);
+    const token = await getIdToken();
+
+    if (!token) {
+      throw new Error('Missing authentication token');
+    }
+
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/subscription/transaction`,
+      {
+        method: 'POST',
+        // no payload required
+        body: JSON.stringify({}),
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error('Unable to create subscription transaction');
+    }
+
+    const payload: { transactionId: string } = await response.json();
+    const transactionId = payload.transactionId;
+
+    if (!transactionId) {
+      throw new Error('Missing transaction ID');
+    }
+
+    // @ts-ignore
+    Paddle.Checkout.open({
+      settings: {
+        variant: 'one-page',
+        theme: 'light',
+        locale: 'en'
+      },
+      transactionId,
+      customer: {
+        email: user.email
+      },
+      customData: {
+        userId: user.uid
+      }
+    });
+
+    setTransactionInProgress(false);
+  };
 
   const displayPlanInfo =
     userData?.plan === 'SOLO' || (isTeamPlan && canManageSubscription);
@@ -319,7 +347,6 @@ const AccountSubscription: FunctionComponent = function () {
                                   {/* Only display the frequency for non self trials */}
                                   {subscriptionData?.frequency &&
                                   userData?.plan !== 'FREE' &&
-                                  subscriptionData?.provider !== 'manual' &&
                                   displayPlanInfo
                                     ? ` - ${
                                         frequencyNames[
@@ -418,35 +445,38 @@ const AccountSubscription: FunctionComponent = function () {
                                   </div>
                                 ) : !upgradeInProgress &&
                                   subscriptionData &&
-                                  (userData?.plan === 'SOLO' ||
-                                    (userData?.plan === 'TEAM' &&
-                                      canManageSubscription)) &&
+                                  userData?.plan === 'SOLO' &&
                                   !subscriptionData?.cancellationScheduled &&
-                                  subscriptionData.status !== 'past_due' &&
-                                  subscriptionData?.provider !== 'free' &&
-                                  subscriptionData?.provider !== 'manual' &&
-                                  teamData?.seats <
-                                    pricing.TEAM.includedSeats ? (
+                                  (subscriptionData.status === 'trialing' ||
+                                    subscriptionData.status === 'active') &&
+                                  subscriptionData?.provider === 'paddle' ? (
                                   <div>
                                     <button
                                       className='btn btn-xs btn-primary'
                                       onClick={() => {
-                                        const newSeats =
-                                          teamData?.plan === 'SOLO'
-                                            ? 2
-                                            : teamData?.seats + 1;
                                         setUpgradeInProgress(true);
-
-                                        setSeats(newSeats);
-                                        setPreviousSeats(newSeats);
-                                        setMinSeats(newSeats);
                                         upgradePreview();
                                       }}
                                     >
-                                      {userData?.plan === 'SOLO' &&
-                                        'Upgrade to a Team plan'}
-                                      {userData?.plan === 'TEAM' &&
-                                        'Upgrade seats'}
+                                      Upgrade to a Team plan
+                                    </button>
+                                  </div>
+                                ) : !upgradeInProgress &&
+                                  subscriptionData &&
+                                  (userData?.plan === 'SOLO' ||
+                                    userData?.plan === 'TEAM') &&
+                                  subscriptionData?.cancellationScheduled &&
+                                  subscriptionData.status === 'trialing' &&
+                                  subscriptionData?.provider === 'manual' ? (
+                                  <div className='text-end'>
+                                    <button
+                                      className='btn btn-xs btn-primary'
+                                      onClick={() => {
+                                        openCheckout();
+                                      }}
+                                      disabled={transactionInProgress}
+                                    >
+                                      Upgrade to a paid plan
                                     </button>
                                   </div>
                                 ) : (
@@ -473,61 +503,16 @@ const AccountSubscription: FunctionComponent = function () {
                               <div className='row mb-4'>
                                 <div className='col'>
                                   <p className='m-0 fw-bold'>
-                                    {userData?.plan === 'SOLO' &&
-                                      'Team plan upgrade payment preview'}
-                                    {userData?.plan === 'TEAM' &&
-                                      'Seats upgrade payment preview'}
+                                    Payment preview -{' '}
+                                    {
+                                      frequencyNames[
+                                        subscriptionData?.frequency
+                                      ]
+                                    }{' '}
+                                    Team plan package with{' '}
+                                    {pricing.TEAM.includedSeats} seats and{' '}
+                                    {pricing.TEAM.deployQuota} APIs
                                   </p>
-                                </div>
-                                <div className='col-auto'>
-                                  <div className='row align-items-center'>
-                                    <div className='col-auto'>
-                                      <label
-                                        htmlFor='seatsNumber'
-                                        className='col-form-label p-0'
-                                      >
-                                        Number of seats
-                                      </label>
-                                    </div>
-                                    <div className='col-auto'>
-                                      <input
-                                        type='number'
-                                        id='seatsNumber'
-                                        className='form-control form-control-xs'
-                                        placeholder='Number of seats'
-                                        value={seats}
-                                        disabled={isPending}
-                                        min={minSeats}
-                                        max={99}
-                                        step={1}
-                                        onChange={(event) => {
-                                          let newSeats = parseInt(
-                                            event.target.value
-                                          );
-
-                                          if (
-                                            isNaN(newSeats) ||
-                                            newSeats < 1 ||
-                                            newSeats < minSeats
-                                          ) {
-                                            newSeats = minSeats;
-                                          } else if (newSeats > 99) {
-                                            newSeats = 99;
-                                          }
-
-                                          setSeats(newSeats);
-                                        }}
-                                        /* onBlur={() => {
-                                          upgradePreview();
-                                        }}
-                                        onKeyUp={(event) => {
-                                          if (event.key === 'Enter') {
-                                            upgradePreview();
-                                          }
-                                        }} */
-                                      />
-                                    </div>
-                                  </div>
                                 </div>
                               </div>
 
@@ -617,7 +602,6 @@ const AccountSubscription: FunctionComponent = function () {
                                       resetUpgradePreview();
                                       resetUpgrade();
                                       setUpgradeInProgress(false);
-                                      setSeats(previousSeats);
                                     }}
                                     disabled={isUpgradeSuccess}
                                   >
@@ -633,8 +617,7 @@ const AccountSubscription: FunctionComponent = function () {
                                       upgradePreviewStatus === 'pending' ||
                                       isUpgradePreviewError ||
                                       isUpgradeError ||
-                                      isUpgradeSuccess ||
-                                      seats !== previousSeats
+                                      isUpgradeSuccess
                                     }
                                   >
                                     Confirm payment

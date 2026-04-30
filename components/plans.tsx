@@ -10,6 +10,7 @@ import { AccordionData } from '../models/common.model';
 import { useAuth } from '../utils/auth';
 import {
   useCurrentUser,
+  useTrialOnboarding,
   useTrialOnboardingEligibility
 } from '../utils/queries';
 import Accordion from './accordion';
@@ -145,12 +146,18 @@ const PlansView: FunctionComponent<{
   const auth = useAuth();
   const currentUser = useCurrentUser();
   const router = useRouter();
-  const [planFrequency, setPlanFrequency] = useState('YEARLY');
+  const [planFrequency, setPlanFrequency] = useState<Frequency>(
+    Frequency.YEARLY
+  );
   const [showTrialOnboardingConfirmation, setShowTrialOnboardingConfirmation] =
     useState(false);
   const discountCode = router.query.discountCode;
-  const { refetch: trialEligibilityCheck, isLoading: isCheckingEligibility } =
-    useTrialOnboardingEligibility();
+  const {
+    data: trialEligibilityStatus,
+    isLoading: isLoadingTrialEligibilityStatus
+  } = useTrialOnboardingEligibility();
+  const { refetch: trialOnboarding, isLoading: isTrialOnboarding } =
+    useTrialOnboarding();
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -218,7 +225,39 @@ const PlansView: FunctionComponent<{
     window.location.assign(process.env.NEXT_PUBLIC_WEBAPP_URL);
   };
 
-  const openCheckout = (planId: Plans) => {
+  const openCheckout = async (planId: Plans) => {
+    const token = await auth.getIdToken();
+
+    if (!token) {
+      throw new Error('Missing authentication token');
+    }
+
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/subscription/transaction`,
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          plan: planId,
+          frequency: planFrequency
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error('Unable to create subscription transaction');
+    }
+
+    const payload: { transactionId: string } = await response.json();
+    const transactionId = payload.transactionId;
+
+    if (!transactionId) {
+      throw new Error('Missing transaction ID');
+    }
+
     // @ts-ignore
     Paddle.Checkout.open({
       settings: {
@@ -226,12 +265,7 @@ const PlansView: FunctionComponent<{
         theme: 'light',
         locale: 'en'
       },
-      items: [
-        {
-          priceId: pricing[planId][planFrequency].priceId,
-          quantity: 1
-        }
-      ],
+      transactionId,
       customer: {
         email: auth.user.email
       },
@@ -242,23 +276,35 @@ const PlansView: FunctionComponent<{
     });
   };
 
-  const checkOnboardingEligibility = async (planId: Plans) => {
-    try {
-      const eligibilityResult = await trialEligibilityCheck({
-        plan: planId
-      });
+  const getTrialButtonText = () => {
+    if (!auth.isAuth) {
+      return 'Start free trial';
+    }
 
-      if (eligibilityResult.data) {
-        setShowTrialOnboardingConfirmation(true);
+    if (trialEligibilityStatus?.trial) {
+      return 'Start free trial';
+    }
 
-        setTimeout(() => {
-          openWebApp();
-        }, 3000);
-      } else {
-        openCheckout(planId);
-      }
-    } catch {
-      openCheckout(planId);
+    return 'Purchase plan';
+  };
+
+  const getTrialNoteText = () => {
+    if (!auth.isAuth) {
+      return 'Users with a valid work email are eligible for a 14-day free trial without credit card requirement. Other users are eligible for a 7-day free trial requiring a credit card.';
+    }
+  };
+
+  const getTrialCtaText = () => {
+    if (!auth.isAuth) {
+      return '14-day free trial. No credit card required.<sup>2</sup>';
+    }
+
+    if (trialEligibilityStatus?.self && trialEligibilityStatus?.trial) {
+      return '14-day free trial. No credit card required.';
+    }
+
+    if (!trialEligibilityStatus?.self && trialEligibilityStatus?.trial) {
+      return '7-day free trial. Credit card required.';
     }
   };
 
@@ -274,7 +320,35 @@ const PlansView: FunctionComponent<{
       return;
     }
 
-    await checkOnboardingEligibility(planId);
+    // If the cached pre-check already says ineligible, skip POST and go straight to checkout.
+    if (
+      trialEligibilityStatus?.self === false ||
+      trialEligibilityStatus?.trial === false
+    ) {
+      await openCheckout(planId);
+      return;
+    }
+
+    try {
+      const trialResult = await trialOnboarding({
+        plan: planId,
+        frequency: planFrequency
+      });
+
+      if (trialResult.data) {
+        setShowTrialOnboardingConfirmation(true);
+
+        setTimeout(() => {
+          openWebApp();
+        }, 3000);
+
+        return;
+      }
+    } catch {
+      // fallback to checkout if trial onboarding eligibility check fails
+    }
+
+    await openCheckout(planId);
   };
 
   const tickBadge = (
@@ -309,7 +383,7 @@ const PlansView: FunctionComponent<{
                   autoComplete='off'
                   checked={planFrequency === 'MONTHLY'}
                   onChange={(event) => {
-                    setPlanFrequency(event.target.value);
+                    setPlanFrequency(event.target.value as Frequency);
                   }}
                 />
                 <label
@@ -332,7 +406,7 @@ const PlansView: FunctionComponent<{
                   autoComplete='off'
                   checked={planFrequency === 'YEARLY'}
                   onChange={(event) => {
-                    setPlanFrequency(event.target.value);
+                    setPlanFrequency(event.target.value as Frequency);
                   }}
                 />
                 <label
@@ -490,27 +564,34 @@ const PlansView: FunctionComponent<{
                       {(!currentUser.data ||
                         currentUser.data?.plan === 'FREE') && (
                         <div className='text-center'>
-                          <div className='mb-2'>
-                            {!isCheckingEligibility && (
-                              <button
-                                type='button'
-                                className='btn btn-primary btn-xs'
-                                disabled={isCheckingEligibility}
-                                onClick={async () => {
-                                  await startTrial(Plans.SOLO);
-                                }}
-                              >
-                                Start free trial
-                              </button>
+                          {!isTrialOnboarding &&
+                            !isLoadingTrialEligibilityStatus && (
+                              <div className='mb-2'>
+                                <button
+                                  type='button'
+                                  className='btn btn-primary btn-xs'
+                                  disabled={isTrialOnboarding}
+                                  onClick={async () => {
+                                    await startTrial(Plans.SOLO);
+                                  }}
+                                >
+                                  {getTrialButtonText()}
+                                </button>
+                              </div>
                             )}
-                            {isCheckingEligibility && <Spinner small />}
-                          </div>
-                          <p className='text-gray-700 mb-0'>
-                            <small>
-                              14-day free trial. No credit card required.
-                              <sup>2</sup>
-                            </small>
-                          </p>
+                          {getTrialCtaText() &&
+                            !isTrialOnboarding &&
+                            !isLoadingTrialEligibilityStatus && (
+                              <p className='text-gray-700 mb-0'>
+                                <small
+                                  dangerouslySetInnerHTML={{
+                                    __html: getTrialCtaText()
+                                  }}
+                                ></small>
+                              </p>
+                            )}
+                          {(isLoadingTrialEligibilityStatus ||
+                            isTrialOnboarding) && <Spinner small />}
                         </div>
                       )}
                       {currentUser.data && currentUser.data.plan !== 'FREE' && (
@@ -519,7 +600,7 @@ const PlansView: FunctionComponent<{
                             <button
                               type='button'
                               className='btn btn-primary btn-xs'
-                              disabled={isCheckingEligibility}
+                              disabled={isTrialOnboarding}
                               onClick={() => {
                                 openWebApp();
                               }}
@@ -527,10 +608,10 @@ const PlansView: FunctionComponent<{
                               <i className='icon-open me-1'></i> Open web app
                             </button>
                             <Link
-                              href={'/download/'}
+                              href={'/account/subscription/'}
                               className='btn btn-primary-subtle btn-xs'
                             >
-                              Download
+                              My account
                             </Link>
                           </div>
                         </div>
@@ -689,27 +770,34 @@ const PlansView: FunctionComponent<{
                       {(!currentUser.data ||
                         currentUser.data?.plan === 'FREE') && (
                         <div className='text-center'>
-                          <div className='mb-2'>
-                            {!isCheckingEligibility && (
-                              <button
-                                type='button'
-                                className='btn btn-primary btn-xs'
-                                disabled={isCheckingEligibility}
-                                onClick={async () => {
-                                  await startTrial(Plans.TEAM);
-                                }}
-                              >
-                                Start free trial
-                              </button>
+                          {!isTrialOnboarding &&
+                            !isLoadingTrialEligibilityStatus && (
+                              <div className='mb-2'>
+                                <button
+                                  type='button'
+                                  className='btn btn-primary btn-xs'
+                                  disabled={isTrialOnboarding}
+                                  onClick={async () => {
+                                    await startTrial(Plans.TEAM);
+                                  }}
+                                >
+                                  {getTrialButtonText()}
+                                </button>
+                              </div>
                             )}
-                            {isCheckingEligibility && <Spinner small />}
-                          </div>
-                          <p className='text-gray-700 mb-0'>
-                            <small>
-                              14-day free trial. No credit card required.
-                              <sup>2</sup>
-                            </small>
-                          </p>
+                          {getTrialCtaText() &&
+                            !isTrialOnboarding &&
+                            !isLoadingTrialEligibilityStatus && (
+                              <p className='text-gray-700 mb-0'>
+                                <small
+                                  dangerouslySetInnerHTML={{
+                                    __html: getTrialCtaText()
+                                  }}
+                                ></small>
+                              </p>
+                            )}
+                          {(isLoadingTrialEligibilityStatus ||
+                            isTrialOnboarding) && <Spinner small />}
                         </div>
                       )}
                       {currentUser.data && currentUser.data.plan !== 'FREE' && (
@@ -718,7 +806,7 @@ const PlansView: FunctionComponent<{
                             <button
                               type='button'
                               className='btn btn-primary btn-xs'
-                              disabled={isCheckingEligibility}
+                              disabled={isTrialOnboarding}
                               onClick={() => {
                                 openWebApp();
                               }}
@@ -726,10 +814,10 @@ const PlansView: FunctionComponent<{
                               <i className='icon-open me-1'></i> Open web app
                             </button>
                             <Link
-                              href={'/download/'}
+                              href={'/account/subscription/'}
                               className='btn btn-primary-subtle btn-xs'
                             >
-                              Download
+                              My account
                             </Link>
                           </div>
                         </div>
@@ -826,11 +914,6 @@ const PlansView: FunctionComponent<{
                           Request a demo
                         </button>
                       </div>
-                      <p className='text-gray-700 mb-0'>
-                        <small>
-                          Request a demo or contact us for a custom quote
-                        </small>
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -845,10 +928,12 @@ const PlansView: FunctionComponent<{
               <sup>1</sup> See the{' '}
               <Link href={'/pricing/#faq'}>FAQ of our Cloud plans</Link> for
               more information about API mocks.
-              <br />
-              <sup>2</sup> The 14-day free trial is available for users with a
-              valid work email only. A 7-day trial requiring a credit card will
-              be available for other users.
+              {getTrialNoteText() && (
+                <>
+                  <br />
+                  <sup>2</sup> {getTrialNoteText()}
+                </>
+              )}
             </p>
 
             <section className='py-6 py-md-8'>

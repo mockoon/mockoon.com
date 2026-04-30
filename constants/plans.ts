@@ -6,6 +6,6 @@ export const planNames = {
 };
 
 export const frequencyNames = {
-  MONTHLY: 'monthly',
-  YEARLY: 'yearly'
+  MONTHLY: 'Monthly',
+  YEARLY: 'Yearly'
 };

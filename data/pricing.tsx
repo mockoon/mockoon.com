@@ -1,12 +1,10 @@
 export const pricing = {
   SOLO: {
     MONTHLY: {
-      price: 15,
-      priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_SOLO_MONTHLY_PRICE_ID
+      price: 15
     },
     YEARLY: {
-      price: 10, // we will display as a monthly price but charge yearly
-      priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_SOLO_YEARLY_PRICE_ID
+      price: 10 // we will display as a monthly price but charge yearly
     },
     includedSeats: 1,
     trialDays: 7,
@@ -18,12 +16,10 @@ export const pricing = {
   },
   TEAM: {
     MONTHLY: {
-      price: 145,
-      priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_TEAM_MONTHLY_PRICE_ID
+      price: 145
     },
     YEARLY: {
-      price: 100, // we will display as a monthly price but charge yearly
-      priceId: process.env.NEXT_PUBLIC_PADDLE_PLAN_TEAM_YEARLY_PRICE_ID
+      price: 100 // we will display as a monthly price but charge yearly
     },
     includedSeats: 5,
     trialDays: 7,

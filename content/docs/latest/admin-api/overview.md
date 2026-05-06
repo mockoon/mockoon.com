@@ -20,6 +20,38 @@ For example, if your mock server is running on `http://localhost:3000`, the admi
 
 > 💡 The [API prefix](docs:server-configuration/port-prefix) is not applied to the admin API base endpoint. If your API endpoints are accessible on `http://localhost:3000/myprefix/{endpoint}`, the admin API base endpoint will still be `http://localhost:3000/mockoon-admin`.
 
+## Admin API authentication
+
+The admin API is **always protected by bearer token authentication**. Every request must include an `Authorization: Bearer <token>` header (or, for the [SSE events endpoint](docs:admin-api/events), a `?token=<token>` query parameter). Requests without a valid token **receive a 401 Unauthorized response**.
+
+### Authentication in the desktop application
+
+In the desktop application, a secure random token is generated on each application launch and is available from each mock API Settings tab:
+
+![Admin API token in the desktop application](docs-img:admin-api-token.png)
+
+The token can be overridden by setting the `MOCKOON_ADMIN_API_TOKEN` environment variable before launching the application. This token will apply to all mock's admin APIs running in the desktop application.
+
+### Authentication in the CLI
+
+In the CLI, you can either provide your own token or let Mockoon generate one for you. When no token is provided, a secure random token is generated at startup and printed to the logs once. Make sure to save it, as it will change every time the server restarts.
+
+Use the `--admin-api-token` flag, or the `MOCKOON_ADMIN_API_TOKEN` environment variable.
+
+```bash
+mockoon-cli start --admin-api-token mytoken -d ./mock.json
+```
+
+You can also provide one token per environment by passing the flag multiple times (or as a comma-separated list), in the same order as the `--data` files.
+
+Learn more about the CLI in the [dedicated documentation](https://github.com/mockoon/mockoon/blob/main/packages/cli/README.md#admin-api)
+
+## Cross-origin requests (CORS)
+
+By default, the admin API emits no CORS headers. To allow a specific frontend origin, use the `--admin-api-cors-origin` flag (or `MOCKOON_ADMIN_API_CORS_ORIGIN`) on the CLI.
+
+Admin APIs from local mocks running in the desktop application cannot be configured to allow CORS requests.
+
 ## Disable the admin API
 
 The admin API is **enabled by default**.

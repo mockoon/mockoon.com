@@ -29,6 +29,13 @@ To subscribe to the events, call the following endpoint:
 GET /mockoon-admin/events?maxlogs=100
 ```
 
+Both header and query parameter can be used to provide the admin API token:
+
+```http
+GET /mockoon-admin/events?maxlogs=100&token=mytoken
+Authorization: Bearer mytoken
+```
+
 ## Events
 
 The events are sent in the JSON format:
@@ -42,9 +49,9 @@ The event names and properties are following the same structure as the [MockoonS
 - `transaction-complete`: sent when a transaction is completed. Contains the transaction data in a `transaction` property.
 - `data-bucket-processed`: sent when the data buckets are processed when launching the server. Contains the data buckets statuses in a `dataBuckets` property.
 
-### Log event
+### Transaction complete event
 
-Example of a log event:
+Example of a transaction complete (log) event:
 
 ```json
 {
@@ -60,7 +67,8 @@ Example of a log event:
       "body": "",
       "headers": [
         { "key": "accept", "value": "*/*" },
-        { "key": "accept-encoding", "value": "gzip, br, deflate" }
+        { "key": "accept-encoding", "value": "gzip, br, deflate" },
+        { "key": "Authorization", "value": "Bearer [REDACTED]" }
       ]
     },
     "response": {
@@ -80,6 +88,8 @@ Example of a log event:
 The data in the `transaction` property is following the [Transaction model](https://github.com/mockoon/mockoon/blob/main/packages/commons/src/models/server.model.ts#L61-L86) similar to the one used in the [`/mockoon-admin/logs` endpoint](docs:admin-api/transaction-logs).
 
 Upon connection, the server will send the last `maxlogs` transactions (if specified) and then continue to send new transactions as they are completed.
+
+> 💡 Transaction logs returned by this endpoint and the [GET `/logs` endpoint](docs:admin-api/transaction-logs) have known-sensitive headers redacted (`authorization`, `proxy-authorization`, `cookie`, `set-cookie`, `x-api-key`, `api-key`, `x-auth-token`). For `authorization` / `proxy-authorization`, the auth scheme is preserved (e.g. `Bearer [REDACTED]`). Request and response bodies are not modified.
 
 ### Data buckets processed event
 

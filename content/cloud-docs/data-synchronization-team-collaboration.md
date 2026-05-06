@@ -58,23 +58,11 @@ However, some parts of the environment definition cannot be edited simultaneousl
 
 > 💡 You can customize your display name in the [application settings](/account/info/) to make it easier for your team members to identify you.
 
-## Offline editing
+### Synchronizing after being offline
 
-Mockoon's synchronization and collaboration features are primarily designed to work while being **online**. Offline editing works to some extent, but it is **not recommended to simultaneously edit** the same environment while being offline.
+Mockoon's synchronization and collaboration feature is designed to work while being **online**. Offline editing is disabled.
 
-When you are offline, a warning is shown in the cloud environments list:
-
-![#sub#Warning shown when the application is offline{391x209}](cloud-docs-img:offline-editing-warning.png)
-
-When you modify an environment while being offline and go back online, three scenarios can happen:
-
-- **You made local changes**, but **the cloud version was not modified**: your local changes will be automatically **pushed** to the cloud.
-- **You did not make local changes**, but **the cloud version was modified**: the cloud version will be pulled automatically to your local environment.
-- **You made local changes**, and **the cloud version was modified**: you will be prompted to **choose** between **keeping** your local changes or **discarding** them.
-
-![#sub#Dialog shown when the application detected a conflict{504x241}](cloud-docs-img:offline-conflict-warning.png)
-
-> ⚠️ If multiple users edit the same environment while offline, **only one version of the environment will be kept** and the others will be discarded.
+When coming back online after being offline, the application will automatically pull the latest version of the cloud environments.
 
 ## Disconnection reasons
 

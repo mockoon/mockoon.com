@@ -98,3 +98,9 @@ Future major versions of Mockoon may introduce **breaking changes to the data mo
 ## Plans quotas and limits
 
 Some **quotas and limits apply** to the cloud deployment feature depending on your plan. As these quotas and limits are subject to change over time, please refer to your [account settings](/account/subscription/) for the information specific to your account.
+
+## Headers
+
+When your environment is deployed to the cloud, Mockoon adds the following special headers to the responses:
+
+- `X-Mockoon-Callback-Depth`: header tracking the depth of callback calls to prevent infinite loops (see [Infinite callbacks loop prevention](docs:callbacks/using-callbacks#infinite-callbacks-loop-prevention)).

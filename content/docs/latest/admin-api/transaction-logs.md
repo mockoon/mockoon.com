@@ -50,7 +50,10 @@ GET /mockoon-admin/logs?page=2&limit=20
       "query": "",
       "queryParams": {},
       "body": "",
-      "headers": [{ "key": "host", "value": "localhost:3000" }]
+      "headers": [
+        { "key": "host", "value": "localhost:3000" },
+        { "key": "Authorization", "value": "Bearer [REDACTED]" }
+      ]
     },
     "response": {
       "statusCode": 200,
@@ -65,6 +68,8 @@ GET /mockoon-admin/logs?page=2&limit=20
   }
 ]
 ```
+
+> 💡 Transaction logs returned by this endpoint and the [SSE event stream](docs:admin-api/events) have known-sensitive headers redacted (`authorization`, `proxy-authorization`, `cookie`, `set-cookie`, `x-api-key`, `api-key`, `x-auth-token`). For `authorization` / `proxy-authorization`, the auth scheme is preserved (e.g. `Bearer [REDACTED]`). Request and response bodies are not modified.
 
 ## Purge the transaction logs
 

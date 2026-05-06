@@ -79,7 +79,7 @@
       },
       {
         "source": "/releases{,/}",
-        "destination": "/releases/9.6.1/",
+        "destination": "/releases/9.7.0/",
         "type": 302
       },
       {

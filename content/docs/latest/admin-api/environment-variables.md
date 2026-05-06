@@ -43,7 +43,7 @@ To set or update an environment variable, call the `/mockoon-admin/env-vars` end
 - **Method:** `POST`, `PUT` or `PATCH`
 - **URL:** `/mockoon-admin/env-vars`
 - **Body:** JSON object with the following properties:
-  - `key`: the name of the variable, including the `MOCKOON_` prefix, or the [custom prefix](docs:variables/environment-variables#changing-or-removing-the-prefix) defined in the application settings.
+  - `key`: the name of the variable, including the `MOCKOON_` prefix, or the [custom prefix](docs:variables/environment-variables#changing-or-removing-the-prefix) defined in the application settings. Keys that do not start with the prefix are automatically prepended with it.
   - `value`: the value of the variable.
 
 **Example request:**
@@ -59,3 +59,5 @@ Content-Type: application/json
 ```
 
 > ⚠️ This will only create or update the environment variable for the running mock server. It will **not** modify your system environment variables.
+
+> ⚠️ When no prefix is set (through the application settings or CLI `--env-vars-prefix` flag), writes through the admin API are rejected to prevent arbitrary environment variable modifications (e.g. `PATH`, `NODE_OPTIONS`).

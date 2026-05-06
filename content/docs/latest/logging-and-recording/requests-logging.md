@@ -95,4 +95,6 @@ When using this option, logs will contain the full transaction (request and resp
 
 > ⚠️ Enabling this option will generate a lot of logs and can quickly fill up your disk space. Use it with caution.
 
-> 🔏 Our logging system will automatically anonymize any credentials present in the `Authorization` or `Proxy-Authorization` headers.
+## Redaction of sensitive data in logs
+
+While the complete request and response information is available in the desktop application "Logs" tab, transaction logs stored in the log files (see above), returned by the [admin API endpoints](docs:admin-api/transaction-logs), or output by the CLI with the `--log-transactions` flag, automatically redact known-sensitive headers (`authorization`, `proxy-authorization`, `cookie`, `set-cookie`, `x-api-key`, `api-key`, `x-auth-token`). For `authorization` / `proxy-authorization`, the auth scheme is preserved (e.g. `Bearer [REDACTED]`).

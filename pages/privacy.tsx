@@ -12,7 +12,7 @@ const Privacy: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Privacy policy' subtitle='Last update November 17, 2025' />
+      <Hero title='Privacy policy' subtitle='Last update May 6, 2026' />
 
       <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
         <div className='container'>
@@ -90,17 +90,14 @@ const Privacy: FunctionComponent = function () {
           <div className='row'>
             <div className='col-12'>
               <Quote colorScheme='secondary'>
-                💡 <strong>Summary of changes (November 17, 2025)</strong>:
+                💡 <strong>Summary of changes (May 6, 2026)</strong>:
                 <ul className='mb-0'>
                   <li>
-                    Sections 10 (Changes to this Policy) and 11 (Contact Us)
-                    were renumbered to 14 and 15 respectively.
-                  </li>
-                  <li>
-                    New sections 10 (California Privacy Notice), 11 (Data
-                    Retention Details), 12 (Backup and Restore Practices), and
-                    13 (Sub-processors) were added to provide more detailed
-                    information on these topics.
+                    Section 3: We stopped collecting anonymous telemetry data in
+                    the desktop and web applications, effective May 6, 2026. The
+                    telemetry settings are still visible in the applications up
+                    to v9.6.0, but non-functional. All collected telemetry data
+                    was deleted on May 6, 2026.
                   </li>
                 </ul>
               </Quote>
@@ -153,12 +150,6 @@ const Privacy: FunctionComponent = function () {
                   navigation statistics. We do not collect any personal
                   information neither do we use cookies or any other tracking
                   technology.
-                </li>
-                <li>
-                  Use our desktop application: in addition to the
-                  above-mentioned log data, we collect anonymous usage
-                  statistics. We do not collect any personal information neither
-                  do we use cookies or any other tracking technology.
                 </li>
               </ul>
               <p>

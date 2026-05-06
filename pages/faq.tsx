@@ -250,23 +250,18 @@ const faq: AccordionData = [
         content: (
           <>
             <p className='text-gray-700'>
-              Yes. The desktop application an Cloud web application uses a
-              custom telemetry system collecting anonymous and basic usage data
-              like session duration, country, operating system, application
-              version, and number of environments. You can opt out of this
-              telemetry system in the application settings.
+              No, Mockoon desktop, web, CLI or Docker image do not collect any
+              usage data or telemetry. There is no need to opt-out of any data
+              collection.
             </p>
             <p className='text-gray-700'>
-              None of your mock API data like route names, headers, bodies are
-              collected.
-            </p>
-            <p className='text-gray-700'>
-              No data or telemetry is collected when self-hosting using the{' '}
-              <a href='/cli/'>CLI</a> or{' '}
-              <a href='https://hub.docker.com/r/mockoon/cli' rel='noopener'>
-                Docker image
-              </a>
-              .
+              Note: Until May 2026, the desktop and web applications were
+              collecting anonymous telemetry data to help us improve the
+              product. This data collection was opt-out and could be disabled in
+              the application settings. The data collection officially stopped
+              on May 6, 2026 and all collected data was deleted. The telemetry
+              settings are still visible in the application settings up to
+              v9.6.0 but they are now non-functional.
             </p>
           </>
         )

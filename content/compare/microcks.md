@@ -18,7 +18,7 @@ Microcks is an open-source, cloud-native tool for API mocking and testing. It us
 
 Microcks is primarily designed for self-hosted usage and can be deployed on developers' machines, on-premises, or in the cloud using containers. It also includes dynamic mocking, delays, callbacks, webhooks, and stateful mock capabilities.
 
-![#sub#Screenshot of Microcks's interface{1400x760}](/images/compare/api-mocking-comparison-microcks-screenshot.png)
+![#sub#Screenshot of Microcks's interface{1666x1078}](/images/compare/api-mocking-comparison-microcks-screenshot.png)
 
 ## What is Mockoon?
 

@@ -18,7 +18,7 @@ MockFly is an online API mocking service focused on quickly creating mock REST e
 
 MockFly is a paid service with a free tier that includes limited daily requests and project quotas. It also offers collaboration features for teams working on shared mock APIs.
 
-![#sub#Screenshot of MockFly's interface{1400x760}](/images/compare/api-mocking-comparison-mockfly-screenshot.png)
+![#sub#Screenshot of MockFly's interface{2072x982}](/images/compare/api-mocking-comparison-mockfly-screenshot.png)
 
 ## What is Mockoon?
 

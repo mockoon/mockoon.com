@@ -8,6 +8,12 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+
     ignore:
       - dependency-name: "*"
         # Ignore all major updates

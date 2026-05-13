@@ -1,11 +1,9 @@
-import { addHours, format, isFuture } from 'date-fns';
 import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import Accordion from '../components/accordion';
 import CompanyLogos from '../components/company-logos';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
-import { courseDates } from '../constants/courses';
 import Layout from '../layout/layout';
 import { AccordionData } from '../models/common.model';
 
@@ -28,7 +26,7 @@ const faq: AccordionData = [
       {
         title: 'How long does the training last?',
         content:
-          'The training lasts 4 hours (see schedule above). We can also accommodate custom training schedules. <a href="/contact-form/">Contact us</a> for more information.'
+          'The training lasts 2 hours (see schedule above). We can also accommodate custom training schedules. <a href="/contact-form/">Contact us</a> for more information.'
       },
       {
         title: 'How many participants will attend the training?',
@@ -57,7 +55,7 @@ const courseContent: AccordionData = [
   {
     items: [
       {
-        title: 'Hour 1: Getting started with Mockoon',
+        title: 'Getting started with Mockoon',
         content: [
           'Introduction to Mockoon and installation',
           'Discover the main features of the application',
@@ -67,7 +65,7 @@ const courseContent: AccordionData = [
         ]
       },
       {
-        title: 'Hour 2: Craft realistic scenarios',
+        title: 'Craft realistic scenarios',
         content: [
           'Use templating to create dynamic and realistic responses',
           'Create multiple responses for a route',
@@ -76,7 +74,7 @@ const courseContent: AccordionData = [
         ]
       },
       {
-        title: 'Hour 3: Integrate into your workflow',
+        title: 'Integrate into your workflow',
         content: [
           'Partial mocking with the proxy mode',
           'Record and replay requests to create mocks',
@@ -86,7 +84,7 @@ const courseContent: AccordionData = [
         ]
       },
       {
-        title: 'Hour 4: Advanced features',
+        title: 'Advanced features',
         content: [
           'Create reusable mock data with the data buckets',
           'Create automated CRUD endpoints',
@@ -100,8 +98,6 @@ const courseContent: AccordionData = [
 ];
 
 const Training: FunctionComponent = function () {
-  const dates = courseDates.filter((date) => isFuture(date));
-
   return (
     <Layout footerBanner='download'>
       <Meta title={meta.title} description={meta.description} />
@@ -171,25 +167,6 @@ const Training: FunctionComponent = function () {
                     </div>
                   </div>
 
-                  <p className='text-center text-gray-700 mb-4'>
-                    Next available sessions:
-                  </p>
-
-                  <p className='text-center text-gray-700 mb-4'>
-                    {courseDates.map(
-                      (date) =>
-                        isFuture(date) && (
-                          <>
-                            <strong key={date.toISOString()}>
-                              {format(date, 'PPP')} - from{' '}
-                              {format(date, 'HH:mm')} to{' '}
-                              {format(addHours(date, 4), 'HH:mm OOOO')}
-                            </strong>
-                            <br />
-                          </>
-                        )
-                    )}
-                  </p>
 
                   <div className='text-center'>
                     <a
@@ -204,8 +181,8 @@ const Training: FunctionComponent = function () {
                     class)
                     <br />
                     Be sure to enter a valid email address as we will get in
-                    touch with you after your booking to invite you to the
-                    training session.
+                    touch with you after your booking to schedule the training
+                    session.
                     <br />
                     <br />
                     <Link href='/contact-form/'>Contact us</Link> for group

@@ -1,14 +1,11 @@
 import { DocSearch } from '@docsearch/react';
-import { format, isBefore, isFuture, min } from 'date-fns';
+import { isBefore } from 'date-fns';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useState } from 'react';
-import { courseDates } from '../constants/courses';
 import { useAuth } from '../utils/auth';
 import { useCurrentUser } from '../utils/queries';
-import CourseBanner from './course-banner';
 import GitHub from './github';
-import CustomTooltip from './tooltip';
 
 enum Dropdowns {
   NONE = 'NONE',
@@ -31,8 +28,6 @@ const Nav: FunctionComponent<{
     userData?.plan !== 'FREE' &&
     userData?.teamRole !== 'billing' &&
     userData?.teamRole !== 'team_admin';
-  const dates = courseDates.filter((date) => isFuture(date));
-  const nextCourse = min(dates);
   const toggler = (
     <button
       className='navbar-toggler'
@@ -62,7 +57,12 @@ const Nav: FunctionComponent<{
       {topBanner &&
         showBanner &&
         isBefore(new Date(), topBanner.topBannerTimeEnd) && (
-          <CourseBanner closeBanner={closeBanner} textAlign='center' />
+          <div className='top-banner text-center'>
+            {topBanner.content}
+            <button className='close-banner' onClick={closeBanner}>
+              &times;
+            </button>
+          </div>
         )}
       <nav className='navbar navbar-expand-lg navbar-light bg-white'>
         <div className='container-fluid'>
@@ -512,14 +512,6 @@ const Nav: FunctionComponent<{
                             }`}
                           >
                             Live Training
-                            <CustomTooltip
-                              text={`Next session on ${format(
-                                nextCourse,
-                                'PPPP'
-                              )}`}
-                            >
-                              <span className='ms-2'>📅</span>
-                            </CustomTooltip>
                           </Link>
                         </div>
                       </div>

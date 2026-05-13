@@ -41,3 +41,15 @@ And add one or more headers by clicking on the "Add header" button at the bottom
 By default, the **`Connection` and `Upgrade` request headers** containing something else than **`websocket`** are ignored by Mockoon and will have no effect on the response.
 
 However, when your mock contains a [WebSocket route](docs:api-endpoints/websockets), Mockoon will use these headers to upgrade the connection to a WebSocket connection. In this case, passing an **`Upgrade`** header without the value **`websocket`** will result in a **400 Bad Request** response.
+
+### Mockoon response headers
+
+Mockoon adds the following headers to all responses:
+
+- `X-Mockoon-Callback-Depth`: to prevent infinite callback loops (see [Using callbacks](docs:callbacks/using-callbacks#infinite-callbacks-loop-prevention))
+
+**Route metadata headers**, enabled by default in the desktop application and disabled by default in the CLI (use the [`--enable-route-metadata-headers` flag](https://github.com/mockoon/mockoon/tree/main/packages/cli#start-command)):
+
+- `X-Mockoon-Route-Uuid`: the **route UUID** that handled the request.
+- `X-Mockoon-Route-Response-No`: the _response number_ that handled the request (starting at 1).
+- `X-Mockoon-Route-Response-Uuid`: the **response UUID** that handled the request.

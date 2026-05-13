@@ -1,0 +1,19 @@
+version: 2
+
+updates:
+  - package-ecosystem: "npm"
+    cooldown:
+      default-days: 7
+    versioning-strategy: increase
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "*"
+        # Ignore all major updates
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"

@@ -52,7 +52,7 @@
     "date-fns": "4.1.0",
     "eslint-config-next": "16.2.4",
     "fast-xml-parser": "5.7.3",
-    "firebase": "12.10.0",
+    "firebase": "12.13.0",
     "github-slugger": "2.0.0",
     "glob": "13.0.6",
     "gray-matter": "4.0.3",

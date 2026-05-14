@@ -94,7 +94,7 @@
     "cross-var": "1.1.0",
     "firebase-tools": "15.10.1",
     "image-size": "2.0.2",
-    "prettier": "3.8.1",
+    "prettier": "3.8.3",
     "typescript": "5.9.3"
   }
 }

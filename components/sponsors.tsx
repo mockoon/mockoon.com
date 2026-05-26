@@ -29,6 +29,7 @@ const Sponsors: FunctionComponent<{
               src='/images/sponsors/github.png'
               className='img-fluid m-4'
               alt='GitHub logo'
+              style={{ maxHeight: '64px' }}
             />
           </Link>
           <Link
@@ -40,6 +41,7 @@ const Sponsors: FunctionComponent<{
               src='/images/sponsors/localazy.png'
               className='img-fluid m-4'
               alt='Localazy logo'
+              style={{ maxHeight: '64px' }}
             />
           </Link>
           <Link
@@ -51,6 +53,24 @@ const Sponsors: FunctionComponent<{
               src='/images/sponsors/serpapi.png'
               className='img-fluid m-4'
               alt='SerpApi logo'
+              style={{ maxHeight: '64px' }}
+            />
+          </Link>
+        </div>
+      </div>
+      <h4 className='text-gray-700 text-center pt-6 pb-4 fw-bold'>Gold</h4>
+      <div className='row align-items-center justify-content-center'>
+        <div className='col col-xl-4 text-center'>
+          <Link
+            href='https://coderabbit.link/mockoon '
+            className='d-inline-block p-4'
+            target='_blank'
+          >
+            <img
+              src='/images/sponsors/coderabbit.png'
+              className='img-fluid m-4'
+              alt='CodeRabbit logo'
+              style={{ maxHeight: '48px' }}
             />
           </Link>
         </div>

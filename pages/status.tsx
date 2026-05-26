@@ -14,6 +14,13 @@ const incidents: {
   status: 'planned' | 'inprogress' | 'resolved';
 }[] = [
   {
+    title: 'AI assistant - Short outage following an update',
+    desc: 'We deployed an update to our AI assistant that caused a short outage. The issue was quickly identified and resolved. We apologize for the inconvenience.',
+    dateStart: '2026-05-26T17:30:00Z',
+    dateEnd: '2026-05-26T19:30:00Z',
+    status: 'resolved'
+  },
+  {
     title: 'Deployment - All instances - Routine update',
     desc: 'We are deploying a routine update to all our deploy instances. During this time, affected instances may be temporarily unavailable. The update is expected to last less than 5 minutes per instance. We apologize for the inconvenience.',
     dateStart: '2026-04-14T20:07:00Z',

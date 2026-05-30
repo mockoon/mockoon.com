@@ -70,7 +70,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 onClick={() => postDownload('win')}
               >
                 <span className='icon me-2'>
-                  <i className='icon-download'></i>
+                  <i className='icon-file_download'></i>
                 </span>
                 <span>installer</span>
               </a>
@@ -81,7 +81,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 onClick={() => postDownload('win')}
               >
                 <span className='icon me-2'>
-                  <i className='icon-download'></i>
+                  <i className='icon-file_download'></i>
                 </span>
                 <span>portable</span>
               </a>
@@ -148,7 +148,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 onClick={() => postDownload('linux')}
               >
                 <span className='icon me-2'>
-                  <i className='icon-download'></i>
+                  <i className='icon-file_download'></i>
                 </span>
                 <span>deb</span>
               </a>
@@ -160,7 +160,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 onClick={() => postDownload('linux')}
               >
                 <span className='icon me-2'>
-                  <i className='icon-download'></i>
+                  <i className='icon-file_download'></i>
                 </span>
                 <span>rpm</span>
               </a>
@@ -172,7 +172,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 onClick={() => postDownload('linux')}
               >
                 <span className='icon me-2'>
-                  <i className='icon-download'></i>
+                  <i className='icon-file_download'></i>
                 </span>
                 <span>AppImage</span>
               </a>
@@ -188,7 +188,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 onClick={() => postDownload('linux')}
               >
                 <span className='icon me-2'>
-                  <i className='icon-download'></i>
+                  <i className='icon-file_download'></i>
                 </span>
                 <span>deb</span>
               </a>
@@ -200,7 +200,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 onClick={() => postDownload('linux')}
               >
                 <span className='icon me-2'>
-                  <i className='icon-download'></i>
+                  <i className='icon-file_download'></i>
                 </span>
                 <span>AppImage</span>
               </a>
@@ -254,7 +254,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 onClick={() => postDownload('mac')}
               >
                 <span className='icon me-2'>
-                  <i className='icon-download'></i>
+                  <i className='icon-file_download'></i>
                 </span>
                 <span>Universal</span>
               </a>
@@ -265,7 +265,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 onClick={() => postDownload('mac')}
               >
                 <span className='icon me-2'>
-                  <i className='icon-download'></i>
+                  <i className='icon-file_download'></i>
                 </span>
                 <span>Intel</span>
               </a>
@@ -276,7 +276,7 @@ const DownloadSection: FunctionComponent<{ version: string }> = function ({
                 onClick={() => postDownload('mac')}
               >
                 <span className='icon me-2'>
-                  <i className='icon-download'></i>
+                  <i className='icon-file_download'></i>
                 </span>
                 <span>Silicon</span>
               </a>

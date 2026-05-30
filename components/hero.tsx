@@ -76,7 +76,7 @@ const Hero: FunctionComponent<{
                           <span>
                             {cta.text}{' '}
                             {cta.link.includes('download') && (
-                              <i className='icon-download ps-2'></i>
+                              <i className='icon-file_download ps-2'></i>
                             )}
                           </span>
                         </button>

@@ -49,7 +49,7 @@ const benefits = [
     title: 'Risk-Free Testing',
     description:
       'Test any scenario without affecting production systems or live data',
-    icon: 'icon-shield'
+    icon: 'icon-security'
   },
   {
     title: 'Parallel Development',
@@ -67,7 +67,7 @@ const benefits = [
     title: 'Compliance & Security',
     description:
       'Meet security requirements by keeping test data separate from production',
-    icon: 'icon-lock'
+    icon: 'icon-https'
   }
 ];
 

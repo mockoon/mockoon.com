@@ -267,7 +267,7 @@ export default function Docs(props: {
                   )}
                   {props.topicData.badges.includes('early-access') && (
                     <span className='badge text-bg-info ms-2'>
-                      <i className='icon-lab'></i>{' '}
+                      <i className='icon-science'></i>{' '}
                       <span className='d-none d-md-inline'>Early access</span>
                     </span>
                   )}

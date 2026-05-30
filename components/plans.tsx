@@ -47,7 +47,7 @@ const cloudFaq: AccordionData = [
       {
         title: 'Do you offer an availability SLA?',
         content:
-          "Yes. We target <strong>99.9%</strong> monthly uptime across our Services. For Enterprise plans, this SLA is <strong>contractual</strong>. Scheduled maintenance and factors outside of our reasonable control are excluded. Incidents and maintenance are reported on our <a href='/status/'>status page</a>. See our <a href='/terms/'>terms of service</a> for details and remedies."
+          "Yes. We target <strong>99.9%</strong> monthly uptime across our Services. For Enterprise plans, this SLA is <strong>contractual</strong>. Scheduled maintenance and factors outside of our reasonable control are excluded. Incidents and maintenance are reported on our <a href='/status/'>status page</a>. See our <a href='/terms/'>terms of service</a> for details and remedies, and our <a href='/trust/'>Trust Center</a> for an overview of our security and reliability practices."
       },
       {
         title:
@@ -114,6 +114,27 @@ const cloudFaq: AccordionData = [
         title: 'VAT',
         content:
           'Prices are in USD and exclude taxes (VAT, etc.). Taxes may or may not be charged during checkout depending on various criteria like your location and quality (individual or business).'
+      }
+    ]
+  },
+  {
+    title: 'Security & privacy',
+    items: [
+      {
+        title: 'How does Mockoon handle my data?',
+        content:
+          'Mockoon is local-first: by default, your mock APIs, request data, and responses live on your machine and never reach our servers. Cloud sync is opt-in and synced data is encrypted in transit and at rest. For full details, see our <a href="/trust/">Trust Center</a> and our <a href="/privacy/">privacy policy</a>.'
+      },
+      {
+        title:
+          'Are you compliant with GDPR, CCPA, and other privacy regulations?',
+        content:
+          'Yes. We support customers operating under GDPR, CCPA, the UK Data Protection Act, and PIPEDA. You can review our compliance posture, sub-processors, and security controls in our <a href="/trust/">Trust Center</a>.'
+      },
+      {
+        title: 'Where can I report a security vulnerability?',
+        content:
+          'Please follow our responsible disclosure process described in our <a href="https://github.com/mockoon/mockoon/security/policy" rel="noopener">security policy</a>. More information is available in our <a href="/trust/">Trust Center</a>.'
       }
     ]
   },

@@ -54,7 +54,7 @@ const XmlToJson: FunctionComponent = function () {
             </div>
 
             <div className='code-editor-sync m-2 fs-1 text-gray-600 align-self-center text-center'>
-              <i className='icon-sync'></i>
+              <i className='icon-sync_alt'></i>
             </div>
 
             <div className='code-editor-container'>

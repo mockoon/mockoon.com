@@ -48,7 +48,7 @@ const benefits = [
     title: 'Test in Isolation',
     description:
       'Test components independently without setting up complex environments',
-    icon: 'icon-isolate'
+    icon: 'icon-device_hub'
   },
   {
     title: 'Control Service Behavior',
@@ -60,7 +60,7 @@ const benefits = [
     title: 'Reduce Test Complexity',
     description:
       'Eliminate the need to coordinate multiple services for testing',
-    icon: 'icon-streamline'
+    icon: 'icon-auto_fix_high'
   },
   {
     title: 'Accelerate CI/CD',

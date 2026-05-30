@@ -13,6 +13,7 @@ const Card: FunctionComponent<{
   btnLight?: boolean;
   // synchronize colors between border and link
   synchronizedColors?: boolean;
+  align?: 'left' | 'center' | 'right';
 }> = function (props) {
   let cover = props.cover !== undefined ? props.cover : true;
   let border = props.border !== undefined ? props.border : false;
@@ -21,13 +22,14 @@ const Card: FunctionComponent<{
   let padding = props.data.imagePaddingClasses
     ? props.data.imagePaddingClasses
     : 'px-8 py-4';
+  let align = props.align !== undefined ? props.align : 'center';
 
   return (
     <Fragment>
       <div
-        className={`card ${border ? 'card-border' : ''} d-flex ${
+        className={`card ${border ? 'card-border' : ''} border-1 d-flex ${
           props.vertical ? 'flex-column' : 'flex-column flex-lg-row'
-        } flex-fill shadow-light-lg text-center h-100`}
+        } flex-fill shadow-dark-lg text-${align} h-100`}
         style={{
           borderTopColor: props.borderColor,
           backgroundColor: props.backgroundColor
@@ -68,13 +70,13 @@ const Card: FunctionComponent<{
           )}
 
           <h3
-            className='pb-3 h4 col-10 fw-medium'
+            className='pb-3 h4 fw-medium'
             dangerouslySetInnerHTML={{ __html: props.data.title }}
           ></h3>
 
           {props.data.description && (
             <p
-              className='col-10 text-gray-700'
+              className='text-gray-700'
               dangerouslySetInnerHTML={{ __html: props.data.description }}
             ></p>
           )}

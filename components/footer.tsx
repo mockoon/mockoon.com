@@ -212,6 +212,11 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
+                <Link href='/trust/' className='text-reset'>
+                  Trust & Security
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/ai-powered-api-mocking/' className='text-reset'>
                   AI-powered API mocking
                 </Link>

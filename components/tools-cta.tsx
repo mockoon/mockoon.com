@@ -17,7 +17,7 @@ const ToolsCta: FunctionComponent = function () {
       </p>
       <div className='mt-4'>
         <a href='/download/' className='btn btn-primary-subtle btn-xs'>
-          <i className='icon-download me-2'></i> Download
+          <i className='icon-file_download me-2'></i> Download
         </a>
       </div>
     </Quote>

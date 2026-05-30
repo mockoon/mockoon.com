@@ -144,8 +144,8 @@ const Article: FunctionComponent<{
                     id='download-the-example-environment'
                     className='fw-medium position-relative'
                   >
-                    <i className='icon-download me-2'></i>Download the example
-                    environment
+                    <i className='icon-file_download me-2'></i>Download the
+                    example environment
                   </h2>
                   <p>
                     You can download the example environment file created for

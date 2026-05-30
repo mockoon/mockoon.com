@@ -75,7 +75,7 @@ export const MockSamplesDownloadButton: FunctionComponent<{
       style={{ opacity: 1 }}
     >
       <span className='icon me-2'>
-        <i className='icon-download'></i>
+        <i className='icon-file_download'></i>
       </span>
       Download mock API file
     </a>

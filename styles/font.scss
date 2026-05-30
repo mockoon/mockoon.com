@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'mockoon';
-  src: url('/fonts/mockoon.woff?9kbgkr') format('woff');
+  src: url('/fonts/mockoon.woff?qzt3wn') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -22,11 +22,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-lab:before {
-  content: '\e90b';
-}
-.icon-sync:before {
-  content: '\e915';
+.icon-savings:before {
+  content: '\e927';
 }
 .icon-github:before {
   content: '\e911';
@@ -35,16 +32,9 @@
   content: '\e90f';
   color: #0077b5;
 }
-.icon-reddit:before {
-  content: '\e917';
-  color: #ff4500;
-}
 .icon-youtube:before {
   content: '\e912';
   color: #f00;
-}
-.icon-download:before {
-  content: '\f019';
 }
 .icon-apple:before {
   content: '\f179';
@@ -55,14 +45,23 @@
 .icon-linux:before {
   content: '\f17c';
 }
+.icon-warning:before {
+  content: '\e91f';
+}
 .icon-new_releases:before {
   content: '\e908';
+}
+.icon-play_arrow:before {
+  content: '\e929';
 }
 .icon-chat:before {
   content: '\e90c';
 }
 .icon-email:before {
   content: '\e90d';
+}
+.icon-vpn_key:before {
+  content: '\e920';
 }
 .icon-add:before {
   content: '\e919';
@@ -79,8 +78,29 @@
 .icon-remove:before {
   content: '\e903';
 }
+.icon-storage:before {
+  content: '\e921';
+}
+.icon-bar_chart:before {
+  content: '\e931';
+}
 .icon-cloud:before {
   content: '\e910';
+}
+.icon-file_download:before {
+  content: '\e917';
+}
+.icon-desktop_windows:before {
+  content: '\e91d';
+}
+.icon-security:before {
+  content: '\e91c';
+}
+.icon-device_hub:before {
+  content: '\e930';
+}
+.icon-tune:before {
+  content: '\e92d';
 }
 .icon-arrow_drop_down:before {
   content: '\e905';
@@ -94,6 +114,9 @@
 .icon-refresh:before {
   content: '\e909';
 }
+.icon-wifi_off:before {
+  content: '\e922';
+}
 .icon-public:before {
   content: '\e91b';
 }
@@ -102,6 +125,12 @@
 }
 .icon-account_circle:before {
   content: '\e904';
+}
+.icon-code:before {
+  content: '\e91e';
+}
+.icon-description:before {
+  content: '\e923';
 }
 .icon-history:before {
   content: '\e907';
@@ -120,4 +149,37 @@
 }
 .icon-search:before {
   content: '\e913';
+}
+.icon-verified_user:before {
+  content: '\e924';
+}
+.icon-visibility_off:before {
+  content: '\e925';
+}
+.icon-speed:before {
+  content: '\e92e';
+}
+.icon-sync_alt:before {
+  content: '\e915';
+}
+.icon-api:before {
+  content: '\e92a';
+}
+.icon-auto_fix_high:before {
+  content: '\e92f';
+}
+.icon-design_services:before {
+  content: '\e92b';
+}
+.icon-north_east:before {
+  content: '\e926';
+}
+.icon-science:before {
+  content: '\e90b';
+}
+.icon-verified:before {
+  content: '\e92c';
+}
+.icon-groups:before {
+  content: '\e928';
 }

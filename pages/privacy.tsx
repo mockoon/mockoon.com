@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
@@ -237,6 +238,11 @@ const Privacy: FunctionComponent = function () {
                 You are responsible for selecting any password and its overall
                 security strength, ensuring the security of your own information
                 within the bounds of our services.
+              </p>
+              <p>
+                For a detailed overview of the security controls,
+                sub-processors, and compliance practices that protect your data,
+                please visit our <Link href='/trust/'>Trust Center</Link>.
               </p>
               <h3 className='mt-6 fw-medium'>
                 5. How Long We Keep Your Personal Information

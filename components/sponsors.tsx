@@ -60,9 +60,9 @@ const Sponsors: FunctionComponent<{
       </div>
       <h4 className='text-gray-700 text-center pt-6 pb-4 fw-bold'>Gold</h4>
       <div className='row align-items-center justify-content-center'>
-        <div className='col col-xl-4 text-center'>
+        <div className='col col-md-10 text-center'>
           <Link
-            href='https://coderabbit.link/mockoon '
+            href='https://coderabbit.link/mockoon'
             className='d-inline-block p-4'
             target='_blank'
           >
@@ -70,7 +70,19 @@ const Sponsors: FunctionComponent<{
               src='/images/sponsors/coderabbit.png'
               className='img-fluid m-4'
               alt='CodeRabbit logo'
-              style={{ maxHeight: '48px' }}
+              style={{ maxHeight: '56px' }}
+            />
+          </Link>
+          <Link
+            href='https://talordata.com/?campaignid=rGAerPX1XrVAODD0&utm_source=mockoon&utm_term=mockoon'
+            className='d-inline-block p-4'
+            target='_blank'
+          >
+            <img
+              src='/images/sponsors/talordata.png'
+              className='img-fluid m-4'
+              alt='TalorData logo'
+              style={{ maxHeight: '56px' }}
             />
           </Link>
         </div>

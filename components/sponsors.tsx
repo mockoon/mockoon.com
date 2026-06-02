@@ -24,6 +24,7 @@ const Sponsors: FunctionComponent<{
             href='https://github.blog/news-insights/company-news/github-accelerator-our-first-cohort-and-whats-next/'
             className='d-inline-block p-4'
             target='_blank'
+            rel='sponsored'
           >
             <img
               src='/images/sponsors/github.png'
@@ -36,6 +37,7 @@ const Sponsors: FunctionComponent<{
             href='https://localazy.com/register?ref=a9CiDC61gOac-azO'
             className='d-inline-block p-4'
             target='_blank'
+            rel='sponsored'
           >
             <img
               src='/images/sponsors/localazy.png'
@@ -48,6 +50,7 @@ const Sponsors: FunctionComponent<{
             href='https://serpapi.com/?utm_source=mockoon'
             className='d-inline-block p-4'
             target='_blank'
+            rel='sponsored'
           >
             <img
               src='/images/sponsors/serpapi.png'
@@ -65,6 +68,7 @@ const Sponsors: FunctionComponent<{
             href='https://coderabbit.link/mockoon'
             className='d-inline-block p-4'
             target='_blank'
+            rel='sponsored'
           >
             <img
               src='/images/sponsors/coderabbit.png'
@@ -77,6 +81,7 @@ const Sponsors: FunctionComponent<{
             href='https://talordata.com/?campaignid=rGAerPX1XrVAODD0&utm_source=mockoon&utm_term=mockoon'
             className='d-inline-block p-4'
             target='_blank'
+            rel='sponsored'
           >
             <img
               src='/images/sponsors/talordata.png'
@@ -99,6 +104,7 @@ const Sponsors: FunctionComponent<{
                 href='https://www.pragm.co/en/about/about-pragm'
                 className='d-inline-block p-4'
                 target='_blank'
+                rel='sponsored'
               >
                 <img
                   src='/images/sponsors/pragm.png'

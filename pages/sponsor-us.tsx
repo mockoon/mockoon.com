@@ -115,7 +115,7 @@ const SponsorUs: FunctionComponent = function () {
         </div>
       </div>
       <section className='py-5 py-lg-10 border-top bg-gradient-light-white'>
-        <Sponsors showLink={false} showHonorary={true} />
+        <Sponsors showLink={false} />
       </section>
     </Layout>
   );

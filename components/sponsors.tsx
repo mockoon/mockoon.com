@@ -3,8 +3,7 @@ import { FunctionComponent } from 'react';
 
 const Sponsors: FunctionComponent<{
   showLink: boolean;
-  showHonorary: boolean;
-}> = function ({ showLink, showHonorary }) {
+}> = function ({ showLink }) {
   return (
     <div className='container'>
       <div className='col-12 text-center pb-4'>
@@ -78,6 +77,19 @@ const Sponsors: FunctionComponent<{
             />
           </Link>
           <Link
+            href='https://www.rapidproxy.io/?ref=mockoon'
+            className='d-inline-block p-4'
+            target='_blank'
+            rel='sponsored'
+          >
+            <img
+              src='/images/sponsors/rapidproxy.png'
+              className='img-fluid m-4'
+              alt='RapidProxy logo'
+              style={{ maxHeight: '56px' }}
+            />
+          </Link>
+          <Link
             href='https://talordata.com/?campaignid=rGAerPX1XrVAODD0&utm_source=mockoon&utm_term=mockoon'
             className='d-inline-block p-4'
             target='_blank'
@@ -92,30 +104,6 @@ const Sponsors: FunctionComponent<{
           </Link>
         </div>
       </div>
-
-      {showHonorary && (
-        <>
-          <h4 className='text-gray-700 text-center pt-6 pb-4 fw-bold'>
-            Special thanks
-          </h4>
-          <div className='row align-items-center justify-content-center'>
-            <div className='col text-center'>
-              <Link
-                href='https://www.pragm.co/en/about/about-pragm'
-                className='d-inline-block p-4'
-                target='_blank'
-                rel='sponsored'
-              >
-                <img
-                  src='/images/sponsors/pragm.png'
-                  className='img-fluid'
-                  alt='Pragm logo'
-                />
-              </Link>
-            </div>
-          </div>
-        </>
-      )}
     </div>
   );
 };

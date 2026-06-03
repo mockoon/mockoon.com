@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Fragment, FunctionComponent, useState } from 'react';
 import { authors } from '../constants/authors';
 import { ArticleData } from '../models/common.model';
@@ -131,13 +132,32 @@ const Article: FunctionComponent<{
         </section>
 
         <section className='pt-6 pt-lg-8 pb-8'>
+          {articleData.mockApiFile && (
+            <div className='row justify-content-center'>
+              <div className='col-12 col-lg-10 col-xl-10'>
+                <div
+                  className='quote bg-secondary-subtle border-start border-secondary border-4 p-4 my-4'
+                  role='alert'
+                >
+                  <div className='badge badge-rounded-circle text-bg-primary-subtle me-2'>
+                    <i className='icon-file_download'></i>
+                  </div>
+                  This article includes a{' '}
+                  <strong>downloadable mock API environment file</strong> to
+                  follow along with the tutorial. You can find the download
+                  section at the{' '}
+                  <Link href='#download-api-mock'>end of the article</Link>.
+                </div>
+              </div>
+            </div>
+          )}
           <div className='row justify-content-center'>
             <div className='col-12 col-lg-10 col-xl-10'>
               <Markdown body={articleBody} />
             </div>
           </div>
           {articleData.mockApiFile && (
-            <div className='row justify-content-center'>
+            <div className='row justify-content-center' id='download-api-mock'>
               <div className='col-12 col-lg-10 col-xl-10'>
                 <div className='mt-8 p-6 border-top border-bottom bg-gray-100'>
                   <h2

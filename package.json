@@ -75,7 +75,7 @@
     "rehype-raw": "7.0.0",
     "remark-gfm": "4.0.1",
     "sass": "1.100.0",
-    "semver": "7.8.0",
+    "semver": "7.8.1",
     "typed.js": "3.0.0",
     "xml-js": "1.6.11"
   },

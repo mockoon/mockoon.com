@@ -142,7 +142,7 @@ All `mockoon-cli start` flags (`--port`, etc.) must be provided when running the
 
 To load a data file, you can either **mount** a local file and pass the `start` command flags at the end of the command:
 
-`docker run -d --mount type=bind,source=./data.json,target=/data,readonly -p 3000:3000 mockoon/cli:latest -d data -p 3000`
+`docker run -d --mount type=bind,source=/home/your-data-file.json,target=/home/mockoon/data/your-data-file.json,readonly -p 3000:3000 mockoon/cli:latest --data /home/mockoon/data/your-data-file.json --port 3000`
 
 Or directly **pass a URL** to the `mockoon-cli start` command:
 

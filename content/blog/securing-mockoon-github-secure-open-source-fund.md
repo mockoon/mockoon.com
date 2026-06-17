@@ -72,6 +72,7 @@ Here is a look at the actions we took to make Mockoon more secure:
 - **Incident Response Plan**: We published a public Incident Response Plan (IRP) alongside our global [security policy](https://github.com/mockoon/mockoon?tab=security-ov-file) and created a more thorough version for internal purposes.
 - **CVE Management**: We learned how to manage CVEs (Common Vulnerabilities and Exposures) and set up processes to handle them effectively. We successfully requested a first CVE for a [GitHub Security Advisory (GHSA)](https://github.com/mockoon/mockoon/security/advisories/GHSA-w7f9-wqc4-3wxr) opened last year and clarified processes for future advisories.
 - **SBOMs**: We explored generating and publishing Software Bill of Materials (SBOMs). Version 9.4.0, is the [first release to include an SBOM](https://mockoon.com/releases/9.4.0/#distributionsecurity), and we plan to make it a standard part of our release process moving forward.
+- **NPM trusted publishing**: We learned about NPM's trusted publishing feature and implemented it to ensure that only authorized maintainers can publish packages, reducing the risk of supply chain attacks.
 
 This is only a part of the concrete actions we took during the program. And we cannot count the number of learnings we had on many other security topics like fuzzing, securing AI prompts and MCPs, UX and security, and much more. We are now much more aware of the security landscape surrounding open-source projects and the best practices to mitigate risks.
 

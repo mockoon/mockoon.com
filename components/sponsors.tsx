@@ -64,6 +64,19 @@ const Sponsors: FunctionComponent<{
       <div className='row align-items-center justify-content-center'>
         <div className='col col-md-10 text-center'>
           <Link
+            href='https://9proxy.com/?utm_source=Github&utm_campaign=mockoon'
+            className='d-inline-block p-4'
+            target='_blank'
+            rel='sponsored'
+          >
+            <img
+              src='/images/sponsors/9proxy.png'
+              className='img-fluid m-4'
+              alt='9Proxy logo'
+              style={{ maxHeight: '56px' }}
+            />
+          </Link>
+          <Link
             href='https://coderabbit.link/mockoon'
             className='d-inline-block p-4'
             target='_blank'

@@ -50,7 +50,7 @@
     "ajv-formats": "3.0.1",
     "bootstrap": "5.3.8",
     "date-fns": "4.3.0",
-    "eslint-config-next": "16.2.6",
+    "eslint-config-next": "16.2.9",
     "fast-xml-parser": "5.8.0",
     "firebase": "12.13.0",
     "github-slugger": "2.0.0",

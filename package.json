@@ -84,7 +84,7 @@
     "@types/glob": "9.0.0",
     "@types/leaflet": "1.9.21",
     "@types/node": "24.13.2",
-    "@types/react": "19.2.16",
+    "@types/react": "19.2.17",
     "@types/react-syntax-highlighter": "15.5.13",
     "@types/semver": "7.7.1",
     "@types/webpack": "5.28.5",

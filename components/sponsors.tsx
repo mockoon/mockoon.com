@@ -90,19 +90,6 @@ const Sponsors: FunctionComponent<{
             />
           </Link>
           <Link
-            href='https://www.rapidproxy.io/?ref=mockoon'
-            className='d-inline-block p-4'
-            target='_blank'
-            rel='sponsored'
-          >
-            <img
-              src='/images/sponsors/rapidproxy.png'
-              className='img-fluid m-4'
-              alt='RapidProxy logo'
-              style={{ maxHeight: '56px' }}
-            />
-          </Link>
-          <Link
             href='https://talordata.com/?campaignid=rGAerPX1XrVAODD0&utm_source=mockoon&utm_term=mockoon'
             className='d-inline-block p-4'
             target='_blank'

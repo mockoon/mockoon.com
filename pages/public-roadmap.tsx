@@ -44,6 +44,21 @@ const tasks: {
 } = {
   released: [
     {
+      link: '/releases/9.7.0#goodbye-telemetry',
+      title: 'Telemetry removal from desktop and web applications',
+      cloud: false
+    },
+    {
+      link: '/releases/9.7.0#multi-select-mode',
+      title: 'Batch actions on routes, data buckets and callbacks',
+      cloud: false
+    },
+    {
+      link: '/releases/9.7.0#admin-api-hardening',
+      title: 'Improved Admin API security',
+      cloud: false
+    },
+    {
       link: '/releases/9.6.0#openapi-re-import',
       title: 'OpenAPI specification re-import',
       cloud: false
@@ -100,27 +115,14 @@ const tasks: {
       link: '/cloud/docs/audit-trail/',
       cloud: true,
       target: null
-    },
-    {
-      link: '/cloud/docs/roles-permissions/',
-      title: 'Support roles (team admin, billing)',
-      cloud: true,
-      target: null
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/blob/main/packages/cli/README.md#start-command',
-      title: 'CLI local files watch mode',
-      cloud: false,
-      target: null
-    },
-    {
-      link: '/docs/latest/templating/mockoon-helpers/#jmespath',
-      title: 'JMESPath support',
-      cloud: false,
-      target: null
     }
   ],
   inProgress: [
+    {
+      link: '/blog/roadmap-update-faster-releases-self-hosting-focus-2026',
+      title: 'Self-hosted collaboration and mocks',
+      cloud: false
+    },
     {
       link: 'https://github.com/mockoon/mockoon/issues/2150',
       title: 'CLI MCP',

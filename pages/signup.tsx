@@ -34,9 +34,9 @@ const Signup: FunctionComponent = function () {
   } = useAuth();
   const router = useRouter();
   const [error, setError] = useState(null);
-  const isInApp = router.query.inapp === 'true';
   const isWebApp = router.query.webapp === 'true';
   const authCallback = router.query.authCallback as string;
+  const appRedirect = router.query.appRedirect as string;
   const {
     register: registerFormField,
     watch,
@@ -86,7 +86,7 @@ const Signup: FunctionComponent = function () {
   };
 
   useEffect(() => {
-    if (isInApp || isWebApp || authCallback) {
+    if (isWebApp || authCallback || appRedirect) {
       localStorage.setItem('redirect', '/app-auth/');
     }
 
@@ -96,6 +96,10 @@ const Signup: FunctionComponent = function () {
 
     if (authCallback) {
       localStorage.setItem('authCallback', authCallback);
+    }
+
+    if (appRedirect) {
+      localStorage.setItem('appRedirect', appRedirect);
     }
 
     if (!isSubmitting && !isAuthLoading && user && isAuth) {
@@ -113,9 +117,9 @@ const Signup: FunctionComponent = function () {
     isAuthLoading,
     user,
     isAuth,
-    isInApp,
     isWebApp,
-    authCallback
+    authCallback,
+    appRedirect
   ]);
 
   return (

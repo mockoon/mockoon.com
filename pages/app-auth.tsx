@@ -25,6 +25,7 @@ const AppAuth = function () {
   const isWebApp = router.query.webapp === 'true';
   const [callbackWorkflow, setCallbackWorkflow] = useState(false);
 
+  // old desktop workflow with call to localhost callback (new workflow redirects to the url with appRedirect)
   const {
     mutate: appCallback,
     isPending: isAppCallbackPending,
@@ -51,6 +52,15 @@ const AppAuth = function () {
     }
   });
 
+  // new app redirect working for both desktop and web app
+  const appRedirect = (token: string) => {
+    const appRedirectUrl = localStorage.getItem('appRedirect');
+    localStorage.removeItem('appRedirect');
+
+    window.location.assign(`${appRedirectUrl}?token=${token}`);
+  };
+
+  // old web app "redirect" sending the token to the web app via postMessage
   const webAppRedirect = (token: string) => {
     localStorage.removeItem('webAppRedirect');
 
@@ -89,7 +99,9 @@ const AppAuth = function () {
       });
     },
     onSuccess: async (data) => {
-      if (localStorage.getItem('webAppRedirect')) {
+      if (localStorage.getItem('appRedirect')) {
+        appRedirect(data.token);
+      } else if (localStorage.getItem('webAppRedirect')) {
         webAppRedirect(data.token);
       } else if (localStorage.getItem('authCallback')) {
         // new workflow >= 9.0.0, using localhost callback

@@ -7,6 +7,7 @@ import Meta from '../components/meta';
 import Spinner from '../components/spinner';
 import Layout from '../layout/layout';
 import { useAuth } from '../utils/auth';
+import { normalizeAppRedirectUrl } from '../utils/redirect';
 
 const meta = {
   title: 'Desktop application login',
@@ -25,6 +26,7 @@ const AppAuth = function () {
   const isWebApp = router.query.webapp === 'true';
   const [callbackWorkflow, setCallbackWorkflow] = useState(false);
 
+  // old desktop workflow with call to localhost callback (new workflow redirects to the url with appRedirect)
   const {
     mutate: appCallback,
     isPending: isAppCallbackPending,
@@ -32,7 +34,14 @@ const AppAuth = function () {
     isError: isAppCallbackError
   } = useMutation({
     mutationFn: async (token: string) => {
-      return fetch(`${localStorage.getItem('authCallback')}?token=${token}`, {
+      const rawAuthCallbackUrl = localStorage.getItem('authCallback');
+      const authCallbackUrl = normalizeAppRedirectUrl(rawAuthCallbackUrl);
+
+      if (!authCallbackUrl) {
+        throw new Error('Invalid auth callback URL');
+      }
+
+      return fetch(`${authCallbackUrl}?token=${token}`, {
         method: 'GET'
       }).then((res) => {
         if (res.ok) {
@@ -51,6 +60,21 @@ const AppAuth = function () {
     }
   });
 
+  // new app redirect working for both desktop and web app
+  const appRedirect = (token: string) => {
+    const rawAppRedirectUrl = localStorage.getItem('appRedirect');
+    localStorage.removeItem('appRedirect');
+
+    const appRedirectUrl = normalizeAppRedirectUrl(rawAppRedirectUrl);
+
+    if (!appRedirectUrl) {
+      throw new Error('Invalid app redirect URL');
+    }
+
+    window.location.assign(`${appRedirectUrl}?token=${token}`);
+  };
+
+  // old web app "redirect" sending the token to the web app via postMessage
   const webAppRedirect = (token: string) => {
     localStorage.removeItem('webAppRedirect');
 
@@ -89,7 +113,9 @@ const AppAuth = function () {
       });
     },
     onSuccess: async (data) => {
-      if (localStorage.getItem('webAppRedirect')) {
+      if (localStorage.getItem('appRedirect')) {
+        appRedirect(data.token);
+      } else if (localStorage.getItem('webAppRedirect')) {
         webAppRedirect(data.token);
       } else if (localStorage.getItem('authCallback')) {
         // new workflow >= 9.0.0, using localhost callback

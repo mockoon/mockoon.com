@@ -10,6 +10,7 @@ import Spinner from '../components/spinner';
 import Layout from '../layout/layout';
 import { useAuth } from '../utils/auth';
 import { useHoneypotFieldName } from '../utils/form-hooks';
+import { normalizeAppRedirectUrl } from '../utils/redirect';
 
 const meta = {
   title: "Mockoon's cloud signup",
@@ -34,9 +35,9 @@ const Signup: FunctionComponent = function () {
   } = useAuth();
   const router = useRouter();
   const [error, setError] = useState(null);
-  const isInApp = router.query.inapp === 'true';
   const isWebApp = router.query.webapp === 'true';
   const authCallback = router.query.authCallback as string;
+  const appRedirect = router.query.appRedirect as string;
   const {
     register: registerFormField,
     watch,
@@ -86,7 +87,7 @@ const Signup: FunctionComponent = function () {
   };
 
   useEffect(() => {
-    if (isInApp || isWebApp || authCallback) {
+    if (isWebApp || authCallback || appRedirect) {
       localStorage.setItem('redirect', '/app-auth/');
     }
 
@@ -95,7 +96,19 @@ const Signup: FunctionComponent = function () {
     }
 
     if (authCallback) {
-      localStorage.setItem('authCallback', authCallback);
+      const normalizedAuthCallback = normalizeAppRedirectUrl(authCallback);
+
+      if (normalizedAuthCallback) {
+        localStorage.setItem('authCallback', normalizedAuthCallback);
+      }
+    }
+
+    if (appRedirect) {
+      const normalizedAppRedirect = normalizeAppRedirectUrl(appRedirect);
+
+      if (normalizedAppRedirect) {
+        localStorage.setItem('appRedirect', normalizedAppRedirect);
+      }
     }
 
     if (!isSubmitting && !isAuthLoading && user && isAuth) {
@@ -113,9 +126,9 @@ const Signup: FunctionComponent = function () {
     isAuthLoading,
     user,
     isAuth,
-    isInApp,
     isWebApp,
-    authCallback
+    authCallback,
+    appRedirect
   ]);
 
   return (

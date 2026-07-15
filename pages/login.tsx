@@ -11,6 +11,7 @@ import Spinner from '../components/spinner';
 import Layout from '../layout/layout';
 import { useAuth } from '../utils/auth';
 import { useHoneypotFieldName } from '../utils/form-hooks';
+import { normalizeAppRedirectUrl } from '../utils/redirect';
 
 const meta = {
   title: "Mockoon's cloud login",
@@ -27,9 +28,9 @@ const Login: FunctionComponent = function () {
     verifyTfaCode
   } = useAuth();
   const router = useRouter();
-  const isInApp = router.query.inapp === 'true';
   const isWebApp = router.query.webapp === 'true';
   const authCallback = router.query.authCallback as string;
+  const appRedirect = router.query.appRedirect as string;
   const [tfaStep, setTfaStep] = useState<MultiFactorError>(null);
   const credentialsForm = useForm();
   const totpForm = useForm();
@@ -96,7 +97,7 @@ const Login: FunctionComponent = function () {
   };
 
   useEffect(() => {
-    if (isInApp || isWebApp || authCallback) {
+    if (isWebApp || authCallback || appRedirect) {
       localStorage.setItem('redirect', '/app-auth/');
     }
 
@@ -109,7 +110,20 @@ const Login: FunctionComponent = function () {
     }
 
     if (authCallback) {
-      localStorage.setItem('authCallback', authCallback);
+      const normalizedAuthCallback = normalizeAppRedirectUrl(authCallback);
+
+      if (normalizedAuthCallback) {
+        localStorage.setItem('authCallback', normalizedAuthCallback);
+      }
+    }
+
+    // new app redirect working for both desktop and web app
+    if (appRedirect) {
+      const normalizedAppRedirect = normalizeAppRedirectUrl(appRedirect);
+
+      if (normalizedAppRedirect) {
+        localStorage.setItem('appRedirect', normalizedAppRedirect);
+      }
     }
 
     if (
@@ -134,7 +148,7 @@ const Login: FunctionComponent = function () {
     ) {
       router.push('/email-verification/');
     }
-  }, [isAuthLoading, user, isAuth, isInApp, isWebApp, authCallback]);
+  }, [isAuthLoading, user, isAuth, isWebApp, authCallback, appRedirect]);
 
   return (
     <Layout footerBanner='contact' minimal={isWebApp}>

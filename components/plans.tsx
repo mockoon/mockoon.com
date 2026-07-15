@@ -472,175 +472,181 @@ const PlansView: FunctionComponent<{
             </Modal>
 
             <div className='row gx-4 gy-4 justify-content-center'>
-              <div className='col-12 col-lg-4'>
-                <div className='card shadow-lg mb-6 mb-md-0 h-100'>
-                  <div className='card-body h-100 d-flex flex-column'>
-                    <h2 className='d-flex justify-content-center mb-2 fw-medium'>
-                      <span className='text-primary'>Solo</span>
-                      <span className='ms-1'>plan</span>
-                    </h2>
-                    <p className='text-center text-gray-700'>
-                      For individual developers and hobby projects
-                    </p>
-                    <div className='d-flex justify-content-center position-relative'>
-                      <span className='h2 mb-0 mt-2'>$</span>
-                      <span className='price display-2 mb-0'>
-                        {pricing.SOLO[planFrequency].price}
-                      </span>
-                      <span
-                        className='h5 text-gray-700 align-self-end ms-2'
-                        dangerouslySetInnerHTML={{
-                          __html: suffixes.SOLO[planFrequency]
-                        }}
-                      ></span>
-                    </div>
-                    {planFrequency === Frequency.YEARLY && (
-                      <div className='mx-auto mb-6'>
-                        <span className='badge text-bg-success-subtle rounded-pill'>
-                          Save up to 30% with annual billing
+              {false && (
+                <div className='col-12 col-lg-4'>
+                  <div className='card shadow-lg mb-6 mb-md-0 h-100'>
+                    <div className='card-body h-100 d-flex flex-column'>
+                      <h2 className='d-flex justify-content-center mb-2 fw-medium'>
+                        <span className='text-primary'>Solo</span>
+                        <span className='ms-1'>plan</span>
+                      </h2>
+                      <p className='text-center text-gray-700'>
+                        For individual developers and hobby projects
+                      </p>
+                      <div className='d-flex justify-content-center position-relative'>
+                        <span className='h2 mb-0 mt-2'>$</span>
+                        <span className='price display-2 mb-0'>
+                          {pricing.SOLO[planFrequency].price}
                         </span>
+                        <span
+                          className='h5 text-gray-700 align-self-end ms-2'
+                          dangerouslySetInnerHTML={{
+                            __html: suffixes.SOLO[planFrequency]
+                          }}
+                        ></span>
                       </div>
-                    )}
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
+                      {planFrequency === Frequency.YEARLY && (
+                        <div className='mx-auto mb-6'>
+                          <span className='badge text-bg-success-subtle rounded-pill'>
+                            Save up to 30% with annual billing
+                          </span>
+                        </div>
+                      )}
+                      <div className='d-flex'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                          <i className='icon-check'></i>
+                        </div>
+
+                        <p className='mb-0'>
+                          All of Mockoon's{' '}
+                          <Link href={'/features/'}>open-source features</Link>
+                        </p>
                       </div>
+                      <hr />
 
-                      <p className='mb-0'>
-                        All of Mockoon's{' '}
-                        <Link href={'/features/'}>open-source features</Link>
-                      </p>
-                    </div>
-                    <hr />
+                      <div className='d-flex'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                          <i className='icon-check'></i>
+                        </div>
 
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
-                      </div>
-
-                      <p>
-                        {pricing.SOLO.syncQuota} API mock<sup>1</sup>{' '}
-                        <Link href={'/cloud/docs/api-mock-cloud-deployments/'}>
-                          deployed
-                        </Link>{' '}
-                        in the cloud and{' '}
-                        <Link
-                          href={
-                            '/cloud/docs/data-synchronization-team-collaboration/'
-                          }
-                        >
-                          synchronized
-                        </Link>{' '}
-                        across your devices
-                      </p>
-                    </div>
-
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
-                      </div>
-
-                      <p>
-                        {pricing.SOLO.deployCallsQuota.toLocaleString()} monthly
-                        calls included
-                      </p>
-                    </div>
-
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
+                        <p>
+                          {pricing.SOLO.syncQuota} API mock<sup>1</sup>{' '}
+                          <Link
+                            href={'/cloud/docs/api-mock-cloud-deployments/'}
+                          >
+                            deployed
+                          </Link>{' '}
+                          in the cloud and{' '}
+                          <Link
+                            href={
+                              '/cloud/docs/data-synchronization-team-collaboration/'
+                            }
+                          >
+                            synchronized
+                          </Link>{' '}
+                          across your devices
+                        </p>
                       </div>
 
-                      <p>
-                        {pricing.SOLO.templatesQuota}{' '}
-                        <Link href={'/ai-powered-api-mocking/'}>
-                          AI-generated endpoints
-                        </Link>{' '}
-                        per month
-                      </p>
-                    </div>
+                      <div className='d-flex'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                          <i className='icon-check'></i>
+                        </div>
 
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
+                        <p>
+                          {pricing.SOLO.deployCallsQuota.toLocaleString()}{' '}
+                          monthly calls included
+                        </p>
                       </div>
 
-                      <p>
-                        Access to the{' '}
-                        <Link href={'/cloud/docs/web-application/'}>
-                          Web UI
-                        </Link>
-                      </p>
-                    </div>
+                      <div className='d-flex'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                          <i className='icon-check'></i>
+                        </div>
 
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
+                        <p>
+                          {pricing.SOLO.templatesQuota}{' '}
+                          <Link href={'/ai-powered-api-mocking/'}>
+                            AI-generated endpoints
+                          </Link>{' '}
+                          per month
+                        </p>
                       </div>
 
-                      <p>Priority email support</p>
-                    </div>
-                    <div className='mt-auto'>
-                      {/* show only if not connected or not already subscribed */}
-                      {(!currentUser.data ||
-                        currentUser.data?.plan === 'FREE') && (
-                        <div className='text-center'>
-                          {!isTrialOnboarding &&
-                            !isLoadingTrialEligibilityStatus && (
-                              <div className='mb-2'>
+                      <div className='d-flex'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                          <i className='icon-check'></i>
+                        </div>
+
+                        <p>
+                          Access to the{' '}
+                          <Link href={'/cloud/docs/web-application/'}>
+                            Web UI
+                          </Link>
+                        </p>
+                      </div>
+
+                      <div className='d-flex'>
+                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                          <i className='icon-check'></i>
+                        </div>
+
+                        <p>Priority email support</p>
+                      </div>
+                      <div className='mt-auto'>
+                        {/* show only if not connected or not already subscribed */}
+                        {(!currentUser.data ||
+                          currentUser.data?.plan === 'FREE') && (
+                          <div className='text-center'>
+                            {!isTrialOnboarding &&
+                              !isLoadingTrialEligibilityStatus && (
+                                <div className='mb-2'>
+                                  <button
+                                    type='button'
+                                    className='btn btn-primary btn-xs'
+                                    disabled={isTrialOnboarding}
+                                    onClick={async () => {
+                                      await startTrial(Plans.SOLO);
+                                    }}
+                                  >
+                                    {getTrialButtonText()}
+                                  </button>
+                                </div>
+                              )}
+                            {getTrialCtaText() &&
+                              !isTrialOnboarding &&
+                              !isLoadingTrialEligibilityStatus && (
+                                <p className='text-gray-700 mb-0'>
+                                  <small
+                                    dangerouslySetInnerHTML={{
+                                      __html: getTrialCtaText()
+                                    }}
+                                  ></small>
+                                </p>
+                              )}
+                            {(isLoadingTrialEligibilityStatus ||
+                              isTrialOnboarding) && <Spinner small />}
+                          </div>
+                        )}
+                        {currentUser.data &&
+                          currentUser.data.plan !== 'FREE' && (
+                            <div className='text-center'>
+                              <div className='btn-group'>
                                 <button
                                   type='button'
                                   className='btn btn-primary btn-xs'
                                   disabled={isTrialOnboarding}
-                                  onClick={async () => {
-                                    await startTrial(Plans.SOLO);
+                                  onClick={() => {
+                                    openWebApp();
                                   }}
                                 >
-                                  {getTrialButtonText()}
+                                  <i className='icon-open me-1'></i> Open web
+                                  app
                                 </button>
+                                <Link
+                                  href={'/account/subscription/'}
+                                  className='btn btn-primary-subtle btn-xs'
+                                >
+                                  My account
+                                </Link>
                               </div>
-                            )}
-                          {getTrialCtaText() &&
-                            !isTrialOnboarding &&
-                            !isLoadingTrialEligibilityStatus && (
-                              <p className='text-gray-700 mb-0'>
-                                <small
-                                  dangerouslySetInnerHTML={{
-                                    __html: getTrialCtaText()
-                                  }}
-                                ></small>
-                              </p>
-                            )}
-                          {(isLoadingTrialEligibilityStatus ||
-                            isTrialOnboarding) && <Spinner small />}
-                        </div>
-                      )}
-                      {currentUser.data && currentUser.data.plan !== 'FREE' && (
-                        <div className='text-center'>
-                          <div className='btn-group'>
-                            <button
-                              type='button'
-                              className='btn btn-primary btn-xs'
-                              disabled={isTrialOnboarding}
-                              onClick={() => {
-                                openWebApp();
-                              }}
-                            >
-                              <i className='icon-open me-1'></i> Open web app
-                            </button>
-                            <Link
-                              href={'/account/subscription/'}
-                              className='btn btn-primary-subtle btn-xs'
-                            >
-                              My account
-                            </Link>
-                          </div>
-                        </div>
-                      )}
+                            </div>
+                          )}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
 
               <div className='col-12 col-lg-4'>
                 <div className='card shadow-lg border-1 border-primary mb-md-0 h-100'>
@@ -967,9 +973,9 @@ const PlansView: FunctionComponent<{
                         <thead>
                           <tr>
                             <th></th>
-                            <th className='text-center'>
+                            {/* <th className='text-center'>
                               <span className='text-primary'>Solo</span> plan
-                            </th>
+                            </th> */}
                             <th className='text-center'>
                               <span className='text-primary'>Team</span> plan
                             </th>
@@ -995,7 +1001,7 @@ const PlansView: FunctionComponent<{
                                 Web app
                               </Link>
                             </td>
-                            <td className='text-center'>{tickBadge}</td>
+                            {/* <td className='text-center'>{tickBadge}</td> */}
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                           </tr>
@@ -1009,9 +1015,9 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>Number of team members</td>
-                            <td className='text-center'>
+                            {/* <td className='text-center'>
                               {pricing.SOLO.includedSeats}
-                            </td>
+                            </td> */}
                             <td className='text-center'>
                               {pricing.TEAM.includedSeats}
                             </td>
@@ -1022,9 +1028,9 @@ const PlansView: FunctionComponent<{
                               Number of API mocks{' '}
                               <CustomTooltip text='Single quota governing your API mocks. You can synchronize across devices and collaborators, and deploy up to the same number. Each mock is an unlimited collection of endpoints and rules.'></CustomTooltip>
                             </td>
-                            <td className='text-center'>
+                            {/* <td className='text-center'>
                               {pricing.SOLO.syncQuota}
-                            </td>
+                            </td> */}
                             <td className='text-center'>
                               {pricing.TEAM.syncQuota}
                             </td>
@@ -1032,13 +1038,13 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>Data synchronization across your devices</td>
-                            <td className='text-center'>{tickBadge}</td>
+                            {/* <td className='text-center'>{tickBadge}</td> */}
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                           </tr>
                           <tr>
                             <td>Real-time collaboration</td>
-                            <td className='text-center'>{crossBadge}</td>
+                            {/* <td className='text-center'>{crossBadge}</td> */}
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                           </tr>
@@ -1047,9 +1053,9 @@ const PlansView: FunctionComponent<{
                               Monthly calls included{' '}
                               <CustomTooltip text='Total monthly API requests across your deployed mocks.'></CustomTooltip>
                             </td>
-                            <td className='text-center'>
+                            {/* <td className='text-center'>
                               {pricing.SOLO.deployCallsQuota.toLocaleString()}
-                            </td>
+                            </td> */}
                             <td className='text-center'>
                               {pricing.TEAM.deployCallsQuota.toLocaleString()}
                             </td>
@@ -1057,9 +1063,9 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>Request rate limit</td>
-                            <td className='text-center'>
+                            {/* <td className='text-center'>
                               {pricing.SOLO.deployReqSQuota} req/sec
-                            </td>
+                            </td> */}
                             <td className='text-center'>
                               {pricing.TEAM.deployReqSQuota} req/sec
                             </td>
@@ -1067,7 +1073,7 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>Private or public mocks</td>
-                            <td className='text-center'>{tickBadge}</td>
+                            {/* <td className='text-center'>{tickBadge}</td> */}
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                           </tr>
@@ -1076,7 +1082,7 @@ const PlansView: FunctionComponent<{
                               Hosting{' '}
                               <CustomTooltip text='Each API mock runs in a dedicated container (per-API isolation).'></CustomTooltip>
                             </td>
-                            <td className='text-center'>Multi-tenant</td>
+                            {/* <td className='text-center'>Multi-tenant</td> */}
                             <td className='text-center'>Multi-tenant</td>
                             <td className='text-center'>
                               Multi-tenant or single-tenant
@@ -1087,7 +1093,7 @@ const PlansView: FunctionComponent<{
                               Self-hosting with the CLI{' '}
                               <CustomTooltip text='Self-host cloud APIs from your own server using Mockoon CLI.'></CustomTooltip>
                             </td>
-                            <td className='text-center'>{crossBadge}</td>
+                            {/* <td className='text-center'>{crossBadge}</td> */}
                             <td className='text-center'>
                               {(1000).toLocaleString()} monthly pulls
                             </td>
@@ -1098,12 +1104,12 @@ const PlansView: FunctionComponent<{
                               Regions{' '}
                               <CustomTooltip text='Choose a region close to your users. Enterprise can be provisioned in a custom Google Cloud region.'></CustomTooltip>
                             </td>
-                            <td className='text-center'>
+                            {/* <td className='text-center'>
                               Choice of{' '}
                               <Link href='#available-regions'>
                                 available regions
                               </Link>
-                            </td>
+                            </td> */}
                             <td className='text-center'>
                               Choice of{' '}
                               <Link href='#available-regions'>
@@ -1116,7 +1122,7 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>API mock max size</td>
-                            <td className='text-center'>10MB</td>
+                            {/* <td className='text-center'>10MB</td> */}
                             <td className='text-center'>30MB</td>
                             <td className='text-center'>Custom</td>
                           </tr>
@@ -1130,21 +1136,21 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>Generate JSON templates</td>
-                            <td className='text-center'>{tickBadge}</td>
+                            {/* <td className='text-center'>{tickBadge}</td> */}
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                           </tr>
                           <tr>
                             <td>Generate HTTP endpoints</td>
-                            <td className='text-center'>{tickBadge}</td>
+                            {/* <td className='text-center'>{tickBadge}</td> */}
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                           </tr>
                           <tr>
                             <td>Number of credits</td>
-                            <td className='text-center'>
+                            {/* <td className='text-center'>
                               {pricing.SOLO.templatesQuota}/month
-                            </td>
+                            </td> */}
                             <td className='text-center'>
                               {pricing.TEAM.templatesQuota}/month/user
                             </td>
@@ -1177,7 +1183,7 @@ const PlansView: FunctionComponent<{
                               Owner{' '}
                               <CustomTooltip text='The owner has full access to all resources and can manage team settings'></CustomTooltip>
                             </td>
-                            <td className='text-center'>{crossBadge}</td>
+                            {/* <td className='text-center'>{crossBadge}</td> */}
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                           </tr>
@@ -1186,7 +1192,7 @@ const PlansView: FunctionComponent<{
                               Users{' '}
                               <CustomTooltip text='Users can access and manage the resources but cannot modify team settings'></CustomTooltip>
                             </td>
-                            <td className='text-center'>{crossBadge}</td>
+                            {/* <td className='text-center'>{crossBadge}</td> */}
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                           </tr>
@@ -1195,7 +1201,7 @@ const PlansView: FunctionComponent<{
                               Team admin{' '}
                               <CustomTooltip text='Team admins can manage team settings and billing information'></CustomTooltip>
                             </td>
-                            <td className='text-center'>{crossBadge}</td>
+                            {/* <td className='text-center'>{crossBadge}</td> */}
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                           </tr>
@@ -1204,7 +1210,7 @@ const PlansView: FunctionComponent<{
                               Billing{' '}
                               <CustomTooltip text='Billing users can manage billing information'></CustomTooltip>
                             </td>
-                            <td className='text-center'>{crossBadge}</td>
+                            {/* <td className='text-center'>{crossBadge}</td> */}
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                           </tr>
@@ -1224,19 +1230,19 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>Team activities audit trail</td>
-                            <td className='text-center'>{crossBadge}</td>
+                            {/* <td className='text-center'>{crossBadge}</td> */}
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                           </tr>
                           <tr>
                             <td>Resource activities audit trail</td>
-                            <td className='text-center'>{crossBadge}</td>
+                            {/* <td className='text-center'>{crossBadge}</td> */}
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                           </tr>
                           <tr>
                             <td>Retention</td>
-                            <td className='text-center'>{crossBadge}</td>
+                            {/* <td className='text-center'>{crossBadge}</td> */}
                             <td className='text-center'>30 days</td>
                             <td className='text-center'>1 year</td>
                           </tr>
@@ -1251,9 +1257,9 @@ const PlansView: FunctionComponent<{
 
                           <tr>
                             <td>Support level</td>
-                            <td className='text-center'>
+                            {/* <td className='text-center'>
                               Priority email support
-                            </td>
+                            </td> */}
                             <td className='text-center'>Next business day</td>
                             <td className='text-center'>Custom SLA</td>
                           </tr>
@@ -1262,13 +1268,13 @@ const PlansView: FunctionComponent<{
                               Availability SLA{' '}
                               <CustomTooltip text='Monthly uptime commitment. Contractual for Enterprise plans. Excludes scheduled maintenance and factors outside our reasonable control. See status page and terms.'></CustomTooltip>
                             </td>
-                            <td className='text-center'>99.9% (target)</td>
+                            {/* <td className='text-center'>99.9% (target)</td> */}
                             <td className='text-center'>99.9% (target)</td>
                             <td className='text-center'>99.9% (contractual)</td>
                           </tr>
                           <tr>
                             <td>Customer success manager</td>
-                            <td className='text-center'>{crossBadge}</td>
+                            {/* <td className='text-center'>{crossBadge}</td> */}
                             <td className='text-center'>{crossBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                           </tr>
@@ -1282,7 +1288,7 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>Payment options</td>
-                            <td className='text-center'>Credit card only</td>
+                            {/* <td className='text-center'>Credit card only</td> */}
                             <td className='text-center'>Credit card only</td>
                             <td className='text-center'>PO and invoicing</td>
                           </tr>

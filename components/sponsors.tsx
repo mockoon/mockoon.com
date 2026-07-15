@@ -90,15 +90,15 @@ const Sponsors: FunctionComponent<{
             />
           </Link>
           <Link
-            href='https://talordata.com/?campaignid=rGAerPX1XrVAODD0&utm_source=mockoon&utm_term=mockoon'
+            href='https://www.swiftproxy.net/?ref=mockoon'
             className='d-inline-block p-4'
             target='_blank'
             rel='sponsored'
           >
             <img
-              src='/images/sponsors/talordata.png'
+              src='/images/sponsors/swiftproxy.png'
               className='img-fluid m-4'
-              alt='TalorData logo'
+              alt='SwiftProxy logo'
               style={{ maxHeight: '56px' }}
             />
           </Link>

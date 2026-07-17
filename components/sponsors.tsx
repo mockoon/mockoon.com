@@ -102,6 +102,19 @@ const Sponsors: FunctionComponent<{
               style={{ maxHeight: '56px' }}
             />
           </Link>
+          <Link
+            href='https://talordata.com/?campaignid=rGAerPX1XrVAODD0&utm_source=mockoon&utm_term=mockoon'
+            className='d-inline-block p-4'
+            target='_blank'
+            rel='sponsored'
+          >
+            <img
+              src='/images/sponsors/talordata.png'
+              className='img-fluid m-4'
+              alt='TalorData logo'
+              style={{ maxHeight: '56px' }}
+            />
+          </Link>
         </div>
       </div>
     </div>

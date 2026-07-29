@@ -44,6 +44,11 @@ const tasks: {
 } = {
   released: [
     {
+      link: '/releases/9.8.0#new-cli-mcp-server',
+      title: 'CLI MCP server',
+      cloud: false
+    },
+    {
       link: '/releases/9.7.0#goodbye-telemetry',
       title: 'Telemetry removal from desktop and web applications',
       cloud: false
@@ -109,12 +114,6 @@ const tasks: {
       link: 'https://github.com/mockoon/mockoon/issues/1458',
       title: 'Copy logs as cURL',
       cloud: false
-    },
-    {
-      title: 'Account activity audit trail',
-      link: '/cloud/docs/audit-trail/',
-      cloud: true,
-      target: null
     }
   ],
   inProgress: [
@@ -122,12 +121,6 @@ const tasks: {
       link: '/blog/roadmap-update-faster-releases-self-hosting-focus-2026',
       title: 'Self-hosted collaboration and mocks',
       cloud: false
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/2150',
-      title: 'CLI MCP',
-      cloud: false,
-      target: '_blank'
     },
     {
       link: 'https://github.com/mockoon/mockoon/issues/1045',

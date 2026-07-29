@@ -162,3 +162,9 @@ JSON equivalent (compacted):
 > 📘 Please refer to [xml-js documentation](https://www.npmjs.com/package/xml-js) for more detail on how the XML is parsed.
 
 > 🛠️ Use our [XML to JSON converter](/tools/xml-to-json/) to get a preview of how Mockoon will convert your XML to JSON. You can also use our [XML validator](/tools/xml-validator/) to make sure your XML is valid.
+
+## Size limitation
+
+Mockoon enforces a **maximum request body size** to protect the server from oversized payloads. The default limit is set to 100MB (not configurable in the desktop application). Any request exceeding this limit will receive a `413 Payload Too Large` response.
+
+This limit can be configured in the CLI using the [`--max-request-body-size` flag](https://github.com/mockoon/mockoon/tree/main/packages/cli#start-command).

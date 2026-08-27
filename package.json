@@ -51,7 +51,7 @@
     "bootstrap": "5.3.8",
     "date-fns": "4.4.0",
     "eslint-config-next": "16.3.0",
-    "fast-xml-parser": "5.10.1",
+    "fast-xml-parser": "5.11.0",
     "firebase": "12.17.1",
     "github-slugger": "2.0.0",
     "glob": "13.0.6",

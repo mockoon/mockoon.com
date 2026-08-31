@@ -12,11 +12,11 @@ order: 806
 
 ---
 
-This endpoint allows you to **partially update** the environment definition, such as updating the responses or adding headers without restarting the mock server or the application.
+## Full update of the environment configuration
+
+This endpoint allows you to **fully update** the environment definition without restarting the mock server or the application. The payload must include the complete environment configuration. No merging with the existing configuration will be performed.
 
 > ⚠️ **Note:** some server configuration options cannot be updated during runtime (see below).
-
-## Update the environment configuration
 
 To update the environment configuration, call the `/mockoon-admin/environment` endpoint with the following parameters:
 

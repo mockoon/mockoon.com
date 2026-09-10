@@ -76,19 +76,7 @@ const Sponsors: FunctionComponent<{
               style={{ maxHeight: '56px' }}
             />
           </Link>
-          <Link
-            href='https://www.swiftproxy.net/?ref=mockoon'
-            className='d-inline-block p-4'
-            target='_blank'
-            rel='sponsored'
-          >
-            <img
-              src='/images/sponsors/swiftproxy.png'
-              className='img-fluid m-4'
-              alt='SwiftProxy logo'
-              style={{ maxHeight: '56px' }}
-            />
-          </Link>
+
           <Link
             href='https://www.testmuai.com/?utm_medium=sponsor&utm_source=mockoon'
             className='d-inline-block p-4'

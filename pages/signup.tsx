@@ -38,6 +38,7 @@ const Signup: FunctionComponent = function () {
   const isWebApp = router.query.webapp === 'true';
   const authCallback = router.query.authCallback as string;
   const appRedirect = router.query.appRedirect as string;
+  const state = router.query.state as string;
   const {
     register: registerFormField,
     watch,
@@ -111,6 +112,11 @@ const Signup: FunctionComponent = function () {
       }
     }
 
+    // state param sent back to the app alongside the token, newer app versions only
+    if (state) {
+      localStorage.setItem('authState', state);
+    }
+
     if (!isSubmitting && !isAuthLoading && user && isAuth) {
       const redirect = localStorage.getItem('redirect');
 
@@ -128,7 +134,8 @@ const Signup: FunctionComponent = function () {
     isAuth,
     isWebApp,
     authCallback,
-    appRedirect
+    appRedirect,
+    state
   ]);
 
   return (

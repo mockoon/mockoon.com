@@ -96,5 +96,13 @@
     "image-size": "2.0.2",
     "prettier": "3.9.6",
     "typescript": "5.9.3"
+  },
+  "allowScripts": {
+    "@firebase/util@1.15.3": true,
+    "@parcel/watcher@2.5.6": true,
+    "core-js@2.6.12": true,
+    "protobufjs@7.5.8": true,
+    "re2@1.26.1": true,
+    "unrs-resolver@1.11.1": true
   }
 }

@@ -41,7 +41,15 @@ const AppAuth = function () {
         throw new Error('Invalid auth callback URL');
       }
 
-      return fetch(`${authCallbackUrl}?token=${token}`, {
+      // state must be sent back to the app, if provided (newer app versions only)
+      const state = localStorage.getItem('authState');
+      const params = new URLSearchParams({ token });
+
+      if (state) {
+        params.set('state', state);
+      }
+
+      return fetch(`${authCallbackUrl}?${params.toString()}`, {
         method: 'GET'
       }).then((res) => {
         if (res.ok) {
@@ -53,6 +61,7 @@ const AppAuth = function () {
     },
     onSuccess: async () => {
       localStorage.removeItem('authCallback');
+      localStorage.removeItem('authState');
     },
     onError: async (error, token) => {
       // revert to custom protocol if fails
@@ -71,7 +80,16 @@ const AppAuth = function () {
       throw new Error('Invalid app redirect URL');
     }
 
-    window.location.assign(`${appRedirectUrl}?token=${token}`);
+    // state must be sent back to the app, if provided (newer app versions only)
+    const state = localStorage.getItem('authState');
+    localStorage.removeItem('authState');
+    const params = new URLSearchParams({ token });
+
+    if (state) {
+      params.set('state', state);
+    }
+
+    window.location.assign(`${appRedirectUrl}?${params.toString()}`);
   };
 
   // old web app "redirect" sending the token to the web app via postMessage

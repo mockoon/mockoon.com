@@ -31,6 +31,7 @@ const Login: FunctionComponent = function () {
   const isWebApp = router.query.webapp === 'true';
   const authCallback = router.query.authCallback as string;
   const appRedirect = router.query.appRedirect as string;
+  const state = router.query.state as string;
   const [tfaStep, setTfaStep] = useState<MultiFactorError>(null);
   const credentialsForm = useForm();
   const totpForm = useForm();
@@ -126,6 +127,11 @@ const Login: FunctionComponent = function () {
       }
     }
 
+    // state param sent back to the app alongside the token, newer app versions only
+    if (state) {
+      localStorage.setItem('authState', state);
+    }
+
     if (
       !credentialsForm.formState.isSubmitting &&
       !isAuthLoading &&
@@ -148,7 +154,7 @@ const Login: FunctionComponent = function () {
     ) {
       router.push('/email-verification/');
     }
-  }, [isAuthLoading, user, isAuth, isWebApp, authCallback, appRedirect]);
+  }, [isAuthLoading, user, isAuth, isWebApp, authCallback, appRedirect, state]);
 
   return (
     <Layout footerBanner='contact' minimal={isWebApp}>

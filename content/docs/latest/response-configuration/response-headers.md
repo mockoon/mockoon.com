@@ -36,6 +36,17 @@ And add one or more headers by clicking on the "Add header" button at the bottom
 
 ## Specific headers
 
+### Content-Type charset override
+
+By default, Mockoon serves responses using UTF-8 encoding. You can override the default `charset=utf-8` by explicitly defining a `Content-Type` header with a different charset (or without a charset) at the route or environment level.
+
+For example, to serve a payload with ISO-8859-1 or UTF-16 encoding:
+
+- Header name: `Content-Type`
+- Header value: `application/json; charset=iso-8859-1` (or `text/xml; charset=utf-16`)
+
+Mockoon will preserve your exact header value without forcing the `charset=utf-8` suffix.
+
 ### Connection/Upgrade headers
 
 By default, the **`Connection` and `Upgrade` request headers** containing something else than **`websocket`** are ignored by Mockoon and will have no effect on the response.

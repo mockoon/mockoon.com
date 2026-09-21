@@ -44,6 +44,12 @@ const tasks: {
 } = {
   released: [
     {
+      link: '/releases/9.9.0#websocket-support-in-mockoon-cloud',
+      title: 'Websocket support in cloud deployments',
+      cloud: true,
+      target: null
+    },
+    {
       link: '/releases/9.8.0#new-cli-mcp-server',
       title: 'CLI MCP server',
       cloud: false
@@ -109,11 +115,6 @@ const tasks: {
       link: '/releases/9.4.0/#cloud-logs-in-the-desktop-application-and-logs-replay',
       title: 'Display cloud logs in the desktop app',
       cloud: true
-    },
-    {
-      link: 'https://github.com/mockoon/mockoon/issues/1458',
-      title: 'Copy logs as cURL',
-      cloud: false
     }
   ],
   inProgress: [
@@ -127,6 +128,12 @@ const tasks: {
       title: 'Export logs as HAR',
       cloud: false,
       target: '_blank'
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/2362',
+      title: 'Undo delete popup',
+      cloud: false,
+      target: '_blank'
     }
   ],
   planned: [
@@ -137,11 +144,6 @@ const tasks: {
     },
     {
       title: 'Team-level environment variables support for cloud deployments',
-      cloud: true,
-      target: null
-    },
-    {
-      title: 'Websocket support in cloud deployments',
       cloud: true,
       target: null
     }

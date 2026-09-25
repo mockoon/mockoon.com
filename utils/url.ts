@@ -25,6 +25,13 @@ export const urlTransform = (docsVersion?: string) => (uri: string) => {
     return `/cloud/docs/${pathSplit[0]}/${
       pathSplit[1] ? '#' + pathSplit[1] : ''
     }`.replace(/\/{2,}/g, '/');
+  } else if (uri.startsWith('self-hosted-docs:')) {
+    const schemeSplit = uri.split(':');
+    const pathSplit = schemeSplit[1].split('#');
+
+    return `/self-hosted/docs/${pathSplit[0]}/${
+      pathSplit[1] ? '#' + pathSplit[1] : ''
+    }`.replace(/\/{2,}/g, '/');
   }
 
   return uri;

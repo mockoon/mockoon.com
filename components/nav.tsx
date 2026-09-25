@@ -492,6 +492,16 @@ const Nav: FunctionComponent<{
                           >
                             Cloud Docs
                           </Link>
+                          <Link
+                            href='/self-hosted/docs/discover-mockoon-self-hosted/'
+                            className={`dropdown-item ${
+                              router.pathname === '/self-hosted/docs/[...slug]'
+                                ? 'active'
+                                : ''
+                            }`}
+                          >
+                            Self-hosted Docs
+                          </Link>
 
                           <Link
                             href='/tutorials/'

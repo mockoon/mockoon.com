@@ -112,10 +112,22 @@ const Markdown: FunctionComponent<{
 
           // rewrite docs img src
           const isCloudDocs = (src as string).startsWith('cloud-docs-img:');
+          const isSelfHostedDocs = (src as string).startsWith(
+            'self-hosted-docs-img:'
+          );
           const isDocs = (src as string).startsWith('docs-img:');
 
-          if (isDocs || isCloudDocs) {
-            src = `/images/${isCloudDocs ? props.slug.replace(/^docs\//, 'docs/cloud/') : props.slug}/${(src as string).replace('cloud-docs-img:', '').replace('docs-img:', '')}`;
+          if (isDocs || isCloudDocs || isSelfHostedDocs) {
+            let prefix = props.slug;
+            if (isCloudDocs) {
+              prefix = props.slug.replace(/^docs\//, 'docs/cloud/');
+            } else if (isSelfHostedDocs) {
+              prefix = props.slug.replace(/^docs\//, 'docs/self-hosted/');
+            }
+            src = `/images/${prefix}/${(src as string)
+              .replace('cloud-docs-img:', '')
+              .replace('self-hosted-docs-img:', '')
+              .replace('docs-img:', '')}`;
           }
 
           return (

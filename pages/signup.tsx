@@ -35,7 +35,6 @@ const Signup: FunctionComponent = function () {
   } = useAuth();
   const router = useRouter();
   const [error, setError] = useState(null);
-  const isWebApp = router.query.webapp === 'true';
   const authCallback = router.query.authCallback as string;
   const appRedirect = router.query.appRedirect as string;
   const state = router.query.state as string;
@@ -88,12 +87,8 @@ const Signup: FunctionComponent = function () {
   };
 
   useEffect(() => {
-    if (isWebApp || authCallback || appRedirect) {
+    if (authCallback || appRedirect) {
       localStorage.setItem('redirect', '/app-auth/');
-    }
-
-    if (isWebApp) {
-      localStorage.setItem('webAppRedirect', '1');
     }
 
     if (authCallback) {
@@ -132,7 +127,6 @@ const Signup: FunctionComponent = function () {
     isAuthLoading,
     user,
     isAuth,
-    isWebApp,
     authCallback,
     appRedirect,
     state

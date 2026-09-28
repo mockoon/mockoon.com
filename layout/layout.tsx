@@ -8,8 +8,7 @@ const Layout: FunctionComponent<{
   footerBanner: FooterCTA;
   children: React.ReactNode;
   topBanner?: { topBannerTimeEnd: Date; content: React.ReactNode };
-  minimal?: boolean;
-}> = function ({ footerBanner, children, minimal, topBanner }) {
+}> = function ({ footerBanner, children, topBanner }) {
   return (
     <Fragment>
       <Head>
@@ -31,10 +30,10 @@ const Layout: FunctionComponent<{
         <meta name='apple-mobile-web-app-title' content='Mockoon' />
         <link rel='manifest' href='/site.webmanifest' />
       </Head>
-      {!minimal && <Nav topBanner={topBanner} />}
+      <Nav topBanner={topBanner} />
 
       {children}
-      {!minimal && <Footer banner={footerBanner} />}
+      <Footer banner={footerBanner} />
     </Fragment>
   );
 };

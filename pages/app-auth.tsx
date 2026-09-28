@@ -23,7 +23,6 @@ const AppAuth = function () {
     logout
   } = useAuth();
   const router = useRouter();
-  const isWebApp = router.query.webapp === 'true';
   const [callbackWorkflow, setCallbackWorkflow] = useState(false);
 
   // old desktop workflow with call to localhost callback (new workflow redirects to the url with appRedirect)
@@ -92,16 +91,6 @@ const AppAuth = function () {
     window.location.assign(`${appRedirectUrl}?${params.toString()}`);
   };
 
-  // old web app "redirect" sending the token to the web app via postMessage
-  const webAppRedirect = (token: string) => {
-    localStorage.removeItem('webAppRedirect');
-
-    window.parent.postMessage(
-      `token=${token}`,
-      `${process.env.NEXT_PUBLIC_WEBAPP_URL}`
-    );
-  };
-
   const {
     mutate: getToken,
     isPending: isGetTokenPending,
@@ -133,8 +122,6 @@ const AppAuth = function () {
     onSuccess: async (data) => {
       if (localStorage.getItem('appRedirect')) {
         appRedirect(data.token);
-      } else if (localStorage.getItem('webAppRedirect')) {
-        webAppRedirect(data.token);
       } else if (localStorage.getItem('authCallback')) {
         // new workflow >= 9.0.0, using localhost callback
         setCallbackWorkflow(true);
@@ -147,18 +134,14 @@ const AppAuth = function () {
   });
 
   useEffect(() => {
-    if (isWebApp) {
-      localStorage.setItem('webAppRedirect', '1');
-    }
-
     if (!isAuthLoading) {
       if (!user) {
-        router.push(`/login/${isWebApp ? '?webapp=true' : ''}`);
+        router.push('/login/');
       } else if (user && !isAuth) {
         router.push('/email-verification/');
       }
     }
-  }, [isAuthLoading, user, isAuth, isWebApp]);
+  }, [isAuthLoading, user, isAuth]);
 
   useEffect(
     function () {
@@ -170,7 +153,7 @@ const AppAuth = function () {
   );
 
   return (
-    <Layout footerBanner='download' minimal={isWebApp}>
+    <Layout footerBanner='download'>
       <Meta title={meta.title} description={meta.description} />
 
       {isAuthLoading && <LoadingPage />}

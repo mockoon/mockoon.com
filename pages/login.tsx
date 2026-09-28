@@ -28,7 +28,6 @@ const Login: FunctionComponent = function () {
     verifyTfaCode
   } = useAuth();
   const router = useRouter();
-  const isWebApp = router.query.webapp === 'true';
   const authCallback = router.query.authCallback as string;
   const appRedirect = router.query.appRedirect as string;
   const state = router.query.state as string;
@@ -98,16 +97,8 @@ const Login: FunctionComponent = function () {
   };
 
   useEffect(() => {
-    if (isWebApp || authCallback || appRedirect) {
+    if (authCallback || appRedirect) {
       localStorage.setItem('redirect', '/app-auth/');
-    }
-
-    if (isWebApp) {
-      window.parent.postMessage(
-        `loaded`,
-        `${process.env.NEXT_PUBLIC_WEBAPP_URL}`
-      );
-      localStorage.setItem('webAppRedirect', '1');
     }
 
     if (authCallback) {
@@ -154,10 +145,10 @@ const Login: FunctionComponent = function () {
     ) {
       router.push('/email-verification/');
     }
-  }, [isAuthLoading, user, isAuth, isWebApp, authCallback, appRedirect, state]);
+  }, [isAuthLoading, user, isAuth, authCallback, appRedirect, state]);
 
   return (
-    <Layout footerBanner='contact' minimal={isWebApp}>
+    <Layout footerBanner='contact'>
       <Meta title={meta.title} description={meta.description} />
 
       {isAuthLoading && <LoadingPage />}
@@ -167,9 +158,7 @@ const Login: FunctionComponent = function () {
           <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
             <div className='container'>
               <div className='row align-items-center justify-content-center gx-0'>
-                <div
-                  className={`col-12 col-md-5 col-lg-4 ${isWebApp ? '' : 'py-8 py-md-11'}`}
-                >
+                <div className='col-12 col-md-5 col-lg-4 py-8 py-md-11'>
                   <h1 className='mb-0 fw-bold text-center'>Log in</h1>
                   <p className='mb-6 text-center text-gray-700'>
                     Access your Mockoon Cloud account.
@@ -260,12 +249,7 @@ const Login: FunctionComponent = function () {
                         </div>
 
                         <p className='text-end fs-sm'>
-                          <Link
-                            href='/forgot-password/'
-                            target={`${isWebApp ? '_blank' : ''}`}
-                          >
-                            Forgot password?
-                          </Link>
+                          <Link href='/forgot-password/'>Forgot password?</Link>
                         </p>
 
                         <FormHoneypot
@@ -304,12 +288,7 @@ const Login: FunctionComponent = function () {
                       </div>
                       <p className='my-4 fs-sm text-center text-gray-700'>
                         Don't have an account yet?{' '}
-                        <Link
-                          href={'signup/'}
-                          target={`${isWebApp ? '_blank' : ''}`}
-                        >
-                          Sign up
-                        </Link>
+                        <Link href={'signup/'}>Sign up</Link>
                       </p>
                     </>
                   )}

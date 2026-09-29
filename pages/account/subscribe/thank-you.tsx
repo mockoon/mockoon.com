@@ -34,7 +34,7 @@ const SubscribeThankYou: FunctionComponent = function () {
       <Meta title={meta.title} description={meta.description} />
 
       <PaddleScript />
-      <AccountHeader title='' subtitle='' showWebappLink={false} />
+      <AccountHeader title='' subtitle='' />
 
       <main className='pb-8 pb-md-11 mt-md-n6'>
         <div className='container-md'>

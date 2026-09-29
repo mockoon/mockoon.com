@@ -1,0 +1,252 @@
+import Link from 'next/link';
+import AlternatedFeatures from '../../components/alternated-features';
+import CompanyLogos from '../../components/company-logos';
+import Hero from '../../components/hero';
+import Meta from '../../components/meta';
+import OssProComparison from '../../components/oss-pro-comparison';
+import SocialProof from '../../components/social-proof';
+import Layout from '../../layout/layout';
+
+const proFeatures = [
+  {
+    title:
+      '<span class="text-primary">Collaborate</span> with your team in real time',
+    description:
+      'Invite your team members to collaborate on your mock APIs in real time. Avoid conflicts and keep your team in sync. ',
+    imgSrc: '/images/pro/mockoon-pro-real-time-collaboration-presence.png',
+    imgAlt: 'mockoon application screenshot showing users collaborating',
+    cta: 'Read the documentation',
+    ctaLink: '/pro/docs/features/data-synchronization-team-collaboration/'
+  },
+  {
+    title: 'Instantly <span class="text-primary">deploy</span> your mock APIs',
+    description:
+      'Deploy your mock APIs with a single click and share them with your team, clients, or class. Say goodbye to complex deployment configurations.',
+    imgSrc: '/images/pro/mockoon-pro-api-mock-deployment.png',
+    imgAlt: 'mockoon application screenshot showing list of deployed APIs',
+    cta: 'Read the documentation',
+    ctaLink: '/pro/docs/features/api-mock-deployments/'
+  },
+  /* {
+    title:
+      '<span class="text-primary">Prototype</span> your APIs faster with our assistants',
+    description:
+      'Accelerate your API design and prototyping with our assistants. Generate realistic data, endpoints, and responses in seconds.',
+    imgSrc: '/images/pro/mockoon-pro-ai-assisted-mock-design.png',
+    imgAlt: 'mockoon application screenshot showing AI assistant in action',
+    cta: 'Discover our assistant',
+    ctaLink: '/ai-powered-api-mocking/'
+  }, */
+  {
+    title:
+      'Create mock APIs using the <span class="text-primary">web app</span>',
+    description:
+      'Design, deploy, and collaborate on mock APIs directly in the embedded web app, no desktop installation required.',
+    imgSrc: '/images/pro/mockoon-pro-web-application.png',
+    imgAlt: 'mockoon web application screenshot showing list of APIs endpoints',
+    cta: 'Read the documentation',
+    ctaLink: '/pro/docs/clients/embedded-web-application/'
+  },
+  {
+    title: 'Keep your setup in <span class="text-primary">sync</span>',
+    description:
+      'Always have the latest version of your mock APIs available on all your devices. Enjoy a frictionless experience with automatic data synchronization.',
+    imgSrc: '/images/pro/mockoon-pro-data-synchronization-devices.png',
+    imgAlt: 'mockoon application screenshot showing synchronized setup',
+    cta: 'Read the documentation',
+    ctaLink: '/pro/docs/features/data-synchronization-team-collaboration/'
+  },
+  {
+    title: 'Get <span class="text-primary">help</span> when you need it',
+    description:
+      'Enjoy priority support from our team of experts. Get help with your setup, your integrations, or any other questions you may have.',
+    imgSrc: '/images/pro/mockoon-pro-enterprise-priority-support.png',
+    imgAlt: 'mockoon application screenshot showing support tickets'
+  }
+];
+
+export default function () {
+  const ctaContent = (
+    <section className='pb-6 pb-md-8'>
+      <div className='container'>
+        <div className='row justify-content-center'>
+          <div className='col-md-6 text-center'>
+            <Link
+              href='/pro/checkout/?mode=trial'
+              className='btn btn-primary mb-6 lift'
+            >
+              Try Mockoon Pro for free{' '}
+              <i className='icon-arrow_forward ms-2'></i>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+
+  return (
+    <Layout footerBanner='download'>
+      <Meta
+        title={'Mockoon Pro'}
+        description='Discover Mockoon Pro features: Collaborate with your team, keep your data in sync, and deploy your mock APIs with Mockoon Pro'
+      />
+
+      <Hero
+        title='Never let <span class="text-primary">API integration</span> slow you down again'
+        subtitle='Collaborate with your team, keep your data in sync, and deploy your mock APIs with Mockoon Pro'
+        mainPicture='/images/pro-hero.png'
+        mainPictureAlt='Mockoon logo in the cloud interconnected with other services'
+        mainPictureSkewed={false}
+      >
+        <SocialProof />
+        <p className='text-gray-600 mb-0 mt-6'>
+          <img
+            src='/images/eu-flag.svg'
+            alt='EU'
+            width={30}
+            className='me-2 align-middle'
+          />
+          Proudly built and operated in Europe, with privacy and transparency at
+          the core.
+        </p>
+      </Hero>
+
+      <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
+        <CompanyLogos />
+      </section>
+
+      <section className='py-6 py-md-8'>
+        <div className='container'>
+          <h2 className='fw-bold position-relative my-8 text-center'>
+            Benefits of using Mockoon Pro and API mocking
+          </h2>
+          <div className='row g-10 justify-content-center'>
+            <div className='col-lg-6'>
+              <div className='row'>
+                <div className='col-12 col-lg-6'>
+                  <div className='d-flex'>
+                    <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                      <i className='icon icon-add'></i>
+                    </div>
+
+                    <p>Accelerate API development with parallel work</p>
+                  </div>
+
+                  <div className='d-flex'>
+                    <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                      <i className='icon icon-add'></i>
+                    </div>
+
+                    <p className='mb-lg-0'>
+                      More thorough and reliable API testing
+                    </p>
+                  </div>
+                </div>
+                <div className='col-12 col-lg-6'>
+                  <div className='d-flex'>
+                    <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                      <i className='icon icon-add'></i>
+                    </div>
+
+                    <p>
+                      Cheaper, more reliable, and surprise-free test
+                      environments
+                    </p>
+                  </div>
+
+                  <div className='d-flex'>
+                    <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                      <i className='icon icon-add'></i>
+                    </div>
+
+                    <p className='mb-0'>Faster developers onboarding</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='col-lg-6'>
+              <div className='row'>
+                <div className='col-12 col-lg-6'>
+                  <div className='d-flex'>
+                    <div className='badge badge-rounded-circle text-bg-danger-subtle mt-1 me-4'>
+                      <i className='icon icon-remove'></i>
+                    </div>
+
+                    <p>Tedious third-party API setup and provisioning</p>
+                  </div>
+
+                  <div className='d-flex'>
+                    <div className='badge badge-rounded-circle text-bg-danger-subtle mt-1 me-4'>
+                      <i className='icon icon-remove'></i>
+                    </div>
+
+                    <p className='mb-lg-0'>
+                      Unstable and costly API testing environments
+                    </p>
+                  </div>
+                </div>
+                <div className='col-12 col-lg-6'>
+                  <div className='d-flex'>
+                    <div className='badge badge-rounded-circle text-bg-danger-subtle mt-1 me-4'>
+                      <i className='icon icon-remove'></i>
+                    </div>
+
+                    <p>Untested scenarios and edge cases</p>
+                  </div>
+
+                  <div className='d-flex'>
+                    <div className='badge badge-rounded-circle text-bg-danger-subtle mt-1 me-4'>
+                      <i className='icon icon-remove'></i>
+                    </div>
+
+                    <p className='mb-0'>
+                      Team dependencies and bottlenecks on API availability
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className='py-5 py-lg-10'>
+        <div className='container text-lg-start text-center'>
+          <AlternatedFeatures features={proFeatures} imgSize={[800, 454]} />
+        </div>
+      </section>
+
+      <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
+        <div className='container'>
+          <div className='row justify-content-center'>
+            <div className='col-12 col-lg-7 text-center'>
+              <img
+                src='/images/eu-flag.svg'
+                alt='European Union flag'
+                width={60}
+                height={40}
+                className='mb-4'
+              />
+              <h2 className='fw-bold'>Built in Europe, for everyone</h2>
+              <p className='lead text-gray-700'>
+                Mockoon Pro is operated by an independent European company.
+                Privacy-first, openly developed, and committed to a public
+                roadmap.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {ctaContent}
+
+      <section className='py-5 py-lg-10'>
+        <div className='container text-lg-start text-center'>
+          <OssProComparison />
+        </div>
+      </section>
+
+      {ctaContent}
+    </Layout>
+  );
+}

@@ -69,13 +69,13 @@ const CLI: FunctionComponent = function () {
           <Quote colorScheme='warning'>
             <h4 className='my-4 d-flex align-items-center'>
               <div>
-                📢 <strong>Cloud deployments</strong> are now available in{' '}
-                <strong>Mockoon Cloud</strong>. Supercharge your API development
-                now!
+                📢 <strong>Mockoon Pro</strong> is now available. Self-host team
+                collaboration, data synchronization, and API mock deployments on
+                your own infrastructure.
               </div>
               <div className='ms-auto'>
-                <a href='/blog/mock-api-cloud-deployments-release/'>
-                  Learn more
+                <a href='/blog/mockoon-pro-self-hosted-beta/'>
+                  Read the announcement
                 </a>
               </div>
             </h4>

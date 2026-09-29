@@ -3,15 +3,28 @@ import { FunctionComponent } from 'react';
 const SocialProof: FunctionComponent = function () {
   return (
     <>
-      <div className='text-center text-lg-start text mb-6'>
+      <div className='d-flex flex-wrap align-items-center gap-4 mb-6'>
         <div>
           <a
             href='https://github.blog/news-insights/company-news/github-accelerator-our-first-cohort-and-whats-next/'
             target='_blank'
           >
             <img
-              src='/images/github-accelerator.png'
+              src='/images/backed-by-github-accelerator.png'
               alt='github accelerator logo'
+              width='312'
+              className='img-fluid'
+            />
+          </a>
+        </div>
+        <div>
+          <a
+            href='https://github.blog/open-source/maintainers/securing-the-ai-software-supply-chain-security-results-across-67-open-source-projects/'
+            target='_blank'
+          >
+            <img
+              src='/images/backed-by-github-secure-os-fund.png'
+              alt='github secure open source fund logo'
               width='200'
               className='img-fluid'
             />

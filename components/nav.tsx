@@ -183,14 +183,14 @@ const Nav: FunctionComponent<{
                       <div className='row gx-0'>
                         <div className='col-12 col-lg-6'>
                           {' '}
-                          <h6 className='dropdown-header'>Cloud</h6>
+                          <h6 className='dropdown-header'>Pro</h6>
                           <Link
-                            href='/cloud/'
+                            href='/pro/'
                             className={`dropdown-item ${
-                              router.pathname === '/cloud' ? 'active' : ''
+                              router.pathname === '/pro' ? 'active' : ''
                             }`}
                           >
-                            Mockoon Cloud
+                            Mockoon Pro
                           </Link>
                           <Link
                             href='/pricing/'
@@ -199,18 +199,6 @@ const Nav: FunctionComponent<{
                             }`}
                           >
                             Pricing
-                          </Link>
-                          <Link
-                            href={`${process.env.NEXT_PUBLIC_WEBAPP_URL}`}
-                            className='dropdown-item'
-                          >
-                            Web app
-                            <span className='badge text-bg-warning ms-1'>
-                              Cloud
-                            </span>
-                            <span className='badge text-bg-info ms-1'>
-                              Early access
-                            </span>
                           </Link>
                         </div>
                       </div>
@@ -483,24 +471,14 @@ const Nav: FunctionComponent<{
                             Docs
                           </Link>
                           <Link
-                            href='/cloud/docs/about/'
+                            href='/pro/docs/discover-mockoon-pro/'
                             className={`dropdown-item ${
-                              router.pathname === '/cloud/docs/[...slug]'
+                              router.pathname === '/pro/docs/[...slug]'
                                 ? 'active'
                                 : ''
                             }`}
                           >
-                            Cloud Docs
-                          </Link>
-                          <Link
-                            href='/self-hosted/docs/discover-mockoon-self-hosted/'
-                            className={`dropdown-item ${
-                              router.pathname === '/self-hosted/docs/[...slug]'
-                                ? 'active'
-                                : ''
-                            }`}
-                          >
-                            Self-hosted Docs
+                            Pro Docs
                           </Link>
 
                           <Link

@@ -19,9 +19,9 @@ const architecturePillars = [
   },
   {
     icon: 'icon-https',
-    title: 'What we never see',
+    title: 'What local usage never reports',
     description:
-      'Zero telemetry in your apps. The data flowing through your mocks and the responses you build are never reported to us.',
+      'The desktop app, CLI, and self-hosted Pro include no telemetry. Mock data and responses are not reported to us unless you use a hosted or AI feature or provide them for support.',
     points: [
       'No request body or response content',
       'No data captured by your mocks',
@@ -31,14 +31,14 @@ const architecturePillars = [
   },
   {
     icon: 'icon-cloud',
-    title: 'Cloud sync is opt-in',
+    title: 'Self-hosted Pro by default',
     description:
-      'Mockoon Cloud is optional. By default you work locally and nothing syncs. Opt in to sync environments across devices and collaborate with your team.',
+      'Mockoon Pro runs on infrastructure you control. Managed cloud is available only as an Enterprise option, while legacy Cloud remains available to existing customers.',
     points: [
-      'Local-only by default',
-      'Cloud sync requires explicit opt-in',
-      'Synced data is encrypted at rest',
-      'All traffic runs over TLS'
+      'Customer-controlled infrastructure and storage',
+      'Self-hosted collaboration and synchronization',
+      'No Mockoon-operated relay for self-hosted data',
+      'Enterprise managed cloud available separately'
     ]
   }
 ];
@@ -67,7 +67,7 @@ const desktopSecurity = [
     icon: 'icon-visibility_off',
     title: 'No Telemetry',
     description:
-      'No mock content, request bodies, or response data is ever reported to us, and we have no telemetry in the app. We never see your data, and we never track how you use the app.',
+      'The desktop app, CLI, and self-hosted Pro report no telemetry or mock content. Data is sent only when you deliberately use a hosted or AI feature or provide it for support.',
     link: { text: 'Privacy Policy', url: '/privacy/' }
   },
   {
@@ -80,16 +80,16 @@ const desktopSecurity = [
     icon: 'icon-refresh',
     title: 'SDLC & Change Management',
     description:
-      'All changes to the desktop app, CLI, and cloud services are authorized, tested, reviewed, and approved before being released to production.'
+      'All changes to the desktop app, CLI, Pro, and Mockoon-operated services are authorized, tested, reviewed, and approved before being released to production.'
   }
 ];
 
-const cloudSecurity = [
+const proSecurity = [
   {
     icon: 'icon-https',
     title: 'Encryption',
     description:
-      'TLS everywhere. Sensitive customer data is encrypted at rest using industry-standard protocols. Secure transmission protocols protect data sent over public networks.'
+      'Mockoon-operated services use TLS for data in transit and industry-standard encryption for sensitive customer data at rest.'
   },
   {
     icon: 'icon-verified_user',
@@ -111,7 +111,7 @@ const cloudSecurity = [
     icon: 'icon-storage',
     title: 'Backup & Recovery',
     description:
-      'Automated backups with documented retention. Business Continuity and Disaster Recovery plans are in place and tested at least annually.'
+      'Mockoon-operated services use automated backups with documented retention. Business Continuity and Disaster Recovery plans are in place and tested at least annually.'
   },
   {
     icon: 'icon-bar_chart',
@@ -131,13 +131,14 @@ const subprocessors = [
   {
     purpose: 'Hosting & Infrastructure',
     vendor: 'Google Cloud Platform',
-    description: 'Managed cloud platform hosting Mockoon Cloud services.'
+    description:
+      'Hosts Enterprise managed cloud, legacy Mockoon Cloud, and supporting services.'
   },
   {
     purpose: 'Authentication & Database',
     vendor: 'Firebase',
     description:
-      'User authentication and database services. Data encrypted at rest.'
+      'User authentication, service data, and Pro trial and license records. Data is encrypted at rest.'
   },
   {
     purpose: 'Payments',
@@ -149,7 +150,13 @@ const subprocessors = [
     purpose: 'Email',
     vendor: 'AWS SES',
     description:
-      'Transactional email delivery for account notifications and customer communications.'
+      'Transactional delivery for account, trial, license, and customer communications.'
+  },
+  {
+    purpose: 'AI Features & Trial Eligibility',
+    vendor: 'Google Gemini',
+    description:
+      'Processes user-initiated AI assistant prompts and work emails used for Pro trial eligibility checks.'
   },
   {
     purpose: 'CDN, DDoS, Security & DNS',
@@ -167,7 +174,7 @@ const subprocessors = [
     purpose: 'Docker Image Distribution',
     vendor: 'Docker Hub',
     description:
-      'Public hosting and distribution of the official Mockoon CLI Docker images.'
+      'Distribution of the official Mockoon CLI and Mockoon Pro Docker images.'
   },
   {
     purpose: 'Windows App Distribution',
@@ -525,7 +532,7 @@ const controls = [
       {
         title: 'Customer data deleted upon leaving',
         description:
-          'The company purges or removes customer data containing confidential information from the application environment, in accordance with best practices, when customers leave the service.'
+          'The company purges or removes customer data from Mockoon-operated application environments, in accordance with applicable retention procedures, when customers leave the hosted service. This does not apply to customer-controlled self-hosted storage.'
       },
       {
         title: 'Data classification policy established',
@@ -539,7 +546,7 @@ const controls = [
 const sections = [
   { id: 'architecture', label: 'Architecture' },
   { id: 'desktop', label: 'Desktop app' },
-  { id: 'cloud', label: 'Cloud services' },
+  { id: 'cloud', label: 'Hosted services' },
   { id: 'infrastructure', label: 'Infrastructure' },
   { id: 'compliance', label: 'Compliance' },
   { id: 'controls', label: 'Security controls' },
@@ -557,7 +564,7 @@ const TrustPage: FunctionComponent = function () {
 
       <Hero
         title='Mockoon <span class="text-primary">Trust Center</span>'
-        subtitle='Your mock data stays on your machine. Mockoon is local-first, open source, and built with security and privacy at its core.'
+        subtitle='Mockoon is local-first, and self-hosted Mockoon Pro keeps your data on infrastructure you control.'
       />
 
       {/* Section index */}
@@ -593,13 +600,13 @@ const TrustPage: FunctionComponent = function () {
                 01 · Architecture
               </p>
               <h2 className='display-5 fw-medium mb-3'>
-                Your data stays on your machine
+                Your data stays under your control
               </h2>
               <p className='lead text-gray-700 mb-0'>
-                Mockoon is a desktop application. By default, your mock APIs,
-                request data, and responses stay on your computer, they never
-                touch our servers. Cloud sync is opt-in, and you remain in
-                control of what gets synced.
+                The desktop application stores data locally, and self-hosted
+                Mockoon Pro runs on your infrastructure. Mockoon processes mock
+                data only when you use Enterprise managed cloud, legacy Mockoon
+                Cloud, or deliberately provide it for support.
               </p>
             </div>
           </div>
@@ -675,7 +682,7 @@ const TrustPage: FunctionComponent = function () {
         </div>
       </section>
 
-      {/* 03 - Cloud service security */}
+      {/* 03 - Hosted service security */}
       <section
         id='cloud'
         className='py-6 py-md-8 border-bottom bg-gradient-light-white'
@@ -684,19 +691,21 @@ const TrustPage: FunctionComponent = function () {
           <div className='row mb-6'>
             <div className='col-12 col-lg-8 mx-auto text-center'>
               <p className='text-uppercase text-primary fw-bold small mb-2'>
-                03 · Cloud services
+                03 · Hosted services
               </p>
               <h2 className='display-5 fw-medium mb-3'>
-                Cloud service security
+                Mockoon-operated service security
               </h2>
               <p className='lead text-gray-700 mb-0'>
-                For our optional cloud services, accounts, billing, and
-                environment sync, we maintain these practices.
+                These practices cover our account, billing, licensing,
+                Enterprise managed cloud, and legacy Mockoon Cloud systems.
+                Customer-operated self-hosted infrastructure remains under the
+                customer's security controls.
               </p>
             </div>
           </div>
           <div className='row g-4'>
-            {cloudSecurity.map((item, i) => (
+            {proSecurity.map((item, i) => (
               <div key={i} className='col-12 col-md-6 col-lg-4'>
                 <div className='card card-bleed shadow-light-lg h-100'>
                   <div className='card-body'>
@@ -731,8 +740,8 @@ const TrustPage: FunctionComponent = function () {
               </p>
               <h2 className='display-5 fw-medium mb-3'>Our infrastructure</h2>
               <p className='lead text-gray-700 mb-0'>
-                Our cloud footprint is deliberately small. We rely on a curated
-                set of trusted, audited providers.
+                Our service footprint is deliberately small. We rely on a
+                curated set of trusted providers for specific operations.
               </p>
             </div>
           </div>

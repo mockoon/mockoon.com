@@ -7,13 +7,13 @@ const RequestDemo: FunctionComponent = function () {
   return (
     <Layout footerBanner='contact'>
       <Meta
-        title='Request a Mockoon Cloud demo'
-        description='Book a demo with our team to see how Mockoon and our Cloud can help you streamline your API development workflows'
+        title='Request a Mockoon Pro demo'
+        description='Book a demo with our team to see how Mockoon Pro can help you streamline your API development workflows'
       />
 
       <Hero
         title='Request a <span class="text-primary">demo</span>'
-        subtitle='Book a demo with our team to see how Mockoon and our Cloud can help you streamline your API development workflows'
+        subtitle='Book a demo with our team to see how Mockoon Pro can help you streamline your API development workflows'
       />
       <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
         <div className='container'>
@@ -26,24 +26,22 @@ const RequestDemo: FunctionComponent = function () {
               <ul>
                 <li>
                   <strong>Identify your API development challenges</strong> and
-                  explore how Mockoon Cloud can solve them.
+                  explore how Mockoon can solve them.
                 </li>
                 <li>
-                  <strong>
-                    Get a hands-on demo of Mockoon Cloud's features
-                  </strong>
+                  <strong>Get a hands-on demo of Mockoon Pro's features</strong>
                   , including real-time team collaboration and cloud
                   deployments.
                 </li>
                 <li>
                   <strong>
-                    Understand best practices for using Mockoon Cloud
+                    Understand best practices for using Mockoon Pro
                   </strong>{' '}
                   with your team and scaling your projects.
                 </li>
                 <li>
                   <strong>Ask any questions you have about features</strong>,
-                  integrations, and how Mockoon Cloud can support your specific
+                  integrations, and how Mockoon Pro can support your specific
                   needs.
                 </li>
               </ul>

@@ -5,6 +5,7 @@ import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import { urlTransform } from '../utils/url';
 import CodeBlock from './code-block';
+import MermaidDiagram from './mermaid-diagram';
 import Quotation from './quotation';
 import Quote from './quote';
 
@@ -88,6 +89,13 @@ const Markdown: FunctionComponent<{
       components={{
         code: ({ node, className, children, ...props }) => {
           const match = /language-(\w+)/.exec(className || '');
+
+          if (match?.[1] === 'mermaid') {
+            return (
+              <MermaidDiagram chart={String(children).replace(/\n$/, '')} />
+            );
+          }
+
           return /* !inline &&  */ match ? (
             <CodeBlock
               code={String(children).replace(/\n$/, '')}
@@ -112,21 +120,19 @@ const Markdown: FunctionComponent<{
 
           // rewrite docs img src
           const isCloudDocs = (src as string).startsWith('cloud-docs-img:');
-          const isSelfHostedDocs = (src as string).startsWith(
-            'self-hosted-docs-img:'
-          );
+          const isProDocs = (src as string).startsWith('pro-docs-img:');
           const isDocs = (src as string).startsWith('docs-img:');
 
-          if (isDocs || isCloudDocs || isSelfHostedDocs) {
+          if (isDocs || isCloudDocs || isProDocs) {
             let prefix = props.slug;
             if (isCloudDocs) {
               prefix = props.slug.replace(/^docs\//, 'docs/cloud/');
-            } else if (isSelfHostedDocs) {
-              prefix = props.slug.replace(/^docs\//, 'docs/self-hosted/');
+            } else if (isProDocs) {
+              prefix = props.slug.replace(/^docs\//, 'docs/pro/');
             }
             src = `/images/${prefix}/${(src as string)
               .replace('cloud-docs-img:', '')
-              .replace('self-hosted-docs-img:', '')
+              .replace('pro-docs-img:', '')
               .replace('docs-img:', '')}`;
           }
 

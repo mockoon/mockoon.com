@@ -35,7 +35,7 @@ const faq: AccordionData = [
       {
         title: 'Do you need an account to create mock APIs?',
         content:
-          "No, you don't need to sign up or create an account to use Mockoon. However, if you want to use our Cloud services, you will need to create an account."
+          "No, you don't need to sign up or create an account to use Mockoon. However, if you want to use our Pro services, you will need to create an account."
       },
       {
         title: 'Is Mockoon compatible with OpenAPI?',
@@ -63,7 +63,7 @@ const faq: AccordionData = [
             >
               MIT license
             </a>
-            ). We also have a <Link href={'/cloud/'}>Cloud version</Link> that
+            ). We also have a <Link href={'/pro/'}>Pro version</Link> that
             offers team collaboration, online deployment, and a web application.
           </>
         )
@@ -71,16 +71,16 @@ const faq: AccordionData = [
     ]
   },
   {
-    title: 'Mockoon Cloud',
+    title: 'Mockoon Pro/Cloud',
     items: [
       {
-        title: 'Do you offer a Cloud version?',
+        title: 'Do you offer a cloud version?',
         content: (
           <>
-            Yes, we have <a href='/cloud/'>Cloud plans</a> that offers
-            additional features like AI-powered API mocks generation, data
-            synchronization and real-time collaboration, cloud deployments,
-            enterprise-grade support, and more!
+            We have a <a href='/pro/'>paid plans</a> that offer additional
+            features like data synchronization and real-time collaboration,
+            remote deployments, enterprise-grade support, and more! They come in
+            self-hosted and cloud versions.
           </>
         )
       },
@@ -89,7 +89,7 @@ const faq: AccordionData = [
         content: (
           <>
             Yes, a web application is available with our{' '}
-            <Link href='/cloud/'>Cloud plans</Link>.
+            <Link href='/pro/'>Pro plans</Link>.
           </>
         )
       },
@@ -98,8 +98,8 @@ const faq: AccordionData = [
         content: (
           <>
             Yes, you can get enterprise-grade support with our{' '}
-            <a href='/cloud/'>Cloud plans</a>. We can also provide priority
-            support separately. <a href='/contact-form/'>Contact us</a> for more
+            <a href='/pro/'>Pro plans</a>. We can also provide priority support
+            separately. <a href='/contact-form/'>Contact us</a> for more
             information.
           </>
         )
@@ -118,19 +118,6 @@ const faq: AccordionData = [
         title: 'Does Mockoon work behind a company firewall?',
         content:
           'Mockoon creates a local mock server running on Node.js and does not require internet access. The server is then made available on all local network adapters (localhost, 127.0.0.1, 192.168.x.x, etc.) on the port you define. If the machine on which Mockoon is running has open ports on the local network, other users will be able to access it.'
-      },
-      {
-        title: 'Does Mockoon require an active internet connection?',
-        content: (
-          <>
-            No, you don't need an internet connection to use Mockoon. Everything
-            runs locally.
-            <br />
-            However, an internet connection is required to use our{' '}
-            <a href='/cloud/'>cloud services</a> and{' '}
-            <Link href='/cloud/docs/web-application/'>web application</Link>.
-          </>
-        )
       }
     ]
   },
@@ -169,18 +156,6 @@ const faq: AccordionData = [
             for more information.
           </>
         )
-      },
-      {
-        title:
-          'Is Mockoon compatible with cloud functions and serverless environments?',
-        content: (
-          <>
-            Yes, Mockoon has an <a href='/serverless/'>official NPM package</a>{' '}
-            that allows you to run all your mock API servers in cloud functions
-            and serverless environments: AWS Lambda, GCP Functions, Firebase
-            Functions, etc.
-          </>
-        )
       }
     ]
   },
@@ -192,8 +167,8 @@ const faq: AccordionData = [
         content: (
           <>
             <p>
-              Mockoon application data and settings are stored in your operating
-              system user data folder:
+              Mockoon desktop application data and settings are stored in your
+              operating system user data folder:
             </p>
             <ul className='text-break'>
               <li>
@@ -232,10 +207,11 @@ const faq: AccordionData = [
               </Link>
             </p>
             <p className='text-gray-700'>
-              When using our <Link href={'/cloud/'}>Cloud services</Link>, your
-              data is stored in our secure cloud infrastructure. None of your
-              data is shared with third parties nor used for any purpose other
-              than providing the service.
+              When using our <Link href={'/pro/'}>Pro application</Link>, your
+              data is stored in your infrastructure when self-hosting or in our
+              secure cloud infrastructure when opting for the managed service.
+              In both cases, none of your data is shared with third parties nor
+              used for any purpose other than providing the service.
             </p>
           </>
         )
@@ -262,6 +238,10 @@ const faq: AccordionData = [
               on May 6, 2026 and all collected data was deleted. The telemetry
               settings are still visible in the application settings up to
               v9.6.0 but they are now non-functional.
+            </p>
+            <p>
+              Our Mockoon Pro self-hosted and managed cloud services do not
+              collect any usage data or telemetry either.
             </p>
           </>
         )

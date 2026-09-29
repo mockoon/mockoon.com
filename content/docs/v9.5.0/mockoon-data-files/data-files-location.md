@@ -36,7 +36,8 @@ Mockoon can monitor data files' external changes and automatically reload the in
 
 ![enable file monitoring in the settings{860x812}](docs-img:enable-file-watching.png)
 
-## Cloud environments
+## Mockoon Pro environments
 
-If you are a Mockoon Cloud user, you can also create cloud environments that are stored in the cloud and synchronized across all your devices. It also allows you to collaborate in real-time with your team members.
-You can learn more about this feature in the [dedicated documentation](/cloud/docs/data-synchronization-team-collaboration/).
+With Mockoon Pro, you can create synchronized environments stored on your private Mockoon Pro server. For self-hosted installations, these environments are persisted in the server's mounted `/data` volume. The desktop application also keeps a local copy on each connected device.
+
+Synchronized environments are available across your devices and let your team collaborate in real time. Learn more in the [data synchronization and team collaboration documentation](pro-docs:features/data-synchronization-team-collaboration).

@@ -68,7 +68,7 @@ const Contact: FunctionComponent = function () {
                       may have with the product.
                     </p>
                     <div className='mt-auto text-center'>
-                      <a href='/cloud/'>Get enterprise support</a>
+                      <a href='/pro/'>Get enterprise support</a>
                     </div>
                   </div>
                 </div>

@@ -13,7 +13,7 @@ const faq: AccordionData = [
       {
         title: 'Where is the roadmap?',
         content:
-          'Our <a href="https://github.com/orgs/mockoon/projects/9" target="_blank">public roadmap</a> for our open-source projects is hosted on GitHub. Above is a summary of the current state of the open-source roadmap with the most important features, including Mockoon Cloud\'s features.'
+          'Our <a href="https://github.com/orgs/mockoon/projects/9" target="_blank">public roadmap</a> for our open-source projects is hosted on GitHub. Above is a summary of the current state of the open-source roadmap with the most important features, including Mockoon Pro\'s features.'
       },
       {
         title: 'Where are the features listed? How can I contribute?',
@@ -28,7 +28,7 @@ const faq: AccordionData = [
       {
         title: 'Is everything on the public roadmap?',
         content:
-          'No. Some work may not be listed on the roadmap. It is the case for chores like dependencies updates or work happening on non-open-source products and tools (backend, cloud offering, etc.).'
+          'No. Some work may not be listed on the roadmap. It is the case for chores like dependencies updates or work happening on non-open-source products and tools (backend, pro offering, etc.).'
       }
     ]
   }
@@ -38,7 +38,7 @@ const tasks: {
   [key in 'released' | 'inProgress' | 'planned']: {
     link?: string;
     title: string;
-    cloud: boolean;
+    pro: boolean;
     target?: string;
   }[];
 } = {
@@ -46,105 +46,105 @@ const tasks: {
     {
       link: '/releases/9.9.0#websocket-support-in-mockoon-cloud',
       title: 'Websocket support in cloud deployments',
-      cloud: true,
+      pro: true,
       target: null
     },
     {
       link: '/releases/9.8.0#new-cli-mcp-server',
       title: 'CLI MCP server',
-      cloud: false
+      pro: false
     },
     {
       link: '/releases/9.7.0#goodbye-telemetry',
       title: 'Telemetry removal from desktop and web applications',
-      cloud: false
+      pro: false
     },
     {
       link: '/releases/9.7.0#multi-select-mode',
       title: 'Batch actions on routes, data buckets and callbacks',
-      cloud: false
+      pro: false
     },
     {
       link: '/releases/9.7.0#admin-api-hardening',
       title: 'Improved Admin API security',
-      cloud: false
+      pro: false
     },
     {
       link: '/releases/9.6.0#openapi-re-import',
       title: 'OpenAPI specification re-import',
-      cloud: false
+      pro: false
     },
     {
       link: '/releases/9.6.0#goodbye-server-restarts',
       title: 'Enable mocks live update',
-      cloud: false
+      pro: false
     },
     {
       link: '/docs/latest/callbacks/overview/#configure-a-callback',
       title: 'Support callbacks relative paths',
-      cloud: false
+      pro: false
     },
     {
       link: '/cloud/docs/api-mock-cloud-deployments/#self-host-with-the-cli',
       title: 'CLI: deploy from a cloud mock',
-      cloud: true
+      pro: true
     },
     {
       title: 'EU cloud deployment regions',
       link: '/pricing/#available-regions',
-      cloud: true,
+      pro: true,
       target: null
     },
     {
       title: 'Resources activity audit trail',
       link: '/cloud/docs/audit-trail/',
-      cloud: true,
+      pro: true,
       target: null
     },
     {
       link: '/releases/9.4.0/#openapi-import-and-export-in-the-web-application',
       title: 'OpenAPI import in web app',
-      cloud: true
+      pro: true
     },
     {
       link: '/releases/9.4.0/#cloud-logs-in-the-desktop-application-and-logs-replay',
       title: 'Cloud logs replay',
-      cloud: true
+      pro: true
     },
     {
       link: '/releases/9.4.0/#cloud-logs-in-the-desktop-application-and-logs-replay',
       title: 'Display cloud logs in the desktop app',
-      cloud: true
+      pro: true
     }
   ],
   inProgress: [
     {
       link: '/blog/roadmap-update-faster-releases-self-hosting-focus-2026',
       title: 'Self-hosted collaboration and mocks',
-      cloud: false
+      pro: false
     },
     {
       link: 'https://github.com/mockoon/mockoon/issues/1045',
       title: 'Export logs as HAR',
-      cloud: false,
+      pro: false,
       target: '_blank'
     },
     {
       link: 'https://github.com/mockoon/mockoon/issues/2362',
       title: 'Undo delete popup',
-      cloud: false,
+      pro: false,
       target: '_blank'
     }
   ],
   planned: [
     {
       title: 'Resource level permissions (edit, view, etc.)',
-      cloud: true,
+      pro: true,
       target: null
     },
     {
       title: 'Team-level environment variables support for cloud deployments',
-      cloud: true,
+      pro: true,
       target: null
     }
   ]
@@ -200,10 +200,8 @@ const Roadmap: FunctionComponent = function () {
                     </div>
 
                     <p className='text-gray-800'>
-                      {task.cloud && (
-                        <span className='badge text-bg-warning me-2'>
-                          Cloud
-                        </span>
+                      {task.pro && (
+                        <span className='badge text-bg-warning me-2'>Pro</span>
                       )}
                       {task.link && (
                         <Link
@@ -233,10 +231,8 @@ const Roadmap: FunctionComponent = function () {
                     </div>
 
                     <p className='text-gray-800'>
-                      {task.cloud && (
-                        <span className='badge text-bg-warning me-2'>
-                          Cloud
-                        </span>
+                      {task.pro && (
+                        <span className='badge text-bg-warning me-2'>Pro</span>
                       )}
                       {task.link && (
                         <Link
@@ -267,10 +263,8 @@ const Roadmap: FunctionComponent = function () {
                     </div>
 
                     <p className='text-gray-800'>
-                      {task.cloud && (
-                        <span className='badge text-bg-warning me-2'>
-                          Cloud
-                        </span>
+                      {task.pro && (
+                        <span className='badge text-bg-warning me-2'>Pro</span>
                       )}
                       {task.link && (
                         <Link
@@ -314,8 +308,8 @@ const Roadmap: FunctionComponent = function () {
           <div className='row'>
             <div className='text-center'>
               <p className='has-text-centered pt-4'>
-                <a className='btn btn-primary-subtle' href='/cloud/'>
-                  Get enterprise support with Mockoon Cloud
+                <a className='btn btn-primary-subtle' href='/pro/'>
+                  Get enterprise support with Mockoon Pro
                 </a>
               </p>
             </div>

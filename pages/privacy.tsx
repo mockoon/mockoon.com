@@ -13,7 +13,7 @@ const Privacy: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Privacy policy' subtitle='Last update May 6, 2026' />
+      <Hero title='Privacy policy' subtitle='Last update September 30, 2026' />
 
       <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
         <div className='container'>
@@ -91,14 +91,12 @@ const Privacy: FunctionComponent = function () {
           <div className='row'>
             <div className='col-12'>
               <Quote colorScheme='secondary'>
-                💡 <strong>Summary of changes (May 6, 2026)</strong>:
+                💡 <strong>Summary of changes (September 30, 2026)</strong>:
                 <ul className='mb-0'>
                   <li>
-                    Section 3: We stopped collecting anonymous telemetry data in
-                    the desktop and web applications, effective May 6, 2026. The
-                    telemetry settings are still visible in the applications up
-                    to v9.6.0, but non-functional. All collected telemetry data
-                    was deleted on May 6, 2026.
+                    Added details about Mockoon Pro trial and license data,
+                    eligibility checks, and the distinction between self-hosted
+                    and Mockoon-hosted services.
                   </li>
                 </ul>
               </Quote>
@@ -111,7 +109,7 @@ const Privacy: FunctionComponent = function () {
               </p>
               <p>
                 This policy is effective as of July 1st, 2021 and was last
-                updated on November 17, 2025.
+                updated on September 30, 2026.
               </p>
               <h3 className='mt-6 fw-medium'>1. Information We Collect</h3>
               <p>
@@ -163,6 +161,13 @@ const Privacy: FunctionComponent = function () {
                   including your email and password.
                 </li>
                 <li>
+                  When you request or receive a Mockoon Pro trial or license:
+                  your work email, company domain, verification and eligibility
+                  status, license identifier and key, plan, number of licenses,
+                  and issuance and expiration dates. A self-hosted trial does
+                  not require an account.
+                </li>
+                <li>
                   When you purchase a service (managed by our payment processor,
                   Paddle): billing details, payment information such as name,
                   address and credit card information.
@@ -185,6 +190,11 @@ const Privacy: FunctionComponent = function () {
                 <li>
                   Deliver the service requested by you (service purchase,
                   newsletter subscription, support request, etc.).
+                </li>
+                <li>
+                  Verify trial requests, assess company eligibility, prevent
+                  abuse, enforce one trial per company domain, issue licenses,
+                  and send transactional license and expiration emails.
                 </li>
                 <li>
                   Improve our services by analyzing the anonymous data
@@ -218,6 +228,27 @@ const Privacy: FunctionComponent = function () {
                   support request, etc.).
                 </li>
               </ul>
+              <p>
+                For work-email domains not covered by our local eligibility
+                rules or a previous decision, we send the submitted work email
+                to Google's Gemini service to assess company eligibility. We
+                store the resulting domain-level decision to avoid repeating
+                this check. Google processes this information under its
+                applicable service terms and privacy commitments.
+              </p>
+              <p>
+                When you use an AI assistant, your prompt is sent to Google
+                Gemini to generate the requested output. We do not use prompts
+                or outputs to train AI models, and we do not retain them.
+              </p>
+              <p>
+                Mockoon Pro is self-hosted by default. Content stored in a
+                self-hosted installation remains on infrastructure controlled by
+                the customer and is not received or backed up by us unless the
+                customer deliberately provides it for support. We process hosted
+                content only for Mockoon-operated services, including Enterprise
+                managed cloud and legacy Mockoon Cloud.
+              </p>
               <h3 className='mt-6 fw-medium'>
                 4. Security of Your Personal Information
               </h3>
@@ -343,13 +374,14 @@ const Privacy: FunctionComponent = function () {
                 and limit use of their information, and the right to
                 non-discrimination. Submit requests to support@mockoon.com; we
                 will verify and respond within 45 days. Categories collected:
-                identifiers (email), commercial information (purchases),
-                internet activity (log data), and billing information processed
-                by Paddle. Sources: you and our service logs. Purposes: provide,
-                secure, and support the service; process transactions.
-                Disclosures to service providers: hosting (Google Cloud
-                Platform), payments (Paddle), optional AI provider (OpenAI) for
-                user-initiated features.
+                identifiers (email), commercial information (purchases), trial
+                and license information, internet activity (log data), and
+                billing information processed by Paddle. Sources: you and our
+                service logs. Purposes: provide, secure, and support the
+                service; assess trial eligibility; prevent abuse; and process
+                transactions. Disclosures to service providers: hosting (Google
+                Cloud Platform), payments (Paddle), and Google Gemini for
+                user-initiated AI features and trial eligibility analysis.
               </p>
               <h3 className='mt-6 fw-medium'>11. Data Retention Details</h3>
               <p>
@@ -359,26 +391,35 @@ const Privacy: FunctionComponent = function () {
                 (up to 90 days). Operational logs are retained up to 90 days and
                 then deleted or anonymized. Billing records may be retained up
                 to 10 years for tax and accounting. Support correspondence may
-                be retained up to 24 months. AI prompts and outputs are not
-                stored by Mockoon and subject to OpenAI's data usage policies.
+                be retained up to 24 months.
+              </p>
+              <p>
+                Trial verification records are kept only as needed to complete
+                or secure the request. Trial claims and license records may be
+                retained after expiration to administer licenses, prevent repeat
+                trials, maintain transaction records, and meet legal or
+                accounting obligations.
               </p>
               <h3 className='mt-6 fw-medium'>
                 12. Backup and Restore Practices
               </h3>
               <p>
-                We host services in Google Cloud Platform. We perform daily
-                backups with up to 90-day retention. Backups are encrypted and
-                used only for continuity and disaster recovery.
+                For Mockoon-operated services, including Enterprise managed
+                cloud and legacy Mockoon Cloud, we host services in Google Cloud
+                Platform and perform encrypted backups for continuity and
+                disaster recovery. These practices do not apply to customer-run
+                self-hosted installations.
               </p>
               <h3 className='mt-6 fw-medium'>13. Sub-processors</h3>
               <p>
                 We use Google Cloud Platform (hosting), Paddle (payments and
-                billing), Cloudflare (CDN and security) and OpenAI (optional AI
-                features; prompts may be sent when you use the feature; we do
-                not send production data and do not retain prompts). Each acts
-                as a processor under appropriate agreements; international
-                transfers rely on safeguards such as Standard Contractual
-                Clauses and Data Processing Agreements where applicable.
+                billing), Cloudflare (CDN and security), and Google Gemini
+                (user-initiated AI features and trial eligibility analysis).
+                Hosting subprocessors process customer content only when you use
+                a Mockoon-operated hosted service. Each provider acts under
+                appropriate agreements; international transfers rely on
+                safeguards such as Standard Contractual Clauses and Data
+                Processing Agreements where applicable.
               </p>
               <h3 className='mt-6 fw-medium'>14. Changes to This Policy</h3>
               <p>

@@ -16,7 +16,7 @@ API mocking can help enhance integration testing by providing a **controlled and
 
 Testing an application against a mock API allows developers to create a **controlled and more predictable** environment for integration testing. Without having to rely on the actual API, tests are less likely to fail due to external factors, such as network issues or changes in the API's behavior. This ensures that the tests are more reliable and consistent, providing developers with confidence in the application's behavior.
 
-> 💡 Mockoon offers many tools to deploy your mocks in a testing environment: a [CLI](/cli/), a [Docker image](https://hub.docker.com/r/mockoon/cli), a [serverless library](/serverless/) and a [GitHub Action](https://github.com/marketplace/actions/mockoon-cli).
+> 💡 Mockoon offers many tools to deploy your mocks in a testing environment: a [CLI](/cli/), a [Docker image](https://hub.docker.com/r/mockoon/cli) and a [GitHub Action](https://github.com/marketplace/actions/mockoon-cli).
 
 ## Simulation of edge cases
 

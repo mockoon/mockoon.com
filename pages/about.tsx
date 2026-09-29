@@ -106,7 +106,7 @@ const About: FunctionComponent<{
               use cases. Today, Mockoon is used by{' '}
               <strong>thousands of developers and teams worldwide</strong>, from
               solo devs to large companies, and has been downloaded over{' '}
-              <strong>900,000 times</strong>.
+              <strong>1 million times</strong>.
             </p>
           </div>
         </div>
@@ -144,7 +144,7 @@ const About: FunctionComponent<{
               without external funding or venture capital. Mockoon is sustained
               through a mix of <strong>community support</strong> and our{' '}
               <strong>commercial offering</strong>,{' '}
-              <a href='/cloud/'>Mockoon Cloud</a>.
+              <a href='/pro/'>Mockoon Pro</a>.
             </p>
             <p>
               If you believe in what we're building, you can{' '}
@@ -157,9 +157,8 @@ const About: FunctionComponent<{
                 backers
               </a>{' '}
               helping keep the project alive and evolving.{' '}
-              <strong>Subscribing to Mockoon Cloud</strong> is another great way
+              <strong>Subscribing to Mockoon Pro</strong> is another great way
               to support us — and it comes with powerful features like{' '}
-              <strong>AI-powered API mock generation</strong>,{' '}
               <strong>real-time team collaboration</strong>,{' '}
               <strong>cloud deployments</strong>, and more. Your support helps
               us remain sustainable while keeping the core project free and open
@@ -173,15 +172,15 @@ const About: FunctionComponent<{
               rel='noopener'
             >
               <img
-                src='/images/sponsor-btn-250.png'
+                src='/images/sponsors-btn-250.png'
                 alt='sponsor button'
                 width={250}
                 height={71}
               />
             </a>
-            <a href='/cloud/' className='ms-4'>
+            <a href='/pro/' className='ms-4'>
               <img
-                src='/images/cloud-btn-250.png'
+                src='/images/pro-btn-250.png'
                 alt='discover mockoon cloud button'
                 width={250}
                 height={71}

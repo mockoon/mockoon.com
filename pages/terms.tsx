@@ -13,28 +13,34 @@ const Terms: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero title='Terms of service' subtitle='Last update February 10, 2026' />
+      <Hero
+        title='Terms of service'
+        subtitle='Last update September 30, 2026'
+      />
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
               <Quote colorScheme='secondary'>
-                💡 <strong>Summary of changes (February 10, 2026)</strong>:
+                💡 <strong>Summary of changes (September 30, 2026)</strong>:
                 <ul className='mb-0'>
                   <li>
-                    Clarified support levels: "Email support", "Priority email
-                    support", "Next business day support", and "Enterprise
-                    support".
+                    Added terms for self-hosted Mockoon Pro licenses and trials,
+                    and clarified which terms apply to managed and legacy Cloud
+                    services.
                   </li>
                 </ul>
               </Quote>
               <p>
-                These terms of service ("Agreement") govern your use of
-                Mockoon's cloud products and services ("Service") provided by
-                1kB SARL-S, doing business as "Mockoon" ("Company", "we", "us",
-                and/or "our). By accessing or using the Service, you acknowledge
-                that you have read, understood, and agree to be bound by this
-                Agreement.
+                These terms of service ("Agreement") govern your use of Mockoon
+                Pro self-hosted software, Mockoon Pro managed cloud, and legacy
+                Mockoon Cloud products and services (collectively, the
+                "Service") provided by 1kB SARL-S, doing business as "Mockoon"
+                ("Company", "we", "us", and/or "our"). Managed cloud is an
+                Enterprise option. Legacy Mockoon Cloud remains available to
+                existing customers under their existing plan entitlements. By
+                accessing or using the Service, you acknowledge that you have
+                read, understood, and agree to be bound by this Agreement.
               </p>
               <p>The Service is provided by:</p>
               <p className='ps-4'>
@@ -70,12 +76,12 @@ const Terms: FunctionComponent = function () {
               </p>
               <h3 className='mt-6 fw-medium'>1. Account registration</h3>
               <p>
-                By creating an account or signing up for our Service, you agree
-                to provide accurate, up-to-date, and complete information during
-                the signup process. You are solely responsible for maintaining
-                the security and confidentiality of your login credentials. Each
-                user must have unique login credentials that must not be shared
-                by multiple users.
+                An account is required for legacy Mockoon Cloud and certain
+                managed services, but not to request or use a self-hosted
+                Mockoon Pro trial. If you create an account, you agree to
+                provide accurate, up-to-date, and complete information and to
+                protect your login credentials. Login credentials must not be
+                shared.
               </p>
               <p>
                 You are responsible for all activities that occur using your
@@ -118,6 +124,23 @@ const Terms: FunctionComponent = function () {
                 personal or internal business purposes.
               </p>
               <p>
+                Mockoon Pro is licensed per authorized user. You may install and
+                operate the self-hosted software only for the number of users
+                permitted by your license key. You must not share a license key
+                outside your organization or bypass, alter, or interfere with
+                license validation. License keys remain our confidential
+                licensing material and do not transfer ownership of the
+                software.
+              </p>
+              <p>
+                Self-hosted trials last 14 days, include five licenses, require
+                an eligible verified work email, and are limited to one trial
+                per company domain. No account or payment method is required,
+                and a trial does not automatically convert to a paid
+                subscription. We may refuse or withdraw a trial in cases of
+                ineligibility, misuse, or attempted circumvention.
+              </p>
+              <p>
                 You acknowledge and agree that all intellectual property rights,
                 including but not limited to software, trademarks, logos, and
                 any related documentation associated with our Service, are and
@@ -131,6 +154,15 @@ const Terms: FunctionComponent = function () {
               </p>
               <h3 className='mt-6 fw-medium'>4. Your content and data</h3>
               <p>
+                For self-hosted Mockoon Pro, Your Content remains on
+                infrastructure you control unless you choose to provide it to us
+                for support. You are responsible for operating and securing that
+                infrastructure, applying updates, configuring domains and
+                certificates, maintaining backups, and complying with laws that
+                apply to Your Content. We do not provide hosting or availability
+                commitments for self-hosted installations.
+              </p>
+              <p>
                 Our Service may allow you to upload, submit, store, send, or
                 receive various types of content, including data, files,
                 documents, feedback, suggestions, or other materials ("Your
@@ -138,12 +170,12 @@ const Terms: FunctionComponent = function () {
               </p>
               <p>
                 You retain ownership of Your Content, and we claim no ownership
-                or control over it. By uploading or submitting Your Content to
-                our Service, you grant us a worldwide, non-exclusive,
-                royalty-free, sublicensable, and transferable license to use,
-                reproduce, modify, adapt, distribute, and display Your Content
-                solely for the purposes of providing, operating, and improving
-                the Service.
+                or control over it. If you submit Your Content to a
+                Mockoon-operated service, you grant us a worldwide,
+                non-exclusive, royalty-free, sublicensable, and transferable
+                license to use, reproduce, modify, adapt, distribute, and
+                display Your Content solely for the purposes of providing,
+                operating, and improving the Service.
               </p>
               <p>
                 You represent and warrant that you have all necessary rights,
@@ -165,16 +197,13 @@ const Terms: FunctionComponent = function () {
                 objectionable.
               </p>
               <p>
-                You are strictly prohibited from uploading, storing, or
-                processing any "Personal Data" or "Personally Identifiable
-                Information" (PII) within the Service. This includes, but is not
-                limited to, names, email addresses, phone numbers, financial
-                information, health information, or any data that could be used
-                to identify an individual. You acknowledge that the Service is
-                not intended for the management of personal data, and you bear
-                sole responsibility for the content you create. You agree to
-                indemnify and hold us harmless from any claims arising from your
-                violation of this clause.
+                You are responsible for ensuring that your collection and
+                processing of personal data through the Service complies with
+                applicable law. You must not use Mockoon-operated hosted
+                services to process sensitive personal data unless expressly
+                agreed in writing. For self-hosted Mockoon Pro, you determine
+                the purposes and means of processing and are responsible for
+                appropriate security and data-protection measures.
               </p>
               <p>
                 We may use your feedback, suggestions, or ideas regarding our
@@ -186,10 +215,11 @@ const Terms: FunctionComponent = function () {
               </p>
               <h3 className='mt-6 fw-medium'>5. Fair use</h3>
               <p>
-                We strive to ensure that all plan levels receive an adequate
-                allocation of bandwidth or compute power, which we consider to
-                be typical for projects at each respective plan level. We will
-                make commercially reasonable efforts to provide these resources.
+                For managed cloud and legacy Mockoon Cloud, we strive to ensure
+                that all plan levels receive an adequate allocation of bandwidth
+                or compute power, which we consider to be typical for projects
+                at each respective plan level. We will make commercially
+                reasonable efforts to provide these resources.
               </p>
               <p>
                 In the event that we determine your usage to be unreasonable and
@@ -373,11 +403,11 @@ const Terms: FunctionComponent = function () {
                 We reserve the right to update or modify the fees for our
                 Service, but we will provide you with prior notice before the
                 start of the next billing cycle. This notice will be sent to the
-                email address associated with your account, and it is your
-                responsibility to ensure that you receive and review these
-                notifications. If you continue to use our Service after the fee
-                change takes effect, it will be deemed as your acceptance of the
-                modified fees.
+                email address associated with your account, order, or license,
+                and it is your responsibility to ensure that you receive and
+                review these notifications. If you continue to use our Service
+                after the fee change takes effect, it will be deemed as your
+                acceptance of the modified fees.
               </p>
               <p>
                 In the event of a dispute regarding the fees charged, you must
@@ -387,8 +417,10 @@ const Terms: FunctionComponent = function () {
                 the disputed fees.
               </p>
               <p>
-                All fees are stated and payable in United States Dollars (USD),
-                unless otherwise specified.
+                Mockoon Pro self-hosted fees are stated and payable in euros
+                (EUR). Legacy Mockoon Cloud fees remain payable in the currency
+                shown in the customer's existing subscription. Enterprise order
+                forms may specify a different currency or payment arrangement.
               </p>
               <p>
                 You acknowledge that our Service may integrate with third-party
@@ -409,8 +441,13 @@ const Terms: FunctionComponent = function () {
                 outstanding fees accrued prior to the termination or cessation.
               </p>
               <h3 className='mt-6 fw-medium'>
-                11. Description of the cloud Services
+                11. Description of hosted Services
               </h3>
+              <p>
+                This section applies only to Mockoon Pro managed cloud and
+                legacy Mockoon Cloud. It does not apply to infrastructure that
+                customers operate as part of self-hosted Mockoon Pro.
+              </p>
               <h4 className='mt-6 fw-medium'>a. AI assistant</h4>
               <p>
                 The AI assistant is a feature available to all our customers of
@@ -615,11 +652,12 @@ const Terms: FunctionComponent = function () {
                 12. Usage quotas and limitations
               </h3>
               <p>
-                Our Service may include certain usage quotas, such as storage,
-                deployments, or AI assistant invocations, depending on the plan
-                you have subscribed to. These usage quotas are provided to
-                ensure fair usage of our services and to maintain the optimal
-                performance of our infrastructure. They are visible in your{' '}
+                Managed cloud and legacy Mockoon Cloud may include usage quotas,
+                such as storage, deployments, or AI assistant invocations,
+                depending on the applicable plan. These usage quotas are
+                provided to ensure fair usage of our services and to maintain
+                the optimal performance of our infrastructure. They are visible
+                in your{' '}
                 <a href='/account/subscription/'>
                   account management interface
                 </a>
@@ -674,9 +712,9 @@ const Terms: FunctionComponent = function () {
               </p>
               <p>
                 The Support Service will be conducted through written means via
-                the email addresses indicated in your account settings. Please
-                note that live audio or video calls are not included in the
-                Support Service.
+                the email address associated with your account, order, or
+                license. Live audio or video calls are included only when
+                specified in an Enterprise order or agreed separately.
               </p>
               <p>
                 Support Services do not cover assistance with custom
@@ -723,9 +761,11 @@ const Terms: FunctionComponent = function () {
               </p>
               <h5 className='mt-6 fw-medium'>13d. Enterprise Support</h5>
               <p>
-                Enterprise Support offers a guaranteed response time of one
-                business day, unless otherwise specified in the plan details or
-                separately agreed upon in writing. Business days are defined as{' '}
+                Enterprise Support offers a guaranteed initial response within
+                four business hours, unless a different response time is
+                separately agreed upon in writing. The response-time clock runs
+                only during business hours and resumes at the start of the next
+                business day when necessary. Business hours are defined as{' '}
                 <strong>Monday to Friday, 9 am to 5 pm CET/CEST</strong>,
                 excluding Luxembourgish public holidays.
               </p>
@@ -752,13 +792,13 @@ const Terms: FunctionComponent = function () {
               <p>
                 Termination of this Agreement, whether initiated by you or us,
                 will take effect at the end of the current billing cycle
-                following the receipt of the termination notice. Upon
-                termination, your access to our Service will be deactivated, and
-                you will no longer have the right to use or access any data or
-                information associated with your account. Please note that
-                termination of this Agreement does not relieve you of the
-                obligation to pay any outstanding fees accrued prior to the
-                termination.
+                following the receipt of the termination notice. When a
+                self-hosted Mockoon Pro license expires or terminates, your
+                right to use paid functionality ends, but data stored on your
+                own infrastructure is not deleted by us. Access to hosted
+                services and hosted data may be deactivated under the applicable
+                plan or order. Termination does not relieve you of the
+                obligation to pay fees accrued before termination.
               </p>
               <p>
                 Any provisions of this Agreement that by their nature extend

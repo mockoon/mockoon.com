@@ -47,5 +47,3 @@ We provide a [public roadmap](/public-roadmap/) page where you can get a glimpse
 ---
 
 By subscribing to Mockoon Cloud, you will enhance your API development capabilities and also contribute to the sustainability of the open-source project. Join us on this exciting journey and subscribe to Mockoon Cloud today!
-
-[![get mockoon Cloud button{300x86}](/images/cloud-btn.png)](/cloud/)

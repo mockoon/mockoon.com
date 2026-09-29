@@ -59,12 +59,12 @@ export default function () {
             <div className='col-12 col-lg-4 d-flex'>
               <Card
                 data={{
-                  topTag: 'cloud',
+                  topTag: 'pro',
                   topTagClasses: 'text-bg-warning',
-                  title: '☁️ Achieve more with our Cloud',
+                  title: '☁️ Achieve more with Pro',
                   description:
-                    'Mockoon Cloud is a powerful API mocking platform that allows you to collaborate and share your mock APIs easily.',
-                  links: [{ src: '/cloud/', text: 'Learn more' }]
+                    'Mockoon Pro is a powerful API mocking platform that allows you to collaborate and share your mock APIs easily.',
+                  links: [{ src: '/pro/', text: 'Learn more' }]
                 }}
                 cover={false}
                 border

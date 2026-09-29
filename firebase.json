@@ -58,13 +58,18 @@
         "type": 301
       },
       {
-        "source": "/enterprise{,/}",
+        "source": "/serverless{,/}",
+        "destination": "/cli/",
+        "type": 301
+      },
+      {
+        "source": "/cloud{,/}",
         "destination": "/pro/",
         "type": 301
       },
       {
-        "source": "/pro{,/}",
-        "destination": "/cloud/",
+        "source": "/self-hosted/docs/installation{,/}",
+        "destination": "/pro/docs/self-hosting/installation/",
         "type": 301
       },
       {
@@ -160,176 +165,6 @@
       {
         "source": "/mock-samples/category{,/}",
         "destination": "/mock-samples/category/all/",
-        "type": 301
-      },
-      {
-        "source": "/docs/8.0.0/mockoon-cloud/templates-and-ai-assistant{,/}",
-        "destination": "/cloud/docs/templates-and-ai-assistant/",
-        "type": 301
-      },
-      {
-        "source": "/docs/8.0.0/mockoon-cloud/data-synchronization-team-collaboration{,/}",
-        "destination": "/cloud/docs/data-synchronization-team-collaboration/",
-        "type": 301
-      },
-      {
-        "source": "/docs/8.1.0/mockoon-cloud/templates-and-ai-assistant{,/}",
-        "destination": "/cloud/docs/templates-and-ai-assistant/",
-        "type": 301
-      },
-      {
-        "source": "/docs/8.1.0/mockoon-cloud/data-synchronization-team-collaboration{,/}",
-        "destination": "/cloud/docs/data-synchronization-team-collaboration/",
-        "type": 301
-      },
-      {
-        "source": "/docs/8.1.1/mockoon-cloud/templates-and-ai-assistant{,/}",
-        "destination": "/cloud/docs/templates-and-ai-assistant/",
-        "type": 301
-      },
-      {
-        "source": "/docs/8.1.1/mockoon-cloud/data-synchronization-team-collaboration{,/}",
-        "destination": "/cloud/docs/data-synchronization-team-collaboration/",
-        "type": 301
-      },
-      {
-        "source": "/docs/8.2.0/mockoon-cloud/templates-and-ai-assistant{,/}",
-        "destination": "/cloud/docs/templates-and-ai-assistant/",
-        "type": 301
-      },
-      {
-        "source": "/docs/8.2.0/mockoon-cloud/data-synchronization-team-collaboration{,/}",
-        "destination": "/cloud/docs/data-synchronization-team-collaboration/",
-        "type": 301
-      },
-      {
-        "source": "/docs/8.3.0/mockoon-cloud/overview{,/}",
-        "destination": "/cloud/docs/about/",
-        "type": 301
-      },
-      {
-        "source": "/docs/8.3.0/mockoon-cloud/api-mock-cloud-deployments{,/}",
-        "destination": "/cloud/docs/api-mock-cloud-deployments/",
-        "type": 301
-      },
-      {
-        "source": "/docs/8.3.0/mockoon-cloud/templates-and-ai-assistant{,/}",
-        "destination": "/cloud/docs/templates-and-ai-assistant/",
-        "type": 301
-      },
-      {
-        "source": "/docs/8.3.0/mockoon-cloud/data-synchronization-team-collaboration{,/}",
-        "destination": "/cloud/docs/data-synchronization-team-collaboration/",
-        "type": 301
-      },
-      {
-        "source": "/docs/8.4.0/mockoon-cloud/overview{,/}",
-        "destination": "/cloud/docs/about/",
-        "type": 301
-      },
-      {
-        "source": "/docs/8.4.0/mockoon-cloud/api-mock-cloud-deployments{,/}",
-        "destination": "/cloud/docs/api-mock-cloud-deployments/",
-        "type": 301
-      },
-      {
-        "source": "/docs/8.4.0/mockoon-cloud/templates-and-ai-assistant{,/}",
-        "destination": "/cloud/docs/templates-and-ai-assistant/",
-        "type": 301
-      },
-      {
-        "source": "/docs/8.4.0/mockoon-cloud/data-synchronization-team-collaboration{,/}",
-        "destination": "/cloud/docs/data-synchronization-team-collaboration/",
-        "type": 301
-      },
-      {
-        "source": "/docs/9.0.0/mockoon-cloud/overview{,/}",
-        "destination": "/cloud/docs/about/",
-        "type": 301
-      },
-      {
-        "source": "/docs/9.0.0/mockoon-cloud/api-mock-cloud-deployments{,/}",
-        "destination": "/cloud/docs/api-mock-cloud-deployments/",
-        "type": 301
-      },
-      {
-        "source": "/docs/9.0.0/mockoon-cloud/templates-and-ai-assistant{,/}",
-        "destination": "/cloud/docs/templates-and-ai-assistant/",
-        "type": 301
-      },
-      {
-        "source": "/docs/9.0.0/mockoon-cloud/data-synchronization-team-collaboration{,/}",
-        "destination": "/cloud/docs/data-synchronization-team-collaboration/",
-        "type": 301
-      },
-      {
-        "source": "/docs/9.1.0/mockoon-cloud/overview{,/}",
-        "destination": "/cloud/docs/about/",
-        "type": 301
-      },
-      {
-        "source": "/docs/9.1.0/mockoon-cloud/api-mock-cloud-deployments{,/}",
-        "destination": "/cloud/docs/api-mock-cloud-deployments/",
-        "type": 301
-      },
-      {
-        "source": "/docs/9.1.0/mockoon-cloud/templates-and-ai-assistant{,/}",
-        "destination": "/cloud/docs/templates-and-ai-assistant/",
-        "type": 301
-      },
-      {
-        "source": "/docs/9.1.0/mockoon-cloud/data-synchronization-team-collaboration{,/}",
-        "destination": "/cloud/docs/data-synchronization-team-collaboration/",
-        "type": 301
-      },
-      {
-        "source": "/docs/9.2.0/mockoon-cloud/overview{,/}",
-        "destination": "/cloud/docs/about/",
-        "type": 301
-      },
-      {
-        "source": "/docs/9.2.0/mockoon-cloud/api-mock-cloud-deployments{,/}",
-        "destination": "/cloud/docs/api-mock-cloud-deployments/",
-        "type": 301
-      },
-      {
-        "source": "/docs/9.2.0/mockoon-cloud/templates-and-ai-assistant{,/}",
-        "destination": "/cloud/docs/templates-and-ai-assistant/",
-        "type": 301
-      },
-      {
-        "source": "/docs/9.2.0/mockoon-cloud/data-synchronization-team-collaboration{,/}",
-        "destination": "/cloud/docs/data-synchronization-team-collaboration/",
-        "type": 301
-      },
-      {
-        "source": "/docs/9.2.0/mockoon-cloud/web-application{,/}",
-        "destination": "/cloud/docs/web-application/",
-        "type": 301
-      },
-      {
-        "source": "/docs/latest/mockoon-cloud/overview{,/}",
-        "destination": "/cloud/docs/about/",
-        "type": 301
-      },
-      {
-        "source": "/docs/latest/mockoon-cloud/api-mock-cloud-deployments{,/}",
-        "destination": "/cloud/docs/api-mock-cloud-deployments/",
-        "type": 301
-      },
-      {
-        "source": "/docs/latest/mockoon-cloud/data-synchronization-team-collaboration{,/}",
-        "destination": "/cloud/docs/data-synchronization-team-collaboration/",
-        "type": 301
-      },
-      {
-        "source": "/docs/latest/mockoon-cloud/templates-and-ai-assistant{,/}",
-        "destination": "/cloud/docs/templates-and-ai-assistant/",
-        "type": 301
-      },
-      {
-        "source": "/docs/latest/mockoon-cloud/web-application{,/}",
-        "destination": "/cloud/docs/web-application/",
         "type": 301
       }
     ]

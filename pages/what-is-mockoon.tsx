@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
-import OssCloudComparison from '../components/oss-cloud-comparison';
+import OssProComparison from '../components/oss-pro-comparison';
 import Layout from '../layout/layout';
 
 export default function () {
@@ -23,16 +23,10 @@ export default function () {
             <div className='col-lg-9'>
               <p>
                 Mockoon is a popular open-source API mocking tool{' '}
-                <strong>
-                  created in 2017 by{' '}
-                  <Link href={'https://github.com/255kb'}>
-                    Guillaume Monnet
-                  </Link>
-                </strong>
-                . It allows developers to quickly create mock APIs and test
-                their applications without relying on third-party APIs that can
-                be unreliable, slow, or expensive to use in development and
-                testing environments.
+                <strong>created in 2017</strong>. It allows developers to
+                quickly create mock APIs and test their applications without
+                relying on third-party APIs that can be unreliable, slow, or
+                expensive to use in development and testing environments.
               </p>
               <p>
                 Mockoon is a <strong>desktop application</strong> available on
@@ -55,7 +49,7 @@ export default function () {
                 <strong>used by thousands of developers and companies</strong>{' '}
                 around the world to speed up their development process and
                 reduce dependencies on external services. It has been{' '}
-                <strong>downloaded more than 800k times</strong> and has a
+                <strong>downloaded more than 1 million times</strong> and has a
                 vibrant community of contributors and users.
               </p>
             </div>
@@ -205,7 +199,7 @@ export default function () {
                   <strong>Mockoon CLI</strong>
                 </Link>{' '}
                 is a command-line interface that allows developers to{' '}
-                <strong>self-host their mock APIs</strong> and{' '}
+                <strong>run their mock APIs programmatically</strong> and{' '}
                 <strong>integrate them into their CI/CD</strong> pipelines and
                 servers. The CLI is also available as a{' '}
                 <Link href='https://hub.docker.com/r/mockoon/cli'>
@@ -214,15 +208,11 @@ export default function () {
                 .
               </p>
               <p>
-                An{' '}
-                <Link href='/serverless/'>
-                  <strong>NPM library</strong>
-                </Link>{' '}
-                is also available to{' '}
-                <strong>deploy and manage mock APIs programmatically</strong>.
-                It is compatible with most{' '}
-                <strong>cloud functions providers</strong>: AWS Lambda, Google
-                Cloud Functions, Netlify Functions, etc.
+                <Link href={'/pro/'}>
+                  <strong>Mockoon Pro</strong>
+                </Link>
+                , available as a Docker image is available for developers who
+                need advanced features and collaboration capabilities.
               </p>
               <div className='text-center my-4'>
                 <img
@@ -252,15 +242,16 @@ export default function () {
           <div className='row justify-content-center'>
             <div className='col-lg-8'>
               <h2 className='fw-bold position-relative mt-8 text-center'>
-                What is Mockoon Cloud?
+                What is Mockoon Pro?
               </h2>
               <p>
-                Mockoon Cloud allows developers to{' '}
+                Mockoon Pro allows developers to{' '}
                 <strong>collaborate and share their API mocks</strong> in the
-                cloud. It streamlines the API mocking process and accelerates
-                the development of APIs and applications.
+                cloud (self-hosted or managed). It streamlines the API mocking
+                process and accelerates the development of APIs and
+                applications.
                 <br />
-                Several features are available in Mockoon Cloud:
+                Several features are available in Mockoon Pro:
               </p>
               <ul>
                 <li>
@@ -276,12 +267,13 @@ export default function () {
                   the cloud with a single click and share them with your team.
                 </li>
                 <li>
-                  <strong>Enterprise-grade support</strong>: get priority
-                  support from the Mockoon Team.
+                  <strong>Integrated web app</strong>: access and manage your
+                  API mocks directly from the web interface and avoid the need
+                  to install the desktop app.
                 </li>
                 <li>
-                  <strong>AI-powered API mocks generation</strong>: prototype
-                  faster with AI-generated JSON templates and endpoints.
+                  <strong>Enterprise-grade support</strong>: get priority
+                  support from the Mockoon Team.
                 </li>
               </ul>
               <div className='text-center my-4'>
@@ -295,16 +287,16 @@ export default function () {
           </div>
           <div className='row justify-content-center'>
             <div className='col-lg-8'>
-              <OssCloudComparison />
+              <OssProComparison />
             </div>
           </div>
           <div className='row justify-content-center mt-6'>
             <div className='col-12 col-md-4'>
               <Link
-                href='/cloud/'
+                href='/pro/'
                 className='btn w-100 btn-primary btn-primary-subtle d-flex align-items-center lift'
               >
-                Discover Mockoon Cloud
+                Discover Mockoon Pro
                 <i className='icon-arrow_forward ms-auto'></i>
               </Link>
             </div>

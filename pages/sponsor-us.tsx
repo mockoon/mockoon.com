@@ -11,13 +11,13 @@ const SponsorUs: FunctionComponent = function () {
     <Layout footerBanner='newsletter'>
       <Meta
         title='Support our work on Mockoon'
-        description='Mockoon is an open-source project. You can help the maintainers by sponsoring the project through GitHub Sponsors or by subscribing to our Cloud plans.'
+        description='Mockoon is an open-source project. You can help the maintainers by sponsoring the project through GitHub Sponsors or by subscribing to our Pro plans.'
         ogType='article'
       />
 
       <Hero
         title='<span class="text-primary">Support our work</span> on Mockoon'
-        subtitle='Mockoon is an independent open-source project. You can support our work by sponsoring the project or by subscribing to our Cloud plans.'
+        subtitle='Mockoon is an independent open-source project. You can support our work by sponsoring the project or by subscribing to our Pro plans.'
       />
 
       <div className='container pb-8'>
@@ -38,7 +38,7 @@ const SponsorUs: FunctionComponent = function () {
             <p>
               Completely <strong>free</strong> to use, Mockoon saves time for
               thousands of developers around the world every day, and has been{' '}
-              <strong>downloaded over 900,000 times</strong>.
+              <strong>downloaded over 1 million times</strong>.
             </p>
             <p>
               {' '}
@@ -73,7 +73,7 @@ const SponsorUs: FunctionComponent = function () {
                 rel='noopener'
               >
                 <img
-                  src='/images/sponsor-btn-250.png'
+                  src='/images/sponsors-btn-250.png'
                   alt='sponsor button'
                   width={250}
                   height={71}
@@ -83,18 +83,17 @@ const SponsorUs: FunctionComponent = function () {
             <p>
               You can also{' '}
               <strong>
-                support Mockoon by subscribing to our Cloud offering
+                support Mockoon by subscribing to our Pro offering
               </strong>
               , a powerful, hosted version of the tool that includes:{' '}
               <strong>real-time team collaboration</strong>,{' '}
-              <strong>cloud deployments</strong>,{' '}
-              <strong>AI-powered mock generation</strong>,{' '}
+              <strong>remote deployments</strong>,{' '}
               <strong>enterprise-grade support</strong> ... and more to come!
             </p>
             <p className='text-center m-8'>
-              <a href='/cloud/'>
+              <a href='/pro/'>
                 <img
-                  src='/images/cloud-btn-250.png'
+                  src='/images/pro-btn-250.png'
                   alt='discover mockoon cloud button'
                   width={250}
                   height={71}
@@ -105,8 +104,7 @@ const SponsorUs: FunctionComponent = function () {
               Not in a position to sponsor or subscribe? You can still help!{' '}
               <strong>Star us on GitHub</strong>,{' '}
               <strong>share Mockoon with your peers</strong>, or{' '}
-              <strong>talk about us</strong>
-              in your company, every bit helps!
+              <strong>talk about us</strong> in your company, every bit helps!
             </p>
             <div className='text-center m-8'>
               <GitHub />

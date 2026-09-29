@@ -18,6 +18,12 @@ const EmailForm: FunctionComponent<{
   const { honeypotFieldName } = useHoneypotFieldName();
 
   const onSubmit = async (data) => {
+    if (data[honeypotFieldName]) {
+      return;
+    }
+
+    delete data[honeypotFieldName];
+
     data = {
       ...data,
       newsletter: true

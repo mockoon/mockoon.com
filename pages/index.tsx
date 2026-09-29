@@ -51,11 +51,11 @@ const hpFeatures = [
     title:
       '<span class="text-primary">Collaborate</span> with your team in real-time',
     description:
-      'Supercharge your team productivity with Mockoon Cloud. Collaborate on your mock APIs in real-time, deploy them to the cloud, and share them with your team.',
-    imgSrc: '/images/home/mockoon-cloud.png',
-    imgAlt: 'mockoon cloud feature linked together',
-    cta: 'Discover our Cloud',
-    ctaLink: '/cloud/'
+      'Self-host Mockoon Pro on your own infrastructure to collaborate in real time, synchronize your mock APIs, and deploy managed mock instances for your team.',
+    imgSrc: '/images/pro/mockoon-pro-real-time-collaboration-presence.png',
+    imgAlt: 'Mockoon Pro interface showing real-time team collaboration',
+    cta: 'Discover Mockoon Pro',
+    ctaLink: '/pro/'
   },
   {
     title: '<span class="text-primary">Self-host</span> your mock APIs',
@@ -68,19 +68,9 @@ const hpFeatures = [
   },
   {
     title:
-      '<span class="text-primary">Deploy</span> your mock APIs in cloud functions',
-    description:
-      'Deploy your mock REST APIs in cloud functions, compatible with most providers: AWS Lambda, GCP Functions, Firebase Functions, etc.',
-    imgSrc: '/images/home/api-mock-serverless-hosting.png',
-    imgAlt: 'Mockoon CLI start and list commands screenshot',
-    cta: 'Discover the serverless package',
-    ctaLink: '/serverless/'
-  },
-  {
-    title:
       '<span class="text-primary">Privacy</span> friendly and <span class="text-primary">offline</span> first',
     description:
-      'Our tools are offline first and require no account creation. They are privacy-friendly, making them the best choice for highly regulated or high-security environments.',
+      'Mockoon is local-first, and Mockoon Pro runs on your own infrastructure with no telemetry, and full control over your data.',
     imgSrc: '/images/home/api-mocking-privacy-friendly-offline.png',
     imgAlt: 'Mockoon interface with a security lock'
   }
@@ -89,7 +79,7 @@ const hpFeatures = [
 const meta = {
   title: 'Create mock APIs in seconds with Mockoon',
   description:
-    'Mockoon is the easiest and quickest way to run mock REST API servers. No remote deployment, no account required, free, open source and cross-platform.'
+    'Design and run mock APIs locally with our free open-source tools, or self-host Mockoon Pro for team collaboration and managed mock deployments.'
 };
 
 const caseStudies = [
@@ -176,8 +166,8 @@ const HomePage: FunctionComponent = function () {
       <Meta title={meta.title} description={meta.description} />
 
       <Hero
-        title="Create <span className='text-primary'>mock APIs</span> in seconds"
-        subtitle='Mockoon is the easiest and quickest way to design and run mock REST APIs.<br>No remote deployment, no account required, <strong>free</strong> and <strong>open-source</strong>.'
+        title="Create <span class='text-primary'>mock APIs</span> in seconds"
+        subtitle='Design and run mock APIs locally with our <strong>free</strong> and <strong>open-source</strong> tools.<br>Collaborate, synchronize, and deploy at scale with self-hosted <strong>Mockoon Pro</strong>.'
         cta={[
           {
             text: 'Download',
@@ -210,13 +200,13 @@ const HomePage: FunctionComponent = function () {
           <Quote colorScheme='warning'>
             <h4 className='my-4 d-flex align-items-center'>
               <div>
-                📢 <strong>Cloud deployments</strong> are now available in{' '}
-                <strong>Mockoon Cloud</strong>. Supercharge your API development
-                now!
+                📢 <strong>Mockoon Pro</strong> is now available in beta.
+                Self-host team collaboration, data synchronization, and API mock
+                deployments on your own infrastructure.
               </div>
               <div className='ms-auto'>
-                <a href='/blog/mock-api-cloud-deployments-release/'>
-                  Learn more
+                <a href='/blog/mockoon-pro-self-hosted-beta/'>
+                  Read the announcement
                 </a>
               </div>
             </h4>

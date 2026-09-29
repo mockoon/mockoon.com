@@ -7,21 +7,21 @@ import SocialProof from '../components/social-proof';
 import Layout from '../layout/layout';
 
 const meta = {
-  title: "Mockoon's Cloud plans pricing",
+  title: 'Mockoon Pro pricing',
   description:
-    'Collaborate with your team, keep your data in sync, and deploy your mock APIs with Mockoon Cloud plans'
+    'Mockoon Pro pricing for self-hosted deployments, with managed cloud available for Enterprise customers'
 };
 
-const Cloud: FunctionComponent = function () {
+const Pricing: FunctionComponent = function () {
   return (
     <Layout footerBanner='contact'>
       <Meta title={meta.title} description={meta.description} />
 
       <Hero
-        title='Mockoon Cloud <span class="text-primary">pricing</span>'
-        subtitle='Collaborate with your team, keep your data in sync, and deploy your mock APIs with Mockoon Cloud'
-        mainPicture='/images/cloud-hero.svg'
-        mainPictureAlt='Mockoon logo in the cloud interconnected with other services'
+        title='Mockoon Pro <span class="text-primary">pricing</span>'
+        subtitle='Collaborate on mock APIs with self-hosted Mockoon Pro, with a managed cloud option for Enterprise customers'
+        mainPicture='/images/pro-hero.png'
+        mainPictureAlt='Mockoon Pro deployment and collaboration'
         mainPictureWidth={1200}
         mainPictureHeight={783}
         mainPictureSkewed={false}
@@ -46,7 +46,7 @@ const Cloud: FunctionComponent = function () {
           <div className='row justify-content-center'>
             <div className='col-12 col-lg-8 align-items-center'>
               <h2 className='fw-bold text-center mb-6'>
-                Stay up-to-date with Mockoon Cloud feature releases
+                Stay up-to-date with Mockoon Pro feature releases
               </h2>
               <div className='row align-items-center text-lg-start text-center'>
                 <div className='col-12 justify-content-end'>
@@ -61,4 +61,4 @@ const Cloud: FunctionComponent = function () {
   );
 };
 
-export default Cloud;
+export default Pricing;

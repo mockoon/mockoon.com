@@ -9,12 +9,12 @@ const ContactFormPage: FunctionComponent = function () {
     <Layout footerBanner='newsletter'>
       <Meta
         title="Contact Mockoon's team"
-        description='For all non-support inquiries (your Mockoon Cloud subscription, sponsoring, etc.) you can contact us using our contact form. We will get back to you shortly'
+        description='For all non-support inquiries (your Mockoon Pro subscription, sponsoring, etc.) you can contact us using our contact form. We will get back to you shortly'
       />
 
       <Hero
         title='Contact us'
-        subtitle='For all non-support inquiries (your Mockoon Cloud subscription, sponsoring, etc.), please contact us using the form below'
+        subtitle='For all non-support inquiries (your Mockoon Pro subscription, sponsoring, etc.), please contact us using the form below'
       />
       <section
         id='form'

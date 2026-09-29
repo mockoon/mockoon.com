@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent } from 'react';
 import { TemplateLight } from '../models/templates.model';
-import SidebarBanner from './sidebar-banner';
 
 const TemplatesMenu: FunctionComponent<{
   templates: TemplateLight[];
@@ -28,14 +27,6 @@ const TemplatesMenu: FunctionComponent<{
           );
         })}
       </ul>
-
-      <SidebarBanner
-        pro
-        title='Prototype faster than ever!'
-        text='With Mockoon Cloud, you can generate your own templates using our AI assistant and prototype faster than ever.'
-        link='/cloud/'
-        ctaText='Discover Mockoon Cloud →'
-      />
     </aside>
   );
 };

@@ -44,7 +44,7 @@ We're humbled by the continuous trust and support of our users and are constantl
 And after all this time, Mockoon is still an open-source tool built by volunteer maintainers. To continue working on this project and sustain ourselves, we are looking for sponsors.
 If you like our application, please consider sponsoring us too and join all the [Sponsors and Backers](https://github.com/mockoon/mockoon/blob/main/backers.md) who helped this project over time!
 
-[![sponsor button{300x86}](/images/sponsor-btn.png)](https://github.com/sponsors/mockoon)
+[![sponsor button{300x86}](/images/sponsors-btn.png)](https://github.com/sponsors/mockoon)
 
 As part of this search for sustainability, we now have [Cloud plans](/cloud/) including, AI-powered API mocks generation, enterprise-grade support, and more!
 

@@ -1,11 +1,9 @@
 import { Frequency, Plans } from '@mockoon/cloud';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import 'leaflet/dist/leaflet.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FunctionComponent, useEffect, useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 import { Modal } from 'react-bootstrap';
-import { pricing } from '../data/pricing';
 import { AccordionData } from '../models/common.model';
 import { useAuth } from '../utils/auth';
 import {
@@ -15,39 +13,38 @@ import {
 } from '../utils/queries';
 import Accordion from './accordion';
 import PaddleScript from './paddle';
-import Spinner from './spinner';
 import CustomTooltip from './tooltip';
 
 const queryClient = new QueryClient();
 
-const cloudFaq: AccordionData = [
+const proFaq: AccordionData = [
   {
     title: 'Features',
     items: [
       {
         title: 'What is an "API mock"?',
         content:
-          'An API mock is a collection of endpoints created in the <a href="/download/">desktop</a> or <a href="/cloud/docs/web-application/">web</a> applications to simulate a real API. Each mock can include an unlimited number of endpoints, rules, stateful routes, and more. For more information, please refer to the <a href="/docs/latest/about/">documentation</a>.'
+          'An API mock is a collection of endpoints created in the <a href="/download/">desktop application</a> or Mockoon Pro <a href="/pro/docs/clients/embedded-web-application/">embedded web application</a> to simulate a real API. Each mock can include an unlimited number of endpoints, rules, stateful routes, and more. For more information, please refer to the <a href="/docs/latest/about/">documentation</a>.'
       },
       {
-        title: 'Which features are supported in the cloud?',
+        title: 'Can I self-host Mockoon Pro?',
         content:
-          'Nearly all features available in the desktop application are supported in the cloud, namely in cloud deployments. Some features are not available due to technical limitations or security reasons. For more information, please refer to the <a href="/cloud/docs/about/">cloud documentation</a>.'
+          'Yes. Mockoon Pro is self-hosted by default, giving you control over your infrastructure and data. Follow our <a href="/pro/docs/self-hosting/installation/">installation guide</a> to get started.'
       },
       {
-        title: 'Do you offer a web application?',
-        content: `Yes, we offer a web application that allows you to manage your API mocks in the cloud. You can access it <a href="${process.env.NEXT_PUBLIC_WEBAPP_URL}">here</a>. Please note that the web application is only available for paid plans.`
-      },
-      {
-        title:
-          'What is the difference between "Priority email support", "Next business day support", and "Enterprise support"?',
+        title: 'Do you offer a managed cloud service?',
         content:
-          "Priority email support is a standard support service provided to our Solo plan customers. You can contact us at any time by email and we will help you with your questions without a guaranteed response time. The usual response time is between two and three business days. Team plan customers benefit from next business day support, guaranteeing a response on the next business day. For Enterprise support, a response time of one business day is guaranteed and specific SLA can be negotiated. For more information, please refer to the <a href='/terms/'>terms of service</a>."
+          'Yes. Managed cloud is available only as an Enterprise option, including hosting, operations, and managed API mock deployments. <a href="/contact-form/">Contact us</a> to discuss your requirements.'
+      },
+      {
+        title: 'What is the difference between Team and Enterprise support?',
+        content:
+          "Team plan customers benefit from next business day support. Enterprise customers receive dedicated support with a guaranteed initial response within four open business hours. For more information, please refer to the <a href='/terms/'>terms of service</a>."
       },
       {
         title: 'Do you offer an availability SLA?',
         content:
-          "Yes. We target <strong>99.9%</strong> monthly uptime across our Services. For Enterprise plans, this SLA is <strong>contractual</strong>. Scheduled maintenance and factors outside of our reasonable control are excluded. Incidents and maintenance are reported on our <a href='/status/'>status page</a>. See our <a href='/terms/'>terms of service</a> for details and remedies, and our <a href='/trust/'>Trust Center</a> for an overview of our security and reliability practices."
+          "The self-hosted Team plan runs on infrastructure you operate, so its availability is under your control. Enterprise managed cloud includes a contractual SLA defined in your agreement. See our <a href='/terms/'>terms of service</a> and <a href='/trust/'>Trust Center</a> for details."
       },
       {
         title:
@@ -62,28 +59,23 @@ const cloudFaq: AccordionData = [
     items: [
       {
         title: 'Do you offer a free trial?',
-        content: `Yes, we offer a 14-day free trial without a credit card requirement for users with a valid work email. <br/>A 7-day free trial with a credit card requirement is also available for other users. In this case, you can cancel at any time during the trial period to avoid being charged.`
+        content:
+          'Yes. Eligible companies can request one 14-day self-hosted Mockoon Pro trial with five license slots using a verified work email. No account or payment method is required, and the trial does not renew automatically. <a href="/pro/checkout/?mode=trial">Start your free trial</a>.'
       },
       {
-        title:
-          'Our team/company is interested in the Team or Enterprise plan. Can we try it first withour providing a payment method?',
+        title: 'Can I evaluate the Enterprise plan?',
         content:
-          'We can provide you with a trial without a payment method. Do not hesitate to <a href="/contact-form/">contact us</a> to discuss your needs.'
+          'The self-service trial covers the self-hosted Pro experience. <a href="/contact-form/">Contact us</a> to discuss an Enterprise evaluation, managed cloud, or specific deployment requirements.'
       },
       {
-        title: 'How many users can I have?',
+        title: 'How are Mockoon Pro licenses allocated?',
         content:
-          'The Team plan includes 5 seats. You can <a href="/contact-form/">contact us</a> to add or remove seats at any time.'
-      },
-      {
-        title: 'I received emails from Paddle.com, what is it?',
-        content:
-          'Paddle.com is our payment provider. You will receive emails from them when you purchase a plan, when your subscription is renewed or when you cancel your subscription.'
+          'Each license is a slot that you can assign to either one user seat or one concurrently running mock instance. For example, 10 licenses can be split between 6 users and 4 deployed mock instances, and you can adjust this allocation as your needs change.'
       },
       {
         title: 'What payment methods do you accept?',
         content:
-          'We accept credit cards (Visa, Mastercard, etc.) through our payment provider Paddle. You can also pay by bank transfer for the Enterprise plan. <a href="/contact-form/">Contact us</a> before purchasing for more information.'
+          'Team licenses can be purchased by credit card through our payment provider, Paddle. Enterprise customers can also pay by purchase order and invoice.'
       },
       {
         title: 'I have specific billing requirements, can you help me?',
@@ -103,17 +95,17 @@ const cloudFaq: AccordionData = [
       {
         title: 'How can I cancel my subscription?',
         content:
-          'You can manage your subscription using the links in the emails you received from Paddle.com or in your <a href="/account/subscription/">account management page</a>. You can also <a href="/contact-form/">contact us</a> and we will help you cancel your subscription.'
+          'For a Mockoon Pro subscription, use the management link provided with your order or <a href="/contact-form/">contact us</a>. Existing Mockoon Cloud customers can continue to manage their subscription from the <a href="/account/subscription/">account page</a>.'
       },
       {
         title: 'Can I get a refund?',
         content:
-          'We may offer a refund on a case-by-case basis if you have not used the service yet (usage quotas, etc.). Please refer to the <a href="/terms/">terms of service</a> for more information. In any case, do not hesitate to <a href="/contact-form/">contact us</a>. We will be happy to help you.'
+          'Fees are generally non-refundable, but exceptional requests may be considered case by case. Please review our <a href="/terms/">terms of service</a> or <a href="/contact-form/">contact us</a> for help.'
       },
       {
         title: 'VAT',
         content:
-          'Prices are in USD and exclude taxes (VAT, etc.). Taxes may or may not be charged during checkout depending on various criteria like your location and quality (individual or business).'
+          'Prices are in EUR and exclude taxes (VAT, etc.). Applicable taxes are calculated during checkout based on your location and customer type.'
       }
     ]
   },
@@ -123,7 +115,7 @@ const cloudFaq: AccordionData = [
       {
         title: 'How does Mockoon handle my data?',
         content:
-          'Mockoon is local-first: by default, your mock APIs, request data, and responses live on your machine and never reach our servers. Cloud sync is opt-in and synced data is encrypted in transit and at rest. For full details, see our <a href="/trust/">Trust Center</a> and our <a href="/privacy/">privacy policy</a>.'
+          'Mockoon is local-first, and self-hosted Mockoon Pro stores application data on infrastructure you control. Mockoon processes mock data only when you use Enterprise managed cloud, legacy Mockoon Cloud, or deliberately provide it for support. For full details, see our <a href="/trust/">Trust Center</a> and <a href="/privacy/">privacy policy</a>.'
       },
       {
         title:
@@ -157,7 +149,15 @@ const cloudFaq: AccordionData = [
 
 const suffixes = {
   SOLO: { MONTHLY: '/month', YEARLY: '/month (Tax excl.)<br/>billed annually' },
-  TEAM: { MONTHLY: '/month', YEARLY: '/month (Tax excl.)<br/>billed annually' }
+  TEAM: {
+    MONTHLY: '/license/month',
+    YEARLY: '/license/month (Tax excl.)<br/>billed €120/license/year'
+  }
+};
+
+const proPrices = {
+  MONTHLY: '15',
+  YEARLY: '10'
 };
 
 const PlansView: FunctionComponent<{
@@ -179,68 +179,6 @@ const PlansView: FunctionComponent<{
   } = useTrialOnboardingEligibility();
   const { refetch: trialOnboarding, isLoading: isTrialOnboarding } =
     useTrialOnboarding();
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    let map = null;
-
-    import('leaflet').then((L) => {
-      const container = document.getElementById('regions-map');
-      if (!container) return;
-
-      if (container.querySelector('.leaflet-container')) {
-        return;
-      }
-
-      map = L.map('regions-map', {
-        scrollWheelZoom: false,
-        minZoom: 2,
-        maxZoom: 2,
-        zoomControl: false,
-        dragging: false
-      }).setView([20, 0], 2);
-
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
-
-      const regions = [
-        {
-          name: 'US (Central, Iowa)',
-          lat: 41.878113,
-          lng: -93.097702
-        },
-        {
-          name: 'EU (West, Belgium)',
-          lat: 50.503887,
-          lng: 4.469936
-        }
-      ];
-
-      regions.forEach((region) => {
-        L.marker([region.lat, region.lng], {
-          icon: L.icon({
-            iconUrl:
-              'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0cHgiIGZpbGw9IiMzMzVFRUEiPjxyZWN0IGZpbGw9Im5vbmUiIGhlaWdodD0iMjQiIHdpZHRoPSIyNCIvPjxwYXRoIGQ9Ik0xMiwyTDEyLDJDOC4xMywyLDUsNS4xMyw1LDljMCwxLjc0LDAuNSwzLjM3LDEuNDEsNC44NGMwLjk1LDEuNTQsMi4yLDIuODYsMy4xNiw0LjRjMC40NywwLjc1LDAuODEsMS40NSwxLjE3LDIuMjYgQzExLDIxLjA1LDExLjIxLDIyLDEyLDIyaDBjMC43OSwwLDEtMC45NSwxLjI1LTEuNWMwLjM3LTAuODEsMC43LTEuNTEsMS4xNy0yLjI2YzAuOTYtMS41MywyLjIxLTIuODUsMy4xNi00LjQgQzE4LjUsMTIuMzcsMTksMTAuNzQsMTksOUMxOSw1LjEzLDE1Ljg3LDIsMTIsMnogTTEyLDExLjc1Yy0xLjM4LDAtMi41LTEuMTItMi41LTIuNXMxLjEyLTIuNSwyLjUtMi41czIuNSwxLjEyLDIuNSwyLjUgUzEzLjM4LDExLjc1LDEyLDExLjc1eiIvPjwvc3ZnPg==',
-            iconSize: [36, 36],
-            iconAnchor: [18, 36],
-            popupAnchor: [0, -36]
-          })
-        })
-          .addTo(map)
-          .bindPopup(region.name);
-      });
-    });
-
-    // Cleanup on unmount
-    return () => {
-      if (map) {
-        map.remove();
-      }
-    };
-  }, []);
 
   const openWebApp = () => {
     window.location.assign(process.env.NEXT_PUBLIC_WEBAPP_URL);
@@ -307,12 +245,6 @@ const PlansView: FunctionComponent<{
     }
 
     return 'Purchase plan';
-  };
-
-  const getTrialNoteText = () => {
-    if (!auth.isAuth) {
-      return 'Users with a valid work email are eligible for a 14-day free trial without credit card requirement. Other users are eligible for a 7-day free trial requiring a credit card.';
-    }
   };
 
   const getTrialCtaText = () => {
@@ -472,183 +404,7 @@ const PlansView: FunctionComponent<{
             </Modal>
 
             <div className='row gx-4 gy-4 justify-content-center'>
-              {false && (
-                <div className='col-12 col-lg-4'>
-                  <div className='card shadow-lg mb-6 mb-md-0 h-100'>
-                    <div className='card-body h-100 d-flex flex-column'>
-                      <h2 className='d-flex justify-content-center mb-2 fw-medium'>
-                        <span className='text-primary'>Solo</span>
-                        <span className='ms-1'>plan</span>
-                      </h2>
-                      <p className='text-center text-gray-700'>
-                        For individual developers and hobby projects
-                      </p>
-                      <div className='d-flex justify-content-center position-relative'>
-                        <span className='h2 mb-0 mt-2'>$</span>
-                        <span className='price display-2 mb-0'>
-                          {pricing.SOLO[planFrequency].price}
-                        </span>
-                        <span
-                          className='h5 text-gray-700 align-self-end ms-2'
-                          dangerouslySetInnerHTML={{
-                            __html: suffixes.SOLO[planFrequency]
-                          }}
-                        ></span>
-                      </div>
-                      {planFrequency === Frequency.YEARLY && (
-                        <div className='mx-auto mb-6'>
-                          <span className='badge text-bg-success-subtle rounded-pill'>
-                            Save up to 30% with annual billing
-                          </span>
-                        </div>
-                      )}
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
-
-                        <p className='mb-0'>
-                          All of Mockoon's{' '}
-                          <Link href={'/features/'}>open-source features</Link>
-                        </p>
-                      </div>
-                      <hr />
-
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
-
-                        <p>
-                          {pricing.SOLO.syncQuota} API mock<sup>1</sup>{' '}
-                          <Link
-                            href={'/cloud/docs/api-mock-cloud-deployments/'}
-                          >
-                            deployed
-                          </Link>{' '}
-                          in the cloud and{' '}
-                          <Link
-                            href={
-                              '/cloud/docs/data-synchronization-team-collaboration/'
-                            }
-                          >
-                            synchronized
-                          </Link>{' '}
-                          across your devices
-                        </p>
-                      </div>
-
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
-
-                        <p>
-                          {pricing.SOLO.deployCallsQuota.toLocaleString()}{' '}
-                          monthly calls included
-                        </p>
-                      </div>
-
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
-
-                        <p>
-                          {pricing.SOLO.templatesQuota}{' '}
-                          <Link href={'/ai-powered-api-mocking/'}>
-                            AI-generated endpoints
-                          </Link>{' '}
-                          per month
-                        </p>
-                      </div>
-
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
-
-                        <p>
-                          Access to the{' '}
-                          <Link href={'/cloud/docs/web-application/'}>
-                            Web UI
-                          </Link>
-                        </p>
-                      </div>
-
-                      <div className='d-flex'>
-                        <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                          <i className='icon-check'></i>
-                        </div>
-
-                        <p>Priority email support</p>
-                      </div>
-                      <div className='mt-auto'>
-                        {/* show only if not connected or not already subscribed */}
-                        {(!currentUser.data ||
-                          currentUser.data?.plan === 'FREE') && (
-                          <div className='text-center'>
-                            {!isTrialOnboarding &&
-                              !isLoadingTrialEligibilityStatus && (
-                                <div className='mb-2'>
-                                  <button
-                                    type='button'
-                                    className='btn btn-primary btn-xs'
-                                    disabled={isTrialOnboarding}
-                                    onClick={async () => {
-                                      await startTrial(Plans.SOLO);
-                                    }}
-                                  >
-                                    {getTrialButtonText()}
-                                  </button>
-                                </div>
-                              )}
-                            {getTrialCtaText() &&
-                              !isTrialOnboarding &&
-                              !isLoadingTrialEligibilityStatus && (
-                                <p className='text-gray-700 mb-0'>
-                                  <small
-                                    dangerouslySetInnerHTML={{
-                                      __html: getTrialCtaText()
-                                    }}
-                                  ></small>
-                                </p>
-                              )}
-                            {(isLoadingTrialEligibilityStatus ||
-                              isTrialOnboarding) && <Spinner small />}
-                          </div>
-                        )}
-                        {currentUser.data &&
-                          currentUser.data.plan !== 'FREE' && (
-                            <div className='text-center'>
-                              <div className='btn-group'>
-                                <button
-                                  type='button'
-                                  className='btn btn-primary btn-xs'
-                                  disabled={isTrialOnboarding}
-                                  onClick={() => {
-                                    openWebApp();
-                                  }}
-                                >
-                                  <i className='icon-open me-1'></i> Open web
-                                  app
-                                </button>
-                                <Link
-                                  href={'/account/subscription/'}
-                                  className='btn btn-primary-subtle btn-xs'
-                                >
-                                  My account
-                                </Link>
-                              </div>
-                            </div>
-                          )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              <div className='col-12 col-lg-4'>
+              <div className='col-12 col-lg-5'>
                 <div className='card shadow-lg border-1 border-primary mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
                     <h2 className='d-flex justify-content-center mb-3 fw-medium'>
@@ -656,12 +412,12 @@ const PlansView: FunctionComponent<{
                       <span className='ms-1'>plan</span>
                     </h2>
                     <p className='text-center text-gray-700'>
-                      For small teams and companies
+                      Self-host Mockoon Pro on your own infrastructure
                     </p>
                     <div className='d-flex justify-content-center'>
-                      <span className='h2 mb-0 mt-2'>$</span>
+                      <span className='h2 mb-0 mt-2'>€</span>
                       <span className='price display-2 mb-0'>
-                        {pricing.TEAM[planFrequency].price}
+                        {proPrices[planFrequency]}
                       </span>
                       <span
                         className='h5 text-gray-700 align-self-end ms-2'
@@ -673,7 +429,7 @@ const PlansView: FunctionComponent<{
                     {planFrequency === Frequency.YEARLY && (
                       <div className='mx-auto mb-6'>
                         <span className='badge text-bg-success-subtle rounded-pill'>
-                          Save up to 30% with annual billing
+                          Save €60 per license with annual billing
                         </span>
                       </div>
                     )}
@@ -695,7 +451,10 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
-                      <p>{pricing.TEAM.includedSeats} team members</p>
+                      <p>
+                        Flexible license slots assignable to users or running
+                        mock instances
+                      </p>
                     </div>
 
                     <div className='d-flex'>
@@ -704,19 +463,10 @@ const PlansView: FunctionComponent<{
                       </div>
 
                       <p>
-                        {pricing.TEAM.deployQuota} API mocks{' '}
-                        <Link href={'/cloud/docs/api-mock-cloud-deployments/'}>
-                          deployed
+                        <Link href='/pro/docs/self-hosting/installation/'>
+                          Self-hosted deployment
                         </Link>{' '}
-                        in the cloud with{' '}
-                        <Link
-                          href={
-                            '/cloud/docs/data-synchronization-team-collaboration/'
-                          }
-                        >
-                          real-time collaboration
-                        </Link>
-                        <sup>1</sup>
+                        with full control of your data
                       </p>
                     </div>
 
@@ -726,33 +476,8 @@ const PlansView: FunctionComponent<{
                       </div>
 
                       <p>
-                        {pricing.TEAM.deployCallsQuota.toLocaleString()} monthly
-                        calls included
-                      </p>
-                    </div>
-
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
-                      </div>
-
-                      <p>
-                        {pricing.TEAM.templatesQuota}{' '}
-                        <Link href={'/ai-powered-api-mocking/'}>
-                          AI-generated endpoints
-                        </Link>{' '}
-                        per month per user
-                      </p>
-                    </div>
-
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
-                      </div>
-
-                      <p>
-                        <Link href={'/cloud/docs/roles-permissions/'}>
-                          Team level role-based access control
+                        <Link href='/pro/docs/features/data-synchronization-team-collaboration/'>
+                          Real-time team collaboration
                         </Link>
                       </p>
                     </div>
@@ -763,9 +488,8 @@ const PlansView: FunctionComponent<{
                       </div>
 
                       <p>
-                        Access to the{' '}
-                        <Link href={'/cloud/docs/web-application/'}>
-                          Web UI
+                        <Link href='/pro/docs/features/api-mock-deployments/'>
+                          Deploy and manage API mock instances
                         </Link>
                       </p>
                     </div>
@@ -775,86 +499,52 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
-                      <p>Next business day support</p>
+                      <p>Role-based access control</p>
                     </div>
-                    {false && (
-                      <>
-                        <hr />
-                        <div className='d-flex'>
-                          <p>Add-ons:</p>
-                        </div>
-                        <div className='d-flex'>
-                          <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                            <i className='icon-check'></i>
-                          </div>
 
-                          <p>1 extra API and 50k requests - 10$/monthly</p>
-                        </div>
-                      </>
-                    )}
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
+
+                      <p>Administrative and workspace audit trail</p>
+                    </div>
+
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
+
+                      <p>
+                        Embedded{' '}
+                        <Link href='/pro/docs/clients/embedded-web-application/'>
+                          web application
+                        </Link>
+                      </p>
+                    </div>
+
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
+
+                      <p>Next business day email support</p>
+                    </div>
                     <div className='mt-4'>
-                      {/* show only if not connected or not already subscribed */}
-                      {(!currentUser.data ||
-                        currentUser.data?.plan === 'FREE') && (
-                        <div className='text-center'>
-                          {!isTrialOnboarding &&
-                            !isLoadingTrialEligibilityStatus && (
-                              <div className='mb-2'>
-                                <button
-                                  type='button'
-                                  className='btn btn-primary btn-xs'
-                                  disabled={isTrialOnboarding}
-                                  onClick={async () => {
-                                    await startTrial(Plans.TEAM);
-                                  }}
-                                >
-                                  {getTrialButtonText()}
-                                </button>
-                              </div>
-                            )}
-                          {getTrialCtaText() &&
-                            !isTrialOnboarding &&
-                            !isLoadingTrialEligibilityStatus && (
-                              <p className='text-gray-700 mb-0'>
-                                <small
-                                  dangerouslySetInnerHTML={{
-                                    __html: getTrialCtaText()
-                                  }}
-                                ></small>
-                              </p>
-                            )}
-                          {(isLoadingTrialEligibilityStatus ||
-                            isTrialOnboarding) && <Spinner small />}
-                        </div>
-                      )}
-                      {currentUser.data && currentUser.data.plan !== 'FREE' && (
-                        <div className='text-center'>
-                          <div className='btn-group'>
-                            <button
-                              type='button'
-                              className='btn btn-primary btn-xs'
-                              disabled={isTrialOnboarding}
-                              onClick={() => {
-                                openWebApp();
-                              }}
-                            >
-                              <i className='icon-open me-1'></i> Open web app
-                            </button>
-                            <Link
-                              href={'/account/subscription/'}
-                              className='btn btn-primary-subtle btn-xs'
-                            >
-                              My account
-                            </Link>
-                          </div>
-                        </div>
-                      )}
+                      <div className='text-center'>
+                        <Link
+                          href='/pro/checkout/?mode=trial'
+                          className='btn btn-primary btn-xs'
+                        >
+                          Start free trial
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className='col-12 col-lg-4'>
+              <div className='col-12 col-lg-5'>
                 <div className='card shadow-lg mb-md-0 h-100'>
                   <div className='card-body h-100 d-flex flex-column'>
                     <h2 className='d-flex justify-content-center mb-3 fw-medium'>
@@ -881,36 +571,17 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
-                      <p>Custom quotas and limits</p>
-                    </div>
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
-                      </div>
-
-                      <p>Optional dedicated instances</p>
-                    </div>
-
-                    <div className='d-flex'>
-                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
-                        <i className='icon-check'></i>
-                      </div>
-
                       <p>
-                        Enterprise support{' '}
-                        <CustomTooltip text='Get dedicated assistance for enterprise-level needs. To learn more about our Enterprise support, see the FAQ of our Cloud plans or our terms of service.'></CustomTooltip>
+                        Dedicated enterprise support with a 4-business-hour
+                        response time
                       </p>
                     </div>
-
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
                         <i className='icon-check'></i>
                       </div>
 
-                      <p>
-                        Customer success{' '}
-                        <CustomTooltip text='Get dedicated assistance during onboarding and setup'></CustomTooltip>
-                      </p>
+                      <p>Migration and onboarding</p>
                     </div>
 
                     <div className='d-flex'>
@@ -918,7 +589,22 @@ const PlansView: FunctionComponent<{
                         <i className='icon-check'></i>
                       </div>
 
-                      <p>Custom payment options</p>
+                      <p>Custom feature development</p>
+                    </div>
+
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
+
+                      <p>Training and consulting</p>
+                    </div>
+                    <div className='d-flex'>
+                      <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>
+                        <i className='icon-check'></i>
+                      </div>
+
+                      <p>Optional managed cloud deployment</p>
                     </div>
                     <div className='text-center mt-auto'>
                       <div className='btn-group mb-2'>
@@ -947,20 +633,12 @@ const PlansView: FunctionComponent<{
               </div>
             </div>
             <p className='fs-sm text-gray-700 text-center mt-1'>
-              Prices are in USD and exclude taxes (e.g. VAT, sales tax, etc.)
-              where applicable. By proceeding to payment you agree to our{' '}
-              <Link href={'/privacy/'}>privacy policy</Link> and{' '}
-              <Link href={'/terms/'}>terms of service</Link>.
-              <br />
-              <sup>1</sup> See the{' '}
-              <Link href={'/pricing/#faq'}>FAQ of our Cloud plans</Link> for
-              more information about API mocks.
-              {getTrialNoteText() && (
-                <>
-                  <br />
-                  <sup>2</sup> {getTrialNoteText()}
-                </>
-              )}
+              Prices are in EUR and exclude taxes (e.g. VAT, sales tax, etc.)
+              where applicable. By creating a trial or purchasing a plan, you
+              agree to our <Link href={'/privacy/'}>privacy policy</Link> and{' '}
+              <Link href={'/terms/'}>terms of service</Link>. <br />
+              Users with a valid work email are eligible for a 14-day free trial
+              without credit card requirement.
             </p>
 
             <section className='py-6 py-md-8'>
@@ -973,9 +651,6 @@ const PlansView: FunctionComponent<{
                         <thead>
                           <tr>
                             <th></th>
-                            {/* <th className='text-center'>
-                              <span className='text-primary'>Solo</span> plan
-                            </th> */}
                             <th className='text-center'>
                               <span className='text-primary'>Team</span> plan
                             </th>
@@ -988,299 +663,125 @@ const PlansView: FunctionComponent<{
                         <tbody>
                           <tr>
                             <td
-                              colSpan={5}
+                              colSpan={3}
                               className='text-start fw-bold bg-gray-100'
                             >
-                              Applications
+                              Features
                             </td>
                           </tr>
                           <tr>
                             <td>
-                              Access to the{' '}
-                              <Link href={'/cloud/docs/web-application/'}>
-                                Web app
+                              License allocation{' '}
+                              <CustomTooltip text='Each license is a slot assignable to one user or one concurrently running mock instance.'></CustomTooltip>
+                            </td>
+                            <td className='text-center'>Users or instances</td>
+                            <td className='text-center'>Users or instances</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <Link href='/pro/docs/clients/embedded-web-application/'>
+                                Embedded web application
+                              </Link>{' '}
+                              <CustomTooltip text='The embedded web application allows you to run Mockoon directly within your web browser. Mockoon Pro is also compatible with the desktop application.'></CustomTooltip>
+                            </td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <Link href='/pro/docs/self-hosting/administration/'>
+                                Administration dashboard
                               </Link>
                             </td>
-                            {/* <td className='text-center'>{tickBadge}</td> */}
-                            <td className='text-center'>{tickBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
-                          </tr>
-                          <tr>
-                            <td
-                              colSpan={5}
-                              className='text-start fw-bold bg-gray-100'
-                            >
-                              Cloud APIs
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Number of team members</td>
-                            {/* <td className='text-center'>
-                              {pricing.SOLO.includedSeats}
-                            </td> */}
-                            <td className='text-center'>
-                              {pricing.TEAM.includedSeats}
-                            </td>
-                            <td className='text-center'>Custom</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              Number of API mocks{' '}
-                              <CustomTooltip text='Single quota governing your API mocks. You can synchronize across devices and collaborators, and deploy up to the same number. Each mock is an unlimited collection of endpoints and rules.'></CustomTooltip>
-                            </td>
-                            {/* <td className='text-center'>
-                              {pricing.SOLO.syncQuota}
-                            </td> */}
-                            <td className='text-center'>
-                              {pricing.TEAM.syncQuota}
-                            </td>
-                            <td className='text-center'>Custom</td>
-                          </tr>
-                          <tr>
-                            <td>Data synchronization across your devices</td>
-                            {/* <td className='text-center'>{tickBadge}</td> */}
-                            <td className='text-center'>{tickBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
-                          </tr>
-                          <tr>
-                            <td>Real-time collaboration</td>
-                            {/* <td className='text-center'>{crossBadge}</td> */}
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                           </tr>
                           <tr>
                             <td>
-                              Monthly calls included{' '}
-                              <CustomTooltip text='Total monthly API requests across your deployed mocks.'></CustomTooltip>
-                            </td>
-                            {/* <td className='text-center'>
-                              {pricing.SOLO.deployCallsQuota.toLocaleString()}
-                            </td> */}
-                            <td className='text-center'>
-                              {pricing.TEAM.deployCallsQuota.toLocaleString()}
-                            </td>
-                            <td className='text-center'>Custom</td>
-                          </tr>
-                          <tr>
-                            <td>Request rate limit</td>
-                            {/* <td className='text-center'>
-                              {pricing.SOLO.deployReqSQuota} req/sec
-                            </td> */}
-                            <td className='text-center'>
-                              {pricing.TEAM.deployReqSQuota} req/sec
-                            </td>
-                            <td className='text-center'>Custom</td>
-                          </tr>
-                          <tr>
-                            <td>Private or public mocks</td>
-                            {/* <td className='text-center'>{tickBadge}</td> */}
-                            <td className='text-center'>{tickBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              Hosting{' '}
-                              <CustomTooltip text='Each API mock runs in a dedicated container (per-API isolation).'></CustomTooltip>
-                            </td>
-                            {/* <td className='text-center'>Multi-tenant</td> */}
-                            <td className='text-center'>Multi-tenant</td>
-                            <td className='text-center'>
-                              Multi-tenant or single-tenant
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              Self-hosting with the CLI{' '}
-                              <CustomTooltip text='Self-host cloud APIs from your own server using Mockoon CLI.'></CustomTooltip>
-                            </td>
-                            {/* <td className='text-center'>{crossBadge}</td> */}
-                            <td className='text-center'>
-                              {(1000).toLocaleString()} monthly pulls
-                            </td>
-                            <td className='text-center'>Custom quota</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              Regions{' '}
-                              <CustomTooltip text='Choose a region close to your users. Enterprise can be provisioned in a custom Google Cloud region.'></CustomTooltip>
-                            </td>
-                            {/* <td className='text-center'>
-                              Choice of{' '}
-                              <Link href='#available-regions'>
-                                available regions
-                              </Link>
-                            </td> */}
-                            <td className='text-center'>
-                              Choice of{' '}
-                              <Link href='#available-regions'>
-                                available regions
+                              <Link href='/pro/docs/features/data-synchronization-team-collaboration/'>
+                                Real-time collaboration
                               </Link>
                             </td>
-                            <td className='text-center'>
-                              Custom Google Cloud region
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>API mock max size</td>
-                            {/* <td className='text-center'>10MB</td> */}
-                            <td className='text-center'>30MB</td>
-                            <td className='text-center'>Custom</td>
-                          </tr>
-                          <tr>
-                            <td
-                              colSpan={5}
-                              className='text-start fw-bold bg-gray-100'
-                            >
-                              AI assistants
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Generate JSON templates</td>
-                            {/* <td className='text-center'>{tickBadge}</td> */}
                             <td className='text-center'>{tickBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
-                          </tr>
-                          <tr>
-                            <td>Generate HTTP endpoints</td>
-                            {/* <td className='text-center'>{tickBadge}</td> */}
-                            <td className='text-center'>{tickBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
-                          </tr>
-                          <tr>
-                            <td>Number of credits</td>
-                            {/* <td className='text-center'>
-                              {pricing.SOLO.templatesQuota}/month
-                            </td> */}
-                            <td className='text-center'>
-                              {pricing.TEAM.templatesQuota}/month/user
-                            </td>
-                            <td className='text-center'>Custom</td>
-                          </tr>
-                          <tr>
-                            <td
-                              colSpan={5}
-                              className='text-start fw-bold bg-gray-100'
-                            >
-                              Roles & Permissions
-                            </td>
-                          </tr>
-                          <tr>
-                            <td
-                              colSpan={5}
-                              className='text-start fw-bold bg-gray-100'
-                            >
-                              Team-level roles{' '}
-                              <Link
-                                href='/cloud/docs/roles-permissions/'
-                                className='fw-normal ms-2'
-                              >
-                                <small>Learn more</small>
-                              </Link>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              Owner{' '}
-                              <CustomTooltip text='The owner has full access to all resources and can manage team settings'></CustomTooltip>
-                            </td>
-                            {/* <td className='text-center'>{crossBadge}</td> */}
-                            <td className='text-center'>{tickBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              Users{' '}
-                              <CustomTooltip text='Users can access and manage the resources but cannot modify team settings'></CustomTooltip>
-                            </td>
-                            {/* <td className='text-center'>{crossBadge}</td> */}
-                            <td className='text-center'>{tickBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              Team admin{' '}
-                              <CustomTooltip text='Team admins can manage team settings and billing information'></CustomTooltip>
-                            </td>
-                            {/* <td className='text-center'>{crossBadge}</td> */}
-                            <td className='text-center'>{tickBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              Billing{' '}
-                              <CustomTooltip text='Billing users can manage billing information'></CustomTooltip>
-                            </td>
-                            {/* <td className='text-center'>{crossBadge}</td> */}
-                            <td className='text-center'>{tickBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
-                          </tr>
-                          <tr>
-                            <td
-                              colSpan={5}
-                              className='text-start fw-bold bg-gray-100'
-                            >
-                              Audit trail{' '}
-                              <Link
-                                href='/cloud/docs/audit-trail/'
-                                className='fw-normal ms-2'
-                              >
-                                <small>Learn more</small>
-                              </Link>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Team activities audit trail</td>
-                            {/* <td className='text-center'>{crossBadge}</td> */}
-                            <td className='text-center'>{tickBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
-                          </tr>
-                          <tr>
-                            <td>Resource activities audit trail</td>
-                            {/* <td className='text-center'>{crossBadge}</td> */}
-                            <td className='text-center'>{tickBadge}</td>
-                            <td className='text-center'>{tickBadge}</td>
-                          </tr>
-                          <tr>
-                            <td>Retention</td>
-                            {/* <td className='text-center'>{crossBadge}</td> */}
-                            <td className='text-center'>30 days</td>
-                            <td className='text-center'>1 year</td>
-                          </tr>
-                          <tr>
-                            <td
-                              colSpan={5}
-                              className='text-start fw-bold bg-gray-100'
-                            >
-                              Support
-                            </td>
                           </tr>
 
                           <tr>
-                            <td>Support level</td>
-                            {/* <td className='text-center'>
-                              Priority email support
-                            </td> */}
-                            <td className='text-center'>Next business day</td>
-                            <td className='text-center'>Custom SLA</td>
+                            <td>
+                              <Link href='/pro/docs/features/api-mock-deployments/'>
+                                Deploy and manage mock instances
+                              </Link>
+                            </td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
                           </tr>
                           <tr>
                             <td>
-                              Availability SLA{' '}
-                              <CustomTooltip text='Monthly uptime commitment. Contractual for Enterprise plans. Excludes scheduled maintenance and factors outside our reasonable control. See status page and terms.'></CustomTooltip>
+                              <Link href='/pro/docs/misc/authentication/'>
+                                Local accounts and member invitations
+                              </Link>
                             </td>
-                            {/* <td className='text-center'>99.9% (target)</td> */}
-                            <td className='text-center'>99.9% (target)</td>
-                            <td className='text-center'>99.9% (contractual)</td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
                           </tr>
                           <tr>
-                            <td>Customer success manager</td>
-                            {/* <td className='text-center'>{crossBadge}</td> */}
+                            <td>
+                              <Link href='/pro/docs/misc/authentication/#openid-connect-oidc-single-sign-on'>
+                                OpenID Connect (OIDC) Single Sign-On
+                              </Link>
+                            </td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <Link href='/pro/docs/misc/roles-and-permissions/'>
+                                Roles and permissions
+                              </Link>
+                            </td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <Link href='/pro/docs/misc/audit-trail/'>
+                                Audit trail
+                              </Link>
+                            </td>
+                            <td className='text-center'>{tickBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td
+                              colSpan={3}
+                              className='text-start fw-bold bg-gray-100'
+                            >
+                              Support & services
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Support level</td>
+                            <td className='text-center'>Next business day</td>
+                            <td className='text-center'>4 business hours</td>
+                          </tr>
+                          <tr>
+                            <td>Migration and onboarding</td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td>Custom feature development</td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>{tickBadge}</td>
+                          </tr>
+                          <tr>
+                            <td>Training and consulting</td>
                             <td className='text-center'>{crossBadge}</td>
                             <td className='text-center'>{tickBadge}</td>
                           </tr>
                           <tr>
                             <td
-                              colSpan={5}
+                              colSpan={3}
                               className='text-start fw-bold bg-gray-100'
                             >
                               Payment
@@ -1288,9 +789,49 @@ const PlansView: FunctionComponent<{
                           </tr>
                           <tr>
                             <td>Payment options</td>
-                            {/* <td className='text-center'>Credit card only</td> */}
                             <td className='text-center'>Credit card only</td>
                             <td className='text-center'>PO and invoicing</td>
+                          </tr>
+                          <tr>
+                            <td
+                              colSpan={3}
+                              className='text-start fw-bold bg-gray-100'
+                            >
+                              Managed cloud (optional)
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Managed cloud availability</td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>Optional</td>
+                          </tr>
+                          <tr>
+                            <td>Bandwidth included</td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>Custom</td>
+                          </tr>
+                          <tr>
+                            <td>Hosting</td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>Single-tenant</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Regions{' '}
+                              <CustomTooltip text='Choose a region close to your users.'></CustomTooltip>
+                            </td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>
+                              Cloud provider of your choice
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Availability SLA{' '}
+                              <CustomTooltip text='Monthly uptime commitment for the optional managed cloud service.'></CustomTooltip>
+                            </td>
+                            <td className='text-center'>{crossBadge}</td>
+                            <td className='text-center'>Custom SLA</td>
                           </tr>
                         </tbody>
                       </table>
@@ -1303,8 +844,8 @@ const PlansView: FunctionComponent<{
             {showTagline && (
               <>
                 <div className='text-center'>
-                  <Link href='/cloud/' className='btn btn-primary-subtle'>
-                    Discover Mockoon Cloud
+                  <Link href='/pro/' className='btn btn-primary-subtle'>
+                    Discover Mockoon Pro
                   </Link>
                 </div>
                 <div className='py-8'>
@@ -1333,55 +874,6 @@ const PlansView: FunctionComponent<{
                 </div>
               </>
             )}
-
-            {showRegions && (
-              <section
-                id='available-regions'
-                className='py-6 py-md-8 border-top'
-              >
-                <div className='container'>
-                  <div className='row justify-content-center'>
-                    <div className='col-12 col-lg-10 align-items-center'>
-                      <h2 className='fw-bold mb-4 text-center'>
-                        Available regions
-                      </h2>
-                      <p className='text-center mb-6'>
-                        Choose the region closest to your team for optimal
-                        performance. Enterprise customers can deploy to any{' '}
-                        <a
-                          href='https://cloud.google.com/about/locations'
-                          target='_blank'
-                          rel='noopener'
-                        >
-                          Google Cloud region
-                        </a>
-                        .
-                      </p>
-                      <div className='card shadow-light-lg mb-6'>
-                        <div className='card-body'>
-                          <div
-                            id='regions-map'
-                            style={{ height: '35vh' }}
-                          ></div>
-                        </div>
-                      </div>
-                      <div className='row text-center mb-4'>
-                        <div className='col'>
-                          <p className='mb-0'>
-                            <strong>US</strong> (Central, Iowa)
-                          </p>
-                        </div>
-                        <div className='col'>
-                          <p className='mb-0'>
-                            <strong>EU</strong> (West, Belgium)
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            )}
           </div>
         </section>
 
@@ -1392,8 +884,8 @@ const PlansView: FunctionComponent<{
           <div className='container' id='faq'>
             <div className='row justify-content-center'>
               <div className='col-12 col-lg-8 align-items-center'>
-                <h2 className='fw-bold mb-6 text-center'>Cloud plans FAQ</h2>
-                <Accordion data={cloudFaq} />
+                <h2 className='fw-bold mb-6 text-center'>Mockoon Pro FAQ</h2>
+                <Accordion data={proFaq} />
               </div>
             </div>
           </div>

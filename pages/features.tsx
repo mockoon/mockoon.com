@@ -12,15 +12,28 @@ const features: CardData[] = [
       'Create an unlimited number of mock API with unlimited number of routes and run them in parallel'
   },
   {
-    title: 'Web application',
-    topTag: 'Cloud',
+    title: 'Embedded web application',
+    topTag: 'Pro',
     topTagClasses: 'text-bg-warning',
     description:
-      'Collaborate on mock APIs directly in your browser with our web application, no desktop installation required.',
+      'Create and edit mock APIs directly in your browser without installing the desktop application.',
     links: [
       {
-        src: '/cloud/docs/web-application/',
+        src: '/pro/docs/clients/embedded-web-application/',
         text: 'Documentation →'
+      }
+    ]
+  },
+  {
+    title: 'Private and sovereign deployment',
+    topTag: 'Pro',
+    topTagClasses: 'text-bg-warning',
+    description:
+      'Self-host Mockoon Pro on-premises, in your private cloud, or on an isolated or air-gapped network with full control over your data.',
+    links: [
+      {
+        src: '/pro/docs/self-hosting/installation/',
+        text: 'Installation guide →'
       }
     ]
   },
@@ -42,27 +55,27 @@ const features: CardData[] = [
     ]
   },
   {
-    title: 'Deploy in the cloud',
-    topTag: 'Cloud',
+    title: 'Mock API deployments',
+    topTag: 'Pro',
     topTagClasses: 'text-bg-warning',
     description:
-      'Deploy your mock APIs online with Mockoon Cloud and share them with your team',
+      'Deploy and manage running mock APIs on your private infrastructure with automatic subdomain routing.',
     links: [
       {
-        src: '/cloud/docs/api-mock-cloud-deployments/',
+        src: '/pro/docs/features/api-mock-deployments/',
         text: 'Documentation →'
       }
     ]
   },
   {
-    title: 'CLI Cloud self-deploy',
-    topTag: 'Cloud',
+    title: 'Authentication and user management',
+    topTag: 'Pro',
     topTagClasses: 'text-bg-warning',
     description:
-      'Self-host your Mockoon Cloud environments on your own infrastructure with the CLI.',
+      'Manage invitations and users with local accounts or OpenID Connect (OIDC) Single Sign-On.',
     links: [
       {
-        src: '/cloud/docs/api-mock-cloud-deployments/#self-host-with-the-cli',
+        src: '/pro/docs/misc/authentication/',
         text: 'Documentation →'
       }
     ]
@@ -84,13 +97,14 @@ const features: CardData[] = [
     ]
   },
   {
-    title: 'Real-time collaboration',
-    topTag: 'Cloud',
+    title: 'Data synchronization and collaboration',
+    topTag: 'Pro',
     topTagClasses: 'text-bg-warning',
-    description: 'Collaborate with your team in real-time on your mock APIs',
+    description:
+      'Synchronize mock APIs across devices and collaborate with your team in real time.',
     links: [
       {
-        src: '/cloud/docs/data-synchronization-team-collaboration/',
+        src: '/pro/docs/features/data-synchronization-team-collaboration/',
         text: 'Documentation →'
       }
     ]
@@ -117,13 +131,14 @@ const features: CardData[] = [
     ]
   },
   {
-    title: 'Cloud synchronization',
-    topTag: 'Cloud',
+    title: 'Audit trail',
+    topTag: 'Pro',
     topTagClasses: 'text-bg-warning',
-    description: 'Synchronize your mock APIs across all your devices',
+    description:
+      'Track administrative, security, and workspace events across your Mockoon Pro instance.',
     links: [
       {
-        src: '/cloud/docs/data-synchronization-team-collaboration/',
+        src: '/pro/docs/misc/audit-trail/',
         text: 'Documentation →'
       }
     ]
@@ -142,19 +157,6 @@ const features: CardData[] = [
   {
     title: 'Simulated latency',
     description: 'Add latency at environment or route level or even both'
-  },
-  {
-    title: 'Quick prototyping using AI',
-    topTag: 'Cloud',
-    topTagClasses: 'text-bg-warning',
-    description:
-      'Use our read-to-use templates and AI assistant to quickly prototype your mock APIs',
-    links: [
-      {
-        src: '/ai-powered-api-mocking/',
-        text: 'Learn more →'
-      }
-    ]
   },
   {
     title: 'Stateful CRUD operations',
@@ -221,6 +223,16 @@ const features: CardData[] = [
     ]
   },
   {
+    title: 'WebSockets support',
+    description: 'Simulate real-time communication using WebSockets',
+    links: [
+      {
+        src: '/docs/latest/api-endpoints/websockets/',
+        text: 'Documentation →'
+      }
+    ]
+  },
+  {
     title: 'File serving',
     description:
       'File serving with automatic mime type detection and templating support',
@@ -281,10 +293,8 @@ const features: CardData[] = [
   }
 ];
 
-const nonCloudFeatures = features.filter(
-  (feature) => feature.topTag !== 'Cloud'
-);
-const cloudFeatures = features.filter((feature) => feature.topTag === 'Cloud');
+const nonProFeatures = features.filter((feature) => feature.topTag !== 'Pro');
+const proFeatures = features.filter((feature) => feature.topTag === 'Pro');
 
 const Features: FunctionComponent = function () {
   return (
@@ -303,9 +313,9 @@ const Features: FunctionComponent = function () {
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
-              <h2>Cloud features</h2>
+              <h2>Mockoon Pro features</h2>
             </div>
-            {cloudFeatures.map((feature) => {
+            {proFeatures.map((feature) => {
               return (
                 <div
                   key={feature.title}
@@ -321,7 +331,7 @@ const Features: FunctionComponent = function () {
             <div className='col-12'>
               <h2>Open source features</h2>
             </div>
-            {nonCloudFeatures.map((feature) => {
+            {nonProFeatures.map((feature) => {
               return (
                 <div
                   key={feature.title}

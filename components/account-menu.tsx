@@ -50,21 +50,25 @@ const AccountMenu: FunctionComponent = function () {
                 Notifications
               </Link>
             </li>
-            <h6 className='fw-bold text-uppercase mt-4 mb-3'>Mockoon Cloud</h6>
-            <li
-              className={`list-item ${
-                router.pathname.includes('account/subscription') ? 'active' : ''
-              }`}
-            >
-              <Link
-                href='/account/subscription/'
-                className='list-link text-reset ps-4'
-              >
-                Subscription and usage
-              </Link>
-            </li>
             {!isLoading && userData?.plan !== 'FREE' && (
               <>
+                <h6 className='fw-bold text-uppercase mt-4 mb-3'>
+                  Mockoon Cloud
+                </h6>
+                <li
+                  className={`list-item ${
+                    router.pathname.includes('account/subscription')
+                      ? 'active'
+                      : ''
+                  }`}
+                >
+                  <Link
+                    href='/account/subscription/'
+                    className='list-link text-reset ps-4'
+                  >
+                    Subscription and usage
+                  </Link>
+                </li>
                 {!isSupportRole && (
                   <>
                     <li

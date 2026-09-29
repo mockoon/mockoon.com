@@ -145,8 +145,11 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/cloud/docs/about/' className='text-reset'>
-                  Cloud Docs
+                <Link
+                  href='/pro/docs/discover-mockoon-pro/'
+                  className='text-reset'
+                >
+                  Pro Docs
                 </Link>
               </li>
               <li className='mb-2'>
@@ -198,11 +201,11 @@ const Footer: FunctionComponent<{
             </ul>
           </div>
           <div className='col-12 col-md-6 col-lg-2 text-lg-start text-center'>
-            <h6 className='fw-bold text-uppercase'>Cloud</h6>
+            <h6 className='fw-bold text-uppercase'>Pro</h6>
 
             <ul className='list-unstyled text-gray-700'>
               <li className='mb-2'>
-                <Link href='/cloud/' className='text-reset'>
+                <Link href='/pro/' className='text-reset'>
                   Overview
                 </Link>
               </li>
@@ -214,11 +217,6 @@ const Footer: FunctionComponent<{
               <li className='mb-2'>
                 <Link href='/trust/' className='text-reset'>
                   Trust & Security
-                </Link>
-              </li>
-              <li className='mb-2'>
-                <Link href='/ai-powered-api-mocking/' className='text-reset'>
-                  AI-powered API mocking
                 </Link>
               </li>
               <li className='mb-2'>
@@ -256,23 +254,8 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link
-                  href={`${process.env.NEXT_PUBLIC_WEBAPP_URL}`}
-                  className='text-reset'
-                >
-                  Web app
-                  <span className='badge text-bg-warning ms-1'>Cloud</span>
-                  <span className='badge text-bg-info ms-1'>Early access</span>
-                </Link>
-              </li>
-              <li className='mb-2'>
                 <Link href='/cli/' className='text-reset'>
                   CLI
-                </Link>
-              </li>
-              <li className='mb-2'>
-                <Link href='/serverless/' className='text-reset'>
-                  Serverless package
                 </Link>
               </li>
             </ul>

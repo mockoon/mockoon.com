@@ -61,7 +61,7 @@ So, to continue working on this project, we recently started looking for sponsor
 
 If you like our application, please consider sponsoring us too and join all the [Sponsors and Backers](https://github.com/mockoon/mockoon/blob/main/backers.md) who helped this project over time!
 
-[![sponsor button{300x86}](/images/sponsor-btn.png)](https://github.com/sponsors/mockoon)
+[![sponsor button{300x86}](/images/sponsors-btn.png)](https://github.com/sponsors/mockoon)
 
 ## New enterprise services
 

@@ -1,13 +1,4 @@
-import {
-  format,
-  parseISO,
-  setDate,
-  setHours,
-  setMinutes,
-  setMonth,
-  setSeconds,
-  setYear
-} from 'date-fns';
+import { format, isValid, parseISO } from 'date-fns';
 import { FunctionComponent, useState } from 'react';
 import Hero from '../../components/hero';
 import Meta from '../../components/meta';
@@ -17,6 +8,67 @@ import Layout from '../../layout/layout';
 const DateConverter: FunctionComponent = function () {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [customFormat, setCustomFormat] = useState('yyyy-MM-dd');
+
+  const updateDatePart = (
+    part: 'year' | 'month' | 'day' | 'hour' | 'minute' | 'second',
+    inputValue: string
+  ) => {
+    if (inputValue === '') {
+      return;
+    }
+
+    const value = Number(inputValue);
+
+    if (!Number.isInteger(value)) {
+      return;
+    }
+
+    setCurrentDate((date) => {
+      const updatedDate = new Date(date);
+
+      if (part === 'year' || part === 'month') {
+        const day = updatedDate.getDate();
+        updatedDate.setDate(1);
+
+        if (part === 'year') {
+          updatedDate.setFullYear(value);
+        } else if (value >= 1 && value <= 12) {
+          updatedDate.setMonth(value - 1);
+        } else {
+          return date;
+        }
+
+        const lastDayOfMonth = new Date(
+          updatedDate.getFullYear(),
+          updatedDate.getMonth() + 1,
+          0
+        ).getDate();
+        updatedDate.setDate(Math.min(day, lastDayOfMonth));
+      } else if (part === 'day') {
+        const lastDayOfMonth = new Date(
+          updatedDate.getFullYear(),
+          updatedDate.getMonth() + 1,
+          0
+        ).getDate();
+
+        if (value < 1 || value > lastDayOfMonth) {
+          return date;
+        }
+
+        updatedDate.setDate(value);
+      } else if (part === 'hour' && value >= 0 && value <= 23) {
+        updatedDate.setHours(value);
+      } else if (part === 'minute' && value >= 0 && value <= 59) {
+        updatedDate.setMinutes(value);
+      } else if (part === 'second' && value >= 0 && value <= 59) {
+        updatedDate.setSeconds(value);
+      } else {
+        return date;
+      }
+
+      return isValid(updatedDate) ? updatedDate : date;
+    });
+  };
 
   const formatDate = (date: Date, pattern: string) => {
     try {
@@ -52,14 +104,10 @@ const DateConverter: FunctionComponent = function () {
                     type='number'
                     id='dateYear'
                     className='form-control border-secondary'
-                    value={formatDate(currentDate, 'yyyy')}
-                    onChange={(event) => {
-                      try {
-                        setCurrentDate(
-                          setYear(currentDate, parseInt(event.target.value))
-                        );
-                      } catch (error) {}
-                    }}
+                    value={currentDate.getFullYear()}
+                    onChange={(event) =>
+                      updateDatePart('year', event.target.value)
+                    }
                   />
                 </div>
                 <div className='me-1'>
@@ -68,17 +116,12 @@ const DateConverter: FunctionComponent = function () {
                     type='number'
                     id='dateMonth'
                     className='form-control border-secondary'
-                    value={formatDate(currentDate, 'MM')}
-                    onChange={(event) => {
-                      try {
-                        setCurrentDate(
-                          setMonth(
-                            currentDate,
-                            parseInt(event.target.value) - 1
-                          )
-                        );
-                      } catch (error) {}
-                    }}
+                    min='1'
+                    max='12'
+                    value={currentDate.getMonth() + 1}
+                    onChange={(event) =>
+                      updateDatePart('month', event.target.value)
+                    }
                   />
                 </div>
                 <div className='me-1'>
@@ -87,14 +130,12 @@ const DateConverter: FunctionComponent = function () {
                     type='number'
                     id='dateDay'
                     className='form-control border-secondary'
-                    value={formatDate(currentDate, 'dd')}
-                    onChange={(event) => {
-                      try {
-                        setCurrentDate(
-                          setDate(currentDate, parseInt(event.target.value))
-                        );
-                      } catch (error) {}
-                    }}
+                    min='1'
+                    max='31'
+                    value={currentDate.getDate()}
+                    onChange={(event) =>
+                      updateDatePart('day', event.target.value)
+                    }
                   />
                 </div>
                 <div className='me-1'>
@@ -103,14 +144,12 @@ const DateConverter: FunctionComponent = function () {
                     type='number'
                     id='dateHour'
                     className='form-control border-secondary'
-                    value={formatDate(currentDate, 'HH')}
-                    onChange={(event) => {
-                      try {
-                        setCurrentDate(
-                          setHours(currentDate, parseInt(event.target.value))
-                        );
-                      } catch (error) {}
-                    }}
+                    min='0'
+                    max='23'
+                    value={currentDate.getHours()}
+                    onChange={(event) =>
+                      updateDatePart('hour', event.target.value)
+                    }
                   />
                 </div>
                 <div className='me-1'>
@@ -119,14 +158,12 @@ const DateConverter: FunctionComponent = function () {
                     type='number'
                     id='dateMinutes'
                     className='form-control border-secondary'
-                    value={formatDate(currentDate, 'mm')}
-                    onChange={(event) => {
-                      try {
-                        setCurrentDate(
-                          setMinutes(currentDate, parseInt(event.target.value))
-                        );
-                      } catch (error) {}
-                    }}
+                    min='0'
+                    max='59'
+                    value={currentDate.getMinutes()}
+                    onChange={(event) =>
+                      updateDatePart('minute', event.target.value)
+                    }
                   />
                 </div>
                 <div>
@@ -135,14 +172,12 @@ const DateConverter: FunctionComponent = function () {
                     type='number'
                     id='dateSeconds'
                     className='form-control border-secondary'
-                    value={formatDate(currentDate, 'ss')}
-                    onChange={(event) => {
-                      try {
-                        setCurrentDate(
-                          setSeconds(currentDate, parseInt(event.target.value))
-                        );
-                      } catch (error) {}
-                    }}
+                    min='0'
+                    max='59'
+                    value={currentDate.getSeconds()}
+                    onChange={(event) =>
+                      updateDatePart('second', event.target.value)
+                    }
                   />
                 </div>
               </div>
@@ -152,17 +187,13 @@ const DateConverter: FunctionComponent = function () {
                   id='iso'
                   className='form-control border-secondary'
                   placeholder=''
-                  value={formatDate(
-                    currentDate,
-                    "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-                  )}
+                  value={currentDate.toISOString()}
                   onChange={(event) => {
-                    try {
-                      console.log(
-                        formatDate(currentDate, "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
-                      );
-                      setCurrentDate(parseISO(event.target.value));
-                    } catch (error) {}
+                    const parsedDate = parseISO(event.target.value);
+
+                    if (isValid(parsedDate)) {
+                      setCurrentDate(parsedDate);
+                    }
                   }}
                 />
               </div>
@@ -174,28 +205,40 @@ const DateConverter: FunctionComponent = function () {
                   id='unixS'
                   className='form-control border-secondary'
                   placeholder=''
-                  value={formatDate(currentDate, 't')}
+                  value={Math.floor(currentDate.getTime() / 1000)}
                   onChange={(event) => {
-                    try {
-                      setCurrentDate(
-                        new Date(parseInt(event.target.value) * 1000)
-                      );
-                    } catch (error) {}
+                    if (event.target.value === '') {
+                      return;
+                    }
+
+                    const timestamp = Number(event.target.value);
+                    const date = new Date(timestamp * 1000);
+
+                    if (Number.isFinite(timestamp) && isValid(date)) {
+                      setCurrentDate(date);
+                    }
                   }}
                 />
               </div>
               <div className='mt-6'>
-                <label htmlFor='unixS'>Unix timestamp (ms)</label>
+                <label htmlFor='unixMs'>Unix timestamp (ms)</label>
                 <input
                   type='number'
-                  id='unixS'
+                  id='unixMs'
                   className='form-control border-secondary'
                   placeholder=''
-                  value={formatDate(currentDate, 'T')}
+                  value={currentDate.getTime()}
                   onChange={(event) => {
-                    try {
-                      setCurrentDate(new Date(parseInt(event.target.value)));
-                    } catch (error) {}
+                    if (event.target.value === '') {
+                      return;
+                    }
+
+                    const timestamp = Number(event.target.value);
+                    const date = new Date(timestamp);
+
+                    if (Number.isFinite(timestamp) && isValid(date)) {
+                      setCurrentDate(date);
+                    }
                   }}
                 />
               </div>

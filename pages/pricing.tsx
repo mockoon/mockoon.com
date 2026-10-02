@@ -39,7 +39,7 @@ const Pricing: FunctionComponent = function () {
         </p>
       </Hero>
 
-      <PlansView showTagline={true} showRegions={true} />
+      <PlansView showTagline={true} />
 
       <section className='py-6 py-md-8' id='product-updates-subscribe'>
         <div className='container'>

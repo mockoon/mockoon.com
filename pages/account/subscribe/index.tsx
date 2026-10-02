@@ -35,7 +35,7 @@ const AccountSubscribe: FunctionComponent = function () {
       {!isAuthLoading && isAuth && (
         <>
           <AccountHeader title='My account' subtitle='Subscribe to a plan' />
-          <PlansView showTagline={false} showRegions={false} />
+          <PlansView showTagline={false} />
         </>
       )}
     </Layout>

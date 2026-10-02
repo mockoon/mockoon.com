@@ -149,27 +149,17 @@ const proFaq: AccordionData = [
 
 const suffixes = {
   SOLO: { MONTHLY: '/month', YEARLY: '/month (Tax excl.)<br/>billed annually' },
-  TEAM: {
-    MONTHLY: '/license/month',
-    YEARLY: '/license/month (Tax excl.)<br/>billed €120/license/year'
-  }
+  TEAM: '/license/month (Tax excl.)<br/>billed €120/license/year'
 };
 
-const proPrices = {
-  MONTHLY: '15',
-  YEARLY: '10'
-};
+const proYearlyMonthlyPrice = '10';
 
 const PlansView: FunctionComponent<{
   showTagline: boolean;
-  showRegions: boolean;
-}> = function ({ showTagline, showRegions }) {
+}> = function ({ showTagline }) {
   const auth = useAuth();
   const currentUser = useCurrentUser();
   const router = useRouter();
-  const [planFrequency, setPlanFrequency] = useState<Frequency>(
-    Frequency.YEARLY
-  );
   const [showTrialOnboardingConfirmation, setShowTrialOnboardingConfirmation] =
     useState(false);
   const discountCode = router.query.discountCode;
@@ -197,7 +187,7 @@ const PlansView: FunctionComponent<{
         method: 'POST',
         body: JSON.stringify({
           plan: planId,
-          frequency: planFrequency
+          frequency: Frequency.YEARLY
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -285,7 +275,7 @@ const PlansView: FunctionComponent<{
     try {
       const trialResult = await trialOnboarding({
         plan: planId,
-        frequency: planFrequency
+        frequency: Frequency.YEARLY
       });
 
       if (trialResult.data) {
@@ -319,62 +309,8 @@ const PlansView: FunctionComponent<{
     <>
       <PaddleScript />
       <QueryClientProvider client={queryClient}>
-        <section className='mb-8'>
+        <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
           <div className='container'>
-            <div className='text-center my-6'>
-              <div
-                className='btn-group'
-                role='group'
-                aria-label='Plan frequency selector'
-              >
-                <input
-                  type='radio'
-                  className='btn-check'
-                  name='MONTHLY'
-                  value='MONTHLY'
-                  id='MONTHLY'
-                  autoComplete='off'
-                  checked={planFrequency === 'MONTHLY'}
-                  onChange={(event) => {
-                    setPlanFrequency(event.target.value as Frequency);
-                  }}
-                />
-                <label
-                  className={`btn btn-xs ${
-                    planFrequency === 'MONTHLY'
-                      ? 'btn-secondary'
-                      : 'btn-outline-secondary'
-                  }`}
-                  htmlFor='MONTHLY'
-                >
-                  Pay monthly
-                </label>
-
-                <input
-                  type='radio'
-                  className='btn-check'
-                  name='YEARLY'
-                  value='YEARLY'
-                  id='YEARLY'
-                  autoComplete='off'
-                  checked={planFrequency === 'YEARLY'}
-                  onChange={(event) => {
-                    setPlanFrequency(event.target.value as Frequency);
-                  }}
-                />
-                <label
-                  className={`btn btn-xs ${
-                    planFrequency === 'YEARLY'
-                      ? 'btn-secondary'
-                      : 'btn-outline-secondary'
-                  }`}
-                  htmlFor='YEARLY'
-                >
-                  Pay annually
-                </label>
-              </div>
-            </div>
-
             {/* Trial onboarding confirmation modal */}
             <Modal
               show={showTrialOnboardingConfirmation}
@@ -417,22 +353,20 @@ const PlansView: FunctionComponent<{
                     <div className='d-flex justify-content-center'>
                       <span className='h2 mb-0 mt-2'>€</span>
                       <span className='price display-2 mb-0'>
-                        {proPrices[planFrequency]}
+                        {proYearlyMonthlyPrice}
                       </span>
                       <span
                         className='h5 text-gray-700 align-self-end ms-2'
                         dangerouslySetInnerHTML={{
-                          __html: suffixes.TEAM[planFrequency]
+                          __html: suffixes.TEAM
                         }}
                       ></span>
                     </div>
-                    {planFrequency === Frequency.YEARLY && (
-                      <div className='mx-auto mb-6'>
-                        <span className='badge text-bg-success-subtle rounded-pill'>
-                          Save €60 per license with annual billing
-                        </span>
-                      </div>
-                    )}
+                    <div className='mx-auto mb-6'>
+                      <span className='badge text-bg-success-subtle rounded-pill'>
+                        Annual billing
+                      </span>
+                    </div>
 
                     <div className='d-flex'>
                       <div className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4'>

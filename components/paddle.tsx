@@ -2,7 +2,13 @@ import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { FunctionComponent } from 'react';
 
-const PaddleScript: FunctionComponent = function () {
+type PaddleScriptProps = {
+  checkoutCompletedUrl?: string;
+};
+
+const PaddleScript: FunctionComponent<PaddleScriptProps> = function ({
+  checkoutCompletedUrl = '/account/subscribe/thank-you/'
+}) {
   const router = useRouter();
 
   return (
@@ -20,7 +26,7 @@ const PaddleScript: FunctionComponent = function () {
           eventCallback: function (data) {
             if (data.name === 'checkout.completed') {
               setTimeout(() => {
-                router.push('/account/subscribe/thank-you/');
+                router.push(checkoutCompletedUrl);
                 // @ts-ignore
                 Paddle.Checkout.close();
               }, 3000);

@@ -384,6 +384,16 @@ const Terms: FunctionComponent = function () {
                 case.
               </p>
               <p>
+                Paid Mockoon Pro licenses are digital content delivered
+                immediately after a successful payment. By requesting immediate
+                delivery at checkout, you expressly consent to performance
+                beginning before the end of any applicable withdrawal or
+                cooling-off period and acknowledge that, where permitted by
+                applicable law, you lose your statutory right of withdrawal once
+                delivery of the license begins. This does not affect any rights
+                that cannot legally be excluded.
+              </p>
+              <p>
                 Depending on the subscription term and plan you select, you
                 authorize our payment provider (Paddle.com) to automatically
                 charge the payment method you provided on a recurring basis for

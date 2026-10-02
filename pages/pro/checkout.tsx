@@ -149,7 +149,7 @@ export default function ProCheckout() {
                   )}
                   <div className='d-flex justify-content-between'>
                     <span>Licenses</span>
-                    <span>{isTrial ? '10' : 'Choose during checkout'}</span>
+                    <span>{isTrial ? '5' : 'Choose during checkout'}</span>
                   </div>
                   {isTrial && (
                     <p className='text-gray-700 fs-sm mt-4 mb-0'>

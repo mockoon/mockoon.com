@@ -217,7 +217,7 @@ export default function () {
               <div className='text-center my-4'>
                 <img
                   src='/images/what-is-mockoon/desktop-cli-screenshot.png'
-                  className='img-fluid w-md-50'
+                  className='img-fluid w-md-75'
                   alt='Screenshot of the Mockoon desktop application and CLI'
                 />
               </div>
@@ -278,18 +278,18 @@ export default function () {
               </ul>
               <div className='text-center my-4'>
                 <img
-                  src='/images/what-is-mockoon/cloud-illustration.svg'
-                  className='img-fluid w-md-50'
+                  src='/images/what-is-mockoon/pro-illustration.png'
+                  className='img-fluid w-md-75'
                   alt='illustration showing mockoon logo with the features written around it'
                 />
               </div>
             </div>
           </div>
-          <div className='row justify-content-center'>
-            <div className='col-lg-8'>
+          <section className='py-5 py-lg-10'>
+            <div className='container text-lg-start text-center'>
               <OssProComparison />
             </div>
-          </div>
+          </section>
           <div className='row justify-content-center mt-6'>
             <div className='col-12 col-md-4'>
               <Link

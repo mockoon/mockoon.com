@@ -27,34 +27,27 @@ const proFeatures = [
     cta: 'Read the documentation',
     ctaLink: '/pro/docs/features/api-mock-deployments/'
   },
-  /* {
-    title:
-      '<span class="text-primary">Prototype</span> your APIs faster with our assistants',
-    description:
-      'Accelerate your API design and prototyping with our assistants. Generate realistic data, endpoints, and responses in seconds.',
-    imgSrc: '/images/pro/mockoon-pro-ai-assisted-mock-design.png',
-    imgAlt: 'mockoon application screenshot showing AI assistant in action',
-    cta: 'Discover our assistant',
-    ctaLink: '/ai-powered-api-mocking/'
-  }, */
   {
     title:
-      'Create mock APIs using the <span class="text-primary">web app</span>',
+      'Give everyone a <span class="text-primary">full API mocking workspace</span>',
     description:
-      'Design, deploy, and collaborate on mock APIs directly in the embedded web app, no desktop installation required.',
+      'Let developers, QA, and product teams, create, test, and deploy mock APIs from any browser. The full web app is built into your Mockoon Pro instance: no installation or desktop access required.',
     imgSrc: '/images/pro/mockoon-pro-web-application.png',
-    imgAlt: 'mockoon web application screenshot showing list of APIs endpoints',
-    cta: 'Read the documentation',
+    imgAlt:
+      'Mockoon Pro embedded web application showing a mock API workspace in a browser',
+    cta: 'Explore the embedded web app',
     ctaLink: '/pro/docs/clients/embedded-web-application/'
   },
   {
-    title: 'Keep your setup in <span class="text-primary">sync</span>',
+    title:
+      'Stay in control with <span class="text-primary">enterprise access and oversight</span>',
     description:
-      'Always have the latest version of your mock APIs available on all your devices. Enjoy a frictionless experience with automatic data synchronization.',
-    imgSrc: '/images/pro/mockoon-pro-data-synchronization-devices.png',
-    imgAlt: 'mockoon application screenshot showing synchronized setup',
-    cta: 'Read the documentation',
-    ctaLink: '/pro/docs/features/data-synchronization-team-collaboration/'
+      'Manage users, invitations, roles, and approved email domains from one place. Connect your identity provider with OIDC SSO and keep a searchable audit trail of administrative, security, and workspace activity, all hosted on your infrastructure.',
+    imgSrc: '/images/pro/mockoon-pro-users-and-audit-trail.png',
+    imgAlt:
+      'Mockoon Pro audit trail showing user, security, and workspace activity',
+    cta: 'Explore Pro administration',
+    ctaLink: '/pro/docs/misc/authentication/'
   },
   {
     title: 'Get <span class="text-primary">help</span> when you need it',
@@ -88,12 +81,12 @@ export default function () {
     <Layout footerBanner='download'>
       <Meta
         title={'Mockoon Pro'}
-        description='Discover Mockoon Pro features: Collaborate with your team, keep your data in sync, and deploy your mock APIs with Mockoon Pro'
+        description='Run a private API mocking platform on your infrastructure. Collaborate in real time, work from any browser, and deploy mock APIs in one click.'
       />
 
       <Hero
         title='Never let <span class="text-primary">API integration</span> slow you down again'
-        subtitle='Collaborate with your team, keep your data in sync, and deploy your mock APIs with Mockoon Pro'
+        subtitle='Give your whole team one private place to design, collaborate on, and deploy mock APIs, from the browser or desktop app.'
         mainPicture='/images/pro-hero.png'
         mainPictureAlt='Mockoon logo in the cloud interconnected with other services'
         mainPictureSkewed={false}

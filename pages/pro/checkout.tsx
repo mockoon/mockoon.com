@@ -61,7 +61,7 @@ export default function ProCheckout() {
       );
 
       if (!response.ok) {
-        throw new Error('Unable to create purchase transaction');
+        throw new Error('Unable to start checkout');
       }
 
       const payload: { email: string; transactionId: string } =
@@ -184,7 +184,7 @@ export default function ProCheckout() {
                       htmlFor='pro-purchase-email'
                       className='form-label fw-bold'
                     >
-                      Email address
+                      Work email address
                     </label>
                     <input
                       id='pro-purchase-email'
@@ -194,10 +194,11 @@ export default function ProCheckout() {
                       required
                       value={email}
                       onChange={(event) => setEmail(event.target.value)}
-                      placeholder='you@example.com'
+                      placeholder='you@company.com'
                     />
                     <small className='text-gray-700'>
-                      Your license will be sent to this address after payment.
+                      We verify company email addresses before checkout. Your
+                      license will be sent to this address after payment.
                     </small>
                   </div>
                   <div className='mb-4'>
@@ -246,8 +247,9 @@ export default function ProCheckout() {
                     </small>
                   </div>
                   {hasError && (
-                    <div className='alert alert-danger'>
-                      Unable to start checkout. Please try again later.
+                    <div className='alert alert-warning'>
+                      Something went wrong. Please{' '}
+                      <Link href='/contact-form/'>contact us</Link>.
                     </div>
                   )}
                   <div className='form-check mb-4'>

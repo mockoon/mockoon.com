@@ -364,7 +364,7 @@ const PlansView: FunctionComponent<{
                     </div>
                     <div className='mx-auto mb-6'>
                       <span className='badge text-bg-success-subtle rounded-pill'>
-                        Annual billing
+                        Annual billing, minimum 5 licenses
                       </span>
                     </div>
 
@@ -386,8 +386,8 @@ const PlansView: FunctionComponent<{
                       </div>
 
                       <p>
-                        Flexible license slots assignable to users or running
-                        mock instances
+                        Flexible license slots assignable to users seats or mock
+                        instances
                       </p>
                     </div>
 
@@ -606,7 +606,7 @@ const PlansView: FunctionComponent<{
                           <tr>
                             <td>
                               License allocation{' '}
-                              <CustomTooltip text='Each license is a slot assignable to one user or one concurrently running mock instance.'></CustomTooltip>
+                              <CustomTooltip text='Each license is a slot assignable to one user seat or one mock instance.'></CustomTooltip>
                             </td>
                             <td className='text-center'>Users or instances</td>
                             <td className='text-center'>Users or instances</td>

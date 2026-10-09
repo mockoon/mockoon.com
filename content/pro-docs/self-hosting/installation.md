@@ -12,6 +12,8 @@ order: 200
 
 Mockoon Pro is distributed as an official [Docker image on Docker Hub (`mockoon/pro`)](https://hub.docker.com/r/mockoon/pro). It requires a single persistent storage directory and a base domain name with wildcard DNS support for deployed mock instances.
 
+> ℹ️ **Docker Image Tags & Beta Notice**: During the current public beta, Mockoon Pro is published under the `beta` tag (`mockoon/pro:beta`) as well as exact version tags (e.g. `mockoon/pro:9.9.0-beta.3`). The `latest` tag will be made available with the general availability (GA) release. The installation examples below use `mockoon/pro:beta`.
+
 ## Prerequisites
 
 - **Docker or OCI container engine** (Docker Engine, Podman, containerd).
@@ -39,7 +41,7 @@ docker run -d \
   -e NODE_ENV=production \
   -e PORT=5020 \
   -v mockoon-data:/data \
-  mockoon/pro:latest
+  mockoon/pro:beta
 ```
 
 ### Docker Compose
@@ -69,7 +71,7 @@ services:
       - mockoon-pro
 
   mockoon-pro:
-    image: mockoon/pro:latest
+    image: mockoon/pro:beta
     container_name: mockoon-pro
     restart: unless-stopped
     environment:
@@ -129,7 +131,7 @@ If you already terminate TLS at an external load balancer or firewall:
 ```yaml
 services:
   mockoon-pro:
-    image: mockoon/pro:latest
+    image: mockoon/pro:beta
     container_name: mockoon-pro
     restart: unless-stopped
     ports:
@@ -172,7 +174,7 @@ spec:
     spec:
       containers:
         - name: mockoon-pro
-          image: mockoon/pro:latest
+          image: mockoon/pro:beta
           ports:
             - containerPort: 5020
           env:
@@ -356,7 +358,7 @@ docker run -d \
   -e MOCKOON_TLS_KEY_PATH=/certs/privkey.pem \
   -v mockoon-data:/data \
   -v /path/to/certs:/certs:ro \
-  mockoon/pro:latest
+  mockoon/pro:beta
 ```
 
 > ⚠️ The certificate must be a wildcard certificate valid for both `mockoon.company.com` and `*.mockoon.company.com`.
@@ -380,7 +382,7 @@ tar -czvf mockoon-data-backup-$(date +%Y%m%d%H%M%S).tar.gz -C /path/to/mockoon-d
 
 #### With Docker Compose
 
-1. **(Optional) Update the image tag**: If you pinned a specific version tag in your `docker-compose.yml` (e.g. `mockoon/pro:0.1.0-alpha.2`), update it to the target version. If you are tracking `latest` or an alpha track, you can leave it as is.
+1. **(Optional) Update the image tag**: If you pinned a specific version tag in your `docker-compose.yml` (e.g. `mockoon/pro:9.9.0-beta.3`), update it to the target version. If you are tracking `beta`, you can leave it as is.
 2. **Pull the latest image**:
    ```bash
    docker compose pull
@@ -403,7 +405,7 @@ tar -czvf mockoon-data-backup-$(date +%Y%m%d%H%M%S).tar.gz -C /path/to/mockoon-d
 
 1. **Pull the new image**:
    ```bash
-   docker pull mockoon/pro:latest
+   docker pull mockoon/pro:beta
    ```
 2. **Stop and remove the old container**:
    ```bash
@@ -421,7 +423,7 @@ tar -czvf mockoon-data-backup-$(date +%Y%m%d%H%M%S).tar.gz -C /path/to/mockoon-d
      -e MOCKOON_SERVER_ID=mockoon-node-1 \
      -e MOCKOON_STORAGE_DIR=/data/ \
      -v mockoon-data:/data \
-     mockoon/pro:latest
+     mockoon/pro:beta
    ```
 
 #### With Kubernetes / OpenShift
@@ -429,7 +431,7 @@ tar -czvf mockoon-data-backup-$(date +%Y%m%d%H%M%S).tar.gz -C /path/to/mockoon-d
 Update the deployment with the new image tag:
 
 ```bash
-kubectl set image deployment/mockoon-pro mockoon-pro=mockoon/pro:latest
+kubectl set image deployment/mockoon-pro mockoon-pro=mockoon/pro:beta
 ```
 
 Or update your Helm values / Kubernetes manifest and apply:

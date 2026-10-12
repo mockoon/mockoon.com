@@ -12,7 +12,7 @@ order: 200
 
 Mockoon Pro is distributed as an official [Docker image on Docker Hub (`mockoon/pro`)](https://hub.docker.com/r/mockoon/pro). It requires a single persistent storage directory and a base domain name with wildcard DNS support for deployed mock instances.
 
-> ℹ️ **Docker Image Tags & Beta Notice**: During the current public beta, Mockoon Pro is published under the `beta` tag (`mockoon/pro:beta`) as well as exact version tags (e.g. `mockoon/pro:9.9.0-beta.3`). The `latest` tag will be made available with the general availability (GA) release. The installation examples below use `mockoon/pro:beta`.
+> ℹ️ **Docker Image Tags & Beta Notice**: During the current public beta, Mockoon Pro is published under the `beta` tag (`mockoon/pro:beta`) as well as exact version tags (e.g. `mockoon/pro:9.9.0-beta.4`). The `latest` tag will be made available with the general availability (GA) release. The installation examples below use `mockoon/pro:beta`.
 
 ## Prerequisites
 
@@ -382,7 +382,7 @@ tar -czvf mockoon-data-backup-$(date +%Y%m%d%H%M%S).tar.gz -C /path/to/mockoon-d
 
 #### With Docker Compose
 
-1. **(Optional) Update the image tag**: If you pinned a specific version tag in your `docker-compose.yml` (e.g. `mockoon/pro:9.9.0-beta.3`), update it to the target version. If you are tracking `beta`, you can leave it as is.
+1. **(Optional) Update the image tag**: If you pinned a specific version tag in your `docker-compose.yml` (e.g. `mockoon/pro:9.9.0-beta.4`), update it to the target version. If you are tracking `beta`, you can leave it as is.
 2. **Pull the latest image**:
    ```bash
    docker compose pull

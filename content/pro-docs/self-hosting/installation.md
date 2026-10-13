@@ -37,7 +37,6 @@ docker run -d \
   -p 5020:5020 \
   -e MOCKOON_DOMAIN=mockoon.company.com \
   -e MOCKOON_SERVER_ID=mockoon-node-1 \
-  -e MOCKOON_STORAGE_DIR=/data/ \
   -e NODE_ENV=production \
   -e PORT=5020 \
   -v mockoon-data:/data \
@@ -164,6 +163,8 @@ metadata:
   name: mockoon-pro
 spec:
   replicas: 1
+  strategy:
+    type: Recreate # SQLite on an RWO volume: never run two pods at once
   selector:
     matchLabels:
       app: mockoon-pro
@@ -201,17 +202,17 @@ spec:
 
 The application is configured through environment variables passed to the container:
 
-| Variable                | Required | Default              | Description                                                                                                                                                                                                                                |
-| ----------------------- | -------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `MOCKOON_DOMAIN`        | Optional | `localhost`          | Base domain for routing (e.g. `mockoon.company.com`). If omitted, defaults to `localhost`.                                                                                                                                                 |
-| `PORT`                  | Optional | `5020`               | Port on which the HTTP server listens inside the container.                                                                                                                                                                                |
-| `NODE_ENV`              | Optional | `development`        | Node.js environment mode: `production` or `development`.                                                                                                                                                                                   |
-| `MOCKOON_STORAGE_DIR`   | Required | `/data/`             | Path to the directory where SQLite database files and mock environment JSON files are stored.                                                                                                                                              |
-| `MOCKOON_SERVER_ID`     | Required | `mockoon-pro-server` | Unique identifier for the server node, used for deployment instances tracking and logging.                                                                                                                                                 |
-| `USE_HTTPS`             | Optional | _Auto-inferred_      | Force `true` (HTTPS/WSS) or `false` (HTTP/WS). Automatically inferred as `false` for `localhost` and `true` for custom production domains. Informs the application that traffic is served over HTTPS (behind reverse proxy or Direct TLS). |
-| `MOCKOON_TLS_CERT_PATH` | Optional | _None_               | Path to the server certificate/bundle when using Direct TLS. Direct TLS is only activated if this and `MOCKOON_TLS_KEY_PATH` are set.                                                                                                      |
-| `MOCKOON_TLS_KEY_PATH`  | Optional | _None_               | Path to the server private key when using Direct TLS.                                                                                                                                                                                      |
-| `MOCKOON_TLS_CA_PATH`   | Optional | _None_               | Path to the CA certificate when using Direct TLS.                                                                                                                                                                                          |
+| Variable                | Required | Default            | Description                                                                                                                                                                                                                                |
+| ----------------------- | -------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `MOCKOON_DOMAIN`        | Optional | `localhost`        | Base domain for routing (e.g. `mockoon.company.com`). If omitted, defaults to `localhost`.                                                                                                                                                 |
+| `PORT`                  | Optional | `5020`             | Port on which the HTTP server listens inside the container.                                                                                                                                                                                |
+| `NODE_ENV`              | Optional | `production`       | Node.js environment mode: `production` or `development`.                                                                                                                                                                                   |
+| `MOCKOON_STORAGE_DIR`   | Optional | `/data/`           | Path to the directory where SQLite database files and mock environment JSON files are stored. Must be an absolute path inside the container.                                                                                               |
+| `MOCKOON_SERVER_ID`     | Required | `mockoon-pro-test` | Unique identifier for the server node (lowercase letters, digits and hyphens only), used for deployment instances tracking and logging. Set your own value.                                                                                |
+| `USE_HTTPS`             | Optional | _Auto-inferred_    | Force `true` (HTTPS/WSS) or `false` (HTTP/WS). Automatically inferred as `false` for `localhost` and `true` for custom production domains. Informs the application that traffic is served over HTTPS (behind reverse proxy or Direct TLS). |
+| `MOCKOON_TLS_CERT_PATH` | Optional | _None_             | Path to the server certificate/bundle when using Direct TLS. Direct TLS is only activated if this and `MOCKOON_TLS_KEY_PATH` are set.                                                                                                      |
+| `MOCKOON_TLS_KEY_PATH`  | Optional | _None_             | Path to the server private key when using Direct TLS.                                                                                                                                                                                      |
+| `MOCKOON_TLS_CA_PATH`   | Optional | _None_             | Path to the CA certificate when using Direct TLS.                                                                                                                                                                                          |
 
 ## DNS & wildcard routing
 
@@ -353,7 +354,6 @@ docker run -d \
   -e USE_HTTPS=true \
   -e MOCKOON_DOMAIN=mockoon.company.com \
   -e MOCKOON_SERVER_ID=mockoon-prod \
-  -e MOCKOON_STORAGE_DIR=/data/ \
   -e MOCKOON_TLS_CERT_PATH=/certs/fullchain.pem \
   -e MOCKOON_TLS_KEY_PATH=/certs/privkey.pem \
   -v mockoon-data:/data \
@@ -371,11 +371,14 @@ When a new version or patch is released, follow the instructions below matching 
 
 ### 1. (Recommended) Create a backup
 
-Before applying updates, create a quick snapshot or archive of your `/data` volume:
+Before applying updates, stop the container (the SQLite database runs in WAL mode, so a live copy may be inconsistent) and archive the `/data` volume:
 
 ```bash
-# Archive the data volume
-tar -czvf mockoon-data-backup-$(date +%Y%m%d%H%M%S).tar.gz -C /path/to/mockoon-data .
+docker stop mockoon-pro
+docker run --rm \
+  -v mockoon-data:/data:ro \
+  -v "$(pwd)":/backup \
+  alpine tar -czf /backup/mockoon-data-backup.tar.gz -C /data .
 ```
 
 ### 2. Update the container
@@ -421,20 +424,19 @@ tar -czvf mockoon-data-backup-$(date +%Y%m%d%H%M%S).tar.gz -C /path/to/mockoon-d
      -e PORT=5020 \
      -e MOCKOON_DOMAIN=mockoon.company.com \
      -e MOCKOON_SERVER_ID=mockoon-node-1 \
-     -e MOCKOON_STORAGE_DIR=/data/ \
      -v mockoon-data:/data \
      mockoon/pro:beta
    ```
 
 #### With Kubernetes / OpenShift
 
-Update the deployment with the new image tag:
+Because `beta` is a moving tag, set `imagePullPolicy: Always` on the container and restart the rollout to pull the new image:
 
 ```bash
-kubectl set image deployment/mockoon-pro mockoon-pro=mockoon/pro:beta
+kubectl rollout restart deployment/mockoon-pro
 ```
 
-Or update your Helm values / Kubernetes manifest and apply:
+Or pin an exact version tag in your Helm values / Kubernetes manifest and apply:
 
 ```bash
 kubectl apply -f deployment.yaml

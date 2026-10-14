@@ -13,11 +13,13 @@ tags:
 date: '2024-07-30'
 ---
 
+> ⚠️ **Mockoon Cloud is now a legacy offering**, still available to existing customers. Our new offering, **[Mockoon Pro](/pro/)**, lets you self-host the same collaboration and deployment features on your own infrastructure, and adds an embedded web application, single sign-on, and an audit trail. A managed cloud version is available as an Enterprise option. If you are new to Mockoon's collaborative features, follow the **[getting started with self-hosted Mockoon Pro tutorial](/tutorials/getting-started-with-mockoon-pro/)** instead.
+
 In this tutorial, we will learn how to **get started with [Mockoon Cloud](/cloud/)**, a cloud-based service that allows you to **collaborate on your mock APIs with your team**, **deploy your mock APIs to the cloud**, and **generate HTTP endpoints with our AI assistant**.
 
 ## Prerequisites
 
-Before starting this tutorial, make sure you signed up and subscribed to a Mockoon Cloud plan. If you haven't done it yet, you can [sign up here](/cloud/). Our plans are available for individual developers and teams. You can also try Mockoon Cloud for free with our 7-day trial.
+Before starting this tutorial, make sure you have an active Mockoon Cloud plan. New customers should [discover Mockoon Pro](/pro/) and its [14-day free trial](/pro/checkout/?mode=trial), as new Mockoon Cloud subscriptions are no longer offered.
 
 ## 1. Install the desktop application or use the web app
 

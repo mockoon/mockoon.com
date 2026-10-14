@@ -236,7 +236,7 @@ const Nav: FunctionComponent<{
                   Solutions {!show && <i className='icon-arrow_drop_down'></i>}
                 </a>
                 <div
-                  className={`dropdown-menu ${
+                  className={`dropdown-menu dropdown-menu-lg ${
                     show ? 'text-center' : ''
                   } ${dropdownOpen === Dropdowns.SOLUTIONS ? 'show' : ''}`}
                 >
@@ -282,85 +282,10 @@ const Nav: FunctionComponent<{
                         </div>
                       </div>
                     </div>
-                    {/* <div className='col-md-4 mb-4 mb-md-0'>
-                      <div className='row gx-0'>
-                        <div className='col-12 col-lg-6'>
-                          <h6 className='dropdown-header'>By Roles</h6>
-
-                          <Link
-                            href='/use-cases/frontend-developers/'
-                            className={`dropdown-item ${
-                              router.pathname ===
-                              '/use-cases/frontend-developers'
-                                ? 'active'
-                                : ''
-                            }`}
-                          >
-                            Frontend Developers
-                          </Link>
-
-                          <Link
-                            href='/use-cases/backend-developers/'
-                            className={`dropdown-item ${
-                              router.pathname ===
-                              '/use-cases/backend-developers'
-                                ? 'active'
-                                : ''
-                            }`}
-                          >
-                            Backend Developers
-                          </Link>
-
-                          <Link
-                            href='/use-cases/qa-engineers/'
-                            className={`dropdown-item ${
-                              router.pathname === '/use-cases/qa-engineers'
-                                ? 'active'
-                                : ''
-                            }`}
-                          >
-                            QA Engineers
-                          </Link>
-
-                          <Link
-                            href='/use-cases/devops-engineers/'
-                            className={`dropdown-item ${
-                              router.pathname === '/use-cases/devops-engineers'
-                                ? 'active'
-                                : ''
-                            }`}
-                          >
-                            DevOps Engineers
-                          </Link>
-
-                          <Link
-                            href='/use-cases/product-managers/'
-                            className={`dropdown-item ${
-                              router.pathname === '/use-cases/product-managers'
-                                ? 'active'
-                                : ''
-                            }`}
-                          >
-                            Product Managers
-                          </Link>
-
-                          <Link
-                            href='/use-cases/api-architects/'
-                            className={`dropdown-item ${
-                              router.pathname === '/use-cases/api-architects'
-                                ? 'active'
-                                : ''
-                            }`}
-                          >
-                            API Architects
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
                     <div className='col-md-4 mb-4 mb-md-0'>
                       <div className='row gx-0'>
                         <div className='col-12 col-lg-6'>
-                          <h6 className='dropdown-header'>By Industries</h6>
+                          <h6 className='dropdown-header'>By Industry</h6>
 
                           <Link
                             href='/use-cases/fintech/'
@@ -370,64 +295,45 @@ const Nav: FunctionComponent<{
                                 : ''
                             }`}
                           >
-                            Fintech & Banking
+                            Banking & Financial Services
                           </Link>
 
                           <Link
-                            href='/use-cases/ecommerce/'
+                            href='/use-cases/insurance/'
                             className={`dropdown-item ${
-                              router.pathname === '/use-cases/ecommerce'
+                              router.pathname === '/use-cases/insurance'
                                 ? 'active'
                                 : ''
                             }`}
                           >
-                            E-commerce & Retail
+                            Insurance
                           </Link>
 
                           <Link
-                            href='/use-cases/healthcare/'
+                            href='/use-cases/automotive/'
                             className={`dropdown-item ${
-                              router.pathname === '/use-cases/healthcare'
+                              router.pathname === '/use-cases/automotive'
                                 ? 'active'
                                 : ''
                             }`}
                           >
-                            Healthcare & MedTech
+                            Automotive
                           </Link>
 
                           <Link
-                            href='/use-cases/saas/'
+                            href='/use-cases/industrial-automation/'
                             className={`dropdown-item ${
-                              router.pathname === '/use-cases/saas'
+                              router.pathname ===
+                              '/use-cases/industrial-automation'
                                 ? 'active'
                                 : ''
                             }`}
                           >
-                            SaaS & Technology
-                          </Link>
-
-                          <Link
-                            href='/use-cases/gaming/'
-                            className={`dropdown-item ${
-                              router.pathname === '/use-cases/gaming'
-                                ? 'active'
-                                : ''
-                            }`}
-                          >
-                            Gaming & Entertainment
-                          </Link>
-
-                          <Link
-                            href='/use-cases/'
-                            className={`dropdown-item ${
-                              router.pathname === '/solutions' ? 'active' : ''
-                            }`}
-                          >
-                            All Industries
+                            Industrial Automation
                           </Link>
                         </div>
                       </div>
-                    </div> */}
+                    </div>
                   </div>
                 </div>
               </li>

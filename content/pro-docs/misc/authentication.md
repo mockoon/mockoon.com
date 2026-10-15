@@ -1,8 +1,8 @@
 ---
 title: Authentication
 meta:
-  title: Authentication and user management in Mockoon Pro
-  description: Configure Local Database authentication, OpenID Connect (OIDC) Single Sign-On, email domain restrictions, and manage team members.
+  title: 'Authentication and user management in Mockoon Pro'
+  description: 'Configure Local Database authentication, OpenID Connect (OIDC) Single Sign-On, mixed authentication, email domain restrictions, and manage team members.'
 order: 900
 ---
 
@@ -10,9 +10,15 @@ order: 900
 
 ---
 
-Mockoon Pro supports two authentication modes: **Local database** and **OpenID Connect (OIDC) Single Sign-On**. Public registration is closed; new users join via single-use invitation links or through enterprise SSO.
+Mockoon Pro supports three authentication modes:
 
-![Authentication Modes](pro-docs-img:pro-authentication-modes.png)
+- **Local database**: Users authenticate with an email address and password stored by Mockoon Pro.
+- **OpenID Connect (OIDC) Single Sign-On**: All users authenticate through your Identity Provider.
+- **Mixed**: Local database authentication and OIDC Single Sign-On are available at the same time.
+
+Public registration is closed; new users join through single-use invitation links or enterprise SSO.
+
+![Authentication Modes](pro-docs-img:pro-authentication-modes-mixed.png)
 
 ## Local database (Default)
 
@@ -25,6 +31,7 @@ The **Users** page (`/users`) allows the team Owner to oversee team access:
 - Review pending invitations, view their creation dates, and revoke unneeded links.
 - Monitor active members and pending invitations against your allocated seat count.
 - Temporarily disable user accounts to immediately revoke active sessions and tokens without deleting data.
+- Change the role of a member (for example promote a `User` to `Owner`) using the role selector. You cannot change your own role, and the last remaining Owner can never be demoted. The roles of disabled users cannot be changed.
 - Permanently remove users from the team and database.
 
 ![User Management in Settings](pro-docs-img:pro-settings-users.png)
@@ -71,13 +78,21 @@ Supported identity providers include **Microsoft Entra ID**, **Okta**, **Keycloa
    - **Client Secret**: Application client secret.
 6. Click **Save Changes**.
 
-![OIDC Single Sign-On Configuration in Settings](pro-docs-img:pro-settings-oidc.png)
+![OIDC Single Sign-On Configuration in Settings](pro-docs-img:pro-settings-oidc-mixed.png)
 
 Settings are verified and applied immediately without restarting the server.
 
+## Mixed authentication
+
+Mixed mode enables **Local database** and **OIDC Single Sign-On** together. It is useful when progressively adopting SSO or when selected users and administrators still require local password access.
+
+Authentication is determined per account. Local accounts continue to use their email address and password, while OIDC accounts authenticate through the configured Identity Provider.
+
 ### Account linking
 
-When an existing user (such as the initial admin) logs in via OIDC with a verified email matching their local account, Mockoon automatically links their account, preserving their team role and environments.
+When an existing local user (such as the initial administrator) signs in through OIDC with a verified email matching their local account, Mockoon automatically links the accounts while preserving the user's team role, workspace access, and environments.
+
+After an account is linked, **OIDC supersedes local password authentication for that account**. The stored password is removed, existing sessions are revoked, and the user must subsequently sign in through the Identity Provider. Other unlinked local accounts can continue using password authentication while mixed mode is enabled.
 
 ## Email domain restrictions
 

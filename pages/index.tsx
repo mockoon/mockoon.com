@@ -236,12 +236,12 @@ const HomePage: FunctionComponent = function () {
           <Quote colorScheme='warning'>
             <h4 className='my-4 d-flex align-items-center'>
               <div>
-                📢 <strong>Mockoon Pro</strong> is now available in beta.
+                📢 <strong>Mockoon Pro</strong> is now generally available.
                 Self-host team collaboration, data synchronization, and API mock
                 deployments on your own infrastructure.
               </div>
               <div className='ms-auto'>
-                <a href='/blog/mockoon-pro-self-hosted-beta/'>
+                <a href='/blog/mockoon-pro-self-hosted-general-availability/'>
                   Read the announcement
                 </a>
               </div>

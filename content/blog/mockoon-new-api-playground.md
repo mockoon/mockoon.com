@@ -29,7 +29,7 @@ Even better, all actions like updates or deletes are **persisted** (until the ne
 
 ## ⚙️ How we built the API playground
 
-All the fake data were generated using Faker.js and our [templating system](/docs/latest/templating/overview/). We picked some from our list of [templates 📃](/templates/) and created some new ones using our [AI assistant 🤖](/ai-powered-api-mocking/).
+All the fake data were generated using Faker.js and our [templating system](/docs/latest/templating/overview/). We picked some from our list of [templates 📃](/templates/) and created some new ones using our AI assistant.
 
 We then created a Mockoon project with all the [CRUD endpoints](/docs/latest/api-endpoints/crud-routes/). CRUD endpoints are fully automated and create multiple routes at runtime to let you manipulate a [data bucket](/docs/latest/data-buckets/overview/), a sort of basic JSON database.
 

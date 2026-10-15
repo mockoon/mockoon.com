@@ -10,7 +10,7 @@ order: 203
 
 ---
 
-Mockoon Pro includes an administration portal to manage team members, system settings, mock server deployments, and monitoring.
+Mockoon Pro includes an administration portal to manage team members, workspaces, system settings, mock server deployments, and monitoring.
 
 ## Dashboard
 
@@ -18,17 +18,25 @@ The **Dashboard** (`/dashboard`) provides an operational overview of your instan
 
 ![Mockoon Pro Dashboard](pro-docs-img:pro-dashboard.png)
 
+## Workspaces
+
+The **Workspaces** page (`/workspaces`) is accessible to the **Owner** role. It lets Owners create and customize workspaces, assign team members, and review the synchronized environments in each workspace.
+
+Workspace membership controls access to synchronized environments, real-time collaboration, presence information, and deployments. See [Workspaces and access control](pro-docs:features/workspaces) for the complete access model and administration workflow.
+
 ## Settings
 
 The **Settings** page (`/settings`) is accessible to the **Owner** role:
 
 - **License & allocation**: Review your plan, total license pool, adjust user and instance allocations, and update your license key.
 - **Allowed email domains**: Restrict member invitations and logins to approved corporate domains.
-- **Authentication mode**: Switch between local database accounts and OpenID Connect (OIDC) SSO (see [authentication documentation](pro-docs:authentication) for more details).
+- **Authentication mode**: Switch between local database accounts and OpenID Connect (OIDC) SSO (see [authentication documentation](pro-docs:misc/authentication) for more details).
 
 ### Licensing
 
 Mockoon Pro licenses operate **100% offline**. The server validates your license key cryptographically and never contacts external servers.
+
+You can [request a free 14-day trial](/pro/checkout/?mode=trial) or [purchase a license](/pro/checkout/?mode=subscription) on our website.
 
 Your license provides a total pool of **licenses** that you can freely allocate between users (seats) and deployed mock instances.
 
@@ -78,4 +86,8 @@ Mockoon Pro stores all application state (database, settings, user accounts, and
 
 ### Upgrades
 
-When updating to a new version, pull the latest image and restart your container. All data in `/data` is preserved and migrated automatically on startup. See the [Installation guide](pro-docs:installation#updating-mockoon-self-hosted) for setup configurations.
+When updating to a new version, pull the latest image and restart your container. All data in `/data` is preserved and migrated automatically on startup. See the [Installation guide](pro-docs:self-hosting/installation#updating-mockoon-self-hosted) for setup configurations.
+
+When updating to a new major version, Mockoon Pro migrates all
+synchronized environments in `/data`, persists the changes, and updates the
+team's compatible major version. The **desktop client must also be updated to the same major version to ensure compatibility**, while the embedded web application follows the server's major version.

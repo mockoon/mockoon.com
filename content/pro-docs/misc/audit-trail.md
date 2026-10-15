@@ -19,6 +19,12 @@ The following events are logged in the audit trail:
 - **Authentication & users**:
   - Members invited, added, or removed
   - Members disabled or re-enabled
+  - Members role changes
+- **Workspaces**:
+  - Workspaces created
+  - Team members assigned or removed from workspaces
+- **Settings**:
+  - Administration settings updated
 - **Mock deployments & environments**:
   - Mock instances started, restarted, or stopped
   - Mock environments created or deleted

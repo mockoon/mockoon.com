@@ -16,7 +16,7 @@ The web application is bundled inside the container and served at `/app` on your
 
 The web application lets your team create, inspect, and modify mock APIs directly in any browser with zero local installation.
 
-You can launch and sign into the web application automatically by clicking **"Launch web client"** in the management dashboard navigation bar.
+You can open and connect the web application automatically by clicking **"Launch web client"** in the management dashboard navigation bar.
 
 ![Mockoon Embedded Web Application](pro-docs-img:pro-web-app.png)
 
@@ -27,7 +27,7 @@ The application will **automatically configure itself** to connect to your self-
 The interface is the same as the desktop application, with a few differences due to the nature of the web application:
 
 - Some unsupported features for remote APIs (file serving, custom TLS, etc.) are hidden to avoid confusion.
-- Desktop/local specific options and features are disabled or hidden (managing local environments, etc.).
-- Some interface elements were modified to fit the web application (e.g. the server start button deploys to the cloud instead of starting a local server).
+- Desktop and local-specific options are disabled or hidden. The web application displays a single **APIs** list instead of the desktop application's **Local** and **Remote** lists.
+- Some interface elements were modified to fit the web application. For example, the server start button deploys the remote API instead of starting a local server.
 
 As this application is still in early access, we are working on improving the interface and adding new features. We welcome your feedback and suggestions to help us make it better.

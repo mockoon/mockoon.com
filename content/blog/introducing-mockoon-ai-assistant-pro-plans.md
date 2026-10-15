@@ -25,7 +25,7 @@ This significant step will allow us to secure the project's sustainability and c
 
 ## 🤖 AI assistant and templates
 
-The first feature part of our Cloud plans is an [AI assistant](/ai-powered-api-mocking/) that helps you generate realistic templates for your endpoints, accompanied by a range of [hand-curated JSON templates](/templates/). This functionality empowers solo developers and teams to accelerate the prototyping process.
+The first feature part of our Cloud plans is an AI assistant that helps you generate realistic templates for your endpoints, accompanied by a range of [hand-curated JSON templates](/templates/). This functionality empowers solo developers and teams to accelerate the prototyping process.
 
 This feature is not only designed to enhance API prototyping but also serves as an invaluable tool for teaching and learning API concepts. It makes Mockoon Cloud the perfect companion for educators, trainers, and anyone seeking to teach or grasp the intricacies of APIs.
 

@@ -21,6 +21,7 @@ It packages everything required to run a full-featured, team-wide mock API platf
 - **[Collaboration](pro-docs:features/data-synchronization-team-collaboration)**: Work together with your team in real time, with presence indicators and conflict resolution.
 - **[Mock deployments](pro-docs:features/api-mock-deployments)**: Deploy running mock servers directly on your internal network with automatic subdomain routing.
 - **[Web app](pro-docs:clients/embedded-web-application)**: Access and edit your mock APIs directly in your browser without installing the desktop application.
+- **[Workspaces and access control](pro-docs:features/workspaces)**: Organize synchronized mock APIs and control which team members can access and deploy them.
 - **[Authentication and users management](pro-docs:misc/authentication)**: Support for local accounts, member invitations, and OpenID Connect (OIDC) Single Sign-On.
 - **[Audit trail](pro-docs:misc/audit-trail)**: Track administrative, security, and workspace events.
 
@@ -86,9 +87,12 @@ Mockoon Pro is compatible starting from Mockoon [Desktop version 9.9.0](/release
 
 The [embedded web application](pro-docs:clients/embedded-web-application) is always compatible with the corresponding version of Mockoon Pro, ensuring a seamless experience for your team.
 
-## Getting started
+Below is a table listing the first Desktop application version supporting each Mockoon Pro feature:
 
-1. Deploy the container using the **[Installation guide](pro-docs:self-hosting/installation)**.
-2. Complete the initial configuration using the **[Setup guide](pro-docs:self-hosting/initial-setup)**.
-3. Invite your team members or configure **[Authentication](pro-docs:misc/authentication)**.
-4. Access the **[embedded web app](pro-docs:clients/embedded-web-application)** or connect the **[Desktop app](pro-docs:clients/desktop-application)**.
+| Pro feature                                                                                                   | Release version                 |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| Connect to a self-hosted Mockoon Pro instance                                                                 | [>= v9.9.0](/releases/9.9.0/)   |
+| [Embedded web application](pro-docs:clients/embedded-web-application)                                         | [>= v9.9.0](/releases/9.9.0/)   |
+| [Data synchronization and real-time collaboration](pro-docs:features/data-synchronization-team-collaboration) | [>= v9.9.0](/releases/9.9.0/)   |
+| [Self-hosted mock deployments](pro-docs:features/api-mock-deployments)                                        | [>= v9.9.0](/releases/9.9.0/)   |
+| [Workspaces and access control](pro-docs:features/workspaces)                                                 | [>= v9.10.0](/releases/9.10.0/) |

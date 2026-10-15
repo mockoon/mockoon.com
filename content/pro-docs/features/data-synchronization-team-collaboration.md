@@ -12,31 +12,33 @@ order: 300
 
 [Mockoon Pro](/pro/) allows you to **synchronize your mock APIs**, share them with your team, and **collaborate in real time**. This feature is available in both the [desktop application](pro-docs:clients/desktop-application) and the [embedded web application](pro-docs:clients/embedded-web-application).
 
-## Cloud vs local environments in the desktop application
+## Remote vs local environments in the desktop application
 
-The **local environment** is the default environment in Mockoon desktop. It is [stored on your local machine](docs:mockoon-data-files/data-files-location) and not synchronized with the cloud.
+The **Local** list contains environments [stored on your machine](docs:mockoon-data-files/data-files-location). They are not synchronized with your Mockoon Pro instance.
 
-**"Cloud" environments** are stored on your Mockoon Pro server, and a local copy is kept on each client's machine. You can easily **create a cloud copy** of your local environment or **convert an existing cloud environment** back to a local environment.
+The **Remote** list contains environments stored on your Mockoon Pro server, with a local copy kept on each client machine. You can **duplicate a local environment to remote** or convert a remote environment back to local.
 
-![Cloud and local environments menus{200x231}](pro-docs-img:cloud-sync-menu.png)
+![Remote and Local environment menus](pro-docs-img:remote-sync-menu.png)
 
-## Managing your cloud environments
+The embedded web application has no local environments and displays a single **Remote** list.
 
-### Create a cloud environment
+## Managing your remote environments
 
-There are multiple ways to **create a cloud environment**. You can use the context menu in the local environments list to create a cloud environment from a local one using "Duplicate to the cloud" or create a new cloud environment from scratch using "New cloud environment" from the cloud environments menu.
+### Create a remote environment
 
-![context menus to create cloud environments{569x492}](pro-docs-img:create-cloud-environment.png)
+There are multiple ways to **create a remote environment**. In the desktop application, use **"Duplicate to remote"** in a local environment's context menu, or select **"New remote environment"** from the **Remote** menu.
 
-The new cloud environment will be created and synchronized with the cloud, together with a local copy. It will be available on all your devices (solo plan) and for all your team members (team/enterprise plans) once they connect to the cloud.
+![Context menus to create remote environments](pro-docs-img:create-remote-environment.png)
 
-### Remove an environment from the cloud
+The new remote environment is stored on your Mockoon Pro instance and synchronized to a local copy. It is assigned to the selected [workspace](pro-docs:features/workspaces) and becomes available to the members of that workspace.
 
-You can **remove an environment** from the cloud using the context menu in the cloud environments list and selecting "Convert to local" or "Delete from cloud":
+### Remove a remote environment
 
-![context menu to convert a cloud environment to local{533x277}](pro-docs-img:convert-cloud-to-local.png)
+In the desktop application, open the environment's context menu in the **Remote** list and select **"Delete from remote and convert to local"** or **"Delete from remote and close"**. In the web application, select **"Delete"**.
 
-After converting an environment to local, it will be **permanently removed from the cloud** and **converted to a local environment** on all your devices (solo plan) and for all your team members (team/enterprise plans).
+![Context menu to delete a remote environment or convert it to local](pro-docs-img:convert-remote-to-local.png)
+
+Converting an environment to local permanently removes it from the Mockoon Pro server and converts it to a local environment for the members of its workspace.
 
 ## Team collaboration and conflict handling
 
@@ -52,9 +54,9 @@ However, some parts of the environment definition cannot be edited simultaneousl
 - The route response's rules or callbacks list.
 - The various editors content (inline body, data bucket, callback, etc.).
 
-**Presence indicators** are displayed in the application to show who is currently **connected** and **editing** an environment. They are visible in the cloud environments list, indicating if a user is editing an environment (left side of the image). Additionally, presence indicators are shown at the top of the application, displaying the users currently connected to the cloud space (right side of the image).
+**Presence indicators** are displayed in the application to show who is currently **connected** and **editing** an environment. They are visible in the **Remote** environment list, indicating if a user is editing an environment (left side of the image). Additionally, presence indicators are shown at the top of the application, displaying the users currently connected to the Mockoon Pro instance (right side of the image).
 
-![Presence indicators{668x157}](pro-docs-img:presence-indicators.png)
+![Presence indicators](pro-docs-img:presence-indicators.png)
 
 > 💡 You can customize your display name in the [application settings](/account/info/) to make it easier for your team members to identify you.
 
@@ -62,27 +64,33 @@ However, some parts of the environment definition cannot be edited simultaneousl
 
 Mockoon's synchronization and collaboration feature is designed to work while being **online**. Offline editing is disabled.
 
-When coming back online after being offline, the application will automatically pull the latest version of the cloud environments.
+When coming back online after being offline, the application will automatically pull the latest version of the remote environments.
 
 ## Disconnection reasons
 
-If you are disconnected from the cloud, the application will display a warning in the cloud environments list in the form of a orange or red cloud icon. Hovering over the icon will display the reason for the disconnection (e.g. incompatible version, etc.). You can also click on the icon to try to reconnect:
+If you are disconnected from the Mockoon Pro instance, the application displays a warning in the **Remote** environment list as an orange or red cloud icon. Hovering over the icon displays the reason for the disconnection, such as an incompatible version. You can also click the icon to reconnect:
 
-![#sub#Tooltip showing a regular disconnection{287x219}](pro-docs-img:offline-reason-disconnected.png)
+![#sub#Tooltip showing a regular disconnection](pro-docs-img:offline-reason-disconnected.png)
 
-![#sub#Tooltip showing a disconnection due to an incompatible version{288x221}](pro-docs-img:offline-reason-incompatible-version.png)
+![#sub#Tooltip showing a disconnection due to an incompatible version](pro-docs-img:offline-reason-incompatible-version.png)
 
 ## Major versions migrations
 
-Future major versions of Mockoon may introduce **breaking changes to the data model** of your environments. When this happens, the **first device (or user) to connect to the cloud storage will trigger the migration process**. The migration will update the data model of the cloud environments to the new version. Once the migration is complete, older versions of Mockoon will no longer be able to synchronize with your cloud space and will have to be updated.
+Future major versions of Mockoon may introduce **breaking changes to the data
+model** of your environments. Pulling a new Mockoon Pro image and restarting the
+container automatically migrates all synchronized environments before the
+application accepts connections. No user needs to open the desktop or embedded
+web application to trigger the migration.
 
-Here are the steps to follow to migrate your environments to a new major version when working in a team:
+After a major upgrade, all desktop clients must be updated to the same major
+version as the Pro server. Older versions can no longer synchronize with the
+migrated instance. The embedded web application is shipped with the server and
+already uses the matching version.
 
-1. **Coordinate** with your team to ensure that all users are aware of the upcoming migration.
-2. **Update** Mockoon desktop on one device to the new major version. This will trigger the migration process in you cloud space.
-3. **Update** Mockoon desktop on all other devices.
-
-> ⚠️ We strongly recommend that major updates installations are **coordinated** across your team to avoid any disruption.
+Coordinate major upgrades with your team, back up the persistent storage, then
+update the container and desktop clients. See the
+[self-hosted update guide](pro-docs:installation#updating-mockoon-self-hosted)
+for backup and migration details.
 
 ## Unsupported features
 

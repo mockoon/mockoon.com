@@ -16,9 +16,11 @@ order: 301
 
 ### Deploy an environment
 
-You can **deploy an environment** to your Mockoon Pro instance using the context menu in the local or cloud environments list and selecting **"Deploy to the cloud"**:
+You can **deploy an environment** to your Mockoon Pro instance using the context menu in the **Remote** environments list and selecting **"Manage deployment"**:
 
-![context menus to deploy cloud environments{513x507}](pro-docs-img:deploy-environment-menu.png)
+![Context menus to deploy remote environments](pro-docs-img:deploy-environment-menu.png)
+
+> 💡 From the web application, the play button at the top of the environment editor allows you to deploy the environment directly, while in the desktop application, it starts the local server for the environment.
 
 In the deployment dialog, you can further customize your instance:
 
@@ -28,11 +30,11 @@ In the deployment dialog, you can further customize your instance:
   - **Private**: The environment will be accessible only to users with the URL and the **API key** (see [Instance URL and visibility](#instance-url-and-visibility) below).
 - **Live updates**: If enabled, changes made to the environment will be pushed to the remote instance automatically without requiring a manual re-deployment. If disabled, changes will only be applied to the remote instance when you manually re-deploy it (see [Live updates and re-deployments](#live-updates-and-re-deployments) for more information).
 
-![deployment dialog{958x451}](pro-docs-img:deploy-environment-dialog.png)
+![deployment dialog](pro-docs-img:deploy-environment-dialog.png)
 
 After clicking the **"Deploy"** button, the environment will be deployed on your Mockoon Pro instance and will be accessible using the provided URL. In the management dialog, you can find the URL and the API key to access the environment. You can also re-deploy the environment or delete the instance:
 
-![deployment management dialog{794x203}](pro-docs-img:deploy-environment-management-dialog.png)
+![deployment management dialog](pro-docs-img:deploy-environment-management-dialog.png)
 
 ### Re-deploy or delete an instance
 
@@ -57,7 +59,7 @@ The visibility of the environment can be set to **public** or **private**. Here 
 
 The deployment feature does not support the following features:
 
-- Custom TLS and hostnames are not supported and will be disabled in the cloud environment.
+- Custom TLS and hostnames are not supported and will be disabled in the remote environment.
 - External files linked to the environment are not uploaded and served (e.g. environment's certificates or files used in the "File" response body type). File serving is generally not supported in remote environments and linking files is disabled.
 - The proxy mode will be disabled if it points to a local address or IP (e.g. `localhost` or `127.0.0.1`).
 - Callbacks pointing to a local address or IP (e.g. `localhost` or `127.0.0.1`) will be disabled.

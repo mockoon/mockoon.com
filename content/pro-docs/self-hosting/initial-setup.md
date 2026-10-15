@@ -3,7 +3,7 @@ title: Initial setup
 meta:
   title: Setup and licensing in Mockoon Pro
   description: Complete the initial setup wizard, activate your offline cryptographic license key, and manage quotas in Mockoon Pro.
-order: 201
+order: 202
 ---
 
 # Initial setup
@@ -21,7 +21,7 @@ On its first start, Mockoon Pro automatically redirects browser traffic to `/set
 ### Configuration fields
 
 - **Infrastructure preview**: Displays the active base domain (`MOCKOON_DOMAIN`), storage directory, and runtime mode.
-- **License key**: Your signed license key (see [Licensing](pro-docs:self-hosting/administration#licensing) to learn more).
+- **License key**: Your signed license key ([request a free 14-day trial](/pro/checkout/?mode=trial), [purchase a license](/pro/checkout/?mode=subscription), or see [Licensing](pro-docs:self-hosting/administration#licensing) to learn more).
 - **Administrator account (Owner)**: Admin email, optional display name, and password (minimum 8 characters) for local dashboard access. You will be able to [set up OpenID Connect (OIDC) Single Sign-On](pro-docs:authentication) later if needed.
 - **Security & organization**: Generated JWT secret (auto-generated), optional [allowed email domain restrictions](pro-docs:authentication#email-domain-restrictions), and your organization identifier (defaults to `team-mockoon-pro`).
 

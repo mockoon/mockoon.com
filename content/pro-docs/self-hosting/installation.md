@@ -3,7 +3,7 @@ title: Installation
 meta:
   title: Mockoon Pro installation and configuration
   description: Learn how to deploy and configure Mockoon Pro using Docker, Docker Compose, Kubernetes, and OpenShift.
-order: 200
+order: 201
 ---
 
 # Installation
@@ -11,8 +11,6 @@ order: 200
 ---
 
 Mockoon Pro is distributed as an official [Docker image on Docker Hub (`mockoon/pro`)](https://hub.docker.com/r/mockoon/pro). It requires a single persistent storage directory and a base domain name with wildcard DNS support for deployed mock instances.
-
-> ℹ️ **Docker Image Tags & Beta Notice**: During the current public beta, Mockoon Pro is published under the `beta` tag (`mockoon/pro:beta`) as well as exact version tags (e.g. `mockoon/pro:9.9.0-beta.4`). The `latest` tag will be made available with the general availability (GA) release. The installation examples below use `mockoon/pro:beta`.
 
 ## Prerequisites
 
@@ -40,7 +38,7 @@ docker run -d \
   -e NODE_ENV=production \
   -e PORT=5020 \
   -v mockoon-data:/data \
-  mockoon/pro:beta
+  mockoon/pro:latest
 ```
 
 ### Docker Compose
@@ -70,7 +68,7 @@ services:
       - mockoon-pro
 
   mockoon-pro:
-    image: mockoon/pro:beta
+    image: mockoon/pro:latest
     container_name: mockoon-pro
     restart: unless-stopped
     environment:
@@ -130,7 +128,7 @@ If you already terminate TLS at an external load balancer or firewall:
 ```yaml
 services:
   mockoon-pro:
-    image: mockoon/pro:beta
+    image: mockoon/pro:latest
     container_name: mockoon-pro
     restart: unless-stopped
     ports:
@@ -175,7 +173,7 @@ spec:
     spec:
       containers:
         - name: mockoon-pro
-          image: mockoon/pro:beta
+          image: mockoon/pro:latest
           ports:
             - containerPort: 5020
           env:
@@ -358,7 +356,7 @@ docker run -d \
   -e MOCKOON_TLS_KEY_PATH=/certs/privkey.pem \
   -v mockoon-data:/data \
   -v /path/to/certs:/certs:ro \
-  mockoon/pro:beta
+  mockoon/pro:latest
 ```
 
 > ⚠️ The certificate must be a wildcard certificate valid for both `mockoon.company.com` and `*.mockoon.company.com`.
@@ -385,7 +383,7 @@ docker run --rm \
 
 #### With Docker Compose
 
-1. **(Optional) Update the image tag**: If you pinned a specific version tag in your `docker-compose.yml` (e.g. `mockoon/pro:9.9.0-beta.4`), update it to the target version. If you are tracking `beta`, you can leave it as is.
+1. **(Optional) Update the image tag**: If you pinned a specific version tag in your `docker-compose.yml` (e.g. `mockoon/pro:9.10.0`), update it to the target version. If you are tracking `latest`, you can leave it as is.
 2. **Pull the latest image**:
    ```bash
    docker compose pull
@@ -408,7 +406,7 @@ docker run --rm \
 
 1. **Pull the new image**:
    ```bash
-   docker pull mockoon/pro:beta
+   docker pull mockoon/pro:latest
    ```
 2. **Stop and remove the old container**:
    ```bash
@@ -425,12 +423,12 @@ docker run --rm \
      -e MOCKOON_DOMAIN=mockoon.company.com \
      -e MOCKOON_SERVER_ID=mockoon-node-1 \
      -v mockoon-data:/data \
-     mockoon/pro:beta
+     mockoon/pro:latest
    ```
 
 #### With Kubernetes / OpenShift
 
-Because `beta` is a moving tag, set `imagePullPolicy: Always` on the container and restart the rollout to pull the new image:
+Because `latest` is a moving tag, set `imagePullPolicy: Always` on the container and restart the rollout to pull the new image:
 
 ```bash
 kubectl rollout restart deployment/mockoon-pro
@@ -445,3 +443,5 @@ kubectl apply -f deployment.yaml
 ### Automated migrations
 
 When the updated container starts up, any required SQLite database migrations and internal state upgrades are automatically executed. No manual migration scripts or database intervention are needed.
+
+Check the list of [migrations for each version](pro-docs:self-hosting/migrations) to understand the changes applied during the upgrade.

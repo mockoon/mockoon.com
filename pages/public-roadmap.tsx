@@ -44,6 +44,25 @@ const tasks: {
 } = {
   released: [
     {
+      title: 'Workspaces support',
+      link: '/pro/docs/features/workspaces/',
+      pro: true
+    },
+    {
+      title: 'Update user roles',
+      link: '/pro/docs/self-hosting/administration/#upgrades',
+      pro: true
+    },
+    {
+      title: 'Auto-migrate major versions',
+      pro: true
+    },
+    {
+      link: '/blog/roadmap-update-faster-releases-self-hosting-focus-2026',
+      title: 'Self-hosted collaboration and mocks',
+      pro: false
+    },
+    {
       link: '/releases/9.9.0#websocket-support-in-mockoon-cloud',
       title: 'Websocket support in cloud deployments',
       pro: true,
@@ -94,43 +113,9 @@ const tasks: {
       link: '/pricing/#available-regions',
       pro: true,
       target: null
-    },
-    {
-      title: 'Resources activity audit trail',
-      link: '/cloud/docs/audit-trail/',
-      pro: true,
-      target: null
-    },
-    {
-      link: '/releases/9.4.0/#openapi-import-and-export-in-the-web-application',
-      title: 'OpenAPI import in web app',
-      pro: true
-    },
-    {
-      link: '/releases/9.4.0/#cloud-logs-in-the-desktop-application-and-logs-replay',
-      title: 'Cloud logs replay',
-      pro: true
-    },
-    {
-      link: '/releases/9.4.0/#cloud-logs-in-the-desktop-application-and-logs-replay',
-      title: 'Display cloud logs in the desktop app',
-      pro: true
     }
   ],
   inProgress: [
-    {
-      title: 'Update user roles',
-      pro: true
-    },
-    {
-      title: 'Auto-migrate major versions',
-      pro: true
-    },
-    {
-      link: '/blog/roadmap-update-faster-releases-self-hosting-focus-2026',
-      title: 'Self-hosted collaboration and mocks',
-      pro: false
-    },
     {
       link: 'https://github.com/mockoon/mockoon/issues/1045',
       title: 'Export logs as HAR',
@@ -145,11 +130,6 @@ const tasks: {
     }
   ],
   planned: [
-    {
-      title: 'Resource level permissions (edit, view, etc.)',
-      pro: true,
-      target: null
-    },
     {
       title: 'Team-level environment variables support for cloud deployments',
       pro: true,

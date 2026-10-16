@@ -356,7 +356,7 @@ const Nav: FunctionComponent<{
                   Resources {!show && <i className='icon-arrow_drop_down'></i>}
                 </a>
                 <div
-                  className={`dropdown-menu dropdown-menu-xl ${
+                  className={`dropdown-menu dropdown-menu-xl dropdown-menu-end ${
                     show ? 'text-center' : ''
                   } ${dropdownOpen === Dropdowns.RESOURCES ? 'show' : ''}`}
                 >

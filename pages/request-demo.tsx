@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react';
+import ContactForm from '../components/contact-form';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Layout from '../layout/layout';
@@ -15,45 +16,28 @@ const RequestDemo: FunctionComponent = function () {
         title='Request a <span class="text-primary">demo</span>'
         subtitle='Book a demo with our team to see how Mockoon Pro can help you streamline your API development workflows'
       />
-      <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
+      <section
+        id='form'
+        className='pt-4 pb-8 pb-md-14 border-top bg-gradient-light-white'
+      >
         <div className='container'>
-          <div className='row'>
-            <div className='col'>
-              <p>
-                <strong>Book a Free 30-Minute Demo with Our Founder</strong>
+          <div className='row justify-content-center'>
+            <div className='col-12 col-md-10 col-lg-8 text-center'>
+              <p className='fs-lg text-gray-700 mb-7 mb-md-9'>
+                Tell us about your API development challenges and your team's
+                needs. We will get back to you shortly to arrange a personalized
+                demo.
               </p>
-              <p>Join our founder for a personalized session to: </p>
-              <ul>
-                <li>
-                  <strong>Identify your API development challenges</strong> and
-                  explore how Mockoon can solve them.
-                </li>
-                <li>
-                  <strong>Get a hands-on demo of Mockoon Pro's features</strong>
-                  , including real-time team collaboration and cloud
-                  deployments.
-                </li>
-                <li>
-                  <strong>
-                    Understand best practices for using Mockoon Pro
-                  </strong>{' '}
-                  with your team and scaling your projects.
-                </li>
-                <li>
-                  <strong>Ask any questions you have about features</strong>,
-                  integrations, and how Mockoon Pro can support your specific
-                  needs.
-                </li>
-              </ul>
             </div>
           </div>
-          <iframe
-            src='https://calendar.app.google/nKd1wJnhiiZBDWuf9'
-            style={{ border: 0 }}
-            width='100%'
-            height='1500'
-            frameBorder='0'
-          ></iframe>
+          <div className='row justify-content-center'>
+            <div className='col-12 col-lg-6'>
+              <ContactForm
+                isCompanyRequired
+                submitButtonLabel='Request a demo'
+              />
+            </div>
+          </div>
         </div>
       </section>
     </Layout>

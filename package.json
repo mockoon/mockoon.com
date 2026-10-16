@@ -60,7 +60,7 @@
     "js-yaml": "4.3.2",
     "jsonpath-plus": "10.4.0",
     "marked": "17.0.6",
-    "mermaid": "^12.1.0",
+    "mermaid": "^12.2.0",
     "next": "16.4.0",
     "object-path": "0.11.8",
     "qrcode.react": "4.2.0",

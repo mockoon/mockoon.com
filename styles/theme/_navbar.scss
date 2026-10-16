@@ -375,6 +375,12 @@
     transform: translate(-50%, 10px);
   }
 
+  .navbar-nav .dropdown > .dropdown-menu.dropdown-menu-end {
+    right: 0;
+    left: auto;
+    transform: translateY(10px);
+  }
+
   .navbar-nav .dropdown-menu.showing {
     display: block;
   }
@@ -390,5 +396,9 @@
 
   .navbar-nav .dropdown > .dropdown-menu.show {
     transform: translate(-50%, 0);
+  }
+
+  .navbar-nav .dropdown > .dropdown-menu.dropdown-menu-end.show {
+    transform: translateY(0);
   }
 }

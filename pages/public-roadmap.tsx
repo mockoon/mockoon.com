@@ -119,6 +119,14 @@ const tasks: {
   ],
   inProgress: [
     {
+      title: 'Update user roles',
+      pro: true
+    },
+    {
+      title: 'Auto-migrate major versions',
+      pro: true
+    },
+    {
       link: '/blog/roadmap-update-faster-releases-self-hosting-focus-2026',
       title: 'Self-hosted collaboration and mocks',
       pro: false

@@ -514,17 +514,6 @@ const Nav: FunctionComponent<{
                 </div>
               </li>
 
-              <li className='nav-item'>
-                <Link
-                  href='/request-demo/'
-                  className={`nav-link text-info ${
-                    router.pathname === '/request-demo' ? 'active' : ''
-                  }`}
-                >
-                  Demo
-                </Link>
-              </li>
-
               <li
                 className='nav-item dropdown text-center'
                 onMouseEnter={() => {

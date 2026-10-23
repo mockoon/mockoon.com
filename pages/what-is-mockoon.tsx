@@ -4,6 +4,27 @@ import Meta from '../components/meta';
 import OssProComparison from '../components/oss-pro-comparison';
 import Layout from '../layout/layout';
 
+const benefits = [
+  {
+    title: 'Speed up development and third-party API integration',
+    description:
+      'Reduce dependency on external services and their limitations: rate limits, costs, availability, etc.',
+    icon: 'icon-speed'
+  },
+  {
+    title: 'Test your applications in a controlled environment',
+    description:
+      'Use predictable responses, status codes, and latencies to easily simulate edge cases and error scenarios.',
+    icon: 'icon-science'
+  },
+  {
+    title: 'Onboard new team members faster',
+    description:
+      'Provide a consistent and reliable environment to test and develop their applications.',
+    icon: 'icon-groups'
+  }
+];
+
 export default function () {
   return (
     <Layout footerBanner='download'>
@@ -62,71 +83,21 @@ export default function () {
           <h2 className='fw-bold position-relative my-8 text-center'>
             Benefits of using Mockoon and API mocking
           </h2>
-          <div className='row g-10 justify-content-center'>
-            <div className='col-lg-4'>
-              <div className='row'>
-                <div className='col-12 col-md-8 m-auto'>
-                  <img
-                    src='/images/what-is-mockoon/api-integration.svg'
-                    className='img-fluid'
-                    alt='one person connecting to multiple applications'
-                  />
+          <div className='row g-6 justify-content-center'>
+            {benefits.map((benefit, index) => (
+              <div key={index} className='col-lg-4'>
+                <div className='text-center'>
+                  <div className='icon-wrapper mb-3'>
+                    <i
+                      className={`${benefit.icon} text-primary`}
+                      style={{ fontSize: '2.5rem' }}
+                    ></i>
+                  </div>
+                  <h4 className='fw-bold mb-2'>{benefit.title}</h4>
+                  <p className='text-muted mb-0'>{benefit.description}</p>
                 </div>
               </div>
-              <div className='row'>
-                <div className='col'>
-                  <p>
-                    <strong>
-                      Speed up development and third-party API integration
-                    </strong>{' '}
-                    by reducing dependency on external services and their
-                    limitations: rate limits, costs, availability, etc.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className='col-lg-4'>
-              <div className='row'>
-                <div className='col-12 col-md-8 m-auto'>
-                  <img
-                    src='/images/what-is-mockoon/integration-testing.svg'
-                    className='img-fluid'
-                    alt='visual representation of software testing'
-                  />
-                </div>
-              </div>
-              <div className='row'>
-                <div className='col'>
-                  <p>
-                    Test your applications in a{' '}
-                    <strong>controlled environment</strong> with predictable
-                    responses, status codes, and latencies. Easily{' '}
-                    <strong>simulate edge cases and error scenarios</strong>.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className='col-lg-4'>
-              <div className='row'>
-                <div className='col-12 col-md-8 m-auto'>
-                  <img
-                    src='/images/what-is-mockoon/onboarding.svg'
-                    className='img-fluid'
-                    alt='Two people coding'
-                  />
-                </div>
-              </div>
-              <div className='row'>
-                <div className='col'>
-                  <p>
-                    <strong>Onboard new team members faster</strong> by
-                    providing them with a{' '}
-                    <strong>consistent and reliable environment</strong> to test
-                    and develop their applications.
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
           <div className='row justify-content-center mt-6'>
             <div className='col-12 col-md-4'>

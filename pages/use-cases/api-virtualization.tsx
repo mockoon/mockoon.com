@@ -85,7 +85,6 @@ export default function ApiVirtualizationSolution() {
         subtitle='Virtualize third-party and internal services to remove bottlenecks, stabilize tests, and validate failure scenarios without complex environment setup'
         mainPicture='/images/solutions/api-virtualization/api-virtualization-hero.png'
         mainPictureAlt='API virtualization illustration with service dependencies'
-        mainPictureSkewed={false}
       >
         <SocialProof />
       </Hero>

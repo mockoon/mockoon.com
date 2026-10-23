@@ -42,7 +42,6 @@ export default function IndustrySolutionPage({
         subtitle={data.metaDescription}
         mainPicture={data.heroImage}
         mainPictureAlt={data.heroImageAlt}
-        mainPictureSkewed={false}
       >
         <SocialProof />
       </Hero>

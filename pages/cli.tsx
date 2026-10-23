@@ -1,42 +1,41 @@
 import { FunctionComponent } from 'react';
-import Card from '../components/card';
 import CodeBlock from '../components/code-block';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Quote from '../components/quote';
 import Layout from '../layout/layout';
-import { CardData } from '../models/common.model';
 
-const features: CardData[] = [
+const benefits = [
   {
-    title: 'Supports all Mockoon\'s <span class="text-primary">features</span>',
+    title: 'Full Feature Parity',
     description:
-      "The CLI supports all of Mockoon's features: dynamic templating, response rules, proxy mode, OpenAPI compatibility, etc.",
-    links: [{ src: '/features/', text: 'View all features' }]
+      "Supports all of Mockoon's features: dynamic templating, response rules, proxy mode, and OpenAPI compatibility.",
+    icon: 'icon-tune',
+    link: '/features/',
+    linkText: 'View all features'
   },
   {
-    title:
-      '<span class="text-primary">Lightweight</span> and <span class="text-primary">fast</span>',
+    title: 'Lightweight & Fast',
     description:
-      'Deploy lighting fast mock servers in your CI environment with a simple and easy to use NPM package or Docker image.',
-    links: [
-      {
-        src: 'https://github.com/mockoon/mockoon/tree/main/packages/cli#installation',
-        text: 'How to use it',
-        blank: true
-      }
-    ]
+      'Deploy lightning-fast mock servers in your CI environment with minimal resource footprint using NPM or Docker.',
+    icon: 'icon-speed',
+    link: 'https://github.com/mockoon/mockoon/tree/main/packages/cli#installation',
+    linkText: 'How to use it',
+    blank: true
   },
   {
-    title: 'Run your mocks <span class="text-primary">anywhere</span>',
+    title: 'Run Anywhere',
     description:
-      'Also available as a Docker image and a GitHub Action, run your mock APIs in your favorite CI platform!',
-    links: [
-      {
-        src: '/tutorials/self-host-mock-api-server-cli/',
-        text: 'Getting started tutorial'
-      }
-    ]
+      'Available as an NPM package, official Docker image, and GitHub Action for any CI/CD platform.',
+    icon: 'icon-cloud',
+    link: '/tutorials/self-host-mock-api-server-cli/',
+    linkText: 'Getting started tutorial'
+  },
+  {
+    title: 'Automated Testing',
+    description:
+      'Eliminate external dependencies and rate limits from automated integration and regression test suites.',
+    icon: 'icon-verified'
   }
 ];
 
@@ -46,7 +45,7 @@ const CLI: FunctionComponent = function () {
       <Meta
         title='Self-host your mocks with Mockoon CLI'
         description='Run your mock APIs in your CI/CD pipeline, on your servers or in your cloud environments with Mockoon CLI'
-        image='cli-hero.png'
+        image='cli/cli-hero.png'
       />
       <Hero
         title='<span class="text-primary">Self-host</span> your mocks with Mockoon CLI'
@@ -59,7 +58,7 @@ const CLI: FunctionComponent = function () {
             subtitle: 'MIT license'
           }
         ]}
-        mainPicture='/images/cli-hero.png'
+        mainPicture='/images/cli/cli-hero.png'
         mainPictureAlt='Mockoon CLI screenshot'
         mainPictureWidth={1200}
         mainPictureHeight={430}
@@ -83,30 +82,49 @@ const CLI: FunctionComponent = function () {
         </div>
       </section>
 
+      <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
+        <div className='container'>
+          <h2 className='fw-bold position-relative my-8 text-center'>
+            The perfect companion for headless and automated environments
+          </h2>
+          <div className='row g-6 justify-content-center'>
+            {benefits.map((benefit, index) => (
+              <div key={index} className='col-lg-6 col-xl-3'>
+                <div className='text-center'>
+                  <div className='icon-wrapper mb-3'>
+                    <i
+                      className={`${benefit.icon} text-primary`}
+                      style={{ fontSize: '2.5rem' }}
+                    ></i>
+                  </div>
+                  <h4 className='fw-bold mb-2'>{benefit.title}</h4>
+                  <p className='text-muted mb-3'>{benefit.description}</p>
+                  {benefit.link && (
+                    <a
+                      href={benefit.link}
+                      className='fs-sm text-primary text-decoration-none'
+                      target={benefit.blank ? '_blank' : undefined}
+                      rel={benefit.blank ? 'noopener' : undefined}
+                    >
+                      {benefit.linkText} →
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className='py-8 py-lg-10'>
         <div className='container'>
-          <div className='row py-5'>
-            <div className='col-12'>
-              <div className='text-center'>
-                <h2 className='fw-medium'>
-                  Mockoon's perfect complement for all your headless and
-                  automated environments.
-                </h2>
-              </div>
-            </div>
-            <div className='col-12'>
-              <div className='row'>
-                {features.map((feature) => {
-                  return (
-                    <div
-                      key={feature.title}
-                      className='mx-auto my-lg-3 col-12 col-lg-4'
-                    >
-                      <Card data={feature} cover={false} />
-                    </div>
-                  );
-                })}
-              </div>
+          <div className='row justify-content-center mb-6'>
+            <div className='col-lg-8 text-center'>
+              <h2 className='fw-bold mb-4'>Quick start guides</h2>
+              <p className='text-muted'>
+                Run your mock APIs in seconds across your favorite tools and
+                environments
+              </p>
             </div>
           </div>
           <div className='row py-8'>

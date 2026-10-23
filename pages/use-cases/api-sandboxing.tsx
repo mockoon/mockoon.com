@@ -86,7 +86,6 @@ export default function ApiSandboxingSolution() {
         subtitle='Create isolated sandbox environments to experiment safely, validate edge cases early, and give teams confidence before every release.'
         mainPicture='/images/solutions/api-sandboxing/api-sandboxing-hero.png'
         mainPictureAlt='API sandboxing illustration with isolated environment'
-        mainPictureSkewed={false}
       >
         <SocialProof />
       </Hero>

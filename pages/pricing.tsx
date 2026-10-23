@@ -24,7 +24,6 @@ const Pricing: FunctionComponent = function () {
         mainPictureAlt='Mockoon Pro deployment and collaboration'
         mainPictureWidth={1200}
         mainPictureHeight={783}
-        mainPictureSkewed={false}
       >
         <SocialProof />
         <p className='text-gray-600 mb-0 mt-6'>

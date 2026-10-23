@@ -85,7 +85,6 @@ export default function ApiMockingSolution() {
         subtitle={metaDescription}
         mainPicture='/images/solutions/api-mocking/api-mocking-hero.png'
         mainPictureAlt='API mocking illustration with Mockoon interface'
-        mainPictureSkewed={false}
       >
         <SocialProof />
       </Hero>

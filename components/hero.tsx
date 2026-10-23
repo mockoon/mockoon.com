@@ -9,7 +9,6 @@ const Hero: FunctionComponent<{
   mainPictureAlt?: string;
   mainPictureWidth?: number;
   mainPictureHeight?: number;
-  mainPictureSkewed?: boolean;
   children?: React.ReactNode;
 }> = function ({
   title,
@@ -20,11 +19,8 @@ const Hero: FunctionComponent<{
   mainPictureAlt = null,
   mainPictureWidth,
   mainPictureHeight,
-  mainPictureSkewed,
   children
 }) {
-  mainPictureSkewed = mainPictureSkewed ?? true;
-
   return (
     <section
       className={`position-relative ${
@@ -96,11 +92,7 @@ const Hero: FunctionComponent<{
           </div>
           {mainPicture && (
             <div className='col-12 col-lg-6 mt-10 mt-lg-0'>
-              <div
-                className={`${
-                  mainPictureSkewed ? 'skewed-screenshot' : ''
-                } mb-8 mb-lg-0`}
-              >
+              <div className='mb-8 mb-lg-0'>
                 <img
                   src={mainPicture}
                   alt={mainPictureAlt}

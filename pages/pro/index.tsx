@@ -89,7 +89,6 @@ export default function () {
         subtitle='Give your whole team one private place to design, collaborate on, and deploy mock APIs, from the browser or desktop app.'
         mainPicture='/images/pro-hero.png'
         mainPictureAlt='Mockoon logo in the cloud interconnected with other services'
-        mainPictureSkewed={false}
       >
         <SocialProof />
         <p className='text-gray-600 mb-0 mt-6'>

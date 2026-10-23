@@ -1,34 +1,38 @@
 import { FunctionComponent } from 'react';
-import Card from '../components/card';
 import DownloadSection from '../components/download-section';
 import Hero from '../components/hero';
 import Meta from '../components/meta';
 import Layout from '../layout/layout';
-import { CardData } from '../models/common.model';
 import { getDesktopLatestVersion } from '../utils/utils';
 
 export async function getStaticProps() {
   return { props: { version: await getDesktopLatestVersion() } };
 }
 
-const features: CardData[] = [
+const benefits = [
   {
-    title: 'API mocking that saves you time',
+    title: 'Instant & Local-First',
     description:
-      'Get working mock REST APIs in seconds with an intuitive and easy-to-use interface. Run them everywhere with the CLI.',
-    imageSrc: '/images/highlight1.png'
+      'Get working mock REST APIs in seconds with an intuitive interface. No account, no cloud, zero latency.',
+    icon: 'icon-speed'
   },
   {
-    title: 'Complete tooling',
+    title: 'Realistic Scenarios',
     description:
-      'Go beyond mocking with advanced features and tackle the most complex situation with HTTP requests recording, proxying, integration testing, etc.',
-    imageSrc: '/images/highlight3.png'
+      'Simulate real-world conditions with dynamic templating, Faker.js data, route rules, and custom delays.',
+    icon: 'icon-tune'
   },
   {
-    title: 'Integrates with your workflow',
+    title: 'Integrates with Your Workflow',
     description:
-      'Compatible with the OpenAPI specification, Mockoon integrates perfectly with your existing applications and API design workflow.',
-    imageSrc: '/images/highlight2.png'
+      'Compatible with OpenAPI specifications. Import specs, export mocks, and run everywhere with the CLI.',
+    icon: 'icon-sync_alt'
+  },
+  {
+    title: '100% Privacy Friendly',
+    description:
+      'Your data stays on your machine. Mockoon is offline-first with no tracking or telemetry on your mock traffic.',
+    icon: 'icon-security'
   }
 ];
 
@@ -45,7 +49,7 @@ const Download: FunctionComponent<{ version: string }> = function ({
       <Hero
         title='<span class="text-primary">Design your mock API</span> with Mockoon desktop'
         subtitle="Don't let API dependencies slow you down. Design the perfect API mock with Mockoon Desktop and accelerate your development lifecycle"
-        mainPicture='/images/desktop-stylized.png'
+        mainPicture='/images/home/home-hero.png'
         mainPictureAlt='Mockoon desktop application screenshot'
       />
 
@@ -79,31 +83,26 @@ const Download: FunctionComponent<{ version: string }> = function ({
         </div>
       </section>
 
-      <section className='py-5 py-lg-10'>
+      <section className='py-6 py-md-8 border-top bg-gradient-light-white'>
         <div className='container'>
-          <div className='row py-5'>
-            <div className='col-12'>
-              <div className='text-center'>
-                <h2 className='fw-medium'>
-                  Design the perfect{' '}
-                  <span className='text-primary'>mock API</span> with Mockoon
-                </h2>
+          <h2 className='fw-bold position-relative my-8 text-center'>
+            Why developers choose Mockoon Desktop
+          </h2>
+          <div className='row g-6 justify-content-center'>
+            {benefits.map((benefit, index) => (
+              <div key={index} className='col-lg-6 col-xl-3'>
+                <div className='text-center'>
+                  <div className='icon-wrapper mb-3'>
+                    <i
+                      className={`${benefit.icon} text-primary`}
+                      style={{ fontSize: '2.5rem' }}
+                    ></i>
+                  </div>
+                  <h4 className='fw-bold mb-2'>{benefit.title}</h4>
+                  <p className='text-muted mb-0'>{benefit.description}</p>
+                </div>
               </div>
-            </div>
-            <div className='col-12'>
-              <div className='row'>
-                {features.map((feature) => {
-                  return (
-                    <div
-                      key={feature.title}
-                      className='mx-auto my-lg-3 col-12 col-lg-4'
-                    >
-                      <Card data={feature} cover={false} border vertical />
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

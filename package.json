@@ -80,7 +80,7 @@
     "xml-js": "1.6.11"
   },
   "devDependencies": {
-    "@mockoon/cli": "9.9.0",
+    "@mockoon/cli": "9.10.0",
     "@types/glob": "9.0.0",
     "@types/node": "24.19.1",
     "@types/react": "19.3.0",

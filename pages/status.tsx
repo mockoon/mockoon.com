@@ -18,7 +18,7 @@ const incidents: {
     desc: 'All services will be restarted for the deployment of v9.10.0. The downtime is expected to last less than 15 minutes for each service.',
     dateStart: '2026-10-30T08:00:00Z',
     dateEnd: '2026-10-30T09:00:00Z',
-    status: 'planned'
+    status: 'inprogress'
   },
   {
     title: 'All services - Scheduled downtime for v9.9.0 release',

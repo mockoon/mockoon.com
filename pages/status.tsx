@@ -15,10 +15,10 @@ const incidents: {
 }[] = [
   {
     title: 'All services - Scheduled downtime for v9.10.0 release',
-    desc: 'All services will be restarted for the deployment of v9.10.0. The downtime is expected to last less than 15 minutes for each service.',
+    desc: 'All services will be restarted for the deployment of v9.10.0. The downtime is expected to last less than 15 minutes for each service.<br>Update (08:40 UTC): All services have been successfully updated to v9.10.0. We thank you for your patience during this deployment.',
     dateStart: '2026-10-30T08:00:00Z',
-    dateEnd: '2026-10-30T09:00:00Z',
-    status: 'inprogress'
+    dateEnd: '2026-10-30T08:40:00Z',
+    status: 'resolved'
   },
   {
     title: 'All services - Scheduled downtime for v9.9.0 release',

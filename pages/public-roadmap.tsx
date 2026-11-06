@@ -44,6 +44,12 @@ const tasks: {
 } = {
   released: [
     {
+      link: '/releases/9.10.0/#restore-deleted-entities-from-notifications',
+      title: 'Undo delete popup',
+      pro: false,
+      target: '_blank'
+    },
+    {
       title: 'Workspaces support',
       link: '/pro/docs/features/workspaces/',
       pro: true
@@ -97,41 +103,51 @@ const tasks: {
       link: '/releases/9.6.0#goodbye-server-restarts',
       title: 'Enable mocks live update',
       pro: false
-    },
-    {
-      link: '/docs/latest/callbacks/overview/#configure-a-callback',
-      title: 'Support callbacks relative paths',
-      pro: false
-    },
-    {
-      link: '/cloud/docs/api-mock-cloud-deployments/#self-host-with-the-cli',
-      title: 'CLI: deploy from a cloud mock',
-      pro: true
-    },
-    {
-      title: 'EU cloud deployment regions',
-      link: '/pricing/#available-regions',
-      pro: true,
-      target: null
     }
   ],
   inProgress: [
     {
-      link: 'https://github.com/mockoon/mockoon/issues/1045',
-      title: 'Export logs as HAR',
+      title: 'Path-based routing support',
+      pro: true,
+      target: null
+    },
+    {
+      link: 'https://github.com/mockoon/mockoon/issues/1717',
+      title: 'Surface callbacks in logs',
       pro: false,
       target: '_blank'
     },
     {
-      link: 'https://github.com/mockoon/mockoon/issues/2362',
-      title: 'Undo delete popup',
+      link: 'https://github.com/mockoon/mockoon/issues/1045',
+      title: 'Export logs as HAR',
       pro: false,
       target: '_blank'
     }
   ],
   planned: [
     {
-      title: 'Team-level environment variables support for cloud deployments',
+      title: 'User password management',
+      pro: true,
+      target: null
+    },
+    {
+      title: 'User email invitations',
+      pro: true,
+      target: null
+    },
+    {
+      title: 'Tag system for mocks',
+      pro: true,
+      target: null
+    },
+    {
+      title: 'Git integration',
+      pro: true,
+      target: null
+    },
+    {
+      title:
+        'Team-level environment variables support in Mockoon Pro instances',
       pro: true,
       target: null
     }

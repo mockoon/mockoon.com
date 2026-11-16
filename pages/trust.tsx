@@ -37,7 +37,7 @@ const architecturePillars = [
     points: [
       'Customer-controlled infrastructure and storage',
       'Self-hosted collaboration and synchronization',
-      'No Mockoon-operated relay for self-hosted data',
+      'Offline license validation; no relay or phone-home',
       'Enterprise managed cloud available separately'
     ]
   }
@@ -81,6 +81,36 @@ const desktopSecurity = [
     title: 'SDLC & Change Management',
     description:
       'All changes to the desktop app, CLI, Pro, and Mockoon-operated services are authorized, tested, reviewed, and approved before being released to production.'
+  },
+  {
+    icon: 'icon-description',
+    title: 'Software Bill of Materials',
+    description:
+      'Since v9.4.0, SPDX Software Bills of Materials (SBOMs) are published alongside Mockoon application and library releases. Security teams can inspect dependencies as part of their software approval process.',
+    link: {
+      text: 'View SBOMs on GitHub releases',
+      url: 'https://github.com/mockoon/mockoon/releases'
+    }
+  },
+  {
+    icon: 'icon-verified_user',
+    title: 'Trusted Publishing',
+    description:
+      'Our npm release pipelines use trusted publishing instead of long-lived publishing tokens. GitHub Actions permissions, branch protections, and dependency updates help protect the path from source code to release.',
+    link: {
+      text: 'Supply-chain improvements',
+      url: '/releases/9.4.0/#distributionsecurity'
+    }
+  },
+  {
+    icon: 'icon-security',
+    title: 'GitHub Security Collaboration',
+    description:
+      "Mockoon participated in GitHub's Secure Open Source Fund alongside projects including Node.js and Keycloak. Training and guidance from GitHub's Security Lab helped strengthen our security practices and vulnerability response.",
+    link: {
+      text: 'Read about the program',
+      url: '/blog/securing-mockoon-github-secure-open-source-fund/'
+    }
   }
 ];
 
@@ -156,7 +186,7 @@ const subprocessors = [
     purpose: 'AI Features & Trial Eligibility',
     vendor: 'Google Gemini',
     description:
-      'Processes user-initiated AI assistant prompts and work emails used for Pro trial eligibility checks.'
+      'Processes user-initiated AI assistant prompts and work emails used for Pro trial eligibility checks. It does not receive self-hosted mock traffic or automatically process your mock environments.'
   },
   {
     purpose: 'CDN, DDoS, Security & DNS',
@@ -326,15 +356,6 @@ const controls = [
           'The company deploys anti-malware technology to environments commonly susceptible to malicious attacks and configures this to be updated routinely, logged, and installed on all relevant systems.'
       },
       {
-        title: 'Employee background checks performed',
-        description: 'The company performs background checks on new employees.'
-      },
-      {
-        title: 'Performance evaluations conducted',
-        description:
-          'The company managers are required to complete performance evaluations for direct reports at least annually.'
-      },
-      {
         title: 'Password policy enforced',
         description:
           "The company requires passwords for in-scope system components to be configured according to the company's policy."
@@ -345,29 +366,14 @@ const controls = [
           'The company maintains a formal inventory of production system assets.'
       },
       {
-        title: 'Code of Conduct acknowledged by contractors',
+        title: 'Personnel conduct requirements',
         description:
-          'The company requires contractor agreements to include a code of conduct or reference to the company code of conduct.'
+          'Personnel and contractors with production access are subject to documented conduct and security requirements.'
       },
       {
-        title: 'Code of Conduct acknowledged by employees and enforced',
+        title: 'Confidentiality commitments',
         description:
-          'The company requires employees to acknowledge a code of conduct at the time of hire. Employees who violate the code of conduct are subject to disciplinary actions in accordance with a disciplinary policy.'
-      },
-      {
-        title: 'Confidentiality Agreement acknowledged by contractors',
-        description:
-          'The company requires contractors to sign a confidentiality agreement at the time of engagement.'
-      },
-      {
-        title: 'Confidentiality Agreement acknowledged by employees',
-        description:
-          'The company requires employees to sign a confidentiality agreement during onboarding.'
-      },
-      {
-        title: 'MDM system utilized',
-        description:
-          'The company has a mobile device management (MDM) system in place to centrally manage mobile devices supporting the service.'
+          'Personnel and contractors with access to confidential information are required to agree to confidentiality obligations before access is granted.'
       }
     ]
   },
@@ -545,7 +551,7 @@ const controls = [
 
 const sections = [
   { id: 'architecture', label: 'Architecture' },
-  { id: 'desktop', label: 'Desktop app' },
+  { id: 'desktop', label: 'Product & supply chain' },
   { id: 'cloud', label: 'Hosted services' },
   { id: 'infrastructure', label: 'Infrastructure' },
   { id: 'compliance', label: 'Compliance' },
@@ -645,14 +651,15 @@ const TrustPage: FunctionComponent = function () {
           <div className='row mb-6'>
             <div className='col-12 col-lg-8 mx-auto text-center'>
               <p className='text-uppercase text-primary fw-bold small mb-2'>
-                02 · Desktop app
+                02 · Product &amp; supply chain
               </p>
               <h2 className='display-5 fw-medium mb-3'>
-                Desktop application security
+                Product &amp; supply-chain security
               </h2>
               <p className='lead text-gray-700 mb-0'>
-                Security practices built into the application itself, protecting
-                every user regardless of plan.
+                Auditable source code, signed desktop releases, dependency
+                transparency, and hardened publishing pipelines help your
+                security team evaluate the software you deploy.
               </p>
             </div>
           </div>
@@ -745,6 +752,29 @@ const TrustPage: FunctionComponent = function () {
               </p>
             </div>
           </div>
+          <div className='row justify-content-center mb-5'>
+            <div className='col-12 col-lg-10'>
+              <div className='border-start border-primary border-3 ps-4'>
+                <p className='fw-bold mb-2'>
+                  Pro instances send no data out by default, whether self-hosted
+                  or managed.
+                </p>
+                <p className='text-gray-700 mb-0'>
+                  The providers below support legacy Mockoon Cloud and our
+                  website, software distribution, and optional AI services. For
+                  Mockoon Pro, account, trial, payment, and license-purchasing
+                  services are separate from your instance. Your self-hosted or
+                  managed Pro instance does not send mock data, request traffic,
+                  or telemetry to those services, and license validation is
+                  offline. Outbound connections are made only for integrations
+                  you explicitly configure, such as OIDC authentication or mocks
+                  that call external APIs. Managed instances run on hosting
+                  infrastructure, but the Pro application follows the same
+                  no-outbound-by-default model.
+                </p>
+              </div>
+            </div>
+          </div>
           <div className='row justify-content-center'>
             <div className='col-12 col-lg-10'>
               <div className='card card-bleed shadow-light-lg'>
@@ -827,8 +857,10 @@ const TrustPage: FunctionComponent = function () {
                 Continuously monitored controls
               </h2>
               <p className='lead text-gray-700 mb-0'>
-                The comprehensive set of controls we maintain and monitor to
-                protect your data and ensure the integrity of our service.
+                These controls cover Mockoon-operated systems and the personnel
+                and contractors with production access. For self-hosted Pro,
+                your organization controls infrastructure, access policies,
+                backups, and operational security.
               </p>
             </div>
           </div>
@@ -913,7 +945,9 @@ const TrustPage: FunctionComponent = function () {
               <p className='text-uppercase text-primary fw-bold small mb-2'>
                 07 · Documentation
               </p>
-              <h2 className='display-5 fw-medium mb-3'>Read our policies</h2>
+              <h2 className='display-5 fw-medium mb-3'>
+                Policies &amp; security evidence
+              </h2>
             </div>
           </div>
           <div className='row g-4 justify-content-center'>
@@ -971,6 +1005,24 @@ const TrustPage: FunctionComponent = function () {
                         <i className='icon-north_east'></i>
                       </Link>
                     </li>
+                    <li className='py-1'>
+                      <Link
+                        href='https://github.com/mockoon/mockoon/releases'
+                        className='text-reset text-decoration-none'
+                      >
+                        Release Assets &amp; SBOMs{' '}
+                        <i className='icon-north_east'></i>
+                      </Link>
+                    </li>
+                    <li className='py-1'>
+                      <Link
+                        href='/blog/securing-mockoon-github-secure-open-source-fund/'
+                        className='text-reset text-decoration-none'
+                      >
+                        GitHub Security Program{' '}
+                        <i className='icon-north_east'></i>
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -991,9 +1043,10 @@ const TrustPage: FunctionComponent = function () {
                 Questions about security or compliance?
               </h2>
               <p className='lead text-gray-700 mb-6'>
-                Whether you have questions, need to report a vulnerability, or
-                want to discuss compliance requirements for your organization,
-                we're here to help.
+                Evaluating Mockoon Pro or completing a vendor security review?
+                Contact us with your architecture, deployment, or procurement
+                questions. You can also report a vulnerability through our
+                security policy.
               </p>
               <div className='d-flex justify-content-center flex-wrap gap-3'>
                 <Link href='/contact/' className='btn btn-primary'>

@@ -89,7 +89,7 @@ already uses the matching version.
 
 Coordinate major upgrades with your team, back up the persistent storage, then
 update the container and desktop clients. See the
-[self-hosted update guide](pro-docs:installation#updating-mockoon-self-hosted)
+[self-hosted update guide](pro-docs:self-hosting/installation#updating-mockoon-self-hosted)
 for backup and migration details.
 
 ## Unsupported features

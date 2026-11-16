@@ -13,21 +13,18 @@ const Terms: FunctionComponent = function () {
         description='Mockoon is the fastest and easiest way to create mock API servers. Our tools are privacy and regulated-industry friendly'
       />
 
-      <Hero
-        title='Terms of service'
-        subtitle='Last update September 30, 2026'
-      />
+      <Hero title='Terms of service' subtitle='Last update November 16, 2026' />
       <section className='pb-8'>
         <div className='container'>
           <div className='row'>
             <div className='col-12'>
               <Quote colorScheme='secondary'>
-                💡 <strong>Summary of changes (September 30, 2026)</strong>:
+                💡 <strong>Summary of changes (November 16, 2026)</strong>:
                 <ul className='mb-0'>
                   <li>
-                    Added terms for self-hosted Mockoon Pro licenses and trials,
-                    and clarified which terms apply to managed and legacy Cloud
-                    services.
+                    Clarified Pro license slots, third-party marketplace
+                    purchases, refunds, and termination of offline usage rights.
+                    Updated the AI assistant provider information.
                   </li>
                 </ul>
               </Quote>
@@ -101,9 +98,13 @@ const Terms: FunctionComponent = function () {
                 the Service.
               </p>
               <p>
-                Upon termination of your account, your access to the Service
-                will be deactivated, and you may no longer have access to your
-                account or any data associated with it.
+                Upon termination of your account, access to account-based hosted
+                services may be deactivated, and you may no longer have access
+                to your account or hosted data associated with it. Account
+                closure does not itself cancel a third-party marketplace
+                subscription or remotely disable a self-hosted installation.
+                Software usage rights and subscription termination are governed
+                by section 14 and the applicable order.
               </p>
               <p>
                 We shall not be liable to you or any third party for any
@@ -124,13 +125,22 @@ const Terms: FunctionComponent = function () {
                 personal or internal business purposes.
               </p>
               <p>
-                Mockoon Pro is licensed per authorized user. You may install and
-                operate the self-hosted software only for the number of users
-                permitted by your license key. You must not share a license key
-                outside your organization or bypass, alter, or interfere with
-                license validation. License keys remain our confidential
-                licensing material and do not transfer ownership of the
-                software.
+                Self-hosted Mockoon Pro is licensed in license slots, unless
+                your applicable order expressly specifies a different model.
+                Each slot covers either one authorized user or one deployed mock
+                instance. Slots may be allocated between users and mock
+                instances, but a slot cannot cover both at the same time. The
+                combined number of authorized users and deployed mock instances
+                must not exceed the number of slots granted by your license.
+                Where an offer is sold in packs, the applicable listing or order
+                specifies the number of slots included in each purchased pack.
+              </p>
+              <p>
+                You must not share a license key outside your organization or
+                bypass, alter, or interfere with license validation. License
+                keys remain our confidential licensing material and do not
+                transfer ownership of the software. Legacy Mockoon Cloud
+                subscriptions retain their existing plan entitlements.
               </p>
               <p>
                 Self-hosted trials last 14 days, include five licenses, require
@@ -384,17 +394,34 @@ const Terms: FunctionComponent = function () {
                 case.
               </p>
               <p>
-                Paid Mockoon Pro licenses are digital content delivered
-                immediately after a successful payment. By requesting immediate
-                delivery at checkout, you expressly consent to performance
-                beginning before the end of any applicable withdrawal or
-                cooling-off period and acknowledge that, where permitted by
-                applicable law, you lose your statutory right of withdrawal once
-                delivery of the license begins. This does not affect any rights
-                that cannot legally be excluded.
+                Self-hosted Mockoon Pro subscriptions are generally
+                non-refundable once the license key has been issued, because the
+                key enables offline use and cannot be remotely revoked. Requests
+                involving duplicate purchases, billing errors, or a defective
+                product will be reviewed individually. For third-party
+                marketplace purchases, contact us through{' '}
+                <Link href='/contact-form/'>our contact form</Link> with your
+                subscription details. Approved refunds are processed through the
+                marketplace where the purchase was made, in accordance with its
+                applicable policies. This policy does not limit rights under
+                applicable law or the relevant marketplace terms.
               </p>
               <p>
-                Depending on the subscription term and plan you select, you
+                Paid Mockoon Pro licenses are digital content delivered after
+                successful payment and any required account activation. Where
+                you expressly request immediate delivery at checkout, you
+                consent to performance beginning before the end of any
+                applicable withdrawal or cooling-off period and acknowledge
+                that, where permitted by applicable law, you lose your statutory
+                right of withdrawal once delivery of the license begins. This
+                does not affect any rights that cannot legally be excluded.
+                Acceptance of these terms alone does not establish a withdrawal
+                waiver where separate consent or acknowledgment is legally
+                required.
+              </p>
+              <p>
+                For subscriptions purchased directly through Paddle.com,
+                depending on the subscription term and plan you select, you
                 authorize our payment provider (Paddle.com) to automatically
                 charge the payment method you provided on a recurring basis for
                 the fees associated with your chosen subscription. The charges
@@ -427,10 +454,37 @@ const Terms: FunctionComponent = function () {
                 the disputed fees.
               </p>
               <p>
-                Mockoon Pro self-hosted fees are stated and payable in euros
-                (EUR). Legacy Mockoon Cloud fees remain payable in the currency
-                shown in the customer's existing subscription. Enterprise order
-                forms may specify a different currency or payment arrangement.
+                Mockoon Pro self-hosted fees purchased directly from us are
+                stated and payable in euros (EUR), unless the applicable order
+                specifies otherwise. Legacy Mockoon Cloud fees remain payable in
+                the currency shown in the customer's existing subscription.
+                Enterprise order forms may specify a different currency or
+                payment arrangement.
+              </p>
+              <h4 className='mt-4 fw-medium'>
+                Third-party marketplace purchases
+              </h4>
+              <p>
+                For purchases through a third-party marketplace, the applicable
+                marketplace listing, accepted offer, and order specify the plan,
+                license quantity or pack size, price, currency, contract term,
+                and billing schedule. The marketplace provider handles billing
+                and payment under its applicable terms; the direct Paddle
+                billing provisions do not apply to those purchases. Contract
+                changes, automatic renewal, cancellation, price changes, billing
+                disputes, and refunds follow the applicable marketplace order
+                and policies. To the extent of a conflict, those terms govern
+                these transaction matters rather than the general payment and
+                subscription provisions of this Agreement.
+              </p>
+              <p>
+                A third-party marketplace purchase of self-hosted Mockoon Pro
+                does not include managed hosting, automatic infrastructure
+                provisioning, or infrastructure charges unless expressly stated
+                in the offer. You deploy and operate the software yourself. Any
+                cloud infrastructure you use is billed separately. Updated
+                license keys may need to be installed in your instance following
+                a renewal or a change in purchased quantity.
               </p>
               <p>
                 You acknowledge that our Service may integrate with third-party
@@ -467,14 +521,14 @@ const Terms: FunctionComponent = function () {
               </p>
               <p>
                 To provide the AI assistant feature, we utilize services from
-                our third-party vendor, OpenAI. By using the AI assistant, you
-                acknowledge that the content and data you provide as input
-                ("Prompts") will be transmitted to OpenAI for processing. You
-                agree not to submit any Personal Data or sensitive confidential
-                information through the AI assistant. Your use of this feature
-                is also subject to OpenAI's own{' '}
+                our third-party vendor, Google Gemini. By using the AI
+                assistant, you acknowledge that the content and data you provide
+                as input ("Prompts") will be transmitted to Google for
+                processing. You agree not to submit any Personal Data or
+                sensitive confidential information through the AI assistant.
+                Your use of this feature is also subject to Google's applicable{' '}
                 <a
-                  href='https://openai.com/policies/terms-of-use'
+                  href='https://ai.google.dev/gemini-api/terms'
                   target='_blank'
                   rel='noopener'
                 >
@@ -482,7 +536,7 @@ const Terms: FunctionComponent = function () {
                 </a>{' '}
                 and{' '}
                 <a
-                  href='https://openai.com/policies/privacy-policy'
+                  href='https://policies.google.com/privacy'
                   target='_blank'
                   rel='noopener'
                 >
@@ -789,7 +843,11 @@ const Terms: FunctionComponent = function () {
               <p>
                 You may terminate this Agreement at any time by providing
                 written notice to us or by canceling your subscription in your
-                account management interface.
+                account management interface. For third-party marketplace
+                purchases, renewal and cancellation must be managed through the
+                relevant marketplace under the applicable order and policies.
+                Disabling automatic renewal prevents renewal charges but does
+                not itself refund or terminate the current paid contract term.
               </p>
               <p>
                 We may terminate this Agreement or suspend your access to our
@@ -809,6 +867,18 @@ const Terms: FunctionComponent = function () {
                 services and hosted data may be deactivated under the applicable
                 plan or order. Termination does not relieve you of the
                 obligation to pay fees accrued before termination.
+              </p>
+              <p>
+                Self-hosted license keys are validated offline and cannot be
+                remotely revoked. Technical validity of a key does not extend
+                your contractual usage rights. When those rights expire or
+                terminate, you must cease using the paid functionality covered
+                by that license, even if the key remains technically valid. If a
+                purchase is fully refunded, the usage rights granted by that
+                purchase end unless otherwise agreed in writing or required by
+                applicable law. For a partial refund that reduces the licensed
+                quantity, use must remain within the remaining entitlement and
+                any replacement license issued for it.
               </p>
               <p>
                 Any provisions of this Agreement that by their nature extend

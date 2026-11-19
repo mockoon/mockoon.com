@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'mockoon';
-  src: url('/fonts/mockoon.woff?qzt3wn') format('woff');
+  src: url('/fonts/mockoon.woff?4kerjz') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -22,28 +22,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-savings:before {
-  content: '\e927';
-}
-.icon-github:before {
-  content: '\e911';
-}
-.icon-linkedin:before {
-  content: '\e90f';
-  color: #0077b5;
-}
-.icon-youtube:before {
-  content: '\e912';
-  color: #f00;
-}
-.icon-apple:before {
-  content: '\f179';
-}
-.icon-windows:before {
-  content: '\f17a';
-}
-.icon-linux:before {
-  content: '\f17c';
+.icon-help_outline:before {
+  content: '\e932';
 }
 .icon-warning:before {
   content: '\e91f';
@@ -182,4 +162,27 @@
 }
 .icon-groups:before {
   content: '\e928';
+}
+.icon-savings:before {
+  content: '\e927';
+}
+.icon-github:before {
+  content: '\e911';
+}
+.icon-linkedin:before {
+  content: '\e90f';
+  color: #0077b5;
+}
+.icon-youtube:before {
+  content: '\e912';
+  color: #f00;
+}
+.icon-apple:before {
+  content: '\f179';
+}
+.icon-windows:before {
+  content: '\f17a';
+}
+.icon-linux:before {
+  content: '\f17c';
 }

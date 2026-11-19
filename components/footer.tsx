@@ -215,6 +215,11 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
+                <Link href='/pro/aws-marketplace/' className='text-reset'>
+                  AWS Marketplace
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/trust/' className='text-reset'>
                   Trust & Security
                 </Link>

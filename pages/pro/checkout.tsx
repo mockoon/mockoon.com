@@ -324,6 +324,16 @@ export default function ProCheckout() {
                   )}
                 </div>
               </div>
+              {!isTrial && (
+                <p className='text-gray-700 my-4'>
+                  Prefer to pay through your AWS account?{' '}
+                  <Link href='https://aws.amazon.com/marketplace/pp/prodview-vspshwxf7b66c'>
+                    Purchase through AWS Marketplace
+                  </Link>
+                  , or <Link href='/contact-form/'>contact us</Link> to discuss
+                  a private offer.
+                </p>
+              )}
             </div>
           </div>
         </div>

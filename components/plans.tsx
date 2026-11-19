@@ -75,7 +75,12 @@ const proFaq: AccordionData = [
       {
         title: 'What payment methods do you accept?',
         content:
-          'Team licenses can be purchased by credit card through our payment provider, Paddle. Enterprise customers can also pay by purchase order and invoice.'
+          'Team licenses can be purchased by credit card through our payment provider, Paddle, or through <a href="https://aws.amazon.com/marketplace/pp/prodview-vspshwxf7b66c">AWS Marketplace</a> using your AWS account. Enterprise customers can also pay by purchase order and invoice.'
+      },
+      {
+        title: 'Can I purchase Mockoon Pro through AWS Marketplace?',
+        content:
+          'Yes. You can <a href="https://aws.amazon.com/marketplace/pp/prodview-vspshwxf7b66c">purchase Mockoon Pro through AWS Marketplace</a> and pay through your AWS bill. <a href="/contact-form/">Contact us</a> to discuss a private offer. After purchasing, select "Set up your account" in AWS Marketplace and provide a delivery email to receive your license key. No Mockoon account is required. Marketplace pricing and terms are shown in the AWS offer, and you manage renewals and subscription changes through AWS Marketplace.'
       },
       {
         title: 'I have specific billing requirements, can you help me?',
@@ -95,7 +100,7 @@ const proFaq: AccordionData = [
       {
         title: 'How can I cancel my subscription?',
         content:
-          'For a Mockoon Pro subscription, use the management link provided with your order or <a href="/contact-form/">contact us</a>. Existing Mockoon Cloud customers can continue to manage their subscription from the <a href="/account/subscription/">account page</a>.'
+          'For a Mockoon Pro subscription purchased on our website, use the management link provided with your order or <a href="/contact-form/">contact us</a>. For AWS Marketplace purchases, manage cancellation and auto-renewal in AWS Marketplace. Existing Mockoon Cloud customers can continue to manage their subscription from the <a href="/account/subscription/">account page</a>.'
       },
       {
         title: 'Can I get a refund?',
@@ -105,7 +110,7 @@ const proFaq: AccordionData = [
       {
         title: 'VAT',
         content:
-          'Prices are in EUR and exclude taxes (VAT, etc.). Applicable taxes are calculated during checkout based on your location and customer type.'
+          'Website prices are in EUR and exclude taxes (VAT, etc.). Applicable taxes are calculated during checkout based on your location and customer type. For AWS Marketplace purchases, pricing, currency, and applicable taxes are shown in AWS Marketplace.'
       }
     ]
   },

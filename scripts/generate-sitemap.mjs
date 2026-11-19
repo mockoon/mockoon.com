@@ -175,7 +175,7 @@ Promise.all([
     'pages/!(_)*.tsx',
     'root-pages',
     '^pages',
-    ['/templates'],
+    ['/templates', '/pro', '/pro/aws-marketplace'],
     [
       'login',
       'signup',

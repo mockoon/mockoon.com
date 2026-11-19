@@ -38,6 +38,8 @@ Mockoon Pro licenses operate **100% offline**. The server validates your license
 
 You can [request a free 14-day trial](/pro/checkout/?mode=trial) or [purchase a license](/pro/checkout/?mode=subscription) on our website.
 
+Mockoon Pro can also be purchased through [**AWS Marketplace**](https://aws.amazon.com/marketplace/pp/prodview-vspshwxf7b66c), with subscription charges billed through your AWS account. [Contact us](/contact-form/) to discuss a private offer. Pricing, quantities, currency, and purchase terms are specified in the AWS offer.
+
 Your license provides a total pool of **licenses** that you can freely allocate between users (seats) and deployed mock instances.
 
 Your license key determines:
@@ -45,6 +47,15 @@ Your license key determines:
 - **Plan tier**: Team or Enterprise.
 - **Total licenses count**: Total capacity available for allocation.
 - **Expiration date**: The license validity period.
+
+#### Purchasing through AWS Marketplace
+
+1. Purchase your license slots from the [Mockoon Pro listing in AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-vspshwxf7b66c).
+2. Select **Set up your account** from your AWS Marketplace purchase or subscription details. This opens the Mockoon activation page; it does not require creating a Mockoon account.
+3. Enter the email address where you want to receive your license. After verifying the purchase, Mockoon emails your license key and setup details.
+4. Enter the key during initial setup, or update it in **Settings** (`/settings`) on an existing deployment.
+
+Each slot covers one user or one deployed mock instance, with the same allocation model described below. Manage renewals, quantity changes, and cancellation through AWS Marketplace. When a renewal or quantity change produces an updated key, it is sent to your delivery email and must be applied to your deployment.
 
 #### Allocating licenses
 
@@ -59,7 +70,7 @@ For example, with a 30-license key, you can allocate 10 seats for your team and 
 
 When renewing or upgrading your license:
 
-1. Obtain your new license key from your Mockoon customer portal or sales representative.
+1. Use the replacement license key sent by email after renewing or upgrading your subscription, or contact your sales representative.
 2. Log in as the **Owner** and go to **Settings** (`/settings`).
 3. Paste the new key into **Update License Key**.
 4. Click **Save Changes**.

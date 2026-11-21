@@ -92,7 +92,7 @@
     "cross-env": "10.1.0",
     "cross-var": "1.1.0",
     "firebase-tools": "15.34.2",
-    "image-size": "2.0.4",
+    "image-size": "2.1.0",
     "prettier": "3.9.10",
     "typescript": "5.9.3"
   },

@@ -112,6 +112,16 @@ const tasks: {
       target: null
     },
     {
+      title: 'User password management',
+      pro: true,
+      target: null
+    },
+    {
+      title: 'User email invitations',
+      pro: true,
+      target: null
+    },
+    {
       link: 'https://github.com/mockoon/mockoon/issues/1717',
       title: 'Surface callbacks in logs',
       pro: false,
@@ -126,12 +136,12 @@ const tasks: {
   ],
   planned: [
     {
-      title: 'User password management',
+      title: 'Two-factor authentication',
       pro: true,
       target: null
     },
     {
-      title: 'User email invitations',
+      title: 'Workspace manager role',
       pro: true,
       target: null
     },
@@ -142,6 +152,11 @@ const tasks: {
     },
     {
       title: 'Git integration',
+      pro: true,
+      target: null
+    },
+    {
+      title: 'Dashboard analytics',
       pro: true,
       target: null
     },

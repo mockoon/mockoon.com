@@ -32,6 +32,7 @@ You can run Mockoon Pro with a standard `docker run` command:
 ```bash
 docker run -d \
   --name mockoon-pro \
+  --stop-timeout 30 \
   -p 5020:5020 \
   -e MOCKOON_DOMAIN=mockoon.company.com \
   -e MOCKOON_SERVER_ID=mockoon-node-1 \
@@ -71,6 +72,7 @@ services:
     image: mockoon/pro:latest
     container_name: mockoon-pro
     restart: unless-stopped
+    stop_grace_period: 30s
     environment:
       - NODE_ENV=production
       - PORT=5020
@@ -131,6 +133,7 @@ services:
     image: mockoon/pro:latest
     container_name: mockoon-pro
     restart: unless-stopped
+    stop_grace_period: 30s
     ports:
       - '5020:5020'
     environment:
@@ -171,6 +174,7 @@ spec:
       labels:
         app: mockoon-pro
     spec:
+      terminationGracePeriodSeconds: 30
       containers:
         - name: mockoon-pro
           image: mockoon/pro:latest
@@ -195,6 +199,16 @@ spec:
           persistentVolumeClaim:
             claimName: mockoon-pro-data-pvc
 ```
+
+## Graceful shutdown
+
+Allow **30 seconds** for shutdowns, restarts, and updates so Mockoon Pro can persist pending changes.
+
+- **Docker**: Use `--stop-timeout 30` when creating the container, or `docker stop -t 30 mockoon-pro` for an existing container.
+- **Docker Compose**: Set `stop_grace_period: 30s` on the Pro service. Apply changes with `docker compose up -d`.
+- **Kubernetes / OpenShift**: The default termination grace period is already **30 seconds**. Keep this default or set `terminationGracePeriodSeconds: 30` explicitly in the pod template.
+
+Forced stops can interrupt writes and lose pending changes.
 
 ## Environment variables
 
@@ -346,6 +360,7 @@ To have the Mockoon container serve TLS directly without a reverse proxy, set `U
 ```bash
 docker run -d \
   --name mockoon-pro \
+  --stop-timeout 30 \
   -p 443:443 \
   -e NODE_ENV=production \
   -e PORT=443 \

@@ -220,6 +220,11 @@ const Footer: FunctionComponent<{
                 </Link>
               </li>
               <li className='mb-2'>
+                <Link href='/pro/resellers/' className='text-reset'>
+                  Resellers
+                </Link>
+              </li>
+              <li className='mb-2'>
                 <Link href='/trust/' className='text-reset'>
                   Trust & Security
                 </Link>

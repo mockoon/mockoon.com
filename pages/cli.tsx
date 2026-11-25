@@ -171,6 +171,17 @@ $ mockoon-cli start --data ./data-file.json`}
                 lineBreak
                 language='bash'
               />
+              <p className='text-muted fs-sm mt-3 mb-0'>
+                Also available on{' '}
+                <a
+                  href='https://gallery.ecr.aws/z7j6m9o3/cli'
+                  target='_blank'
+                  rel='noopener'
+                >
+                  AWS Public ECR
+                </a>{' '}
+                (<code>public.ecr.aws/z7j6m9o3/cli:latest</code>).
+              </p>
             </div>
           </div>
           <div className='row py-5 justify-content-center'>

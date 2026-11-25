@@ -329,24 +329,22 @@ export default function ResellersPage() {
                 {resellerBenefits.map((benefit, index) => (
                   <div
                     key={benefit.title}
-                    className={
+                    className={`d-flex align-items-start ${
                       index < resellerBenefits.length - 1
                         ? 'border-bottom pb-4 mb-4'
                         : ''
-                    }
+                    }`}
                   >
-                    <h3 className='h5 fw-bold d-flex align-items-start'>
-                      <span
-                        className='badge badge-rounded-circle text-bg-success-subtle me-3 mt-1'
-                        aria-hidden='true'
-                      >
-                        <i className='icon-check'></i>
-                      </span>
-                      <span>{benefit.title}</span>
-                    </h3>
-                    <p className='text-gray-700 mb-0 ps-7'>
-                      {benefit.description}
-                    </p>
+                    <div
+                      className='badge badge-rounded-circle text-bg-success-subtle mt-1 me-4 flex-shrink-0'
+                      aria-hidden='true'
+                    >
+                      <i className='icon-check'></i>
+                    </div>
+                    <div>
+                      <h3 className='h5 fw-bold mb-2'>{benefit.title}</h3>
+                      <p className='text-gray-700 mb-0'>{benefit.description}</p>
+                    </div>
                   </div>
                 ))}
               </div>
